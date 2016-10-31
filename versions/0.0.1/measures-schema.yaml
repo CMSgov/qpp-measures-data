@@ -1,0 +1,37 @@
+id: https://github.com/navahq/mips-data-format/versions/0.0.1/measures-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: #/definitions/measure }
+
+definitions:
+  measure:
+    type: object
+    properties:
+      measureId: { type: string }
+      name: { type: string }
+      version: { type: string }
+      description: { type: string }
+      category: { enum: [ia, quality, aci, cost] }
+      # TODO (Mari): add remaining measure sets
+      measureSets:
+        type: array
+        items: { enum: [generalSurgery] }
+      metricType: { enum: [attestation, proportion, continuous] }
+      publishDate:
+        type: string
+        # Date representation as defined by https://tools.ietf.org/html/rfc3339
+        format: date-time
+      removalDate:
+        type: string
+        format: date-time
+    required: [measureId, name, version, description, category, metricType, publishDate]
+    oneOf:
+      - { $ref: '#/definitions/iaMeasure' }
+
+  iaMeasure:
+    type: object
+    properties:
+      category: { enum: [ia] }
+      weight: { enum: [medium, high] }
+      subcategoryId: { type: string }
+    required: [weight]
