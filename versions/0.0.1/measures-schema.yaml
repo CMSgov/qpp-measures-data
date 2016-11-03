@@ -8,30 +8,38 @@ definitions:
     type: object
     properties:
       measureId: { type: string }
-      name: { type: string }
-      version: { type: string }
+      title: { type: string }
       description: { type: string }
       category: { enum: [ia, quality, aci, cost] }
       # TODO (Mari): add remaining measure sets
       measureSets:
         type: array
         items: { enum: [generalSurgery] }
-      metricType: { enum: [attestation, proportion, continuous] }
-      publishDate:
-        type: string
-        # Date representation as defined by https://tools.ietf.org/html/rfc3339
-        format: date-time
-      removalDate:
-        type: string
-        format: date-time
-    required: [measureId, name, version, description, category, metricType, publishDate]
+      metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
+      firstPerformanceYear: { type: integer }
+      lastPerformancYear: { type: integer }
+    required: [measureId, title, description, category, metricType, firstPerformanceYear]
     oneOf:
-      - { $ref: '#/definitions/iaMeasure' }
+      - { $ref: #/definitions/iaMeasure }
 
   iaMeasure:
     type: object
     properties:
       category: { enum: [ia] }
       weight: { enum: [medium, high] }
-      subcategoryId: { type: string }
-    required: [weight]
+      subcategoryId:
+        oneOf: [{ $ref: #/definitions/subcategoryIds }]
+    required: [weight, subcategoryId]
+
+  # TODO (Mari) : If these subcategory names change, we will need a lookup
+  # table that maps IDs to names.
+  subcategoryIds:
+    enum:
+      - achievingHealthEquity
+      - behavioralAndMentalHealth
+      - beneficiaryEngagement
+      - careCoordination
+      - emergencyResponseAndPreparedness
+      - expandedPracticeAccess
+      - patientSafetyAndPracticeAssessment
+      - populationManagement
