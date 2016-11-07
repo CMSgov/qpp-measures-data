@@ -4,19 +4,10 @@
   "description": "The Merit Incentive-based Payment System data format",
   "repository": {
     "type": "git",
-    "url": "https://github.com/navahq/mips-data-format.git"
+    "url": "https://github.com/CMSgov/mips-data-format.git"
   },
-  "scripts": {
-    "validate": "cat versions/0.0.1/measures-data.json | node util/validate-measures-data.js",
-    "convert": "curl -s https://qpp.cms.gov/rest/api/v1/ia_measures | node util/convert-qpp-to-measures.js > versions/0.0.1/measures-data.json"
-  },
-  "main": "main.js",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/mit-license.php"
-    }
-  ],
+  "main": "index.js",
+  "license": "MIT",
   "devDependencies": {
     "ajv": "~4.8.2",
     "yamljs": "~0.2.8"

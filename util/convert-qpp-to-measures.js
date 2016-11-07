@@ -1,12 +1,15 @@
-var fs = require('fs');
-var path = require('path');
-
 /**
  * Expects from standard input a QPP JSON blob describing activity measures and
  * writes to standard output a JSON blob that conforms with a specified version
  * of the measures schema. If no version is specified, the schema version will
  * default to the latest.
+ *
+ * This script can be used as follows:
+ * cat qpp_ia_measures.json | node convert-qpp-to-measures.js 0.0.1 > measures-data.json
  **/
+
+var fs = require('fs');
+var path = require('path');
 
 var version = process.argv[2] || '0.0.1';
 
@@ -29,7 +32,7 @@ process.stdin.on('end', () => {
 });
 
 /**
- * Takes a JSON cpiaActivities object and returns a measuresData JSON object.
+ * Takes a JSON cpiaActivities object and returns a measures data JSON object.
  * Replaces or adds key/value pairs from cpiaActivities as follows:
  *    cpiaActivity key | measuresData key
  *    ------------------------------------
@@ -40,7 +43,7 @@ process.stdin.on('end', () => {
  *    actvty_wghtng_cd | weight
  *    N/A              | category
  *    N/A              | metricType (defaults to 'boolean')
- *    N/A              | publishDate (defaults to the current time)
+ *    N/A              | firstPerformanceYear (defaults to the current year)
  */
 function parseQpp(json) {
   var measureSetList = json.serviceData.categoryList;

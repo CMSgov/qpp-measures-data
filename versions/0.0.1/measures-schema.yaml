@@ -11,10 +11,10 @@ definitions:
       title: { type: string }
       description: { type: string }
       category: { enum: [ia, quality, aci, cost] }
-      # TODO (Mari): add remaining measure sets
       measureSets:
         type: array
-        items: { enum: [generalSurgery] }
+        items:
+          oneOf: [{ $ref: #/definitions/measureSet }]
       metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
       lastPerformanceYear: { type: integer }
@@ -30,6 +30,11 @@ definitions:
       subcategoryId:
         oneOf: [{ $ref: #/definitions/subcategoryIds }]
     required: [weight, subcategoryId]
+
+  # TODO (Mari): add remaining measure sets
+  measureSet:
+    enum:
+      - generalSurgery
 
   # TODO (Mari) : If these subcategory names change, we will need a lookup
   # table that maps IDs to names.
