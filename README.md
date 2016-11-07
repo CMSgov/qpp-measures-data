@@ -18,7 +18,7 @@ the measures schema, run `curl -s https://qpp.cms.gov/rest/api/v1/ia_measures | 
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
 The module can be used with the following pattern:
 ```javascript
-var mipsDataFormat = require('mips-data-format');
+var mipsDataFormat = require('@nava/mips-data-format');
 var measuresData = mipsDataFormat.getMeasuresData('0.0.1');
 var measuresSchema = mipsDataFormat.getMeasuresSchema('0.0.1');
 var measurementSetSchema = mipsDataFormat.getMeasurementSetSchema('0.0.1');
