@@ -4,21 +4,26 @@ type: object
 properties:
   version: { type: string }
   category: { enum: [ia, quality, aci, cost] }
-  measureSet:
-    oneOf: [{ $ref: #/definitions/measure-set }]
+  measureSet: { $ref: #/definitions/measure-set }
   # performanceStart and performanceEnd should be formatted as YYYY-MM-DD
-  performanceStart: { type: string }
-  performanceEnd: { type: string }
+  performanceStart: { $ref: #/definitions/nullable-string }
+  performanceEnd: { $ref: #/definitions/nullable-string }
   measurements:
     type: array
     items: { $ref: #/definitions/measurement }
 required: [version, category, measurements]
 
 definitions:
+  nullable-string:
+    oneOf:
+      - { type: string }
+      - { type: "null" }
+
   # TODO (Mari): add remaining measure sets
   measure-set:
-    enum:
-      - generalSurgery
+    oneOf:
+      - { enum: [generalSurgery] }
+      - { type: "null" }
 
   measurement:
     type: object
