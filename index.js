@@ -14,5 +14,5 @@ exports.getMeasuresSchema = function(version) {
 
 exports.getMeasurementSetSchema = function(version) {
   return YAML.load(
-    path.join(__dirname, 'versions', version, 'measures-schema.yaml'));
+    path.join(__dirname, 'versions', version, 'measurement-set-schema.yaml'));
 }
