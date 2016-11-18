@@ -16,3 +16,5 @@ exports.getMeasurementSetSchema = function(version) {
   return YAML.load(
     path.join(__dirname, 'versions', version, 'measurement-set-schema.yaml'));
 }
+
+exports.convertXmlToJson = require('./util/convert-xml-to-json.js').convertToJson;
