@@ -28,7 +28,7 @@ function convertToJson(xml) {
     // XML does not allow for a root array object, so in the case of
     // measures-data, the converted JSON will have a root measure object that
     // keys to the measures-data array that we will remove before returning.
-    json = JSON.stringify(result.measure ? result.measure : result);
+    json = JSON.stringify(result && result.measure ? result.measure : result);
   });
   return json;
 }
