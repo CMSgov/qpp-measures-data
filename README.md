@@ -1,5 +1,5 @@
 # mips-data-format
-The Merit Incentive-based Payment System data format
+The Merit-based Incentive Payment System data format
 
 ### Setup
 Run `npm install`.
