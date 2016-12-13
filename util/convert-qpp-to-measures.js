@@ -72,11 +72,11 @@ function parseQpp(json) {
   for (var i=0; i< measureList.length; i++) {
     var measure = measureList[i];
     var obj = {};
-    for (var j in measure) {
-      obj.category = category;
-      obj.metricType = 'boolean'; // default
-      obj.firstPerformanceYear = new Date().getFullYear();
+    obj.category = category;
+    obj.firstPerformanceYear = new Date().getFullYear();
+    obj.metricType = 'boolean'; // default
 
+    for (var j in measure) {
       if (j === 'measure_title') {
         obj.title = measure[j];
       } else if (j === 'measure_desc') {
@@ -136,9 +136,9 @@ function parseWeight(weight) {
 
 function parseMetricType(metricType) {
   switch(metricType) {
-    case 'Numerator\/ Denominator':
+    case 'Numerator/ Denominator':
       return 'proportion';
-    case 'Yes\/No Statement':
+    case 'Yes/No Statement':
       return 'boolean';
     default:
       throw new Error("Invalid metric type: " + metricType);
