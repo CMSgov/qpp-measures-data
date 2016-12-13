@@ -11,16 +11,12 @@ definitions:
       title: { type: string }
       description: { type: string }
       category: { enum: [ia, quality, aci, cost] }
-      measureSets:
-        type: array
-        items:
-          oneOf: [{ $ref: #/definitions/measureSet }]
       metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
-      lastPerformanceYear: { type: integer }
     required: [measureId, title, description, category, metricType, firstPerformanceYear]
     oneOf:
       - { $ref: #/definitions/iaMeasure }
+      - { $ref: #/definitions/aciMeasure }
 
   iaMeasure:
     type: object
@@ -31,10 +27,16 @@ definitions:
         oneOf: [{ $ref: #/definitions/subcategoryIds }]
     required: [weight, subcategoryId]
 
-  # TODO (Mari): add remaining measure sets
-  measureSet:
-    enum:
-      - generalSurgery
+  aciMeasure:
+    type: object
+    properties:
+      category: { enum: [aci] }
+      weight: { enum: [0, 5, 10, 20] }
+      objective:
+        oneOf: [{ $ref: #/definitions/objectives }]
+      isRequired: { type: boolean }
+      isBonus: { type: boolean }
+    required: [weight, objective, isRequired, isBonus]
 
   # TODO (Mari) : If these subcategory names change, we will need a lookup
   # table that maps IDs to names.
@@ -48,3 +50,16 @@ definitions:
       - expandedPracticeAccess
       - patientSafetyAndPracticeAssessment
       - populationManagement
+
+  objectives:
+    enum:
+      - publicHealthAndClinicalDataRegistryReporting
+      - healthInformationExchange
+      - electronicPrescribing
+      - coordinationOfCareThroughPatientEngagement
+      - patientElectronicAccess
+      - protectPatientHealthInformation
+      - publicHealthReporting
+      - medicationReconciliation
+      - patientSpecificEducation
+      - secureMessaging
