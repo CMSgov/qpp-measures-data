@@ -1,14 +1,14 @@
 /**
- * Expects from standard input a JSON blob describing activity measures or a
- * measurement-set and writes to standard output an equivalent XML string.
+ * Expects from standard input a JSON blob describing activity measures and
+ * writes to standard output an equivalent XML string.
  *
  * This script can be used as follows:
- * cat measures-data.json | node convert-json-to-xml.js measures > measures-data.xml
+ * cat measures-data.json | node convert-json-to-xml.js  > measures-data.xml
  **/
 
 var xml2js = require('xml2js');
 
-var schemaType = process.argv[2] || 'measures';
+var schemaType = 'measures';
 
 var json = '';
 /**
@@ -26,15 +26,7 @@ var json = '';
 function convertToXml(json) {
   var builder = new xml2js.Builder({rootName: schemaType});
   var xml = builder.buildObject(JSON.parse(json, 'utf8'));
-  process.stdout.write(xml.replace(/(<\/)?[0-9]{1,}(>)/g,'$1measure$2')
-                          // Each object in the measurements (plural) array
-                          // should be treated as a singular measurement object
-                          .replace(/(<\/)?measurements(>)/g,'$1measurement$2')
-                          // TODO (Mari) : The root node of a measurement-set
-                          // XML doc should be <measurements>. A better approach
-                          // would be to use an XML builder and iterate through
-                          // each node.
-                          .replace(/(<\/)?measurement-set(>)/g,'$1measurements$2'));
+  process.stdout.write(xml.replace(/(<\/)?[0-9]{1,}(>)/g,'$1measure$2');
 }
 
 process.stdin.setEncoding('utf8');
