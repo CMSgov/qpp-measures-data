@@ -8,6 +8,7 @@
  * cat qpp_ia_measures.json | node convert-qpp-to-measures.js 0.0.1 ia > measures-data.json
  **/
 
+var _ = require('lodash');
 var fs = require('fs');
 var path = require('path');
 
@@ -18,6 +19,26 @@ var category = process.argv[3] || 'ia';
 var qpp = '';
 
 process.stdin.setEncoding('utf8');
+
+var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
+  'IA_AHE_2',
+  'IA_BE_1',
+  'IA_BE_15',
+  'IA_BE_4',
+  'IA_BMH_7',
+  'IA_BMH_8',
+  'IA_CC_1',
+  'IA_CC_13',
+  'IA_CC_8',
+  'IA_CC_9',
+  'IA_PM_13',
+  'IA_PM_14',
+  'IA_PM_15',
+  'IA_PM_16',
+  'IA_PM_2',
+  'IA_PM_4',
+  'IA_PSPA_16'
+];
 
 process.stdin.on('readable', () => {
   var chunk = process.stdin.read();
@@ -56,6 +77,7 @@ process.stdin.on('end', () => {
  *    measure_domain_desc           | objective
  *    submitting_requirement_text   | metricType
  *    bonus_optional_measure_sw     | isBonus
+ *    stage_name                    | measureSet
  *    N/A                           | category
  *    N/A                           | firstPerformanceYear (defaults to the current year)
  */
@@ -83,6 +105,9 @@ function parseQpp(json) {
         obj.description = measure[j];
       } else if (j === 'measure_id') {
         obj.measureId = measure[j];
+        if (category === 'ia') {
+          obj.cehrtEligible = _.includes(CEHRT_ELIGABLE_IA_MEASURE_IDS, obj.measureId);
+        }
       } else if (j === 'actvty_ctgry_desc') {
         obj.subcategoryId = formatString(measure[j]);
       } else if (j === 'actvty_wghtng_cd') {
@@ -95,6 +120,8 @@ function parseQpp(json) {
         obj.objective = formatString(measure[j]);
       } else if (j === 'submitting_requirement_text') {
         obj.metricType = parseMetricType(measure[j]);
+      } else if (j === 'stage_name') {
+        obj.measureSet = parseMeasureSet(measure[j]);
       } else if (j === 'bonus_optional_measure_sw') {
         obj.isBonus = measure[j];
         if (obj.isBonus) {
@@ -142,5 +169,14 @@ function parseMetricType(metricType) {
       return 'boolean';
     default:
       throw new Error("Invalid metric type: " + metricType);
+  }
+}
+
+function parseMeasureSet(measureSet) {
+  switch(measureSet) {
+    case '2017 Advancing Care Information Transition Objectives and Measures':
+      return 'transition';
+    default:
+      return null;
   }
 }

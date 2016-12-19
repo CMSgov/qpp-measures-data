@@ -26,7 +26,7 @@ var json = '';
 function convertToXml(json) {
   var builder = new xml2js.Builder({rootName: schemaType});
   var xml = builder.buildObject(JSON.parse(json, 'utf8'));
-  process.stdout.write(xml.replace(/(<\/)?[0-9]{1,}(>)/g,'$1measure$2');
+  process.stdout.write(xml.replace(/(<\/)?[0-9]{1,}(>)/g,'$1measure$2'));
 }
 
 process.stdin.setEncoding('utf8');
