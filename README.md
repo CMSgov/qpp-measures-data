@@ -1,10 +1,7 @@
 # mips-data-format
 The Merit-based Incentive Payment System data format
 
-### Setup
-If you don't already have [jq](https://stedolan.github.io/jq/), run `brew install jq`.
-
-Run `npm install`.
+## How to Use mips-data-format
 
 ### Importing the mips-data-format module
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
@@ -26,7 +23,25 @@ $ jq -s add <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node util/conver
 To regenerate the `measures-data.xml` file, run `cat versions/$VERSION/measures-data.json | node util/convert-json-to-xml.js > versions/$VERSION/measures-data.xml`.
 
 ### Validation
+
 We've provided a simple tool to validate JSON against our JSON schema. To validate against
-`measures-schema.yaml`, run `cat [path to JSON] | node util/validate-data.js [version of schema to validate against] measures`. To validate against `measurement-set-schema.yaml`, run `cat [path to JSON] | node util/validate-data.js [version of schema to validate against] measurement-set`
+`measures-schema.yaml`, run `cat [path to JSON] | node util/validate-data.js [version of schema to validate against] measures`.
+
 For example, running `cat versions/0.0.1/measures-data.json | node util/validate-data.js 0.0.1 measures`
 validates the latest version of `measures-data.json` against the latest `measures-schema.yaml`.
+
+## How to Contribute to mips-data-format
+
+### Setup
+
+If you don't already have [jq](https://stedolan.github.io/jq/), run `brew install jq`.
+
+Run `npm install`.
+
+### Testing
+
+When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
+
+```
+mocha
+```

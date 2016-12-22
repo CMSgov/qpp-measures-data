@@ -1451,4 +1451,59 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
     <weight>medium</weight>
     <subcategoryId>beneficiaryEngagement</subcategoryId>
   </measure>
+  <measure>
+    <measureId>ACI_INFBLO_1</measureId>
+    <category>aci</category>
+    <title>EHR Attestation</title>
+    <description>I have not  knowingly and willfully take action to limit or restrict the interoperability of certified EHR technology.
+I have responded to requests to retrieve or exchange information—including requests from patients and other health care providers regardless of the requestor's affiliation or technology.
+I have implemented appropriate standards and processes to ensure that its certified EHR technology was connected in accordance with applicable law and standards, allowed patients timely access to their electronic health information; and supported exchange of electronic health information with other health care providers.</description>
+    <metricType>boolean</metricType>
+    <firstPerformanceYear>2016</firstPerformanceYear>
+    <weight>0</weight>
+    <isRequired>true</isRequired>
+    <isBonus>false</isBonus>
+    <measureSet/>
+    <objective/>
+  </measure>
+  <measure>
+    <measureId>ACI_ONCDIR_1</measureId>
+    <category>aci</category>
+    <title>ONC Attestation</title>
+    <description>I have (1) acknowledged the requirement to cooperate in good faith with ONC direct review health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received;
+AND (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
+    <metricType>boolean</metricType>
+    <firstPerformanceYear>2016</firstPerformanceYear>
+    <weight>0</weight>
+    <isRequired>true</isRequired>
+    <isBonus>false</isBonus>
+    <measureSet/>
+    <objective/>
+  </measure>
+  <measure>
+    <measureId>ACI_ONCACB_1</measureId>
+    <category>aci</category>
+    <title>Surveillance Attestation</title>
+    <description>I have (1) Acknowledged the option to cooperate in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC–ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
+    <metricType>boolean</metricType>
+    <firstPerformanceYear>2016</firstPerformanceYear>
+    <weight>0</weight>
+    <isRequired>false</isRequired>
+    <isBonus>false</isBonus>
+    <measureSet/>
+    <objective/>
+  </measure>
+  <measure>
+    <measureId>ACI_IACEHRT_1</measureId>
+    <category>aci</category>
+    <title>CEHRT Used</title>
+    <description>Providers have the option to report on participation in an immunization registry for 10 points toward the performance score.</description>
+    <metricType>boolean</metricType>
+    <firstPerformanceYear>2016</firstPerformanceYear>
+    <weight>10</weight>
+    <isRequired>false</isRequired>
+    <isBonus>true</isBonus>
+    <measureSet/>
+    <objective/>
+  </measure>
 </measures>
