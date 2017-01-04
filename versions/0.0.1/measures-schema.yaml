@@ -24,7 +24,7 @@ definitions:
     type: object
     properties:
       category: { enum: [ia] }
-      weight: { enum: [medium, high] }
+      weight: { enum: [null, medium, high] }
       subcategoryId:
         oneOf: [{ $ref: #/definitions/subcategoryIds }]
       cehrtEligible: { type: boolean }
@@ -53,6 +53,7 @@ definitions:
       - expandedPracticeAccess
       - patientSafetyAndPracticeAssessment
       - populationManagement
+      - null
 
   objectives:
     enum:
