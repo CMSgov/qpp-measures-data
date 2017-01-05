@@ -1,1 +1,1 @@
-require('./versions/0.0.1/measures-data-spec');
+require('./measures/measures-data-spec');

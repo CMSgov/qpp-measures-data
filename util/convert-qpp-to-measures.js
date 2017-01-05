@@ -1,20 +1,17 @@
 /**
  * Expects from standard input a QPP JSON blob describing activity measures and
- * writes to standard output a JSON blob that conforms with a specified version
- * of the measures schema. If no version is specified, the schema version will
- * default to the latest.
+ * writes to standard output a JSON blob that conforms with the measures
+ * schema.
  *
  * This script can be used as follows:
- * cat qpp_ia_measures.json | node convert-qpp-to-measures.js 0.0.1 ia > measures-data.json
+ * cat qpp_ia_measures.json | node convert-qpp-to-measures.js ia > measures-data.json
  **/
 
 var _ = require('lodash');
 var fs = require('fs');
 var path = require('path');
 
-var version = process.argv[2] || '0.0.1';
-
-var category = process.argv[3] || 'ia';
+var category = process.argv[2] || 'ia';
 
 var qpp = '';
 
