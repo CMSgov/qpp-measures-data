@@ -61,6 +61,7 @@ process.stdin.on('end', () => {
  *    N/A              | category
  *    N/A              | metricType (defaults to 'boolean')
  *    N/A              | firstPerformanceYear (defaults to the current year)
+ *    N/A              | lastPerformanceYear (defaults to null)
  *
  * For Advancing Care Information, the replacement is as follows:
  *    ACI key               | measuresData key
@@ -77,6 +78,7 @@ process.stdin.on('end', () => {
  *    stage_name                    | measureSet
  *    N/A                           | category
  *    N/A                           | firstPerformanceYear (defaults to the current year)
+ *    N/A                           | lastPerformanceYear (defaults to null)
  */
 function parseQpp(json) {
   var measureSetList = json.serviceData.categoryList;
@@ -93,6 +95,7 @@ function parseQpp(json) {
     var obj = {};
     obj.category = category;
     obj.firstPerformanceYear = new Date().getFullYear();
+    obj.lastPerformanceYear = null;
     obj.metricType = 'boolean'; // default
 
     for (var j in measure) {
