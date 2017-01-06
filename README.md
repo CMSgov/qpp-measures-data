@@ -1,13 +1,13 @@
-# mips-data-format
-The Merit-based Incentive Payment System data format
+# qpp-measures-data
+Quality Payments Program Measures Data Repository
 
-## How to Use mips-data-format
+## How to Use qpp-measures-data
 
-### Importing the mips-data-format module
+### Importing the qpp-measures-data module
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
 The module can be used with the following pattern:
 ```javascript
-var mipsDataFormat = require('@cmsgov/mips-data-format');
+var mipsDataFormat = require('@cmsgov/qpp-measures-data');
 var measuresData = mipsDataFormat.getMeasuresData('0.0.1');
 var measuresSchema = mipsDataFormat.getMeasuresSchema('0.0.1');
 ```
@@ -30,7 +30,7 @@ We've provided a simple tool to validate JSON against our JSON schema. To valida
 For example, running `cat versions/0.0.1/measures-data.json | node util/validate-data.js 0.0.1 measures`
 validates the latest version of `measures-data.json` against the latest `measures-schema.yaml`.
 
-## How to Contribute to mips-data-format
+## How to Contribute to qpp-measures-data
 
 ### Setup
 
