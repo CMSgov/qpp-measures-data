@@ -2,8 +2,8 @@
 <measures>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_5</measureId>
     <title>Clinical Data Registry Reporting</title>
@@ -16,8 +16,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_HIE_3</measureId>
     <title>Clinical Information Reconciliation</title>
@@ -30,8 +30,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_3</measureId>
     <title>Electronic Case Reporting</title>
@@ -44,8 +44,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_EP_1</measureId>
     <title>e-Prescribing</title>
@@ -58,8 +58,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_1</measureId>
     <title>Immunization Registry Reporting</title>
@@ -72,8 +72,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_CCTPE_3</measureId>
     <title>Patient-Generated Health Data</title>
@@ -86,8 +86,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_PEA_2</measureId>
     <title>Patient-Specific Education</title>
@@ -100,8 +100,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_PEA_1</measureId>
     <title>Provide Patient Access</title>
@@ -114,8 +114,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_4</measureId>
     <title>Public Health Registry Reporting</title>
@@ -128,8 +128,22 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>proportion</metricType>
+    <measureId>ACI_HIE_2</measureId>
+    <title>Request/Accept Summary of Care</title>
+    <description>For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician receives or retrieves and incorporates into the patient's record an electronic summary of care document.</description>
+    <isRequired>true</isRequired>
+    <weight>10</weight>
+    <measureSet/>
+    <isBonus>false</isBonus>
+    <objective>healthInformationExchange</objective>
+  </measure>
+  <measure>
+    <category>aci</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_CCTPE_2</measureId>
     <title>Secure Messaging</title>
@@ -142,8 +156,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PPHI_1</measureId>
     <title>Security Risk Analysis</title>
@@ -156,11 +170,11 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_HIE_1</measureId>
-    <title>Send a Summary of Care Record</title>
+    <title>Send a Summary of Care</title>
     <description>For at least one transition of care or referral, the MIPS eligible clinician that transitions or refers their patient to another setting of care or health care provider-(1) creates a summary of care record using certified EHR technology; and (2) electronically exchanges the summary of care record.</description>
     <isRequired>true</isRequired>
     <weight>10</weight>
@@ -170,22 +184,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
-    <metricType>proportion</metricType>
-    <measureId>ACI_HIE_2</measureId>
-    <title>Summary of Care Measure</title>
-    <description>For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician receives or retrieves and incorporates into the patient's record an electronic summary of care document.</description>
-    <isRequired>true</isRequired>
-    <weight>10</weight>
-    <measureSet/>
-    <isBonus>false</isBonus>
-    <objective>healthInformationExchange</objective>
-  </measure>
-  <measure>
-    <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_2</measureId>
     <title>Syndromic Surveillance Reporting</title>
@@ -198,8 +198,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_CCTPE_1</measureId>
     <title>View, Download and Transmit (VDT)</title>
@@ -212,8 +212,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_EP_1</measureId>
     <title>e-Prescribing</title>
@@ -226,8 +226,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_HIE_1</measureId>
     <title>Health Information Exchange</title>
@@ -240,8 +240,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_TRANS_PHCDRR_1</measureId>
     <title>Immunization Registry Reporting</title>
@@ -254,8 +254,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_MR_1</measureId>
     <title>Medication Reconciliation</title>
@@ -268,12 +268,12 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_PSE_1</measureId>
     <title>Patient-Specific Education</title>
-    <description>The MIPS eligible clinician must use clinically relevant information from CEHRT to identify patient-specific educational resources and provide electronic access to those materials to at least one unique patient seen by the MIPS eligible clinician.</description>
+    <description>The MIPS eligible clinician must use clinically relevant information from CEHRT to identify patient-specific educational resources and provide access to those materials to at least one unique patient seen by the MIPS eligible clinician.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
     <measureSet>transition</measureSet>
@@ -282,8 +282,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_PEA_1</measureId>
     <title>Provide Patient Access</title>
@@ -296,8 +296,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_SM_1</measureId>
     <title>Secure Messaging</title>
@@ -310,8 +310,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_TRANS_PPHI_1</measureId>
     <title>Security Risk Analysis</title>
@@ -324,8 +324,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_TRANS_PHCDRR_3</measureId>
     <title>Specialized Registry Reporting</title>
@@ -338,8 +338,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>ACI_TRANS_PHCDRR_2</measureId>
     <title>Syndromic Surveillance Reporting</title>
@@ -352,8 +352,8 @@
   </measure>
   <measure>
     <category>aci</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_TRANS_PEA_2</measureId>
     <title>View, Download, or Transmit (VDT)</title>
@@ -366,8 +366,8 @@
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_EPA_4</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -378,8 +378,8 @@
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_4</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -390,8 +390,8 @@
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_5</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -402,8 +402,8 @@
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_2</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -427,8 +427,8 @@ Clinicians would attest that, 60 percent for first year, or 75 percent for the s
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_12</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -446,8 +446,8 @@ Systematically integrate information from referrals into the plan of care.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_10</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -458,8 +458,8 @@ Systematically integrate information from referrals into the plan of care.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_11</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -475,8 +475,8 @@ Partner with community or hospital-based transitional care services.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_13</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -493,8 +493,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_5</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -505,8 +505,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_6</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -517,8 +517,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_EPA_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -529,8 +529,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_9</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -541,8 +541,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_10</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -553,8 +553,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_6</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -565,8 +565,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_4</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -577,8 +577,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_1</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -589,8 +589,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_8</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -601,8 +601,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_5</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -613,8 +613,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_AHE_1</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -625,8 +625,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_15</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -637,8 +637,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_4</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -649,8 +649,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -661,8 +661,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_14</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -673,8 +673,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_5</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -685,8 +685,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_16</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -697,8 +697,8 @@ Routine medication reconciliation.</description>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_4</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -717,8 +717,8 @@ Clinician would attest that, 60 percent for first year, or 75 percent for the se
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -729,8 +729,8 @@ Clinician would attest that, 60 percent for first year, or 75 percent for the se
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_17</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -746,8 +746,8 @@ Use available data regularly to analyze opportunities to reduce cost through imp
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_15</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -758,8 +758,8 @@ Use available data regularly to analyze opportunities to reduce cost through imp
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_6</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -770,8 +770,8 @@ Use available data regularly to analyze opportunities to reduce cost through imp
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_20</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -782,8 +782,8 @@ Use available data regularly to analyze opportunities to reduce cost through imp
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_8</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -794,8 +794,8 @@ Use available data regularly to analyze opportunities to reduce cost through imp
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_15</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -809,8 +809,8 @@ Managing care intensively through new diagnoses, injuries and exacerbations of i
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_21</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -821,8 +821,8 @@ Managing care intensively through new diagnoses, injuries and exacerbations of i
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_19</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -840,8 +840,8 @@ Promote transparency and engage patients and families by sharing practice level 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -852,8 +852,8 @@ Promote transparency and engage patients and families by sharing practice level 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_7</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -871,8 +871,8 @@ Integrate behavioral health and medical care plans and facilitate integration th
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_16</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -887,8 +887,8 @@ Conduct periodic, structured medication reviews.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_14</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -903,8 +903,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_9</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -915,8 +915,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_1</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -927,8 +927,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_21</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -939,8 +939,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_22</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -951,8 +951,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_23</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -963,8 +963,8 @@ Use on-site practice-based or shared care managers to proactively monitor and co
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_20</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -982,8 +982,8 @@ Incorporate population health, quality and patient experience metrics in regular
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_AHE_4</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -994,8 +994,8 @@ Incorporate population health, quality and patient experience metrics in regular
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_AHE_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1006,8 +1006,8 @@ Incorporate population health, quality and patient experience metrics in regular
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_AHE_2</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -1018,8 +1018,8 @@ Incorporate population health, quality and patient experience metrics in regular
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_5</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1030,8 +1030,8 @@ Incorporate population health, quality and patient experience metrics in regular
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_18</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1047,8 +1047,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1059,8 +1059,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_ERP_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1071,8 +1071,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_1</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1083,8 +1083,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_8</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1095,8 +1095,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_10</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1107,8 +1107,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_7</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1119,8 +1119,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_11</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1131,8 +1131,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_14</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1143,8 +1143,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_11</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1155,8 +1155,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_8</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1167,8 +1167,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_13</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1179,8 +1179,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1191,8 +1191,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_9</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1203,8 +1203,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_12</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1215,8 +1215,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_1</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1227,8 +1227,8 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_ERP_1</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1239,23 +1239,24 @@ Use relevant data sources to create benchmarks and goals for performance at the 
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_12</measureId>
     <cehrtEligible>false</cehrtEligible>
-    <description>Empanel (assign responsibility for) the total population, linking each patient to a MIPS eligible clinician or  group or care team.
-Empanelment is a series of processes that assign each active patient to a MIPS eligible clinician or  group and/or care team, confirm assignment with patients and clinicians, and use the resultant patient panels as a foundation for individual patient and population health management. 
-Empanelment identifies the patients and population for whom the MIPS eligible clinician or group and/or care team is responsible and is the foundation for the relationship continuity between patient and MIPS eligible clinician or group /care team that is at the heart of comprehensive primary care. Effective empanelment requires identification of the "active population" of the practice: those patients who identify and use your practice as a source for primary care. There are many ways to define "active patients" operationally, but generally, the definition of "active patients" includes patients who have sought care within the last 24 to 36 months, allowing inclusion of younger patients who have minimal acute or preventive health care.
-</description>
+    <description>Empanel (assign responsibility for) the total population, linking each patient to a MIPS eligible clinician or group or care team.
+
+Empanelment is a series of processes that assign each active patient to a MIPS eligible clinician or group and/or care team, confirm assignment with patients and clinicians, and use the resultant patient panels as a foundation for individual patient and population health management. 
+
+Empanelment identifies the patients and population for whom the MIPS eligible clinician or group and/or care team is responsible and is the foundation for the relationship continuity between patient and MIPS eligible clinician or group /care team that is at the heart of comprehensive primary care. Effective empanelment requires identification of the "active population" of the practice: those patients who identify and use your practice as a source for primary care. There are many ways to define "active patients" operationally, but generally, the definition of "active patients" includes patients who have sought care within the last 24 to 36 months, allowing inclusion of younger patients who have minimal acute or preventive health care.</description>
     <title>Population empanelment</title>
     <weight>medium</weight>
     <subcategoryId>populationManagement</subcategoryId>
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_13</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -1271,8 +1272,8 @@ Use structured referral notes.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_14</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1288,11 +1289,11 @@ Provide a guide to available community resources.
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_EPA_1</measureId>
-    <cehrtEligible>false</cehrtEligible>
+    <cehrtEligible>true</cehrtEligible>
     <description>Provide 24/7 access to MIPS eligible clinicians,  groups, or care teams for advice about urgent and emergent care (e.g., eligible clinician and care team access to medical record, cross-coverage with access to medical record, or protocol-driven nurse line with access to medical record) that could include one or more of the following:
 Expanded hours in evenings and weekends with access to the patient medical record (e.g., coordinate with small practices to provide alternate hour office visits and urgent care);
 
@@ -1307,8 +1308,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_18</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1319,8 +1320,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_13</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1331,8 +1332,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_11</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1343,8 +1344,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_7</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1355,8 +1356,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1367,8 +1368,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_4</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1379,8 +1380,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1391,8 +1392,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BMH_3</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1403,8 +1404,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_12</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1415,8 +1416,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_19</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1427,8 +1428,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_1</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -1439,8 +1440,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_16</measureId>
     <cehrtEligible>true</cehrtEligible>
@@ -1451,8 +1452,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_8</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1463,8 +1464,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PSPA_7</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1475,8 +1476,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_10</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1487,8 +1488,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_7</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1499,8 +1500,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_9</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1511,8 +1512,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_CC_6</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1523,8 +1524,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1535,8 +1536,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_EPA_2</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1547,8 +1548,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PM_6</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1559,8 +1560,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_BE_17</measureId>
     <cehrtEligible>false</cehrtEligible>
@@ -1571,13 +1572,13 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
   </measure>
   <measure>
     <category>ia</category>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <metricType>boolean</metricType>
     <measureId>IA_PCMH</measureId>
     <cehrtEligible>false</cehrtEligible>
-    <description>Electronic submission of Patient Centered Medical Home (PCMH) accreditation</description>
-    <title>Electronic submission of Patient Centered Medical Home (PCMH) accreditation</title>
+    <description>I attest that I am a Patient Centered Medical Home (PCMH) or Comparable Specialty Practice</description>
+    <title>Patient Centered Medical Home Attestation</title>
     <weight/>
     <subcategoryId/>
   </measure>
@@ -1589,8 +1590,8 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
 I have responded to requests to retrieve or exchange information—including requests from patients and other health care providers regardless of the requestor's affiliation or technology.
 I have implemented appropriate standards and processes to ensure that its certified EHR technology was connected in accordance with applicable law and standards, allowed patients timely access to their electronic health information; and supported exchange of electronic health information with other health care providers.</description>
     <metricType>boolean</metricType>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <weight>0</weight>
     <isRequired>true</isRequired>
     <isBonus>false</isBonus>
@@ -1604,8 +1605,8 @@ I have implemented appropriate standards and processes to ensure that its certif
     <description>I have (1) acknowledged the requirement to cooperate in good faith with ONC direct review health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received;
 AND (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
     <metricType>boolean</metricType>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <weight>0</weight>
     <isRequired>true</isRequired>
     <isBonus>false</isBonus>
@@ -1618,8 +1619,8 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <title>Surveillance Attestation</title>
     <description>I have (1) Acknowledged the option to cooperate in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC–ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
     <metricType>boolean</metricType>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <weight>0</weight>
     <isRequired>false</isRequired>
     <isBonus>false</isBonus>
@@ -1632,8 +1633,8 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <title>CEHRT Used</title>
     <description>Providers have the option to report on participation in an immunization registry for 10 points toward the performance score.</description>
     <metricType>boolean</metricType>
-    <firstPerformanceYear>2016</firstPerformanceYear>
-    <lastPerformanceYear />
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
     <weight>10</weight>
     <isRequired>false</isRequired>
     <isBonus>true</isBonus>

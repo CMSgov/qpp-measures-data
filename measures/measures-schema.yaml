@@ -13,7 +13,7 @@ definitions:
       category: { enum: [ia, quality, aci, cost] }
       metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
-      lastPerformanceYear: { type: integer }
+      lastPerformanceYear: { enum: [integer, null] }
       measureSet: { enum: [transition, null] }
     required: [measureId, title, description, category, metricType, firstPerformanceYear]
     oneOf:
