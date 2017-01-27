@@ -28,6 +28,7 @@ var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_CC_13',
   'IA_CC_8',
   'IA_CC_9',
+  'IA_EPA_1',
   'IA_PM_13',
   'IA_PM_14',
   'IA_PM_15',
