@@ -14,11 +14,14 @@ definitions:
       metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
       lastPerformanceYear: { enum: [integer, null] }
-      measureSet: { enum: [transition, null] }
+      measureSets:
+        type: array
+        items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear]
     oneOf:
       - { $ref: #/definitions/iaMeasure }
       - { $ref: #/definitions/aciMeasure }
+      - { $ref: #/definitions/qualityMeasure }
 
   iaMeasure:
     type: object
@@ -39,7 +42,26 @@ definitions:
         oneOf: [{ $ref: #/definitions/objectives }]
       isRequired: { type: boolean }
       isBonus: { type: boolean }
-    required: [weight, objective, isRequired, isBonus, measureSet]
+    required: [weight, objective, isRequired, isBonus, measureSets]
+
+  qualityMeasure:
+    type: object
+    properties:
+      category: { enum: [quality] }
+      measureType:
+        oneOf: [{ $ref: #/definitions/measureTypes }]
+      isHighPriority: { type: boolean }
+      isInverse: { type: boolean }
+      overallAlgorithm: { enum: [simpleAverage, weightedAverage, first, last] }
+      strata:
+        type: array
+        # TODO (Mari): This will be enumerated
+        items: { type: string }
+      primarySteward: { type: string }
+      methods:
+        type: array
+        items: { $ref: #/definitions/methods }
+    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, overallAlgorithm, strata, primarySteward, measureSets]
 
   # TODO (Mari) : If these subcategory names change, we will need a lookup
   # table that maps IDs to names.
@@ -68,3 +90,56 @@ definitions:
       - patientSpecificEducation
       - secureMessaging
       - null
+
+  measureTypes:
+    enum:
+      - efficiency
+      - intermediateOutcome
+      - outcome
+      - patientEngagementExperience
+      - process
+      - structure
+
+  methods:
+    enum:
+      - administrativeClaims
+      - claims
+      - csv
+      - cmsWebInterface
+      - ehr
+      - registry
+
+  measureSets:
+    enum:
+      - transition
+      - null
+      - allergyImmunology
+      - anesthesiology
+      - cardiology
+      - dermatology
+      - diagnosticRadiology
+      - electrophysiologyCardiacSpecialist
+      - emergencyMedicine
+      - gastroenterology
+      - generalOncology
+      - generalPracticeFamilyMedicine
+      - generalSurgery
+      - hospitalists
+      - internalMedicine
+      - interventionalRadiology
+      - mentalBehavioralHealth
+      - neurology
+      - obstetricsGynecology
+      - ophthalmology
+      - orthopedicSurgery
+      - otolaryngology
+      - pathology
+      - pediatrics
+      - physicalMedicine
+      - plasticSurgery
+      - preventiveMedicine
+      - radiationOncology
+      - rheumatology
+      - thoracicSurgery
+      - urology
+      - vascularSurgery
