@@ -11,7 +11,7 @@ definitions:
       title: { type: string }
       description: { type: string }
       category: { enum: [ia, quality, aci, cost] }
-      metricType: { enum: [boolean, proportion, performanceRatio, continuous] }
+      metricType: { enum: [boolean, proportion, performanceRatio, multiPerformanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
       lastPerformanceYear: { enum: [integer, null] }
       measureSets:
