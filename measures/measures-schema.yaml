@@ -13,11 +13,10 @@ definitions:
       category: { enum: [ia, quality, aci, cost] }
       metricType: { enum: [boolean, proportion, performanceRatio, multiPerformanceRatio, continuous] }
       firstPerformanceYear: { type: integer }
-      lastPerformanceYear: { enum: [integer, null] }
       measureSets:
         type: array
         items: { $ref: #/definitions/measureSets }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear]
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
     oneOf:
       - { $ref: #/definitions/iaMeasure }
       - { $ref: #/definitions/aciMeasure }
