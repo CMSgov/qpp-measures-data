@@ -16,7 +16,7 @@ var measuresSchema = qppMeasuresData.getMeasuresSchema();
 To regenerate the `measures-data.json` file, which contains additional metadata and conforms to
 the measures schema, run:
 ```
-$ jq -s add measures/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node util/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node util/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node util/convert-qpp-to-measures.js quality) | tee measures/measures-data.json
+$ jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node util/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node util/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node util/convert-qpp-to-measures.js quality) | tee measures/measures-data.json
 ```
 
 To regenerate the `measures-data.xml` file, run `cat measures/measures-data.json | node util/convert-json-to-xml.js > measures/measures-data.xml`.
