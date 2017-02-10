@@ -52,7 +52,7 @@ process.stdin.on('end', () => {
 /**
  * Takes a QPP JSON object and returns a measures data JSON object.
  * Replaces or adds key/value pairs from Improvement Activities as follows:
- *    IA key | measuresData key
+ *    IA key           | measuresData key
  *    ------------------------------------
  *    measure_title    | title
  *    measure_desc     | description
@@ -65,29 +65,53 @@ process.stdin.on('end', () => {
  *    N/A              | lastPerformanceYear (defaults to null)
  *
  * For Advancing Care Information, the replacement is as follows:
- *    ACI key               | measuresData key
+ *    ACI key                       | measuresData key
  *    ------------------------------------------------
  *    measure_title                 | title
  *    measure_desc                  | description
- *    stage_name                    | measureSet
+ *    stage_name                    | measureSets
  *    measure_id                    | measureId
  *    base_score_required_sw        | isRequired
  *    performance_score_weight_text | weight
  *    measure_domain_desc           | objective
  *    submitting_requirement_text   | metricType
  *    bonus_optional_measure_sw     | isBonus
- *    stage_name                    | measureSet
  *    N/A                           | category
  *    N/A                           | firstPerformanceYear (defaults to the current year)
  *    N/A                           | lastPerformanceYear (defaults to null)
+ *
+ * For Quality, the replacement is as follows:
+ *    Quality key           | measuresData key
+ *    ----------------------------------------
+ *    measure_title         | title
+ *    measure_desc          | description
+ *    national_quality_code | nationalQualityCode
+ *    measure_type          | measureType
+ *    measure_id            | measureId
+ *    emsr_id               | eMeasureId
+ *    nqf_emsr_num          | nqfEMeasureId
+ *    nqf_num               | nqfId
+ *    qlty_id               | qualityId
+ *    high_prrty_msr_sw     | isHighPriority
+ *    submission_method     | methods
+ *    speciality_list       | measureSets
+ *    prmry_msr_stwrd_name  | primarySteward
+ *    N/A                   | metricType
+ *    N/A                   | isInverse
+ *    N/A                   | overallAlgorithm
+ *    N/A                   | strata
+ *    N/A                   | category
+ *    N/A                   | firstPerformanceYear
+ *    N/A                   | lastPerformanceYear
  */
 function parseQpp(json) {
-  var measureSetList = json.serviceData.categoryList;
   if (category === 'ia') {
     var measureList = json.serviceData.cpiaActivities;
   } else if (category === 'aci') {
     var measureList = json.serviceData.aci_measures.aci_stage_name1_measures
       .concat(json.serviceData.aci_measures.aci_stage_name2_measures);
+  } else if (category === 'quality') {
+    var measureList = json.serviceData.pqrsMeasures;
   }
   var result = [];
 
@@ -122,12 +146,43 @@ function parseQpp(json) {
       } else if (j === 'submitting_requirement_text') {
         obj.metricType = parseMetricType(measure[j]);
       } else if (j === 'stage_name') {
-        obj.measureSet = parseMeasureSet(measure[j]);
+        obj.measureSets = parseMeasureSet(measure[j]);
       } else if (j === 'bonus_optional_measure_sw') {
         obj.isBonus = measure[j];
         if (obj.isBonus) {
           obj.weight = 5; // override weight if measure is a bonus measure
         }
+      } else if (j === 'national_quality_code') {
+        obj.nationalQualityCode = _.trim(measure[j]);
+      } else if (j === 'measure_type') {
+        obj.measureType = formatString(measure[j]);
+      } else if (j === 'emsr_id') {
+        obj.eMeasureId = parseId(measure[j]);
+      } else if (j === 'nqf_emsr_num') {
+        obj.nqfEMeasureId = parseId(measure[j]);
+      } else if (j === 'nqf_num') {
+        obj.nqfId = parseId(measure[j]);
+      } else if (j === 'qlty_id') {
+        obj.qualityId = parseId(measure[j]);
+      } else if (j === 'high_prrty_msr_sw') {
+        obj.isHighPriority = measure[j] === 'No' ? false : true;
+      } else if (j === 'prmry_msr_stwrd_name') {
+        obj.primarySteward = measure[j];
+      } else if (j === 'submission_method') {
+        obj.methods = _.map(measure[j], function(method) {
+          return formatString(method);
+        });
+      } else if (j === 'speciality_list') {
+        obj.measureSets = _.map(measure[j], function(speciality) {
+          return formatString(speciality);
+        });
+      } else if (category === 'quality') {
+        // TODO (Mari): These will need to be populated via another mechanism
+        // outside of the API (similar to CEHRT eligible IA measures)
+        obj.isInverse = false;
+        obj.metricType = 'performanceRatio';
+        obj.overallAlgorithm = 'simpleAverage';
+        obj.strata = [];
       }
     }
     result.push(obj);
@@ -136,15 +191,11 @@ function parseQpp(json) {
 }
 
 /**
-  * Removes spaces, replaces ampersands, capitalizes 'And' and 'Of' and
-  * lowercases the first letter.
+  * Replaces ampersands, slashes, and converts to camel case.
   */
 function formatString(string) {
-  string = string.replace('&','And')
-        .replace(/ /g,'')
-        .replace(/and([A-Z])/,"And$1")
-        .replace(/of([A-Z])/,"Of$1")
-  return string.charAt(0).toLowerCase() + string.slice(1);
+  return _.camelCase(string.replace('&', 'And')
+                           .replace('/', ''));
 }
 
 function parseWeight(weight) {
@@ -176,8 +227,12 @@ function parseMetricType(metricType) {
 function parseMeasureSet(measureSet) {
   switch(measureSet) {
     case '2017 Advancing Care Information Transition Objectives and Measures':
-      return 'transition';
+      return ['transition'];
     default:
-      return null;
+      return [];
   }
+}
+
+function parseId(id) {
+  return (id === 'N/A') ? null : id;
 }

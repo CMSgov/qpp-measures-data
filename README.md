@@ -16,15 +16,17 @@ var measuresSchema = qppMeasuresData.getMeasuresSchema();
 To regenerate the `measures-data.json` file, which contains additional metadata and conforms to
 the measures schema, run:
 ```
-$ jq -s add <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node util/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node util/convert-qpp-to-measures.js ia) | tee measures/measures-data.json
+$ jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node util/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node util/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node util/convert-qpp-to-measures.js quality) | tee measures/measures-data.json
 ```
 
 To regenerate the `measures-data.xml` file, run `cat measures/measures-data.json | node util/convert-json-to-xml.js > measures/measures-data.xml`.
 
+The measures from `additional-measures.json` must be added, as they are not available via the QPP API.
+
 ### Validation
 
 We've provided a simple tool to validate JSON against our JSON schema. To validate against
-`measures-schema.yaml`, run `cat [path to JSON] | node util/validate-data.js [version of schema to validate against] measures`.
+`measures-schema.yaml`, run `cat [path to JSON] | node util/validate-data.js measures`.
 
 For example, running `cat measures/measures-data.json | node util/validate-data.js measures`
 validates the latest version of `measures-data.json` against the latest `measures-schema.yaml`.
