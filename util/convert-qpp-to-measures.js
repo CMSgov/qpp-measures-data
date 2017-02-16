@@ -93,7 +93,7 @@ process.stdin.on('end', () => {
  *    nqf_num               | nqfId
  *    qlty_id               | qualityId
  *    high_prrty_msr_sw     | isHighPriority
- *    submission_method     | methods
+ *    submission_method     | submissionMethods
  *    speciality_list       | measureSets
  *    prmry_msr_stwrd_name  | primarySteward
  *    N/A                   | metricType
@@ -169,7 +169,7 @@ function parseQpp(json) {
       } else if (j === 'prmry_msr_stwrd_name') {
         obj.primarySteward = measure[j];
       } else if (j === 'submission_method') {
-        obj.methods = _.map(measure[j], function(method) {
+        obj.submissionMethods = _.map(measure[j], function(method) {
           return formatString(method);
         });
       } else if (j === 'speciality_list') {
@@ -180,7 +180,7 @@ function parseQpp(json) {
         // TODO (Mari): These will need to be populated via another mechanism
         // outside of the API (similar to CEHRT eligible IA measures)
         obj.isInverse = false;
-        obj.metricType = 'performanceRatio';
+        obj.metricType = 'performanceRate';
         obj.overallAlgorithm = 'simpleAverage';
         obj.strata = [];
       }

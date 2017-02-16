@@ -11,7 +11,7 @@ definitions:
       title: { type: string }
       description: { type: string }
       category: { enum: [ia, quality, aci, cost] }
-      metricType: { enum: [boolean, proportion, performanceRatio, multiPerformanceRatio, continuous] }
+      metricType: { enum: [boolean, proportion, performanceRate, continuous] }
       firstPerformanceYear: { type: integer }
       lastPerformanceYear: { type: [integer, 'null'] }
       measureSets:
@@ -63,7 +63,7 @@ definitions:
         # TODO (Mari): This will be enumerated
         items: { type: string }
       primarySteward: { type: string }
-      methods:
+      submissionMethods:
         type: array
         items: { $ref: #/definitions/methods }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, overallAlgorithm, strata, primarySteward, measureSets]
