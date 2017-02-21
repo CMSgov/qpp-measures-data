@@ -1,7 +1,18 @@
 # qpp-measures-data
 Quality Payments Program Measures Data Repository
 
+This repository hosts measures data for QPP and supports functionality to import
+measures data as an NPM module. It currently hosts all Improvement Activity and
+Advancing Care Information measures, as well as a fraction of Quality measures.
+
 ## How to Use qpp-measures-data
+
+Measures data can be accessed by installing the `qpp-measures-data` NPM repository.
+The measures data JSON schema is described in `measures/measures-schema.yaml`. The
+measures data here combines existing data from the QPP API, with supplementary data
+found in `util`. To access measures data without installing the NPM repository,
+run `git clone git@github.com:CMSgov/qpp-measures-data.git` and navigate to
+`measures/measures-data.json`.
 
 ### Importing the qpp-measures-data module
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
@@ -44,5 +55,5 @@ Run `npm install`.
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
 
 ```
-mocha
+npm run test
 ```
