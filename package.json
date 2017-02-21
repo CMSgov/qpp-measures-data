@@ -7,6 +7,9 @@
     "url": "https://github.com/CMSgov/qpp-measures-data.git"
   },
   "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/_mocha --colors"
+  },
   "license": "MIT",
   "dependencies": {
     "ajv": "^4.10.0",
