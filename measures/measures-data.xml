@@ -72,6 +72,19 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
     <metricType>boolean</metricType>
+    <measureId>ACI_LVPP_1</measureId>
+    <title>Low-Volume Permissible Prescriptions</title>
+    <description>A MIPS eligible clinician (EC) who writes fewer than 100 permissible prescriptions during the performance period is eligible for exclusion from the required e-prescribing measure.</description>
+    <isRequired>false</isRequired>
+    <weight>0</weight>
+    <isBonus>false</isBonus>
+    <objective>electronicPrescribing</objective>
+  </measure>
+  <measure>
+    <category>aci</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_5</measureId>
     <title>Clinical Data Registry Reporting</title>
     <description>The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
@@ -550,8 +563,8 @@ Routine medication reconciliation.</description>
     <metricType>boolean</metricType>
     <measureId>IA_CC_5</measureId>
     <cehrtEligible>false</cehrtEligible>
-    <description>Membership and participation in a CMS Partnership for Patients Hospital Engagement Network.</description>
-    <title>CMS partner in Patients Hospital Engagement Network</title>
+    <description>Membership and participation in a CMS Partnership for Patients Hospital Improvement Innovation Network.</description>
+    <title>CMS partner in Patients Hospital Improvement Innovation Networks</title>
     <weight>medium</weight>
     <subcategoryId>careCoordination</subcategoryId>
   </measure>
