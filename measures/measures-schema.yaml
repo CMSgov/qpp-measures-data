@@ -10,11 +10,22 @@ definitions:
       measureId: { type: string }
       title: { type: string }
       description: { type: string }
-      category: { enum: [ia, quality, aci, cost] }
-      metricType: { enum: [boolean, proportion, performanceRate, continuous] }
-      firstPerformanceYear: { type: integer }
-      lastPerformanceYear: { type: [integer, 'null'] }
+      category:
+        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Advancing Care Information, and Cost.
+        enum: [ia, quality, aci, cost]
+      metricType:
+        description: Type of measurement that the measure requires in order to attest.
+        enum: [boolean, proportion, performanceRate, continuous]
+      firstPerformanceYear:
+        description: Year in which the measure was introduced.
+        type: integer
+        default: 2017
+      lastPerformanceYear:
+        description: Year in which the measure was deprecated.
+        type: [integer, 'null']
+        default: 'null'
       measureSets:
+        description: ACI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
@@ -27,21 +38,37 @@ definitions:
     type: object
     properties:
       category: { enum: [ia] }
-      weight: { enum: [null, medium, high] }
+      weight:
+        description: Determines the points granted for attesting to the measure.
+        enum: [null, medium, high]
+        default: medium
       subcategoryId:
+        description: IA category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/subcategoryIds }]
-      cehrtEligible: { type: boolean }
+      cehrtEligible:
+        description: If true, attesting to the measure will qualify the provider for an ACI CEHRT bonus.
+        type: boolean
+        default: false
     required: [weight, subcategoryId, cehrtEligible]
 
   aciMeasure:
     type: object
     properties:
       category: { enum: [aci] }
-      weight: { enum: [0, 5, 10, 20] }
+      weight:
+        description: Determines the performance score points granted for attesting to the measure.
+        enum: [0, 5, 10, 20]
       objective:
+        description: ACI category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/objectives }]
-      isRequired: { type: boolean }
-      isBonus: { type: boolean }
+      isRequired:
+        description: If true, attesting to the measure is required in order to receive a non-zero ACI score.
+        type: boolean
+        default: false
+      isBonus:
+        description: If true, attesting to the measure will qualify the provider for ACI bonus points.
+        type: boolean
+        default: false
     required: [weight, objective, isRequired, isBonus, measureSets]
 
   qualityMeasure:
@@ -50,26 +77,43 @@ definitions:
       category: { enum: [quality] }
       nationalQualityCode: { type: ['null', string] }
       measureType:
+        description: Quality category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/measureTypes }]
-      eMeasureId: { type: ['null', string] }
-      nqfEMeasureId: { type: ['null', string] }
-      nqfId: { type: ['null', string] }
+      eMeasureId:
+        description: Identifier for Electronic Clinical Quality Measures (ECQM).
+        type: ['null', string]
+      nqfEMeasureId:
+        description: Identifier for measure specified in the Health Quality Measure Format (HQMF).
+        type: ['null', string]
+      nqfId:
+        description: Identifier for the National Quality Forum (NQF) measure.
+        type: ['null', string]
       qualityId: { type: ['null', string] }
-      isHighPriority: { type: boolean }
-      isInverse: { type: boolean }
-      overallAlgorithm: { enum: [simpleAverage, weightedAverage, first, last] }
+      isHighPriority:
+        description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
+        type: boolean
+        default: false
+      isInverse:
+        description: If true, a lower performance rate correlates with better performance.
+        type: boolean
+        default: false
+      overallAlgorithm:
+        description: Formula to determine the overall performance rate, given multiple strata of performance rates.
+        enum: [simpleAverage, weightedAverage, first, last]
       strata:
+        description: Population segments for which the measure requires reporting data.
         type: array
         # TODO (Mari): This will be enumerated
         items: { type: string }
-      primarySteward: { type: string }
+      primarySteward:
+        description: Organization who submits and maintains the measure.
+        type: string
       submissionMethods:
+        description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, overallAlgorithm, strata, primarySteward, measureSets]
 
-  # TODO (Mari) : If these subcategory names change, we will need a lookup
-  # table that maps IDs to names.
   subcategoryIds:
     enum:
       - null
