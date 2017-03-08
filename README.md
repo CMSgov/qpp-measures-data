@@ -1,9 +1,18 @@
 # qpp-measures-data
-Quality Payments Program Measures Data Repository
+Quality Payment Program Measures Data Repository
 
 This repository hosts measures data for QPP and supports functionality to import
 measures data as an NPM module. It currently hosts all Improvement Activity and
 Advancing Care Information measures, as well as a fraction of Quality measures.
+
+This is the alpha v2 source of truth for QPP measures data, building off of the
+existing v1 measures data available at [qpp.cms.gov/api](qpp.cms.gov/api).
+This data (qpp-measures-data) reformats some of the data from the v1 measures
+API and adds some additional information (see `util/convert-qpp-to-measures.js`
+for the exact transformations). The transition to using qpp-measures-data as a
+source of truth for CMS is ongoing and this data may be subject to
+modifications. We are not guaranteeing stability in the API contract for
+qpp-measures-data at this time.
 
 ## How to Use qpp-measures-data
 
