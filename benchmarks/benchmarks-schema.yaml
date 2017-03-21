@@ -1,0 +1,23 @@
+id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: #/definitions/benchmark }
+
+definitions:
+  benchmark:
+    type: object
+    properties:
+      measureId:
+        description: Corresponds to measure object's measureId.
+        type: string
+      performanceYear: { type: string }
+      benchmarkYear: { type: string }
+      deciles:
+        type: array
+        items:
+          type: [number]
+        minItems: 9
+        maxItems: 9
+      submissionMethod:
+        enum: [claims, registry, qcdrOrQualifiedRegistry, cmsWebInterface, administrativeClaims, ehr, cmsApprovedCahpsVendor]
+    required: [measureId, performanceYear, benchmarkYear, submissionMethod, deciles]

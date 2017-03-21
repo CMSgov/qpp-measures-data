@@ -5,14 +5,19 @@
  *
  * This script can be used as follows:
  * cat qpp_ia_measures.json | node convert-qpp-to-measures.js ia > measures-data.json
+ *
+ * See README for details on generating measures-data.json.
  **/
 
+// Libraries
 var _ = require('lodash');
 var fs = require('fs');
 var path = require('path');
-
+// Utils
+var measureIdToIsInverseMap = require('./../benchmarks/measure-id-to-is-inverse-map.json');
+// Commandline arguments
 var category = process.argv[2] || 'ia';
-
+// Variables
 var qpp = '';
 
 process.stdin.setEncoding('utf8');
@@ -179,7 +184,8 @@ function parseQpp(json) {
       } else if (category === 'quality') {
         // TODO (Mari): These will need to be populated via another mechanism
         // outside of the API (similar to CEHRT eligible IA measures)
-        obj.isInverse = false;
+        // isInverse defaults to false;
+        obj.isInverse = measureIdToIsInverseMap[obj.measureId] || false;
         obj.metricType = 'performanceRate';
         obj.overallAlgorithm = 'simpleAverage';
         obj.strata = [];
@@ -187,7 +193,7 @@ function parseQpp(json) {
     }
     result.push(obj);
   }
-  return JSON.stringify(result, null, 2);;
+  return JSON.stringify(result, null, 2);
 }
 
 /**
