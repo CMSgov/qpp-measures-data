@@ -2,14 +2,14 @@
 var chai    = require('chai');
 var expect  = chai.expect;
 // Utils
-var formatCsvRecord = require('./../../util/format-csv-record');
+var formatBenchmarkRecord = require('./../../util/format-benchmark-record');
 
 var options = {
   benchmarkYear: '2016',
   performanceYear: '2018'
 };
 
-describe('formatCsvRecord', function() {
+describe('formatBenchmarkRecord', function() {
   describe('When qualityId of the record does NOT correspond to a measure', function() {
     it('should return undefined', function() {
       // USWR 1800 is not a real qualityID, but the other properties are from real benchmark USWR 18.
@@ -29,7 +29,7 @@ describe('formatCsvRecord', function() {
         decile10: '100',
         isToppedOut: 'Yes'
       };
-      var benchmark = formatCsvRecord(record, options);
+      var benchmark = formatBenchmarkRecord(record, options);
 
       expect(benchmark).to.be.undefined;
     });
@@ -53,7 +53,7 @@ describe('formatCsvRecord', function() {
         decile10: ' -- ',
         isToppedOut: ' -- '
       };
-      var benchmark = formatCsvRecord(record, options);
+      var benchmark = formatBenchmarkRecord(record, options);
 
       expect(benchmark).to.be.undefined;
     });
@@ -77,8 +77,8 @@ describe('formatCsvRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatCsvRecord(record, { benchmarkYear: '2002', performaceYear: '2004'});
-      var benchmark2 = formatCsvRecord(record, { benchmarkYear: '2004', performanceYear: '2006'});
+      var benchmark1 = formatBenchmarkRecord(record, { benchmarkYear: '2002', performaceYear: '2004'});
+      var benchmark2 = formatBenchmarkRecord(record, { benchmarkYear: '2004', performanceYear: '2006'});
 
       expect(benchmark1.benchmarkYear).to.equal('2002');
       expect(benchmark2.benchmarkYear).to.equal('2004');
@@ -100,8 +100,8 @@ describe('formatCsvRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatCsvRecord(record, {benchmarkYear: '2002', performanceYear: '2004'});
-      var benchmark2 = formatCsvRecord(record, {benchmarkYear: '2004', performanceYear: '2006'});
+      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: '2002', performanceYear: '2004'});
+      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: '2004', performanceYear: '2006'});
 
       expect(benchmark1.performanceYear).to.equal('2004');
       expect(benchmark2.performanceYear).to.equal('2006');
@@ -125,7 +125,7 @@ describe('formatCsvRecord', function() {
           decile10: '>= 99.76',
           isToppedOut: 'Yes'
         };
-        var benchmark = formatCsvRecord(record, options);
+        var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
@@ -154,7 +154,7 @@ describe('formatCsvRecord', function() {
           decile10: '100',
           isToppedOut: 'Yes'
         };
-        var benchmark = formatCsvRecord(record, options);
+        var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
@@ -187,7 +187,7 @@ describe('formatCsvRecord', function() {
               decile10: '0',
               isToppedOut: 'No'
             };
-            var benchmark = formatCsvRecord(record, options);
+            var benchmark = formatBenchmarkRecord(record, options);
 
             expect(benchmark).to.exist;
             expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
@@ -215,7 +215,7 @@ describe('formatCsvRecord', function() {
               decile10: '<=  4.00',
               isToppedOut: 'No'
             };
-            var benchmark = formatCsvRecord(record, options);
+            var benchmark = formatBenchmarkRecord(record, options);
 
             expect(benchmark).to.exist;
             expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
@@ -244,7 +244,7 @@ describe('formatCsvRecord', function() {
           decile10: '0',
           isToppedOut: 'Yes'
         };
-        var benchmark = formatCsvRecord(record, options);
+        var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
@@ -273,7 +273,7 @@ describe('formatCsvRecord', function() {
           decile10: '100',
           isToppedOut: 'Y'
         };
-        var benchmark = formatCsvRecord(record, options);
+        var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
@@ -301,7 +301,7 @@ describe('formatCsvRecord', function() {
           decile10: '0',
           isToppedOut: 'Y'
         };
-        var benchmark = formatCsvRecord(record, options);
+        var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;

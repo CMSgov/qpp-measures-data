@@ -1,4 +1,4 @@
-var DEMO_CSV_COLUMNS = [
+var BENCHMARK_CSV_COLUMNS = [
   'measureName',
   'qualityId',
   'submissionMethod',
@@ -15,4 +15,4 @@ var DEMO_CSV_COLUMNS = [
   'isToppedOut'
 ];
 
-module.exports = DEMO_CSV_COLUMNS;
+module.exports = BENCHMARK_CSV_COLUMNS;

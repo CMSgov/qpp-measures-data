@@ -7,7 +7,7 @@
  * This script can be used as follows:
  * cat [json file path] | node [this file's path] [schemaType]
  * Example:
- * cat ../measures/measures-data.json | node validate-data.js measures
+ * cat measures/measures-data.json | node scripts/validate-data.js measures
  **/
 
 var Ajv = require('ajv');

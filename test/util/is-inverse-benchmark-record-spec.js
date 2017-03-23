@@ -43,6 +43,25 @@ describe('isInverseBenchmarkRecord', function() {
     });
 
     expect(isInverse2).to.be.true;
+
+    var isInverse3 = isInverseBenchmarkRecord({
+      measureName: 'Children Who Have Dental Decay or Cavities',
+      qualityId: '378',
+      submissionMethod: 'EHR',
+      measureType: 'Outcome',
+      benchmark: 'Y',
+      decile3: '0.36 -  0.01',
+      decile4: '--',
+      decile5: '--',
+      decile6: '--',
+      decile7: '--',
+      decile8: '--',
+      decile9: '--',
+      decile10: '0',
+      isToppedOut: 'Yes'
+    });
+
+    expect(isInverse3).to.be.true;
   });
   it('should return true when decile 10 is <= x', function() {
     var isInverse = isInverseBenchmarkRecord({decile10: '<= 4.00'});
@@ -50,6 +69,11 @@ describe('isInverseBenchmarkRecord', function() {
     expect(isInverse, 'case1').to.be.true;
 
     var isInverse2 = isInverseBenchmarkRecord({
+      measureName: 'Diabetes: Hemoglobin A1c Poor Control',
+      qualityId: '1',
+      submissionMethod: 'Claims',
+      measureType: 'Outcome',
+      benchmark: 'Y',
       decile3: '35.00 - 25.72',
       decile4: '25.71 - 20.32',
       decile5: '20.31 - 16.23',
@@ -57,18 +81,27 @@ describe('isInverseBenchmarkRecord', function() {
       decile7: '13.04 - 10.01',
       decile8: '10.00 -  7.42',
       decile9: '7.41 -  4.01',
-      decile10: '<=  4.00'
+      decile10: '<=  4.00',
+      isToppedOut: 'No'
     });
 
-    expect(isInverse2, 'case2').to.be.true;
+    expect(isInverse2).to.be.true;
   });
   it('should return false when decile 10 is >= x', function() {
     var isInverse = isInverseBenchmarkRecord({decile10: '>= 5.00'});
 
     expect(isInverse).to.be.false;
 
-    var isInverse2 = isInverseBenchmarkRecord({
 
+    var isInverse2 = isInverseBenchmarkRecord({
+      decile3: '76.59 - 87.88',
+      decile4: '87.89 - 92.73',
+      decile5: '92.74 - 95.35',
+      decile6: '95.36 - 97.08',
+      decile7: '97.09 - 98.27',
+      decile8: '98.28 - 99.12',
+      decile9: '99.13 - 99.75',
+      decile10: '>= 99.76'
     });
 
     expect(isInverse2).to.be.false;
