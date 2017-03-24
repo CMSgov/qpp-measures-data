@@ -5,7 +5,9 @@
  * the validation error.
  *
  * This script can be used as follows:
- * cat measures-data.json | node validate-data.js
+ * cat [json file path] | node [this file's path] [schemaType]
+ * Example:
+ * cat measures/measures-data.json | node scripts/validate-data.js measures
  **/
 
 var Ajv = require('ajv');
@@ -14,12 +16,12 @@ var YAML = require('yamljs');
 
 var ajv = Ajv();
 
-var schemaType = 'measures';
+var schemaType = process.argv[2];
 
 var json = '';
 function validate(json) {
   var valid = ajv.validate(
-    YAML.load(path.join(__dirname, '../measures',
+    YAML.load(path.join(__dirname, '../' + schemaType,
       schemaType + '-schema.yaml')),
     JSON.parse(json, 'utf8'));
   if (valid) {
@@ -30,15 +32,21 @@ function validate(json) {
   }
 }
 
-process.stdin.setEncoding('utf8');
+if (schemaType) {
+  process.stdin.setEncoding('utf8');
 
-process.stdin.on('readable', function() {
+  process.stdin.on('readable', function() {
     var chunk = this.read();
     if (chunk !== null) {
       json += chunk;
     }
-});
+  });
 
-process.stdin.on('end', function() {
-   validate(json);
-});
+  process.stdin.on('end', function() {
+    validate(json);
+  });
+} else {
+  console.log('Please provide schema type, e.g. measures or benchmarks\nExample Command: cat ../measures/measures-data.json | node validate-data.js measures');
+}
+
+

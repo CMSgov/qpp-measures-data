@@ -3,7 +3,7 @@
  * writes to standard output an equivalent XML string.
  *
  * This script can be used as follows:
- * cat measures-data.json | node convert-json-to-xml.js  > measures-data.xml
+ * cat measures/measures-data.json | node scripts/convert-json-to-xml.js  > measures/measures-data.xml
  **/
 
 var xml2js = require('xml2js');

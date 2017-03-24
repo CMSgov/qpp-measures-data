@@ -4,19 +4,18 @@
  * schema.
  *
  * This script can be used as follows:
- * cat qpp_ia_measures.json | node convert-qpp-to-measures.js ia > measures-data.json
+ * example: `cat qpp_ia_measures.json | node scripts/convert-qpp-to-measures.js ia > measures/measures-data.json`
+ *
+ * See README for details on generating measures-data.json.
  **/
 
-var _ = require('lodash');
-var fs = require('fs');
-var path = require('path');
-
-var category = process.argv[2] || 'ia';
-
-var qpp = '';
-
-process.stdin.setEncoding('utf8');
-
+// Libraries
+var _     = require('lodash');
+var fs    = require('fs');
+var parse = require('csv-parse/lib/sync');
+var path  = require('path');
+// Constants
+var BENCHMARK_CSV_COLUMNS = require('./../util/constants/benchmark-csv-columns');
 var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_AHE_2',
   'IA_BE_1',
@@ -37,6 +36,34 @@ var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_PM_4',
   'IA_PSPA_16'
 ];
+// Utils
+var isInverseBenchmarkRecord = require('./../util/is-inverse-benchmark-record');
+// Data
+var benchmarksData   = fs.readFileSync(path.join(__dirname, './../data/historical-benchmarks/2015.csv'), 'utf8');
+var benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4});
+// Commandline arguments
+var category = process.argv[2] || 'ia';
+// Variables
+var qualityIdToIsInverseMap = {};
+var qpp = '';
+
+benchmarkRecords.forEach(function(record) {
+  // NOTE: qualityId is not unique per record. (A qualityId and submissionMethod
+  // combination are unique.) Because quality ids are not unique we need to make
+  // sure that measures that are inverse do not get reset to the default due to
+  // submission methods that do not have decile data.
+  // For example, qualityId 378 EHR has decile data and can be determined to be
+  // an inverse measure, but 378 Registry/QCDR does not have decile data and
+  // would be determined to be a direct measure by default.
+  //
+  // A measure's benchmarks are all inverse or all direct, regardless of the
+  // submission method.
+  if (!qualityIdToIsInverseMap[record.qualityId]) {
+    qualityIdToIsInverseMap[record.qualityId] = isInverseBenchmarkRecord(record);
+  }
+});
+
+process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', () => {
   var chunk = process.stdin.read();
@@ -177,9 +204,8 @@ function parseQpp(json) {
           return formatString(speciality);
         });
       } else if (category === 'quality') {
-        // TODO (Mari): These will need to be populated via another mechanism
-        // outside of the API (similar to CEHRT eligible IA measures)
-        obj.isInverse = false;
+        // isInverse defaults to false;
+        obj.isInverse = qualityIdToIsInverseMap[obj.qualityId.replace(/^0*/, '')] || false;
         obj.metricType = 'performanceRate';
         obj.overallAlgorithm = 'simpleAverage';
         obj.strata = [];
@@ -187,7 +213,7 @@ function parseQpp(json) {
     }
     result.push(obj);
   }
-  return JSON.stringify(result, null, 2);;
+  return JSON.stringify(result, null, 2);
 }
 
 /**
