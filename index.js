@@ -3,14 +3,25 @@ var fs = require('fs');
 var path = require('path');
 var YAML = require('yamljs');
 
+var yearRegEx = /^[0-9]{4}/;
+var benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
+
 /**
  *
- * @param {number|string} performanceYear - four digit year
- * @return {Array<Benchmark>} - benchmarks data for given year
+ * @return {{}} - benchmarks data -
+ * An object keyed by performance year with array values
+ * containing the benchmarks for that performance year
  */
-exports.getBenchmarksData = function(performanceYear) {
-  return JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear + '.json')));
+exports.getBenchmarksData = function() {
+  var benchmarksByYear = {};
+
+  fs.readdirSync(path.join(__dirname, 'benchmarks')).forEach(function(file) {
+    if (benchmarkJsonFileRegEx.test(file)) {
+      benchmarksByYear[file.match(yearRegEx)[0]] = require(path.join(__dirname, 'benchmarks', file));
+    }
+  });
+
+  return benchmarksByYear;
 };
 
 /**
