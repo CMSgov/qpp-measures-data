@@ -44,9 +44,20 @@ var benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 
 ### Generating measures-data.json
 To regenerate the `measures-data.json` file, which contains additional metadata and conforms to
-the measures schema, run:
+the measures schema, do the following:
+
+1. download the qpp quality pdfs 
+	```
+	wget https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip .
+	unzip QPP_quality_measure_specifications.zip
+	unzip Claims-Registry-Measures.zip
+	```
+2. run the convert from pdfs tool to get the quality info from the pdfs
+	```
+	node scripts/get-quality-measures-from-pdfs.js Claims-Registry-Measures
+	```
 ```
-$ jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | tee measures/measures-data.json
+$ jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
 ```
 
 To regenerate the `measures-data.xml` file, run `cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml`.

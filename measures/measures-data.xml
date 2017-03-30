@@ -1652,6 +1652,10 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 2 years and older with a diagnosis of AOE who were not prescribed systemic antimicrobial therapy</description>
+      <name>AOE</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -1677,6 +1681,10 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 2 years and older with a diagnosis of AOE who were prescribed topical preparations</description>
+      <name>AOE</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -1726,6 +1734,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of individuals at least 18 years of age as of the beginning of the measurement period with schizophrenia or schizoaffective disorder who had at least two prescriptions filled for any antipsychotic medication and who had a Proportion of Days Covered (PDC) of at least 0.8 for antipsychotic medications during the measurement period (12 consecutive months)</description>
+      <name>schizophrenia</name>
+    </strata>
     <primarySteward>Health Services Advisory Group </primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>mentalBehavioralHealth</measureSets>
@@ -1746,7 +1758,19 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <qualityId>122</qualityId>
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patient visits with blood pressure results &lt; 140/90 mmHg</description>
+      <name>&lt;140/90mmHg</name>
+    </strata>
+    <strata>
+      <description>Percentage of patient visits with blood pressure results ≥ 140/90 mmHg and plan of care</description>
+      <name>planOfCare</name>
+    </strata>
+    <strata>
+      <description>Overall percentage of patient visits with blood pressure results &lt; 140/90 mmHg and ≥ 140/90 mmHg with a documented plan of care Eligible clinicians should continue to report the measure as specified, with no additional steps needed to account for multiple performance rates.</description>
+      <name>overall</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -1767,6 +1791,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of End Stage Renal Disease (ESRD) who initiate maintenance hemodialysis during the measurement period, whose mode of vascular access is a catheter at the time maintenance hemodialysis is initiated</description>
+      <name>ESRD</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -1787,6 +1815,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of End Stage Renal Disease (ESRD) receiving maintenance hemodialysis for greater than or equal to 90 days whose mode of vascular access is a catheter</description>
+      <name>ESRD</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -1807,6 +1839,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of ESRD who withdraw from hemodialysis or peritoneal dialysis who are referred to hospice care</description>
+      <name>ESRD</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -1827,6 +1863,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of medical records of patients aged 18 years and older with a diagnosis of major depressive disorder (MDD) and a specific diagnosed comorbid condition (diabetes, coronary artery disease, ischemic stroke, intracranial hemorrhage, chronic kidney disease [stages 4 or 5], End Stage Renal Disease [ESRD] or congestive heart failure) being treated by another clinician with communication to the clinician treating the comorbid condition</description>
+      <name>comorbid</name>
+    </strata>
     <primarySteward>American Psychiatric Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>mentalBehavioralHealth</measureSets>
@@ -1868,6 +1908,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Patients aged 18 years and older who had surgery for primary rhegmatogenous retinal detachment who did not require a return to the operating room within 90 days of surgery</description>
+      <name>retinalDetachment</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -1889,6 +1933,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Patients aged 18 years and older who had surgery for primary rhegmatogenous retinal detachment and achieved an improvement in their visual acuity, from their preoperative level, within 90 days of surgery in the operative eye</description>
+      <name>retinalDetachment</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -1910,6 +1958,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, aged 18 years and older, with a diagnosis of acute sinusitis who were prescribed an antibiotic within 10 days after onset of symptoms</description>
+      <name>sinusitis</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -1934,6 +1986,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of acute bacterial sinusitis that were prescribed amoxicillin, with or without clavulanate, as a first line antibiotic at the time of diagnosis</description>
+      <name>sinusitis</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -1958,6 +2014,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older, with a diagnosis of acute sinusitis who had a computerized tomography (CT) scan of the paranasal sinuses ordered at the time of diagnosis or received within 28 days after date of diagnosis</description>
+      <name>sinusitis</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -1982,6 +2042,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of chronic sinusitis who had more than one CT scan of the paranasal sinuses ordered or received within 90 days after date of diagnosis</description>
+      <name>sinusitis</name>
+    </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -2006,6 +2070,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients greater than 85 years of age who received a screening colonoscopy from January 1 to December 31</description>
+      <name>colonoscopy</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>gastroenterology</measureSets>
@@ -2027,6 +2095,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 50 years and older with a diagnosis of age-related macular degeneration (AMD) or their caregiver(s) who were counseled within 12 months on the benefits and/or risks of the Age-Related Eye Disease Study (AREDS) formulation for preventing progression of AMD</description>
+      <name>AMD</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2049,6 +2121,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 50 years and older with a diagnosis of age-related macular degeneration (AMD) who had a dilated macular examination performed which included documentation of the presence or absence of macular thickening or hemorrhage the level of macular degeneration severity during one or more office visits within 12 months</description>
+      <name>AMD</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2091,6 +2167,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients diagnosed with Amyotrophic Lateral Sclerosis (ALS) who were offered assistance in planning for end of life issues (e.g., advance directives, invasive ventilation, hospice) at least once annually</description>
+      <name>ALS</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -2112,6 +2192,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who required an anastomotic leak intervention following gastric bypass or colectomy surgery</description>
+      <name>colectomy</name>
+    </strata>
     <primarySteward>American College of Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalSurgery</measureSets>
@@ -2133,6 +2217,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of current smokers who abstain from cigarettes prior to anesthesia on the day of elective surgery or procedure</description>
+      <name>cigarettes</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -2154,6 +2242,10 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who are active injection drug users who received screening for HCV infection within the 12 month reporting period</description>
+      <name>HCV</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -2202,6 +2294,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients in whom a retrievable IVC filter is placed who, within 3 months post-placement, have a documented assessment for the appropriateness of continued filtration, device removal or the inability to contact the patient with at least two attempts</description>
+      <name>IVC</name>
+    </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -2228,6 +2324,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for abdominal imaging studies for asymptomatic patients aged 18 years and older with one or more of the following noted incidentally with follow‐up imaging recommended: • Liver lesion ≤ 0.5 cm • Cystic kidney lesion &lt; 1.0 cm • Adrenal lesion ≤ 1.0 cm</description>
+      <name>abdominalImaging</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2250,6 +2350,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for computed tomography (CT), CT angiography (CTA) or magnetic resonance imaging (MRI) or magnetic resonance angiogram (MRA) studies of the chest or neck or ultrasound of the neck for patients aged 18 years and older with no known thyroid disease with a thyroid nodule &lt; 1.0 cm noted incidentally with follow-up imaging recommended</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2272,6 +2376,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 50 to 75 years of age receiving a screening colonoscopy without biopsy or polypectomy who had a recommended follow-up interval of at least 10 years for repeat colonoscopy documented in their colonoscopy report</description>
+      <name>colonoscopy</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2294,6 +2402,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of children 3-18 years of age who were diagnosed with pharyngitis, ordered an antibiotic and received a group A streptococcus (strep) test for the episode</description>
+      <name>strep</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2318,6 +2430,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of children 3 months - 18 years of age who were diagnosed with upper respiratory infection (URI) and were not dispensed an antibiotic prescription on or three days after the episode</description>
+      <name>URI</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2341,6 +2457,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients with sepsis due to MSSA bacteremia who received beta-lactam antibiotic (e.g. nafcillin, oxacillin or cefazolin) as definitive therapy</description>
+      <name>MSSA</name>
+    </strata>
     <primarySteward>Infectious Diseases Society of America</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2363,6 +2483,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of women, aged 18 years and older, who undergo endometrial sampling or hysteroscopy with biopsy and results documented before undergoing an endometrial ablation</description>
+      <name>endometrialAblation</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -2384,6 +2508,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of nonvalvular atrial fibrillation (AF) or atrial flutter whose assessment of the specified thromboembolic risk factors indicate one or more high-risk factors or more than one moderate risk factor, as determined by CHADS2 risk stratification, who are prescribed warfarin another oral anticoagulant drug that is FDA approved for the prevention of thromboembolism</description>
+      <name>AF</name>
+    </strata>
     <primarySteward>American College of Cardiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2408,6 +2536,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of adults 18–64 years of age with a diagnosis of acute bronchitis who were not dispensed an antibiotic prescription</description>
+      <name>bronchitis</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -2431,6 +2563,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of esophageal biopsy reports that document the presence of Barrett’s mucosa that also include a statement about dysplasia</description>
+      <name>barrettsMucosa</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2453,6 +2589,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of biopsies with a diagnosis of cutaneous Basal Cell Carcinoma (BCC) and Squamous Cell Carcinoma (SCC) (including in situ disease) in which the pathologist communicates results to the clinician within 7 days of biopsy date</description>
+      <name>BCC&amp;SCC</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -2473,6 +2613,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of new patients whose biopsy results have been reviewed and communicated to the primary care/referring physician and patient by the performing physician</description>
+      <name>biopsy</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>dermatology</measureSets>
@@ -2517,6 +2661,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of breast cancer resection pathology reports that include the pT category (primary tumor), the pN category (regional lymph nodes), and the histologic grade</description>
+      <name>pTpN</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2539,6 +2687,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of women 50 - 74 years of age who had a mammogram to screen for breast cancer</description>
+      <name>mammogram</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -2598,6 +2750,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients evaluated in an outpatient setting who within the previous 12 months have experienced an acute myocardial infarction (MI), coronary artery bypass graft (CABG) surgery, a percutaneous coronary intervention (PCI), cardiac valve surgery, or cardiac transplantation, or who have chronic stable angina (CSA) and have not already participated in an early outpatient cardiac rehabilitation/secondary prevention (CR) program for the qualifying event/diagnosis who were referred to a CR program Definition: Referral - A referral is defined as an official communication between the health care provider and the patient to recommend and carry out a referral order to an outpatient CR program. This includes the provision of all necessary information to the patient that will allow the patient to enroll in an outpatient CR program. This also includes a written or electronic communication between the healthcare provider or healthcare system and the cardiac rehabilitation program that includes the patient's enrollment information for the program. A hospital discharge summary or office note may potentially be formatted to include the necessary patient information to communicate to the CR program (the patient’s cardiovascular history, testing, and treatments, for instance). According to standards of practice for cardiac rehabilitation programs, care coordination communications are sent to the referring provider, including any issues regarding treatment changes, adverse treatment responses, or new non-emergency condition (new symptoms, patient care questions, etc.) that need attention by the referring provider. These communications also include a progress report once the patient has completed the program. All communications must maintain an appropriate level of confidentiality as outlined by the 1996 Health Insurance Portability and Accountability Act (HIPAA). Note: A patient with a qualifying diagnosis should have a referral to CR within the subsequent 12 months. In the event that the patient has a second (recurrent) qualifying event before the original 12 month “referral” period has ended, a new 12 month “referral” period for CR referral starts at the time of the second qualifying event, since the patient again becomes eligible for CR at that time.</description>
+      <name>outpatient</name>
+    </strata>
     <primarySteward>American College of Cardiology Foundation</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -2618,6 +2774,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), or cardiac magnetic resonance (CMR) performed in low risk surgery patients 18 years or older for preoperative evaluation during the 12-month reporting period</description>
+      <name>preoperative</name>
+    </strata>
     <primarySteward>American College of Cardiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>cardiology</measureSets>
@@ -2639,6 +2799,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of all stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), and cardiovascular magnetic resonance (CMR) performed in patients aged 18 years and older routinely after percutaneous coronary intervention (PCI), with reference to timing of test after PCI and symptom status</description>
+      <name>PCI</name>
+    </strata>
     <primarySteward>American College of Cardiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>cardiology</measureSets>
@@ -2660,6 +2824,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of all stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), and cardiovascular magnetic resonance (CMR) performed in asymptomatic, low coronary heart disease (CHD) risk patients 18 years and older for initial detection and risk assessment</description>
+      <name>CHD</name>
+    </strata>
     <primarySteward>American College of Cardiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>cardiology</measureSets>
@@ -2681,6 +2849,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 65 years and older who have an advance care plan or surrogate decision maker documented in the medical record or documentation in the medical record that an advance care plan was discussed but the patient did not wish or was not able to name a surrogate decision maker or provide an advance care plan</description>
+      <name>surrogate</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2723,6 +2895,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of uncomplicated cataract who had cataract surgery and no significant ocular conditions impacting the visual outcome of surgery and had best-corrected visual acuity of 20/40 or better (distance or near) achieved within 90 days following the cataract surgery</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2745,6 +2921,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of uncomplicated cataract who had cataract surgery and had any of a specified list of surgical procedures in the 30 days following cataract surgery which would indicate the occurrence of any of the following major complications: retained nuclear fragments, endophthalmitis, dislocated or wrong power IOL, retinal detachment, or wound dehiscence</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -2767,6 +2947,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had cataract surgery and had improvement in visual function achieved within 90 days following the cataract surgery, based on completing a pre-operative and post-operative visual function survey</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -2788,6 +2972,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had cataract surgery and were satisfied with their care within 90 days following the cataract surgery, based on completion of the Consumer Assessment of Healthcare Providers and Systems Surgical Care Survey</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -2809,6 +2997,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had cataract surgery performed and who achieved a final refraction within +/- 1.0 diopters of their planned (target) refraction</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -2830,6 +3022,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had cataract surgery performed and had an unplanned rupture of the posterior capsule requiring vitrectomy</description>
+      <name>cataract</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>ophthalmology</measureSets>
@@ -2940,6 +3136,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of female adolescents 16 years of age who had a chlamydia screening test with proper follow-up during the measurement period</description>
+      <name>chlamydia</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -2983,6 +3183,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of COPD (FEV1/FVC &lt; 70%) and who have an FEV1 less than 60% predicted and have symptoms who were prescribed a long-acting inhaled bronchodilator</description>
+      <name>FEV1/FVC&lt;70%</name>
+    </strata>
     <primarySteward>American Thoracic Society</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3004,6 +3208,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of COPD who had spirometry results documented</description>
+      <name>COPD</name>
+    </strata>
     <primarySteward>American Thoracic Society</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3025,6 +3233,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients with a mRs score of 0 to 2 at 90 days following endovascular stroke intervention</description>
+      <name>stroke</name>
+    </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -3087,6 +3299,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older receiving a surveillance colonoscopy, with a history of a prior adenomatous polyp(s) in previous colonoscopy findings, which had an interval of 3 or more years since their last colonoscopy</description>
+      <name>colonoscopy</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3109,6 +3325,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of colon and rectum cancer resection pathology reports that include the pT category (primary tumor), the pN category (regional lymph nodes) and the histologic grade</description>
+      <name>pTpN</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3131,6 +3351,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 50-75 years of age who had appropriate screening for colorectal cancer</description>
+      <name>colorectalCancer</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3156,6 +3380,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 50 years and older treated for a fracture with documentation of communication, between the physician treating the fracture and the physician or other clinician managing the patient’s on-going care, that a fracture occurred and that the patient was or should be considered for osteoporosis treatment or testing. This measure is reported by the physician who treats the fracture and who therefore is held accountable for the communication</description>
+      <name>fracture</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3178,6 +3406,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 18 - 85 years of age who had a diagnosis of hypertension and whose blood pressure was adequately controlled (&lt; 140/90 mmHg) during the measurement period</description>
+      <name>hypertension</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3208,6 +3440,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery who, within 30 days postoperatively, develop deep sternal wound infection involving muscle, bone, and/or mediastinum requiring operative intervention</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>thoracicSurgery</measureSets>
@@ -3229,6 +3465,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery (without pre-existing renal failure) who develop postoperative renal failure or require dialysis</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>thoracicSurgery</measureSets>
@@ -3250,6 +3490,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of isolated Coronary Artery Bypass Graft (CABG) surgeries for patients aged 18 years and older who received a beta-blocker within 24 hours prior to surgical incision</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -3271,6 +3515,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery who require postoperative intubation &gt; 24 hours</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>thoracicSurgery</measureSets>
@@ -3292,6 +3540,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery who have a postoperative stroke (i.e., any confirmed neurological deficit of abrupt onset caused by a disturbance in blood supply to the brain) that did not resolve within 24 hours</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>thoracicSurgery</measureSets>
@@ -3313,6 +3565,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery who require a return to the operating room () during the current hospitalization for mediastinal bleeding with or without tamponade, graft occlusion, valve dysfunction, or other cardiac reason</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>thoracicSurgery</measureSets>
@@ -3334,6 +3590,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing isolated CABG surgery who received an IMA graft</description>
+      <name>IMA</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -3354,6 +3614,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period who also have diabetes a current or prior Left Ventricular Ejection Fraction (LVEF) &lt; 40% who were prescribed ACE inhibitor or ARB therapy</description>
+      <name>CAD</name>
+    </strata>
     <primarySteward>American Heart Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>cardiology</measureSets>
@@ -3375,6 +3639,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease (CAD) seen within a 12 month period who were prescribed aspirin or clopidogrel</description>
+      <name>CAD</name>
+    </strata>
     <primarySteward>American Heart Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>cardiology</measureSets>
@@ -3395,7 +3663,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <qualityId>007</qualityId>
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
+    <strata>
+      <description>Patients who are 18 years and older with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF &lt; 40%</description>
+      <name>LVEF&lt;40%</name>
+    </strata>
+    <strata>
+      <description>Patients who are 18 years and older with a diagnosis of CAD or history of cardiac surgery who have a prior myocardial infarction</description>
+      <name>myocardialInfarction</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3419,6 +3695,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of dementia whose caregiver(s) were provided with education on dementia disease management and health behavior changes referred to additional resources for support within a 12 month period</description>
+      <name>dementia</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -3463,6 +3743,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of dementia or their caregiver(s) who were counseled or referred for counseling regarding safety concerns within a 12 month period</description>
+      <name>dementia</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -3485,6 +3769,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of dementia for whom an assessment of functional status is performed and the results reviewed at least once within a 12 month period</description>
+      <name>dementia</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -3507,6 +3795,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of dementia who have one or more neuropsychiatric symptoms who received or were recommended to receive an intervention for neuropsychiatric symptoms within a 12 month period</description>
+      <name>dementia</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -3529,6 +3821,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of dementia and for whom an assessment of neuropsychiatric symptoms is performed and results reviewed at least once in a 12 month period</description>
+      <name>dementia</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -3551,6 +3847,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Adult patients age 18 years and older with major depression or dysthymia and an initial PHQ-9 score &gt; 9 who demonstrate remission at six months defined as a PHQ-9 score less than 5. This measure applies to both patients with newly diagnosed and existing depression whose current PHQ-9 score indicates a need for treatment. This measure additionally promotes ongoing contact between the patient and provider as patients who do not have a follow-up PHQ-9 score at six months (+/- 30 days) are also included in the denominator</description>
+      <name>remission</name>
+    </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>mentalBehavioralHealth</measureSets>
@@ -3572,6 +3872,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Patients age 18 and older with major depression or dysthymia and an initial Patient Health Questionnaire (PHQ-9) score greater than nine who demonstrate remission at twelve months (+/- 30 days after an index visit) defined as a PHQ-9 score less than five. This measure applies to both patients with newly diagnosed and existing depression whose current PHQ-9 score indicates a need for treatment</description>
+      <name>depression</name>
+    </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>cmsWebInterface</submissionMethods>
@@ -3617,6 +3921,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 18 - 75 years of age with diabetes who had a retinal or dilated eye exam by an eye care professional during the measurement period or a negative retinal or dilated eye exam (no evidence of retinopathy) in the 12 months prior to the measurement period</description>
+      <name>diabetes</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3665,6 +3973,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c &gt; 9.0% during the measurement period</description>
+      <name>A1c&gt;9.0%</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3691,6 +4003,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period</description>
+      <name>diabetes</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3713,6 +4029,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of diabetes mellitus who had a neurological examination of their lower extremities within 12 months</description>
+      <name>DM</name>
+    </strata>
     <primarySteward>American Podiatric Medical Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -3733,6 +4053,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of diabetes mellitus who were evaluated for proper footwear and sizing</description>
+      <name>DM</name>
+    </strata>
     <primarySteward>American Podiatric Medical Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -3753,6 +4077,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed with documented communication to the physician who manages the ongoing care of the patient with diabetes mellitus regarding the findings of the macular or fundus exam at least once within 12 months</description>
+      <name>diabeticRetinopathy</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3797,6 +4125,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals, and vitamin/mineral/dietary (nutritional) supplements must contain the medications’ name, dosage, frequency and route of administration</description>
+      <name>document</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -3843,6 +4175,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients 18 and older prescribed opiates for longer than six weeks duration who signed an opioid treatment agreement at least once during Opioid Therapy documented in the medical record</description>
+      <name>opiates</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -3867,6 +4203,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing endovascular stroke treatment who have a door to puncture time of less than two hours</description>
+      <name>stroke</name>
+    </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -3887,6 +4227,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 65 years and older with a documented elder maltreatment screen using an Elder Maltreatment Screening tool on the date of encounter a documented follow-up plan on the date of the positive screen</description>
+      <name>elderMaltreament</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3911,6 +4255,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of emergency department visits for patients aged 18 years and older who presented within 24 hours of a minor blunt head trauma with a Glasgow Coma Scale (GCS) score of 15 and who had a head CT for trauma ordered by an emergency care provider who have an indication for a head CT</description>
+      <name>headTrauma</name>
+    </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3933,6 +4281,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of emergency department visits for patients aged 2 through 17 years who presented within 24 hours of a minor blunt head trauma with a Glasgow Coma Scale (GCS) score of 15 and who had a head CT for trauma ordered by an emergency care provider who are classified as low risk according to the Pediatric Emergency Care Applied Research Network (PECARN) prediction rules for traumatic brain injury</description>
+      <name>headTrauma</name>
+    </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3955,6 +4307,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All female patients of childbearing potential (12 - 44 years old) diagnosed with epilepsy who were counseled or referred for counseling for how epilepsy and its treatment may affect contraception pregnancy at least once a year</description>
+      <name>epilepsy</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -3977,6 +4333,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients 18 and older prescribed opiates for longer than six weeks duration evaluated for risk of opioid misuse using a brief validated instrument (e.g. Opioid Risk Tool, SOAPP-R) or patient interview documented at least once during Opioid Therapy in the medical record</description>
+      <name>opioidRisk</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -4001,6 +4361,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 65 years and older with a history of falls that had a plan of care for falls documented within 12 months</description>
+      <name>falls</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4024,6 +4388,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 65 years and older with a history of falls that had a risk assessment for falls completed within 12 months</description>
+      <name>falls</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4072,6 +4440,14 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of discharges for which the patient received follow-up within 30 days of discharge</description>
+      <name>30days</name>
+    </strata>
+    <strata>
+      <description>The percentage of discharges for which the patient received follow-up within 7 days of discharge</description>
+      <name>overall</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>mentalBehavioralHealth</measureSets>
@@ -4094,6 +4470,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients aged 18 years and older with documentation of a current functional outcome assessment using a standardized functional outcome assessment tool on the date of the encounter documentation of a care plan based on identified functional outcome deficiencies on the date of the identified deficiencies</description>
+      <name>functionalOutcome</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4178,6 +4558,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report outcome measure of functional status (FS) for patients 14 years+ with elbow, wrist or hand impairments. The change in FS assessed using FOTO (elbow, wrist and hand) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality</description>
+      <name>armImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4198,6 +4582,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report measure of change in functional status (FS) for patients 14 years+ with foot and ankle impairments. The change in functional status (FS) assessed using FOTO’s (foot and ankle) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality</description>
+      <name>footImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4218,6 +4606,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report outcome measure of functional status (FS) for patients 14 years+ with general orthopaedic impairments (neck, cranium, mandible, thoracic spine, ribs or other general orthopedic impairment). The change in FS assessed using FOTO (general orthopedic) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level by to assess quality</description>
+      <name>orthopaedicImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4238,6 +4630,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report measure of change in functional status (FS) for patients 14 years+ with hip impairments. The change in functional status (FS) assessed using FOTO’s (hip) PROM (patient- reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality</description>
+      <name>hipImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4258,6 +4654,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report measure of change in functional status for patients 14 year+ with knee impairments. The change in functional status (FS) assessed using FOTO’s (knee) PROM (patient-reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality</description>
+      <name>kneeImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4278,6 +4678,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report outcome measure of change in functional status for patients 14 years+ with lumbar impairments. The change in functional status (FS) assessed using FOTO (lumbar) PROM (patient reported outcome measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level by to assess quality</description>
+      <name>lumbarImpairment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4298,6 +4702,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>A self-report outcome measure of change in functional status (FS) for patients 14 years+ with shoulder impairments. The change in functional status (FS) assessed using FOTO’s (shoulder) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality</description>
+      <name>shoulderImpariment</name>
+    </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4318,6 +4726,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) &lt; 40% who were prescribed ACE inhibitor or ARB therapy either within a 12 month period when seen in the outpatient setting at each hospital discharge</description>
+      <name>LVEF&lt;40%</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4343,6 +4755,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) &lt; 40% who were prescribed beta-blocker therapy either within a 12 month period when seen in the outpatient setting at each hospital discharge</description>
+      <name>HF</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4367,6 +4783,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older, seen within a 12 month reporting period, with a diagnosis of chronic lymphocytic leukemia (CLL) made at any time during or prior to the reporting period who had baseline flow cytometry studies performed and documented in the chart</description>
+      <name>CLL</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4387,6 +4807,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of multiple myeloma, not in remission, who were prescribed or received intravenous bisphosphonate therapy within the 12 month reporting period.</description>
+      <name>MM</name>
+    </strata>
     <primarySteward>American Society of Hematology</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4407,6 +4831,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of myelodysplastic syndrome (MDS) or an acute leukemia who had baseline cytogenetic testing performed on bone marrow</description>
+      <name>MDS</name>
+    </strata>
     <primarySteward>American Society of Hematology</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4427,6 +4855,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of myelodysplastic syndrome (MDS) who are receiving erythropoietin therapy with documentation of iron stores within 60 days prior to initiating erythropoietin therapy</description>
+      <name>MDS</name>
+    </strata>
     <primarySteward>American Society of Hematology</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4448,6 +4880,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of hepatitis C with whom a physician or other qualified healthcare professional reviewed the range of treatment options appropriate to their genotype and demonstrated a shared decision making approach with the patient. To meet the measure, there must be documentation in the patient record of a discussion between the physician or other qualified healthcare professional and the patient that includes all of the following: treatment choices appropriate to genotype, risks and benefits, evidence of effectiveness, and patient preferences toward treatment</description>
+      <name>hepC</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>gastroenterology</measureSets>
@@ -4469,6 +4905,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of chronic hepatitis C cirrhosis who underwent imaging with either ultrasound, contrast enhanced CT or MRI for hepatocellular carcinoma (HCC) at least once within the 12 month reporting period</description>
+      <name>hepC</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -4492,6 +4932,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of female patients (aged 18 years and older) with breast cancer who are human epidermal growth factor receptor 2 (HER2)/neu negative who are not administered HER2-targeted therapies</description>
+      <name>breastCancer</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -4535,6 +4979,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 13 years and older with a diagnosis of HIV/AIDS for whom chlamydia, gonorrhea, and syphilis screenings were performed at least once since the diagnosis of HIV infection</description>
+      <name>HIV/AIDS</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>pediatrics</measureSets>
@@ -4556,6 +5004,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age with a diagnosis of HIV who had at least one medical visit in each 6 month period of the 24 month measurement period, with a minimum of 60 days between medical visits</description>
+      <name>HIV</name>
+    </strata>
     <primarySteward>Health Resources and Services Administration</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4576,6 +5028,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients, regardless of age, with a diagnosis of HIV with a HIV viral load less than 200 copies/mL at last HIV viral load test during the measurement year</description>
+      <name>HIV</name>
+    </strata>
     <primarySteward>Health Resources and Services Administration</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalPracticeFamilyMedicine</measureSets>
@@ -4601,7 +5057,27 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <qualityId>392</qualityId>
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
+    <strata>
+      <description>Females 18-64 years of age</description>
+      <name>18-64F</name>
+    </strata>
+    <strata>
+      <description>Males 18-64 years of age</description>
+      <name>18-64M</name>
+    </strata>
+    <strata>
+      <description>Females 65 years of age and older</description>
+      <name>65+F</name>
+    </strata>
+    <strata>
+      <description>Males 65 years of age and older</description>
+      <name>65+M</name>
+    </strata>
+    <strata>
+      <description>Overall percentage of patients with cardiac tamponade and/or pericardiocentesis occurring within 30 days Eligible clinicians should continue to report the measure as specified, with no additional steps needed to account for multiple performance rates.</description>
+      <name>overall</name>
+    </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>electrophysiologyCardiacSpecialist</measureSets>
@@ -4622,7 +5098,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <qualityId>348</qualityId>
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
+    <strata>
+      <description>Patients with first time implants with one or more complications or mortality within 30 days</description>
+      <name>30</name>
+    </strata>
+    <strata>
+      <description>Patients with first time implants with one or more complications within 90 days</description>
+      <name>90</name>
+    </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>electrophysiologyCardiacSpecialist</measureSets>
@@ -4645,6 +5129,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Infection rate following CIED device implantation, replacement, or revision</description>
+      <name>CIED</name>
+    </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>electrophysiologyCardiacSpecialist</measureSets>
@@ -4686,6 +5174,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Image confirmation of lesion(s) targeted for image guided excisional biopsy or image guided partial mastectomy in patients with nonpalpable, image-detected breast lesion(s). Lesions may include: microcalcifications, mammographic or sonographic mass or architectural distortion, focal suspicious abnormalities on magnetic resonance imaging (MRI) or other breast imaging amenable to localization such as positron emission tomography (PET) mammography, or a biopsy marker demarcating site of confirmed pathology as established by previous core biopsy</description>
+      <name>imageConfirmation</name>
+    </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4705,7 +5197,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <qualityId>394</qualityId>
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>numerators</overallAlgorithm>
+    <strata>
+      <description>Patients who had one dose of meningococcal vaccine on or between the patient’s 11th and 13th birthdays</description>
+      <name>meningococcal</name>
+    </strata>
+    <strata>
+      <description>Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient’s 10th and 13th birthdays</description>
+      <name>Tdap</name>
+    </strata>
+    <strata>
+      <description>Patients who had at least three HPV vaccines with different dates of service on or between the patient’s 9th and 13th birthdays</description>
+      <name>HPV</name>
+    </strata>
+    <strata>
+      <description>All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes.</description>
+      <name>overall</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalPracticeFamilyMedicine</measureSets>
@@ -4728,6 +5236,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of inflammatory bowel disease (IBD) who had Hepatitis B Virus (HBV) status assessed and results interpreted within one year prior to receiving a first course of anti-TNF (tumor necrosis factor) therapy</description>
+      <name>IBD</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>gastroenterology</measureSets>
@@ -4749,6 +5261,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with an inflammatory bowel disease encounter who were prescribed prednisone equivalents greater than or equal to 10 mg/day for 60 or greater consecutive days or a single prescription equating to 600 mg prednisone or greater for all fills and were documented for risk of bone loss once during the reporting year or the previous calendar year</description>
+      <name>IBD</name>
+    </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>gastroenterology</measureSets>
@@ -4798,6 +5314,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The IVD All-or-None Measure is one outcome measure (optimal control). The measure contains four goals. All four goals within a measure must be reached in order to meet that measure. The numerator for the all-or-none measure should be collected from the organization's total IVD denominator. All-or-None Outcome Measure (Optimal Control) - Using the IVD denominator optimal results include: • Most recent blood pressure (BP) measurement is less than 140/90 mm Hg -- And • Most recent tobacco status is Tobacco Free -- And • Daily Aspirin or Other Antiplatelet Unless Contraindicated -- And • Statin Use</description>
+      <name>IVDAllOrNone</name>
+    </strata>
     <primarySteward>Wisconsin Collaborative for Healthcare Quality</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4818,6 +5338,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 18 years of age and older who were diagnosed with acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period, or who had an active diagnosis of ischemic vascular disease (IVD) during the measurement period, and who had documentation of use of aspirin or another antiplatelet during the measurement period</description>
+      <name>AMI</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -4844,6 +5368,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer who receive anti-epidermal growth factor receptor monoclonal antibody therapy for whom KRAS gene mutation testing was performed</description>
+      <name>KRASGeneMutation</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -4865,6 +5393,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Pathology reports based on biopsy and/or cytology specimens with a diagnosis of primary non-small cell lung cancer classified into specific histologic type or classified as NSCLC-NOS with an explanation included in the pathology report</description>
+      <name>lungCancer</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4887,6 +5419,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Pathology reports based on resection specimens with a diagnosis of primary lung carcinoma that include the pT category, pN category and for non-small cell lung cancer, histologic type</description>
+      <name>lungCarcinoma</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -4932,6 +5468,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who gave birth during a 12-month period who delivered a live singleton at ≥ 37 and &lt; 39 weeks of gestation completed who had elective deliveries or early inductions without medical indication</description>
+      <name>birth</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4952,6 +5492,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who gave birth during a 12-month period who were seen for post-partum care within 8 weeks of giving birth who received a breast feeding evaluation and education, post-partum depression screening, post-partum glucose screening for gestational diabetes patients, and family and contraceptive planning</description>
+      <name>postPartum</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -4972,6 +5516,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients 5-64 years of age during the measurement year who were identified as having persistent asthma and were dispensed appropriate medications that they remained on for at least 75% of their treatment period</description>
+      <name>asthma</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -5000,6 +5548,18 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Performance Rate 1: Percentage of discharges from any inpatient facility (e.g., hospital, skilled nursing facility, or rehabilitation facility) for patients 18-64 years of age seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on- going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record</description>
+      <name>18-64</name>
+    </strata>
+    <strata>
+      <description>Performance Rate 2: Percentage of discharges from any inpatient facility (e.g., hospital, skilled nursing facility, or rehabilitation facility) for patients 65 years and older seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on- going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record</description>
+      <name>65+</name>
+    </strata>
+    <strata>
+      <description>Total Rate (Overall Performance Rate): Percentage of discharges from any inpatient facility (e.g., hospital, skilled nursing facility, or rehabilitation facility) for patients 18 years and older seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on-going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record</description>
+      <name>overall</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>cmsWebInterface</submissionMethods>
@@ -5025,6 +5585,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes: • A target date for the next complete physical skin exam, • A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment</description>
+      <name>melanoma</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>dermatology</measureSets>
@@ -5046,6 +5610,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patient visits, regardless of age, with a new occurrence of melanoma that have a treatment plan documented in the chart that was communicated to the physician(s) providing continuing care within one month of diagnosis</description>
+      <name>melanoma</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>dermatology</measureSets>
@@ -5067,6 +5635,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a current diagnosis of Stage 0 through IIC melanoma or a history of melanoma of any stage, without signs or symptoms suggesting systemic spread, seen for an office visit during the one- year measurement period, for whom no diagnostic imaging studies were ordered</description>
+      <name>melanoma</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>dermatology</measureSets>
@@ -5088,6 +5660,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Pathology reports for primary malignant cutaneous melanoma that include the pT category and a statement on thickness and ulceration and for pT1, mitotic rate</description>
+      <name>melanoma</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5110,6 +5686,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of adolescent females 16–20 years of age who were screened unnecessarily for cervical cancer</description>
+      <name>cervicalCancer</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -5132,6 +5712,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for all patients, regardless of age, undergoing bone scintigraphy that include physician documentation of correlation with existing relevant imaging studies (e.g., x-ray, MRI, CT, etc.) that were performed</description>
+      <name>scintigraphy</name>
+    </strata>
     <primarySteward>Society of Nuclear Medicine and Molecular Imaging</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5154,6 +5738,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patient visits, regardless of patient age, with a diagnosis of cancer currently receiving chemotherapy or radiation therapy in which pain intensity is quantified</description>
+      <name>cancer</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5177,6 +5765,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients, regardless of age, with a diagnosis of cancer currently receiving chemotherapy or radiation therapy who report having pain with a documented plan of care to address pain</description>
+      <name>cancer</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>radiationOncology</measureSets>
@@ -5198,6 +5790,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of breast, rectal, pancreatic or lung cancer receiving 3D conformal radiation therapy who had documentation in medical record that radiation dose limits to normal tissues were established prior to the initiation of a course of 3D conformal radiation for a minimum of two tissues</description>
+      <name>cancer</name>
+    </strata>
     <primarySteward>American Society for Radiation Oncology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5220,6 +5816,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with one or more of the following: a history of injection drug use, receipt of a blood transfusion prior to 1992, receiving maintenance hemodialysis, birthdate in the years 1945-1965 who received one-time screening for hepatitis C virus (HCV) infection</description>
+      <name>HCV</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -5242,6 +5842,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of patients undergoing index pediatric and/or congenital heart surgery who die, including both 1) all deaths occurring during the hospitalization in which the procedure was performed, even if after 30 days (including patients transferred to other acute care facilities), and 2) those deaths occurring after discharge from the hospital, but within 30 days of the procedure, stratified by the five STAT Mortality Levels, a multi-institutional validated complexity stratification tool</description>
+      <name>congenitalHeartSurgery</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -5262,6 +5866,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients 18 and older prescribed opiates for longer than six weeks duration who had a follow-up evaluation conducted at least every three months during Opioid Therapy documented in the medical record</description>
+      <name>opiates</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -5285,7 +5893,35 @@ This measure is reported as three rates stratified by age group:
     <qualityId>398</qualityId>
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
-    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
+    <strata>
+      <description>Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation.</description>
+      <name>overall</name>
+    </strata>
+    <strata>
+      <description>Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation.</description>
+      <name>5-17</name>
+    </strata>
+    <strata>
+      <description>Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation.</description>
+      <name>18-50</name>
+    </strata>
+    <strata>
+      <description>Asthma well-controlled (take the most recent ACT) for patients 5 to 17 with Asthma</description>
+      <name>ACT5-17</name>
+    </strata>
+    <strata>
+      <description>Asthma well-controlled (take the most recent ACT) for patients 18 to 50 with Asthma</description>
+      <name>ACT18-50</name>
+    </strata>
+    <strata>
+      <description>Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma</description>
+      <name>lowRisk5-17</name>
+    </strata>
+    <strata>
+      <description>Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma</description>
+      <name>lowRisk18-50</name>
+    </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -5308,6 +5944,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for computed tomography (CT) imaging studies of the thorax for patients aged 18 years and older with documented follow-up recommendations for incidentally detected pulmonary nodules (e.g., follow-up CT imaging studies needed or that no follow-up is needed) based at a minimum on nodule size patient risk factors</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5329,6 +5969,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for computed tomography (CT) studies performed for all patients, regardless of age, which document that Digital Imaging and Communications in Medicine (DICOM) format image data are available to non- affiliated external healthcare facilities or entities on a secure, media free, reciprocally searchable basis with patient authorization for at least a 12-month period after the study</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5350,6 +5994,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of computed tomography (CT) and cardiac nuclear medicine (myocardial perfusion studies) imaging reports for all patients, regardless of age, that document a count of known previous CT (any type of CT) and cardiac nuclear medicine (myocardial perfusion) studies that the patient has received in the 12-month period prior to the current study</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5371,6 +6019,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of total computed tomography (CT) studies performed for all patients, regardless of age, that are reported to a radiation dose index registry that is capable of collecting at a minimum selected data elements</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5392,6 +6044,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports of computed tomography (CT) studies performed for all patients, regardless of age, which document that a search for Digital Imaging and Communications in Medicine (DICOM) format images was conducted for prior patient CT imaging studies completed at non-affiliated external healthcare facilities or entities within the past 12-months and are available through a secure, authorized, media-free, shared archive prior to an imaging study being performed</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5413,6 +6069,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of computed tomography (CT) imaging reports for all patients, regardless of age, with the imaging study named according to a standardized nomenclature and the standardized nomenclature is used in institution’s computer systems</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>diagnosticRadiology</measureSets>
@@ -5434,6 +6094,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patient visits for patients aged 21 years and older with a diagnosis of osteoarthritis (OA) with assessment for function and pain</description>
+      <name>OA</name>
+    </strata>
     <primarySteward>American Academy of Orthopedic Surgeons</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5460,6 +6124,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of women age 50-85 who suffered a fracture and who either had a bone mineral density test or received a prescription for a drug to treat osteoporosis in the six months after the fracture</description>
+      <name>osteoporosis</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5484,6 +6152,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients with a diagnosis of primary headache disorder whom advanced brain imaging was not ordered</description>
+      <name>headache</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5506,6 +6178,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients aged 18 years and older with documentation of a pain assessment using a standardized tool(s) on each visit documentation of a follow-up plan when pain is present</description>
+      <name>painAssessment</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5528,6 +6204,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Patients aged 18 and older who report being uncomfortable because of pain at the initial assessment (after admission to palliative care services) that report pain was brought to a comfortable level within 48 hours</description>
+      <name>pain</name>
+    </strata>
     <primarySteward>National Hospice and Palliative Care Organization</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalPracticeFamilyMedicine</measureSets>
@@ -5549,6 +6229,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients with a diagnosis of Parkinson’s disease who were assessed for cognitive impairment or dysfunction in the last 12 months</description>
+      <name>parkinsons</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -5570,6 +6254,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients with a diagnosis of Parkinson’s disease (or caregiver(s), as appropriate) who had the Parkinson’s disease treatment options (e.g., non-pharmacological treatment, pharmacological treatment, or surgical treatment) reviewed at least once annually</description>
+      <name>parkinsons</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -5591,6 +6279,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients with a diagnosis of Parkinson’s disease who were assessed for psychiatric symptoms (e.g., psychosis, depression, anxiety disorder, apathy, or impulse control disorder) in the last 12 months</description>
+      <name>parkinsons</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -5612,6 +6304,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>All patients with a diagnosis of Parkinson’s Disease (or caregiver(s), as appropriate) who had rehabilitative therapy options (e.g., physical, occupational, or speech therapy) discussed in the last 12 months</description>
+      <name>parkinsons</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>neurology</measureSets>
@@ -5633,6 +6329,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients who underwent a non-emergency surgery who had their personalized risks of postoperative complications assessed by their surgical team prior to surgery using a clinical data-based, patient-specific risk calculator and who received personal discussion of those risks with the surgeon</description>
+      <name>surgery</name>
+    </strata>
     <primarySteward>American College of Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalSurgery</measureSets>
@@ -5659,6 +6359,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer and KRAS gene mutation spared treatment with anti-EGFR monoclonal antibodies</description>
+      <name>metastaticColorectalCancer</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -5680,6 +6384,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of calendar months within a 12-month period during which patients aged 17 years and younger with a diagnosis of End Stage Renal Disease (ESRD) undergoing maintenance hemodialysis in an outpatient dialysis facility have an assessment of the adequacy of volume management from a nephrologist</description>
+      <name>ESRD</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -5700,6 +6408,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of calendar months within a 12-month period during which patients aged 17 years and younger with a diagnosis of End Stage Renal Disease (ESRD) receiving hemodialysis or peritoneal dialysis have a hemoglobin level &lt; 10 g/dL</description>
+      <name>ESRD</name>
+    </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -5720,6 +6432,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing appropriate preoperative evaluation of stress urinary incontinence prior to pelvic organ prolapse surgery per ACOG/AUGS/AUA guidelines</description>
+      <name>urinaryIncontinence</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -5740,6 +6456,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients who are screened for uterine malignancy prior to vaginal closure or obliterative surgery for pelvic organ prolapse</description>
+      <name>uterineMalignancy</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5761,6 +6481,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients who undergo cystoscopy to evaluate for lower urinary tract injury at the time of hysterectomy for pelvic organ prolapse</description>
+      <name>cystoscopy</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5783,6 +6507,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing carotid endarterectomy (CEA) who are taking an anti-platelet agent within 48 hours prior to surgery and are prescribed this medication at hospital discharge following surgery</description>
+      <name>CEA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5804,6 +6532,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of surgical patients aged 18 years and older undergoing procedures with the indications for a first second generation cephalosporin prophylactic antibiotic who had an order for a first OR second generation cephalosporin for antimicrobial prophylaxis</description>
+      <name>prophylacticAntibiotic</name>
+    </strata>
     <primarySteward>American Society of Plastic Surgeons</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5830,6 +6562,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of surgical patients aged 18 years and older undergoing procedures for which venous thromboembolism (VTE) prophylaxis is indicated in all patients, who had an order for Low Molecular Weight Heparin (LMWH), Low- Dose Unfractionated Heparin (LDUH), adjusted-dose warfarin, fondaparinux or mechanical prophylaxis to be given within 24 hours prior to incision time or within 24 hours after surgery end time</description>
+      <name>VTE</name>
+    </strata>
     <primarySteward>American Society of Plastic Surgeons</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5856,6 +6592,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who undergo surgical or therapeutic procedures under general or neuraxial anesthesia of 60 minutes duration or longer for whom at least one body temperature greater than or equal to 35.5 degrees Celsius (or 95.9 degrees Fahrenheit) was recorded within the 30 minutes immediately before or the 15 minutes immediately after anesthesia end time</description>
+      <name>anesthesia</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -5877,6 +6617,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients 18 years of age and older during the measurement year who were hospitalized and discharged from July 1 of the year prior to the measurement year to June 30 of the measurement year with a diagnosis of acute myocardial infarction (AMI) and who were prescribed persistent beta-blocker treatment for six months after discharge</description>
+      <name>AMI</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalPracticeFamilyMedicine</measureSets>
@@ -5898,6 +6642,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The rate of screening and surveillance colonoscopies for which photodocumentation of landmarks of cecal intubation is performed to establish a complete examination</description>
+      <name>colonoscopy</name>
+    </strata>
     <primarySteward>American Society for Gastrointestinal Endoscopy</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -5919,6 +6667,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine</description>
+      <name>pneumococcal</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -5944,6 +6696,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who are under the care of an anesthesia practitioner and are admitted to a PACU in which a post-anesthetic formal transfer of care protocol or checklist which includes the key transfer of care elements is utilized</description>
+      <name>PACU</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -5965,6 +6721,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who undergo a procedure under anesthesia and are admitted to an Intensive Care Unit (ICU) directly from the anesthetizing location, who have a documented use of a checklist or protocol for the transfer of care from the responsible anesthesia practitioner to the responsible ICU team or team member</description>
+      <name>ICU</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -6006,6 +6766,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percent of patients undergoing breast cancer operations who obtained the diagnosis of breast cancer preoperatively by a minimally invasive biopsy method</description>
+      <name>breastCancer</name>
+    </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -6026,6 +6790,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, who undergo central venous catheter (CVC) insertion for whom CVC was inserted with all elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound techniques followed</description>
+      <name>CVC</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6049,6 +6817,10 @@ This measure is reported as three rates stratified by age group:
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, aged 18 years and older, who undergo a procedure under an inhalational general anesthetic, who have three or more risk factors for post-operative nausea and vomiting (PONV), who receive combination therapy consisting of at least two prophylactic pharmacologic antiemetic agents of different classes preoperatively or intraoperatively</description>
+      <name>PONV</name>
+    </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>anesthesiology</measureSets>
@@ -6072,6 +6844,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a BMI documented during the current encounter or during the previous six months with a BMI outside of normal parameters, a follow-up plan is documented during the encounter or during the previous six months of the current encounter Normal Parameters: Age 18 years and older BMI ≥ 18.5 and &lt; 25 kg/m2</description>
+      <name>BMI</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6111,6 +6887,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 6 months and older seen for a visit between October 1 and March 31 who received an influenza immunization who reported previous receipt of an influenza immunization</description>
+      <name>influenza</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6140,6 +6920,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 12 years and older screened for depression on the date of the encounter using an age appropriate standardized depression screening tool if positive, a follow-up plan is documented on the date of the positive screen</description>
+      <name>depression</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6167,6 +6951,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older seen during the reporting period who were screened for high blood pressure a recommended follow-up plan is documented based on the current blood pressure (BP) reading as indicated</description>
+      <name>highBloodPressure</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6213,6 +7001,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months who received cessation counseling intervention if identified as a tobacco user</description>
+      <name>tobacco</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6259,6 +7051,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 24 months who received brief counseling if identified as an unhealthy alcohol user</description>
+      <name>alcohol</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>internalMedicine</measureSets>
@@ -6313,6 +7109,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more office visits within 12 months</description>
+      <name>POAG</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>ehr</submissionMethods>
@@ -6336,6 +7136,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) whose glaucoma treatment has not failed (the most recent IOP was reduced by at least 15% from the pre-intervention level) if the most recent IOP was not reduced by at least 15% from the pre-intervention level, a plan of care was documented within 12 months</description>
+      <name>POAG</name>
+    </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6358,6 +7162,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of patients who died from cancer, and admitted to hospice and spent less than 3 days there</description>
+      <name>hospice</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -6379,6 +7187,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of patients who died from cancer admitted to the ICU in the last 30 days of life</description>
+      <name>ICU</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -6400,6 +7212,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of patients who died from cancer not admitted to hospice</description>
+      <name>noHospice</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -6421,6 +7237,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing any surgery to repair pelvic organ prolapse who sustains an injury to the bladder recognized either during or within 1 month after surgery</description>
+      <name>bladder</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -6442,6 +7262,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing surgical repair of pelvic organ prolapse that is complicated by a bowel injury at the time of index surgery that is recognized intraoperatively or within 1 month after surgery</description>
+      <name>bowel</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -6463,6 +7287,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing pelvic organ prolapse repairs who sustain an injury to the ureter recognized either during or within 1 month after surgery</description>
+      <name>ureter</name>
+    </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>obstetricsGynecology</measureSets>
@@ -6484,6 +7312,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of patients who died from cancer with more than one emergency department visit in the last 30 days of life</description>
+      <name>emergencyDepartment</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -6505,6 +7337,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of patients who died from cancer receiving chemotherapy in the last 14 days of life</description>
+      <name>chemotherapy</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -6526,6 +7362,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of prostate cancer at high or very high risk of recurrence receiving external beam radiotherapy to the prostate who were prescribed adjuvant hormonal therapy (GnRH [gonadotropin-releasing hormone] agonist or antagonist)</description>
+      <name>prostateCancer</name>
+    </strata>
     <primarySteward>American Urological Association Education and Research</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>urology</measureSets>
@@ -6547,6 +7387,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients, regardless of age, with a diagnosis of prostate cancer at low (or very low) risk of recurrence receiving interstitial prostate brachytherapy, external beam radiotherapy to the prostate, OR radical prostatectomy, OR cryotherapy who did not have a bone scan performed at any time since diagnosis of prostate cancer</description>
+      <name>prostateCancer</name>
+    </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6571,6 +7415,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of psoriasis patients receiving oral systemic or biologic therapy who meet minimal physician-or patient- reported disease activity levels. It is implied that establishment and maintenance of an established minimum level of disease control as measured by physician-and/or patient-reported outcomes will increase patient satisfaction with and adherence to treatment</description>
+      <name>therapy</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6593,6 +7441,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients with a diagnosis of primary headache disorder whose health related quality of life (HRQoL) was assessed with a tool(s) during at least two visits during the 12 month measurement period whose health related quality of life score stayed the same or improved</description>
+      <name>headache</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6615,6 +7467,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>This is a measure based on whether quantitative evaluation of Human Epidermal Growth Factor Receptor 2 Testing (HER2) by immunohistochemistry (IHC) uses the system recommended in the current ASCO/CAP Guidelines for Human Epidermal Growth Factor Receptor 2 Testing in breast cancer</description>
+      <name>HER2</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6642,6 +7498,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for patients aged 18 years and older undergoing CT with documentation that one or more of the following dose reduction techniques were used: • Automated exposure control • Adjustment of the mA and/or kV according to patient size • Use of iterative reconstruction technique</description>
+      <name>CT</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6664,6 +7524,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of radical prostatectomy pathology reports that include the pT category, the pN category, the Gleason score and a statement about margin status</description>
+      <name>prostatectomy</name>
+    </strata>
     <primarySteward>College of American Pathologists</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6687,6 +7551,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Final reports for procedures using fluoroscopy that document radiation exposure indices, or exposure time and number of fluorographic images (if radiation exposure indices are not available)</description>
+      <name>radiation</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6709,6 +7577,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for screening mammograms that are classified as “probably benign”</description>
+      <name>mammograms</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6731,6 +7603,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing a screening mammogram whose information is entered into a reminder system with a target due date for the next mammogram</description>
+      <name>mammogram</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6753,6 +7629,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of final reports for carotid imaging studies (neck magnetic resonance angiography [MRA], neck computed tomography angiography [CTA], neck duplex ultrasound, carotid angiogram) performed that include direct or indirect reference to measurements of distal internal carotid diameter as the denominator for stenosis measurement</description>
+      <name>carotidImaging</name>
+    </strata>
     <primarySteward>American College of Radiology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6775,6 +7655,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of asymptomatic patients undergoing CAS who are discharged to home no later than post-operative day #2</description>
+      <name>CAS</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>interventionalRadiology</measureSets>
@@ -6797,6 +7681,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of asymptomatic patients undergoing CEA who are discharged to home no later than post-operative day #2</description>
+      <name>CEA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>vascularSurgery</measureSets>
@@ -6818,6 +7706,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of patients undergoing endovascular repair of small or moderate infrarenal abdominal aortic aneurysms (AAA) that die while in the hospital</description>
+      <name>AAA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>vascularSurgery</measureSets>
@@ -6839,6 +7731,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of patients undergoing endovascular repair of small or moderate non-ruptured infrarenal abdominal aortic aneurysms (AAA) that do not experience a major complication (discharged to home no later than post-operative day #2)</description>
+      <name>AAA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>interventionalRadiology</measureSets>
@@ -6861,6 +7757,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients undergoing open repair of small or moderate abdominal aortic aneurysms (AAA) who are discharged alive</description>
+      <name>AAA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -6881,6 +7781,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of patients undergoing open repair of small or moderate sized non-ruptured infrarenal abdominal aortic aneurysms who do not experience a major complication (discharge to home no later than post-operative day #7)</description>
+      <name>AAA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>vascularSurgery</measureSets>
@@ -6902,6 +7806,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of asymptomatic patients undergoing CAS who experience stroke or death following surgery while in the hospital</description>
+      <name>CAS</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>interventionalRadiology</measureSets>
@@ -6924,6 +7832,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of asymptomatic patients undergoing CEA who experience stroke or death following surgery while in the hospital</description>
+      <name>CEA</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -6944,6 +7856,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Inpatients assigned to endovascular treatment for obstructive arterial disease, the percent of patients who undergo unplanned major amputation or surgical bypass within 48 hours of the index procedure</description>
+      <name>OAD</name>
+    </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6965,6 +7881,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged birth and older referred to a physician (preferably a physician specially trained in disorders of the ear) for an otologic evaluation subsequent to an audiologic evaluation after presenting with acute or chronic dizziness</description>
+      <name>dizziness</name>
+    </strata>
     <primarySteward>Audiology Quality Consortium</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -6986,6 +7906,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment and classification of disease prognosis at least once within 12 months</description>
+      <name>RA</name>
+    </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7008,6 +7932,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed at least once within 12 months</description>
+      <name>RA</name>
+    </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7030,6 +7958,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone ≥ 10 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan within 12 months</description>
+      <name>RA</name>
+    </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7052,6 +7984,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment and classification of disease activity within 12 months</description>
+      <name>RA</name>
+    </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>rheumatology</measureSets>
@@ -7073,6 +8009,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have documentation of a tuberculosis (TB) screening performed and results interpreted within 6 months prior to receiving a first course of therapy using a biologic disease-modifying anti-rheumatic drug (DMARD)</description>
+      <name>RA</name>
+    </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>rheumatology</measureSets>
@@ -7094,6 +8034,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of Rh-negative pregnant women aged 14-50 years at risk of fetal blood exposure who receive Rh- Immunoglobulin (Rhogam) in the emergency department (ED)</description>
+      <name>Rhogam</name>
+    </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7116,6 +8060,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percent of patients aged 18 years and older undergoing isolated CABG who die, including both all deaths occurring during the hospitalization in which the CABG was performed, even if after 30 days, and those deaths occurring after discharge from the hospital, but within 30 days of the procedure</description>
+      <name>CABG</name>
+    </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7136,6 +8084,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of patients age 50 years or older with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy</description>
+      <name>colonoscopy</name>
+    </strata>
     <primarySteward>American Society for Gastrointestinal Endoscopy</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>gastroenterology</measureSets>
@@ -7157,6 +8109,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of female patients aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) to check for osteoporosis</description>
+      <name>DXA</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7179,6 +8135,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of clinically node negative (clinical stage T1N0M0 or T2N0M0) breast cancer patients who undergo a sentinel lymph node (SLN) procedure</description>
+      <name>SLN</name>
+    </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7199,6 +8159,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients aged 18 years and older with a diagnosis of obstructive sleep apnea who were prescribed positive airway pressure therapy who had documentation that adherence to positive airway pressure therapy was objectively measured</description>
+      <name>sleepApnea</name>
+    </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7219,6 +8183,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of visits for patients aged 18 years and older with a diagnosis of obstructive sleep apnea that includes documentation of an assessment of sleep symptoms, including presence or absence of snoring and daytime sleepiness</description>
+      <name>sleepApnea</name>
+    </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7239,6 +8207,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of moderate or severe obstructive sleep apnea who were prescribed positive airway pressure therapy</description>
+      <name>sleepApnea</name>
+    </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7259,6 +8231,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea who had an apnea hypopnea index (AHI) or a respiratory disturbance index (RDI) measured at the time of initial diagnosis</description>
+      <name>sleepApnea</name>
+    </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7279,6 +8255,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older undergoing infra-inguinal lower extremity bypass who are prescribed a statin medication at discharge</description>
+      <name>lowerExtremityBypass</name>
+    </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7304,6 +8284,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of the following patients—all considered at high risk of cardiovascular events—who were prescribed or were on statin therapy during the measurement period: • Adults aged ≥ 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD); • Adults aged ≥21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level ≥ 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia; OR • Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL</description>
+      <name>highRiskCardiovascular</name>
+    </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethods>cmsWebInterface</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7328,6 +8312,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of ischemic stroke or transient ischemic attack (TIA) who were prescribed antithrombotic therapy at discharge</description>
+      <name>strokeTIA</name>
+    </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7351,6 +8339,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within two hours of time last known well and for whom IV t-PA was initiated within three hours of time last known well</description>
+      <name>stroke</name>
+    </strata>
     <primarySteward>American Heart Association</primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
@@ -7371,6 +8363,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had a surgical site infection (SSI)</description>
+      <name>SSI</name>
+    </strata>
     <primarySteward>American College of Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalSurgery</measureSets>
@@ -7395,6 +8391,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>The percentage of adolescents 12 to 20 years of age with a primary care visit during the measurement year for whom tobacco use status was documented and received help with quitting if identified as a tobacco user</description>
+      <name>tobacco</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>allergyImmunology</measureSets>
@@ -7439,6 +8439,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients regardless of age undergoing a total knee replacement whose operative report identifies the prosthetic implant specifications including the prosthetic implant manufacturer, the brand name of the prosthetic implant and the size of each prosthetic implant</description>
+      <name>kneeReplacement</name>
+    </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7460,6 +8464,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients regardless of age undergoing a total knee replacement who had the prophylactic antibiotic completely infused prior to the inflation of the proximal tourniquet</description>
+      <name>kneeReplacement</name>
+    </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7481,6 +8489,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients regardless of age undergoing a total knee replacement with documented shared decision- making with discussion of conservative (non-surgical) therapy (e.g., non-steroidal anti-inflammatory drug (NSAIDs), analgesics, weight loss, exercise, injections) prior to the procedure</description>
+      <name>kneeReplacement</name>
+    </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7502,6 +8514,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients regardless of age undergoing a total knee replacement who are evaluated for the presence or absence of venous thromboembolic and cardiovascular risk factors within 30 days prior to the procedure (e.g. history of Deep Vein Thrombosis (DVT), Pulmonary Embolism (PE), Myocardial Infarction (MI), Arrhythmia and Stroke)</description>
+      <name>kneeReplacement</name>
+    </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>orthopedicSurgery</measureSets>
@@ -7523,6 +8539,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Proportion of female patients (aged 18 years and older) with AJCC stage I (T1c) – III, human epidermal growth factor receptor 2 (HER2) positive breast cancer receiving adjuvant chemotherapy who are also receiving trastuzumab</description>
+      <name>AJCC</name>
+    </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalOncology</measureSets>
@@ -7544,6 +8564,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients whose providers are ensuring active tuberculosis prevention either through yearly negative standard tuberculosis screening tests or are reviewing the patient’s history to determine if they have had appropriate management for a recent or prior positive test</description>
+      <name>tuberculosis</name>
+    </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>dermatology</measureSets>
@@ -7567,6 +8591,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of pregnant female patients aged 14 to 50 who present to the emergency department (ED) with a chief complaint of abdominal pain or vaginal bleeding who receive a trans-abdominal or trans-vaginal ultrasound to determine pregnancy location</description>
+      <name>ED</name>
+    </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7589,6 +8617,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had an unplanned hospital readmission within 30 days of principal procedure</description>
+      <name>readmission</name>
+    </strata>
     <primarySteward>American College of Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalSurgery</measureSets>
@@ -7610,6 +8642,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30 day postoperative period</description>
+      <name>reoperation</name>
+    </strata>
     <primarySteward>American College of Surgeons</primarySteward>
     <submissionMethods>registry</submissionMethods>
     <measureSets>generalSurgery</measureSets>
@@ -7631,6 +8667,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of female patients aged 65 years and older who were assessed for the presence or absence of urinary incontinence within 12 months</description>
+      <name>UTI</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7655,6 +8695,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of female patients aged 65 years and older with a diagnosis of urinary incontinence with a documented plan of care for urinary incontinence at least once within 12 months</description>
+      <name>UTI</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>claims</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7682,6 +8726,14 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients who were ordered at least one high-risk medication</description>
+      <name>overall</name>
+    </strata>
+    <strata>
+      <description>Percentage of patients who were ordered at least two different high-risk medications</description>
+      <name>2+</name>
+    </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethods>ehr</submissionMethods>
     <submissionMethods>registry</submissionMethods>
@@ -7726,6 +8778,10 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <strata>
+      <description>Percentage of patients treated for varicose veins (CEAP C2-S) who are treated with saphenous ablation (with or without adjunctive tributary treatment) that report an improvement on a disease specific patient reported outcome survey instrument after treatment</description>
+      <name>CEAP_C2-S</name>
+    </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
     <submissionMethods>registry</submissionMethods>
   </measure>
