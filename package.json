@@ -1,6 +1,6 @@
 {
   "name": "@cmsgov/qpp-measures-data",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -13,9 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "ajv": "^4.10.0",
+    "csv-parse": "^1.2.0",
     "lodash": "^4.16.4",
-    "yamljs": "~0.2.8",
-    "xml2js": "~0.4.17"
+    "xml2js": "~0.4.17",
+    "yamljs": "~0.2.8"
   },
   "devDependencies": {
     "chai": "^3.5.0",

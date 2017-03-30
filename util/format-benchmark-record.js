@@ -166,8 +166,8 @@ var formatBenchmarkRecord = function(record, options) {
 
   return {
     measureId: measure.measureId,
-    benchmarkYear: options.benchmarkYear,
-    performanceYear: options.performanceYear,
+    benchmarkYear: parseInt(options.benchmarkYear),
+    performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
     deciles: [
       record.decile1,

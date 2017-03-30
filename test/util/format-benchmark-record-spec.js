@@ -5,8 +5,8 @@ var expect  = chai.expect;
 var formatBenchmarkRecord = require('./../../util/format-benchmark-record');
 
 var options = {
-  benchmarkYear: '2016',
-  performanceYear: '2018'
+  benchmarkYear: 2016,
+  performanceYear: 2018
 };
 
 describe('formatBenchmarkRecord', function() {
@@ -77,11 +77,11 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatBenchmarkRecord(record, { benchmarkYear: '2002', performaceYear: '2004'});
-      var benchmark2 = formatBenchmarkRecord(record, { benchmarkYear: '2004', performanceYear: '2006'});
+      var benchmark1 = formatBenchmarkRecord(record, { benchmarkYear: 2002, performaceYear: 2004});
+      var benchmark2 = formatBenchmarkRecord(record, { benchmarkYear: 2004, performanceYear: 2006});
 
-      expect(benchmark1.benchmarkYear).to.equal('2002');
-      expect(benchmark2.benchmarkYear).to.equal('2004');
+      expect(benchmark1.benchmarkYear).to.equal(2002);
+      expect(benchmark2.benchmarkYear).to.equal(2004);
     });
     it('should have the correct performanceYear based on the options argument', function() {
       var record = {
@@ -100,11 +100,11 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: '2002', performanceYear: '2004'});
-      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: '2004', performanceYear: '2006'});
+      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
+      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
 
-      expect(benchmark1.performanceYear).to.equal('2004');
-      expect(benchmark2.performanceYear).to.equal('2006');
+      expect(benchmark1.performanceYear).to.equal(2004);
+      expect(benchmark2.performanceYear).to.equal(2006);
     });
 
     describe('When a direct (non-inverse) measure', function() {
@@ -131,8 +131,8 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS68v60419130');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('ehr');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-          expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([0, 76.59, 87.89, 92.74, 95.36, 97.09, 98.28, 99.13, 99.76]);
         });
       });
@@ -160,8 +160,8 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('0391099');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-          expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([100, 100, 100, 100, 100, 100, 100, 100, 100]);
         });
       });
@@ -192,8 +192,8 @@ describe('formatBenchmarkRecord', function() {
             expect(benchmark).to.exist;
             expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
             expect(benchmark.submissionMethod, 'submissionMethod').to.equal('ehr');
-            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-            expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+            expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
             expect(benchmark.deciles).to.eql([100, 54.67, 35.90, 25.62, 19.33, 14.14, 9.09, 3.33, 0]);
           });
         });
@@ -220,8 +220,8 @@ describe('formatBenchmarkRecord', function() {
             expect(benchmark).to.exist;
             expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
             expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-            expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+            expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
             expect(benchmark.deciles, 'deciles').to.eql([100, 35.00, 25.71, 20.31, 16.22, 13.04, 10.00, 7.41, 4.00]);
           });
         });
@@ -250,8 +250,8 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('qcdrOrQualifiedRegistry');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-          expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([0, 0, 0, 0, 0, 0, 0, 0, 0]);
         });
       });
@@ -279,8 +279,8 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS143v50086012');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-          expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([0, 99.01, 100, 100, 100, 100, 100, 100, 100]);
         });
       });
@@ -307,8 +307,8 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('qcdrOrQualifiedRegistry');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal('2016');
-          expect(benchmark.performanceYear, 'performanceYear').to.equal('2018');
+          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
+          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([100, 0.13, 0.12, 0.12, 0.12, 0, 0, 0, 0]);
         });
       });
