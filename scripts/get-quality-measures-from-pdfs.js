@@ -111,7 +111,7 @@ qualityIds.forEach(function(qualityId, i){
       // sort all performance rates
       var sortedRates = _.sortBy(performanceRateJson, ['qualityId']);
       // write file to tmp
-      fs.writeFile(p.join(__dirname, '../measures/quality-performance-rates.json'), JSON.stringify(sortedRates, null, 2));
+      fs.writeFile(p.join(__dirname, '../util/quality-performance-rates.json'), JSON.stringify(sortedRates, null, 2));
     }
   });
 });
