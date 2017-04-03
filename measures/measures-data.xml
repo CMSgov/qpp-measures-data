@@ -85,6 +85,32 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
     <metricType>boolean</metricType>
+    <measureId>ACI_LVSSC_1</measureId>
+    <title>Low-Volume Send a Summary of Care</title>
+    <description>Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.</description>
+    <isRequired>false</isRequired>
+    <weight>0</weight>
+    <isBonus>false</isBonus>
+    <objective>healthInformationExchange</objective>
+  </measure>
+  <measure>
+    <category>aci</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>ACI_LVRASC_1</measureId>
+    <title>Low-Volume Request / Accept Summary of Care</title>
+    <description>Any MIPS eligible clinician who does not receive any transitions of care or referrals or have patient encounters in which the MIPS eligible clinician has never before encountered the patient during the performance period.</description>
+    <isRequired>false</isRequired>
+    <weight>0</weight>
+    <isBonus>false</isBonus>
+    <objective>healthInformationExchange</objective>
+  </measure>
+  <measure>
+    <category>aci</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
     <measureId>ACI_PHCDRR_5</measureId>
     <title>Clinical Data Registry Reporting</title>
     <description>The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
@@ -214,19 +240,6 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <category>aci</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>boolean</metricType>
-    <measureId>ACI_LVRASC_1</measureId>
-    <title>Low-Volume Request / Accept Summary of Care</title>
-    <description>Any MIPS eligible clinician who does not receive any transitions of care or referrals or have patient encounters in which the MIPS eligible clinician has never before encountered the patient during the performance period.</description>
-    <isRequired>false</isRequired>
-    <weight>0</weight>
-    <isBonus>false</isBonus>
-    <objective>healthInformationExchange</objective>
-  </measure>
-  <measure>
-    <category>aci</category>
-    <firstPerformanceYear>2017</firstPerformanceYear>
-    <lastPerformanceYear/>
     <metricType>proportion</metricType>
     <measureId>ACI_CCTPE_2</measureId>
     <title>Secure Messaging</title>
@@ -259,19 +272,6 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>For at least one transition of care or referral, the MIPS eligible clinician that transitions or refers their patient to another setting of care or health care provider-(1) creates a summary of care record using certified EHR technology; and (2) electronically exchanges the summary of care record.</description>
     <isRequired>true</isRequired>
     <weight>10</weight>
-    <isBonus>false</isBonus>
-    <objective>healthInformationExchange</objective>
-  </measure>
-  <measure>
-    <category>aci</category>
-    <firstPerformanceYear>2017</firstPerformanceYear>
-    <lastPerformanceYear/>
-    <metricType>boolean</metricType>
-    <measureId>ACI_LVSSC_1</measureId>
-    <title>Low-Volume Send a Summary of Care</title>
-    <description>Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.</description>
-    <isRequired>false</isRequired>
-    <weight>0</weight>
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
   </measure>
