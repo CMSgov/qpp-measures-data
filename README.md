@@ -83,6 +83,8 @@ validates the latest version of `measures-data.json` against the latest `measure
 
 If you don't already have [jq](https://stedolan.github.io/jq/), run `brew install jq`.
 
+If you don't have wget, run `brew install wget`.
+
 Run `npm install`.
 
 ### Testing
