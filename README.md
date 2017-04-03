@@ -84,7 +84,7 @@ npm run test
 
 ### Additional measures
 
-`util/additional-measures.json` includes measures objects which are part of scoring logic but are not part of the MIPS measures set. For example it includes:
+`util/additional-measures.json` includes data objects which are necessary for scoring but not part of the MIPS measures set. So far, additional-meausures includes:
 
 1. **Attestation:** Attestation measures are pre-requisites of submitting additional measurements for a given category.
 2. **Exclusionary:** Exclusionary measures are optional measures which describe conditions for exemption from submitting an associated measure. For example, submitting `true` to `ACI_LVPP_1` exempts a user from submitting data for the required measure `ACI_EP_1`
