@@ -24,7 +24,7 @@ program
   .parse(process.argv);
 
 if (!folderPath) {
-  console.log(chalk.red('Missing required argument <path>'));
+  console.log('Missing required argument <path>');
   process.exit(1);
 }
 

@@ -81,9 +81,10 @@ validates the latest version of `measures-data.json` against the latest `measure
 
 ### Setup
 
-If you don't already have [jq](https://stedolan.github.io/jq/), run `brew install jq`.
-
-If you don't have wget, run `brew install wget`.
+Install the following brew modules:
+```
+brew install jq wget poppler
+```
 
 Run `npm install`.
 
