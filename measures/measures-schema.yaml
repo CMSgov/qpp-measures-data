@@ -99,12 +99,11 @@ definitions:
         default: false
       overallAlgorithm:
         description: Formula to determine the overall performance rate, given multiple strata of performance rates.
-        enum: [simpleAverage, weightedAverage, first, last]
+        enum: [simpleAverage, weightedAverage, sumNumerators]
       strata:
         description: Population segments for which the measure requires reporting data.
         type: array
-        # TODO (Mari): This will be enumerated
-        items: { type: string }
+        items: { $ref: #/definitions/performanceStrata }
       primarySteward:
         description: Organization who submits and maintains the measure.
         type: string
@@ -113,6 +112,14 @@ definitions:
         type: array
         items: { $ref: #/definitions/methods }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, overallAlgorithm, strata, primarySteward, measureSets]
+
+  performanceStrata:
+    type: object
+    properties:
+      description:
+        type: string
+      name:
+        type: string
 
   subcategoryIds:
     enum:
