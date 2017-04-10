@@ -23,7 +23,7 @@ function mergeQpp(qppJson) {
   // read in tmp/quality-performance-rates.json
   var performanceRatesJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/quality-performance-rates.json'), 'utf8'));
   // read in measures/quality-measures-additional-info.json
-  var performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/quality-measures-additional-info.json'), 'utf8'));
+  var performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/quality-measures-strata-details.json'), 'utf8'));
 
   var measuresNotFound = [];
   // iterate through all qppJson measures and find matching items from other json blobs
