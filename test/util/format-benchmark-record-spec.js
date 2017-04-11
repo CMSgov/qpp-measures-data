@@ -249,7 +249,7 @@ describe('formatBenchmarkRecord', function() {
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('qcdrOrQualifiedRegistry');
+          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -306,7 +306,7 @@ describe('formatBenchmarkRecord', function() {
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('qcdrOrQualifiedRegistry');
+          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([100, 0.13, 0.12, 0.12, 0.12, 0, 0, 0, 0]);
