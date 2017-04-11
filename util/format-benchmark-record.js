@@ -14,7 +14,7 @@ var measures = require('./../measures/measures-data.json');
 var SUBMISSION_METHOD_MAP = {
   'claims': 'claims',
   'registry': 'registry',
-  'registry/qcdr': 'qcdrOrQualifiedRegistry',
+  'registry/qcdr': 'registry',
   'cmswebinterface': 'cmsWebInterface',
   'administrativeclaims': 'administrativeClaims',
   'ehr': 'ehr',
