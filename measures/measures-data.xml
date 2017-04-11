@@ -311,7 +311,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using certified EHR technology.</description>
     <isRequired>true</isRequired>
     <weight>0</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>electronicPrescribing</objective>
   </measure>
@@ -325,7 +325,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician that transitions or refers their patient to another setting of care or health care clinician (1) uses CEHRT to create a summary of care record; and (2) electronically transmits such summary to a receiving health care clinician for at least one transition of care or referral.</description>
     <isRequired>true</isRequired>
     <weight>20</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
   </measure>
@@ -339,7 +339,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician is in active engagement with a public health agency to submit immunization data.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>publicHealthReporting</objective>
   </measure>
@@ -353,7 +353,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician performs medication reconciliation for at least one transition of care in which the patient is transitioned into the care of the MIPS eligible clinician.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>medicationReconciliation</objective>
   </measure>
@@ -367,7 +367,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician must use clinically relevant information from CEHRT to identify patient-specific educational resources and provide access to those materials to at least one unique patient seen by the MIPS eligible clinician.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>patientSpecificEducation</objective>
   </measure>
@@ -381,7 +381,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>At least one patient seen by the MIPS eligible clinician during the performance period is provided timely access to view online, download, and transmit to a third party their health information subject to the MIPS eligible clinician's discretion to withhold certain information.</description>
     <isRequired>true</isRequired>
     <weight>20</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
   </measure>
@@ -395,7 +395,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>For at least one unique patient seen by the MIPS eligible clinician during the performance period, a secure message was sent using the electronic messaging function of CEHRT to the patient (or the patient-authorized representative), or in response to a secure message sent by the patient (or the patient-authorized representative) during the performance period.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>secureMessaging</objective>
   </measure>
@@ -409,7 +409,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified EHR technology in accordance with requirements in 45 CFR164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), and implement security updates as necessary and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.</description>
     <isRequired>true</isRequired>
     <weight>0</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>protectPatientHealthInformation</objective>
   </measure>
@@ -423,7 +423,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician is in active engagement to submit data to specialized registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
   </measure>
@@ -437,7 +437,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>The MIPS eligible clinician  is in active engagement with a public health agency to submit syndromic surveillance data.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
   </measure>
@@ -451,7 +451,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <description>At least one patient seen by the MIPS eligible clinician during the performance period (or patient-authorized representative) views, downloads or transmits their health information to a third party during the performance period.</description>
     <isRequired>false</isRequired>
     <weight>10</weight>
-    <measureSets>transition</measureSets>
+    <measureSet>transition</measureSet>
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
   </measure>
@@ -1683,12 +1683,12 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
       <name>AOE</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1712,11 +1712,11 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
       <name>AOE</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1739,9 +1739,9 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1765,8 +1765,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>schizophrenia</name>
     </strata>
     <primarySteward>Health Services Advisory Group </primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1798,7 +1798,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>overall</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -1822,7 +1822,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>ESRD</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -1846,7 +1846,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>ESRD</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -1870,7 +1870,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>ESRD</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -1894,8 +1894,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>comorbid</name>
     </strata>
     <primarySteward>American Psychiatric Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1915,7 +1915,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -1939,8 +1939,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>retinalDetachment</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1964,8 +1964,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>retinalDetachment</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -1989,11 +1989,11 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>sinusitis</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2017,11 +2017,11 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>sinusitis</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2045,11 +2045,11 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>sinusitis</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2073,11 +2073,11 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>sinusitis</name>
     </strata>
     <primarySteward>American Academy of Otolaryngology-Head and Neck Surgery</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2101,8 +2101,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>colonoscopy</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2126,9 +2126,9 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>AMD</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2152,9 +2152,9 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>AMD</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2174,7 +2174,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Yale University</primarySteward>
-    <submissionMethods>administrativeClaims</submissionMethods>
+    <submissionMethod>administrativeClaims</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -2198,8 +2198,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>ALS</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2223,8 +2223,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>colectomy</name>
     </strata>
     <primarySteward>American College of Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2248,8 +2248,8 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>cigarettes</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2273,9 +2273,9 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
       <name>HCV</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2298,10 +2298,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2325,7 +2325,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>IVC</name>
     </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -2355,9 +2355,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>abdominalImaging</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2381,9 +2381,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2407,9 +2407,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>colonoscopy</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2433,11 +2433,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>strep</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2461,10 +2461,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>URI</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2488,9 +2488,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>MSSA</name>
     </strata>
     <primarySteward>Infectious Diseases Society of America</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>hospitalists</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2514,8 +2514,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>endometrialAblation</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2539,11 +2539,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>AF</name>
     </strata>
     <primarySteward>American College of Cardiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2567,10 +2567,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>bronchitis</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2594,9 +2594,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>barrettsMucosa</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2620,7 +2620,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>BCC&amp;SCC</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -2644,11 +2644,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>biopsy</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
-    <measureSets>interventionalRadiology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>urology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2668,7 +2668,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Center for Quality Assessment and Improvement in Mental Health</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -2692,9 +2692,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>pTpN</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2718,14 +2718,14 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>mammogram</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2756,8 +2756,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Agency for Healthcare Research &amp; Quality</primarySteward>
-    <submissionMethods>csv</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>csv</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2781,7 +2781,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>outpatient</name>
     </strata>
     <primarySteward>American College of Cardiology Foundation</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -2805,8 +2805,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>preoperative</name>
     </strata>
     <primarySteward>American College of Cardiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2830,8 +2830,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>PCI</name>
     </strata>
     <primarySteward>American College of Cardiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2855,8 +2855,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CHD</name>
     </strata>
     <primarySteward>American College of Cardiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2880,29 +2880,29 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>surrogate</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2926,9 +2926,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2952,9 +2952,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -2978,8 +2978,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3003,8 +3003,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3028,8 +3028,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3053,8 +3053,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>cataract</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3077,9 +3077,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3100,9 +3100,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3122,8 +3122,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3143,7 +3143,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>true</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -3167,8 +3167,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>chlamydia</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3188,9 +3188,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3214,8 +3214,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>FEV1/FVC&lt;70%</name>
     </strata>
     <primarySteward>American Thoracic Society</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -3239,8 +3239,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>COPD</name>
     </strata>
     <primarySteward>American Thoracic Society</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -3264,7 +3264,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>stroke</name>
     </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -3284,28 +3284,28 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>dermatology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3330,9 +3330,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>colonoscopy</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3356,9 +3356,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>pTpN</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3382,12 +3382,12 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>colorectalCancer</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3411,9 +3411,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>fracture</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>preventiveMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3437,17 +3437,17 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>hypertension</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3471,8 +3471,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>thoracicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3496,8 +3496,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>thoracicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3521,8 +3521,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3546,8 +3546,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>thoracicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3571,8 +3571,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>thoracicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3596,8 +3596,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>thoracicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3621,7 +3621,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>IMA</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -3645,8 +3645,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CAD</name>
     </strata>
     <primarySteward>American Heart Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3670,8 +3670,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CAD</name>
     </strata>
     <primarySteward>American Heart Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3699,10 +3699,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>myocardialInfarction</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3726,9 +3726,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>dementia</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3748,9 +3748,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3774,9 +3774,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>dementia</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3800,9 +3800,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>dementia</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3826,9 +3826,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>dementia</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3852,9 +3852,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>dementia</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3878,8 +3878,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>remission</name>
     </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3903,11 +3903,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>depression</name>
     </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3927,8 +3927,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Minnesota Community Measurement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3952,13 +3952,13 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>diabetes</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -3978,9 +3978,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4004,13 +4004,13 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>A1c&gt;9.0%</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4034,9 +4034,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>diabetes</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4060,7 +4060,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>DM</name>
     </strata>
     <primarySteward>American Podiatric Medical Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4084,7 +4084,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>DM</name>
     </strata>
     <primarySteward>American Podiatric Medical Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4108,10 +4108,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>diabeticRetinopathy</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4131,8 +4131,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4156,33 +4156,33 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>document</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>anesthesiology</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>dermatology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>anesthesiology</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4206,11 +4206,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>opiates</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4234,7 +4234,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>stroke</name>
     </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4258,11 +4258,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>elderMaltreament</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4286,9 +4286,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>headTrauma</name>
     </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4312,9 +4312,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>headTrauma</name>
     </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4338,9 +4338,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>epilepsy</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4364,11 +4364,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>opioidRisk</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4392,10 +4392,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>falls</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4419,10 +4419,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>falls</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4442,8 +4442,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4475,9 +4475,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>overall</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4501,9 +4501,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>functionalOutcome</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>physicalMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>physicalMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4523,8 +4523,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4544,8 +4544,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4565,7 +4565,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4589,7 +4589,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>armImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4613,7 +4613,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>footImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4637,7 +4637,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>orthopaedicImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4661,7 +4661,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>hipImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4685,7 +4685,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>kneeImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4709,7 +4709,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>lumbarImpairment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4733,7 +4733,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>shoulderImpariment</name>
     </strata>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4757,12 +4757,12 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>LVEF&lt;40%</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4786,11 +4786,11 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>HF</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>cardiology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>cardiology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4814,7 +4814,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CLL</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4838,7 +4838,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>MM</name>
     </strata>
     <primarySteward>American Society of Hematology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4862,7 +4862,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>MDS</name>
     </strata>
     <primarySteward>American Society of Hematology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4886,7 +4886,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>MDS</name>
     </strata>
     <primarySteward>American Society of Hematology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -4911,8 +4911,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>hepC</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4936,10 +4936,10 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>hepC</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4963,8 +4963,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>breastCancer</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -4984,9 +4984,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5010,8 +5010,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>HIV/AIDS</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5035,7 +5035,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>HIV</name>
     </strata>
     <primarySteward>Health Resources and Services Administration</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5059,8 +5059,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>HIV</name>
     </strata>
     <primarySteward>Health Resources and Services Administration</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5105,8 +5105,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>overall</name>
     </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>electrophysiologyCardiacSpecialist</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5134,8 +5134,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>90</name>
     </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>electrophysiologyCardiacSpecialist</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5160,8 +5160,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>CIED</name>
     </strata>
     <primarySteward>The Heart Rhythm Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>electrophysiologyCardiacSpecialist</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5181,7 +5181,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5205,7 +5205,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>imageConfirmation</name>
     </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5241,9 +5241,9 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>overall</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5267,8 +5267,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>IBD</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5292,8 +5292,8 @@ b. Percentage of patients who remained on an antidepressant medication for at le
       <name>IBD</name>
     </strata>
     <primarySteward>American Gastroenterological Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5316,7 +5316,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5345,7 +5345,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>IVDAllOrNone</name>
     </strata>
     <primarySteward>Wisconsin Collaborative for Healthcare Quality</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5369,13 +5369,13 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>AMI</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5399,8 +5399,8 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>KRASGeneMutation</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5424,9 +5424,9 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>lungCancer</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5450,9 +5450,9 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>lungCarcinoma</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5473,7 +5473,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5499,7 +5499,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>birth</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5523,7 +5523,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>postPartum</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5547,10 +5547,10 @@ b. Percentage of patients who initiated treatment and who had two or more additi
       <name>asthma</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5587,9 +5587,9 @@ This measure is reported as three rates stratified by age group:
       <name>overall</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5616,8 +5616,8 @@ This measure is reported as three rates stratified by age group:
       <name>melanoma</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5641,8 +5641,8 @@ This measure is reported as three rates stratified by age group:
       <name>melanoma</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5666,8 +5666,8 @@ This measure is reported as three rates stratified by age group:
       <name>melanoma</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5691,9 +5691,9 @@ This measure is reported as three rates stratified by age group:
       <name>melanoma</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5717,9 +5717,9 @@ This measure is reported as three rates stratified by age group:
       <name>cervicalCancer</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5743,9 +5743,9 @@ This measure is reported as three rates stratified by age group:
       <name>scintigraphy</name>
     </strata>
     <primarySteward>Society of Nuclear Medicine and Molecular Imaging</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5769,10 +5769,10 @@ This measure is reported as three rates stratified by age group:
       <name>cancer</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>radiationOncology</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5796,8 +5796,8 @@ This measure is reported as three rates stratified by age group:
       <name>cancer</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>radiationOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5821,9 +5821,9 @@ This measure is reported as three rates stratified by age group:
       <name>cancer</name>
     </strata>
     <primarySteward>American Society for Radiation Oncology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>radiationOncology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5847,9 +5847,9 @@ This measure is reported as three rates stratified by age group:
       <name>HCV</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5873,7 +5873,7 @@ This measure is reported as three rates stratified by age group:
       <name>congenitalHeartSurgery</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -5897,11 +5897,11 @@ This measure is reported as three rates stratified by age group:
       <name>opiates</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5949,9 +5949,9 @@ This measure is reported as three rates stratified by age group:
       <name>lowRisk18-50</name>
     </strata>
     <primarySteward>Minnesota Community Measurement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -5975,8 +5975,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6000,8 +6000,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6025,8 +6025,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6050,8 +6050,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6075,8 +6075,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6100,8 +6100,8 @@ This measure is reported as three rates stratified by age group:
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6125,13 +6125,13 @@ This measure is reported as three rates stratified by age group:
       <name>OA</name>
     </strata>
     <primarySteward>American Academy of Orthopedic Surgeons</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6155,11 +6155,11 @@ This measure is reported as three rates stratified by age group:
       <name>osteoporosis</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6183,9 +6183,9 @@ This measure is reported as three rates stratified by age group:
       <name>headache</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6209,9 +6209,9 @@ This measure is reported as three rates stratified by age group:
       <name>painAssessment</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>physicalMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>physicalMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6235,8 +6235,8 @@ This measure is reported as three rates stratified by age group:
       <name>pain</name>
     </strata>
     <primarySteward>National Hospice and Palliative Care Organization</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6260,8 +6260,8 @@ This measure is reported as three rates stratified by age group:
       <name>parkinsons</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6285,8 +6285,8 @@ This measure is reported as three rates stratified by age group:
       <name>parkinsons</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6310,8 +6310,8 @@ This measure is reported as three rates stratified by age group:
       <name>parkinsons</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6335,8 +6335,8 @@ This measure is reported as three rates stratified by age group:
       <name>parkinsons</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6360,13 +6360,13 @@ This measure is reported as three rates stratified by age group:
       <name>surgery</name>
     </strata>
     <primarySteward>American College of Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>plasticSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6390,8 +6390,8 @@ This measure is reported as three rates stratified by age group:
       <name>metastaticColorectalCancer</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6415,7 +6415,7 @@ This measure is reported as three rates stratified by age group:
       <name>ESRD</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6439,7 +6439,7 @@ This measure is reported as three rates stratified by age group:
       <name>ESRD</name>
     </strata>
     <primarySteward>Renal Physicians Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6463,7 +6463,7 @@ This measure is reported as three rates stratified by age group:
       <name>urinaryIncontinence</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6487,8 +6487,8 @@ This measure is reported as three rates stratified by age group:
       <name>uterineMalignancy</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6512,9 +6512,9 @@ This measure is reported as three rates stratified by age group:
       <name>cystoscopy</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6538,8 +6538,8 @@ This measure is reported as three rates stratified by age group:
       <name>CEA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6563,13 +6563,13 @@ This measure is reported as three rates stratified by age group:
       <name>prophylacticAntibiotic</name>
     </strata>
     <primarySteward>American Society of Plastic Surgeons</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>plasticSurgery</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>plasticSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6593,13 +6593,13 @@ This measure is reported as three rates stratified by age group:
       <name>VTE</name>
     </strata>
     <primarySteward>American Society of Plastic Surgeons</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>plasticSurgery</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>plasticSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6623,8 +6623,8 @@ This measure is reported as three rates stratified by age group:
       <name>anesthesia</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6648,8 +6648,8 @@ This measure is reported as three rates stratified by age group:
       <name>AMI</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6673,8 +6673,8 @@ This measure is reported as three rates stratified by age group:
       <name>colonoscopy</name>
     </strata>
     <primarySteward>American Society for Gastrointestinal Endoscopy</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6698,12 +6698,12 @@ This measure is reported as three rates stratified by age group:
       <name>pneumococcal</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6727,8 +6727,8 @@ This measure is reported as three rates stratified by age group:
       <name>PACU</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6752,8 +6752,8 @@ This measure is reported as three rates stratified by age group:
       <name>ICU</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6773,7 +6773,7 @@ This measure is reported as three rates stratified by age group:
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>OptumInsight</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6797,7 +6797,7 @@ This measure is reported as three rates stratified by age group:
       <name>breastCancer</name>
     </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -6821,10 +6821,10 @@ This measure is reported as three rates stratified by age group:
       <name>CVC</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
-    <measureSets>hospitalists</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
+    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6848,8 +6848,8 @@ This measure is reported as three rates stratified by age group:
       <name>PONV</name>
     </strata>
     <primarySteward>American Society of Anesthesiologists</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>anesthesiology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6875,26 +6875,26 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>BMI</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6918,16 +6918,16 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>influenza</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6951,14 +6951,14 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>depression</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -6982,33 +6982,33 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>highBloodPressure</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>anesthesiology</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>dermatology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>anesthesiology</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7032,33 +7032,33 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>tobacco</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>dermatology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7082,20 +7082,20 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>alcohol</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7115,8 +7115,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7140,10 +7140,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>POAG</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7167,9 +7167,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>POAG</name>
     </strata>
     <primarySteward>American Academy of Ophthalmology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>ophthalmology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7193,8 +7193,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>hospice</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7218,8 +7218,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>ICU</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7243,8 +7243,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>noHospice</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7268,8 +7268,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>bladder</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7293,8 +7293,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>bowel</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7318,8 +7318,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>ureter</name>
     </strata>
     <primarySteward>American Urogynecologic Society</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7343,8 +7343,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>emergencyDepartment</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7368,8 +7368,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>chemotherapy</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7393,8 +7393,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>prostateCancer</name>
     </strata>
     <primarySteward>American Urological Association Education and Research</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>urology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7418,11 +7418,11 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>prostateCancer</name>
     </strata>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>radiationOncology</measureSets>
-    <measureSets>urology</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>radiationOncology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7446,9 +7446,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>therapy</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7472,9 +7472,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>headache</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7498,9 +7498,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>HER2</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7529,9 +7529,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CT</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7555,10 +7555,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>prostatectomy</name>
     </strata>
     <primarySteward>College of American Pathologists</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>pathology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7582,9 +7582,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>radiation</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7608,9 +7608,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>mammograms</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7634,9 +7634,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>mammogram</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7660,9 +7660,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>carotidImaging</name>
     </strata>
     <primarySteward>American College of Radiology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>diagnosticRadiology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7686,9 +7686,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CAS</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>interventionalRadiology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7712,8 +7712,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CEA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7737,8 +7737,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>AAA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7762,9 +7762,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>AAA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>interventionalRadiology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7788,7 +7788,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>AAA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -7812,8 +7812,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>AAA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7837,9 +7837,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CAS</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>interventionalRadiology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7863,7 +7863,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CEA</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -7887,8 +7887,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>OAD</name>
     </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -7912,8 +7912,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>dizziness</name>
     </strata>
     <primarySteward>Audiology Quality Consortium</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -7937,9 +7937,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>RA</name>
     </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>rheumatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7963,9 +7963,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>RA</name>
     </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>rheumatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -7989,9 +7989,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>RA</name>
     </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>rheumatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8015,8 +8015,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>RA</name>
     </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>rheumatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8040,8 +8040,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>RA</name>
     </strata>
     <primarySteward>American College of Rheumatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>rheumatology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8065,9 +8065,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>Rhogam</name>
     </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8091,7 +8091,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>CABG</name>
     </strata>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8115,8 +8115,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>colonoscopy</name>
     </strata>
     <primarySteward>American Society for Gastrointestinal Endoscopy</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>gastroenterology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8140,9 +8140,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>DXA</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>preventiveMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8166,7 +8166,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>SLN</name>
     </strata>
     <primarySteward>American Society of Breast Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8190,7 +8190,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>sleepApnea</name>
     </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8214,7 +8214,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>sleepApnea</name>
     </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8238,7 +8238,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>sleepApnea</name>
     </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8262,7 +8262,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>sleepApnea</name>
     </strata>
     <primarySteward>American Academy of Sleep Medicine</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8286,7 +8286,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>lowerExtremityBypass</name>
     </strata>
     <primarySteward>Society for Vascular Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8315,11 +8315,11 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>highRiskCardiovascular</name>
     </strata>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
-    <submissionMethods>cmsWebInterface</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8343,10 +8343,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>strokeTIA</name>
     </strata>
     <primarySteward>American Academy of Neurology</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8370,7 +8370,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>stroke</name>
     </strata>
     <primarySteward>American Heart Association</primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8394,11 +8394,11 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>SSI</name>
     </strata>
     <primarySteward>American College of Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>plasticSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>plasticSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8422,31 +8422,31 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>tobacco</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>allergyImmunology</measureSets>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>cardiology</measureSets>
-    <measureSets>dermatology</measureSets>
-    <measureSets>emergencyMedicine</measureSets>
-    <measureSets>gastroenterology</measureSets>
-    <measureSets>generalSurgery</measureSets>
-    <measureSets>generalOncology</measureSets>
-    <measureSets>hospitalists</measureSets>
-    <measureSets>neurology</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>ophthalmology</measureSets>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>otolaryngology</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>thoracicSurgery</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>vascularSurgery</measureSets>
-    <measureSets>mentalBehavioralHealth</measureSets>
-    <measureSets>plasticSurgery</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>hospitalists</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>ophthalmology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8470,8 +8470,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>kneeReplacement</name>
     </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8495,8 +8495,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>kneeReplacement</name>
     </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8520,8 +8520,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>kneeReplacement</name>
     </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8545,8 +8545,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>kneeReplacement</name>
     </strata>
     <primarySteward>American Association of Hip and Knee Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8570,8 +8570,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>AJCC</name>
     </strata>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalOncology</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8595,10 +8595,10 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>tuberculosis</name>
     </strata>
     <primarySteward>American Academy of Dermatology</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>dermatology</measureSets>
-    <measureSets>rheumatology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>dermatology</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8622,9 +8622,9 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>ED</name>
     </strata>
     <primarySteward>American College of Emergency Physicians</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>emergencyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8648,8 +8648,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>readmission</name>
     </strata>
     <primarySteward>American College of Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8673,8 +8673,8 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>reoperation</name>
     </strata>
     <primarySteward>American College of Surgeons</primarySteward>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>generalSurgery</measureSets>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8698,11 +8698,11 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>UTI</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>preventiveMedicine</measureSets>
-    <measureSets>urology</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8726,12 +8726,12 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
       <name>UTI</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>claims</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
-    <measureSets>internalMedicine</measureSets>
-    <measureSets>obstetricsGynecology</measureSets>
-    <measureSets>urology</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>claims</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8761,8 +8761,8 @@ b. Percentage of patients who were ordered at least two different high-risk medi
       <name>2+</name>
     </strata>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>ehr</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8782,10 +8782,10 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>orthopedicSurgery</measureSets>
-    <measureSets>physicalMedicine</measureSets>
-    <measureSets>generalPracticeFamilyMedicine</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
     <category>quality</category>
@@ -8809,7 +8809,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
       <name>CEAP_C2-S</name>
     </strata>
     <primarySteward>Society of Interventional Radiology </primarySteward>
-    <submissionMethods>registry</submissionMethods>
+    <submissionMethod>registry</submissionMethod>
   </measure>
   <measure>
     <category>quality</category>
@@ -8833,7 +8833,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <isInverse>false</isInverse>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
-    <submissionMethods>ehr</submissionMethods>
-    <measureSets>pediatrics</measureSets>
+    <submissionMethod>ehr</submissionMethod>
+    <measureSet>pediatrics</measureSet>
   </measure>
 </measures>
