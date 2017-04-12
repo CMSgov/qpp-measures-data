@@ -1,1217 +1,992 @@
 [
   {
     "qualityId": "001",
-    "performanceRates": ["A1c>9.0%"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["A1c>9.0%"]
   },
   {
     "qualityId": "005",
-    "performanceRates": ["LVEF<40%"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["LVEF<40%"]
   },
   {
     "qualityId": "006",
-    "performanceRates": ["CAD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CAD"]
   },
   {
     "qualityId": "007",
     "performanceRates": ["LVEF<40%", "myocardialInfarction"],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "008",
-    "performanceRates": ["HF"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HF"]
   },
   {
     "qualityId": "012",
-    "performanceRates": ["POAG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["POAG"]
   },
   {
     "qualityId": "014",
-    "performanceRates": ["AMD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AMD"]
   },
   {
     "qualityId": "019",
-    "performanceRates": ["diabeticRetinopathy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["diabeticRetinopathy"]
   },
   {
     "qualityId": "021",
-    "performanceRates": ["prophylacticAntibiotic"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["prophylacticAntibiotic"]
   },
   {
     "qualityId": "023",
-    "performanceRates": ["VTE"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["VTE"]
   },
   {
     "qualityId": "024",
-    "performanceRates": ["fracture"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["fracture"]
   },
   {
     "qualityId": "032",
-    "performanceRates": ["strokeTIA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["strokeTIA"]
   },
   {
     "qualityId": "039",
-    "performanceRates": ["DXA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["DXA"]
   },
   {
     "qualityId": "043",
-    "performanceRates": ["IMA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["IMA"]
   },
   {
     "qualityId": "044",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "046",
     "performanceRates": ["18-64", "65+", "overall"],
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "047",
-    "performanceRates": ["surrogate"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["surrogate"]
   },
   {
     "qualityId": "048",
-    "performanceRates": ["UTI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["UTI"]
   },
   {
     "qualityId": "050",
-    "performanceRates": ["UTI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["UTI"]
   },
   {
     "qualityId": "051",
-    "performanceRates": ["COPD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["COPD"]
   },
   {
     "qualityId": "052",
-    "performanceRates": ["FEV1/FVC<70%"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["FEV1/FVC<70%"]
   },
   {
     "qualityId": "065",
-    "performanceRates": ["URI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["URI"]
   },
   {
     "qualityId": "066",
-    "performanceRates": ["strep"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["strep"]
   },
   {
     "qualityId": "067",
-    "performanceRates": ["MDS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["MDS"]
   },
   {
     "qualityId": "068",
-    "performanceRates": ["MDS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["MDS"]
   },
   {
     "qualityId": "069",
-    "performanceRates": ["MM"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["MM"]
   },
   {
     "qualityId": "070",
-    "performanceRates": ["CLL"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CLL"]
   },
   {
     "qualityId": "076",
-    "performanceRates": ["CVC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CVC"]
   },
   {
     "qualityId": "091",
-    "performanceRates": ["AOE"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AOE"]
   },
   {
     "qualityId": "093",
-    "performanceRates": ["AOE"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AOE"]
   },
   {
     "qualityId": "099",
-    "performanceRates": ["pTpN"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["pTpN"]
   },
   {
     "qualityId": "100",
-    "performanceRates": ["pTpN"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["pTpN"]
   },
   {
     "qualityId": "102",
-    "performanceRates": ["prostateCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["prostateCancer"]
   },
   {
     "qualityId": "104",
-    "performanceRates": ["prostateCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["prostateCancer"]
   },
   {
     "qualityId": "109",
-    "performanceRates": ["OA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["OA"]
   },
   {
     "qualityId": "110",
-    "performanceRates": ["influenza"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["influenza"]
   },
   {
     "qualityId": "111",
-    "performanceRates": ["pneumococcal"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["pneumococcal"]
   },
   {
     "qualityId": "112",
-    "performanceRates": ["mammogram"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["mammogram"]
   },
   {
     "qualityId": "113",
-    "performanceRates": ["colorectalCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colorectalCancer"]
   },
   {
     "qualityId": "116",
-    "performanceRates": ["bronchitis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["bronchitis"]
   },
   {
     "qualityId": "117",
-    "performanceRates": ["diabetes"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["diabetes"]
   },
   {
     "qualityId": "118",
-    "performanceRates": ["CAD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CAD"]
   },
   {
     "qualityId": "119",
-    "performanceRates": ["diabetes"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["diabetes"]
   },
   {
     "qualityId": "122",
     "performanceRates": ["<140/90mmHg", "planOfCare", "overall"],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "126",
-    "performanceRates": ["DM"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["DM"]
   },
   {
     "qualityId": "127",
-    "performanceRates": ["DM"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["DM"]
   },
   {
     "qualityId": "128",
-    "performanceRates": ["BMI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["BMI"]
   },
   {
     "qualityId": "130",
-    "performanceRates": ["document"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["document"]
   },
   {
     "qualityId": "131",
-    "performanceRates": ["painAssessment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["painAssessment"]
   },
   {
     "qualityId": "134",
-    "performanceRates": ["depression"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["depression"]
   },
   {
     "qualityId": "137",
-    "performanceRates": ["melanoma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["melanoma"]
   },
   {
     "qualityId": "138",
-    "performanceRates": ["melanoma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["melanoma"]
   },
   {
     "qualityId": "140",
-    "performanceRates": ["AMD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AMD"]
   },
   {
     "qualityId": "141",
-    "performanceRates": ["POAG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["POAG"]
   },
   {
     "qualityId": "143",
-    "performanceRates": ["cancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cancer"]
   },
   {
     "qualityId": "144",
-    "performanceRates": ["cancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cancer"]
   },
   {
     "qualityId": "145",
-    "performanceRates": ["radiation"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["radiation"]
   },
   {
     "qualityId": "146",
-    "performanceRates": ["mammograms"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["mammograms"]
   },
   {
     "qualityId": "147",
-    "performanceRates": ["scintigraphy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["scintigraphy"]
   },
   {
     "qualityId": "154",
-    "performanceRates": ["falls"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["falls"]
   },
   {
     "qualityId": "155",
-    "performanceRates": ["falls"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["falls"]
   },
   {
     "qualityId": "156",
-    "performanceRates": ["cancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cancer"]
   },
   {
     "qualityId": "164",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "165",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "166",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "167",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "168",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "176",
-    "performanceRates": ["RA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["RA"]
   },
   {
     "qualityId": "177",
-    "performanceRates": ["RA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["RA"]
   },
   {
     "qualityId": "178",
-    "performanceRates": ["RA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["RA"]
   },
   {
     "qualityId": "179",
-    "performanceRates": ["RA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["RA"]
   },
   {
     "qualityId": "180",
-    "performanceRates": ["RA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["RA"]
   },
   {
     "qualityId": "181",
-    "performanceRates": ["elderMaltreament"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["elderMaltreament"]
   },
   {
     "qualityId": "182",
-    "performanceRates": ["functionalOutcome"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["functionalOutcome"]
   },
   {
     "qualityId": "185",
-    "performanceRates": ["colonoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colonoscopy"]
   },
   {
     "qualityId": "187",
-    "performanceRates": ["stroke"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["stroke"]
   },
   {
     "qualityId": "191",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "192",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "195",
-    "performanceRates": ["carotidImaging"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["carotidImaging"]
   },
   {
     "qualityId": "204",
-    "performanceRates": ["AMI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AMI"]
   },
   {
     "qualityId": "205",
-    "performanceRates": ["HIV/AIDS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HIV/AIDS"]
   },
   {
     "qualityId": "217",
-    "performanceRates": ["kneeImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["kneeImpairment"]
   },
   {
     "qualityId": "218",
-    "performanceRates": ["hipImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["hipImpairment"]
   },
   {
     "qualityId": "219",
-    "performanceRates": ["footImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["footImpairment"]
   },
   {
     "qualityId": "220",
-    "performanceRates": ["lumbarImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["lumbarImpairment"]
   },
   {
     "qualityId": "221",
-    "performanceRates": ["shoulderImpariment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["shoulderImpariment"]
   },
   {
     "qualityId": "222",
-    "performanceRates": ["armImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["armImpairment"]
   },
   {
     "qualityId": "223",
-    "performanceRates": ["orthopaedicImpairment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["orthopaedicImpairment"]
   },
   {
     "qualityId": "224",
-    "performanceRates": ["melanoma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["melanoma"]
   },
   {
     "qualityId": "225",
-    "performanceRates": ["mammogram"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["mammogram"]
   },
   {
     "qualityId": "226",
-    "performanceRates": ["tobacco"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["tobacco"]
   },
   {
     "qualityId": "236",
-    "performanceRates": ["hypertension"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["hypertension"]
   },
   {
     "qualityId": "238",
     "performanceRates": ["overall", "2+"],
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "243",
-    "performanceRates": ["outpatient"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["outpatient"]
   },
   {
     "qualityId": "249",
-    "performanceRates": ["barrettsMucosa"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["barrettsMucosa"]
   },
   {
     "qualityId": "250",
-    "performanceRates": ["prostatectomy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["prostatectomy"]
   },
   {
     "qualityId": "251",
-    "performanceRates": ["HER2"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HER2"]
   },
   {
     "qualityId": "254",
-    "performanceRates": ["ED"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ED"]
   },
   {
     "qualityId": "255",
-    "performanceRates": ["Rhogam"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["Rhogam"]
   },
   {
     "qualityId": "257",
-    "performanceRates": ["lowerExtremityBypass"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["lowerExtremityBypass"]
   },
   {
     "qualityId": "258",
-    "performanceRates": ["AAA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AAA"]
   },
   {
     "qualityId": "259",
-    "performanceRates": ["AAA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AAA"]
   },
   {
     "qualityId": "260",
-    "performanceRates": ["CEA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CEA"]
   },
   {
     "qualityId": "261",
-    "performanceRates": ["dizziness"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dizziness"]
   },
   {
     "qualityId": "262",
-    "performanceRates": ["imageConfirmation"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["imageConfirmation"]
   },
   {
     "qualityId": "263",
-    "performanceRates": ["breastCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["breastCancer"]
   },
   {
     "qualityId": "264",
-    "performanceRates": ["SLN"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["SLN"]
   },
   {
     "qualityId": "265",
-    "performanceRates": ["biopsy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["biopsy"]
   },
   {
     "qualityId": "268",
-    "performanceRates": ["epilepsy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["epilepsy"]
   },
   {
     "qualityId": "271",
-    "performanceRates": ["IBD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["IBD"]
   },
   {
     "qualityId": "275",
-    "performanceRates": ["IBD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["IBD"]
   },
   {
     "qualityId": "276",
-    "performanceRates": ["sleepApnea"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sleepApnea"]
   },
   {
     "qualityId": "277",
-    "performanceRates": ["sleepApnea"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sleepApnea"]
   },
   {
     "qualityId": "278",
-    "performanceRates": ["sleepApnea"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sleepApnea"]
   },
   {
     "qualityId": "279",
-    "performanceRates": ["sleepApnea"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sleepApnea"]
   },
   {
     "qualityId": "282",
-    "performanceRates": ["dementia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dementia"]
   },
   {
     "qualityId": "283",
-    "performanceRates": ["dementia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dementia"]
   },
   {
     "qualityId": "284",
-    "performanceRates": ["dementia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dementia"]
   },
   {
     "qualityId": "286",
-    "performanceRates": ["dementia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dementia"]
   },
   {
     "qualityId": "288",
-    "performanceRates": ["dementia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["dementia"]
   },
   {
     "qualityId": "290",
-    "performanceRates": ["parkinsons"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["parkinsons"]
   },
   {
     "qualityId": "291",
-    "performanceRates": ["parkinsons"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["parkinsons"]
   },
   {
     "qualityId": "293",
-    "performanceRates": ["parkinsons"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["parkinsons"]
   },
   {
     "qualityId": "294",
-    "performanceRates": ["parkinsons"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["parkinsons"]
   },
   {
     "qualityId": "303",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "304",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "317",
-    "performanceRates": ["highBloodPressure"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["highBloodPressure"]
   },
   {
     "qualityId": "320",
-    "performanceRates": ["colonoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colonoscopy"]
   },
   {
     "qualityId": "322",
-    "performanceRates": ["preoperative"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["preoperative"]
   },
   {
     "qualityId": "323",
-    "performanceRates": ["PCI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["PCI"]
   },
   {
     "qualityId": "324",
-    "performanceRates": ["CHD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CHD"]
   },
   {
     "qualityId": "325",
-    "performanceRates": ["comorbid"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["comorbid"]
   },
   {
     "qualityId": "326",
-    "performanceRates": ["AF"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AF"]
   },
   {
     "qualityId": "327",
-    "performanceRates": ["ESRD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ESRD"]
   },
   {
     "qualityId": "328",
-    "performanceRates": ["ESRD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ESRD"]
   },
   {
     "qualityId": "329",
-    "performanceRates": ["ESRD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ESRD"]
   },
   {
     "qualityId": "330",
-    "performanceRates": ["ESRD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ESRD"]
   },
   {
     "qualityId": "331",
-    "performanceRates": ["sinusitis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sinusitis"]
   },
   {
     "qualityId": "332",
-    "performanceRates": ["sinusitis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sinusitis"]
   },
   {
     "qualityId": "333",
-    "performanceRates": ["sinusitis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sinusitis"]
   },
   {
     "qualityId": "334",
-    "performanceRates": ["sinusitis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["sinusitis"]
   },
   {
     "qualityId": "335",
-    "performanceRates": ["birth"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["birth"]
   },
   {
     "qualityId": "336",
-    "performanceRates": ["postPartum"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["postPartum"]
   },
   {
     "qualityId": "337",
-    "performanceRates": ["tuberculosis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["tuberculosis"]
   },
   {
     "qualityId": "338",
-    "performanceRates": ["HIV"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HIV"]
   },
   {
     "qualityId": "340",
-    "performanceRates": ["HIV"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HIV"]
   },
   {
     "qualityId": "342",
-    "performanceRates": ["pain"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["pain"]
   },
   {
     "qualityId": "343",
-    "performanceRates": ["colonoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colonoscopy"]
   },
   {
     "qualityId": "344",
-    "performanceRates": ["CAS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CAS"]
   },
   {
     "qualityId": "345",
-    "performanceRates": ["CAS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CAS"]
   },
   {
     "qualityId": "346",
-    "performanceRates": ["CEA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CEA"]
   },
   {
     "qualityId": "347",
-    "performanceRates": ["AAA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AAA"]
   },
   {
     "qualityId": "348",
     "performanceRates": ["30", "90"],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "350",
-    "performanceRates": ["kneeReplacement"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["kneeReplacement"]
   },
   {
     "qualityId": "351",
-    "performanceRates": ["kneeReplacement"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["kneeReplacement"]
   },
   {
     "qualityId": "352",
-    "performanceRates": ["kneeReplacement"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["kneeReplacement"]
   },
   {
     "qualityId": "353",
-    "performanceRates": ["kneeReplacement"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["kneeReplacement"]
   },
   {
     "qualityId": "354",
-    "performanceRates": ["colectomy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colectomy"]
   },
   {
     "qualityId": "355",
-    "performanceRates": ["reoperation"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["reoperation"]
   },
   {
     "qualityId": "356",
-    "performanceRates": ["readmission"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["readmission"]
   },
   {
     "qualityId": "357",
-    "performanceRates": ["SSI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["SSI"]
   },
   {
     "qualityId": "358",
-    "performanceRates": ["surgery"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["surgery"]
   },
   {
     "qualityId": "359",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "360",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "361",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "362",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "363",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "364",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "370",
-    "performanceRates": ["depression"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["depression"]
   },
   {
     "qualityId": "383",
-    "performanceRates": ["schizophrenia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["schizophrenia"]
   },
   {
     "qualityId": "384",
-    "performanceRates": ["retinalDetachment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["retinalDetachment"]
   },
   {
     "qualityId": "385",
-    "performanceRates": ["retinalDetachment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["retinalDetachment"]
   },
   {
     "qualityId": "386",
-    "performanceRates": ["ALS"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ALS"]
   },
   {
     "qualityId": "387",
-    "performanceRates": ["HCV"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HCV"]
   },
   {
     "qualityId": "388",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "389",
-    "performanceRates": ["cataract"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cataract"]
   },
   {
     "qualityId": "390",
-    "performanceRates": ["hepC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["hepC"]
   },
   {
     "qualityId": "391",
     "performanceRates": ["30days", "overall"],
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "392",
     "performanceRates": ["18-64F", "18-64M", "65+F", "65+M", "overall"],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "393",
-    "performanceRates": ["CIED"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CIED"]
   },
   {
     "qualityId": "394",
     "performanceRates": ["meningococcal", "Tdap", "HPV", "overall"],
-    "overallAlgorithm": "sumNumerators"
+    "overallAlgorithm": "sumNumerators",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "395",
-    "performanceRates": ["lungCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["lungCancer"]
   },
   {
     "qualityId": "396",
-    "performanceRates": ["lungCarcinoma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["lungCarcinoma"]
   },
   {
     "qualityId": "397",
-    "performanceRates": ["melanoma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["melanoma"]
   },
   {
     "qualityId": "398",
     "performanceRates": ["overall", "5-17", "18-50", "ACT5-17", "ACT18-50", "lowRisk5-17", "lowRisk18-50"],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate"
   },
   {
     "qualityId": "400",
-    "performanceRates": ["HCV"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["HCV"]
   },
   {
     "qualityId": "401",
-    "performanceRates": ["hepC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["hepC"]
   },
   {
     "qualityId": "402",
-    "performanceRates": ["tobacco"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["tobacco"]
   },
   {
     "qualityId": "403",
-    "performanceRates": ["ESRD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ESRD"]
   },
   {
     "qualityId": "404",
-    "performanceRates": ["cigarettes"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cigarettes"]
   },
   {
     "qualityId": "405",
-    "performanceRates": ["abdominalImaging"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["abdominalImaging"]
   },
   {
     "qualityId": "406",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "407",
-    "performanceRates": ["MSSA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["MSSA"]
   },
   {
     "qualityId": "408",
-    "performanceRates": ["opiates"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["opiates"]
   },
   {
     "qualityId": "409",
-    "performanceRates": ["stroke"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["stroke"]
   },
   {
     "qualityId": "410",
-    "performanceRates": ["therapy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["therapy"]
   },
   {
     "qualityId": "411",
-    "performanceRates": ["remission"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["remission"]
   },
   {
     "qualityId": "412",
-    "performanceRates": ["opiates"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["opiates"]
   },
   {
     "qualityId": "413",
-    "performanceRates": ["stroke"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["stroke"]
   },
   {
     "qualityId": "414",
-    "performanceRates": ["opioidRisk"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["opioidRisk"]
   },
   {
     "qualityId": "415",
-    "performanceRates": ["headTrauma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["headTrauma"]
   },
   {
     "qualityId": "416",
-    "performanceRates": ["headTrauma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["headTrauma"]
   },
   {
     "qualityId": "417",
-    "performanceRates": ["AAA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AAA"]
   },
   {
     "qualityId": "418",
-    "performanceRates": ["osteoporosis"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["osteoporosis"]
   },
   {
     "qualityId": "419",
-    "performanceRates": ["headache"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["headache"]
   },
   {
     "qualityId": "420",
-    "performanceRates": ["CEAP_C2-S"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CEAP_C2-S"]
   },
   {
     "qualityId": "421",
-    "performanceRates": ["IVC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["IVC"]
   },
   {
     "qualityId": "422",
-    "performanceRates": ["cystoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cystoscopy"]
   },
   {
     "qualityId": "423",
-    "performanceRates": ["CEA"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CEA"]
   },
   {
     "qualityId": "424",
-    "performanceRates": ["anesthesia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["anesthesia"]
   },
   {
     "qualityId": "425",
-    "performanceRates": ["colonoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colonoscopy"]
   },
   {
     "qualityId": "426",
-    "performanceRates": ["PACU"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["PACU"]
   },
   {
     "qualityId": "427",
-    "performanceRates": ["ICU"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ICU"]
   },
   {
     "qualityId": "428",
-    "performanceRates": ["urinaryIncontinence"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["urinaryIncontinence"]
   },
   {
     "qualityId": "429",
-    "performanceRates": ["uterineMalignancy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["uterineMalignancy"]
   },
   {
     "qualityId": "430",
-    "performanceRates": ["PONV"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["PONV"]
   },
   {
     "qualityId": "431",
-    "performanceRates": ["alcohol"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["alcohol"]
   },
   {
     "qualityId": "432",
-    "performanceRates": ["bladder"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["bladder"]
   },
   {
     "qualityId": "433",
-    "performanceRates": ["bowel"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["bowel"]
   },
   {
     "qualityId": "434",
-    "performanceRates": ["ureter"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ureter"]
   },
   {
     "qualityId": "435",
-    "performanceRates": ["headache"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["headache"]
   },
   {
     "qualityId": "436",
-    "performanceRates": ["CT"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CT"]
   },
   {
     "qualityId": "437",
-    "performanceRates": ["OAD"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["OAD"]
   },
   {
     "qualityId": "438",
-    "performanceRates": ["highRiskCardiovascular"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["highRiskCardiovascular"]
   },
   {
     "qualityId": "439",
-    "performanceRates": ["colonoscopy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["colonoscopy"]
   },
   {
     "qualityId": "440",
-    "performanceRates": ["BCC&SCC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["BCC&SCC"]
   },
   {
     "qualityId": "441",
-    "performanceRates": ["IVDAllOrNone"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["IVDAllOrNone"]
   },
   {
     "qualityId": "442",
-    "performanceRates": ["AMI"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AMI"]
   },
   {
     "qualityId": "443",
-    "performanceRates": ["cervicalCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["cervicalCancer"]
   },
   {
     "qualityId": "444",
-    "performanceRates": ["asthma"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["asthma"]
   },
   {
     "qualityId": "445",
-    "performanceRates": ["CABG"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["CABG"]
   },
   {
     "qualityId": "446",
-    "performanceRates": ["congenitalHeartSurgery"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["congenitalHeartSurgery"]
   },
   {
     "qualityId": "447",
-    "performanceRates": ["chlamydia"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["chlamydia"]
   },
   {
     "qualityId": "448",
-    "performanceRates": ["endometrialAblation"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["endometrialAblation"]
   },
   {
     "qualityId": "449",
-    "performanceRates": ["breastCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["breastCancer"]
   },
   {
     "qualityId": "450",
-    "performanceRates": ["AJCC"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["AJCC"]
   },
   {
     "qualityId": "451",
-    "performanceRates": ["KRASGeneMutation"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["KRASGeneMutation"]
   },
   {
     "qualityId": "452",
-    "performanceRates": ["metastaticColorectalCancer"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["metastaticColorectalCancer"]
   },
   {
     "qualityId": "453",
-    "performanceRates": ["chemotherapy"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["chemotherapy"]
   },
   {
     "qualityId": "454",
-    "performanceRates": ["emergencyDepartment"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["emergencyDepartment"]
   },
   {
     "qualityId": "455",
-    "performanceRates": ["ICU"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["ICU"]
   },
   {
     "qualityId": "456",
-    "performanceRates": ["noHospice"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["noHospice"]
   },
   {
     "qualityId": "457",
-    "performanceRates": ["hospice"],
-    "overallAlgorithm": "simpleAverage"
+    "performanceRates": ["hospice"]
   }
 ]

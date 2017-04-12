@@ -206,8 +206,8 @@ function parseQpp(json) {
       } else if (category === 'quality') {
         // isInverse defaults to false;
         obj.isInverse = qualityIdToIsInverseMap[obj.qualityId.replace(/^0*/, '')] || false;
-        obj.metricType = 'performanceRate';
-        obj.overallAlgorithm = 'simpleAverage';
+        // metricType for quality defaults to singlePerformanceRate
+        obj.metricType = 'singlePerformanceRate';
         obj.strata = [];
       }
     }

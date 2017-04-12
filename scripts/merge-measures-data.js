@@ -1,4 +1,4 @@
-// this script merges the tmp/quality-performance-rates.json, 
+// this script merges the tmp/quality-performance-rates.json,
 // measures/quality-measures-additional-info.json, and the measures from stdin
 // into a new file that has more info about each performance strata
 var _     = require('lodash');
@@ -43,6 +43,10 @@ function mergeQpp(qppJson) {
 
       qppJson[index].strata = strataDetails;
       qppJson[index].overallAlgorithm = performanceRateInfo.overallAlgorithm;
+
+      if (performanceRateInfo.metricType) {
+        qppJson[index].metricType = performanceRateInfo.metricType;
+      }
     }
   });
 

@@ -15,7 +15,7 @@ definitions:
         enum: [ia, quality, aci, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
-        enum: [boolean, proportion, performanceRate, continuous]
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, continuous]
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer
@@ -101,7 +101,7 @@ definitions:
         description: Formula to determine the overall performance rate, given multiple strata of performance rates.
         enum: [simpleAverage, weightedAverage, sumNumerators]
       strata:
-        description: Population segments for which the measure requires reporting data.
+        description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
         type: array
         items: { $ref: #/definitions/performanceStrata }
       primarySteward:
@@ -111,7 +111,7 @@ definitions:
         description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
-    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, overallAlgorithm, strata, primarySteward, measureSets]
+    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
     type: object
