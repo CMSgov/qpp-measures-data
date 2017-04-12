@@ -17,8 +17,8 @@ var SUBMISSION_METHOD_MAP = {
   'registry/qcdr': 'registry',
   'cmswebinterface': 'cmsWebInterface',
   'administrativeclaims': 'administrativeClaims',
-  'ehr': 'ehr',
-  'cmsapprovedcahpsvendor': 'cmsApprovedCahpsVendor'
+  'ehr': 'electronicHealthRecord',
+  'cmsapprovedcahpsvendor': 'certifiedSurveyVendor'
 };
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
