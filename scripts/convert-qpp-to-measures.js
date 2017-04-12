@@ -197,6 +197,10 @@ function parseQpp(json) {
         obj.primarySteward = measure[j];
       } else if (j === 'submission_method') {
         obj.submissionMethods = _.map(measure[j], function(method) {
+          method = {
+            EHR: 'electronicHealthRecord',
+            CSV: 'certifiedSurveyVendor'
+          }[method] || method;
           return formatString(method);
         });
       } else if (j === 'speciality_list') {
