@@ -130,7 +130,7 @@ describe('formatBenchmarkRecord', function() {
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
           expect(benchmark.measureId, 'measureId').to.equal('CMS68v60419130');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('ehr');
+          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
           expect(benchmark.deciles).to.eql([0, 76.59, 87.89, 92.74, 95.36, 97.09, 98.28, 99.13, 99.76]);
@@ -191,7 +191,7 @@ describe('formatBenchmarkRecord', function() {
 
             expect(benchmark).to.exist;
             expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
-            expect(benchmark.submissionMethod, 'submissionMethod').to.equal('ehr');
+            expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
             expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
             expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
             expect(benchmark.deciles).to.eql([100, 54.67, 35.90, 25.62, 19.33, 14.14, 9.09, 3.33, 0]);

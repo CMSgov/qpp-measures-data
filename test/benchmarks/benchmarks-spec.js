@@ -15,7 +15,6 @@ describe('benchmarks getter functions', function() {
     });
 
     it('should return an object keyed by performance year with array values', function() {
-      console.log('getBenchmarksData:', getBenchmarksData());
       assert(Array.isArray(getBenchmarksData()[2017]));
     });
 
