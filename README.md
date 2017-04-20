@@ -35,7 +35,7 @@ For example, `benchmarks/2017.json` contains the benchmarks for performance year
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
 The module can be used with the following pattern:
 ```javascript
-var qppMeasuresData = require('@cmsgov/qpp-measures-data');
+var qppMeasuresData = require('qpp-measures-data');
 var measuresData = qppMeasuresData.getMeasuresData();
 var measuresSchema = qppMeasuresData.getMeasuresSchema();
 var benchmarksData = qppMeasuresData.getBenchmarksData(2017);
@@ -105,4 +105,3 @@ npm run test
 
 1. **Attestations:** Attestations are pre-requisites of submitting additional measurements for a given category.
 2. **Exclusions:** Exclusions are optional attestations of conditions which exempt the provider from a corresponding (required) measure. For example, submitting `true` to `ACI_LVPP_1` exempts a user from submitting data for the required measure `ACI_EP_1`.
-
