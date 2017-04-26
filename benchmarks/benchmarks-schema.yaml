@@ -8,7 +8,7 @@ definitions:
     type: object
     properties:
       measureId:
-        description: measureId corresponds to a measure object's measureId
+        description: measureId corresponds to a measure object's measureId. For quality measures, measureId is the same as qualityId.
         type: string
       performanceYear:
         description: The performanceYear four digit integer corresponds to the time period of the performance data that was submitted for scoring.

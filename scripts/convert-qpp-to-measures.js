@@ -118,7 +118,7 @@ process.stdin.on('end', () => {
  *    emsr_id               | eMeasureId
  *    nqf_emsr_num          | nqfEMeasureId
  *    nqf_num               | nqfId
- *    qlty_id               | qualityId
+ *    qlty_id               |
  *    high_prrty_msr_sw     | isHighPriority
  *    submission_method     | submissionMethods
  *    speciality_list       | measureSets
@@ -142,7 +142,7 @@ function parseQpp(json) {
   }
   var result = [];
 
-  for (var i=0; i< measureList.length; i++) {
+  for (var i = 0; i < measureList.length; i++) {
     var measure = measureList[i];
     var obj = {};
     obj.category = category;
@@ -150,61 +150,64 @@ function parseQpp(json) {
     obj.lastPerformanceYear = null;
     obj.metricType = 'boolean'; // default
 
-    for (var j in measure) {
-      if (j === 'measure_title') {
-        obj.title = measure[j];
-      } else if (j === 'measure_desc') {
-        obj.description = measure[j];
-      } else if (j === 'measure_id') {
-        obj.measureId = measure[j];
+    _.forOwn(measure, function(value, key) {
+      if (key === 'measure_title') {
+        obj.title = value;
+      } else if (key === 'measure_desc') {
+        obj.description = value;
+      } else if (key === 'measure_id') {
+        obj.measureId = value;
+        if (category === 'quality' && measure.qlty_id) {
+          obj.measureId = measure.qlty_id;
+        }
         if (category === 'ia') {
           obj.cehrtEligible = _.includes(CEHRT_ELIGABLE_IA_MEASURE_IDS, obj.measureId);
         }
-      } else if (j === 'actvty_ctgry_desc') {
-        obj.subcategoryId = formatString(measure[j]);
-      } else if (j === 'actvty_wghtng_cd') {
-        obj.weight = measure[j].replace(/ /g, '').toLowerCase();
-      } else if (j === 'base_score_required_sw') {
-        obj.isRequired = measure[j] === 'No' ? false : true;
-      } else if (j === 'performance_score_weight_text') {
-        obj.weight = parseWeight(measure[j]);
-      } else if (j === 'measure_domain_desc') {
-        obj.objective = formatString(measure[j]);
-      } else if (j === 'submitting_requirement_text') {
-        obj.metricType = parseMetricType(measure[j]);
-      } else if (j === 'stage_name') {
-        obj.measureSets = parseMeasureSet(measure[j]);
-      } else if (j === 'bonus_optional_measure_sw') {
-        obj.isBonus = measure[j];
+      } else if (key === 'actvty_ctgry_desc') {
+        obj.subcategoryId = formatString(value);
+      } else if (key === 'actvty_wghtng_cd') {
+        obj.weight = value.replace(/ /g, '').toLowerCase();
+      } else if (key === 'base_score_required_sw') {
+        obj.isRequired = value === 'No' ? false : true;
+      } else if (key === 'performance_score_weight_text') {
+        obj.weight = parseWeight(value);
+      } else if (key === 'measure_domain_desc') {
+        obj.objective = formatString(value);
+      } else if (key === 'submitting_requirement_text') {
+        obj.metricType = parseMetricType(value);
+      } else if (key === 'stage_name') {
+        obj.measureSets = parseMeasureSet(value);
+      } else if (key === 'bonus_optional_measure_sw') {
+        obj.isBonus = value;
         if (obj.isBonus) {
           obj.weight = 5; // override weight if measure is a bonus measure
         }
-      } else if (j === 'national_quality_code') {
-        obj.nationalQualityCode = _.trim(measure[j]);
-      } else if (j === 'measure_type') {
-        obj.measureType = formatString(measure[j]);
-      } else if (j === 'emsr_id') {
-        obj.eMeasureId = parseId(measure[j]);
-      } else if (j === 'nqf_emsr_num') {
-        obj.nqfEMeasureId = parseId(measure[j]);
-      } else if (j === 'nqf_num') {
-        obj.nqfId = parseId(measure[j]);
-      } else if (j === 'qlty_id') {
-        obj.qualityId = parseId(measure[j]);
-      } else if (j === 'high_prrty_msr_sw') {
-        obj.isHighPriority = measure[j] === 'No' ? false : true;
-      } else if (j === 'prmry_msr_stwrd_name') {
-        obj.primarySteward = measure[j];
-      } else if (j === 'submission_method') {
-        obj.submissionMethods = _.map(measure[j], function(method) {
+      } else if (key === 'national_quality_code') {
+        obj.nationalQualityCode = _.trim(value);
+      } else if (key === 'measure_type') {
+        obj.measureType = formatString(value);
+      } else if (key === 'emsr_id') {
+        obj.eMeasureId = parseId(value);
+      } else if (key === 'nqf_emsr_num') {
+        obj.nqfEMeasureId = parseId(value);
+      } else if (key === 'nqf_num') {
+        obj.nqfId = parseId(value);
+      } else if (key === 'qlty_id') {
+        obj.qualityId = parseId(value);
+      } else if (key === 'high_prrty_msr_sw') {
+        obj.isHighPriority = value === 'No' ? false : true;
+      } else if (key === 'prmry_msr_stwrd_name') {
+        obj.primarySteward = value;
+      } else if (key === 'submission_method') {
+        obj.submissionMethods = _.map(value, function(method) {
           method = {
             EHR: 'electronicHealthRecord',
             CSV: 'certifiedSurveyVendor'
           }[method] || method;
           return formatString(method);
         });
-      } else if (j === 'speciality_list') {
-        obj.measureSets = _.map(measure[j], function(speciality) {
+      } else if (key === 'speciality_list') {
+        obj.measureSets = _.map(value, function(speciality) {
           return formatString(speciality);
         });
       } else if (category === 'quality') {
@@ -214,7 +217,7 @@ function parseQpp(json) {
         obj.metricType = 'singlePerformanceRate';
         obj.strata = [];
       }
-    }
+    });
     result.push(obj);
   }
   return JSON.stringify(result, null, 2);

@@ -8,6 +8,10 @@ var measuresData = mipsDataFormat.getMeasuresData();
 describe('measures data json', function() {
   var measureIds = _.map(measuresData, 'measureId');
 
+  it('should not have any duplicate measureIds', function() {
+    assert.equal(_.uniq(measureIds).length, measureIds.length);
+  });
+
   describe('pre-aci attestations', function() {
     var measureIdsSet = new Set(measureIds);
     var requiredAttestationIdsSet = new Set(['ACI_INFBLO_1', 'ACI_ONCDIR_1', 'ACI_ONCACB_1', 'ACI_IACEHRT_1']);

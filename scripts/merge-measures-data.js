@@ -29,11 +29,11 @@ function mergeQpp(qppJson) {
   // iterate through all qppJson measures and find matching items from other json blobs
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category === 'quality') {
-      var performanceRateDescription = _.find(performanceRatesJson, {'qualityId': qppItem.qualityId});
-      var performanceRateInfo = _.find(performanceRateAdditionalJson, {'qualityId': qppItem.qualityId});
+      var performanceRateDescription = _.find(performanceRatesJson, {'qualityId': qppItem.measureId});
+      var performanceRateInfo = _.find(performanceRateAdditionalJson, {'qualityId': qppItem.measureId});
 
       if (!performanceRateDescription || !performanceRateInfo) {
-        return measuresNotFound.push(qppItem.qualityId);
+        return measuresNotFound.push(qppItem.measureId);
       }
 
       var strataDetails = [];

@@ -50,35 +50,49 @@ the measures schema, do the following:
 	```
 	wget https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip .
 	unzip QPP_quality_measure_specifications.zip
-	unzip Claims-Registry-Measures.zip
 	```
 2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quaility measures data.
 	```
-	node scripts/get-quality-measures-from-pdfs.js Claims-Registry-Measures
+	node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
 	```
 
-Then run this command to generate a new measures-data.json file
+Then run this command to generate a new measures-data.json file:
 
 ```
-$ jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
+jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
 ```
 
-To regenerate the `measures-data.xml` file, run `cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml`.
+To regenerate the `measures-data.xml` file, run:
+```
+cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
+```
 
 The measures from `additional-measures.json` must be added, as they are not available via the QPP API.
 
 ### Generating benchmarks data
 To regenerate benchmarks data from historical data use the `scripts/parse-benchmarks-data.js` script
-like so `cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017`;
+like so:
+```
+cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017
+```
 
 ### Validation
 
-We've provided a simple tool to validate JSON against our JSON schema. To validate against
-`measures-schema.yaml`, run `cat [path to JSON] | node scripts/validate-data.js measures`.
-For benchmarks, run `cat [path to JSON] | node scripts/validate-data.js benchmarks`.
-
-For example, running `cat measures/measures-data.json | node scripts/validate-data.js measures`
+We've provided a simple tool to validate JSON against our JSON schema.
+For example, running
+```
+cat measures/measures-data.json | node scripts/validate-data.js measures
+```
 validates the latest version of `measures-data.json` against the latest `measures-schema.yaml`.
+
+To validate measures against `measures-schema.yaml`, run:
+```
+cat [path to measures JSON] | node scripts/validate-data.js measures
+```
+To validate benchmarks against `benchmarks-schema.yaml`, run:
+```
+cat [path to benchmarks JSON] | node scripts/validate-data.js benchmarks
+```
 
 ## How to Contribute to qpp-measures-data
 
@@ -89,7 +103,10 @@ Install the following brew modules:
 brew install jq wget poppler
 ```
 
-Run `npm install`.
+Run:
+```
+npm install
+```
 
 ### Testing
 
