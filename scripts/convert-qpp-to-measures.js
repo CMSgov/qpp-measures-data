@@ -44,22 +44,22 @@ var benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, fr
 // Commandline arguments
 var category = process.argv[2] || 'ia';
 // Variables
-var qualityIdToIsInverseMap = {};
+var measureIdToIsInverseMap = {};
 var qpp = '';
 
 benchmarkRecords.forEach(function(record) {
-  // NOTE: qualityId is not unique per record. (A qualityId and submissionMethod
-  // combination are unique.) Because quality ids are not unique we need to make
-  // sure that measures that are inverse do not get reset to the default due to
-  // submission methods that do not have decile data.
-  // For example, qualityId 378 EHR has decile data and can be determined to be
-  // an inverse measure, but 378 Registry/QCDR does not have decile data and
-  // would be determined to be a direct measure by default.
+  // NOTE: a measureId is not unique per record.
+  // A measureId and submissionMethod combination are unique.
+  // Because quality ids are not unique we need to make sure that measures that
+  // are inverse do not get reset to the default due to submission methods that
+  // do not have decile data. For example, 378 EHR has decile data and can be
+  // determined to be an inverse measure, but 378 Registry/QCDR does not have
+  // decile data and would be determined to be a direct measure by default.
   //
   // A measure's benchmarks are all inverse or all direct, regardless of the
   // submission method.
-  if (!qualityIdToIsInverseMap[record.qualityId]) {
-    qualityIdToIsInverseMap[record.qualityId] = isInverseBenchmarkRecord(record);
+  if (!measureIdToIsInverseMap[record.qualityId]) {
+    measureIdToIsInverseMap[record.qualityId] = isInverseBenchmarkRecord(record);
   }
 });
 
@@ -114,11 +114,10 @@ process.stdin.on('end', () => {
  *    measure_desc          | description
  *    national_quality_code | nationalQualityCode
  *    measure_type          | measureType
- *    measure_id            | measureId
  *    emsr_id               | eMeasureId
  *    nqf_emsr_num          | nqfEMeasureId
  *    nqf_num               | nqfId
- *    qlty_id               |
+ *    qlty_id               | measureId
  *    high_prrty_msr_sw     | isHighPriority
  *    submission_method     | submissionMethods
  *    speciality_list       | measureSets
@@ -192,8 +191,6 @@ function parseQpp(json) {
         obj.nqfEMeasureId = parseId(value);
       } else if (key === 'nqf_num') {
         obj.nqfId = parseId(value);
-      } else if (key === 'qlty_id') {
-        obj.qualityId = parseId(value);
       } else if (key === 'high_prrty_msr_sw') {
         obj.isHighPriority = value === 'No' ? false : true;
       } else if (key === 'prmry_msr_stwrd_name') {
@@ -212,7 +209,7 @@ function parseQpp(json) {
         });
       } else if (category === 'quality') {
         // isInverse defaults to false;
-        obj.isInverse = qualityIdToIsInverseMap[obj.qualityId.replace(/^0*/, '')] || false;
+        obj.isInverse = measureIdToIsInverseMap[obj.measureId.replace(/^0*/, '')] || false;
         // metricType for quality defaults to singlePerformanceRate
         obj.metricType = 'singlePerformanceRate';
         obj.strata = [];

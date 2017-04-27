@@ -110,7 +110,7 @@ definitions:
         description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
-    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, strata, primarySteward, measureSets]
+    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
     type: object
