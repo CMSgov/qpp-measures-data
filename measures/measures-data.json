@@ -86,12 +86,44 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "metricType": "boolean",
+    "measureId": "ACI_TRANS_LVPP_1",
+    "title": "Low-Volume Permissible Prescriptions",
+    "description": "A MIPS eligible clinician (EC) who writes fewer than 100 permissible prescriptions during the performance period is eligible for exclusion from the required e-prescribing measure.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "electronicPrescribing"
+  },
+  {
+    "category": "aci",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
     "measureId": "ACI_LVOTC_1",
     "title": "Low-Volume Outgoing Transfer of Care",
     "description": "Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.",
     "isRequired": false,
     "weight": 0,
     "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange"
+  },
+  {
+    "category": "aci",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "ACI_TRANS_LVOTC_1",
+    "title": "Low-Volume Outgoing Transfer of Care",
+    "description": "Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
     "isBonus": false,
     "objective": "healthInformationExchange"
   },
