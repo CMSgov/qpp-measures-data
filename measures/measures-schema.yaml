@@ -88,7 +88,6 @@ definitions:
       nqfId:
         description: Identifier for the National Quality Forum (NQF) measure.
         type: ['null', string]
-      qualityId: { type: ['null', string] }
       isHighPriority:
         description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
         type: boolean
@@ -111,7 +110,7 @@ definitions:
         description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
-    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, qualityId, isHighPriority, isInverse, strata, primarySteward, measureSets]
+    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
     type: object

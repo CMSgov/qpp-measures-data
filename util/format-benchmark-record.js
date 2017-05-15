@@ -23,13 +23,13 @@ var SUBMISSION_METHOD_MAP = {
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
-var QUALITY_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
+var MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
   /**
-   * NOTE: The qualityId is usually a string integer.
+   * NOTE: Quality measurements' measureIds are usually string integers.
    * There are some non-integer qualityIds in the demo benchmarks csv,
    * e.g. '316A' and '316B'.
    */
-  return measure.qualityId ? measure.qualityId.replace(/^0*/, '') : undefined;
+  return measure.measureId.replace(/^0*/, '');
 });
 // Helper Functions
 /**
@@ -158,8 +158,9 @@ var formatBenchmarkRecord = function(record, options) {
   /**
    * NOTE: Some of the benchmarks don't correspond to
    * any of the measures currently in our json.
+   * NOTE: Quality measurement measureIds are equal to their qualityIds.
    */
-  var measure = QUALITY_ID_TO_MEASURE_MAP[record.qualityId];
+  var measure = MEASURE_ID_TO_MEASURE_MAP[record.qualityId];
 
   if (!measure) return;
   if (record.benchmark.trim() === 'N') return;

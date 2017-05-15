@@ -129,7 +129,7 @@ describe('formatBenchmarkRecord', function() {
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('CMS68v60419130');
+          expect(benchmark.measureId, 'measureId').to.equal('130');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -158,7 +158,7 @@ describe('formatBenchmarkRecord', function() {
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('0391099');
+          expect(benchmark.measureId, 'measureId').to.equal('099');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -190,7 +190,7 @@ describe('formatBenchmarkRecord', function() {
             var benchmark = formatBenchmarkRecord(record, options);
 
             expect(benchmark).to.exist;
-            expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
+            expect(benchmark.measureId, 'measureId').to.equal('001');
             expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
             expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
             expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -218,7 +218,7 @@ describe('formatBenchmarkRecord', function() {
             var benchmark = formatBenchmarkRecord(record, options);
 
             expect(benchmark).to.exist;
-            expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
+            expect(benchmark.measureId, 'measureId').to.equal('001');
             expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
             expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
             expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -248,7 +248,7 @@ describe('formatBenchmarkRecord', function() {
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
+          expect(benchmark.measureId, 'measureId').to.equal('001');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -277,7 +277,7 @@ describe('formatBenchmarkRecord', function() {
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('CMS143v50086012');
+          expect(benchmark.measureId, 'measureId').to.equal('012');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
@@ -305,7 +305,7 @@ describe('formatBenchmarkRecord', function() {
 
         it('should return the correct benchmark object', function() {
           expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('CMS122v50059001');
+          expect(benchmark.measureId, 'measureId').to.equal('001');
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
