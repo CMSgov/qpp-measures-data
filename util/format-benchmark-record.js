@@ -108,7 +108,11 @@ var formatDecileGenerator = function(record) {
     if (!definedPredecessor &&
       definedSuccessor &&
       nextIndex === array.length) {
-      return parseFloat(definedSuccessor[0]);
+      if (isInverseMeasure) {
+        return parseFloat(definedSuccessor[0]);
+      } else {
+        return 0;
+      }
     }
     // If the decile has neighbors on both sides:
     if (definedPredecessor &&
