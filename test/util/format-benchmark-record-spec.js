@@ -162,7 +162,7 @@ describe('formatBenchmarkRecord', function() {
           expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
           expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
           expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([100, 100, 100, 100, 100, 100, 100, 100, 100]);
+          expect(benchmark.deciles).to.eql([0, 0, 0, 0, 0, 0, 0, 0, 100]);
         });
       });
     });
