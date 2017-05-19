@@ -110,6 +110,14 @@ definitions:
         description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
+      eligibilityOptions:
+        description: The eligibility options correspond to denominator options in measure specifications and are used to identify eligible instances for the associated measure.
+        type: array
+        items: { $ref: #/definitions/eligibilityOption }
+      performanceOptions:
+        description: The performance options correspond to numerator options in measure specifications and are used to identify instances of performance met, not met or exclusion / exception.
+        type: array
+        items: { $ref: #/definitions/performanceOption }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
@@ -197,3 +205,68 @@ definitions:
       - thoracicSurgery
       - urology
       - vascularSurgery
+
+  eligibilityOption:
+    type: object
+    properties:
+      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
+      sexCode:
+        enum: [M, F] # null if both genders are eligible
+      minAge:
+        type: integer
+      maxAge:
+        type: integer
+      # TODO: add description, dedup with additionalDiagnosisCodes
+      diagnosisCodes: { $ref: #/definitions/diagnosisCodes }
+      additionalDiagnosisCodes: { $ref: #/definitions/diagnosisCodes }
+      procedureCodes:
+        type: array
+        items: { $ref: #/definitions/codeObject }
+    required: [submissionMethods]
+
+  performanceOption:
+    type: object
+    properties:
+      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
+      optionType:
+        enum: [performanceMet, performanceNotMet, performanceExclusion]
+      qualityCodes:
+        type: array
+        items: { $ref: #/definitions/codeObject }
+    required: [submissionMethods, optionType, qualityCodes]
+
+  codeObject:
+    type: object
+    properties:
+      code:
+        type: string
+      modifiers:
+        type: array
+        items:
+          type: string
+      modifierExclusions:
+        type: array
+        items:
+          type: string
+      placesOfService:
+        type: array
+        items:
+          type: string
+      placesOfServiceExclusions:
+        type: array
+        items:
+          type: string
+    required: [code]
+
+  qualityCodesSubmissionMethods:
+    type: array
+    items:
+      enum:
+        - claims
+        - registry
+
+  diagnosisCodes:
+    type: array
+    items:
+      type: string
+
