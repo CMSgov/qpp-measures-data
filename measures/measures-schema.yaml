@@ -211,14 +211,13 @@ definitions:
     properties:
       submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       sexCode:
-        enum: [M, F] # null if both genders are eligible
+        enum: [M, F]
       minAge:
         type: integer
       maxAge:
         type: integer
-      # TODO: add description, dedup with additionalDiagnosisCodes
-      diagnosisCodes: { $ref: #/definitions/diagnosisCodes }
-      additionalDiagnosisCodes: { $ref: #/definitions/diagnosisCodes }
+      diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       procedureCodes:
         type: array
         items: { $ref: #/definitions/codeObject }
@@ -240,22 +239,10 @@ definitions:
     properties:
       code:
         type: string
-      modifiers:
-        type: array
-        items:
-          type: string
-      modifierExclusions:
-        type: array
-        items:
-          type: string
-      placesOfService:
-        type: array
-        items:
-          type: string
-      placesOfServiceExclusions:
-        type: array
-        items:
-          type: string
+      modifiers:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      modifierExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      placesOfService:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      placesOfServiceExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
     required: [code]
 
   qualityCodesSubmissionMethods:
@@ -265,7 +252,7 @@ definitions:
         - claims
         - registry
 
-  diagnosisCodes:
+  arrayOfStringIdentifiers:
     type: array
     items:
       type: string
