@@ -111,11 +111,11 @@ definitions:
         type: array
         items: { $ref: #/definitions/methods }
       eligibilityOptions:
-        description: The eligibility options correspond to denominator options in measure specifications and are used to identify eligible instances for the associated measure.
+        description: Eligibility options correspond to denominator options in measure specifications. Each option is a set of codes used to identify eligible instances of the associated measure.
         type: array
         items: { $ref: #/definitions/eligibilityOption }
       performanceOptions:
-        description: The performance options correspond to numerator options in measure specifications and are used to identify instances of performance met, not met or exclusion / exception.
+        description: Performance options correspond to numerator options in measure specifications. Each option is a set of codes used to identify instances of performance met, performance not met, performance exclusion  or performance exception.
         type: array
         items: { $ref: #/definitions/performanceOption }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
