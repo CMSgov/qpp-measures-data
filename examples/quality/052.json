@@ -28,46 +28,118 @@
     "measureSets": [],
     "eligibilityOptions": [
       {
-        "submissionMethods": ["claims"],
-        "diagnosisCodes": ["J41.0", "J41.1", "J41.8", "J42", "J43.0", "J43.1", "J43.2", "J43.8", "J43.9", "J44.0", "J44.1", "J44.9"]
+        "submissionMethods": [
+          "claims"
+        ],
+        "diagnosisCodes": [
+          "J41.0",
+          "J41.1",
+          "J41.8",
+          "J42",
+          "J43.0",
+          "J43.1",
+          "J43.2",
+          "J43.8",
+          "J43.9",
+          "J44.0",
+          "J44.1",
+          "J44.9"
+        ]
       }
     ],
     "performanceOptions": [
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceExclusion",
-        "qualityCodes": [{"code": "G8925"}]
+        "qualityCodes": [
+          {
+            "code": "G8925"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceExclusion",
-        "qualityCodes": [{"code": "G8926"}]
+        "qualityCodes": [
+          {
+            "code": "G8926"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceMet",
-        "qualityCodes": [{"code": "G9695"}, {"code": "G8924"}]
+        "qualityCodes": [
+          {
+            "code": "G9695"
+          },
+          {
+            "code": "G8924"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceExclusion",
-        "qualityCodes": [{"code": "G9696"}, {"code": "G8924"}]
+        "qualityCodes": [
+          {
+            "code": "G9696"
+          },
+          {
+            "code": "G8924"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceExclusion",
-        "qualityCodes": [{"code": "G9697"}, {"code": "G8924"}]
+        "qualityCodes": [
+          {
+            "code": "G9697"
+          },
+          {
+            "code": "G8924"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceExclusion",
-        "qualityCodes": [{"code": "G9698"}, {"code": "G8924"}]
+        "qualityCodes": [
+          {
+            "code": "G9698"
+          },
+          {
+            "code": "G8924"
+          }
+        ]
       },
       {
-        "submissionMethods": ["claims"],
+        "submissionMethods": [
+          "claims"
+        ],
         "optionType": "performanceNotMet",
-        "qualityCodes": [{"code": "G9699"}, {"code": "G8924"}]
-      }      
+        "qualityCodes": [
+          {
+            "code": "G9699"
+          },
+          {
+            "code": "G8924"
+          }
+        ]
+      }
     ]
   }
 ]
