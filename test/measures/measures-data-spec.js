@@ -32,6 +32,4 @@ describe('measures data json', function() {
       assert.equal(intersection.size, multiPerformanceIds.size);
     });
   });
-
-  // TODO(aimee): Add validate-data.js functionality here.
 });
