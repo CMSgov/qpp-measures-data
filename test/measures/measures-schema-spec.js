@@ -7,7 +7,7 @@ const testFilesFolder = 'test/examples/quality/';
 const qualityMeasureExampleFilenames = fs.readdirSync(testFilesFolder);
 const numExamples = qualityMeasureExampleFilenames.length;
 
-describe('measures schema', function() {
+describe('measures schema validates json', function() {
   describe('measures-data.json', function() {
     var capturedStdout = null;
 
@@ -19,7 +19,7 @@ describe('measures schema', function() {
       });
     });
 
-    it('are valid', function() {
+    it('is valid', function() {
       assert.equal(capturedStdout, 'Valid!\n');
     });
   });
