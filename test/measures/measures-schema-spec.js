@@ -24,7 +24,7 @@ describe('measures schema', function() {
     });
   });
 
-  // TODO(aimee): Remove once obsolete. This will become obsolete once c2q measures are imported.
+  // TODO(aimee): Remove: This will become obsolete once c2q measures are imported into measures-data.
   describe('example quality measures', function() {
     var capturedStdoutExamples = [];
 
