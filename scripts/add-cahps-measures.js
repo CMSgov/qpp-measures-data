@@ -1,9 +1,9 @@
 // Libraries
-var fs    = require('fs');
-var parse = require('csv-parse');
-var path  = require('path');
+const fs    = require('fs');
+const parse = require('csv-parse');
+const path  = require('path');
 
-var additionalMeasuresFilepath = '../util/additional-measures.json'
+const additionalMeasuresFilepath = '../util/additional-measures.json'
 var additionalMeasures = require(additionalMeasuresFilepath);
 
 // We want to overwrite CAHPS measures every time we run this script.
@@ -13,11 +13,20 @@ additionalMeasures = additionalMeasures.filter(function(measure) {
 });
 
 // Constants
-var CAHPS_CSV_COLUMNS = [
+const CAHPS_CSV_COLUMNS = [
   'Measure Name',
   'Measure Points',
   'Measure Contribution'
 ];
+
+// Blurgh
+const defaultNqfId = '0005';
+const nqfIdMap = {
+  'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': defaultNqfId,
+  'CAHPS for MIPS SSM: How Well Providers Communicate': defaultNqfId,
+  'CAHPS for MIPS SSM: Patient\'s Rating of Provider': defaultNqfId,
+  'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': defaultNqfId
+};
 
 // Data
 var cahpsMeasuresData = '';
@@ -39,19 +48,20 @@ process.stdin.on('readable', function() {
 });
 
 function generateCahpsMeasure(record, idx) {
+  var measureTitle = record['Measure Name'];
   return {
     category: 'quality',
     firstPerformanceYear: 2017,
     lastPerformanceYear: null,
     metricType: 'float',
-    title: record['Measure Name'],
+    title: measureTitle,
     description: null, // TBD: Will be provided by RAND,
     nationalQualityCode: null,
     measureType: 'patientEngagementExperience',
     measureId: 'CAHPS_' + (idx + 1),
     eMeasureId: null,
     nqfEMeasureId: null,
-    nqfId: null, // TODO(aimee): update to conditional based on spec
+    nqfId: nqfIdMap[measureTitle] || null,
     isInverse: false,
     strata: [],
     isHighPriority: true,
