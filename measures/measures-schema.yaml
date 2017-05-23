@@ -221,6 +221,9 @@ definitions:
       procedureCodes:
         type: array
         items: { $ref: #/definitions/codeObject }
+    anyOf:
+      - required: ['procedureCodes']
+      - required: ['diagnosisCodes']
     required: [submissionMethods]
 
   performanceOption:

@@ -26,23 +26,21 @@ describe('measures schema validates json', function() {
 
   // TODO(aimee): Remove: This will become obsolete once c2q measures are imported into measures-data.
   describe('example quality measures', function() {
-    var capturedStdoutExamples = [];
+    qualityMeasureExampleFilenames.forEach(function(qualityMeasureExampleFilename) {
+      var capturedStdoutExamples = null;
 
-    before(function(done) {
-      qualityMeasureExampleFilenames.forEach(function(qualityMeasureExampleFilename, idx) {
+      before(function(done) {
         var command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename + 
           ' | node scripts/validate-data.js measures';
         exec(command, function(error, stdout, stderr) {
-          capturedStdoutExamples.push(stdout);
-          if (idx === numExamples - 1) {
-            done();
-          }
+          capturedStdoutExamples = stdout;
+          done();
         });
       });
-    });
 
-    it('are valid', function() {
-      assert.deepEqual(capturedStdoutExamples, Array(numExamples).fill('Valid!\n'));
+      it(qualityMeasureExampleFilename + ' is valid', function() {
+        assert.deepEqual(capturedStdoutExamples, 'Valid!\n');
+      });
     });
   });
 });
