@@ -82,7 +82,6 @@ process.stdin.on('end', function() {
     } else {
       records.forEach(function(record, idx) {
         var measure = generateCahpsMeasure(record, idx);
-
         if (measure) additionalMeasures.push(measure);
       });
 
