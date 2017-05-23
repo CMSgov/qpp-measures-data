@@ -111,11 +111,11 @@ definitions:
         type: array
         items: { $ref: #/definitions/methods }
       eligibilityOptions:
-        description: Eligibility options mirror denominator options in measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
+        description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
         type: array
         items: { $ref: #/definitions/eligibilityOption }
       performanceOptions:
-        description: Performance options mirror numerator options in measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
+        description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
         type: array
         items: { $ref: #/definitions/performanceOption }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
