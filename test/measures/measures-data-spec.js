@@ -55,6 +55,11 @@ describe('measures data json', function() {
       it('all have primarySteward \'Agency for Healthcare Research & Quality\'', () => testExpectedField('primarySteward', 'Agency for Healthcare Research & Quality'));
       it('all have submissionMethods \'certifiedSurveyVendor\'', () => testExpectedField('submissionMethods', ['certifiedSurveyVendor']));
       it('all have measureSets \'generalPracticeFamilyMedicine\'', () => testExpectedField('measureSets', ['generalPracticeFamilyMedicine']));
+      it('all have firstPerformanceYear 2017', () => testExpectedField('firstPerformanceYear', 2017));
+      it('all have category quality', () => testExpectedField('category', 'quality'));
+      it('all have isHighPriority true', () => testExpectedField('isHighPriority', true));
+      it('all have isInverse false', () => testExpectedField('isInverse', false));
+
       it('some have nqfId 0005', function() {
         var nqfIdMeasures = cahpsMeasures.filter((measure) => measure.nqfId !== null);
         var expectedNqfIdMeasuresLength = 4;
