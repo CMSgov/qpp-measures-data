@@ -31,5 +31,35 @@ describe('measures data json', function() {
 
       assert.equal(intersection.size, multiPerformanceIds.size);
     });
+
+    describe('CAHPS measures', function() {
+      const cahpsMeasures = measuresData.filter(function(measure) {
+        var re = /CAHPS_\d+/i;
+        return measure.measureId.match(re) !== null;
+      });
+      const numCahpsMeasures = cahpsMeasures.length;
+
+      function testExpectedField(fieldName, expectedFieldValue, measuresToTest, numExpected) {
+        var numExpected = numExpected || numCahpsMeasures;
+        var measuresToTest = measuresToTest || cahpsMeasures;
+        var fieldValues = measuresToTest.map((measure) => measure[fieldName]);
+        assert.deepEqual(fieldValues, Array(numExpected).fill(expectedFieldValue));
+      }
+
+      it('includes 12 cahps measures', function() {
+        assert.equal(numCahpsMeasures, 12);
+      });
+
+      it('are all floats', () => testExpectedField('metricType', 'float'));
+      it('all have measureType \'patientEngagementExperience\'', () => testExpectedField('measureType', 'patientEngagementExperience'));
+      it('all have primarySteward \'Agency for Healthcare Research & Quality\'', () => testExpectedField('primarySteward', 'Agency for Healthcare Research & Quality'));
+      it('all have submissionMethods \'certifiedSurveyVendor\'', () => testExpectedField('submissionMethods', ['certifiedSurveyVendor']));
+      it('all have measureSets \'generalPracticeFamilyMedicine\'', () => testExpectedField('measureSets', ['generalPracticeFamilyMedicine']));
+      it('some have nqfId 0005', function() {
+        var nqfIdMeasures = cahpsMeasures.filter((measure) => measure.nqfId !== null);
+        var expectedNqfIdMeasuresLength = 4;
+        testExpectedField('nqfId', '0005', nqfIdMeasures, expectedNqfIdMeasuresLength);
+      });
+    });
   });
 });

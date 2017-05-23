@@ -55,7 +55,7 @@ function generateCahpsMeasure(record, idx) {
     lastPerformanceYear: null,
     metricType: 'float',
     title: measureTitle,
-    description: null, // TBD: Will be provided by RAND,
+    description: '', // TBD: Will be provided by RAND,
     nationalQualityCode: null,
     measureType: 'patientEngagementExperience',
     measureId: 'CAHPS_' + (idx + 1),
