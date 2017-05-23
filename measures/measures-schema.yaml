@@ -110,6 +110,14 @@ definitions:
         description: Possible methods for submitting performance data for the measure.
         type: array
         items: { $ref: #/definitions/methods }
+      eligibilityOptions:
+        description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
+        type: array
+        items: { $ref: #/definitions/eligibilityOption }
+      performanceOptions:
+        description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
+        type: array
+        items: { $ref: #/definitions/performanceOption }
     required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
@@ -197,3 +205,58 @@ definitions:
       - thoracicSurgery
       - urology
       - vascularSurgery
+
+  eligibilityOption:
+    type: object
+    properties:
+      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
+      sexCode:
+        enum: [M, F]
+      minAge:
+        type: integer
+      maxAge:
+        type: integer
+      diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      procedureCodes:
+        type: array
+        items: { $ref: #/definitions/codeObject }
+    anyOf:
+      - required: ['procedureCodes']
+      - required: ['diagnosisCodes']
+    required: [submissionMethods]
+
+  performanceOption:
+    type: object
+    properties:
+      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
+      optionType:
+        enum: [performanceMet, performanceNotMet, performanceExclusion]
+      qualityCodes:
+        type: array
+        items: { $ref: #/definitions/codeObject }
+    required: [submissionMethods, optionType, qualityCodes]
+
+  codeObject:
+    type: object
+    properties:
+      code:
+        type: string
+      modifiers:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      modifierExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      placesOfService:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      placesOfServiceExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
+    required: [code]
+
+  qualityCodesSubmissionMethods:
+    type: array
+    items:
+      enum:
+        - claims
+        - registry
+
+  arrayOfStringIdentifiers:
+    type: array
+    items:
+      type: string
+
