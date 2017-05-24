@@ -20,7 +20,7 @@ const nqfIdMap = {
   'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': defaultNqfId
 };
 
-// Data
+// Initialize a string to store the CSV data.
 var cahpsMeasuresData = '';
 
 /**
