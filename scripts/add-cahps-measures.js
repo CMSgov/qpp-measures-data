@@ -6,12 +6,6 @@ const path  = require('path');
 const additionalMeasuresFilepath = '../util/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);
 
-// We want to overwrite CAHPS measures every time we run this script.
-additionalMeasures = additionalMeasures.filter(function(measure) {
-  var re = /CAHPS_\d+/i;
-  return measure.measureId.match(re) === null;
-});
-
 // Constants
 const CAHPS_CSV_COLUMNS = [
   'Measure Name',
@@ -80,6 +74,12 @@ process.stdin.on('end', function() {
     if (err) {
       console.log(err);
     } else {
+      // We want to overwrite CAHPS measures every time we run this script.
+      additionalMeasures = additionalMeasures.filter(function(measure) {
+        var re = /CAHPS_\d+/i;
+        return measure.measureId.match(re) === null;
+      });
+
       records.forEach(function(record, idx) {
         var measure = generateCahpsMeasure(record, idx);
         if (measure) additionalMeasures.push(measure);
