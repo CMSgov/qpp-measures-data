@@ -5,20 +5,14 @@ const path  = require('path');
 
 const additionalMeasuresFilepath = '../util/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);
+const cahpsConsts = require('./cahps-consts');
 
 // Constants
 const CAHPS_CSV_COLUMNS = [
-  'Measure Name'
+  'Measure Name',
+  null,
+  null
 ];
-
-// Some measures have an NqfId (NQF: National Quality Forum) of '0005'
-const defaultNqfId = '0005';
-const nqfIdMap = {
-  'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': defaultNqfId,
-  'CAHPS for MIPS SSM: How Well Providers Communicate': defaultNqfId,
-  'CAHPS for MIPS SSM: Patient\'s Rating of Provider': defaultNqfId,
-  'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': defaultNqfId
-};
 
 // Initialize a string to store the CSV data.
 var cahpsMeasuresData = '';
@@ -50,10 +44,10 @@ function generateCahpsMeasure(record, idx) {
     description: '', // TBD: Will be provided by RAND,
     nationalQualityCode: null,
     measureType: 'patientEngagementExperience',
-    measureId: 'CAHPS_' + (idx + 1),
+    measureId: 'CAHPS_' + cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle],
     eMeasureId: null,
     nqfEMeasureId: null,
-    nqfId: nqfIdMap[measureTitle] || null,
+    nqfId: cahpsConsts.nqfIdMap[measureTitle] || null,
     isInverse: false,
     strata: [],
     isHighPriority: true,
