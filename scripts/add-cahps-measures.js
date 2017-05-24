@@ -3,7 +3,7 @@ const fs    = require('fs');
 const parse = require('csv-parse');
 const path  = require('path');
 
-const additionalMeasuresFilepath = '../util/additional-measures.json'
+const additionalMeasuresFilepath = '../util/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);
 
 // We want to overwrite CAHPS measures every time we run this script.
