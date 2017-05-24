@@ -23,6 +23,6 @@ const cahpsTitleToMeasureIdIndexMap = {
 };
 
 module.exports = {
-  nqfIdMap: nqfIdMap,
-  cahpsTitleToMeasureIdIndexMap: cahpsTitleToMeasureIdIndexMap
+  nqfIdMap,
+  cahpsTitleToMeasureIdIndexMap
 };
