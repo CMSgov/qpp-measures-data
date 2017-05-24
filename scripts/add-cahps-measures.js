@@ -10,8 +10,10 @@ const cahpsConsts = require('./cahps-consts');
 // Constants
 const CAHPS_CSV_COLUMNS = [
   'Measure Name',
-  null,
-  null
+  // The following columns are unused but prefer leaving it to be clear about
+  // the structure of the original import document.
+  'Measure Points',
+  'Measure Contribution'
 ];
 
 // Initialize a string to store the CSV data.
@@ -35,6 +37,10 @@ process.stdin.on('readable', function() {
 
 function generateCahpsMeasure(record, idx) {
   var measureTitle = record['Measure Name'];
+  var measureIdx = cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle];
+  if (measureIdx === undefined) {
+    throw 'No existing measure index matches title: "' + measureTitle + '"';
+  };
   return {
     category: 'quality',
     firstPerformanceYear: 2017,
