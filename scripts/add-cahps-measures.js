@@ -11,7 +11,7 @@ const CAHPS_CSV_COLUMNS = [
   'Measure Name'
 ];
 
-// Blurgh
+// Some measures have an NqfId (NQF: National Quality Forum) of '0005'
 const defaultNqfId = '0005';
 const nqfIdMap = {
   'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': defaultNqfId,
