@@ -8,9 +8,7 @@ var additionalMeasures = require(additionalMeasuresFilepath);
 
 // Constants
 const CAHPS_CSV_COLUMNS = [
-  'Measure Name',
-  'Measure Points',
-  'Measure Contribution'
+  'Measure Name'
 ];
 
 // Blurgh
