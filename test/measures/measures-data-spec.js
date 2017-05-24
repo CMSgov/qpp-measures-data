@@ -34,36 +34,37 @@ describe('measures data json', function() {
 
     describe('CAHPS measures', function() {
       const cahpsMeasures = measuresData.filter(function(measure) {
-        var re = /CAHPS_\d+/i;
-        return measure.measureId.match(re) !== null;
-      });
-      const numCahpsMeasures = cahpsMeasures.length;
-
-      function testExpectedField(fieldName, expectedFieldValue, measuresToTest, numExpected) {
-        var numExpected = numExpected || numCahpsMeasures;
-        var measuresToTest = measuresToTest || cahpsMeasures;
-        var fieldValues = measuresToTest.map((measure) => measure[fieldName]);
-        assert.deepEqual(fieldValues, Array(numExpected).fill(expectedFieldValue));
-      }
-
-      it('includes 12 cahps measures', function() {
-        assert.equal(numCahpsMeasures, 12);
+        return measure.measureId.match(/CAHPS_\d+/);
       });
 
-      it('are all floats', () => testExpectedField('metricType', 'float'));
-      it('all have measureType \'patientEngagementExperience\'', () => testExpectedField('measureType', 'patientEngagementExperience'));
-      it('all have primarySteward \'Agency for Healthcare Research & Quality\'', () => testExpectedField('primarySteward', 'Agency for Healthcare Research & Quality'));
-      it('all have submissionMethods \'certifiedSurveyVendor\'', () => testExpectedField('submissionMethods', ['certifiedSurveyVendor']));
-      it('all have measureSets \'generalPracticeFamilyMedicine\'', () => testExpectedField('measureSets', ['generalPracticeFamilyMedicine']));
-      it('all have firstPerformanceYear 2017', () => testExpectedField('firstPerformanceYear', 2017));
-      it('all have category quality', () => testExpectedField('category', 'quality'));
-      it('all have isHighPriority true', () => testExpectedField('isHighPriority', true));
-      it('all have isInverse false', () => testExpectedField('isInverse', false));
-
-      it('some have nqfId 0005', function() {
-        var nqfIdMeasures = cahpsMeasures.filter((measure) => measure.nqfId !== null);
-        var expectedNqfIdMeasuresLength = 4;
-        testExpectedField('nqfId', '0005', nqfIdMeasures, expectedNqfIdMeasuresLength);
+      it('creates 12 correct CAHPS measures', function() {
+        const cahpsMeasures = measuresData.filter(measure => measure.measureId.match(/CAHPS_\d+/));
+        const commonCahpsProperties = {
+          'metricType': 'float',
+          'measureType': 'patientEngagementExperience',
+          'primarySteward': 'Agency for Healthcare Research & Quality',
+          'submissionMethods': ['certifiedSurveyVendor'],
+          'measureSets': ['generalPracticeFamilyMedicine'],
+          'firstPerformanceYear': 2017,
+          'category': 'quality',
+          'isHighPriority': true,
+          'isInverse': false
+        };
+        const nqfIdMap = {
+          'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': '0005',
+          'CAHPS for MIPS SSM: How Well Providers Communicate': '0005',
+          'CAHPS for MIPS SSM: Patient\'s Rating of Provider': '0005',
+          'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': '0005'
+        }
+        assert.equal(cahpsMeasures.length, 12);
+        cahpsMeasures.forEach(cahpsMeasure => {
+          assert.match(cahpsMeasure.title, /^CAHPS for MIPS/);
+          // these are the same for all CAHPS measures
+          assert.deepEqual(_.pick(cahpsMeasure, Object.keys(commonCahpsProperties)), commonCahpsProperties);
+          if (nqfIdMap[cahpsMeasure.title]) {
+            assert.equal(cahpsMeasure.nqfId, '0005');
+          }
+        });
       });
     });
   });
