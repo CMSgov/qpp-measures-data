@@ -1,3 +1,12 @@
+#!/usr/bin/env node
+
+/**
+ *
+ * Script to add cahps measures to additional-measures.json from csv
+ * To run: `cat [DATA_CSV_FILE] | node scripts/add-cahps-measures.js`
+ * e.g. `cat cahps_measures_origin.csv | node scripts/add-cahps-measures.js`
+ */
+
 // Libraries
 const fs    = require('fs');
 const parse = require('csv-parse');
@@ -18,13 +27,6 @@ const CAHPS_CSV_COLUMNS = [
 
 // Initialize a string to store the CSV data.
 var cahpsMeasuresData = '';
-
-/**
- *
- * Script to add cahps measures to additional-measures.json from csv
- * To run: `cat [DATA_CSV_FILE] | node scripts/add-cahps-measures.js`
- * e.g. `cat cahps_measures_origin.csv | node scripts/add-cahps-measures.js`
- */
 
 process.stdin.setEncoding('utf8');
 
