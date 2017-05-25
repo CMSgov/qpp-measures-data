@@ -47,7 +47,7 @@ function generateCahpsMeasure(record, idx) {
     category: 'quality',
     firstPerformanceYear: 2017,
     lastPerformanceYear: null,
-    metricType: 'float',
+    metricType: 'cahps',
     title: measureTitle,
     description: '', // TBD: Will be provided by RAND,
     nationalQualityCode: null,

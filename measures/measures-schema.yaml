@@ -15,7 +15,7 @@ definitions:
         enum: [ia, quality, aci, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
-        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, continuous, float]
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, continuous, cahps]
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer

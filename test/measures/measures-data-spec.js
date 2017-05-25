@@ -40,7 +40,7 @@ describe('measures data json', function() {
       it('contains 12 correct CAHPS measures', function() {
         const cahpsMeasures = measuresData.filter(measure => measure.measureId.match(/CAHPS_\d+/));
         const commonCahpsProperties = {
-          'metricType': 'float',
+          'metricType': 'cahps',
           'measureType': 'patientEngagementExperience',
           'primarySteward': 'Agency for Healthcare Research & Quality',
           'submissionMethods': ['certifiedSurveyVendor'],
