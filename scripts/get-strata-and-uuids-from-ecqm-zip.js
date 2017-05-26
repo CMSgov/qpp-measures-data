@@ -68,11 +68,7 @@ function extractStrata(measure) {
     strataDescriptions = [description.trim()];
   }
 
-  const strata = strataDescriptions.map((description, index) => ({
-    // we'll replace these manually to be contextually relevant
-    name: `strata${index + 1}`,
-    description
-  }));
+  const strata = strataDescriptions.map(description => ({ description }));
 
   // pull out uuids for each stratum
   // ASSUMPTION: numerators are ordered the same as measure groupings
