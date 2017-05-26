@@ -46,15 +46,20 @@ var benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 To regenerate the `measures-data.json` file, which contains additional metadata and conforms to
 the measures schema, do the following:
 
-1. Download the qpp quality pdfs
+1. Download the qpp quality pdfs and ecqm measure specifications
 	```
 	wget https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip .
+  wget https://ecqi.healthit.gov/system/files/ecqm_eligibleclinician_jan2017.zip .
 	unzip QPP_quality_measure_specifications.zip
 	```
-2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quaility measures data.
+2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quality measures data.
 	```
 	node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
 	```
+3. Run the script to extract strata descriptions and measure/strata uuids for ecqms from the zip:
+  ```
+  node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+  ```
 
 Then run this command to generate a new measures-data.json file:
 
