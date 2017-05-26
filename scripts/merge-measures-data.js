@@ -53,13 +53,9 @@ function mergeQpp(qppJson) {
 
   console.error('did not find measure details for the following', measuresNotFound);
 
-  // a separate pass for ecqm data to keep things simple
-
+  // separate passes for ecqm data to keep things simple
   // load extracted ecqm data
   const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), 'utf8'));
-
-  // and our hand-mined ecqm strata names and outliers
-  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), 'utf8'));
 
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;
@@ -87,6 +83,32 @@ function mergeQpp(qppJson) {
         // @kencheeto: CMS156v5 is the only one that has more than one stratum and the ordering is correct
         console.warn(qppItem.eMeasureId, ': we are not guaranteed the same ordering, please double check these strata values in the diff');
       }
+    }
+  });
+
+  // and our hand-mined ecqm strata names and outliers
+  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), 'utf8'));
+
+  qppJson.forEach(function(qppItem, index) {
+    if (qppItem.category !== 'quality') return;
+    const ecqmInfo = _.find(manuallyAddedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
+    if (!ecqmInfo) return;
+
+    if (ecqmInfo.overallAlgorithm) {
+      qppJson[index].overallAlgorithm = ecqmInfo.overallAlgorithm;
+    }
+
+    if (ecqmInfo.metricType) {
+      qppJson[index].metricType = ecqmInfo.metricType;
+    }
+
+    if (['CMS145v5', 'CMS160v5'].includes(qppItem.eMeasureId)) {
+      qppJson[index].strata = ecqmInfo.strata;
+    } else {
+      // strata length in both files should match now
+      ecqmInfo.strata.forEach((newStratum, ecqmIndex) => {
+        qppJson[index].strata[ecqmIndex].name = newStratum.name;
+      });
     }
   });
 
