@@ -119,11 +119,11 @@ Promise.all(
     const details = measure.measure.measureDetails[0];
     const emeasureid = details.emeasureid[0];
     if (emeasureid === '145') {
-      console.log('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/xmls/CMS145v5.zip');
+      console.log('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v5_NQFXXXX_CAD_BB.zip');
       return;
     }
     if (emeasureid === '160') {
-      console.log('WARNING: CMS160v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/xmls/CMS160v5.zip');
+      console.log('WARNING: CMS160v5 has one numerator but two initial populations and needs to be added manually - see /tmp/EC_CMS160v5_NQF0712_Dep_PHQ9.zip');
       return;
     }
     const strata = extractStrata(measure);
