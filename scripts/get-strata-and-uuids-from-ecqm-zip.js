@@ -24,6 +24,7 @@
 
 const _ = require('lodash');
 const fs = require('fs');
+const rimraf = require('rimraf');
 const path = require('path');
 const Promise = require('bluebird');
 const AdmZip = require('adm-zip');
@@ -90,6 +91,7 @@ function extractStrata(measure) {
 }
 
 // gather list of xml files
+rimraf.sync(tmpDir);
 new AdmZip(zipPath).extractAllTo(tmpDir, true);
 // each measure has its own zip, collect name of SimpleXML files
 const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
@@ -99,7 +101,7 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
     .find(entry => entry.entryName.match(/[^0-9]\.xml$/))
     .entryName;
 
-  // extract 'CMS75v5.xml' to /xmls
+  // extract 'CMS75v5_SimpleXML.xml' to /xmls
   zip.extractEntryTo(filename, tmpDir + '/xmls', false, true);
 
   return filename.split('/')[1];
@@ -109,8 +111,7 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
 const promisifiedParseString = Promise.promisify(parseString);
 Promise.all(
   xmlFiles.map(xmlFile => {
-    return promisifiedParseString(fs.readFileSync(path.join(tmpDir, '/xmls', xmlFile)))
-      .then(xml => xml);
+    return promisifiedParseString(fs.readFileSync(path.join(tmpDir, '/xmls', xmlFile)));
   })
 )
 // extract data from converted JavaScript objects
