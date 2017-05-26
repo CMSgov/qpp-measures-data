@@ -21,54 +21,69 @@ if (!measuresDataPath) {
 const outlierEcqms = [
   {
     "eMeasureId": "CMS145v5",
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate",
     "strata": [
       {
-        "description": "Patients with an order for at least one high-risk medication during the measurement period.",
-        "name": "overall",
+        "description": "Beta Blocker Therapy for LVSD",
+        "name": "betaBlockerTherapyForLVSD",
         "eMeasureUuids": {
-          "initialPopulationUuid": "C7BCE5A3-AC0D-440E-AA29-C98239F37A8B",
-          "denominatorUuid": "07F04D61-0383-487E-942C-690BBBC6437D",
-          "numeratorUuid": "7A0001AC-4BE0-4FAA-94AE-4843C9FFFCA8",
-          "denominatorExclusionUuid": "718a29a0-49b3-4483-ab9d-dc37074f39f5",
-          "denominatorExceptionUuid": "bba507df-e957-4649-98b9-ff70c1dd7971"
+          "initialPopulationUuid": "27982FD6-7C42-44E7-A871-0BB7F858A6D5",
+          "denominatorUuid": "2294F966-EECD-4C61-8D94-D5E4B09BD9BB",
+          "numeratorUuid": "02A4DDAC-D615-457A-9304-F1E382D3811C",
+          "denominatorExclusionUuid": "e497e337-9671-4805-94e9-1c7113bf187b",
+          "denominatorExceptionUuid": "487E15AB-CDE2-4955-9B93-1A2CDAE6B1F2"
         }
       },
       {
-        "description": "Patients with an order for at least two different high-risk medications during the measurement period.",
-        "name": "2+",
+        "description": "Beta Blocker Therapy",
+        "name": "betaBlockerTherapy",
         "eMeasureUuids": {
-          "initialPopulationUuid": "BC02D7CE-7133-46C6-8592-658668B09948",
-          "denominatorUuid": "00401314-1B01-4896-A9FC-E991CDF29B6B",
-          "numeratorUuid": "FA7BF805-C21E-4077-B43E-C63F8D17B5CF",
-          "denominatorExclusionUuid": "41d84550-23c6-46a7-bb50-85708fa8607b",
-          "denominatorExceptionUuid": "0e953aff-ae2e-4a74-b774-ca3d9cd40e00"
+          "initialPopulationUuid": "2EE8137A-4627-471C-8837-85BDBF665017",
+          "denominatorUuid": "CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC",
+          "numeratorUuid": "5C03C433-8F8A-4204-B536-D7381835CE8C",
+          "denominatorExclusionUuid": "1804358a-4620-44e2-8fb9-526eecdc2fd1",
+          "denominatorExceptionUuid": "F79E2A13-6F9E-4B84-99E0-4603E99C83C3"
         }
       }
     ]
   },
   {
     "eMeasureId": "CMS160v5",
+    "overallAlgorithm": "weightedAverage",
+    "metricType": "multiPerformanceRate",
     "strata": [
       {
-        "description": "Patients with an order for at least one high-risk medication during the measurement period.",
-        "name": "overall",
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+        "name": "diagnosisVisitWithin4MonthsOfEnd",
         "eMeasureUuids": {
-          "initialPopulationUuid": "C7BCE5A3-AC0D-440E-AA29-C98239F37A8B",
-          "denominatorUuid": "07F04D61-0383-487E-942C-690BBBC6437D",
-          "numeratorUuid": "7A0001AC-4BE0-4FAA-94AE-4843C9FFFCA8",
-          "denominatorExclusionUuid": "718a29a0-49b3-4483-ab9d-dc37074f39f5",
-          "denominatorExceptionUuid": "bba507df-e957-4649-98b9-ff70c1dd7971"
+          "initialPopulationUuid": "92656CE7-C9B1-44A8-8778-A8EF1ED90A18",
+          "denominatorUuid": "C7DFE664-71AE-4EAD-AB65-CDFCF825A44E",
+          "numeratorUuid": "B5FA6E85-0F2E-4674-A3F8-E14D834E73AB",
+          "denominatorExclusionUuid": "76B54A59-41A9-4664-B85C-F61238AE1DC4",
+          "denominatorExceptionUuid": "1c1e013a-b202-4f9e-9ee5-02be9507b7c4"
         }
       },
       {
-        "description": "Patients with an order for at least two different high-risk medications during the measurement period.",
-        "name": "2+",
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+        "name": "diagnosisVisitBetween4And8MonthsAfterStart",
         "eMeasureUuids": {
-          "initialPopulationUuid": "BC02D7CE-7133-46C6-8592-658668B09948",
-          "denominatorUuid": "00401314-1B01-4896-A9FC-E991CDF29B6B",
-          "numeratorUuid": "FA7BF805-C21E-4077-B43E-C63F8D17B5CF",
-          "denominatorExclusionUuid": "41d84550-23c6-46a7-bb50-85708fa8607b",
-          "denominatorExceptionUuid": "0e953aff-ae2e-4a74-b774-ca3d9cd40e00"
+          "initialPopulationUuid": "757F3066-31E7-45D1-BA50-3EFB27ABB8E5",
+          "denominatorUuid": "32635FEA-918B-438F-8421-8A6A14E238E8",
+          "numeratorUuid": "33538979-8425-45A4-B724-D74CC0A84EF3",
+          "denominatorExclusionUuid": "29931862-020D-401E-B9E9-953791263D87",
+          "denominatorExceptionUuid": "a9770f07-3989-4c20-8a7a-605e4a77cbe2"
+        }
+      },
+      {
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+        "name": "diagnosisVisitWithin4MonthsOfStart",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5631A7DF-CA44-4AD4-A691-DC0CED303F6A",
+          "denominatorUuid": "9665A8D2-F896-47A9-AA7E-271E9815D3CE",
+          "numeratorUuid": "2D4D6446-C9CD-4661-868B-C8B9B13A8E08",
+          "denominatorExclusionUuid": "910A0EE9-ECDA-494C-83E9-30DD9E224FFB",
+          "denominatorExceptionUuid": "2cc2a6f9-d57f-48f0-ac88-7b8670cf4f4c"
         }
       }
     ]

@@ -56,10 +56,10 @@ function mergeQpp(qppJson) {
   // a separate pass for ecqm data to keep things simple
 
   // load extracted ecqm data
-  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/generated-ecqm-strata.json'), 'utf8'));
+  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), 'utf8'));
 
   // and our hand-mined ecqm strata names and outliers
-  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-created-ecqm-strata.json'), 'utf8'));
+  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), 'utf8'));
 
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;

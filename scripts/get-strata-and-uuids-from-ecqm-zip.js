@@ -83,12 +83,13 @@ function extractStrata(measure) {
   // ASSUMPTION: numerators are ordered the same as measure groupings
   // if not we need to key on something
   measure.measure.measureGrouping[0].group.forEach((group, index) => {
+    const ids = group.clause;
     strata[index].eMeasureUuids = {
-      initialPopulationUuid: group.clause[0].$.uuid,
-      denominatorUuid: group.clause[1].$.uuid,
-      numeratorUuid: group.clause[2].$.uuid,
-      denominatorExclusionUuid: group.clause[3].$.uuid,
-      denominatorExceptionUuid: group.clause[5].$.uuid
+      initialPopulationUuid: ids.find(item => item.$.type === 'initialPopulation').$.uuid,
+      denominatorUuid: ids.find(item => item.$.type === 'denominator').$.uuid,
+      numeratorUuid: ids.find(item => item.$.type === 'numerator').$.uuid,
+      denominatorExclusionUuid: ids.find(item => item.$.type === 'denominatorExclusions').$.uuid,
+      denominatorExceptionUuid: ids.find(item => item.$.type === 'denominatorExceptions').$.uuid,
     }
   });
 
