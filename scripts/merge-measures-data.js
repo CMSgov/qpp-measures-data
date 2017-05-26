@@ -54,10 +54,16 @@ function mergeQpp(qppJson) {
   console.error('did not find measure details for the following', measuresNotFound);
 
   // a separate pass for ecqm data to keep things simple
-  var ecqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/ecqm-strata.json'), 'utf8'));
+
+  // load extracted ecqm data
+  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/generated-ecqm-strata.json'), 'utf8'));
+
+  // and our hand-mined ecqm strata names and outliers
+  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-created-ecqm-strata.json'), 'utf8'));
+
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;
-    const ecqmInfo = _.find(ecqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
+    const ecqmInfo = _.find(generatedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
     if (!ecqmInfo) return;
 
     qppJson[index].eMeasureUuid = ecqmInfo.eMeasureUuid;
