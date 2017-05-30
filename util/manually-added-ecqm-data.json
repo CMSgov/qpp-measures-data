@@ -12,7 +12,7 @@
     "eMeasureId": "CMS123v5",
     "strata": [
       {
-        "name": "receivedExams",
+        "name": "receivedFootExams",
         "description": "Patients who received visual, pulse and sensory foot examinations during the measurement period"
       }
     ]
@@ -44,7 +44,7 @@
     "eMeasureId": "CMS136v6",
     "strata": [
       {
-        "name": "hadPractitionerVisit",
+        "name": "hadPractitionerVisitWithin30Days",
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD."
       },
       {
@@ -58,11 +58,11 @@
     "eMeasureId": "CMS137v5",
     "strata": [
       {
-        "name": "treatmentWithin14Days",
+        "name": "treatmentWithin14DaysOfDiagnosis",
         "description": "Patients who initiated treatment within 14 days of the diagnosis"
       },
       {
-        "name": "treatmentPlusServicesWithin30",
+        "name": "treatmentPlusServicesWithin30DaysOfVisit",
         "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
       }
     ],
@@ -83,7 +83,7 @@
     "metricType": "multiPerformanceRate",
     "strata": [
       {
-        "description": "Beta Blocker Therapy for LVSD",
+        "description": "Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF <40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.",
         "name": "betaBlockerTherapyForLVSD",
         "eMeasureUuids": {
           "initialPopulationUuid": "27982FD6-7C42-44E7-A871-0BB7F858A6D5",
@@ -94,8 +94,8 @@
         }
       },
       {
-        "description": "Beta Blocker Therapy",
-        "name": "betaBlockerTherapy",
+        "description": "Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.",
+        "name": "betaBlockerTherapyWithPriorMI",
         "eMeasureUuids": {
           "initialPopulationUuid": "2EE8137A-4627-471C-8837-85BDBF665017",
           "denominatorUuid": "CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC",
@@ -110,7 +110,7 @@
     "eMeasureId": "CMS149v5",
     "strata": [
       {
-        "name": "assessedCognition",
+        "name": "assessedCognitionOnceWithin12Months",
         "description": "Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12 month period"
       }
     ]
@@ -128,7 +128,7 @@
     "eMeasureId": "CMS155v5",
     "strata": [
       {
-        "name": "BMI",
+        "name": "recordedHeightWeightBMI",
         "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
       },
       {
@@ -146,7 +146,7 @@
     "eMeasureId": "CMS158v5",
     "strata": [
       {
-        "name": "hepBTested",
+        "name": "hepatitisBTested",
         "description": "Patients who were tested for hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery"
       }
     ]
@@ -204,7 +204,7 @@
     "eMeasureId": "CMS166v6",
     "strata": [
       {
-        "name": "noImagingStudy",
+        "name": "noImagingStudyWithin28Days",
         "description": "Patients without an imaging study conducted on the date of the outpatient or emergency department visit or in the 28 days following the outpatient or emergency department visit"
       }
     ]
@@ -213,7 +213,7 @@
     "eMeasureId": "CMS167v5",
     "strata": [
       {
-        "name": "dilatedMacularOrFundusExam",
+        "name": "dilatedMacularOrFundusExamWithin12Months",
         "description": "Patients who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy AND the presence or absence of macular edema during one or more office visits within 12 months"
       }
     ]
@@ -222,7 +222,7 @@
     "eMeasureId": "CMS169v5",
     "strata": [
       {
-        "name": "alcoholAssessmentEvidence",
+        "name": "evidenceOfSubstanceUseBetweenDiagnosisAndTreatment",
         "description": "Patients in the denominator with evidence of an assessment for alcohol or other substance use following or concurrent with the new diagnosis, and prior to or concurrent with the initiation of treatment for that diagnosis"
       }
     ]
@@ -249,11 +249,11 @@
     "eMeasureId": "CMS52v5",
     "strata": [
       {
-        "name": "within3MonthsCD4<200/mm3",
+        "name": "prescribedWithin3MonthsCD4<200/mm3",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3"
       },
       {
-        "name": "within3MonthsCD4<500/mm3OrCD4<15%",
+        "name": "prescribedWithin3MonthsCD4<500/mm3OrCD4<15%",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%"
       },
       {
@@ -276,7 +276,7 @@
     "eMeasureId": "CMS65v6",
     "strata": [
       {
-        "name": "lowerFollowupBP",
+        "name": "lowerFollowupBloodPressure",
         "description": "Patients whose follow-up blood pressure is at least 10 mmHg less than their baseline blood pressure or is adequately controlled.\r\n\r\nIf a follow-up blood pressure reading is not recorded during the measurement year, the patient's blood pressure is assumed \"not improved.\""
       }
     ]
