@@ -113,7 +113,7 @@ function generateScaffoldJson(measuresData) {
     .filter(measure => measure.strata.some(stratum => !stratum.name))
     .map(measure => {
       const strata = measure.strata
-        .filter(stratum => !stratum.name)
+        .filter(stratum => !stratum.name) // some ecqms already have one named stratum
         .map(stratum => ({
           name: '',
           description: stratum.description // for deducing name
