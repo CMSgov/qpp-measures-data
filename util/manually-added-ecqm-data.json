@@ -30,11 +30,11 @@
     "eMeasureId": "CMS128v5",
     "strata": [
       {
-        "name": "continuousTreatmentAtLeast84Days",
+        "name": ">=84Days",
         "description": "Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date"
       },
       {
-        "name": "continuousTreatmentAtLeast180Days",
+        "name": ">=180Days",
         "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date"
       }
     ],
@@ -44,11 +44,11 @@
     "eMeasureId": "CMS136v6",
     "strata": [
       {
-        "name": "hadPractitionerVisitWithin30Days",
+        "name": "visitWithin30Days",
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD."
       },
       {
-        "name": "hadPractitionerVisitAndFollowups",
+        "name": "visitAndFollowups",
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner."
       }
     ],
@@ -84,7 +84,7 @@
     "strata": [
       {
         "description": "Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF <40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.",
-        "name": "betaBlockerTherapyForLVSD",
+        "name": "LVSD",
         "eMeasureUuids": {
           "initialPopulationUuid": "27982FD6-7C42-44E7-A871-0BB7F858A6D5",
           "denominatorUuid": "2294F966-EECD-4C61-8D94-D5E4B09BD9BB",
@@ -95,7 +95,7 @@
       },
       {
         "description": "Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.",
-        "name": "betaBlockerTherapyWithPriorMI",
+        "name": "priorMI",
         "eMeasureUuids": {
           "initialPopulationUuid": "2EE8137A-4627-471C-8837-85BDBF665017",
           "denominatorUuid": "CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC",
@@ -110,7 +110,7 @@
     "eMeasureId": "CMS149v5",
     "strata": [
       {
-        "name": "assessedCognitionOnceWithin12Months",
+        "name": "assessedCognitionWithin12Months",
         "description": "Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12 month period"
       }
     ]
@@ -119,7 +119,7 @@
     "eMeasureId": "CMS153v5",
     "strata": [
       {
-        "name": "testedForChlamydia",
+        "name": "chlamydia",
         "description": "Women with at least one chlamydia test during the measurement period"
       }
     ]
@@ -128,15 +128,15 @@
     "eMeasureId": "CMS155v5",
     "strata": [
       {
-        "name": "recordedHeightWeightBMI",
+        "name": "BMI",
         "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
       },
       {
-        "name": "nutritionCounseling",
+        "name": "nutrition",
         "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
       },
       {
-        "name": "physicalActivityCounseling",
+        "name": "physicalActivity",
         "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
       }
     ],
@@ -146,7 +146,7 @@
     "eMeasureId": "CMS158v5",
     "strata": [
       {
-        "name": "hepatitisBTested",
+        "name": "hepB",
         "description": "Patients who were tested for hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery"
       }
     ]
@@ -158,7 +158,7 @@
     "strata": [
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitWithin4MonthsOfEnd",
+        "name": "within4MonthsOfEnd",
         "eMeasureUuids": {
           "initialPopulationUuid": "92656CE7-C9B1-44A8-8778-A8EF1ED90A18",
           "denominatorUuid": "C7DFE664-71AE-4EAD-AB65-CDFCF825A44E",
@@ -169,7 +169,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitBetween4And8MonthsAfterStart",
+        "name": "between4And8MonthsAfterStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "757F3066-31E7-45D1-BA50-3EFB27ABB8E5",
           "denominatorUuid": "32635FEA-918B-438F-8421-8A6A14E238E8",
@@ -180,7 +180,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitWithin4MonthsOfStart",
+        "name": "within4MonthsOfStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "5631A7DF-CA44-4AD4-A691-DC0CED303F6A",
           "denominatorUuid": "9665A8D2-F896-47A9-AA7E-271E9815D3CE",
@@ -249,15 +249,15 @@
     "eMeasureId": "CMS52v5",
     "strata": [
       {
-        "name": "prescribedWithin3MonthsCD4<200/mm3",
+        "name": "within3MonthsCD4<200/mm3",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3"
       },
       {
-        "name": "prescribedWithin3MonthsCD4<500/mm3OrCD4<15%",
+        "name": "within3MonthsCD4<500/mm3OrCD4<15%",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%"
       },
       {
-        "name": "prescribedAtDiagnosis",
+        "name": "atDiagnosis",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV"
       }
     ],

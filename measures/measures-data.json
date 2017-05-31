@@ -2008,7 +2008,7 @@
           "denominatorExclusionUuid": "FE028D3B-7AB5-418B-A90C-CCFE76F25078",
           "denominatorExceptionUuid": "abe7771d-6723-4a05-a56a-17a04f981c59"
         },
-        "name": "hadPractitionerVisitWithin30Days"
+        "name": "visitWithin30Days"
       },
       {
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
@@ -2019,7 +2019,7 @@
           "denominatorExclusionUuid": "425772D2-6437-4F33-9B1E-349E1C6587D9",
           "denominatorExceptionUuid": "57124f7c-9f15-4b23-9b29-722aeb6d43ee"
         },
-        "name": "hadPractitionerVisitAndFollowups"
+        "name": "visitAndFollowups"
       }
     ],
     "isHighPriority": false,
@@ -2682,7 +2682,7 @@
           "denominatorExclusionUuid": "BA926F92-CA87-43B3-A5C4-FD9FF8B59BB5",
           "denominatorExceptionUuid": "a4a6db02-ab9a-489d-845a-06eccd0b957d"
         },
-        "name": "continuousTreatmentAtLeast84Days"
+        "name": ">=84Days"
       },
       {
         "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date",
@@ -2693,7 +2693,7 @@
           "denominatorExclusionUuid": "8C51C326-AE19-462B-9745-6C8ABE92AE27",
           "denominatorExceptionUuid": "fdcf818a-10f3-43d8-8568-8d2545106a07"
         },
-        "name": "continuousTreatmentAtLeast180Days"
+        "name": ">=180Days"
       }
     ],
     "isHighPriority": false,
@@ -3805,7 +3805,7 @@
           "denominatorExclusionUuid": "341797C7-3664-41E2-9771-6D85B2085BFA",
           "denominatorExceptionUuid": "2e71982a-b165-480e-afc8-4d1eaee6073b"
         },
-        "name": "testedForChlamydia"
+        "name": "chlamydia"
       }
     ],
     "isHighPriority": false,
@@ -4412,7 +4412,7 @@
     "strata": [
       {
         "description": "Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF <40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.",
-        "name": "betaBlockerTherapyForLVSD",
+        "name": "LVSD",
         "eMeasureUuids": {
           "initialPopulationUuid": "27982FD6-7C42-44E7-A871-0BB7F858A6D5",
           "denominatorUuid": "2294F966-EECD-4C61-8D94-D5E4B09BD9BB",
@@ -4423,7 +4423,7 @@
       },
       {
         "description": "Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.",
-        "name": "betaBlockerTherapyWithPriorMI",
+        "name": "priorMI",
         "eMeasureUuids": {
           "initialPopulationUuid": "2EE8137A-4627-471C-8837-85BDBF665017",
           "denominatorUuid": "CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC",
@@ -4499,7 +4499,7 @@
           "denominatorExclusionUuid": "7b3728ef-a1b8-489a-8a7c-f682c26e0d7f",
           "denominatorExceptionUuid": "2EE99933-7653-4C53-8506-2A76D0657064"
         },
-        "name": "assessedCognitionOnceWithin12Months"
+        "name": "assessedCognitionWithin12Months"
       }
     ],
     "isHighPriority": false,
@@ -4719,7 +4719,7 @@
     "strata": [
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitWithin4MonthsOfEnd",
+        "name": "within4MonthsOfEnd",
         "eMeasureUuids": {
           "initialPopulationUuid": "92656CE7-C9B1-44A8-8778-A8EF1ED90A18",
           "denominatorUuid": "C7DFE664-71AE-4EAD-AB65-CDFCF825A44E",
@@ -4730,7 +4730,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitBetween4And8MonthsAfterStart",
+        "name": "between4And8MonthsAfterStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "757F3066-31E7-45D1-BA50-3EFB27ABB8E5",
           "denominatorUuid": "32635FEA-918B-438F-8421-8A6A14E238E8",
@@ -4741,7 +4741,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "diagnosisVisitWithin4MonthsOfStart",
+        "name": "within4MonthsOfStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "5631A7DF-CA44-4AD4-A691-DC0CED303F6A",
           "denominatorUuid": "9665A8D2-F896-47A9-AA7E-271E9815D3CE",
@@ -6089,7 +6089,7 @@
           "denominatorExclusionUuid": "4c42d3ad-5ad4-4e97-ac7d-81c9758fbead",
           "denominatorExceptionUuid": "58347456-D1F3-4BBB-9B35-5D42825A0AB3"
         },
-        "name": "prescribedWithin3MonthsCD4<200/mm3"
+        "name": "within3MonthsCD4<200/mm3"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%",
@@ -6100,7 +6100,7 @@
           "denominatorExclusionUuid": "659d5fba-93ed-4b1f-bd17-233362e37e58",
           "denominatorExceptionUuid": "B7CCA1A6-F352-4A23-BC89-6FE9B60DC0C6"
         },
-        "name": "prescribedWithin3MonthsCD4<500/mm3OrCD4<15%"
+        "name": "within3MonthsCD4<500/mm3OrCD4<15%"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV",
@@ -6111,7 +6111,7 @@
           "denominatorExclusionUuid": "8d54df2e-8a7e-49e3-a99a-0132f5139b7c",
           "denominatorExceptionUuid": "28ee691d-8155-41fe-8c20-12a5d2e1fb75"
         },
-        "name": "prescribedAtDiagnosis"
+        "name": "atDiagnosis"
       }
     ],
     "isHighPriority": false,
@@ -8217,7 +8217,7 @@
           "denominatorExclusionUuid": "72135b92-8866-4315-992d-38ca6490da49",
           "denominatorExceptionUuid": "F77E40ED-F649-4250-B99A-3C35414D88B0"
         },
-        "name": "hepatitisBTested"
+        "name": "hepB"
       }
     ],
     "isHighPriority": false,
@@ -10655,7 +10655,7 @@
           "denominatorExclusionUuid": "6938F4DD-D5AB-4C40-BA03-EB0F0959615C",
           "denominatorExceptionUuid": "3cac2acd-a3ed-4629-967a-83464c25fee4"
         },
-        "name": "recordedHeightWeightBMI"
+        "name": "BMI"
       },
       {
         "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period",
@@ -10666,7 +10666,7 @@
           "denominatorExclusionUuid": "A399FA9C-48CF-41E5-812A-3445188B8301",
           "denominatorExceptionUuid": "9fc3a9e2-6e5f-4310-9d12-5546add1a4d2"
         },
-        "name": "nutritionCounseling"
+        "name": "nutrition"
       },
       {
         "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period",
@@ -10677,7 +10677,7 @@
           "denominatorExclusionUuid": "507F7EC3-D380-48BE-B920-ABB1EB258256",
           "denominatorExceptionUuid": "15a2ed8f-4300-4ad9-b2ec-63d6f389feba"
         },
-        "name": "physicalActivityCounseling"
+        "name": "physicalActivity"
       }
     ],
     "isHighPriority": false,

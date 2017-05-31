@@ -1996,7 +1996,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
         <denominatorExclusionUuid>FE028D3B-7AB5-418B-A90C-CCFE76F25078</denominatorExclusionUuid>
         <denominatorExceptionUuid>abe7771d-6723-4a05-a56a-17a04f981c59</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>hadPractitionerVisitWithin30Days</name>
+      <name>visitWithin30Days</name>
     </strata>
     <strata>
       <description>Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.</description>
@@ -2007,7 +2007,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
         <denominatorExclusionUuid>425772D2-6437-4F33-9B1E-349E1C6587D9</denominatorExclusionUuid>
         <denominatorExceptionUuid>57124f7c-9f15-4b23-9b29-722aeb6d43ee</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>hadPractitionerVisitAndFollowups</name>
+      <name>visitAndFollowups</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -2548,7 +2548,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>BA926F92-CA87-43B3-A5C4-FD9FF8B59BB5</denominatorExclusionUuid>
         <denominatorExceptionUuid>a4a6db02-ab9a-489d-845a-06eccd0b957d</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>continuousTreatmentAtLeast84Days</name>
+      <name>&gt;=84Days</name>
     </strata>
     <strata>
       <description>Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date</description>
@@ -2559,7 +2559,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>8C51C326-AE19-462B-9745-6C8ABE92AE27</denominatorExclusionUuid>
         <denominatorExceptionUuid>fdcf818a-10f3-43d8-8568-8d2545106a07</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>continuousTreatmentAtLeast180Days</name>
+      <name>&gt;=180Days</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3498,7 +3498,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>341797C7-3664-41E2-9771-6D85B2085BFA</denominatorExclusionUuid>
         <denominatorExceptionUuid>2e71982a-b165-480e-afc8-4d1eaee6073b</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>testedForChlamydia</name>
+      <name>chlamydia</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3999,7 +3999,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <strata>
       <description>Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF &lt;40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.</description>
-      <name>betaBlockerTherapyForLVSD</name>
+      <name>LVSD</name>
       <eMeasureUuids>
         <initialPopulationUuid>27982FD6-7C42-44E7-A871-0BB7F858A6D5</initialPopulationUuid>
         <denominatorUuid>2294F966-EECD-4C61-8D94-D5E4B09BD9BB</denominatorUuid>
@@ -4010,7 +4010,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     </strata>
     <strata>
       <description>Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.</description>
-      <name>betaBlockerTherapyWithPriorMI</name>
+      <name>priorMI</name>
       <eMeasureUuids>
         <initialPopulationUuid>2EE8137A-4627-471C-8837-85BDBF665017</initialPopulationUuid>
         <denominatorUuid>CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC</denominatorUuid>
@@ -4074,7 +4074,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>7b3728ef-a1b8-489a-8a7c-f682c26e0d7f</denominatorExclusionUuid>
         <denominatorExceptionUuid>2EE99933-7653-4C53-8506-2A76D0657064</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>assessedCognitionOnceWithin12Months</name>
+      <name>assessedCognitionWithin12Months</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4252,7 +4252,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>diagnosisVisitWithin4MonthsOfEnd</name>
+      <name>within4MonthsOfEnd</name>
       <eMeasureUuids>
         <initialPopulationUuid>92656CE7-C9B1-44A8-8778-A8EF1ED90A18</initialPopulationUuid>
         <denominatorUuid>C7DFE664-71AE-4EAD-AB65-CDFCF825A44E</denominatorUuid>
@@ -4263,7 +4263,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     </strata>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>diagnosisVisitBetween4And8MonthsAfterStart</name>
+      <name>between4And8MonthsAfterStart</name>
       <eMeasureUuids>
         <initialPopulationUuid>757F3066-31E7-45D1-BA50-3EFB27ABB8E5</initialPopulationUuid>
         <denominatorUuid>32635FEA-918B-438F-8421-8A6A14E238E8</denominatorUuid>
@@ -4274,7 +4274,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     </strata>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>diagnosisVisitWithin4MonthsOfStart</name>
+      <name>within4MonthsOfStart</name>
       <eMeasureUuids>
         <initialPopulationUuid>5631A7DF-CA44-4AD4-A691-DC0CED303F6A</initialPopulationUuid>
         <denominatorUuid>9665A8D2-F896-47A9-AA7E-271E9815D3CE</denominatorUuid>
@@ -5398,7 +5398,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>4c42d3ad-5ad4-4e97-ac7d-81c9758fbead</denominatorExclusionUuid>
         <denominatorExceptionUuid>58347456-D1F3-4BBB-9B35-5D42825A0AB3</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>prescribedWithin3MonthsCD4&lt;200/mm3</name>
+      <name>within3MonthsCD4&lt;200/mm3</name>
     </strata>
     <strata>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%</description>
@@ -5409,7 +5409,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>659d5fba-93ed-4b1f-bd17-233362e37e58</denominatorExclusionUuid>
         <denominatorExceptionUuid>B7CCA1A6-F352-4A23-BC89-6FE9B60DC0C6</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>prescribedWithin3MonthsCD4&lt;500/mm3OrCD4&lt;15%</name>
+      <name>within3MonthsCD4&lt;500/mm3OrCD4&lt;15%</name>
     </strata>
     <strata>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV</description>
@@ -5420,7 +5420,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>8d54df2e-8a7e-49e3-a99a-0132f5139b7c</denominatorExclusionUuid>
         <denominatorExceptionUuid>28ee691d-8155-41fe-8c20-12a5d2e1fb75</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>prescribedAtDiagnosis</name>
+      <name>atDiagnosis</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -7167,7 +7167,7 @@ This measure is reported as three rates stratified by age group:
         <denominatorExclusionUuid>72135b92-8866-4315-992d-38ca6490da49</denominatorExclusionUuid>
         <denominatorExceptionUuid>F77E40ED-F649-4250-B99A-3C35414D88B0</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>hepatitisBTested</name>
+      <name>hepB</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>OptumInsight</primarySteward>
@@ -9183,7 +9183,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
         <denominatorExclusionUuid>6938F4DD-D5AB-4C40-BA03-EB0F0959615C</denominatorExclusionUuid>
         <denominatorExceptionUuid>3cac2acd-a3ed-4629-967a-83464c25fee4</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>recordedHeightWeightBMI</name>
+      <name>BMI</name>
     </strata>
     <strata>
       <description>Patients who had counseling for nutrition during a visit that occurs during the measurement period</description>
@@ -9194,7 +9194,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
         <denominatorExclusionUuid>A399FA9C-48CF-41E5-812A-3445188B8301</denominatorExclusionUuid>
         <denominatorExceptionUuid>9fc3a9e2-6e5f-4310-9d12-5546add1a4d2</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>nutritionCounseling</name>
+      <name>nutrition</name>
     </strata>
     <strata>
       <description>Patients who had counseling for physical activity during a visit that occurs during the measurement period</description>
@@ -9205,7 +9205,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
         <denominatorExclusionUuid>507F7EC3-D380-48BE-B920-ABB1EB258256</denominatorExclusionUuid>
         <denominatorExceptionUuid>15a2ed8f-4300-4ad9-b2ec-63d6f389feba</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>physicalActivityCounseling</name>
+      <name>physicalActivity</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
