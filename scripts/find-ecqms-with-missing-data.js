@@ -27,6 +27,12 @@ process.stdin.on('readable', () => {
   }
 });
 
+process.stdin.on('end', () => {
+  const scaffold = generateScaffoldJson(JSON.parse(measuresData, 'utf8'));
+  console.log('output: ', scaffold);
+  fs.writeFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), scaffold);
+});
+
 // There are two measures that are known outliers; CMS145v5 and CMS160v5, which are added
 // manually here to be merged in by merge-measures-data.js
 const outlierEcqms = [
@@ -129,9 +135,3 @@ function generateScaffoldJson(measuresData) {
   const sortedMissingJson = _.sortBy(missingJson, ['eMeasureId']);
   return JSON.stringify(sortedMissingJson, null, 2);
 }
-
-process.stdin.on('end', () => {
-  const scaffold = generateScaffoldJson(JSON.parse(measuresData, 'utf8'));
-  console.log('output: ', scaffold);
-  fs.writeFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), scaffold);
-});
