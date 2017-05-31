@@ -9,17 +9,23 @@ To 'util/manually-added-ecqm-data.json', you must manually edit the strata field
 
 Once 'util/manually-added-ecqm-data.json' contains strata names and you've verified that the hardcoded 145v5 and 160v5 measure data is correct, you can run merge-measures-data.js to include the missing strata data.
 
-Usage: ./scripts/find-ecqms-with-missing-data.js measures/measures-data.json
+To run: `cat [measures-data.json] | node scripts/find-ecqms-with-missing-data.js`
+e.g. `cat measures/measures-data.json | node scripts/find-ecqms-with-missing-data.js`
 */
 
 const fs = require('fs');
 const _ = require('lodash');
 const path = require('path');
-const measuresDataPath = process.argv[2];
-if (!measuresDataPath) {
-  console.log('Missing required argument <path to measures-data.json>');
-  process.exit(1);
-}
+let measuresData = '';
+
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('readable', () => {
+  var chunk = process.stdin.read();
+  if (chunk !== null) {
+    measuresData += chunk;
+  }
+});
 
 // There are two measures that are known outliers; CMS145v5 and CMS160v5, which are added
 // manually here to be merged in by merge-measures-data.js
@@ -95,30 +101,37 @@ const outlierEcqms = [
   }
 ];
 
-const measuresJson = JSON.parse(fs.readFileSync(measuresDataPath, 'utf8'));
-const ecqmsWithMissingData = measuresJson
-  .filter(measure => measure.category === 'quality')
-  .filter(measure => measure.strata.some(stratum => !stratum.name))
-  .map(measure => {
-    const strata = measure.strata
-      .filter(stratum => !stratum.name)
-      .map(stratum => ({
-        name: '',
-        description: stratum.description // for deducing name
-      }));
+function generateScaffoldJson(measuresData) {
+  const ecqmsWithMissingData = measuresData
+    .filter(measure => measure.category === 'quality')
+    .filter(measure => measure.strata.some(stratum => !stratum.name))
+    .map(measure => {
+      const strata = measure.strata
+        .filter(stratum => !stratum.name)
+        .map(stratum => ({
+          name: '',
+          description: stratum.description // for deducing name
+        }));
 
-    const scaffold = {
-      eMeasureId: measure.eMeasureId, // for keying purposes
-      strata
-    };
+      const scaffold = {
+        eMeasureId: measure.eMeasureId, // for keying purposes
+        strata
+      };
 
-    // add stub for overallAlgorithm if needed
-    if (measure.strata.length > 1 && !measure.overallAlgorithm) {
-      scaffold.overallAlgorithm = '';
-    }
-    return scaffold;
-  });
+      // add stub for overallAlgorithm if needed
+      if (measure.strata.length > 1 && !measure.overallAlgorithm) {
+        scaffold.overallAlgorithm = '';
+      }
+      return scaffold;
+    });
 
-const missingJson = outlierEcqms.concat(ecqmsWithMissingData);
-const sortedMissingJson = _.sortBy(missingJson, ['eMeasureId']);
-fs.writeFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), JSON.stringify(sortedMissingJson, null, 2));
+  const missingJson = outlierEcqms.concat(ecqmsWithMissingData);
+  const sortedMissingJson = _.sortBy(missingJson, ['eMeasureId']);
+  return JSON.stringify(sortedMissingJson, null, 2);
+}
+
+process.stdin.on('end', () => {
+  const scaffold = generateScaffoldJson(JSON.parse(measuresData, 'utf8'));
+  console.log('output: ', scaffold);
+  fs.writeFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), scaffold);
+});
