@@ -47,32 +47,36 @@ To regenerate the `measures-data.json` file, which contains additional metadata 
 the measures schema, do the following:
 
 1. Download the qpp quality pdfs and ecqm measure specifications
-	```
-	wget https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip .
-  wget https://ecqi.healthit.gov/system/files/ecqm_eligibleclinician_jan2017.zip .
-	unzip QPP_quality_measure_specifications.zip
-	```
-2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quality measures data.
-	```
-	node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
-	```
+
+    ```
+    wget https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip .
+    wget https://ecqi.healthit.gov/system/files/ecqm_eligibleclinician_jan2017.zip .
+    unzip QPP_quality_measure_specifications.zip
+    ```
+
+2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) `util/quality-measures-strata-details.json` file to get the full quality measures data.
+
+    ```
+    node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
+    ```
+
 3. Run the script to extract strata descriptions and measure/strata uuids for ecqms from the zip:
-  ```
-  node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
-  ```
 
-Then run this command to generate a new measures-data.json file:
+    ```
+    node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+    ```
 
-```
-jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
-```
+4. Then run this command to generate a new `measures-data.json` file:
 
-To regenerate the `measures-data.xml` file, run:
-```
-cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
-```
+    ```
+    jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
+    ```
 
-The measures from `additional-measures.json` must be added, as they are not available via the QPP API.
+5. To regenerate the `measures-data.xml` file, run:
+
+    ```
+    cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
+    ```
 
 ### Generating benchmarks data
 To regenerate benchmarks data from historical data use the `scripts/parse-benchmarks-data.js` script
