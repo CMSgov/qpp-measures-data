@@ -66,17 +66,16 @@ the measures schema, do the following:
     node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
     ```
 
+4. Then run this command to generate a new measures-data.json file:
 
-Then run this command to generate a new measures-data.json file:
+  ```
+  jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
+  ```
 
-```
-jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
-```
-
-To regenerate the `measures-data.xml` file, run:
-```
-cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
-```
+  To regenerate the `measures-data.xml` file, run:
+  ```
+  cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
+  ```
 
 The measures from `additional-measures.json` must be added, as they are not available via the QPP API.
 
