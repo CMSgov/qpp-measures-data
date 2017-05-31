@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
 /*
-Run this on measures-data.json to generate a scaffold for filling in missing ecqm data.
-The util/manually-added-ecqm-data.json file will be (re)written.
+This is intended to be a one-time-use script; it takes measures-data as input that is
+missing ecqm data and writes a scaffold json file at 'utils/manually-added-ecqm-data.json'.
+The 'util/manually-added-ecqm-data.json' file will be (re)written.
+
+To 'util/manually-added-ecqm-data.json', you must manually edit the strata fields and commit the changes.
+
+Once 'util/manually-added-ecqm-data.json' contains strata names and you've verified that the hardcoded 145v5 and 160v5 measure data is correct, you can run merge-measures-data.js to include the missing strata data.
 
 Usage: ./scripts/find-ecqms-with-missing-data.js measures/measures-data.json
 */
