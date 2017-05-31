@@ -78,8 +78,6 @@ the measures schema, do the following:
     cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
     ```
 
-The measures from `additional-measures.json` must be added, as they are not available via the QPP API.
-
 ### Generating benchmarks data
 To regenerate benchmarks data from historical data use the `scripts/parse-benchmarks-data.js` script
 like so:
