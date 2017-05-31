@@ -54,7 +54,7 @@ the measures schema, do the following:
     unzip QPP_quality_measure_specifications.zip
     ```
 
-2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quality measures data.
+2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) `util/quality-measures-strata-details.json` file to get the full quality measures data.
 
     ```
     node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
@@ -66,7 +66,7 @@ the measures schema, do the following:
     node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
     ```
 
-4. Then run this command to generate a new measures-data.json file:
+4. Then run this command to generate a new `measures-data.json` file:
 
     ```
     jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
