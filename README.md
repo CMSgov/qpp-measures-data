@@ -63,6 +63,7 @@ the measures schema, do the following:
     node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
   ```
 
+
 Then run this command to generate a new measures-data.json file:
 
 ```
