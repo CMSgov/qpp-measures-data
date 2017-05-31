@@ -82,6 +82,9 @@ definitions:
       eMeasureId:
         description: Identifier for Electronic Clinical Quality Measures (ECQM).
         type: ['null', string]
+      eMeasureUuid:
+        description: UUID for Electronic Clinical Quality Measures (ECQM).
+        type: string
       nqfEMeasureId:
         description: Identifier for measure specified in the Health Quality Measure Format (HQMF).
         type: ['null', string]
@@ -127,6 +130,19 @@ definitions:
         type: string
       name:
         type: string
+      eMeasureUuids:
+        type: object
+        properties:
+          initialPopulationUuid:
+            type: string
+          denominatorUuid:
+            type: string
+          numeratorUuid:
+            type: string
+          denominatorExclusionUuid:
+            type: string
+          denominatorExceptionUuid:
+            type: string
 
   subcategoryIds:
     enum:

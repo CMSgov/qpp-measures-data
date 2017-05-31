@@ -1974,7 +1974,7 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>ADHD: Follow-Up Care for Children Prescribed Attention-Deficit/Hyperactivity Disorder (ADHD) Medication</title>
     <description>Percentage of children 6-12 years of age and newly dispensed a medication for attention-deficit/hyperactivity disorder (ADHD) who had appropriate follow-up care.  Two rates are reported.  
 a. Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.
@@ -1987,11 +1987,35 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <nqfEMeasureId/>
     <nqfId>0108</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>4DF80BC3-980B-465E-8591-616C7DB74FBD</initialPopulationUuid>
+        <denominatorUuid>815F709E-9703-4A6E-860F-CB0096A98B71</denominatorUuid>
+        <numeratorUuid>341DBA96-D1CC-409F-99D9-8AB80D03B4A8</numeratorUuid>
+        <denominatorExclusionUuid>FE028D3B-7AB5-418B-A90C-CCFE76F25078</denominatorExclusionUuid>
+        <denominatorExceptionUuid>abe7771d-6723-4a05-a56a-17a04f981c59</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>visitWithin30Days</name>
+    </strata>
+    <strata>
+      <description>Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>9FC61BF5-1EBD-44DE-ADCB-64E70FD3C0A5</initialPopulationUuid>
+        <denominatorUuid>62FDAE01-000B-40A0-9C74-4A803BA37A96</denominatorUuid>
+        <numeratorUuid>5097B983-9C47-4F28-9194-C795F42053AF</numeratorUuid>
+        <denominatorExclusionUuid>425772D2-6437-4F33-9B1E-349E1C6587D9</denominatorExclusionUuid>
+        <denominatorExceptionUuid>57124f7c-9f15-4b23-9b29-722aeb6d43ee</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>visitAndFollowups</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22a639d81762</eMeasureUuid>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
   </measure>
   <measure>
     <category>quality</category>
@@ -2150,9 +2174,21 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <nqfEMeasureId/>
     <nqfId>0104</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients with a suicide risk assessment completed during the visit in which a new diagnosis or recurrent episode was identified</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>9CDC88D7-31DA-44F1-9348-CFDD29F4B20B</initialPopulationUuid>
+        <denominatorUuid>1EC810C4-E6D2-4ED6-AE02-A0BF4D675F05</denominatorUuid>
+        <numeratorUuid>693493EC-2E8E-447C-88A3-FC93AD771AB9</numeratorUuid>
+        <denominatorExclusionUuid>f1f029d5-89a7-4c0b-acec-4ddc4fefc799</denominatorExclusionUuid>
+        <denominatorExceptionUuid>94a41537-ee3d-4e8b-bd88-08c70e8dde3d</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>assessedSuicideRisk</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-503f-a1fc-0150-de8350a220c3</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -2490,7 +2526,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>Anti-Depressant Medication Management</title>
     <description>Percentage of patients 18 years of age and older who were treated with antidepressant medication, had a diagnosis of major depression, and who remained on an antidepressant medication treatment. Two rates are reported. 
 a. Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). 
@@ -2503,12 +2539,36 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0105</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>220EBFDC-C2DF-431B-B14A-8982026B10F1</initialPopulationUuid>
+        <denominatorUuid>50E80E87-0A09-4914-8632-BD0797460B34</denominatorUuid>
+        <numeratorUuid>02A8409A-7B63-4FE9-B865-87C650DD7459</numeratorUuid>
+        <denominatorExclusionUuid>BA926F92-CA87-43B3-A5C4-FD9FF8B59BB5</denominatorExclusionUuid>
+        <denominatorExceptionUuid>a4a6db02-ab9a-489d-845a-06eccd0b957d</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>&gt;=84Days</name>
+    </strata>
+    <strata>
+      <description>Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>1E041190-8EE7-46B0-A735-B416C5FA76FC</initialPopulationUuid>
+        <denominatorUuid>B1C6949E-6854-4182-8BC9-C0EE75B705A2</denominatorUuid>
+        <numeratorUuid>3A4FA8BB-D8BC-4F66-9367-A71DF03A868D</numeratorUuid>
+        <denominatorExclusionUuid>8C51C326-AE19-462B-9745-6C8ABE92AE27</denominatorExclusionUuid>
+        <denominatorExceptionUuid>fdcf818a-10f3-43d8-8568-8d2545106a07</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>&gt;=180Days</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22a112d2172a</eMeasureUuid>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
   </measure>
   <measure>
     <category>quality</category>
@@ -2625,8 +2685,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId/>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of children 3-18 years of age who were diagnosed with pharyngitis, ordered an antibiotic and received a group A streptococcus (strep) test for the episode</description>
+      <description>Children with a group A streptococcus test in the 7-day period from 3 days prior through 3 days after the diagnosis of pharyngitis</description>
       <name>strep</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>6BE37D85-960E-4C32-AD2D-FE036A058EB4</initialPopulationUuid>
+        <denominatorUuid>AE00EE88-B26B-449D-94DE-EA3887BB66E0</denominatorUuid>
+        <numeratorUuid>86A8B7E8-EEA2-4C19-8A1B-74B905939505</numeratorUuid>
+        <denominatorExclusionUuid>A0B43F8B-E6EE-4229-A05D-ECF1B601CEAF</denominatorExclusionUuid>
+        <denominatorExceptionUuid>7f8af6e7-489b-4f64-a627-6c9b50400d9e</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -2635,6 +2702,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>emergencyMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-424a166015d1</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -2651,8 +2719,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0069</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of children 3 months - 18 years of age who were diagnosed with upper respiratory infection (URI) and were not dispensed an antibiotic prescription on or three days after the episode</description>
+      <description>Children without a prescription for antibiotic medication on or 3 days after the outpatient or ED visit for an upper respiratory infection</description>
       <name>URI</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>A5BF87B0-15CF-4012-9E29-DC85010676BC</initialPopulationUuid>
+        <denominatorUuid>FDE4FCC5-826B-42C6-82BE-1694DD18A48D</denominatorUuid>
+        <numeratorUuid>27037F9E-5C8E-41FE-A973-E2E020C97DA7</numeratorUuid>
+        <denominatorExclusionUuid>8E32E552-A70A-4BBC-A92A-F8D3D48113CF</denominatorExclusionUuid>
+        <denominatorExceptionUuid>cc580a24-5718-4c00-a7f3-fff702791e15</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -2660,6 +2735,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <submissionMethod>registry</submissionMethod>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-42810251160f</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -2845,9 +2921,21 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients in the denominator with evidence of an assessment for alcohol or other substance use following or concurrent with the new diagnosis, and prior to or concurrent with the initiation of treatment for that diagnosis</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>AB5E9E84-65FB-4566-8254-D3488CA9A169</initialPopulationUuid>
+        <denominatorUuid>9656501E-1FAB-4B81-AB59-6646F1114394</denominatorUuid>
+        <numeratorUuid>3C942ABF-C287-4FBB-AFEE-67BC5FC93BD0</numeratorUuid>
+        <denominatorExclusionUuid>672f9875-55d9-4fb3-b56f-85205699103f</denominatorExclusionUuid>
+        <denominatorExceptionUuid>3a57a106-7404-476e-b026-23282a95d75f</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>evidenceOfSubstanceUseBetweenDiagnosisAndTreatment</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Center for Quality Assessment and Improvement in Mental Health</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-503f-a1fc-0150-67942bbc07d7</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -2888,8 +2976,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>2372</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of women 50 - 74 years of age who had a mammogram to screen for breast cancer</description>
+      <description>Women with one or more mammograms during the measurement period or the 15 months prior to the measurement period</description>
       <name>mammogram</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>66FD640C-70BB-400F-9926-98EA1ACEBEBA</initialPopulationUuid>
+        <denominatorUuid>40FB2D5F-7DEF-4D41-80C4-F3FBA0ED5851</denominatorUuid>
+        <numeratorUuid>0AB40D2B-08CE-4185-8A54-336C3140644D</numeratorUuid>
+        <denominatorExclusionUuid>EC5CC49E-42A7-4DD8-BD40-A6258E71DCB9</denominatorExclusionUuid>
+        <denominatorExceptionUuid>f8f1841f-42d9-4f20-bc7f-960ce90c17ae</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -2901,6 +2996,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-229c4ea3170c</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3082,14 +3178,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0565</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of uncomplicated cataract who had cataract surgery and no significant ocular conditions impacting the visual outcome of surgery and had best-corrected visual acuity of 20/40 or better (distance or near) achieved within 90 days following the cataract surgery</description>
+      <description>Patients who had best-corrected visual acuity of 20/40 or better (distance or near) achieved within 90 days following cataract surgery</description>
       <name>cataract</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>D790598C-DC4A-4DF8-8E50-9878AF4E886F</initialPopulationUuid>
+        <denominatorUuid>16000621-529F-4F4E-A0A8-ACA703D3B40A</denominatorUuid>
+        <numeratorUuid>2F166EEC-4528-474A-966F-D9C8AD49C7AD</numeratorUuid>
+        <denominatorExclusionUuid>9D7B933B-8A97-4BA3-A546-220E1BF789CC</denominatorExclusionUuid>
+        <denominatorExceptionUuid>d164dbe6-d3d5-4bc4-8df1-d54b1d07ef10</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1f44d4980f0f</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3106,14 +3210,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0564</nqfId>
     <isInverse>true</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of uncomplicated cataract who had cataract surgery and had any of a specified list of surgical procedures in the 30 days following cataract surgery which would indicate the occurrence of any of the following major complications: retained nuclear fragments, endophthalmitis, dislocated or wrong power IOL, retinal detachment, or wound dehiscence</description>
+      <description>Patients who had one or more specified operative procedures for any of the following major complications within 30 days following cataract surgery: retained nuclear fragments, endophthalmitis, dislocated or wrong power IOL, retinal detachment, or wound dehiscence</description>
       <name>cataract</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>1B6E9DCF-15DC-4D57-97DB-F8A8619DDB1B</initialPopulationUuid>
+        <denominatorUuid>44BB8D98-F611-48FD-BD3F-05BB998F3754</denominatorUuid>
+        <numeratorUuid>A4AE5A30-F400-4849-B054-FB19138AC580</numeratorUuid>
+        <denominatorExclusionUuid>AE555E04-C8C0-4ABE-AE9B-C5FC2B46F263</denominatorExclusionUuid>
+        <denominatorExceptionUuid>4af92697-0940-49aa-b67e-dca6646aed47</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a2308830b04</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3224,11 +3336,27 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0032</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Women with one or more screenings for cervical cancer. Appropriate screenings are defined by any one of the following criteria:&#xD;
+&#xD;
+- Cervical cytology performed during the measurement period or the two years prior to the measurement period for women who are at least 21 years old at the time of the test&#xD;
+ &#xD;
+- Cervical cytology/human papillomavirus (HPV) co-testing performed during the measurement period or the four years prior to the measurement period for women who are at least 30 years old at the time of the test</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>3A29C38D-E468-47CC-995B-B281B1B066CF</initialPopulationUuid>
+        <denominatorUuid>7CDA5C1B-CD31-4D16-80C4-22AE2F549D88</denominatorUuid>
+        <numeratorUuid>3854BDE6-9614-475D-8E3B-5A041C04C291</numeratorUuid>
+        <denominatorExclusionUuid>45A2163C-25C2-4245-A3C6-0BEE64E18B64</denominatorExclusionUuid>
+        <denominatorExceptionUuid>bc43554a-5399-4d55-9c48-7dc2c1cbbb65</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>screenedForCervicalCancer</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-229bdcab1702</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3245,11 +3373,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>1365</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patient visits with an assessment for suicide risk</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>008509CF-85E8-40C0-9434-65FE19EFC090</initialPopulationUuid>
+        <denominatorUuid>92E101F9-795A-46DD-BEDE-EA94743AC232</denominatorUuid>
+        <numeratorUuid>78D2FEEA-45D3-4D08-9227-773E70E3AAD5</numeratorUuid>
+        <denominatorExclusionUuid>e21f777c-f8c6-4250-9428-2535d91b4a96</denominatorExclusionUuid>
+        <denominatorExceptionUuid>6267da42-6e04-4614-bbe6-bb17021cc4b1</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>assessedSuicideRisk</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-503f-a1fc-0151-11602d4d2909</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3265,10 +3405,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0038</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>DA379EC2-EE2E-4548-AEF0-DD4F14F80279</initialPopulationUuid>
+        <denominatorUuid>CC8AFFF0-A436-42CD-8322-5EBCEF9CBF06</denominatorUuid>
+        <numeratorUuid>AE7A33AF-0DA7-4772-A23C-2D2CA732D53A</numeratorUuid>
+        <denominatorExclusionUuid>19d26b5e-9be2-4313-80f4-67be1e0dde37</denominatorExclusionUuid>
+        <denominatorExceptionUuid>01a1c883-e2e6-4aec-81de-17f3cd9b63b3</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>receivedVaccinesOrExposure</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a4ba57f0b8a</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3284,9 +3436,21 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>true</isInverse>
+    <strata>
+      <description>Children who had cavities or decayed teeth</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>72D79C93-6D03-4BA2-B250-5316E370B766</initialPopulationUuid>
+        <denominatorUuid>E87F18F1-F70C-4BB3-A95C-7C1D4561E73D</denominatorUuid>
+        <numeratorUuid>3D9AD35A-7456-4AA2-8FDB-D4B06DF72CC9</numeratorUuid>
+        <denominatorExclusionUuid>c7cc2c7e-892e-4b35-b1ed-b25a094f25d5</denominatorExclusionUuid>
+        <denominatorExceptionUuid>7637d114-553a-4bc4-b084-d05b3a125bb8</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>hadCavitiesOrDecayedTeeth</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1f39c24d0eef</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3325,11 +3489,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0033</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Women with at least one chlamydia test during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>A417988B-395B-4108-9988-1AE443A1E254</initialPopulationUuid>
+        <denominatorUuid>F25492A9-8164-4833-9A91-EA160ECC9190</denominatorUuid>
+        <numeratorUuid>D387E1DC-F06A-4054-87B1-40B863FCF8EC</numeratorUuid>
+        <denominatorExclusionUuid>341797C7-3664-41E2-9771-6D85B2085BFA</denominatorExclusionUuid>
+        <denominatorExceptionUuid>2e71982a-b165-480e-afc8-4d1eaee6073b</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>chlamydia</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22b52da917ba</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3413,6 +3589,17 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Number of patients with a referral, for which the referring provider received a report from the provider to whom the patient was referred</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>E7A4AE77-FC46-44F1-BF25-9E99A89CED9B</initialPopulationUuid>
+        <denominatorUuid>B710DA92-D4B9-4217-8D1E-94B35163BECE</denominatorUuid>
+        <numeratorUuid>9824B759-A263-44DE-9F5E-93DA4E8F4627</numeratorUuid>
+        <denominatorExclusionUuid>38db92d1-881b-452b-930e-79bff2e4e490</denominatorExclusionUuid>
+        <denominatorExceptionUuid>c8dcc3f8-38e7-4004-956e-ab8abe965231</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>patientsWithReferral</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
@@ -3437,6 +3624,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>vascularSurgery</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>plasticSurgery</measureSet>
+    <eMeasureUuid>40280381-5118-2f4e-0151-59fb81bf1055</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3502,8 +3690,18 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0034</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients 50-75 years of age who had appropriate screening for colorectal cancer</description>
+      <description>Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria: &#xD;
+- Fecal occult blood test (FOBT) during the measurement period &#xD;
+- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period &#xD;
+- Colonoscopy during the measurement period or the nine years prior to the measurement period</description>
       <name>colorectalCancer</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>4D1C7452-B908-4616-B9E9-36C9AA71005B</initialPopulationUuid>
+        <denominatorUuid>589C2FD6-6AA9-4AF8-9E1C-973170361917</denominatorUuid>
+        <numeratorUuid>52ADE511-39D4-4CBC-84B6-A82059741359</numeratorUuid>
+        <denominatorExclusionUuid>93AA9C96-E1FE-435B-BA0B-FAF0C5592275</denominatorExclusionUuid>
+        <denominatorExceptionUuid>385e49f7-501d-498f-b99d-681c67c6a22d</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3513,6 +3711,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <submissionMethod>registry</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22a1e7e81737</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3553,8 +3752,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0018</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients 18 - 85 years of age who had a diagnosis of hypertension and whose blood pressure was adequately controlled (&lt; 140/90 mmHg) during the measurement period</description>
+      <description>Patients whose blood pressure at the most recent visit is adequately controlled (systolic blood pressure &lt; 140 mmHg and diastolic blood pressure &lt; 90 mmHg) during the measurement period</description>
       <name>hypertension</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>3AD33404-E734-4F67-9144-E4B63CB3F4BE</initialPopulationUuid>
+        <denominatorUuid>E62FEBA3-0F98-460D-93CD-44314D7203A8</denominatorUuid>
+        <numeratorUuid>F9FEBF42-4B21-47A9-B03E-D2DA5CF8492B</numeratorUuid>
+        <denominatorExclusionUuid>55A6D5F3-2029-4896-B850-4C7894161D7D</denominatorExclusionUuid>
+        <denominatorExceptionUuid>fafa1d59-6f64-487c-9f95-ed81c139d2c0</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3569,6 +3775,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>thoracicSurgery</measureSet>
     <measureSet>vascularSurgery</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22b98cff181a</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3791,12 +3998,26 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0070</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Patients who are 18 years and older with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF &lt; 40%</description>
-      <name>LVEF&lt;40%</name>
+      <description>Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF &lt;40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.</description>
+      <name>LVSD</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>27982FD6-7C42-44E7-A871-0BB7F858A6D5</initialPopulationUuid>
+        <denominatorUuid>2294F966-EECD-4C61-8D94-D5E4B09BD9BB</denominatorUuid>
+        <numeratorUuid>02A4DDAC-D615-457A-9304-F1E382D3811C</numeratorUuid>
+        <denominatorExclusionUuid>e497e337-9671-4805-94e9-1c7113bf187b</denominatorExclusionUuid>
+        <denominatorExceptionUuid>487E15AB-CDE2-4955-9B93-1A2CDAE6B1F2</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <description>Patients who are 18 years and older with a diagnosis of CAD or history of cardiac surgery who have a prior myocardial infarction</description>
-      <name>myocardialInfarction</name>
+      <description>Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.</description>
+      <name>priorMI</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>2EE8137A-4627-471C-8837-85BDBF665017</initialPopulationUuid>
+        <denominatorUuid>CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC</denominatorUuid>
+        <numeratorUuid>5C03C433-8F8A-4204-B536-D7381835CE8C</numeratorUuid>
+        <denominatorExclusionUuid>1804358a-4620-44e2-8fb9-526eecdc2fd1</denominatorExclusionUuid>
+        <denominatorExceptionUuid>F79E2A13-6F9E-4B84-99E0-4603E99C83C3</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -3844,11 +4065,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12 month period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>1D86EE69-7DA7-4A73-8611-2E71176568B6</initialPopulationUuid>
+        <denominatorUuid>2DA1439F-7941-411C-8885-91306F0CD9DD</denominatorUuid>
+        <numeratorUuid>2C2431A3-7DE3-4C97-80C0-4BF96D4880F0</numeratorUuid>
+        <denominatorExclusionUuid>7b3728ef-a1b8-489a-8a7c-f682c26e0d7f</denominatorExclusionUuid>
+        <denominatorExceptionUuid>2EE99933-7653-4C53-8506-2A76D0657064</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>assessedCognitionWithin12Months</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a401cc10b57</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -3984,8 +4217,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0710</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Patients age 18 and older with major depression or dysthymia and an initial Patient Health Questionnaire (PHQ-9) score greater than nine who demonstrate remission at twelve months (+/- 30 days after an index visit) defined as a PHQ-9 score less than five. This measure applies to both patients with newly diagnosed and existing depression whose current PHQ-9 score indicates a need for treatment</description>
+      <description>Patients who achieved remission at twelve months as demonstrated by a twelve month (+/- 30 days grace period) PHQ-9 score of less than five</description>
       <name>depression</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>8AAC0F5B-DC7F-4FA3-8DE9-439C663E6B41</initialPopulationUuid>
+        <denominatorUuid>1C6771A4-4C26-4E2C-9E10-FF6F1A5D0907</denominatorUuid>
+        <numeratorUuid>52837728-F488-4BA5-9921-FFDEEC0F0803</numeratorUuid>
+        <denominatorExclusionUuid>72259A21-874C-4E51-9465-9989019193D0</denominatorExclusionUuid>
+        <denominatorExceptionUuid>1de2c677-5e1b-48fb-b554-24996d0fc30c</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Minnesota Community Measurement</primarySteward>
@@ -3994,12 +4234,13 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <submissionMethod>registry</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-5118-2f4e-0151-3a9382cd09ba</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>Depression Utilization of the PHQ-9 Tool</title>
     <description>Patients age 18 and older with the diagnosis of major depression or dysthymia who have a Patient Health Questionnaire (PHQ-9) tool administered at least once during a 4-month period in which there was a qualifying visit</description>
     <nationalQualityCode>ECC</nationalQualityCode>
@@ -4009,10 +4250,44 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0712</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <name>within4MonthsOfEnd</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>92656CE7-C9B1-44A8-8778-A8EF1ED90A18</initialPopulationUuid>
+        <denominatorUuid>C7DFE664-71AE-4EAD-AB65-CDFCF825A44E</denominatorUuid>
+        <numeratorUuid>B5FA6E85-0F2E-4674-A3F8-E14D834E73AB</numeratorUuid>
+        <denominatorExclusionUuid>76B54A59-41A9-4664-B85C-F61238AE1DC4</denominatorExclusionUuid>
+        <denominatorExceptionUuid>1c1e013a-b202-4f9e-9ee5-02be9507b7c4</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
+    <strata>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <name>between4And8MonthsAfterStart</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>757F3066-31E7-45D1-BA50-3EFB27ABB8E5</initialPopulationUuid>
+        <denominatorUuid>32635FEA-918B-438F-8421-8A6A14E238E8</denominatorUuid>
+        <numeratorUuid>33538979-8425-45A4-B724-D74CC0A84EF3</numeratorUuid>
+        <denominatorExclusionUuid>29931862-020D-401E-B9E9-953791263D87</denominatorExclusionUuid>
+        <denominatorExceptionUuid>a9770f07-3989-4c20-8a7a-605e4a77cbe2</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
+    <strata>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <name>within4MonthsOfStart</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>5631A7DF-CA44-4AD4-A691-DC0CED303F6A</initialPopulationUuid>
+        <denominatorUuid>9665A8D2-F896-47A9-AA7E-271E9815D3CE</denominatorUuid>
+        <numeratorUuid>2D4D6446-C9CD-4661-868B-C8B9B13A8E08</numeratorUuid>
+        <denominatorExclusionUuid>910A0EE9-ECDA-494C-83E9-30DD9E224FFB</denominatorExclusionUuid>
+        <denominatorExceptionUuid>2cc2a6f9-d57f-48f0-ac88-7b8670cf4f4c</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Minnesota Community Measurement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
   </measure>
   <measure>
     <category>quality</category>
@@ -4029,8 +4304,16 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0055</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients 18 - 75 years of age with diabetes who had a retinal or dilated eye exam by an eye care professional during the measurement period or a negative retinal or dilated eye exam (no evidence of retinopathy) in the 12 months prior to the measurement period</description>
+      <description>Patients with an eye screening for diabetic retinal disease. This includes diabetics who had one of the following:&#xD;
+A retinal or dilated eye exam by an eye care professional in the measurement period or a negative retinal exam (no evidence of retinopathy) by an eye care professional in the year prior to the measurement period</description>
       <name>diabetes</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>321FB2D3-477E-41B7-8BB1-02EE94D08417</initialPopulationUuid>
+        <denominatorUuid>98CE7ECC-1F09-4F52-906C-E53EAB545F00</denominatorUuid>
+        <numeratorUuid>3F48A9B6-7B99-4BF4-AB1E-50DC1FFB9D1A</numeratorUuid>
+        <denominatorExclusionUuid>7f24aecc-ef66-4bfc-b86b-15c973bca8c3</denominatorExclusionUuid>
+        <denominatorExceptionUuid>5421c143-d990-478f-bbef-1f152fee4d22</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -4041,6 +4324,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>internalMedicine</measureSet>
     <measureSet>ophthalmology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22a24cdd1740</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4056,11 +4340,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0056</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who received visual, pulse and sensory foot examinations during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>9AB84D25-5883-4D85-A868-0D702403F250</initialPopulationUuid>
+        <denominatorUuid>61B09878-32B3-4ECB-8E78-D1093E1FDDF9</denominatorUuid>
+        <numeratorUuid>60EC6098-950A-40E5-994F-E9A62CFF6FC2</numeratorUuid>
+        <denominatorExclusionUuid>02D13BF4-EF77-4DF4-A436-834AEDBE043C</denominatorExclusionUuid>
+        <denominatorExceptionUuid>b508d087-5c33-4d49-b042-6da769499b06</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>receivedFootExams</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-229b7b2f16f9</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4077,8 +4373,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0059</nqfId>
     <isInverse>true</isInverse>
     <strata>
-      <description>Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c &gt; 9.0% during the measurement period</description>
+      <description>Patients whose most recent HbA1c level (performed during the measurement period) is &gt;9.0%</description>
       <name>A1c&gt;9.0%</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>0739FE2E-B8DE-4A56-B064-877CC8E0977D</initialPopulationUuid>
+        <denominatorUuid>D346DA74-F16E-4159-BEDF-331BA28837FB</denominatorUuid>
+        <numeratorUuid>6D01A564-58CC-4CF5-929F-B83583701BFE</numeratorUuid>
+        <denominatorExclusionUuid>25d4b54e-697c-4afe-a2e2-636ce9fe7bf2</denominatorExclusionUuid>
+        <denominatorExceptionUuid>7c4dda50-c802-4a70-b58f-c50780cf5edd</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -4089,6 +4392,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-229afff616ee</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4105,14 +4409,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0062</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period</description>
+      <description>Patients with a screening for nephropathy or evidence of nephropathy during the measurement period</description>
       <name>diabetes</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>A27FD818-3C97-4516-A796-319B89E306AC</initialPopulationUuid>
+        <denominatorUuid>0CC16DE4-474A-4F6E-BFB8-0104709B1E05</denominatorUuid>
+        <numeratorUuid>5647E3D0-6550-4B0B-AE76-53CD9E99D20B</numeratorUuid>
+        <denominatorExclusionUuid>9887c765-7188-4af0-8c30-cba92f11ea1c</denominatorExclusionUuid>
+        <denominatorExceptionUuid>68ac0f19-3c01-42cf-9056-154ea55e4789</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-528a-60ff-0152-d7504e61249a</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4173,8 +4485,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0089</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed with documented communication to the physician who manages the ongoing care of the patient with diabetes mellitus regarding the findings of the macular or fundus exam at least once within 12 months</description>
+      <description>Patients with documentation, at least once within 12 months, of the findings of the dilated macular or fundus exam via communication to the physician who manages the patient's diabetic care</description>
       <name>diabeticRetinopathy</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>2072A4E8-4486-4A10-AF97-F84ADE0EB62E</initialPopulationUuid>
+        <denominatorUuid>2BB9F18C-8E26-44D6-904E-849495A6AF90</denominatorUuid>
+        <numeratorUuid>BCB8AEEC-EABC-477E-AA6D-6DB34220CD85</numeratorUuid>
+        <denominatorExclusionUuid>9e1763e9-74f8-4f09-b57f-0f74a9adb3c7</denominatorExclusionUuid>
+        <denominatorExceptionUuid>608279BD-7620-4FC4-8752-08E3040BA160</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4182,6 +4501,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a31050d0b24</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4197,10 +4517,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0088</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy AND the presence or absence of macular edema during one or more office visits within 12 months</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>3EB89216-BC0B-4DF7-8B8D-06B9AB68DB49</initialPopulationUuid>
+        <denominatorUuid>04507C05-46D4-4D96-9D9D-853CA557F4B2</denominatorUuid>
+        <numeratorUuid>3186154C-6A01-4FAF-A77F-B5233A3F078C</numeratorUuid>
+        <denominatorExclusionUuid>305ce4ad-9e91-4236-af6d-1c5c65db586c</denominatorExclusionUuid>
+        <denominatorExceptionUuid>170B3877-D83D-424C-BD7E-29F644B0A6DC</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>dilatedMacularOrFundusExamWithin12Months</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>ophthalmology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a4838b80b79</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4217,8 +4549,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0419</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals, and vitamin/mineral/dietary (nutritional) supplements must contain the medications’ name, dosage, frequency and route of administration</description>
+      <description>Eligible professional attests to documenting, updating or reviewing the patient's current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications' name, dosages, frequency and route of administration</description>
       <name>document</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>D412322D-11F1-4573-893E-E6A05855DE10</initialPopulationUuid>
+        <denominatorUuid>375D0559-C749-4BB9-9267-81EDF447650B</denominatorUuid>
+        <numeratorUuid>EFFE261C-0D57-423E-992C-7141B132768C</numeratorUuid>
+        <denominatorExclusionUuid>a5dd46b0-f412-4d7d-a3b4-16c8ad4a4f43</denominatorExclusionUuid>
+        <denominatorExceptionUuid>3C100EC4-2990-4D79-AE14-E816F5E78AC8</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -4249,6 +4588,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-3d64af97147b</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4486,10 +4826,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0101</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who were screened for future fall risk at least once within the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>0175F89E-9CD7-4CD8-8D7F-38CB825D2BDD</initialPopulationUuid>
+        <denominatorUuid>A3F77B7C-2398-470D-A359-E2A31539DF91</denominatorUuid>
+        <numeratorUuid>F0F4094E-CE53-44EE-8CEF-0555479E37B2</numeratorUuid>
+        <denominatorExclusionUuid>c4aa6477-f361-4990-ac25-0549bd86e1c7</denominatorExclusionUuid>
+        <denominatorExceptionUuid>CF7E1913-CB4E-42F7-BAEC-0EFFF01ECB17</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>screenedForFallRisk</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
+    <eMeasureUuid>40280381-51f0-825b-0152-22aae8a21778</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4562,10 +4914,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients with patient-reported functional status assessment results (eg, VR-12, VR-36,PROMIS-10-Global Health, PROMIS-29, HOOS) not more than 180 days prior to the primary THA procedure, and at least 60 days and not more than 180 days after THA procedure</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>642D0090-BEAB-410B-B3B3-8D1A5EC5B919</initialPopulationUuid>
+        <denominatorUuid>FFA80359-2E09-48C8-8862-DD6E1F5F5428</denominatorUuid>
+        <numeratorUuid>7D021618-E1EE-4C2F-AD6A-F74E03D69E43</numeratorUuid>
+        <denominatorExclusionUuid>65458ECD-6573-4203-8C56-515063BAFE19</denominatorExclusionUuid>
+        <denominatorExceptionUuid>029ee8ff-899f-434b-9e83-cb5503bdfebb</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>reportedFunctionalStatus</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-227617db152e</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4581,10 +4945,22 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients with patient-reported functional status assessment results (eg, VR-12, VR-36, PROMIS-10 Global Health, PROMIS-29, KOOS) not more than 180 days prior to the primary TKA procedure, and at least 60 days and not more than 180 days after TKA procedure</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>F0D80FC4-5E5E-46F3-A519-1B99013E2761</initialPopulationUuid>
+        <denominatorUuid>D795B824-0575-47B3-93DB-D48CD5643677</denominatorUuid>
+        <numeratorUuid>0DD7EF36-2B1D-4447-8E52-BF9C4A3E7ED3</numeratorUuid>
+        <denominatorExclusionUuid>0E8BFC37-A4BA-4DE6-A6F3-DF4C188AB129</denominatorExclusionUuid>
+        <denominatorExceptionUuid>a059c9d5-0445-40a5-8b55-db98a69891f4</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>reportedFunctionalStatus</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-227ce2c81597</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4600,9 +4976,21 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients with patient reported functional status assessment results (eg, VR-12; VR-36; MLHF-Q; KCCQ; PROMIS-10 Global Health, PROMIS-29) present in the EHR within two weeks before or during the initial encounter and the follow-up encounter during the measurement year</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>AD37C6FE-2537-4A9B-8AD9-A372E3215F76</initialPopulationUuid>
+        <denominatorUuid>19ECF222-71EF-4D75-9CC2-19ED201107EA</denominatorUuid>
+        <numeratorUuid>F9B4C929-8F37-48D1-953C-489C028AE725</numeratorUuid>
+        <denominatorExclusionUuid>32DBECF3-11EC-40FB-B35D-FA1BF7366492</denominatorExclusionUuid>
+        <denominatorExceptionUuid>b156a02c-e64c-4b93-97d3-48b6af51fbf5</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>reportedFunctionalStatus</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1f3f70ca0eff</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4773,8 +5161,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0081</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) &lt; 40% who were prescribed ACE inhibitor or ARB therapy either within a 12 month period when seen in the outpatient setting at each hospital discharge</description>
+      <description>Patients who were prescribed ACE inhibitor or ARB therapy either within a 12 month period when seen in the outpatient setting OR at each hospital discharge</description>
       <name>LVEF&lt;40%</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>F3000871-B8FD-4F74-8892-281C250C11EA</initialPopulationUuid>
+        <denominatorUuid>C1E20830-ADFE-4D88-B979-166FA0820D5C</denominatorUuid>
+        <numeratorUuid>49E476F4-E8A1-48A6-B800-A8172073DBFB</numeratorUuid>
+        <denominatorExclusionUuid>a2cd75d1-24b1-4216-a241-b0b07fecde1f</denominatorExclusionUuid>
+        <denominatorExceptionUuid>41E08783-4358-4E0D-81BE-9616A8F58319</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4784,6 +5179,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>cardiology</measureSet>
     <measureSet>hospitalists</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-62239c5d1ef6</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4800,8 +5196,15 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfId>0083</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) &lt; 40% who were prescribed beta-blocker therapy either within a 12 month period when seen in the outpatient setting at each hospital discharge</description>
+      <description>Patients who were prescribed beta-blocker therapy either within a 12 month period when seen in the outpatient setting OR at each hospital discharge</description>
       <name>HF</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>5ED1A428-A266-47E5-AE4F-DB97A65BB1D4</initialPopulationUuid>
+        <denominatorUuid>1E6C181E-91F6-4A61-82E0-7360C81CE3B0</denominatorUuid>
+        <numeratorUuid>ABBFFB54-E629-4520-875E-F6D18BC651B1</numeratorUuid>
+        <denominatorExclusionUuid>8d38d97e-589e-4a22-881e-fa41649b54f1</denominatorExclusionUuid>
+        <denominatorExceptionUuid>E9280685-6046-438D-AE45-0F7EDBA29C33</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4810,6 +5213,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <measureSet>cardiology</measureSet>
     <measureSet>hospitalists</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a3981870b45</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -4975,7 +5379,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>HIV/AIDS: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis</title>
     <description>Percentage of patients aged 6 weeks and older with a diagnosis of HIV/AIDS who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis</description>
     <nationalQualityCode>ECC</nationalQualityCode>
@@ -4985,11 +5389,46 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId>0405</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>E681DBF8-F827-4586-B3E0-178FF19EC3A2</initialPopulationUuid>
+        <denominatorUuid>04BF53CE-6993-4EA2-BFE5-66E36172B388</denominatorUuid>
+        <numeratorUuid>631C0B49-83F4-4A54-96C4-7E0766B2407C</numeratorUuid>
+        <denominatorExclusionUuid>4c42d3ad-5ad4-4e97-ac7d-81c9758fbead</denominatorExclusionUuid>
+        <denominatorExceptionUuid>58347456-D1F3-4BBB-9B35-5D42825A0AB3</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>within3MonthsCD4&lt;200/mm3</name>
+    </strata>
+    <strata>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>AAC578DB-1900-43BD-BBBF-50014A5457E5</initialPopulationUuid>
+        <denominatorUuid>1574973E-EB52-40C7-9709-25ABEDBA99A3</denominatorUuid>
+        <numeratorUuid>5B7AC4EC-547A-47E5-AC5E-618401175511</numeratorUuid>
+        <denominatorExclusionUuid>659d5fba-93ed-4b1f-bd17-233362e37e58</denominatorExclusionUuid>
+        <denominatorExceptionUuid>B7CCA1A6-F352-4A23-BC89-6FE9B60DC0C6</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>within3MonthsCD4&lt;500/mm3OrCD4&lt;15%</name>
+    </strata>
+    <strata>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>AF36C4A9-8BD9-4E21-838D-A47A1845EB90</initialPopulationUuid>
+        <denominatorUuid>B95BC0D3-572E-462B-BAA2-46CD33A865CD</denominatorUuid>
+        <numeratorUuid>86F74F07-D593-44F6-AA12-405966400963</numeratorUuid>
+        <denominatorExclusionUuid>8d54df2e-8a7e-49e3-a99a-0132f5139b7c</denominatorExclusionUuid>
+        <denominatorExceptionUuid>28ee691d-8155-41fe-8c20-12a5d2e1fb75</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>atDiagnosis</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-2273af5a150b</eMeasureUuid>
+    <overallAlgorithm>weightedAverage</overallAlgorithm>
   </measure>
   <measure>
     <category>quality</category>
@@ -5170,9 +5609,23 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients whose follow-up blood pressure is at least 10 mmHg less than their baseline blood pressure or is adequately controlled.&#xD;
+&#xD;
+If a follow-up blood pressure reading is not recorded during the measurement year, the patient's blood pressure is assumed "not improved."</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>78CD5ACE-054C-43DF-A743-5F1E5BA4C099</initialPopulationUuid>
+        <denominatorUuid>CE973C7A-B867-422B-8408-83538E236039</denominatorUuid>
+        <numeratorUuid>F67DCC8F-4F0F-491B-957F-B21E721B040B</numeratorUuid>
+        <denominatorExclusionUuid>74F900B9-65DA-4E6C-BB2D-592189ABDDE5</denominatorExclusionUuid>
+        <denominatorExceptionUuid>6add5684-4b28-4d80-bf3d-dd0ea530a529</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>lowerFollowupBloodPressure</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-51f0-825b-0152-227c2f851589</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -5283,7 +5736,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>Initiation and Engagement of Alcohol and Other Drug Dependence Treatment</title>
     <description>Percentage of patients 13 years of age and older with a new episode of alcohol and other drug (AOD) dependence who received the following. Two rates are reported.
 a. Percentage of patients who initiated treatment within 14 days of the diagnosis.
@@ -5296,9 +5749,33 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <nqfEMeasureId/>
     <nqfId>0004</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who initiated treatment within 14 days of the diagnosis</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>EC2C5F63-AF76-4D3C-85F0-5423F8C28541</initialPopulationUuid>
+        <denominatorUuid>BC948E65-B908-493B-B48B-04AC342D3E6C</denominatorUuid>
+        <numeratorUuid>0BBF8596-4CFE-47F4-A0D7-9BEAB94BA4CD</numeratorUuid>
+        <denominatorExclusionUuid>56BC7FA2-C22A-4440-8652-2D3568852C60</denominatorExclusionUuid>
+        <denominatorExceptionUuid>506b11e2-8e60-4254-8277-5a3670bb6287</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>treatmentWithin14DaysOfDiagnosis</name>
+    </strata>
+    <strata>
+      <description>Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>1511AD34-240C-4F3E-A87B-73511AABFC5C</initialPopulationUuid>
+        <denominatorUuid>4A09AB89-D9B8-4DD1-BC4E-78BCFD1C5873</denominatorUuid>
+        <numeratorUuid>7FFA49C4-D708-491E-85FE-6855F0A725DF</numeratorUuid>
+        <denominatorExclusionUuid>206A891D-C3E1-4660-BF2C-6CDBDF9282FB</denominatorExclusionUuid>
+        <denominatorExceptionUuid>3870dc26-e32d-4ba5-9025-6b00d8259f16</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>treatmentPlusServicesWithin30DaysOfVisit</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-528a-60ff-0152-8e089ed20376</eMeasureUuid>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
   </measure>
   <measure>
     <category>quality</category>
@@ -5342,8 +5819,15 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <nqfId>0068</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients 18 years of age and older who were diagnosed with acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period, or who had an active diagnosis of ischemic vascular disease (IVD) during the measurement period, and who had documentation of use of aspirin or another antiplatelet during the measurement period</description>
+      <description>Patients who had an active medication of aspirin or another antiplatelet during the measurement year</description>
       <name>AMI</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>C3E458D8-8ED4-4F09-A661-6221A2B9355D</initialPopulationUuid>
+        <denominatorUuid>FE6E1AA0-EE26-4F9E-A2FD-8E36058DCB47</denominatorUuid>
+        <numeratorUuid>0A3C80F4-A9FF-4BDF-B018-D647E7D777EB</numeratorUuid>
+        <denominatorExclusionUuid>D564DEEE-17E7-4442-921D-436E5113788A</denominatorExclusionUuid>
+        <denominatorExceptionUuid>4b5358ad-05f3-484a-a66b-c652b4e825d1</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -5354,6 +5838,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <measureSet>internalMedicine</measureSet>
     <measureSet>cardiology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-5736a9401b9f</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -5441,9 +5926,21 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Children with documentation of maternal screening or treatment for postpartum depression for the mother.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>D3ADB281-2F53-4BE6-89A9-124480DE787D</initialPopulationUuid>
+        <denominatorUuid>6B845134-C1B7-4383-AFB3-1FFB7EAD359B</denominatorUuid>
+        <numeratorUuid>D2A5FF72-DE5E-413A-829E-C763FC07DF4A</numeratorUuid>
+        <denominatorExclusionUuid>3a0f2630-297f-481e-980c-252371b90b4b</denominatorExclusionUuid>
+        <denominatorExceptionUuid>4e37becd-1435-4aa7-b64f-e3b853b005e7</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>documentedScreeningOrTreatment</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-51f0-825b-0152-2295c55c16aa</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -5713,8 +6210,15 @@ This measure is reported as three rates stratified by age group:
     <nqfId>0384</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patient visits, regardless of patient age, with a diagnosis of cancer currently receiving chemotherapy or radiation therapy in which pain intensity is quantified</description>
+      <description>Patient visits in which pain intensity is quantified</description>
       <name>cancer</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>8494E3CD-7119-4471-9F2F-42540A797498</initialPopulationUuid>
+        <denominatorUuid>D1358E7F-9C53-414C-9D4D-DEF7AE9B6E68</denominatorUuid>
+        <numeratorUuid>95484C04-C98A-4A77-B2A7-9FE583060582</numeratorUuid>
+        <denominatorExclusionUuid>8357720f-e333-419c-b274-d0d8a7c0c52c</denominatorExclusionUuid>
+        <denominatorExceptionUuid>3ccb17ee-f833-4839-ad7e-e32315697409</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -5722,6 +6226,7 @@ This measure is reported as three rates stratified by age group:
     <submissionMethod>registry</submissionMethod>
     <measureSet>generalOncology</measureSet>
     <measureSet>radiationOncology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a4425a90b6c</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6573,8 +7078,15 @@ This measure is reported as three rates stratified by age group:
     <nqfId>0043</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine</description>
+      <description>Patients who have ever received a pneumococcal vaccination</description>
       <name>pneumococcal</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>E1A2F7D4-0B24-47FC-9369-0700771B2D40</initialPopulationUuid>
+        <denominatorUuid>B57EA797-15A1-4C60-B34C-BAE292FE3B76</denominatorUuid>
+        <numeratorUuid>CBD0926D-6088-44EE-883C-0A0F9E77E2A1</numeratorUuid>
+        <denominatorExclusionUuid>43958624-b741-4a41-9407-cda6e8d75029</denominatorExclusionUuid>
+        <denominatorExceptionUuid>704fc6d6-ecc6-47a7-a411-829c6d327993</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -6584,6 +7096,7 @@ This measure is reported as three rates stratified by age group:
     <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>preventiveMedicine</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a646a2a0bfa</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6645,9 +7158,21 @@ This measure is reported as three rates stratified by age group:
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who were tested for hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>328FF8FF-8A53-42CF-A33E-789BC7E0D8ED</initialPopulationUuid>
+        <denominatorUuid>9826C75F-8106-44DE-AFB5-47669443C153</denominatorUuid>
+        <numeratorUuid>4ADA7675-6263-4018-997E-D27CE43A11D6</numeratorUuid>
+        <denominatorExclusionUuid>72135b92-8866-4315-992d-38ca6490da49</denominatorExclusionUuid>
+        <denominatorExceptionUuid>F77E40ED-F649-4250-B99A-3C35414D88B0</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>hepB</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>OptumInsight</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <eMeasureUuid>40280381-5223-eb6b-0152-6a1558f51bdc</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6736,8 +7261,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0421</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a BMI documented during the current encounter or during the previous six months with a BMI outside of normal parameters, a follow-up plan is documented during the encounter or during the previous six months of the current encounter Normal Parameters: Age 18 years and older BMI ≥ 18.5 and &lt; 25 kg/m2</description>
+      <description>Patients with a documented BMI during the encounter or during the previous six months, AND when the BMI is outside of normal parameters, a follow-up plan is documented during the encounter or during the previous six months of the current encounter</description>
       <name>BMI</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>4D10500F-6738-4541-BF24-4C95C74B45AB</initialPopulationUuid>
+        <denominatorUuid>36CCB819-C150-466D-A55A-0A175B19E751</denominatorUuid>
+        <numeratorUuid>51D06394-AF97-41DD-BF41-68D58786A9D2</numeratorUuid>
+        <denominatorExclusionUuid>EE5FFA67-A42D-4472-8159-ED4B87BE6CDA</denominatorExclusionUuid>
+        <denominatorExceptionUuid>0E162220-C93B-48B0-AAB1-E2F8E7FE7EA1</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -6761,6 +7293,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-5118-2f4e-0151-20a31a780368</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6777,8 +7310,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0041</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 6 months and older seen for a visit between October 1 and March 31 who received an influenza immunization who reported previous receipt of an influenza immunization</description>
+      <description>Patients who received an influenza immunization OR who reported previous receipt of an influenza immunization</description>
       <name>influenza</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>FF48C33E-49B3-45D1-AB44-D283F39AE73D</initialPopulationUuid>
+        <denominatorUuid>56E05D20-4529-4EB7-8E30-17C95BBC5223</denominatorUuid>
+        <numeratorUuid>A6516D8B-0A7D-426D-A0EC-F3F4999A2588</numeratorUuid>
+        <denominatorExclusionUuid>98a4272d-cff5-477d-a728-23d4303c2fba</denominatorExclusionUuid>
+        <denominatorExceptionUuid>9411528A-67EF-439B-9C00-37372B2096E3</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -6792,6 +7332,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-395ce63513af</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6808,8 +7349,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0418</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 12 years and older screened for depression on the date of the encounter using an age appropriate standardized depression screening tool if positive, a follow-up plan is documented on the date of the positive screen</description>
+      <description>Patients screened for depression on the date of the encounter  using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the positive screen</description>
       <name>depression</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>55D921A2-0700-43F0-8C6F-1DB4ADDD7FAB</initialPopulationUuid>
+        <denominatorUuid>CB0D06D7-9C40-45B0-AEC2-60C39262ABA0</denominatorUuid>
+        <numeratorUuid>D94BAE8B-1EAC-4832-B040-884B4BBC5BD0</numeratorUuid>
+        <denominatorExclusionUuid>8C56B86F-EFE9-404D-B97C-F8FC4691D50D</denominatorExclusionUuid>
+        <denominatorExceptionUuid>E98E90BE-F3BD-42CD-A194-D6BEFA1BB714</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -6821,6 +7369,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-537c-f767-0153-c378bd7207a5</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6837,8 +7386,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId/>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older seen during the reporting period who were screened for high blood pressure a recommended follow-up plan is documented based on the current blood pressure (BP) reading as indicated</description>
+      <description>Patients who were screened for high blood pressure AND have a recommended follow-up plan documented, as indicated if the blood pressure is pre-hypertensive or hypertensive</description>
       <name>highBloodPressure</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>C7E7C7AF-464F-43A0-8C84-CDFF99953C97</initialPopulationUuid>
+        <denominatorUuid>65AFB8BA-F5CC-4ABA-A3FB-2F95FEE2B6FA</denominatorUuid>
+        <numeratorUuid>8964CE5A-64A4-4259-9359-39A1CDC07B8D</numeratorUuid>
+        <denominatorExclusionUuid>8867C7A7-F8F1-4B61-A6C7-9390C5B5B4EF</denominatorExclusionUuid>
+        <denominatorExceptionUuid>2338C9B7-B2C5-4348-BF2B-C9E636FD7A45</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -6869,6 +7425,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-528a-60ff-0152-94967c8a0860</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6885,8 +7442,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0028</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months who received cessation counseling intervention if identified as a tobacco user</description>
+      <description>Patients who were screened for tobacco use at least once within 24 months AND who received tobacco cessation intervention if identified as a tobacco user</description>
       <name>tobacco</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>CA679308-8AF3-4374-91DC-907951440D72</initialPopulationUuid>
+        <denominatorUuid>FFC4DDE0-C91C-4235-BF69-E3EF79457FBB</denominatorUuid>
+        <numeratorUuid>44BEAC3C-8402-46F0-9494-81B33C502F0A</numeratorUuid>
+        <denominatorExclusionUuid>a5a204a2-1a11-4ea7-8153-48c2f6b1dbce</denominatorExclusionUuid>
+        <denominatorExceptionUuid>655C9F36-02F7-498B-AE18-D322EA2B3726</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -6917,6 +7481,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-503f-a1fc-0150-d33f5b0a1b8c</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6967,10 +7532,22 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfEMeasureId/>
     <nqfId/>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Children who receive a fluoride varnish application</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>BCE39253-0C5F-4DFA-A5BD-0828A8B2BB22</initialPopulationUuid>
+        <denominatorUuid>B41B2DF9-B4BF-4B89-A483-5B0C1A9D9804</denominatorUuid>
+        <numeratorUuid>BEF89159-5D5C-47C6-953D-63FCAEA41548</numeratorUuid>
+        <denominatorExclusionUuid>a73c666b-2ccf-462a-860b-985b8c9b4454</denominatorExclusionUuid>
+        <denominatorExceptionUuid>45089ed9-59a2-49b5-9162-a49b72f3da9a</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>receivedFluorideVarnish</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1f6962df0f9c</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -6987,8 +7564,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0086</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more office visits within 12 months</description>
+      <description>Patients who have an optic nerve head evaluation during one or more office visits within 12 months</description>
       <name>POAG</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>56091E02-5F5C-4073-9602-D0B5BB93A26E</initialPopulationUuid>
+        <denominatorUuid>262ADC93-EE8C-4B95-9EFF-A6223C66ECA8</denominatorUuid>
+        <numeratorUuid>2902F791-D7AB-49B2-B024-45B1077E0374</numeratorUuid>
+        <denominatorExclusionUuid>57c33ac4-db05-42ce-b750-ddc6d49caa62</denominatorExclusionUuid>
+        <denominatorExceptionUuid>1FA6B8AF-0583-418D-852B-9B1D9708DDFF</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -6996,6 +7580,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
+    <eMeasureUuid>40280381-52fc-3a32-0153-1a3471e70b34</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -7243,8 +7828,15 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <nqfId>0389</nqfId>
     <isInverse>false</isInverse>
     <strata>
-      <description>Percentage of patients, regardless of age, with a diagnosis of prostate cancer at low (or very low) risk of recurrence receiving interstitial prostate brachytherapy, external beam radiotherapy to the prostate, OR radical prostatectomy, OR cryotherapy who did not have a bone scan performed at any time since diagnosis of prostate cancer</description>
+      <description>Patients who did not have a bone scan performed at any time since diagnosis of prostate cancer</description>
       <name>prostateCancer</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>73B68FA6-B437-4166-8555-F54EDD2BD797</initialPopulationUuid>
+        <denominatorUuid>F457BF14-DBBF-4F25-9C27-3F1A77E6341A</denominatorUuid>
+        <numeratorUuid>ECBF5473-BA0F-4662-90A9-BCCF981F92CD</numeratorUuid>
+        <denominatorExclusionUuid>b975ce93-b67c-4cf8-9794-6d00b8ead043</denominatorExclusionUuid>
+        <denominatorExceptionUuid>01197FE4-C21E-482E-8A98-05506308A206</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -7253,6 +7845,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <measureSet>generalOncology</measureSet>
     <measureSet>radiationOncology</measureSet>
     <measureSet>urology</measureSet>
+    <eMeasureUuid>40280381-503f-a1fc-0151-10de35992766</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -8480,18 +9073,33 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <nqfId>0022</nqfId>
     <isInverse>true</isInverse>
     <strata>
-      <description>Percentage of patients who were ordered at least one high-risk medication</description>
+      <description>Patients with an order for at least one high-risk medication during the measurement period.</description>
       <name>overall</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>C7BCE5A3-AC0D-440E-AA29-C98239F37A8B</initialPopulationUuid>
+        <denominatorUuid>07F04D61-0383-487E-942C-690BBBC6437D</denominatorUuid>
+        <numeratorUuid>7A0001AC-4BE0-4FAA-94AE-4843C9FFFCA8</numeratorUuid>
+        <denominatorExclusionUuid>718a29a0-49b3-4483-ab9d-dc37074f39f5</denominatorExclusionUuid>
+        <denominatorExceptionUuid>bba507df-e957-4649-98b9-ff70c1dd7971</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <description>Percentage of patients who were ordered at least two different high-risk medications</description>
+      <description>Patients with an order for at least two different high-risk medications during the measurement period.</description>
       <name>2+</name>
+      <eMeasureUuids>
+        <initialPopulationUuid>BC02D7CE-7133-46C6-8592-658668B09948</initialPopulationUuid>
+        <denominatorUuid>00401314-1B01-4896-A9FC-E991CDF29B6B</denominatorUuid>
+        <numeratorUuid>FA7BF805-C21E-4077-B43E-C63F8D17B5CF</numeratorUuid>
+        <denominatorExclusionUuid>41d84550-23c6-46a7-bb50-85708fa8607b</denominatorExclusionUuid>
+        <denominatorExceptionUuid>0e953aff-ae2e-4a74-b774-ca3d9cd40e00</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <eMeasureUuid>40280381-52fc-3a32-0153-56d2b4f01ae5</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -8507,12 +9115,24 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <nqfEMeasureId/>
     <nqfId>0052</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients without an imaging study conducted on the date of the outpatient or emergency department visit or in the 28 days following the outpatient or emergency department visit</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>45D3A3ED-A7D6-45B9-AC95-647BFFE7018E</initialPopulationUuid>
+        <denominatorUuid>0E27156C-B8EB-48E7-A588-4AB97A0914E1</denominatorUuid>
+        <numeratorUuid>13C60632-9CF4-491B-82E9-A06118111C44</numeratorUuid>
+        <denominatorExclusionUuid>0E9E3C94-6AA0-4C3C-A311-72CB0F2698B6</denominatorExclusionUuid>
+        <denominatorExceptionUuid>ff61928c-0cb1-4a7f-a617-9b18bcfce0e4</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>noImagingStudyWithin28Days</name>
+    </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>physicalMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22ba7621182e</eMeasureUuid>
   </measure>
   <measure>
     <category>quality</category>
@@ -8540,7 +9160,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
-    <metricType>singlePerformanceRate</metricType>
+    <metricType>multiPerformanceRate</metricType>
     <title>Weight Assessment and Counseling for Nutrition and Physical Activity for Children and Adolescents</title>
     <description>Percentage of patients 3-17 years of age who had an outpatient visit with a Primary Care Physician (PCP) or Obstetrician/Gynecologist (OB/GYN) and who had evidence of the following during the measurement period. Three rates are reported.
 
@@ -8554,9 +9174,44 @@ b. Percentage of patients who were ordered at least two different high-risk medi
     <nqfEMeasureId/>
     <nqfId>0024</nqfId>
     <isInverse>false</isInverse>
+    <strata>
+      <description>Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>0ADE9325-3FB7-402F-AD89-34C9F2753D03</initialPopulationUuid>
+        <denominatorUuid>933D86C8-2C2B-4AFF-AE81-DF2F9882A3A4</denominatorUuid>
+        <numeratorUuid>61887626-5457-484C-A02D-75EF8547F559</numeratorUuid>
+        <denominatorExclusionUuid>6938F4DD-D5AB-4C40-BA03-EB0F0959615C</denominatorExclusionUuid>
+        <denominatorExceptionUuid>3cac2acd-a3ed-4629-967a-83464c25fee4</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>BMI</name>
+    </strata>
+    <strata>
+      <description>Patients who had counseling for nutrition during a visit that occurs during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>25286925-4221-4396-9DE0-60EA606924DF</initialPopulationUuid>
+        <denominatorUuid>CFB8E3E2-FF4F-4D25-B613-7EC142BAE8A9</denominatorUuid>
+        <numeratorUuid>EEAD441F-B3B2-4DC9-A890-B35E14B38EA7</numeratorUuid>
+        <denominatorExclusionUuid>A399FA9C-48CF-41E5-812A-3445188B8301</denominatorExclusionUuid>
+        <denominatorExceptionUuid>9fc3a9e2-6e5f-4310-9d12-5546add1a4d2</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>nutrition</name>
+    </strata>
+    <strata>
+      <description>Patients who had counseling for physical activity during a visit that occurs during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>48747E9D-674C-4013-9585-268114190119</initialPopulationUuid>
+        <denominatorUuid>208B74F2-6592-4381-BEC1-EB136004C3B2</denominatorUuid>
+        <numeratorUuid>21409D88-B5E3-4745-8DE2-D99DBB9F4DF0</numeratorUuid>
+        <denominatorExclusionUuid>507F7EC3-D380-48BE-B920-ABB1EB258256</denominatorExclusionUuid>
+        <denominatorExceptionUuid>15a2ed8f-4300-4ad9-b2ec-63d6f389feba</denominatorExceptionUuid>
+      </eMeasureUuids>
+      <name>physicalActivity</name>
+    </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
+    <eMeasureUuid>40280381-51f0-825b-0152-22b695b217dc</eMeasureUuid>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
   </measure>
 </measures>
