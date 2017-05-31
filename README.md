@@ -62,9 +62,9 @@ the measures schema, do the following:
 
 3. Run the script to extract strata descriptions and measure/strata uuids for ecqms from the zip:
 
-  ```
-    node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
-  ```
+    ```
+      node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+    ```
 
 
 Then run this command to generate a new measures-data.json file:
