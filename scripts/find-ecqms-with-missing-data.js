@@ -30,7 +30,7 @@ const outlierEcqms = [
     "metricType": "multiPerformanceRate",
     "strata": [
       {
-        "description": "Beta Blocker Therapy for LVSD",
+        "description": "Patients with at least 2 encounters with eligible professionals and left ventricular systolic dysfunction (LVEF <40%) who are prescribed beta-blocker therapy for LVSD. For these patients, beta-blocker therapy includes the following: bisoprolol, carvedilol, or sustained release metoprolol succinate.",
         "name": "betaBlockerTherapyForLVSD",
         "eMeasureUuids": {
           "initialPopulationUuid": "27982FD6-7C42-44E7-A871-0BB7F858A6D5",
@@ -41,8 +41,8 @@ const outlierEcqms = [
         }
       },
       {
-        "description": "Beta Blocker Therapy",
-        "name": "betaBlockerTherapy",
+        "description": "Patients with at least 2 encounters with eligible professionals with a prior (resolved within last 3 years) myocardial infarction who are prescribed beta-blocker therapy. For patients with prior MI, beta-blocker therapy includes any agent within the beta-blocker drug class.",
+        "name": "betaBlockerTherapyWithPriorMI",
         "eMeasureUuids": {
           "initialPopulationUuid": "2EE8137A-4627-471C-8837-85BDBF665017",
           "denominatorUuid": "CC31BC83-F06C-4381-8A4F-1EEBE9ECF7BC",
