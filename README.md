@@ -52,10 +52,12 @@ the measures schema, do the following:
   wget https://ecqi.healthit.gov/system/files/ecqm_eligibleclinician_jan2017.zip .
 	unzip QPP_quality_measure_specifications.zip
 	```
+
 2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) util/quality-measures-strata-details.json file to get the full quality measures data.
 	```
 	node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
 	```
+
 3. Run the script to extract strata descriptions and measure/strata uuids for ecqms from the zip:
   ```
   node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
