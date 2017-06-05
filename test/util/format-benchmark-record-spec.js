@@ -1,6 +1,5 @@
-// Libraries
-var chai    = require('chai');
-var expect  = chai.expect;
+var chai = require('chai');
+var assert = chai.assert;
 // Utils
 var formatBenchmarkRecord = require('./../../util/format-benchmark-record');
 
@@ -31,7 +30,7 @@ describe('formatBenchmarkRecord', function() {
       };
       var benchmark = formatBenchmarkRecord(record, options);
 
-      expect(benchmark).to.be.undefined;
+      assert.isUndefined(benchmark);
     });
   });
 
@@ -55,7 +54,7 @@ describe('formatBenchmarkRecord', function() {
       };
       var benchmark = formatBenchmarkRecord(record, options);
 
-      expect(benchmark).to.be.undefined;
+      assert.isUndefined(benchmark);
     });
   });
 
@@ -80,8 +79,8 @@ describe('formatBenchmarkRecord', function() {
       var benchmark1 = formatBenchmarkRecord(record, { benchmarkYear: 2002, performaceYear: 2004});
       var benchmark2 = formatBenchmarkRecord(record, { benchmarkYear: 2004, performanceYear: 2006});
 
-      expect(benchmark1.benchmarkYear).to.equal(2002);
-      expect(benchmark2.benchmarkYear).to.equal(2004);
+      assert.equal(benchmark1.benchmarkYear, 2002);
+      assert.equal(benchmark2.benchmarkYear, 2004);
     });
     it('should have the correct performanceYear based on the options argument', function() {
       var record = {
@@ -103,8 +102,8 @@ describe('formatBenchmarkRecord', function() {
       var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
       var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
 
-      expect(benchmark1.performanceYear).to.equal(2004);
-      expect(benchmark2.performanceYear).to.equal(2006);
+      assert.equal(benchmark1.performanceYear, 2004);
+      assert.equal(benchmark2.performanceYear, 2006);
     });
 
     describe('When a direct (non-inverse) measure', function() {
@@ -128,12 +127,12 @@ describe('formatBenchmarkRecord', function() {
         var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
-          expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('130');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([0, 76.59, 87.89, 92.74, 95.36, 97.09, 98.28, 99.13, 99.76]);
+          assert.isDefined(benchmark);
+          assert.equal(benchmark.measureId, '130', 'measureId');
+          assert.equal(benchmark.submissionMethod, 'electronicHealthRecord', 'submissionMethod');
+          assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+          assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+          assert.deepEqual(benchmark.deciles, [0, 76.59, 87.89, 92.74, 95.36, 97.09, 98.28, 99.13, 99.76], 'deciles');
         });
       });
 
@@ -157,12 +156,12 @@ describe('formatBenchmarkRecord', function() {
         var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
-          expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('099');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([0, 0, 0, 0, 0, 0, 0, 0, 100]);
+          assert.isDefined(benchmark);
+          assert.equal(benchmark.measureId, '099', 'measureId');
+          assert.equal(benchmark.submissionMethod, 'claims', 'submissionMethod');
+          assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+          assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+          assert.deepEqual(benchmark.deciles, [0, 0, 0, 0, 0, 0, 0, 0, 100], 'deciles');
         });
       });
     });
@@ -189,12 +188,12 @@ describe('formatBenchmarkRecord', function() {
             };
             var benchmark = formatBenchmarkRecord(record, options);
 
-            expect(benchmark).to.exist;
-            expect(benchmark.measureId, 'measureId').to.equal('001');
-            expect(benchmark.submissionMethod, 'submissionMethod').to.equal('electronicHealthRecord');
-            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-            expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-            expect(benchmark.deciles).to.eql([100, 54.67, 35.90, 25.62, 19.33, 14.14, 9.09, 3.33, 0]);
+            assert.isDefined(benchmark);
+            assert.equal(benchmark.measureId, '001', 'measureId');
+            assert.equal(benchmark.submissionMethod, 'electronicHealthRecord', 'submissionMethod');
+            assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+            assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+            assert.deepEqual(benchmark.deciles, [100, 54.67, 35.90, 25.62, 19.33, 14.14, 9.09, 3.33, 0], 'deciles');
           });
         });
         describe('When Decile 10 is less than or equal to x', function() {
@@ -217,12 +216,12 @@ describe('formatBenchmarkRecord', function() {
             };
             var benchmark = formatBenchmarkRecord(record, options);
 
-            expect(benchmark).to.exist;
-            expect(benchmark.measureId, 'measureId').to.equal('001');
-            expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-            expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-            expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-            expect(benchmark.deciles, 'deciles').to.eql([100, 35.00, 25.71, 20.31, 16.22, 13.04, 10.00, 7.41, 4.00]);
+            assert.isDefined(benchmark);
+            assert.equal(benchmark.measureId, '001', 'measureId');
+            assert.equal(benchmark.submissionMethod, 'claims', 'submissionMethod');
+            assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+            assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+            assert.deepEqual(benchmark.deciles, [100, 35.00, 25.71, 20.31, 16.22, 13.04, 10.00, 7.41, 4.00], 'deciles');
           });
         });
       });
@@ -247,12 +246,12 @@ describe('formatBenchmarkRecord', function() {
         var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
-          expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('001');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+          assert.isDefined(benchmark);
+          assert.equal(benchmark.measureId, '001', 'measureId');
+          assert.equal(benchmark.submissionMethod, 'registry', 'submissionMethod');
+          assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+          assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+          assert.deepEqual(benchmark.deciles, [0, 0, 0, 0, 0, 0, 0, 0, 0], 'deciles');
         });
       });
 
@@ -276,12 +275,12 @@ describe('formatBenchmarkRecord', function() {
         var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
-          expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('012');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('claims');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([0, 99.01, 100, 100, 100, 100, 100, 100, 100]);
+          assert.isDefined(benchmark);
+          assert.equal(benchmark.measureId, '012', 'measureId');
+          assert.equal(benchmark.submissionMethod, 'claims', 'submissionMethod');
+          assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+          assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+          assert.deepEqual(benchmark.deciles, [0, 99.01, 100, 100, 100, 100, 100, 100, 100], 'deciles');
         });
       });
       describe('When there are two gaps between Deciles 3 and 10', function() {
@@ -304,12 +303,12 @@ describe('formatBenchmarkRecord', function() {
         var benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
-          expect(benchmark).to.exist;
-          expect(benchmark.measureId, 'measureId').to.equal('001');
-          expect(benchmark.submissionMethod, 'submissionMethod').to.equal('registry');
-          expect(benchmark.benchmarkYear, 'benchmarkYear').to.equal(2016);
-          expect(benchmark.performanceYear, 'performanceYear').to.equal(2018);
-          expect(benchmark.deciles).to.eql([100, 0.13, 0.12, 0.12, 0.12, 0, 0, 0, 0]);
+          assert.isDefined(benchmark);
+          assert.equal(benchmark.measureId, '001', 'measureId');
+          assert.equal(benchmark.submissionMethod, 'registry', 'submissionMethod');
+          assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
+          assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
+          assert.deepEqual(benchmark.deciles, [100, 0.13, 0.12, 0.12, 0.12, 0, 0, 0, 0], 'deciles');
         });
       });
     });
