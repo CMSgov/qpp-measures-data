@@ -125,6 +125,14 @@ When making changes to measures-data, include tests in the tests directory and m
 npm run test
 ```
 
+### Publish
+
+To publish a new version, make sure you've bumped the `version` in `package.json`, then:
+```
+npm login # as cmsgov
+npm publish
+```
+
 ### Additional measures
 
 `util/additional-measures.json` includes data objects which are necessary for scoring but are not MIPS measures. At this time `util/additional-measures.json` includes:
