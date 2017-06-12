@@ -1,5 +1,7 @@
 # qpp-measures-data
 
+[![Build Status](https://travis-ci.org/CMSgov/qpp-measures-data.svg?branch=master)](https://travis-ci.org/CMSgov/qpp-measures-data)
+
 ## Quality Payment Program Measures Data Repository
 
 This repository hosts measures data for QPP and supports functionality to import
@@ -103,39 +105,13 @@ To validate benchmarks against `benchmarks-schema.yaml`, run:
 cat [path to benchmarks JSON] | node scripts/validate-data.js benchmarks
 ```
 
-## How to Contribute to qpp-measures-data
-
-### Setup
-
-Install the following brew modules:
-```
-brew install jq wget poppler
-```
-
-Run:
-```
-npm install
-```
-
-### Testing
-
-When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
-
-```
-npm run test
-```
-
-### Publish
-
-To publish a new version, make sure you've bumped the `version` in `package.json`, then:
-```
-npm login # as cmsgov
-npm publish
-```
-
 ### Additional measures
 
 `util/additional-measures.json` includes data objects which are necessary for scoring but are not MIPS measures. At this time `util/additional-measures.json` includes:
 
 1. **Attestations:** Attestations are pre-requisites of submitting additional measurements for a given category.
 2. **Exclusions:** Exclusions are optional attestations of conditions which exempt the provider from a corresponding (required) measure. For example, submitting `true` to `ACI_LVPP_1` exempts a user from submitting data for the required measure `ACI_EP_1`.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
