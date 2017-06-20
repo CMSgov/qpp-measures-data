@@ -3,7 +3,7 @@
     "eMeasureId": "CMS117v5",
     "strata": [
       {
-        "name": "receivedVaccinesOrExposure",
+        "name": "vaccinesOrExposure",
         "description": "Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday"
       }
     ]
@@ -21,7 +21,7 @@
     "eMeasureId": "CMS124v5",
     "strata": [
       {
-        "name": "screenedForCervicalCancer",
+        "name": "screenedForCancer",
         "description": "Women with one or more screenings for cervical cancer. Appropriate screenings are defined by any one of the following criteria:\r\n\r\n- Cervical cytology performed during the measurement period or the two years prior to the measurement period for women who are at least 21 years old at the time of the test\r\n \r\n- Cervical cytology/human papillomavirus (HPV) co-testing performed during the measurement period or the four years prior to the measurement period for women who are at least 30 years old at the time of the test"
       }
     ]
@@ -58,11 +58,11 @@
     "eMeasureId": "CMS137v5",
     "strata": [
       {
-        "name": "treatmentWithin14DaysOfDiagnosis",
+        "name": "14DaysOfDiagnosis",
         "description": "Patients who initiated treatment within 14 days of the diagnosis"
       },
       {
-        "name": "treatmentPlusServicesWithin30DaysOfVisit",
+        "name": "30DaysOfVisit",
         "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
       }
     ],
@@ -110,7 +110,7 @@
     "eMeasureId": "CMS149v5",
     "strata": [
       {
-        "name": "assessedCognitionWithin12Months",
+        "name": "assessed12Months",
         "description": "Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12 month period"
       }
     ]
@@ -158,7 +158,7 @@
     "strata": [
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "within4MonthsOfEnd",
+        "name": "4MonthsOfEnd",
         "eMeasureUuids": {
           "initialPopulationUuid": "92656CE7-C9B1-44A8-8778-A8EF1ED90A18",
           "denominatorUuid": "C7DFE664-71AE-4EAD-AB65-CDFCF825A44E",
@@ -169,7 +169,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "between4And8MonthsAfterStart",
+        "name": "4&8MonthsAfterStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "757F3066-31E7-45D1-BA50-3EFB27ABB8E5",
           "denominatorUuid": "32635FEA-918B-438F-8421-8A6A14E238E8",
@@ -180,7 +180,7 @@
       },
       {
         "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
-        "name": "within4MonthsOfStart",
+        "name": "4MonthsOfStart",
         "eMeasureUuids": {
           "initialPopulationUuid": "5631A7DF-CA44-4AD4-A691-DC0CED303F6A",
           "denominatorUuid": "9665A8D2-F896-47A9-AA7E-271E9815D3CE",
@@ -204,7 +204,7 @@
     "eMeasureId": "CMS166v6",
     "strata": [
       {
-        "name": "noImagingStudyWithin28Days",
+        "name": "noStudy28Days",
         "description": "Patients without an imaging study conducted on the date of the outpatient or emergency department visit or in the 28 days following the outpatient or emergency department visit"
       }
     ]
@@ -213,7 +213,7 @@
     "eMeasureId": "CMS167v5",
     "strata": [
       {
-        "name": "dilatedMacularOrFundusExamWithin12Months",
+        "name": "dilatedExam12Months",
         "description": "Patients who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy AND the presence or absence of macular edema during one or more office visits within 12 months"
       }
     ]
@@ -222,7 +222,7 @@
     "eMeasureId": "CMS169v5",
     "strata": [
       {
-        "name": "evidenceOfSubstanceUseBetweenDiagnosisAndTreatment",
+        "name": "substanceUse",
         "description": "Patients in the denominator with evidence of an assessment for alcohol or other substance use following or concurrent with the new diagnosis, and prior to or concurrent with the initiation of treatment for that diagnosis"
       }
     ]
@@ -249,11 +249,11 @@
     "eMeasureId": "CMS52v5",
     "strata": [
       {
-        "name": "within3MonthsCD4<200/mm3",
+        "name": "CD4<200/mm3",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3"
       },
       {
-        "name": "within3MonthsCD4<500/mm3OrCD4<15%",
+        "name": "CD4<500/mm3OrCD4<15%",
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%"
       },
       {
@@ -267,7 +267,7 @@
     "eMeasureId": "CMS56v5",
     "strata": [
       {
-        "name": "reportedFunctionalStatus",
+        "name": "functionalStatus",
         "description": "Patients with patient-reported functional status assessment results (eg, VR-12, VR-36,PROMIS-10-Global Health, PROMIS-29, HOOS) not more than 180 days prior to the primary THA procedure, and at least 60 days and not more than 180 days after THA procedure"
       }
     ]
@@ -276,7 +276,7 @@
     "eMeasureId": "CMS65v6",
     "strata": [
       {
-        "name": "lowerFollowupBloodPressure",
+        "name": "lowerFollowupBP",
         "description": "Patients whose follow-up blood pressure is at least 10 mmHg less than their baseline blood pressure or is adequately controlled.\r\n\r\nIf a follow-up blood pressure reading is not recorded during the measurement year, the patient's blood pressure is assumed \"not improved.\""
       }
     ]
@@ -285,7 +285,7 @@
     "eMeasureId": "CMS66v5",
     "strata": [
       {
-        "name": "reportedFunctionalStatus",
+        "name": "functionalStatus",
         "description": "Patients with patient-reported functional status assessment results (eg, VR-12, VR-36, PROMIS-10 Global Health, PROMIS-29, KOOS) not more than 180 days prior to the primary TKA procedure, and at least 60 days and not more than 180 days after TKA procedure"
       }
     ]
@@ -294,7 +294,7 @@
     "eMeasureId": "CMS74v6",
     "strata": [
       {
-        "name": "receivedFluorideVarnish",
+        "name": "fluorideVarnish",
         "description": "Children who receive a fluoride varnish application"
       }
     ]
@@ -303,7 +303,7 @@
     "eMeasureId": "CMS75v5",
     "strata": [
       {
-        "name": "hadCavitiesOrDecayedTeeth",
+        "name": "cavitiesOrDecayed",
         "description": "Children who had cavities or decayed teeth"
       }
     ]
@@ -312,7 +312,7 @@
     "eMeasureId": "CMS82v4",
     "strata": [
       {
-        "name": "documentedScreeningOrTreatment",
+        "name": "screeningOrTreatment",
         "description": "Children with documentation of maternal screening or treatment for postpartum depression for the mother."
       }
     ]
@@ -321,7 +321,7 @@
     "eMeasureId": "CMS90v6",
     "strata": [
       {
-        "name": "reportedFunctionalStatus",
+        "name": "functionalStatus",
         "description": "Patients with patient reported functional status assessment results (eg, VR-12; VR-36; MLHF-Q; KCCQ; PROMIS-10 Global Health, PROMIS-29) present in the EHR within two weeks before or during the initial encounter and the follow-up encounter during the measurement year"
       }
     ]
