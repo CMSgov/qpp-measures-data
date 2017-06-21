@@ -2930,7 +2930,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>672f9875-55d9-4fb3-b56f-85205699103f</denominatorExclusionUuid>
         <denominatorExceptionUuid>3a57a106-7404-476e-b026-23282a95d75f</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>evidenceOfSubstanceUseBetweenDiagnosisAndTreatment</name>
+      <name>substanceUse</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Center for Quality Assessment and Improvement in Mental Health</primarySteward>
@@ -3349,7 +3349,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>45A2163C-25C2-4245-A3C6-0BEE64E18B64</denominatorExclusionUuid>
         <denominatorExceptionUuid>bc43554a-5399-4d55-9c48-7dc2c1cbbb65</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>screenedForCervicalCancer</name>
+      <name>screenedForCancer</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3414,7 +3414,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>19d26b5e-9be2-4313-80f4-67be1e0dde37</denominatorExclusionUuid>
         <denominatorExceptionUuid>01a1c883-e2e6-4aec-81de-17f3cd9b63b3</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>receivedVaccinesOrExposure</name>
+      <name>vaccinesOrExposure</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -3445,7 +3445,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>c7cc2c7e-892e-4b35-b1ed-b25a094f25d5</denominatorExclusionUuid>
         <denominatorExceptionUuid>7637d114-553a-4bc4-b084-d05b3a125bb8</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>hadCavitiesOrDecayedTeeth</name>
+      <name>cavitiesOrDecayed</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -4074,7 +4074,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
         <denominatorExclusionUuid>7b3728ef-a1b8-489a-8a7c-f682c26e0d7f</denominatorExclusionUuid>
         <denominatorExceptionUuid>2EE99933-7653-4C53-8506-2A76D0657064</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>assessedCognitionWithin12Months</name>
+      <name>assessed12Months</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4252,7 +4252,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     <isInverse>false</isInverse>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>within4MonthsOfEnd</name>
+      <name>4MonthsOfEnd</name>
       <eMeasureUuids>
         <initialPopulationUuid>92656CE7-C9B1-44A8-8778-A8EF1ED90A18</initialPopulationUuid>
         <denominatorUuid>C7DFE664-71AE-4EAD-AB65-CDFCF825A44E</denominatorUuid>
@@ -4263,7 +4263,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     </strata>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>between4And8MonthsAfterStart</name>
+      <name>4&amp;8MonthsAfterStart</name>
       <eMeasureUuids>
         <initialPopulationUuid>757F3066-31E7-45D1-BA50-3EFB27ABB8E5</initialPopulationUuid>
         <denominatorUuid>32635FEA-918B-438F-8421-8A6A14E238E8</denominatorUuid>
@@ -4274,7 +4274,7 @@ b. Percentage of patients who remained on an antidepressant medication for at le
     </strata>
     <strata>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
-      <name>within4MonthsOfStart</name>
+      <name>4MonthsOfStart</name>
       <eMeasureUuids>
         <initialPopulationUuid>5631A7DF-CA44-4AD4-A691-DC0CED303F6A</initialPopulationUuid>
         <denominatorUuid>9665A8D2-F896-47A9-AA7E-271E9815D3CE</denominatorUuid>
@@ -4526,7 +4526,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>305ce4ad-9e91-4236-af6d-1c5c65db586c</denominatorExclusionUuid>
         <denominatorExceptionUuid>170B3877-D83D-424C-BD7E-29F644B0A6DC</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>dilatedMacularOrFundusExamWithin12Months</name>
+      <name>dilatedExam12Months</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Physician Consortium for Performance Improvement</primarySteward>
@@ -4923,7 +4923,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>65458ECD-6573-4203-8C56-515063BAFE19</denominatorExclusionUuid>
         <denominatorExceptionUuid>029ee8ff-899f-434b-9e83-cb5503bdfebb</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>reportedFunctionalStatus</name>
+      <name>functionalStatus</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -4954,7 +4954,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>0E8BFC37-A4BA-4DE6-A6F3-DF4C188AB129</denominatorExclusionUuid>
         <denominatorExceptionUuid>a059c9d5-0445-40a5-8b55-db98a69891f4</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>reportedFunctionalStatus</name>
+      <name>functionalStatus</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -4985,7 +4985,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>32DBECF3-11EC-40FB-B35D-FA1BF7366492</denominatorExclusionUuid>
         <denominatorExceptionUuid>b156a02c-e64c-4b93-97d3-48b6af51fbf5</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>reportedFunctionalStatus</name>
+      <name>functionalStatus</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -5052,7 +5052,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
     <isInverse>false</isInverse>
     <strata>
       <description>A self-report outcome measure of functional status (FS) for patients 14 years+ with general orthopaedic impairments (neck, cranium, mandible, thoracic spine, ribs or other general orthopedic impairment). The change in FS assessed using FOTO (general orthopedic) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level by to assess quality</description>
-      <name>orthopaedicImpairment</name>
+      <name>orthoImpairment</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Focus on Therapeutic Outcomes, Inc.</primarySteward>
@@ -5398,7 +5398,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>4c42d3ad-5ad4-4e97-ac7d-81c9758fbead</denominatorExclusionUuid>
         <denominatorExceptionUuid>58347456-D1F3-4BBB-9B35-5D42825A0AB3</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>within3MonthsCD4&lt;200/mm3</name>
+      <name>CD4&lt;200/mm3</name>
     </strata>
     <strata>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%</description>
@@ -5409,7 +5409,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
         <denominatorExclusionUuid>659d5fba-93ed-4b1f-bd17-233362e37e58</denominatorExclusionUuid>
         <denominatorExceptionUuid>B7CCA1A6-F352-4A23-BC89-6FE9B60DC0C6</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>within3MonthsCD4&lt;500/mm3OrCD4&lt;15%</name>
+      <name>CD4&lt;500/mm3OrCD4&lt;15%</name>
     </strata>
     <strata>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV</description>
@@ -5620,7 +5620,7 @@ If a follow-up blood pressure reading is not recorded during the measurement yea
         <denominatorExclusionUuid>74F900B9-65DA-4E6C-BB2D-592189ABDDE5</denominatorExclusionUuid>
         <denominatorExceptionUuid>6add5684-4b28-4d80-bf3d-dd0ea530a529</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>lowerFollowupBloodPressure</name>
+      <name>lowerFollowupBP</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -5758,7 +5758,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
         <denominatorExclusionUuid>56BC7FA2-C22A-4440-8652-2D3568852C60</denominatorExclusionUuid>
         <denominatorExceptionUuid>506b11e2-8e60-4254-8277-5a3670bb6287</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>treatmentWithin14DaysOfDiagnosis</name>
+      <name>14DaysOfDiagnosis</name>
     </strata>
     <strata>
       <description>Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit</description>
@@ -5769,7 +5769,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
         <denominatorExclusionUuid>206A891D-C3E1-4660-BF2C-6CDBDF9282FB</denominatorExclusionUuid>
         <denominatorExceptionUuid>3870dc26-e32d-4ba5-9025-6b00d8259f16</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>treatmentPlusServicesWithin30DaysOfVisit</name>
+      <name>30DaysOfVisit</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -5935,7 +5935,7 @@ b. Percentage of patients who initiated treatment and who had two or more additi
         <denominatorExclusionUuid>3a0f2630-297f-481e-980c-252371b90b4b</denominatorExclusionUuid>
         <denominatorExceptionUuid>4e37becd-1435-4aa7-b64f-e3b853b005e7</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>documentedScreeningOrTreatment</name>
+      <name>screeningOrTreatment</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
@@ -6315,7 +6315,7 @@ This measure is reported as three rates stratified by age group:
     <isInverse>false</isInverse>
     <strata>
       <description>Percent of patients undergoing index pediatric and/or congenital heart surgery who die, including both 1) all deaths occurring during the hospitalization in which the procedure was performed, even if after 30 days (including patients transferred to other acute care facilities), and 2) those deaths occurring after discharge from the hospital, but within 30 days of the procedure, stratified by the five STAT Mortality Levels, a multi-institutional validated complexity stratification tool</description>
-      <name>congenitalHeartSurgery</name>
+      <name>heartSurgery</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>Society of Thoracic Surgeons</primarySteward>
@@ -6795,7 +6795,7 @@ This measure is reported as three rates stratified by age group:
     <isInverse>false</isInverse>
     <strata>
       <description>Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer and KRAS gene mutation spared treatment with anti-EGFR monoclonal antibodies</description>
-      <name>metastaticColorectalCancer</name>
+      <name>colorectalCancer</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>American Society of Clinical Oncology</primarySteward>
@@ -6954,7 +6954,7 @@ This measure is reported as three rates stratified by age group:
     <isInverse>false</isInverse>
     <strata>
       <description>Percentage of surgical patients aged 18 years and older undergoing procedures with the indications for a first second generation cephalosporin prophylactic antibiotic who had an order for a first OR second generation cephalosporin for antimicrobial prophylaxis</description>
-      <name>prophylacticAntibiotic</name>
+      <name>antibiotic</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>American Society of Plastic Surgeons</primarySteward>
@@ -7541,7 +7541,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
         <denominatorExclusionUuid>a73c666b-2ccf-462a-860b-985b8c9b4454</denominatorExclusionUuid>
         <denominatorExceptionUuid>45089ed9-59a2-49b5-9162-a49b72f3da9a</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>receivedFluorideVarnish</name>
+      <name>fluorideVarnish</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -8664,7 +8664,7 @@ Normal Parameters:       Age 18 years and older BMI =&gt; 18.5 and &lt; 25 kg/m2
     <isInverse>false</isInverse>
     <strata>
       <description>Percentage of the following patients—all considered at high risk of cardiovascular events—who were prescribed or were on statin therapy during the measurement period: • Adults aged ≥ 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD); • Adults aged ≥21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level ≥ 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia; OR • Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL</description>
-      <name>highRiskCardiovascular</name>
+      <name>highRiskCardio</name>
     </strata>
     <isHighPriority>false</isHighPriority>
     <primarySteward>Centers for Medicare &amp; Medicaid Services</primarySteward>
@@ -9124,7 +9124,7 @@ b. Percentage of patients who were ordered at least two different high-risk medi
         <denominatorExclusionUuid>0E9E3C94-6AA0-4C3C-A311-72CB0F2698B6</denominatorExclusionUuid>
         <denominatorExceptionUuid>ff61928c-0cb1-4a7f-a617-9b18bcfce0e4</denominatorExceptionUuid>
       </eMeasureUuids>
-      <name>noImagingStudyWithin28Days</name>
+      <name>noStudy28Days</name>
     </strata>
     <isHighPriority>true</isHighPriority>
     <primarySteward>National Committee for Quality Assurance</primarySteward>
