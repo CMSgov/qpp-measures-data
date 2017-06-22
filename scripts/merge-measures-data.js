@@ -103,6 +103,7 @@ function mergeQpp(qppJson) {
 
     if (['CMS145v5', 'CMS160v5'].includes(qppItem.eMeasureId)) {
       qppJson[index].strata = ecqmInfo.strata;
+      qppJson[index].eMeasureUuid = ecqmInfo.eMeasureUuid;
     } else {
       // strata length in both files should match now
       ecqmInfo.strata.forEach((newStratum, ecqmIndex) => {
