@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# generate benchmarks
+cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017
+
+# validate benchmarks
+cat benchmarks/2017.json | node scripts/validate-data.js benchmarks

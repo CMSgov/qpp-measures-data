@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/_mocha --colors",
-    "start": "scripts/generate-measures-data"
+    "build:measures": "scripts/build-measures",
+    "build:benchmarks": "scripts/build-benchmarks"
   },
   "license": "MIT",
   "devDependencies": {

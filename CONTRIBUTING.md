@@ -13,18 +13,18 @@ npm install
 Make changes on a feature branch, then open a pull request. Make sure CI passes on your branch, and you include any relevant new tests.
 
 ### Generating measures-data.json
-To regenerate the `measures-data.json` and `measures-data.xml` files, which contain additional metadata and conform to
+To regenerate and validate the `measures-data.json` and `measures-data.xml` files, which contain additional metadata and conform to
 the measures schema, do the following:
 
 ```
-npm start
+npm run build:measures
 ```
 
 ### Generating benchmarks data
-To regenerate benchmarks data from historical data use the `scripts/parse-benchmarks-data.js` script
-like so:
+To regenerate and validate benchmarks data from historical data:
+
 ```
-cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017
+npm run build:benchmarks
 ```
 
 ### Validation
@@ -51,6 +51,7 @@ cat [path to benchmarks JSON] | node scripts/validate-data.js benchmarks
 
 1. **Attestations:** Attestations are pre-requisites of submitting additional measurements for a given category.
 2. **Exclusions:** Exclusions are optional attestations of conditions which exempt the provider from a corresponding (required) measure. For example, submitting `true` to `ACI_LVPP_1` exempts a user from submitting data for the required measure `ACI_EP_1`.
+
 ## Testing
 
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
