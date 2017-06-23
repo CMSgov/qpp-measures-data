@@ -8,7 +8,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/_mocha --colors"
+    "test": "node_modules/.bin/_mocha --colors",
+    "build:measures": "scripts/build-measures",
+    "build:benchmarks": "scripts/build-benchmarks"
   },
   "license": "MIT",
   "devDependencies": {
