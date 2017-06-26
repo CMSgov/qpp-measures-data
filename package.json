@@ -10,7 +10,8 @@
   "scripts": {
     "test": "node_modules/.bin/_mocha --colors",
     "build:measures": "scripts/build-measures",
-    "build:benchmarks": "scripts/build-benchmarks"
+    "build:benchmarks": "scripts/build-benchmarks",
+    "pre-commit": "tools/pre-commit.sh"
   },
   "license": "MIT",
   "devDependencies": {
@@ -27,6 +28,10 @@
     "xml2js": "~0.4.17"
   },
   "dependencies": {
+    "pre-commit": "^1.2.2",
     "yamljs": "^0.2.8"
-  }
+  },
+  "pre-commit": [
+    "pre-commit"
+  ]
 }
