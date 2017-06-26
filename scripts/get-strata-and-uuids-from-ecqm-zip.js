@@ -87,9 +87,25 @@ function extractStrata(measure) {
     strata[index].eMeasureUuids = {
       initialPopulationUuid: ids.find(item => item.$.type === 'initialPopulation').$.uuid,
       denominatorUuid: ids.find(item => item.$.type === 'denominator').$.uuid,
-      numeratorUuid: ids.find(item => item.$.type === 'numerator').$.uuid,
-      denominatorExclusionUuid: ids.find(item => item.$.type === 'denominatorExclusions').$.uuid,
-      denominatorExceptionUuid: ids.find(item => item.$.type === 'denominatorExceptions').$.uuid,
+      numeratorUuid: ids.find(item => item.$.type === 'numerator').$.uuid
+    };
+
+    const denominatorException = ids
+      .find(item => (
+        (item.$.type === 'denominatorExceptions') && // is denominatorExceptions
+        (_.get(item, 'logicalOp[0].subTreeRef[0].$.displayName')) // and non-empty, as 'None' denominatorExceptions still get UUIDs :(
+      ));
+    if (denominatorException) {
+      strata[index].eMeasureUuids.denominatorExceptionUuid = denominatorException.$.uuid;
+    }
+
+    const denominatorExclusion = ids
+      .find(item => (
+        (item.$.type === 'denominatorExclusions') &&
+        (_.get(item, 'logicalOp[0].subTreeRef[0].$.displayName'))
+      ));
+    if (denominatorExclusion) {
+      strata[index].eMeasureUuids.denominatorExclusionUuid = denominatorExclusion.$.uuid;
     }
   });
 
