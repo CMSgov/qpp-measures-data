@@ -62,12 +62,14 @@ return strata name, description, and uuids like so
   ...
 */
 function extractStrata(measure) {
-  const details = measure.measure.measureDetails[0];
   // our version of 'strata' are described as 'numerators'
   // parse out strata descriptions from numerator text
-  const description = details.numeratorDescription[0];
   // descriptions are like "Numerator 1: Patients who initiated treatment within 14 days of the diagnosis\nNumerator 2: Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
-  let strataDescriptions = _.compact(description.split('\n'))
+  const description = measure.subjectOf
+    .find(item => item.measureAttribute[0].code[0].$.code === 'NUMER')
+    .measureAttribute[0].value[0].$.value;
+
+  let strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/))
     // if multiple strata, they're enumerated as 'Numerator x: '
     .filter(string => string.match(/^(Numerator \d: )/))
     // all the text after 'Numerator 1:'
@@ -80,17 +82,26 @@ function extractStrata(measure) {
   const strata = strataDescriptions.map(description => ({ description }));
 
   // pull out uuids for each stratum
-  // ASSUMPTION: numerators are ordered the same as measure groupings
-  // if not we need to key on something
-  measure.measure.measureGrouping[0].group.forEach((group, index) => {
-    const ids = group.clause;
-    strata[index].eMeasureUuids = {
-      initialPopulationUuid: ids.find(item => item.$.type === 'initialPopulation').$.uuid,
-      denominatorUuid: ids.find(item => item.$.type === 'denominator').$.uuid,
-      numeratorUuid: ids.find(item => item.$.type === 'numerator').$.uuid,
-      denominatorExclusionUuid: ids.find(item => item.$.type === 'denominatorExclusions').$.uuid,
-      denominatorExceptionUuid: ids.find(item => item.$.type === 'denominatorExceptions').$.uuid,
+  const components = measure.component.slice(1);
+  components.forEach((component, index) => {
+    const ids = component.populationCriteriaSection[0].component;
+    const eMeasureUuids = {
+      initialPopulationUuid: ids.find(item => item.initialPopulationCriteria).initialPopulationCriteria[0].id[0].$.root,
+      denominatorUuid: ids.find(item => item.denominatorCriteria).denominatorCriteria[0].id[0].$.root,
+      numeratorUuid: ids.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root
+    };
+
+    const denominatorException = ids.find(item => item.denominatorExceptionCriteria);
+    if (denominatorException) {
+      eMeasureUuids.denominatorExceptionUuid = denominatorException.denominatorExceptionCriteria[0].id[0].$.root;
     }
+
+    const denominatorExclusion = ids.find(item => item.denominatorExclusionCriteria);
+    if (denominatorExclusion) {
+      eMeasureUuids.denominatorExclusionUuid = denominatorExclusion.denominatorExclusionCriteria[0].id[0].$.root;
+    }
+
+    strata[index].eMeasureUuids = eMeasureUuids;
   });
 
   return strata;
@@ -104,10 +115,10 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   const zip = new AdmZip(path.join(tmpDir, measureZip));
 
   const filename = zip.getEntries()
-    .find(entry => entry.entryName.match(/[^0-9]\.xml$/))
+    .find(entry => entry.entryName.match(/[0-9]\.xml$/))
     .entryName;
 
-  // extract 'CMS75v5_SimpleXML.xml' to /xmls
+  // extract 'CMS75v5.xml' to /xmls
   zip.extractEntryTo(filename, tmpDir + '/xmls', false, true);
 
   return filename.split('/')[1];
@@ -121,10 +132,10 @@ Promise.all(
   })
 )
 // extract data from converted JavaScript objects
-.then(measures => {
-  return _.compact(measures.map(measure => {
-    const details = measure.measure.measureDetails[0];
-    const emeasureid = details.emeasureid[0];
+.then(docs => {
+  return _.compact(docs.map(doc => {
+    const measure = doc.QualityMeasureDocument;
+    const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
     if (emeasureid === '145') {
       console.warn('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v5_NQFXXXX_CAD_BB.zip');
       return;
@@ -134,12 +145,11 @@ Promise.all(
       return;
     }
     const strata = extractStrata(measure);
-    const version = details.version[0].split('.')[0];
+    const version = measure.versionNumber[0].$.value.split('.')[0];
     const eMeasureId = `CMS${emeasureid}v${version}`;
     return  {
       eMeasureId,
-      eMeasureUuid: details.uuid[0],
-      // overallAlgorithm: '', // these need to be added manually
+      eMeasureUuid: measure.id[0].$.root,
       strata: strata,
       metricType: strata.length > 1 ? 'multiPerformanceRate' : 'singlePerformanceRate'
     };
@@ -151,4 +161,3 @@ Promise.all(
   fs.writeFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
   console.warn('remember to add the strata names manually!')
 });
-
