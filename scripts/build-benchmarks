@@ -4,7 +4,7 @@
 cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017
 
 # merge the benchmark files
-echo "$(node scripts/merge-benchmarks.js ../benchmarks/2017.json ../data/wi_2017.json)" > benchmarks/2017.json
+echo "$(jq -s add benchmarks/2017.json data/wi_2017.json)" > benchmarks/2017.json
 
 # validate benchmarks
 cat benchmarks/2017.json | node scripts/validate-data.js benchmarks
