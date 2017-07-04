@@ -1,4 +1,4 @@
-id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/ema-schema.yaml
+id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/clinical-clusters-schema.yaml
 $schema: http://json-schema.org/schema#
 type: array
 items: { $ref: #/definitions/ClusterType }
@@ -8,6 +8,7 @@ definitions:
     properties:
       measureId:
         type: string
+        description: The measure identifier
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer
@@ -27,7 +28,9 @@ definitions:
     properties:
       name:
         type: string
+        description: Cluster or Speciality name
       measureIds:
         type: array
         items:
           type: string
+          description: Measure identifier
