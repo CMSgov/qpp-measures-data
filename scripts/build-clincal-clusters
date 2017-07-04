@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# generate EMA cluster data
+echo "Generating clinical cluster :"
+cat measures/measures-data.json | node scripts/ema-clinical-cluster-builder.js ./util/ClaimsClinical_Cluster.csv ./util/Registry_ClinicalCluster.csv | tee clinical-clusters/clinical-clusters.json
+
+
+# validate EMA cluster
+echo ""
+echo "Validating clinical-cluster.json produced: "
+cat clinical-clusters/clinical-clusters.json | node scripts/validate-data.js clinical-clusters
