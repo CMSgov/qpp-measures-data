@@ -28,10 +28,13 @@ node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan201
 echo "merging sources into measures-data.json"
 jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
 
-# 5. To regenerate the `measures-data.xml` file, run:
+# 5. Add EMA speciality relationship
+cat measures/measures-data.json | node scripts/ema-speciality-enricher.js | tee measures/measures-data.json
+
+# 6. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
 cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
 
-# 6. Validate the resulting measures-data.json file:
+# 7. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
 cat measures/measures-data.json | node scripts/validate-data.js measures
