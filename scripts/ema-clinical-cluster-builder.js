@@ -37,8 +37,8 @@ var specialClusterRelations = {
         {measureId: '317', optionals: []},
         {measureId: '424', optionals: []},
         {measureId: '430', optionals: []},
-        {measureId: '051',  optionals: ['52']},
-        {measureId: '052',  optionals: ['51']},
+        {measureId: '051',  optionals: ['052']},
+        {measureId: '052',  optionals: ['051']},
         {measureId: '398',  optionals: ['444']},
         {measureId: '444',  optionals: ['398']},
         {measureId: '024',  optionals: ['418']},
@@ -63,12 +63,12 @@ var specialClusterRelations = {
 
 function curate(clusterMap, relations) {
     // remove clincalClusters from measures that belongs to multiple cluster
-    _.chain(relations)
+    relations
         .filter(r => r.optionals.length === 0)
         .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
 
     // remove measures in clincalClusters that are optional
-    _.chain(relations)
+    relations
         .filter(r => r.optionals.length > 0)
         .forEach(r => {
             clusterMap.get(r.measureId).clinicalClusters
@@ -76,7 +76,7 @@ function curate(clusterMap, relations) {
         });
 
     // remove clusters that do not have specialitySet or clinicalClusters
-    _.chain(clusterMap.values())
+    Array.from(clusterMap.values())
         .filter(cluster => _.isEmpty(cluster.clinicalClusters) && _.isEmpty(cluster.specialitySets))
         .forEach(cluster => clusterMap.delete(cluster.measureId))
 }
