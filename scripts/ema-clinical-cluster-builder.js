@@ -22,8 +22,9 @@ var _ = require('lodash');
 var parse = require('csv-parse/lib/sync');
 
 var MAX_SPECIALITY_SET_SIZE = 6;
+var SUPPORTED_PERFORMANCE_YEARS = [2017];
 
-var json = '';
+var measuresJson = '';
 var claimsClusterFilePath = process.argv[2];
 var registryClusterFilePath = process.argv[3];
 
@@ -141,7 +142,11 @@ function populateSpecialitySet(clusterMap, measures, submissionMethod) {
 
 }
 
-function enrich(measures) {
+function generateEMAClusters(allMeasures) {
+    let measures = allMeasures.filter(m =>
+        (SUPPORTED_PERFORMANCE_YEARS.indexOf(m.firstPerformanceYear) > -1) &&
+        (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
+    );
 
     let claimsClusterMap = new Map();
     let registryClusterMap = new Map();
@@ -173,10 +178,10 @@ process.stdin.setEncoding('utf8');
 process.stdin.on('readable', () => {
     var chunk = process.stdin.read();
     if (chunk !== null) {
-        json += chunk;
+        measuresJson += chunk;
     }
 });
 
 process.stdin.on('end', () => {
-    enrich(JSON.parse(json, 'utf8'));
+    generateEMAClusters(JSON.parse(measuresJson, 'utf8'));
 });
