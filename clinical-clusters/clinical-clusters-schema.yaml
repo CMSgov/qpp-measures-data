@@ -20,7 +20,7 @@ definitions:
       clinicalClusters:
         type: array
         items: { $ref: #/definitions/ClinicalClusterType }
-      specialitySets:
+      specialtySets:
         type: array
         items: { $ref: #/definitions/ClinicalClusterType }
   ClinicalClusterType:
@@ -28,7 +28,7 @@ definitions:
     properties:
       name:
         type: string
-        description: Cluster or Speciality name
+        description: Cluster or Specialty name
       measureIds:
         type: array
         items:

@@ -8,7 +8,7 @@
  *    "firstPerformanceYear": 2017,
  *    "lastPerformanceYear": null,
  *    "submissionMethod" : "registry",
- *    "specialitySets": [
+ *    "specialtySets": [
  *        {name:"generalOncology", "measureIds": ["047","130","317","226","250"] }
  *    ],
  *    "clinicalClusters": [
@@ -76,9 +76,9 @@ function curate(clusterMap, relations) {
                 .forEach(c => c.measureIds = c.measureIds.filter(measureId  => r.optionals.indexOf(measureId) < 0))
         });
 
-    // remove clusters that do not have specialitySet or clinicalClusters
+    // remove clusters that do not have specialtySet or clinicalClusters
     Array.from(clusterMap.values())
-        .filter(cluster => _.isEmpty(cluster.clinicalClusters) && _.isEmpty(cluster.specialitySets))
+        .filter(cluster => _.isEmpty(cluster.clinicalClusters) && _.isEmpty(cluster.specialtySets))
         .forEach(cluster => clusterMap.delete(cluster.measureId))
 }
 
@@ -110,22 +110,22 @@ function populateClinicalClusters(clusterMap, measures, submissionMethod, filePa
     });
 }
 
-function populateSpecialitySet(clusterMap, measures, submissionMethod) {
+function populateSpecialtySet(clusterMap, measures, submissionMethod) {
 
-    // group the measures of submissionMethod by speciality set
-    let bySpeciality = _.chain(measures)
+    // group the measures of submissionMethod by specialty set
+    let bySpecialty = _.chain(measures)
         .filter(m => m.category === 'quality')
         .filter(m => m.submissionMethods && m.submissionMethods.indexOf(submissionMethod) > -1)
-        .flatMap(m => m.measureSets.map(speciality => Object.assign({speciality: speciality}, m)))
-        .groupBy('speciality')
+        .flatMap(m => m.measureSets.map(specialty => Object.assign({specialty: specialty}, m)))
+        .groupBy('specialty')
         .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
         .value();
 
 
-    // read the grouped measures and populate the speciality set on each
-    bySpeciality.forEach(speciality => {
-        if (speciality.measureIds.length < MAX_SPECIALITY_SET_SIZE) {
-            speciality.measureIds.forEach(measureId => {
+    // read the grouped measures and populate the specialty set on each
+    bySpecialty.forEach(specialty => {
+        if (specialty.measureIds.length < MAX_SPECIALITY_SET_SIZE) {
+            specialty.measureIds.forEach(measureId => {
                 let measure = measures.find(m => m.measureId === measureId);
                 let cluster = clusterMap.get(measureId) || {
                         measureId: measureId,
@@ -133,8 +133,8 @@ function populateSpecialitySet(clusterMap, measures, submissionMethod) {
                         firstPerformanceYear: measure.firstPerformanceYear,
                         lastPerformanceYear: measure.lastPerformanceYear
                     };
-                cluster['specialitySets'] =  cluster['specialitySets'] || [];
-                cluster.specialitySets.push(speciality);
+                cluster['specialtySets'] =  cluster['specialtySets'] || [];
+                cluster.specialtySets.push(specialty);
                 clusterMap.set(measureId, cluster);
             });
         }
@@ -151,9 +151,9 @@ function generateEMAClusters(allMeasures) {
     let claimsClusterMap = new Map();
     let registryClusterMap = new Map();
 
-    // set the claims and registry speciality set
-    populateSpecialitySet(claimsClusterMap, measures, 'claims');
-    populateSpecialitySet(registryClusterMap, measures, 'registry');
+    // set the claims and registry specialty set
+    populateSpecialtySet(claimsClusterMap, measures, 'claims');
+    populateSpecialtySet(registryClusterMap, measures, 'registry');
 
     populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
     populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
