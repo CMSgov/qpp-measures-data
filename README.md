@@ -40,7 +40,8 @@ The module can be used with the following pattern:
 var qppMeasuresData = require('qpp-measures-data');
 var measuresData = qppMeasuresData.getMeasuresData();
 var measuresSchema = qppMeasuresData.getMeasuresSchema();
-var benchmarksData = qppMeasuresData.getBenchmarksData(2017);
+var benchmarksData = qppMeasuresData.getBenchmarksData();
+var benchmark2017Data = benchmarksData[2017];
 var benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 ```
 
