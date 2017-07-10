@@ -75,7 +75,7 @@ definitions:
     type: object
     properties:
       category: { enum: [quality] }
-      nationalQualityCode: { type: ['null', string] }
+      nationalQualityStrategyDomain: { type: ['null', string] }
       measureType:
         description: Quality category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/measureTypes }]
@@ -131,7 +131,7 @@ definitions:
           registrySpecialitySet:
             type: array
             items: { $ref: #/definitions/specialityClusterSet}
-    required: [nationalQualityCode, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
     type: object
