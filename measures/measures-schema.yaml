@@ -7,7 +7,9 @@ definitions:
   measure:
     type: object
     properties:
-      measureId: { type: string }
+      measureId:
+        type: string
+        description: For quality measures, the measureId is the same as the quality number. For an advancing care information (ACI) measure, the measureId is the measure identifier for the ACI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
       title: { type: string }
       description: { type: string }
       category:
