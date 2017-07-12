@@ -439,9 +439,14 @@
     "description": "The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
     "isRequired": false,
     "weight": 5,
-    "measureSets": [],
+    "measureSets": [
+      "registryBonus"
+    ],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_3"
+    ]
   },
   {
     "category": "aci",
@@ -453,9 +458,14 @@
     "description": "For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician performs clinical information reconciliation. The MIPS eligible clinician must implement clinical information reconciliation for the following three clinical information sets: (1) Medication. Review of the patient's medication, including the name, dosage, frequency, and route of each medication. (2) Medication allergy. Review of the patient's known medication allergies. (3) Current Problem list. Review of the patient's current and active diagnoses.",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "substitutes": [
+      "ACI_TRANS_MR_1"
+    ]
   },
   {
     "category": "aci",
@@ -467,9 +477,12 @@
     "description": "The MIPS eligible clinician is in active engagement with a public health agency to electronically submit case reporting of reportable conditions.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
     "isRequired": false,
     "weight": 5,
-    "measureSets": [],
+    "measureSets": [
+      "registryBonus"
+    ],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -481,9 +494,16 @@
     "description": "At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using certified EHR technology.",
     "isRequired": true,
     "weight": 0,
-    "measureSets": [],
+    "measureSets": [
+      "base"
+    ],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "substitutes": [
+      "ACI_LVPP_1",
+      "ACI_TRANS_EP_1",
+      "ACI_TRANS_LVPP_1"
+    ]
   },
   {
     "category": "aci",
@@ -495,9 +515,14 @@
     "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit immunization data and receive immunization forecasts and histories from the public health immunization registry/immunization information system (IIS).",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_1"
+    ]
   },
   {
     "category": "aci",
@@ -509,9 +534,12 @@
     "description": "Patient-generated health data or data from a non-clinical setting is incorporated into the certified EHR technology for at least one unique patient seen by the MIPS eligible clinician during the performance period.",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -523,9 +551,14 @@
     "description": "The MIPS eligible clinician must use clinically relevant information from certified EHR technology to identify patient-specific educational resources and provide electronic access to those materials to at least one unique patient seen by the MIPS eligible clinician.",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "substitutes": [
+      "ACI_TRANS_PSE_1"
+    ]
   },
   {
     "category": "aci",
@@ -537,9 +570,14 @@
     "description": "For at least one unique patient seen by the MIPS eligible clinician: (1) The patient (or the patient authorized representative) is provided timely access to view online, download, and transmit his or her health information; and (2) The MIPS eligible clinician ensures the patient's health information is available for the patient (or patient-authorized representative) to access using any application of their choice that is configured to meet the technical specifications of the Application Programing Interface (API) in the MIPS eligible clinician's certified EHR technology.",
     "isRequired": true,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "base"
+    ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "substitutes": [
+      "ACI_TRANS_PEA_1"
+    ]
   },
   {
     "category": "aci",
@@ -551,9 +589,12 @@
     "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit data to public health registries.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
     "isRequired": false,
     "weight": 5,
-    "measureSets": [],
+    "measureSets": [
+      "registryBonus"
+    ],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -565,9 +606,16 @@
     "description": "For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician receives or retrieves and incorporates into the patient's record an electronic summary of care document.",
     "isRequired": true,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "base"
+    ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "substitutes": [
+      "ACI_LVITC_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -579,9 +627,14 @@
     "description": "For at least one unique patient seen by the MIPS eligible clinician during the performance period, a secure message was sent using the electronic messaging function of certified EHR technology to the patient (or the patient-authorized representative), or in response to a secure message sent by the patient (or the patient-authorized representative), or in response to a secure message sent by the patient (or the patient-authorized representative).",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "substitutes": [
+      "ACI_TRANS_SM_1"
+    ]
   },
   {
     "category": "aci",
@@ -593,9 +646,14 @@
     "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified EHR technology in accordance with requirements in 45 CFR164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), and implement security updates as necessary and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
     "isRequired": true,
     "weight": 0,
-    "measureSets": [],
+    "measureSets": [
+      "base"
+    ],
     "isBonus": false,
-    "objective": "protectPatientHealthInformation"
+    "objective": "protectPatientHealthInformation",
+    "substitutes": [
+      "ACI_TRANS_PPHI_1"
+    ]
   },
   {
     "category": "aci",
@@ -607,9 +665,16 @@
     "description": "For at least one transition of care or referral, the MIPS eligible clinician that transitions or refers their patient to another setting of care or health care provider-(1) creates a summary of care record using certified EHR technology; and (2) electronically exchanges the summary of care record.",
     "isRequired": true,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "base"
+    ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "substitutes": [
+      "ACI_LVOTC_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -621,9 +686,14 @@
     "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit syndromic surveillance data from a urgent care ambulatory setting where the jurisdiction accepts syndromic data from such settings and the standards are clearly defined.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
     "isRequired": false,
     "weight": 5,
-    "measureSets": [],
+    "measureSets": [
+      "registryBonus"
+    ],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_2"
+    ]
   },
   {
     "category": "aci",
@@ -635,9 +705,14 @@
     "description": "During the performance period, at least one unique patient (or patient-authorized representatives) seen by the MIPS eligible clinician actively engages with the EHR made accessible by the MIPS eligible clinician. An MIPS eligible clinician may meet the measure by either-(1) view, download or transmit to a third party their health information; or (2) access their health information through the use of an API that can be used by applications chosen by the patient and configured to the API in the MIPS eligible clinician's certified EHR technology; or (3) a combination of (1) and (2).",
     "isRequired": false,
     "weight": 10,
-    "measureSets": [],
+    "measureSets": [
+      "performanceBonus"
+    ],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "substitutes": [
+      "ACI_TRANS_PEA_2"
+    ]
   },
   {
     "category": "aci",
@@ -650,10 +725,16 @@
     "isRequired": true,
     "weight": 0,
     "measureSets": [
-      "transition"
+      "transition",
+      "base"
     ],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "substitutes": [
+      "ACI_TRANS_LVPP_1",
+      "ACI_LVPP_1",
+      "ACI_EP_1"
+    ]
   },
   {
     "category": "aci",
@@ -666,10 +747,18 @@
     "isRequired": true,
     "weight": 20,
     "measureSets": [
-      "transition"
+      "transition",
+      "base"
     ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "substitutes": [
+      "ACI_TRANS_LVOTC_1",
+      "ACI_HIE_1",
+      "ACI_LVOTC_1",
+      "ACI_HIE_2",
+      "ACI_LVITC_1"
+    ]
   },
   {
     "category": "aci",
@@ -682,10 +771,14 @@
     "isRequired": false,
     "weight": 10,
     "measureSets": [
-      "transition"
+      "transition",
+      "performanceBonus"
     ],
     "isBonus": false,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "substitutes": [
+      "ACI_PHCDRR_1"
+    ]
   },
   {
     "category": "aci",
@@ -698,10 +791,14 @@
     "isRequired": false,
     "weight": 10,
     "measureSets": [
-      "transition"
+      "transition",
+      "performanceBonus"
     ],
     "isBonus": false,
-    "objective": "medicationReconciliation"
+    "objective": "medicationReconciliation",
+    "substitutes": [
+      "ACI_HIE_3"
+    ]
   },
   {
     "category": "aci",
@@ -714,10 +811,14 @@
     "isRequired": false,
     "weight": 10,
     "measureSets": [
-      "transition"
+      "transition",
+      "performanceBonus"
     ],
     "isBonus": false,
-    "objective": "patientSpecificEducation"
+    "objective": "patientSpecificEducation",
+    "substitutes": [
+      "ACI_PEA_2"
+    ]
   },
   {
     "category": "aci",
@@ -730,10 +831,14 @@
     "isRequired": true,
     "weight": 20,
     "measureSets": [
-      "transition"
+      "transition",
+      "base"
     ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "substitutes": [
+      "ACI_PEA_1"
+    ]
   },
   {
     "category": "aci",
@@ -746,10 +851,14 @@
     "isRequired": false,
     "weight": 10,
     "measureSets": [
-      "transition"
+      "transition",
+      "performanceBonus"
     ],
     "isBonus": false,
-    "objective": "secureMessaging"
+    "objective": "secureMessaging",
+    "substitutes": [
+      "ACI_CCTPE_2"
+    ]
   },
   {
     "category": "aci",
@@ -762,10 +871,14 @@
     "isRequired": true,
     "weight": 0,
     "measureSets": [
-      "transition"
+      "transition",
+      "base"
     ],
     "isBonus": false,
-    "objective": "protectPatientHealthInformation"
+    "objective": "protectPatientHealthInformation",
+    "substitutes": [
+      "ACI_PPHI_1"
+    ]
   },
   {
     "category": "aci",
@@ -778,10 +891,14 @@
     "isRequired": false,
     "weight": 5,
     "measureSets": [
-      "transition"
+      "transition",
+      "registryBonus"
     ],
     "isBonus": true,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "substitutes": [
+      "ACI_PHCDRR_5"
+    ]
   },
   {
     "category": "aci",
@@ -794,10 +911,14 @@
     "isRequired": false,
     "weight": 5,
     "measureSets": [
-      "transition"
+      "transition",
+      "registryBonus"
     ],
     "isBonus": true,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "substitutes": [
+      "ACI_PHCDRR_2"
+    ]
   },
   {
     "category": "aci",
@@ -810,10 +931,14 @@
     "isRequired": false,
     "weight": 10,
     "measureSets": [
-      "transition"
+      "transition",
+      "performanceBonus"
     ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "substitutes": [
+      "ACI_CCTPE_1"
+    ]
   },
   {
     "category": "ia",
