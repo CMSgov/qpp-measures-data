@@ -40,9 +40,11 @@ process.stdin.on('readable', function() {
 function generateCahpsMeasure(record, idx) {
   var measureTitle = record['Measure Name'];
   var measureIdx = cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle];
+
   if (measureIdx === undefined) {
     throw 'No existing measure index matches title: "' + measureTitle + '"';
-  };
+  }
+
   return {
     category: 'quality',
     firstPerformanceYear: 2017,
@@ -50,7 +52,7 @@ function generateCahpsMeasure(record, idx) {
     metricType: 'cahps',
     title: measureTitle,
     description: '', // TBD: Will be provided by RAND,
-    nationalQualityCode: null,
+    nationalQualityStrategyDomain: null,
     measureType: 'patientEngagementExperience',
     measureId: 'CAHPS_' + cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle],
     eMeasureId: null,
