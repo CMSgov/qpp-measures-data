@@ -276,7 +276,7 @@ function enrichACIMeasures(measures) {
           // find the relation and upgrade the measureSet and add substitute
           var aciRelation = aciRelations[m.measureId];
           if (aciRelation) {
-            m.subCategory = aciRelation.subCategory;
+            m.reportingCategory = aciRelation.reportingCategory;
             m.substitutes = aciRelation.substitutes;
           }
       });

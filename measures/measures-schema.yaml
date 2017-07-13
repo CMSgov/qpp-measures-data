@@ -57,8 +57,8 @@ definitions:
     type: object
     properties:
       category: { enum: [aci] }
-      subCategory:
-        description: The subcategory of the ACI measure.
+      reportingCategory:
+        description: The reporting category of the ACI measure.
         enum: [pre-attestation, base, registryBonus, performanceBonus, cehrtBonus]
       weight:
         description: Determines the performance score points granted for attesting to the measure.
