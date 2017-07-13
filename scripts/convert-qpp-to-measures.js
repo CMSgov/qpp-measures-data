@@ -112,7 +112,7 @@ process.stdin.on('end', () => {
  *    ----------------------------------------
  *    measure_title         | title
  *    measure_desc          | description
- *    national_quality_code | nationalQualityCode
+ *    national_quality_code | nationalQualityStrategyDomain
  *    measure_type          | measureType
  *    emsr_id               | eMeasureId
  *    nqf_emsr_num          | nqfEMeasureId
@@ -182,7 +182,7 @@ function parseQpp(json) {
           obj.weight = 5; // override weight if measure is a bonus measure
         }
       } else if (key === 'national_quality_code') {
-        obj.nationalQualityCode = _.trim(value);
+        obj.nationalQualityStrategyDomain = _.trim(value);
       } else if (key === 'measure_type') {
         obj.measureType = formatString(value);
       } else if (key === 'emsr_id') {
