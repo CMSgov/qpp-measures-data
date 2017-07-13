@@ -129,16 +129,6 @@ definitions:
         description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
         type: array
         items: { $ref: #/definitions/performanceOption }
-      ema:
-        description: Eligibility Measure Adjustment(EMA) cluster relationship for applicable the measure.
-        type: object
-        properties:
-          claimsSpecialitySet:
-            type: array
-            items: { $ref: #/definitions/specialityClusterSet}
-          registrySpecialitySet:
-            type: array
-            items: { $ref: #/definitions/specialityClusterSet}
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
