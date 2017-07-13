@@ -217,7 +217,7 @@ function parseQpp(json) {
     });
     result.push(obj);
   }
-  enrichACIMeasures(result);
+
   return JSON.stringify(result, null, 2);
 }
 
@@ -266,18 +266,4 @@ function parseMeasureSet(measureSet) {
 
 function parseId(id) {
   return (id === 'N/A') ? null : id;
-}
-
-function enrichACIMeasures(measures) {
-  var aciRelations = require('../util/aci-measure-relations.json');
-  measures
-      .filter(m => m.category === 'aci')
-      .forEach(m => {
-          // find the relation and upgrade the measureSet and add substitute
-          var aciRelation = aciRelations[m.measureId];
-          if (aciRelation) {
-            m.reportingCategory = aciRelation.reportingCategory;
-            m.substitutes = aciRelation.substitutes;
-          }
-      });
 }

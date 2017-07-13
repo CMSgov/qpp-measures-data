@@ -23,7 +23,9 @@
     "isRequired": true,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "pre-attestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_ONCDIR_1",
@@ -37,7 +39,9 @@
     "isRequired": true,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "pre-attestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_ONCACB_1",
@@ -51,7 +55,9 @@
     "isRequired": false,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "pre-attestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_IACEHRT_1",
@@ -65,7 +71,9 @@
     "isRequired": false,
     "isBonus": true,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "cehrtBonus",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -79,7 +87,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_EP_1",
+      "ACI_TRANS_EP_1",
+      "ACI_TRANS_LVPP_1"
+    ]
   },
   {
     "category": "aci",
@@ -95,7 +109,13 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_EP_1",
+      "ACI_LVPP_1",
+      "ACI_EP_1"
+    ]
   },
   {
     "category": "aci",
@@ -109,7 +129,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_HIE_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -125,7 +151,15 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_HIE_1",
+      "ACI_HIE_1",
+      "ACI_LVOTC_1",
+      "ACI_HIE_2",
+      "ACI_LVITC_1"
+    ]
   },
   {
     "category": "aci",
@@ -139,7 +173,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_HIE_2",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "quality",

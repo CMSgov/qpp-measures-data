@@ -114,5 +114,23 @@ function mergeQpp(qppJson) {
 
   console.error('did not find measure details for the following', measuresNotFound);
 
+  enrichACIMeasures(qppJson);
+
   return JSON.stringify(qppJson, null, 2);
+}
+
+
+
+function enrichACIMeasures(measures) {
+    var aciRelations = require('../util/aci-measure-relations.json');
+    measures
+        .filter(m => m.category === 'aci')
+        .forEach(m => {
+            // find the relation and upgrade the measureSet and add substitute
+            var aciRelation = aciRelations[m.measureId];
+            if (aciRelation) {
+                m.reportingCategory = aciRelation.reportingCategory;
+                m.substitutes = aciRelation.substitutes;
+            }
+        });
 }
