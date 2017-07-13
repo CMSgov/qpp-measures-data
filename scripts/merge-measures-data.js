@@ -120,17 +120,23 @@ function mergeQpp(qppJson) {
 }
 
 
-
+/**
+ * Will add extra metadata to ACI measures
+ * @param measures - the measures to enrich
+ */
 function enrichACIMeasures(measures) {
-    var aciRelations = require('../util/aci-measure-relations.json');
-    measures
-        .filter(m => m.category === 'aci')
-        .forEach(m => {
-            // find the relation and upgrade the measureSet and add substitute
-            var aciRelation = aciRelations[m.measureId];
-            if (aciRelation) {
-                m.reportingCategory = aciRelation.reportingCategory;
-                m.substitutes = aciRelation.substitutes;
-            }
-        });
+
+  // load the relations from file
+  var aciRelations = require('../util/aci-measure-relations.json');
+
+  measures
+      .filter(m => m.category === 'aci')
+      .forEach(m => {
+          // find the relation and upgrade the measureSet and add substitute
+          var aciRelation = aciRelations[m.measureId];
+          if (aciRelation) {
+              m.reportingCategory = aciRelation.reportingCategory;
+              m.substitutes = aciRelation.substitutes;
+          }
+      });
 }

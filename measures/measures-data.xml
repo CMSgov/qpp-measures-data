@@ -26,7 +26,7 @@ I have implemented appropriate standards and processes to ensure that its certif
     <isRequired>true</isRequired>
     <isBonus>false</isBonus>
     <objective/>
-    <reportingCategory>pre-attestation</reportingCategory>
+    <reportingCategory>preAttestation</reportingCategory>
   </measure>
   <measure>
     <measureId>ACI_ONCDIR_1</measureId>
@@ -41,7 +41,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isRequired>true</isRequired>
     <isBonus>false</isBonus>
     <objective/>
-    <reportingCategory>pre-attestation</reportingCategory>
+    <reportingCategory>preAttestation</reportingCategory>
   </measure>
   <measure>
     <measureId>ACI_ONCACB_1</measureId>
@@ -55,7 +55,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isRequired>false</isRequired>
     <isBonus>false</isBonus>
     <objective/>
-    <reportingCategory>pre-attestation</reportingCategory>
+    <reportingCategory>preAttestation</reportingCategory>
   </measure>
   <measure>
     <measureId>ACI_IACEHRT_1</measureId>
@@ -84,9 +84,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>electronicPrescribing</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_EP_1</substitutes>
-    <substitutes>ACI_TRANS_EP_1</substitutes>
-    <substitutes>ACI_TRANS_LVPP_1</substitutes>
+    <substitute>ACI_EP_1</substitute>
+    <substitute>ACI_TRANS_EP_1</substitute>
+    <substitute>ACI_TRANS_LVPP_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -102,9 +102,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>electronicPrescribing</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_EP_1</substitutes>
-    <substitutes>ACI_LVPP_1</substitutes>
-    <substitutes>ACI_EP_1</substitutes>
+    <substitute>ACI_TRANS_EP_1</substitute>
+    <substitute>ACI_LVPP_1</substitute>
+    <substitute>ACI_EP_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -119,9 +119,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_HIE_1</substitutes>
-    <substitutes>ACI_TRANS_HIE_1</substitutes>
-    <substitutes>ACI_TRANS_LVOTC_1</substitutes>
+    <substitute>ACI_HIE_1</substitute>
+    <substitute>ACI_TRANS_HIE_1</substitute>
+    <substitute>ACI_TRANS_LVOTC_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -137,11 +137,11 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_HIE_1</substitutes>
-    <substitutes>ACI_HIE_1</substitutes>
-    <substitutes>ACI_LVOTC_1</substitutes>
-    <substitutes>ACI_HIE_2</substitutes>
-    <substitutes>ACI_LVITC_1</substitutes>
+    <substitute>ACI_TRANS_HIE_1</substitute>
+    <substitute>ACI_HIE_1</substitute>
+    <substitute>ACI_LVOTC_1</substitute>
+    <substitute>ACI_HIE_2</substitute>
+    <substitute>ACI_LVITC_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -156,9 +156,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_HIE_2</substitutes>
-    <substitutes>ACI_TRANS_HIE_1</substitutes>
-    <substitutes>ACI_TRANS_LVOTC_1</substitutes>
+    <substitute>ACI_HIE_2</substitute>
+    <substitute>ACI_TRANS_HIE_1</substitute>
+    <substitute>ACI_TRANS_LVOTC_1</substitute>
   </measure>
   <measure>
     <category>quality</category>
@@ -401,7 +401,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitutes>ACI_TRANS_PHCDRR_3</substitutes>
+    <substitute>ACI_TRANS_PHCDRR_3</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -416,7 +416,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_TRANS_MR_1</substitutes>
+    <substitute>ACI_TRANS_MR_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -445,9 +445,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>electronicPrescribing</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_LVPP_1</substitutes>
-    <substitutes>ACI_TRANS_EP_1</substitutes>
-    <substitutes>ACI_TRANS_LVPP_1</substitutes>
+    <substitute>ACI_LVPP_1</substitute>
+    <substitute>ACI_TRANS_EP_1</substitute>
+    <substitute>ACI_TRANS_LVPP_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -462,7 +462,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_TRANS_PHCDRR_1</substitutes>
+    <substitute>ACI_TRANS_PHCDRR_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -491,7 +491,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_TRANS_PSE_1</substitutes>
+    <substitute>ACI_TRANS_PSE_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -506,7 +506,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_PEA_1</substitutes>
+    <substitute>ACI_TRANS_PEA_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -535,9 +535,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_LVITC_1</substitutes>
-    <substitutes>ACI_TRANS_HIE_1</substitutes>
-    <substitutes>ACI_TRANS_LVOTC_1</substitutes>
+    <substitute>ACI_LVITC_1</substitute>
+    <substitute>ACI_TRANS_HIE_1</substitute>
+    <substitute>ACI_TRANS_LVOTC_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -552,7 +552,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>coordinationOfCareThroughPatientEngagement</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_TRANS_SM_1</substitutes>
+    <substitute>ACI_TRANS_SM_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -567,7 +567,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>protectPatientHealthInformation</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_PPHI_1</substitutes>
+    <substitute>ACI_TRANS_PPHI_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -582,9 +582,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_LVOTC_1</substitutes>
-    <substitutes>ACI_TRANS_HIE_1</substitutes>
-    <substitutes>ACI_TRANS_LVOTC_1</substitutes>
+    <substitute>ACI_LVOTC_1</substitute>
+    <substitute>ACI_TRANS_HIE_1</substitute>
+    <substitute>ACI_TRANS_LVOTC_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -599,7 +599,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitutes>ACI_TRANS_PHCDRR_2</substitutes>
+    <substitute>ACI_TRANS_PHCDRR_2</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -614,7 +614,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>coordinationOfCareThroughPatientEngagement</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_TRANS_PEA_2</substitutes>
+    <substitute>ACI_TRANS_PEA_2</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -630,9 +630,9 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>electronicPrescribing</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_LVPP_1</substitutes>
-    <substitutes>ACI_LVPP_1</substitutes>
-    <substitutes>ACI_EP_1</substitutes>
+    <substitute>ACI_TRANS_LVPP_1</substitute>
+    <substitute>ACI_LVPP_1</substitute>
+    <substitute>ACI_EP_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -648,11 +648,11 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>healthInformationExchange</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_TRANS_LVOTC_1</substitutes>
-    <substitutes>ACI_HIE_1</substitutes>
-    <substitutes>ACI_LVOTC_1</substitutes>
-    <substitutes>ACI_HIE_2</substitutes>
-    <substitutes>ACI_LVITC_1</substitutes>
+    <substitute>ACI_TRANS_LVOTC_1</substitute>
+    <substitute>ACI_HIE_1</substitute>
+    <substitute>ACI_LVOTC_1</substitute>
+    <substitute>ACI_HIE_2</substitute>
+    <substitute>ACI_LVITC_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -668,7 +668,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>publicHealthReporting</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_PHCDRR_1</substitutes>
+    <substitute>ACI_PHCDRR_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -684,7 +684,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>medicationReconciliation</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_HIE_3</substitutes>
+    <substitute>ACI_HIE_3</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -700,7 +700,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>patientSpecificEducation</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_PEA_2</substitutes>
+    <substitute>ACI_PEA_2</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -716,7 +716,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_PEA_1</substitutes>
+    <substitute>ACI_PEA_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -732,7 +732,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>secureMessaging</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_CCTPE_2</substitutes>
+    <substitute>ACI_CCTPE_2</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -748,7 +748,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>protectPatientHealthInformation</objective>
     <reportingCategory>base</reportingCategory>
-    <substitutes>ACI_PPHI_1</substitutes>
+    <substitute>ACI_PPHI_1</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -764,7 +764,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitutes>ACI_PHCDRR_5</substitutes>
+    <substitute>ACI_PHCDRR_5</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -780,7 +780,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitutes>ACI_PHCDRR_2</substitutes>
+    <substitute>ACI_PHCDRR_2</substitute>
   </measure>
   <measure>
     <category>aci</category>
@@ -796,7 +796,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <isBonus>false</isBonus>
     <objective>patientElectronicAccess</objective>
     <reportingCategory>performanceBonus</reportingCategory>
-    <substitutes>ACI_CCTPE_1</substitutes>
+    <substitute>ACI_CCTPE_1</substitute>
   </measure>
   <measure>
     <category>ia</category>

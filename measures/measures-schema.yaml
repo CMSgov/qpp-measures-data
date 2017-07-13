@@ -59,7 +59,7 @@ definitions:
       category: { enum: [aci] }
       reportingCategory:
         description: The reporting category of the ACI measure.
-        enum: [pre-attestation, base, registryBonus, performanceBonus, cehrtBonus]
+        enum: [preAttestation, base, registryBonus, performanceBonus, cehrtBonus]
       weight:
         description: Determines the performance score points granted for attesting to the measure.
         enum: [0, 5, 10, 20]
@@ -75,7 +75,7 @@ definitions:
         type: boolean
         default: false
       substitutes:
-        description: Identifiers of other ACI Measures that can be used instead of the current meausre.
+        description: Identifiers of other ACI measure that can be used instead of the current meausre.
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
     required: [weight, objective, isRequired, isBonus, measureSets]
 
