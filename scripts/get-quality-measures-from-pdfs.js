@@ -55,7 +55,7 @@ function getRates(path, cb) {
 
     if (!found) {
       // only a single performace rate
-      var rateRegex = /DESCRIPTION:((.|\s)*?)INSTRUCTIONS:/;
+      let rateRegex = /DESCRIPTION:((.|\s)*?)INSTRUCTIONS:/;
       var foundRate = data.match(rateRegex);
 
       rateDescriptions.push(cleanUpString(foundRate[1]));
@@ -76,7 +76,7 @@ function getRates(path, cb) {
 
       for (var i = 1; i <= numOfRates; i++) {
         // look for the description between 1) and 2)
-        rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i + 1) + '\\' + delineationChar + '|Version 1\\.0)');
+        let rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i + 1) + '\\' + delineationChar + '|Version 1\\.0)');
 
         if (i + 1 > numOfRates) {
           // if this is the last rate, look for the description between x) and the ending phrases
