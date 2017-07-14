@@ -119,7 +119,6 @@ function mergeQpp(qppJson) {
   return JSON.stringify(qppJson, null, 2);
 }
 
-
 /**
  * Will add extra metadata to ACI measure that are not directly available
  * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
