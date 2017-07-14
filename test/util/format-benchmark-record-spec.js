@@ -24,7 +24,7 @@ describe('formatBenchmarkRecord', function() {
         decile6: '99.79 - 99.84',
         decile7: '99.85 - 99.99',
         decile8: ' -- ',
-        decile9: ' --	',
+        decile9: ' -- ',
         decile10: '100',
         isToppedOut: 'Yes'
       };
@@ -48,7 +48,7 @@ describe('formatBenchmarkRecord', function() {
         decile6: ' -- ',
         decile7: ' -- ',
         decile8: ' -- ',
-        decile9: ' --	',
+        decile9: ' -- ',
         decile10: ' -- ',
         isToppedOut: ' -- '
       };
@@ -76,8 +76,8 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatBenchmarkRecord(record, { benchmarkYear: 2002, performaceYear: 2004});
-      var benchmark2 = formatBenchmarkRecord(record, { benchmarkYear: 2004, performanceYear: 2006});
+      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
+      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
 
       assert.equal(benchmark1.benchmarkYear, 2002);
       assert.equal(benchmark2.benchmarkYear, 2004);

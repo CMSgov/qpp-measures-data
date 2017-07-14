@@ -42,11 +42,11 @@ function cleanUpString(input) {
 
 function getRates(path, cb) {
   pdfToText.pdfToText(path, function(err, data) {
-    if (err) throw(err);
+    if (err) throw (err);
 
     var rateDescriptions = [];
 
-    var found = data.match(/This measure will be calculated with (\d) performance rates\:/);
+    var found = data.match(/This measure will be calculated with (\d) performance rates:/);
 
     if (!found) {
       // sometimes the phrase for a multi-performance rate is different
@@ -55,7 +55,7 @@ function getRates(path, cb) {
 
     if (!found) {
       // only a single performace rate
-      var rateRegex = /DESCRIPTION\:((.|\s)*?)INSTRUCTIONS\:/;
+      let rateRegex = /DESCRIPTION:((.|\s)*?)INSTRUCTIONS:/;
       var foundRate = data.match(rateRegex);
 
       rateDescriptions.push(cleanUpString(foundRate[1]));
@@ -72,19 +72,19 @@ function getRates(path, cb) {
       var remainingFile = data.substring(reportingFound.index + reportingFound[0].length);
       // find the 1, see if a ) or a . comes after each performance rate number
       var firstPos = remainingFile.indexOf('1');
-      var delineationChar = remainingFile[firstPos+1];
+      var delineationChar = remainingFile[firstPos + 1];
 
-      for (var i = 1; i<=numOfRates; i++) {
+      for (var i = 1; i <= numOfRates; i++) {
         // look for the description between 1) and 2)
-        var rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i+1)+ '\\' + delineationChar + '|Version 1\\.0)');
+        let rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i + 1) + '\\' + delineationChar + '|Version 1\\.0)');
 
-        if (i+1 > numOfRates) {
+        if (i + 1 > numOfRates) {
           // if this is the last rate, look for the description between x) and the ending phrases
-          var endingPhrases = '(REPORTING CRITERIA|Measure Reporting:|Version 1\\.0|DENOMINATOR \\(REPORTING|The eligible clinician should submit data)'
-          rateRegex = new RegExp(i +'\\' + delineationChar + '((.|\\s)*?)' + endingPhrases);
+          var endingPhrases = '(REPORTING CRITERIA|Measure Reporting:|Version 1\\.0|DENOMINATOR \\(REPORTING|The eligible clinician should submit data)';
+          rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)' + endingPhrases);
         }
 
-        var foundRate = remainingFile.match(rateRegex);
+        foundRate = remainingFile.match(rateRegex);
         rateDescriptions.push(cleanUpString(foundRate[1]));
       }
     }
@@ -102,7 +102,7 @@ var groupedFiles = fs.readdirSync(folderPath).reduce(function(arr, current) {
 }, {});
 
 var qualityIds = Object.keys(groupedFiles);
-qualityIds.forEach(function(qualityId, i){
+qualityIds.forEach(function(qualityId, i) {
   getRates(p.join(folderPath, groupedFiles[qualityId][0]), function(rateDescriptions) {
     // push into performanceRateJson
     performanceRateJson.push({qualityId: qualityId, descriptions: rateDescriptions});
@@ -115,4 +115,3 @@ qualityIds.forEach(function(qualityId, i){
     }
   });
 });
-

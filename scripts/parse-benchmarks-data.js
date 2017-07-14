@@ -1,7 +1,7 @@
 // Libraries
-var fs    = require('fs');
+var fs = require('fs');
 var parse = require('csv-parse');
-var path  = require('path');
+var path = require('path');
 // Constants
 var BENCHMARK_CSV_COLUMNS = [
   'measureName',
@@ -22,7 +22,7 @@ var BENCHMARK_CSV_COLUMNS = [
 // Utils
 var formatBenchmarkRecord = require('./../util/format-benchmark-record');
 // Data
-var benchmarksData   = '';
+var benchmarksData = '';
 
 /**
  *
@@ -32,7 +32,7 @@ var benchmarksData   = '';
  */
 var benchmarks = [];
 // Commandline Arguments
-var benchmarkYear   = process.argv[2];
+var benchmarkYear = process.argv[2];
 var performanceYear = process.argv[3];
 
 if (benchmarkYear && performanceYear) {
@@ -59,7 +59,7 @@ if (benchmarkYear && performanceYear) {
         fs.writeFileSync(path.join(__dirname, '../benchmarks/' + performanceYear + '.json'), JSON.stringify(benchmarks, null, 2), 'utf8');
       }
     });
-});
+  });
 } else {
   console.log('Please provide a benchmark and performance year like so: `node parse-benchmarks-data.js 2015 2017`');
 }

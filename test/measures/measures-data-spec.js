@@ -22,30 +22,32 @@ describe('measures data json', function() {
         .filter(x => requiredAttestationIdsSet.has(x)));
       assert.equal(intersection.size, requiredAttestationIdsSet.size);
     });
+
     it('does not have substitutes', () => {
       requiredAttestationIdsSet.forEach(measureId => {
-        var measure = measuresData.find(m => m.measureId == 'ACI_INFBLO_1');
+        var measure = measuresData.find(m => m.measureId === 'ACI_INFBLO_1');
         assert.isTrue(_.isEmpty(measure.substitutes));
-      })
+      });
     });
   });
 
   describe('ACI measures have proper substitutions', () => {
-
     it('ACI_PHCDRR_1 should be in performanceBonus reporting category', () => {
-      var measure = measuresData.find(m => m.measureId == 'ACI_PHCDRR_1');
+      var measure = measuresData.find(m => m.measureId === 'ACI_PHCDRR_1');
       assert.equal(measure.reportingCategory, 'performanceBonus');
     });
+
     it('ACI_TRANS_PHCDRR_2 should contain correct substitutes', () => {
-      var measure = measuresData.find(m => m.measureId == 'ACI_TRANS_PHCDRR_2');
+      var measure = measuresData.find(m => m.measureId === 'ACI_TRANS_PHCDRR_2');
       assert.deepEqual(measure.substitutes, ['ACI_PHCDRR_2']);
     });
+
     it('dose contain proper metadata on all measures', () => {
       var generated = {};
       measuresData
         .filter(m => m.category === 'aci')
-        .forEach(m =>  {
-            generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
+        .forEach(m => {
+          generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
         });
       assert.deepEqual(generated, actualAciRelation);
     });
@@ -61,10 +63,6 @@ describe('measures data json', function() {
     });
 
     describe('CAHPS measures', function() {
-      const cahpsMeasures = measuresData.filter(function(measure) {
-        return measure.measureId.match(/CAHPS_\d+/);
-      });
-
       it('contains 12 correct CAHPS measures', function() {
         const cahpsMeasures = measuresData.filter(measure => measure.measureId.match(/CAHPS_\d+/));
         const commonCahpsProperties = {
@@ -83,7 +81,7 @@ describe('measures data json', function() {
           'CAHPS for MIPS SSM: How Well Providers Communicate': '0005',
           'CAHPS for MIPS SSM: Patient\'s Rating of Provider': '0005',
           'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': '0005'
-        }
+        };
         assert.equal(cahpsMeasures.length, 12);
         cahpsMeasures.forEach(cahpsMeasure => {
           assert.match(cahpsMeasure.title, /^CAHPS for MIPS/);

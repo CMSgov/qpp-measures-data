@@ -8,9 +8,9 @@
  */
 
 // Libraries
-const fs    = require('fs');
+const fs = require('fs');
 const parse = require('csv-parse');
-const path  = require('path');
+const path = require('path');
 
 const additionalMeasuresFilepath = '../util/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);
@@ -42,7 +42,7 @@ function generateCahpsMeasure(record, idx) {
   var measureIdx = cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle];
 
   if (measureIdx === undefined) {
-    throw 'No existing measure index matches title: "' + measureTitle + '"';
+    throw new Error('No existing measure index matches title: "' + measureTitle + '"');
   }
 
   return {

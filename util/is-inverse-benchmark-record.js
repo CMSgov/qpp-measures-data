@@ -5,7 +5,7 @@
  */
 var isInverseBenchmarkRecord = function(record) {
   if (parseFloat(record.decile10) === 100) return false;
-  if (parseFloat(record.decile10) === 0)   return true;
+  if (parseFloat(record.decile10) === 0) return true;
   if (record.decile10 && record.decile10.indexOf('<=') > -1) return true;
   if (record.decile10 && record.decile10.indexOf('>=') > -1) return false;
 

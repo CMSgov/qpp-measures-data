@@ -37,12 +37,12 @@ For example, `benchmarks/2017.json` contains the benchmarks for performance year
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
 The module can be used with the following pattern:
 ```javascript
-var qppMeasuresData = require('qpp-measures-data');
-var measuresData = qppMeasuresData.getMeasuresData();
-var measuresSchema = qppMeasuresData.getMeasuresSchema();
-var benchmarksData = qppMeasuresData.getBenchmarksData();
-var benchmark2017Data = benchmarksData[2017];
-var benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
+const qppMeasuresData = require('qpp-measures-data');
+const measuresData = qppMeasuresData.getMeasuresData();
+const measuresSchema = qppMeasuresData.getMeasuresSchema();
+const benchmarksData = qppMeasuresData.getBenchmarksData();
+const benchmark2017Data = benchmarksData[2017];
+const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 ```
 
 ## Contributing
