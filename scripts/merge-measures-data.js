@@ -4,6 +4,7 @@
 var _     = require('lodash');
 var fs    = require('fs');
 var path  = require('path');
+const aciRelations = require('../util/aci-measure-relations.json');
 var qpp = '';
 
 process.stdin.setEncoding('utf8');
@@ -121,22 +122,23 @@ function mergeQpp(qppJson) {
 
 
 /**
- * Will add extra metadata to ACI measures
+ * Will add extra metadata to ACI measure that are not directly available
+ * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
+ * After this function executes, an ACI measure will have reporting category and substitutes.
+ *  - substitutes: contains other measures that surrogates of a given measure.
+ *  - reportingCategory: corresponds to the measure performance category
  * @param measures - the measures to enrich
  */
 function enrichACIMeasures(measures) {
-
-  // load the relations from file
-  var aciRelations = require('../util/aci-measure-relations.json');
-
+  // add extra ACI metadata to ACI measure
   measures
-      .filter(m => m.category === 'aci')
-      .forEach(m => {
-          // find the relation and upgrade the measureSet and add substitute
-          var aciRelation = aciRelations[m.measureId];
-          if (aciRelation) {
-              m.reportingCategory = aciRelation.reportingCategory;
-              m.substitutes = aciRelation.substitutes;
-          }
-      });
+    .filter(measure => measure.category === 'aci')
+    .forEach(measure => {
+      // find the relation and populate reporting category and substitutions
+      var aciRelation = aciRelations[measure.measureId];
+      if (aciRelation) {
+        measure.reportingCategory = aciRelation.reportingCategory;
+        measure.substitutes = aciRelation.substitutes;
+      }
+    });
 }
