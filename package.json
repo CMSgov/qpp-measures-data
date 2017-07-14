@@ -8,11 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/_mocha --colors",
+    "test": "mocha",
     "build:measures": "scripts/build-measures",
     "build:benchmarks": "scripts/build-benchmarks",
-    "lint": "eslint test util scripts index.js",
-    "pretest": "npm run lint",
+    "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh"
   },
   "license": "MIT",
