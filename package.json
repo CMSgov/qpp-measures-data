@@ -11,7 +11,7 @@
     "test": "node_modules/.bin/_mocha --colors",
     "build:measures": "scripts/build-measures",
     "build:benchmarks": "scripts/build-benchmarks",
-    "lint": "eslint test util scripts",
+    "lint": "eslint test util scripts index.js",
     "pretest": "npm run lint",
     "pre-commit": "tools/pre-commit.sh"
   },
