@@ -131,13 +131,14 @@ process.stdin.on('end', () => {
  *    N/A                   | lastPerformanceYear
  */
 function parseQpp(json) {
+  let measureList;
   if (category === 'ia') {
-    var measureList = json.serviceData.cpiaActivities;
+    measureList = json.serviceData.cpiaActivities;
   } else if (category === 'aci') {
-    var measureList = json.serviceData.aci_measures.aci_stage_name1_measures
+    measureList = json.serviceData.aci_measures.aci_stage_name1_measures
       .concat(json.serviceData.aci_measures.aci_stage_name2_measures);
   } else if (category === 'quality') {
-    var measureList = json.serviceData.pqrsMeasures;
+    measureList = json.serviceData.pqrsMeasures;
   }
   var result = [];
 

@@ -46,7 +46,7 @@ function getRates(path, cb) {
 
     var rateDescriptions = [];
 
-    var found = data.match(/This measure will be calculated with (\d) performance rates\:/);
+    var found = data.match(/This measure will be calculated with (\d) performance rates:/);
 
     if (!found) {
       // sometimes the phrase for a multi-performance rate is different
@@ -55,7 +55,7 @@ function getRates(path, cb) {
 
     if (!found) {
       // only a single performace rate
-      var rateRegex = /DESCRIPTION\:((.|\s)*?)INSTRUCTIONS\:/;
+      var rateRegex = /DESCRIPTION:((.|\s)*?)INSTRUCTIONS:/;
       var foundRate = data.match(rateRegex);
 
       rateDescriptions.push(cleanUpString(foundRate[1]));
@@ -76,7 +76,7 @@ function getRates(path, cb) {
 
       for (var i = 1; i <= numOfRates; i++) {
         // look for the description between 1) and 2)
-        var rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i + 1) + '\\' + delineationChar + '|Version 1\\.0)');
+        rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)(' + (i + 1) + '\\' + delineationChar + '|Version 1\\.0)');
 
         if (i + 1 > numOfRates) {
           // if this is the last rate, look for the description between x) and the ending phrases
@@ -84,7 +84,7 @@ function getRates(path, cb) {
           rateRegex = new RegExp(i + '\\' + delineationChar + '((.|\\s)*?)' + endingPhrases);
         }
 
-        var foundRate = remainingFile.match(rateRegex);
+        foundRate = remainingFile.match(rateRegex);
         rateDescriptions.push(cleanUpString(foundRate[1]));
       }
     }

@@ -73,7 +73,9 @@ function curate(clusterMap, relations) {
     .filter(r => r.optionals.length > 0)
     .forEach(r => {
       clusterMap.get(r.measureId).clinicalClusters
-        .forEach(c => c.measureIds = c.measureIds.filter(measureId => r.optionals.indexOf(measureId) < 0));
+        .forEach(c => {
+          c.measureIds = c.measureIds.filter(measureId => r.optionals.indexOf(measureId) < 0);
+        });
     });
 
   // remove clusters that do not have specialtySet or clinicalClusters

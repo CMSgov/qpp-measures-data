@@ -1,8 +1,6 @@
 // Utility functions for formatting the csv records
 // Libraries
-var fs = require('fs');
 var keyBy = require('lodash/keyBy');
-var path = require('path');
 // Data
 var measures = require('./../measures/measures-data.json');
 // Constants

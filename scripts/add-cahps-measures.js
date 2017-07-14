@@ -42,7 +42,7 @@ function generateCahpsMeasure(record, idx) {
   var measureIdx = cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle];
 
   if (measureIdx === undefined) {
-    throw 'No existing measure index matches title: "' + measureTitle + '"';
+    throw new Error('No existing measure index matches title: "' + measureTitle + '"');
   }
 
   return {

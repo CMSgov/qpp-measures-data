@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const testFilesFolder = 'test/examples/quality/';
 const qualityMeasureExampleFilenames = fs.readdirSync(testFilesFolder);
-const numExamples = qualityMeasureExampleFilenames.length;
 
 describe('measures schema validates json', function() {
   describe('measures-data.json', function() {
@@ -14,6 +13,7 @@ describe('measures schema validates json', function() {
     before(function(done) {
       var command = 'cat measures/measures-data.json | node scripts/validate-data.js measures';
       exec(command, function(error, stdout, stderr) {
+        if (error) console.log(error.stack);
         capturedStdout = stdout;
         done();
       });
@@ -33,6 +33,7 @@ describe('measures schema validates json', function() {
         var command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename +
           ' | node scripts/validate-data.js measures';
         exec(command, function(error, stdout, stderr) {
+          if (error) console.log(error.stack);
           capturedStdoutExamples = stdout;
           done();
         });

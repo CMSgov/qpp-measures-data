@@ -33,10 +33,6 @@ describe('measures data json', function() {
     });
 
     describe('CAHPS measures', function() {
-      const cahpsMeasures = measuresData.filter(function(measure) {
-        return measure.measureId.match(/CAHPS_\d+/);
-      });
-
       it('contains 12 correct CAHPS measures', function() {
         const cahpsMeasures = measuresData.filter(measure => measure.measureId.match(/CAHPS_\d+/));
         const commonCahpsProperties = {
