@@ -1,10 +1,11 @@
 // this script merges the tmp/quality-performance-rates.json,
 // measures/quality-measures-additional-info.json, and the measures from stdin
 // into a new file that has more info about each performance strata
-var _ = require('lodash');
-var fs = require('fs');
-var path = require('path');
-var qpp = '';
+const _ = require('lodash');
+const fs = require('fs');
+const path = require('path');
+const aciRelations = require('../util/aci-measure-relations.json');
+let qpp = '';
 
 process.stdin.setEncoding('utf8');
 
@@ -113,5 +114,30 @@ function mergeQpp(qppJson) {
 
   console.error('did not find measure details for the following', measuresNotFound);
 
+  enrichACIMeasures(qppJson);
+
   return JSON.stringify(qppJson, null, 2);
+}
+
+
+/**
+ * Will add extra metadata to ACI measure that are not directly available
+ * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
+ * After this function executes, an ACI measure will have reporting category and substitutes.
+ *  - substitutes: contains other measures that surrogates of a given measure.
+ *  - reportingCategory: corresponds to the measure performance category
+ * @param measures - the measures to enrich
+ */
+function enrichACIMeasures(measures) {
+  // add extra ACI metadata to ACI measure
+  measures
+    .filter(measure => measure.category === 'aci')
+    .forEach(measure => {
+      // find the relation and populate reporting category and substitutions
+      var aciRelation = aciRelations[measure.measureId];
+      if (aciRelation) {
+        measure.reportingCategory = aciRelation.reportingCategory;
+        measure.substitutes = aciRelation.substitutes;
+      }
+    });
 }

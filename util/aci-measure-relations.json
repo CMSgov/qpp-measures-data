@@ -1,0 +1,42 @@
+{
+  "ACI_INFBLO_1" : {"reportingCategory":"preAttestation", "substitutes": []},
+  "ACI_ONCDIR_1" : {"reportingCategory":"preAttestation", "substitutes": []},
+  "ACI_ONCACB_1" : {"reportingCategory":"preAttestation", "substitutes": []},
+
+  "ACI_EP_1" : {"reportingCategory":"base", "substitutes": ["ACI_LVPP_1", "ACI_TRANS_EP_1", "ACI_TRANS_LVPP_1"]},
+  "ACI_LVPP_1" : {"reportingCategory":"base", "substitutes": ["ACI_EP_1", "ACI_TRANS_EP_1", "ACI_TRANS_LVPP_1"]},
+  "ACI_PPHI_1" : {"reportingCategory":"base", "substitutes": ["ACI_TRANS_PPHI_1"]},
+  "ACI_PEA_1" : {"reportingCategory":"base", "substitutes": ["ACI_TRANS_PEA_1"]},
+  "ACI_HIE_1" : {"reportingCategory":"base", "substitutes": ["ACI_LVOTC_1", "ACI_TRANS_HIE_1", "ACI_TRANS_LVOTC_1"]},
+  "ACI_LVOTC_1" : {"reportingCategory":"base", "substitutes": ["ACI_HIE_1","ACI_TRANS_HIE_1", "ACI_TRANS_LVOTC_1"]},
+  "ACI_HIE_2" : {"reportingCategory":"base",  "substitutes": ["ACI_LVITC_1","ACI_TRANS_HIE_1", "ACI_TRANS_LVOTC_1"]},
+  "ACI_LVITC_1" : {"reportingCategory":"base", "substitutes": ["ACI_HIE_2","ACI_TRANS_HIE_1", "ACI_TRANS_LVOTC_1"]},
+  "ACI_TRANS_EP_1" : {"reportingCategory":"base", "substitutes": ["ACI_TRANS_LVPP_1", "ACI_LVPP_1", "ACI_EP_1"]},
+  "ACI_TRANS_LVPP_1" : {"reportingCategory":"base","substitutes": ["ACI_TRANS_EP_1", "ACI_LVPP_1", "ACI_EP_1"]},
+  "ACI_TRANS_PPHI_1" : {"reportingCategory":"base", "substitutes": ["ACI_PPHI_1"]},
+  "ACI_TRANS_PEA_1" : {"reportingCategory":"base", "substitutes": ["ACI_PEA_1"]},
+  "ACI_TRANS_HIE_1" : {"reportingCategory":"base", "substitutes": ["ACI_TRANS_LVOTC_1","ACI_HIE_1", "ACI_LVOTC_1", "ACI_HIE_2", "ACI_LVITC_1"]},
+  "ACI_TRANS_LVOTC_1" : {"reportingCategory":"base", "substitutes": ["ACI_TRANS_HIE_1", "ACI_HIE_1","ACI_LVOTC_1", "ACI_HIE_2", "ACI_LVITC_1"]},
+
+  "ACI_PHCDRR_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_TRANS_PHCDRR_1"]},
+  "ACI_PEA_2" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_TRANS_PSE_1"]},
+  "ACI_CCTPE_2" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_TRANS_SM_1"]},
+  "ACI_CCTPE_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_TRANS_PEA_2"]},
+  "ACI_HIE_3" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_TRANS_MR_1"]},
+  "ACI_CCTPE_3" : {"reportingCategory":"performanceBonus", "substitutes": []},
+
+  "ACI_TRANS_PHCDRR_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_PHCDRR_1"]},
+  "ACI_TRANS_PSE_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_PEA_2"]},
+  "ACI_TRANS_SM_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_CCTPE_2"]},
+  "ACI_TRANS_PEA_2" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_CCTPE_1"]},
+  "ACI_TRANS_MR_1" : {"reportingCategory":"performanceBonus", "substitutes": ["ACI_HIE_3"]},
+
+  "ACI_PHCDRR_2" : {"reportingCategory":"registryBonus", "substitutes": ["ACI_TRANS_PHCDRR_2"]},
+  "ACI_PHCDRR_5" : {"reportingCategory":"registryBonus", "substitutes": ["ACI_TRANS_PHCDRR_3"]},
+  "ACI_PHCDRR_3" : {"reportingCategory":"registryBonus", "substitutes": []},
+  "ACI_PHCDRR_4" : {"reportingCategory":"registryBonus", "substitutes": []},
+  "ACI_TRANS_PHCDRR_2" : {"reportingCategory":"registryBonus", "substitutes": ["ACI_PHCDRR_2"]},
+  "ACI_TRANS_PHCDRR_3" : {"reportingCategory":"registryBonus", "substitutes": ["ACI_PHCDRR_5"]},
+
+  "ACI_IACEHRT_1": {"reportingCategory": "cehrtBonus", "substitutes": []}
+}
