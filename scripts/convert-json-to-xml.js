@@ -32,6 +32,7 @@ function convertToXml(json) {
   var xml = builder.buildObject(JSON.parse(json, 'utf8'));
   process.stdout.write(
     xml
+      .replace(/(<\/)?substitutes(>)/g,'$1substitute$2')
       .replace(/(<\/)?measureSets(>)/g,'$1measureSet$2')
       .replace(/(<\/)?submissionMethods(>)/g,'$1submissionMethod$2')
       .replace(/(<\/)?[0-9]{1,}(>)/g,'$1measure$2')

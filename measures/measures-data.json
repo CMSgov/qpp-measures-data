@@ -23,7 +23,9 @@
     "isRequired": true,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "preAttestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_ONCDIR_1",
@@ -37,7 +39,9 @@
     "isRequired": true,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "preAttestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_ONCACB_1",
@@ -51,7 +55,9 @@
     "isRequired": false,
     "isBonus": false,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "preAttestation",
+    "substitutes": []
   },
   {
     "measureId": "ACI_IACEHRT_1",
@@ -65,7 +71,9 @@
     "isRequired": false,
     "isBonus": true,
     "measureSets": [],
-    "objective": null
+    "objective": null,
+    "reportingCategory": "cehrtBonus",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -79,7 +87,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_EP_1",
+      "ACI_TRANS_EP_1",
+      "ACI_TRANS_LVPP_1"
+    ]
   },
   {
     "category": "aci",
@@ -95,7 +109,13 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_EP_1",
+      "ACI_LVPP_1",
+      "ACI_EP_1"
+    ]
   },
   {
     "category": "aci",
@@ -109,7 +129,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_HIE_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -125,7 +151,15 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_HIE_1",
+      "ACI_HIE_1",
+      "ACI_LVOTC_1",
+      "ACI_HIE_2",
+      "ACI_LVITC_1"
+    ]
   },
   {
     "category": "aci",
@@ -139,7 +173,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_HIE_2",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "quality",
@@ -441,7 +481,11 @@
     "weight": 5,
     "measureSets": [],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_3"
+    ]
   },
   {
     "category": "aci",
@@ -455,7 +499,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_TRANS_MR_1"
+    ]
   },
   {
     "category": "aci",
@@ -469,7 +517,9 @@
     "weight": 5,
     "measureSets": [],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -483,7 +533,13 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_LVPP_1",
+      "ACI_TRANS_EP_1",
+      "ACI_TRANS_LVPP_1"
+    ]
   },
   {
     "category": "aci",
@@ -497,7 +553,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_1"
+    ]
   },
   {
     "category": "aci",
@@ -511,7 +571,9 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -525,7 +587,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_TRANS_PSE_1"
+    ]
   },
   {
     "category": "aci",
@@ -539,7 +605,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_PEA_1"
+    ]
   },
   {
     "category": "aci",
@@ -553,7 +623,9 @@
     "weight": 5,
     "measureSets": [],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": []
   },
   {
     "category": "aci",
@@ -567,7 +639,13 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_LVITC_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -581,7 +659,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_TRANS_SM_1"
+    ]
   },
   {
     "category": "aci",
@@ -595,7 +677,11 @@
     "weight": 0,
     "measureSets": [],
     "isBonus": false,
-    "objective": "protectPatientHealthInformation"
+    "objective": "protectPatientHealthInformation",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_PPHI_1"
+    ]
   },
   {
     "category": "aci",
@@ -609,7 +695,13 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_LVOTC_1",
+      "ACI_TRANS_HIE_1",
+      "ACI_TRANS_LVOTC_1"
+    ]
   },
   {
     "category": "aci",
@@ -623,7 +715,11 @@
     "weight": 5,
     "measureSets": [],
     "isBonus": true,
-    "objective": "publicHealthAndClinicalDataRegistryReporting"
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "ACI_TRANS_PHCDRR_2"
+    ]
   },
   {
     "category": "aci",
@@ -637,7 +733,11 @@
     "weight": 10,
     "measureSets": [],
     "isBonus": false,
-    "objective": "coordinationOfCareThroughPatientEngagement"
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_TRANS_PEA_2"
+    ]
   },
   {
     "category": "aci",
@@ -653,7 +753,13 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "electronicPrescribing"
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_LVPP_1",
+      "ACI_LVPP_1",
+      "ACI_EP_1"
+    ]
   },
   {
     "category": "aci",
@@ -669,7 +775,15 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "healthInformationExchange"
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_TRANS_LVOTC_1",
+      "ACI_HIE_1",
+      "ACI_LVOTC_1",
+      "ACI_HIE_2",
+      "ACI_LVITC_1"
+    ]
   },
   {
     "category": "aci",
@@ -685,7 +799,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_PHCDRR_1"
+    ]
   },
   {
     "category": "aci",
@@ -701,7 +819,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "medicationReconciliation"
+    "objective": "medicationReconciliation",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_HIE_3"
+    ]
   },
   {
     "category": "aci",
@@ -717,7 +839,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "patientSpecificEducation"
+    "objective": "patientSpecificEducation",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_PEA_2"
+    ]
   },
   {
     "category": "aci",
@@ -733,7 +859,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_PEA_1"
+    ]
   },
   {
     "category": "aci",
@@ -749,7 +879,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "secureMessaging"
+    "objective": "secureMessaging",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_CCTPE_2"
+    ]
   },
   {
     "category": "aci",
@@ -765,7 +899,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "protectPatientHealthInformation"
+    "objective": "protectPatientHealthInformation",
+    "reportingCategory": "base",
+    "substitutes": [
+      "ACI_PPHI_1"
+    ]
   },
   {
     "category": "aci",
@@ -781,7 +919,11 @@
       "transition"
     ],
     "isBonus": true,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "ACI_PHCDRR_5"
+    ]
   },
   {
     "category": "aci",
@@ -797,7 +939,11 @@
       "transition"
     ],
     "isBonus": true,
-    "objective": "publicHealthReporting"
+    "objective": "publicHealthReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "ACI_PHCDRR_2"
+    ]
   },
   {
     "category": "aci",
@@ -813,7 +959,11 @@
       "transition"
     ],
     "isBonus": false,
-    "objective": "patientElectronicAccess"
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "ACI_CCTPE_1"
+    ]
   },
   {
     "category": "ia",

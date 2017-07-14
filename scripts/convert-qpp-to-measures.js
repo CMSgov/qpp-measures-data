@@ -217,6 +217,7 @@ function parseQpp(json) {
     });
     result.push(obj);
   }
+
   return JSON.stringify(result, null, 2);
 }
 

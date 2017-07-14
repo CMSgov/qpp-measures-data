@@ -4,6 +4,7 @@ var _ = require('lodash');
 
 var mipsDataFormat = require('../../index.js');
 var measuresData = mipsDataFormat.getMeasuresData();
+var actualAciRelation = require('../../util/aci-measure-relations.json');
 
 describe('measures data json', function() {
   var measureIds = _.map(measuresData, 'measureId');
@@ -20,6 +21,33 @@ describe('measures data json', function() {
       var intersection = new Set([...measureIdsSet]
         .filter(x => requiredAttestationIdsSet.has(x)));
       assert.equal(intersection.size, requiredAttestationIdsSet.size);
+    });
+    it('does not have substitutes', () => {
+      requiredAttestationIdsSet.forEach(measureId => {
+        var measure = measuresData.find(m => m.measureId == 'ACI_INFBLO_1');
+        assert.isTrue(_.isEmpty(measure.substitutes));
+      })
+    });
+  });
+
+  describe('ACI measures have proper substitutions', () => {
+
+    it('ACI_PHCDRR_1 should be in performanceBonus reporting category', () => {
+      var measure = measuresData.find(m => m.measureId == 'ACI_PHCDRR_1');
+      assert.equal(measure.reportingCategory, 'performanceBonus');
+    });
+    it('ACI_TRANS_PHCDRR_2 should contain correct substitutes', () => {
+      var measure = measuresData.find(m => m.measureId == 'ACI_TRANS_PHCDRR_2');
+      assert.deepEqual(measure.substitutes, ['ACI_PHCDRR_2']);
+    });
+    it('dose contain proper metadata on all measures', () => {
+      var generated = {};
+      measuresData
+        .filter(m => m.category === 'aci')
+        .forEach(m =>  {
+            generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
+        });
+      assert.deepEqual(generated, actualAciRelation);
     });
   });
 
