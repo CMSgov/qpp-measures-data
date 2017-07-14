@@ -8,9 +8,9 @@
  */
 
 // Libraries
-const fs    = require('fs');
+const fs = require('fs');
 const parse = require('csv-parse');
-const path  = require('path');
+const path = require('path');
 
 const additionalMeasuresFilepath = '../util/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);

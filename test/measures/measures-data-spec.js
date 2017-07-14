@@ -55,7 +55,7 @@ describe('measures data json', function() {
           'CAHPS for MIPS SSM: How Well Providers Communicate': '0005',
           'CAHPS for MIPS SSM: Patient\'s Rating of Provider': '0005',
           'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': '0005'
-        }
+        };
         assert.equal(cahpsMeasures.length, 12);
         cahpsMeasures.forEach(cahpsMeasure => {
           assert.match(cahpsMeasure.title, /^CAHPS for MIPS/);

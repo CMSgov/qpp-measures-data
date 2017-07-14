@@ -46,15 +46,13 @@ exports.getMeasuresSchema = function() {
   return YAML.load(path.join(__dirname, 'measures', 'measures-schema.yaml'));
 };
 
-
 /**
  * @return {Array<ClinicalCluster>}
  */
 exports.getClinicalClusterData = function() {
-    return JSON.parse(
-        fs.readFileSync(path.join(__dirname, 'clinical-clusters', 'clinical-clusters.json')));
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'clinical-clusters', 'clinical-clusters.json')));
 };
-
 
 /**
  * @return {{}} - Object representation of the Clinical Cluster Schema

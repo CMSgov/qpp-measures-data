@@ -30,7 +30,7 @@ describe('measures schema validates json', function() {
       var capturedStdoutExamples = null;
 
       before(function(done) {
-        var command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename + 
+        var command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename +
           ' | node scripts/validate-data.js measures';
         exec(command, function(error, stdout, stderr) {
           capturedStdoutExamples = stdout;

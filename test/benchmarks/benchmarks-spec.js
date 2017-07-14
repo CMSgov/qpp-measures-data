@@ -1,9 +1,9 @@
 // Libraries
-var chai   = require('chai');
+var chai = require('chai');
 var assert = chai.assert;
 // functions being tested
 var main = require('./../../index');
-var getBenchmarksData   = main.getBenchmarksData;
+var getBenchmarksData = main.getBenchmarksData;
 var getBenchmarksSchema = main.getBenchmarksSchema;
 
 describe('benchmarks getter functions', function() {
@@ -16,7 +16,7 @@ describe('benchmarks getter functions', function() {
       assert.isArray(getBenchmarksData()[2017]);
     });
 
-    it('should return undefined if benchmarks do not exist for that performance year', function(){
+    it('should return undefined if benchmarks do not exist for that performance year', function() {
       assert.isUndefined(getBenchmarksData()[2016]);
     });
   });

@@ -92,7 +92,6 @@ describe('isInverseBenchmarkRecord', function() {
 
     assert.isFalse(isInverse);
 
-
     var isInverse2 = isInverseBenchmarkRecord({
       decile3: '76.59 - 87.88',
       decile4: '87.89 - 92.73',

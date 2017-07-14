@@ -132,32 +132,32 @@ Promise.all(
   })
 )
 // extract data from converted JavaScript objects
-.then(docs => {
-  return _.compact(docs.map(doc => {
-    const measure = doc.QualityMeasureDocument;
-    const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-    if (emeasureid === '145') {
-      console.warn('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v5_NQFXXXX_CAD_BB.zip');
-      return;
-    }
-    if (emeasureid === '160') {
-      console.warn('WARNING: CMS160v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS160v5_NQF0712_Dep_PHQ9.zip');
-      return;
-    }
-    const strata = extractStrata(measure);
-    const version = measure.versionNumber[0].$.value.split('.')[0];
-    const eMeasureId = `CMS${emeasureid}v${version}`;
-    return  {
-      eMeasureId,
-      eMeasureUuid: measure.id[0].$.root,
-      strata: strata,
-      metricType: strata.length > 1 ? 'multiPerformanceRate' : 'singlePerformanceRate'
-    };
-  }));
-})
+  .then(docs => {
+    return _.compact(docs.map(doc => {
+      const measure = doc.QualityMeasureDocument;
+      const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
+      if (emeasureid === '145') {
+        console.warn('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v5_NQFXXXX_CAD_BB.zip');
+        return;
+      }
+      if (emeasureid === '160') {
+        console.warn('WARNING: CMS160v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS160v5_NQF0712_Dep_PHQ9.zip');
+        return;
+      }
+      const strata = extractStrata(measure);
+      const version = measure.versionNumber[0].$.value.split('.')[0];
+      const eMeasureId = `CMS${emeasureid}v${version}`;
+      return {
+        eMeasureId,
+        eMeasureUuid: measure.id[0].$.root,
+        strata: strata,
+        metricType: strata.length > 1 ? 'multiPerformanceRate' : 'singlePerformanceRate'
+      };
+    }));
+  })
 // sort and write extracted data to disk
-.then(ecqms => {
-  const sortedEcqms = _.sortBy(ecqms, ['eMeasureId']);
-  fs.writeFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
-  console.warn('remember to add the strata names manually!')
-});
+  .then(ecqms => {
+    const sortedEcqms = _.sortBy(ecqms, ['eMeasureId']);
+    fs.writeFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
+    console.warn('remember to add the strata names manually!');
+  });

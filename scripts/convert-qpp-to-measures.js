@@ -10,10 +10,10 @@
  **/
 
 // Libraries
-var _     = require('lodash');
-var fs    = require('fs');
+var _ = require('lodash');
+var fs = require('fs');
 var parse = require('csv-parse/lib/sync');
-var path  = require('path');
+var path = require('path');
 // Constants
 var BENCHMARK_CSV_COLUMNS = require('./../util/constants/benchmark-csv-columns');
 var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
@@ -39,7 +39,7 @@ var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
 // Utils
 var isInverseBenchmarkRecord = require('./../util/is-inverse-benchmark-record');
 // Data
-var benchmarksData   = fs.readFileSync(path.join(__dirname, './../data/historical-benchmarks/2015.csv'), 'utf8');
+var benchmarksData = fs.readFileSync(path.join(__dirname, './../data/historical-benchmarks/2015.csv'), 'utf8');
 var benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4});
 // Commandline arguments
 var category = process.argv[2] || 'ia';
@@ -167,7 +167,7 @@ function parseQpp(json) {
       } else if (key === 'actvty_wghtng_cd') {
         obj.weight = value.replace(/ /g, '').toLowerCase();
       } else if (key === 'base_score_required_sw') {
-        obj.isRequired = value === 'No' ? false : true;
+        obj.isRequired = value !== 'No';
       } else if (key === 'performance_score_weight_text') {
         obj.weight = parseWeight(value);
       } else if (key === 'measure_domain_desc') {
@@ -192,7 +192,7 @@ function parseQpp(json) {
       } else if (key === 'nqf_num') {
         obj.nqfId = parseId(value);
       } else if (key === 'high_prrty_msr_sw') {
-        obj.isHighPriority = value === 'No' ? false : true;
+        obj.isHighPriority = value !== 'No';
       } else if (key === 'prmry_msr_stwrd_name') {
         obj.primarySteward = value;
       } else if (key === 'submission_method') {
@@ -225,11 +225,11 @@ function parseQpp(json) {
   */
 function formatString(string) {
   return _.camelCase(string.replace('&', 'And')
-                           .replace('/', ''));
+    .replace('/', ''));
 }
 
 function parseWeight(weight) {
-  switch(weight) {
+  switch (weight) {
     case '0':
       return 0;
     case '0 or 10%':
@@ -239,23 +239,23 @@ function parseWeight(weight) {
     case 'Up to 20%':
       return 20;
     default:
-      throw new Error("Invalid weight: " + weight);
+      throw new Error('Invalid weight: ' + weight);
   }
 }
 
 function parseMetricType(metricType) {
-  switch(metricType) {
+  switch (metricType) {
     case 'Numerator/ Denominator':
       return 'proportion';
     case 'Yes/No Statement':
       return 'boolean';
     default:
-      throw new Error("Invalid metric type: " + metricType);
+      throw new Error('Invalid metric type: ' + metricType);
   }
 }
 
 function parseMeasureSet(measureSet) {
-  switch(measureSet) {
+  switch (measureSet) {
     case '2017 Advancing Care Information Transition Objectives and Measures':
       return ['transition'];
     default:

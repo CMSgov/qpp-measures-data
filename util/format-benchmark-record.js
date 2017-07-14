@@ -1,8 +1,8 @@
 // Utility functions for formatting the csv records
 // Libraries
-var fs    = require('fs');
+var fs = require('fs');
 var keyBy = require('lodash/keyBy');
-var path  = require('path');
+var path = require('path');
 // Data
 var measures = require('./../measures/measures-data.json');
 // Constants
@@ -78,14 +78,14 @@ var formatDecileGenerator = function(record) {
    * @return {number | null}
    */
   return function(decileString, index, array) {
-    var range     =  decileString ? decileString.match(floatRegex) : null;
+    var range = decileString ? decileString.match(floatRegex) : null;
     var nextIndex = index + 1;
     var prevIndex = index - 1;
     var definedPredecessor;
     var definedSuccessor;
 
     // If decile is explicitly defined:
-    if  (decileString && range) return parseFloat(range[0]);
+    if (decileString && range) return parseFloat(range[0]);
 
     // Find closest neighbors:
     while (prevIndex >= 0 && !definedPredecessor) {
@@ -121,7 +121,7 @@ var formatDecileGenerator = function(record) {
     }
     // If neighbors exist only on one side:
     if (!definedPredecessor) return bottom;
-    if (!definedSuccessor)   return top;
+    if (!definedSuccessor) return top;
   };
 };
 
@@ -187,7 +187,7 @@ var formatBenchmarkRecord = function(record, options) {
       record.decile10
     ]
       .map(formatDecileGenerator(record))
-      .slice(1,10)
+      .slice(1, 10)
   };
 };
 

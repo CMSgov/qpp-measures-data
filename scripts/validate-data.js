@@ -26,8 +26,7 @@ function validate(json) {
     JSON.parse(json, 'utf8'));
   if (valid) {
     console.log('Valid!');
-  }
-  else {
+  } else {
     console.log('Invalid: ' + ajv.errorsText(ajv.errors));
   }
 }
@@ -48,5 +47,3 @@ if (schemaType) {
 } else {
   console.log('Please provide schema type, e.g. measures or benchmarks\nExample Command: cat ../measures/measures-data.json | node validate-data.js measures');
 }
-
-

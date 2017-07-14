@@ -29,159 +29,155 @@ var claimsClusterFilePath = process.argv[2];
 var registryClusterFilePath = process.argv[3];
 
 var specialClusterRelations = {
-    registry: [
-        {measureId: '047', optionals: []},
-        {measureId: '110', optionals: []},
-        {measureId: '130', optionals: []},
-        {measureId: '134', optionals: []},
-        {measureId: '226', optionals: []},
-        {measureId: '317', optionals: []},
-        {measureId: '424', optionals: []},
-        {measureId: '430', optionals: []},
-        {measureId: '051',  optionals: ['052']},
-        {measureId: '052',  optionals: ['051']},
-        {measureId: '398',  optionals: ['444']},
-        {measureId: '444',  optionals: ['398']},
-        {measureId: '024',  optionals: ['418']},
-        {measureId: '418',  optionals: ['024']},
-        {measureId: '006',  optionals: ['118', '007']},
-        {measureId: '007',  optionals: ['118', '006']},
-        {measureId: '118',  optionals: ['007', '006']},
-        {measureId: '426',  optionals: ['427']},
-        {measureId: '427',  optionals: ['426']},
-        {measureId: '112',  optionals: ['113']},
-        {measureId: '113',  optionals: ['112']},
+  registry: [
+    {measureId: '047', optionals: []},
+    {measureId: '110', optionals: []},
+    {measureId: '130', optionals: []},
+    {measureId: '134', optionals: []},
+    {measureId: '226', optionals: []},
+    {measureId: '317', optionals: []},
+    {measureId: '424', optionals: []},
+    {measureId: '430', optionals: []},
+    {measureId: '051', optionals: ['052']},
+    {measureId: '052', optionals: ['051']},
+    {measureId: '398', optionals: ['444']},
+    {measureId: '444', optionals: ['398']},
+    {measureId: '024', optionals: ['418']},
+    {measureId: '418', optionals: ['024']},
+    {measureId: '006', optionals: ['118', '007']},
+    {measureId: '007', optionals: ['118', '006']},
+    {measureId: '118', optionals: ['007', '006']},
+    {measureId: '426', optionals: ['427']},
+    {measureId: '427', optionals: ['426']},
+    {measureId: '112', optionals: ['113']},
+    {measureId: '113', optionals: ['112']}
 
-    ],
-    claims: [
-        {measureId: '130', optionals: []},
-        {measureId: '226', optionals: []},
-        {measureId: '317', optionals: []},
-        {measureId: '112',  optionals: ['113']},
-        {measureId: '113',  optionals: ['112']}
-    ]
+  ],
+  claims: [
+    {measureId: '130', optionals: []},
+    {measureId: '226', optionals: []},
+    {measureId: '317', optionals: []},
+    {measureId: '112', optionals: ['113']},
+    {measureId: '113', optionals: ['112']}
+  ]
 };
 
 function curate(clusterMap, relations) {
-    // remove clincalClusters from measures that belongs to multiple cluster
-    relations
-        .filter(r => r.optionals.length === 0)
-        .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
+  // remove clincalClusters from measures that belongs to multiple cluster
+  relations
+    .filter(r => r.optionals.length === 0)
+    .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
 
-    // remove measures in clincalClusters that are optional
-    relations
-        .filter(r => r.optionals.length > 0)
-        .forEach(r => {
-            clusterMap.get(r.measureId).clinicalClusters
-                .forEach(c => c.measureIds = c.measureIds.filter(measureId  => r.optionals.indexOf(measureId) < 0))
-        });
+  // remove measures in clincalClusters that are optional
+  relations
+    .filter(r => r.optionals.length > 0)
+    .forEach(r => {
+      clusterMap.get(r.measureId).clinicalClusters
+        .forEach(c => c.measureIds = c.measureIds.filter(measureId => r.optionals.indexOf(measureId) < 0));
+    });
 
-    // remove clusters that do not have specialtySet or clinicalClusters
-    Array.from(clusterMap.values())
-        .filter(cluster => _.isEmpty(cluster.clinicalClusters) && _.isEmpty(cluster.specialtySets))
-        .forEach(cluster => clusterMap.delete(cluster.measureId))
+  // remove clusters that do not have specialtySet or clinicalClusters
+  Array.from(clusterMap.values())
+    .filter(cluster => _.isEmpty(cluster.clinicalClusters) && _.isEmpty(cluster.specialtySets))
+    .forEach(cluster => clusterMap.delete(cluster.measureId));
 }
 
 function populateClinicalClusters(clusterMap, measures, submissionMethod, filePath) {
-    let contents = fs.readFileSync(filePath, 'utf8');
-    let rows = parse(contents, {columns: true});
+  let contents = fs.readFileSync(filePath, 'utf8');
+  let rows = parse(contents, {columns: true});
 
-    //group the measures by cluster
-    let byClusterName = _.chain(rows)
-        .map(r => ({clusterName: _.camelCase(r['Title']), measureId: _.padStart(r['Quality ID'], 3, '0')}))
-        .groupBy('clusterName')
-        .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
-        .value();
+  // group the measures by cluster
+  let byClusterName = _.chain(rows)
+    .map(r => ({clusterName: _.camelCase(r['Title']), measureId: _.padStart(r['Quality ID'], 3, '0')}))
+    .groupBy('clusterName')
+    .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
+    .value();
 
     // read the grouped measures and populate the cluster name
-    byClusterName.forEach(clinicalCluster => {
-        clinicalCluster.measureIds.forEach(measureId => {
-            let measure = measures.find(m => m.measureId === measureId);
-            let cluster = clusterMap.get(measureId) || {
-                    measureId: measureId,
-                    submissionMethod: submissionMethod,
-                    firstPerformanceYear: measure.firstPerformanceYear,
-                    lastPerformanceYear: measure.lastPerformanceYear
-                };
-            cluster['clinicalClusters'] = cluster['clinicalClusters'] || [];
-            cluster['clinicalClusters'].push(clinicalCluster);
-            clusterMap.set(measureId, cluster);
-        });
+  byClusterName.forEach(clinicalCluster => {
+    clinicalCluster.measureIds.forEach(measureId => {
+      let measure = measures.find(m => m.measureId === measureId);
+      let cluster = clusterMap.get(measureId) || {
+        measureId: measureId,
+        submissionMethod: submissionMethod,
+        firstPerformanceYear: measure.firstPerformanceYear,
+        lastPerformanceYear: measure.lastPerformanceYear
+      };
+      cluster['clinicalClusters'] = cluster['clinicalClusters'] || [];
+      cluster['clinicalClusters'].push(clinicalCluster);
+      clusterMap.set(measureId, cluster);
     });
+  });
 }
 
 function populateSpecialtySet(clusterMap, measures, submissionMethod) {
-
-    // group the measures of submissionMethod by specialty set
-    let bySpecialty = _.chain(measures)
-        .filter(m => m.category === 'quality')
-        .filter(m => m.submissionMethods && m.submissionMethods.indexOf(submissionMethod) > -1)
-        .flatMap(m => m.measureSets.map(specialty => Object.assign({specialty: specialty}, m)))
-        .groupBy('specialty')
-        .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
-        .value();
-
+  // group the measures of submissionMethod by specialty set
+  let bySpecialty = _.chain(measures)
+    .filter(m => m.category === 'quality')
+    .filter(m => m.submissionMethods && m.submissionMethods.indexOf(submissionMethod) > -1)
+    .flatMap(m => m.measureSets.map(specialty => Object.assign({specialty: specialty}, m)))
+    .groupBy('specialty')
+    .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
+    .value();
 
     // read the grouped measures and populate the specialty set on each
-    bySpecialty.forEach(specialty => {
-        if (specialty.measureIds.length < MAX_SPECIALITY_SET_SIZE) {
-            specialty.measureIds.forEach(measureId => {
-                let measure = measures.find(m => m.measureId === measureId);
-                let cluster = clusterMap.get(measureId) || {
-                        measureId: measureId,
-                        submissionMethod: submissionMethod,
-                        firstPerformanceYear: measure.firstPerformanceYear,
-                        lastPerformanceYear: measure.lastPerformanceYear
-                    };
-                cluster['specialtySets'] =  cluster['specialtySets'] || [];
-                cluster.specialtySets.push(specialty);
-                clusterMap.set(measureId, cluster);
-            });
-        }
-    });
-
+  bySpecialty.forEach(specialty => {
+    if (specialty.measureIds.length < MAX_SPECIALITY_SET_SIZE) {
+      specialty.measureIds.forEach(measureId => {
+        let measure = measures.find(m => m.measureId === measureId);
+        let cluster = clusterMap.get(measureId) || {
+          measureId: measureId,
+          submissionMethod: submissionMethod,
+          firstPerformanceYear: measure.firstPerformanceYear,
+          lastPerformanceYear: measure.lastPerformanceYear
+        };
+        cluster['specialtySets'] = cluster['specialtySets'] || [];
+        cluster.specialtySets.push(specialty);
+        clusterMap.set(measureId, cluster);
+      });
+    }
+  });
 }
 
 function generateEMAClusters(allMeasures) {
-    let measures = allMeasures.filter(m =>
-        (SUPPORTED_PERFORMANCE_YEARS.indexOf(m.firstPerformanceYear) > -1) &&
+  let measures = allMeasures.filter(m =>
+    (SUPPORTED_PERFORMANCE_YEARS.indexOf(m.firstPerformanceYear) > -1) &&
         (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
-    );
+  );
 
-    let claimsClusterMap = new Map();
-    let registryClusterMap = new Map();
+  let claimsClusterMap = new Map();
+  let registryClusterMap = new Map();
 
-    // set the claims and registry specialty set
-    populateSpecialtySet(claimsClusterMap, measures, 'claims');
-    populateSpecialtySet(registryClusterMap, measures, 'registry');
+  // set the claims and registry specialty set
+  populateSpecialtySet(claimsClusterMap, measures, 'claims');
+  populateSpecialtySet(registryClusterMap, measures, 'registry');
 
-    populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
-    populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
+  populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
+  populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
 
-    curate(registryClusterMap, specialClusterRelations.registry);
-    curate(claimsClusterMap, specialClusterRelations.claims);
+  curate(registryClusterMap, specialClusterRelations.registry);
+  curate(claimsClusterMap, specialClusterRelations.claims);
 
-    let emaClusters = [];
+  let emaClusters = [];
 
-    claimsClusterMap
-        .forEach(v => emaClusters.push(v));
+  claimsClusterMap
+    .forEach(v => emaClusters.push(v));
 
-    registryClusterMap
-        .forEach(v => emaClusters.push(v));
+  registryClusterMap
+    .forEach(v => emaClusters.push(v));
 
-
-    //print the JSON back to the stream
-    process.stdout.write(JSON.stringify(emaClusters, null, 2));
+  // print the JSON back to the stream
+  process.stdout.write(JSON.stringify(emaClusters, null, 2));
 }
 
 process.stdin.setEncoding('utf8');
 process.stdin.on('readable', () => {
-    var chunk = process.stdin.read();
-    if (chunk !== null) {
-        measuresJson += chunk;
-    }
+  var chunk = process.stdin.read();
+  if (chunk !== null) {
+    measuresJson += chunk;
+  }
 });
 
 process.stdin.on('end', () => {
-    generateEMAClusters(JSON.parse(measuresJson, 'utf8'));
+  generateEMAClusters(JSON.parse(measuresJson, 'utf8'));
 });
