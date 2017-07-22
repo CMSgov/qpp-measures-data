@@ -2,7 +2,7 @@
 var chai = require('chai');
 var assert = chai.assert;
 // Utils
-var isInverseBenchmarkRecord = require('./../../util/is-inverse-benchmark-record');
+var isInverseBenchmarkRecord = require('./../../../util/benchmarks/is-inverse-benchmark-record');
 
 describe('isInverseBenchmarkRecord', function() {
   it('should default to false', function() {

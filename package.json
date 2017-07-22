@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -8,9 +8,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "build:measures": "scripts/build-measures",
-    "build:benchmarks": "scripts/build-benchmarks",
+    "test": "mocha --recursive",
+    "build:measures": "scripts/measures/build-measures",
+    "build:benchmarks": "scripts/benchmarks/build-benchmarks",
+    "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh"
   },

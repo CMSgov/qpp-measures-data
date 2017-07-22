@@ -2,9 +2,9 @@
 
 /**
  *
- * Script to add cahps measures to additional-measures.json from csv
- * To run: `cat [DATA_CSV_FILE] | node scripts/add-cahps-measures.js`
- * e.g. `cat cahps_measures_origin.csv | node scripts/add-cahps-measures.js`
+ * One-time use script to add cahps measures to additional-measures.json from csv
+ * To run: `cat [DATA_CSV_FILE] | node add-cahps-measures.js`
+ * e.g. `cat cahps_measures_origin.csv | node add-cahps-measures.js`
  */
 
 // Libraries
@@ -12,9 +12,32 @@ const fs = require('fs');
 const parse = require('csv-parse');
 const path = require('path');
 
-const additionalMeasuresFilepath = '../util/additional-measures.json';
+const additionalMeasuresFilepath = '../../util/measures/additional-measures.json';
 var additionalMeasures = require(additionalMeasuresFilepath);
-const cahpsConsts = require('./cahps-consts');
+
+// Some measures have an NqfId (NQF: National Quality Forum) of '0005'
+const defaultNqfId = '0005';
+const nqfIdMap = {
+  'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': defaultNqfId,
+  'CAHPS for MIPS SSM: How Well Providers Communicate': defaultNqfId,
+  'CAHPS for MIPS SSM: Patient\'s Rating of Provider': defaultNqfId,
+  'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': defaultNqfId
+};
+
+const cahpsTitleToMeasureIdIndexMap = {
+  'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': 1,
+  'CAHPS for MIPS SSM: How Well Providers Communicate': 2,
+  'CAHPS for MIPS SSM: Patient\'s Rating of Provider': 3,
+  'CAHPS for MIPS SSM: Access to Specialists': 4,
+  'CAHPS for MIPS SSM: Health Promotion and Education': 5,
+  'CAHPS for MIPS SSM: Shared Decision-Making': 6,
+  'CAHPS for MIPS SSM: Health Status and Functional Status': 7,
+  'CAHPS for MIPS SSM: Care Coordination': 8,
+  'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': 9,
+  'CAHPS for MIPS SSM: Helping You Take Medications as Directed': 10,
+  'CAHPS for MIPS SSM: Stewardship of Patient Resources': 11,
+  'CAHPS for MIPS SSM: Between Visit Communication': 12
+};
 
 // Constants
 const CAHPS_CSV_COLUMNS = [
@@ -39,7 +62,7 @@ process.stdin.on('readable', function() {
 
 function generateCahpsMeasure(record, idx) {
   var measureTitle = record['Measure Name'];
-  var measureIdx = cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle];
+  var measureIdx = cahpsTitleToMeasureIdIndexMap[measureTitle];
 
   if (measureIdx === undefined) {
     throw new Error('No existing measure index matches title: "' + measureTitle + '"');
@@ -54,10 +77,10 @@ function generateCahpsMeasure(record, idx) {
     description: '', // TBD: Will be provided by RAND,
     nationalQualityStrategyDomain: null,
     measureType: 'patientEngagementExperience',
-    measureId: 'CAHPS_' + cahpsConsts.cahpsTitleToMeasureIdIndexMap[measureTitle],
+    measureId: 'CAHPS_' + cahpsTitleToMeasureIdIndexMap[measureTitle],
     eMeasureId: null,
     nqfEMeasureId: null,
-    nqfId: cahpsConsts.nqfIdMap[measureTitle] || null,
+    nqfId: nqfIdMap[measureTitle] || null,
     isInverse: false,
     strata: [],
     isHighPriority: true,

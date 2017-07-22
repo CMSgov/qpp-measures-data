@@ -1,10 +1,10 @@
-// this script merges the tmp/quality-performance-rates.json,
-// measures/quality-measures-additional-info.json, and the measures from stdin
+// this script merges the util/measures/quality-performance-rates.json,
+// util/measures/quality-measures-additional-info.json, and the measures from stdin
 // into a new file that has more info about each performance strata
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const aciRelations = require('../util/aci-measure-relations.json');
+const aciRelations = require('../../util/measures/aci-measure-relations.json');
 let qpp = '';
 
 process.stdin.setEncoding('utf8');
@@ -22,9 +22,9 @@ process.stdin.on('end', () => {
 
 function mergeQpp(qppJson) {
   // read in tmp/quality-performance-rates.json
-  var performanceRatesJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/quality-performance-rates.json'), 'utf8'));
+  var performanceRatesJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-performance-rates.json'), 'utf8'));
   // read in measures/quality-measures-additional-info.json
-  var performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/quality-measures-strata-details.json'), 'utf8'));
+  var performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-measures-strata-details.json'), 'utf8'));
 
   var measuresNotFound = [];
   // iterate through all qppJson measures and find matching items from other json blobs
@@ -53,7 +53,7 @@ function mergeQpp(qppJson) {
 
   // Almost all eCQM measure and strata UUIDs as well as strata descriptions can be extracted from source XML files (with two exceptions which are handled below).
   // scripts/get-strata-and-uuids-from-ecqm-zip.js produces the generated-ecqm-data.json file which is integrated into measures-data below.
-  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), 'utf8'));
+  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/generated-ecqm-data.json'), 'utf8'));
 
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;
@@ -86,7 +86,7 @@ function mergeQpp(qppJson) {
 
   // There are two measures (CMS145v5 and CMS160v5) whose source XML files from the zip mentioned above don't have a programmatically parseable format for UUID/description extraction. Also, strata names for almost all eCQM measures need to be manually created.
   // scripts/find-ecqms-with-missing-data.js produces the manually-added-ecqm-data.json file, which has been manually edited with the correct strata names and hardcoded info for 145v5 and 160v5.
-  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), 'utf8'));
+  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/manually-added-ecqm-data.json'), 'utf8'));
 
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;

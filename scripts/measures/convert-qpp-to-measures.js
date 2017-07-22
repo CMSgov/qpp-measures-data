@@ -4,19 +4,34 @@
  * schema.
  *
  * This script can be used as follows:
- * example: `cat qpp_ia_measures.json | node scripts/convert-qpp-to-measures.js ia > measures/measures-data.json`
+ * example: `cat qpp_ia_measures.json | node convert-qpp-to-measures.js ia > measures/measures-data.json`
  *
  * See README for details on generating measures-data.json.
  **/
 
 // Libraries
-var _ = require('lodash');
-var fs = require('fs');
-var parse = require('csv-parse/lib/sync');
-var path = require('path');
+const _ = require('lodash');
+const fs = require('fs');
+const parse = require('csv-parse/lib/sync');
+const path = require('path');
 // Constants
-var BENCHMARK_CSV_COLUMNS = require('./../util/constants/benchmark-csv-columns');
-var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
+const BENCHMARK_CSV_COLUMNS = [
+  'measureName',
+  'qualityId',
+  'submissionMethod',
+  'measureType',
+  'benchmark',
+  'decile3',
+  'decile4',
+  'decile5',
+  'decile6',
+  'decile7',
+  'decile8',
+  'decile9',
+  'decile10',
+  'isToppedOut'
+];
+const CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_AHE_2',
   'IA_BE_1',
   'IA_BE_15',
@@ -36,16 +51,20 @@ var CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_PM_4',
   'IA_PSPA_16'
 ];
+const CMS_WEB_INTERFACE_INELIGIBLE_QUALITY_MEASURE_IDS = [
+  '001',
+  '117'
+];
 // Utils
-var isInverseBenchmarkRecord = require('./../util/is-inverse-benchmark-record');
+const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
 // Data
-var benchmarksData = fs.readFileSync(path.join(__dirname, './../data/historical-benchmarks/2015.csv'), 'utf8');
-var benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4});
+const benchmarksData = fs.readFileSync(path.join(__dirname, '../../util/benchmarks/2015.csv'), 'utf8');
+const benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4});
 // Commandline arguments
-var category = process.argv[2] || 'ia';
+const category = process.argv[2] || 'ia';
 // Variables
-var measureIdToIsInverseMap = {};
-var qpp = '';
+const measureIdToIsInverseMap = {};
+let qpp = '';
 
 benchmarkRecords.forEach(function(record) {
   // NOTE: a measureId is not unique per record.
@@ -197,12 +216,16 @@ function parseQpp(json) {
       } else if (key === 'prmry_msr_stwrd_name') {
         obj.primarySteward = value;
       } else if (key === 'submission_method') {
-        obj.submissionMethods = _.map(value, function(method) {
+        const unabbrieviatedMethods = _.map(value, (method) => {
           method = {
             EHR: 'electronicHealthRecord',
             CSV: 'certifiedSurveyVendor'
           }[method] || method;
           return formatString(method);
+        });
+        // Certain measures are ineligible for certain submission methods 
+        obj.submissionMethods = _.filter(unabbrieviatedMethods, (value) => {
+          return !(_.includes(CMS_WEB_INTERFACE_INELIGIBLE_QUALITY_MEASURE_IDS, obj.measureId) && value === 'cmsWebInterface');
         });
       } else if (key === 'speciality_list') {
         obj.measureSets = _.map(value, function(speciality) {
