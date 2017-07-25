@@ -64,10 +64,10 @@ describe('measures data json', function() {
 
     it('properly handles the exclusion of certain submission methods', () => {
       const shouldNotAcceptCmsWebInterface = measuresData.filter(
-        measure => measure.measureId === '001' || measure.measureId === '117'
+        measure => ['001', '117'].includes(measure.measureId)
       );
-      _.each(shouldNotAcceptCmsWebInterface, (measure) => {
-        assert.isFalse(_.includes(measure.submissionMethods, 'cmsWebInterface'));
+      shouldNotAcceptCmsWebInterface.forEach(measure => {
+        assert.isFalse(measure.submissionMethods.includes('cmsWebInterface'));
       });
     });
 
