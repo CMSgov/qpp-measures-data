@@ -389,6 +389,28 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <measureSet>generalPracticeFamilyMedicine</measureSet>
   </measure>
   <measure>
+    <category>quality</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>singlePerformanceRate</metricType>
+    <title>Diabetes Mellitus (DM) Composite (All or Nothing Scoring) </title>
+    <description>Composite of DM-2 (NQF 0059): Diabetes: Homoglobin A1c (HbA1c) Poor Control (&lt;9%) &amp; DM-7 (NQF 0055): Diabetes: Eye Exam </description>
+    <nationalQualityStrategyDomain>ECC</nationalQualityStrategyDomain>
+    <measureType>intermediateOutcomeAndProcess</measureType>
+    <measureId>DM_COMPOSITE</measureId>
+    <eMeasureId/>
+    <nqfEMeasureId/>
+    <nqfId>0055 &amp; 0059</nqfId>
+    <isInverse>false</isInverse>
+    <strata>
+      <description>Percentage of patients 18 - 75 years of age with diabetes who had hemoglobin A1c &gt; 9.0% during the measurement period and who had a retinal or dilated eye exam by an eye care professional during the measurement period or a negative retinal or dilated eye exam (no evidence of retinopathy) in the 12 months prior to the measurement period</description>
+      <name>A1c&gt;9.0%</name>
+    </strata>
+    <isHighPriority>true</isHighPriority>
+    <primarySteward>National Committee for Quality Assurance</primarySteward>
+    <submissionMethod>cmsWebInterface</submissionMethod>
+  </measure>
+  <measure>
     <category>aci</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
@@ -4374,7 +4396,6 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>ophthalmology</measureSet>
@@ -4439,7 +4460,6 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
     <primarySteward>National Committee for Quality Assurance</primarySteward>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>

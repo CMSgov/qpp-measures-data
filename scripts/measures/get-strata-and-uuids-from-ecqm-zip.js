@@ -2,12 +2,12 @@
 
 /*
 Extracts ecqm eMeasureIds and strata names, descriptions, and uuids from a zip file.
-Running this will generate a file at util/generated-ecqm-data.json
+Running this will generate a file at util/measures/generated-ecqm-data.json
 
-Usage: ./scripts/get-strata-and-uuids-from-ecqm-zip.js <path to zip of ecqm>
+Usage: ./get-strata-and-uuids-from-ecqm-zip.js <path to zip of ecqm>
 
 most likely:
-./scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+./get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
 
 each generated ecqm entry will look like this:
 
@@ -158,6 +158,6 @@ Promise.all(
 // sort and write extracted data to disk
   .then(ecqms => {
     const sortedEcqms = _.sortBy(ecqms, ['eMeasureId']);
-    fs.writeFileSync(path.join(__dirname, '../util/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
+    fs.writeFileSync(path.join(__dirname, '../../util/measures/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
     console.warn('remember to add the strata names manually!');
   });

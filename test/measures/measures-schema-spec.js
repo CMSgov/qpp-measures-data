@@ -3,7 +3,7 @@ const assert = chai.assert;
 const exec = require('child_process').exec;
 const fs = require('fs');
 
-const testFilesFolder = 'test/examples/quality/';
+const testFilesFolder = 'test/measures/examples/quality/';
 const qualityMeasureExampleFilenames = fs.readdirSync(testFilesFolder);
 
 describe('measures schema validates json', function() {

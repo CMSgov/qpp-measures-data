@@ -1,8 +1,8 @@
-// running this will generate a file in measures/quality-performace-rates.json
+// running this will generate a file in util/measures/quality-performace-rates.json
 // with the descriptions for each performance rate
 // claims pdfs can be downloaded from https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip
 // unzip and give the path to the Claims-Quality-Measures
-// usage ./scripts/get-quality-measures-from-pdfs.js <path to folder of claims quality measures pdfs>
+// usage ./get-quality-measures-from-pdfs.js <path to folder of claims quality measures pdfs>
 
 var _ = require('lodash');
 var fs = require('fs');
@@ -111,7 +111,7 @@ qualityIds.forEach(function(qualityId, i) {
       // sort all performance rates
       var sortedRates = _.sortBy(performanceRateJson, ['qualityId']);
       // write file to tmp
-      fs.writeFile(p.join(__dirname, '../util/quality-performance-rates.json'), JSON.stringify(sortedRates, null, 2));
+      fs.writeFile(p.join(__dirname, '../../util/measures/quality-performance-rates.json'), JSON.stringify(sortedRates, null, 2));
     }
   });
 });
