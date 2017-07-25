@@ -2,7 +2,7 @@
 // Libraries
 var keyBy = require('lodash/keyBy');
 // Data
-var measures = require('./../measures/measures-data.json');
+var measures = require('../../measures/measures-data.json');
 // Constants
 /**
  * Maps normalized (trimmed and squeezed) submission method values
@@ -38,7 +38,7 @@ var MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
 var formatSubmissionMethod = function(submissionMethod) {
   return SUBMISSION_METHOD_MAP[submissionMethod.replace(/\s/g, '').toLowerCase()];
 };
-var isInverseBenchmarkRecord = require('./is-inverse-benchmark-record');
+var isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
 var floatRegex = /([0-9]*[.]?[0-9]+)/g;
 /**
  * Generator function to create a

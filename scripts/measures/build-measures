@@ -18,15 +18,15 @@ fi
 
 # 2. Run the convert from pdfs tool to get the quality info from the pdfs. This info needs to be combined with the (manually generated) `util/quality-measures-strata-details.json` file to get the full quality measures data.
 echo "extracting quality measures from PDFs"
-node scripts/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
+node scripts/measures/get-quality-measures-from-pdfs.js QPP_quality_measure_specifications/Claims-Registry-Measures
 
 # 3. Run the script to extract strata descriptions and measure/strata uuids for ecqms from the zip:
 echo "extracting eCQM strata and uuids from eCQM zip"
-node scripts/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+node scripts/measures/get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
 
 # 4. Then run this command to generate a new `measures-data.json` file:
 echo "merging sources into measures-data.json"
-jq -s add util/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/convert-qpp-to-measures.js quality) | node scripts/merge-measures-data.js | tee measures/measures-data.json
+jq -s add util/measures/additional-measures.json <(curl -s https://qpp.cms.gov/api/v1/aci_measures | node scripts/measures/convert-qpp-to-measures.js aci) <(curl -s https://qpp.cms.gov/api/v1/ia_measures | node scripts/measures/convert-qpp-to-measures.js ia) <(curl -s https://qpp.cms.gov/api/v1/quality_measures | node scripts/measures/convert-qpp-to-measures.js quality) | node scripts/measures/merge-measures-data.js | tee measures/measures-data.json
 
 # 5. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"

@@ -2,15 +2,15 @@
 
 /*
 This is intended to be a one-time-use script; it takes measures-data as input that is
-missing ecqm data and writes a scaffold json file at 'utils/manually-added-ecqm-data.json'.
-The 'util/manually-added-ecqm-data.json' file will be (re)written.
+missing ecqm data and writes a scaffold json file at 'util/measures/manually-added-ecqm-data.json'.
+The 'util/measures/manually-added-ecqm-data.json' file will be (re)written.
 
-To 'util/manually-added-ecqm-data.json', you must manually edit the strata fields and commit the changes.
+To 'util/measures/manually-added-ecqm-data.json', you must manually edit the strata fields and commit the changes.
 
-Once 'util/manually-added-ecqm-data.json' contains strata names and you've verified that the hardcoded 145v5 and 160v5 measure data is correct, you can run merge-measures-data.js to include the missing strata data.
+Once 'util/measures/manually-added-ecqm-data.json' contains strata names and you've verified that the hardcoded 145v5 and 160v5 measure data is correct, you can run merge-measures-data.js to include the missing strata data.
 
-To run: `cat [measures-data.json] | node scripts/find-ecqms-with-missing-data.js`
-e.g. `cat measures/measures-data.json | node scripts/find-ecqms-with-missing-data.js`
+To run: `cat [measures-data.json] | node find-ecqms-with-missing-data.js`
+e.g. `cat measures/measures-data.json | node find-ecqms-with-missing-data.js`
 */
 
 const fs = require('fs');
@@ -30,7 +30,7 @@ process.stdin.on('readable', () => {
 process.stdin.on('end', () => {
   const scaffold = generateScaffoldJson(JSON.parse(measuresData, 'utf8'));
   console.log('output: ', scaffold);
-  fs.writeFileSync(path.join(__dirname, '../util/manually-added-ecqm-data.json'), scaffold);
+  fs.writeFileSync(path.join(__dirname, '../../util/measures/manually-added-ecqm-data.json'), scaffold);
 });
 
 // There are two measures that are known outliers; CMS145v5 and CMS160v5, which are added

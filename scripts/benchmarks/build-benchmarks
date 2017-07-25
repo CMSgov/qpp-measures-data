@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# generate benchmarks
+echo "generating new benchmarks JSON"
+jq -s add <(cat util/benchmarks/2015.csv | node scripts/benchmarks/parse-benchmarks-data.js 2015 2017) util/benchmarks/additional-benchmarks-2017.json | tee benchmarks/2017.json
+
+# validate benchmarks
+echo "validating new benchmarks JSON"
+cat benchmarks/2017.json | node scripts/validate-data.js benchmarks

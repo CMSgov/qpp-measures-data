@@ -1,7 +1,5 @@
 // Libraries
-var fs = require('fs');
 var parse = require('csv-parse');
-var path = require('path');
 // Constants
 var BENCHMARK_CSV_COLUMNS = [
   'measureName',
@@ -20,7 +18,7 @@ var BENCHMARK_CSV_COLUMNS = [
   'isToppedOut'
 ];
 // Utils
-var formatBenchmarkRecord = require('./../util/format-benchmark-record');
+var formatBenchmarkRecord = require('./format-benchmark-record');
 // Data
 var benchmarksData = '';
 
@@ -56,7 +54,7 @@ if (benchmarkYear && performanceYear) {
           if (benchmark) benchmarks.push(benchmark);
         });
 
-        fs.writeFileSync(path.join(__dirname, '../benchmarks/' + performanceYear + '.json'), JSON.stringify(benchmarks, null, 2), 'utf8');
+        process.stdout.write(JSON.stringify(benchmarks, null, 2));
       }
     });
   });
