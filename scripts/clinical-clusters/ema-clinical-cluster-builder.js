@@ -57,6 +57,7 @@ var specialClusterRelations = {
     {measureId: '130', optionals: []},
     {measureId: '226', optionals: []},
     {measureId: '317', optionals: []},
+    {measureId: '117', optionals: []},
     {measureId: '112', optionals: ['113']},
     {measureId: '113', optionals: ['112']}
   ]
