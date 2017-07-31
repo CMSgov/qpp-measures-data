@@ -14,7 +14,8 @@ describe('clinical cluster functionality', () => {
     assert.isObject(schema);
   });
 
-  it('clusters do not have registry 130, but claims', () => {
+  it('measures in specialClusterRelations are ignored completely if no optional is available', () => {
+    // clusters do not have registry 130, but claims
     var data = main.getClinicalClusterData();
     var clusters = data.filter(c => c.measureId === '130' && c.submissionMethod === 'registry');
     assert.isArray(clusters);
@@ -24,7 +25,8 @@ describe('clinical cluster functionality', () => {
     assert.equal(1, clusters.length);
   });
 
-  it('registry 051 and 052 should only have 130 in their clinicalCluster for registry', () => {
+  it('measures in specialClusterRelations has measureIds without optionals', () => {
+    // registry 051 and 052 should only have 130 in their clinicalCluster for registry
     var data = main.getClinicalClusterData();
     var clusters = data.filter(c => c.measureId === '051' && c.submissionMethod === 'registry');
     assert.equal(1, clusters.length);
@@ -37,73 +39,12 @@ describe('clinical cluster functionality', () => {
     assert.deepEqual(['130'], cluster052.clinicalClusters[0].measureIds);
   });
 
-  it('claims 117 should not have any clinical clusters', () => {
+  it('Cluster input files are processed properly', () => {
+    // registry Acute Otitis Externa should have 91 and 93
     var data = main.getClinicalClusterData();
-    var clusters = data.filter(c => c.measureId === '117' && c.submissionMethod === 'claims');
-    assert.equal(0, clusters.length);
-  });
-
-  it('claims 130 should not have any clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var clusters = data.filter(c => c.measureId === '130' && c.submissionMethod === 'claims' && c.clinicalClusters);
-    assert.equal(0, clusters.length);
-  });
-
-  it('claims Eye Care should have 117 in clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var measureIds = ['012', '014', '019', '140', '141'];
-    measureIds.forEach(measureId => {
-      var clusters = data.filter(c => c.measureId === measureId && c.submissionMethod === 'claims');
-      assert.equal(1, clusters.length);
-      var theCluster = clusters[0];
-      var eyeCare = theCluster.clinicalClusters.find(c => c.name === 'eyeCare');
-      assert.include(eyeCare.measureIds, '117');
-    });
-  });
-
-  it('claims Colonoscopy Care should have 130 in clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var measureIds = ['425'];
-    measureIds.forEach(measureId => {
-      var clusters = data.filter(c => c.measureId === measureId && c.submissionMethod === 'claims');
-      assert.equal(1, clusters.length);
-      var theCluster = clusters[0];
-      var eyeCare = theCluster.clinicalClusters.find(c => c.name === 'colonoscopyCare');
-      assert.include(eyeCare.measureIds, '130');
-    });
-  });
-
-  it('claims Endoscopy and Polyp Surveillance should have 320 in clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var measureIds = ['185'];
-    measureIds.forEach(measureId => {
-      var clusters = data.filter(c => c.measureId === measureId && c.submissionMethod === 'claims');
-      assert.equal(1, clusters.length);
-      var theCluster = clusters[0];
-      var eyeCare = theCluster.clinicalClusters.find(c => c.name === 'endoscopyAndPolypSurveillance');
-      assert.include(eyeCare.measureIds, '320');
-    });
-  });
-
-  it('registry Osteoporosis Care should not have 110 in clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var clusters = data
-      .filter(c => c.submissionMethod === 'registry')
-      .filter(c => c.clinicalClusters && c.clinicalClusters.find(cc => cc.name === 'osteoporosisCare'));
-    clusters.forEach(theCluster => {
-      var osteoporosisCare = theCluster.clinicalClusters.find(c => c.name === 'osteoporosisCare');
-      assert.notInclude(osteoporosisCare.measureIds, '110');
-    });
-  });
-
-  it('registry Heart Failure Care should not have 226 in clinical clusters', () => {
-    var data = main.getClinicalClusterData();
-    var clusters = data
-      .filter(c => c.submissionMethod === 'registry')
-      .filter(c => c.clinicalClusters && c.clinicalClusters.find(cc => cc.name === 'heartFailureCare'));
-    clusters.forEach(theCluster => {
-      var osteoporosisCare = theCluster.clinicalClusters.find(c => c.name === 'heartFailureCare');
-      assert.notInclude(osteoporosisCare.measureIds, '226');
-    });
+    var measuresIds = data.filter(c => c.submissionMethod === 'registry')
+      .filter(c => c.clinicalClusters && c.clinicalClusters.find(c => c.name === 'acuteOtitisExterna'))
+      .map(c => c.clinicalClusters[0].measureIds);
+    assert.deepEqual(measuresIds, [ [ '091', '093' ], [ '091', '093' ] ]);
   });
 });
