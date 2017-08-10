@@ -161,7 +161,7 @@ describe('formatBenchmarkRecord', function() {
           assert.equal(benchmark.submissionMethod, 'claims', 'submissionMethod');
           assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
           assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
-          assert.deepEqual(benchmark.deciles, [0, 100, 100, 100, 100, 100, 100, 100, 100], 'deciles');
+          assert.deepEqual(benchmark.deciles, [0, 0, 100, 100, 100, 100, 100, 100, 100], 'deciles');
         });
       });
     });
@@ -251,7 +251,7 @@ describe('formatBenchmarkRecord', function() {
           assert.equal(benchmark.submissionMethod, 'registry', 'submissionMethod');
           assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
           assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
-          assert.deepEqual(benchmark.deciles, [100, 0, 0, 0, 0, 0, 0, 0, 0], 'deciles');
+          assert.deepEqual(benchmark.deciles, [100, 100, 0, 0, 0, 0, 0, 0, 0], 'deciles');
         });
       });
 
