@@ -5,6 +5,7 @@ const _ = require('lodash');
 const mipsDataFormat = require('../../index.js');
 const measuresData = mipsDataFormat.getMeasuresData();
 const actualAciRelation = require('../../util/measures/aci-measure-relations.json');
+const actualCpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
 
 describe('measures data json', function() {
   const measureIds = _.map(measuresData, 'measureId');
@@ -102,5 +103,27 @@ describe('measures data json', function() {
         });
       });
     });
+
+    describe('Some quality measures belong to CPC+ groups', () => {
+      it('MeasureId 309 should be in CPC+ group "C"', () =>
+        const measure = measuresData.find(m => m.measureId === '309');
+        assert.equal(measure.cpcPlusGroup, 'C');
+      });
+
+      it('contains proper metadata on all measures', () => {
+        const generated = {};
+        measuresData
+          .filter(m => m.category === 'quality')
+          .filter(m => m.cpcPlusGroup !== undefined)
+          .forEach(m => {
+            if (generated[m.cpcPlusGroup] === undefined) {
+              generated[m.cpcPlusGroup] = [];
+            }
+            generated[m.cpcPlusGroup].push(m.cpcPlusGroup);
+          });
+          assert.deepEqual(generated, actualCpcPlusGroups);
+      });
+    });
+
   });
 });

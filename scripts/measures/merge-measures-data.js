@@ -5,6 +5,8 @@ const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
+const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
+
 let qpp = '';
 
 process.stdin.setEncoding('utf8');
@@ -115,6 +117,7 @@ function mergeQpp(qppJson) {
   console.error('did not find measure details for the following', measuresNotFound);
 
   enrichACIMeasures(qppJson);
+  enrichCPCPlusMeasures(qppJson);
 
   return JSON.stringify(qppJson, null, 2);
 }
@@ -139,4 +142,22 @@ function enrichACIMeasures(measures) {
         measure.substitutes = aciRelation.substitutes;
       }
     });
+}
+
+/**
+ * Will add extra metadata to CPC+ measures
+ *
+ */
+function enrichCPCPlusMeasures(measures) {
+  measures
+    .filter(measure => measure.category === 'quality')
+    .forEach(measure => {
+      Object.keys(cpcPlusGroups).forEach((groupId) => {
+        var match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
+        if (match !== undefined) {
+          measure.cpcPlusGroup = match;
+        }
+      });
+
+  });
 }
