@@ -2,7 +2,15 @@
 
 # 1. Add QCDR measures to measures-data.json
 echo "Adding QCDR measures to measures-data.json"
-node ./scripts/import-csv-script.js | jq -s add $1 <(cat measures/measures-data.json) | tee measures/measures-data.json
+node scripts/import-csv-script.js > qcdr-measures.json 
+
+mv measures/measures-data.json measures/measures-data-og.json
+jq -s '.[0] + .[1]' qcdr-measures.json measures/measures-data-og.json > measures/measures-data.json
+# test cat measures/measures-data.json | grep measureId | wc -l
+
+# cleanup
+rm measures/measures-data-og.json
+rm qcdr-measures.json
 
 # 2. Regenerate the `measures-data.xml` file:
 echo "generating measures-data.xml from measures-data.json"
