@@ -11,6 +11,20 @@ sourced_fields:
   description: 4
   nationalQualityStrategyDomain: 5
   measureType: 13
-  isHighPriority: 14 # This may be a reason to break this down - to confirm map blanks to false or null
-  isInverse: 16
-  isRiskAdjusted: 20
+  isHighPriority:
+    index: 14
+    mappings:
+      'High Priority': true
+      default: false
+  isInverse:
+    index: 16
+    mappings:
+      N: false
+      Y: true
+      default: false
+  isRiskAdjusted:
+    index: 20
+    mappings:
+      N: false
+      Y: true
+      default: false
