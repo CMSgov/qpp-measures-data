@@ -13,18 +13,22 @@ const testMeasures = require('./test-measures.json');
 const testConfig = YAML.load(path.join(__dirname, 'test-csv-config.yaml'));
 const testCsv = fs.readFileSync(path.join(__dirname, 'test-qcdr.csv'));
 
+// Expected new measures
+const expectedMeasures = require('./expected-measures.json');
+
 describe('import-csv', function() {
-  it.only('should append new measures to original measures', () => {
+  it('should append new measures to original measures', () => {
     const updatedMeasures = importCsv(testMeasures, testCsv, testConfig);
     assert.equal(updatedMeasures.length, 4);
   });
 
-  it('should overwrite fields with the right csv data', () => {
-
-  });
-
-  it('should use identified constant fields', () => {
-
+  it.only('should overwrite fields with the right csv data', () => {
+    const updatedMeasures = importCsv(testMeasures, testCsv, testConfig);
+    expectedMeasures.forEach(function(expectedMeasure, measureIdx) {
+      Object.entries(expectedMeasure).forEach(function([measureKey, measureValue]) {
+        assert.deepEqual(updatedMeasures[2 + measureIdx][measureKey], measureValue);
+      });
+    });
   });
 
   // describe('errors')
