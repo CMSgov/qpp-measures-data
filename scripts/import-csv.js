@@ -8,7 +8,11 @@ const importCsv = function(measures, csvFile, config) {
   const newMeasures = records.map(function(record) {
     var newMeasure = {};
     Object.entries(sourcedFields).forEach(function([measureKey, colIndex]) {
-      newMeasure[measureKey] = record[colIndex];
+      if (!record[colIndex]) {
+        throw TypeError('Column ' + colIndex + ' does not exist in source data');
+      } else {
+        newMeasure[measureKey] = record[colIndex];
+      }
     });
     Object.entries(constantFields).forEach(function([measureKey, measureValue]) {
       newMeasure[measureKey] = measureValue;
