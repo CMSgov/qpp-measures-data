@@ -1,8 +1,11 @@
 const parse = require('csv-parse/lib/sync');
 
 // TODO add ability to ignore header row
-const importCsv = function(measures, csvFile, config) {
+const importCsv = function(csvFile, config, header = true) {
   const records = parse(csvFile);
+  if (header) {
+    records.shift();
+  }
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
 
@@ -27,7 +30,8 @@ const importCsv = function(measures, csvFile, config) {
     });
     return newMeasure;
   });
-  return measures.concat(newMeasures);
+
+  return newMeasures;
 };
 
 module.exports = importCsv;
