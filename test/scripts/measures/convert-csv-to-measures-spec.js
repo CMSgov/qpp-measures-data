@@ -10,16 +10,16 @@ const parse = require('csv-parse/lib/sync');
 const convertCsvToMeasures = require('./../../../scripts/convert-csv-to-measures');
 
 // Test data
-const testConfig = YAML.load(path.join(__dirname, 'test-csv-config.yaml'));
-const testCsv = parse(fs.readFileSync(path.join(__dirname, 'test-qcdr.csv')));
+const testConfig = YAML.load(path.join(__dirname, 'fixtures/test-csv-config.yaml'));
+const testCsv = parse(fs.readFileSync(path.join(__dirname, 'fixtures/test-qcdr.csv')));
 testCsv.shift();
-const testCsv2Cols = parse(fs.readFileSync(path.join(__dirname, 'test-qcdr-2cols.csv')));
+const testCsv2Cols = parse(fs.readFileSync(path.join(__dirname, 'fixtures/test-qcdr-2cols.csv')));
 testCsv2Cols.shift();
 
 // Expected new measures
-const expectedMeasures = require('./expected-measures.json');
+const expectedMeasures = require('./fixtures/expected-measures.json');
 
-describe('import-csv', function() {
+describe('convertCsvToMeasures', function() {
   it('should create new measures', () => {
     const newMeasures = convertCsvToMeasures(testCsv, testConfig);
     assert.equal(newMeasures.length, 2);
