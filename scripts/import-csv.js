@@ -1,11 +1,10 @@
-const parse = require('csv-parse/lib/sync');
-
-// TODO add ability to ignore header row
-const importCsv = function(csvFile, config, header = true) {
-  const records = parse(csvFile);
-  if (header) {
-    records.shift();
-  }
+/**
+ * [importCsv description]
+ * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
+ * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
+ * @return {array}            Returns an array of measures objects
+ */
+const importCsv = function(records, config) {
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
 
