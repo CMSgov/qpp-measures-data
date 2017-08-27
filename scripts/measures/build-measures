@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 
 # 1. Add QCDR measures to measures-data.json
-echo "Adding QCDR measures to measures-data.json"
-node scripts/import-csv-script.js > qcdr-measures.json 
-
-mv measures/measures-data.json measures/measures-data-og.json
-jq -s '.[0] + .[1]' qcdr-measures.json measures/measures-data-og.json > measures/measures-data.json
-# test cat measures/measures-data.json | grep measureId | wc -l
-
-# cleanup
-rm measures/measures-data-og.json
-rm qcdr-measures.json
+# TODO(aimee) At the moment this is NOT idempontent
+# jq -s add <(cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml) measures/measures-data.json | tee measures/measures-data.json
+jq -s '.[0] + .[1]' <(cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml) measures/measures-data.json
+# test cat measures/measures-data.json | wc -l should be >27354
 
 # 2. Regenerate the `measures-data.xml` file:
 echo "generating measures-data.xml from measures-data.json"
