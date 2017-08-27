@@ -36,7 +36,7 @@ describe('convertCsvToMeasures', function() {
 
   it('throws an informative error when the column doesn\'t exist', function() {
     const errorMessage = 'Column 2 does not exist in source data';
-    // function expects a function as its first parameter, not an invocation
+    // assert.throws expects a function as its first parameter
     const errFunc = () => { convertCsvToMeasures(testCsv2Cols, testConfig); };
     assert.throws(errFunc, TypeError, errorMessage);
   });
