@@ -41,6 +41,27 @@ At this time `util/measures/additional-measures.json` includes:
 
 Similarly, `util/benchmarks/additional-benchmarks-2017.json` contains benchmark data that is necessary for scoring but not included in the historical CSV file. Any additional benchmarks should be added to this file, followed by a re-generation of benchmarks data.
 
+### Importing measures from CSV file
+
+The `scripts/measures/import-csv.js` script handles importing new measures from a CSV and converting them to the qpp-measures-data measure schema. A config file is required in order to correctly map columns in the spreadsheet map to qpp-measures-data measures fields. A config file is a yaml file with the following structure:
+
+```yaml
+sourced_fields:
+  measureId: 0
+  isHighPriority:
+    index: 11
+    Y: true
+    N: false
+    default: false
+constant_fields:
+  category: quality
+```
+
+* **`sourced_fields`** are fields which should find values in the CSV input.
+    * `sourced_fields` child objects may be integers referencing a column index OR an object. If an object, this signifies the CSV data should be mapped to valid measures data types. In the example above, a `Y` in column 11 will result in `isHighPriority: true`.
+* **`constant_fields`** are fields which are the same for all measures being created from the CSV input.
+
+
 ## Testing
 
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
