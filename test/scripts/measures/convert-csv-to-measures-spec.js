@@ -7,7 +7,7 @@ const path = require('path');
 const parse = require('csv-parse/lib/sync');
 
 // The function
-const importCsv = require('./../../../scripts/import-csv');
+const convertCsvToMeasures = require('./../../../scripts/convert-csv-to-measures');
 
 // Test data
 const testConfig = YAML.load(path.join(__dirname, 'test-csv-config.yaml'));
@@ -21,12 +21,12 @@ const expectedMeasures = require('./expected-measures.json');
 
 describe('import-csv', function() {
   it('should create new measures', () => {
-    const newMeasures = importCsv(testCsv, testConfig);
+    const newMeasures = convertCsvToMeasures(testCsv, testConfig);
     assert.equal(newMeasures.length, 2);
   });
 
   it('should overwrite fields with the right csv data', () => {
-    const newMeasures = importCsv(testCsv, testConfig);
+    const newMeasures = convertCsvToMeasures(testCsv, testConfig);
     expectedMeasures.forEach(function(expectedMeasure, measureIdx) {
       Object.entries(expectedMeasure).forEach(function([measureKey, measureValue]) {
         assert.deepEqual(newMeasures[measureIdx][measureKey], measureValue);
@@ -37,7 +37,7 @@ describe('import-csv', function() {
   it('throws an informative error when the column doesn\'t exist', function() {
     const errorMessage = 'Column 2 does not exist in source data';
     // function expects a function as its first parameter, not an invocation
-    const errFunc = () => { importCsv(testCsv2Cols, testConfig); };
+    const errFunc = () => { convertCsvToMeasures(testCsv2Cols, testConfig); };
     assert.throws(errFunc, TypeError, errorMessage);
   });
 });

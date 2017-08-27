@@ -1,36 +1,30 @@
-/**
- * [importCsv description]
- * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
- * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
- * @return {array}            Returns an array of measures objects
- */
-const importCsv = function(records, config) {
-  const sourcedFields = config.sourced_fields;
-  const constantFields = config.constant_fields;
+const parse = require('csv-parse/lib/sync');
+const YAML = require('yamljs');
 
-  const newMeasures = records.map(function(record) {
-    var newMeasure = {};
-    Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
-      if (typeof columnObject === 'number') {
-        if (!record[columnObject]) {
-          throw TypeError('Column ' + columnObject + ' does not exist in source data');
-        } else {
-          // measure data maps directly to data in csv
-          newMeasure[measureKey] = record[columnObject];
-        }
-      } else {
-        // measure data requires mapping CSV data to new value, e.g. Y, N -> true, false
-        const mappedValue = columnObject.mappings[record[columnObject.index]];
-        newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
-      }
-    });
-    Object.entries(constantFields).forEach(function([measureKey, measureValue]) {
-      newMeasure[measureKey] = measureValue;
-    });
-    return newMeasure;
-  });
+// newmeasures=$(cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/import-csv.js util/measures/qcdr-config.yaml)
+// echo $newmeasures | node scripts/validate-data.js measures
+// jq -s add <(cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/import-csv.js util/measures/qcdr-config.yaml) <(cat measures/measures-data.json) | tee measures/measures-data.json
+const importCsv = require('./import-csv');
 
-  return newMeasures;
-};
+const config = YAML.load(process.argv[2]);
+// TODO: make this configurable
+const header = true;
+let csvFile = '';
 
-module.exports = importCsv;
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('readable', function() {
+  var chunk = process.stdin.read();
+  if (chunk !== null) {
+    csvFile += chunk;
+  }
+});
+
+process.stdin.on('end', function() {
+  const records = parse(csvFile, 'utf8');
+  if (header) {
+    records.shift();
+  }
+
+  process.stdout.write(JSON.stringify(importCsv(records, config), null, 2));
+});
