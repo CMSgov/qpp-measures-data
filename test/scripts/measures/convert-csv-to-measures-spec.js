@@ -7,7 +7,7 @@ const path = require('path');
 const parse = require('csv-parse/lib/sync');
 
 // The function
-const convertCsvToMeasures = require('./../../../scripts/convert-csv-to-measures');
+const convertCsvToMeasures = require('./../../../scripts/measures/convert-csv-to-measures');
 
 // Test data
 const testConfig = YAML.load(path.join(__dirname, 'fixtures/test-csv-config.yaml'));
