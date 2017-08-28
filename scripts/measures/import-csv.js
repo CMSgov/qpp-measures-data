@@ -6,10 +6,10 @@ const YAML = require('yamljs');
  * CSV from stdin and outputs valid measures using convertCsvToMeasures.js
  *
  * example:
- * $ cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml
+ * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml
  *
  * test:
- * $ cat util/measures/2017-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml | node scripts/validate-data.js measures 
+ * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-csv.js util/measures/qcdr-config.yaml | node scripts/validate-data.js measures
 */
 const convertCsvToMeasures = require('./convert-csv-to-measures');
 
