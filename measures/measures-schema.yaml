@@ -133,6 +133,9 @@ definitions:
       isRiskAdjusted:
         type: boolean
         default: false
+      vendorId:
+        description: Submissions of the measure are restricted to the organization associated with vendorId.
+        type: string
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
