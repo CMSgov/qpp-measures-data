@@ -1,3 +1,12 @@
+function transformColumn(transformDtype, columnObject, record) {
+  switch (transformDtype) {
+    case 'array':
+      return record[columnObject.index].split(columnObject.transform.delimiter);
+    default:
+      throw new Error('Invalid dtype: ' + transformDtype);
+  }
+}
+
 /**
  * [convertCsvToMeasures description]
  * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
@@ -18,10 +27,15 @@ const convertCsvToMeasures = function(records, config) {
           // measure data maps directly to data in csv
           newMeasure[measureKey] = record[columnObject];
         }
-      } else {
+      } else if (columnObject.mappings !== undefined) {
         // measure data requires mapping CSV data to new value, e.g. Y, N -> true, false
         const mappedValue = columnObject.mappings[record[columnObject.index]];
         newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
+      } else if (columnObject.transform !== undefined) {
+        const transformDtype = columnObject.transform.dtype;
+        newMeasure[measureKey] = transformColumn(transformDtype, columnObject, record);
+      } else {
+        throw Error('Invalid column definition for ' + measureKey);
       }
     });
     Object.entries(constantFields).forEach(function([measureKey, measureValue]) {

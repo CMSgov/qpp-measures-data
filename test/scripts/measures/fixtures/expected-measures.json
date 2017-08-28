@@ -16,7 +16,8 @@
     "measureType": "Process",
     "isHighPriority": false,
     "isInverse": false,
-    "isRiskAdjusted": false
+    "isRiskAdjusted": false,
+    "vendorIds": ["6273354"]
   },
   {
     "category": "quality",
@@ -35,6 +36,30 @@
     "measureType": "Process",
     "isHighPriority": true,
     "isInverse": false,
-    "isRiskAdjusted": false
+    "isRiskAdjusted": false,
+    "vendorIds": ["6273354"]
+  },
+  {
+    "measureId": "CDR1",
+    "title": "Adequate Off-loading of Diabetic Foot Ulcer at each treatment visit",
+    "description": "Percentage of visits in which diabetic foot ulcers among patients aged 18 years and older received adequate off-loading during a 12-month reporting period.",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "Process",
+    "isHighPriority": false,
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "category": "quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "singlePerformanceRate",
+    "strata": [
+      {
+        "name": "overall"
+      }
+    ],
+    "vendorIds": [
+      "4403327",
+      "6621356"
+    ]
   }
 ]
