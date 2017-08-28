@@ -16,7 +16,22 @@ sourced_fields:
   title: 3
   description: 4
   nationalQualityStrategyDomain: 5
-  measureType: 13
+  measureType:
+    index: 13
+    mappings:
+      Process: process
+      Outcome: outcome
+      'Patient Engagement/Experience ': patientEngagementExperience
+      'Patient Engagement/Experience': patientEngagementExperience
+      'Efficiency': efficiency
+      'Intermediate Outcome': intermediateOutcome
+      'Structure': structure
+      # TODO(aimee): verify these mappings
+      'Patient Reported Outcome': outcome
+      'Composite': outcome
+      'Cost/Resource Use': efficiency
+      'Cost/resource Use': efficiency
+      'Clinical Process Effectiveness': process
   isHighPriority:
     index: 14
     mappings:
