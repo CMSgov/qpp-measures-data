@@ -12,9 +12,7 @@ const convertCsvToMeasures = require('./../../../scripts/measures/convert-csv-to
 // Test data
 const testConfig = YAML.load(path.join(__dirname, 'fixtures/test-csv-config.yaml'));
 const testCsv = parse(fs.readFileSync(path.join(__dirname, 'fixtures/test-qcdr.csv')));
-testCsv.shift();
 const testCsv2Cols = parse(fs.readFileSync(path.join(__dirname, 'fixtures/test-qcdr-2cols.csv')));
-testCsv2Cols.shift();
 
 // Expected new measures
 const expectedMeasures = require('./fixtures/expected-measures.json');
