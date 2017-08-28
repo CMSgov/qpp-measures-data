@@ -12,7 +12,11 @@ constant_fields:
   measureSets: []
 sourced_fields:
   # TODO(aimee): This will eventually become an array, measureIds are not currently unique and have multiple vendorIds
-  vendorId: 0
+  vendorIds:
+    index: 0
+    transform:
+      dtype: array
+      delimiter: ','
   # TODO(aimee): This is an assumption, currently multiple orgs are identified with
   primarySteward: 1
   # TODO(aimee): measureIds are not currently unique

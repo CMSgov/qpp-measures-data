@@ -6,6 +6,11 @@ constant_fields:
   strata:
     - name: overall
 sourced_fields:
+  vendorIds:
+    index: 0
+    transform:
+      dtype: array
+      delimiter: ','
   measureId: 2
   title: 3
   description: 4
