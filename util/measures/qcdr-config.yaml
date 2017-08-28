@@ -7,12 +7,14 @@ constant_fields:
   eMeasureId: null
   nqfEMeasureId: null
   nqfId: null
-  # TODO(aimee): what should primarySteward be?
-  primarySteward: PIMMS
   strata:
     - name: overall
   measureSets: []
 sourced_fields:
+  # TODO(aimee): This will eventually become an array, measureIds are not currently unique and have multiple vendorIds
+  vendorId: 0
+  # TODO(aimee): This is an assumption, currently multiple orgs are identified with
+  primarySteward: 1
   # TODO(aimee): measureIds are not currently unique
   measureId: 2
   title: 3
