@@ -18,7 +18,7 @@ Make changes on a feature branch, then open a pull request. Make sure CI passes 
 To regenerate and validate data, do the following:
 
 ```
-npm run build:measures          # generates measures/measures-data.json and measures/measures-data.xml, validates measures-data.json
+npm run build:measures          # generates measures/measures-data.json and measures/measures-data.xml
 npm run build:benchmarks        # generates benchmarks/2017.json
 npm run build:clinical-clusters # generates clinical-clusters/clinical-clusters.json
 ```
