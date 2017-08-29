@@ -14,7 +14,6 @@ const parse = require('csv-parse/lib/sync');
  * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-qcdr-measures.js | node scripts/validate-data.js measures
 */
 
-
 /**
  * [config defines how to generate QCDR measures from origin CSV file]
  * @type {Object}

@@ -32,7 +32,7 @@ describe('convertCsvToMeasures', function() {
     });
   });
 
-  it.only('throws an informative error when the column doesn\'t exist', function() {
+  it('throws an informative error when the column doesn\'t exist', function() {
     const errorMessage = /Column 2 does not exist in source data/;
     // assert.throws expects a function as its first parameter
     const errFunc = () => { runTest(testCsv2Cols); };
