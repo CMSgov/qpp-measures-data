@@ -50,9 +50,10 @@ sourced_fields:
   measureId: 0
   isHighPriority:
     index: 11
-    Y: true
-    N: false
-    default: false
+    mappings:
+      Y: true
+      N: false
+      default: false
 constant_fields:
   category: quality
 ```
