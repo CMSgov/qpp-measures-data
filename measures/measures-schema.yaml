@@ -30,7 +30,6 @@ definitions:
         description: ACI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
-
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
     oneOf:
       - { $ref: #/definitions/iaMeasure }
