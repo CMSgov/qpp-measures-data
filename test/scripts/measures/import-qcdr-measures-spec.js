@@ -1,6 +1,7 @@
 // Libraries
 const chai = require('chai');
 const assert = chai.assert;
+const { execSync } = require('child_process');
 
 // Test data
 const testCsv = './test/scripts/measures/fixtures/test-qcdr.csv';
@@ -9,8 +10,7 @@ const testCsv2Cols = './test/scripts/measures/fixtures/test-qcdr-2cols.csv';
 // Expected new measures
 const expectedMeasures = require('./fixtures/expected-measures.json');
 
-const { execSync } = require('child_process');
-
+// Function which executes script and converts output to a JS object.
 const runTest = function(file) {
   const cmd = 'cat ' + file + ' | node ./scripts/measures/import-qcdr-measures.js';
   const measuresJson = execSync(cmd).toString();
