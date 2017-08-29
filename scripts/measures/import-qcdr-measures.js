@@ -139,7 +139,6 @@ process.stdin.on('readable', function() {
 process.stdin.on('end', function() {
   const records = parse(csvFile, 'utf8');
   // remove header
-  // TODO(aimee): Should we test this?
   records.shift();
   process.stdout.write(JSON.stringify(convertCsvToMeasures(records, config), null, 2));
 });
