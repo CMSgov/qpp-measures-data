@@ -8,10 +8,9 @@ This repository hosts measures data for QPP and supports functionality to import
 measures data as an NPM module. It currently hosts all Improvement Activity and
 Advancing Care Information measures, as well as a fraction of Quality measures.
 
-This is the alpha v2 source of truth for QPP measures data, building off of the
-existing v1 measures data available at [qpp.cms.gov/api](qpp.cms.gov/api).
+This is the alpha v2 source of truth for QPP measures data. It has been built off a measures data API which is no longer available (qpp.cms.gov/api).
 This data (qpp-measures-data) reformats some of the data from the v1 measures
-API and adds some additional information (see `util/measures/convert-qpp-to-measures.js`
+API and adds some additional information (see [`scripts/measures/archived/scripts/convert-qpp-to-measures.js`](scripts/measures/archived/scripts/convert-qpp-to-measures.js)
 for the exact transformations). The transition to using qpp-measures-data as a
 source of truth for CMS is ongoing and this data may be subject to
 modifications. We are not guaranteeing stability in the API contract for
