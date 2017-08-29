@@ -51,7 +51,7 @@ const config = {
         'Patient Engagement/Experience ': 'patientEngagementExperience',
         'Patient Engagement/Experience': 'patientEngagementExperience',
         'Efficiency': 'efficiency',
-        'IntermediateOutcome': 'intermediateOutcome',
+        'Intermediate Outcome': 'intermediateOutcome',
         'Structure': 'structure',
         'Patient Reported Outcome': 'outcome',
         'Composite': 'outcome',
