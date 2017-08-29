@@ -14,6 +14,16 @@ const parse = require('csv-parse/lib/sync');
  * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-qcdr-measures.js | node scripts/validate-data.js measures
 */
 
+
+/**
+ * [config defines how to generate QCDR measures from origin CSV file]
+ * @type {Object}
+ *
+ *  * `constant_fields` are fields which are the same for all measures being
+ *  created from the CSV input.
+ *  * `source_fields` are fields which should find values in the CSV input.
+ *
+ */
 const config = {
   constant_fields: {
     category: 'quality',
