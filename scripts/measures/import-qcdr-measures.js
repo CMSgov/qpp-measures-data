@@ -1,13 +1,10 @@
 const parse = require('csv-parse/lib/sync');
 
 /**
- * import-qcdr-measures reads a CSV file, takes a config file as an argument, reads
- * CSV from stdin and outputs valid measures using convertCsvToMeasures.js
- * Assumes CSV has a header row.
+ * `import-qcdr-measures` reads a QCDR CSV file and outputs valid measures
+ * using `convertCsvToMeasures` and a config object.
  *
  * example:
- * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-qcdr-measures.js
- * example for CSVs which have no header row:
  * $ cat util/measures/20170825-PIMMS-non-mips_measure_specifications.csv | node ./scripts/measures/import-qcdr-measures.js
  *
  * test:
