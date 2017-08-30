@@ -129,6 +129,12 @@ definitions:
         description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
         type: array
         items: { $ref: #/definitions/performanceOption }
+      isRiskAdjusted:
+        type: boolean
+        default: false
+      vendorId:
+        description: Submissions of the measure are restricted to the organization associated with vendorId.
+        type: string
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
