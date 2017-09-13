@@ -169,6 +169,19 @@ function generateEMAClusters(allMeasures) {
   registryClusterMap
     .forEach(v => emaClusters.push(v));
 
+  // add the current measure to the cluster
+  emaClusters.forEach(ema => {
+    if (ema.clinicalClusters) {
+      let clinicalClusters = [];
+      ema.clinicalClusters.forEach(cc => {
+        let cluster = Object.assign({}, cc, {measureIds: cc.measureIds.concat([ema.measureId])});
+        clinicalClusters.push(cluster);
+        cluster.measureIds = _.uniq(cluster.measureIds);
+      });
+      ema.clinicalClusters = clinicalClusters;
+    }
+  });
+
   // print the JSON back to the stream
   process.stdout.write(JSON.stringify(emaClusters, null, 2));
 }
