@@ -41,6 +41,11 @@ At this time `util/measures/additional-measures.json` includes:
 
 Similarly, `util/benchmarks/additional-benchmarks-2017.json` contains benchmark data that is necessary for scoring but not included in the historical CSV file. Any additional benchmarks should be added to this file, followed by a re-generation of benchmarks data.
 
+### Importing measures from CSV file
+
+`scripts/measures/import-qcdr-measures.js` script handles importing QCDR measures from a CSV and converting them to the qpp-measures-data measure schema. The `convertCsvToMeasures` function can be replicated for new CSVs if appropriate.
+
+
 ## Testing
 
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
