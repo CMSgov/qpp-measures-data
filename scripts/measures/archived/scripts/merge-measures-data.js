@@ -4,8 +4,8 @@
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const aciRelations = require('../../util/measures/aci-measure-relations.json');
-const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
+const aciRelations = require('../../../../util/measures/aci-measure-relations.json');
+const cpcPlusGroups = require('../../../../util/measures/cpc+-measure-groups.json');
 
 let qpp = '';
 
