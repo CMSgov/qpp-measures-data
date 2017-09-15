@@ -31,12 +31,12 @@ describe('clinical cluster functionality', () => {
     var clusters = data.filter(c => c.measureId === '051' && c.submissionMethod === 'registry');
     assert.equal(1, clusters.length);
     var cluster051 = clusters[0];
-    assert.deepEqual(['130'], cluster051.clinicalClusters[0].measureIds);
+    assert.deepEqual(['130', '051'], cluster051.clinicalClusters[0].measureIds);
 
     clusters = data.filter(c => c.measureId === '052' && c.submissionMethod === 'registry');
     assert.equal(1, clusters.length);
     var cluster052 = clusters[0];
-    assert.deepEqual(['130'], cluster052.clinicalClusters[0].measureIds);
+    assert.deepEqual(['130', '052'], cluster052.clinicalClusters[0].measureIds);
   });
 
   it('Cluster input files are processed properly', () => {
