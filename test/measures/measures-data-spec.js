@@ -105,7 +105,7 @@ describe('measures data json', function() {
     });
 
     describe('Some quality measures belong to CPC+ groups', () => {
-      it('MeasureId 309 should be in CPC+ group "C"', () =>
+      it('MeasureId 309 should be in CPC+ group "C"', () => {
         const measure = measuresData.find(m => m.measureId === '309');
         assert.equal(measure.cpcPlusGroup, 'C');
       });
@@ -119,11 +119,11 @@ describe('measures data json', function() {
             if (generated[m.cpcPlusGroup] === undefined) {
               generated[m.cpcPlusGroup] = [];
             }
-            generated[m.cpcPlusGroup].push(m.cpcPlusGroup);
+            generated[m.cpcPlusGroup].push(m.eMeasureId);
+            generated[m.cpcPlusGroup].sort();
           });
-          assert.deepEqual(generated, actualCpcPlusGroups);
+        assert.deepEqual(generated, actualCpcPlusGroups);
       });
     });
-
   });
 });
