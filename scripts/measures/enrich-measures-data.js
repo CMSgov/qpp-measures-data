@@ -4,7 +4,7 @@ const path = require('path');
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
 
-const qpp = fs.readFileSync(path.join(__dirname, '../../measures/measures-data.json'), 'utf8');
+const qpp = fs.readFileSync(path.join(__dirname, '../../staging/measures-data.json'), 'utf8');
 fs.writeFileSync(path.join(__dirname, '../../measures/measures-data.json'), enrichMeasures(JSON.parse(qpp)));
 
 function enrichMeasures(measures) {
