@@ -158,6 +158,5 @@ function enrichCPCPlusMeasures(measures) {
           measure.cpcPlusGroup = match;
         }
       });
-
-  });
+    });
 }
