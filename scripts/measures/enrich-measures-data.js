@@ -1,23 +1,13 @@
 const _ = require('lodash');
 const fs = require('fs');
+const path = require('path');
 
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
 
-var qpp = '';
 
-process.stdin.setEncoding('utf8');
-
-process.stdin.on('readable', () => {
-  var chunk = process.stdin.read();
-  if (chunk !== null) {
-    qpp += chunk;
-  }
-});
-
-process.stdin.on('end', () => {
-  process.stdout.write(enrichMeasures(JSON.parse(qpp, 'utf8')));
-});
+const qpp = fs.readFileSync(path.join(__dirname, '../../measures/measures-data.json'), 'utf8');
+fs.writeFileSync(path.join(__dirname, '../../measures/measures-data.json'), enrichMeasures(JSON.parse(qpp)));
 
 function enrichMeasures(measures) {
   enrichACIMeasures(measures);
@@ -58,7 +48,7 @@ function enrichCPCPlusMeasures(measures) {
       Object.keys(cpcPlusGroups).forEach((groupId) => {
         var match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
         if (match !== undefined) {
-          measure.cpcPlusGroup = match;
+          measure.cpcPlusGroup = groupId;
         }
       });
     });
