@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 1. Enrich `measures-data.json` file, run:
-cat measures/measures-data.json | node scripts/measures/enrich-measures-data.js | tee measures/measures-data.json
+cat measures/measures-data.json | node scripts/measures/enrich-measures-data.js > tee measures/measures-data.json
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
