@@ -12,7 +12,7 @@ const expectedMeasures = require('./fixtures/expected-measures.json');
 
 // Function which executes script and converts output to a JS object.
 const runTest = function(file) {
-  const cmd = 'cat ' + file + ' | node ./scripts/measures/archived/scripts/import-qcdr-measures.js';
+  const cmd = 'cat ' + file + ' | node ./scripts/measures/import-qcdr-measures.js';
   const measuresJson = execSync(cmd, {stdio: 'pipe'}).toString();
   return JSON.parse(measuresJson);
 };
