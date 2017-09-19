@@ -1,11 +1,15 @@
 const chai = require('chai');
 const assert = chai.assert;
 const _ = require('lodash');
+const fs = require('fs');
+const path = require('path');
+const parse = require('csv-parse/lib/sync');
 
 const mipsDataFormat = require('../../index.js');
 const measuresData = mipsDataFormat.getMeasuresData();
 const actualAciRelation = require('../../util/measures/aci-measure-relations.json');
 const actualCpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
+const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname, '../../util/measures/measurePDF-Specification.csv'), 'utf8'));
 
 describe('measures data json', function() {
   const measureIds = _.map(measuresData, 'measureId');
@@ -123,6 +127,32 @@ describe('measures data json', function() {
             generated[m.cpcPlusGroup].sort();
           });
         assert.deepEqual(generated, actualCpcPlusGroups);
+      });
+    });
+
+    describe('Some measures have measureSpecification property', () => {
+      it('contains proper metadata on measures', () => {
+        const validMeasureIds = measuresData
+          .filter(m => m.measureSpecification !== undefined)
+          .map(m => m.measureId);
+        const actual = actualMeasureSpecificationData.reduce(function(acc, [submissionMethod, measureId, link]) {
+          if (validMeasureIds.includes(measureId)) {
+            acc[measureId] = acc[measureId] || {};
+            acc[measureId][submissionMethod] = link;
+          }
+          return acc;
+        }, {});
+        const generated = {};
+        measuresData
+          .filter(m => m.measureSpecification !== undefined)
+          .forEach(m => {
+            generated[m.measureId] = generated[m.measureId] || {};
+            const submissionMethods = Object.keys(m.measureSpecification);
+            submissionMethods.forEach((method) => {
+              generated[m.measureId][method] = m.measureSpecification[method];
+            });
+          });
+        assert.deepEqual(generated, actual);
       });
     });
   });
