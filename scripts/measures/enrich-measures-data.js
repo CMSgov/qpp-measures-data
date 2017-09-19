@@ -56,8 +56,8 @@ function enrichCPCPlusMeasures(measures) {
 
 /**
  * Will add measureSpecification links and it's submission method types to measures.
+ * @param {array} measures
  */
-
 function enrichAddMeasuresSpecification(measures) {
   var csv = parse(fs.readFileSync(path.join(__dirname, '../../util/measures/measurePDF-Specification.csv'), 'utf8'));
   var mappedLinks = csv.reduce(function(acc, [submissionMethod, measureId, link]) {
@@ -66,9 +66,8 @@ function enrichAddMeasuresSpecification(measures) {
     return acc;
   }, {});
   var measureData = measures.map(function(measure) {
-    measure['measureSpecification'] = mappedLinks[measure.measureId];
+    measure.measureSpecification = mappedLinks[measure.measureId];
     return measure;
   });
-  // console.log(measureData);
   return measureData;
 };
