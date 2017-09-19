@@ -26,6 +26,9 @@ definitions:
         description: Year in which the measure was deprecated.
         type: [integer, 'null']
         default: 'null'
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        items: { $ref: #/definitions/measureSpecification }
       measureSets:
         description: ACI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
@@ -135,6 +138,9 @@ definitions:
       vendorId:
         description: Submissions of the measure are restricted to the organization associated with vendorId.
         type: string
+      cpcPlusGroup:
+        description: CPC+ group which the measure belongs
+        type: string
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
@@ -203,6 +209,18 @@ definitions:
       - cmsWebInterface
       - electronicHealthRecord
       - registry
+
+  measureSpecification:
+    type: object
+    properties:
+      default:
+        type: string
+      registry:
+        type: string
+      claims:
+        type: string
+      cmsWebInterface:
+        type: string
 
   measureSets:
     enum:

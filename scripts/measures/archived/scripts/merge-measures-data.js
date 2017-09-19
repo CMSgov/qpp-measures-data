@@ -4,7 +4,8 @@
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const aciRelations = require('../../util/measures/aci-measure-relations.json');
+const aciRelations = require('../../../../util/measures/aci-measure-relations.json');
+
 let qpp = '';
 
 process.stdin.setEncoding('utf8');
