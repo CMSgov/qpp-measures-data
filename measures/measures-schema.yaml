@@ -28,7 +28,7 @@ definitions:
         default: 'null'
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
-        type: object
+        items: { $ref: #/definitions/measureSpecification }
       measureSets:
         description: ACI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
@@ -209,6 +209,18 @@ definitions:
       - cmsWebInterface
       - electronicHealthRecord
       - registry
+
+  measureSpecification:
+    type: object
+    properties:
+      default:
+        type: string
+      registry:
+        type: string
+      claims:
+        type: string
+      cmsWebInterface:
+        type: string
 
   measureSets:
     enum:
