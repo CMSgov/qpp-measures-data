@@ -51,6 +51,9 @@ definitions:
         description: If true, attesting to the measure will qualify the provider for an ACI CEHRT bonus.
         type: boolean
         default: false
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        type: object
     required: [weight, subcategoryId, cehrtEligible]
 
   aciMeasure:
@@ -77,6 +80,9 @@ definitions:
       substitutes:
         description: Identifiers of other ACI measure that can be used instead of the current meausre.
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
+      measureSpecification:
+         description: URL link for Measure Specification PDF to download by Submission Method.
+         type: object
     required: [weight, objective, isRequired, isBonus, measureSets]
 
   qualityMeasure:
@@ -138,6 +144,9 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        type: object
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
 
   performanceStrata:
