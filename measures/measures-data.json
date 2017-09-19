@@ -494,7 +494,10 @@
     "submissionMethods": [
       "cmsWebInterface"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_DM.pdf"
+    }
   },
   {
     "category": "aci",
@@ -512,7 +515,10 @@
     "reportingCategory": "registryBonus",
     "substitutes": [
       "ACI_TRANS_PHCDRR_3"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Clinical Data Registry Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -530,7 +536,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_TRANS_MR_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Clinical Information Reconciliation.pdf"
+    }
   },
   {
     "category": "aci",
@@ -546,7 +555,10 @@
     "isBonus": true,
     "objective": "publicHealthAndClinicalDataRegistryReporting",
     "reportingCategory": "registryBonus",
-    "substitutes": []
+    "substitutes": [],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Electronic Case Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -566,7 +578,10 @@
       "ACI_LVPP_1",
       "ACI_TRANS_EP_1",
       "ACI_TRANS_LVPP_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_e-Prescribing.pdf"
+    }
   },
   {
     "category": "aci",
@@ -584,7 +599,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_TRANS_PHCDRR_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Immunization Registry Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -600,7 +618,10 @@
     "isBonus": false,
     "objective": "coordinationOfCareThroughPatientEngagement",
     "reportingCategory": "performanceBonus",
-    "substitutes": []
+    "substitutes": [],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Patient-Generated Health Data.pdf"
+    }
   },
   {
     "category": "aci",
@@ -618,7 +639,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_TRANS_PSE_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Patient-Specific Education.pdf"
+    }
   },
   {
     "category": "aci",
@@ -636,7 +660,10 @@
     "reportingCategory": "base",
     "substitutes": [
       "ACI_TRANS_PEA_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Provide Patient Access.pdf"
+    }
   },
   {
     "category": "aci",
@@ -652,7 +679,10 @@
     "isBonus": true,
     "objective": "publicHealthAndClinicalDataRegistryReporting",
     "reportingCategory": "registryBonus",
-    "substitutes": []
+    "substitutes": [],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Public Health Registry Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -672,7 +702,10 @@
       "ACI_LVITC_1",
       "ACI_TRANS_HIE_1",
       "ACI_TRANS_LVOTC_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Request-Accept Summary of Care.pdf"
+    }
   },
   {
     "category": "aci",
@@ -690,7 +723,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_TRANS_SM_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Secure Messaging.pdf"
+    }
   },
   {
     "category": "aci",
@@ -708,7 +744,10 @@
     "reportingCategory": "base",
     "substitutes": [
       "ACI_TRANS_PPHI_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Security Risk Analysis.pdf"
+    }
   },
   {
     "category": "aci",
@@ -728,7 +767,10 @@
       "ACI_LVOTC_1",
       "ACI_TRANS_HIE_1",
       "ACI_TRANS_LVOTC_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Send a Summary of Care.pdf"
+    }
   },
   {
     "category": "aci",
@@ -746,7 +788,10 @@
     "reportingCategory": "registryBonus",
     "substitutes": [
       "ACI_TRANS_PHCDRR_2"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_Syndromic Surveillance Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -764,7 +809,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_TRANS_PEA_2"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Measure Specifications/MIPS ACI Measure_View Download or Transmit (VDT).pdf"
+    }
   },
   {
     "category": "aci",
@@ -786,7 +834,10 @@
       "ACI_TRANS_LVPP_1",
       "ACI_LVPP_1",
       "ACI_EP_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_e-Prescribing.pdf"
+    }
   },
   {
     "category": "aci",
@@ -810,7 +861,10 @@
       "ACI_LVOTC_1",
       "ACI_HIE_2",
       "ACI_LVITC_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Health Information Exchange.pdf"
+    }
   },
   {
     "category": "aci",
@@ -830,7 +884,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_PHCDRR_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Immunization Registry Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -850,7 +907,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_HIE_3"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Medication Reconciliation.pdf"
+    }
   },
   {
     "category": "aci",
@@ -870,7 +930,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_PEA_2"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Patient-Specific Education.pdf"
+    }
   },
   {
     "category": "aci",
@@ -890,7 +953,10 @@
     "reportingCategory": "base",
     "substitutes": [
       "ACI_PEA_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Provide Patient Access.pdf"
+    }
   },
   {
     "category": "aci",
@@ -910,7 +976,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_CCTPE_2"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Secure Messaging.pdf"
+    }
   },
   {
     "category": "aci",
@@ -930,7 +999,10 @@
     "reportingCategory": "base",
     "substitutes": [
       "ACI_PPHI_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Security Risk Analysis.pdf"
+    }
   },
   {
     "category": "aci",
@@ -950,7 +1022,10 @@
     "reportingCategory": "registryBonus",
     "substitutes": [
       "ACI_PHCDRR_5"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Specialized Registry Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -970,7 +1045,10 @@
     "reportingCategory": "registryBonus",
     "substitutes": [
       "ACI_PHCDRR_2"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_Syndromic Surveillance Reporting.pdf"
+    }
   },
   {
     "category": "aci",
@@ -990,7 +1068,10 @@
     "reportingCategory": "performanceBonus",
     "substitutes": [
       "ACI_CCTPE_1"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/aci_specifications/Transition Measure Specifications/MIPS 2017 ACI Transition Measure_View Download or Transmit (VDT).pdf"
+    }
   },
   {
     "category": "ia",
@@ -2127,7 +2208,11 @@
       "otolaryngology",
       "generalPracticeFamilyMedicine",
       "pediatrics"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_093_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_093_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2159,7 +2244,11 @@
       "emergencyMedicine",
       "otolaryngology",
       "pediatrics"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_091_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_091_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2207,7 +2296,10 @@
       "pediatrics"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22a639d81762",
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS136v6.html"
+    }
   },
   {
     "category": "quality",
@@ -2236,7 +2328,10 @@
     ],
     "measureSets": [
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_383_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2272,7 +2367,10 @@
       "registry"
     ],
     "measureSets": [],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_122_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2299,7 +2397,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_329_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2326,7 +2427,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_330_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2353,7 +2457,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_403_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2382,7 +2489,10 @@
     ],
     "measureSets": [
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_325_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2415,7 +2525,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-503f-a1fc-0150-de8350a220c3"
+    "eMeasureUuid": "40280381-503f-a1fc-0150-de8350a220c3",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS161v5.html"
+    }
   },
   {
     "category": "quality",
@@ -2444,7 +2557,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_384_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2473,7 +2589,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_385_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2505,7 +2624,10 @@
       "internalMedicine",
       "otolaryngology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_331_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2537,7 +2659,10 @@
       "internalMedicine",
       "otolaryngology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_332_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2569,7 +2694,10 @@
       "internalMedicine",
       "otolaryngology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_333_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2601,7 +2729,10 @@
       "internalMedicine",
       "otolaryngology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_334_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2630,7 +2761,10 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_439_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2660,7 +2794,11 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_140_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_140_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2690,7 +2828,11 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_014_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_014_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2741,7 +2883,10 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_386_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2770,7 +2915,10 @@
     ],
     "measureSets": [
       "generalSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_354_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2799,7 +2947,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_404_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2829,7 +2980,10 @@
     "measureSets": [
       "internalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_387_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2878,7 +3032,10 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22a112d2172a",
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS128v5.html"
+    }
   },
   {
     "category": "quality",
@@ -2905,7 +3062,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_421_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2935,7 +3095,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_405_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_405_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2965,7 +3129,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_406_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_406_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -2995,7 +3163,11 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_320_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_320_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3034,7 +3206,10 @@
       "generalPracticeFamilyMedicine",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-424a166015d1"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-424a166015d1",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_066_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3072,7 +3247,10 @@
       "generalPracticeFamilyMedicine",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-42810251160f"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-42810251160f",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_065_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3102,7 +3280,11 @@
     ],
     "measureSets": [
       "hospitalists"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_407_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_407_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3131,7 +3313,10 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_448_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3163,7 +3348,11 @@
       "internalMedicine",
       "cardiology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_326_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_326_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3194,7 +3383,10 @@
       "internalMedicine",
       "emergencyMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_116_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3224,7 +3416,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_249_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_249_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3251,7 +3447,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_440_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3283,7 +3482,10 @@
       "interventionalRadiology",
       "obstetricsGynecology",
       "urology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_265_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3316,7 +3518,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-503f-a1fc-0150-67942bbc07d7"
+    "eMeasureUuid": "40280381-503f-a1fc-0150-67942bbc07d7",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS169v5.html"
+    }
   },
   {
     "category": "quality",
@@ -3346,7 +3551,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_099_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_099_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3389,7 +3598,12 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-229c4ea3170c",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_112_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV5.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_112_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3440,7 +3654,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_243_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3469,7 +3686,10 @@
     ],
     "measureSets": [
       "cardiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_322_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3498,7 +3718,10 @@
     ],
     "measureSets": [
       "cardiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_323_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3527,7 +3750,10 @@
     ],
     "measureSets": [
       "cardiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_324_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3577,7 +3803,11 @@
       "mentalBehavioralHealth",
       "plasticSurgery",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_047_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_047_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3614,7 +3844,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1f44d4980f0f"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1f44d4980f0f",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_191_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3651,7 +3884,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a2308830b04"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a2308830b04",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_192_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3680,7 +3916,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_303_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3709,7 +3948,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_304_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3738,7 +3980,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_389_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3767,7 +4012,10 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_388_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3805,7 +4053,10 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-229bdcab1702",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS124v5.html"
+    }
   },
   {
     "category": "quality",
@@ -3841,7 +4092,10 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-503f-a1fc-0151-11602d4d2909"
+    "eMeasureUuid": "40280381-503f-a1fc-0151-11602d4d2909",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS177v5.html"
+    }
   },
   {
     "category": "quality",
@@ -3876,7 +4130,10 @@
     "measureSets": [
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4ba57f0b8a"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4ba57f0b8a",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS117v5.html"
+    }
   },
   {
     "category": "quality",
@@ -3909,7 +4166,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1f39c24d0eef"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1f39c24d0eef",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS75v5.html"
+    }
   },
   {
     "category": "quality",
@@ -3938,7 +4198,10 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_447_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -3975,7 +4238,10 @@
       "obstetricsGynecology",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-51f0-825b-0152-22b52da917ba"
+    "eMeasureUuid": "40280381-51f0-825b-0152-22b52da917ba",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS153v5.html"
+    }
   },
   {
     "category": "quality",
@@ -4003,7 +4269,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_052_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_052_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4031,7 +4301,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_051_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_051_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4058,7 +4332,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_409_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4113,7 +4390,10 @@
       "mentalBehavioralHealth",
       "plasticSurgery"
     ],
-    "eMeasureUuid": "40280381-5118-2f4e-0151-59fb81bf1055"
+    "eMeasureUuid": "40280381-5118-2f4e-0151-59fb81bf1055",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS50v5.html"
+    }
   },
   {
     "category": "quality",
@@ -4143,7 +4423,11 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_185_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_185_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4173,7 +4457,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_100_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_100_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4214,7 +4502,12 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22a1e7e81737",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_113_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV6.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_113_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4244,7 +4537,11 @@
     ],
     "measureSets": [
       "preventiveMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_024_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_024_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4290,7 +4587,12 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22b98cff181a",
-    "cpcPlusGroup": "A"
+    "cpcPlusGroup": "A",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_236_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_HTN2.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_236_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4319,7 +4621,10 @@
     ],
     "measureSets": [
       "thoracicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_165_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4348,7 +4653,10 @@
     ],
     "measureSets": [
       "thoracicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_167_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4377,7 +4685,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_044_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4406,7 +4717,10 @@
     ],
     "measureSets": [
       "thoracicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_164_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4435,7 +4749,10 @@
     ],
     "measureSets": [
       "thoracicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_166_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4464,7 +4781,10 @@
     ],
     "measureSets": [
       "thoracicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_168_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4491,7 +4811,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_043_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4520,7 +4843,10 @@
     ],
     "measureSets": [
       "cardiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_118_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4549,7 +4875,10 @@
     ],
     "measureSets": [
       "cardiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_006_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4598,7 +4927,10 @@
       "generalPracticeFamilyMedicine"
     ],
     "overallAlgorithm": "weightedAverage",
-    "eMeasureUuid": "40280381-52fc-3a32-0153-2e772ecc10c0"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-2e772ecc10c0",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_007_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4628,7 +4960,10 @@
     "measureSets": [
       "neurology",
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_288_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4666,7 +5001,10 @@
       "mentalBehavioralHealth"
     ],
     "eMeasureUuid": "40280381-52fc-3a32-0153-1a401cc10b57",
-    "cpcPlusGroup": "B"
+    "cpcPlusGroup": "B",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS149v5.html"
+    }
   },
   {
     "category": "quality",
@@ -4696,7 +5034,10 @@
     "measureSets": [
       "neurology",
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_286_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4726,7 +5067,10 @@
     "measureSets": [
       "neurology",
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_282_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4756,7 +5100,10 @@
     "measureSets": [
       "neurology",
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_284_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4786,7 +5133,10 @@
     "measureSets": [
       "neurology",
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_283_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4815,7 +5165,10 @@
     ],
     "measureSets": [
       "mentalBehavioralHealth"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_411_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4855,7 +5208,11 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-5118-2f4e-0151-3a9382cd09ba",
-    "cpcPlusGroup": "A"
+    "cpcPlusGroup": "A",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_370_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_MH1.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4912,7 +5269,10 @@
       "mentalBehavioralHealth"
     ],
     "overallAlgorithm": "weightedAverage",
-    "eMeasureUuid": "40280381-503f-a1fc-0150-afe320c01761"
+    "eMeasureUuid": "40280381-503f-a1fc-0150-afe320c01761",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS160v5.html"
+    }
   },
   {
     "category": "quality",
@@ -4952,7 +5312,11 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22a24cdd1740",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_117_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_117_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -4989,7 +5353,10 @@
       "internalMedicine",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-51f0-825b-0152-229b7b2f16f9"
+    "eMeasureUuid": "40280381-51f0-825b-0152-229b7b2f16f9",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS123v5.html"
+    }
   },
   {
     "category": "quality",
@@ -5029,7 +5396,11 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-229afff616ee",
-    "cpcPlusGroup": "A"
+    "cpcPlusGroup": "A",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_001_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_001_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5065,7 +5436,10 @@
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-528a-60ff-0152-d7504e61249a"
+    "eMeasureUuid": "40280381-528a-60ff-0152-d7504e61249a",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_119_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5092,7 +5466,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_126_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5119,7 +5496,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_127_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5157,7 +5537,11 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a31050d0b24"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a31050d0b24",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_019_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_019_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5193,7 +5577,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4838b80b79"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4838b80b79",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS167v5.html"
+    }
   },
   {
     "category": "quality",
@@ -5254,7 +5641,11 @@
       "plasticSurgery",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-3d64af97147b"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-3d64af97147b",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_130_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_130_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5286,7 +5677,10 @@
       "neurology",
       "physicalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_412_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5313,7 +5707,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_413_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5345,7 +5742,11 @@
       "internalMedicine",
       "mentalBehavioralHealth",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_181_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_181_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5375,7 +5776,11 @@
     ],
     "measureSets": [
       "emergencyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_415_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_415_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5405,7 +5810,11 @@
     ],
     "measureSets": [
       "emergencyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_416_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_416_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5435,7 +5844,11 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_268_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_268_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5467,7 +5880,10 @@
       "neurology",
       "physicalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_414_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5498,7 +5914,11 @@
     "measureSets": [
       "internalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_155_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_155_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5529,7 +5949,11 @@
     "measureSets": [
       "internalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_154_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_154_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5565,7 +5989,11 @@
     ],
     "measureSets": [],
     "eMeasureUuid": "40280381-51f0-825b-0152-22aae8a21778",
-    "cpcPlusGroup": "B"
+    "cpcPlusGroup": "B",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS139v5.html",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_CARE2.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5600,7 +6028,10 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "overallAlgorithm": "overallStratumOnly"
+    "overallAlgorithm": "overallStratumOnly",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_391_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5630,7 +6061,11 @@
     ],
     "measureSets": [
       "physicalMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_182_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_182_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5666,7 +6101,10 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "eMeasureUuid": "40280381-51f0-825b-0152-227617db152e"
+    "eMeasureUuid": "40280381-51f0-825b-0152-227617db152e",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS56v5.html"
+    }
   },
   {
     "category": "quality",
@@ -5702,7 +6140,10 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "eMeasureUuid": "40280381-51f0-825b-0152-227ce2c81597"
+    "eMeasureUuid": "40280381-51f0-825b-0152-227ce2c81597",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS66v5.html"
+    }
   },
   {
     "category": "quality",
@@ -5736,7 +6177,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1f3f70ca0eff"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1f3f70ca0eff",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS90v6.html"
+    }
   },
   {
     "category": "quality",
@@ -5763,7 +6207,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_222_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5790,7 +6237,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_219_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5817,7 +6267,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_223_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5844,7 +6297,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_218_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5871,7 +6327,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_217_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5898,7 +6357,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_220_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5925,7 +6387,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_221_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -5965,7 +6430,10 @@
       "hospitalists",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-62239c5d1ef6"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-62239c5d1ef6",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_005_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6004,7 +6472,10 @@
       "hospitalists",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a3981870b45"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a3981870b45",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_008_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6031,7 +6502,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_070_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6058,7 +6532,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_069_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6085,7 +6562,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_067_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6112,7 +6592,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_068_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6141,7 +6624,10 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_390_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6172,7 +6658,10 @@
       "internalMedicine",
       "gastroenterology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_401_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6201,7 +6690,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_449_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6258,7 +6750,10 @@
       "pediatrics"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-2273af5a150b",
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS52v5.html"
+    }
   },
   {
     "category": "quality",
@@ -6287,7 +6782,10 @@
     ],
     "measureSets": [
       "pediatrics"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_205_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6314,7 +6812,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_340_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6343,7 +6844,10 @@
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_338_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6389,7 +6893,10 @@
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_392_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6423,7 +6930,10 @@
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "overallAlgorithm": "weightedAverage"
+    "overallAlgorithm": "weightedAverage",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_348_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6452,7 +6962,10 @@
     ],
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_393_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6486,7 +6999,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-51f0-825b-0152-227c2f851589"
+    "eMeasureUuid": "40280381-51f0-825b-0152-227c2f851589",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS65v6.html"
+    }
   },
   {
     "category": "quality",
@@ -6513,7 +7029,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_262_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6556,7 +7075,10 @@
       "generalPracticeFamilyMedicine",
       "pediatrics"
     ],
-    "overallAlgorithm": "sumNumerators"
+    "overallAlgorithm": "sumNumerators",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_394_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6585,7 +7107,10 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_275_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6614,7 +7139,10 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_271_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6660,7 +7188,10 @@
     "measureSets": [],
     "eMeasureUuid": "40280381-528a-60ff-0152-8e089ed20376",
     "overallAlgorithm": "simpleAverage",
-    "cpcPlusGroup": "B"
+    "cpcPlusGroup": "B",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS137v5.html"
+    }
   },
   {
     "category": "quality",
@@ -6687,7 +7218,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_441_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6728,7 +7262,12 @@
       "cardiology",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-5736a9401b9f"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-5736a9401b9f",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_204_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_IVD2.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_204_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6757,7 +7296,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_451_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6787,7 +7329,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_395_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_395_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6817,7 +7363,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_396_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_396_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6850,7 +7400,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-51f0-825b-0152-2295c55c16aa"
+    "eMeasureUuid": "40280381-51f0-825b-0152-2295c55c16aa",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS82v4.html"
+    }
   },
   {
     "category": "quality",
@@ -6877,7 +7430,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_335_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6904,7 +7460,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_336_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6935,7 +7494,10 @@
       "allergyImmunology",
       "generalPracticeFamilyMedicine",
       "pediatrics"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_444_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -6973,7 +7535,11 @@
       "registry"
     ],
     "measureSets": [],
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_046_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_046_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7002,7 +7568,10 @@
     ],
     "measureSets": [
       "dermatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_137_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7031,7 +7600,10 @@
     ],
     "measureSets": [
       "dermatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_138_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7060,7 +7632,10 @@
     ],
     "measureSets": [
       "dermatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_224_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7090,7 +7665,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_397_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_397_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7120,7 +7699,10 @@
     "measureSets": [
       "obstetricsGynecology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_443_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7150,7 +7732,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_147_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_147_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7187,7 +7773,10 @@
       "generalOncology",
       "radiationOncology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4425a90b6c"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4425a90b6c",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_143_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7216,7 +7805,10 @@
     ],
     "measureSets": [
       "radiationOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_144_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7246,7 +7838,11 @@
     ],
     "measureSets": [
       "radiationOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_156_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_156_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7276,7 +7872,10 @@
     "measureSets": [
       "internalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_400_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7303,7 +7902,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_446_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7335,7 +7937,10 @@
       "neurology",
       "physicalMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_408_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7390,7 +7995,10 @@
       "allergyImmunology",
       "generalPracticeFamilyMedicine"
     ],
-    "overallAlgorithm": "overallStratumOnly"
+    "overallAlgorithm": "overallStratumOnly",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_398_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7419,7 +8027,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_364_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7448,7 +8059,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_362_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7477,7 +8091,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_360_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7506,7 +8123,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_361_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7535,7 +8155,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_363_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7564,7 +8187,10 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_359_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7598,7 +8224,11 @@
       "physicalMedicine",
       "preventiveMedicine",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_109_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_109_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7630,7 +8260,11 @@
       "internalMedicine",
       "obstetricsGynecology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_418_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_418_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7660,7 +8294,11 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_419_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_419_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7690,7 +8328,11 @@
     ],
     "measureSets": [
       "physicalMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_131_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_131_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7719,7 +8361,10 @@
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_342_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7748,7 +8393,10 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_291_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7777,7 +8425,10 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_294_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7806,7 +8457,10 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_290_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7835,7 +8489,10 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_293_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7869,7 +8526,10 @@
       "thoracicSurgery",
       "urology",
       "plasticSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_358_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7898,7 +8558,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_452_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7925,7 +8588,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_327_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7952,7 +8618,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_328_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -7979,7 +8648,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_428_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8007,7 +8679,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_429_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_429_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8037,7 +8713,11 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_422_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_422_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8065,7 +8745,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_423_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_423_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8099,7 +8783,11 @@
       "otolaryngology",
       "thoracicSurgery",
       "plasticSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_021_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_021_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8133,7 +8821,11 @@
       "otolaryngology",
       "thoracicSurgery",
       "plasticSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_023_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_023_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8162,7 +8854,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_424_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8191,7 +8886,10 @@
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_442_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8219,7 +8917,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_425_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_425_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8258,7 +8960,12 @@
       "allergyImmunology",
       "preventiveMedicine"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a646a2a0bfa"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a646a2a0bfa",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_111_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV8.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_111_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8287,7 +8994,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_426_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8316,7 +9026,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_427_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8350,7 +9063,10 @@
       "electronicHealthRecord"
     ],
     "measureSets": [],
-    "eMeasureUuid": "40280381-5223-eb6b-0152-6a1558f51bdc"
+    "eMeasureUuid": "40280381-5223-eb6b-0152-6a1558f51bdc",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS158v5.html"
+    }
   },
   {
     "category": "quality",
@@ -8377,7 +9093,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_263_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8408,7 +9127,11 @@
     "measureSets": [
       "anesthesiology",
       "hospitalists"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_076_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_076_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8437,7 +9160,10 @@
     ],
     "measureSets": [
       "anesthesiology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_430_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8492,7 +9218,12 @@
       "plasticSurgery",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-5118-2f4e-0151-20a31a780368"
+    "eMeasureUuid": "40280381-5118-2f4e-0151-20a31a780368",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_128_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV9.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_128_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8536,7 +9267,12 @@
       "generalPracticeFamilyMedicine",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-395ce63513af"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-395ce63513af",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_110_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV7.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_110_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8579,7 +9315,12 @@
       "generalPracticeFamilyMedicine",
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-537c-f767-0153-c378bd7207a5"
+    "eMeasureUuid": "40280381-537c-f767-0153-c378bd7207a5",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_134_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV12.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_134_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8641,7 +9382,11 @@
       "plasticSurgery",
       "generalPracticeFamilyMedicine"
     ],
-    "eMeasureUuid": "40280381-528a-60ff-0152-94967c8a0860"
+    "eMeasureUuid": "40280381-528a-60ff-0152-94967c8a0860",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_317_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_317_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8703,7 +9448,12 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-503f-a1fc-0150-d33f5b0a1b8c",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_226_Registry.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV10.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_226_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8744,7 +9494,10 @@
       "preventiveMedicine",
       "mentalBehavioralHealth",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_431_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8779,7 +9532,10 @@
     "measureSets": [
       "pediatrics"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1f6962df0f9c"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1f6962df0f9c",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS74v6.html"
+    }
   },
   {
     "category": "quality",
@@ -8817,7 +9573,11 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "eMeasureUuid": "40280381-52fc-3a32-0153-1a3471e70b34"
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a3471e70b34",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_012_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_012_Claims.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8847,7 +9607,11 @@
     ],
     "measureSets": [
       "ophthalmology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_141_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_141_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8876,7 +9640,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_457_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8905,7 +9672,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_455_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8934,7 +9704,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_456_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8963,7 +9736,10 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_432_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -8992,7 +9768,10 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_433_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9021,7 +9800,10 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_434_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9050,7 +9832,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_454_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9079,7 +9864,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_453_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9108,7 +9896,10 @@
     ],
     "measureSets": [
       "urology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_104_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9147,7 +9938,10 @@
       "radiationOncology",
       "urology"
     ],
-    "eMeasureUuid": "40280381-503f-a1fc-0151-10de35992766"
+    "eMeasureUuid": "40280381-503f-a1fc-0151-10de35992766",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_102_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9177,7 +9971,11 @@
     ],
     "measureSets": [
       "dermatology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_410_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_410_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9207,7 +10005,11 @@
     ],
     "measureSets": [
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_435_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_435_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9237,7 +10039,11 @@
     ],
     "measureSets": [
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_251_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_251_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9267,7 +10073,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_436_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_436_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9298,7 +10108,11 @@
     "measureSets": [
       "generalOncology",
       "pathology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_250_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_250_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9328,7 +10142,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_145_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_145_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9358,7 +10176,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_146_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_146_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9388,7 +10210,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_225_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_225_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9418,7 +10244,11 @@
     ],
     "measureSets": [
       "diagnosticRadiology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_195_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_195_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9448,7 +10278,10 @@
     "measureSets": [
       "interventionalRadiology",
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_344_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9477,7 +10310,10 @@
     ],
     "measureSets": [
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_260_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9506,7 +10342,10 @@
     ],
     "measureSets": [
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_347_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9536,7 +10375,10 @@
     "measureSets": [
       "interventionalRadiology",
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_259_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9563,7 +10405,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_417_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9592,7 +10437,10 @@
     ],
     "measureSets": [
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_258_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9622,7 +10470,10 @@
     "measureSets": [
       "interventionalRadiology",
       "vascularSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_345_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9649,7 +10500,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_346_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9677,7 +10531,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_437_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_437_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9705,7 +10563,11 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_261_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_261_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9735,7 +10597,10 @@
     "measureSets": [
       "orthopedicSurgery",
       "rheumatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_179_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9765,7 +10630,10 @@
     "measureSets": [
       "orthopedicSurgery",
       "rheumatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_178_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9795,7 +10663,10 @@
     "measureSets": [
       "orthopedicSurgery",
       "rheumatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_180_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9824,7 +10695,10 @@
     ],
     "measureSets": [
       "rheumatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_177_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9853,7 +10727,10 @@
     ],
     "measureSets": [
       "rheumatology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_176_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9883,7 +10760,11 @@
     ],
     "measureSets": [
       "emergencyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_255_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_255_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9910,7 +10791,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_445_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9939,7 +10823,10 @@
     ],
     "measureSets": [
       "gastroenterology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_343_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9969,7 +10856,11 @@
     ],
     "measureSets": [
       "preventiveMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_039_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_039_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -9996,7 +10887,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_264_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10023,7 +10917,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_279_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10050,7 +10947,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_276_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10077,7 +10977,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_278_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10104,7 +11007,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_277_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10131,7 +11037,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_257_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10163,7 +11072,11 @@
       "internalMedicine",
       "cardiology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2017 WI_PREV13.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_438_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10194,7 +11107,11 @@
     "measureSets": [
       "hospitalists",
       "neurology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_032_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_032_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10221,7 +11138,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_187_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10253,7 +11173,10 @@
       "otolaryngology",
       "vascularSurgery",
       "plasticSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_357_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10305,7 +11228,10 @@
       "plasticSurgery",
       "generalPracticeFamilyMedicine",
       "pediatrics"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_402_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10334,7 +11260,10 @@
     ],
     "measureSets": [
       "orthopedicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_353_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10363,7 +11292,10 @@
     ],
     "measureSets": [
       "orthopedicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_352_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10392,7 +11324,10 @@
     ],
     "measureSets": [
       "orthopedicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_350_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10421,7 +11356,10 @@
     ],
     "measureSets": [
       "orthopedicSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_351_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10450,7 +11388,10 @@
     ],
     "measureSets": [
       "generalOncology"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_450_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10481,7 +11422,10 @@
       "dermatology",
       "rheumatology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_337_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10511,7 +11455,11 @@
     ],
     "measureSets": [
       "emergencyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_254_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_254_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10540,7 +11488,10 @@
     ],
     "measureSets": [
       "generalSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_356_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10569,7 +11520,10 @@
     ],
     "measureSets": [
       "generalSurgery"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_355_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10601,7 +11555,11 @@
       "obstetricsGynecology",
       "preventiveMedicine",
       "urology"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_048_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_048_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10634,7 +11592,11 @@
       "obstetricsGynecology",
       "urology",
       "generalPracticeFamilyMedicine"
-    ]
+    ],
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_050_Claims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_050_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10679,7 +11641,10 @@
     "measureSets": [],
     "overallAlgorithm": "overallStratumOnly",
     "eMeasureUuid": "40280381-52fc-3a32-0153-56d2b4f01ae5",
-    "cpcPlusGroup": "B"
+    "cpcPlusGroup": "B",
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_238_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10718,7 +11683,10 @@
       "generalPracticeFamilyMedicine"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22ba7621182e",
-    "cpcPlusGroup": "C"
+    "cpcPlusGroup": "C",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS166v6.html"
+    }
   },
   {
     "category": "quality",
@@ -10745,7 +11713,10 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_420_Registry.pdf"
+    }
   },
   {
     "category": "quality",
@@ -10802,6 +11773,9 @@
       "pediatrics"
     ],
     "eMeasureUuid": "40280381-51f0-825b-0152-22b695b217dc",
-    "overallAlgorithm": "simpleAverage"
+    "overallAlgorithm": "simpleAverage",
+    "measureSpecification": {
+      "registry": "https://ecqi.healthit.gov/system/files/ecqm/measures/CMS155v5.html"
+    }
   }
 ]
