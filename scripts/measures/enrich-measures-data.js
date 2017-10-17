@@ -12,6 +12,7 @@ function enrichMeasures(measures) {
   enrichACIMeasures(measures);
   enrichCPCPlusMeasures(measures);
   enrichAddMeasuresSpecification(measures);
+  enrichInverseMeasures(measures);
   return JSON.stringify(measures, null, 2);
 };
 
@@ -71,3 +72,16 @@ function enrichAddMeasuresSpecification(measures) {
   });
   return measureData;
 };
+
+/**
+ * Add `isInverse` attribute to measures based on inverse-measures.json
+ * The JSON document used to derive this is generated using get-inverse-measures-from-pdfs.js
+ */
+function enrichInverseMeasures(measures) {
+  let inverseMeasures = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/inverse-measures.json')));
+  measures.forEach(measure => {
+    if (inverseMeasures.hasOwnProperty(measure.measureId)) {
+      measure.isInverse = inverseMeasures[measure.measureId];
+    }
+  });
+}
