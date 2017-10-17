@@ -11,26 +11,7 @@
 
 // Libraries
 const _ = require('lodash');
-const fs = require('fs');
-const parse = require('csv-parse/lib/sync');
-const path = require('path');
 // Constants
-const BENCHMARK_CSV_COLUMNS = [
-  'measureName',
-  'qualityId',
-  'submissionMethod',
-  'measureType',
-  'benchmark',
-  'decile3',
-  'decile4',
-  'decile5',
-  'decile6',
-  'decile7',
-  'decile8',
-  'decile9',
-  'decile10',
-  'isToppedOut'
-];
 const CEHRT_ELIGABLE_IA_MEASURE_IDS = [
   'IA_AHE_2',
   'IA_BE_1',
@@ -55,32 +36,10 @@ const CMS_WEB_INTERFACE_INELIGIBLE_QUALITY_MEASURE_IDS = [
   '001',
   '117'
 ];
-// Utils
-const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
-// Data
-const benchmarksData = fs.readFileSync(path.join(__dirname, '../../util/benchmarks/2015.csv'), 'utf8');
-const benchmarkRecords = parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4});
 // Commandline arguments
 const category = process.argv[2] || 'ia';
 // Variables
-const measureIdToIsInverseMap = {};
 let qpp = '';
-
-benchmarkRecords.forEach(function(record) {
-  // NOTE: a measureId is not unique per record.
-  // A measureId and submissionMethod combination are unique.
-  // Because quality ids are not unique we need to make sure that measures that
-  // are inverse do not get reset to the default due to submission methods that
-  // do not have decile data. For example, 378 EHR has decile data and can be
-  // determined to be an inverse measure, but 378 Registry/QCDR does not have
-  // decile data and would be determined to be a direct measure by default.
-  //
-  // A measure's benchmarks are all inverse or all direct, regardless of the
-  // submission method.
-  if (!measureIdToIsInverseMap[record.qualityId]) {
-    measureIdToIsInverseMap[record.qualityId] = isInverseBenchmarkRecord(record);
-  }
-});
 
 process.stdin.setEncoding('utf8');
 
@@ -223,7 +182,7 @@ function parseQpp(json) {
           }[method] || method;
           return formatString(method);
         });
-        // Certain measures are ineligible for certain submission methods 
+        // Certain measures are ineligible for certain submission methods
         obj.submissionMethods = _.filter(unabbrieviatedMethods, (value) => {
           return !(_.includes(CMS_WEB_INTERFACE_INELIGIBLE_QUALITY_MEASURE_IDS, obj.measureId) && value === 'cmsWebInterface');
         });
@@ -232,8 +191,6 @@ function parseQpp(json) {
           return formatString(speciality);
         });
       } else if (category === 'quality') {
-        // isInverse defaults to false;
-        obj.isInverse = measureIdToIsInverseMap[obj.measureId.replace(/^0*/, '')] || false;
         // metricType for quality defaults to singlePerformanceRate
         obj.metricType = 'singlePerformanceRate';
         obj.strata = [];
