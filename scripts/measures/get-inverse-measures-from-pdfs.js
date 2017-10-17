@@ -1,7 +1,7 @@
 // running this will print out whether each measure is an inverse measure
 // claims pdfs can be downloaded from https://qpp.cms.gov/docs/QPP_quality_measure_specifications.zip
-// unzip and give the path to the Claims-Quality-Measures
-// usage ./get-inverse-measures-from-pdfs.js <path to folder of claims quality measures pdfs>
+// unzip and give the path to the Claims-Registry-Measures directory
+// usage ./get-inverse-measures-from-pdfs.js <path to folder of Claims-Registry-Measures pdfs>
 
 const fs = require('fs');
 const program = require('commander');
