@@ -8,6 +8,8 @@ const program = require('commander');
 const pdfToText = require('pdf-to-text');
 const p = require('path');
 
+const outputPath = '../../util/measures/inverse-measures.json';
+
 let folderPath = null;
 
 function setPath(path) {
@@ -27,13 +29,15 @@ if (!folderPath) {
 
 function getIsInverse(path, cb) {
   pdfToText.pdfToText(path, function(err, data) {
+    let isInverse = false;
+
     if (err) {
-      cb(false);
+      console.log('Error processing PDF: ' + path + ' - ' + err);
+      cb(isInverse);
       return;
     }
 
     let found = data.match(/inverse measure/i); // ignore case
-    let isInverse = false;
 
     if (found) {
       isInverse = true;
@@ -52,8 +56,17 @@ const groupedFiles = fs.readdirSync(folderPath).reduce(function(arr, current) {
 }, {});
 
 const qualityIds = Object.keys(groupedFiles);
+const output = {};
+
 qualityIds.forEach(function(qualityId, i) {
   getIsInverse(p.join(folderPath, groupedFiles[qualityId][0]), function(isInverse) {
-    console.log(qualityId + ' : ' + isInverse);
+    output[qualityId] = isInverse;
   });
 });
+
+// the PDF processing package we are using is async but doesn't support promises, so there's no intelligent
+// way to wait for it to finish. This will write the output after ten seconds.
+// TODO switch to a promise-supporting PDF package
+setTimeout(function() {
+  fs.writeFileSync(p.join(__dirname, outputPath), JSON.stringify(output, null, 2));
+}, 10000);
