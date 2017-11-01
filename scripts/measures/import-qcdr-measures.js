@@ -98,7 +98,7 @@ const config = {
         default: false
       }
     },
-    primarySteward: 22,
+    primarySteward: 22
   }
 };
 
@@ -133,7 +133,7 @@ const convertCsvToMeasures = function(records, config) {
           // one set max will contain true columns ('Y'). Determine
           // which set does and use the corresponding mapTo value. If none of
           // the sets do, use the default.
-          _.each(columnObject.mappings['Y'], function (option) {
+          _.each(columnObject.mappings['Y'], function(option) {
             let mapToValue = _.find(option.indices, function(index) {
               return record[index] === 'Y';
             });
@@ -145,7 +145,7 @@ const convertCsvToMeasures = function(records, config) {
           });
 
           // If none of the columns contain a true value, use the default
-          if(_.isEmpty(newMeasure[measureKey])) {
+          if (_.isEmpty(newMeasure[measureKey])) {
             newMeasure[measureKey] = columnObject.mappings['default'];
           }
         }
