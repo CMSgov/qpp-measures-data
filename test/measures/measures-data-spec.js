@@ -67,15 +67,6 @@ describe('measures data json', function() {
       assert.equal(intersection.size, multiPerformanceIds.size);
     });
 
-    it('properly handles the exclusion of certain submission methods', () => {
-      const shouldNotAcceptCmsWebInterface = measuresData.filter(
-        measure => ['001', '117'].includes(measure.measureId)
-      );
-      shouldNotAcceptCmsWebInterface.forEach(measure => {
-        assert.isFalse(measure.submissionMethods.includes('cmsWebInterface'));
-      });
-    });
-
     describe('CAHPS measures', function() {
       it('contains 12 correct CAHPS measures', function() {
         const cahpsMeasures = measuresData.filter(measure => measure.measureId.match(/CAHPS_\d+/));
