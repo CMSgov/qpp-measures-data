@@ -1,4 +1,5 @@
 const parse = require('csv-parse/lib/sync');
+const _ = require('lodash');
 
 /**
  * `import-qcdr-measures` reads a QCDR CSV file and outputs valid measures
@@ -25,7 +26,6 @@ const config = {
     category: 'quality',
     firstPerformanceYear: 2017,
     lastPerformanceYear: null,
-    metricType: 'singlePerformanceRate',
     eMeasureId: null,
     nqfEMeasureId: null,
     nqfId: null,
@@ -34,11 +34,10 @@ const config = {
         name: 'overall'
       }
     ],
-    measureSets: []
+    measureSets: [],
+    isRegistryMeasure: true
   },
   sourced_fields: {
-    vendorId: 0,
-    primarySteward: 1,
     measureId: 2,
     title: 3,
     description: 4,
@@ -75,6 +74,22 @@ const config = {
         default: false
       }
     },
+    // If any of the three CSV columns are Y, map to 'singlePerformanceRate' or
+    // 'continuousVariable' depending on the columns; if none are Y (all are N)
+    // map to 'cahps'
+    metricType: {
+      mapType: 'mutuallyExclusiveMapSets',
+      mappings: {
+        Y: [{
+          indices: [17],
+          mapTo: 'singlePerformanceRate'
+        }, {
+          indices: [18, 19],
+          mapTo: 'continuousVariable'
+        }],
+        default: 'cahps'
+      }
+    },
     isRiskAdjusted: {
       index: 20,
       mappings: {
@@ -82,7 +97,8 @@ const config = {
         Y: true,
         default: false
       }
-    }
+    },
+    primarySteward: 22,
   }
 };
 
@@ -101,6 +117,7 @@ const convertCsvToMeasures = function(records, config) {
     Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
       if (typeof columnObject === 'number') {
         if (!record[columnObject]) {
+          console.log(record);
           throw TypeError('Column ' + columnObject + ' does not exist in source data');
         } else {
           // measure data maps directly to data in csv
@@ -108,8 +125,30 @@ const convertCsvToMeasures = function(records, config) {
         }
       } else {
         // measure data requires mapping CSV data to new value, e.g. Y, N -> true, false
-        const mappedValue = columnObject.mappings[record[columnObject.index]];
-        newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
+        if (columnObject.index) {
+          const mappedValue = columnObject.mappings[record[columnObject.index]];
+          newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
+        } else if (columnObject.mapType === 'mutuallyExclusiveMapSets') {
+          // This field maps to more than one set of CSV columns, of which up to
+          // one set max will contain true columns ('Y'). Determine
+          // which set does and use the corresponding mapTo value. If none of
+          // the sets do, use the default.
+          _.each(columnObject.mappings['Y'], function (option) {
+            let mapToValue = _.find(option.indices, function(index) {
+              return record[index] === 'Y';
+            });
+            // Once we find the one true/'Y' value, we're done. Break out of .each
+            if (!_.isUndefined(mapToValue)) {
+              newMeasure[measureKey] = option.mapTo;
+              return false;
+            }
+          });
+
+          // If none of the columns contain a true value, use the default
+          if(_.isEmpty(newMeasure[measureKey])) {
+            newMeasure[measureKey] = columnObject.mappings['default'];
+          }
+        }
       }
     });
     Object.entries(constantFields).forEach(function([measureKey, measureValue]) {
