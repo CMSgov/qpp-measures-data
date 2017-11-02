@@ -171,7 +171,7 @@ function enrichQCDRMeasures() {
   // remove header
   records.shift();
   // If there's more than one QCDR measure with the same measure, we can
-  // arbitrarily pick one and ignore the others (basically, they should all be
+  // arbitrarily pick one and ignore the others (they should all be
   // identical except for the QCDR Organization Name which we don't care about)
   const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
 
@@ -186,20 +186,22 @@ function enrichQCDRMeasures() {
     const existingMeasure = _.find(allMeasures, {'measureId': id});
 
     if (existingMeasure) {
-      const conflictingMeasures = _.reduce(measure, function(result, value, key) {
-        const existingValue = existingMeasure['key'];
+      const conflictingValues = _.reduce(measure, function(result, value, key) {
+        const existingValue = existingMeasure[key];
         // isEqual does a deep comparison so this works with strata as well
         if (!_.isEmpty(existingValue) && !_.isEqual(value, existingValue)) {
-          return result.push('key:' + key + ', qcdr value' + value +
-            ' differs from existing value: ' + existingValue);
-        } else {
-          return result;
+          result.push({
+            'existingKey': key,
+            'existingValue': existingValue,
+            'conflictingQcdrValue': value
+          });
         }
+        return result;
       }, []);
 
-      if (!_.isEmpty(conflictingMeasures)) {
-        throw TypeError('QCDR measure with id ' + id + 'conflicts with existing ' +
-          'measure. See: ' + conflictingMeasures);
+      if (!_.isEmpty(conflictingValues)) {
+        throw TypeError('QCDR measure with measureId: "' + id + '" conflicts' +
+        ' with existing measure. See below:\n' + JSON.stringify(conflictingValues, null, 2));
       } else {
         _.assign(existingMeasure, measure);
         modifiedMeasureIds.push(id);
@@ -218,6 +220,6 @@ function enrichQCDRMeasures() {
   return JSON.stringify(allMeasures, null, 2);
 }
 
-fs.writeFileSync(path.join(__dirname, MEASURES_DATA_JSON_PATH), enrichQCDRMeasures());
+fs.writeFileSync(path.join(__dirname, './test2.json'), enrichQCDRMeasures());
 
 console.log('Successfully merged QCDR measures into ' + MEASURES_DATA_JSON_PATH);
