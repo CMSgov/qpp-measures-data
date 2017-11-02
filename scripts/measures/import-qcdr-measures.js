@@ -76,7 +76,7 @@ const config = {
       }
     },
     // If any of the three CSV columns are Y, map to 'singlePerformanceRate' or
-    // 'continuousVariable' depending on the columns; if none are Y (all are N)
+    // 'nonProportion' depending on the columns; if none are Y (all are N)
     // map to 'cahps'
     metricType: {
       mapType: 'mutuallyExclusiveMapSets',
@@ -86,7 +86,7 @@ const config = {
           mapTo: 'singlePerformanceRate'
         }, {
           indices: [18, 19],
-          mapTo: 'continuousVariable'
+          mapTo: 'nonProportion'
         }],
         default: 'cahps'
       }
@@ -220,6 +220,6 @@ function enrichQCDRMeasures() {
   return JSON.stringify(allMeasures, null, 2);
 }
 
-fs.writeFileSync(path.join(__dirname, './test2.json'), enrichQCDRMeasures());
+fs.writeFileSync(path.join(__dirname, MEASURES_DATA_JSON_PATH), enrichQCDRMeasures());
 
 console.log('Successfully merged QCDR measures into ' + MEASURES_DATA_JSON_PATH);
