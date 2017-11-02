@@ -1,12 +1,13 @@
 const parse = require('csv-parse/lib/sync');
 const _ = require('lodash');
-
 const fs = require('fs');
 const path = require('path');
 
 /**
- * `import-qcdr-measures` reads a QCDR CSV file and outputs valid measures
- * using `convertCsvToMeasures` and a config object.
+ * `import-qcdr-measures` reads a QCDR CSV file and outputs valid measures,
+ * then merges the result into existing measures-data.json, throwing an error
+ * if any existing measures with the same measureId has different values
+ * for any existing properties.
  */
 
 const MEASURES_DATA_JSON_PATH = '../../staging/measures-data.json';
@@ -178,21 +179,17 @@ function enrichQCDRMeasures() {
   const modifiedMeasureIds = [];
 
   // If measure exists already, merge in keys from QCDR measures. If any existing
-  // keys have a different value, throw an error.
+  // non-empty keys have a different value, throw an error.
   // If measure doesn't exist, create it.
   _.each(qcdrMeasures, function(measure) {
     const id = measure.measureId;
     const existingMeasure = _.find(allMeasures, {'measureId': id});
 
-    if (id === 'ACR7') {
-      console.log("ok", existingMeasure);
-      return;
-    }
-    if(existingMeasure) {
+    if (existingMeasure) {
       const conflictingMeasures = _.reduce(measure, function(result, value, key) {
         const existingValue = existingMeasure['key'];
         // isEqual does a deep comparison so this works with strata as well
-        if(!_.isEmpty(existingValue) && !_.isEqual(value, existingValue)) {
+        if (!_.isEmpty(existingValue) && !_.isEqual(value, existingValue)) {
           return result.push('key:' + key + ', qcdr value' + value +
             ' differs from existing value: ' + existingValue);
         } else {
@@ -200,7 +197,7 @@ function enrichQCDRMeasures() {
         }
       }, []);
 
-      if(!_.isEmpty(conflictingMeasures)) {
+      if (!_.isEmpty(conflictingMeasures)) {
         throw TypeError('QCDR measure with id ' + id + 'conflicts with existing ' +
           'measure. See: ' + conflictingMeasures);
       } else {
@@ -224,4 +221,3 @@ function enrichQCDRMeasures() {
 fs.writeFileSync(path.join(__dirname, MEASURES_DATA_JSON_PATH), enrichQCDRMeasures());
 
 console.log('Successfully merged QCDR measures into ' + MEASURES_DATA_JSON_PATH);
-// fs.writeFileSync(path.join(__dirname, '../../measures/measures-data.json'), convertCsvToMeasures(records, config));
