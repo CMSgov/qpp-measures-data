@@ -162,19 +162,7 @@ const convertCsvToMeasures = function(records, config) {
   return newMeasures;
 };
 
-function enrichQCDRMeasures() {
-  const qpp = fs.readFileSync(path.join(__dirname, MEASURES_DATA_JSON_PATH), 'utf8');
-  const allMeasures = JSON.parse(qpp);
-
-  const csv = fs.readFileSync(path.join(__dirname, QCDR_MEASURES_CSV_PATH), 'utf8');
-  const records = parse(csv, 'utf8');
-  // remove header
-  records.shift();
-  // If there's more than one QCDR measure with the same measure, we can
-  // arbitrarily pick one and ignore the others (they should all be
-  // identical except for the QCDR Organization Name which we don't care about)
-  const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
-
+function enrichQcdrMeasures(allMeasures, qcdrMeasures) {
   const addedMeasureIds = [];
   const modifiedMeasureIds = [];
 
@@ -220,6 +208,22 @@ function enrichQCDRMeasures() {
   return JSON.stringify(allMeasures, null, 2);
 }
 
-fs.writeFileSync(path.join(__dirname, MEASURES_DATA_JSON_PATH), enrichQCDRMeasures());
+function importQcdrMeasures(measuresDataPath, qcdrMeasuresDataPath) {
+  const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
+  const allMeasures = JSON.parse(qpp);
 
-console.log('Successfully merged QCDR measures into ' + MEASURES_DATA_JSON_PATH);
+  const csv = fs.readFileSync(path.join(__dirname, qcdrMeasuresDataPath), 'utf8');
+  const records = parse(csv, 'utf8');
+  // remove header
+  records.shift();
+  // If there's more than one QCDR measure with the same measure, we can
+  // arbitrarily pick one and ignore the others (they should all be
+  // identical except for the QCDR Organization Name which we don't care about)
+  const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
+
+  fs.writeFileSync(path.join(__dirname, measuresDataPath), enrichQcdrMeasures(allMeasures, qcdrMeasures));
+
+  console.log('Successfully merged QCDR measures into ' + measuresDataPath);
+}
+
+importQcdrMeasures(MEASURES_DATA_JSON_PATH, QCDR_MEASURES_CSV_PATH);
