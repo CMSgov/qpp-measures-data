@@ -33,6 +33,7 @@ const config = {
       }
     ],
     measureSets: [],
+    // If true, this measure was authored by a Qualified Clinical Data Registry.
     isRegistryMeasure: true
   },
   sourced_fields: {
@@ -159,14 +160,6 @@ const convertCsvToMeasures = function(records, config) {
   return newMeasures;
 };
 
-/**
- * [convertCsvToMeasures description]
- * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
- * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
- * @return {array}            Returns an array of measures objects
- *
- * We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
- */
 function mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath) {
   const addedMeasureIds = [];
   const modifiedMeasureIds = [];
@@ -236,8 +229,6 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath) {
 
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath);
-
 let outputPath;
 if (process.argv[4]) {
   outputPath = process.argv[4];
@@ -245,4 +236,5 @@ if (process.argv[4]) {
   outputPath = measuresDataPath;
 }
 
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath);
 fs.writeFileSync(path.join(__dirname, outputPath), newMeasures);

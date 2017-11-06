@@ -141,7 +141,7 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets, isRegistryMeasure]
 
   performanceStrata:
     type: object
