@@ -10,9 +10,6 @@ const path = require('path');
  * for any existing properties.
  */
 
-const MEASURES_DATA_JSON_PATH = '../../staging/measures-data.json';
-const QCDR_MEASURES_CSV_PATH = '../../util/measures/latest-QCDR-Measures-20170911.csv';
-
 /**
  * [config defines how to generate QCDR measures from origin CSV file]
  * @type {Object}
@@ -162,7 +159,15 @@ const convertCsvToMeasures = function(records, config) {
   return newMeasures;
 };
 
-function enrichQcdrMeasures(allMeasures, qcdrMeasures) {
+/**
+ * [convertCsvToMeasures description]
+ * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
+ * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
+ * @return {array}            Returns an array of measures objects
+ *
+ * We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
+ */
+function mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath) {
   const addedMeasureIds = [];
   const modifiedMeasureIds = [];
 
@@ -173,7 +178,7 @@ function enrichQcdrMeasures(allMeasures, qcdrMeasures) {
     const id = measure.measureId;
     const existingMeasure = _.find(allMeasures, {'measureId': id});
 
-    if (existingMeasure) {
+    if (existingMeasure && !_.isEqual(existingMeasure, measure)) {
       const conflictingValues = _.reduce(measure, function(result, value, key) {
         const existingValue = existingMeasure[key];
         // isEqual does a deep comparison so this works with strata as well
@@ -194,21 +199,26 @@ function enrichQcdrMeasures(allMeasures, qcdrMeasures) {
         _.assign(existingMeasure, measure);
         modifiedMeasureIds.push(id);
       }
-    } else {
+    } else if (!existingMeasure) {
       allMeasures.push(measure);
       addedMeasureIds.push(id);
     }
   });
 
-  console.log('Added measures with the following ids: ' +
-    addedMeasureIds + '\n');
-  console.log('Modified measures with the following ids: ' +
-    modifiedMeasureIds + '\n');
+  if (_.isEmpty(addedMeasureIds) && _.isEmpty(modifiedMeasureIds)) {
+    console.log('Import complete. No measures added to or modified in ' + measuresDataPath);
+  } else {
+    console.log('Added measures with the following ids: ' +
+      addedMeasureIds + '\n');
+    console.log('Modified measures with the following ids: ' +
+      modifiedMeasureIds + '\n');
+    console.log('Successfully merged QCDR measures into ' + measuresDataPath);
+  }
 
   return JSON.stringify(allMeasures, null, 2);
 }
 
-function importQcdrMeasures(measuresDataPath, qcdrMeasuresDataPath) {
+function importMeasures(measuresDataPath, qcdrMeasuresDataPath) {
   const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
   const allMeasures = JSON.parse(qpp);
 
@@ -221,9 +231,18 @@ function importQcdrMeasures(measuresDataPath, qcdrMeasuresDataPath) {
   // identical except for the QCDR Organization Name which we don't care about)
   const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
 
-  fs.writeFileSync(path.join(__dirname, measuresDataPath), enrichQcdrMeasures(allMeasures, qcdrMeasures));
-
-  console.log('Successfully merged QCDR measures into ' + measuresDataPath);
+  return mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath);
 }
 
-importQcdrMeasures(MEASURES_DATA_JSON_PATH, QCDR_MEASURES_CSV_PATH);
+const measuresDataPath = process.argv[2];
+const qcdrMeasuresDataPath = process.argv[3];
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath);
+
+let outputPath;
+if (process.argv[4]) {
+  outputPath = process.argv[4];
+} else {
+  outputPath = measuresDataPath;
+}
+
+fs.writeFileSync(path.join(__dirname, outputPath), newMeasures);
