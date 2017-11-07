@@ -74,22 +74,6 @@ const config = {
         default: false
       }
     },
-    // If any of the three CSV columns are Y, map to 'singlePerformanceRate' or
-    // 'nonProportion' depending on the columns; if none are Y (all are N)
-    // map to 'cahps'
-    metricType: {
-      mapType: 'mutuallyExclusiveMapSets',
-      mappings: {
-        Y: [{
-          indices: [17],
-          mapTo: 'singlePerformanceRate'
-        }, {
-          indices: [18, 19],
-          mapTo: 'nonProportion'
-        }],
-        default: 'cahps'
-      }
-    },
     isRiskAdjusted: {
       index: 20,
       mappings: {
@@ -99,6 +83,8 @@ const config = {
       }
     },
     primarySteward: 22
+    // `metricType` is a sourced field but not represented here since it maps from
+    // multiple columns-- you can find it by searching in the code below
   }
 };
 
@@ -126,35 +112,29 @@ const convertCsvToMeasures = function(records, config) {
         }
       } else {
         // measure data requires mapping CSV data to new value, e.g. Y, N -> true, false
-        if (columnObject.index) {
-          const mappedValue = columnObject.mappings[_.trim(record[columnObject.index])];
-          newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
-        } else if (columnObject.mapType === 'mutuallyExclusiveMapSets') {
-          // This field maps to more than one set of CSV columns, of which up to
-          // one set max will contain true columns ('Y'). Determine
-          // which set does and use the corresponding mapTo value. If none of
-          // the sets do, use the default.
-          _.each(columnObject.mappings['Y'], function(option) {
-            let mapToValue = _.find(option.indices, function(index) {
-              return _.trim(record[index]) === 'Y';
-            });
-            // Once we find the one true/'Y' value, we're done. Break out of .each
-            if (!_.isUndefined(mapToValue)) {
-              newMeasure[measureKey] = option.mapTo;
-              return false;
-            }
-          });
-
-          // If none of the columns contain a true value, use the default
-          if (_.isEmpty(newMeasure[measureKey])) {
-            newMeasure[measureKey] = columnObject.mappings['default'];
-          }
-        }
+        const mappedValue = columnObject.mappings[_.trim(record[columnObject.index])];
+        newMeasure[measureKey] = mappedValue || columnObject.mappings['default'];
       }
     });
     Object.entries(constantFields).forEach(function([measureKey, measureValue]) {
       newMeasure[measureKey] = measureValue;
     });
+
+    // If the 'proportion' column (col 17) is Y and the other two columns
+    // (continuous and ratio, cols 18 and 19) are N, metricType should be
+    // 'singlePerformanceRate'. Otherwise it should be 'nonProportion'
+    //
+    // Note: if the 'proportion' column is Y *and* there are multiple
+    // strata, then the metricType should be 'multiPerformanceRate'
+    // TODO(kalvin): implement multiPerformanceRate;
+    if (record[17] === 'Y' &&
+        record[18] === 'N' &&
+        record[19] === 'N') {
+      newMeasure['metricType'] = 'singlePerformanceRate';
+    } else {
+      newMeasure['metricType'] = 'nonProportion';
+    }
+
     return newMeasure;
   });
 
