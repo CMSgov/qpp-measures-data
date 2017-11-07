@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * `import-qcdr-measures` reads a QCDR CSV file and outputs valid measures,
- * then merges the result into existing measures-data.json, throwing an error
+ * `import-qcdr-measures` reads a QCDR CSV file and creates valid measures,
+ * then merges the result into an existing set of measures, throwing an error
  * if any existing measures with the same measureId has different values
  * for any existing properties.
  */
