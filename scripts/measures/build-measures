@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 0. Add QCDR measures to the 'staging/measures-data.json' file:
-node scripts/measures/import-qcdr-measures.js '../../staging/measures-data.json' '../../util/measures/latest-QCDR-Measures-20170911.csv' >| '../../staging/measures-data.json'
+node scripts/measures/import-qcdr-measures.js '../../staging/measures-data.json' '../../util/measures/latest-QCDR-Measures-20170911.csv' '../../staging/measures-data-with-qcdrs.json'
 
 # 1. Enrich `measures-data.json` file, run:
 node scripts/measures/enrich-measures-data.js

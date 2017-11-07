@@ -33,7 +33,8 @@ const config = {
       }
     ],
     measureSets: [],
-    // If true, this measure was authored by a Qualified Clinical Data Registry.
+    // If true, this measure was authored by a Qualified Clinical Data Registry,
+    // aka it's a QCDR measure.
     isRegistryMeasure: true
   },
   sourced_fields: {
@@ -208,10 +209,21 @@ function mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath) {
     console.log('Successfully merged QCDR measures into ' + measuresDataPath);
   }
 
-  return JSON.stringify(allMeasures, null, 2);
+  return allMeasures;
 }
 
-function importMeasures(measuresDataPath, qcdrMeasuresDataPath) {
+// We want to add the new isRegistryMeasure field to all quality measures,
+// not just the measures where it's true (aka qcdr measures)
+function addMissingRegistryFlags(measures) {
+  _.each(measures, function(measure) {
+    if (measure.category === 'quality' && !_.isBoolean(measure.isRegistryMeasure)) {
+      measure.isRegistryMeasure = false;
+    }
+  });
+  return measures;
+}
+
+function importMeasures(measuresDataPath, qcdrMeasuresDataPath, outputPath) {
   const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
   const allMeasures = JSON.parse(qpp);
 
@@ -224,17 +236,13 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath) {
   // identical except for the QCDR Organization Name which we don't care about)
   const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
 
-  return mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath);
+  const mergedMeasures = mergeMeasures(allMeasures, qcdrMeasures, outputPath);
+  return JSON.stringify(addMissingRegistryFlags(mergedMeasures), null, 2);
 }
 
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
-let outputPath;
-if (process.argv[4]) {
-  outputPath = process.argv[4];
-} else {
-  outputPath = measuresDataPath;
-}
+const outputPath = process.argv[4];
 
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath);
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, outputPath);
 fs.writeFileSync(path.join(__dirname, outputPath), newMeasures);
