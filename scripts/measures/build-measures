@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
 
+qcdr_csv='../../util/measures/latest-QCDR-Measures-20170911.csv'
+staging_measures='../../staging/measures-data.json'
+staging_measures_with_qcdrs='../../staging/measures-data-with-qcdrs.json'
+final_measures='../../measures/measures-data.json'
+
+# 0. Add QCDR measures to the 'staging/measures-data.json' file:
+node scripts/measures/import-qcdr-measures.js \
+	$staging_measures $qcdr_csv $staging_measures_with_qcdrs
+
 # 1. Enrich `measures-data.json` file, run:
-node scripts/measures/enrich-measures-data.js
+node scripts/measures/enrich-measures-data.js \
+	$staging_measures_with_qcdrs $final_measures
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
-cat measures/measures-data.json | node scripts/convert-json-to-xml.js > measures/measures-data.xml
+cat measures/measures-data.json | node scripts/convert-json-to-xml.js \
+	> measures/measures-data.xml
 
 # 3. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
