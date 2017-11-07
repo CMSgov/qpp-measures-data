@@ -33,8 +33,6 @@ const config = {
       }
     ],
     measureSets: [],
-    // If true, this measure was authored by a Qualified Clinical Data Registry,
-    // aka it's a QCDR measure.
     isRegistryMeasure: true
   },
   sourced_fields: {

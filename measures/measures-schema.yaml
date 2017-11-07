@@ -133,6 +133,7 @@ definitions:
         type: array
         items: { $ref: #/definitions/performanceOption }
       isRegistryMeasure:
+        description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
         type: boolean
         default: false
       isRiskAdjusted:
