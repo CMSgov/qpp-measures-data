@@ -154,7 +154,7 @@ function mergeMeasures(allMeasures, qcdrMeasures, measuresDataPath) {
       const conflictingValues = _.reduce(measure, function(result, value, key) {
         const existingValue = existingMeasure[key];
         // isEqual does a deep comparison so this works with strata as well
-        if (!_.isEmpty(existingValue) && !_.isEqual(value, existingValue)) {
+        if (!_.isNil(existingValue) && !_.isEqual(value, existingValue)) {
           result.push({
             'existingKey': key,
             'existingValue': existingValue,
