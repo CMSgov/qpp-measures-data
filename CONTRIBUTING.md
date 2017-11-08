@@ -63,6 +63,7 @@ To publish a new version, make sure you've bumped the `version` in `package.json
 npm login # as cmsgov
 npm publish
 ```
+After the new version is published, create release in Github with a version 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. The release notes should contain the headers "Added", "Changed", "Removed", "Fixed" and bullet pointed details where appropriate.
 
 ## Licenses
 
