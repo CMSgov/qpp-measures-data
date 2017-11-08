@@ -4,6 +4,7 @@ const assert = chai.assert;
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 // Test data
 const testMeasures = '../../test/scripts/measures/fixtures/test-measures-data.json';
@@ -30,7 +31,7 @@ const runTest = function(measuresFile, measuresCsv) {
 describe('import measures', function() {
   it('should create new measures and ignore duplicate measureIds', () => {
     const measures = runTest(testMeasures, testCsv);
-    assert.equal(measures.length, 2);
+    assert.equal(measures.length, 3);
   });
 
   it('should overwrite fields with the right csv data', () => {
@@ -40,6 +41,12 @@ describe('import measures', function() {
         assert.deepEqual(measures[measureIdx][measureKey], measureValue);
       });
     });
+  });
+
+  it('should correctly identify multiPerformanceRate measures', () => {
+    const measures = runTest(testMeasures, testCsv);
+    const multiPerformanceRateMeasure = _.find(measures, {measureId: 'AAAAI4'});
+    assert.equal(multiPerformanceRateMeasure.metricType, 'multiPerformanceRate');
   });
 
   it('throws an informative error when the column doesn\'t exist', function() {

@@ -120,15 +120,18 @@ const convertCsvToMeasures = function(records, config) {
 
     // If the 'proportion' column (col 17) is Y and the other two columns
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
-    // 'singlePerformanceRate'. Otherwise it should be 'nonProportion'
-    //
-    // Note: if the 'proportion' column is Y *and* there are multiple
-    // strata, then the metricType should be 'multiPerformanceRate'
-    // TODO(kalvin): implement multiPerformanceRate;
+    // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
+    // strata/performance rates. Otherwise it should be 'nonProportion'
     if (record[17] === 'Y' &&
         record[18] === 'N' &&
         record[19] === 'N') {
-      newMeasure['metricType'] = 'singlePerformanceRate';
+      // returns an integer if passed string '3', NaN if passed 'N/A'
+      const numPerformanceRates = _.parseInt(record[11]);
+      if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
+        newMeasure['metricType'] = 'multiPerformanceRate';
+      } else {
+        newMeasure['metricType'] = 'singlePerformanceRate';
+      }
     } else {
       newMeasure['metricType'] = 'nonProportion';
     }
