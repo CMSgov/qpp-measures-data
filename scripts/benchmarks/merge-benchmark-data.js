@@ -1,6 +1,7 @@
 const BENCHMARK_LAYERS = [
   '../../staging/benchmarks/benchmarks_base_2017.json',
-  '../../staging/benchmarks/benchmarks_updates_20171109.json'
+  '../../staging/benchmarks/benchmarks_updates_20171109.json',
+  '../../staging/benchmarks/benchmarks_readmission_20171109.json'
 ];
 
 const UNIQUE_COLUMN_CONSTRAINT = [
@@ -19,18 +20,24 @@ const getBenchmarkKey = (benchmark) => {
   return benchmarkKey;
 };
 
-let mergedBenchmarks = new Map();
+const mergeBenchmarkLayers = (benchmarkLayers) => {
+  const mergedBenchmarks = new Map();
 
-BENCHMARK_LAYERS.forEach((benchmarkLayer) => {
-  const benchmarkFile = require(benchmarkLayer);
-  benchmarkFile.forEach((benchmark) => {
-    mergedBenchmarks.set(getBenchmarkKey(benchmark), benchmark);
+  benchmarkLayers.forEach((benchmarkLayer) => {
+    const benchmarkFile = require(benchmarkLayer);
+    benchmarkFile.forEach((benchmark) => {
+      mergedBenchmarks.set(getBenchmarkKey(benchmark), benchmark);
+    });
   });
-});
 
-let formattedBenchmarks = [];
-for (const value of mergedBenchmarks.values()) {
-  formattedBenchmarks.push(value);
-}
+  const formattedBenchmarks = [];
+  for (const value of mergedBenchmarks.values()) {
+    formattedBenchmarks.push(value);
+  }
+
+  return formattedBenchmarks;
+};
+
+const formattedBenchmarks = mergeBenchmarkLayers(BENCHMARK_LAYERS);
 
 process.stdout.write(JSON.stringify(formattedBenchmarks, null, 2));
