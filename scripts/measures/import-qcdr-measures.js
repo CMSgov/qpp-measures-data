@@ -41,7 +41,7 @@ const config = {
     description: 4,
     nationalQualityStrategyDomain: 5,
     measureType: {
-      index: 13,
+      index: 14,
       mappings: {
         'Process': 'process',
         'Outcome': 'outcome',
@@ -58,14 +58,14 @@ const config = {
       }
     },
     isHighPriority: {
-      index: 14,
+      index: 15,
       mappings: {
         'High Priority': true,
         default: false
       }
     },
     isInverse: {
-      index: 16,
+      index: 17,
       mappings: {
         N: false,
         Y: true,
@@ -73,14 +73,14 @@ const config = {
       }
     },
     isRiskAdjusted: {
-      index: 20,
+      index: 21,
       mappings: {
         N: false,
         Y: true,
         default: false
       }
     },
-    primarySteward: 22
+    primarySteward: 23
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
   }
@@ -122,13 +122,50 @@ const convertCsvToMeasures = function(records, config) {
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    if (record[17] === 'Y' &&
-        record[18] === 'N' &&
-        record[19] === 'N') {
+    if (record[18] === 'Y' &&
+        record[19] === 'N' &&
+        record[20] === 'N') {
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(record[11]);
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         newMeasure['metricType'] = 'multiPerformanceRate';
+
+        // Add the names and descriptions of strata
+        const overallPerformanceRate = _.parseInt(record[13]);
+        if (_.isInteger(overallPerformanceRate)) {
+          let strataName;
+          const measureId = record[2];
+          const strataText = record[12];
+
+          // Split 'Rate 1: text Rate 2: text Rate 3: text' into [text, text, text]
+          const strata = _.split(strataText, /\s*[Rr]ate [0-9]+:\s*/);
+          // Drop anything before 'Rate 1' (usually an empty string)
+          strata.shift();
+
+          // TODO(kalvin): move strata names to a separate file and flesh out
+          const STRATA_NAMES = {
+            'AHSQC6': ['hernia', 'overall', 'hernia>10cm'],
+            'NHBPC15': ['ADL', 'IADL', 'overall'],
+            'NHBPC7': ['reviewed', 'overall']
+          };
+
+          newMeasure['overallAlgorithm'] = 'overallStratumOnly';
+
+          newMeasure['strata'] = [];
+          _.each(strata, function(stratum, index) {
+            strataName = STRATA_NAMES[measureId][index];
+            // i + 1 because Rates in the csv are numbered starting from 1
+            if (_.lowerCase(strataName) === 'overall' &&
+              index + 1 !== overallPerformanceRate) {
+              throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
+                'CSV doesn\'t match the name in the strata details file');
+            }
+            newMeasure['strata'].push({
+              'name': strataName,
+              'description': strata[index]
+            });
+          });
+        }
       } else {
         newMeasure['metricType'] = 'singlePerformanceRate';
       }
