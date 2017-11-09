@@ -121,8 +121,8 @@ function parseQpp(json) {
   const result = [];
 
   for (let i = 0; i < measureList.length; i++) {
-    var measure = measureList[i];
-    var obj = {};
+    const measure = measureList[i];
+    const obj = {};
     obj.category = category;
     obj.firstPerformanceYear = new Date().getFullYear();
     obj.lastPerformanceYear = null;

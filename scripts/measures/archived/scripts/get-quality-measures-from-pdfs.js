@@ -53,10 +53,11 @@ function getRates(path, cb) {
       found = data.match(/There are (\d) performance rates to be calculated/);
     }
 
+    let foundRate;
     if (!found) {
       // only a single performace rate
       const rateRegex = /DESCRIPTION:((.|\s)*?)INSTRUCTIONS:/;
-      var foundRate = data.match(rateRegex);
+      foundRate = data.match(rateRegex);
 
       rateDescriptions.push(cleanUpString(foundRate[1]));
     } else {
