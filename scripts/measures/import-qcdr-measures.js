@@ -41,7 +41,7 @@ const config = {
     description: 4,
     nationalQualityStrategyDomain: 5,
     measureType: {
-      index: 14,
+      index: 13,
       mappings: {
         'Process': 'process',
         'Outcome': 'outcome',
@@ -58,14 +58,14 @@ const config = {
       }
     },
     isHighPriority: {
-      index: 15,
+      index: 14,
       mappings: {
         'High Priority': true,
         default: false
       }
     },
     isInverse: {
-      index: 17,
+      index: 15,
       mappings: {
         N: false,
         Y: true,
@@ -73,14 +73,14 @@ const config = {
       }
     },
     isRiskAdjusted: {
-      index: 21,
+      index: 16,
       mappings: {
         N: false,
         Y: true,
         default: false
       }
     },
-    primarySteward: 23
+    primarySteward: 22
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
   }
@@ -122,50 +122,79 @@ const convertCsvToMeasures = function(records, config) {
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    if (record[18] === 'Y' &&
-        record[19] === 'N' &&
-        record[20] === 'N') {
+    if (record[17] === 'Y' &&
+        record[18] === 'N' &&
+        record[19] === 'N') {
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(record[11]);
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         newMeasure['metricType'] = 'multiPerformanceRate';
 
-        // Add the names and descriptions of strata
-        const overallPerformanceRate = _.parseInt(record[13]);
-        if (_.isInteger(overallPerformanceRate)) {
-          let strataName;
-          const measureId = record[2];
-          const strataText = record[12];
-
-          // Split 'Rate 1: text Rate 2: text Rate 3: text' into [text, text, text]
-          const strata = _.split(strataText, /\s*[Rr]ate [0-9]+:\s*/);
-          // Drop anything before 'Rate 1' (usually an empty string)
-          strata.shift();
-
-          // TODO(kalvin): move strata names to a separate file and flesh out
-          const STRATA_NAMES = {
-            'AHSQC6': ['hernia', 'overall', 'hernia>10cm'],
-            'NHBPC15': ['ADL', 'IADL', 'overall'],
-            'NHBPC7': ['reviewed', 'overall']
-          };
-
+        const overallPerformanceRate = record[13];
+        const nthPerformanceRate = _.parseInt(overallPerformanceRate);
+        if (_.isInteger(nthPerformanceRate)) {
           newMeasure['overallAlgorithm'] = 'overallStratumOnly';
-
-          newMeasure['strata'] = [];
-          _.each(strata, function(stratum, index) {
-            strataName = STRATA_NAMES[measureId][index];
-            // i + 1 because Rates in the csv are numbered starting from 1
-            if (_.lowerCase(strataName) === 'overall' &&
-              index + 1 !== overallPerformanceRate) {
-              throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
-                'CSV doesn\'t match the name in the strata details file');
-            }
-            newMeasure['strata'].push({
-              'name': strataName,
-              'description': strata[index]
-            });
-          });
+        } else if (_.lowerCase(overallPerformanceRate) === 'sum numerators') {
+          newMeasure['overallAlgorithm'] = 'sumNumerators';
+        } else if (_.lowerCase(overallPerformanceRate) === 'weighted average') {
+          newMeasure['overallAlgorithm'] = 'weightedAverage';
         }
+
+        // Add the names and descriptions of strata
+        let strataName;
+        const measureId = record[2];
+        const strataText = record[12];
+
+        // Split 'description Rate 1: text Rate 2: text' into [text, text]
+        const strata = _.split(strataText, /\s*[Rr]ate [0-9]+:\s*/);
+        // Drop anything before 'Rate 1' (usually a description of the measure)
+        strata.shift();
+
+        // TODO(kalvin): move strata names to a separate file and flesh out
+        const STRATA_NAMES = {
+          'AHSQC6': ['hernia', 'overall', 'hernia>10cm'],
+          'NHBPC15': ['ADL', 'IADL', 'overall'],
+          'NHBPC7': ['reviewed', 'overall'],
+          'AAAAI19': ['ICS', 'nonICS', 'overall'],
+          'ARCO13': ['antithrombotic', 'anticoagulation', 'antithrombotic2', 'LDL'],
+          'AHSQC9': ['overall', 'email'],
+          'AQI49': ['lysine', 'mini', 'redcell', 'transfusion', 'overall'],
+          'MOA1': ['back', 'neck'],
+          'ECPR43': ['overall', 'urgentcare'],
+          'MNCM3': ['pediatric', 'adult'],
+          'NPAGSC3': ['overall', 'improvement'],
+          'NPAGSC4': ['overall', 'improvement'],
+          'NPAGSC5': ['overall', 'improvement'],
+          'NPAGSC10': ['overall', 'improvement'],
+          'NNEPTN1': ['12to18', '18'],
+          'PP1': ['ace', 'digoxin', 'diuretics'],
+          'RHI1': ['<9', '>=9', 'overall'],
+          'RHI2': ['>=160', '<160', 'overall'],
+          'RHI4': ['decreased', 'increased', 'overall'],
+          'USWR15': ['bucket1', 'bucket2', 'bucket3', 'overall'],
+          'USWR13': ['vital', 'glucose', 'overall'],
+          'CDR6': ['bucket1', 'bucket2', 'bucket3', 'overall'],
+          'NPA3': ['baseline', 'overall'],
+          'NPA4': ['baseline', 'overall'],
+          'NPA5': ['baseline', 'overall'],
+          'ICLOPS15': ['withoutexcess', 'withexcess'],
+          'ICLOPS17': ['withfollowup', 'withoutfollowup']
+        };
+
+        newMeasure['strata'] = [];
+        _.each(strata, function(stratum, index) {
+          strataName = STRATA_NAMES[measureId][index];
+          // i + 1 because Rates in the csv are numbered starting from 1
+          if (_.lowerCase(strataName) === 'overall' &&
+            index + 1 !== nthPerformanceRate) {
+            throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
+              'CSV doesn\'t match the name in the strata details file');
+          }
+          newMeasure['strata'].push({
+            'name': strataName,
+            'description': strata[index]
+          });
+        });
       } else {
         newMeasure['metricType'] = 'singlePerformanceRate';
       }
