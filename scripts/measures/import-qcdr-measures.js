@@ -27,11 +27,6 @@ const config = {
     eMeasureId: null,
     nqfEMeasureId: null,
     nqfId: null,
-    strata: [
-      {
-        name: 'overall'
-      }
-    ],
     measureSets: [],
     isRegistryMeasure: true
   },
@@ -65,7 +60,7 @@ const config = {
       }
     },
     isInverse: {
-      index: 15,
+      index: 16,
       mappings: {
         N: false,
         Y: true,
@@ -73,7 +68,7 @@ const config = {
       }
     },
     isRiskAdjusted: {
-      index: 16,
+      index: 20,
       mappings: {
         N: false,
         Y: true,
@@ -92,7 +87,9 @@ const config = {
  * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
  * @return {array}            Returns an array of measures objects
  *
- * We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
+ * Notes:
+ * 1. The terms 'strata' and 'performance rate' are used interchangeably
+ * 2. We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
  */
 const convertCsvToMeasures = function(records, config) {
   const sourcedFields = config.sourced_fields;
@@ -130,7 +127,7 @@ const convertCsvToMeasures = function(records, config) {
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         newMeasure['metricType'] = 'multiPerformanceRate';
 
-        const overallPerformanceRate = record[13];
+        const overallPerformanceRate = record[12];
         const nthPerformanceRate = _.parseInt(overallPerformanceRate);
         if (_.isInteger(nthPerformanceRate)) {
           newMeasure['overallAlgorithm'] = 'overallStratumOnly';
@@ -143,14 +140,15 @@ const convertCsvToMeasures = function(records, config) {
         // Add the names and descriptions of strata
         let strataName;
         const measureId = record[2];
-        const strataText = record[12];
+        const measureDescription = record[4];
 
+        // Measure description column contains performance rate description
         // Split 'description Rate 1: text Rate 2: text' into [text, text]
-        const strata = _.split(strataText, /\s*[Rr]ate [0-9]+:\s*/);
+        const strata = _.split(measureDescription, /\s*[Rr]ate [0-9]+:\s*/);
         // Drop anything before 'Rate 1' (usually a description of the measure)
         strata.shift();
 
-        // TODO(kalvin): move strata names to a separate file and flesh out
+        // TODO(kalvin): move strata names to a separate file
         const STRATA_NAMES = {
           'AHSQC6': ['hernia', 'overall', 'hernia>10cm'],
           'NHBPC15': ['ADL', 'IADL', 'overall'],
