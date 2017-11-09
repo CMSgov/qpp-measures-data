@@ -1,15 +1,15 @@
 // Utility functions for formatting the csv records
 // Libraries
-var keyBy = require('lodash/keyBy');
+const keyBy = require('lodash/keyBy');
 // Data
-var measures = require('../../measures/measures-data.json');
+const measures = require('../../measures/measures-data.json');
 // Constants
 /**
  * Maps normalized (trimmed and squeezed) submission method values
  * from csv to standard values.
  * @enum {string}
  */
-var SUBMISSION_METHOD_MAP = {
+const SUBMISSION_METHOD_MAP = {
   'claims': 'claims',
   'registry': 'registry',
   'registry/qcdr': 'registry',
@@ -21,7 +21,7 @@ var SUBMISSION_METHOD_MAP = {
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
-var MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
+const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
   /**
    * NOTE: Quality measurements' measureIds are usually string integers.
    * There are some non-integer qualityIds in the demo benchmarks csv,
@@ -35,11 +35,11 @@ var MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
  * @param {string} submissionMethod - non-normalized version from csv dataset
  * @returns {string} - normalized version
  */
-var formatSubmissionMethod = function(submissionMethod) {
+const formatSubmissionMethod = function(submissionMethod) {
   return SUBMISSION_METHOD_MAP[submissionMethod.replace(/\s/g, '').toLowerCase()];
 };
-var isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
-var floatRegex = /([0-9]*[.]?[0-9]+)/g;
+const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+const floatRegex = /([0-9]*[.]?[0-9]+)/g;
 /**
  * Generator function to create a
  * function that formats the deciles based on options
@@ -63,10 +63,10 @@ var floatRegex = /([0-9]*[.]?[0-9]+)/g;
  *  isToppedOut: string}} record
  *  @returns {function}
  */
-var formatDecileGenerator = function(record) {
-  var isInverseMeasure = isInverseBenchmarkRecord(record);
-  var top = isInverseMeasure ? 0 : 100;
-  var bottom = isInverseMeasure ? 100 : 0;
+const formatDecileGenerator = function(record) {
+  const isInverseMeasure = isInverseBenchmarkRecord(record);
+  const top = isInverseMeasure ? 0 : 100;
+  const bottom = isInverseMeasure ? 100 : 0;
 
   /**
    * Params correspond to the Array.map signature
@@ -76,11 +76,11 @@ var formatDecileGenerator = function(record) {
    * @return {number | null}
    */
   return function(decileString, index, array) {
-    var range = decileString ? decileString.match(floatRegex) : null;
-    var nextIndex = index + 1;
-    var prevIndex = index - 1;
-    var definedPredecessor;
-    var definedSuccessor;
+    const range = decileString ? decileString.match(floatRegex) : null;
+    let nextIndex = index + 1;
+    let prevIndex = index - 1;
+    let definedPredecessor;
+    let definedSuccessor;
 
     // If decile is explicitly defined:
     if (decileString && range) return parseFloat(range[0]);
@@ -160,13 +160,13 @@ var formatDecileGenerator = function(record) {
  *  } | undefined
  * } - benchmark object
  */
-var formatBenchmarkRecord = function(record, options) {
+const formatBenchmarkRecord = function(record, options) {
   /**
    * NOTE: Some of the benchmarks don't correspond to
    * any of the measures currently in our json.
    * NOTE: Quality measurement measureIds are equal to their qualityIds.
    */
-  var measure = MEASURE_ID_TO_MEASURE_MAP[record.qualityId];
+  const measure = MEASURE_ID_TO_MEASURE_MAP[record.qualityId];
 
   if (!measure) return;
   if (record.benchmark.trim() === 'N') return;

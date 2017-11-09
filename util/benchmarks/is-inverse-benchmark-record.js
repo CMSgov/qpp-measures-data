@@ -3,13 +3,13 @@
  * @param {{}} record
  * @return {boolean}
  */
-var isInverseBenchmarkRecord = function(record) {
+const isInverseBenchmarkRecord = function(record) {
   if (parseFloat(record.decile10) === 100) return false;
   if (parseFloat(record.decile10) === 0) return true;
   if (record.decile10 && record.decile10.indexOf('<=') > -1) return true;
   if (record.decile10 && record.decile10.indexOf('>=') > -1) return false;
 
-  var deciles = [
+  const deciles = [
     record.decile1,
     record.decile2,
     record.decile3,
@@ -22,11 +22,11 @@ var isInverseBenchmarkRecord = function(record) {
     record.decile10
   ];
 
-  for (var i = 0; i < deciles.length; i++) {
-    var decile = deciles[i];
+  for (let i = 0; i < deciles.length; i++) {
+    const decile = deciles[i];
 
     if (decile) {
-      var range = decile.match(/(\d{0,3}\.?\d{2,})/g);
+      const range = decile.match(/(\d{0,3}\.?\d{2,})/g);
 
       if (range) {
         if (range.length === 2 && range[0] !== range[1]) {

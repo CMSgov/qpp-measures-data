@@ -6,11 +6,11 @@
  * cat measures/measures-data.json | node scripts/convert-json-to-xml.js  > measures/measures-data.xml
  **/
 
-var xml2js = require('xml2js');
+const xml2js = require('xml2js');
 
-var schemaType = 'measures';
+const schemaType = 'measures';
 
-var json = '';
+let json = '';
 /**
   * XML does not allow for multiple elements without a root element. So by
   * default, the measures-data JSON object, whose root element is an array
@@ -28,8 +28,8 @@ var json = '';
   * details: https://github.com/Leonidas-from-XIV/node-xml2js#xml-builder-usage
   */
 function convertToXml(json) {
-  var builder = new xml2js.Builder({rootName: schemaType});
-  var xml = builder.buildObject(JSON.parse(json, 'utf8'));
+  const builder = new xml2js.Builder({rootName: schemaType});
+  const xml = builder.buildObject(JSON.parse(json, 'utf8'));
   process.stdout.write(
     xml
       .replace(/(<\/)?substitutes(>)/g, '$1substitute$2')
@@ -42,7 +42,7 @@ function convertToXml(json) {
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', function() {
-  var chunk = this.read();
+  const chunk = this.read();
   if (chunk !== null) {
     json += chunk;
   }

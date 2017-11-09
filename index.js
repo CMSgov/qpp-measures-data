@@ -1,10 +1,10 @@
 // Libraries
-var fs = require('fs');
-var path = require('path');
-var YAML = require('yamljs');
+const fs = require('fs');
+const path = require('path');
+const YAML = require('yamljs');
 
-var yearRegEx = /^[0-9]{4}/;
-var benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
+const yearRegEx = /^[0-9]{4}/;
+const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
 
 /**
  *
@@ -13,7 +13,7 @@ var benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
  * containing the benchmarks for that performance year
  */
 exports.getBenchmarksData = function() {
-  var benchmarksByYear = {};
+  const benchmarksByYear = {};
 
   fs.readdirSync(path.join(__dirname, 'benchmarks')).forEach(function(file) {
     if (benchmarkJsonFileRegEx.test(file)) {
