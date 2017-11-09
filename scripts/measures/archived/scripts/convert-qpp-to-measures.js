@@ -44,7 +44,7 @@ let qpp = '';
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', () => {
-  var chunk = process.stdin.read();
+  const chunk = process.stdin.read();
   if (chunk !== null) {
     qpp += chunk;
   }
@@ -118,11 +118,11 @@ function parseQpp(json) {
   } else if (category === 'quality') {
     measureList = json.serviceData.pqrsMeasures;
   }
-  var result = [];
+  const result = [];
 
-  for (var i = 0; i < measureList.length; i++) {
-    var measure = measureList[i];
-    var obj = {};
+  for (let i = 0; i < measureList.length; i++) {
+    const measure = measureList[i];
+    const obj = {};
     obj.category = category;
     obj.firstPerformanceYear = new Date().getFullYear();
     obj.lastPerformanceYear = null;

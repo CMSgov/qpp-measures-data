@@ -99,7 +99,7 @@ const convertCsvToMeasures = function(records, config) {
   const constantFields = config.constant_fields;
 
   const newMeasures = records.map(function(record) {
-    var newMeasure = {};
+    const newMeasure = {};
     Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
       if (typeof columnObject === 'number') {
         if (!record[columnObject]) {

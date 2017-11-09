@@ -1,7 +1,7 @@
 // Libraries
-var parse = require('csv-parse');
+const parse = require('csv-parse');
 // Constants
-var BENCHMARK_CSV_COLUMNS = [
+const BENCHMARK_CSV_COLUMNS = [
   'measureName',
   'qualityId',
   'submissionMethod',
@@ -18,9 +18,9 @@ var BENCHMARK_CSV_COLUMNS = [
   'isToppedOut'
 ];
 // Utils
-var formatBenchmarkRecord = require('./format-benchmark-record');
+const formatBenchmarkRecord = require('./format-benchmark-record');
 // Data
-var benchmarksData = '';
+let benchmarksData = '';
 
 /**
  *
@@ -28,16 +28,16 @@ var benchmarksData = '';
  * To run: `cat [DATA_CSV_FILE] | node scripts/parse-benchmarks-data.js [BENCHMARK_YEAR] [PERFORMANCE_YEAR]`
  * e.g. `cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017`
  */
-var benchmarks = [];
+const benchmarks = [];
 // Commandline Arguments
-var benchmarkYear = process.argv[2];
-var performanceYear = process.argv[3];
+const benchmarkYear = process.argv[2];
+const performanceYear = process.argv[3];
 
 if (benchmarkYear && performanceYear) {
   process.stdin.setEncoding('utf8');
 
   process.stdin.on('readable', function() {
-    var chunk = process.stdin.read();
+    const chunk = process.stdin.read();
     if (chunk !== null) {
       benchmarksData += chunk;
     }
@@ -49,7 +49,7 @@ if (benchmarkYear && performanceYear) {
         console.log(err);
       } else {
         records.forEach(function(record) {
-          var benchmark = formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear});
+          const benchmark = formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear});
 
           if (benchmark) benchmarks.push(benchmark);
         });

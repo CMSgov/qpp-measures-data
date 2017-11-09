@@ -8,10 +8,10 @@ const qualityMeasureExampleFilenames = fs.readdirSync(testFilesFolder);
 
 describe('measures schema validates json', function() {
   describe('measures-data.json', function() {
-    var capturedStdout = null;
+    let capturedStdout = null;
 
     before(function(done) {
-      var command = 'cat measures/measures-data.json | node scripts/validate-data.js measures';
+      const command = 'cat measures/measures-data.json | node scripts/validate-data.js measures';
       exec(command, function(error, stdout, stderr) {
         if (error) console.log(error.stack);
         capturedStdout = stdout;
@@ -27,10 +27,10 @@ describe('measures schema validates json', function() {
   // TODO(aimee): Remove: This will become obsolete once c2q measures are imported into measures-data.
   describe('example quality measures', function() {
     qualityMeasureExampleFilenames.forEach(function(qualityMeasureExampleFilename) {
-      var capturedStdoutExamples = null;
+      let capturedStdoutExamples = null;
 
       before(function(done) {
-        var command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename +
+        const command = 'cat ' + testFilesFolder + qualityMeasureExampleFilename +
           ' | node scripts/validate-data.js measures';
         exec(command, function(error, stdout, stderr) {
           if (error) console.log(error.stack);
