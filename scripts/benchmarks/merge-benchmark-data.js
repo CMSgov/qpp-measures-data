@@ -13,7 +13,7 @@ const UNIQUE_COLUMN_CONSTRAINT = [
 const getBenchmarkKey = (benchmark) => {
   let benchmarkKey = '';
   UNIQUE_COLUMN_CONSTRAINT.forEach((keyName) => {
-    benchmarkKey += benchmark[keyName];
+    benchmarkKey += `${benchmark[keyName]}|`;
   });
 
   return benchmarkKey;
