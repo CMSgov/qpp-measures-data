@@ -119,31 +119,32 @@ const convertCsvToMeasures = function(records, config) {
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    if (record[17] === 'Y' &&
-        record[18] === 'N' &&
-        record[19] === 'N') {
+    const proportion = _.trim(record[17]);
+    const continuous = _.trim(record[18]);
+    const ratio = _.trim(record[19]);
+    if (proportion === 'Y' && continuous === 'N' && ratio === 'N') {
       // returns an integer if passed string '3', NaN if passed 'N/A'
-      const numPerformanceRates = _.parseInt(record[11]);
+      const numPerformanceRates = _.parseInt(_.trim(record[11]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         newMeasure['metricType'] = 'multiPerformanceRate';
 
-        const overallPerformanceRate = record[12];
+        const overallPerformanceRate = _.lowerCase(_.trim(record[12]));
         const nthPerformanceRate = _.parseInt(overallPerformanceRate);
         if (_.isInteger(nthPerformanceRate)) {
           newMeasure['overallAlgorithm'] = 'overallStratumOnly';
-        } else if (_.lowerCase(overallPerformanceRate) === 'sum numerators') {
+        } else if (overallPerformanceRate === 'sum numerators') {
           newMeasure['overallAlgorithm'] = 'sumNumerators';
-        } else if (_.lowerCase(overallPerformanceRate) === 'weighted average') {
+        } else if (overallPerformanceRate === 'weighted average') {
           newMeasure['overallAlgorithm'] = 'weightedAverage';
         }
 
         // Add the names and descriptions of strata
         let strataName;
-        const measureId = record[2];
-        const measureDescription = record[4];
+        const measureId = _.trim(record[2]);
+        const measureDescription = _.trim(record[4]);
 
         // Measure description column contains performance rate description
-        // Split 'description Rate 1: text Rate 2: text' into [text, text]
+        // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
         const strata = _.split(measureDescription, /\s*[Rr]ate [0-9]+:\s*/);
         // Drop anything before 'Rate 1' (usually a description of the measure)
         strata.shift();
