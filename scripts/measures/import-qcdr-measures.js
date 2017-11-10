@@ -81,7 +81,7 @@ const config = {
   }
 };
 
-const addMultiPerformanceRateMeasure = function(newMeasure, record, qcdrStrataNamesDataPath) {
+const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNamesDataPath) {
   // Parse the names for qcdr measures with multiple strata/performance rates
   // { measureId: [name of 1st performance rate, name of 2nd performance rate, etc.] }
   //
@@ -179,7 +179,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(_.trim(record[11]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
-        newMeasure = addMultiPerformanceRateMeasure(newMeasure, record, qcdrStrataNamesDataPath);
+        addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath);
       } else {
         newMeasure['metricType'] = 'singlePerformanceRate';
       }
