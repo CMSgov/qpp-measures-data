@@ -88,7 +88,7 @@ const config = {
  * @return {array}            Returns an array of measures objects
  *
  * Notes:
- * 1. The terms 'strata' and 'performance rate' are used interchangeably
+ * 1. The terms [performance rate] 'strata' and 'performance rates' are used interchangeably
  * 2. We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
  */
 const convertCsvToMeasures = function(records, config) {
@@ -150,6 +150,12 @@ const convertCsvToMeasures = function(records, config) {
         strata.shift();
 
         // TODO(kalvin): move strata names to a separate file
+        // Note these arrays are ordered and represent the names of the
+        // 1st, 2nd, 3rd etc. performance rates. Unlike the descriptions
+        // for each strata/performance rate, the names do not come from a source
+        // outside of this codebase. They were created by manually selecting
+        // distinct keywords from the associated performance rate description
+        // and are used when submitting to the API.
         const STRATA_NAMES = {
           'AHSQC6': ['hernia', 'overall', 'hernia>10cm'],
           'NHBPC15': ['ADL', 'IADL', 'overall'],
