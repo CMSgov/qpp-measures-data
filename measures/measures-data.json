@@ -23112,7 +23112,7 @@
   {
     "measureId": "ICLOPS15",
     "title": "Excess Days Rate and Degree of Excess (Including Physician Response)",
-    "description": "This is a two-part measure, measuring rate of discharges with no excess days and, where excess days occur, the rate of overly excess days. Physician feedback is required to satisfy requirements. Patients will be assigned to a physician’s Registry based on identification within the Hospital Quality dataset. The patient will be matched to existing patient data within this physician’s source system using the standard Roji Health Intelligence patient-matching algorithm (utilizing the data elements listed previously). Patients within the data who cannot be matched to patients within the physician source system data will be displayed, but flagged for review and validation.\nPerformance Rate 1 is the percentage of discharges without excess days out of the total of all-cause discharges for patients aged 18 years and older.\nPerformance Rate 2 is the percentage of discharges with excess days where clinician provided the required feedback AND where excess days numbered less than 3, out of the total number of discharges with excess days.",
+    "description": "This is a two-part measure, measuring rate of discharges with no excess days and, where excess days occur, the rate of overly excess days. Physician feedback is required to satisfy requirements. Patients will be assigned to a physician’s Registry based on identification within the Hospital Quality dataset. The patient will be matched to existing patient data within this physician’s source system using the standard Roji Health Intelligence patient-matching algorithm (utilizing the data elements listed previously). Patients within the data who cannot be matched to patients within the physician source system data will be displayed, but flagged for review and validation.\nRate 1: the percentage of discharges without excess days out of the total of all-cause discharges for patients aged 18 years and older.\nRate 2: the percentage of discharges with excess days where clinician provided the required feedback AND where excess days numbered less than 3, out of the total number of discharges with excess days.",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "outcome",
     "isHighPriority": true,
@@ -23129,12 +23129,21 @@
     "isRegistryMeasure": true,
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": []
+    "strata": [
+      {
+        "name": "withoutexcess",
+        "description": "the percentage of discharges without excess days out of the total of all-cause discharges for patients aged 18 years and older."
+      },
+      {
+        "name": "withexcess",
+        "description": "the percentage of discharges with excess days where clinician provided the required feedback AND where excess days numbered less than 3, out of the total number of discharges with excess days."
+      }
+    ]
   },
   {
     "measureId": "ICLOPS17",
     "title": "Rate of Follow Up Visits Within 7 Days of Discharge (Including Physician Response)",
-    "description": "This is a two-part measure, measuring whether patients were seen in a timely fashion in the ambulatory setting after discharge.  Physician feedback is required to satisfy requirements. Patients will be assigned to a physician’s Registry based on identification within the Hospital Quality dataset. The patient will be matched to existing patient data within this physician’s source system using the standard Roji Health Intelligence patient-matching algorithm (utilizing the data elements listed previously). Patients within the data who cannot be matched to patients within the physician source system data will be displayed, but flagged for review and validation.\nPerformance Rate 1 the percentage of discharges where there is a subsequent office visit within seven days out of the total number of of all-cause discharges for patients aged 18 years and older.\nPerformance Rate 2 is the percentage of discharges without subsequent office visits within 7 days where clinician provided required feedback AND where re-admission within 30 days did not occur, out of the total number of all-cause discharges for patients aged 18 years and older.",
+    "description": "This is a two-part measure, measuring whether patients were seen in a timely fashion in the ambulatory setting after discharge.  Physician feedback is required to satisfy requirements. Patients will be assigned to a physician’s Registry based on identification within the Hospital Quality dataset. The patient will be matched to existing patient data within this physician’s source system using the standard Roji Health Intelligence patient-matching algorithm (utilizing the data elements listed previously). Patients within the data who cannot be matched to patients within the physician source system data will be displayed, but flagged for review and validation.\nRate 1: the percentage of discharges where there is a subsequent office visit within seven days out of the total number of of all-cause discharges for patients aged 18 years and older.\nRate 2: the percentage of discharges without subsequent office visits within 7 days where clinician provided required feedback AND where re-admission within 30 days did not occur, out of the total number of all-cause discharges for patients aged 18 years and older.",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "isHighPriority": true,
@@ -23151,7 +23160,16 @@
     "isRegistryMeasure": true,
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": []
+    "strata": [
+      {
+        "name": "withfollowup",
+        "description": "the percentage of discharges where there is a subsequent office visit within seven days out of the total number of of all-cause discharges for patients aged 18 years and older."
+      },
+      {
+        "name": "withoutfollowup",
+        "description": "the percentage of discharges without subsequent office visits within 7 days where clinician provided required feedback AND where re-admission within 30 days did not occur, out of the total number of all-cause discharges for patients aged 18 years and older."
+      }
+    ]
   },
   {
     "measureId": "RHI1",
