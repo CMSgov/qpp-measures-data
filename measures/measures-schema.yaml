@@ -111,7 +111,7 @@ definitions:
         type: boolean
         default: false
       overallAlgorithm:
-        description: Formula to determine the overall performance rate, given multiple strata of performance rates.
+        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
         enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly]
       strata:
         description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
@@ -142,7 +142,18 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, strata, primarySteward, measureSets, isRegistryMeasure]
+    oneOf: [
+      {
+        properties: {
+          metricType: { enum: [multiPerformanceRate] }
+        },
+        required: [overallAlgorithm, strata]
+      },{
+        properties: {
+          metricType: { enum: [singlePerformanceRate, nonProportion, cahps] }
+        }
+      }]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, isRegistryMeasure]
 
   performanceStrata:
     type: object
