@@ -11,6 +11,7 @@ const testMeasures = '../../test/scripts/measures/fixtures/test-measures-data.js
 const testMeasures2 = '../../test/scripts/measures/fixtures/test-measures-data2.json';
 const testCsv = '../../test/scripts/measures/fixtures/test-qcdr.csv';
 const testCsv2Cols = '../../test/scripts/measures/fixtures/test-qcdr-2cols.csv';
+const qcdrStrataNamesFile = '../../util/measures/qcdr-measures-strata-names.json';
 const outputArg = '../../test/scripts/measures/fixtures/test-measures-data-output.json';
 const output = '../' + outputArg;
 
@@ -20,7 +21,7 @@ const expectedMeasures = require('./fixtures/expected-measures.json');
 // Function which executes script and reads in output file to a JS object.
 const runTest = function(measuresFile, measuresCsv) {
   const cmd = 'node ./scripts/measures/import-qcdr-measures.js ' +
-    measuresFile + ' ' + measuresCsv + ' ' + outputArg;
+    measuresFile + ' ' + measuresCsv + ' ' + qcdrStrataNamesFile + ' ' + outputArg;
   console.log(execSync(cmd, {stdio: 'pipe'}).toString());
 
   const qpp = fs.readFileSync(path.join(__dirname, output), 'utf8');
