@@ -85,11 +85,11 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   // Parse the names for qcdr measures with multiple strata/performance rates
   // { measureId: [name of 1st performance rate, name of 2nd performance rate, etc.] }
   //
-  // Note that the order of the array values matter. Also, unlike the descriptions
-  // for each of the strata/performance rates, the names do not come from a source
-  // outside of this codebase. They were created by manually selecting
-  // distinct keywords from the associated performance rate description
-  // and are used when submitting to the API.
+  // In the strata names file, note that the order of the array values matter.
+  // Also, unlike the descriptions for each of the strata/performance rates,
+  // the names do not come from a source outside of this codebase. They were
+  // created by manually selecting distinct keywords from the associated
+  // performance rate description and are used when submitting to the API.
   const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
   const qcdrStrataNames = JSON.parse(strataNames);
 
