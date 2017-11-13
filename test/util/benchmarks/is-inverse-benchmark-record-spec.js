@@ -1,19 +1,19 @@
 // Libraries
-var chai = require('chai');
-var assert = chai.assert;
+const chai = require('chai');
+const assert = chai.assert;
 // Utils
-var isInverseBenchmarkRecord = require('./../../../util/benchmarks/is-inverse-benchmark-record');
+const isInverseBenchmarkRecord = require('./../../../util/benchmarks/is-inverse-benchmark-record');
 
 describe('isInverseBenchmarkRecord', function() {
   it('should default to false', function() {
     assert.isFalse(isInverseBenchmarkRecord({}));
   });
   it('should return false when decile 10 is equal to 100', function() {
-    var isInverse = isInverseBenchmarkRecord({decile10: '100'});
+    const isInverse = isInverseBenchmarkRecord({decile10: '100'});
 
     assert.isFalse(isInverse);
 
-    var isInverse2 = isInverseBenchmarkRecord({
+    const isInverse2 = isInverseBenchmarkRecord({
       decile3: '53.73 - 75.75',
       decile4: '75.76 - 88.45',
       decile5: '88.46 - 98.07',
@@ -27,11 +27,11 @@ describe('isInverseBenchmarkRecord', function() {
     assert.isFalse(isInverse2);
   });
   it('should return true when decile 10 is equal to 0', function() {
-    var isInverse = isInverseBenchmarkRecord({decile10: '0'});
+    const isInverse = isInverseBenchmarkRecord({decile10: '0'});
 
     assert.isTrue(isInverse);
 
-    var isInverse2 = isInverseBenchmarkRecord({
+    const isInverse2 = isInverseBenchmarkRecord({
       decile3: '54.67 - 35.91',
       decile4: '35.90 - 25.63',
       decile5: '25.62 - 19.34',
@@ -44,7 +44,7 @@ describe('isInverseBenchmarkRecord', function() {
 
     assert.isTrue(isInverse2);
 
-    var isInverse3 = isInverseBenchmarkRecord({
+    const isInverse3 = isInverseBenchmarkRecord({
       measureName: 'Children Who Have Dental Decay or Cavities',
       qualityId: '378',
       submissionMethod: 'EHR',
@@ -64,11 +64,11 @@ describe('isInverseBenchmarkRecord', function() {
     assert.isTrue(isInverse3);
   });
   it('should return true when decile 10 is <= x', function() {
-    var isInverse = isInverseBenchmarkRecord({decile10: '<= 4.00'});
+    const isInverse = isInverseBenchmarkRecord({decile10: '<= 4.00'});
 
     assert.isTrue(isInverse, 'case1');
 
-    var isInverse2 = isInverseBenchmarkRecord({
+    const isInverse2 = isInverseBenchmarkRecord({
       measureName: 'Diabetes: Hemoglobin A1c Poor Control',
       qualityId: '1',
       submissionMethod: 'Claims',
@@ -88,11 +88,11 @@ describe('isInverseBenchmarkRecord', function() {
     assert.isTrue(isInverse2);
   });
   it('should return false when decile 10 is >= x', function() {
-    var isInverse = isInverseBenchmarkRecord({decile10: '>= 5.00'});
+    const isInverse = isInverseBenchmarkRecord({decile10: '>= 5.00'});
 
     assert.isFalse(isInverse);
 
-    var isInverse2 = isInverseBenchmarkRecord({
+    const isInverse2 = isInverseBenchmarkRecord({
       decile3: '76.59 - 87.88',
       decile4: '87.89 - 92.73',
       decile5: '92.74 - 95.35',

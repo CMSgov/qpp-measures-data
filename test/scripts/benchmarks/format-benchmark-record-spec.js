@@ -1,9 +1,9 @@
-var chai = require('chai');
-var assert = chai.assert;
+const chai = require('chai');
+const assert = chai.assert;
 // Utils
-var formatBenchmarkRecord = require('./../../../scripts/benchmarks/format-benchmark-record');
+const formatBenchmarkRecord = require('./../../../scripts/benchmarks/format-benchmark-record');
 
-var options = {
+const options = {
   benchmarkYear: 2016,
   performanceYear: 2018
 };
@@ -12,7 +12,7 @@ describe('formatBenchmarkRecord', function() {
   describe('When qualityId of the record does NOT correspond to a measure', function() {
     it('should return undefined', function() {
       // USWR 1800 is not a real qualityID, but the other properties are from real benchmark USWR 18.
-      var record = {
+      const record = {
         measureName: 'Complications or Side Effects among patients undergoing Treatment with HBOT',
         qualityId: 'USWR 1800', // USWR 18
         submissionMethod: 'Registry/QCDR',
@@ -28,7 +28,7 @@ describe('formatBenchmarkRecord', function() {
         decile10: '100',
         isToppedOut: 'Yes'
       };
-      var benchmark = formatBenchmarkRecord(record, options);
+      const benchmark = formatBenchmarkRecord(record, options);
 
       assert.isUndefined(benchmark);
     });
@@ -36,7 +36,7 @@ describe('formatBenchmarkRecord', function() {
 
   describe('When benchmark property of record is \'N\'', function() {
     it('should return undefined', function() {
-      var record = {
+      const record = {
         measureName: 'Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients',
         qualityId: '102',
         submissionMethod: 'EHR',
@@ -52,7 +52,7 @@ describe('formatBenchmarkRecord', function() {
         decile10: ' -- ',
         isToppedOut: ' -- '
       };
-      var benchmark = formatBenchmarkRecord(record, options);
+      const benchmark = formatBenchmarkRecord(record, options);
 
       assert.isUndefined(benchmark);
     });
@@ -60,7 +60,7 @@ describe('formatBenchmarkRecord', function() {
 
   describe('When qualityId of the record does correspond to a measure', function() {
     it('should have the correct benchmarkYear based on the options argument', function() {
-      var record = {
+      const record = {
         measureName: 'Diabetes: Hemoglobin A1c Poor Control',
         qualityId: '1',
         submissionMethod: 'EHR',
@@ -76,14 +76,14 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
-      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
+      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
+      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
 
       assert.equal(benchmark1.benchmarkYear, 2002);
       assert.equal(benchmark2.benchmarkYear, 2004);
     });
     it('should have the correct performanceYear based on the options argument', function() {
-      var record = {
+      const record = {
         measureName: 'Diabetes: Hemoglobin A1c Poor Control',
         qualityId: '1',
         submissionMethod: 'EHR',
@@ -99,8 +99,8 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      var benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
-      var benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
+      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
+      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
 
       assert.equal(benchmark1.performanceYear, 2004);
       assert.equal(benchmark2.performanceYear, 2006);
@@ -108,7 +108,7 @@ describe('formatBenchmarkRecord', function() {
 
     describe('When a direct (non-inverse) measure', function() {
       describe('When there are no gaps between between Deciles 3 and 10', function() {
-        var record = {
+        const record = {
           measureName: 'Documentation of Current Medications in the Medical Record',
           qualityId: '130',
           submissionMethod: 'EHR',
@@ -124,7 +124,7 @@ describe('formatBenchmarkRecord', function() {
           decile10: '>= 99.76',
           isToppedOut: 'Yes'
         };
-        var benchmark = formatBenchmarkRecord(record, options);
+        const benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           assert.isDefined(benchmark);
@@ -137,7 +137,7 @@ describe('formatBenchmarkRecord', function() {
       });
 
       describe('When Deciles 3 through 9 are not defined', function() {
-        var record = {
+        const record = {
           measureName: 'Breast Cancer Resection Pathology Reporting: pT Category (Primary Tumor) and pN Category (Regional Lymph Nodes) with Histologic Grade',
           qualityId: '99',
           submissionMethod: 'Claims',
@@ -153,7 +153,7 @@ describe('formatBenchmarkRecord', function() {
           decile10: '100',
           isToppedOut: 'Yes'
         };
-        var benchmark = formatBenchmarkRecord(record, options);
+        const benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           assert.isDefined(benchmark);
@@ -170,7 +170,7 @@ describe('formatBenchmarkRecord', function() {
       describe('When Deciles 3 through 10 are all defined, i.e. not null or \'--\'', function() {
         describe('When Decile 10 is equal to 0', function() {
           it('should return the correct benchmark object', function() {
-            var record = {
+            const record = {
               measureName: 'Diabetes: Hemoglobin A1c Poor Control',
               qualityId: '1',
               submissionMethod: 'EHR',
@@ -186,7 +186,7 @@ describe('formatBenchmarkRecord', function() {
               decile10: '0',
               isToppedOut: 'No'
             };
-            var benchmark = formatBenchmarkRecord(record, options);
+            const benchmark = formatBenchmarkRecord(record, options);
 
             assert.isDefined(benchmark);
             assert.equal(benchmark.measureId, '001', 'measureId');
@@ -198,7 +198,7 @@ describe('formatBenchmarkRecord', function() {
         });
         describe('When Decile 10 is less than or equal to x', function() {
           it('should return the correct benchmark object', function() {
-            var record = {
+            const record = {
               measureName: 'Diabetes: Hemoglobin A1c Poor Control',
               qualityId: '1',
               submissionMethod: 'Claims',
@@ -214,7 +214,7 @@ describe('formatBenchmarkRecord', function() {
               decile10: '<=  4.00',
               isToppedOut: 'No'
             };
-            var benchmark = formatBenchmarkRecord(record, options);
+            const benchmark = formatBenchmarkRecord(record, options);
 
             assert.isDefined(benchmark);
             assert.equal(benchmark.measureId, '001', 'measureId');
@@ -227,7 +227,7 @@ describe('formatBenchmarkRecord', function() {
       });
 
       describe('When Deciles 3 through 9 are not defined', function() {
-        var record = {
+        const record = {
           measureName: 'Anaphylaxis During Anesthesia Care',
           qualityId: '1', // ABG 11
           submissionMethod: 'Registry/QCDR',
@@ -245,7 +245,7 @@ describe('formatBenchmarkRecord', function() {
         };
 
         it('should return the correct benchmark object', function() {
-          var benchmark = formatBenchmarkRecord(record, options);
+          const benchmark = formatBenchmarkRecord(record, options);
           assert.isDefined(benchmark);
           assert.equal(benchmark.measureId, '001', 'measureId');
           assert.equal(benchmark.submissionMethod, 'registry', 'submissionMethod');
@@ -256,7 +256,7 @@ describe('formatBenchmarkRecord', function() {
       });
 
       describe('When there is one gap between Deciles 3 and 10', function() {
-        var record = {
+        const record = {
           measureName: 'Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation',
           qualityId: '12',
           submissionMethod: 'Claims',
@@ -272,7 +272,7 @@ describe('formatBenchmarkRecord', function() {
           decile10: '100',
           isToppedOut: 'Y'
         };
-        var benchmark = formatBenchmarkRecord(record, options);
+        const benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           assert.isDefined(benchmark);
@@ -284,7 +284,7 @@ describe('formatBenchmarkRecord', function() {
         });
       });
       describe('When there are two gaps between Deciles 3 and 10', function() {
-        var record = {
+        const record = {
           measureName: 'CT IV Contrast Extravasation Rate (Low Osmolar Contrast Media)',
           qualityId: '1', // ACRad 20
           submissionMethod: 'Registry/QCDR',
@@ -300,7 +300,7 @@ describe('formatBenchmarkRecord', function() {
           decile10: '0',
           isToppedOut: 'Y'
         };
-        var benchmark = formatBenchmarkRecord(record, options);
+        const benchmark = formatBenchmarkRecord(record, options);
 
         it('should return the correct benchmark object', function() {
           assert.isDefined(benchmark);

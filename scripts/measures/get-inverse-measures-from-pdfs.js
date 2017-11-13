@@ -37,7 +37,7 @@ function getIsInverse(path, cb) {
       return;
     }
 
-    let found = data.match(/inverse measure/i); // ignore case
+    const found = data.match(/inverse measure/i); // ignore case
 
     if (found) {
       isInverse = true;
@@ -50,7 +50,7 @@ function getIsInverse(path, cb) {
 // find all files in path
 // group the files by the qualityId. This way we don't have to look through the claims and registry files
 const groupedFiles = fs.readdirSync(folderPath).reduce(function(arr, current) {
-  let qualityId = current.split('_')[2];
+  const qualityId = current.split('_')[2];
   arr[qualityId] ? arr[qualityId].push(current) : arr[qualityId] = [current];
   return arr;
 }, {});

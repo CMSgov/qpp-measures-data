@@ -4,12 +4,14 @@ const assert = chai.assert;
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 // Test data
 const testMeasures = '../../test/scripts/measures/fixtures/test-measures-data.json';
 const testMeasures2 = '../../test/scripts/measures/fixtures/test-measures-data2.json';
 const testCsv = '../../test/scripts/measures/fixtures/test-qcdr.csv';
 const testCsv2Cols = '../../test/scripts/measures/fixtures/test-qcdr-2cols.csv';
+const qcdrStrataNamesFile = '../../util/measures/qcdr-measures-strata-names.json';
 const outputArg = '../../test/scripts/measures/fixtures/test-measures-data-output.json';
 const output = '../' + outputArg;
 
@@ -19,7 +21,7 @@ const expectedMeasures = require('./fixtures/expected-measures.json');
 // Function which executes script and reads in output file to a JS object.
 const runTest = function(measuresFile, measuresCsv) {
   const cmd = 'node ./scripts/measures/import-qcdr-measures.js ' +
-    measuresFile + ' ' + measuresCsv + ' ' + outputArg;
+    measuresFile + ' ' + measuresCsv + ' ' + qcdrStrataNamesFile + ' ' + outputArg;
   console.log(execSync(cmd, {stdio: 'pipe'}).toString());
 
   const qpp = fs.readFileSync(path.join(__dirname, output), 'utf8');
@@ -30,7 +32,7 @@ const runTest = function(measuresFile, measuresCsv) {
 describe('import measures', function() {
   it('should create new measures and ignore duplicate measureIds', () => {
     const measures = runTest(testMeasures, testCsv);
-    assert.equal(measures.length, 2);
+    assert.equal(measures.length, 3);
   });
 
   it('should overwrite fields with the right csv data', () => {
@@ -40,6 +42,12 @@ describe('import measures', function() {
         assert.deepEqual(measures[measureIdx][measureKey], measureValue);
       });
     });
+  });
+
+  it('should correctly identify multiPerformanceRate measures', () => {
+    const measures = runTest(testMeasures, testCsv);
+    const multiPerformanceRateMeasure = _.find(measures, {measureId: 'AAAAI4'});
+    assert.equal(multiPerformanceRateMeasure.metricType, 'multiPerformanceRate');
   });
 
   it('throws an informative error when the column doesn\'t exist', function() {

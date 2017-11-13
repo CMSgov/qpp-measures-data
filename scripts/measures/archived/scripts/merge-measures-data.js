@@ -11,7 +11,7 @@ let qpp = '';
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', () => {
-  var chunk = process.stdin.read();
+  const chunk = process.stdin.read();
   if (chunk !== null) {
     qpp += chunk;
   }
@@ -23,22 +23,22 @@ process.stdin.on('end', () => {
 
 function mergeQpp(qppJson) {
   // read in tmp/quality-performance-rates.json
-  var performanceRatesJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-performance-rates.json'), 'utf8'));
+  const performanceRatesJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-performance-rates.json'), 'utf8'));
   // read in measures/quality-measures-additional-info.json
-  var performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-measures-strata-details.json'), 'utf8'));
+  const performanceRateAdditionalJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../util/measures/quality-measures-strata-details.json'), 'utf8'));
 
-  var measuresNotFound = [];
+  const measuresNotFound = [];
   // iterate through all qppJson measures and find matching items from other json blobs
   qppJson.forEach(function(qppItem, index) {
     if (qppItem.category === 'quality') {
-      var performanceRateDescription = _.find(performanceRatesJson, {'qualityId': qppItem.measureId});
-      var performanceRateInfo = _.find(performanceRateAdditionalJson, {'qualityId': qppItem.measureId});
+      const performanceRateDescription = _.find(performanceRatesJson, {'qualityId': qppItem.measureId});
+      const performanceRateInfo = _.find(performanceRateAdditionalJson, {'qualityId': qppItem.measureId});
 
       if (!performanceRateDescription || !performanceRateInfo) {
         return measuresNotFound.push(qppItem.measureId);
       }
 
-      var strataDetails = [];
+      const strataDetails = [];
       performanceRateDescription.descriptions.forEach(function(description, index) {
         strataDetails.push({description: description, name: performanceRateInfo.performanceRates[index]});
       });
@@ -134,7 +134,7 @@ function enrichACIMeasures(measures) {
     .filter(measure => measure.category === 'aci')
     .forEach(measure => {
       // find the relation and populate reporting category and substitutions
-      var aciRelation = aciRelations[measure.measureId];
+      const aciRelation = aciRelations[measure.measureId];
       if (aciRelation) {
         measure.reportingCategory = aciRelation.reportingCategory;
         measure.substitutes = aciRelation.substitutes;

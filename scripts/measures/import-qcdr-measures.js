@@ -27,11 +27,6 @@ const config = {
     eMeasureId: null,
     nqfEMeasureId: null,
     nqfId: null,
-    strata: [
-      {
-        name: 'overall'
-      }
-    ],
     measureSets: [],
     isRegistryMeasure: true
   },
@@ -86,20 +81,75 @@ const config = {
   }
 };
 
+const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNamesDataPath) {
+  // Parse the names for qcdr measures with multiple strata/performance rates
+  // { measureId: [name of 1st performance rate, name of 2nd performance rate, etc.] }
+  //
+  // In the strata names file, note that the order of the array values matter.
+  // Also, unlike the descriptions for each of the strata/performance rates,
+  // the names do not come from a source outside of this codebase. They were
+  // created by manually selecting distinct keywords from the associated
+  // performance rate description and are used when submitting to the API.
+  const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
+  const qcdrStrataNames = JSON.parse(strataNames);
+
+  newMeasure['metricType'] = 'multiPerformanceRate';
+
+  const overallPerformanceRate = _.lowerCase(_.trim(record[12]));
+  const nthPerformanceRate = _.parseInt(overallPerformanceRate);
+  if (_.isInteger(nthPerformanceRate)) {
+    newMeasure['overallAlgorithm'] = 'overallStratumOnly';
+  } else if (overallPerformanceRate === 'sum numerators') {
+    newMeasure['overallAlgorithm'] = 'sumNumerators';
+  } else if (overallPerformanceRate === 'weighted average') {
+    newMeasure['overallAlgorithm'] = 'weightedAverage';
+  }
+
+  // Add the names and descriptions of strata
+  let strataName;
+  const measureId = _.trim(record[2]);
+  const measureDescription = _.trim(record[4]);
+
+  // Measure description column contains performance rate description
+  // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
+  const strata = _.split(measureDescription, /\s*[Rr]ate [0-9]+:\s*/);
+  // Drop anything before 'Rate 1' (usually a description of the measure)
+  strata.shift();
+
+  newMeasure['strata'] = [];
+  _.each(strata, function(stratum, index) {
+    strataName = qcdrStrataNames[measureId][index];
+    // i + 1 because Rates in the csv are numbered starting from 1
+    if (_.lowerCase(strataName) === 'overall' &&
+      index + 1 !== nthPerformanceRate) {
+      throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
+        'CSV doesn\'t match the name in the strata details file');
+    }
+    newMeasure['strata'].push({
+      'name': strataName,
+      'description': strata[index]
+    });
+  });
+
+  return newMeasure;
+};
+
 /**
  * [convertCsvToMeasures description]
  * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
  * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
  * @return {array}            Returns an array of measures objects
  *
- * We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
+ * Notes:
+ * 1. The terms [performance rate] 'strata' and 'performance rates' are used interchangeably
+ * 2. We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
  */
-const convertCsvToMeasures = function(records, config) {
+const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) {
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
 
   const newMeasures = records.map(function(record) {
-    var newMeasure = {};
+    const newMeasure = {};
     Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
       if (typeof columnObject === 'number') {
         if (!record[columnObject]) {
@@ -120,15 +170,19 @@ const convertCsvToMeasures = function(records, config) {
 
     // If the 'proportion' column (col 17) is Y and the other two columns
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
-    // 'singlePerformanceRate'. Otherwise it should be 'nonProportion'
-    //
-    // Note: if the 'proportion' column is Y *and* there are multiple
-    // strata, then the metricType should be 'multiPerformanceRate'
-    // TODO(kalvin): implement multiPerformanceRate;
-    if (record[17] === 'Y' &&
-        record[18] === 'N' &&
-        record[19] === 'N') {
-      newMeasure['metricType'] = 'singlePerformanceRate';
+    // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
+    // strata/performance rates. Otherwise it should be 'nonProportion'
+    const proportion = _.trim(record[17]);
+    const continuous = _.trim(record[18]);
+    const ratio = _.trim(record[19]);
+    if (proportion === 'Y' && continuous === 'N' && ratio === 'N') {
+      // returns an integer if passed string '3', NaN if passed 'N/A'
+      const numPerformanceRates = _.parseInt(_.trim(record[11]));
+      if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
+        addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath);
+      } else {
+        newMeasure['metricType'] = 'singlePerformanceRate';
+      }
     } else {
       newMeasure['metricType'] = 'nonProportion';
     }
@@ -201,18 +255,19 @@ function addMissingRegistryFlags(measures) {
   return measures;
 }
 
-function importMeasures(measuresDataPath, qcdrMeasuresDataPath, outputPath) {
+function importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, outputPath) {
   const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
   const allMeasures = JSON.parse(qpp);
 
   const csv = fs.readFileSync(path.join(__dirname, qcdrMeasuresDataPath), 'utf8');
-  const records = parse(csv, 'utf8');
+  const qcdrCsv = parse(csv, 'utf8');
   // remove header
-  records.shift();
+  qcdrCsv.shift();
+
   // If there's more than one QCDR measure with the same measure, we can
   // arbitrarily pick one and ignore the others (they should all be
   // identical except for the QCDR Organization Name which we don't care about)
-  const qcdrMeasures = _.uniqBy(convertCsvToMeasures(records, config), 'measureId');
+  const qcdrMeasures = _.uniqBy(convertCsvToMeasures(qcdrCsv, config, qcdrStrataNamesDataPath), 'measureId');
 
   const mergedMeasures = mergeMeasures(allMeasures, qcdrMeasures, outputPath);
   return JSON.stringify(addMissingRegistryFlags(mergedMeasures), null, 2);
@@ -220,7 +275,8 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath, outputPath) {
 
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
-const outputPath = process.argv[4];
+const qcdrStrataNamesDataPath = process.argv[4];
+const outputPath = process.argv[5];
 
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, outputPath);
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, outputPath);
 fs.writeFileSync(path.join(__dirname, outputPath), newMeasures);

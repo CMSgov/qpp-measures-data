@@ -10,17 +10,17 @@
  * cat measures/measures-data.json | node scripts/validate-data.js measures
  **/
 
-var Ajv = require('ajv');
-var path = require('path');
-var YAML = require('yamljs');
+const Ajv = require('ajv');
+const path = require('path');
+const YAML = require('yamljs');
 
-var ajv = Ajv();
+const ajv = Ajv();
 
-var schemaType = process.argv[2];
+const schemaType = process.argv[2];
 
-var json = '';
+let json = '';
 function validate(json) {
-  var valid = ajv.validate(
+  const valid = ajv.validate(
     YAML.load(path.join(__dirname, '../' + schemaType,
       schemaType + '-schema.yaml')),
     JSON.parse(json, 'utf8'));
@@ -35,7 +35,7 @@ if (schemaType) {
   process.stdin.setEncoding('utf8');
 
   process.stdin.on('readable', function() {
-    var chunk = this.read();
+    const chunk = this.read();
     if (chunk !== null) {
       json += chunk;
     }

@@ -13,7 +13,7 @@ const parse = require('csv-parse');
 const path = require('path');
 
 const additionalMeasuresFilepath = '../../util/measures/additional-measures.json';
-var additionalMeasures = require(additionalMeasuresFilepath);
+let additionalMeasures = require(additionalMeasuresFilepath);
 
 // Some measures have an NqfId (NQF: National Quality Forum) of '0005'
 const defaultNqfId = '0005';
@@ -49,20 +49,20 @@ const CAHPS_CSV_COLUMNS = [
 ];
 
 // Initialize a string to store the CSV data.
-var cahpsMeasuresData = '';
+let cahpsMeasuresData = '';
 
 process.stdin.setEncoding('utf8');
 
 process.stdin.on('readable', function() {
-  var chunk = process.stdin.read();
+  const chunk = process.stdin.read();
   if (chunk !== null) {
     cahpsMeasuresData += chunk;
   }
 });
 
 function generateCahpsMeasure(record, idx) {
-  var measureTitle = record['Measure Name'];
-  var measureIdx = cahpsTitleToMeasureIdIndexMap[measureTitle];
+  const measureTitle = record['Measure Name'];
+  const measureIdx = cahpsTitleToMeasureIdIndexMap[measureTitle];
 
   if (measureIdx === undefined) {
     throw new Error('No existing measure index matches title: "' + measureTitle + '"');
@@ -101,12 +101,12 @@ process.stdin.on('end', function() {
     } else {
       // We want to overwrite CAHPS measures every time we run this script.
       additionalMeasures = additionalMeasures.filter(function(measure) {
-        var re = /CAHPS_\d+/i;
+        const re = /CAHPS_\d+/i;
         return measure.measureId.match(re) === null;
       });
 
       records.forEach(function(record, idx) {
-        var measure = generateCahpsMeasure(record, idx);
+        const measure = generateCahpsMeasure(record, idx);
         if (measure) additionalMeasures.push(measure);
       });
 
