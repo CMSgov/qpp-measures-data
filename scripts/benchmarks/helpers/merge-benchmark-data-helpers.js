@@ -9,6 +9,11 @@ const UNIQUE_COLUMN_CONSTRAINT = [
 ];
 const BENCHMARK_JSON_DIR = '../../../staging/benchmarks/json/';
 
+// Returns an alphabetically-ordered list of files in the given pat
+const getOrderedFileNames = (currentDir, relativePath) => {
+  return fs.readdirSync(path.join(currentDir, relativePath));
+};
+
 // Generate a key in an object to store benchmarks in.
 // Benchmarks with the same key will overwrite one another base
 // which was loaded last. See mergeBenchmarkLayers for more details.
@@ -43,6 +48,7 @@ const mergeBenchmarkLayers = (benchmarkLayers) => {
 };
 
 module.exports = {
+  getOrderedFileNames,
   getBenchmarkKey,
   mergeBenchmarkLayers
 };

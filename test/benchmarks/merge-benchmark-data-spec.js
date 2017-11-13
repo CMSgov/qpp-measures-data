@@ -4,6 +4,14 @@ var assert = chai.assert;
 const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
 
 describe('mergeBenchmarkData', function() {
+  describe('getOrderedFileNames', function() {
+    it('orders files in a dir alphabetically', () => {
+      const orderingJsonDir = '../../test/benchmarks/files/ordering-json/';
+      const expectedOrder = ['000-benchmark.json', '001-benchmark.json', '999-benchmark.json'];
+      assert.deepEqual(mergeBenchmarkData.getOrderedFileNames(__dirname, orderingJsonDir), expectedOrder);
+    });
+  });
+
   describe('getBenchmarkKey', function() {
     it('parses correctly the key', function() {
       const benchmark = {
