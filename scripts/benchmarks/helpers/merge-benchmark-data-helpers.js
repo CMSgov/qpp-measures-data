@@ -7,6 +7,7 @@ const UNIQUE_COLUMN_CONSTRAINT = [
   'performanceYear',
   'submissionMethod'
 ];
+const BENCHMARK_JSON_DIR = '../../../staging/benchmarks/json/';
 
 // Generate a key in an object to store benchmarks in.
 // Benchmarks with the same key will overwrite one another base
@@ -32,7 +33,7 @@ const mergeBenchmarkLayers = (benchmarkLayers) => {
   const mergedBenchmarks = new Map();
 
   benchmarkLayers.forEach((benchmarkLayer) => {
-    const benchmarkFile = JSON.parse(fs.readFileSync(path.join(__dirname, benchmarkLayer), 'utf8'));
+    const benchmarkFile = JSON.parse(fs.readFileSync(path.join(__dirname, BENCHMARK_JSON_DIR, benchmarkLayer), 'utf8'));
     benchmarkFile.forEach((benchmark) => {
       mergedBenchmarks.set(getBenchmarkKey(benchmark), benchmark);
     });
