@@ -1,6 +1,8 @@
 // Libraries
 const parse = require('csv-parse');
 // Constants
+// Note: A blank column is added due to the formatting of CSVs we receive.
+// We need to standardize the format of the CSVs.
 const BENCHMARK_CSV_COLUMNS = [
   'measureName',
   'qualityId',
@@ -15,7 +17,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'decile8',
   'decile9',
   'decile10',
-  'isToppedOut'
+  'isToppedOut',
+  ''
 ];
 // Utils
 const formatBenchmarkRecord = require('./format-benchmark-record');

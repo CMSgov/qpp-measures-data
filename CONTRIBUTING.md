@@ -30,7 +30,7 @@ We've provided a simple tool to validate JSON against our JSON schemas. By provi
 cat [path to JSON] | node scripts/validate-data.js [measures | benchmarks | clinical-clusters]
 ```
 
-### Additional measures or benchmarks
+### Additional measures
 
 `util/measures/additional-measures.json` includes data objects which are necessary for scoring but are not MIPS measures. Any additional measures should be added to this file, followed by a re-generation of measures data using the command described in the "Generating Data" section.
 
@@ -41,10 +41,21 @@ At this time `util/measures/additional-measures.json` includes:
 
 Similarly, `util/benchmarks/additional-benchmarks-2017.json` contains benchmark data that is necessary for scoring but not included in the historical CSV file. Any additional benchmarks should be added to this file, followed by a re-generation of benchmarks data.
 
-### Importing measures from CSV file
+#### Importing measures from CSV file
 
 `scripts/measures/import-qcdr-measures.js` script handles importing QCDR measures from a CSV and converting them to the qpp-measures-data measure schema. The `convertCsvToMeasures` function can be replicated for new CSVs if appropriate.
 
+### Additional benchmarks
+
+To add or update benchmarks, you'll want to convert the csv file into JSON with the `scripts/benchmarks/parse-benchmarks-data.js`. `parse-benchmarks-data.js` relies on a set of columns to be present and additional empty columns can cause the parsing to fail. See that file for additional instructions on how to generate the JSON file.
+
+After you have the parsed JSON file, move the CSV and JSON into `staging/benchmarks/csv` and `staging/benchmarks/json`. We do this for auditing and regeneration purposes. You'll notice a number prepended to both files. We number each file to enforce ordering of merges. Currently, if two benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, the one that exists in the larger numbered file will overwrite the smaller one.
+
+To update the benchmarks file after the JSON file is in place, run `npm run build:measures` and verify the changes are as expected. (You can run `git diff`.)
+
+### Deleting measures and benchmarks
+
+TODO: Support a safer way to delete benchmarks. You could add a key saying `delete: true` and have the generate step filter out benchmarks with those keys. This way you wouldn't change the generation artifacts.
 
 ## Testing
 
