@@ -1,5 +1,5 @@
-var chai = require('chai');
-var assert = chai.assert;
+const chai = require('chai');
+const assert = chai.assert;
 
 const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
 
