@@ -8,7 +8,6 @@ const UNIQUE_COLUMN_CONSTRAINT = [
   'submissionMethod'
 ];
 
-
 // Generate a key in an object to store benchmarks in.
 // Benchmarks with the same key will overwrite one another base
 // which was loaded last. See mergeBenchmarkLayers for more details.
@@ -39,12 +38,7 @@ const mergeBenchmarkLayers = (benchmarkLayers) => {
     });
   });
 
-  const formattedBenchmarks = [];
-  for (const value of mergedBenchmarks.values()) {
-    formattedBenchmarks.push(value);
-  }
-
-  return formattedBenchmarks;
+  return [...mergedBenchmarks.values()];
 };
 
 module.exports = {
