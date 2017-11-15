@@ -29,7 +29,7 @@ describe('formatBenchmarkRecord', function() {
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
-      assert.equal(benchmark.measureId, 'USWR_1800');
+      assert.equal(benchmark.measureId, 'USWR1800');
     });
   });
 
