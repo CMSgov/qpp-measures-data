@@ -2,9 +2,6 @@
 const chai = require('chai');
 const assert = chai.assert;
 const { execSync } = require('child_process');
-// const fs = require('fs');
-// const path = require('path');
-// const _ = require('lodash');
 
 const testCsv = 'test/scripts/benchmarks/fixtures/test-benchmarks.csv';
 
