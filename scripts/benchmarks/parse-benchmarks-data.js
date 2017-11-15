@@ -28,8 +28,8 @@ let benchmarksData = '';
 /**
  *
  * Script to generate benchmark.json file from csv
- * To run: `cat [DATA_CSV_FILE] | node scripts/parse-benchmarks-data.js [BENCHMARK_YEAR] [PERFORMANCE_YEAR]`
- * e.g. `cat data/historical-benchmarks/2015.csv | node scripts/parse-benchmarks-data.js 2015 2017`
+ * To run: `cat [DATA_CSV_FILE] | node scripts/benchmarks/parse-benchmarks-data.js [BENCHMARK_YEAR] [PERFORMANCE_YEAR]`
+ * e.g. `cat data/historical-benchmarks/2015.csv | node scripts/benchmarks/parse-benchmarks-data.js 2015 2017`
  */
 const benchmarks = [];
 // Commandline Arguments
