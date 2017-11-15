@@ -155,7 +155,7 @@ const formatMeasureId = (measureId) => {
   // If all digits, pad with zeros up to the thousands
   // else, return a nonspaced version
   if (measureId.match(/^\d+$/)) {
-    return ('0000' + measureId).slice(-4);
+    return ('000' + measureId).slice(-3);
   } else {
     return measureIdRemovedSpaces;
   }
