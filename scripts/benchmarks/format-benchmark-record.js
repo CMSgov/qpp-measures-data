@@ -1,8 +1,11 @@
 // Utility functions for formatting the csv records
 // Libraries
 const keyBy = require('lodash/keyBy');
+
 // Data
 const measures = require('../../measures/measures-data.json');
+const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+
 // Constants
 /**
  * Maps normalized (trimmed and squeezed) submission method values
@@ -18,6 +21,7 @@ const SUBMISSION_METHOD_MAP = {
   'ehr': 'electronicHealthRecord',
   'cmsapprovedcahpsvendor': 'certifiedSurveyVendor'
 };
+
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
@@ -29,6 +33,7 @@ const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
    */
   return measure.measureId.replace(/^0*/, '');
 });
+
 // Helper Functions
 /**
  *
@@ -38,8 +43,9 @@ const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
 const formatSubmissionMethod = function(submissionMethod) {
   return SUBMISSION_METHOD_MAP[submissionMethod.replace(/\s/g, '').toLowerCase()];
 };
-const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+
 const floatRegex = /([0-9]*[.]?[0-9]+)/g;
+
 /**
  * Generator function to create a
  * function that formats the deciles based on options
@@ -127,6 +133,28 @@ const formatDecileGenerator = function(record) {
   };
 };
 
+// Looks in measures-data.json for an existing measureIds and
+// walks through the original, capitalized + removed spaces,
+// and capitalized + underscored spaces versions.
+// If found, returns the measureId from the measures-data.json file.
+// If none are found, return the underscored spaces version.
+const formatMeasureId = (measureId) => {
+  const measureIdRemovedSpaces = measureId.replace(/\s+/g, '').toUpperCase();
+  const measureIdUnderscore = measureId.replace(/\s+/g, '_').toUpperCase();
+  const measureIdCandidates = [
+    measureId,
+    measureIdRemovedSpaces,
+    measureIdUnderscore
+  ];
+
+  for (const formattedMeasureID of measureIdCandidates) {
+    const measure = MEASURE_ID_TO_MEASURE_MAP[formattedMeasureID];
+    if (measure) return measure.measureId;
+  };
+
+  return measureIdUnderscore;
+};
+
 /**
  *
  * @param {{
@@ -166,13 +194,10 @@ const formatBenchmarkRecord = function(record, options) {
    * any of the measures currently in our json.
    * NOTE: Quality measurement measureIds are equal to their qualityIds.
    */
-  const measure = MEASURE_ID_TO_MEASURE_MAP[record.qualityId];
 
-  if (!measure) return;
-  if (record.benchmark.trim() === 'N') return;
-
+  if (record.benchmark.trim() !== 'Y') return;
   return {
-    measureId: measure.measureId,
+    measureId: formatMeasureId(record.qualityId),
     benchmarkYear: parseInt(options.benchmarkYear),
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
