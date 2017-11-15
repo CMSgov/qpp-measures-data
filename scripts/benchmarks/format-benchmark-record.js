@@ -137,10 +137,10 @@ const formatDecileGenerator = function(record) {
 // walks through the original, capitalized + removed spaces,
 // and capitalized + underscored spaces versions.
 // If found, returns the measureId from the measures-data.json file.
-// If none are found, return the underscored spaces version.
+// If none are found, return the padded number or non-spaced version
 const formatMeasureId = (measureId) => {
-  const measureIdRemovedSpaces = measureId.replace(/\s+/g, '').toUpperCase();
-  const measureIdUnderscore = measureId.replace(/\s+/g, '_').toUpperCase();
+  const measureIdRemovedSpaces = measureId.replace(/\s+/g, '');
+  const measureIdUnderscore = measureId.replace(/\s+/g, '_');
   const measureIdCandidates = [
     measureId,
     measureIdRemovedSpaces,
@@ -152,7 +152,13 @@ const formatMeasureId = (measureId) => {
     if (measure) return measure.measureId;
   };
 
-  return measureIdUnderscore;
+  // If all digits, pad with zeros up to the thousands
+  // else, return a nonspaced version
+  if (measureId.match(/^\d+$/)) {
+    return ('0000' + measureId).slice(-4);
+  } else {
+    return measureIdRemovedSpaces;
+  }
 };
 
 /**

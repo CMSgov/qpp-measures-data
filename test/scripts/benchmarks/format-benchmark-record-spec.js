@@ -10,11 +10,10 @@ const options = {
 
 describe('formatBenchmarkRecord', function() {
   describe('When qualityId of the record does NOT correspond to a measure', function() {
-    it('should return undefined', function() {
-      // USWR 1800 is not a real qualityID, but the other properties are from real benchmark USWR 18.
+    it('should still be created', function() {
       const record = {
         measureName: 'Complications or Side Effects among patients undergoing Treatment with HBOT',
-        qualityId: 'USWR 1800', // USWR 18
+        qualityId: 'USWR 1800',
         submissionMethod: 'Registry/QCDR',
         measureType: 'Outcome',
         benchmark: 'Y',
@@ -30,7 +29,7 @@ describe('formatBenchmarkRecord', function() {
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
-      assert.isUndefined(benchmark);
+      assert.equal(benchmark.measureId, 'USWR_1800');
     });
   });
 
