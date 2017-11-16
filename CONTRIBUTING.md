@@ -48,7 +48,7 @@ Similarly, `util/benchmarks/additional-benchmarks-2017.json` contains benchmark 
 ### Additional benchmarks
 
 To add or update benchmarks, you'll want to convert the csv file into JSON with the `scripts/benchmarks/parse-benchmarks-data.js`. `parse-benchmarks-data.js` relies on a set of columns to be present and additional empty columns can cause the parsing to fail. See that file for additional instructions on how to generate the JSON file.
-Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/measures-data.json` for the correct usage. If none are matched, either a padded `0000` digit will be used for `measureId`s with all digits or a non-spaced version of the `measureId` will be used.
+Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/measures-data.json` for the correct usage. If none are matched, either a padded `000` digit will be used for `measureId`s with all digits or a non-spaced version of the `measureId` will be used.
 
 After you have the parsed JSON file, move the CSV and JSON into `staging/benchmarks/csv` and `staging/benchmarks/json`. We do this for auditing and regeneration purposes. You'll notice a number prepended to both files. We number each file to enforce ordering of merges. Currently, if two benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, the one that exists in the larger numbered file will overwrite the smaller one.
 

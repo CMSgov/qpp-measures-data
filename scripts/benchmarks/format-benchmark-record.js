@@ -134,30 +134,26 @@ const formatDecileGenerator = function(record) {
 };
 
 // Looks in measures-data.json for an existing measureIds and
-// walks through the original, capitalized + removed spaces,
-// and capitalized + underscored spaces versions.
+// walks through for versions with combinations of spaces as underscores
+// and vice versa.
 // If found, returns the measureId from the measures-data.json file.
 // If none are found, return the padded number or non-spaced version
 const formatMeasureId = (measureId) => {
-  const measureIdRemovedSpaces = measureId.replace(/\s+/g, '');
-  const measureIdUnderscore = measureId.replace(/\s+/g, '_');
-  const measureIdCandidates = [
-    measureId,
-    measureIdRemovedSpaces,
-    measureIdUnderscore
-  ];
+  let measureIdFuzzyMatch = measureId.replace(/(\s|_)/g, '(\\s|_)?');
+  let measureIdFuzzyMatchRegEx = new RegExp('^' + measureIdFuzzyMatch + '$');
 
-  for (const formattedMeasureID of measureIdCandidates) {
-    const measure = MEASURE_ID_TO_MEASURE_MAP[formattedMeasureID];
-    if (measure) return measure.measureId;
-  };
+  for (const knownMeasureID of Object.keys(MEASURE_ID_TO_MEASURE_MAP)) {
+    if (knownMeasureID.match(measureIdFuzzyMatchRegEx)) {
+      return MEASURE_ID_TO_MEASURE_MAP[knownMeasureID].measureId;
+    }
+  }
 
-  // If all digits, pad with zeros up to the thousands
+  // If all digits, pad with zeros up to the hundredth place
   // else, return a nonspaced version
   if (measureId.match(/^\d+$/)) {
     return ('000' + measureId).slice(-3);
   } else {
-    return measureIdRemovedSpaces;
+    return measureId.replace(/\s/g, '');
   }
 };
 
@@ -224,4 +220,7 @@ const formatBenchmarkRecord = function(record, options) {
   };
 };
 
-module.exports = formatBenchmarkRecord;
+module.exports = {
+  formatBenchmarkRecord,
+  formatMeasureId
+};

@@ -21,7 +21,7 @@ const BENCHMARK_CSV_COLUMNS = [
   ''
 ];
 // Utils
-const formatBenchmarkRecord = require('./format-benchmark-record');
+const { formatBenchmarkRecord } = require('./format-benchmark-record');
 // Data
 let benchmarksData = '';
 
