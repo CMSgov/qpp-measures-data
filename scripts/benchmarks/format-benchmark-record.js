@@ -139,8 +139,8 @@ const formatDecileGenerator = function(record) {
 // If found, returns the measureId from the measures-data.json file.
 // If none are found, return the padded number or non-spaced version
 const formatMeasureId = (measureId) => {
-  let measureIdFuzzyMatch = measureId.replace(/(\s|_)/g, '(\\s|_)?');
-  let measureIdFuzzyMatchRegEx = new RegExp('^' + measureIdFuzzyMatch + '$');
+  const measureIdFuzzyMatch = measureId.replace(/(\s|_)/g, '(\\s|_)?');
+  const measureIdFuzzyMatchRegEx = new RegExp('^' + measureIdFuzzyMatch + '$');
 
   for (const knownMeasureID of Object.keys(MEASURE_ID_TO_MEASURE_MAP)) {
     if (knownMeasureID.match(measureIdFuzzyMatchRegEx)) {
