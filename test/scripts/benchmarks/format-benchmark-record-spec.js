@@ -1,20 +1,43 @@
 const chai = require('chai');
 const assert = chai.assert;
 // Utils
-const formatBenchmarkRecord = require('./../../../scripts/benchmarks/format-benchmark-record');
+const { formatBenchmarkRecord, formatMeasureId } = require('./../../../scripts/benchmarks/format-benchmark-record');
 
 const options = {
   benchmarkYear: 2016,
   performanceYear: 2018
 };
 
+describe('formatMeasureId', function() {
+  it('parses a recognized measureId correctly', function() {
+    assert.equal(formatMeasureId('1'), '001');
+  });
+
+  it('parses and unrecognized measureId with a space correctly', function() {
+    assert.equal(formatMeasureId('USWR 13'), 'USWR13');
+  });
+
+  it('parses a recognized measureId with a underscore correctly', function() {
+    assert.equal(formatMeasureId('ASBS_1'), 'ASBS1');
+  });
+
+  it('parses a recognized measureId with underscores correctly', function() {
+    assert.equal(formatMeasureId('ACI_ONCDIR_1'), 'ACI_ONCDIR_1');
+    assert.equal(formatMeasureId('ACI_ONCDIR 1'), 'ACI_ONCDIR_1');
+    assert.equal(formatMeasureId('ACI ONCDIR 1'), 'ACI_ONCDIR_1');
+  });
+
+  it('parses an unrecognized measure and removes spaces', function() {
+    assert.equal(formatMeasureId('R_O G__E R 13'), 'R_OG__ER13');
+  });
+});
+
 describe('formatBenchmarkRecord', function() {
   describe('When qualityId of the record does NOT correspond to a measure', function() {
-    it('should return undefined', function() {
-      // USWR 1800 is not a real qualityID, but the other properties are from real benchmark USWR 18.
+    it('should still be created', function() {
       const record = {
         measureName: 'Complications or Side Effects among patients undergoing Treatment with HBOT',
-        qualityId: 'USWR 1800', // USWR 18
+        qualityId: 'USWR 1800',
         submissionMethod: 'Registry/QCDR',
         measureType: 'Outcome',
         benchmark: 'Y',
@@ -30,7 +53,29 @@ describe('formatBenchmarkRecord', function() {
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
-      assert.isUndefined(benchmark);
+      assert.equal(benchmark.measureId, 'USWR1800');
+    });
+
+    it('should still be created with padded 0s up to the hundredth place', function() {
+      const record = {
+        measureName: 'Complications or Side Effects among patients undergoing Treatment with HBOT',
+        qualityId: '6',
+        submissionMethod: 'Registry/QCDR',
+        measureType: 'Outcome',
+        benchmark: 'Y',
+        decile3: '98.99 - 99.07',
+        decile4: '99.08 - 99.48',
+        decile5: '99.49 - 99.78',
+        decile6: '99.79 - 99.84',
+        decile7: '99.85 - 99.99',
+        decile8: ' -- ',
+        decile9: ' -- ',
+        decile10: '100',
+        isToppedOut: 'Yes'
+      };
+      const benchmark = formatBenchmarkRecord(record, options);
+
+      assert.equal(benchmark.measureId, '006');
     });
   });
 

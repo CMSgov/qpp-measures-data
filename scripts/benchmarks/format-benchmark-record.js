@@ -1,8 +1,11 @@
 // Utility functions for formatting the csv records
 // Libraries
 const keyBy = require('lodash/keyBy');
+
 // Data
 const measures = require('../../measures/measures-data.json');
+const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+
 // Constants
 /**
  * Maps normalized (trimmed and squeezed) submission method values
@@ -18,6 +21,7 @@ const SUBMISSION_METHOD_MAP = {
   'ehr': 'electronicHealthRecord',
   'cmsapprovedcahpsvendor': 'certifiedSurveyVendor'
 };
+
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
@@ -29,6 +33,7 @@ const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
    */
   return measure.measureId.replace(/^0*/, '');
 });
+
 // Helper Functions
 /**
  *
@@ -38,8 +43,9 @@ const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
 const formatSubmissionMethod = function(submissionMethod) {
   return SUBMISSION_METHOD_MAP[submissionMethod.replace(/\s/g, '').toLowerCase()];
 };
-const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+
 const floatRegex = /([0-9]*[.]?[0-9]+)/g;
+
 /**
  * Generator function to create a
  * function that formats the deciles based on options
@@ -127,6 +133,30 @@ const formatDecileGenerator = function(record) {
   };
 };
 
+// Looks in measures-data.json for an existing measureIds and
+// walks through for versions with combinations of spaces as underscores
+// and vice versa.
+// If found, returns the measureId from the measures-data.json file.
+// If none are found, return the padded number or non-spaced version
+const formatMeasureId = (measureId) => {
+  const measureIdFuzzyMatch = measureId.replace(/(\s|_)/g, '(\\s|_)?');
+  const measureIdFuzzyMatchRegEx = new RegExp('^' + measureIdFuzzyMatch + '$');
+
+  for (const knownMeasureID of Object.keys(MEASURE_ID_TO_MEASURE_MAP)) {
+    if (knownMeasureID.match(measureIdFuzzyMatchRegEx)) {
+      return MEASURE_ID_TO_MEASURE_MAP[knownMeasureID].measureId;
+    }
+  }
+
+  // If all digits, pad with zeros up to the hundredth place
+  // else, return a nonspaced version
+  if (measureId.match(/^\d+$/)) {
+    return ('000' + measureId).slice(-3);
+  } else {
+    return measureId.replace(/\s/g, '');
+  }
+};
+
 /**
  *
  * @param {{
@@ -166,13 +196,10 @@ const formatBenchmarkRecord = function(record, options) {
    * any of the measures currently in our json.
    * NOTE: Quality measurement measureIds are equal to their qualityIds.
    */
-  const measure = MEASURE_ID_TO_MEASURE_MAP[record.qualityId];
 
-  if (!measure) return;
-  if (record.benchmark.trim() === 'N') return;
-
+  if (record.benchmark.trim() !== 'Y') return;
   return {
-    measureId: measure.measureId,
+    measureId: formatMeasureId(record.qualityId),
     benchmarkYear: parseInt(options.benchmarkYear),
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
@@ -193,4 +220,7 @@ const formatBenchmarkRecord = function(record, options) {
   };
 };
 
-module.exports = formatBenchmarkRecord;
+module.exports = {
+  formatBenchmarkRecord,
+  formatMeasureId
+};

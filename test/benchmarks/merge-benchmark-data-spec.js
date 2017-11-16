@@ -81,7 +81,7 @@ describe('mergeBenchmarkData', function() {
       assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers), resultingBenchmarks);
     });
 
-    it('joins a third independant layer', function() {
+    it('joins a third independent layer', function() {
       const baseLayer = '../../../test/benchmarks/files/base_layer.json';
       const secondLayer = '../../../test/benchmarks/files/overwrite_001_claims.json';
       const thirdLayer = '../../../test/benchmarks/files/independent_layer.json';
