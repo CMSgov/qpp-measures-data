@@ -142,6 +142,7 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
+    # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
     oneOf: [
       {
         properties: {

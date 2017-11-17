@@ -147,6 +147,8 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) {
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
+  const TRUE_CSV = 'Y';
+  const FALSE_CSV = 'N';
 
   const newMeasures = records.map(function(record) {
     const newMeasure = {};
@@ -175,7 +177,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     const proportion = _.trim(record[17]);
     const continuous = _.trim(record[18]);
     const ratio = _.trim(record[19]);
-    if (proportion === 'Y' && continuous === 'N' && ratio === 'N') {
+    if (proportion === TRUE_CSV && continuous === FALSE_CSV && ratio === FALSE_CSV) {
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(_.trim(record[11]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
