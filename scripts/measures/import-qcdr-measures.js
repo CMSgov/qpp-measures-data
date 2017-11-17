@@ -187,6 +187,8 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
       newMeasure['metricType'] = 'nonProportion';
     }
 
+    newMeasure['submissionMethods'] = ['registry'];
+
     return newMeasure;
   });
 
