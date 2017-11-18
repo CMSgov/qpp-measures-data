@@ -142,6 +142,7 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
+    # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
     oneOf: [
       {
         properties: {
@@ -153,7 +154,7 @@ definitions:
           metricType: { enum: [singlePerformanceRate, nonProportion, cahps] }
         }
       }]
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, isRegistryMeasure]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, submissionMethods, isRegistryMeasure]
 
   performanceStrata:
     type: object
