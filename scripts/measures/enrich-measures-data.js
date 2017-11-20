@@ -4,6 +4,7 @@ const parse = require('csv-parse/lib/sync');
 
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
+const stratifications = require('../../util/measures/additional-stratifications.json');
 
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
@@ -15,6 +16,7 @@ function enrichMeasures(measures) {
   enrichCPCPlusMeasures(measures);
   enrichAddMeasuresSpecification(measures);
   enrichInverseMeasures(measures);
+  enrichStratifications(measures);
   return JSON.stringify(measures, null, 2);
 };
 
@@ -86,4 +88,24 @@ function enrichInverseMeasures(measures) {
       measure.isInverse = inverseMeasures[measure.measureId];
     }
   });
+}
+
+/**
+ * Adds in each SubPopulations stratification uuid's.
+ * This JSON document used to derive this is generated using get-stratifications.js
+ */
+function enrichStratifications(measures) {
+  measures
+    .filter(measure => measure.category === 'quality')
+    .forEach(measure => {
+      const stratification = stratifications[measure.eMeasureId];
+      if (stratification) {
+          measure.strata.forEach(subPopulation => {
+            var strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid]
+            if (strataList) {
+              subPopulation.eMeasureUuids.strata = strataList;
+            }
+          });
+      }
+    });
 }
