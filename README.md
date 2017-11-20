@@ -46,4 +46,5 @@ const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Before creating pull requests, please make sure to review
+[CONTRIBUTING.md](CONTRIBUTING.md).

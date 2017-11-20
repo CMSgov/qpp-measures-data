@@ -68,14 +68,17 @@ npm test
 
 We also use Travis CI to run tests on every branch.
 
-## Publish
+## Versioning, publishing, and creating new releases
 
-To publish a new version, make sure you've bumped the `version` in `package.json`, then:
+1. The `version` in `package.json` must be bumped when making changes to `measures/measures-data.json` or `benchmarks/2017.json`
+
+2. To publish a new version after bumping the version number:
 ```
 npm login # as cmsgov
 npm publish
 ```
-After the new version is published, create release in Github with a version 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. The release notes should contain the headers "Added", "Changed", "Removed", "Fixed" and bullet pointed details where appropriate (more detailed guidance [here](http://keepachangelog.com/en/0.3.0/)).
+
+3. After the new version is published, create a release in Github titled 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. The release notes should contain appropriate, standardized headers like "Added", "Changed", "Removed", "Fixed", and relevant details. Please read [the standards](http://keepachangelog.com/en/0.3.0/) prior to creating release notes.
 
 ## Licenses
 
