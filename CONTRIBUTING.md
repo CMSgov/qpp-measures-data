@@ -70,15 +70,19 @@ We also use Travis CI to run tests on every branch.
 
 ## Versioning, publishing, and creating new releases
 
-1. The `version` in `package.json` must be bumped when making changes to `measures/measures-data.json` or `benchmarks/2017.json`
+1. Bump the `version` in `package.json` when making changes to `measures/measures-data.json` or `benchmarks/2017.json`. You can also choose to bump the version when making changes elsewhere.
 
-2. To publish a new version after bumping the version number:
+2. Publish a new version after bumping the version number:
 ```
 npm login # as cmsgov
 npm publish
 ```
 
-3. After the new version is published, create a release in Github titled 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. The release notes should contain appropriate, standardized headers like "Added", "Changed", "Removed", "Fixed", and relevant details. Please read [the standards](http://keepachangelog.com/en/0.3.0/) prior to creating release notes.
+3. [Create a release](https://github.com/CMSgov/qpp-measures-data/releases) in Github after the new version is published.
+  - The tag version should be 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. (Note the `v` prefix).
+  - The release title should be a short description of the release contents.
+  - The release notes should contain appropriate, standardized headers like "Added", "Changed", "Removed", "Fixed", and relevant details.
+  - Please read [the standards](http://keepachangelog.com/en/0.3.0/) prior to creating release notes.
 
 ## Licenses
 
