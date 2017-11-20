@@ -15,28 +15,28 @@ if (!zipPath) {
 }
 
 function extractStrata(measure) {
-    var retVal = {}
-    measure.component.forEach((component, index) => {
-        if (!component.populationCriteriaSection) {
-          return;
-        }
+  const retVal = {};
+  measure.component.forEach((component, index) => {
+    if (!component.populationCriteriaSection) {
+      return;
+    }
 
-        const components = component.populationCriteriaSection[0].component;
-        const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
-        var stratList = [];
-        stratificationUuids = components.filter(item => item.stratifierCriteria).forEach((component, index) => {
-            var supplementalDataComponent = component.stratifierCriteria[0].component;
-            if (supplementalDataComponent === undefined ||
-                supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== "SDE") {
-              stratList.push(component.stratifierCriteria[0].id[0].$.root);
-            }
-        });
-        if (stratList.length !== 0) {
-            retVal[numeratorUuid] = stratList;
-        }
-    })
+    const components = component.populationCriteriaSection[0].component;
+    const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
+    const stratList = [];
+    components.filter(item => item.stratifierCriteria).forEach((component, index) => {
+      const supplementalDataComponent = component.stratifierCriteria[0].component;
+      if (supplementalDataComponent === undefined ||
+        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== 'SDE') {
+        stratList.push(component.stratifierCriteria[0].id[0].$.root);
+      }
+    });
+    if (stratList.length !== 0) {
+      retVal[numeratorUuid] = stratList;
+    }
+  });
 
-    return retVal;
+  return retVal;
 }
 
 // gather list of xml files
@@ -69,8 +69,8 @@ Promise.all(
       const measure = doc.QualityMeasureDocument;
       const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
       const strata = extractStrata(measure);
-      if (_.isEmpty(strata)){
-        return
+      if (_.isEmpty(strata)) {
+        return;
       }
       const version = measure.versionNumber[0].$.value.split('.')[0];
       const eMeasureId = `CMS${emeasureid}v${version}`;
@@ -82,8 +82,8 @@ Promise.all(
   })
 // map of measure id to stratification list
   .then(ecqms => {
-    var stratifications = {};
-    ecqms.forEach(ecqm => stratifications[ecqm.eMeasureId] = ecqm.strata);
+    const stratifications = {};
+    ecqms.forEach(ecqm => { stratifications[ecqm.eMeasureId] = ecqm.strata; });
 
     fs.writeFileSync(path.join(__dirname, '../../../../util/measures/additional-stratifications.json'), JSON.stringify(stratifications, null, 2));
   });
