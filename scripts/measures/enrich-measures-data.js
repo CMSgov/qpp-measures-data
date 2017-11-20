@@ -100,12 +100,12 @@ function enrichStratifications(measures) {
     .forEach(measure => {
       const stratification = stratifications[measure.eMeasureId];
       if (stratification) {
-          measure.strata.forEach(subPopulation => {
-            var strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid]
-            if (strataList) {
-              subPopulation.eMeasureUuids.strata = strataList;
-            }
-          });
+        measure.strata.forEach(subPopulation => {
+          const strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid];
+          if (strataList) {
+            subPopulation.eMeasureUuids.strata = strataList;
+          }
+        });
       }
     });
 }
