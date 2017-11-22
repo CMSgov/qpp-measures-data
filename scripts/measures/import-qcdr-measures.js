@@ -107,7 +107,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Add the names and descriptions of strata
   let strataName;
-  const measureId = _.trim(record[2]);
+  const measureId = record[2].replace(/\s/g,''); // "MOA 1" becomes "MOA1"
   const measureDescription = _.trim(record[4]);
 
   // Measure description column contains performance rate description
