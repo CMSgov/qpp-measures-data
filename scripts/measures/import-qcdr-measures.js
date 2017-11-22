@@ -107,7 +107,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Add the names and descriptions of strata
   let strataName;
-  const measureId = _.trim(record[2]);
+  const measureId = record[2].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
   const measureDescription = _.trim(record[4]);
 
   // Measure description column contains performance rate description
@@ -118,12 +118,17 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   newMeasure['strata'] = [];
   _.each(strata, function(stratum, index) {
+    if (_.isUndefined(qcdrStrataNames[measureId])) {
+      throw TypeError('Missing strata for ' + measureId + '. Should' +
+        'be in ' + qcdrStrataNamesDataPath + ', but isn\'t.');
+    }
     strataName = qcdrStrataNames[measureId][index];
+
     // i + 1 because Rates in the csv are numbered starting from 1
     if (_.lowerCase(strataName) === 'overall' &&
       index + 1 !== nthPerformanceRate) {
       throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
-        'CSV doesn\'t match the name in the strata details file');
+        'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath);
     }
     newMeasure['strata'].push({
       'name': strataName,
