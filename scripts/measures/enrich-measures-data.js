@@ -91,12 +91,13 @@ function enrichInverseMeasures(measures) {
 }
 
 /**
- * Adds in each SubPopulations stratification uuid's.
+ * Adds in each SubPopulation's stratification UUIDs
  * This JSON document used to derive this is generated using get-stratifications.js
  */
 function enrichStratifications(measures) {
+  const QUALITY_CATEGORY = 'quality'
   measures
-    .filter(measure => measure.category === 'quality')
+    .filter(measure => measure.category === QUALITY_CATEGORY)
     .forEach(measure => {
       const stratification = stratifications[measure.eMeasureId];
       if (stratification) {
