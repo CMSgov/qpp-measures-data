@@ -1,5 +1,30 @@
 #!/usr/bin/env node
 
+/*
+Extracts ecqm eMeasureIds and retrieves any measure stratifications
+Running this will generate a file at util/measures/additional-stratifications.json
+
+Usage: ./get-strata-and-uuids-from-ecqm-zip.js <path to zip of ecqm>
+
+most likely:
+./get-strata-and-uuids-from-ecqm-zip.js ecqm_eligibleclinician_jan2017.zip
+
+each generated ecqm stratification entry will look similar to this:
+
+  {
+    "CMS137v5": {
+      "0BBF8596-4CFE-47F4-A0D7-9BEAB94BA4CD": [
+        "EFB5B088-CE10-43DE-ACCD-9913B7AC12A2",
+        "94B9555F-8700-45EF-B69F-433EBEDE8051"
+      ],
+      "7FFA49C4-D708-491E-85FE-6855F0A725DF": [
+        "ABC5631A-81C0-45C9-9306-716EAE39CDDB",
+        "2654804B-E6DA-4401-AA8B-1FEEACC0C259"
+      ]
+    }
+  }
+*/
+
 const _ = require('lodash');
 const fs = require('fs');
 const rimraf = require('rimraf');
