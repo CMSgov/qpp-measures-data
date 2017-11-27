@@ -9,13 +9,15 @@ const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
 const tmpDir = '/tmp/ecqm';
 const zipPath = process.argv[2];
+
 if (!zipPath) {
   console.log('Missing required argument <path to zip>');
   process.exit(1);
 }
 
 function extractStrata(measure) {
-  const retVal = {};
+  const returnValue = {};
+  const stratificationCodeType = 'SDE'
   measure.component.forEach((component, index) => {
     if (!component.populationCriteriaSection) {
       return;
@@ -24,19 +26,21 @@ function extractStrata(measure) {
     const components = component.populationCriteriaSection[0].component;
     const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
     const stratList = [];
+    // loops through a Stratifier Criteria's components. If it's not a supplemental data component do another check to
+    // verify if it has the correct code for strata and add the content if it does.
     components.filter(item => item.stratifierCriteria).forEach((component, index) => {
       const supplementalDataComponent = component.stratifierCriteria[0].component;
-      if (supplementalDataComponent === undefined ||
-        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== 'SDE') {
+      if (_.isUndefined(supplementalDataComponent) ||
+        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== stratificationCodeType) {
         stratList.push(component.stratifierCriteria[0].id[0].$.root);
       }
     });
     if (stratList.length !== 0) {
-      retVal[numeratorUuid] = stratList;
+      returnValue[numeratorUuid] = stratList;
     }
   });
 
-  return retVal;
+  return returnValue;
 }
 
 // gather list of xml files
@@ -47,6 +51,7 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   const zip = new AdmZip(path.join(tmpDir, measureZip));
 
   const filename = zip.getEntries()
+    //.find(entry => entry.entryName.match(/([A-Z]{3})([0-9]{1,3})v([0-9])\.xml$/))
     .find(entry => entry.entryName.match(/[0-9]\.xml$/))
     .entryName;
 
@@ -67,13 +72,13 @@ Promise.all(
   .then(docs => {
     return _.compact(docs.map(doc => {
       const measure = doc.QualityMeasureDocument;
-      const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
+      const measureId = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
       const strata = extractStrata(measure);
       if (_.isEmpty(strata)) {
         return;
       }
       const version = measure.versionNumber[0].$.value.split('.')[0];
-      const eMeasureId = `CMS${emeasureid}v${version}`;
+      const eMeasureId = `CMS${measureId}v${version}`;
       return {
         eMeasureId,
         strata
@@ -85,5 +90,6 @@ Promise.all(
     const stratifications = {};
     ecqms.forEach(ecqm => { stratifications[ecqm.eMeasureId] = ecqm.strata; });
 
-    fs.writeFileSync(path.join(__dirname, '../../../../util/measures/additional-stratifications.json'), JSON.stringify(stratifications, null, 2));
+    fs.writeFileSync(path.join(__dirname,
+      '../../../../util/measures/additional-stratifications.json'), JSON.stringify(stratifications, null, 2));
   });
