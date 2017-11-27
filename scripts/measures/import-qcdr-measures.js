@@ -107,7 +107,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Add the names and descriptions of strata
   let strataName;
-  const measureId = _.trim(record[2]);
+  const measureId = record[2].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
   const measureDescription = _.trim(record[4]);
 
   // Measure description column contains performance rate description
@@ -118,12 +118,17 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   newMeasure['strata'] = [];
   _.each(strata, function(stratum, index) {
+    if (_.isUndefined(qcdrStrataNames[measureId])) {
+      throw TypeError('Missing strata for ' + measureId + '. Should' +
+        'be in ' + qcdrStrataNamesDataPath + ', but isn\'t.');
+    }
     strataName = qcdrStrataNames[measureId][index];
+
     // i + 1 because Rates in the csv are numbered starting from 1
     if (_.lowerCase(strataName) === 'overall' &&
       index + 1 !== nthPerformanceRate) {
       throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
-        'CSV doesn\'t match the name in the strata details file');
+        'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath);
     }
     newMeasure['strata'].push({
       'name': strataName,
@@ -147,6 +152,8 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) {
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
+  const TRUE_CSV = 'Y';
+  const FALSE_CSV = 'N';
 
   const newMeasures = records.map(function(record) {
     const newMeasure = {};
@@ -175,7 +182,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     const proportion = _.trim(record[17]);
     const continuous = _.trim(record[18]);
     const ratio = _.trim(record[19]);
-    if (proportion === 'Y' && continuous === 'N' && ratio === 'N') {
+    if (proportion === TRUE_CSV && continuous === FALSE_CSV && ratio === FALSE_CSV) {
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(_.trim(record[11]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
@@ -186,6 +193,8 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     } else {
       newMeasure['metricType'] = 'nonProportion';
     }
+
+    newMeasure['submissionMethods'] = ['registry'];
 
     return newMeasure;
   });
