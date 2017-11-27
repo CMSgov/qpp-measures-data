@@ -49,7 +49,7 @@ if (!zipPath) {
 
 function extractStrata(measure) {
   const returnValue = [];
-  const supplementDataType = 'SDE'
+  const supplementDataType = 'SDE';
   measure.component.forEach((component, index) => {
     if (!component.populationCriteriaSection) {
       return;
@@ -69,8 +69,8 @@ function extractStrata(measure) {
     });
     if (stratList.length !== 0) {
       const numeratorMap = {};
-      numeratorMap["numeratorUuid"] = numeratorUuid;
-      numeratorMap["strata"] = stratList;
+      numeratorMap['numeratorUuid'] = numeratorUuid;
+      numeratorMap['strata'] = stratList;
       returnValue.push(numeratorMap);
     }
   });

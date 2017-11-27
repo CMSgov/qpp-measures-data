@@ -99,11 +99,9 @@ function enrichStratifications(measures) {
   measures
     .filter(measure => measure.category === QUALITY_CATEGORY)
     .forEach(measure => {
-      //const stratification = stratifications[measure.eMeasureId];
       const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
       if (stratification) {
         measure.strata.forEach(subPopulation => {
-          //const strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid];
           const mapping = stratification.mapping.find(map =>
             map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
           if (mapping) {
