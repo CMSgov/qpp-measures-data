@@ -6,6 +6,7 @@ const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
 const stratifications = require('../../util/measures/additional-stratifications.json');
 
+const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
@@ -48,7 +49,7 @@ function enrichACIMeasures(measures) {
  */
 function enrichCPCPlusMeasures(measures) {
   measures
-    .filter(measure => measure.category === 'quality')
+    .filter(measure => measure.category === QUALITY_CATEGORY)
     .forEach(measure => {
       Object.keys(cpcPlusGroups).forEach((groupId) => {
         const match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
@@ -95,16 +96,18 @@ function enrichInverseMeasures(measures) {
  * This JSON document used to derive this is generated using get-stratifications.js
  */
 function enrichStratifications(measures) {
-  const QUALITY_CATEGORY = 'quality'
   measures
     .filter(measure => measure.category === QUALITY_CATEGORY)
     .forEach(measure => {
-      const stratification = stratifications[measure.eMeasureId];
+      //const stratification = stratifications[measure.eMeasureId];
+      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
       if (stratification) {
         measure.strata.forEach(subPopulation => {
-          const strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid];
-          if (strataList) {
-            subPopulation.eMeasureUuids.strata = strataList;
+          //const strataList = stratification[subPopulation.eMeasureUuids.numeratorUuid];
+          const mapping = stratification.mapping.find(map =>
+            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          if (mapping) {
+            subPopulation.eMeasureUuids.strata = mapping.strata;
           }
         });
       }
