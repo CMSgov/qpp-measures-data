@@ -13,7 +13,7 @@ each generated ecqm stratification entry will look similar to this:
 
   {
     "eMeasureId": "CMS137v5",
-    "mapping": [
+    "strataMaps": [
       {
         "numeratorUuid": "0BBF8596-4CFE-47F4-A0D7-9BEAB94BA4CD",
         "strata": [
@@ -48,7 +48,7 @@ if (!zipPath) {
 }
 
 function extractStrata(measure) {
-  const returnValue = [];
+  const strataMaps = [];
   const supplementDataType = 'SDE';
   measure.component.forEach((component, index) => {
     if (!component.populationCriteriaSection) {
@@ -71,11 +71,11 @@ function extractStrata(measure) {
       const numeratorMap = {};
       numeratorMap['numeratorUuid'] = numeratorUuid;
       numeratorMap['strata'] = stratList;
-      returnValue.push(numeratorMap);
+      strataMaps.push(numeratorMap);
     }
   });
 
-  return returnValue;
+  return strataMaps;
 }
 
 // gather list of xml files
@@ -108,15 +108,15 @@ Promise.all(
     return _.compact(docs.map(doc => {
       const measure = doc.QualityMeasureDocument;
       const measureId = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-      const strata = extractStrata(measure);
-      if (_.isEmpty(strata)) {
+      const strataMap = extractStrata(measure);
+      if (_.isEmpty(strataMap)) {
         return;
       }
       const version = measure.versionNumber[0].$.value.split('.')[0];
       const eMeasureId = `CMS${measureId}v${version}`;
       return {
         eMeasureId,
-        mapping: strata
+        strataMaps: strataMap
       };
     }));
   })
