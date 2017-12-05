@@ -4,7 +4,9 @@ const parse = require('csv-parse/lib/sync');
 
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
+const stratifications = require('../../util/measures/additional-stratifications.json');
 
+const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
@@ -15,6 +17,7 @@ function enrichMeasures(measures) {
   enrichCPCPlusMeasures(measures);
   enrichAddMeasuresSpecification(measures);
   enrichInverseMeasures(measures);
+  enrichStratifications(measures);
   return JSON.stringify(measures, null, 2);
 };
 
@@ -46,7 +49,7 @@ function enrichACIMeasures(measures) {
  */
 function enrichCPCPlusMeasures(measures) {
   measures
-    .filter(measure => measure.category === 'quality')
+    .filter(measure => measure.category === QUALITY_CATEGORY)
     .forEach(measure => {
       Object.keys(cpcPlusGroups).forEach((groupId) => {
         const match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
@@ -86,4 +89,25 @@ function enrichInverseMeasures(measures) {
       measure.isInverse = inverseMeasures[measure.measureId];
     }
   });
+}
+
+/**
+ * Adds in each SubPopulation's stratification UUIDs
+ * This JSON document used to derive this is generated using get-stratifications.js
+ */
+function enrichStratifications(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
+      if (stratification) {
+        measure.strata.forEach(subPopulation => {
+          const mapping = stratification.mapping.find(map =>
+            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          if (mapping) {
+            subPopulation.eMeasureUuids.strata = mapping.strata;
+          }
+        });
+      }
+    });
 }
