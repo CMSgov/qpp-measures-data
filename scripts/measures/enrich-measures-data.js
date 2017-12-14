@@ -102,7 +102,7 @@ function enrichStratifications(measures) {
       const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
       if (stratification) {
         measure.strata.forEach(subPopulation => {
-          const mapping = stratification.mapping.find(map =>
+          const mapping = stratification.strataMaps.find(map =>
             map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
           if (mapping) {
             subPopulation.eMeasureUuids.strata = mapping.strata;
