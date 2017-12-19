@@ -93,7 +93,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
   const qcdrStrataNames = JSON.parse(strataNames);
 
-  newMeasure['metricType'] = 'multiPerformanceRate';
+  newMeasure['metricType'] = 'registryMultiPerformanceRate';
 
   const overallPerformanceRate = _.lowerCase(_.trim(record[12]));
   const nthPerformanceRate = _.parseInt(overallPerformanceRate);
@@ -188,7 +188,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath);
       } else {
-        newMeasure['metricType'] = 'singlePerformanceRate';
+        newMeasure['metricType'] = 'registrySinglePerformanceRate';
       }
     } else {
       newMeasure['metricType'] = 'nonProportion';
