@@ -47,7 +47,7 @@ describe('import measures', function() {
   it('should correctly identify multiPerformanceRate measures', () => {
     const measures = runTest(testMeasures, testCsv);
     const multiPerformanceRateMeasure = _.find(measures, {measureId: 'AAAAI4'});
-    assert.equal(multiPerformanceRateMeasure.metricType, 'multiPerformanceRate');
+    assert.equal(multiPerformanceRateMeasure.metricType, 'registryMultiPerformanceRate');
   });
 
   it('throws an informative error when the column doesn\'t exist', function() {
