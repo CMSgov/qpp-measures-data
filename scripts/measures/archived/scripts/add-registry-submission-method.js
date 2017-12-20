@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-stagingMeasuresDataPath = './staging/measures-data.json';
-stagingMeasuresString = fs.readFileSync(stagingMeasuresDataPath, 'utf-8');
-stagingMeasures = JSON.parse(stagingMeasuresString);
+const stagingMeasuresDataPath = './staging/measures-data.json';
+const stagingMeasuresString = fs.readFileSync(stagingMeasuresDataPath, 'utf-8');
+const stagingMeasures = JSON.parse(stagingMeasuresString);
 
-updatedMeasures = [];
+const updatedMeasures = [];
 stagingMeasures.forEach((measure) => {
   // if it's an ecqm measure and it allows 'electronicHealthRecord'
   // submissions but not 'registry' submissions already, add 'registry' to the list.
@@ -16,5 +16,5 @@ stagingMeasures.forEach((measure) => {
   updatedMeasures.push(measure);
 });
 
-updatedMeasuresJson = JSON.stringify(updatedMeasures, null, 2);
+const updatedMeasuresJson = JSON.stringify(updatedMeasures, null, 2);
 fs.writeFileSync(stagingMeasuresDataPath, updatedMeasuresJson);
