@@ -146,5 +146,16 @@ describe('measures data json', function() {
         assert.deepEqual(generated, actual);
       });
     });
+
+    describe('eCQMeasures', () => {
+      it('all eCQM measures permitting electronicHealthRecord submission method also permit registry submission method', () => {
+        const eCQMeasures = measuresData.filter(m => m.eMeasureUuid !== undefined);
+        eCQMeasures.forEach(m => {
+          if (m.submissionMethods.includes('electronicHealthRecord')) {
+            assert.isTrue(m.submissionMethods.includes('registry'));
+          }
+        });
+      });
+    });
   });
 });
