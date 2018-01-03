@@ -52,7 +52,7 @@ Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/me
 
 After you have the parsed JSON file, move the CSV and JSON into `staging/benchmarks/csv` and `staging/benchmarks/json`. We do this for auditing and regeneration purposes. You'll notice a number prepended to both files. We number each file to enforce ordering of merges. Currently, if two benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, the one that exists in the larger numbered file will overwrite the smaller one.
 
-To update the benchmarks file after the JSON file is in place, run `npm run build:measures` and verify the changes are as expected. (You can run `git diff`.)
+To update the benchmarks file after the JSON file is in place, run `npm run build:benchmarks` and verify the changes are as expected. (You can run `git diff`.)
 
 ### Deleting measures and benchmarks
 
