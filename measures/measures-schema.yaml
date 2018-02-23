@@ -17,7 +17,7 @@ definitions:
         enum: [ia, quality, aci, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
-        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps]
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, cost]
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer
@@ -151,7 +151,7 @@ definitions:
         required: [overallAlgorithm, strata]
       },{
         properties: {
-          metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate] }
+          metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, cost] }
         }
       }]
     required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, submissionMethods, isRegistryMeasure]
