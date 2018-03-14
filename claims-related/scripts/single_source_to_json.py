@@ -36,7 +36,7 @@ DEFAULT_SINGLE_SOURCE_EXCEL_PATH = (
     '.xlsx'
 )
 DEFAULT_NAVA_MEASURES_DATA_PATH = '/home/jovyan/measures/measures-data.json'
-DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp_single_source.json'
+DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source.json'
 
 
 def _convert_measure_ids_to_match_nava_format(single_source_dict):
@@ -48,31 +48,6 @@ def _convert_measure_ids_to_match_nava_format(single_source_dict):
         single_source_final[measure_id] = measure_dict
 
     return single_source_final
-
-
-def merge_single_source_with_nava_measures_data(single_source_dict, nava_measure_filepath):
-    """
-    Read in the Nava measures data JSON file and merge with measures contained in the single source.
-
-    The measures data JSON can be found here:
-        https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json
-    """
-    # Convert measure IDs to agree with Nava's naming conventions.
-    single_source_dict = _convert_measure_ids_to_match_nava_format(single_source_dict)
-
-    with open(nava_measure_filepath, 'r') as f:
-        nava_measures_data = json.load(f)
-
-    full_measures_data = []
-    for measure in nava_measures_data:
-        if measure['measureId'] in single_source_dict:
-            updated_measure = measure.copy()
-            updated_measure.update(single_source_dict[measure['measureId']])
-            full_measures_data.append(updated_measure)
-        else:
-            full_measures_data.append(measure)
-
-    return full_measures_data
 
 
 def _main(**kwargs):
@@ -94,18 +69,17 @@ def _main(**kwargs):
     # above iteration.
     single_source_dict = merge_multiple_eligibility_options(single_source_dict)
 
-    full_measures_data = merge_single_source_with_nava_measures_data(
-        single_source_dict,
-        nava_measure_filepath=kwargs['measures_data_filepath']
-    )
+    # Update measureIds to match the format for later consolidation.
+    output = _convert_measure_ids_to_match_nava_format(single_source_dict)
+
     # Write to JSON.
     if kwargs.get('output_filepath', None):
         with open(kwargs['output_filepath'], 'w') as f:
-            json.dump(full_measures_data, f, sort_keys=True, indent=4)
+            json.dump(output, f, sort_keys=True, indent=4)
 
         print('The combined JSON file was written to {}.'.format(kwargs['output_filepath']))
 
-    return full_measures_data
+    return output
 
 
 def _get_arguments():
