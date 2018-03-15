@@ -276,9 +276,9 @@ definitions:
       sexCode:
         enum: [M, F]
       minAge:
-        type: integer
+        type: number
       maxAge:
-        type: integer
+        type: number
       diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       procedureCodes:
@@ -287,18 +287,17 @@ definitions:
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
-    required: [submissionMethods]
 
   performanceOption:
     type: object
     properties:
       submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       optionType:
-        enum: [performanceMet, performanceNotMet, performanceExclusion]
+        enum: [performanceMet, performanceNotMet, performanceExclusion, performanceException]
       qualityCodes:
         type: array
         items: { $ref: #/definitions/codeObject }
-    required: [submissionMethods, optionType, qualityCodes]
+    required: [optionType, qualityCodes]
 
   codeObject:
     type: object
