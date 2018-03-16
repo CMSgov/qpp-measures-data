@@ -35,7 +35,6 @@ DEFAULT_SINGLE_SOURCE_EXCEL_PATH = (
     '/home/jovyan/work/data/2017_Claims_IndivMeasures_SingleSourceVersion2_11082017_andrea_edit'
     '.xlsx'
 )
-DEFAULT_NAVA_MEASURES_DATA_PATH = '/home/jovyan/measures/measures-data.json'
 DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source.json'
 
 
@@ -93,13 +92,6 @@ def _get_arguments():
         help='Single Source Excel file input filename',
         required=False,
         default=DEFAULT_SINGLE_SOURCE_EXCEL_PATH,
-        type=str)
-
-    parser.add_argument(
-        '-md', '--measures_data_filepath',
-        help='Measure data JSON filepath (maintained by Nava)',
-        required=False,
-        default=DEFAULT_NAVA_MEASURES_DATA_PATH,
         type=str)
 
     parser.add_argument(
