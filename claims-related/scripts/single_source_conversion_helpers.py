@@ -11,7 +11,7 @@ ENC_PROC_CODE_CATEGORY = ['ENCOUNTER_CODE', 'PROC_CODE']
 QUALITY_CODE_CATEGORY = ['PD_Exe', 'PD_Exl', 'PN_X', 'PN']
 
 # Descriptions of these options can be found at
-# https://cmsgov.github.io/qpp-submissions-docs/schemas# under "Single-Performance Rates".
+# https://cmsgov.github.io/qpp-submissions-docs/measurements#single-performance-rate-measurements
 PERFORMANCE_OPTIONS = {
     'PN_X': 'performanceNotMet',
     'PN': 'performanceMet',
