@@ -293,7 +293,7 @@ definitions:
     properties:
       submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       optionType:
-        enum: [performanceMet, performanceNotMet, performanceExclusion, performanceException]
+        enum: [performanceMet, performanceNotMet, eligiblePopulationExclusion, eligiblePopulationException]
       qualityCodes:
         type: array
         items: { $ref: #/definitions/codeObject }

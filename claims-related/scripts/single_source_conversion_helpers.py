@@ -15,8 +15,8 @@ QUALITY_CODE_CATEGORY = ['PD_Exe', 'PD_Exl', 'PN_X', 'PN']
 PERFORMANCE_OPTIONS = {
     'PN_X': 'performanceNotMet',
     'PN': 'performanceMet',
-    'PD_Exe': 'performanceException',
-    'PD_Exl': 'performanceExclusion'
+    'PD_Exe': 'eligiblePopulationException',
+    'PD_Exl': 'eligiblePopulationExclusion'
 }
 
 
