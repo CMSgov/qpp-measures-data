@@ -314,6 +314,7 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
             'sexCode': representative_row['sex_code'],
             'minAge': representative_row['min_age'],
             'maxAge': representative_row['max_age'],
+            'submissionMethods': ['claims']  # Add the submissionMethods attribute.
         }
 
         # Remove null or invalid values from the eligibility option.

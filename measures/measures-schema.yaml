@@ -284,6 +284,7 @@ definitions:
       procedureCodes:
         type: array
         items: { $ref: #/definitions/codeObject }
+    required: [submissionMethods]
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
