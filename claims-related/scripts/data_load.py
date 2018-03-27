@@ -67,7 +67,7 @@ def load_single_source(excel_path):
     }
 
     with open(excel_path, 'rb') as fname:
-        single_source = pd.read_excel(fname, sheetname='Codes', dtypes=column_dtypes)
+        single_source = pd.read_excel(fname, sheetname=-1, dtypes=column_dtypes)
 
     # Update column names.
     single_source.rename(columns=format_column_title, inplace=True)
