@@ -297,7 +297,7 @@ definitions:
       qualityCodes:
         type: array
         items: { $ref: #/definitions/codeObject }
-    required: [optionType, qualityCodes]
+    required: [submissionMethods, optionType, qualityCodes]
 
   codeObject:
     type: object

@@ -181,6 +181,7 @@ def merge_multiple_performance_options(performance_options):
     # Key by codeset_number.
     for option in performance_options:
         codeset_number = option.pop('codeset_number')
+        option['submissionMethods'] = ['claims']  # Add the submissionMethods attribute.
         if codeset_number > 0:
             multiple_code_sets[codeset_number].append(option)
         else:
