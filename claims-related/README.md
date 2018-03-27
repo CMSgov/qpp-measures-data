@@ -4,6 +4,9 @@ This directory contains resources for parsing the single source spreadsheet to p
 This file is then used during the enrichment of the measures data to include those attributes.
 # Running
 ## Containerised
+### Prerequisites
+The only prerequisite to run the containerised process is that you have [docker](https://www.docker.com/) and [docker-compose](https://docs.docker.com/compose/) installed.
+### Instructions
 Run the script from the container:
 ```bash
 docker-compose run data-analysis python /home/jovyan/work/scripts/single_source_to_json.py
