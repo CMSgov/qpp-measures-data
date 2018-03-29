@@ -32,14 +32,11 @@ cat [path to JSON] | node scripts/validate-data.js [measures | benchmarks | clin
 
 ### Additional measures
 
-`util/measures/additional-measures.json` includes data objects which are necessary for scoring but are not MIPS measures. Any additional measures should be added to this file, followed by a re-generation of measures data using the command described in the "Generating Data" section.
+`util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/measures-data.json` and `measures/measures-data.xml` by running `npm run build:measures`.
 
-At this time `util/measures/additional-measures.json` includes:
+The csv is formatted for the script to run correctly. If the new version does not conform to how the csv is expected, it will cause the npm build step to fail. When your work is complete, make sure to send the updated `qcdr-measures-v<#>.csv` with a bumped version number back to PIMMS with instructions to use it as the base to make the next set of changes. The next person to update measures-data will thank you!
 
-1. **Attestations:** Attestations are pre-requisites of submitting additional measurements for a given category.
-2. **Exclusions:** Exclusions are optional attestations of conditions which exempt the provider from a corresponding (required) measure. For example, submitting `true` to `ACI_LVPP_1` exempts a user from submitting data for the required measure `ACI_EP_1`.
-
-Similarly, `util/benchmarks/additional-benchmarks-2017.json` contains benchmark data that is necessary for scoring but not included in the historical CSV file. Any additional benchmarks should be added to this file, followed by a re-generation of benchmarks data.
+`cp` the new version of the CSV to `util/measures/qcdr-measures.csv`, run `npm run build:measures`, and `git diff` to see changes are as expected to `measures/measures-data.json`.
 
 #### Importing measures from CSV file
 
