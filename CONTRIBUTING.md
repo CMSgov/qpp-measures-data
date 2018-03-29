@@ -34,9 +34,9 @@ cat [path to JSON] | node scripts/validate-data.js [measures | benchmarks | clin
 
 `util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/measures-data.json` and `measures/measures-data.xml` by running `npm run build:measures`.
 
-The csv is formatted for the script to run correctly. If the new version does not conform to how the csv is expected, it will cause the npm build step to fail. You can send `util/measures/qcdr-measures.csv` back as the base for changes to be made.
+The csv is formatted for the script to run correctly. If the new version does not conform to how the csv is expected, it will cause the npm build step to fail. When your work is complete, make sure to send the updated `qcdr-measures-v<#>.csv` with a bumped version number back to PIMMS with instructions to use it as the base to make the next set of changes. The next person to update measures-data will thank you!
 
-Copy the new version of the CSV to `util/measures/qcdr-measures.csv`, run `npm run build:measures`, and `git diff` to see changes are as expected to `measures/measures-data.json`.
+`cp` the new version of the CSV to `util/measures/qcdr-measures.csv`, run `npm run build:measures`, and `git diff` to see changes are as expected to `measures/measures-data.json`.
 
 #### Importing measures from CSV file
 
