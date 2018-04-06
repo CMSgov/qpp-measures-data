@@ -19,7 +19,8 @@ const SUBMISSION_METHOD_MAP = {
   'cmswebinterface': 'cmsWebInterface',
   'administrativeclaims': 'administrativeClaims',
   'ehr': 'electronicHealthRecord',
-  'cmsapprovedcahpsvendor': 'certifiedSurveyVendor'
+  'cmsapprovedcahpsvendor': 'certifiedSurveyVendor',
+  'cahpssurveyvendor': 'certifiedSurveyVendor'
 };
 
 /**
