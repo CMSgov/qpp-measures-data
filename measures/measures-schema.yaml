@@ -38,6 +38,7 @@ definitions:
       - { $ref: #/definitions/iaMeasure }
       - { $ref: #/definitions/aciMeasure }
       - { $ref: #/definitions/qualityMeasure }
+      - { $ref: #/definitions/aggregateCostMeasure }
 
   iaMeasure:
     type: object
@@ -81,6 +82,21 @@ definitions:
         description: Identifiers of other ACI measure that can be used instead of the current meausre.
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
     required: [weight, objective, isRequired, isBonus, measureSets]
+
+  aggregateCostMeasure:
+    type: object
+    properties:
+      category: { enum: [cost] }
+    isInverse:
+        description: If true, a lower performance rate correlates with better performance.
+        type: boolean
+        default: false
+    overallAlgorithm:
+        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+        type: string
+    submissionMethods:
+        description: Possible methods for submitting performance data for the measure.
+        type: array
 
   qualityMeasure:
     type: object
