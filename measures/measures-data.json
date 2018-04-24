@@ -2191,6 +2191,34 @@
     "subcategoryId": "beneficiaryEngagement"
   },
   {
+    "category": "cost",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "costScore",
+    "title": "Medicare Spending Per Beneficiary (MSPB)",
+    "description": "The Medicare Spending Per Beneficiary (MSPB) measure evaluates solo practitioners and groups on their spending efficiency and is specialty-adjusted to account for their specialty mix. Solo practitioners and groups are identified by their National Provider Identification (NPI) and Taxpayer Identification Number (TIN) combination. Specifically, the MSPB measure assesses the average spend for Medicare services performed by providers/groups per episode of care. Each episode comprises the period immediately prior to, during, and following a patient's hospital stay.",
+    "measureId": "MSPB_1",
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ]
+  },
+  {
+    "category": "cost",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "costScore",
+    "title": "Total Per Capita Costs (TPCC)",
+    "description": "The Total Per Capita Costs (TPCC) measure is a payment-standardized, annualized, risk-adjusted, and specialty-adjusted measure that evaluates the overall efficiency of care provided to beneficiaries attributed to solo practitioners and groups, as identified by their Medicare Taxpayer Identification Number (TIN)",
+    "measureId": "TPCC_1",
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ]
+  },
+  {
     "category": "quality",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,

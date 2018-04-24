@@ -2121,6 +2121,30 @@ Provision of same-day or next-day access to a consistent MIPS eligible clinician
     <subcategoryId>beneficiaryEngagement</subcategoryId>
   </measure>
   <measure>
+    <category>cost</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>costScore</metricType>
+    <title>Medicare Spending Per Beneficiary (MSPB)</title>
+    <description>The Medicare Spending Per Beneficiary (MSPB) measure evaluates solo practitioners and groups on their spending efficiency and is specialty-adjusted to account for their specialty mix. Solo practitioners and groups are identified by their National Provider Identification (NPI) and Taxpayer Identification Number (TIN) combination. Specifically, the MSPB measure assesses the average spend for Medicare services performed by providers/groups per episode of care. Each episode comprises the period immediately prior to, during, and following a patient's hospital stay.</description>
+    <measureId>MSPB_1</measureId>
+    <isInverse>true</isInverse>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <submissionMethod>administrativeClaims</submissionMethod>
+  </measure>
+  <measure>
+    <category>cost</category>
+    <firstPerformanceYear>2017</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>costScore</metricType>
+    <title>Total Per Capita Costs (TPCC)</title>
+    <description>The Total Per Capita Costs (TPCC) measure is a payment-standardized, annualized, risk-adjusted, and specialty-adjusted measure that evaluates the overall efficiency of care provided to beneficiaries attributed to solo practitioners and groups, as identified by their Medicare Taxpayer Identification Number (TIN)</description>
+    <measureId>TPCC_1</measureId>
+    <isInverse>true</isInverse>
+    <overallAlgorithm>simpleAverage</overallAlgorithm>
+    <submissionMethod>administrativeClaims</submissionMethod>
+  </measure>
+  <measure>
     <category>quality</category>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
