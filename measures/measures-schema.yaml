@@ -290,14 +290,22 @@ definitions:
     properties:
       submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       sexCode:
+        description: Gender identifier in the case of measures that apply to one gender only.
         enum: [M, F]
       minAge:
+        description: The minimum patient age required for eligibility.
         type: number
       maxAge:
+        description: The maximum patient age required for eligibility.
         type: number
       diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       procedureCodes:
+        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
+        type: array
+        items: { $ref: #/definitions/codeObject }
+      additionalProcedureCodes:
+        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
         type: array
         items: { $ref: #/definitions/codeObject }
     required: [submissionMethods]
@@ -310,8 +318,10 @@ definitions:
     properties:
       submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       optionType:
+        description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
         enum: [performanceMet, performanceNotMet, eligiblePopulationExclusion, eligiblePopulationException]
       qualityCodes:
+        description: A list of quality codes, all of which must be present to meet the performance option.
         type: array
         items: { $ref: #/definitions/codeObject }
     required: [submissionMethods, optionType, qualityCodes]
@@ -320,6 +330,7 @@ definitions:
     type: object
     properties:
       code:
+        description: The HCPCS or CPT code represented as a string.
         type: string
       modifiers:  { $ref: #/definitions/arrayOfStringIdentifiers }
       modifierExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }

@@ -9,6 +9,7 @@ DX_CODE_CATEGORY = ['DX_CODE']
 DX_CODE_X_CATEGORY = ['DX_CODE_X']
 ENC_PROC_CODE_CATEGORY = ['ENCOUNTER_CODE', 'PROC_CODE']
 QUALITY_CODE_CATEGORY = ['PD_Exe', 'PD_Exl', 'PN_X', 'PN']
+ADDITIONAL_ENC_PROC_CODE_CATEGORY = ['ADDITIONAL_PROCEDURE_CODE']
 
 # Descriptions of these options can be found at
 # https://cmsgov.github.io/qpp-submissions-docs/measurements#single-performance-rate-measurements
@@ -33,8 +34,9 @@ def determine_element_category(element):
         if element.startswith(category):
             return category
 
-    if element.endswith('DENOM_CODE'):  # Just a single row has this value. Needs to be verified
-        return 'ENCOUNTER_CODE'
+    # Additional procedure codes (used in measure 155 and 226).
+    if element.endswith('DENOM_CODE'):
+        return 'ADDITIONAL_PROCEDURE_CODE'
 
 
 def find_min_max_age(age_string):
@@ -119,7 +121,7 @@ def procedure_codes_to_dict(row):
         },
     where modifiers and place of service are only present if they contain valid values.
     """
-    if row['element_category'] not in ENC_PROC_CODE_CATEGORY:
+    if row['element_category'] not in (ENC_PROC_CODE_CATEGORY + ADDITIONAL_ENC_PROC_CODE_CATEGORY):
         return {}
 
     procedure_dict = {
@@ -293,6 +295,12 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
             lambda row: procedure_codes_to_dict(row), axis=1, reduce=True
         ).tolist()
 
+        additional_procedure_codes = codeset_df[
+            codeset_df['element_category'].isin(ADDITIONAL_ENC_PROC_CODE_CATEGORY)
+        ].apply(
+            lambda row: procedure_codes_to_dict(row), axis=1, reduce=True
+        ).tolist()
+
         dx_codes_df = codeset_df[codeset_df['element_category'].isin(DX_CODE_CATEGORY)]
 
         diagnosis_codes = list(
@@ -308,6 +316,7 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
         # Build the entire eligibility option with all keys, even if they have null values.
         eligibility_option = {
             'procedureCodes': procedure_codes,
+            'additionalProcedureCodes': additional_procedure_codes,
             'diagnosisCodes': diagnosis_codes,
             'diagnosisExclusionCodes': diagnosis_exclusion_codes,
             'additionalDiagnosisCodes': additional_diagnosis_codes,

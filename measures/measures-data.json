@@ -19385,6 +19385,17 @@
     },
     "eligibilityOptions": [
       {
+        "additionalProcedureCodes": [
+          {
+            "code": "1100F",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P",
+              "8P"
+            ]
+          }
+        ],
         "minAge": 65,
         "procedureCodes": [
           {
@@ -19512,15 +19523,6 @@
           },
           {
             "code": "G0439"
-          },
-          {
-            "code": "1100F",
-            "modifierExclusions": [
-              "1P",
-              "2P",
-              "3P",
-              "8P"
-            ]
           }
         ],
         "submissionMethods": [

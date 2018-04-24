@@ -17508,6 +17508,13 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2017_Measure_155_Registry.pdf</registry>
     </measureSpecification>
     <eligibilityOptions>
+      <additionalProcedureCodes>
+        <code>1100F</code>
+        <modifierExclusions>1P</modifierExclusions>
+        <modifierExclusions>2P</modifierExclusions>
+        <modifierExclusions>3P</modifierExclusions>
+        <modifierExclusions>8P</modifierExclusions>
+      </additionalProcedureCodes>
       <minAge>65</minAge>
       <procedureCodes>
         <code>92540</code>
@@ -17634,13 +17641,6 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
       </procedureCodes>
       <procedureCodes>
         <code>G0439</code>
-      </procedureCodes>
-      <procedureCodes>
-        <code>1100F</code>
-        <modifierExclusions>1P</modifierExclusions>
-        <modifierExclusions>2P</modifierExclusions>
-        <modifierExclusions>3P</modifierExclusions>
-        <modifierExclusions>8P</modifierExclusions>
       </procedureCodes>
       <submissionMethod>claims</submissionMethod>
     </eligibilityOptions>

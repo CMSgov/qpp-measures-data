@@ -31,10 +31,7 @@ from single_source_conversion_helpers import (
 )
 
 # Default filepaths for all required resources.
-DEFAULT_SINGLE_SOURCE_EXCEL_PATH = (
-    '/home/jovyan/work/data/2017_Claims_IndivMeasures_SingleSourceVersion2_11082017_andrea_edit'
-    '.xlsx'
-)
+DEFAULT_SINGLE_SOURCE_EXCEL_PATH = '/home/jovyan/work/data/2017_Claims_IndivMeasures_SingleSourceVersion2_11082017_andrea_edit.xlsx'
 DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source.json'
 
 

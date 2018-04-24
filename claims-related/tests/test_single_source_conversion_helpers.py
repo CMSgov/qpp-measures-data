@@ -36,7 +36,7 @@ def test_determine_element_category():
         'ENCOUNTER_CODE',
         'ENCOUNTER_CODE',
         'PROC_CODE',
-        'ENCOUNTER_CODE',
+        'ADDITIONAL_PROCEDURE_CODE',
         None
     ]
 
