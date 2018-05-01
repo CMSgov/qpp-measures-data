@@ -19,5 +19,7 @@ The docker-compose file in this directory mounts the correct directories for thi
     * Path to the measures data JSON, e.g. `/measures/measures-data.json`
 * `--output_filepath`
     * Path to write output to, e.g. `/claims-related/data/qpp-single-source.json`
+### Local development
+When making changes to the single source parsing scripts, use the command `make test` to run the test suite. Doing this ensures that any changes do not break existing functionality, resulting in an unusable or inaccurate JSON output.
 ## Native
 The script for processing the spreadsheet can be run outside of the container using the instructions above if your system has [numpy](http://www.numpy.org/) and [pandas](https://pandas.pydata.org/) installed.
