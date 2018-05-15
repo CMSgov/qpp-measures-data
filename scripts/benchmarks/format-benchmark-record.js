@@ -28,7 +28,7 @@ const SUBMISSION_METHOD_MAP = {
 const validPerformanceYears = [2017, 2018];
 const MEASURE_ID_TO_MEASURE_MAP = [];
 for (const year of validPerformanceYears) {
-  let measures = require('../../measures/' + year + '/measures-data.json');
+  const measures = require('../../measures/' + year + '/measures-data.json');
   MEASURE_ID_TO_MEASURE_MAP[year] = keyBy(measures, function(measure) {
     /**
      * NOTE: Quality measurements' measureIds are usually string integers.

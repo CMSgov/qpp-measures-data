@@ -12,7 +12,7 @@ const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname
 
 const performanceYears = [2017, 2018];
 for (const year of performanceYears) {
-  let measuresData = mipsDataFormat.getMeasuresData(year);
+  const measuresData = mipsDataFormat.getMeasuresData(year);
   describe(year + ' measures data json', function() {
     const measureIds = _.map(measuresData, 'measureId');
 
