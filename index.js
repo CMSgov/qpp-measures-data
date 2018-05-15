@@ -42,8 +42,8 @@ exports.getMeasuresData = function(performanceYear = 2017) {
 /**
  * @return {{}} - Object representation of the Measures Schema
  */
-exports.getMeasuresSchema = function() {
-  return YAML.load(path.join(__dirname, 'measures', 'measures-schema.yaml'));
+exports.getMeasuresSchema = function(performanceYear = 2017) {
+  return YAML.load(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'));
 };
 
 /**

@@ -37,10 +37,10 @@ Functions take a string version argument and return the appropriate YAML schema 
 The module can be used with the following pattern:
 ```javascript
 const qppMeasuresData = require('qpp-measures-data');
-const measuresData = qppMeasuresData.getMeasuresData();
-const measuresSchema = qppMeasuresData.getMeasuresSchema();
+const measuresData = qppMeasuresData.getMeasuresData(2018);
+const measuresSchema = qppMeasuresData.getMeasuresSchema(2018);
 const benchmarksData = qppMeasuresData.getBenchmarksData();
-const benchmark2017Data = benchmarksData[2017];
+const benchmark2017Data = benchmarksData[2018];
 const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 ```
 
