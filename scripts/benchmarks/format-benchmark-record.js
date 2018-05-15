@@ -3,7 +3,6 @@
 const keyBy = require('lodash/keyBy');
 
 // Data
-const measures = require('../../measures/measures-data.json');
 const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
 
 // Constants
@@ -26,14 +25,19 @@ const SUBMISSION_METHOD_MAP = {
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
-const MEASURE_ID_TO_MEASURE_MAP = keyBy(measures, function(measure) {
-  /**
-   * NOTE: Quality measurements' measureIds are usually string integers.
-   * There are some non-integer qualityIds in the demo benchmarks csv,
-   * e.g. '316A' and '316B'.
-   */
-  return measure.measureId.replace(/^0*/, '');
-});
+const validPerformanceYears = [2017, 2018];
+const MEASURE_ID_TO_MEASURE_MAP = [];
+for (const year of validPerformanceYears) {
+  let measures = require('../../measures/' + year + '/measures-data.json');
+  MEASURE_ID_TO_MEASURE_MAP[year] = keyBy(measures, function(measure) {
+    /**
+     * NOTE: Quality measurements' measureIds are usually string integers.
+     * There are some non-integer qualityIds in the demo benchmarks csv,
+     * e.g. '316A' and '316B'.
+     */
+    return measure.measureId.replace(/^0*/, '');
+  });
+}
 
 // Helper Functions
 /**
@@ -139,13 +143,13 @@ const formatDecileGenerator = function(record) {
 // and vice versa.
 // If found, returns the measureId from the measures-data.json file.
 // If none are found, return the padded number or non-spaced version
-const formatMeasureId = (measureId) => {
+const formatMeasureId = (measureId, performanceYear) => {
   const measureIdFuzzyMatch = measureId.replace(/(\s|_)/g, '(\\s|_)?');
   const measureIdFuzzyMatchRegEx = new RegExp('^' + measureIdFuzzyMatch + '$');
 
-  for (const knownMeasureID of Object.keys(MEASURE_ID_TO_MEASURE_MAP)) {
+  for (const knownMeasureID of Object.keys(MEASURE_ID_TO_MEASURE_MAP[performanceYear])) {
     if (knownMeasureID.match(measureIdFuzzyMatchRegEx)) {
-      return MEASURE_ID_TO_MEASURE_MAP[knownMeasureID].measureId;
+      return MEASURE_ID_TO_MEASURE_MAP[performanceYear][knownMeasureID].measureId;
     }
   }
 
@@ -200,7 +204,7 @@ const formatBenchmarkRecord = function(record, options) {
 
   if (record.benchmark.trim() !== 'Y') return;
   return {
-    measureId: formatMeasureId(record.qualityId),
+    measureId: formatMeasureId(record.qualityId, options.performanceYear),
     benchmarkYear: parseInt(options.benchmarkYear),
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),

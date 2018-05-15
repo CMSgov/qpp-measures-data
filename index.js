@@ -36,7 +36,7 @@ exports.getBenchmarksSchema = function() {
  */
 exports.getMeasuresData = function(performanceYear = 2017) {
   return JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'measures', performanceYear, 'measures-data.json')));
+    fs.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json')));
 };
 
 /**

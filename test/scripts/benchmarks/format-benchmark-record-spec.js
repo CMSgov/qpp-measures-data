@@ -8,27 +8,29 @@ const options = {
   performanceYear: 2018
 };
 
+const year = options.performanceYear;
+
 describe('formatMeasureId', function() {
   it('parses a recognized measureId correctly', function() {
-    assert.equal(formatMeasureId('1'), '001');
+    assert.equal(formatMeasureId('1', year), '001');
   });
 
   it('parses and unrecognized measureId with a space correctly', function() {
-    assert.equal(formatMeasureId('USWR 13'), 'USWR13');
+    assert.equal(formatMeasureId('USWR 13', year), 'USWR13');
   });
 
   it('parses a recognized measureId with a underscore correctly', function() {
-    assert.equal(formatMeasureId('ASBS_1'), 'ASBS1');
+    assert.equal(formatMeasureId('ASBS_1', year), 'ASBS1');
   });
 
   it('parses a recognized measureId with underscores correctly', function() {
-    assert.equal(formatMeasureId('ACI_ONCDIR_1'), 'ACI_ONCDIR_1');
-    assert.equal(formatMeasureId('ACI_ONCDIR 1'), 'ACI_ONCDIR_1');
-    assert.equal(formatMeasureId('ACI ONCDIR 1'), 'ACI_ONCDIR_1');
+    assert.equal(formatMeasureId('ACI_ONCDIR_1', year), 'ACI_ONCDIR_1');
+    assert.equal(formatMeasureId('ACI_ONCDIR 1', year), 'ACI_ONCDIR_1');
+    assert.equal(formatMeasureId('ACI ONCDIR 1', year), 'ACI_ONCDIR_1');
   });
 
   it('parses an unrecognized measure and removes spaces', function() {
-    assert.equal(formatMeasureId('R_O G__E R 13'), 'R_OG__ER13');
+    assert.equal(formatMeasureId('R_O G__E R 13', year), 'R_OG__ER13');
   });
 });
 
@@ -121,8 +123,8 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
-      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
+      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
+      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
 
       assert.equal(benchmark1.benchmarkYear, 2002);
       assert.equal(benchmark2.benchmarkYear, 2004);
@@ -144,11 +146,11 @@ describe('formatBenchmarkRecord', function() {
         decile10: '0',
         isToppedOut: 'No'
       };
-      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2004});
-      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2006});
+      const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
+      const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
 
-      assert.equal(benchmark1.performanceYear, 2004);
-      assert.equal(benchmark2.performanceYear, 2006);
+      assert.equal(benchmark1.performanceYear, 2017);
+      assert.equal(benchmark2.performanceYear, 2018);
     });
 
     describe('When a direct (non-inverse) measure', function() {

@@ -7,22 +7,25 @@ const testFilesFolder = 'test/measures/examples/quality/';
 const qualityMeasureExampleFilenames = fs.readdirSync(testFilesFolder);
 
 describe('measures schema validates json', function() {
-  describe('measures-data.json', function() {
-    let capturedStdout = null;
+  const performanceYears = [2017, 2018];
+  for (const year of performanceYears) {
+    describe(year + ' measures-data.json', function() {
+      let capturedStdout = null;
 
-    before(function(done) {
-      const command = 'cat measures/measures-data.json | node scripts/validate-data.js measures';
-      exec(command, function(error, stdout, stderr) {
-        if (error) console.log(error.stack);
-        capturedStdout = stdout;
-        done();
+      before(function(done) {
+        const command = 'cat measures/' + year + '/measures-data.json | node scripts/validate-data.js measures';
+        exec(command, function(error, stdout, stderr) {
+          if (error) console.log(error.stack);
+          capturedStdout = stdout;
+          done();
+        });
+      });
+
+      it('is valid', function() {
+        assert.equal(capturedStdout, 'Valid!\n');
       });
     });
-
-    it('is valid', function() {
-      assert.equal(capturedStdout, 'Valid!\n');
-    });
-  });
+  }
 
   // TODO(aimee): Remove: This will become obsolete once c2q measures are imported into measures-data.
   describe('example quality measures', function() {

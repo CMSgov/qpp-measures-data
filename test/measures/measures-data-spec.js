@@ -13,7 +13,7 @@ const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname
 const performanceYears = [2017, 2018];
 for (const year of performanceYears) {
   let measuresData = mipsDataFormat.getMeasuresData(year);
-  describe('measures data json', function() {
+  describe(year + ' measures data json', function() {
     const measureIds = _.map(measuresData, 'measureId');
 
     it('should not have any duplicate measureIds', function() {
