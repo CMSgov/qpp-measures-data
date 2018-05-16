@@ -2,8 +2,10 @@ const chai = require('chai');
 const assert = chai.assert;
 const exec = require('child_process').exec;
 
+const Constants = require('../../constants.js');
+
 describe('measures schema validates json', function() {
-  const performanceYears = [2017, 2018];
+  const performanceYears = Constants.validPerformanceYears;
   for (const year of performanceYears) {
     describe(year + ' measures-data.json', function() {
       let capturedStdout = null;

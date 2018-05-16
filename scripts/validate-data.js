@@ -14,11 +14,12 @@ const Ajv = require('ajv');
 const path = require('path');
 const YAML = require('yamljs');
 
+const Constants = require('../constants.js');
+
 const ajv = Ajv();
 
-const defaultPerformanceYear = 2018;
 const schemaType = process.argv[2];
-const performanceYear = (process.argv[3] || defaultPerformanceYear).toString();
+const performanceYear = (process.argv[3] || Constants.defaultPerformanceYear).toString();
 
 let json = '';
 function validate(json) {
