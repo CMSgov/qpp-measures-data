@@ -6,12 +6,13 @@ const path = require('path');
 const parse = require('csv-parse/lib/sync');
 
 const mipsDataFormat = require('../../index.js');
-const measuresData = mipsDataFormat.getMeasuresData();
 const actualAciRelation = require('../../util/measures/aci-measure-relations.json');
 const actualCpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
 const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname, '../../util/measures/measurePDF-Specification.csv'), 'utf8'));
 
-describe('measures data json', function() {
+const year = 2017;
+const measuresData = mipsDataFormat.getMeasuresData(year);
+describe(year + ' measures data json', function() {
   const measureIds = _.map(measuresData, 'measureId');
 
   it('should not have any duplicate measureIds', function() {

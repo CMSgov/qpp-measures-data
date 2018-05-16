@@ -29,7 +29,10 @@ We've provided a simple tool to validate JSON against our JSON schemas. By provi
 ```
 cat [path to JSON] | node scripts/validate-data.js [measures | benchmarks | clinical-clusters]
 ```
-
+e.g. from the base directory:
+```
+cat measures/2018/measures-data.json  | node scripts/validate-data.js measures
+```
 ### Additional measures
 
 `util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/measures-data.json` and `measures/measures-data.xml` by running `npm run build:measures`.
