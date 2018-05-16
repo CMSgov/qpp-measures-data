@@ -5,9 +5,9 @@
  * the validation error.
  *
  * This script can be used as follows:
- * cat [json file path] | node [this file's path] [schemaType]
+ * cat [json file path] | node [this file's path] [schemaType] [performanceYear]
  * Example:
- * cat measures/measures-data.json | node scripts/validate-data.js measures
+ * cat measures/measures-data.json | node scripts/validate-data.js measures 2018
  **/
 
 const Ajv = require('ajv');
@@ -16,12 +16,15 @@ const YAML = require('yamljs');
 
 const ajv = Ajv();
 
+const defaultPerformanceYear = 2018;
 const schemaType = process.argv[2];
+const performanceYear = (process.argv[3] || defaultPerformanceYear).toString();
 
 let json = '';
 function validate(json) {
   const valid = ajv.validate(
     YAML.load(path.join(__dirname, '../' + schemaType,
+      performanceYear,
       schemaType + '-schema.yaml')),
     JSON.parse(json, 'utf8'));
   if (valid) {

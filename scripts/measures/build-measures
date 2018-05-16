@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-year=2018
+defaultPerformanceYear=2018
+performanceYear=${1:-$defaultPerformanceYear} # check if year provided on command line ($1)
 qcdr_csv='../../util/measures/qcdr-measures.csv'
 qcdr_strata_names='../../util/measures/qcdr-measures-strata-names.json'
 staging_measures='../../staging/measures-data.json'
 staging_measures_with_qcdrs='../../staging/measures-data-with-qcdrs.json'
-final_measures='../../measures/'$year'/measures-data.json'
+final_measures='../../measures/'$performanceYear'/measures-data.json'
 
 # 0. Add QCDR measures to the 'staging/measures-data.json' file:
 node scripts/measures/import-qcdr-measures.js \
@@ -17,9 +18,9 @@ node scripts/measures/enrich-measures-data.js \
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
-cat measures/$year/measures-data.json | node scripts/convert-json-to-xml.js \
-	> measures/$year/measures-data.xml
+cat measures/$performanceYear/measures-data.json | node scripts/convert-json-to-xml.js \
+	> measures/$performanceYear/measures-data.xml
 
 # 3. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
-cat measures/$year/measures-data.json | node scripts/validate-data.js measures
+cat measures/$performanceYear/measures-data.json | node scripts/validate-data.js measures $performanceYear
