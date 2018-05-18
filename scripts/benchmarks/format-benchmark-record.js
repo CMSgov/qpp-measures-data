@@ -1,9 +1,10 @@
 // Utility functions for formatting the csv records
 // Libraries
 const keyBy = require('lodash/keyBy');
-
 // Data
 const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-benchmark-record');
+
+const Constants = require('../../constants.js');
 
 // Constants
 /**
@@ -25,9 +26,8 @@ const SUBMISSION_METHOD_MAP = {
 /**
  * @type {{}} - mapping of integer qualityIds to corresponding measure
  */
-const validPerformanceYears = [2017, 2018];
 const MEASURE_ID_TO_MEASURE_MAP = [];
-for (const year of validPerformanceYears) {
+for (const year of Constants.validPerformanceYears) {
   const measures = require('../../measures/' + year + '/measures-data.json');
   MEASURE_ID_TO_MEASURE_MAP[year] = keyBy(measures, function(measure) {
     /**
