@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-defaultPerformanceYear=2018
-performanceYear=${1:-$defaultPerformanceYear} # check if year provided on command line ($1)
+currentPerformanceYear=2018
 qcdr_csv='../../util/measures/qcdr-measures.csv'
 qcdr_strata_names='../../util/measures/qcdr-measures-strata-names.json'
 staging_measures='../../staging/measures-data.json'

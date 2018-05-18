@@ -19,7 +19,7 @@ const Constants = require('../constants.js');
 const ajv = Ajv();
 
 const schemaType = process.argv[2];
-const performanceYear = (process.argv[3] || Constants.defaultPerformanceYear).toString();
+const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
 
 let json = '';
 function validate(json) {
