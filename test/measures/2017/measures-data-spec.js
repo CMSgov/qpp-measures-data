@@ -5,12 +5,13 @@ const fs = require('fs');
 const path = require('path');
 const parse = require('csv-parse/lib/sync');
 
-const mipsDataFormat = require('../../index.js');
-const actualAciRelation = require('../../util/measures/aci-measure-relations.json');
-const actualCpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
-const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname, '../../util/measures/measurePDF-Specification.csv'), 'utf8'));
+const year = 2017;
+const mipsDataFormat = require('../../../index.js');
+const actualAciRelation = require('../../../util/measures/' + year + '/aci-measure-relations.json');
+const actualCpcPlusGroups = require('../../../util/measures/' + year + '/cpc+-measure-groups.json');
+const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname,
+  '../../../util/measures/' + year + '/measurePDF-Specification.csv'), 'utf8'));
 
-const year = 2018;
 const measuresData = mipsDataFormat.getMeasuresData(year);
 describe(year + ' measures data json', function() {
   const measureIds = _.map(measuresData, 'measureId');
