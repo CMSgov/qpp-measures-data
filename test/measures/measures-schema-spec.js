@@ -21,7 +21,7 @@ describe('measures schema validates json', function() {
       });
 
       it('is valid', function() {
-        assert.equal(capturedStdout, 'Valid!\n');
+        assert.equal(capturedStdout, 'Valid for ' + year + ' performance year schema\n');
       });
     });
   }

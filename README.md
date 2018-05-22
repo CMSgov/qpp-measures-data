@@ -42,7 +42,7 @@ const qppMeasuresData = require('qpp-measures-data');
 const measuresData = qppMeasuresData.getMeasuresData($YEAR);
 const measuresSchema = qppMeasuresData.getMeasuresSchema($YEAR);
 const benchmarksData = qppMeasuresData.getBenchmarksData();
-const benchmark2017Data = benchmarksData[$YEAR];
+const benchmarkData$YEAR = benchmarksData[$YEAR];
 const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
 ```
 

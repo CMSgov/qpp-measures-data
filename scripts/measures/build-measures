@@ -1,25 +1,33 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=2018
-qcdr_csv='../../util/measures/qcdr-measures.csv'
-qcdr_strata_names='../../util/measures/qcdr-measures-strata-names.json'
-staging_measures='../../staging/measures-data.json'
-staging_measures_with_qcdrs='../../staging/measures-data-with-qcdrs.json'
-final_measures='../../measures/'$performanceYear'/measures-data.json'
+# We assume we'll never need to rebuild measures for a previous
+# performance year. If you need to rebuild measures
+# for a previous performance year, you'll have to:
+# 1. use the git history of this file
+# 2. use the git history of any necessary import scripts
+# 3. revert any changes to directory structures below.
 
-# 0. Add QCDR measures to the 'staging/measures-data.json' file:
-node scripts/measures/import-qcdr-measures.js \
-	$staging_measures $qcdr_csv $qcdr_strata_names $staging_measures_with_qcdrs
+quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
+quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
+quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+# final_measures='../../measures/'$currentPerformanceYear'/measures-data.json'
 
-# 1. Enrich `measures-data.json` file, run:
-node scripts/measures/enrich-measures-data.js \
-	$staging_measures_with_qcdrs $final_measures
+# 0. Add quality measures to the staging measures-data-quality.json file:
+node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
+	$quality_csv $quality_strata $quality_measures
+
+# TODO: Enrich `measures-data.json` file, run:
+# node scripts/measures/enrich-measures-data.js \
+#	$staging_measures_with_qcdrs $final_measures
+# For now, just copy the staging measures file over.
+cat staging/$currentPerformanceYear/measures-data-quality.json > measures/$currentPerformanceYear/measures-data.json
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
-cat measures/$performanceYear/measures-data.json | node scripts/convert-json-to-xml.js \
-	> measures/$performanceYear/measures-data.xml
+cat measures/$currentPerformanceYear/measures-data.json | node scripts/convert-json-to-xml.js \
+	> measures/$currentPerformanceYear/measures-data.xml
 
 # 3. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
-cat measures/$performanceYear/measures-data.json | node scripts/validate-data.js measures $performanceYear
+cat measures/$currentPerformanceYear/measures-data.json | node scripts/validate-data.js measures $performanceYear

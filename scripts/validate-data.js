@@ -16,7 +16,7 @@ const YAML = require('yamljs');
 
 const Constants = require('../constants.js');
 
-const ajv = Ajv();
+const ajv = new Ajv({ verbose: true });
 
 const schemaType = process.argv[2];
 const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
@@ -29,9 +29,11 @@ function validate(json) {
       schemaType + '-schema.yaml')),
     JSON.parse(json, 'utf8'));
   if (valid) {
-    console.log('Valid!');
+    console.log('Valid for ' + performanceYear + ' performance year schema');
   } else {
-    console.log('Invalid: ' + ajv.errorsText(ajv.errors));
+    console.log('Invalid for ' + performanceYear + ' performance year schema: ' +
+      ajv.errorsText(ajv.errors));
+    console.log('Detailed error: ', ajv.errors);
   }
 }
 
