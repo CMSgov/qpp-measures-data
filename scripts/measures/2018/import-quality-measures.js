@@ -17,8 +17,16 @@ const Constants = require('../../../constants.js');
  *  created from the CSV input.
  *  * `source_fields` are fields which should find values in the CSV input.
  *
+ * NOTE: We currently don't differentiate between empty CSV fields and CSV fields
+ * explicitly marked as false, because there are no optional fields with
+ * true/false values. If there ever are, the default: structure / true/false_markers
+ * below and the mapInput function would need to be updated.
  */
-const CONFIG = {
+const QUALITY_CSV_CONFIG = {
+  // markers are what the CSV creators chose as field values;
+  // they use different conventions for different columns
+  truthy_markers: ['true', 'x'],
+  falsy_markers: ['false', 'null', 'n/a'],
   constant_fields: {
     category: 'quality',
     isRegistryMeasure: false,
@@ -28,9 +36,18 @@ const CONFIG = {
     // fields are csv columns indexed starting from 1 (the provided
     // spreadsheet has a leftmost blank column)
     title: 1,
-    eMeasureId: 2,
-    nqfEMeasureId: 3,
-    nqfId: 4,
+    eMeasureId: {
+      index: 2,
+      default: null
+    },
+    nqfEMeasureId: {
+      index: 3,
+      default: null
+    },
+    nqfId: {
+      index: 4,
+      default: null
+    },
     measureId: 5,
     description: 6,
     nationalQualityStrategyDomain: 7,
@@ -134,19 +151,19 @@ function cleanInput(input) {
 }
 
 // map specific csv input values to their representation in the measures schema
-function mapInput(input) {
-  const cleanedInput = cleanInput(input);
-  if (cleanedInput === 'true' || cleanedInput === 'x') {
+function mapInput(rawInput) {
+  const input = cleanInput(rawInput);
+  if (QUALITY_CSV_CONFIG.truthy_markers.includes(input)) {
     return true;
-  } else if (cleanedInput === 'false') {
+  } else if (QUALITY_CSV_CONFIG.falsy_markers.includes(input)) {
+    // we return false here; the eventual value will be the default value in
+    // QUALITY_CSV_CONFIG, e.g. null
     return false;
-  } else if (cleanedInput === 'null' || cleanedInput === 'n/a') {
-    return null;
-  } else if (Constants.validPerformanceYears.includes(Number(cleanedInput))) {
-    return Number(cleanedInput);
+  } else if (Constants.validPerformanceYears.includes(Number(input))) {
+    return Number(input);
   } else {
     // if csv input isn't one of the special cases above, just return it
-    return input.trim();
+    return rawInput.trim();
   }
 }
 
@@ -175,7 +192,7 @@ const addMultiPerformanceRateStrata = function(measures, strataRows) {
     const stratumName = row[1].trim();
     const description = row[3].trim();
 
-    const measure = _.find(measures, {'measureId': measureId});
+    const measure = _.find(measures, { measureId });
     if (!measure) {
       throw TypeError('Measure id: ' + measureId + ' does not exist in ' +
         qualityMeasuresPath + ' but does exist in ' + qualityStrataPath);
@@ -196,21 +213,26 @@ const addMultiPerformanceRateStrata = function(measures, strataRows) {
 
 /**
  * [convertCsvToMeasures description]
- * @param  {array of arrays}  records each array in the outer array represents a new measure, each inner array its attributes
- * @param  {object}           config  object defining how to build a new measure from this csv file, including mapping of measure fields to column indices
+ * @param  {array of arrays}  each array in the outer array represents
+ * a new measure (row), each inner array its attributes (field/column)
+ * @param  {array of arrays}  same as above but for multiperformancerate
+ * measures strata; each row is a stratum and there are multiple rows per
+ * multiperformance measure
  * @return {array}            Returns an array of measures objects
  *
  * Notes:
- * 1. The terms [performance rate] 'strata' and 'performance rates' are used interchangeably
- * 2. We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
+ * 1. The terms [performance rate] 'strata' and 'performance rates' are used
+ * interchangeably
+ * 2. We trim all data sourced from CSVs because people sometimes unintentionally
+ * include spaces or linebreaks
  */
 const convertQualityStrataCsvsToMeasures = function(qualityCsvRows, strataCsvRows) {
-  const sourcedFields = CONFIG.sourced_fields;
-  const constantFields = CONFIG.constant_fields;
+  const sourcedFields = QUALITY_CSV_CONFIG.sourced_fields;
+  const constantFields = QUALITY_CSV_CONFIG.constant_fields;
 
   const measures = qualityCsvRows.map(function(row) {
     const measure = {};
-    Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
+    _.each(sourcedFields, (columnObject, measureKey) => {
       if (typeof columnObject === 'number') {
         const input = row[columnObject];
         if (_.isUndefined(input)) {
@@ -231,7 +253,7 @@ const convertQualityStrataCsvsToMeasures = function(qualityCsvRows, strataCsvRow
       }
     });
 
-    Object.entries(constantFields).forEach(function([measureKey, measureValue]) {
+    _.each(constantFields, (measureValue, measureKey) => {
       measure[measureKey] = measureValue;
     });
 

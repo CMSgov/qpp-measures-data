@@ -21,13 +21,16 @@ node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
 # node scripts/measures/enrich-measures-data.js \
 #	$staging_measures_with_qcdrs $final_measures
 # For now, just copy the staging measures file over.
-cat staging/$currentPerformanceYear/measures-data-quality.json > measures/$currentPerformanceYear/measures-data.json
+cat staging/$currentPerformanceYear/measures-data-quality.json > \
+	measures/$currentPerformanceYear/measures-data.json
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | node scripts/convert-json-to-xml.js \
-	> measures/$currentPerformanceYear/measures-data.xml
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/convert-json-to-xml.js \
+		> measures/$currentPerformanceYear/measures-data.xml
 
 # 3. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | node scripts/validate-data.js measures $performanceYear
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear
