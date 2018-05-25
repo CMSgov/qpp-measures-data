@@ -32,7 +32,7 @@ navigate to `benchmarks/`. Benchmarks data is organized by performance year.
 For example, `benchmarks/2017.json` contains the benchmarks for performance year 2017
 (benchmark year 2015).
 
-$YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2018.
+$YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2017.
 
 Note that only quality measures data has been imported for 2018. Other measures are being added soon.
 
