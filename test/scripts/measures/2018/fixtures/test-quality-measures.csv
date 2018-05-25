@@ -1,0 +1,45 @@
+,,,,,,,,,,methods,,,,,,measureSets,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"metricType (required)
+
+possible values:
+
+boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps
+
+for definitions: review https://cmsgov.github.io/qpp-submissions-docs/measurements","firstPerformanceYear (required)
+
+Year in which the measure was introduced
+
+The API  will default to 2017 if this column is left blank","lastPerformanceYear (required)
+
+Year in which the measure was deprecated.
+
+The API will default to null if this column is left blank","eMeasureUuid (optional)
+
+UUID for Electronic Clinical Quality Measures (ECQM)","is HighPriority (required)
+
+If true, can be used in the place of an outcome measure to satisfy quality category requirements.
+
+Possible values: true, false","isInverse (required)
+
+If true, a lower performance rate correlates with better performance.
+
+Possible values: true, false","# of performance rate strata (required) Claims
+
+must be 1 or more","# of performance rate strata (required) Registry
+
+must be 1 or more","# of performance rate strata (required) eCQM
+
+must be 1 or more","overallAlgorithm (required if there is more than one performance rate stratum)
+
+Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+
+Possible values: simpleAverage, weightedAverage, sumNumerators, overallStratumOnly",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,title,eMeasureId,nqfEMeasureId,nqfId,measureId,description,nationalQuaityStrategyDomain,measureType,primarySteward,claims,certifiedSurveyVendor,electronicHealthRecord,cmsWebInterface,administrativeClaims,registry,allergyImmunology,anesthesiology,cardiology,electrophysiologyCardiacSpecialist,gastroenterology,dermatology,emergencyMedicine,generalPracticeFamilyMedicine,internalMedicine,obstetricsGynecology,ophthalmology,orthopedicSurgery,otolaryngology,pathology,pediatrics,physicalMedicine,plasticSurgery,preventiveMedicine,neurology,mentalBehavioralHealth,diagnosticRadiology,interventionalRadiology,vascularSurgery,generalSurgery,thoracicSurgery,urology,generalOncology,radiationOncology,hospitalists,rheumatology,Nephrology,Infectious Disease,Neurosurgical,Podiatry,Dentistry,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),CMS122v6,N/A,0059,001,Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period,Effective Clinical Care, Intermediate Outcome,National Committee for Quality Assurance,X,-,X,X,-,X,-,-,-,-,-,-,-,X,X,-,-,-,-,-,-,-,-,X,-,-,-,-,-,-,-,-,-,-,-,-,X,-,-,-,-,singlePerformanceRate,2017,NULL,,TRUE,TRUE,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Coronary Artery Disease (CAD): Beta-Blocker Therapy Ð Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%),CMS145v6,N/A,"
+0070
+",007,Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI OR a current or prior LVEF <40% who were prescribed beta-blocker therapy,Effective Clinical Care,process,Physician Consortium for Performance Improvement,-,-,X,-,-,X,-,-,X,-,-,-,-,X,X,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,multiPerformanceRate,2017,NULL,,FALSE,FALSE,NULL,2,2,weightedAverage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Medication Reconciliation Post-Discharge,N/A,N/A,0097,046,"The percentage of discharges from any inpatient facility (e.g. hospital, skilled nursing facility, or rehabilitation facility) for patients 18 years and older of age seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on-going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record.
+This measure is reported as three rates stratified by age group:
+¥ Submission Criteria 1: 18-64 years of age
+¥ Submission Criteria 2: 65 years and older
+¥ Total Rate: All patients 18 years of age and older",Communication and Care Coordination,process,National Committee for Quality Assurance,X,-,-,X,-,X,-,-,-,-,-,-,-,-,-,-,-,X,-,-,-,-,-,-,-,-,-,-,-,X,-,-,-,-,-,-,X,-,-,-,-,multiPerformanceRate,2017,NULL,,TRUE,FALSE,3,3,NULL,overallStratumOnly,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

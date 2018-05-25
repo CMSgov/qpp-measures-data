@@ -34,7 +34,7 @@ definitions:
         type: array
         items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
-    oneOf:
+    anyOf:
       - { $ref: #/definitions/iaMeasure }
       - { $ref: #/definitions/aciMeasure }
       - { $ref: #/definitions/qualityMeasure }

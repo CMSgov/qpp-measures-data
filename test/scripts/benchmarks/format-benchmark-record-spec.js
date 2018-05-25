@@ -8,14 +8,16 @@ const options = {
   performanceYear: 2018
 };
 
-const year = options.performanceYear;
-
 describe('formatMeasureId', function() {
+  // when benchmarks are updated for 2018, the tests below should be duplicated
+  // for appropriate measures in 2018
+  const year = 2017;
+
   it('parses a recognized measureId correctly', function() {
     assert.equal(formatMeasureId('1', year), '001');
   });
 
-  it('parses and unrecognized measureId with a space correctly', function() {
+  it('parses an unrecognized measureId with a space correctly', function() {
     assert.equal(formatMeasureId('USWR 13', year), 'USWR13');
   });
 
