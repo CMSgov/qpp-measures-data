@@ -1,14 +1,17 @@
 const chai = require('chai');
 const assert = chai.assert;
 const _ = require('lodash');
-const fs = require('fs');
-const path = require('path');
-const parse = require('csv-parse/lib/sync');
+// const fs = require('fs');
+// const path = require('path');
+// const parse = require('csv-parse/lib/sync');
 
 const year = 2018;
 const mipsDataFormat = require('../../../index.js');
-const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname,
-  '../../../util/measures/' + year + '/measurePDF-Specification.csv'), 'utf8'));
+const actualPiRelation = require('../../../util/measures/' + year + '/pi-measure-relations.json');
+// We haven't received the 2018 measure specifications yet, but we will
+const actualMeasureSpecificationData = undefined;
+// const actualMeasureSpecificationData = parse(fs.readFileSync(path.join(__dirname,
+//  '../../../util/measures/' + year + '/measurePDF-Specification.csv'), 'utf8'));
 
 const measuresData = mipsDataFormat.getMeasuresData(year);
 
@@ -39,6 +42,28 @@ describe(year + ' measures data json', function() {
     });
   });
 
+  describe('PI measures have proper substitutions', () => {
+    it('PI_PHCDRR_1 should be in performanceBonus reporting category', () => {
+      const measure = measuresData.find(m => m.measureId === 'PI_PHCDRR_1');
+      assert.equal(measure.reportingCategory, 'performanceBonus');
+    });
+
+    it('PI_TRANS_PHCDRR_2 should contain correct substitutes', () => {
+      const measure = measuresData.find(m => m.measureId === 'PI_TRANS_PHCDRR_2');
+      assert.deepEqual(measure.substitutes, ['PI_PHCDRR_2']);
+    });
+
+    it('contains proper metadata on all measures', () => {
+      const generated = {};
+      measuresData
+        .filter(m => m.category === 'pi')
+        .forEach(m => {
+          generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
+        });
+      assert.deepEqual(generated, actualPiRelation);
+    });
+  });
+
   describe('quality measures', function() {
     it('includes all quality measures with multi-performance strata', function() {
       const multiPerformanceIds = new Set(['007', '046', '122', '238', '348', '391', '392', '394', '398']);
@@ -48,7 +73,8 @@ describe(year + ' measures data json', function() {
       assert.equal(intersection.size, multiPerformanceIds.size);
     });
 
-    describe('Some measures have measureSpecification property', () => {
+    // We haven't received the 2018 measure specifications yet, but we will
+    xdescribe('Some measures have measureSpecification property', () => {
       it('contains proper metadata on measures', () => {
         const validMeasureIds = measuresData
           .filter(m => m.measureSpecification !== undefined)
