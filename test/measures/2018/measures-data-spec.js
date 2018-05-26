@@ -21,6 +21,24 @@ describe(year + ' measures data json', function() {
     assert.equal(_.uniq(measureIds).length, measureIds.length);
   });
 
+  describe('pre-PI attestations', function() {
+    const measureIdsSet = new Set(measureIds);
+    const requiredAttestationIdsSet = new Set(['PI_INFBLO_1', 'PI_ONCDIR_1', 'PI_ONCACB_1', 'PI_IACEHRT_1']);
+
+    it('includes all the pre-PI attestations', function() {
+      const intersection = new Set([...measureIdsSet]
+        .filter(x => requiredAttestationIdsSet.has(x)));
+      assert.equal(intersection.size, requiredAttestationIdsSet.size);
+    });
+
+    it('does not have substitutes', () => {
+      requiredAttestationIdsSet.forEach(measureId => {
+        const measure = measuresData.find(m => m.measureId === 'PI_INFBLO_1');
+        assert.isTrue(_.isEmpty(measure.substitutes));
+      });
+    });
+  });
+
   describe('quality measures', function() {
     it('includes all quality measures with multi-performance strata', function() {
       const multiPerformanceIds = new Set(['007', '046', '122', '238', '348', '391', '392', '394', '398']);

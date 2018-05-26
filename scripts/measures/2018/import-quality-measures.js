@@ -182,7 +182,7 @@ function getCheckedColumns(row, columnNumberToNameMap) {
 
 // loop through all the strata in the strata csv and add them to the measure object
 // (there exist multiple csv rows of strata for each multiPerformanceRate measure)
-const addMultiPerformanceRateStrata = function(measures, strataRows) {
+function addMultiPerformanceRateStrata(measures, strataRows) {
   _.each(strataRows, row => {
     if (!row[0]) {
       return; // csv has a blank row, so skip it
@@ -226,11 +226,11 @@ const addMultiPerformanceRateStrata = function(measures, strataRows) {
  * 2. We trim all data sourced from CSVs because people sometimes unintentionally
  * include spaces or linebreaks
  */
-const convertQualityStrataCsvsToMeasures = function(qualityCsvRows, strataCsvRows) {
+function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
   const sourcedFields = QUALITY_CSV_CONFIG.sourced_fields;
   const constantFields = QUALITY_CSV_CONFIG.constant_fields;
 
-  const measures = qualityCsvRows.map(function(row) {
+  const measures = qualityCsvRows.map((row) => {
     const measure = {};
     _.each(sourcedFields, (columnObject, measureKey) => {
       if (typeof columnObject === 'number') {
