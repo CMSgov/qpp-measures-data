@@ -21,8 +21,8 @@ node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
 	$quality_csv $quality_strata $quality_measures
 
 # 0b. Add PI (formerly ACI) measures to the staging measures-data-pi.json file:
-# (For now it's just copying over 2017's with ACI changed to PI and a few
-# content tweaks by CMS; later we'll add measures specifications)
+# (For now it's just copying over 2017's with ACI changed to PI, preAttestation
+# changed to attestation, and a few content tweaks by CMS)
 cat util/measures/$currentPerformanceYear/pi-measures.json > \
 	staging/$currentPerformanceYear/measures-data-pi.json
 
