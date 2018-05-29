@@ -4,6 +4,7 @@ const assert = chai.assert;
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 // Test data
 const year = 2018;
@@ -14,7 +15,7 @@ const outputArg = '../../../test/scripts/measures/' + year + '/fixtures/test-mea
 const outputPath = path.join(__dirname, year.toString(), '../../' + outputArg);
 
 // Expected new measures
-const expectedMeasures = require('../' + year + '/fixtures/expected-measures.json');
+const expectedMeasures = require('../' + year + '/fixtures/expected-quality-measures.json');
 
 // Function which executes script and reads in output file to a JS object.
 const runTest = function(measuresCsv, qualityStrataCsv) {
@@ -35,8 +36,8 @@ describe(year + ' import measures', function() {
 
   it('should generate the expected quality measures json', () => {
     const measures = runTest(testQualityMeasuresCsv, testQualityStrataCsv);
-    expectedMeasures.forEach(function(expectedMeasure, measureIdx) {
-      Object.entries(expectedMeasure).forEach(function([measureKey, measureValue]) {
+    expectedMeasures.forEach((expectedMeasure, measureIdx) => {
+      _.each(expectedMeasure, (measureValue, measureKey) => {
         assert.deepEqual(measures[measureIdx][measureKey], measureValue);
       });
     });

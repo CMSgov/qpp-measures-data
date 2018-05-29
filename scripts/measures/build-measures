@@ -30,7 +30,7 @@ cat util/measures/$currentPerformanceYear/pi-measures.json > \
 # node scripts/measures/enrich-measures-data.js \
 #	$staging_measures_with_qcdrs $final_measures
 
-# 1. Merge the various types of measures (this just concatenates the json arrays)
+# 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 	$quality_measures $pi_measures \
 	$final_measures
