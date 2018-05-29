@@ -8,21 +8,32 @@ currentPerformanceYear=2018
 # 2. use the git history of any necessary import scripts
 # 3. revert any changes to directory structures below.
 
+# note these paths are relative to /scripts/measures/$currentPerformanceYear/
 quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
 quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
 quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
-# final_measures='../../measures/'$currentPerformanceYear'/measures-data.json'
+pi_json='../../../util/measures/'$currentPerformanceYear'/pi-measures.json'
+pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
+final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
 
-# 0. Add quality measures to the staging measures-data-quality.json file:
+# 0a. Add quality measures to the staging measures-data-quality.json file:
 node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
 	$quality_csv $quality_strata $quality_measures
+
+# 0b. Add PI (formerly ACI) measures to the staging measures-data-pi.json file:
+# (For now it's just copying over 2017's with ACI changed to PI, preAttestation
+# changed to attestation, and a few content tweaks by CMS)
+cat util/measures/$currentPerformanceYear/pi-measures.json > \
+	staging/$currentPerformanceYear/measures-data-pi.json
 
 # TODO: Enrich `measures-data.json` file, run:
 # node scripts/measures/enrich-measures-data.js \
 #	$staging_measures_with_qcdrs $final_measures
-# For now, just copy the staging measures file over.
-cat staging/$currentPerformanceYear/measures-data-quality.json > \
-	measures/$currentPerformanceYear/measures-data.json
+
+# 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
+node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
+	$quality_measures $pi_measures \
+	$final_measures
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"

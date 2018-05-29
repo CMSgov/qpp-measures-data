@@ -1,0 +1,746 @@
+[
+  {
+    "measureId": "PI_INFBLO_1",
+    "category": "pi",
+    "title": "Prevention of Information Blocking Attestation",
+    "description": "I have not  knowingly and willfully take action to limit or restrict the interoperability of certified EHR technology.\nI have responded to requests to retrieve or exchange information—including requests from patients and other health care providers regardless of the requestor's affiliation or technology.\nI have implemented appropriate standards and processes to ensure that its certified EHR technology was connected in accordance with applicable law and standards, allowed patients timely access to their electronic health information; and supported exchange of electronic health information with other health care providers.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": true,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "measureId": "PI_ONCDIR_1",
+    "category": "pi",
+    "title": "ONC Direct Review Attestation",
+    "description": "I have (1) acknowledged the requirement to cooperate in good faith with ONC direct review health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received;\nAND (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": true,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "measureId": "PI_ONCACB_1",
+    "category": "pi",
+    "title": "ONC-ACB Surveillance Attestation (Optional)",
+    "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC–ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": false,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "measureId": "PI_IACEHRT_1",
+    "category": "pi",
+    "title": "PI bonus for submission of eligible Improvement Activities using CEHRT",
+    "description": "I attest that I have submitted an eligible Improvement Activity using Certified Electronic Health Record Technology (CEHRT).",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 10,
+    "isRequired": false,
+    "isBonus": true,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "cehrtBonus",
+    "substitutes": []
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_LVPP_1",
+    "title": "E-Prescribing Exclusion",
+    "description": "A MIPS eligible clinician (EC) who writes fewer than 100 permissible prescriptions during the performance period is eligible for exclusion from the required e-prescribing measure.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_EP_1",
+      "PI_TRANS_EP_1",
+      "PI_TRANS_LVPP_1"
+    ]
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_LVPP_1",
+    "title": "E-Prescribing Exclusion",
+    "description": "A MIPS eligible clinician (EC) who writes fewer than 100 permissible prescriptions during the performance period is eligible for exclusion from the required e-prescribing measure.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_EP_1",
+      "PI_LVPP_1",
+      "PI_EP_1"
+    ]
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_LVOTC_1",
+    "title": "Send a Summary of Care Exclusion",
+    "description": "Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_HIE_1",
+      "PI_TRANS_HIE_1",
+      "PI_TRANS_LVOTC_1"
+    ]
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_LVOTC_1",
+    "title": "Health Information Exchange Exclusion",
+    "description": "Any MIPS eligible clinician who transfers a patient to another setting or refers a patient less than 100 times during the performance period.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_HIE_1",
+      "PI_HIE_1",
+      "PI_LVOTC_1",
+      "PI_HIE_2",
+      "PI_LVITC_1"
+    ]
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_LVITC_1",
+    "title": "Request/Accept Summary of Care Exclusion",
+    "description": "Any MIPS eligible clinician who does not receive any transitions of care or referrals or have patient encounters in which the MIPS eligible clinician has never before encountered the patient during the performance period.",
+    "isRequired": false,
+    "weight": 0,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_HIE_2",
+      "PI_TRANS_HIE_1",
+      "PI_TRANS_LVOTC_1"
+    ]
+  },
+{
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PHCDRR_5",
+    "title": "Clinical Data Registry Reporting",
+    "description": "The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [],
+    "isBonus": true,
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "PI_TRANS_PHCDRR_3"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_HIE_3",
+    "title": "Clinical Information Reconciliation",
+    "description": "For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician performs clinical information reconciliation. The MIPS eligible clinician must implement clinical information reconciliation for the following three clinical information sets: (1) Medication. Review of the patient's medication, including the name, dosage, frequency, and route of each medication. (2) Medication allergy. Review of the patient's known medication allergies. (3) Current Problem list. Review of the patient's current and active diagnoses.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_TRANS_MR_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PHCDRR_3",
+    "title": "Electronic Case Reporting",
+    "description": "The MIPS eligible clinician is in active engagement with a public health agency to electronically submit case reporting of reportable conditions.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [],
+    "isBonus": true,
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_EP_1",
+    "title": "e-Prescribing",
+    "description": "At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using certified EHR technology.",
+    "isRequired": true,
+    "weight": 0,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_LVPP_1",
+      "PI_TRANS_EP_1",
+      "PI_TRANS_LVPP_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PHCDRR_1",
+    "title": "Immunization Registry Reporting",
+    "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit immunization data and receive immunization forecasts and histories from the public health immunization registry/immunization information system (IIS).",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_TRANS_PHCDRR_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_CCTPE_3",
+    "title": "Patient-Generated Health Data",
+    "description": "Patient-generated health data or data from a non-clinical setting is incorporated into the certified EHR technology for at least one unique patient seen by the MIPS eligible clinician during the performance period.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_PEA_2",
+    "title": "Patient-Specific Education",
+    "description": "The MIPS eligible clinician must use clinically relevant information from certified EHR technology to identify patient-specific educational resources and provide electronic access to those materials to at least one unique patient seen by the MIPS eligible clinician.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_TRANS_PSE_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_PEA_1",
+    "title": "Provide Patient Access",
+    "description": "For at least one unique patient seen by the MIPS eligible clinician: (1) The patient (or the patient authorized representative) is provided timely access to view online, download, and transmit his or her health information; and (2) The MIPS eligible clinician ensures the patient's health information is available for the patient (or patient-authorized representative) to access using any application of their choice that is configured to meet the technical specifications of the Application Programing Interface (API) in the MIPS eligible clinician's certified EHR technology.",
+    "isRequired": true,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_PEA_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PHCDRR_4",
+    "title": "Public Health Registry Reporting",
+    "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit data to public health registries.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [],
+    "isBonus": true,
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_HIE_2",
+    "title": "Request/Accept Summary of Care",
+    "description": "For at least one transition of care or referral received or patient encounter in which the MIPS eligible clinician has never before encountered the patient, the MIPS eligible clinician receives or retrieves and incorporates into the patient's record an electronic summary of care document.",
+    "isRequired": true,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_LVITC_1",
+      "PI_TRANS_HIE_1",
+      "PI_TRANS_LVOTC_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_CCTPE_2",
+    "title": "Secure Messaging",
+    "description": "For at least one unique patient seen by the MIPS eligible clinician during the performance period, a secure message was sent using the electronic messaging function of certified EHR technology to the patient (or the patient-authorized representative), or in response to a secure message sent by the patient (or the patient-authorized representative).",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_TRANS_SM_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PPHI_1",
+    "title": "Security Risk Analysis",
+    "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified EHR technology in accordance with requirements in 45 CFR164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), and implement security updates as necessary and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
+    "isRequired": true,
+    "weight": 0,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "protectPatientHealthInformation",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_PPHI_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_HIE_1",
+    "title": "Send a Summary of Care",
+    "description": "For at least one transition of care or referral, the MIPS eligible clinician that transitions or refers their patient to another setting of care or health care provider-(1) creates a summary of care record using certified EHR technology; and (2) electronically exchanges the summary of care record.",
+    "isRequired": true,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_LVOTC_1",
+      "PI_TRANS_HIE_1",
+      "PI_TRANS_LVOTC_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_PHCDRR_2",
+    "title": "Syndromic Surveillance Reporting",
+    "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit syndromic surveillance data from a urgent care ambulatory setting where the jurisdiction accepts syndromic data from such settings and the standards are clearly defined.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [],
+    "isBonus": true,
+    "objective": "publicHealthAndClinicalDataRegistryReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "PI_TRANS_PHCDRR_2"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_CCTPE_1",
+    "title": "View, Download and Transmit (VDT)",
+    "description": "During the performance period, at least one unique patient (or patient-authorized representatives) seen by the MIPS eligible clinician actively engages with the EHR made accessible by the MIPS eligible clinician. An MIPS eligible clinician may meet the measure by either-(1) view, download or transmit to a third party their health information; or (2) access their health information through the use of an API that can be used by applications chosen by the patient and configured to the API in the MIPS eligible clinician's certified EHR technology; or (3) a combination of (1) and (2).",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [],
+    "isBonus": false,
+    "objective": "coordinationOfCareThroughPatientEngagement",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_TRANS_PEA_2"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_EP_1",
+    "title": "e-Prescribing",
+    "description": "At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using certified EHR technology.",
+    "isRequired": true,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_LVPP_1",
+      "PI_LVPP_1",
+      "PI_EP_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_HIE_1",
+    "title": "Health Information Exchange",
+    "description": "The MIPS eligible clinician that transitions or refers their patient to another setting of care or health care clinician (1) uses CEHRT to create a summary of care record; and (2) electronically transmits such summary to a receiving health care clinician for at least one transition of care or referral.",
+    "isRequired": true,
+    "weight": 20,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_TRANS_LVOTC_1",
+      "PI_HIE_1",
+      "PI_LVOTC_1",
+      "PI_HIE_2",
+      "PI_LVITC_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_PHCDRR_1",
+    "title": "Immunization Registry Reporting",
+    "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit immunization data.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "publicHealthReporting",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_PHCDRR_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_MR_1",
+    "title": "Medication Reconciliation",
+    "description": "The MIPS eligible clinician performs medication reconciliation for at least one transition of care in which the patient is transitioned into the care of the MIPS eligible clinician.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "medicationReconciliation",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_HIE_3"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_PSE_1",
+    "title": "Patient-Specific Education",
+    "description": "The MIPS eligible clinician must use clinically relevant information from CEHRT to identify patient-specific educational resources and provide access to those materials to at least one unique patient seen by the MIPS eligible clinician.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "patientSpecificEducation",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_PEA_2"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_PEA_1",
+    "title": "Provide Patient Access",
+    "description": "At least one patient seen by the MIPS eligible clinician during the performance period is provided timely access to view online, download, and transmit to a third party their health information subject to the MIPS eligible clinician's discretion to withhold certain information.",
+    "isRequired": true,
+    "weight": 20,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_PEA_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_SM_1",
+    "title": "Secure Messaging",
+    "description": "For at least one unique patient seen by the MIPS eligible clinician during the performance period, a secure message was sent using the electronic messaging function of CEHRT to the patient (or the patient-authorized representative), or in response to a secure message sent by the patient (or the patient-authorized representative) during the performance period.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "secureMessaging",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_CCTPE_2"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_PPHI_1",
+    "title": "Security Risk Analysis",
+    "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified EHR technology in accordance with requirements in 45 CFR164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), and implement security updates as necessary and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
+    "isRequired": true,
+    "weight": 0,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "protectPatientHealthInformation",
+    "reportingCategory": "base",
+    "substitutes": [
+      "PI_PPHI_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_PHCDRR_3",
+    "title": "Specialized Registry Reporting",
+    "description": "The MIPS eligible clinician is in active engagement to submit data to specialized registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": true,
+    "objective": "publicHealthReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "PI_PHCDRR_5"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "boolean",
+    "measureId": "PI_TRANS_PHCDRR_2",
+    "title": "Syndromic Surveillance Reporting",
+    "description": "The MIPS eligible clinician  is in active engagement with a public health agency to submit syndromic surveillance data.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.",
+    "isRequired": false,
+    "weight": 5,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": true,
+    "objective": "publicHealthReporting",
+    "reportingCategory": "registryBonus",
+    "substitutes": [
+      "PI_PHCDRR_2"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  },
+  {
+    "category": "pi",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "proportion",
+    "measureId": "PI_TRANS_PEA_2",
+    "title": "View, Download, or Transmit (VDT)",
+    "description": "At least one patient seen by the MIPS eligible clinician during the performance period (or patient-authorized representative) views, downloads or transmits their health information to a third party during the performance period.",
+    "isRequired": false,
+    "weight": 10,
+    "measureSets": [
+      "transition"
+    ],
+    "isBonus": false,
+    "objective": "patientElectronicAccess",
+    "reportingCategory": "performanceBonus",
+    "substitutes": [
+      "PI_CCTPE_1"
+    ],
+    "measureSpecification": {
+      "default": ""
+    }
+  }
+]

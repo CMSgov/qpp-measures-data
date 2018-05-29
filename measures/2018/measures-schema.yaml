@@ -9,12 +9,12 @@ definitions:
     properties:
       measureId:
         type: string
-        description: For quality measures, the measureId is the same as the quality number. For an advancing care information (ACI) measure, the measureId is the measure identifier for the ACI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
+        description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
       title: { type: string }
       description: { type: string }
       category:
-        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Advancing Care Information, and Cost.
-        enum: [ia, quality, aci, cost]
+        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.
+        enum: [ia, quality, pi, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
         enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
@@ -30,13 +30,13 @@ definitions:
         description: URL link for Measure Specification PDF to download by Submission Method.
         items: { $ref: #/definitions/measureSpecification }
       measureSets:
-        description: ACI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
+        description: PI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
     anyOf:
       - { $ref: #/definitions/iaMeasure }
-      - { $ref: #/definitions/aciMeasure }
+      - { $ref: #/definitions/piMeasure }
       - { $ref: #/definitions/qualityMeasure }
       - { $ref: #/definitions/aggregateCostMeasure }
 
@@ -52,34 +52,34 @@ definitions:
         description: IA category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/subcategoryIds }]
       cehrtEligible:
-        description: If true, attesting to the measure will qualify the provider for an ACI CEHRT bonus.
+        description: If true, attesting to the measure will qualify the provider for an PI CEHRT bonus.
         type: boolean
         default: false
     required: [weight, subcategoryId, cehrtEligible]
 
-  aciMeasure:
+  piMeasure:
     type: object
     properties:
-      category: { enum: [aci] }
+      category: { enum: [pi] }
       reportingCategory:
-        description: The reporting category of the ACI measure.
-        enum: [preAttestation, base, registryBonus, performanceBonus, cehrtBonus]
+        description: The reporting category of the PI measure.
+        enum: [attestation, base, registryBonus, performanceBonus, cehrtBonus]
       weight:
         description: Determines the performance score points granted for attesting to the measure.
         enum: [0, 5, 10, 20]
       objective:
-        description: ACI category which the measure incentivizes.
+        description: PI category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/objectives }]
       isRequired:
-        description: If true, attesting to the measure is required in order to receive a non-zero ACI score.
+        description: If true, attesting to the measure is required in order to receive a non-zero PI score.
         type: boolean
         default: false
       isBonus:
-        description: If true, attesting to the measure will qualify the provider for ACI bonus points.
+        description: If true, attesting to the measure will qualify the provider for PI bonus points.
         type: boolean
         default: false
       substitutes:
-        description: Identifiers of other ACI measure that can be used instead of the current meausre.
+        description: Identifiers of other PI measure that can be used instead of the current meausre.
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
     required: [weight, objective, isRequired, isBonus, measureSets]
 
