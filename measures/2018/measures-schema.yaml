@@ -1,8 +1,8 @@
 $id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/measures-schema.yaml
-$schema: http://json-schema.org/schema#
+$schema: http://json-schema.org/draft-07/schema
 type: array
 items: { $ref: #/definitions/measure }
-uniqueItemProperties: ['measureId']
+uniqueItemProperties: ['measureId'] # used by ajv-keywords
 
 definitions:
   measure:
