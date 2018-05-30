@@ -44,7 +44,7 @@ function mapInput(rawInput) {
 }
 
 /**
- * [convertCsvToMeasures description]
+ * [convertIaCsvsToMeasures description]
  * @param  {array of objects}  each object in the array represents
  * a new measure (row)
  * @return {array}            Returns an array of measures objects
@@ -52,7 +52,7 @@ function mapInput(rawInput) {
  * Note: We trim all data sourced from CSVs because people sometimes unintentionally
  * include spaces or linebreaks
  */
-function convertIACSVsToMeasures(iaCSVRows) {
+function convertIaCsvsToMeasures(iaCSVRows) {
   return iaCSVRows.map((row) => {
     const measure = {};
     _.each(IA_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
@@ -63,11 +63,11 @@ function convertIACSVsToMeasures(iaCSVRows) {
   });
 }
 
-function importIAMeasures(iaMeasuresPath, outputPath) {
+function importIaMeasures(iaMeasuresPath, outputPath) {
   const csv = fs.readFileSync(path.join(__dirname, iaMeasuresPath), 'utf8');
   const iaCSV = parse(csv, {columns: true});
 
-  const iaMeasures = convertIACSVsToMeasures(iaCSV);
+  const iaMeasures = convertIaCsvsToMeasures(iaCSV);
   const iaMeasuresJSON = JSON.stringify(iaMeasures, null, 2);
 
   fs.writeFileSync(path.join(__dirname, outputPath), iaMeasuresJSON);
@@ -76,4 +76,4 @@ function importIAMeasures(iaMeasuresPath, outputPath) {
 const iaMeasuresPath = process.argv[2];
 const outputPath = process.argv[3];
 
-importIAMeasures(iaMeasuresPath, outputPath);
+importIaMeasures(iaMeasuresPath, outputPath);

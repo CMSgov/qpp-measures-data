@@ -8,7 +8,7 @@ const _ = require('lodash');
 
 // Test data
 const year = 2018;
-const testIAMeasuresCSV = '../../../test/scripts/measures/' + year + '/fixtures/test-ia-measures.csv';
+const testIaMeasuresCsv = '../../../test/scripts/measures/' + year + '/fixtures/test-ia-measures.csv';
 const outputArg = '../../../test/scripts/measures/' + year + '/fixtures/test-measures-data-output.json';
 const outputPath = path.join(__dirname, year.toString(), '../../' + outputArg);
 
@@ -27,12 +27,12 @@ const runTest = (measuresCSV) => {
 
 describe(year + ' import IA measures', () => {
   it('should create new IA measures', () => {
-    const measures = runTest(testIAMeasuresCSV);
+    const measures = runTest(testIaMeasuresCsv);
     assert.equal(measures.length, 2);
   });
 
   it('should generate the expected IA measures json', () => {
-    const measures = runTest(testIAMeasuresCSV);
+    const measures = runTest(testIaMeasuresCsv);
     expectedMeasures.forEach((expectedMeasure, measureIdx) => {
       _.each(expectedMeasure, (measureValue, measureKey) => {
         assert.deepEqual(measures[measureIdx][measureKey], measureValue);
