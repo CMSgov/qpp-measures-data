@@ -11,9 +11,7 @@ const duplicateMeasuresFile = './test/scripts/measures/' + year + '/fixtures/dup
 
 const validateMeasures = function(measuresFile) {
   const cmd = 'cat ' + measuresFile + ' | node ./scripts/validate-data.js measures ' + year;
-  const result = execSync(cmd, {stdio: 'pipe'}).toString();
-  console.log(result);
-  return result;
+  return execSync(cmd, {stdio: 'pipe'}).toString();
 };
 
 describe(year + ' validate data', function() {
