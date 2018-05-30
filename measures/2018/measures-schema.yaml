@@ -1,7 +1,8 @@
-id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/measures-schema.yaml
+$id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/measures-schema.yaml
 $schema: http://json-schema.org/schema#
 type: array
 items: { $ref: #/definitions/measure }
+uniqueItemProperties: ['measureId']
 
 definitions:
   measure:
@@ -43,7 +44,7 @@ definitions:
   iaMeasure:
     type: object
     properties:
-      category: { enum: [ia] }
+      category: { const ia }
       weight:
         description: Determines the points granted for attesting to the measure.
         enum: [null, medium, high]
@@ -60,7 +61,7 @@ definitions:
   piMeasure:
     type: object
     properties:
-      category: { enum: [pi] }
+      category: { const pi }
       reportingCategory:
         description: The reporting category of the PI measure.
         enum: [attestation, base, registryBonus, performanceBonus, cehrtBonus]
@@ -86,7 +87,7 @@ definitions:
   aggregateCostMeasure:
     type: object
     properties:
-      category: { enum: [cost] }
+      category: { const cost }
     isInverse:
         description: If true, a lower performance rate correlates with better performance.
         type: boolean
@@ -101,7 +102,7 @@ definitions:
   qualityMeasure:
     type: object
     properties:
-      category: { enum: [quality] }
+      category: { const quality }
       nationalQualityStrategyDomain: { type: ['null', string] }
       measureType:
         description: Quality category which the measure incentivizes.
