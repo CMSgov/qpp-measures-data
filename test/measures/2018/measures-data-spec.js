@@ -57,6 +57,26 @@ describe(year + ' measures data json', function() {
     });
   });
 
+  describe('IA measures', () => {
+    it('only have valid subcategoryIds', () => {
+      const validSubcategoryIds = [null, 'achievingHealthEquity', 'behavioralAndMentalHealth', 'beneficiaryEngagement', 'careCoordination', 'emergencyResponseAndPreparedness', 'expandedPracticeAccess', 'patientSafetyAndPracticeAssessment', 'populationManagement'];
+      measuresData
+        .filter(measure => measure.category === 'ia')
+        .forEach((measure) => {
+          assert.include(validSubcategoryIds, measure.subcategoryId);
+        });
+    });
+
+    it('only have valid weights', () => {
+      const validWeights = [null, 'medium', 'high'];
+      measuresData
+        .filter(measure => measure.category === 'ia')
+        .forEach((measure) => {
+          assert.include(validWeights, measure.weight);
+        });
+    });
+  });
+
   describe('quality measures', function() {
     it('includes all quality measures with multi-performance strata', function() {
       const multiPerformanceIds = new Set(['007', '046', '122', '238', '348', '391', '392', '394', '398']);

@@ -28,7 +28,7 @@ const runTest = function(measuresCsv, qualityStrataCsv) {
   return JSON.parse(qpp);
 };
 
-describe(year + ' import measures', function() {
+describe(year + ' import quality measures', function() {
   it('should create new quality measures', () => {
     const measures = runTest(testQualityMeasuresCsv, testQualityStrataCsv);
     assert.equal(measures.length, 3);

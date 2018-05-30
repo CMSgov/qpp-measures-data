@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const outputPath = process.argv[4];
+const outputPath = process.argv[process.argv.length - 1];
 
 function mergeMeasures() {
   const allJson = [];

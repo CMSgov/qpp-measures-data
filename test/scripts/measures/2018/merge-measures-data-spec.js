@@ -10,15 +10,15 @@ const _ = require('lodash');
 const year = 2018;
 const testQualityJson = '../../../test/scripts/measures/' + year + '/fixtures/expected-quality-measures.json';
 const testPiJson = '../../../test/scripts/measures/' + year + '/fixtures/test-pi-measures.json';
+const testIaJson = '../../../test/scripts/measures/' + year + '/fixtures/expected-ia-measures.json';
 const outputArg = '../../../test/scripts/measures/' + year + '/fixtures/test-merged-measures-data-output.json';
 const outputPath = path.join(__dirname, year.toString(), '../../' + outputArg);
 
 // Expected combined measures
 const expectedMeasures = require('../' + year + '/fixtures/expected-measures.json');
 
-const runTest = function(measuresCsv, qualityStrataCsv) {
-  const cmd = 'node ./scripts/measures/' + year + '/merge-measures-data.js ' +
-    testQualityJson + ' ' + testPiJson + ' ' + outputArg;
+const runTest = (measuresCsv, qualityStrataCsv) => {
+  const cmd = `node ./scripts/measures/${year}/merge-measures-data.js ${testQualityJson} ${testPiJson} ${testIaJson} ${outputArg}`;
   console.log(execSync(cmd, {stdio: 'pipe'}).toString());
 
   const qpp = fs.readFileSync(outputPath, 'utf8');
@@ -29,7 +29,8 @@ const runTest = function(measuresCsv, qualityStrataCsv) {
 describe(year + ' merge measures', function() {
   it('should generate the expected combined measures json', () => {
     const measures = runTest(testQualityJson, testPiJson);
-    expectedMeasures.forEach(function(expectedMeasure, measureIdx) {
+    assert.equal(measures.length, expectedMeasures.length);
+    expectedMeasures.forEach((expectedMeasure, measureIdx) => {
       _.each(expectedMeasure, (measureValue, measureKey) => {
         assert.deepEqual(measures[measureIdx][measureKey], measureValue);
       });
