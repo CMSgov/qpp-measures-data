@@ -158,8 +158,12 @@ b Percentage of patients who remained on an antidepressant medication for at lea
     <measureSet>generalOncology</measureSet>
     <measureSet>otolaryngology</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>&gt;=84Days</name>
+      <description>Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date</description>
+    </strata>
+    <strata>
+      <name>&gt;=180Days</name>
+      <description>Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date</description>
     </strata>
   </measure>
   <measure>
@@ -1632,8 +1636,16 @@ Age 18 years and older BMI � 18.5 and &lt; 25 kg/m2</description>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>CD4&lt;200/mm3</name>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3</description>
+    </strata>
+    <strata>
+      <name>CD4&lt;500/mm3OrCD4&lt;15%</name>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%</description>
+    </strata>
+    <strata>
+      <name>atDiagnosis</name>
+      <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV</description>
     </strata>
   </measure>
   <measure>
@@ -2405,8 +2417,16 @@ Age 18 years and older BMI � 18.5 and &lt; 25 kg/m2</description>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>BMI</name>
+      <description>Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period</description>
+    </strata>
+    <strata>
+      <name>nutrition</name>
+      <description>Patients who had counseling for nutrition during a visit that occurs during the measurement period</description>
+    </strata>
+    <strata>
+      <name>physicalActivity</name>
+      <description>Patients who had counseling for physical activity during a visit that occurs during the measurement period</description>
     </strata>
   </measure>
   <measure>
@@ -3141,8 +3161,12 @@ b. Percentage of patients who initiated treatment and who had two or more additi
     <measureSet>generalOncology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>14DaysOfDiagnosis</name>
+      <description>Patients who initiated treatment within 14 days of the diagnosis</description>
+    </strata>
+    <strata>
+      <name>30DaysOfVisit</name>
+      <description>Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit</description>
     </strata>
   </measure>
   <measure>
@@ -4210,8 +4234,12 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>otolaryngology</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>visitWithin30Days</name>
+      <description>Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.</description>
+    </strata>
+    <strata>
+      <name>visitAndFollowups</name>
+      <description>Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended.</description>
     </strata>
   </measure>
   <measure>
@@ -4305,8 +4333,16 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <measureSet>generalOncology</measureSet>
     <measureSet>otolaryngology</measureSet>
     <strata>
-      <name>overall</name>
-      <description>This is a placeholder for a measure missing its strata</description>
+      <name>4MonthsOfEnd</name>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+    </strata>
+    <strata>
+      <name>4&amp;8MonthsAfterStart</name>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+    </strata>
+    <strata>
+      <name>4MonthsOfStart</name>
+      <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
     </strata>
   </measure>
   <measure>
@@ -6340,8 +6376,7 @@ b. Percentage of children who remained on ADHD medication for at least 210 days 
     <measureSet>hospitalists</measureSet>
     <strata>
       <name>overall</name>
-      <description>Percentage of patients 18 years of age or older as of October 1 of the denominator identification&#xD;
-period who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively.</description>
+      <description>Percentage of patients 18 years of age or older as of October 1 of the denominator identification&#xD;period who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively.</description>
     </strata>
     <strata>
       <name>averageChange</name>
@@ -6371,8 +6406,7 @@ period who had a lumbar spine fusion procedure performed during the denominator 
     <measureSet>hospitalists</measureSet>
     <strata>
       <name>overall</name>
-      <description>Percentage of patients 18 years of age or older as of January 1 of the denominator identification&#xD;
-period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively.</description>
+      <description>Percentage of patients 18 years of age or older as of January 1 of the denominator identification&#xD;period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively.</description>
     </strata>
     <strata>
       <name>averageChange</name>
