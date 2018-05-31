@@ -5,16 +5,14 @@
 ## Quality Payment Program Measures Data Repository
 
 This repository hosts measures data for QPP and supports functionality to import
-measures data as an NPM module. It currently hosts all Improvement Activity and
-Advancing Care Information measures, as well as a fraction of Quality measures.
+measures data as an NPM module. All 2018 quality, PI (Promoting Interoperability, 
+formerly ACI), and IA measures were added as of 
+[release 1.1.3](https://github.com/CMSgov/qpp-measures-data/releases/tag/1.1.3). QCDR measures will be added later in 2018.
 
-This is the alpha v2 source of truth for QPP measures data. It has been built off a measures data API which is no longer available (qpp.cms.gov/api).
-This data (qpp-measures-data) reformats some of the data from the v1 measures
-API and adds some additional information (see [`scripts/measures/archived/scripts/convert-qpp-to-measures.js`](scripts/measures/archived/scripts/convert-qpp-to-measures.js)
-for the exact transformations). The transition to using qpp-measures-data as a
+This is the v2 source of truth for QPP measures data. The previous measures data API is no longer available (qpp.cms.gov/api). The transition to using qpp-measures-data as a
 source of truth for CMS is ongoing and this data may be subject to
-modifications. We are not guaranteeing stability in the API contract for
-qpp-measures-data at this time.
+modifications. Stability in the API contract for
+qpp-measures-data is prioritized but not guaranteed.
 
 ## How to Use qpp-measures-data
 
@@ -33,8 +31,6 @@ For example, `benchmarks/2017.json` contains the benchmarks for performance year
 (benchmark year 2015).
 
 $YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2017.
-
-All 2018 quality, PI (Promoting Interoperability, formerly ACI), and IA measures were added as of [release 1.1.3](https://github.com/CMSgov/qpp-measures-data/releases/tag/1.1.3).
 
 ### Importing the qpp-measures-data module
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
