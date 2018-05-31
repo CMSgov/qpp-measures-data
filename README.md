@@ -34,7 +34,7 @@ For example, `benchmarks/2017.json` contains the benchmarks for performance year
 
 $YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2017.
 
-Note that only quality and PI (Promoting Interoperability, formerly ACI) measures data has been imported for 2018. IA measures are being added soon.
+All 2018 quality, PI (Promoting Interoperability, formerly ACI), and IA measures have been imported.
 
 ### Importing the qpp-measures-data module
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
