@@ -182,8 +182,12 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": ">=84Days",
+        "description": "Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date"
+      },
+      {
+        "name": ">=180Days",
+        "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date"
       }
     ]
   },
@@ -1880,8 +1884,16 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": "CD4<200/mm3",
+        "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3"
+      },
+      {
+        "name": "CD4<500/mm3OrCD4<15%",
+        "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%"
+      },
+      {
+        "name": "atDiagnosis",
+        "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV"
       }
     ]
   },
@@ -2777,8 +2789,16 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": "BMI",
+        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+      },
+      {
+        "name": "nutrition",
+        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+      },
+      {
+        "name": "physicalActivity",
+        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
       }
     ]
   },
@@ -3644,8 +3664,12 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": "14DaysOfDiagnosis",
+        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+      },
+      {
+        "name": "30DaysOfVisit",
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
       }
     ]
   },
@@ -4884,8 +4908,12 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": "visitWithin30Days",
+        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
+      },
+      {
+        "name": "visitAndFollowups",
+        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
       }
     ]
   },
@@ -4997,8 +5025,16 @@
     ],
     "strata": [
       {
-        "name": "overall",
-        "description": "This is a placeholder for a measure missing its strata"
+        "name": "4MonthsOfEnd",
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia"
+      },
+      {
+        "name": "4&8MonthsAfterStart",
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia"
+      },
+      {
+        "name": "4MonthsOfStart",
+        "description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia"
       }
     ]
   },
@@ -7363,7 +7399,7 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Percentage of patients 18 years of age or older as of October 1 of the denominator identification\r\nperiod who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively."
+        "description": "Percentage of patients 18 years of age or older as of October 1 of the denominator identification\rperiod who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively."
       },
       {
         "name": "averageChange",
@@ -7399,7 +7435,7 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Percentage of patients 18 years of age or older as of January 1 of the denominator identification\r\nperiod who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively."
+        "description": "Percentage of patients 18 years of age or older as of January 1 of the denominator identification\rperiod who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively."
       },
       {
         "name": "averageChange",
