@@ -88,100 +88,60 @@ const QUALITY_CSV_CONFIG = {
   }
 };
 
-// mapping from quality measures csv column numbers to submission method
-const SUBMISSION_METHODS = [
-  'claims',
-  'certifiedSurveyVendor',
-  'electronicHealthRecord',
-  'cmsWebInterface',
-  'administrativeClaims',
-  'registry'
-];
+// mapping from quality measures csv column numbers to submission method array indices
+const SUBMISSION_METHODS = {
+  CSV_COLUMN_START_INDEX: 13,
+  ORDERED_FIELDS: [
+    'claims',
+    'certifiedSurveyVendor',
+    'electronicHealthRecord',
+    'cmsWebInterface',
+    'administrativeClaims',
+    'registry'
+  ]
+};
 
-// {
-//   13: 'claims',
-//   14: 'certifiedSurveyVendor',
-//   15: 'electronicHealthRecord',
-//   16: 'cmsWebInterface',
-//   17: 'administrativeClaims',
-//   18: 'registry'
-// };
-
-// mapping from quality measures csv column numbers to measure sets
-const MEASURE_SETS = [
-  'allergyImmunology',
-  'anesthesiology',
-  'cardiology',
-  'electrophysiologyCardiacSpecialist',
-  'gastroenterology',
-  'dermatology',
-  'emergencyMedicine',
-  'generalPracticeFamilyMedicine',
-  'internalMedicine',
-  'obstetricsGynecology',
-  'ophthalmology',
-  'orthopedicSurgery',
-  'otolaryngology',
-  'pathology',
-  'pediatrics',
-  'physicalMedicine',
-  'plasticSurgery',
-  'preventiveMedicine',
-  'neurology',
-  'mentalBehavioralHealth',
-  'diagnosticRadiology',
-  'interventionalRadiology',
-  'vascularSurgery',
-  'generalSurgery',
-  'thoracicSurgery',
-  'urology',
-  'generalOncology',
-  'radiationOncology',
-  'hospitalists',
-  'rheumatology',
-  'nephrology',
-  'infectiousDisease',
-  'neurosurgical',
-  'podiatry',
-  'dentistry'
-];
-// const MEASURE_SETS = {
-//   16: 'allergyImmunology',
-//   17: 'anesthesiology',
-//   18: 'cardiology',
-//   19: 'electrophysiologyCardiacSpecialist',
-//   20: 'gastroenterology',
-//   21: 'dermatology',
-//   22: 'emergencyMedicine',
-//   23: 'generalPracticeFamilyMedicine',
-//   24: 'internalMedicine',
-//   25: 'obstetricsGynecology',
-//   26: 'ophthalmology',
-//   27: 'orthopedicSurgery',
-//   28: 'otolaryngology',
-//   29: 'pathology',
-//   30: 'pediatrics',
-//   31: 'physicalMedicine',
-//   32: 'plasticSurgery',
-//   33: 'preventiveMedicine',
-//   34: 'neurology',
-//   35: 'mentalBehavioralHealth',
-//   36: 'diagnosticRadiology',
-//   37: 'interventionalRadiology',
-//   38: 'vascularSurgery',
-//   39: 'generalSurgery',
-//   40: 'thoracicSurgery',
-//   41: 'urology',
-//   42: 'generalOncology',
-//   43: 'radiationOncology',
-//   44: 'hospitalists',
-//   45: 'rheumatology',
-//   46: 'nephrology',
-//   47: 'infectiousDisease',
-//   48: 'neurosurgical',
-//   49: 'podiatry',
-//   50: 'dentistry'
-// };
+// mapping from quality measures csv column numbers to measure sets array indices
+const MEASURE_SETS = {
+  CSV_COLUMN_START_INDEX: 19,
+  ORDERED_FIELDS: [
+    'allergyImmunology',
+    'anesthesiology',
+    'cardiology',
+    'electrophysiologyCardiacSpecialist',
+    'gastroenterology',
+    'dermatology',
+    'emergencyMedicine',
+    'generalPracticeFamilyMedicine',
+    'internalMedicine',
+    'obstetricsGynecology',
+    'ophthalmology',
+    'orthopedicSurgery',
+    'otolaryngology',
+    'pathology',
+    'pediatrics',
+    'physicalMedicine',
+    'plasticSurgery',
+    'preventiveMedicine',
+    'neurology',
+    'mentalBehavioralHealth',
+    'diagnosticRadiology',
+    'interventionalRadiology',
+    'vascularSurgery',
+    'generalSurgery',
+    'thoracicSurgery',
+    'urology',
+    'generalOncology',
+    'radiationOncology',
+    'hospitalists',
+    'rheumatology',
+    'nephrology',
+    'infectiousDisease',
+    'neurosurgical',
+    'podiatry',
+    'dentistry'
+  ]
+};
 
 function getCsv(csvPath, headerRows = 1) {
   const csv = fs.readFileSync(path.join(__dirname, csvPath), 'utf8');
@@ -227,20 +187,14 @@ function mapInput(rawInput, fieldName) {
 }
 
 // used when multiple csv columns map into a single measure field
-function getCheckedColumns(row, firstColumnIndex, columnNames) {
+function getCheckedColumns(row, columnSet) {
   const checkedColumns = [];
 
-  _.each(columnNames, (value, index) => {
-    if (mapInput(row[firstColumnIndex + index]) === true) {
+  _.each(columnSet.ORDERED_FIELDS, (value, index) => {
+    if (mapInput(row[columnSet.CSV_COLUMN_START_INDEX + index]) === true) {
       checkedColumns.push(value);
     }
   });
-
-  // _.each(columnNumberToNameMap, (value, key) => {
-  //   if (mapInput(row[key]) === true) {
-  //     checkedColumns.push(value);
-  //   }
-  // });
 
   return checkedColumns;
 }
@@ -322,8 +276,8 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
       measure[measureKey] = measureValue;
     });
 
-    measure['submissionMethods'] = getCheckedColumns(row, 13, SUBMISSION_METHODS);
-    measure['measureSets'] = getCheckedColumns(row, 19, MEASURE_SETS);
+    measure['submissionMethods'] = getCheckedColumns(row, SUBMISSION_METHODS);
+    measure['measureSets'] = getCheckedColumns(row, MEASURE_SETS);
 
     return measure;
   });
@@ -333,13 +287,10 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 
 function importQualityMeasures() {
   const qualityCsv = getCsv(qualityMeasuresPath, 3);
-  // console.log(qualityCsv, 'qualityCsv');
   const strataCsv = getCsv(qualityStrataPath, 2);
 
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);
-
-  // console.log(qualityMeasuresJson);
 
   fs.writeFileSync(path.join(__dirname, outputPath), qualityMeasuresJson);
 }
