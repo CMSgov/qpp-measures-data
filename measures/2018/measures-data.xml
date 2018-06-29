@@ -22,12 +22,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)</title>
@@ -50,10 +48,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>infectiousDisease</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Antiplatelet Therapy</title>
@@ -75,9 +72,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Beta-Blocker Therapy - Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF &lt; 40%)</title>
@@ -101,9 +97,8 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <strata>
       <name>LVSD</name>
       <description>Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF &lt; 40% who were prescribed beta-blocker therapy</description>
@@ -134,10 +129,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>infectiousDisease</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <title>Anti-Depressant Medication Management</title>
@@ -159,9 +153,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
       <name>&gt;=84Days</name>
       <description>Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date</description>
@@ -192,8 +186,7 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Age-Related Macular Degeneration (AMD): Dilated Macular Examination</title>
@@ -215,8 +208,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Diabetic Retinopathy: Documentation of Presence or Absence of Macular Edema and Level of Severity of Retinopathy</title>
@@ -237,7 +229,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care</title>
@@ -260,8 +252,7 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Perioperative Care: Selection of Prophylactic Antibiotic - First OR Second Generation Cephalosporin</title>
@@ -283,13 +274,13 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>urology</measureSet>
-    <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Perioperative Care: Venous Thromboembolism (VTE) Prophylaxis (When Indicated in ALL Patients)</title>
@@ -311,14 +302,14 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
-    <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Communication with the Physician or Other Clinician Managing On-going Care Post-Fracture for Men and Women Aged 50 Years and Older</title>
@@ -340,12 +331,11 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Screening for Osteoporosis for Women Aged 65-85 Years of Age</title>
@@ -367,11 +357,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Use of Internal Mammary Artery (IMA) in Patients with Isolated CABG Surgery</title>
@@ -392,8 +381,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Preoperative Beta-Blocker in Patients with Isolated CABG Surgery</title>
@@ -414,8 +402,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Medication Reconciliation Post-Discharge</title>
@@ -439,11 +426,9 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>generalOncology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>nephrology</measureSet>
     <strata>
       <name>18-64</name>
       <description>Medication Reconciliation Post-Discharge: 18-64 years of age</description>
@@ -478,24 +463,23 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
     <measureSet>hospitalists</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSet>infectiousDisease</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older</title>
@@ -517,12 +501,11 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older</title>
@@ -544,11 +527,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Chronic Obstructive Pulmonary Disease (COPD): Spirometry Evaluation</title>
@@ -570,7 +552,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy</title>
@@ -592,7 +573,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Appropriate Treatment for Children with Upper Respiratory Infection (URI)</title>
@@ -614,11 +594,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Appropriate Testing for Children with Pharyngitis</title>
@@ -640,11 +619,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow</title>
@@ -665,7 +643,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Hematology: Myelodysplastic Syndrome (MDS): Documentation of Iron Stores in Patients Receiving Erythropoietin Therapy</title>
@@ -686,7 +663,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Hematology: Multiple Myeloma: Treatment with Bisphosphonates</title>
@@ -707,7 +683,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Hematology: Chronic Lymphocytic Leukemia (CLL): Baseline Flow Cytometry</title>
@@ -728,7 +703,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections</title>
@@ -750,10 +724,9 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
-    <measureSet>infectiousDisease</measureSet>
+    <measureSet>anesthesiology</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <title>Acute Otitis Externa (AOE): Topical Therapy</title>
@@ -775,13 +748,12 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy - Avoidance of Inappropriate Use</title>
@@ -803,13 +775,12 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Breast Cancer Resection Pathology Reporting: pT Category (Primary Tumor) and pN Category (Regional Lymph Nodes) with Histologic Grade</title>
@@ -831,8 +802,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Colorectal Cancer Resection Pathology Reporting: pT Category (Primary Tumor) and pN Category (Regional Lymph Nodes) with Histologic Grade</title>
@@ -854,8 +824,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients</title>
@@ -877,10 +846,9 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>rheumatology</measureSet>
-    <measureSet>nephrology</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <title>Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer</title>
@@ -901,8 +869,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Adult Major Depressive Disorder (MDD): Suicide Risk Assessment</title>
@@ -923,9 +890,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Osteoarthritis (OA): Function and Pain Assessment</title>
@@ -947,11 +914,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Influenza Immunization</title>
@@ -976,16 +942,14 @@
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>podiatry</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>nephrology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Pneumococcal Vaccination Status for Older Adults</title>
@@ -1010,14 +974,12 @@
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>podiatry</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>nephrology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Breast Cancer Screening</title>
@@ -1041,11 +1003,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <title>Colorectal Cancer Screening</title>
@@ -1069,10 +1029,8 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <title>Avoidance of Antibiotic Treatment in Adults With Acute Bronchitis</title>
@@ -1093,11 +1051,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Diabetes: Eye Exam</title>
@@ -1121,11 +1078,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF &lt; 40%)</title>
@@ -1147,7 +1102,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Diabetes: Medical Attention for Nephropathy</title>
@@ -1169,12 +1123,11 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Blood Pressure Management</title>
@@ -1196,8 +1149,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
     <strata>
       <name>&lt;140/90mmHg</name>
       <description>Percentage of patient visits with blood pressure results &lt; 140/90 mmHg</description>
@@ -1230,10 +1182,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>podiatry</measureSet>
   </measure>
   <measure>
     <title>Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention - Evaluation of Footwear</title>
@@ -1254,7 +1206,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
+    <measureSet>podiatry</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan</title>
@@ -1278,23 +1230,22 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
-    <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
     <measureSet>urology</measureSet>
-    <measureSet>generalOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
+    <measureSet>podiatry</measureSet>
   </measure>
   <measure>
     <title>Documentation of Current Medications in the Medical Record</title>
@@ -1317,31 +1268,31 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>dermatology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>ophthalmology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pathology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
     <measureSet>hospitalists</measureSet>
     <measureSet>rheumatology</measureSet>
+    <measureSet>nephrology</measureSet>
     <measureSet>infectiousDisease</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSet>podiatry</measureSet>
-    <measureSet>dentistry</measureSet>
   </measure>
   <measure>
     <title>Pain Assessment and Follow-Up</title>
@@ -1363,11 +1314,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>neurology</measureSet>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Screening for Depression and Follow-Up Plan</title>
@@ -1391,14 +1341,12 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Melanoma: Continuity of Care - Recall System</title>
@@ -1419,8 +1367,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Melanoma: Coordination of Care</title>
@@ -1441,8 +1388,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Age-Related Macular Degeneration (AMD): Counseling on Antioxidant Supplement</title>
@@ -1464,8 +1410,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care</title>
@@ -1487,8 +1432,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Oncology: Medical and Radiation - Pain Intensity Quantified</title>
@@ -1510,9 +1454,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
-    <measureSet>nephrology</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <title>Oncology: Medical and Radiation - Plan of Care for Pain</title>
@@ -1533,9 +1476,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
-    <measureSet>nephrology</measureSet>
+    <measureSet>generalOncology</measureSet>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <title>Radiology: Exposure Dose or Time Reported for Procedures Using Fluoroscopy</title>
@@ -1557,9 +1499,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Radiology: Inappropriate Use of "Probably Benign" Assessment Category in Screening Mammograms</title>
@@ -1581,8 +1522,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy</title>
@@ -1604,8 +1544,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Falls: Risk Assessment</title>
@@ -1627,14 +1566,14 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>otolaryngology</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>podiatry</measureSet>
   </measure>
   <measure>
     <title>Falls: Plan of Care</title>
@@ -1656,14 +1595,14 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>otolaryngology</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>podiatry</measureSet>
   </measure>
   <measure>
     <title>Oncology: Radiation Dose Limits to Normal Tissues</title>
@@ -1685,8 +1624,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>nephrology</measureSet>
+    <measureSet>radiationOncology</measureSet>
   </measure>
   <measure>
     <title>HIV/AIDS: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis</title>
@@ -1708,8 +1646,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>pediatrics</measureSet>
     <strata>
       <name>CD4&lt;200/mm3</name>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3</description>
@@ -1742,8 +1680,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Prolonged Intubation</title>
@@ -1764,8 +1702,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Deep Sternal Wound Infection Rate</title>
@@ -1786,8 +1723,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Stroke</title>
@@ -1808,8 +1744,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure</title>
@@ -1830,8 +1765,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration</title>
@@ -1852,8 +1786,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Tuberculosis Screening</title>
@@ -1874,9 +1807,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>rheumatology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity</title>
@@ -1897,8 +1829,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Functional Status Assessment</title>
@@ -1919,9 +1850,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Assessment and Classification of Disease Prognosis</title>
@@ -1942,9 +1872,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Glucocorticoid Management</title>
@@ -1965,9 +1894,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Elder Maltreatment Screen and Follow-Up Plan</title>
@@ -1989,10 +1917,9 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Functional Outcome Assessment</title>
@@ -2014,9 +1941,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>neurology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>physicalMedicine</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Colonoscopy Interval for Patients with a History of Adenomatous Polyps&#xD;&#xD;- Avoidance of Inappropriate Use</title>
@@ -2038,8 +1964,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>Stroke and Stroke Rehabilitation: Thrombolytic Therapy</title>
@@ -2060,8 +1985,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery</title>
@@ -2083,8 +2008,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Cataracts: Complications within 30 Days Following Cataract Surgery Requiring Additional Surgical Procedures</title>
@@ -2106,8 +2030,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Radiology: Stenosis Measurement in Carotid Imaging Reports</title>
@@ -2129,8 +2052,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Ischemic Vascular Disease (IVD): Use of Aspirin or Another Antithrombotic</title>
@@ -2154,11 +2076,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis</title>
@@ -2179,9 +2099,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Knee Impairments</title>
@@ -2202,7 +2121,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Hip Impairments</title>
@@ -2223,7 +2141,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Foot or Ankle Impairments</title>
@@ -2244,7 +2161,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Lumbar Impairments</title>
@@ -2265,7 +2181,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Shoulder Impairments</title>
@@ -2286,7 +2201,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Elbow, Wrist or Hand Impairments</title>
@@ -2307,7 +2221,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Other General Orthopaedic Impairments</title>
@@ -2328,7 +2241,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Melanoma: Overutilization of Imaging Studies in Melanoma</title>
@@ -2349,8 +2261,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Radiology: Reminder System for Screening Mammograms</title>
@@ -2372,8 +2283,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention</title>
@@ -2400,28 +2310,28 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>dermatology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>ophthalmology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pathology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
     <measureSet>rheumatology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>podiatry</measureSet>
     <strata>
       <name>screenedForUse</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months</description>
@@ -2457,13 +2367,11 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>urology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>rheumatology</measureSet>
   </measure>
   <measure>
     <title>Use of High-Risk Medications in the Elderly</title>
@@ -2486,12 +2394,11 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>neurosurgical</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>rheumatology</measureSet>
     <strata>
       <name>overall</name>
       <description>Percentage of patients who were ordered at least one high-risk medication</description>
@@ -2521,7 +2428,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
     <strata>
       <name>BMI</name>
       <description>Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period</description>
@@ -2554,7 +2461,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <title>Cardiac Rehabilitation Patient Referral from an Outpatient Setting</title>
@@ -2576,9 +2483,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Barrett's Esophagus</title>
@@ -2600,8 +2506,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Radical Prostatectomy Pathology Reporting</title>
@@ -2623,9 +2528,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>pathology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Quantitative Immunohistochemical (IHC) Evaluation of Human Epidermal Growth Factor Receptor 2 Testing (HER2) for Breast Cancer Patients</title>
@@ -2647,8 +2551,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain</title>
@@ -2670,8 +2573,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <title>Rh Immunoglobulin (Rhogam) for Rh-Negative Pregnant Women at Risk of Fetal Blood Exposure</title>
@@ -2693,8 +2595,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <title>Statin Therapy at Discharge after Lower Extremity Bypass (LEB)</title>
@@ -2715,8 +2616,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Rate of Open Repair of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #7)</title>
@@ -2737,8 +2637,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post Operative Day #2)</title>
@@ -2759,8 +2658,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)</title>
@@ -2781,8 +2679,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness</title>
@@ -2804,7 +2701,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Image Confirmation of Successful Excision of Image-Localized Breast Lesion</title>
@@ -2825,7 +2721,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Preoperative Diagnosis of Breast Cancer</title>
@@ -2846,7 +2741,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Sentinel Lymph Node Biopsy for Invasive Breast Cancer</title>
@@ -2867,7 +2761,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Biopsy Follow-Up</title>
@@ -2888,11 +2781,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy</title>
@@ -2914,8 +2806,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Inflammatory Bowel Disease (IBD): Preventive Care: Corticosteroid Related Iatrogenic Injury - Bone Loss Assessment</title>
@@ -2936,8 +2827,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>Inflammatory Bowel Disease (IBD): Assessment of Hepatitis B Virus (HBV) Status Before Initiating Anti-TNF (Tumor Necrosis Factor) Therapy</title>
@@ -2958,9 +2848,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Sleep Apnea: Assessment of Sleep Symptoms</title>
@@ -2981,8 +2870,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
   </measure>
   <measure>
     <title>Sleep Apnea: Severity Assessment at Initial Diagnosis</title>
@@ -3003,8 +2891,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
   </measure>
   <measure>
     <title>Sleep Apnea: Positive Airway Pressure Therapy Prescribed</title>
@@ -3025,8 +2912,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
   </measure>
   <measure>
     <title>Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy</title>
@@ -3047,8 +2933,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
   </measure>
   <measure>
     <title>Dementia: Cognitive Assessment</title>
@@ -3069,8 +2954,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Dementia: Functional Status Assessment</title>
@@ -3091,9 +2976,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management</title>
@@ -3114,9 +2998,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Dementia: Safety Concerns Screening and Mitigation Recommendations or Referral for Patients with Dementia</title>
@@ -3137,9 +3020,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Dementia: Caregiver Education and Support</title>
@@ -3160,9 +3042,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Parkinson's Disease: Psychiatric Symptoms Assessment for Patients with Parkinson's Disease</title>
@@ -3183,8 +3064,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Parkinson's Disease: Cognitive Impairment or Dysfunction Assessment</title>
@@ -3205,8 +3085,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Parkinson's Disease: Rehabilitative Therapy Options</title>
@@ -3227,8 +3106,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Cataracts: Improvement in Patient's Visual Function within 90 Days Following Cataract Surgery</title>
@@ -3249,8 +3127,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Cataracts: Patient Satisfaction within 90 Days Following Cataract Surgery</title>
@@ -3271,7 +3148,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Initiation and Engagement of Alcohol and Other Drug Dependence Treatment</title>
@@ -3293,9 +3169,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
     <strata>
       <name>14DaysOfDiagnosis</name>
       <description>Patients who initiated treatment within 14 days of the diagnosis</description>
@@ -3324,9 +3200,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <title>Chlamydia Screening for Women</title>
@@ -3347,8 +3223,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented</title>
@@ -3371,29 +3247,28 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>dermatology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSet>neurosurgical</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Falls: Screening for Future Fall Risk</title>
@@ -3415,9 +3290,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients</title>
@@ -3439,8 +3313,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>CAHPS for MIPs Clinician/Group Survey</title>
@@ -3461,8 +3334,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>certifiedSurveyVendor</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Preoperative Evaluation in Low Risk Surgery Patients</title>
@@ -3484,7 +3357,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Routine Testing After Percutaneous Coronary Intervention (PCI)</title>
@@ -3506,7 +3378,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients</title>
@@ -3528,7 +3399,6 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Adult Major Depressive Disorder (MDD): Coordination of Care of Patients with Specific Comorbid Conditions</title>
@@ -3549,8 +3419,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy</title>
@@ -3573,9 +3442,8 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Pediatric Kidney Disease: Adequacy of Volume Management</title>
@@ -3596,8 +3464,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Pediatric Kidney Disease: ESRD Patients Receiving Dialysis: Hemoglobin Level &lt; 10g/dL</title>
@@ -3618,8 +3485,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Catheter Use at Initiation of Hemodialysis</title>
@@ -3640,7 +3506,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Catheter Use for Greater Than or Equal to 90 Days</title>
@@ -3661,8 +3526,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)</title>
@@ -3683,12 +3547,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use)</title>
@@ -3709,12 +3572,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Adult Sinusitis: Computerized Tomography (CT) for Acute Sinusitis (Overuse)</title>
@@ -3735,12 +3597,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Adult Sinusitis: More than One Computerized Tomography (CT) Scan Within 90 Days for Chronic Sinusitis (Overuse)</title>
@@ -3761,11 +3622,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Maternity Care: Elective Delivery or Early Induction Without Medical Indication at &gt;= 37 and &lt; 39 Weeks (Overuse)</title>
@@ -3786,7 +3646,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Maternity Care: Post-Partum Follow-Up and Care Coordination</title>
@@ -3807,7 +3666,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Psoriasis: Tuberculosis (TB) Prevention for Patients with Psoriasis, Psoriatic Arthritis and Rheumatoid Arthritis Patients on a Biological Immune Response Modifier</title>
@@ -3828,11 +3686,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
+    <measureSet>dermatology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>HIV Viral Load Suppression</title>
@@ -3853,11 +3710,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>HIV Medical Visit Frequency</title>
@@ -3878,9 +3734,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>allergyImmunology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Pain Brought Under Control Within 48 Hours</title>
@@ -3901,9 +3756,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Screening Colonoscopy Adenoma Detection Rate</title>
@@ -3924,8 +3778,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)</title>
@@ -3947,8 +3800,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Rate of Asymptomatic Patients Undergoing Carotid Artery Stenting (CAS) Who Are Stroke Free or Discharged Alive</title>
@@ -3970,8 +3822,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Rate of Asymptomatic Patients Undergoing Carotid Endarterectomy (CEA) Who Are Stroke Free or Discharged Alive</title>
@@ -3992,8 +3844,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) Who Are Discharged Alive</title>
@@ -4014,8 +3866,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>HRS-3: Implantable Cardioverter-Defibrillator (ICD) Complications Rate</title>
@@ -4037,8 +3888,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
     <strata>
       <name>30</name>
       <description>Complications or mortality at 30 days</description>
@@ -4067,8 +3917,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Total Knee Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation</title>
@@ -4089,8 +3938,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Total Knee Replacement: Preoperative Antibiotic Infusion with Proximal Tourniquet</title>
@@ -4111,8 +3959,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Total Knee Replacement: Identification of Implanted Prosthesis in Operative Report</title>
@@ -4133,8 +3980,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Anastomotic Leak Intervention</title>
@@ -4155,7 +4001,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Unplanned Reoperation within the 30 Day Postoperative Period</title>
@@ -4176,9 +4021,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>generalOncology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <title>Unplanned Hospital Readmission within 30 Days of Principal Procedure</title>
@@ -4199,9 +4043,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>generalOncology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <title>Surgical Site Infection (SSI)</title>
@@ -4222,11 +4065,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSet>urology</measureSet>
-    <measureSet>generalOncology</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
   </measure>
   <measure>
     <title>Patient-Centered Surgical Risk Assessment and Communication</title>
@@ -4247,14 +4089,13 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>plasticSurgery</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
-    <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Utilization of a Standardized Nomenclature for Computed Tomography (CT) Imaging Description</title>
@@ -4275,8 +4116,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies</title>
@@ -4297,8 +4137,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Reporting to a Radiation Dose Index Registry</title>
@@ -4319,8 +4158,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Computed Tomography (CT) Images Available for Patient Follow-up and Comparison</title>
@@ -4341,8 +4179,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Search for Prior Computed Tomography (CT) Studies Through a Secure, Authorized, Media-Free, Shared Archive</title>
@@ -4363,8 +4200,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines</title>
@@ -4385,8 +4221,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Follow-Up Care for Children Prescribed ADHD Medication (ADD)</title>
@@ -4408,8 +4243,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
       <name>visitWithin30Days</name>
       <description>Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.</description>
@@ -4438,7 +4273,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Pregnant women that had HBsAg testing</title>
@@ -4459,7 +4294,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>otolaryngology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <title>Depression Remission at Twelve Months</title>
@@ -4482,11 +4317,9 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Depression Utilization of the PHQ-9 Tool</title>
@@ -4508,9 +4341,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
       <name>4MonthsOfEnd</name>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
@@ -4563,9 +4396,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>cardiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Closing the Referral Loop: Receipt of Specialist Report</title>
@@ -4587,28 +4420,27 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>dermatology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>ophthalmology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSet>pathology</measureSet>
-    <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>interventionalRadiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalSurgery</measureSet>
     <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
-    <measureSet>hospitalists</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Knee Replacement</title>
@@ -4629,7 +4461,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Hip Replacement</title>
@@ -4650,7 +4482,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
   </measure>
   <measure>
     <title>Functional Status Assessments for Congestive Heart Failure</title>
@@ -4671,8 +4503,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Children Who Have Dental Decay or Cavities</title>
@@ -4693,6 +4525,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <measureSet>dentistry</measureSet>
   </measure>
   <measure>
     <title>Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists</title>
@@ -4713,7 +4546,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>dentistry</measureSet>
   </measure>
   <measure>
     <title>Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment</title>
@@ -4734,8 +4568,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Adherence to Antipsychotic Medications For Individuals with Schizophrenia</title>
@@ -4756,10 +4590,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery</title>
@@ -4780,8 +4613,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Adult Primary Rhegmatogenous Retinal Detachment Surgery: Visual Acuity Improvement Within 90 Days of Surgery</title>
@@ -4802,8 +4634,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences</title>
@@ -4824,8 +4655,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users</title>
@@ -4846,10 +4676,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Cataract Surgery with Intra-Operative Complications (Unplanned Rupture of Posterior Capsule Requiring Unplanned Vitrectomy)</title>
@@ -4870,8 +4699,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Cataract Surgery: Difference Between Planned and Final Refraction</title>
@@ -4892,8 +4720,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pathology</measureSet>
+    <measureSet>ophthalmology</measureSet>
   </measure>
   <measure>
     <title>Hepatitis C: Discussion and Shared Decision Making Surrounding Treatment Options</title>
@@ -4914,9 +4741,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>gastroenterology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Follow-Up After Hospitalization for Mental Illness (FUH)</title>
@@ -4938,9 +4764,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <strata>
       <name>30days</name>
       <description>The percentage of discharges for which the patient received follow-up within 30 days after discharge</description>
@@ -4970,8 +4795,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
     <strata>
       <name>18-64F</name>
       <description>Females 18-64 years of age</description>
@@ -5012,8 +4836,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>emergencyMedicine</measureSet>
+    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
   </measure>
   <measure>
     <title>Immunizations for Adolescents</title>
@@ -5035,10 +4858,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
     <strata>
       <name>meningococcal</name>
       <description>Patients who had one dose of meningococcal vaccine on or between the patient�s 11th and 13th birthdays</description>
@@ -5076,8 +4898,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Lung Cancer Reporting (Resection Specimens)</title>
@@ -5099,8 +4920,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Melanoma Reporting</title>
@@ -5122,8 +4942,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>plasticSurgery</measureSet>
+    <measureSet>pathology</measureSet>
   </measure>
   <measure>
     <title>Optimal Asthma Control</title>
@@ -5145,11 +4964,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
     <strata>
       <name>overall</name>
       <description>Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation</description>
@@ -5198,11 +5016,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>podiatry</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>nephrology</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis</title>
@@ -5223,11 +5040,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Tobacco Use and Help with Quitting Among Adolescents</title>
@@ -5248,26 +5064,25 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
+    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>electrophysiologyCardiacSpecialist</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>dermatology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>physicalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>vascularSurgery</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>generalSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
     <measureSet>generalOncology</measureSet>
-    <measureSet>radiationOncology</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Referral to Hospice</title>
@@ -5288,8 +5103,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>podiatry</measureSet>
+    <measureSet>nephrology</measureSet>
   </measure>
   <measure>
     <title>Anesthesiology Smoking Abstinence</title>
@@ -5310,8 +5124,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Appropriate Follow-up Imaging for Incidental Abdominal Lesions</title>
@@ -5333,8 +5146,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients</title>
@@ -5356,8 +5168,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Appropriate Treatment of Methicillin-Sensitive Staphylococcus Aureus (MSSA) Bacteremia</title>
@@ -5379,9 +5190,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
+    <measureSet>hospitalists</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSet>dentistry</measureSet>
   </measure>
   <measure>
     <title>Opioid Therapy Follow-up Evaluation</title>
@@ -5402,12 +5212,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Clinical Outcome Post Endovascular Stroke Treatment</title>
@@ -5428,8 +5237,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Psoriasis: Clinical Response to Oral Systemic or Biologic Medications</title>
@@ -5450,8 +5259,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Depression Remission at Six Months</title>
@@ -5472,8 +5280,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
   </measure>
   <measure>
     <title>Documentation of Signed Opioid Treatment Agreement</title>
@@ -5494,12 +5301,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Door to Puncture Time for Endovascular Stroke Treatment</title>
@@ -5520,8 +5326,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurosurgical</measureSet>
   </measure>
   <measure>
     <title>Evaluation or Interview for Risk of Opioid Misuse</title>
@@ -5542,12 +5348,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older</title>
@@ -5569,8 +5374,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <title>Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years</title>
@@ -5592,8 +5396,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>emergencyMedicine</measureSet>
   </measure>
   <measure>
     <title>Rate of Open Repair of Small or Moderate Abdominal Aortic Aneurysms (AAA) Where Patients Are Discharged Alive</title>
@@ -5614,8 +5417,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Osteoporosis Management in Women Who Had a Fracture</title>
@@ -5637,11 +5439,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <title>Overuse Of Neuroimaging For Patients With Primary Headache And A Normal Neurological Examination</title>
@@ -5663,8 +5464,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Varicose Vein Treatment with Saphenous Ablation: Outcome Survey</title>
@@ -5685,9 +5485,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Appropriate Assessment of Retrievable Inferior Vena Cava (IVC) Filters for Removal</title>
@@ -5708,8 +5507,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury</title>
@@ -5731,8 +5529,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <title>Perioperative Anti-platelet Therapy for Patients Undergoing Carotid Endarterectomy</title>
@@ -5754,8 +5551,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>urology</measureSet>
+    <measureSet>vascularSurgery</measureSet>
   </measure>
   <measure>
     <title>Perioperative Temperature Management</title>
@@ -5776,8 +5572,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Photodocumentation of Cecal Intubation</title>
@@ -5799,8 +5594,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>Post-Anesthetic Transfer of Care Measure: Procedure Room to a Post Anesthesia Care Unit (PACU)</title>
@@ -5821,8 +5615,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Post-Anesthetic Transfer of Care: Use of Checklist or Protocol for Direct Transfer of Care from Procedure Room to Intensive Care Unit (ICU)</title>
@@ -5843,8 +5636,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Pelvic Organ Prolapse: Preoperative Assessment of Occult Stress Urinary Incontinence</title>
@@ -5865,9 +5657,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Pelvic Organ Prolapse: Preoperative Screening for Uterine Malignancy</title>
@@ -5889,9 +5680,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy</title>
@@ -5912,8 +5702,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Unhealthy Alcohol Use: Screening &amp; Brief Counseling</title>
@@ -5935,18 +5724,17 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
+    <measureSet>gastroenterology</measureSet>
     <measureSet>generalPracticeFamilyMedicine</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>physicalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
-    <measureSet>vascularSurgery</measureSet>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>mentalBehavioralHealth</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair</title>
@@ -5967,9 +5755,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair</title>
@@ -5990,9 +5777,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Ureter Injury at the Time of any Pelvic Organ Prolapse Repair</title>
@@ -6013,9 +5799,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>hospitalists</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>urology</measureSet>
   </measure>
   <measure>
     <title>Quality of Life Assessment For Patients With Primary Headache Disorders</title>
@@ -6037,8 +5822,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>interventionalRadiology</measureSet>
+    <measureSet>neurology</measureSet>
   </measure>
   <measure>
     <title>Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques</title>
@@ -6060,8 +5844,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalSurgery</measureSet>
+    <measureSet>diagnosticRadiology</measureSet>
   </measure>
   <measure>
     <title>Rate of Surgical Conversion from Lower Extremity Endovascular Revascularization Procedure</title>
@@ -6083,8 +5866,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Statin Therapy for the Prevention and Treatment of Cardiovascular Disease</title>
@@ -6107,12 +5889,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>allergyImmunology</measureSet>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>diagnosticRadiology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>preventiveMedicine</measureSet>
   </measure>
   <measure>
     <title>Age Appropriate Screening Colonoscopy</title>
@@ -6133,8 +5913,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>gastroenterology</measureSet>
   </measure>
   <measure>
     <title>Basal Cell Carcinoma (BCC)/Squamous Cell Carcinoma (SCC): Biopsy Reporting Time - Pathologist to Clinician</title>
@@ -6155,8 +5934,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>internalMedicine</measureSet>
+    <measureSet>dermatology</measureSet>
   </measure>
   <measure>
     <title>Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)</title>
@@ -6178,11 +5956,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>urology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>vascularSurgery</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Persistence of Beta-Blocker Treatment After a Heart Attack</title>
@@ -6204,9 +5981,8 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSet>dermatology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
   </measure>
   <measure>
     <title>Non-Recommended Cervical Cancer Screening in Adolescent Females</title>
@@ -6227,10 +6003,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <title>Medication Management for People with Asthma</title>
@@ -6251,10 +6026,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
   </measure>
   <measure>
     <title>Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG)</title>
@@ -6275,8 +6049,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>radiationOncology</measureSet>
+    <measureSet>thoracicSurgery</measureSet>
   </measure>
   <measure>
     <title>Operative Mortality Stratified by the Five STS-EACTS Mortality Categories</title>
@@ -6297,7 +6070,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
   </measure>
   <measure>
     <title>Chlamydia Screening and Follow Up</title>
@@ -6318,12 +6090,11 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>orthopedicSurgery</measureSet>
-    <measureSet>otolaryngology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>internalMedicine</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Appropriate Work Up Prior to Endometrial Ablation</title>
@@ -6344,8 +6115,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>otolaryngology</measureSet>
+    <measureSet>obstetricsGynecology</measureSet>
   </measure>
   <measure>
     <title>HER2 Negative or Undocumented Breast Cancer Patients Spared Treatment with HER2-Targeted Therapies</title>
@@ -6366,8 +6136,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Trastuzumab Received By Patients With AJCC Stage I (T1c) -  III And HER2 Positive Breast Cancer Receiving Adjuvant Chemotherapy</title>
@@ -6388,8 +6157,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy</title>
@@ -6410,8 +6178,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) 4 with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies</title>
@@ -6432,8 +6199,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion Receiving Chemotherapy in the Last 14 Days of Life</title>
@@ -6454,8 +6220,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion of Patients who Died from Cancer with more than One Emergency Department Visit in the Last 30 Days of Life</title>
@@ -6476,8 +6241,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion Admitted to the Intensive Care Unit (ICU) in the Last 30 Days of Life</title>
@@ -6498,8 +6262,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion Not Admitted To Hospice</title>
@@ -6520,8 +6283,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Proportion Admitted to Hospice for less than 3 days</title>
@@ -6542,8 +6304,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>All-cause Hospital Readmission</title>
@@ -6564,7 +6325,6 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>administrativeClaims</submissionMethod>
-    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Average Change in Back Pain following Lumbar Discectomy / Laminotomy</title>
@@ -6586,8 +6346,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
     <strata>
       <name>overall</name>
       <description>Percentage of patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND three months (6 - 20 weeks) postoperatively.</description>
@@ -6617,8 +6377,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
     <strata>
       <name>overall</name>
       <description>Percentage of patients 18 years of age or older as of October 1 of the denominator identification&#xD;period who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively.</description>
@@ -6648,8 +6408,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>pediatrics</measureSet>
+    <measureSet>orthopedicSurgery</measureSet>
+    <measureSet>neurosurgical</measureSet>
     <strata>
       <name>overall</name>
       <description>Percentage of patients 18 years of age or older as of January 1 of the denominator identification&#xD;period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively.</description>
@@ -6678,8 +6438,8 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSet>hospitalists</measureSet>
-    <measureSet>rheumatology</measureSet>
+    <measureSet>urology</measureSet>
+    <measureSet>generalOncology</measureSet>
   </measure>
   <measure>
     <title>Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)</title>
@@ -6700,8 +6460,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>gastroenterology</measureSet>
+    <measureSet>anesthesiology</measureSet>
   </measure>
   <measure>
     <title>Otitis Media with Effusion (OME): Systemic Antimicrobials- Avoidance of Inappropriate Use</title>
@@ -6722,11 +6481,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>ophthalmology</measureSet>
-    <measureSet>physicalMedicine</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
-    <measureSet>dentistry</measureSet>
+    <measureSet>generalPracticeFamilyMedicine</measureSet>
+    <measureSet>otolaryngology</measureSet>
+    <measureSet>pediatrics</measureSet>
+    <measureSet>infectiousDisease</measureSet>
   </measure>
   <measure>
     <title>Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and&#xD;&#xD;Interrogation of Ovarian Arteries</title>
@@ -6747,8 +6505,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>thoracicSurgery</measureSet>
+    <measureSet>interventionalRadiology</measureSet>
   </measure>
   <measure>
     <title>Developmental Screening in the First Three Years of Life</title>
@@ -6770,8 +6527,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSet>cardiology</measureSet>
-    <measureSet>preventiveMedicine</measureSet>
+    <measureSet>pediatrics</measureSet>
     <strata>
       <name>&lt;1</name>
       <description>Children in the eligible population who turned 1 during the performance period. (Birth to 1 year of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool with interpretation and report within 12 months preceding or on their birthday</description>
