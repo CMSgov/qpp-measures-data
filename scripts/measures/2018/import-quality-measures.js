@@ -85,8 +85,8 @@ const QUALITY_CSV_CONFIG = {
       default: false
     },
     overallAlgorithm: 60,
-    isIcdImpacted: false,
-    isToppedOutByProgram: false
+    isIcdImpacted: 61,
+    isToppedOutByProgram: 62
   }
 };
 
