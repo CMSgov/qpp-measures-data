@@ -159,6 +159,12 @@ definitions:
       cpcPlusGroup:
         description: CPC+ group which the measure belongs
         type: string
+      isIcdImpacted:
+        type: boolean
+        default: false
+      isToppedOutByProgram:
+        type: boolean
+        default: false
     # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
     oneOf: [
       {
@@ -171,7 +177,7 @@ definitions:
           metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, costScore] }
         }
       }]
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, submissionMethods, isRegistryMeasure]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
 
   performanceStrata:
     type: object
