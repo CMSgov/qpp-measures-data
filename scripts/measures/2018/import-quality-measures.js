@@ -66,36 +66,36 @@ const QUALITY_CSV_CONFIG = {
         'clinical process effectiveness': 'process'
       }
     },
-    primarySteward: 9,
-    metricType: 51,
+    primarySteward: 12,
+    metricType: 54,
     firstPerformanceYear: {
-      index: 52,
+      index: 55,
       default: 2017
     },
     lastPerformanceYear: {
-      index: 53,
+      index: 56,
       default: null
     },
     isHighPriority: {
-      index: 55,
+      index: 58,
       default: false
     },
     isInverse: {
-      index: 56,
+      index: 59,
       default: false
     },
-    overallAlgorithm: 60
+    overallAlgorithm: 63
   }
 };
 
 // mapping from quality measures csv column numbers to submission method
 const SUBMISSION_METHODS = {
-  10: 'claims',
-  11: 'certifiedSurveyVendor',
-  12: 'electronicHealthRecord',
-  13: 'cmsWebInterface',
-  14: 'administrativeClaims',
-  15: 'registry'
+  13: 'claims',
+  14: 'certifiedSurveyVendor',
+  15: 'electronicHealthRecord',
+  16: 'cmsWebInterface',
+  17: 'administrativeClaims',
+  18: 'registry'
 };
 
 // mapping from quality measures csv column numbers to measure sets
@@ -156,7 +156,8 @@ function cleanInput(input) {
 }
 
 // map specific csv input values to their representation in the measures schema
-function mapInput(rawInput) {
+function mapInput(rawInput, fieldName) {
+  const stringInput = rawInput.toString();
   const input = cleanInput(rawInput);
   if (QUALITY_CSV_CONFIG.truthy_markers.includes(input)) {
     return true;
@@ -167,8 +168,15 @@ function mapInput(rawInput) {
   } else if (Constants.validPerformanceYears.includes(Number(input))) {
     return Number(input);
   } else {
-    // if csv input isn't one of the special cases above, just return it
-    return rawInput.trim();
+    // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
+    let finalInput = stringInput.trim();
+    if (fieldName === 'measureId') {
+      finalInput = _.padStart(finalInput, 3, '0');
+    } else if (fieldName === 'nqfId') {
+      finalInput = _.padStart(finalInput, 4, '0');
+    }
+
+    return finalInput;
   }
 }
 
@@ -237,13 +245,13 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 
   const measures = qualityCsvRows.map((row) => {
     const measure = {};
-    _.each(sourcedFields, (columnObject, measureKey) => {
+    _.each(sourcedFields, (columnObject, fieldName) => {
       if (typeof columnObject === 'number') {
         const input = row[columnObject];
         if (_.isUndefined(input)) {
           throw Error('Column ' + columnObject + ' does not exist in source data');
         } else if (input !== '') {
-          measure[measureKey] = mapInput(input);
+          measure[fieldName] = mapInput(input, fieldName);
         }
       } else {
         let value;
@@ -251,10 +259,10 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
           const input = cleanInput(row[columnObject.index]);
           value = columnObject.mappings[input];
         } else {
-          value = mapInput(row[columnObject.index]);
+          value = mapInput(row[columnObject.index], fieldName);
         }
 
-        measure[measureKey] = value || columnObject['default'];
+        measure[fieldName] = value || columnObject['default'];
       }
     });
 
@@ -272,11 +280,14 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 };
 
 function importQualityMeasures() {
-  const qualityCsv = getCsv(qualityMeasuresPath, 2);
+  const qualityCsv = getCsv(qualityMeasuresPath, 3);
+  // console.log(qualityCsv, 'qualityCsv');
   const strataCsv = getCsv(qualityStrataPath, 2);
 
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);
+
+  // console.log(qualityMeasuresJson);
 
   fs.writeFileSync(path.join(__dirname, outputPath), qualityMeasuresJson);
 }

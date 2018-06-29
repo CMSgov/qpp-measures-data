@@ -24,10 +24,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "preventiveMedicine",
-      "nephrology"
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "diagnosticRadiology",
+      "podiatry"
     ]
   },
   {
@@ -54,9 +56,10 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "hospitalists"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "infectiousDisease"
     ]
   },
   {
@@ -82,12 +85,13 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
-    "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy � Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
+    "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy - Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
     "eMeasureId": "CMS145v6",
     "nqfEMeasureId": null,
     "nqfId": "0070",
@@ -111,8 +115,9 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ],
     "strata": [
       {
@@ -149,9 +154,10 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "hospitalists"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "infectiousDisease"
     ]
   },
   {
@@ -160,7 +166,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0105",
     "measureId": "009",
-    "description": "Percentage of patients 18 years of age and older who were treated with antidepressant medication, had a diagnosis of major depression, and who remained on an antidepressant medication treatment. Two rates are reported:\r\na Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)\r\nb Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)",
+    "description": "Percentage of patients 18 years of age and older who were treated with antidepressant medication, had a diagnosis of major depression, and who remained on an antidepressant medication treatment. Two rates are reported:\r\ra Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)\r\rb Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -177,9 +183,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "vascularSurgery"
     ],
     "strata": [
       {
@@ -216,7 +222,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -242,7 +249,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -267,7 +275,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "ophthalmology"
+      "pathology"
     ]
   },
   {
@@ -294,11 +302,12 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
-    "title": "Perioperative Care: Selection of Prophylactic Antibiotic � First OR Second Generation Cephalosporin",
+    "title": "Perioperative Care: Selection of Prophylactic Antibiotic - First OR Second Generation Cephalosporin",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0268",
@@ -320,13 +329,13 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "otolaryngology",
-      "plasticSurgery",
-      "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
-      "neurosurgical"
+      "cardiology",
+      "pediatrics",
+      "physicalMedicine",
+      "mentalBehavioralHealth",
+      "urology",
+      "generalOncology",
+      "radiationOncology"
     ]
   },
   {
@@ -352,14 +361,14 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "otolaryngology",
-      "plasticSurgery",
-      "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
+      "cardiology",
+      "pediatrics",
+      "physicalMedicine",
+      "mentalBehavioralHealth",
       "urology",
-      "neurosurgical"
+      "generalOncology",
+      "radiationOncology",
+      "hospitalists"
     ]
   },
   {
@@ -368,7 +377,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0045",
     "measureId": "024",
-    "description": "Percentage of patients aged 50 years and older treated for a fracture with documentation of communication, between the physician treating the fracture and the physician or other clinician managing the patient�s on-going care, that a fracture occurred and that the patient was or should be considered for osteoporosis treatment or testing. This measure is reported by the physician who treats the fracture and who therefore is held accountable for the communication",
+    "description": "Percentage of patients aged 50 years and older treated for a fracture with documentation of communication, between the physician treating the fracture and the physician or other clinician managing the patient's on-going care, that a fracture occurred and that the patient was or should be considered for osteoporosis treatment or testing. This measure is reported by the physician who treats the fracture and who therefore is held accountable for the communication",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -385,11 +394,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "preventiveMedicine",
-      "rheumatology"
+      "pediatrics",
+      "diagnosticRadiology",
+      "neurosurgical"
     ]
   },
   {
@@ -415,10 +425,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "preventiveMedicine",
-      "rheumatology"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "diagnosticRadiology",
+      "neurosurgical"
     ]
   },
   {
@@ -443,7 +454,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -468,7 +480,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -477,7 +490,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0097",
     "measureId": "046",
-    "description": "The percentage of discharges from any inpatient facility (e.g. hospital, skilled nursing facility, or rehabilitation facility) for patients 18 years and older of age seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on-going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record.\r\nThis measure is reported as three rates stratified by age group:\r\n� Submission Criteria 1: 18-64 years of age\r\n� Submission Criteria 2: 65 years and older\r\n� Total Rate: All patients 18 years of age and older",
+    "description": "The percentage of discharges from any inpatient facility (e.g. hospital, skilled nursing facility, or rehabilitation facility) for patients 18 years and older of age seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on-going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record.\r\rThis measure is reported as three rates stratified by age group: Submission Criteria 1: 18-64 years of age; Submission Criteria 2: 65 years and older; Total Rate: All patients 18 years of age and older",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -496,9 +509,11 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "generalSurgery",
-      "nephrology"
+      "allergyImmunology",
+      "cardiology",
+      "pediatrics",
+      "generalOncology",
+      "podiatry"
     ],
     "strata": [
       {
@@ -539,23 +554,24 @@
     ],
     "measureSets": [
       "cardiology",
-      "gastroenterology",
+      "dermatology",
       "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
+      "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
-      "preventiveMedicine",
       "neurology",
-      "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
+      "diagnosticRadiology",
+      "interventionalRadiology",
       "urology",
       "generalOncology",
+      "radiationOncology",
       "hospitalists",
       "rheumatology",
-      "nephrology"
+      "infectiousDisease",
+      "neurosurgical",
+      "podiatry"
     ]
   },
   {
@@ -581,11 +597,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
-      "preventiveMedicine",
-      "urology"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology",
+      "diagnosticRadiology",
+      "hospitalists"
     ]
   },
   {
@@ -611,10 +628,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
@@ -639,7 +657,9 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy",
@@ -663,7 +683,9 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Appropriate Treatment for Children with Upper Respiratory Infection (URI)",
@@ -688,10 +710,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "physicalMedicine",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
@@ -717,10 +740,11 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
@@ -744,7 +768,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Hematology: Myelodysplastic Syndrome (MDS): Documentation of Iron Stores in Patients Receiving Erythropoietin Therapy",
@@ -767,7 +793,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Hematology: Multiple Myeloma: Treatment with Bisphosphonates",
@@ -790,7 +818,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Hematology: Chronic Lymphocytic Leukemia (CLL): Baseline Flow Cytometry",
@@ -813,7 +843,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections",
@@ -838,9 +870,10 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology",
-      "interventionalRadiology",
-      "hospitalists"
+      "cardiology",
+      "gastroenterology",
+      "thoracicSurgery",
+      "infectiousDisease"
     ]
   },
   {
@@ -852,7 +885,7 @@
     "description": "Percentage of patients aged 2 years and older with a diagnosis of AOE who were prescribed topical preparations",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -866,16 +899,17 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
-    "title": "Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy � Avoidance of Inappropriate Use",
+    "title": "Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy - Avoidance of Inappropriate Use",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0654",
@@ -883,7 +917,7 @@
     "description": "Percentage of patients aged 2 years and older with a diagnosis of AOE who were not prescribed systemic antimicrobial therapy",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -897,12 +931,13 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
@@ -928,7 +963,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -954,7 +990,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -980,9 +1017,10 @@
       "registry"
     ],
     "measureSets": [
-      "urology",
-      "generalOncology",
-      "radiationOncology"
+      "cardiology",
+      "hospitalists",
+      "rheumatology",
+      "nephrology"
     ]
   },
   {
@@ -1007,7 +1045,8 @@
       "registry"
     ],
     "measureSets": [
-      "urology"
+      "cardiology",
+      "hospitalists"
     ]
   },
   {
@@ -1032,9 +1071,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "mentalBehavioralHealth"
+      "obstetricsGynecology",
+      "ophthalmology",
+      "vascularSurgery"
     ]
   },
   {
@@ -1060,10 +1099,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "orthopedicSurgery",
-      "physicalMedicine",
-      "preventiveMedicine"
+      "cardiology",
+      "ophthalmology",
+      "pediatrics",
+      "neurology",
+      "diagnosticRadiology"
     ]
   },
   {
@@ -1092,14 +1132,16 @@
     ],
     "measureSets": [
       "allergyImmunology",
-      "generalPracticeFamilyMedicine",
-      "obstetricsGynecology",
+      "cardiology",
+      "electrophysiologyCardiacSpecialist",
+      "ophthalmology",
       "otolaryngology",
-      "pediatrics",
+      "physicalMedicine",
       "preventiveMedicine",
-      "rheumatology",
-      "nephrology",
-      "infectiousDisease"
+      "diagnosticRadiology",
+      "neurosurgical",
+      "podiatry",
+      "dentistry"
     ]
   },
   {
@@ -1128,12 +1170,14 @@
     ],
     "measureSets": [
       "allergyImmunology",
-      "generalPracticeFamilyMedicine",
-      "otolaryngology",
-      "preventiveMedicine",
-      "rheumatology",
-      "nephrology",
-      "infectiousDisease"
+      "cardiology",
+      "electrophysiologyCardiacSpecialist",
+      "ophthalmology",
+      "physicalMedicine",
+      "diagnosticRadiology",
+      "neurosurgical",
+      "podiatry",
+      "dentistry"
     ]
   },
   {
@@ -1161,9 +1205,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "obstetricsGynecology",
-      "preventiveMedicine"
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
+      "otolaryngology",
+      "diagnosticRadiology"
     ]
   },
   {
@@ -1191,8 +1237,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "preventiveMedicine"
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
+      "diagnosticRadiology"
     ]
   },
   {
@@ -1201,7 +1249,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0058",
     "measureId": "116",
-    "description": "The percentage of adults 18�64 years of age with a diagnosis of acute bronchitis who were not prescribed or dispensed an antibiotic prescription",
+    "description": "The percentage of adults 18-64 years of age with a diagnosis of acute bronchitis who were not prescribed or dispensed an antibiotic prescription",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -1217,10 +1265,11 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "preventiveMedicine",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "diagnosticRadiology",
+      "dentistry"
     ]
   },
   {
@@ -1248,9 +1297,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "ophthalmology"
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "pathology"
     ]
   },
   {
@@ -1275,7 +1326,8 @@
       "registry"
     ],
     "measureSets": [
-      "cardiology"
+      "cardiology",
+      "dermatology"
     ]
   },
   {
@@ -1301,11 +1353,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "preventiveMedicine",
-      "urology",
-      "nephrology"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "diagnosticRadiology",
+      "hospitalists",
+      "podiatry"
     ]
   },
   {
@@ -1314,7 +1367,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "122",
-    "description": "Percentage of patient visits for those patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (stage 3, 4, or 5, not receiving Renal Replacement Therapy [RRT]) with a blood pressure < 140/90 mmHg OR � 140/90 mmHg with a documented plan of care",
+    "description": "Percentage of patient visits for those patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (stage 3, 4, or 5, not receiving Renal Replacement Therapy [RRT]) with a blood pressure < 140/90 mmHg OR >= 140/90 mmHg with a documented plan of care",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "intermediateOutcome",
     "primarySteward": "Renal Physicians Association",
@@ -1331,7 +1384,8 @@
       "registry"
     ],
     "measureSets": [
-      "nephrology"
+      "cardiology",
+      "podiatry"
     ],
     "strata": [
       {
@@ -1349,7 +1403,7 @@
     ]
   },
   {
-    "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy � Neurological Evaluation",
+    "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0417",
@@ -1370,14 +1424,14 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "preventiveMedicine",
-      "podiatry"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "diagnosticRadiology"
     ]
   },
   {
-    "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention � Evaluation of Footwear",
+    "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention - Evaluation of Footwear",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0416",
@@ -1398,7 +1452,7 @@
       "registry"
     ],
     "measureSets": [
-      "podiatry"
+      "cardiology"
     ]
   },
   {
@@ -1407,7 +1461,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0421",
     "measureId": "128",
-    "description": "Percentage of patients aged 18 years and older with a BMI documented during the current encounter or during the previous twelve months AND with a BMI outside of normal parameters, a follow-up plan is documented during the encounter or during the previous twelve months of the current encounter\r\n\r\nNormal Parameters:\r\n\r\nAge 18 years and older BMI � 18.5 and < 25 kg/m2",
+    "description": "Percentage of patients aged 18 years and older with a BMI documented during the current encounter or during the previous twelve months AND with a BMI outside of normal parameters, a follow-up plan is documented during the encounter or during the previous twelve months of the current encounter\r\r\r\rNormal Parameters:\r\r\r\rAge 18 years and older BMI >= 18.5 and < 25 kg/m2",
     "nationalQualityStrategyDomain": "Community/Population Health",
     "measureType": "process",
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -1426,22 +1480,23 @@
       "registry"
     ],
     "measureSets": [
+      "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "dermatology",
       "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
+      "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
-      "preventiveMedicine",
-      "mentalBehavioralHealth",
+      "neurology",
+      "diagnosticRadiology",
       "vascularSurgery",
-      "generalSurgery",
       "urology",
-      "rheumatology",
-      "infectiousDisease",
-      "podiatry"
+      "generalOncology",
+      "hospitalists",
+      "neurosurgical",
+      "dentistry"
     ]
   },
   {
@@ -1450,7 +1505,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0419",
     "measureId": "130",
-    "description": "Percentage of visits for patients aged 18 years and older for which the eligible professional or eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals, and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications� name, dosage, frequency and route of administration",
+    "description": "Percentage of visits for patients aged 18 years and older for which the eligible professional or eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals, and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications' name, dosage, frequency and route of administration",
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "process",
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -1468,31 +1523,31 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "electrophysiologyCardiacSpecialist",
       "dermatology",
       "generalPracticeFamilyMedicine",
       "internalMedicine",
-      "obstetricsGynecology",
       "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pathology",
+      "pediatrics",
       "physicalMedicine",
-      "plasticSurgery",
-      "preventiveMedicine",
       "neurology",
       "mentalBehavioralHealth",
+      "diagnosticRadiology",
+      "interventionalRadiology",
       "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
       "urology",
       "generalOncology",
+      "radiationOncology",
       "hospitalists",
       "rheumatology",
-      "nephrology",
       "infectiousDisease",
-      "neurosurgical"
+      "neurosurgical",
+      "podiatry",
+      "dentistry"
     ]
   },
   {
@@ -1518,10 +1573,11 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "physicalMedicine",
-      "urology",
-      "rheumatology"
+      "cardiology",
+      "pediatrics",
+      "neurology",
+      "hospitalists",
+      "neurosurgical"
     ]
   },
   {
@@ -1549,21 +1605,23 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
       "pediatrics",
       "preventiveMedicine",
-      "mentalBehavioralHealth"
+      "diagnosticRadiology",
+      "vascularSurgery"
     ]
   },
   {
-    "title": "Melanoma: Continuity of Care � Recall System",
+    "title": "Melanoma: Continuity of Care - Recall System",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0650",
     "measureId": "137",
-    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes:\r\n� A target date for the next complete physical skin exam, AND\r\n� A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment",
+    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes: a target date for the next complete physical skin exam, AND a process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "structure",
     "primarySteward": "American Academy of Dermatology",
@@ -1579,7 +1637,8 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology"
+      "cardiology",
+      "internalMedicine"
     ]
   },
   {
@@ -1604,7 +1663,8 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology"
+      "cardiology",
+      "internalMedicine"
     ]
   },
   {
@@ -1630,7 +1690,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -1656,11 +1717,12 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
-    "title": "Oncology: Medical and Radiation � Pain Intensity Quantified",
+    "title": "Oncology: Medical and Radiation - Pain Intensity Quantified",
     "eMeasureId": "CMS157v6",
     "nqfEMeasureId": null,
     "nqfId": "0384",
@@ -1682,12 +1744,13 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology",
-      "radiationOncology"
+      "cardiology",
+      "rheumatology",
+      "nephrology"
     ]
   },
   {
-    "title": "Oncology: Medical and Radiation � Plan of Care for Pain",
+    "title": "Oncology: Medical and Radiation - Plan of Care for Pain",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0383",
@@ -1708,8 +1771,9 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology",
-      "radiationOncology"
+      "cardiology",
+      "rheumatology",
+      "nephrology"
     ]
   },
   {
@@ -1735,17 +1799,18 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology",
-      "interventionalRadiology"
+      "cardiology",
+      "generalSurgery",
+      "thoracicSurgery"
     ]
   },
   {
-    "title": "Radiology: Inappropriate Use of �Probably Benign� Assessment Category in Screening Mammograms",
+    "title": "Radiology: Inappropriate Use of \"Probably Benign\" Assessment Category in Screening Mammograms",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0508",
     "measureId": "146",
-    "description": "Percentage of final reports for screening mammograms that are classified as �probably benign�",
+    "description": "Percentage of final reports for screening mammograms that are classified as \"probably benign\"",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
     "primarySteward": "American College of Radiology",
@@ -1762,7 +1827,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -1788,7 +1854,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -1814,14 +1881,14 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
-      "preventiveMedicine",
       "neurology",
-      "podiatry"
+      "diagnosticRadiology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -1847,14 +1914,14 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
-      "preventiveMedicine",
       "neurology",
-      "podiatry"
+      "diagnosticRadiology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -1880,7 +1947,8 @@
       "registry"
     ],
     "measureSets": [
-      "radiationOncology"
+      "cardiology",
+      "nephrology"
     ]
   },
   {
@@ -1906,8 +1974,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "allergyImmunology",
-      "pediatrics"
+      "electrophysiologyCardiacSpecialist",
+      "preventiveMedicine"
     ],
     "strata": [
       {
@@ -1946,8 +2014,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -1972,7 +2040,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -1997,7 +2066,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -2022,7 +2092,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -2047,7 +2118,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -2072,7 +2144,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -2097,8 +2170,9 @@
       "registry"
     ],
     "measureSets": [
-      "rheumatology",
-      "infectiousDisease"
+      "cardiology",
+      "neurosurgical",
+      "dentistry"
     ]
   },
   {
@@ -2123,7 +2197,8 @@
       "registry"
     ],
     "measureSets": [
-      "rheumatology"
+      "cardiology",
+      "neurosurgical"
     ]
   },
   {
@@ -2148,8 +2223,9 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "rheumatology"
+      "cardiology",
+      "pediatrics",
+      "neurosurgical"
     ]
   },
   {
@@ -2174,8 +2250,9 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "rheumatology"
+      "cardiology",
+      "pediatrics",
+      "neurosurgical"
     ]
   },
   {
@@ -2184,7 +2261,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "180",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone � 10 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan within 12 months",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone >= 10 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan within 12 months",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American College of Rheumatology",
@@ -2200,8 +2277,9 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "rheumatology"
+      "cardiology",
+      "pediatrics",
+      "neurosurgical"
     ]
   },
   {
@@ -2227,9 +2305,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "vascularSurgery"
     ]
   },
   {
@@ -2255,12 +2334,13 @@
       "registry"
     ],
     "measureSets": [
-      "physicalMedicine",
-      "nephrology"
+      "cardiology",
+      "neurology",
+      "podiatry"
     ]
   },
   {
-    "title": "Colonoscopy Interval for Patients with a History of Adenomatous Polyps\r\n� Avoidance of Inappropriate Use",
+    "title": "Colonoscopy Interval for Patients with a History of Adenomatous Polyps\r\r- Avoidance of Inappropriate Use",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0659",
@@ -2282,7 +2362,8 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
@@ -2307,8 +2388,8 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "neurosurgical"
+      "cardiology",
+      "obstetricsGynecology"
     ]
   },
   {
@@ -2334,7 +2415,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -2360,7 +2442,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -2386,7 +2469,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -2414,9 +2498,11 @@
       "registry"
     ],
     "measureSets": [
+      "allergyImmunology",
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -2441,8 +2527,9 @@
       "registry"
     ],
     "measureSets": [
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
@@ -2451,7 +2538,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0422",
     "measureId": "217",
-    "description": "A self-report measure of change in functional status for patients 14 year+ with knee impairments. The change in functional status (FS) assessed using FOTO�s (knee ) PROM (patient-reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
+    "description": "A self-report measure of change in functional status for patients 14 year+ with knee impairments. The change in functional status (FS) assessed using FOTO's (knee ) PROM (patient-reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -2466,7 +2553,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Hip Impairments",
@@ -2474,7 +2563,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0423",
     "measureId": "218",
-    "description": "A self-report measure of change in functional status (FS) for patients 14 years+ with hip impairments. The change in functional status (FS) assessed using FOTO�s (hip) PROM (patient- reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
+    "description": "A self-report measure of change in functional status (FS) for patients 14 years+ with hip impairments. The change in functional status (FS) assessed using FOTO's (hip) PROM (patient- reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -2489,7 +2578,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Foot or Ankle Impairments",
@@ -2497,7 +2588,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0424",
     "measureId": "219",
-    "description": "A self-report measure of change in functional status (FS) for patients 14 years+ with foot and ankle impairments. The change in functional status (FS) assessed using FOTO�s (foot and ankle) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
+    "description": "A self-report measure of change in functional status (FS) for patients 14 years+ with foot and ankle impairments. The change in functional status (FS) assessed using FOTO's (foot and ankle) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -2512,7 +2603,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Lumbar Impairments",
@@ -2535,7 +2628,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Shoulder Impairments",
@@ -2543,7 +2638,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0426",
     "measureId": "221",
-    "description": "A self-report outcome measure of change in functional status (FS) for patients 14 years+ with shoulder impairments. The change in functional status (FS) assessed using FOTO�s (shoulder) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
+    "description": "A self-report outcome measure of change in functional status (FS) for patients 14 years+ with shoulder impairments. The change in functional status (FS) assessed using FOTO's (shoulder) PROM (patient reported outcomes measure) is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -2558,7 +2653,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",
@@ -2581,7 +2678,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Other General Orthopaedic Impairments",
@@ -2604,7 +2703,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Melanoma: Overutilization of Imaging Studies in Melanoma",
@@ -2628,7 +2729,8 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology"
+      "cardiology",
+      "internalMedicine"
     ]
   },
   {
@@ -2654,7 +2756,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -2685,28 +2788,28 @@
     "measureSets": [
       "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "electrophysiologyCardiacSpecialist",
       "dermatology",
       "generalPracticeFamilyMedicine",
       "internalMedicine",
-      "obstetricsGynecology",
       "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pathology",
+      "pediatrics",
       "physicalMedicine",
-      "plasticSurgery",
-      "preventiveMedicine",
       "neurology",
       "mentalBehavioralHealth",
+      "diagnosticRadiology",
+      "interventionalRadiology",
       "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
       "urology",
       "generalOncology",
+      "radiationOncology",
+      "hospitalists",
       "rheumatology",
-      "infectiousDisease",
       "neurosurgical",
-      "podiatry"
+      "dentistry"
     ],
     "strata": [
       {
@@ -2748,11 +2851,13 @@
       "registry"
     ],
     "measureSets": [
+      "allergyImmunology",
       "cardiology",
-      "obstetricsGynecology",
-      "vascularSurgery",
-      "thoracicSurgery",
-      "rheumatology"
+      "dermatology",
+      "otolaryngology",
+      "urology",
+      "radiationOncology",
+      "neurosurgical"
     ]
   },
   {
@@ -2761,7 +2866,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0022",
     "measureId": "238",
-    "description": "Percentage of patients 65 years of age and older who were ordered high-risk medications. Two rates are submitted.\r\n1) Percentage of patients who were ordered at least one high-risk medication.\r\n2) Percentage of patients who were ordered at least two of the same high-risk medication",
+    "description": "Percentage of patients 65 years of age and older who were ordered high-risk medications. Two rates are submitted.\r\r1) Percentage of patients who were ordered at least one high-risk medication.\r\r2) Percentage of patients who were ordered at least two of the same high-risk medication",
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -2779,11 +2884,12 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "rheumatology"
+      "electrophysiologyCardiacSpecialist",
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "neurosurgical"
     ],
     "strata": [
       {
@@ -2802,7 +2908,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0024",
     "measureId": "239",
-    "description": "Percentage of patients 3-17 years of age who had an outpatient visit with a Primary Care Physician (PCP) or Obstetrician/Gynecologist (OB/GYN) and who had evidence of the following during the measurement period. Three rates are reported.\r\n\r\n - Percentage of patients with height, weight, and body mass  index (BMI) percentile documentation\r\n - Percentage of patients with counseling for nutrition\r\n - Percentage of patients with counseling for physical activity",
+    "description": "Percentage of patients 3-17 years of age who had an outpatient visit with a Primary Care Physician (PCP) or Obstetrician/Gynecologist (OB/GYN) and who had evidence of the following during the measurement period. Three rates are reported.\r\r\r\r - Percentage of patients with height, weight, and body mass  index (BMI) percentile documentation\r\r - Percentage of patients with counseling for nutrition\r\r - Percentage of patients with counseling for physical activity",
     "nationalQualityStrategyDomain": "Community/Population Health",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -2819,7 +2925,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "pediatrics"
+      "preventiveMedicine"
     ],
     "strata": [
       {
@@ -2858,7 +2964,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "pediatrics"
+      "preventiveMedicine"
     ]
   },
   {
@@ -2884,8 +2990,9 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -2894,7 +3001,7 @@
     "nqfEMeasureId": null,
     "nqfId": "1854",
     "measureId": "249",
-    "description": "Percentage of esophageal biopsy reports that document the presence of Barrett�s mucosa that also include a statement about dysplasia",
+    "description": "Percentage of esophageal biopsy reports that document the presence of Barrett's mucosa that also include a statement about dysplasia",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "College of American Pathologists",
@@ -2911,7 +3018,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -2937,8 +3045,9 @@
       "registry"
     ],
     "measureSets": [
-      "pathology",
-      "generalOncology"
+      "cardiology",
+      "plasticSurgery",
+      "rheumatology"
     ]
   },
   {
@@ -2964,7 +3073,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -2990,7 +3100,8 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine"
+      "cardiology",
+      "obstetricsGynecology"
     ]
   },
   {
@@ -3016,7 +3127,8 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine"
+      "cardiology",
+      "obstetricsGynecology"
     ]
   },
   {
@@ -3041,7 +3153,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -3066,7 +3179,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -3091,7 +3205,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -3116,7 +3231,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -3141,7 +3257,9 @@
       "claims",
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Image Confirmation of Successful Excision of Image-Localized Breast Lesion",
@@ -3164,7 +3282,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Preoperative Diagnosis of Breast Cancer",
@@ -3187,7 +3307,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Sentinel Lymph Node Biopsy for Invasive Breast Cancer",
@@ -3210,7 +3332,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Biopsy Follow-Up",
@@ -3234,10 +3358,11 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology",
-      "obstetricsGynecology",
+      "cardiology",
+      "internalMedicine",
       "otolaryngology",
-      "urology"
+      "physicalMedicine",
+      "hospitalists"
     ]
   },
   {
@@ -3263,11 +3388,12 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
-    "title": "Inflammatory Bowel Disease (IBD): Preventive Care: Corticosteroid Related Iatrogenic Injury � Bone Loss Assessment",
+    "title": "Inflammatory Bowel Disease (IBD): Preventive Care: Corticosteroid Related Iatrogenic Injury - Bone Loss Assessment",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -3288,7 +3414,8 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
@@ -3313,8 +3440,9 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology",
-      "infectiousDisease"
+      "cardiology",
+      "generalPracticeFamilyMedicine",
+      "dentistry"
     ]
   },
   {
@@ -3339,7 +3467,8 @@
       "registry"
     ],
     "measureSets": [
-      "otolaryngology"
+      "cardiology",
+      "physicalMedicine"
     ]
   },
   {
@@ -3364,7 +3493,8 @@
       "registry"
     ],
     "measureSets": [
-      "otolaryngology"
+      "cardiology",
+      "physicalMedicine"
     ]
   },
   {
@@ -3389,7 +3519,8 @@
       "registry"
     ],
     "measureSets": [
-      "otolaryngology"
+      "cardiology",
+      "physicalMedicine"
     ]
   },
   {
@@ -3414,7 +3545,8 @@
       "registry"
     ],
     "measureSets": [
-      "otolaryngology"
+      "cardiology",
+      "physicalMedicine"
     ]
   },
   {
@@ -3439,8 +3571,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "neurology",
-      "mentalBehavioralHealth"
+      "interventionalRadiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -3465,8 +3597,9 @@
       "registry"
     ],
     "measureSets": [
-      "neurology",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "interventionalRadiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -3491,8 +3624,9 @@
       "registry"
     ],
     "measureSets": [
-      "neurology",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "interventionalRadiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -3517,8 +3651,9 @@
       "registry"
     ],
     "measureSets": [
-      "neurology",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "interventionalRadiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -3543,17 +3678,18 @@
       "registry"
     ],
     "measureSets": [
-      "neurology",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "interventionalRadiology",
+      "vascularSurgery"
     ]
   },
   {
-    "title": "Parkinson�s Disease: Psychiatric Symptoms Assessment for Patients with Parkinson�s Disease",
+    "title": "Parkinson's Disease: Psychiatric Symptoms Assessment for Patients with Parkinson's Disease",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "290",
-    "description": "Percentage of all patients with a diagnosis of Parkinson�s Disease [PD] who were assessed* for psychiatric symptoms** in the past 12 months",
+    "description": "Percentage of all patients with a diagnosis of Parkinson's Disease [PD] who were assessed* for psychiatric symptoms** in the past 12 months",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American Academy of Neurology",
@@ -3569,16 +3705,17 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
-    "title": "Parkinson�s Disease: Cognitive Impairment or Dysfunction Assessment",
+    "title": "Parkinson's Disease: Cognitive Impairment or Dysfunction Assessment",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "291",
-    "description": "Percentage of all patients with a diagnosis of Parkinson�s Disease [PD]  who were assessed* for cognitive impairment or dysfunction in the past 12 months",
+    "description": "Percentage of all patients with a diagnosis of Parkinson's Disease [PD]  who were assessed* for cognitive impairment or dysfunction in the past 12 months",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American Academy of Neurology",
@@ -3594,16 +3731,17 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
-    "title": "Parkinson�s Disease: Rehabilitative Therapy Options",
+    "title": "Parkinson's Disease: Rehabilitative Therapy Options",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "293",
-    "description": "Percentage of all patients with a diagnosis of Parkinson�s Disease (or caregiver(s), as appropriate) who had rehabilitative therapy options (e.g., physical, occupational, or speech therapy) discussed in the past 12 months",
+    "description": "Percentage of all patients with a diagnosis of Parkinson's Disease (or caregiver(s), as appropriate) who had rehabilitative therapy options (e.g., physical, occupational, or speech therapy) discussed in the past 12 months",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
     "primarySteward": "American Academy of Neurology",
@@ -3619,11 +3757,12 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
-    "title": "Cataracts: Improvement in Patient�s Visual Function within 90 Days Following Cataract Surgery",
+    "title": "Cataracts: Improvement in Patient's Visual Function within 90 Days Following Cataract Surgery",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "1536",
@@ -3644,7 +3783,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -3668,7 +3808,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Initiation and Engagement of Alcohol and Other Drug Dependence Treatment",
@@ -3676,7 +3818,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0004",
     "measureId": "305",
-    "description": "Percentage of patients 13 years of age and older with a new episode of alcohol and other drug (AOD) dependence who received the following. Two rates are reported.\r\na. Percentage of patients who initiated treatment within 14 days of the diagnosis\r\nb. Percentage of patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit",
+    "description": "Percentage of patients 13 years of age and older with a new episode of alcohol and other drug (AOD) dependence who received the following. Two rates are reported.\r\ra. Percentage of patients who initiated treatment within 14 days of the diagnosis\r\rb. Percentage of patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -3693,9 +3835,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "pediatrics"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "preventiveMedicine"
     ],
     "strata": [
       {
@@ -3714,7 +3856,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0032",
     "measureId": "309",
-    "description": "Percentage of women 21-64 years of age who were screened for cervical cancer using either of the following criteria:\r\n*  Women age 21-64 who had cervical cytology performed every 3 years\r\n*  Women age 30-64 who had cervical cytology/human papillomavirus (HPV) co-testing performed every 5 years",
+    "description": "Percentage of women 21-64 years of age who were screened for cervical cancer using either of the following criteria:\r\r*  Women age 21-64 who had cervical cytology performed every 3 years\r\r*  Women age 30-64 who had cervical cytology/human papillomavirus (HPV) co-testing performed every 5 years",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -3730,9 +3872,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology"
     ]
   },
   {
@@ -3757,8 +3899,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "pediatrics"
+      "otolaryngology",
+      "preventiveMedicine"
     ]
   },
   {
@@ -3785,28 +3927,29 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "electrophysiologyCardiacSpecialist",
       "dermatology",
-      "emergencyMedicine",
       "generalPracticeFamilyMedicine",
       "internalMedicine",
       "obstetricsGynecology",
+      "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
-      "plasticSurgery",
-      "preventiveMedicine",
       "neurology",
       "mentalBehavioralHealth",
+      "diagnosticRadiology",
+      "interventionalRadiology",
       "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
       "urology",
       "generalOncology",
+      "radiationOncology",
+      "hospitalists",
       "rheumatology",
-      "nephrology"
+      "neurosurgical",
+      "podiatry"
     ]
   },
   {
@@ -3832,8 +3975,9 @@
       "cmsWebInterface"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "nephrology"
+      "allergyImmunology",
+      "pediatrics",
+      "podiatry"
     ]
   },
   {
@@ -3859,7 +4003,8 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
@@ -3868,7 +4013,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0005 & 0006",
     "measureId": "321",
-    "description": "� Getting timely care, appointments, and information;\r\n� How well providers Communicate;\r\n� Patient�s Rating of Provider;\r\n� Access to Specialists;\r\n� Health Promotion & Education;\r\n� Shared Decision Making;\r\n� Health Status/Functional Status;\r\n� Courteous and Helpful Office Staff;\r\n� Care Coordination; and\r\n� Stewardship of Patient Resources",
+    "description": "Getting timely care, appointments, and information; How well providers Communicate; Patient's Rating of Provider; Access to Specialists; Health Promotion & Education; Shared Decision Making; Health Status/Functional Status; Courteous and Helpful Office Staff; Care Coordination; and Stewardship of Patient Resources",
     "nationalQualityStrategyDomain": "Person and Caregiver-Centered Experience and Outcomes",
     "measureType": "patientEngagementExperience",
     "primarySteward": "Agency for Healthcare Research & Quality",
@@ -3884,8 +4029,8 @@
       "certifiedSurveyVendor"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -3910,7 +4055,8 @@
       "registry"
     ],
     "measureSets": [
-      "cardiology"
+      "cardiology",
+      "dermatology"
     ]
   },
   {
@@ -3935,7 +4081,8 @@
       "registry"
     ],
     "measureSets": [
-      "cardiology"
+      "cardiology",
+      "dermatology"
     ]
   },
   {
@@ -3960,7 +4107,8 @@
       "registry"
     ],
     "measureSets": [
-      "cardiology"
+      "cardiology",
+      "dermatology"
     ]
   },
   {
@@ -3985,7 +4133,8 @@
       "registry"
     ],
     "measureSets": [
-      "mentalBehavioralHealth"
+      "cardiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -4012,8 +4161,9 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -4038,7 +4188,8 @@
       "registry"
     ],
     "measureSets": [
-      "nephrology"
+      "cardiology",
+      "podiatry"
     ]
   },
   {
@@ -4063,7 +4214,8 @@
       "registry"
     ],
     "measureSets": [
-      "nephrology"
+      "cardiology",
+      "podiatry"
     ]
   },
   {
@@ -4087,7 +4239,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Adult Kidney Disease: Catheter Use for Greater Than or Equal to 90 Days",
@@ -4111,7 +4265,8 @@
       "registry"
     ],
     "measureSets": [
-      "nephrology"
+      "cardiology",
+      "podiatry"
     ]
   },
   {
@@ -4123,7 +4278,7 @@
     "description": "Percentage of patients, aged 18 years and older, with a diagnosis of acute viral sinusitis who were prescribed an antibiotic within 10 days after onset of symptoms",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -4136,11 +4291,12 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "dentistry"
     ]
   },
   {
@@ -4152,7 +4308,7 @@
     "description": "Percentage of patients aged 18 years and older with a diagnosis of acute bacterial sinusitis that were prescribed amoxicillin, with or without clavulanate, as a first line antibiotic at the time of diagnosis",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -4165,11 +4321,12 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "dentistry"
     ]
   },
   {
@@ -4181,7 +4338,7 @@
     "description": "Percentage of patients aged 18 years and older with a diagnosis of acute sinusitis who had a computerized tomography (CT) scan of the paranasal sinuses ordered at the time of diagnosis or received within 28 days after date of diagnosis",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "efficiency",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -4194,11 +4351,12 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "infectiousDisease"
+      "cardiology",
+      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "dentistry"
     ]
   },
   {
@@ -4210,7 +4368,7 @@
     "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic sinusitis who had more than one CT scan of the paranasal sinuses ordered or received within 90 days after  date of diagnosis",
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "efficiency",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -4223,19 +4381,20 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "dentistry"
     ]
   },
   {
-    "title": "Maternity Care: Elective Delivery or Early Induction Without Medical Indication at � 37 and < 39 Weeks (Overuse)",
+    "title": "Maternity Care: Elective Delivery or Early Induction Without Medical Indication at >= 37 and < 39 Weeks (Overuse)",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "335",
-    "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who delivered a live singleton at\r\n� 37 and < 39 weeks of gestation completed who had elective deliveries or early inductions without medical indication",
+    "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who delivered a live singleton at\r\r>= 37 and < 39 weeks of gestation completed who had elective deliveries or early inductions without medical indication",
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "outcome",
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -4250,7 +4409,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Maternity Care: Post-Partum Follow-Up and Care Coordination",
@@ -4273,7 +4434,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Psoriasis: Tuberculosis (TB) Prevention for Patients with Psoriasis, Psoriatic Arthritis and Rheumatoid Arthritis Patients on a Biological Immune Response Modifier",
@@ -4281,7 +4444,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "337",
-    "description": "Percentage of patients whose providers are ensuring active tuberculosis prevention either through yearly negative standard tuberculosis screening tests or are reviewing the patient�s history to determine if they have had appropriate management for a recent or prior positive test",
+    "description": "Percentage of patients whose providers are ensuring active tuberculosis prevention either through yearly negative standard tuberculosis screening tests or are reviewing the patient's history to determine if they have had appropriate management for a recent or prior positive test",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American Academy of Dermatology",
@@ -4297,10 +4460,11 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology",
-      "generalPracticeFamilyMedicine",
+      "cardiology",
       "internalMedicine",
-      "infectiousDisease"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "dentistry"
     ]
   },
   {
@@ -4325,10 +4489,11 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "infectiousDisease"
+      "cardiology",
+      "electrophysiologyCardiacSpecialist",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "dentistry"
     ]
   },
   {
@@ -4353,8 +4518,9 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
-      "infectiousDisease"
+      "cardiology",
+      "electrophysiologyCardiacSpecialist",
+      "dentistry"
     ]
   },
   {
@@ -4379,8 +4545,9 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -4405,7 +4572,8 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
@@ -4431,7 +4599,8 @@
     ],
     "measureSets": [
       "cardiology",
-      "vascularSurgery"
+      "dermatology",
+      "urology"
     ]
   },
   {
@@ -4457,8 +4626,8 @@
     ],
     "measureSets": [
       "cardiology",
-      "vascularSurgery",
-      "neurosurgical"
+      "dermatology",
+      "urology"
     ]
   },
   {
@@ -4483,8 +4652,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery",
-      "neurosurgical"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -4509,7 +4678,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -4535,7 +4705,8 @@
       "registry"
     ],
     "measureSets": [
-      "electrophysiologyCardiacSpecialist"
+      "cardiology",
+      "emergencyMedicine"
     ],
     "strata": [
       {
@@ -4570,7 +4741,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "cardiology",
+      "pediatrics"
     ]
   },
   {
@@ -4595,7 +4767,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "cardiology",
+      "pediatrics"
     ]
   },
   {
@@ -4620,7 +4793,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "cardiology",
+      "pediatrics"
     ]
   },
   {
@@ -4645,7 +4819,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "cardiology",
+      "pediatrics"
     ]
   },
   {
@@ -4669,7 +4844,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Unplanned Reoperation within the 30 Day Postoperative Period",
@@ -4693,8 +4870,9 @@
       "registry"
     ],
     "measureSets": [
-      "plasticSurgery",
-      "generalSurgery"
+      "cardiology",
+      "mentalBehavioralHealth",
+      "generalOncology"
     ]
   },
   {
@@ -4719,8 +4897,9 @@
       "registry"
     ],
     "measureSets": [
-      "plasticSurgery",
-      "generalSurgery"
+      "cardiology",
+      "mentalBehavioralHealth",
+      "generalOncology"
     ]
   },
   {
@@ -4745,10 +4924,11 @@
       "registry"
     ],
     "measureSets": [
-      "otolaryngology",
-      "plasticSurgery",
-      "vascularSurgery",
-      "generalSurgery"
+      "cardiology",
+      "physicalMedicine",
+      "mentalBehavioralHealth",
+      "urology",
+      "generalOncology"
     ]
   },
   {
@@ -4773,13 +4953,14 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "otolaryngology",
-      "plasticSurgery",
-      "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
-      "urology"
+      "cardiology",
+      "pediatrics",
+      "physicalMedicine",
+      "mentalBehavioralHealth",
+      "urology",
+      "generalOncology",
+      "radiationOncology",
+      "hospitalists"
     ]
   },
   {
@@ -4788,7 +4969,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "359",
-    "description": "Percentage of computed tomography (CT) imaging reports for all patients, regardless of age, with the imaging study named according to a standardized nomenclature and the standardized nomenclature is used in institution�s computer systems",
+    "description": "Percentage of computed tomography (CT) imaging reports for all patients, regardless of age, with the imaging study named according to a standardized nomenclature and the standardized nomenclature is used in institution's computer systems",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
     "primarySteward": "American College of Radiology",
@@ -4804,7 +4985,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4829,7 +5011,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4854,7 +5037,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4879,7 +5063,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4904,7 +5089,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4929,7 +5115,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -4938,7 +5125,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0108",
     "measureId": "366",
-    "description": "Percentage of children 6-12 years of age and newly dispensed a medication for attention-deficit/hyperactivity disorder (ADHD) who had appropriate follow-up care.  Two rates are reported.\r\na. Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase\r\nb. Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended",
+    "description": "Percentage of children 6-12 years of age and newly dispensed a medication for attention-deficit/hyperactivity disorder (ADHD) who had appropriate follow-up care.  Two rates are reported.\r\ra. Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase\r\rb. Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -4955,8 +5142,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "pediatrics",
-      "mentalBehavioralHealth"
+      "preventiveMedicine",
+      "vascularSurgery"
     ],
     "strata": [
       {
@@ -4991,7 +5178,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "mentalBehavioralHealth"
+      "vascularSurgery"
     ]
   },
   {
@@ -5016,7 +5203,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "obstetricsGynecology"
+      "otolaryngology"
     ]
   },
   {
@@ -5043,9 +5230,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
+      "allergyImmunology",
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "vascularSurgery"
     ]
   },
   {
@@ -5071,9 +5260,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "vascularSurgery"
     ],
     "strata": [
       {
@@ -5135,9 +5324,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -5163,27 +5352,28 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "electrophysiologyCardiacSpecialist",
       "dermatology",
       "generalPracticeFamilyMedicine",
       "internalMedicine",
-      "obstetricsGynecology",
       "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pathology",
+      "pediatrics",
       "physicalMedicine",
-      "preventiveMedicine",
       "neurology",
-      "mentalBehavioralHealth",
+      "diagnosticRadiology",
       "interventionalRadiology",
       "vascularSurgery",
-      "generalSurgery",
       "thoracicSurgery",
       "urology",
       "generalOncology",
-      "rheumatology"
+      "radiationOncology",
+      "hospitalists",
+      "rheumatology",
+      "neurosurgical"
     ]
   },
   {
@@ -5208,7 +5398,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "pediatrics"
     ]
   },
   {
@@ -5233,7 +5423,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "orthopedicSurgery"
+      "pediatrics"
     ]
   },
   {
@@ -5258,8 +5448,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -5283,9 +5473,7 @@
     "submissionMethods": [
       "electronicHealthRecord"
     ],
-    "measureSets": [
-      "dentistry"
-    ]
+    "measureSets": []
   },
   {
     "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
@@ -5309,8 +5497,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "pediatrics",
-      "dentistry"
+      "preventiveMedicine"
     ]
   },
   {
@@ -5335,8 +5522,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "pediatrics",
-      "mentalBehavioralHealth"
+      "preventiveMedicine",
+      "vascularSurgery"
     ]
   },
   {
@@ -5361,9 +5548,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "vascularSurgery"
     ]
   },
   {
@@ -5388,7 +5576,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -5413,7 +5602,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -5438,7 +5628,8 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -5463,9 +5654,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "dentistry"
     ]
   },
   {
@@ -5490,7 +5682,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -5515,7 +5708,8 @@
       "registry"
     ],
     "measureSets": [
-      "ophthalmology"
+      "cardiology",
+      "pathology"
     ]
   },
   {
@@ -5540,8 +5734,9 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology",
-      "infectiousDisease"
+      "cardiology",
+      "generalPracticeFamilyMedicine",
+      "dentistry"
     ]
   },
   {
@@ -5550,7 +5745,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0576",
     "measureId": "391",
-    "description": "The percentage of discharges for patients 6 years of age and older who were hospitalized for treatment of selected mental illness diagnoses and who had a follow-up visit with a mental health practitioner. Two rates are submitted:\r\n� The percentage of discharges for which the patient received follow-up within 30 days of discharge.\r\n� The percentage of discharges for which the patient received follow-up within 7 days of discharge.",
+    "description": "The percentage of discharges for patients 6 years of age and older who were hospitalized for treatment of selected mental illness diagnoses and who had a follow-up visit with a mental health practitioner. Two rates are submitted: The percentage of discharges for which the patient received follow-up within 30 days of discharge. The percentage of discharges for which the patient received follow-up within 7 days of discharge.",
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -5567,8 +5762,9 @@
       "registry"
     ],
     "measureSets": [
-      "pediatrics",
-      "mentalBehavioralHealth"
+      "cardiology",
+      "preventiveMedicine",
+      "vascularSurgery"
     ],
     "strata": [
       {
@@ -5587,7 +5783,7 @@
     "nqfEMeasureId": null,
     "nqfId": "2474",
     "measureId": "392",
-    "description": "Rate of cardiac tamponade and/or pericardiocentesis following atrial fibrillation ablation This measure is submitted as four rates stratified by age and gender:\r\n� Submission Age Criteria 1: Females 18-64 years of age\r\n� Submission Age Criteria 2: Males 18-64 years of age\r\n� Submission Age Criteria 3: Females 65 years of age and older\r\n� Submission Age Criteria 4: Males 65 years of age and older",
+    "description": "Rate of cardiac tamponade and/or pericardiocentesis following atrial fibrillation ablation This measure is submitted as four rates stratified by age and gender: Submission Age Criteria 1: Females 18-64 years of age; Submission Age Criteria 2: Males 18-64 years of age; Submission Age Criteria 3: Females 65 years of age and older; Submission Age Criteria 4: Males 65 years of age and older",
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "outcome",
     "primarySteward": "The Heart Rhythm Society",
@@ -5604,7 +5800,8 @@
       "registry"
     ],
     "measureSets": [
-      "electrophysiologyCardiacSpecialist"
+      "cardiology",
+      "emergencyMedicine"
     ],
     "strata": [
       {
@@ -5651,7 +5848,8 @@
       "registry"
     ],
     "measureSets": [
-      "electrophysiologyCardiacSpecialist"
+      "cardiology",
+      "emergencyMedicine"
     ]
   },
   {
@@ -5677,9 +5875,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "preventiveMedicine",
+      "dentistry"
     ],
     "strata": [
       {
@@ -5723,7 +5922,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -5749,7 +5949,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -5775,7 +5976,8 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "cardiology",
+      "plasticSurgery"
     ]
   },
   {
@@ -5801,10 +6003,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "pediatrics"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "physicalMedicine",
+      "preventiveMedicine"
     ],
     "strata": [
       {
@@ -5859,10 +6062,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "nephrology",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "podiatry",
+      "dentistry"
     ]
   },
   {
@@ -5887,10 +6091,11 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology",
+      "cardiology",
       "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "infectiousDisease"
+      "ophthalmology",
+      "orthopedicSurgery",
+      "dentistry"
     ]
   },
   {
@@ -5915,25 +6120,26 @@
       "registry"
     ],
     "measureSets": [
-      "allergyImmunology",
       "cardiology",
-      "gastroenterology",
+      "electrophysiologyCardiacSpecialist",
       "dermatology",
       "generalPracticeFamilyMedicine",
       "internalMedicine",
-      "obstetricsGynecology",
+      "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
       "pediatrics",
       "physicalMedicine",
       "preventiveMedicine",
       "neurology",
-      "mentalBehavioralHealth",
+      "diagnosticRadiology",
+      "interventionalRadiology",
       "vascularSurgery",
-      "generalSurgery",
-      "thoracicSurgery",
+      "urology",
       "generalOncology",
-      "rheumatology"
+      "radiationOncology",
+      "rheumatology",
+      "neurosurgical"
     ]
   },
   {
@@ -5958,7 +6164,8 @@
       "registry"
     ],
     "measureSets": [
-      "nephrology"
+      "cardiology",
+      "podiatry"
     ]
   },
   {
@@ -5983,7 +6190,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -5992,7 +6200,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "405",
-    "description": "Percentage of final reports for abdominal imaging studies for asymptomatic patients aged 18 years and older with one or more of the following noted incidentally with follow_up imaging recommended:\r\n� Liver lesion � 0.5 cm\r\n� Cystic kidney lesion < 1.0 cm\r\n� Adrenal lesion � 1.0 cm",
+    "description": "Percentage of final reports for abdominal imaging studies for asymptomatic patients aged 18 years and older with one or more of the following noted incidentally with follow_up imaging recommended: Liver lesion =< 0.5 cm; Cystic kidney lesion < 1.0 cm; Adrenal lesion =< 1.0 cm",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American College of Radiology",
@@ -6009,7 +6217,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -6035,7 +6244,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -6061,8 +6271,9 @@
       "registry"
     ],
     "measureSets": [
-      "hospitalists",
-      "infectiousDisease"
+      "cardiology",
+      "infectiousDisease",
+      "dentistry"
     ]
   },
   {
@@ -6087,11 +6298,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "physicalMedicine",
-      "neurology"
+      "pediatrics",
+      "neurology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -6116,8 +6328,8 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology",
-      "neurosurgical"
+      "cardiology",
+      "thoracicSurgery"
     ]
   },
   {
@@ -6139,11 +6351,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "submissionMethods": [
-      "claims",
       "registry"
     ],
     "measureSets": [
-      "dermatology"
+      "cardiology",
+      "internalMedicine"
     ]
   },
   {
@@ -6168,7 +6380,8 @@
       "registry"
     ],
     "measureSets": [
-      "mentalBehavioralHealth"
+      "cardiology",
+      "vascularSurgery"
     ]
   },
   {
@@ -6193,11 +6406,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "physicalMedicine",
-      "neurology"
+      "pediatrics",
+      "neurology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -6222,8 +6436,8 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology",
-      "neurosurgical"
+      "cardiology",
+      "thoracicSurgery"
     ]
   },
   {
@@ -6248,11 +6462,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
+      "cardiology",
+      "ophthalmology",
       "orthopedicSurgery",
-      "physicalMedicine",
-      "neurology"
+      "pediatrics",
+      "neurology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -6278,7 +6493,8 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine"
+      "cardiology",
+      "obstetricsGynecology"
     ]
   },
   {
@@ -6304,7 +6520,8 @@
       "registry"
     ],
     "measureSets": [
-      "emergencyMedicine"
+      "cardiology",
+      "obstetricsGynecology"
     ]
   },
   {
@@ -6329,7 +6546,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -6355,10 +6573,11 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
-      "orthopedicSurgery"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology",
+      "pediatrics"
     ]
   },
   {
@@ -6384,7 +6603,8 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -6409,8 +6629,9 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology",
-      "vascularSurgery"
+      "cardiology",
+      "thoracicSurgery",
+      "urology"
     ]
   },
   {
@@ -6435,7 +6656,8 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology"
+      "cardiology",
+      "thoracicSurgery"
     ]
   },
   {
@@ -6461,7 +6683,8 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology"
+      "cardiology",
+      "otolaryngology"
     ]
   },
   {
@@ -6487,7 +6710,8 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
+      "cardiology",
+      "urology"
     ]
   },
   {
@@ -6512,7 +6736,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -6538,7 +6763,8 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
@@ -6563,7 +6789,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -6588,7 +6815,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -6613,8 +6841,9 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
@@ -6640,12 +6869,13 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
-    "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) � Combination Therapy",
+    "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -6666,7 +6896,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -6692,17 +6923,18 @@
     ],
     "measureSets": [
       "cardiology",
-      "gastroenterology",
+      "dermatology",
       "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
+      "ophthalmology",
+      "orthopedicSurgery",
       "otolaryngology",
       "physicalMedicine",
-      "preventiveMedicine",
       "neurology",
-      "mentalBehavioralHealth",
-      "urology",
-      "generalOncology"
+      "diagnosticRadiology",
+      "interventionalRadiology",
+      "vascularSurgery",
+      "hospitalists",
+      "rheumatology"
     ]
   },
   {
@@ -6727,8 +6959,9 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
@@ -6753,8 +6986,9 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
@@ -6779,8 +7013,9 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology",
-      "urology"
+      "cardiology",
+      "otolaryngology",
+      "hospitalists"
     ]
   },
   {
@@ -6806,7 +7041,8 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "cardiology",
+      "interventionalRadiology"
     ]
   },
   {
@@ -6815,7 +7051,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "436",
-    "description": "Percentage of final reports for patients aged 18 years and older undergoing CT with documentation that one or more of the following dose reduction techniques were used:\r\n� Automated exposure control\r\n� Adjustment of the mA and/or kV according to patient size\r\n� Use of iterative reconstruction technique",
+    "description": "Percentage of final reports for patients aged 18 years and older undergoing CT with documentation that one or more of the following dose reduction techniques were used: Automated exposure control; Adjustment of the mA and/or kV according to patient size; Use of iterative reconstruction technique",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American College of Radiology",
@@ -6832,7 +7068,8 @@
       "registry"
     ],
     "measureSets": [
-      "diagnosticRadiology"
+      "cardiology",
+      "generalSurgery"
     ]
   },
   {
@@ -6858,7 +7095,8 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology"
+      "cardiology",
+      "thoracicSurgery"
     ]
   },
   {
@@ -6867,7 +7105,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "438",
-    "description": "Percentage of the following patients - all considered at high risk of cardiovascular events - who were prescribed or were on statin therapy during the measurement period:\r\n� Adults aged � 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD); OR\r\n� Adults aged �21 years who have ever had  a fasting or direct low-density lipoprotein cholesterol (LDL-C) level � 190 mg/dL; OR\r\n� Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+    "description": "Percentage of the following patients - all considered at high risk of cardiovascular events - who were prescribed or were on statin therapy during the measurement period: Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD); OR Adults aged >=21 years who have ever had  a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL; OR Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -6885,10 +7123,12 @@
       "registry"
     ],
     "measureSets": [
+      "allergyImmunology",
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "preventiveMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "diagnosticRadiology"
     ]
   },
   {
@@ -6913,11 +7153,12 @@
       "registry"
     ],
     "measureSets": [
-      "gastroenterology"
+      "cardiology",
+      "generalPracticeFamilyMedicine"
     ]
   },
   {
-    "title": "Basal Cell Carcinoma (BCC)/Squamous Cell Carcinoma (SCC): Biopsy Reporting Time � Pathologist to Clinician",
+    "title": "Basal Cell Carcinoma (BCC)/Squamous Cell Carcinoma (SCC): Biopsy Reporting Time - Pathologist to Clinician",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -6938,7 +7179,8 @@
       "registry"
     ],
     "measureSets": [
-      "dermatology"
+      "cardiology",
+      "internalMedicine"
     ]
   },
   {
@@ -6947,7 +7189,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "441",
-    "description": "The IVD All-or-None Measure is one outcome measure (optimal control). The measure contains four goals. All four goals within a measure must be reached in order to meet that measure. The numerator for the all-or-none measure should be collected from the organization's total IVD denominator. All-or-None Outcome Measure (Optimal Control) - Using the IVD denominator optimal results include:\r\n+G254\r\n� Most recent blood pressure (BP) measurement is less than 140/90 mm Hg -- And\r\n� Most recent tobacco status is Tobacco Free -- And\r\n� Daily Aspirin or Other Antiplatelet Unless Contraindicated -- And\r\n� Statin Use Unless Contraindicated",
+    "description": "The IVD All-or-None Measure is one outcome measure (optimal control). The measure contains four goals. All four goals within a measure must be reached in order to meet that measure. The numerator for the all-or-none measure should be collected from the organization's total IVD denominator. All-or-None Outcome Measure (Optimal Control) - Using the IVD denominator optimal results include:\r\r+G254\r\r� Most recent blood pressure (BP) measurement is less than 140/90 mm Hg -- And\r\r� Most recent tobacco status is Tobacco Free -- And\r\r� Daily Aspirin or Other Antiplatelet Unless Contraindicated -- And\r\r� Statin Use Unless Contraindicated",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "intermediateOutcome",
     "primarySteward": "Wisconsin Collaborative for Healthcare Quality",
@@ -6964,10 +7206,11 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "vascularSurgery",
-      "thoracicSurgery"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "urology",
+      "radiationOncology"
     ]
   },
   {
@@ -6993,8 +7236,9 @@
     ],
     "measureSets": [
       "cardiology",
-      "generalPracticeFamilyMedicine",
-      "internalMedicine"
+      "dermatology",
+      "ophthalmology",
+      "orthopedicSurgery"
     ]
   },
   {
@@ -7003,7 +7247,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "443",
-    "description": "The percentage of adolescent females 16�20 years of age screened unnecessarily for cervical cancer",
+    "description": "The percentage of adolescent females 16-20 years of age screened unnecessarily for cervical cancer",
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "process",
     "primarySteward": "National Committee for Quality Assurance",
@@ -7019,9 +7263,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology"
     ]
   },
   {
@@ -7046,9 +7291,10 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "pediatrics"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "preventiveMedicine"
     ]
   },
   {
@@ -7073,7 +7319,8 @@
       "registry"
     ],
     "measureSets": [
-      "thoracicSurgery"
+      "cardiology",
+      "radiationOncology"
     ]
   },
   {
@@ -7097,7 +7344,9 @@
     "submissionMethods": [
       "registry"
     ],
-    "measureSets": []
+    "measureSets": [
+      "cardiology"
+    ]
   },
   {
     "title": "Chlamydia Screening and Follow Up",
@@ -7121,11 +7370,12 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
@@ -7150,7 +7400,8 @@
       "registry"
     ],
     "measureSets": [
-      "obstetricsGynecology"
+      "cardiology",
+      "otolaryngology"
     ]
   },
   {
@@ -7175,16 +7426,17 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
-    "title": "Trastuzumab Received By Patients With AJCC Stage I (T1c) �  III And HER2 Positive Breast Cancer Receiving Adjuvant Chemotherapy",
+    "title": "Trastuzumab Received By Patients With AJCC Stage I (T1c) -  III And HER2 Positive Breast Cancer Receiving Adjuvant Chemotherapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "1858",
     "measureId": "450",
-    "description": "Proportion of female patients (aged 18 years and older) with AJCC stage I (T1c) � III, human epidermal growth factor receptor 2 (HER2) positive breast cancer receiving adjuvant chemotherapy who are also receiving trastuzumab",
+    "description": "Proportion of female patients (aged 18 years and older) with AJCC stage I (T1c) - III, human epidermal growth factor receptor 2 (HER2) positive breast cancer receiving adjuvant chemotherapy who are also receiving trastuzumab",
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
     "primarySteward": "American Society of Clinical Oncology",
@@ -7200,7 +7452,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7225,7 +7478,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7250,7 +7504,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7275,7 +7530,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7300,7 +7556,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7325,7 +7582,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7350,7 +7608,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7375,7 +7634,8 @@
       "registry"
     ],
     "measureSets": [
-      "generalOncology"
+      "cardiology",
+      "rheumatology"
     ]
   },
   {
@@ -7399,7 +7659,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSets": []
+    "measureSets": [
+      "anesthesiology"
+    ]
   },
   {
     "title": "Average Change in Back Pain following Lumbar Discectomy / Laminotomy",
@@ -7424,8 +7686,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "neurosurgical"
+      "cardiology",
+      "pediatrics"
     ],
     "strata": [
       {
@@ -7461,8 +7723,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "neurosurgical"
+      "cardiology",
+      "pediatrics"
     ],
     "strata": [
       {
@@ -7498,8 +7760,8 @@
       "registry"
     ],
     "measureSets": [
-      "orthopedicSurgery",
-      "neurosurgical"
+      "cardiology",
+      "pediatrics"
     ],
     "strata": [
       {
@@ -7534,8 +7796,8 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "urology",
-      "generalOncology"
+      "hospitalists",
+      "rheumatology"
     ]
   },
   {
@@ -7560,7 +7822,8 @@
       "registry"
     ],
     "measureSets": [
-      "anesthesiology"
+      "cardiology",
+      "gastroenterology"
     ]
   },
   {
@@ -7570,9 +7833,9 @@
     "nqfId": "0657",
     "measureId": "464",
     "description": "Percentage of patients aged 2 months through 12 years with a diagnosis of OME who were not prescribed systemic antimicrobials",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "nationalQualityStrategyDomain": "Patient Safety, Efficiency and Cost Reduction",
     "measureType": "process",
-    "primarySteward": "American Academy of Otolaryngology � Head and Neck Surgery Foundation",
+    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery Foundation",
     "metricType": "singlePerformanceRate",
     "firstPerformanceYear": 2018,
     "lastPerformanceYear": null,
@@ -7585,14 +7848,15 @@
       "registry"
     ],
     "measureSets": [
-      "generalPracticeFamilyMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "infectiousDisease"
+      "cardiology",
+      "ophthalmology",
+      "physicalMedicine",
+      "preventiveMedicine",
+      "dentistry"
     ]
   },
   {
-    "title": "Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and\r\nInterrogation of Ovarian Arteries",
+    "title": "Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and\r\rInterrogation of Ovarian Arteries",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -7613,7 +7877,8 @@
       "registry"
     ],
     "measureSets": [
-      "interventionalRadiology"
+      "cardiology",
+      "thoracicSurgery"
     ]
   },
   {
@@ -7639,7 +7904,8 @@
       "registry"
     ],
     "measureSets": [
-      "pediatrics"
+      "cardiology",
+      "preventiveMedicine"
     ],
     "strata": [
       {
