@@ -66,31 +66,31 @@ const QUALITY_CSV_CONFIG = {
         'clinical process effectiveness': 'process'
       }
     },
-    primarySteward: 11,
-    metricType: 53,
+    primarySteward: 8,
+    metricType: 50,
     firstPerformanceYear: {
-      index: 54,
+      index: 51,
       default: 2017
     },
     lastPerformanceYear: {
-      index: 55,
+      index: 52,
       default: null
     },
     isHighPriority: {
-      index: 57,
+      index: 54,
       default: false
     },
     isInverse: {
-      index: 58,
+      index: 55,
       default: false
     },
-    overallAlgorithm: 62
+    overallAlgorithm: 59
   }
 };
 
 // mapping from quality measures csv column numbers to submission method array indices
 const SUBMISSION_METHODS = {
-  CSV_COLUMN_START_INDEX: 12,
+  CSV_COLUMN_START_INDEX: 9,
   ORDERED_FIELDS: [
     'claims',
     'certifiedSurveyVendor',
@@ -103,7 +103,7 @@ const SUBMISSION_METHODS = {
 
 // mapping from quality measures csv column numbers to measure sets array indices
 const MEASURE_SETS = {
-  CSV_COLUMN_START_INDEX: 18,
+  CSV_COLUMN_START_INDEX: 15,
   ORDERED_FIELDS: [
     'allergyImmunology',
     'anesthesiology',
