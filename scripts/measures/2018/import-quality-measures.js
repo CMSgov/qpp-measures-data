@@ -35,24 +35,24 @@ const QUALITY_CSV_CONFIG = {
   sourced_fields: {
     // fields are csv columns indexed starting from 1 (the provided
     // spreadsheet has a leftmost blank column)
-    title: 1,
+    title: 0,
     eMeasureId: {
-      index: 2,
+      index: 1,
       default: null
     },
     nqfEMeasureId: {
-      index: 3,
+      index: 2,
       default: null
     },
     nqfId: {
-      index: 4,
+      index: 3,
       default: null
     },
-    measureId: 5,
-    description: 6,
-    nationalQualityStrategyDomain: 7,
+    measureId: 4,
+    description: 5,
+    nationalQualityStrategyDomain: 6,
     measureType: {
-      index: 8,
+      index: 7,
       mappings: { // there should be no capital letters in the keys below
         'process': 'process',
         'outcome': 'outcome',
@@ -66,31 +66,31 @@ const QUALITY_CSV_CONFIG = {
         'clinical process effectiveness': 'process'
       }
     },
-    primarySteward: 12,
-    metricType: 54,
+    primarySteward: 11,
+    metricType: 53,
     firstPerformanceYear: {
-      index: 55,
+      index: 54,
       default: 2017
     },
     lastPerformanceYear: {
-      index: 56,
+      index: 55,
       default: null
     },
     isHighPriority: {
-      index: 58,
+      index: 57,
       default: false
     },
     isInverse: {
-      index: 59,
+      index: 58,
       default: false
     },
-    overallAlgorithm: 63
+    overallAlgorithm: 62
   }
 };
 
 // mapping from quality measures csv column numbers to submission method array indices
 const SUBMISSION_METHODS = {
-  CSV_COLUMN_START_INDEX: 13,
+  CSV_COLUMN_START_INDEX: 12,
   ORDERED_FIELDS: [
     'claims',
     'certifiedSurveyVendor',
@@ -103,7 +103,7 @@ const SUBMISSION_METHODS = {
 
 // mapping from quality measures csv column numbers to measure sets array indices
 const MEASURE_SETS = {
-  CSV_COLUMN_START_INDEX: 19,
+  CSV_COLUMN_START_INDEX: 18,
   ORDERED_FIELDS: [
     'allergyImmunology',
     'anesthesiology',
