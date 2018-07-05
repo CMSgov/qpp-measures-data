@@ -33,8 +33,7 @@ const QUALITY_CSV_CONFIG = {
     isRiskAdjusted: false
   },
   sourced_fields: {
-    // fields are csv columns indexed starting from 1 (the provided
-    // spreadsheet has a leftmost blank column)
+    // fields are csv columns indexed starting from 0
     title: 0,
     eMeasureId: {
       index: 1,
@@ -105,9 +104,9 @@ const SUBMISSION_METHODS = {
 const MEASURE_SETS = {
   CSV_COLUMN_START_INDEX: 15,
   ORDERED_FIELDS: [
-    'allergyImmunology',
-    'anesthesiology',
-    'cardiology',
+    'allergyImmunology', // 15 (CSV_COLUMN_START_INDEX)
+    'anesthesiology', // 16
+    'cardiology', // 17 etc...
     'electrophysiologyCardiacSpecialist',
     'gastroenterology',
     'dermatology',
