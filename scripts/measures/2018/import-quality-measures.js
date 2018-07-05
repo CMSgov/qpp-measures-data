@@ -33,26 +33,25 @@ const QUALITY_CSV_CONFIG = {
     isRiskAdjusted: false
   },
   sourced_fields: {
-    // fields are csv columns indexed starting from 1 (the provided
-    // spreadsheet has a leftmost blank column)
-    title: 1,
+    // fields are csv columns indexed starting from 0
+    title: 0,
     eMeasureId: {
-      index: 2,
+      index: 1,
       default: null
     },
     nqfEMeasureId: {
-      index: 3,
+      index: 2,
       default: null
     },
     nqfId: {
-      index: 4,
+      index: 3,
       default: null
     },
-    measureId: 5,
-    description: 6,
-    nationalQualityStrategyDomain: 7,
+    measureId: 4,
+    description: 5,
+    nationalQualityStrategyDomain: 6,
     measureType: {
-      index: 8,
+      index: 7,
       mappings: { // there should be no capital letters in the keys below
         'process': 'process',
         'outcome': 'outcome',
@@ -66,75 +65,81 @@ const QUALITY_CSV_CONFIG = {
         'clinical process effectiveness': 'process'
       }
     },
-    primarySteward: 9,
-    metricType: 51,
+    primarySteward: 8,
+    metricType: 50,
     firstPerformanceYear: {
-      index: 52,
+      index: 51,
       default: 2017
     },
     lastPerformanceYear: {
-      index: 53,
+      index: 52,
       default: null
     },
     isHighPriority: {
-      index: 55,
+      index: 54,
       default: false
     },
     isInverse: {
-      index: 56,
+      index: 55,
       default: false
     },
-    overallAlgorithm: 60
+    overallAlgorithm: 59
   }
 };
 
-// mapping from quality measures csv column numbers to submission method
+// mapping from quality measures csv column numbers to submission method array indices
 const SUBMISSION_METHODS = {
-  10: 'claims',
-  11: 'certifiedSurveyVendor',
-  12: 'electronicHealthRecord',
-  13: 'cmsWebInterface',
-  14: 'administrativeClaims',
-  15: 'registry'
+  CSV_COLUMN_START_INDEX: 9,
+  ORDERED_FIELDS: [
+    'claims',
+    'certifiedSurveyVendor',
+    'electronicHealthRecord',
+    'cmsWebInterface',
+    'administrativeClaims',
+    'registry'
+  ]
 };
 
-// mapping from quality measures csv column numbers to measure sets
+// mapping from quality measures csv column numbers to measure sets array indices
 const MEASURE_SETS = {
-  16: 'allergyImmunology',
-  17: 'anesthesiology',
-  18: 'cardiology',
-  19: 'electrophysiologyCardiacSpecialist',
-  20: 'gastroenterology',
-  21: 'dermatology',
-  22: 'emergencyMedicine',
-  23: 'generalPracticeFamilyMedicine',
-  24: 'internalMedicine',
-  25: 'obstetricsGynecology',
-  26: 'ophthalmology',
-  27: 'orthopedicSurgery',
-  28: 'otolaryngology',
-  29: 'pathology',
-  30: 'pediatrics',
-  31: 'physicalMedicine',
-  32: 'plasticSurgery',
-  33: 'preventiveMedicine',
-  34: 'neurology',
-  35: 'mentalBehavioralHealth',
-  36: 'diagnosticRadiology',
-  37: 'interventionalRadiology',
-  38: 'vascularSurgery',
-  39: 'generalSurgery',
-  40: 'thoracicSurgery',
-  41: 'urology',
-  42: 'generalOncology',
-  43: 'radiationOncology',
-  44: 'hospitalists',
-  45: 'rheumatology',
-  46: 'nephrology',
-  47: 'infectiousDisease',
-  48: 'neurosurgical',
-  49: 'podiatry',
-  50: 'dentistry'
+  CSV_COLUMN_START_INDEX: 15,
+  ORDERED_FIELDS: [
+    'allergyImmunology', // 15 (CSV_COLUMN_START_INDEX)
+    'anesthesiology', // 16
+    'cardiology', // 17 etc...
+    'electrophysiologyCardiacSpecialist',
+    'gastroenterology',
+    'dermatology',
+    'emergencyMedicine',
+    'generalPracticeFamilyMedicine',
+    'internalMedicine',
+    'obstetricsGynecology',
+    'ophthalmology',
+    'orthopedicSurgery',
+    'otolaryngology',
+    'pathology',
+    'pediatrics',
+    'physicalMedicine',
+    'plasticSurgery',
+    'preventiveMedicine',
+    'neurology',
+    'mentalBehavioralHealth',
+    'diagnosticRadiology',
+    'interventionalRadiology',
+    'vascularSurgery',
+    'generalSurgery',
+    'thoracicSurgery',
+    'urology',
+    'generalOncology',
+    'radiationOncology',
+    'hospitalists',
+    'rheumatology',
+    'nephrology',
+    'infectiousDisease',
+    'neurosurgical',
+    'podiatry',
+    'dentistry'
+  ]
 };
 
 function getCsv(csvPath, headerRows = 1) {
@@ -156,7 +161,8 @@ function cleanInput(input) {
 }
 
 // map specific csv input values to their representation in the measures schema
-function mapInput(rawInput) {
+function mapInput(rawInput, fieldName) {
+  const stringInput = rawInput.toString();
   const input = cleanInput(rawInput);
   if (QUALITY_CSV_CONFIG.truthy_markers.includes(input)) {
     return true;
@@ -167,17 +173,24 @@ function mapInput(rawInput) {
   } else if (Constants.validPerformanceYears.includes(Number(input))) {
     return Number(input);
   } else {
-    // if csv input isn't one of the special cases above, just return it
-    return rawInput.trim();
+    // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
+    let finalInput = stringInput.trim();
+    if (fieldName === 'measureId') {
+      finalInput = _.padStart(finalInput, 3, '0');
+    } else if (fieldName === 'nqfId') {
+      finalInput = _.padStart(finalInput, 4, '0');
+    }
+
+    return finalInput;
   }
 }
 
 // used when multiple csv columns map into a single measure field
-function getCheckedColumns(row, columnNumberToNameMap) {
+function getCheckedColumns(row, columnSet) {
   const checkedColumns = [];
 
-  _.each(columnNumberToNameMap, (value, key) => {
-    if (mapInput(row[key]) === true) {
+  _.each(columnSet.ORDERED_FIELDS, (value, index) => {
+    if (mapInput(row[columnSet.CSV_COLUMN_START_INDEX + index]) === true) {
       checkedColumns.push(value);
     }
   });
@@ -237,13 +250,13 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 
   const measures = qualityCsvRows.map((row) => {
     const measure = {};
-    _.each(sourcedFields, (columnObject, measureKey) => {
+    _.each(sourcedFields, (columnObject, fieldName) => {
       if (typeof columnObject === 'number') {
         const input = row[columnObject];
         if (_.isUndefined(input)) {
           throw Error('Column ' + columnObject + ' does not exist in source data');
         } else if (input !== '') {
-          measure[measureKey] = mapInput(input);
+          measure[fieldName] = mapInput(input, fieldName);
         }
       } else {
         let value;
@@ -251,10 +264,10 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
           const input = cleanInput(row[columnObject.index]);
           value = columnObject.mappings[input];
         } else {
-          value = mapInput(row[columnObject.index]);
+          value = mapInput(row[columnObject.index], fieldName);
         }
 
-        measure[measureKey] = value || columnObject['default'];
+        measure[fieldName] = value || columnObject['default'];
       }
     });
 
@@ -272,7 +285,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 };
 
 function importQualityMeasures() {
-  const qualityCsv = getCsv(qualityMeasuresPath, 2);
+  const qualityCsv = getCsv(qualityMeasuresPath, 3);
   const strataCsv = getCsv(qualityStrataPath, 2);
 
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
