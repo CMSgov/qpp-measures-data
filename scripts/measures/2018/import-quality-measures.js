@@ -67,74 +67,76 @@ const QUALITY_CSV_CONFIG = {
       }
     },
     primarySteward: 9,
-    metricType: 51,
+    metricType: 53,
     firstPerformanceYear: {
-      index: 52,
+      index: 54,
       default: 2017
     },
     lastPerformanceYear: {
-      index: 53,
+      index: 55,
       default: null
     },
     isHighPriority: {
-      index: 55,
+      index: 57,
       default: false
     },
     isInverse: {
-      index: 56,
+      index: 58,
       default: false
     },
-    overallAlgorithm: 60
+    overallAlgorithm: 62,
+    isIcdImpacted: 10,
+    isToppedOutByProgram: 11
   }
 };
 
 // mapping from quality measures csv column numbers to submission method
 const SUBMISSION_METHODS = {
-  10: 'claims',
-  11: 'certifiedSurveyVendor',
-  12: 'electronicHealthRecord',
-  13: 'cmsWebInterface',
-  14: 'administrativeClaims',
-  15: 'registry'
+  12: 'claims',
+  13: 'certifiedSurveyVendor',
+  14: 'electronicHealthRecord',
+  15: 'cmsWebInterface',
+  16: 'administrativeClaims',
+  17: 'registry'
 };
 
 // mapping from quality measures csv column numbers to measure sets
 const MEASURE_SETS = {
-  16: 'allergyImmunology',
-  17: 'anesthesiology',
-  18: 'cardiology',
-  19: 'electrophysiologyCardiacSpecialist',
-  20: 'gastroenterology',
-  21: 'dermatology',
-  22: 'emergencyMedicine',
-  23: 'generalPracticeFamilyMedicine',
-  24: 'internalMedicine',
-  25: 'obstetricsGynecology',
-  26: 'ophthalmology',
-  27: 'orthopedicSurgery',
-  28: 'otolaryngology',
-  29: 'pathology',
-  30: 'pediatrics',
-  31: 'physicalMedicine',
-  32: 'plasticSurgery',
-  33: 'preventiveMedicine',
-  34: 'neurology',
-  35: 'mentalBehavioralHealth',
-  36: 'diagnosticRadiology',
-  37: 'interventionalRadiology',
-  38: 'vascularSurgery',
-  39: 'generalSurgery',
-  40: 'thoracicSurgery',
-  41: 'urology',
-  42: 'generalOncology',
-  43: 'radiationOncology',
-  44: 'hospitalists',
-  45: 'rheumatology',
-  46: 'nephrology',
-  47: 'infectiousDisease',
-  48: 'neurosurgical',
-  49: 'podiatry',
-  50: 'dentistry'
+  18: 'allergyImmunology',
+  19: 'anesthesiology',
+  20: 'cardiology',
+  21: 'electrophysiologyCardiacSpecialist',
+  22: 'gastroenterology',
+  23: 'dermatology',
+  24: 'emergencyMedicine',
+  25: 'generalPracticeFamilyMedicine',
+  26: 'internalMedicine',
+  27: 'obstetricsGynecology',
+  28: 'ophthalmology',
+  29: 'orthopedicSurgery',
+  30: 'otolaryngology',
+  31: 'pathology',
+  32: 'pediatrics',
+  33: 'physicalMedicine',
+  34: 'plasticSurgery',
+  35: 'preventiveMedicine',
+  36: 'neurology',
+  37: 'mentalBehavioralHealth',
+  38: 'diagnosticRadiology',
+  39: 'interventionalRadiology',
+  40: 'vascularSurgery',
+  41: 'generalSurgery',
+  42: 'thoracicSurgery',
+  43: 'urology',
+  44: 'generalOncology',
+  45: 'radiationOncology',
+  46: 'hospitalists',
+  47: 'rheumatology',
+  48: 'nephrology',
+  49: 'infectiousDisease',
+  50: 'neurosurgical',
+  51: 'podiatry',
+  52: 'dentistry'
 };
 
 function getCsv(csvPath, headerRows = 1) {
