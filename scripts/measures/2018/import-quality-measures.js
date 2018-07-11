@@ -297,7 +297,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     measure['submissionMethods'] = getCheckedColumns(row, SUBMISSION_METHODS);
     measure['measureSets'] = getCheckedColumns(row, MEASURE_SETS);
     measure['measureSpecification'] = getColumnSet(row, MEASURE_SPECIFICATION);
-    
+
     return measure;
   });
 
