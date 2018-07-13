@@ -46,7 +46,6 @@ const IGNORED_FIELDS = [
   'cmsWebInterface'
 ];
 
-
 // Main set of fields mapped to their default values
 // Except for measure type which is a custom mapping
 const MAIN_FIELDS = {
@@ -221,7 +220,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
         if (_.isObject(fieldMapping)) {
           measure[fieldName] = fieldMapping[cleanInput(input)];
         } else {
-          let defaultValue = fieldMapping;
+          const defaultValue = fieldMapping;
           measure[fieldName] = input || defaultValue;
         }
       } else if (SUBMISSION_METHODS[fieldName]) {
