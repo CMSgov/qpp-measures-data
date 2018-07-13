@@ -227,7 +227,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
           measure['submissionMethods'].push(SUBMISSION_METHODS[fieldName]);
         }
       } else if (MEASURE_SETS.includes(fieldName)) {
-        // multiple csv columns map into the submission methods measure field
+        // multiple csv columns map into the measure sets measure field
         if (input === true) {
           measure['measureSets'].push(fieldName);
         }
