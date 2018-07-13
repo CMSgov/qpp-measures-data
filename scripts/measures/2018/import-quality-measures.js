@@ -23,13 +23,6 @@ const Constants = require('../../../constants.js');
  * below and the mapInput function would need to be updated.
  */
 
-const QUALITY_CSV_CONFIG = {
-  // markers are what the CSV creators chose as field values;
-  // they use different conventions for different columns
-  truthy_markers: ['true', 'x'],
-  falsy_markers: ['false', 'null', 'n/a']
-};
-
 const CONSTANT_FIELDS = {
   category: 'quality',
   isRegistryMeasure: false,
@@ -127,6 +120,13 @@ const MEASURE_SETS = [
   'dentistry'
 ];
 
+const MARKERS = {
+  // markers are what the CSV creators chose as field values;
+  // they use different conventions for different columns
+  truthy: ['true', 'x'],
+  falsy: ['false', 'null', 'n/a']
+};
+
 function getCsv(csvPath, firstNonHeaderRow) {
   const csv = fs.readFileSync(path.join(__dirname, csvPath), 'utf8');
   const parsedCsv = parse(csv, { columns: true, from: firstNonHeaderRow - 1 });
@@ -144,9 +144,9 @@ function cleanInput(input) {
 function mapInput(rawInput, fieldName) {
   const stringInput = rawInput.toString();
   const input = cleanInput(rawInput);
-  if (QUALITY_CSV_CONFIG.truthy_markers.includes(input)) {
+  if (MARKERS.truthy.includes(input)) {
     return true;
-  } else if (QUALITY_CSV_CONFIG.falsy_markers.includes(input)) {
+  } else if (MARKERS.falsy.includes(input)) {
     // we return false here; the eventual value will be the default value in
     // QUALITY_CSV_CONFIG, e.g. null
     return false;
