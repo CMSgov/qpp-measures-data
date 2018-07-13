@@ -10,25 +10,22 @@ const Constants = require('../../../constants.js');
  */
 
 /**
- * [config defines how to generate quality measures from origin CSV file]
- * @type {Object}
- *
- *  * `constant_fields` are fields which are the same for all measures being
- *  created from the CSV input.
- *  * `source_fields` are fields which should find values in the CSV input.
- *
  * NOTE: We currently don't differentiate between empty CSV fields and CSV fields
  * explicitly marked as false, because there are no optional fields with
  * true/false values. If there ever are, the default: structure / true/false_markers
  * below and the mapInput function would need to be updated.
  */
 
+// Constant fields are not present in the source CSV. They are
+// constant across all quality measures, so we insert these fields into every one
 const CONSTANT_FIELDS = {
   category: 'quality',
   isRegistryMeasure: false,
   isRiskAdjusted: false
 };
 
+// Ignored fields are present in the source CSV but not imported
+// into measures data by this script
 const IGNORED_FIELDS = [
   'eMeasureUuid',
   'numStrataClaims',
@@ -73,6 +70,7 @@ const MAIN_FIELDS = {
   isToppedOutByProgram: false
 };
 
+// Source CSV column names mapped to their measures data names
 const SUBMISSION_METHODS = {
   claimsMethod: 'claims',
   certifiedSurveyVendorMethod: 'certifiedSurveyVendor',
@@ -120,9 +118,9 @@ const MEASURE_SETS = [
   'dentistry'
 ];
 
+// markers are what the CSV creators chose as field values;
+// they use different conventions for different columns
 const MARKERS = {
-  // markers are what the CSV creators chose as field values;
-  // they use different conventions for different columns
   truthy: ['true', 'x'],
   falsy: ['false', 'null', 'n/a']
 };
