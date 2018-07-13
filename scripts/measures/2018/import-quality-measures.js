@@ -22,136 +22,115 @@ const Constants = require('../../../constants.js');
  * true/false values. If there ever are, the default: structure / true/false_markers
  * below and the mapInput function would need to be updated.
  */
+
 const QUALITY_CSV_CONFIG = {
   // markers are what the CSV creators chose as field values;
   // they use different conventions for different columns
   truthy_markers: ['true', 'x'],
-  falsy_markers: ['false', 'null', 'n/a'],
-  constant_fields: {
-    category: 'quality',
-    isRegistryMeasure: false,
-    isRiskAdjusted: false
+  falsy_markers: ['false', 'null', 'n/a']
+};
+
+const CONSTANT_FIELDS = {
+  category: 'quality',
+  isRegistryMeasure: false,
+  isRiskAdjusted: false
+};
+
+const IGNORED_FIELDS = [
+  'eMeasureUuid',
+  'numStrataClaims',
+  'numStrataRegistry',
+  'numStrataEcqm',
+  'registry',
+  'claims',
+  'cmsWebInterface'
+];
+
+
+// Main set of fields mapped to their default values
+// Except for measure type which is a custom mapping
+const MAIN_FIELDS = {
+  title: undefined,
+  eMeasureId: null,
+  nqfEMeasureId: null,
+  nqfId: null,
+  measureId: undefined,
+  description: undefined,
+  nationalQualityStrategyDomain: undefined,
+  measureType: {
+    // there should be no capital letters in the keys below
+    'process': 'process',
+    'outcome': 'outcome',
+    'patient engagement/experience': 'patientEngagementExperience',
+    'efficiency': 'efficiency',
+    'intermediate outcome': 'intermediateOutcome',
+    'structure': 'structure',
+    'patient reported outcome': 'outcome',
+    'composite': 'outcome',
+    'cost/resource use': 'efficiency',
+    'clinical process effectiveness': 'process'
   },
-  sourced_fields: {
-    // fields are csv columns indexed starting from 0
-    title: 0,
-    eMeasureId: {
-      index: 1,
-      default: null
-    },
-    nqfEMeasureId: {
-      index: 2,
-      default: null
-    },
-    nqfId: {
-      index: 3,
-      default: null
-    },
-    measureId: 4,
-    description: 5,
-    nationalQualityStrategyDomain: 6,
-    measureType: {
-      index: 7,
-      mappings: { // there should be no capital letters in the keys below
-        'process': 'process',
-        'outcome': 'outcome',
-        'patient engagement/experience': 'patientEngagementExperience',
-        'efficiency': 'efficiency',
-        'intermediate outcome': 'intermediateOutcome',
-        'structure': 'structure',
-        'patient reported outcome': 'outcome',
-        'composite': 'outcome',
-        'cost/resource use': 'efficiency',
-        'clinical process effectiveness': 'process'
-      }
-    },
-    primarySteward: 8,
-    metricType: 50,
-    firstPerformanceYear: {
-      index: 51,
-      default: 2017
-    },
-    lastPerformanceYear: {
-      index: 52,
-      default: null
-    },
-    isHighPriority: {
-      index: 54,
-      default: false
-    },
-    isInverse: {
-      index: 55,
-      default: false
-    },
-    overallAlgorithm: 59,
-    isIcdImpacted: 64,
-    isToppedOutByProgram: 65
-  }
+  primarySteward: undefined,
+  metricType: null,
+  firstPerformanceYear: 2017,
+  lastPerformanceYear: null,
+  isHighPriority: false,
+  isInverse: false,
+  overallAlgorithm: undefined,
+  isIcdImpacted: false,
+  isToppedOutByProgram: false
 };
 
-// mapping from quality measures csv column numbers to submission method array indices
 const SUBMISSION_METHODS = {
-  CSV_COLUMN_START_INDEX: 9,
-  ORDERED_FIELDS: [
-    'claims',
-    'certifiedSurveyVendor',
-    'electronicHealthRecord',
-    'cmsWebInterface',
-    'administrativeClaims',
-    'registry'
-  ]
+  claimsMethod: 'claims',
+  certifiedSurveyVendorMethod: 'certifiedSurveyVendor',
+  electronicHealthRecordMethod: 'electronicHealthRecord',
+  cmsWebInterfaceMethod: 'cmsWebInterface',
+  administrativeClaimsMethod: 'administrativeClaims',
+  registryMethod: 'registry'
 };
 
-// mapping from quality measures csv column numbers to measure sets array indices
-const MEASURE_SETS = {
-  CSV_COLUMN_START_INDEX: 15,
-  ORDERED_FIELDS: [
-    'allergyImmunology', // 15 (CSV_COLUMN_START_INDEX)
-    'anesthesiology', // 16
-    'cardiology', // 17 etc...
-    'electrophysiologyCardiacSpecialist',
-    'gastroenterology',
-    'dermatology',
-    'emergencyMedicine',
-    'generalPracticeFamilyMedicine',
-    'internalMedicine',
-    'obstetricsGynecology',
-    'ophthalmology',
-    'orthopedicSurgery',
-    'otolaryngology',
-    'pathology',
-    'pediatrics',
-    'physicalMedicine',
-    'plasticSurgery',
-    'preventiveMedicine',
-    'neurology',
-    'mentalBehavioralHealth',
-    'diagnosticRadiology',
-    'interventionalRadiology',
-    'vascularSurgery',
-    'generalSurgery',
-    'thoracicSurgery',
-    'urology',
-    'generalOncology',
-    'radiationOncology',
-    'hospitalists',
-    'rheumatology',
-    'nephrology',
-    'infectiousDisease',
-    'neurosurgical',
-    'podiatry',
-    'dentistry'
-  ]
-};
+const MEASURE_SETS = [
+  'allergyImmunology',
+  'anesthesiology',
+  'cardiology',
+  'electrophysiologyCardiacSpecialist',
+  'gastroenterology',
+  'dermatology',
+  'emergencyMedicine',
+  'generalPracticeFamilyMedicine',
+  'internalMedicine',
+  'obstetricsGynecology',
+  'ophthalmology',
+  'orthopedicSurgery',
+  'otolaryngology',
+  'pathology',
+  'pediatrics',
+  'physicalMedicine',
+  'plasticSurgery',
+  'preventiveMedicine',
+  'neurology',
+  'mentalBehavioralHealth',
+  'diagnosticRadiology',
+  'interventionalRadiology',
+  'vascularSurgery',
+  'generalSurgery',
+  'thoracicSurgery',
+  'urology',
+  'generalOncology',
+  'radiationOncology',
+  'hospitalists',
+  'rheumatology',
+  'nephrology',
+  'infectiousDisease',
+  'neurosurgical',
+  'podiatry',
+  'dentistry'
+];
 
-function getCsv(csvPath, headerRows = 1) {
+function getCsv(csvPath, firstNonHeaderRow) {
   const csv = fs.readFileSync(path.join(__dirname, csvPath), 'utf8');
-  const parsedCsv = parse(csv, 'utf8');
-
-  // remove header rows
-  for (let i = 0; i < headerRows; i++) {
-    parsedCsv.shift();
-  }
+  const parsedCsv = parse(csv, { columns: true, from: firstNonHeaderRow - 1 });
 
   return parsedCsv;
 }
@@ -187,30 +166,13 @@ function mapInput(rawInput, fieldName) {
   }
 }
 
-// used when multiple csv columns map into a single measure field
-function getCheckedColumns(row, columnSet) {
-  const checkedColumns = [];
-
-  _.each(columnSet.ORDERED_FIELDS, (value, index) => {
-    if (mapInput(row[columnSet.CSV_COLUMN_START_INDEX + index]) === true) {
-      checkedColumns.push(value);
-    }
-  });
-
-  return checkedColumns;
-}
-
 // loop through all the strata in the strata csv and add them to the measure object
 // (there exist multiple csv rows of strata for each multiPerformanceRate measure)
 function addMultiPerformanceRateStrata(measures, strataRows) {
   _.each(strataRows, row => {
-    if (!row[0]) {
-      return; // csv has a blank row, so skip it
-    }
-
-    const measureId = row[0].trim();
-    const stratumName = row[1].trim();
-    const description = row[3].trim();
+    const measureId = mapInput(row.measureId, 'measureId');
+    const stratumName = row.stratumName.trim();
+    const description = row.shortDescription.trim();
 
     const measure = _.find(measures, { measureId });
     if (!measure) {
@@ -247,38 +209,39 @@ function addMultiPerformanceRateStrata(measures, strataRows) {
  * include spaces or linebreaks
  */
 function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
-  const sourcedFields = QUALITY_CSV_CONFIG.sourced_fields;
-  const constantFields = QUALITY_CSV_CONFIG.constant_fields;
-
   const measures = qualityCsvRows.map((row) => {
-    const measure = {};
-    _.each(sourcedFields, (columnObject, fieldName) => {
-      if (typeof columnObject === 'number') {
-        const input = row[columnObject];
-        if (_.isUndefined(input)) {
-          throw Error('Column ' + columnObject + ' does not exist in source data');
-        } else if (input !== '') {
-          measure[fieldName] = mapInput(input, fieldName);
-        }
-      } else {
-        let value;
-        if (columnObject.mappings) {
-          const input = cleanInput(row[columnObject.index]);
-          value = columnObject.mappings[input];
+    const measure = {
+      submissionMethods: [],
+      measureSets: []
+    };
+    _.each(row, (userInput, fieldName) => {
+      const input = mapInput(userInput, fieldName);
+      if (_.has(MAIN_FIELDS, fieldName)) {
+        const fieldMapping = MAIN_FIELDS[fieldName];
+        if (_.isObject(fieldMapping)) {
+          measure[fieldName] = fieldMapping[cleanInput(input)];
         } else {
-          value = mapInput(row[columnObject.index], fieldName);
+          let defaultValue = fieldMapping;
+          measure[fieldName] = input || defaultValue;
         }
-
-        measure[fieldName] = value || columnObject['default'];
+      } else if (SUBMISSION_METHODS[fieldName]) {
+        // multiple csv columns map into the submission methods measure field
+        if (input === true) {
+          measure['submissionMethods'].push(SUBMISSION_METHODS[fieldName]);
+        }
+      } else if (MEASURE_SETS.includes(fieldName)) {
+        // multiple csv columns map into the submission methods measure field
+        if (input === true) {
+          measure['measureSets'].push(fieldName);
+        }
+      } else if (!IGNORED_FIELDS.includes(fieldName)) {
+        throw Error('Column ' + fieldName + ' in source data is not recognized');
       }
     });
 
-    _.each(constantFields, (measureValue, measureKey) => {
+    _.each(CONSTANT_FIELDS, (measureValue, measureKey) => {
       measure[measureKey] = measureValue;
     });
-
-    measure['submissionMethods'] = getCheckedColumns(row, SUBMISSION_METHODS);
-    measure['measureSets'] = getCheckedColumns(row, MEASURE_SETS);
 
     return measure;
   });
@@ -287,8 +250,8 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 };
 
 function importQualityMeasures() {
-  const qualityCsv = getCsv(qualityMeasuresPath, 3);
-  const strataCsv = getCsv(qualityStrataPath, 2);
+  const qualityCsv = getCsv(qualityMeasuresPath, 4);
+  const strataCsv = getCsv(qualityStrataPath, 4);
 
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);
