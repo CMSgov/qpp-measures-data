@@ -125,11 +125,11 @@
     "strata": [
       {
         "name": "LVSD",
-        "description": "LVEF prescribed beta-blocker therapy"
+        "description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF < 40% who were prescribed beta-blocker therapy"
       },
       {
         "name": "priorMI",
-        "description": "Prior MI prescribed beta-blocker therapy"
+        "description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a prior (within the past 3 years) myocardial infarction who were prescribed beta-blocker therapy"
       }
     ]
   },
@@ -537,15 +537,15 @@
     "strata": [
       {
         "name": "18-64",
-        "description": "Med Rec 18 - 64 years and older"
+        "description": "Medication Reconciliation Post-Discharge: 18-64 years of age"
       },
       {
         "name": "65+",
-        "description": "Med Rec 65 years and older"
+        "description": "Medication Reconciliation Post-Discharge: 65 years and older"
       },
       {
         "name": "overall",
-        "description": "Med Rec all patients 18 years and older"
+        "description": "Medication Reconciliation Post-Discharge:All patients 18 years of age and older"
       }
     ]
   },
@@ -1428,15 +1428,15 @@
     "strata": [
       {
         "name": "<140/90mmHg",
-        "description": "Visits with blood pressure results < 140/90 mmHg"
+        "description": "Percentage of patient visits with blood pressure results < 140/90 mmHg"
       },
       {
         "name": "planOfCare",
-        "description": "Visits with blood pressure results >= 140/90 mmHg and plan of care"
+        "description": "Percentage of patient visits with blood pressure results >= 140/90 mmHg and plan of care"
       },
       {
         "name": "overall",
-        "description": "Overall visits with blood pressure results < 140/90 mmHg and >= 140/90 mmHg with a documented plan of care"
+        "description": "Overall percentage of patient visits with blood pressure results < 140/90 mmHg and >= 140/90 mmHg with a documented plan of care"
       }
     ]
   },
@@ -2901,15 +2901,15 @@
     "strata": [
       {
         "name": "screenedForUse",
-        "description": "Patients screened for tobacco use one or more times"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
       },
       {
         "name": "intervention",
-        "description": "Screened for tobacco, identified as tobacco user that received cessation."
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
       },
       {
         "name": "overall",
-        "description": "Patients screened for tobacco use one or more times and received cessation"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
       }
     ]
   },
@@ -2982,11 +2982,11 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Ordered at least one high-risk"
+        "description": "Percentage of patients who were ordered at least one high-risk medication"
       },
       {
         "name": "2+",
-        "description": "Ordered at least two high-risk"
+        "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
       }
     ]
   },
@@ -4866,11 +4866,11 @@
     "strata": [
       {
         "name": "30",
-        "description": "Implantable Cardioverter-Defibrillator complications or mortality at 30 days"
+        "description": "Complications or mortality at 30 days"
       },
       {
         "name": "90",
-        "description": "Implantable Cardioverter-Defibrillator complications at 90 day"
+        "description": "Complications at 90 days"
       }
     ]
   },
@@ -5975,11 +5975,11 @@
     "strata": [
       {
         "name": "30days",
-        "description": "Discharges received follow up 30 days"
+        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
       },
       {
         "name": "overall",
-        "description": "Discharges received follow up 7 days"
+        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
       }
     ]
   },
@@ -6013,23 +6013,23 @@
     "strata": [
       {
         "name": "18-64F",
-        "description": "Cardiac tamponade/pericardiocentesis females 18-64 years"
+        "description": "Females 18-64 years of age"
       },
       {
         "name": "18-64M",
-        "description": "Cardiac tamponade/pericardiocentesis males 18-64 years"
+        "description": "Males 18-64 years of age"
       },
       {
         "name": "65+F",
-        "description": "Cardiac tamponade/pericardiocentesis females 65 years and older"
+        "description": "Females 65 years of age and older"
       },
       {
         "name": "65+M",
-        "description": "Cardiac tamponade/pericardiocentesis males 65 years and older"
+        "description": "Males 65 years of age and older"
       },
       {
         "name": "overall",
-        "description": "Overall cardiac tamponade/pericardiocentesis female and males 18 years and older"
+        "description": "Overall percentage of patients with cardiac tamponade and/or pericardiocentesis occurring within 30 days"
       }
     ]
   },
@@ -6092,19 +6092,19 @@
     "strata": [
       {
         "name": "meningococcal",
-        "description": "One dose of meningococcal vaccine"
+        "description": "Patients who had one dose of meningococcal vaccine on or between the patient's 11th and 13th birthdays"
       },
       {
         "name": "Tdap",
-        "description": "One tetanus, diphtheria toxoids and acellular pertussis vaccine"
+        "description": "Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient's 10th and 13th birthdays"
       },
       {
         "name": "HPV",
-        "description": "Completed the HPV vaccine"
+        "description": "Patients who have completed the HPV vaccine with defferent dates of service on or between the patient's 9th and 13th birthdays"
       },
       {
         "name": "overall",
-        "description": "Compliant for Meningococcal, Tdap and HPV"
+        "description": "All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes"
       }
     ]
   },
@@ -6225,31 +6225,31 @@
     "strata": [
       {
         "name": "overall",
-        "description": "5-50 years well-controlled asthma, without elevated risk of exacerbation"
+        "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
       },
       {
-        "name": "17-May",
-        "description": "5-17 years well-controlled asthma, without elevated risk of exacerbation"
+        "name": "5-17",
+        "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation."
       },
       {
         "name": "18-50",
-        "description": "18-50 years well-controlled asthma, without elevated risk of exacerbation"
+        "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
       },
       {
         "name": "ACT5-17",
-        "description": "5 to 17 asthma well-controlled specified asthma control tool result"
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 5 to 17 with Asthma"
       },
       {
         "name": "ACT18-50",
-        "description": "18 to 50 asthma well-controlled specified asthma control tool result"
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
       },
       {
         "name": "lowRisk5-17",
-        "description": "5 to 17 with asthma elevated risk of exacerbation"
+        "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
       },
       {
         "name": "lowRisk18-50",
-        "description": "18 to 50 with asthma elevated risk of exacerbation"
+        "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
       }
     ]
   },
@@ -7965,11 +7965,11 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period"
+        "description": "Percentage of patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND three months (6 - 20 weeks) postoperatively."
       },
       {
         "name": "averageChange",
-        "description": "Average of the change in pain preoperatively to post-operatively among patients having received a lumbar discectomy/laminotomy procedure."
+        "description": "Average change (preoperative to three months (6 - 20 weeks) postoperative) in back pain for all eligible patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose back pain was measured by the visual analog scale (vas) within three months preoperatively and at three months (6 - 20 weeks) postoperatively"
       }
     ]
   },
@@ -8004,11 +8004,11 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar spine fusion procedure performed during the denominator identification period"
+        "description": "Percentage of patients 18 years of age or older as of October 1 of the denominator identification\r\nperiod who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at one year (+/- 3 months) postoperatively."
       },
       {
         "name": "averageChange",
-        "description": "Average of the change in pain preoperatively to post-operatively among patients having received a lumbar fusion."
+        "description": "Average change (preoperative to one year postoperative) in back pain for all eligible patients 18 years of age or older as of October 1 of the denominator identification period who had a lumbar spine fusion procedure performed during the denominator identification period and whose back pain was measured by the visual analog scale (vas) within three months preoperatively and at one year (+/- 3 months) postoperatively"
       }
     ]
   },
@@ -8043,11 +8043,11 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period."
+        "description": "Percentage of patients 18 years of age or older as of January 1 of the denominator identification\r\nperiod who had a lumbar discectomy/laminotomy procedure performed during the denominator identification period and whose leg pain was measured by the Visual Analog Scale (VAS) within three months preoperatively AND at three months (6 to 20 weeks) postoperatively."
       },
       {
         "name": "averageChange",
-        "description": "Average of the change in pain preoperatively to postoperatively among patients having received a lumbar discectomy/laminotomy."
+        "description": "Average change (preoperative to three months (6 to 20 weeks) postoperative) in leg pain for all eligible patients 18 years of age or older as of January 1 of the denominator identification period who had a lumbar discectomy/laminectomy procedure performed during the denominator identification period and whose leg pain was measured by the visual analog scale (vas) within three months preoperatively and at three months (6 to 20 weeks) postoperatively"
       }
     ]
   },
@@ -8193,15 +8193,15 @@
     "strata": [
       {
         "name": "<1",
-        "description": "Birth to 1 year of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool"
+        "description": "Children in the eligible population who turned 1 during the performance period. (Birth to 1 year of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool with interpretation and report within 12 months preceding or on their birthday"
       },
       {
-        "name": "2-Jan",
-        "description": "Children >1 to 2 who were screened for risk of developmental, behavioral and social delays using a standardized tool"
+        "name": "1-2",
+        "description": "Children in the eligible population who turned 2 during the performance period (> 1 year to 2 years of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool with interpretation and report within 12 months preceding or on their birthday"
       },
       {
-        "name": "3-Feb",
-        "description": "Children >2 to 3 who were screened for risk of developmental, behavioral and social delays using a standardized tool"
+        "name": "2-3",
+        "description": "Children in the eligible population who turned 3 during the performance period ( > 2 years to 3 years of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool with interpretation and report within 12 months preceding or on their birthday"
       }
     ]
   },
