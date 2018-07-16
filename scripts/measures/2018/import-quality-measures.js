@@ -210,7 +210,7 @@ function getCheckedColumns(row, columnSet) {
   return checkedColumns;
 }
 
-const getColumnSet = (row, columnSet) => _(columnSet.ORDERED_FIELDS)
+const getColumnSet = (row, columnSet) => columnSet.ORDERED_FIELDS
   .reduce((acc, field, index) => {
     const value = mapInput(row[columnSet.CSV_COLUMN_START_INDEX + index]);
     if (value !== '') acc[field] = value;
