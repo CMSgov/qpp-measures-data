@@ -40,7 +40,7 @@ describe(year + ' import quality measures', function() {
       _.each(expectedMeasure, (measureValue, measureKey) => {
         const measure = measures[measureIdx];
         assert.deepEqual(measure[measureKey], measureValue);
-        assert.sameMembers(Object.keys(expectedMeasure), Object.keys(measure), `Unexpected number of keys for measureId ${measure.measureId}`);
+        assert.sameMembers(Object.keys(expectedMeasure), Object.keys(measure), `Unexpected properties on measureId ${measure.measureId}`);
       });
     });
   });
