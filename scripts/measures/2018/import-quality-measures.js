@@ -17,7 +17,7 @@ const Constants = require('../../../constants.js');
  */
 
 // Constant fields are not present in the source CSV. They are
-// constant across all quality measures, so we insert these fields into every one
+// constant across quality measures, so we insert these fields into every measure
 const CONSTANT_FIELDS = {
   category: 'quality',
   isRegistryMeasure: false,
@@ -80,6 +80,7 @@ const SUBMISSION_METHODS = {
   registryMethod: 'registry'
 };
 
+// Source CSV column names are identical to their measures data names so no mapping
 const MEASURE_SETS = [
   'allergyImmunology',
   'anesthesiology',
@@ -211,12 +212,18 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
       submissionMethods: [],
       measureSets: []
     };
+    // loop through each row of quality-measures.csv (which we've already
+    // parsed into objects with csv headers as keys and row values as values)
+    // and use the associated header to decide how to process each column value.
+    //
+    // if a field is not recognized and not an intentionally ignored
+    // field, throw an error.
     _.each(row, (userInput, fieldName) => {
       const input = mapInput(userInput, fieldName);
       if (_.has(MAIN_FIELDS, fieldName)) {
         const fieldMapping = MAIN_FIELDS[fieldName];
         if (_.isObject(fieldMapping)) {
-          measure[fieldName] = fieldMapping[cleanInput(input)];
+          measure[fieldName] = fieldMapping[cleanInput(userInput)];
         } else {
           const defaultValue = fieldMapping;
           measure[fieldName] = input || defaultValue;
