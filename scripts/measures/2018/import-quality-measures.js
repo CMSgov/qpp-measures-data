@@ -144,6 +144,16 @@ const MEASURE_SETS = {
   ]
 };
 
+const MEASURE_SPECIFICATION = {
+  CSV_COLUMN_START_INDEX: 60,
+  ORDERED_FIELDS: [
+    'default',
+    'registry',
+    'claims',
+    'cmsWebInterface'
+  ]
+};
+
 function getCsv(csvPath, headerRows = 1) {
   const csv = fs.readFileSync(path.join(__dirname, csvPath), 'utf8');
   const parsedCsv = parse(csv, 'utf8');
@@ -199,6 +209,13 @@ function getCheckedColumns(row, columnSet) {
 
   return checkedColumns;
 }
+
+const getColumnSet = (row, columnSet) => columnSet.ORDERED_FIELDS
+  .reduce((acc, field, index) => {
+    const value = mapInput(row[columnSet.CSV_COLUMN_START_INDEX + index]);
+    if (value !== '') acc[field] = value;
+    return acc;
+  }, {});
 
 // loop through all the strata in the strata csv and add them to the measure object
 // (there exist multiple csv rows of strata for each multiPerformanceRate measure)
@@ -279,6 +296,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 
     measure['submissionMethods'] = getCheckedColumns(row, SUBMISSION_METHODS);
     measure['measureSets'] = getCheckedColumns(row, MEASURE_SETS);
+    measure['measureSpecification'] = getColumnSet(row, MEASURE_SPECIFICATION);
 
     return measure;
   });
