@@ -36,7 +36,7 @@ const IGNORED_FIELDS = [
   'cmsWebInterface'
 ];
 
-// Main set of fields mapped to their default values
+// Main set of fields below mapped to their default values
 // Except for measure type which is a custom mapping
 const MAIN_FIELDS = {
   title: undefined,
@@ -70,7 +70,7 @@ const MAIN_FIELDS = {
   isToppedOutByProgram: false
 };
 
-// Source CSV column names mapped to their measures data names
+// Source CSV column names below are mapped to their measures data names
 const SUBMISSION_METHODS = {
   claimsMethod: 'claims',
   certifiedSurveyVendorMethod: 'certifiedSurveyVendor',
@@ -80,7 +80,14 @@ const SUBMISSION_METHODS = {
   registryMethod: 'registry'
 };
 
-// Source CSV column names are identical to their measures data names so no mapping
+// Source CSV column names below are identical to their measures data names so no mapping
+const MEASURE_SPECIFICATIONS = [
+  `default`,
+  `claims`,
+  `registry`,
+  `cmsWebInterface`
+];
+
 const MEASURE_SETS = [
   'allergyImmunology',
   'anesthesiology',
@@ -210,7 +217,8 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
   const measures = qualityCsvRows.map((row) => {
     const measure = {
       submissionMethods: [],
-      measureSets: []
+      measureSets: [],
+      measureSpecification: {}
     };
     // loop through each row of quality-measures.csv (which we've already
     // parsed into objects with csv headers as keys and row values as values)
@@ -237,6 +245,11 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
         // multiple csv columns map into the measure sets measure field
         if (input === true) {
           measure['measureSets'].push(fieldName);
+        }
+      } else if (MEASURE_SPECIFICATIONS.includes(fieldName)) {
+        // measure spec columns are stored within the measureSpecification object
+        if (input) {
+          measure['measureSpecification'][fieldName] = input;
         }
       } else if (!IGNORED_FIELDS.includes(fieldName)) {
         throw Error('Column ' + fieldName + ' in source data is not recognized');
