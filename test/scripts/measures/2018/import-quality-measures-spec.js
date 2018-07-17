@@ -38,7 +38,9 @@ describe(year + ' import quality measures', function() {
     const measures = runTest(testQualityMeasuresCsv, testQualityStrataCsv);
     expectedMeasures.forEach((expectedMeasure, measureIdx) => {
       _.each(expectedMeasure, (measureValue, measureKey) => {
-        assert.deepEqual(measures[measureIdx][measureKey], measureValue);
+        const measure = measures[measureIdx];
+        assert.deepEqual(measure[measureKey], measureValue);
+        assert.sameMembers(Object.keys(expectedMeasure), Object.keys(measure), `Unexpected number of keys for measureId ${measure.measureId}`);
       });
     });
   });
