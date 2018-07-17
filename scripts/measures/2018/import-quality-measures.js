@@ -30,14 +30,12 @@ const IGNORED_FIELDS = [
   'eMeasureUuid',
   'numStrataClaims',
   'numStrataRegistry',
-  'numStrataEcqm',
-  'registry',
-  'claims',
-  'cmsWebInterface'
+  'numStrataEcqm'
 ];
 
 // Main set of fields below mapped to their default values
 // Except for measure type which is a custom mapping
+// Undefined means no default value
 const MAIN_FIELDS = {
   title: undefined,
   eMeasureId: null,
@@ -46,19 +44,7 @@ const MAIN_FIELDS = {
   measureId: undefined,
   description: undefined,
   nationalQualityStrategyDomain: undefined,
-  measureType: {
-    // there should be no capital letters in the keys below
-    'process': 'process',
-    'outcome': 'outcome',
-    'patient engagement/experience': 'patientEngagementExperience',
-    'efficiency': 'efficiency',
-    'intermediate outcome': 'intermediateOutcome',
-    'structure': 'structure',
-    'patient reported outcome': 'outcome',
-    'composite': 'outcome',
-    'cost/resource use': 'efficiency',
-    'clinical process effectiveness': 'process'
-  },
+  measureType: undefined,
   primarySteward: undefined,
   metricType: null,
   firstPerformanceYear: 2017,
@@ -126,6 +112,21 @@ const MEASURE_SETS = [
   'dentistry'
 ];
 
+// Mapping values within the measureType column to valid enums
+const MEASURE_TYPES = {
+  // there should be no capital letters in the keys below
+  'process': 'process',
+  'outcome': 'outcome',
+  'patient engagement/experience': 'patientEngagementExperience',
+  'efficiency': 'efficiency',
+  'intermediate outcome': 'intermediateOutcome',
+  'structure': 'structure',
+  'patient reported outcome': 'outcome',
+  'composite': 'outcome',
+  'cost/resource use': 'efficiency',
+  'clinical process effectiveness': 'process'
+};
+
 // markers are what the CSV creators chose as field values;
 // they use different conventions for different columns
 const MARKERS = {
@@ -143,32 +144,42 @@ function getCsv(csvPath, firstNonHeaderRow) {
 // Accounts for TRUE, True, true, X, x...
 // and people sometimes insert extra spaces
 function cleanInput(input) {
-  return input.trim().toLowerCase();
+  return input.toString().trim().toLowerCase();
 }
 
 // map specific csv input values to their representation in the measures schema
 function mapInput(rawInput, fieldName) {
-  const stringInput = rawInput.toString();
   const input = cleanInput(rawInput);
+
+  if (fieldName === 'measureType') {
+    return MEASURE_TYPES[input];
+  }
+
   if (MARKERS.truthy.includes(input)) {
     return true;
   } else if (MARKERS.falsy.includes(input)) {
     // we return false here; the eventual value will be the default value in
     // QUALITY_CSV_CONFIG, e.g. null
     return false;
-  } else if (Constants.validPerformanceYears.includes(Number(input))) {
-    return Number(input);
   } else {
     // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
-    let finalInput = stringInput.trim();
+    // Included in this else statement because values can be falsy (N/A)
     if (fieldName === 'measureId') {
-      finalInput = _.padStart(finalInput, 3, '0');
+      return _.padStart(input, 3, '0');
     } else if (fieldName === 'nqfId') {
-      finalInput = _.padStart(finalInput, 4, '0');
+      return _.padStart(input, 4, '0');
     }
-
-    return finalInput;
   }
+
+  if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
+    if (Constants.validPerformanceYears.includes(Number(input))) {
+      return Number(input);
+    } else {
+      throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
+    }
+  }
+
+  return rawInput.trim();
 }
 
 // loop through all the strata in the strata csv and add them to the measure object
@@ -229,13 +240,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     _.each(row, (userInput, fieldName) => {
       const input = mapInput(userInput, fieldName);
       if (_.has(MAIN_FIELDS, fieldName)) {
-        const fieldMapping = MAIN_FIELDS[fieldName];
-        if (_.isObject(fieldMapping)) {
-          measure[fieldName] = fieldMapping[cleanInput(userInput)];
-        } else {
-          const defaultValue = fieldMapping;
-          measure[fieldName] = input || defaultValue;
-        }
+        measure[fieldName] = input || MAIN_FIELDS[fieldName];
       } else if (SUBMISSION_METHODS[fieldName]) {
         // multiple csv columns map into the submission methods measure field
         if (input === true) {
