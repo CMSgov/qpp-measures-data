@@ -177,7 +177,7 @@ definitions:
           metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, costScore] }
         }
       }]
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, measureSets, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
+    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
 
   performanceStrata:
     type: object
@@ -260,7 +260,7 @@ definitions:
 
   measureSets:
     enum:
-      - transition
+      - transition # PI only
       - allergyImmunology
       - anesthesiology
       - cardiology
