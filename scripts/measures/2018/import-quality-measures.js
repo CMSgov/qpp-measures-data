@@ -174,14 +174,6 @@ function mapInput(rawInput, fieldName) {
     return MEASURE_TYPES[input];
   }
 
-  if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
-    if (Constants.validPerformanceYears.includes(Number(input))) {
-      return Number(input);
-    } else {
-      throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
-    }
-  }
-
   if (MARKERS.truthy.includes(input)) {
     return true;
   } else if (MARKERS.falsy.includes(input)) {
@@ -189,8 +181,16 @@ function mapInput(rawInput, fieldName) {
     // QUALITY_CSV_CONFIG, e.g. null
     return false;
   } else {
+    // Specific fields with potentially truthy or falsy (e.g. N/A) values go below
+    if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
+      if (Constants.validPerformanceYears.includes(Number(input))) {
+        return Number(input);
+      } else {
+        throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
+      }
+    }
+
     // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
-    // Included in this else statement because values can be falsy (N/A)
     if (fieldName === 'measureId') {
       return _.padStart(input, 3, '0');
     } else if (fieldName === 'nqfId') {
