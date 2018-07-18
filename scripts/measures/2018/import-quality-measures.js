@@ -34,8 +34,8 @@ const IGNORED_FIELDS = [
 ];
 
 // Main set of fields below mapped to their default values
-// Except for measure type which is a custom mapping
-// Undefined means the field has no default; no field should ever end up undefined
+// Undefined means the field has no default in the CSV; if a field ends
+// up undefined in the json, its CSV value is unintentionally missing
 const MAIN_FIELDS = {
   title: undefined,
   eMeasureId: null,
@@ -165,18 +165,21 @@ function checkQualityCsvHeaders(parsedCsv) {
   }
 }
 
-// Accounts for TRUE, True, true, X, x...
-// and people sometimes insert extra spaces
-function cleanInput(input) {
-  return input.toString().trim().toLowerCase();
-}
-
 // map specific csv input values to their representation in the measures schema
 function mapInput(rawInput, fieldName) {
-  const input = cleanInput(rawInput);
+  // account for TRUE, True, true, X, x, extra spaces...
+  const input = rawInput.toString().trim().toLowerCase();
 
   if (fieldName === 'measureType') {
     return MEASURE_TYPES[input];
+  }
+
+  if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
+    if (Constants.validPerformanceYears.includes(Number(input))) {
+      return Number(input);
+    } else {
+      throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
+    }
   }
 
   if (MARKERS.truthy.includes(input)) {
@@ -192,14 +195,6 @@ function mapInput(rawInput, fieldName) {
       return _.padStart(input, 3, '0');
     } else if (fieldName === 'nqfId') {
       return _.padStart(input, 4, '0');
-    }
-  }
-
-  if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
-    if (Constants.validPerformanceYears.includes(Number(input))) {
-      return Number(input);
-    } else {
-      throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
     }
   }
 
@@ -258,9 +253,6 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     // loop through each row of quality-measures.csv (which we've already
     // parsed into objects with csv headers as keys and row values as values)
     // and use the associated header to decide how to process each column value.
-    //
-    // if a field is not recognized and not an intentionally ignored
-    // field, throw an error.
     _.each(row, (userInput, fieldName) => {
       const input = mapInput(userInput, fieldName);
       if (_.has(MAIN_FIELDS, fieldName)) {
