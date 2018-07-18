@@ -35,7 +35,7 @@ const IGNORED_FIELDS = [
 
 // Main set of fields below mapped to their default values
 // Except for measure type which is a custom mapping
-// Undefined means no default value
+// Undefined means the field has no default; no field should ever end up undefined
 const MAIN_FIELDS = {
   title: undefined,
   eMeasureId: null,
@@ -226,11 +226,11 @@ function addMultiPerformanceRateStrata(measures, strataRows) {
  */
 function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
   const measures = qualityCsvRows.map((row) => {
-    const measure = {
-      submissionMethods: [],
-      measureSets: [],
-      measureSpecification: {}
-    };
+    const measure = {};
+    const submissionMethods = [];
+    const measureSets = [];
+    const measureSpecification = {};
+
     // loop through each row of quality-measures.csv (which we've already
     // parsed into objects with csv headers as keys and row values as values)
     // and use the associated header to decide how to process each column value.
@@ -244,17 +244,17 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
       } else if (SUBMISSION_METHODS[fieldName]) {
         // multiple csv columns map into the submission methods measure field
         if (input === true) {
-          measure['submissionMethods'].push(SUBMISSION_METHODS[fieldName]);
+          submissionMethods.push(SUBMISSION_METHODS[fieldName]);
         }
       } else if (MEASURE_SETS.includes(fieldName)) {
         // multiple csv columns map into the measure sets measure field
         if (input === true) {
-          measure['measureSets'].push(fieldName);
+          measureSets.push(fieldName);
         }
       } else if (MEASURE_SPECIFICATIONS.includes(fieldName)) {
         // measure spec columns are stored within the measureSpecification object
         if (input) {
-          measure['measureSpecification'][fieldName] = input;
+          measureSpecification[fieldName] = input;
         }
       } else if (!IGNORED_FIELDS.includes(fieldName)) {
         throw Error('Column ' + fieldName + ' in source data is not recognized');
@@ -264,6 +264,12 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     _.each(CONSTANT_FIELDS, (measureValue, measureKey) => {
       measure[measureKey] = measureValue;
     });
+
+    // We don't assign these directly to `measure` above because we want to
+    // maintain legacy key ordering for easy diffing in measures-data.json
+    measure['submissionMethods'] = submissionMethods;
+    measure['measureSets'] = measureSets;
+    measure['measureSpecification'] = measureSpecification;
 
     return measure;
   });
