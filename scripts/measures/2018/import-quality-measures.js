@@ -141,6 +141,30 @@ function getCsv(csvPath, firstNonHeaderRow) {
   return parsedCsv;
 }
 
+// Make sure the quality CSV isn't missing any fields, and doesn't have any
+// extra unrecognized fields either (besides IGNORED_FIELDS)
+function checkQualityCsvHeaders(parsedCsv) {
+  const allMeasureFields = Object.keys(MAIN_FIELDS).concat(
+    Object.keys(SUBMISSION_METHODS),
+    MEASURE_SETS,
+    MEASURE_SPECIFICATIONS,
+    IGNORED_FIELDS
+  );
+  const allCsvFields = Object.keys(parsedCsv[0]);
+
+  if (!_.isEmpty(_.xor(allMeasureFields, allCsvFields))) {
+    let errorMsg = 'Check the quality CSV header row. ';
+    const missingFieldsInCsv = _.difference(allMeasureFields, allCsvFields);
+    const extraFieldsInCsv = _.difference(allCsvFields, allMeasureFields);
+    if (!_.isEmpty(missingFieldsInCsv)) {
+      errorMsg += '\nThe CSV is missing fields: ' + missingFieldsInCsv;
+    } else if (!_.isEmpty(extraFieldsInCsv)) {
+      errorMsg += '\nThe CSV has unrecognized fields: ' + extraFieldsInCsv;
+    }
+    throw Error(errorMsg);
+  }
+}
+
 // Accounts for TRUE, True, true, X, x...
 // and people sometimes insert extra spaces
 function cleanInput(input) {
@@ -256,8 +280,6 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
         if (input) {
           measureSpecification[fieldName] = input;
         }
-      } else if (!IGNORED_FIELDS.includes(fieldName)) {
-        throw Error('Column ' + fieldName + ' in source data is not recognized');
       }
     });
 
@@ -280,6 +302,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 function importQualityMeasures() {
   const qualityCsv = getCsv(qualityMeasuresPath, 4);
   const strataCsv = getCsv(qualityStrataPath, 4);
+  checkQualityCsvHeaders(qualityCsv);
 
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);
