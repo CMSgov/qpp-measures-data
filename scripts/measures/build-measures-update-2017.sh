@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=2018
-previousPerformanceYear=2017
 # We assume we'll never need to rebuild measures for a previous
 # performance year. If you need to rebuild measures
 # for a previous performance year, you'll have to:
@@ -9,15 +8,16 @@ previousPerformanceYear=2017
 # 2. use the git history of any necessary import scripts
 # 3. revert any changes to directory structures below.
 
-# note these paths are relative to /scripts/measures/$previousPerformanceYear/
-quality_csv='../../../util/measures/'$previousPerformanceYear'/quality-measures.csv'
-quality_strata='../../../util/measures/'$previousPerformanceYear'/quality-strata.csv'
-quality_measures='../../../staging/'$previousPerformanceYear'/measures-data-quality.json'
-pi_json='../../../util/measures/'$previousPerformanceYear'/pi-measures.json'
-pi_measures='../../../staging/'$previousPerformanceYear'/measures-data-pi.json'
-ia_csv='../../../util/measures/'$previousPerformanceYear'/ia-measures.csv'
-ia_measures='../../../staging/'$previousPerformanceYear'/measures-data-ia.json'
-final_measures='../../../measures/'$previousPerformanceYear'/measures-data-test.json'
+# note these paths are relative to /scripts/measures/$currentPerformanceYear/
+quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
+quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
+quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+pi_json='../../../util/measures/'$currentPerformanceYear'/pi-measures.json'
+pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
+ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
+ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
+enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
+final_measures='../../../measures/'$currentPerformanceYear'/measures-data-test.json'
 
 # 0a. Add quality measures to the staging measures-data-quality.json file:
 node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
@@ -35,11 +35,11 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # TODO: Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data-2018.js \
-	$quality_measures $final_measures
+	$quality_measures $enriched_quality_measures
 
 # 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	$quality_measures $pi_measures $ia_measures \
+	$enriched_quality_measures $pi_measures $ia_measures \
 	$final_measures
 
 # 2. To regenerate the `measures-data.xml` file, run:

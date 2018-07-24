@@ -122,27 +122,9 @@ const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, 
     if (qppItem.category !== 'quality') return;
     const ecqmInfo = _.find(generatedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
     if (!ecqmInfo) return;
-    console.log(qppItem);
     measures[index].eMeasureUuid = ecqmInfo.eMeasureUuid;
     measures[index].metricType = ecqmInfo.metricType;
-    const oldStrata = qppItem[index].strata;
-    if (oldStrata.length === 0) {
-      measures[index].strata = ecqmInfo.strata;
-    } else { // only override description, uuids
-      ecqmInfo.strata.forEach((newStratum, ecqmIndex) => {
-        if (oldStrata[ecqmIndex]) {
-          measures[index].strata[ecqmIndex].eMeasureUuids = newStratum.eMeasureUuids;
-          measures[index].strata[ecqmIndex].description = newStratum.description;
-        } else {
-          measures[index].strata[ecqmIndex] = newStratum;
-        }
-      });
-      if (oldStrata.length > 1) {
-        // ASSUMPTION: strata already available are in the same order as the ones extracted from the xml files
-        // @kencheeto: CMS156v5 is the only one that has more than one stratum and the ordering is correct
-        console.warn(qppItem.eMeasureId, ': we are not guaranteed the same ordering, please double check these strata values in the diff');
-      }
-    }
+    measures[index].strata = ecqmInfo.strata;
   });
 }
 
@@ -160,7 +142,7 @@ function enrichClaimsRelatedMeasures(measures) {
   ];
 
   // to avoid nested iteration, let's sort claims related measures by their measure ID
-  const claimsRelatedMeasures = JSON.parse(fs.readFileSync(path.join(__dirname, '../../claims-related/data/qpp-single-source.json')));
+  const claimsRelatedMeasures = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../claims-related/data/qpp-single-source.json')));
 
   // now for each measure, add the attributes from the claims-related measures set
   measures.forEach(measure => {
