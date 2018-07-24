@@ -1,0 +1,175 @@
+const fs = require('fs');
+const path = require('path');
+const parse = require('csv-parse/lib/sync');
+const _ = require('lodash');
+
+const aciRelations = require('../../../util/measures/2017/aci-measure-relations.json');
+const cpcPlusGroups = require('../../../util/measures/2017/cpc+-measure-groups.json');
+const stratifications = require('../../../util/measures/2017/additional-stratifications.json');
+
+const QUALITY_CATEGORY = 'quality';
+const measuresDataPath = process.argv[2];
+const outputPath = process.argv[3];
+const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
+fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp)));
+
+function enrichMeasures(measures) {
+  enrichACIMeasures(measures);
+  enrichCPCPlusMeasures(measures);
+  enrichAddMeasuresSpecification(measures);
+  enrichInverseMeasures(measures);
+  enrichStratifications(measures);
+  mergeGeneratedEcqmData(measures);
+  enrichClaimsRelatedMeasures(measures);
+  return JSON.stringify(measures, null, 2);
+};
+
+/**
+ * Will add extra metadata to ACI measure that are not directly available
+ * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
+ * After this function executes, an ACI measure will have reporting category and substitutes.
+ *  - substitutes: contains other measures that surrogates of a given measure.
+ *  - reportingCategory: corresponds to the measure performance category
+ * @param measures - the measures to enrich
+ */
+function enrichACIMeasures(measures) {
+  // add extra ACI metadata to ACI measure
+  measures
+    .filter(measure => measure.category === 'aci')
+    .forEach(measure => {
+      // find the relation and populate reporting category and substitutions
+      const aciRelation = aciRelations[measure.measureId];
+      if (aciRelation) {
+        measure.reportingCategory = aciRelation.reportingCategory;
+        measure.substitutes = aciRelation.substitutes;
+      }
+    });
+}
+
+/**
+ * Will add extra metadata to CPC+ measures
+ * @param {array} measures
+ */
+function enrichCPCPlusMeasures(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      Object.keys(cpcPlusGroups).forEach((groupId) => {
+        const match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
+        if (match !== undefined) {
+          measure.cpcPlusGroup = groupId;
+        }
+      });
+    });
+};
+
+/**
+ * Will add measureSpecification links and it's submission method types to measures.
+ * @param {array} measures
+ */
+function enrichAddMeasuresSpecification(measures) {
+  const csv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2017/measurePDF-Specification.csv'), 'utf8'));
+  const mappedLinks = csv.reduce(function(acc, [submissionMethod, measureId, link]) {
+    acc[measureId] = acc[measureId] || {};
+    acc[measureId][submissionMethod] = link;
+    return acc;
+  }, {});
+  const measureData = measures.map(function(measure) {
+    measure.measureSpecification = mappedLinks[measure.measureId];
+    return measure;
+  });
+  return measureData;
+};
+
+/**
+ * Add `isInverse` attribute to measures based on inverse-measures.json
+ * The JSON document used to derive this is generated using get-inverse-measures-from-pdfs.js
+ */
+function enrichInverseMeasures(measures) {
+  const inverseMeasures = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2017/inverse-measures.json')));
+  measures.forEach(measure => {
+    if (inverseMeasures.hasOwnProperty(measure.measureId)) {
+      measure.isInverse = inverseMeasures[measure.measureId];
+    }
+  });
+}
+
+/**
+ * Adds in each SubPopulation's stratification UUIDs
+ * This JSON document used to derive this is generated using get-stratifications.js
+ */
+function enrichStratifications(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
+      if (stratification && stratification.strataMaps) {
+        measure.strata.forEach(subPopulation => {
+          const mapping = stratification.strataMaps.find(map =>
+            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          if (mapping) {
+            subPopulation.eMeasureUuids.strata = mapping.strata;
+          }
+        });
+      }
+    });
+}
+
+function mergeGeneratedEcqmData(measures) {
+const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/generated-ecqm-data.json'), 'utf8'));
+
+  measures.forEach(function(qppItem, index) {
+    if (qppItem.category !== 'quality') return;
+    const ecqmInfo = _.find(generatedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
+    if (!ecqmInfo) return;
+    console.log(qppItem);
+    measures[index].eMeasureUuid = ecqmInfo.eMeasureUuid;
+    measures[index].metricType = ecqmInfo.metricType;
+    const oldStrata = qppItem[index].strata;
+    if (oldStrata.length === 0) {
+      measures[index].strata = ecqmInfo.strata;
+    } else { // only override description, uuids
+      ecqmInfo.strata.forEach((newStratum, ecqmIndex) => {
+        if (oldStrata[ecqmIndex]) {
+          measures[index].strata[ecqmIndex].eMeasureUuids = newStratum.eMeasureUuids;
+          measures[index].strata[ecqmIndex].description = newStratum.description;
+        } else {
+          measures[index].strata[ecqmIndex] = newStratum;
+        }
+      });
+      if (oldStrata.length > 1) {
+        // ASSUMPTION: strata already available are in the same order as the ones extracted from the xml files
+        // @kencheeto: CMS156v5 is the only one that has more than one stratum and the ordering is correct
+        console.warn(qppItem.eMeasureId, ': we are not guaranteed the same ordering, please double check these strata values in the diff');
+      }
+    }
+  });
+}
+
+/**
+ * Adds performance and eligibility options for claims-related measures.
+ *
+ * The source for this is a JSON file generated by /claims-related/scripts/single_source_to_json.py
+ * See /claims-related/README.md for more information.
+ */
+function enrichClaimsRelatedMeasures(measures) {
+  // these are the attributes we are interested in
+  const attributes = [
+    'eligibilityOptions',
+    'performanceOptions'
+  ];
+
+  // to avoid nested iteration, let's sort claims related measures by their measure ID
+  const claimsRelatedMeasures = JSON.parse(fs.readFileSync(path.join(__dirname, '../../claims-related/data/qpp-single-source.json')));
+
+  // now for each measure, add the attributes from the claims-related measures set
+  measures.forEach(measure => {
+    // if the measure is in claimsRelatedMeasures, we need to merge its attributes
+    const claimsRelatedMeasure = claimsRelatedMeasures[measure.measureId];
+    if (claimsRelatedMeasure) {
+      for (const attribute of attributes) {
+        measure[attribute] = claimsRelatedMeasure[attribute];
+      }
+    }
+  });
+}
