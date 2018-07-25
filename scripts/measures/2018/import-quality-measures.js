@@ -291,14 +291,40 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
   return addMultiPerformanceRateStrata(measures, strataCsvRows);
 };
 
+// Add fields specific to claims-based quality measures in-place.
+function enrichClaimsBasedQualityMeasures(unenrichedMeasures) {
+  // New attributes to add for claims-based quality measures.
+  const attributes = [
+    'eligibilityOptions',
+    'performanceOptions'
+  ];
+  // JSON object containing the new fields to be added.
+  const claimsRelatedMeasures = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../../claims-related/data/qpp-single-source-2018.json'))
+  );
+
+  // For each measure, add the attributes from the claims-related measures.
+  unenrichedMeasures.forEach(measure => {
+    // If the measure is in claimsRelatedMeasures, merge its attributes.
+    const claimsRelatedMeasure = claimsRelatedMeasures[measure.measureId];
+    if (claimsRelatedMeasure) {
+      for (const attribute of attributes) {
+        measure[attribute] = claimsRelatedMeasure[attribute];
+      }
+    }
+  });
+}
+
 function importQualityMeasures() {
   const qualityCsv = getCsv(qualityMeasuresPath, 4);
   const strataCsv = getCsv(qualityStrataPath, 4);
   checkQualityCsvHeaders(qualityCsv);
-
+  // Import the quality measures from csv.
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
+  // Enrich quality measures by adding information about claims-based measures in-place.
+  enrichClaimsBasedQualityMeasures(qualityMeasures);
+  // Write to file.
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);
-
   fs.writeFileSync(path.join(__dirname, outputPath), qualityMeasuresJson);
 }
 
