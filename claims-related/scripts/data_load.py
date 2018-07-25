@@ -52,8 +52,8 @@ def load_qpp_emeasure(excel_path):
     return qpp_measures
 
 
-def load_single_source(excel_path):
-    """Load single source file into a DataFrame."""
+def excel_to_csv(excel_path):
+    """Convert an Excel version of the single source file to csv."""
     column_dtypes = {
         'age': 'str',
         'code': 'str',
@@ -68,6 +68,27 @@ def load_single_source(excel_path):
 
     with open(excel_path, 'rb') as fname:
         single_source = pd.read_excel(fname, sheetname=-1, dtypes=column_dtypes)
+
+    csv_path = excel_path.replace('xlsx', 'csv')
+    single_source.to_csv(csv_path, index=False)
+
+
+def load_single_source(csv_path):
+    """Load single source file into a DataFrame."""
+    column_dtypes = {
+        'age': 'str',
+        'code': 'str',
+        'coding_system': 'str',
+        'data_element_name': 'str',
+        'gender': 'str',
+        'measure': 'str',
+        'modifier': 'str',
+        'place_of_service': 'str',
+        'reporting_method': 'str'
+    }
+
+    with open(csv_path, 'rb') as fname:
+        single_source = pd.read_csv(fname, dtype=column_dtypes)
 
     # Update column names.
     single_source.rename(columns=format_column_title, inplace=True)
