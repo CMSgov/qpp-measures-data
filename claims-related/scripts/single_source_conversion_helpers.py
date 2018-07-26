@@ -211,6 +211,13 @@ def merge_multiple_eligibility_options(single_source_dict):
             # FIXME: Why is only the first eligibility option included?
             single_source_dict[measure_to_update]['eligibilityOptions'].append(
                 single_source_dict[measure]['eligibilityOptions'][0])
+            # If the new eligibility option has new performance options as well, add those too.
+            if (
+                single_source_dict[measure]['performanceOptions'] !=
+                single_source_dict[measure_to_update]['performanceOptions']
+            ):
+                single_source_dict[measure_to_update]['performanceOptions'] += \
+                    single_source_dict[measure]['performanceOptions']
 
             measures_to_delete.append(measure)
 
