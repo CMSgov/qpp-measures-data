@@ -16,7 +16,6 @@ fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp
 function enrichMeasures(measures) {
   enrichPIMeasures(measures);
   enrichCPCPlusMeasures(measures);
-  // enrichAddMeasuresSpecification(measures);
   enrichInverseMeasures(measures);
   enrichStratifications(measures);
   mergeGeneratedEcqmData(measures);
@@ -61,25 +60,6 @@ function enrichCPCPlusMeasures(measures) {
         }
       });
     });
-};
-
-/**
- * I skipped the Measure specifications because I did not have the measure pdf for 2018.
- * Will add measureSpecification links and it's submission method types to measures.
- * @param {array} measures
- */
-function enrichAddMeasuresSpecification(measures) {
-  const csv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2017/measurePDF-Specification.csv'), 'utf8'));
-  const mappedLinks = csv.reduce(function(acc, [submissionMethod, measureId, link]) {
-    acc[measureId] = acc[measureId] || {};
-    acc[measureId][submissionMethod] = link;
-    return acc;
-  }, {});
-  const measureData = measures.map(function(measure) {
-    measure.measureSpecification = mappedLinks[measure.measureId];
-    return measure;
-  });
-  return measureData;
 };
 
 /**
