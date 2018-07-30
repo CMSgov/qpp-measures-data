@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
 const _ = require('lodash');
 
 const piRelations = require('../../../util/measures/2018/pi-measure-relations.json');
