@@ -16,7 +16,7 @@ fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp
 function enrichMeasures(measures) {
   enrichPIMeasures(measures);
   enrichCPCPlusMeasures(measures);
-  enrichAddMeasuresSpecification(measures);
+  // enrichAddMeasuresSpecification(measures);
   enrichInverseMeasures(measures);
   enrichStratifications(measures);
   mergeGeneratedEcqmData(measures);
@@ -64,6 +64,7 @@ function enrichCPCPlusMeasures(measures) {
 };
 
 /**
+ * I skipped the Measure specifications because I did not have the measure pdf for 2018.
  * Will add measureSpecification links and it's submission method types to measures.
  * @param {array} measures
  */
@@ -97,6 +98,7 @@ function enrichInverseMeasures(measures) {
 /**
  * Adds in each SubPopulation's stratification UUIDs
  * This JSON document used to derive this is generated using get-stratifications.js
+ * Still uses 2017 additional stratifications from 2017. This is subject to change.
  */
 function enrichStratifications(measures) {
   measures
