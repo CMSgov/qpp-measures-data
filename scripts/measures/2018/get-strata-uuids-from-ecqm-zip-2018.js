@@ -91,9 +91,6 @@ function extractStrata(measure) {
       denominatorUuid: ids.find(item => item.denominatorCriteria).denominatorCriteria[0].id[0].$.root,
       numeratorUuid: ids.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root
     };
-    for (var id in eMeasureUuids){
-      console.log("Current uuid : " + eMeasureUuids[id]);
-    }
 
     const denominatorException = ids.find(item => item.denominatorExceptionCriteria);
     if (denominatorException) {

@@ -130,16 +130,16 @@ function mergeGeneratedEcqmData(measures) {
     measures[index].strata = ecqmInfo.strata;
   });
 
-  //This is a manually created file from from the eCQM_EP_EC_May2017.zip for the 4 missing measures.
+  // This is a manually created file from from the eCQM_EP_EC_May2017.zip for the 4 missing measures.
   const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/manually-created-missing-measures.json'), 'utf8'));
   measures.forEach(function(qppItem, index) {
-      if (qppItem.category !== 'quality') return;
-      const manualEcqmInfo = _.find(manuallyAddedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
-      if (!manualEcqmInfo) return;
-      measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
-      measures[index].metricType = manualEcqmInfo.metricType;
-      measures[index].strata = manualEcqmInfo.strata;
-    });
+    if (qppItem.category !== 'quality') return;
+    const manualEcqmInfo = _.find(manuallyAddedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
+    if (!manualEcqmInfo) return;
+    measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
+    measures[index].metricType = manualEcqmInfo.metricType;
+    measures[index].strata = manualEcqmInfo.strata;
+  });
 }
 
 /**
