@@ -80,8 +80,6 @@ function extractStrata(measure) {
     strataDescriptions = [description.trim()];
   }
 
-  console.log("Description : \n" + strataDescriptions);
-
   const strata = strataDescriptions.map(description => ({ description }));
 
   // pull out uuids for each stratum
@@ -142,19 +140,19 @@ Promise.all(
       const measure = doc.QualityMeasureDocument;
       const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
       if (emeasureid === '138') {
-        console.warn('WARNING: CMS138v5 has one numerator but multiple populations and needs to be added manually - see /tmp/ecqm/EC_CMS138v6_NQFXXXX_CAD_BB.zip');
+        console.warn('WARNING: CMS138v6 has one numerator but multiple populations and needs to be added manually - see /tmp/ecqm/EP_EC_CMS138v6_NQF0028_PREV_Tobacco.zip');
         return;
       }
       if (emeasureid === '145') {
-        console.warn('WARNING: CMS145v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v6_NQFXXXX_CAD_BB.zip');
+        console.warn('WARNING: CMS145v6 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS145v6_NQFXXXX_CAD_BB.zip');
         return;
       }
       if (emeasureid === '160') {
-        console.warn('WARNING: CMS160v5 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS160v6_NQF0712_Dep_PHQ9.zip');
+        console.warn('WARNING: CMS160v6 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS160v6_NQF0712_Dep_PHQ9.zip');
         return;
       }
       if (emeasureid === '347') {
-        console.warn('WARNING: CMS347v5 has one numerator but multiple populations and needs to be added manually - see /tmp/ecqm/EC_CMS347v6_NQFXXXX_CAD_BB.zip');
+        console.warn('WARNING: CMS347v1 has one numerator but three initial populations and needs to be added manually - see /tmp/ecqm/EP_EC_CMS347v1_NQFXXXX_Statin_Therapy_Prev.zip');
         return;
       }
       const strata = extractStrata(measure);

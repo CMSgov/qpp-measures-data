@@ -3,7 +3,7 @@ const path = require('path');
 const parse = require('csv-parse/lib/sync');
 const _ = require('lodash');
 
-const aciRelations = require('../../../util/measures/2017/aci-measure-relations.json');
+const piRelations = require('../../../util/measures/2018/pi-measure-relations.json');
 const cpcPlusGroups = require('../../../util/measures/2017/cpc+-measure-groups.json');
 const stratifications = require('../../../util/measures/2017/additional-stratifications.json');
 
@@ -14,7 +14,7 @@ const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
 fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp)));
 
 function enrichMeasures(measures) {
-  enrichACIMeasures(measures);
+  enrichPIMeasures(measures);
   enrichCPCPlusMeasures(measures);
   enrichAddMeasuresSpecification(measures);
   enrichInverseMeasures(measures);
@@ -25,23 +25,23 @@ function enrichMeasures(measures) {
 };
 
 /**
- * Will add extra metadata to ACI measure that are not directly available
+ * Will add extra metadata to PI measure that are not directly available
  * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
  * After this function executes, an ACI measure will have reporting category and substitutes.
  *  - substitutes: contains other measures that surrogates of a given measure.
  *  - reportingCategory: corresponds to the measure performance category
  * @param measures - the measures to enrich
  */
-function enrichACIMeasures(measures) {
-  // add extra ACI metadata to ACI measure
+function enrichPIMeasures(measures) {
+  // add extra PI metadata to PI measure
   measures
-    .filter(measure => measure.category === 'aci')
+    .filter(measure => measure.category === 'pi')
     .forEach(measure => {
       // find the relation and populate reporting category and substitutions
-      const aciRelation = aciRelations[measure.measureId];
-      if (aciRelation) {
-        measure.reportingCategory = aciRelation.reportingCategory;
-        measure.substitutes = aciRelation.substitutes;
+      const piRelation = piRelations[measure.measureId];
+      if (piRelation) {
+        measure.reportingCategory = piRelation.reportingCategory;
+        measure.substitutes = piRelation.substitutes;
       }
     });
 }
@@ -114,9 +114,12 @@ function enrichStratifications(measures) {
       }
     });
 }
-
+/**
+ * Merges the updated 2018 generated measure data UUID's into the current quality measures.
+ * generated-ecqm-data.json was made from running get-strata-uuids-from-ecqm-zip-2018.js on the eCQM_EP_EC_May2017.zip file
+ */
 function mergeGeneratedEcqmData(measures) {
-const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/generated-ecqm-data.json'), 'utf8'));
+  const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/generated-ecqm-data.json'), 'utf8'));
 
   measures.forEach(function(qppItem, index) {
     if (qppItem.category !== 'quality') return;
@@ -126,6 +129,17 @@ const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, 
     measures[index].metricType = ecqmInfo.metricType;
     measures[index].strata = ecqmInfo.strata;
   });
+
+  //This is a manually created file from from the eCQM_EP_EC_May2017.zip for the 4 missing measures.
+  const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/manually-created-missing-measures.json'), 'utf8'));
+  measures.forEach(function(qppItem, index) {
+      if (qppItem.category !== 'quality') return;
+      const manualEcqmInfo = _.find(manuallyAddedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
+      if (!manualEcqmInfo) return;
+      measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
+      measures[index].metricType = manualEcqmInfo.metricType;
+      measures[index].strata = manualEcqmInfo.strata;
+    });
 }
 
 /**

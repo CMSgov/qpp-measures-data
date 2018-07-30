@@ -16,6 +16,7 @@ pi_json='../../../util/measures/'$currentPerformanceYear'/pi-measures.json'
 pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
 ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
+enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
 
 # 0a. Add quality measures to the staging measures-data-quality.json file:
@@ -33,12 +34,12 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 	$ia_csv $ia_measures
 
 # TODO: Enrich `measures-data.json` file, run:
-# node scripts/measures/enrich-measures-data.js \
-#	$staging_measures_with_qcdrs $final_measures
+node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
+	$quality_measures $enriched_quality_measures
 
 # 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	$quality_measures $pi_measures $ia_measures \
+	$enriched_quality_measures $pi_measures $ia_measures \
 	$final_measures
 
 # 2. To regenerate the `measures-data.xml` file, run:
