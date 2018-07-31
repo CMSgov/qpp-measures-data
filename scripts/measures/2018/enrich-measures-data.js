@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 
-const piRelations = require('../../../util/measures/2018/pi-measure-relations.json');
-const cpcPlusGroups = require('../../../util/measures/2017/cpc+-measure-groups.json');
+const currentYear=2018
+const piRelations = require('../../../util/measures/' + currentYear + '/pi-measure-relations.json');
+const cpcPlusGroups = require('../../../util/measures/' + currentYear + '/cpc+-measure-groups.json');
 const stratifications = require('../../../util/measures/2017/additional-stratifications.json');
 
 const QUALITY_CATEGORY = 'quality';
