@@ -25,30 +25,30 @@ function checkUrl(s) {
     });
 };
 
-// this will run once a week on travis
+// this will run once a day on travis
 if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
-  describe('measures specification', function() {
-    it('should have valid specification links', function() {
-      this.timeout(20000); // 20 seconds timeout.
-      const specs = [];
-      const measures = measuresData.getMeasuresData();
-      measures
-        .map(m => ({measureId: m.measureId, measureSpecification: m.measureSpecification}))
-        .filter(s => !!s.measureSpecification)
-        .forEach(s => {
-          Object.values(s.measureSpecification).forEach(url => {
-            specs.push({measureId: s.measureId, url: url});
-          });
-        });
+  it('has valid specification links', function() {
+    this.timeout(8000); // 8 seconds timeout.
+    this.retries(3); // retry for transient failures
 
-      return Promise.map(specs, s => checkUrl(s))
-        .then(results => {
-          const failures = results.filter(r => !r.success);
-          if (failures.length > 0) {
-            console.log(failures);
-          }
-          assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
+    const specs = [];
+    const measures = measuresData.getMeasuresData();
+    measures
+      .map(m => ({measureId: m.measureId, measureSpecification: m.measureSpecification}))
+      .filter(s => !!s.measureSpecification)
+      .forEach(s => {
+        Object.values(s.measureSpecification).forEach(url => {
+          specs.push({measureId: s.measureId, url: url});
         });
-    });
+      });
+
+    return Promise.map(specs, s => checkUrl(s), { concurrency: 20 })
+      .then(results => {
+        const failures = results.filter(r => !r.success);
+        if (failures.length > 0) {
+          console.log(failures);
+        }
+        assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
+      });
   });
 }
