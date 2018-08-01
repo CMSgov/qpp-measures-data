@@ -19,6 +19,7 @@ function enrichMeasures(measures) {
   enrichInverseMeasures(measures);
   enrichStratifications(measures);
   mergeGeneratedEcqmData(measures);
+  addRequiredRegistrySubmissionMethod(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
 };
@@ -121,6 +122,15 @@ function mergeGeneratedEcqmData(measures) {
     measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
     measures[index].metricType = manualEcqmInfo.metricType;
     measures[index].strata = manualEcqmInfo.strata;
+  });
+}
+
+function addRequiredRegistrySubmissionMethod(measures) {
+  const eCQMeasures = measures.filter(m => m.eMeasureUuid !== undefined);
+  eCQMeasures.forEach(m => {
+    if (m.submissionMethods.includes('electronicHealthRecord') && !m.submissionMethods.includes('registry')) {
+      m.submissionMethods.push('registry');
+    }
   });
 }
 
