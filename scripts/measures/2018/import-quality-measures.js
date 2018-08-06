@@ -71,7 +71,8 @@ const MEASURE_SPECIFICATIONS = [
   `default`,
   `claims`,
   `registry`,
-  `cmsWebInterface`
+  `cmsWebInterface`,
+  `electronicHealthRecord`
 ];
 
 const MEASURE_SETS = [
