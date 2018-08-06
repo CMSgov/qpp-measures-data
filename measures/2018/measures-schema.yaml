@@ -300,7 +300,6 @@ definitions:
   eligibilityOption:
     type: object
     properties:
-      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       sexCode:
         description: Gender identifier in the case of measures that apply to one gender only.
         enum: [M, F]
@@ -320,7 +319,6 @@ definitions:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
         type: array
         items: { $ref: #/definitions/codeObject }
-    required: [submissionMethods]
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
@@ -328,7 +326,6 @@ definitions:
   performanceOption:
     type: object
     properties:
-      submissionMethods: { $ref: #/definitions/qualityCodesSubmissionMethods }
       optionType:
         description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
         enum: [performanceMet, performanceNotMet, eligiblePopulationExclusion, eligiblePopulationException]
@@ -336,7 +333,7 @@ definitions:
         description: A list of quality codes, all of which must be present to meet the performance option.
         type: array
         items: { $ref: #/definitions/codeObject }
-    required: [submissionMethods, optionType, qualityCodes]
+    required: [optionType, qualityCodes]
 
   codeObject:
     type: object
