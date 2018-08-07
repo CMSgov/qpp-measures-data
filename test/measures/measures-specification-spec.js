@@ -28,8 +28,8 @@ function checkUrl(s) {
 // this will run once a day on travis
 if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
   it('has valid specification links', function() {
-    this.timeout(12000); // 8 seconds timeout.
-    this.retries(3); // retry for transient failures
+    this.timeout(12000);
+    this.retries(3); // retry for transient network failures
 
     const specs = [];
     const measures = measuresData.getMeasuresData();
