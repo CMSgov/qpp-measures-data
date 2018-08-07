@@ -27,7 +27,7 @@ function enrichMeasures(measures) {
 /**
  * Will add extra metadata to PI measure that are not directly available
  * in machine inferable format at https://qpp.cms.gov/api/v1/aci_measures
- * After this function executes, an ACI measure will have reporting category and substitutes.
+ * After this function executes, an PI measure will have reporting category and substitutes.
  *  - substitutes: contains other measures that surrogates of a given measure.
  *  - reportingCategory: corresponds to the measure performance category
  * @param measures - the measures to enrich
