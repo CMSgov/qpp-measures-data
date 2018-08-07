@@ -31,8 +31,10 @@ from single_source_conversion_helpers import (
 )
 
 # Default filepaths for all required resources.
-DEFAULT_SINGLE_SOURCE_EXCEL_PATH = '/home/jovyan/work/data/2017_Claims_IndivMeasures_SingleSourceVersion2_11082017_andrea_edit.xlsx'
-DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source.json'
+DEFAULT_SINGLE_SOURCE_CSV_PATH = (
+    '/home/jovyan/work/data/2018_Claims_SingleSource_Bayes_Feedback_05032018.csv'
+)
+DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source-2018.json'
 
 
 def _convert_measure_ids_to_match_nava_format(single_source_dict):
@@ -81,22 +83,27 @@ def _main(**kwargs):
 def _get_arguments():
     """Build argument parser."""
     parser = argparse.ArgumentParser(
-        description='This script converts the single source Excel file to JSON.'
+        description='''
+            This script converts the Single Source Excel file to JSON.
+            Arguments default to 2018 measures data and related files.
+        '''
     )
 
     parser.add_argument(
         '-i', '--single_source_filepath',
-        help='Single Source Excel file input filename',
+        help='Single Source CSV file input filename',
         required=False,
-        default=DEFAULT_SINGLE_SOURCE_EXCEL_PATH,
-        type=str)
+        default=DEFAULT_SINGLE_SOURCE_CSV_PATH,
+        type=str
+    )
 
     parser.add_argument(
         '-o', '--output_filepath',
         help='Single source JSON output filepath',
         required=False,
         default=DEFAULT_OUTPUT_JSON_PATH,
-        type=str)
+        type=str
+    )
 
     args = parser.parse_args()
 
