@@ -122,7 +122,9 @@ function mergeGeneratedEcqmData(measures) {
     measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
     measures[index].metricType = manualEcqmInfo.metricType;
     measures[index].strata = manualEcqmInfo.strata;
-    measures[index].overallAlgorithm = manualEcqmInfo.overallAlgorithm;
+    if (manualEcqmInfo.overallAlgorithm) {
+      measures[index].overallAlgorithm = manualEcqmInfo.overallAlgorithm;
+    }
   });
 }
 
