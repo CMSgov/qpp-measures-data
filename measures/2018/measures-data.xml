@@ -39869,9 +39869,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <measureId>PI_INFBLO_1</measureId>
     <category>pi</category>
     <title>Prevention of Information Blocking Attestation</title>
-    <description>I have not  knowingly and willfully take action to limit or restrict the interoperability of certified EHR technology.
-I have responded to requests to retrieve or exchange information—including requests from patients and other health care providers regardless of the requestor's affiliation or technology.
-I have implemented appropriate standards and processes to ensure that its certified EHR technology was connected in accordance with applicable law and standards, allowed patients timely access to their electronic health information; and supported exchange of electronic health information with other health care providers.</description>
+    <description>I attest to CMS that I - (A) did not knowingly and willfully take action (such as to disable functionality) to limit or restrict the compatibility or interoperability of certified EHR technology. (B) Implemented technologies, standards, policies, practices, and agreements reasonably calculated to ensure, to the greatest extent practicable and permitted by law, that the certified EHR technology was, at all relevant times: (1) Connected in accordance with applicable law; (2) Compliant with all standards applicable to the exchange of information, including the standards, implementation specifications, and certification criteria adopted at 45 CFR part 170;  (3) Implemented in a manner that allowed for timely access by patients to their electronic health information; and (4) Implemented in a manner that allowed for the timely, secure, and trusted bi-directional exchange of structured electronic health information with other health care providers (as defined by 42 U.S.C. 300jj(3)), including unaffiliated health care providers, and with disparate certified EHR technology and vendors. (C) Responded in good faith and in a timely manner to requests to retrieve or exchange electronic health information, including from patients, health care providers (as defined by 42 U.S.C. 300jj(3)), and other persons, regardless of the requestor’s affiliation or technology vendor.</description>
     <metricType>boolean</metricType>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
@@ -39885,8 +39883,7 @@ I have implemented appropriate standards and processes to ensure that its certif
     <measureId>PI_ONCDIR_1</measureId>
     <category>pi</category>
     <title>ONC Direct Review Attestation</title>
-    <description>I have (1) acknowledged the requirement to cooperate in good faith with ONC direct review health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received;
-AND (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
+    <description>I attest that I - (1) Acknowledge the requirement to cooperate in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received; and (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.</description>
     <metricType>boolean</metricType>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
@@ -40020,16 +40017,30 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_PHCDRR_5</measureId>
     <title>Clinical Data Registry Reporting</title>
-    <description>The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician is in active engagement to submit data to a clinical data registry.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_PHCDRR_5_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <isBonus>false</isBonus>
+    <objective>publicHealthAndClinicalDataRegistryReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <substitute>PI_TRANS_PHCDRR_3</substitute>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Clinical Data Registry Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_PHCDRR_5_MULTI</measureId>
+    <title>Clinical Data Registry Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if,  active engagement with more than one Clinical Data Registry in accordance with PI_PHCDRR_5.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitute>PI_TRANS_PHCDRR_3</substitute>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40046,7 +40057,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_TRANS_MR_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Clinical Information Reconciliation.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40056,15 +40067,29 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_PHCDRR_3</measureId>
     <title>Electronic Case Reporting</title>
-    <description>The MIPS eligible clinician is in active engagement with a public health agency to electronically submit case reporting of reportable conditions.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician is in active engagement with a public health agency to electronically submit case reporting of reportable conditions.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_PHCDRR_3_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <isBonus>false</isBonus>
+    <objective>publicHealthAndClinicalDataRegistryReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Electronic Case Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_PHCDRR_3_MULTI</measureId>
+    <title>Electronic Case Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if,  active engagement with more than one Electronic Case Reporting registry in accordance with PI_PHCDRR_3.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40083,7 +40108,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <substitute>PI_TRANS_EP_1</substitute>
     <substitute>PI_TRANS_LVPP_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_e-Prescribing.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40101,8 +40126,22 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_TRANS_PHCDRR_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Immunization Registry Reporting.pdf</default>
     </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_PHCDRR_1_MULTI</measureId>
+    <title>Immunization Registry Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if active engagement with more than one immunization registry in accordance with PI_PHCDRR_1.</description>
+    <isRequired>false</isRequired>
+    <weight>5</weight>
+    <isBonus>true</isBonus>
+    <objective>publicHealthAndClinicalDataRegistryReporting</objective>
+    <reportingCategory>performanceBonus</reportingCategory>
   </measure>
   <measure>
     <category>pi</category>
@@ -40118,7 +40157,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <objective>coordinationOfCareThroughPatientEngagement</objective>
     <reportingCategory>performanceBonus</reportingCategory>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Patient-Generated Health Data.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40136,7 +40175,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_TRANS_PSE_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Patient-Specific Education.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40154,7 +40193,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>base</reportingCategory>
     <substitute>PI_TRANS_PEA_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Provide Patient Access.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40164,15 +40203,29 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_PHCDRR_4</measureId>
     <title>Public Health Registry Reporting</title>
-    <description>The MIPS eligible clinician is in active engagement with a public health agency to submit data to public health registries.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician is in active engagement with a public health agency to submit data to public health registries.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_PHCDRR_4_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <isBonus>false</isBonus>
+    <objective>publicHealthAndClinicalDataRegistryReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Public Health Registry Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_PHCDRR_4_MULTI</measureId>
+    <title>Public Health Registry Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if,  active engagement with more than one Public Health Registry in accordance with PI_PHCDRR_4.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40191,7 +40244,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <substitute>PI_TRANS_HIE_1</substitute>
     <substitute>PI_TRANS_LVOTC_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Request-Accept Summary of Care.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40209,7 +40262,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_TRANS_SM_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Secure Messaging.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40227,7 +40280,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>base</reportingCategory>
     <substitute>PI_TRANS_PPHI_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Security Risk Analysis.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40247,7 +40300,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <substitute>PI_TRANS_HIE_1</substitute>
     <substitute>PI_TRANS_LVOTC_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Send a Summary of Care.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40257,16 +40310,30 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_PHCDRR_2</measureId>
     <title>Syndromic Surveillance Reporting</title>
-    <description>The MIPS eligible clinician is in active engagement with a public health agency to submit syndromic surveillance data from a urgent care ambulatory setting where the jurisdiction accepts syndromic data from such settings and the standards are clearly defined.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician is in active engagement with a public health agency to submit syndromic surveillance data from a urgent care ambulatory setting where the jurisdiction accepts syndromic data from such settings and the standards are clearly defined.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_PHCDRR_2_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <isBonus>false</isBonus>
+    <objective>publicHealthAndClinicalDataRegistryReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <substitute>PI_TRANS_PHCDRR_2</substitute>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Syndromic Surveillance Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_PHCDRR_2_MULTI</measureId>
+    <title>Syndromic Surveillance Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if,  active engagement with more than one Syndromic Surveillance registry in accordance with PI_PHCDRR_2.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <isBonus>true</isBonus>
     <objective>publicHealthAndClinicalDataRegistryReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitute>PI_TRANS_PHCDRR_2</substitute>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40283,7 +40350,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_TRANS_PEA_2</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_View Download or Transmit (VDT).pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40304,7 +40371,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <substitute>PI_LVPP_1</substitute>
     <substitute>PI_EP_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_e-Prescribing.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40327,7 +40394,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <substitute>PI_HIE_2</substitute>
     <substitute>PI_LVITC_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Health Information Exchange.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40346,8 +40413,23 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_PHCDRR_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Immunization Registry Reporting.pdf</default>
     </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_TRANS_PHCDRR_1_MULTI</measureId>
+    <title>Immunization Registry Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if active engagement with more than one Immunization Registry in accordance with PI_TRANS_PHCDRR_1.</description>
+    <isRequired>false</isRequired>
+    <weight>5</weight>
+    <measureSet>transition</measureSet>
+    <isBonus>true</isBonus>
+    <objective>publicHealthReporting</objective>
+    <reportingCategory>performanceBonus</reportingCategory>
   </measure>
   <measure>
     <category>pi</category>
@@ -40365,7 +40447,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_HIE_3</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Medication Reconciliation.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40384,7 +40466,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_PEA_2</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Patient Specific Education.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40403,7 +40485,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>base</reportingCategory>
     <substitute>PI_PEA_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Provide Patient Access.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40422,7 +40504,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_CCTPE_2</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Secure Messaging.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40441,7 +40523,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>base</reportingCategory>
     <substitute>PI_PPHI_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Security Risk Analysis.pdf</default>
     </measureSpecification>
   </measure>
   <measure>
@@ -40451,17 +40533,32 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_TRANS_PHCDRR_3</measureId>
     <title>Specialized Registry Reporting</title>
-    <description>The MIPS eligible clinician is in active engagement to submit data to specialized registry.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician is in active engagement to submit data to specialized registry.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_TRANS_PHCDRR_3_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <measureSet>transition</measureSet>
+    <isBonus>false</isBonus>
+    <objective>publicHealthReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <substitute>PI_PHCDRR_5</substitute>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Specialized Registry Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_TRANS_PHCDRR_3_MULTI</measureId>
+    <title>Specialized Registry Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if active engagement with more than one Specialized Registry in accordance with PI_TRANS_PHCDRR_3.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <measureSet>transition</measureSet>
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitute>PI_PHCDRR_5</substitute>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40470,17 +40567,32 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <metricType>boolean</metricType>
     <measureId>PI_TRANS_PHCDRR_2</measureId>
     <title>Syndromic Surveillance Reporting</title>
-    <description>The MIPS eligible clinician  is in active engagement with a public health agency to submit syndromic surveillance data.  Earn a 5 % bonus in the advancing care information performance category score for submitting to one or more public health or clinical data registries.</description>
+    <description>The MIPS eligible clinician  is in active engagement with a public health agency to submit syndromic surveillance data.  To earn a 5 % bonus in the promoting interoperability performance category score for submitting to one or more public health or clinical data registries also attest to PI_TRANS_PHCDRR_2_MULTI.</description>
+    <isRequired>false</isRequired>
+    <weight>10</weight>
+    <measureSet>transition</measureSet>
+    <isBonus>false</isBonus>
+    <objective>publicHealthReporting</objective>
+    <reportingCategory>registryBonus</reportingCategory>
+    <substitute>PI_PHCDRR_2</substitute>
+    <measureSpecification>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Syndromic Surveillance Reporting.pdf</default>
+    </measureSpecification>
+  </measure>
+  <measure>
+    <category>pi</category>
+    <firstPerformanceYear>2018</firstPerformanceYear>
+    <lastPerformanceYear/>
+    <metricType>boolean</metricType>
+    <measureId>PI_TRANS_PHCDRR_2_MULTI</measureId>
+    <title>Syndromic Surveillance Reporting for Multiple Registry Engagement</title>
+    <description>Report as true if active engagement with more than one Syndromic Surveillance Registry in accordance with PI_TRANS_PHCDRR_2.</description>
     <isRequired>false</isRequired>
     <weight>5</weight>
     <measureSet>transition</measureSet>
     <isBonus>true</isBonus>
     <objective>publicHealthReporting</objective>
     <reportingCategory>registryBonus</reportingCategory>
-    <substitute>PI_PHCDRR_2</substitute>
-    <measureSpecification>
-      <default/>
-    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
@@ -40498,7 +40610,7 @@ AND (2) If requested, cooperated in good faith with ONC direct review of his or 
     <reportingCategory>performanceBonus</reportingCategory>
     <substitute>PI_CCTPE_1</substitute>
     <measureSpecification>
-      <default/>
+      <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_View Download or Transmit (VDT).pdf</default>
     </measureSpecification>
   </measure>
   <measure>
