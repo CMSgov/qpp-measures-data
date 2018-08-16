@@ -28,7 +28,9 @@ const config = {
     nqfEMeasureId: null,
     nqfId: null,
     measureSets: [],
-    isRegistryMeasure: true
+    isRegistryMeasure: true,
+    isIcdImpacted: false,
+    isToppedOutByProgram: false
   },
   sourced_fields: {
     measureId: 1,
@@ -40,8 +42,7 @@ const config = {
       mappings: {
         'Process': 'process',
         'Outcome': 'outcome',
-        'Patient Engagement/Experience ': 'patientEngagementExperience',
-        'Patient Engagement/Experience': 'patientEngagementExperience',
+        'Patient Engagement/ Experience': 'patientEngagementExperience',
         'Efficiency': 'efficiency',
         'Intermediate Outcome': 'intermediateOutcome',
         'Structure': 'structure',
