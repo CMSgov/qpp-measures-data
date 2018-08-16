@@ -46,7 +46,7 @@ node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 
 # import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
-	$final_measures $qcdr_csv $quality_strata $final_measuresfinal_measures
+	$final_measures $qcdr_csv $quality_strata $final_measures
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"

@@ -282,8 +282,6 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesD
   return JSON.stringify(addMissingRegistryFlags(mergedMeasures), null, 2);
 }
 
-console.log(process.argv);
-
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
 const qcdrStrataNamesDataPath = process.argv[4];
