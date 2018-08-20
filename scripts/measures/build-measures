@@ -17,7 +17,7 @@ pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
 ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
 qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
-qcdr_measures='../../../staging/'$currentPerformanceYear'/measures-data-qcdr.json'
+qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
 enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
 
@@ -46,7 +46,7 @@ node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 
 # import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
-	$final_measures $qcdr_csv $quality_strata $final_measures
+	$final_measures $qcdr_csv $qcdr_strata
 
 # 2. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"

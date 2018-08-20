@@ -79,10 +79,17 @@ const config = {
     primarySteward: 20
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
+  },
+  special_fields: {
+    numberOfPerformanceRates: 10,
+    overallPerformanceRate: 11,
+    proportional: 16,
+    continuous: 17,
+    ratio: 18
   }
 };
 
-const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNamesDataPath) {
+const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNamesDataPath, config) {
   // Parse the names for qcdr measures with multiple strata/performance rates
   // { measureId: [name of 1st performance rate, name of 2nd performance rate, etc.] }
   //
@@ -93,10 +100,12 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   // performance rate description and are used when submitting to the API.
   const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
   const qcdrStrataNames = JSON.parse(strataNames);
+  const specialFields = config.special_fields;
+  const sourcedFields = config.sourced_fields;
 
   newMeasure['metricType'] = 'registryMultiPerformanceRate';
 
-  const overallPerformanceRate = _.lowerCase(_.trim(record[12]));
+  const overallPerformanceRate = _.lowerCase(_.trim(record[specialFields.overallPerformanceRate]));
   const nthPerformanceRate = _.parseInt(overallPerformanceRate);
   if (_.isInteger(nthPerformanceRate)) {
     newMeasure['overallAlgorithm'] = 'overallStratumOnly';
@@ -108,8 +117,8 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Add the names and descriptions of strata
   let strataName;
-  const measureId = record[2].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
-  const measureDescription = _.trim(record[4]);
+  const measureId = record[sourcedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
+  const measureDescription = _.trim(record[sourcedFields.description]);
 
   // Measure description column contains performance rate description
   // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
@@ -153,6 +162,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) {
   const sourcedFields = config.sourced_fields;
   const constantFields = config.constant_fields;
+  const specialFields = config.special_fields;
   const TRUE_CSV = 'Y';
   const FALSE_CSV = 'N';
 
@@ -180,14 +190,14 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    const proportion = _.trim(record[17]);
-    const continuous = _.trim(record[18]);
-    const ratio = _.trim(record[19]);
+    const proportion = _.trim(record[specialFields.proportion]);
+    const continuous = _.trim(record[specialFields.continuous]);
+    const ratio = _.trim(record[specialFields.ratio]);
     if (proportion === TRUE_CSV && continuous === FALSE_CSV && ratio === FALSE_CSV) {
       // returns an integer if passed string '3', NaN if passed 'N/A'
-      const numPerformanceRates = _.parseInt(_.trim(record[11]));
+      const numPerformanceRates = _.parseInt(_.trim(record[specialFields.numberOfPerformanceRates]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
-        addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath);
+        addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath, config);
       } else {
         newMeasure['metricType'] = 'registrySinglePerformanceRate';
       }
@@ -286,7 +296,6 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesD
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
 const qcdrStrataNamesDataPath = process.argv[4];
-const outputPath = process.argv[5];
 
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, outputPath);
-fs.writeFileSync(path.join(__dirname, outputPath), newMeasures);
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, measuresDataPath);
+fs.writeFileSync(path.join(__dirname, measuresDataPath), newMeasures);
