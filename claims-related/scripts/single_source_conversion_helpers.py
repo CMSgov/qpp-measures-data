@@ -183,7 +183,6 @@ def merge_multiple_performance_options(performance_options):
     # Key by codeset_number.
     for option in performance_options:
         codeset_number = option.pop('codeset_number')
-        option['submissionMethods'] = ['claims']  # Add the submissionMethods attribute.
         if codeset_number > 0:
             multiple_code_sets[codeset_number].append(option)
         else:
@@ -330,7 +329,6 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
             'sexCode': representative_row['sex_code'],
             'minAge': representative_row['min_age'],
             'maxAge': representative_row['max_age'],
-            'submissionMethods': ['claims']  # Add the submissionMethods attribute.
         }
 
         # Remove null or invalid values from the eligibility option.
