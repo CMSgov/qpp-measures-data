@@ -106,7 +106,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   newMeasure['metricType'] = 'registryMultiPerformanceRate';
 
   const overallPerformanceRate = _.lowerCase(_.trim(record[specialFields.overallPerformanceRate]));
-  const nthPerformanceRate = _.parseInt(overallPerformanceRate);
+  const nthPerformanceRate = _.parseInt(overallPerformanceRate.split(' ')[1]);
   if (_.isInteger(nthPerformanceRate)) {
     newMeasure['overallAlgorithm'] = 'overallStratumOnly';
   } else if (overallPerformanceRate === 'sum numerators') {
@@ -129,7 +129,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   newMeasure['strata'] = [];
   _.each(strata, function(stratum, index) {
     if (_.isUndefined(qcdrStrataNames[measureId])) {
-      throw TypeError('Missing strata for ' + measureId + '. Should' +
+      throw TypeError('Missing strata for ' + measureId + '. Should ' +
         'be in ' + qcdrStrataNamesDataPath + ', but isn\'t.');
     }
     strataName = qcdrStrataNames[measureId][index];
@@ -190,9 +190,14 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    const proportion = _.trim(record[specialFields.proportion]);
+    const proportion = _.trim(record[specialFields.proportional]);
     const continuous = _.trim(record[specialFields.continuous]);
     const ratio = _.trim(record[specialFields.ratio]);
+
+    // console.log('???');
+    // console.log(record[14],record[17],record[18],record[19]);
+    // console.log('???');
+
     if (proportion === TRUE_CSV && continuous === FALSE_CSV && ratio === FALSE_CSV) {
       // returns an integer if passed string '3', NaN if passed 'N/A'
       const numPerformanceRates = _.parseInt(_.trim(record[specialFields.numberOfPerformanceRates]));
