@@ -31,7 +31,6 @@ const runTest = function(measuresFile, measuresCsv) {
 describe(year + ' import measures', function() {
   it('should create new measures and ignore duplicate measureIds', () => {
     const measures = runTest(testMeasures, testCsv);
-    console.log(measures);
     assert.equal(measures.length, 4);
   });
 
@@ -49,6 +48,21 @@ describe(year + ' import measures', function() {
       }
       if (measure.metricType === 'registryMultiPerformanceRate') {
         assert.isAbove(measure.strata.length, 1);
+      }
+    });
+  });
+
+  it('should correctly parse overallPerformanceRate', () => {
+    const measures = runTest(testMeasures, testCsv);
+    measures.forEach(measure => {
+      if (measure.measureId === 'PP4') {
+        assert.equal(measure.overallAlgorithm, 'weightedAverage');
+      }
+      if (measure.measureId === 'PP3') {
+        assert.notProperty(measure, 'overallAlgorithm');
+      }
+      if (measure.measureId === 'PP2') {
+        assert.equal(measure.overallAlgorithm, 'overallStratumOnly');
       }
     });
   });
