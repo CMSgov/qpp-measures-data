@@ -11,11 +11,7 @@ const year = 2018;
 const testCsv = '../../../test/scripts/measures/' + year + '/fixtures/test-qcdr.csv';
 const testMeasures = '../../../test/scripts/measures/' + year + '/fixtures/test-qcdr-measures.json';
 const qcdrStrataNamesFile = '../../../util/measures/' + year + '/qcdr-measures-strata-names.json';
-// const outputArg = '../../../test/scripts/measures/' + year + '/fixtures/test-qcdr-measures-output.json';
 const outputPath = path.join(__dirname, year.toString(), '../../' + testMeasures);
-
-// Expected new measures
-// const expectedMeasures = require('../' + year + '/fixtures/expected-measures.json');
 
 // Function which executes script and reads in output file to a JS object.
 const runTest = function(measuresFile, measuresCsv) {
