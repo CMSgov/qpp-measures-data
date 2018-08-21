@@ -16,7 +16,8 @@ const path = require('path');
  *
  *  * `constant_fields` are fields which are the same for all measures being
  *  created from the CSV input.
- *  * `source_fields` are fields which should find values in the CSV input.
+ *  * `mapped_fields` are fields which should find values in the CSV input.
+ *  * `referenced_fields` are fields which are only referenced and not mapped.
  *
  */
 const config = {
@@ -32,7 +33,7 @@ const config = {
     isIcdImpacted: false,
     isToppedOutByProgram: false
   },
-  sourced_fields: {
+  mapped_fields: {
     measureId: 1,
     title: 2,
     description: 3,
@@ -80,7 +81,7 @@ const config = {
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
   },
-  special_fields: {
+  referenced_fields: {
     numberOfPerformanceRates: 10,
     overallPerformanceRate: 11,
     proportional: 16,
@@ -100,12 +101,12 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   // performance rate description and are used when submitting to the API.
   const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
   const qcdrStrataNames = JSON.parse(strataNames);
-  const specialFields = config.special_fields;
-  const sourcedFields = config.sourced_fields;
+  const referencedFields = config.referenced_fields;
+  const mappedFields = config.mapped_fields;
 
   newMeasure['metricType'] = 'registryMultiPerformanceRate';
 
-  const overallPerformanceRate = _.lowerCase(_.trim(record[specialFields.overallPerformanceRate]));
+  const overallPerformanceRate = _.lowerCase(_.trim(record[referencedFields.overallPerformanceRate]));
   const nthPerformanceRate = _.parseInt(overallPerformanceRate.split(' ')[1]);
   if (_.isInteger(nthPerformanceRate)) {
     newMeasure['overallAlgorithm'] = 'overallStratumOnly';
@@ -117,8 +118,8 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Add the names and descriptions of strata
   let strataName;
-  const measureId = record[sourcedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
-  const measureDescription = _.trim(record[sourcedFields.description]);
+  const measureId = record[mappedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
+  const measureDescription = _.trim(record[mappedFields.description]);
 
   // Measure description column contains performance rate description
   // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
@@ -160,15 +161,15 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
  * 2. We trim all data sourced from CSVs because people sometimes unintentionally include spaces or linebreaks
  */
 const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) {
-  const sourcedFields = config.sourced_fields;
+  const mappedFields = config.mapped_fields;
   const constantFields = config.constant_fields;
-  const specialFields = config.special_fields;
+  const referencedFields = config.referenced_fields;
   const TRUE_CSV = 'Y';
   const FALSE_CSV = 'N';
 
   const newMeasures = records.map(function(record) {
     const newMeasure = {};
-    Object.entries(sourcedFields).forEach(function([measureKey, columnObject]) {
+    Object.entries(mappedFields).forEach(function([measureKey, columnObject]) {
       if (typeof columnObject === 'number') {
         if (!record[columnObject]) {
           throw TypeError('Column ' + columnObject + ' does not exist in source data');
@@ -190,17 +191,13 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
     // (continuous and ratio, cols 18 and 19) are N, metricType should be
     // 'singlePerformanceRate', or 'multiPerformanceRate' if there are multiple
     // strata/performance rates. Otherwise it should be 'nonProportion'
-    const proportion = _.trim(record[specialFields.proportional]);
-    const continuous = _.trim(record[specialFields.continuous]);
-    const ratio = _.trim(record[specialFields.ratio]);
-
-    // console.log('???');
-    // console.log(record[14],record[17],record[18],record[19]);
-    // console.log('???');
+    const proportion = _.trim(record[referencedFields.proportional]);
+    const continuous = _.trim(record[referencedFields.continuous]);
+    const ratio = _.trim(record[referencedFields.ratio]);
 
     if (proportion === TRUE_CSV && continuous === FALSE_CSV && ratio === FALSE_CSV) {
       // returns an integer if passed string '3', NaN if passed 'N/A'
-      const numPerformanceRates = _.parseInt(_.trim(record[specialFields.numberOfPerformanceRates]));
+      const numPerformanceRates = _.parseInt(_.trim(record[referencedFields.numberOfPerformanceRates]));
       if (_.isInteger(numPerformanceRates) && numPerformanceRates > 1) {
         addMultiPerformanceRateDetails(newMeasure, record, qcdrStrataNamesDataPath, config);
       } else {
