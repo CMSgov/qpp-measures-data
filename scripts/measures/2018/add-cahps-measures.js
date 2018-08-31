@@ -13,7 +13,7 @@ const parse = require('csv-parse');
 const path = require('path');
 
 const year = 2018;
-const additionalMeasuresFilepath = '../../../util/measures/' + year + '/cahps-measures.json';
+const additionalMeasuresFilepath = '../../../staging/' + year + '/cahps-measures.json';
 let additionalMeasures = require(additionalMeasuresFilepath);
 
 // Some measures have an NqfId (NQF: National Quality Forum) of '0005'
@@ -68,6 +68,8 @@ function generateCahpsMeasure(record, idx) {
     isInverse: false,
     strata: [],
     isHighPriority: true,
+    isIcdImpacted: false,
+    isToppedOutByProgram: false,
     primarySteward: 'Agency for Healthcare Research & Quality',
     submissionMethods: [
       'certifiedSurveyVendor'
@@ -102,6 +104,8 @@ function generateCahpsAcoMeasure(record, idx) {
     isInverse: false,
     strata: [],
     isHighPriority: true,
+    isIcdImpacted: false,
+    isToppedOutByProgram: false,
     primarySteward: 'Agency for Healthcare Research & Quality',
     submissionMethods: [
       'certifiedSurveyVendor'
@@ -123,7 +127,6 @@ process.stdin.on('end', function() {
         const re = /CAHPS_/i;
         return measure.measureId.match(re) === null;
       });
-      console.log('COUNT:', additionalMeasures.length)
 
       records.forEach(function(record, idx) {
         const cahpsMeasure = generateCahpsMeasure(record, idx);
