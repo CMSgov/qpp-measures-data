@@ -80,7 +80,6 @@ function generateCahpsMeasure(record, idx) {
   };
 };
 
-
 function generateCahpsAcoMeasure(record, idx) {
   const measureTitle = record['ACO Measure Description in the Repository'].trim();
   const measureId = record['ACO Measure ID for display in Measure Repository'].trim();
@@ -115,7 +114,6 @@ function generateCahpsAcoMeasure(record, idx) {
     ]
   };
 };
-
 
 process.stdin.on('end', function() {
   parse(cahpsMeasuresData, {columns: CAHPS_CSV_COLUMNS, from: 2}, function(err, records) {
