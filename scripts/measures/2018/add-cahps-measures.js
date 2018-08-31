@@ -54,7 +54,7 @@ function generateCahpsMeasure(record, idx) {
 
   return {
     category: 'quality',
-    firstPerformanceYear: year,
+    firstPerformanceYear: 2017,
     lastPerformanceYear: null,
     metricType: 'cahps',
     title: measureTitle,
@@ -89,7 +89,7 @@ function generateCahpsAcoMeasure(record, idx) {
 
   return {
     category: 'quality',
-    firstPerformanceYear: year,
+    firstPerformanceYear: 2018,
     lastPerformanceYear: null,
     metricType: 'cahps',
     title: measureTitle,
