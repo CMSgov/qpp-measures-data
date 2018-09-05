@@ -12,6 +12,7 @@ currentPerformanceYear=2018
 quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
 quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
 quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
 cahps_measures='../../../staging/'$currentPerformanceYear'/cahps-measures.json'
 cost_measures='../../../util/measures/'$currentPerformanceYear'/cost-measures.json'
 pi_json='../../../util/measures/'$currentPerformanceYear'/pi-measures.json'
@@ -36,6 +37,10 @@ cat util/measures/$currentPerformanceYear/pi-measures.json > \
 # 0c. Add IA measures to the staging measures-data-ia.json file:
 node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 	$ia_csv $ia_measures
+
+# 0d. Add CAHPS measures to the staging cahps-measures.json file:
+node scripts/measures/$currentPerformanceYear/add-cahps-measures.js \
+	$cahps_csv $cahps_measures
 
 # Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \

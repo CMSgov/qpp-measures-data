@@ -1,20 +1,15 @@
 #!/usr/bin/env node
 
 /**
- *
- * One-time use script to add cahps measures to additional-measures.json from csv
- * To run: `cat [DATA_CSV_FILE] | node add-cahps-measures.js`
- * e.g. `cat cahps_measures_origin.csv | node add-cahps-measures.js`
+ * Script to add cahps measures to cahps-measures.json from CSV
+ * To run: `node add-cahps-measures.js [DATA_CSV_FILE] [OUTPUT_FILE]`
+ * e.g. `node add-cahps-measures.js cahps_measures_origin.csv cahps-measures.json`
  */
 
 // Libraries
 const fs = require('fs');
-const parse = require('csv-parse');
+const parse = require('csv-parse/lib/sync');
 const path = require('path');
-
-const year = 2018;
-const additionalMeasuresFilepath = '../../../staging/' + year + '/cahps-measures.json';
-let additionalMeasures = require(additionalMeasuresFilepath);
 
 // Some measures have an NqfId (NQF: National Quality Forum) of '0005'
 const defaultNqfId = '0005';
@@ -34,17 +29,32 @@ const CAHPS_CSV_COLUMNS = [
   'ACO Measure ID for display in Measure Repository'
 ];
 
-// Initialize a string to store the CSV data.
-let cahpsMeasuresData = '';
-
-process.stdin.setEncoding('utf8');
-
-process.stdin.on('readable', function() {
-  const chunk = process.stdin.read();
-  if (chunk !== null) {
-    cahpsMeasuresData += chunk;
-  }
-});
+const cahpsMeasureTemplate = {
+  category: 'quality',
+  firstPerformanceYear: 2017,
+  lastPerformanceYear: null,
+  metricType: 'cahps',
+  title: null,
+  description: '',
+  nationalQualityStrategyDomain: null,
+  measureType: 'patientEngagementExperience',
+  measureId: null,
+  eMeasureId: null,
+  nqfEMeasureId: null,
+  nqfId: null,
+  isInverse: false,
+  strata: [],
+  isHighPriority: true,
+  isIcdImpacted: false,
+  isToppedOutByProgram: false,
+  primarySteward: 'Agency for Healthcare Research & Quality',
+  submissionMethods: [
+    'certifiedSurveyVendor'
+  ],
+  measureSets: [
+    'generalPracticeFamilyMedicine'
+  ]
+};
 
 function generateCahpsMeasure(record, idx) {
   const measureTitle = record['MIPS Measure Description in the Repository'].trim();
@@ -53,31 +63,12 @@ function generateCahpsMeasure(record, idx) {
   if (measureTitle === '') return false;
 
   return {
-    category: 'quality',
-    firstPerformanceYear: 2017,
-    lastPerformanceYear: null,
-    metricType: 'cahps',
+    ...cahpsMeasureTemplate,
     title: measureTitle,
-    description: '', // TBD: Will be provided by RAND,
-    nationalQualityStrategyDomain: null,
-    measureType: 'patientEngagementExperience',
     measureId: measureId,
-    eMeasureId: null,
-    nqfEMeasureId: null,
-    nqfId: nqfIdMap[measureTitle] || null,
-    isInverse: false,
-    strata: [],
-    isHighPriority: true,
-    isIcdImpacted: false,
-    isToppedOutByProgram: false,
-    primarySteward: 'Agency for Healthcare Research & Quality',
-    submissionMethods: [
-      'certifiedSurveyVendor'
-    ],
-    measureSets: [
-      'generalPracticeFamilyMedicine'
-    ]
+    nqfId: nqfIdMap[measureTitle] || null
   };
+
 };
 
 function generateCahpsAcoMeasure(record, idx) {
@@ -88,53 +79,34 @@ function generateCahpsAcoMeasure(record, idx) {
   if (measureTitle === 'Not part of ACO score in 2018 - will not include in 2018 repo') return false;
 
   return {
-    category: 'quality',
-    firstPerformanceYear: 2018,
-    lastPerformanceYear: null,
-    metricType: 'cahps',
+    ...cahpsMeasureTemplate,
     title: measureTitle,
-    description: '', // TBD: Will be provided by RAND,
-    nationalQualityStrategyDomain: null,
-    measureType: 'patientEngagementExperience',
     measureId: measureId,
-    eMeasureId: null,
-    nqfEMeasureId: null,
     nqfId: nqfIdMap[measureTitle] || null,
-    isInverse: false,
-    strata: [],
-    isHighPriority: true,
-    isIcdImpacted: false,
-    isToppedOutByProgram: false,
-    primarySteward: 'Agency for Healthcare Research & Quality',
-    submissionMethods: [
-      'certifiedSurveyVendor'
-    ],
-    measureSets: [
-      'generalPracticeFamilyMedicine'
-    ]
+    firstPerformanceYear: 2018
   };
+
 };
 
-process.stdin.on('end', function() {
-  parse(cahpsMeasuresData, {columns: CAHPS_CSV_COLUMNS, from: 2}, function(err, records) {
-    if (err) {
-      console.log(err);
-    } else {
-      // We want to overwrite CAHPS measures every time we run this script.
-      additionalMeasures = additionalMeasures.filter(function(measure) {
-        const re = /CAHPS_/i;
-        return measure.measureId.match(re) === null;
-      });
 
-      records.forEach(function(record, idx) {
-        const cahpsMeasure = generateCahpsMeasure(record, idx);
-        if (cahpsMeasure) additionalMeasures.push(cahpsMeasure);
+function importCahpsMeasures(cahpsMeasuresCsv, cahpsMeasuresFilepath) {
+  const cahpsMeasuresData = fs.readFileSync(path.join(__dirname, cahpsMeasuresCsv), {encoding: 'utf8'});
+  const records = parse(cahpsMeasuresData, {columns: CAHPS_CSV_COLUMNS, from: 2});
+  const cahpsMeasures = [];
 
-        const cahpsAcoMeasure = generateCahpsAcoMeasure(record, idx);
-        if (cahpsAcoMeasure) additionalMeasures.push(cahpsAcoMeasure);
-      });
+  records.forEach(function(record, idx) {
+    const cahpsMeasure = generateCahpsMeasure(record, idx);
+    if (cahpsMeasure) cahpsMeasures.push(cahpsMeasure);
 
-      fs.writeFileSync(path.join(__dirname, additionalMeasuresFilepath), JSON.stringify(additionalMeasures, null, 2), 'utf8');
-    }
+    const cahpsAcoMeasure = generateCahpsAcoMeasure(record, idx);
+    if (cahpsAcoMeasure) cahpsMeasures.push(cahpsAcoMeasure);
   });
-});
+
+  fs.writeFileSync(path.join(__dirname, cahpsMeasuresFilepath), JSON.stringify(cahpsMeasures, null, 2), {encoding: 'utf8', flag: 'w'});
+};
+
+const cahpsMeasuresCsv = process.argv[2];
+const outputFilepath = process.argv[3];
+
+importCahpsMeasures(cahpsMeasuresCsv, outputFilepath);
+
