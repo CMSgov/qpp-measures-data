@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 DX_CODE_CATEGORY = ['DX_CODE']
-DX_CODE_X_CATEGORY = ['DX_CODE_X']
+DX_CODE_X_CATEGORY = ['DX_CODE_X', 'DX_CODE_Exe', 'DX_CODE_Exl']
 ENC_PROC_CODE_CATEGORY = ['ENCOUNTER_CODE', 'PROC_CODE']
 QUALITY_CODE_CATEGORY = ['PD_Exe', 'PD_Exl', 'PN_X', 'PN']
 ADDITIONAL_ENC_PROC_CODE_CATEGORY = ['ADDITIONAL_PROCEDURE_CODE']
@@ -37,6 +37,15 @@ def determine_element_category(element):
     # Additional procedure codes (used in measure 155 and 226).
     if element.endswith('DENOM_CODE'):
         return 'ADDITIONAL_PROCEDURE_CODE'
+
+    # Drop duplicate PD elements, since these are capture in PN, PN_X, etc.
+    if element.endswith('_PD'):
+        return 'DROP'
+
+    # If the data element is not something we know how to handle, raise an error.
+    else:
+        print('{} data element not recognized!'.format(element))
+        raise(NotImplementedError)
 
 
 def find_min_max_age(age_string):
@@ -245,6 +254,7 @@ def add_row_level_information_to_dataframe(single_source_df):
     single_source_df['element_category'] = single_source_df['data_element_name'].apply(
         determine_element_category
     )
+    single_source_df = single_source_df[single_source_df['element_category'] != 'DROP']
     # Create min_age and max_age floats from string age column.
     single_source_df[['min_age', 'max_age']] = single_source_df['age'].apply(
         find_min_max_age).astype(float)
