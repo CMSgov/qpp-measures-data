@@ -23,7 +23,7 @@ qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
 qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
 enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
-additional_measures='../../../util/measures/'$currentPerformanceYear'/additional-measures.json'
+manually_added_measures='../../../util/measures/'$currentPerformanceYear'/manually-added-measures.json'
 
 # 0a. Add quality measures to the staging measures-data-quality.json file:
 node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
@@ -50,7 +50,7 @@ node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
 # 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 	$enriched_quality_measures $pi_measures $ia_measures $cost_measures $cahps_measures \
-	$additional_measures $final_measures
+	$manually_added_measures $final_measures
 
 # import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
