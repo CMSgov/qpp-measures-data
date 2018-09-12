@@ -5,6 +5,7 @@ const YAML = require('yamljs');
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
+const Constants = require('./constants.js');
 
 /**
  *
@@ -28,7 +29,8 @@ exports.getBenchmarksData = function() {
  * @return {{}} - Object representation of the Benchmarks Schema
  */
 exports.getBenchmarksSchema = function() {
-  return YAML.load(path.join(__dirname, 'benchmarks', 'benchmarks-schema.yaml'));
+  const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
+  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear, 'benchmarks-schema.yaml'));
 };
 
 /**
