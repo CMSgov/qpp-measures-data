@@ -39,8 +39,8 @@ describe('mergeBenchmarkData', function() {
 
   describe('getBenchmarkKey', function() {
     it('joins correctly two layers', function() {
-      const baseLayer = '../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../test/benchmarks/files/overwrite_001_claims.json';
+      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
+      const secondLayer = '../../../../test/benchmarks/files/overwrite_001_claims.json';
 
       const layers = [baseLayer, secondLayer];
 
@@ -82,9 +82,9 @@ describe('mergeBenchmarkData', function() {
     });
 
     it('joins a third independent layer', function() {
-      const baseLayer = '../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../test/benchmarks/files/overwrite_001_claims.json';
-      const thirdLayer = '../../../test/benchmarks/files/independent_layer.json';
+      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
+      const secondLayer = '../../../../test/benchmarks/files/overwrite_001_claims.json';
+      const thirdLayer = '../../../../test/benchmarks/files/independent_layer.json';
 
       const layers = [baseLayer, secondLayer, thirdLayer];
 
@@ -143,8 +143,8 @@ describe('mergeBenchmarkData', function() {
     });
 
     it('throws an error when a measure is missing a field ', function() {
-      const baseLayer = '../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../test/benchmarks/files/missing_id_layer.json';
+      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
+      const secondLayer = '../../../../test/benchmarks/files/missing_id_layer.json';
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
