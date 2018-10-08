@@ -66,12 +66,12 @@ const specialClusterRelations = {
 };
 
 function curate(clusterMap, relations) {
-  // remove clincalClusters from measures that belongs to multiple cluster
+  // remove clinicalClusters from measures that belongs to multiple cluster
   relations
     .filter(r => r.optionals.length === 0)
     .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
 
-  // remove measures in clincalClusters that are optional
+  // remove measures in clinicalClusters that are optional
   relations
     .filter(r => r.optionals.length > 0)
     .forEach(r => {
