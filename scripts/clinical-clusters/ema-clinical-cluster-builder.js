@@ -36,7 +36,7 @@ const specialSpecialtySetRelations = {
   },
   2018: {
     claims: [{
-      name: 'anethesiology', action: 'override', measureIds: ['076', '130', '317']
+      name: 'anesthesiology', action: 'override', measureIds: ['076', '130', '317']
     }, {
       name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317']
     }],
@@ -125,9 +125,17 @@ function curateSpecialtySet(clusterMap, relations) {
           specialtySets.splice(specialtySetIndex, 1);
         });
       } else if (r.action === 'override') {
-
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
+          specialtySets.splice(specialtySetIndex, 1);
+          specialtySets.push({name: r.name, measureIds: r.measureIds});
+        });
       } else if (r.action === 'add') {
-
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          specialtySets.push({name: r.name, measureIds: r.measureIds});
+        });
       }
     });
   }
