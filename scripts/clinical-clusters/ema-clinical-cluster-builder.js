@@ -35,9 +35,15 @@ const specialSpecialtySetRelations = {
     registry: []
   },
   2018: {
-    claims: [],
-    registry: []
-  },
+    claims: [{
+      name: 'anethesiology', action: 'override', measureIds: ['076', '130', '317']
+    }, {
+      name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317']
+    }],
+    registry: [{
+      name: 'dentistry', action: 'remove', measureIds: ['378', '379']
+    }]
+  }
 };
 
 const specialClusterRelations = {
@@ -109,7 +115,22 @@ const specialClusterRelations = {
 };
 
 function curateSpecialtySet(clusterMap, relations) {
+  // handle removal of sets/measures
+  if (relations) {
+    relations.forEach(r => {
+      if (r.action === 'remove') {
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
+          specialtySets.splice(specialtySetIndex, 1);
+        });
+      } else if (r.action === 'override') {
 
+      } else if (r.action === 'add') {
+
+      }
+    });
+  }
 }
 
 function curateClinicalClusters(clusterMap, relations) {
@@ -204,8 +225,8 @@ function generateEMAClusters(allMeasures) {
   populateSpecialtySet(claimsClusterMap, measures, 'claims');
   populateSpecialtySet(registryClusterMap, measures, 'registry');
 
-  curateSpecialtySet(claimsClusterMap, measures, 'claims', specialSpecialtySetRelations[performanceYear].claims);
-  curateSpecialtySet(registryClusterMap, measures, 'registry', specialSpecialtySetRelations[performanceYear].registry);
+  curateSpecialtySet(claimsClusterMap, specialSpecialtySetRelations[performanceYear].claims);
+  curateSpecialtySet(registryClusterMap, specialSpecialtySetRelations[performanceYear].registry);
 
   populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
   populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
