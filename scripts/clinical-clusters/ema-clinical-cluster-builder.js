@@ -98,7 +98,7 @@ const specialClusterRelations = {
   }
 };
 
-function curate(clusterMap, relations) {
+function curateClinicalClusters(clusterMap, relations) {
   // remove clinicalClusters from measures that belongs to multiple cluster
   relations
     .filter(r => r.optionals.length === 0)
@@ -193,8 +193,8 @@ function generateEMAClusters(allMeasures) {
   populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
   populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
 
-  curate(registryClusterMap, specialClusterRelations[performanceYear].registry);
-  curate(claimsClusterMap, specialClusterRelations[performanceYear].claims);
+  curateClinicalClusters(registryClusterMap, specialClusterRelations[performanceYear].registry);
+  curateClinicalClusters(claimsClusterMap, specialClusterRelations[performanceYear].claims);
 
   const emaClusters = [];
 
