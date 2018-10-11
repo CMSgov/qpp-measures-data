@@ -29,8 +29,27 @@ const performanceYear = parseInt(process.argv[2], 10);
 const claimsClusterFilePath = process.argv[3];
 const registryClusterFilePath = process.argv[4];
 
+const specialSpecialtySetRelations = {
+  2017: {
+    claims: [],
+    registry: []
+  },
+  2018: {
+    claims: [],
+    registry: []
+  },
+};
+
 const specialClusterRelations = {
   2017: {
+    claims: [
+      {measureId: '130', optionals: []},
+      {measureId: '226', optionals: []},
+      {measureId: '317', optionals: []},
+      {measureId: '117', optionals: []},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ],
     registry: [
       {measureId: '047', optionals: []},
       {measureId: '110', optionals: []},
@@ -55,18 +74,15 @@ const specialClusterRelations = {
       {measureId: '427', optionals: ['426']},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
-
-    ],
-    claims: [
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '117', optionals: []},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
     ]
   },
   2018: {
+    claims: [
+      {measureId: '130', optionals: []},
+      {measureId: '317', optionals: []},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ],
     registry: [
       {measureId: '110', optionals: []},
       {measureId: '130', optionals: []},
@@ -88,15 +104,13 @@ const specialClusterRelations = {
       {measureId: '427', optionals: ['426']},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
-    ],
-    claims: [
-      {measureId: '130', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
     ]
   }
 };
+
+function curateSpecialtySet(clusterMap, relations) {
+
+}
 
 function curateClinicalClusters(clusterMap, relations) {
   // remove clinicalClusters from measures that belongs to multiple cluster
@@ -190,11 +204,14 @@ function generateEMAClusters(allMeasures) {
   populateSpecialtySet(claimsClusterMap, measures, 'claims');
   populateSpecialtySet(registryClusterMap, measures, 'registry');
 
+  curateSpecialtySet(claimsClusterMap, measures, 'claims', specialSpecialtySetRelations[performanceYear].claims);
+  curateSpecialtySet(registryClusterMap, measures, 'registry', specialSpecialtySetRelations[performanceYear].registry);
+
   populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
   populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
 
-  curateClinicalClusters(registryClusterMap, specialClusterRelations[performanceYear].registry);
   curateClinicalClusters(claimsClusterMap, specialClusterRelations[performanceYear].claims);
+  curateClinicalClusters(registryClusterMap, specialClusterRelations[performanceYear].registry);
 
   const emaClusters = [];
 
