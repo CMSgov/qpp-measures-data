@@ -68,6 +68,9 @@ const specialClusterRelations = {
   },
   2018: {
     registry: [
+      {measureId: '130', optionals: []},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
     ],
     claims: [
     ]
