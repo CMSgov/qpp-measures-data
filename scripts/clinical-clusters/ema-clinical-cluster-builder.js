@@ -68,6 +68,20 @@ const specialClusterRelations = {
   },
   2018: {
     registry: [
+      {measureId: '110', optionals: []},
+      {measureId: '130', optionals: []},
+      {measureId: '226', optionals: []},
+      {measureId: '051', optionals: ['052']},
+      {measureId: '052', optionals: ['051']},
+      {measureId: '398', optionals: ['444']},
+      {measureId: '444', optionals: ['398']},
+      {measureId: '024', optionals: ['418']},
+      {measureId: '418', optionals: ['024']},
+      {measureId: '006', optionals: ['118', '007']},
+      {measureId: '007', optionals: ['118', '006']},
+      {measureId: '118', optionals: ['007', '006']},
+      {measureId: '005', optionals: ['008']},
+      {measureId: '008', optionals: ['005']},
     ],
     claims: [
       {measureId: '130', optionals: []},
