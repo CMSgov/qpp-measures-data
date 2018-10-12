@@ -114,6 +114,7 @@ const specialClusterRelations = {
   }
 };
 
+// Handle exceptions to standard populateSpecialtySet logic with manual overrides
 function curateSpecialtySet(clusterMap, relations) {
   if (relations) {
     relations.forEach(r => {
@@ -140,6 +141,7 @@ function curateSpecialtySet(clusterMap, relations) {
   }
 }
 
+// Handle exceptions to standard populateClinicalClusters logic with manual overrides
 function curateClinicalClusters(clusterMap, relations) {
   // remove clinicalClusters from measures that belongs to multiple cluster
   relations
