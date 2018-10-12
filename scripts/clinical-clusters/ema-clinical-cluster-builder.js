@@ -36,7 +36,7 @@ const specialSpecialtySetRelations = {
   },
   2018: {
     claims: [{
-      name: 'anesthesiology', action: 'override', measureIds: ['076', '130', '317']
+      name: 'anesthesiology', action: 'replace', measureIds: ['076', '130', '317']
     }, {
       name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317']
     }],
@@ -115,23 +115,22 @@ const specialClusterRelations = {
 };
 
 function curateSpecialtySet(clusterMap, relations) {
-  // handle removal of sets/measures
   if (relations) {
     relations.forEach(r => {
-      if (r.action === 'remove') {
+      if (r.action === 'remove') { // remove specialty set from output
         r.measureIds.forEach(m => {
           const specialtySets = clusterMap.get(m).specialtySets;
           const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
           specialtySets.splice(specialtySetIndex, 1);
         });
-      } else if (r.action === 'override') {
+      } else if (r.action === 'replace') { // replace an existing specialty set with a new set of measures
         r.measureIds.forEach(m => {
           const specialtySets = clusterMap.get(m).specialtySets;
           const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
           specialtySets.splice(specialtySetIndex, 1);
           specialtySets.push({name: r.name, measureIds: r.measureIds});
         });
-      } else if (r.action === 'add') {
+      } else if (r.action === 'add') { // add a new specialty set to output
         r.measureIds.forEach(m => {
           const specialtySets = clusterMap.get(m).specialtySets;
           specialtySets.push({name: r.name, measureIds: r.measureIds});
