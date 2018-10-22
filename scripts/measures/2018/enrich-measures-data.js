@@ -131,25 +131,25 @@ function mergeGeneratedEcqmData(measures) {
 }
 
 function addQualityStrataNames(measures) {
- const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
- qualityStrataCsv.forEach(function(strata, csvIndex) {
+  const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
+  qualityStrataCsv.forEach(function(strata, csvIndex) {
     if (strata[6]) {
-      if (strata[0].length == 1) strata[0] = '00' + strata[0];
-      if (strata[0].length == 2) strata[0] = '0' + strata[0];
+      if (strata[0].length === 1) strata[0] = '00' + strata[0];
+      if (strata[0].length === 2) strata[0] = '0' + strata[0];
 
       measures.forEach(function(qppItem, qppIndex) {
         if (qppItem.category !== 'quality') return;
         if (qppItem.eMeasureId == null) return;
-        if (qppItem.measureId == strata[0]) {
-          measures[qppIndex].strata.forEach(function(measureStrata, strataIndex){
-            if(measureStrata.eMeasureUuids && measureStrata.eMeasureUuids.numeratorUuid == strata[6]) {
+        if (qppItem.measureId === strata[0]) {
+          measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
+            if (measureStrata.eMeasureUuids && measureStrata.eMeasureUuids.numeratorUuid === strata[6]) {
               measures[qppIndex].strata[strataIndex].name = strata[1];
             }
           });
         }
       });
     }
- });
+  });
 }
 
 function addRequiredRegistrySubmissionMethod(measures) {
