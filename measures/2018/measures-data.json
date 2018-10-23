@@ -47747,6 +47747,39 @@
     "measureSpecification": {}
   },
   {
+    "category": "quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "metricType": "singlePerformanceRate",
+    "title": "Diabetes Mellitus (DM) Composite (All or Nothing Scoring) ",
+    "description": "Composite of DM-2 (NQF 0059): Diabetes: Homoglobin A1c (HbA1c) Poor Control (<9%) & DM-7 (NQF 0055): Diabetes: Eye Exam ",
+    "nationalQualityStrategyDomain": "ECC",
+    "measureType": "intermediateOutcomeAndProcess",
+    "measureId": "dmComposite",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0055 & 0059",
+    "isInverse": false,
+    "strata": [
+      {
+        "description": "Percentage of patients 18 - 75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period and who had a retinal or dilated eye exam by an eye care professional during the measurement period or a negative retinal or dilated eye exam (no evidence of retinopathy) in the 12 months prior to the measurement period",
+        "name": "A1c>9.0%"
+      }
+    ],
+    "isHighPriority": true,
+    "primarySteward": "National Committee for Quality Assurance",
+    "submissionMethods": [
+      "cmsWebInterface"
+    ],
+    "measureSets": [],
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "isRegistryMeasure": false,
+    "measureSpecification": {
+      "cmsWebInterface": "https://www.cms.gov/Medicare/Quality-Payment-Program/Resource-Library/2018-Web-Interface-Measures-and-supporting-documents/Web-Interface-Measures/2018_WI_DM.pdf"
+    }
+  },
+  {
     "measureId": "AAAAI11",
     "title": "Asthma Assessment and Classification",
     "description": "Percentage of patients aged 5 years and older with asthma and documentation of an asthma assessment and classification. National Quality Strategy Domain: Effective Clinical Care Process Measure",
