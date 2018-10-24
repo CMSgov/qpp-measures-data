@@ -35,14 +35,15 @@ const specialSpecialtySetRelations = {
     registry: []
   },
   2018: {
-    claims: [{
-      name: 'anesthesiology', action: 'replace', measureIds: ['076', '130', '317']
-    }, {
-      name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317']
-    }],
-    registry: [{
-      name: 'dentistry', action: 'remove', measureIds: ['378', '379']
-    }]
+    claims: [
+      { name: 'anesthesiology', action: 'replace', measureIds: ['076', '130', '317'] },
+      { name: 'dermatology', action: 'replace', measureIds: ['130', '226', '317'] },
+      { name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317'] },
+      { name: 'neurosurgical', action: 'replace', measureIds: ['021', '023', '130', '226'] }
+    ],
+    registry: [
+      { name: 'dentistry', action: 'remove', measureIds: ['378', '379'] }
+    ]
   }
 };
 
