@@ -136,7 +136,6 @@ function addQualityStrataNames(measures) {
     if (strata[6]) {
       if (strata[0].length === 1) strata[0] = '00' + strata[0];
       if (strata[0].length === 2) strata[0] = '0' + strata[0];
-
       measures.forEach(function(qppItem, qppIndex) {
         if (qppItem.category !== 'quality') return;
         if (qppItem.eMeasureId == null) return;
