@@ -7,7 +7,7 @@ const UNIQUE_COLUMN_CONSTRAINT = [
   'performanceYear',
   'submissionMethod'
 ];
-const BENCHMARK_JSON_DIR = '../../../staging/benchmarks/json/';
+const BENCHMARK_JSON_DIR = '../../../staging/2018/benchmarks/json/';
 
 // Returns an alphabetically-ordered list of files in the given pat
 const getOrderedFileNames = (currentDir, relativePath) => {

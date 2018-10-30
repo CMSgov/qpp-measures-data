@@ -5,6 +5,7 @@ const YAML = require('yamljs');
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
+const Constants = require('./constants.js');
 
 /**
  *
@@ -28,7 +29,8 @@ exports.getBenchmarksData = function() {
  * @return {{}} - Object representation of the Benchmarks Schema
  */
 exports.getBenchmarksSchema = function() {
-  return YAML.load(path.join(__dirname, 'benchmarks', 'benchmarks-schema.yaml'));
+  const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
+  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear, 'benchmarks-schema.yaml'));
 };
 
 /**
@@ -49,14 +51,14 @@ exports.getMeasuresSchema = function(performanceYear = 2017) {
 /**
  * @return {Array<ClinicalCluster>}
  */
-exports.getClinicalClusterData = function() {
+exports.getClinicalClusterData = function(performanceYear = 2017) {
   return JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'clinical-clusters', 'clinical-clusters.json')));
+    fs.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters.json')));
 };
 
 /**
  * @return {{}} - Object representation of the Clinical Cluster Schema
  */
-exports.getClinicalClusterSchema = function() {
-  return YAML.load(path.join(__dirname, 'clinical-clusters', 'clinical-clusters-schema.yaml'));
+exports.getClinicalClusterSchema = function(performanceYear = 2017) {
+  return YAML.load(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'));
 };

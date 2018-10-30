@@ -25,53 +25,131 @@ const MAX_SPECIALITY_SET_SIZE = 6;
 const SUPPORTED_PERFORMANCE_YEARS = [2017];
 
 let measuresJson = '';
-const claimsClusterFilePath = process.argv[2];
-const registryClusterFilePath = process.argv[3];
+const performanceYear = parseInt(process.argv[2], 10);
+const claimsClusterFilePath = process.argv[3];
+const registryClusterFilePath = process.argv[4];
 
-const specialClusterRelations = {
-  registry: [
-    {measureId: '047', optionals: []},
-    {measureId: '110', optionals: []},
-    {measureId: '130', optionals: []},
-    {measureId: '134', optionals: []},
-    {measureId: '226', optionals: []},
-    {measureId: '317', optionals: []},
-    {measureId: '424', optionals: []},
-    {measureId: '430', optionals: []},
-    {measureId: '051', optionals: ['052']},
-    {measureId: '052', optionals: ['051']},
-    {measureId: '398', optionals: ['444']},
-    {measureId: '444', optionals: ['398']},
-    {measureId: '024', optionals: ['418']},
-    {measureId: '418', optionals: ['024']},
-    {measureId: '005', optionals: ['008']},
-    {measureId: '006', optionals: ['118', '007']},
-    {measureId: '007', optionals: ['118', '006']},
-    {measureId: '008', optionals: ['005']},
-    {measureId: '118', optionals: ['007', '006']},
-    {measureId: '426', optionals: ['427']},
-    {measureId: '427', optionals: ['426']},
-    {measureId: '112', optionals: ['113']},
-    {measureId: '113', optionals: ['112']}
-
-  ],
-  claims: [
-    {measureId: '130', optionals: []},
-    {measureId: '226', optionals: []},
-    {measureId: '317', optionals: []},
-    {measureId: '117', optionals: []},
-    {measureId: '112', optionals: ['113']},
-    {measureId: '113', optionals: ['112']}
-  ]
+const specialSpecialtySetRelations = {
+  2017: {
+    claims: [],
+    registry: []
+  },
+  2018: {
+    claims: [
+      { name: 'anesthesiology', action: 'replace', measureIds: ['076', '130', '317'] },
+      { name: 'dermatology', action: 'replace', measureIds: ['130', '226', '317'] },
+      { name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317'] },
+      { name: 'neurosurgical', action: 'replace', measureIds: ['021', '023', '130', '226'] }
+    ],
+    registry: [
+      { name: 'dentistry', action: 'remove', measureIds: ['378', '379'] }
+    ]
+  }
 };
 
-function curate(clusterMap, relations) {
-  // remove clincalClusters from measures that belongs to multiple cluster
+const specialClusterRelations = {
+  2017: {
+    claims: [
+      {measureId: '130', optionals: []},
+      {measureId: '226', optionals: []},
+      {measureId: '317', optionals: []},
+      {measureId: '117', optionals: []},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ],
+    registry: [
+      {measureId: '047', optionals: []},
+      {measureId: '110', optionals: []},
+      {measureId: '130', optionals: []},
+      {measureId: '134', optionals: []},
+      {measureId: '226', optionals: []},
+      {measureId: '317', optionals: []},
+      {measureId: '424', optionals: []},
+      {measureId: '430', optionals: []},
+      {measureId: '051', optionals: ['052']},
+      {measureId: '052', optionals: ['051']},
+      {measureId: '398', optionals: ['444']},
+      {measureId: '444', optionals: ['398']},
+      {measureId: '024', optionals: ['418']},
+      {measureId: '418', optionals: ['024']},
+      {measureId: '005', optionals: ['008']},
+      {measureId: '006', optionals: ['118', '007']},
+      {measureId: '007', optionals: ['118', '006']},
+      {measureId: '008', optionals: ['005']},
+      {measureId: '118', optionals: ['007', '006']},
+      {measureId: '426', optionals: ['427']},
+      {measureId: '427', optionals: ['426']},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ]
+  },
+  2018: {
+    claims: [
+      {measureId: '130', optionals: []},
+      {measureId: '317', optionals: []},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ],
+    registry: [
+      {measureId: '110', optionals: []},
+      {measureId: '130', optionals: []},
+      {measureId: '226', optionals: []},
+      {measureId: '424', optionals: []},
+      {measureId: '430', optionals: []},
+      {measureId: '051', optionals: ['052']},
+      {measureId: '052', optionals: ['051']},
+      {measureId: '398', optionals: ['444']},
+      {measureId: '444', optionals: ['398']},
+      {measureId: '024', optionals: ['418']},
+      {measureId: '418', optionals: ['024']},
+      {measureId: '006', optionals: ['118', '007']},
+      {measureId: '007', optionals: ['118', '006']},
+      {measureId: '118', optionals: ['007', '006']},
+      {measureId: '005', optionals: ['008']},
+      {measureId: '008', optionals: ['005']},
+      {measureId: '426', optionals: ['427']},
+      {measureId: '427', optionals: ['426']},
+      {measureId: '112', optionals: ['113']},
+      {measureId: '113', optionals: ['112']}
+    ]
+  }
+};
+
+// Handle exceptions to standard populateSpecialtySet logic with manual overrides
+function curateSpecialtySet(clusterMap, relations) {
+  if (relations) {
+    relations.forEach(r => {
+      if (r.action === 'remove') { // remove specialty set from output
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
+          specialtySets.splice(specialtySetIndex, 1);
+        });
+      } else if (r.action === 'replace') { // replace an existing specialty set with a new set of measures
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
+          specialtySets.splice(specialtySetIndex, 1);
+          specialtySets.push({name: r.name, measureIds: r.measureIds});
+        });
+      } else if (r.action === 'add') { // add a new specialty set to output
+        r.measureIds.forEach(m => {
+          const specialtySets = clusterMap.get(m).specialtySets;
+          specialtySets.push({name: r.name, measureIds: r.measureIds});
+        });
+      }
+    });
+  }
+}
+
+// Handle exceptions to standard populateClinicalClusters logic with manual overrides
+function curateClinicalClusters(clusterMap, relations) {
+  // remove clinicalClusters from measures that belongs to multiple cluster
   relations
     .filter(r => r.optionals.length === 0)
     .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
 
-  // remove measures in clincalClusters that are optional
+  // remove measures in clinicalClusters that are optional
   relations
     .filter(r => r.optionals.length > 0)
     .forEach(r => {
@@ -98,7 +176,7 @@ function populateClinicalClusters(clusterMap, measures, submissionMethod, filePa
     .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
     .value();
 
-    // read the grouped measures and populate the cluster name
+  // read the grouped measures and populate the cluster name
   byClusterName.forEach(clinicalCluster => {
     clinicalCluster.measureIds.forEach(measureId => {
       const measure = measures.find(m => m.measureId === measureId);
@@ -125,7 +203,7 @@ function populateSpecialtySet(clusterMap, measures, submissionMethod) {
     .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
     .value();
 
-    // read the grouped measures and populate the specialty set on each
+  // read the grouped measures and populate the specialty set on each
   bySpecialty.forEach(specialty => {
     if (specialty.measureIds.length < MAX_SPECIALITY_SET_SIZE) {
       specialty.measureIds.forEach(measureId => {
@@ -147,7 +225,7 @@ function populateSpecialtySet(clusterMap, measures, submissionMethod) {
 function generateEMAClusters(allMeasures) {
   const measures = allMeasures.filter(m =>
     (SUPPORTED_PERFORMANCE_YEARS.indexOf(m.firstPerformanceYear) > -1) &&
-        (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
+    (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
   );
 
   const claimsClusterMap = new Map();
@@ -157,11 +235,14 @@ function generateEMAClusters(allMeasures) {
   populateSpecialtySet(claimsClusterMap, measures, 'claims');
   populateSpecialtySet(registryClusterMap, measures, 'registry');
 
+  curateSpecialtySet(claimsClusterMap, specialSpecialtySetRelations[performanceYear].claims);
+  curateSpecialtySet(registryClusterMap, specialSpecialtySetRelations[performanceYear].registry);
+
   populateClinicalClusters(claimsClusterMap, measures, 'claims', claimsClusterFilePath);
   populateClinicalClusters(registryClusterMap, measures, 'registry', registryClusterFilePath);
 
-  curate(registryClusterMap, specialClusterRelations.registry);
-  curate(claimsClusterMap, specialClusterRelations.claims);
+  curateClinicalClusters(claimsClusterMap, specialClusterRelations[performanceYear].claims);
+  curateClinicalClusters(registryClusterMap, specialClusterRelations[performanceYear].registry);
 
   const emaClusters = [];
 
