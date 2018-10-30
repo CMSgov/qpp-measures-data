@@ -137,12 +137,12 @@ function mergeGeneratedEcqmData(measures) {
 function addQualityStrataNames(measures) {
   const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
   qualityStrataCsv.forEach(function(strata, csvIndex) {
-    const currentMeasureId = _.padStart(strata[0], 3, '0')
+    const currentMeasureId = _.padStart(strata[0], 3, '0');
     const currentNumeratorUuid = strata[6];
     const currentStrataName = strata[1];
     if (_.isEmpty(currentNumeratorUuid)) return;
     measures.forEach(function(qppItem, qppIndex) {
-      if (qppItem.category !== 'quality' || _.isNull(qppItem.eMeasureId) || qppItem.measureId != currentMeasureId) return;
+      if (qppItem.category !== 'quality' || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
       measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
         if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
             measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
