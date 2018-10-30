@@ -137,16 +137,17 @@ function mergeGeneratedEcqmData(measures) {
 function addQualityStrataNames(measures) {
   const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
   qualityStrataCsv.forEach(function(strata, csvIndex) {
-    if (strata[6]) {
-      if (strata[0].length === 1) strata[0] = '00' + strata[0];
-      if (strata[0].length === 2) strata[0] = '0' + strata[0];
+    const currentMeasureId = _.padStart(strata[0], 3, '0')
+    const currentNumeratorUuid = strata[6];
+    const currentStrataName = strata[1];
+    if (currentNumeratorUuid) {
       measures.forEach(function(qppItem, qppIndex) {
         if (qppItem.category !== 'quality') return;
         if (qppItem.eMeasureId == null) return;
-        if (qppItem.measureId === strata[0]) {
+        if (qppItem.measureId === currentMeasureId) {
           measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
-            if (measureStrata.eMeasureUuids && measureStrata.eMeasureUuids.numeratorUuid === strata[6]) {
-              measures[qppIndex].strata[strataIndex].name = strata[1];
+            if (measureStrata.eMeasureUuids && measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
+              measures[qppIndex].strata[strataIndex].name = currentStrataName;
             }
           });
         }
