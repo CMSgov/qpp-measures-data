@@ -130,6 +130,10 @@ function mergeGeneratedEcqmData(measures) {
   });
 }
 
+/*
+ * A function that uses an identifier in `quality-strata.csv` to map a numerator uuid to a strata.
+ * We add strata names to each strata if the Numerator Sub-Population UUID matches with `quality-strata.csv`.
+ */
 function addQualityStrataNames(measures) {
   const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
   qualityStrataCsv.forEach(function(strata, csvIndex) {
