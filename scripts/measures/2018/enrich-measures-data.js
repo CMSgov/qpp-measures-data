@@ -140,19 +140,16 @@ function addQualityStrataNames(measures) {
     const currentMeasureId = _.padStart(strata[0], 3, '0')
     const currentNumeratorUuid = strata[6];
     const currentStrataName = strata[1];
-    if (currentNumeratorUuid) {
-      measures.forEach(function(qppItem, qppIndex) {
-        if (qppItem.category !== 'quality') return;
-        if (qppItem.eMeasureId == null) return;
-        if (qppItem.measureId === currentMeasureId) {
-          measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
-            if (measureStrata.eMeasureUuids && measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
-              measures[qppIndex].strata[strataIndex].name = currentStrataName;
-            }
-          });
+    if (_.isEmpty(currentNumeratorUuid)) return;
+    measures.forEach(function(qppItem, qppIndex) {
+      if (qppItem.category !== 'quality' || _.isNull(qppItem.eMeasureId) || qppItem.measureId != currentMeasureId) return;
+      measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
+        if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
+            measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
+          measures[qppIndex].strata[strataIndex].name = currentStrataName;
         }
       });
-    }
+    });
   });
 }
 
