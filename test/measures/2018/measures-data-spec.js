@@ -97,4 +97,12 @@ describe(year + ' measures data json', function() {
       });
     });
   });
+
+  describe('multi eCQM', function() {
+    it('all eCQMs that are multiPerformanceRate should contain a strata name', function() {
+      measuresData.filter(measure => measure.metricType === 'multiPerformanceRate')
+        .forEach(measure => measure.strata.forEach(strata =>
+          assert.property(strata, 'name', `measure '${measure.measureId}' missing strata names`)));
+    });
+  });
 });

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
+const parse = require('csv-parse/lib/sync');
 
 const currentYear = 2018;
 const piRelations = require('../../../util/measures/' + currentYear + '/pi-measure-relations.json');
@@ -19,6 +20,7 @@ function enrichMeasures(measures) {
   enrichInverseMeasures(measures);
   enrichStratifications(measures);
   mergeGeneratedEcqmData(measures);
+  addQualityStrataNames(measures);
   addRequiredRegistrySubmissionMethod(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
@@ -125,6 +127,29 @@ function mergeGeneratedEcqmData(measures) {
     if (manualEcqmInfo.overallAlgorithm) {
       measures[index].overallAlgorithm = manualEcqmInfo.overallAlgorithm;
     }
+  });
+}
+
+/*
+ * Uses numeratorUuid field as a common id to map each strata name (only in `enriched-measures-data-quality.json`)
+ * to a particular strata (in `quality-strata.csv`)
+ */
+function addQualityStrataNames(measures) {
+  const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/2018/quality-strata.csv'), 'utf8'));
+  qualityStrataCsv.forEach(function(strata, csvIndex) {
+    const currentMeasureId = _.padStart(strata[0], 3, '0');
+    const currentNumeratorUuid = strata[6];
+    const currentStrataName = strata[1];
+    if (_.isEmpty(currentNumeratorUuid)) return;
+    measures.forEach(function(qppItem, qppIndex) {
+      if (qppItem.category !== 'quality' || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
+      measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
+        if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
+            measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
+          measures[qppIndex].strata[strataIndex].name = currentStrataName;
+        }
+      });
+    });
   });
 }
 

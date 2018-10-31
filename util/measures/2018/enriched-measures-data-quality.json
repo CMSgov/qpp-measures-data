@@ -824,7 +824,8 @@
           "denominatorUuid": "6FFF86C1-040A-4B84-A113-63362E0C1891",
           "numeratorUuid": "C26BB0E0-244A-4B66-A6E0-7731CF7665E7",
           "denominatorExclusionUuid": "126B533C-1705-49A6-9B00-BBD7391EB80C"
-        }
+        },
+        "name": ">=84Days"
       },
       {
         "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.",
@@ -833,7 +834,8 @@
           "denominatorUuid": "3FCF7F76-1243-462E-9AA9-1031D200920D",
           "numeratorUuid": "14C13E0B-C875-4664-ABE4-4AEFDE178F1E",
           "denominatorExclusionUuid": "74A3758B-7BCF-4B63-809E-5087820731B1"
-        }
+        },
+        "name": ">=180Days"
       }
     ],
     "eMeasureUuid": "40280382-5abd-fa46-015b-49909a0e3822"
@@ -23962,7 +23964,8 @@
           "numeratorUuid": "2C3BF41C-8561-48E5-81E0-39DF94F069A6",
           "denominatorExceptionUuid": "61A8AF15-0DE6-4A77-9FC9-03646E859967",
           "denominatorExclusionUuid": "F3CE1536-5D37-403E-A5EC-E80BBA76C512"
-        }
+        },
+        "name": "CD4<200/mm3"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%",
@@ -23972,7 +23975,8 @@
           "numeratorUuid": "8643FDEB-EE41-4C41-B3EB-8AEDAC7553B9",
           "denominatorExceptionUuid": "D04998BF-D3F3-44EA-B5FB-112C6EA13A8B",
           "denominatorExclusionUuid": "C7C308FA-072F-409D-BB0E-2E24F2B706C4"
-        }
+        },
+        "name": "CD4<500/mm3OrCD4<15%"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV",
@@ -23981,7 +23985,8 @@
           "denominatorUuid": "5EA7C0A5-43AE-485B-9162-48A484FED139",
           "numeratorUuid": "E9408863-096A-4C8B-9C2E-26B88F13E018",
           "denominatorExclusionUuid": "1B589B45-9922-41E3-AD0C-F94C6D399FFC"
-        }
+        },
+        "name": "atDiagnosis"
       }
     ],
     "eMeasureUuid": "40280382-5abd-fa46-015b-49b9e72038f0"
@@ -26510,7 +26515,7 @@
         }
       },
       {
-        "name": "intervention",
+        "name": "overall",
         "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
         "eMeasureUuids": {
           "initialPopulationUuid": "7C4B36B2-BC2F-42E2-AE60-2A3E461A441E",
@@ -27947,7 +27952,8 @@
           "denominatorUuid": "1786D67F-A917-4948-994A-7238EBFB513E",
           "numeratorUuid": "C23BC68E-9FB9-4799-9B10-A7DC31339A03",
           "denominatorExclusionUuid": "A798F397-E73F-48FF-A214-01130FE31B1A"
-        }
+        },
+        "name": "overall"
       },
       {
         "description": "Patients with at least two orders for the same high-risk medication during the measurement period",
@@ -27956,7 +27962,8 @@
           "denominatorUuid": "E26E912E-C43F-4412-9495-209C6F83616F",
           "numeratorUuid": "8B77586E-A421-42C4-A8E2-741FDBCF60B6",
           "denominatorExclusionUuid": "E349E935-6A6C-40E3-A422-FD1759F9AAF3"
-        }
+        },
+        "name": "2+"
       }
     ],
     "cpcPlusGroup": "Other_Measure",
@@ -28001,7 +28008,8 @@
           "denominatorUuid": "4731E9F1-E895-4238-B63D-CB1252E3BADE",
           "numeratorUuid": "5307F884-29AC-47B8-AF08-E928B1DF7BBF",
           "denominatorExclusionUuid": "D1DE917A-41C8-48C9-B8FA-56422DA204DD"
-        }
+        },
+        "name": "BMI"
       },
       {
         "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period",
@@ -28010,7 +28018,8 @@
           "denominatorUuid": "EC3E7159-9941-4AB8-9452-C7261977E8DA",
           "numeratorUuid": "88E91D47-9EF9-4B6F-B22B-AAEA81FCD265",
           "denominatorExclusionUuid": "A5AE9992-E943-4583-A1CE-3437BB8293B2"
-        }
+        },
+        "name": "nutrition"
       },
       {
         "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period",
@@ -28019,7 +28028,8 @@
           "denominatorUuid": "66A4A6FE-FBCB-414C-98A6-C5570E7A26A7",
           "numeratorUuid": "01BBCAE4-16E8-4F82-9106-282C7AF4C370",
           "denominatorExclusionUuid": "C7D28A7F-EE82-43F4-A094-31E1488278D9"
-        }
+        },
+        "name": "physicalActivity"
       }
     ],
     "eMeasureUuid": "40280382-5abd-fa46-015b-49a568c83894"
@@ -29923,7 +29933,8 @@
           "denominatorUuid": "3F6350CA-654C-4B00-8B62-EC810D1CA790",
           "numeratorUuid": "6F8814A6-A26A-4FCB-8A41-902971713FCB",
           "denominatorExclusionUuid": "9242AAE1-D2C4-44A4-AF6B-7DF4C5C9BE31"
-        }
+        },
+        "name": "14DaysOfDiagnosis"
       },
       {
         "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit",
@@ -29932,7 +29943,8 @@
           "denominatorUuid": "417055BD-AECD-49D5-8FA7-764FF1544611",
           "numeratorUuid": "431A7185-548C-4F05-B0D3-90108E4AAD57",
           "denominatorExclusionUuid": "F1AA2B4F-003E-4770-9394-8D465715CC4D"
-        }
+        },
+        "name": "30DaysOfVisit"
       }
     ],
     "cpcPlusGroup": "Other_Measure",
@@ -32229,7 +32241,8 @@
           "denominatorUuid": "7872B69D-A1EB-42B3-8ED8-3BF847CC1B0C",
           "numeratorUuid": "40ADC4A8-3EF2-4672-B287-A5C70C125709",
           "denominatorExclusionUuid": "0A5E78D7-074C-46C6-9529-56E06681EABA"
-        }
+        },
+        "name": "visitWithin30Days"
       },
       {
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
@@ -32238,7 +32251,8 @@
           "denominatorUuid": "787F0CCC-18DA-4F36-B8DA-F24FB75B0E1C",
           "numeratorUuid": "B8E236A4-1AE9-44F9-8664-28A6BED54CF8",
           "denominatorExclusionUuid": "37CC8B9D-0299-4221-8AD6-5B4EC842959B"
-        }
+        },
+        "name": "visitAndFollowups"
       }
     ],
     "eMeasureUuid": "40280382-5abd-fa46-015b-499a7b553852"
