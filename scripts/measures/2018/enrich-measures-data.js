@@ -6,7 +6,7 @@ const parse = require('csv-parse/lib/sync');
 const currentYear = 2018;
 const piRelations = require('../../../util/measures/' + currentYear + '/pi-measure-relations.json');
 const cpcPlusGroups = require('../../../util/measures/' + currentYear + '/cpc+-measure-groups.json');
-const stratifications = require('../../../util/measures/2017/additional-stratifications.json');
+const stratifications = require('../../../util/measures/2018/additional-stratifications.json');
 
 const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
@@ -18,8 +18,8 @@ function enrichMeasures(measures) {
   enrichPIMeasures(measures);
   enrichCPCPlusMeasures(measures);
   enrichInverseMeasures(measures);
-  enrichStratifications(measures);
   mergeGeneratedEcqmData(measures);
+  enrichStratifications(measures);
   addQualityStrataNames(measures);
   addRequiredRegistrySubmissionMethod(measures);
   enrichClaimsRelatedMeasures(measures);
@@ -79,27 +79,6 @@ function enrichInverseMeasures(measures) {
 }
 
 /**
- * Adds in each SubPopulation's stratification UUIDs
- * This JSON document used to derive this is generated using get-stratifications.js
- * Still uses 2017 additional stratifications from 2017. This is subject to change.
- */
-function enrichStratifications(measures) {
-  measures
-    .filter(measure => measure.category === QUALITY_CATEGORY)
-    .forEach(measure => {
-      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
-      if (stratification && stratification.strataMaps) {
-        measure.strata.forEach(subPopulation => {
-          const mapping = stratification.strataMaps.find(map =>
-            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
-          if (mapping) {
-            subPopulation.eMeasureUuids.strata = mapping.strata;
-          }
-        });
-      }
-    });
-}
-/**
  * Merges the updated 2018 generated measure data UUID's into the current quality measures.
  * generated-ecqm-data.json was made from running get-strata-uuids-from-ecqm-zip-2018.js on the eCQM_EP_EC_May2017.zip file
  */
@@ -128,6 +107,28 @@ function mergeGeneratedEcqmData(measures) {
       measures[index].overallAlgorithm = manualEcqmInfo.overallAlgorithm;
     }
   });
+}
+
+/**
+ * Adds in each SubPopulation's stratification UUIDs
+ * This JSON document used to derive this is generated using get-stratifications.js
+ * Still uses 2017 additional stratifications from 2017. This is subject to change.
+ */
+function enrichStratifications(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
+      if (stratification && stratification.strataMaps) {
+        measure.strata.forEach(subPopulation => {
+          const mapping = stratification.strataMaps.find(map =>
+            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          if (mapping) {
+            subPopulation.eMeasureUuids.strata = mapping.strata;
+          }
+        });
+      }
+    });
 }
 
 /*
