@@ -33,7 +33,11 @@ describe(year + ' measures data json', function() {
       measuresData
         .filter(m => m.category === 'pi')
         .forEach(m => {
-          generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
+          if (m.exclusion) {
+            generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes, exclusion: m.exclusion};
+          } else {
+            generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
+          }
         });
       assert.deepEqual(generated, actualPiRelation);
     });
