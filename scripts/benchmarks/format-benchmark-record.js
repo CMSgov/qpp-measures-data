@@ -49,6 +49,13 @@ const formatSubmissionMethod = function(submissionMethod) {
   return SUBMISSION_METHOD_MAP[submissionMethod.replace(/\s/g, '').toLowerCase()];
 };
 
+const formatIsToppedOut = function(isToppedOut) {
+  if (isToppedOut.trim().toLowerCase() === 'yes') {
+    return true;
+  }
+  return false;
+};
+
 const floatRegex = /([0-9]*[.]?[0-9]+)/g;
 
 /**
@@ -208,6 +215,7 @@ const formatBenchmarkRecord = function(record, options) {
     benchmarkYear: parseInt(options.benchmarkYear),
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
+    isToppedOut: formatIsToppedOut(record.isToppedOut),
     deciles: [
       record.decile1,
       record.decile2,
