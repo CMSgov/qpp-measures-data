@@ -44,7 +44,6 @@ function enrichPIMeasures(measures) {
       if (piRelation) {
         measure.reportingCategory = piRelation.reportingCategory;
         measure.substitutes = piRelation.substitutes;
-        measure.exclusion = piRelation.exclusion;
       }
     });
 }
