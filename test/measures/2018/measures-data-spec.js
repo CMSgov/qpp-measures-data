@@ -28,15 +28,12 @@ describe(year + ' measures data json', function() {
       assert.deepEqual(measure.substitutes, ['PI_PHCDRR_2']);
     });
 
-    it('contains proper metadata', () => {
+    it.only('contains proper metadata', () => {
       const generated = {};
       measuresData
         .filter(m => m.category === 'pi')
         .forEach(m => {
           generated[m.measureId] = {reportingCategory: m.reportingCategory, substitutes: m.substitutes};
-          if (m.exclusion) {
-            generated[m.measureId].exclusion = m.exclusion;
-          }
         });
       assert.deepEqual(generated, actualPiRelation);
     });
