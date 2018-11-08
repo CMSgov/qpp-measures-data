@@ -28,7 +28,7 @@ describe(year + ' measures data json', function() {
       assert.deepEqual(measure.substitutes, ['PI_PHCDRR_2']);
     });
 
-    it.only('contains proper metadata', () => {
+    it('contains proper metadata', () => {
       const generated = {};
       measuresData
         .filter(m => m.category === 'pi')
