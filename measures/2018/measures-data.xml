@@ -24224,7 +24224,7 @@ A retinal or dilated eye exam by an eye care professional in the measurement per
       </eMeasureUuids>
     </strata>
     <strata>
-      <name>overall</name>
+      <name>tobacco</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user</description>
       <eMeasureUuids>
         <initialPopulationUuid>C1A04121-5A7B-4279-A87C-396A80308933</initialPopulationUuid>
@@ -41021,6 +41021,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <substitute>PI_LVPP_1</substitute>
     <substitute>PI_TRANS_EP_1</substitute>
     <substitute>PI_TRANS_LVPP_1</substitute>
+    <exclusion>PI_LVPP_1</exclusion>
     <measureSpecification>
       <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_e-Prescribing.pdf</default>
     </measureSpecification>
@@ -41158,6 +41159,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <substitute>PI_LVITC_1</substitute>
     <substitute>PI_TRANS_HIE_1</substitute>
     <substitute>PI_TRANS_LVOTC_1</substitute>
+    <exclusion>PI_LVITC_1</exclusion>
     <measureSpecification>
       <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Request-Accept Summary of Care.pdf</default>
     </measureSpecification>
@@ -41214,6 +41216,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <substitute>PI_LVOTC_1</substitute>
     <substitute>PI_TRANS_HIE_1</substitute>
     <substitute>PI_TRANS_LVOTC_1</substitute>
+    <exclusion>PI_LVOTC_1</exclusion>
     <measureSpecification>
       <default>https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Send a Summary of Care.pdf</default>
     </measureSpecification>
@@ -41286,6 +41289,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <substitute>PI_TRANS_LVPP_1</substitute>
     <substitute>PI_LVPP_1</substitute>
     <substitute>PI_EP_1</substitute>
+    <exclusion>PI_TRANS_LVPP_1</exclusion>
     <measureSpecification>
       <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_e-Prescribing.pdf</default>
     </measureSpecification>
@@ -41309,6 +41313,7 @@ period who had a lumbar discectomy/laminotomy procedure performed during the den
     <substitute>PI_LVOTC_1</substitute>
     <substitute>PI_HIE_2</substitute>
     <substitute>PI_LVITC_1</substitute>
+    <exclusion>PI_TRANS_LVOTC_1</exclusion>
     <measureSpecification>
       <default>https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Health Information Exchange.pdf</default>
     </measureSpecification>

@@ -283,6 +283,7 @@
       "PI_TRANS_EP_1",
       "PI_TRANS_LVPP_1"
     ],
+    "exclusion": "PI_LVPP_1",
     "measureSpecification": {
       "default": "https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_e-Prescribing.pdf"
     }
@@ -441,6 +442,7 @@
       "PI_TRANS_HIE_1",
       "PI_TRANS_LVOTC_1"
     ],
+    "exclusion": "PI_LVITC_1",
     "measureSpecification": {
       "default": "https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Request-Accept Summary of Care.pdf"
     }
@@ -506,6 +508,7 @@
       "PI_TRANS_HIE_1",
       "PI_TRANS_LVOTC_1"
     ],
+    "exclusion": "PI_LVOTC_1",
     "measureSpecification": {
       "default": "https://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2018.MIPS ACI Measure_Send a Summary of Care.pdf"
     }
@@ -591,6 +594,7 @@
       "PI_LVPP_1",
       "PI_EP_1"
     ],
+    "exclusion": "PI_TRANS_LVPP_1",
     "measureSpecification": {
       "default": "https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_e-Prescribing.pdf"
     }
@@ -618,6 +622,7 @@
       "PI_HIE_2",
       "PI_LVITC_1"
     ],
+    "exclusion": "PI_TRANS_LVOTC_1",
     "measureSpecification": {
       "default": "https://qpp.cms.gov/docs/pi_specifications/Transition Measure Specifications/2018.MIPS ACI Transition Measure_Health Information Exchange.pdf"
     }
