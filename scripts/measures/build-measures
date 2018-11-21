@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-currentPerformanceYear=2018
+currentPerformanceYear=2019
 # We assume we'll never need to rebuild measures for a previous
 # performance year. If you need to rebuild measures
 # for a previous performance year, you'll have to:
 # 1. use the git history of this file
 # 2. use the git history of any necessary import scripts
 # 3. revert any changes to directory structures below.
+
+if [ $currentPerformanceYear = 2019 ]; then
+  exec scripts/measures/build-2019-measures $currentPerformanceYear
+  exit
+fi
 
 # note these paths are relative to /scripts/measures/$currentPerformanceYear/
 quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'

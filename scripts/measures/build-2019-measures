@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$1
+
+quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
+quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
+quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+
+pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
+pi_csv='../../../util/measures/'$currentPerformanceYear'/pi-measures.csv'
+
+ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
+ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
+
+final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
+
+# 0. Add quality measures to the staging measures-data-quality.json file:
+node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
+	$quality_csv $quality_strata $quality_measures
+
+# 1. Add PI measures to the staging measures-data-pi.json file:
+node scripts/measures/$currentPerformanceYear/import-pi-measures.js \
+	$pi_csv $pi_measures
+
+# 2. Add IA measures to the staging measures-data-ia.json file:
+node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
+	$ia_csv $ia_measures
+
+# 3. Merge the array/jsonfile-per-measureType into a combined array of all measures
+node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
+	$quality_measures $pi_measures $ia_measures $final_measures
+
+# 4. To regenerate the `measures-data.xml` file, run:
+echo "generating measures-data.xml from measures-data.json"
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/convert-json-to-xml.js \
+		> measures/$currentPerformanceYear/measures-data.xml
+
+# 5. Validate the resulting measures-data.json file:
+echo "validating new measures-data.json"
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear
