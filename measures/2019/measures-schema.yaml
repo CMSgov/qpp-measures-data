@@ -63,7 +63,7 @@ definitions:
         enum: [required, bonus, exclusion, null]
       weight:
         description: Determines the performance score points granted for attesting to the measure.
-        enum: [0, 5, 10, 20, 40]
+        enum: [null, 0, 5, 10, 20, 40]
       objective:
         description: PI category which the measure incentivizes.
         oneOf: [{ $ref: #/definitions/objectives }]

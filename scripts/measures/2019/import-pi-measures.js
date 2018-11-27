@@ -67,7 +67,7 @@ function convertPiCsvsToMeasures(piCSVRows) {
     }
     _.each(PI_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
       if (measureKeyName === 'weight') {
-        measure[measureKeyName] = Number(mapInput(row[columnName]));
+        measure[measureKeyName] = row[columnName] === 'null' ? null : Number(mapInput(row[columnName]));
       } else if (measureKeyName === 'measureSets') {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
       } else if (measureKeyName === 'substitutes') {
