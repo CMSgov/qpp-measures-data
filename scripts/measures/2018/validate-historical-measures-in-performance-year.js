@@ -2,8 +2,12 @@ const _ = require('lodash');
 const Constants = require('../../../constants');
 const QppMeasuresData = require('../../../index');
 
+console.log('==========')
+console.log(process.argv[2])
+console.log('==========')
+
 const performanceYear = (process.argv[2] || Constants.currentPerformanceYear);
-const historicalYear = performanceYear - 2;
+const historicalYear = performanceYear - 1;
 
 // First performance year began on or before the historical year and
 // last performance year isn't set yet or is greater or equal to the historical year
@@ -11,6 +15,8 @@ const isWithinValidYears = (measure) => {
   return measure.firstPerformanceYear <= historicalYear &&
     (_.isNull(measure.lastPerformanceYear) || measure.lastPerformanceYear >= performanceYear);
 };
+
+const errorMeasureIds = []
 
 const validateMeasureValidityForPerformanceAndHistoricalYears = (performanceYear, historicalYear) => {
   const performanceYearMeasuresData = QppMeasuresData.getMeasuresData(performanceYear);
@@ -40,12 +46,14 @@ const validateMeasureValidityForPerformanceAndHistoricalYears = (performanceYear
 
     if (!historicalYearMeasureIds.includes(measureId)) {
       console.error(`Measure Id ${measureId} exists in ${performanceYear} but not ${historicalYear}`);
+      errorMeasureIds.push(measureId)
     }
   });
 };
 
 if (performanceYear && historicalYear) {
   validateMeasureValidityForPerformanceAndHistoricalYears(performanceYear, historicalYear);
+  console.log(JSON.stringify(errorMeasureIds, null, 2))
 } else {
   console.error('Please supply performance year!\nExample command: node validate-historical-measures-in-performance-year.js 2019');
 }
