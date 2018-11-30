@@ -69,4 +69,4 @@ cat measures/$currentPerformanceYear/measures-data.json | \
 
 # 4. Validate that measures in performance year are in historical year's measures data
 echo "validating measures in performance year are in historical year's measures data"
-node scripts/measures/$currentPerformanceYear/validate-historical-measures-in-performance-year.js $currentPerformanceYear
+node scripts/measures/validate-historical-measures-in-performance-year.js $currentPerformanceYear
