@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const QppMeasuresData = require('../..');
+const QppMeasuresData = require('../');
 
 const performanceYear = Number(process.argv[2]);
 const previousYear = performanceYear - 1;
@@ -11,8 +11,9 @@ const isWithinValidYears = (measure) => {
     (_.isNull(measure.lastPerformanceYear) || measure.lastPerformanceYear >= performanceYear);
 };
 
-const validatePerformanceYearsMatchPreviousMeasuresData = (performanceYear, previousYear) => {
-  const performanceYearMeasuresData = QppMeasuresData.getMeasuresData(performanceYear);
+const validateFirstPerformanceYears = (measureJson, previousYear) => {
+  const performanceYearMeasuresData = JSON.parse(measureJson);
+
   const previousYearMeasuresData = QppMeasuresData.getMeasuresData(previousYear);
 
   // Get measures from the performance year measures-data with a
@@ -43,8 +44,20 @@ const validatePerformanceYearsMatchPreviousMeasuresData = (performanceYear, prev
   });
 };
 
+let json = '';
 if (previousYear >= 2017) {
-  validatePerformanceYearsMatchPreviousMeasuresData(performanceYear, previousYear);
+  process.stdin.setEncoding('utf8');
+
+  process.stdin.on('readable', function() {
+    const chunk = this.read();
+    if (chunk !== null) {
+      json += chunk;
+    }
+  });
+
+  process.stdin.on('end', function() {
+    validateFirstPerformanceYears(json, previousYear);
+  });
 } else {
   throw Error(`${performanceYear} is an invalid performance year. Must be 2019 or later. We don't have measures data from prior to 2017`);
 }
