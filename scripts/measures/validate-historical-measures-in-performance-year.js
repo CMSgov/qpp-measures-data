@@ -1,36 +1,30 @@
 const _ = require('lodash');
-const Constants = require('../../constants');
 const QppMeasuresData = require('../..');
 
-const currentPerformanceYear = Number(process.argv[2] || Constants.currentPerformanceYear);
-const performanceYear = currentPerformanceYear + 1;
-const historicalYear = performanceYear - 2;
+const performanceYear = Number(process.argv[2]);
+const previousYear = performanceYear - 1;
 
-console.log('========')
-console.log(performanceYear, historicalYear)
-console.log('========')
-
-// First performance year began on or before the historical year and
-// last performance year isn't set yet or is greater or equal to the historical year
+// First performance year began on or before the previous year and
+// last performance year isn't set yet or is greater or equal to the previous year
 const isWithinValidYears = (measure) => {
-  return measure.firstPerformanceYear <= historicalYear &&
+  return measure.firstPerformanceYear <= previousYear &&
     (_.isNull(measure.lastPerformanceYear) || measure.lastPerformanceYear >= performanceYear);
 };
 
-const validateMeasureValidityForPerformanceAndHistoricalYears = (performanceYear, historicalYear) => {
+const validatePerformanceYearsMatchPreviousMeasuresData = (performanceYear, previousYear) => {
   const performanceYearMeasuresData = QppMeasuresData.getMeasuresData(performanceYear);
-  const historicalYearMeasuresData = QppMeasuresData.getMeasuresData(historicalYear);
+  const previousYearMeasuresData = QppMeasuresData.getMeasuresData(previousYear);
 
   // Get measures from the performance year measures-data with a
-  // performance year range that includes the historical year
-  const measuresSupposedlyExistingInHistoricalYear = performanceYearMeasuresData.filter(isWithinValidYears);
+  // performance year range that includes the previous year
+  const measuresSupposedlyExistingInPreviousYear = performanceYearMeasuresData.filter(isWithinValidYears);
 
-  // Get measures from the actual historical year measures-data
-  // In theory this should match the measuresSupposedlyExistingInHistoricalYear
-  const measuresExistingInHistoricalYear = historicalYearMeasuresData.filter(isWithinValidYears);
-  const historicalYearMeasureIds = _.map(measuresExistingInHistoricalYear, m => {
+  // Get measures from the actual previous year measures-data
+  // In theory this should match the measuresSupposedlyExistingInPreviousYear
+  const measuresExistingInPreviousYear = previousYearMeasuresData.filter(isWithinValidYears);
+  const previousYearMeasureIds = _.map(measuresExistingInPreviousYear, m => {
     let measureId = m.measureId.toUpperCase();
-    if (historicalYear === 2017) {
+    if (previousYear === 2017) {
       // ACI measures were all renamed to PI measures between 2017 and 2018
       // and spaces were removed from all measures between 2017 and 2018
       measureId = measureId.replace(/^ACI_/, 'PI_').replace(/ /, '');
@@ -39,18 +33,18 @@ const validateMeasureValidityForPerformanceAndHistoricalYears = (performanceYear
   });
 
   // Throw an error if a measure is valid in the performance year but is
-  // not in the historical year's measures data
-  measuresSupposedlyExistingInHistoricalYear.forEach((measure) => {
+  // not in the previous year's measures data
+  measuresSupposedlyExistingInPreviousYear.forEach((measure) => {
     const measureId = measure.measureId.toUpperCase();
 
-    if (!historicalYearMeasureIds.includes(measureId)) {
-      console.error(`Measure Id ${measureId} exists in ${currentPerformanceYear} but not ${historicalYear}`);
+    if (!previousYearMeasureIds.includes(measureId)) {
+      console.error(`Measure Id ${measureId} exists in ${performanceYear} but not ${previousYear}`);
     }
   });
 };
 
-if (performanceYear && historicalYear) {
-  validateMeasureValidityForPerformanceAndHistoricalYears(currentPerformanceYear, historicalYear);
+if (previousYear >= 2017) {
+  validatePerformanceYearsMatchPreviousMeasuresData(performanceYear, previousYear);
 } else {
-  console.error('Please supply performance year!\nExample command: node validate-historical-measures-in-performance-year.js 2019');
+  throw Error(`${performanceYear} is an invalid performance year. Must be 2019 or later. We don't have measures data from prior to 2017`);
 }

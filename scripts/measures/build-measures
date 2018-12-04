@@ -67,6 +67,11 @@ echo "validating new measures-data.json"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
 
-# 4. Validate that measures in performance year are in historical year's measures data
-echo "validating measures in performance year are in historical year's measures data"
-node scripts/measures/validate-historical-measures-in-performance-year.js $currentPerformanceYear
+# 4. Validate that performance year values in new measures-data match actual previous year's measures
+# We don't have measures data from prior to 2017, so don't do this for
+# performance years earlier than 2018
+if [ $currentPerformanceYear -gt 2017 ]
+then
+	echo "validating measures in performance year are in previous year's measures data"
+	node scripts/measures/validate-historical-measures-in-performance-year.js $currentPerformanceYear
+fi

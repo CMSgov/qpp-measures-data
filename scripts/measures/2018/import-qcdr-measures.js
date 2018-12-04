@@ -23,7 +23,6 @@ const path = require('path');
 const config = {
   constant_fields: {
     category: 'quality',
-    firstPerformanceYear: 2017,
     lastPerformanceYear: null,
     eMeasureId: null,
     nqfEMeasureId: null,
@@ -77,7 +76,8 @@ const config = {
         default: false
       }
     },
-    primarySteward: 20
+    primarySteward: 20,
+    firstPerformanceYear: 22
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
   },
@@ -175,7 +175,11 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
           throw TypeError('Column ' + columnObject + ' does not exist in source data');
         } else {
           // measure data maps directly to data in csv
-          newMeasure[measureKey] = _.trim(record[columnObject]);
+          let value = _.trim(record[columnObject]);
+          if (measureKey === 'firstPerformanceYear') {
+            value = Number(value);
+          }
+          newMeasure[measureKey] = value;
         }
       } else {
         // measure data requires mapping CSV data to new value, e.g. Y, N -> true, false
