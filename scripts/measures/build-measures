@@ -15,5 +15,5 @@ elif [ $currentPerformanceYear = 2018 ]; then
   exec scripts/measures/build-2018-measures $currentPerformanceYear
   exit
 else
-  console.warn('Current performance year not valid: ' + $currentPerformanceYear);
+  echo 'Current performance year not valid!' $currentPerformanceYear;
 fi
