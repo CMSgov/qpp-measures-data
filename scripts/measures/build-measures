@@ -1,68 +1,11 @@
 #!/usr/bin/env bash
 
-currentPerformanceYear=2018
-# We assume we'll never need to rebuild measures for a previous
-# performance year. If you need to rebuild measures
-# for a previous performance year, you'll have to:
-# 1. use the git history of this file
-# 2. use the git history of any necessary import scripts
-# 3. revert any changes to directory structures below.
+currentPerformanceYear=$(($1))
+maxPerformanceYear=2019
 
-# note these paths are relative to /scripts/measures/$currentPerformanceYear/
-quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
-quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
-quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
-cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
-cahps_measures='../../../staging/'$currentPerformanceYear'/cahps-measures.json'
-cost_measures='../../../util/measures/'$currentPerformanceYear'/cost-measures.json'
-pi_json='../../../util/measures/'$currentPerformanceYear'/pi-measures.json'
-pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
-ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
-ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
-qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
-qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
-enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
-final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
-manually_added_measures='../../../util/measures/'$currentPerformanceYear'/manually-added-measures.json'
-
-# 0a. Add quality measures to the staging measures-data-quality.json file:
-node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
-	$quality_csv $quality_strata $quality_measures
-
-# 0b. Add PI (formerly ACI) measures to the staging measures-data-pi.json file:
-# (For now it's just copying over 2017's with ACI changed to PI, preAttestation
-# changed to attestation, and a few content tweaks by CMS)
-cat util/measures/$currentPerformanceYear/pi-measures.json > \
-	staging/$currentPerformanceYear/measures-data-pi.json
-
-# 0c. Add IA measures to the staging measures-data-ia.json file:
-node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
-	$ia_csv $ia_measures
-
-# 0d. Add CAHPS measures to the staging cahps-measures.json file:
-node scripts/measures/$currentPerformanceYear/add-cahps-measures.js \
-	$cahps_csv $cahps_measures
-
-# Enrich `measures-data.json` file, run:
-node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
-	$quality_measures $enriched_quality_measures
-
-# 1. Merge the array/jsonfile-per-measureType into a combined array of all measures
-node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	$enriched_quality_measures $pi_measures $ia_measures $cost_measures $cahps_measures \
-	$manually_added_measures $final_measures
-
-# import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
-node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
-	$final_measures $qcdr_csv $qcdr_strata
-
-# 2. To regenerate the `measures-data.xml` file, run:
-echo "generating measures-data.xml from measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/convert-json-to-xml.js \
-		> measures/$currentPerformanceYear/measures-data.xml
-
-# 3. Validate the resulting measures-data.json file:
-echo "validating new measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/validate-data.js measures $currentPerformanceYear
+if (( $currentPerformanceYear >= 2018 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+  exec scripts/measures/build-${currentPerformanceYear}-measures
+  exit
+else
+  echo 'Current performance year not valid!' $currentPerformanceYear;
+fi
