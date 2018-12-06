@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
 
-currentPerformanceYear=2019
-# We assume we'll never need to rebuild measures for a previous
-# performance year. If you need to rebuild measures
-# for a previous performance year, you'll have to:
-# 1. use the git history of this file
-# 2. use the git history of any necessary import scripts
-# 3. revert any changes to directory structures below.
+currentPerformanceYear=$1
+maxPerformanceYear=2019
 
-if [ $currentPerformanceYear = 2019 ]; then
-  exec scripts/measures/build-2019-measures $currentPerformanceYear
-  exit
-elif [ $currentPerformanceYear = 2018 ]; then
-  exec scripts/measures/build-2018-measures $currentPerformanceYear
+if [ $((currentPerformanceYear >= 2018)) ] && [ $((currentPerformanceYear <= maxPerformanceYear)) ]; then
+  exec scripts/measures/build-${currentPerformanceYear}-measures
   exit
 else
   echo 'Current performance year not valid!' $currentPerformanceYear;
