@@ -9,7 +9,8 @@ const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYea
   const firstPerformanceYears =
     _.pull(
       _.uniq(_.map(currentYearMeasuresData, 'firstPerformanceYear')),
-      currentYear);
+      currentYear
+    );
 
   if (!_.every(firstPerformanceYears, (year) => year < currentYear)) {
     throw Error('One or more measures has a first performance year in the future');
@@ -41,13 +42,13 @@ const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYea
       return measureId;
     });
 
-    // Throw an error if a measure is valid in the performance year but is
+    // Print error message if a measure is valid in the performance year but is
     // not in the previous year's measures data
     measuresSupposedlyExistingInPreviousYear.forEach((measure) => {
       const measureId = measure.measureId.toUpperCase();
 
       if (!previousYearMeasureIds.includes(measureId)) {
-        console.error(`Measure Id ${measureId} exists in ${currentYear} but not ${previousYear}`);
+        console.log(`${measureId} in ${currentYear} measures data supposedly exists in ${previousYear} measures data but does not`);
       }
     });
   });
@@ -68,6 +69,4 @@ if (Constants.validPerformanceYears.includes(currentYear)) {
     const newMeasuresData = JSON.parse(json);
     validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures(newMeasuresData);
   });
-} else {
-  throw Error(`${currentYear} is an invalid performance year. Must be 2019 or later. We don't have measures data from prior to 2017`);
 }

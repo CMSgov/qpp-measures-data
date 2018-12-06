@@ -68,6 +68,6 @@ cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
 
 # 4. Validate that measures actually existed in their listed firstPerformanceYear and the years after
-echo "validating that measures actually existed in their listed firstPerformanceYear and the years after "
+echo "validating that measures actually existed in their listed firstPerformanceYear and the years after"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-measures-past-existence.js $currentPerformanceYear

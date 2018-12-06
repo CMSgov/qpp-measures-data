@@ -14,7 +14,7 @@ const validateMeasures = function(measuresFile) {
   return execSync(cmd, {stdio: 'pipe'}).toString();
 };
 
-describe(year + ' validate data', function() {
+describe(year + ' validate data against schema', function() {
   it('validates the expected combined measures json', () => {
     const message = validateMeasures(expectedMeasuresFile);
     assert.equal(message, 'Valid for 2018 performance year schema\n');
