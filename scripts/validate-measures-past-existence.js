@@ -7,6 +7,12 @@ if (!Constants.validPerformanceYears.includes(currentYear)) {
   throw Error(`${currentYear} is not a valid performance year; valid years are ${Constants.validPerformanceYears}`);
 }
 
+// The firstPerformanceYear field on measures isn't always accurate.
+// This function iterates through measures in a newly generated measures-data and
+// confirms that each measure actually existed in its firstPeformanceYear and subsequent years
+
+// The lastPerformanceYear field is always null since measures that
+// are no longer valid in a give performance year are removed entirely
 const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYearMeasuresData) => {
   // get an array of all first performance years, e.g. [2017, 2018], excluding the current year
   const firstPerformanceYears =
@@ -34,6 +40,8 @@ const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYea
 
     // Get measures from the actual previous year measures-data
     // In theory this should match the measuresSupposedlyExistingInPreviousYear
+    // In practice these are examples of changes between 2017 and 2018:
+    // QUANTUM41 => Quantum41, MOA 1 => MOA1, ACI_INFBLO_1 => PI_INFBLO_1
     const measuresExistingInPreviousYear = previousYearMeasuresData.filter(isWithinValidYears);
     const previousYearMeasureIds = _.map(measuresExistingInPreviousYear, m => {
       let measureId = m.measureId.toUpperCase();
