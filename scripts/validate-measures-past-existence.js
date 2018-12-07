@@ -3,6 +3,9 @@ const QppMeasuresData = require('../');
 const Constants = require('../constants.js');
 
 const currentYear = Number(process.argv[2]);
+if (!Constants.validPerformanceYears.includes(currentYear)) {
+  throw Error(`${currentYear} is not a valid performance year; valid years are ${Constants.validPerformanceYears}`);
+}
 
 const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYearMeasuresData) => {
   // get an array of all first performance years, e.g. [2017, 2018], excluding the current year
@@ -55,18 +58,16 @@ const validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures = (currentYea
 };
 
 let json = '';
-if (Constants.validPerformanceYears.includes(currentYear)) {
-  process.stdin.setEncoding('utf8');
+process.stdin.setEncoding('utf8');
 
-  process.stdin.on('readable', function() {
-    const chunk = this.read();
-    if (chunk !== null) {
-      json += chunk;
-    }
-  });
+process.stdin.on('readable', function() {
+  const chunk = this.read();
+  if (chunk !== null) {
+    json += chunk;
+  }
+});
 
-  process.stdin.on('end', function() {
-    const newMeasuresData = JSON.parse(json);
-    validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures(newMeasuresData);
-  });
-}
+process.stdin.on('end', function() {
+  const newMeasuresData = JSON.parse(json);
+  validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures(newMeasuresData);
+});
