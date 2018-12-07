@@ -15,7 +15,7 @@ const validateMeasures = function(measuresFile) {
 };
 
 describe('validateExistenceOfCurrentYearMeasuresInPreviousYearMeasures', function() {
-  it('validates measures actually existed in their listed firstPerformanceYear and the years after', () => {
+  it('validates measures actually existed in their listed firstPerformanceYear and the years after, including measure id remapping', () => {
     const message = validateMeasures(validPerfYearMeasuresFile);
     assert.equal(message, '');
   });
