@@ -5,8 +5,8 @@ const path = require('path');
 
 const Constants = require('../../../constants.js');
 /**
- * `import-ia-measures` reads an IA CSV file and creates valid measures,
- * then writes the resulting json to a staging measures-data-ia.js file.
+ * `import-cost-measures` reads an COST CSV file and creates valid measures,
+ * then writes the resulting json to a staging measures-data-cost.js file.
  */
 
 const COST_CSV_COLUMN_NAMES = {
