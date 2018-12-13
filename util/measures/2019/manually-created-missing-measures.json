@@ -1,0 +1,110 @@
+[
+	{
+		"eMeasureId": "CMS145v6",
+		"overallAlgorithm": "weightedAverage",
+		"metricType": "multiPerformanceRate",
+		"eMeasureUuid": "40280382-5971-4eed-015a-4df98a314b40",
+		"strata": [
+			{
+				"name": "LVSD",
+				"description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF < 40% who were prescribed beta-blocker therapy",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "AF9E3B00-9A22-46BB-9354-EC4AC32D2EA4",
+					"denominatorUuid": "8B0F028C-2196-4984-A034-B969BD75D013",
+					"numeratorUuid": "F883CF79-13E1-40BD-BBB4-5E26AFAF2E24",
+					"denominatorExceptionUuid": "88EF4FC4-B428-4FFA-8C42-552AC66765BB"
+				}
+			},
+			{
+				"name": "priorMI",
+				"description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a prior (within the past 3 years) myocardial infarction who were prescribed beta-blocker therapy",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "B9E2115F-5BA9-4884-9EBE-3E07254C7DFE",
+					"denominatorUuid": "DB77B19D-6CAF-43B6-B3CF-2E34000B1970",
+					"numeratorUuid": "0F2F49CB-BA85-4F5B-B4EE-F8A725174120",
+					"denominatorExceptionUuid": "7C4A3988-5F29-46BF-9C51-41EF60611C39"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS160v6",
+		"overallAlgorithm": "weightedAverage",
+		"metricType": "multiPerformanceRate",
+		"eMeasureUuid": "40280381-503f-a1fc-0150-afe320c01761",
+		"strata": [
+			{
+				"name": "4MonthsOfEnd",
+				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "725F4792-0A9A-49CB-8063-9BA1A57270EC",
+					"denominatorUuid": "AFCACA89-68B1-4415-8D48-341237EDEC02",
+					"numeratorUuid": "6E41C227-F801-45AC-8271-0E9325CE1481",
+					"denominatorExclusionUuid": "D71F6E54-6FC7-482A-AFFB-C09C66506EB7"
+				}
+			},
+			{
+				"name": "4&8MonthsAfterStart",
+				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "A221C073-3EE6-46DE-AD68-98FB62B4590D",
+					"denominatorUuid": "CCF8EF1D-ACEB-4160-BECE-EBC6DE6AC295",
+					"numeratorUuid": "7B13A87F-621F-4682-BE2C-B0900AEF6AE5",
+					"denominatorExclusionUuid": "0271A3BE-3CF8-4E43-8C52-F14CF020E856"
+				}
+			},
+			{
+				"name": "4MonthsOfStart",
+				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "293D5F5C-912E-40AC-9C0D-4840E5F6E2B8",
+					"denominatorUuid": "E31974D3-5AB2-42F5-ACE3-77415D503785",
+					"numeratorUuid": "3948D321-8D57-4F5B-B3E1-3140D4E6CBBB",
+					"denominatorExclusionUuid": "366C029C-D36B-4585-88D8-824C10AEED5E"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS138v6",
+		"metricType": "multiPerformanceRate",
+		"eMeasureUuid": "40280382-5abd-fa46-015b-1b7c6bb929d0",
+		"strata": [
+			{
+				"name": "screenedForUse",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "95BF2369-1AA2-4A8B-9AF8-B1BD08A4DCA6",
+					"denominatorUuid": "3B551ED0-E6BE-4D1B-B657-7C5CBF0F9E5E",
+					"numeratorUuid": "03EB885E-F7CF-491D-B589-76C35404A6E8",
+					"denominatorExceptionUuid": "824B8FC1-D790-4CAF-8A68-F0607D24D14B"
+				}
+			},
+			{
+				"name": "intervention",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "7C4B36B2-BC2F-42E2-AE60-2A3E461A441E",
+					"denominatorUuid": "AD464F50-958E-4557-8DCE-555614AEE6B8",
+					"numeratorUuid": "70DBF8C1-7DD3-4413-A501-021212C44181",
+					"denominatorExceptionUuid": "6ACFDD9F-4D31-45F8-9516-6D4BCB5BEF20"
+				}
+			},
+			{
+				"name": "overall",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "C1A04121-5A7B-4279-A87C-396A80308933",
+					"denominatorUuid": "D851152D-D00B-4A21-9E6A-A29E2E772E97",
+					"numeratorUuid": "C0CCE0E5-CD1A-4F94-8A75-F750EA4D4251",
+					"denominatorExceptionUuid": "FE9E6C69-EB6B-4423-96FD-4C718E983522"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS347v1",
+		"metricType": "singlePerformanceRate",
+		"eMeasureUuid": "40280382-5b4d-eebc-015b-8245e0fa06b7"
+	}
+]
