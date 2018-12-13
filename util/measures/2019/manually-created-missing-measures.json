@@ -1,28 +1,66 @@
 [
 	{
+		"eMeasureId": "CMS138v7",
+		"overallAlgorithm": "overallStratumOnly",
+		"metricType": "multiPerformanceRate",
+		"eMeasureUuid": "40280382-6240-b6b9-0162-54815a310c2c",
+		"strata": [
+			{
+				"name": "screenedForUse",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "D03DA272-DBB3-4F46-B19B-CF3262A23C2E",
+					"denominatorUuid": "0F1384E0-350D-43B9-8C17-1140837F342E",
+					"numeratorUuid": "1356052C-4C82-4859-85B4-D04ACF269564",
+					"denominatorExceptionUuid": "A8DBEC91-05EF-4897-80E4-39400B23F030"
+				}
+			},
+			{
+				"name": "overall",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "C4D32BC0-8DBE-4766-BF47-7718D1569C79",
+					"denominatorUuid": "C1195308-7F73-409B-A4FF-8F17A4AA772E",
+					"numeratorUuid": "D10D6789-32F2-4A72-9588-611C4765FC13",
+					"denominatorExceptionUuid": "29CD08BD-BFA6-4208-80C6-24DD96862EB4"
+				}
+			},
+			{
+				"name": "tobacco",
+				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "1D17B8A9-4DBF-448A-BB7F-879223A0A825",
+					"denominatorUuid": "C33FDC75-14E2-4A57-A18E-130D26411C92",
+					"numeratorUuid": "98958164-44A0-4759-AF5C-86EFB56AF1BA",
+					"denominatorExceptionUuid": "EA9FE5F4-3057-495E-B5E5-83554CE39944"
+				}
+			}
+		]
+	},
+	{
 		"eMeasureId": "CMS145v6",
 		"overallAlgorithm": "weightedAverage",
 		"metricType": "multiPerformanceRate",
-		"eMeasureUuid": "40280382-5971-4eed-015a-4df98a314b40",
+		"eMeasureUuid": "40280382-6258-7581-0162-8cfbf64110c1",
 		"strata": [
 			{
 				"name": "LVSD",
 				"description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF < 40% who were prescribed beta-blocker therapy",
 				"eMeasureUuids": {
-					"initialPopulationUuid": "AF9E3B00-9A22-46BB-9354-EC4AC32D2EA4",
-					"denominatorUuid": "8B0F028C-2196-4984-A034-B969BD75D013",
-					"numeratorUuid": "F883CF79-13E1-40BD-BBB4-5E26AFAF2E24",
-					"denominatorExceptionUuid": "88EF4FC4-B428-4FFA-8C42-552AC66765BB"
+					"initialPopulationUuid": "D37F8791-745C-422B-AC54-AFE90EF73403",
+					"denominatorUuid": "FA3204A5-C7E7-4DCF-883C-E30E1EAF6B15",
+					"numeratorUuid": "B0B86C82-753C-41B6-ABC0-C40605738B19",
+					"denominatorExceptionUuid": "5C10D849-3AAF-4AB8-AC42-C41593EA4B41"
 				}
 			},
 			{
 				"name": "priorMI",
 				"description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a prior (within the past 3 years) myocardial infarction who were prescribed beta-blocker therapy",
 				"eMeasureUuids": {
-					"initialPopulationUuid": "B9E2115F-5BA9-4884-9EBE-3E07254C7DFE",
-					"denominatorUuid": "DB77B19D-6CAF-43B6-B3CF-2E34000B1970",
-					"numeratorUuid": "0F2F49CB-BA85-4F5B-B4EE-F8A725174120",
-					"denominatorExceptionUuid": "7C4A3988-5F29-46BF-9C51-41EF60611C39"
+					"initialPopulationUuid": "FF8E828F-3079-422E-8A60-DC7E07DC04EB",
+					"denominatorUuid": "87EBA461-3E66-45D9-9798-E0BD11ED7D3E",
+					"numeratorUuid": "8C4B62DB-A300-4FAC-ACE1-9DBADC125338",
+					"denominatorExceptionUuid": "F46DADC8-C8A8-4CDD-8599-07B771C60DD5"
 				}
 			}
 		]
@@ -31,80 +69,38 @@
 		"eMeasureId": "CMS160v6",
 		"overallAlgorithm": "weightedAverage",
 		"metricType": "multiPerformanceRate",
-		"eMeasureUuid": "40280381-503f-a1fc-0150-afe320c01761",
+		"eMeasureUuid": "40280382-6258-7581-0162-63106f9201b2",
 		"strata": [
 			{
 				"name": "4MonthsOfEnd",
 				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
 				"eMeasureUuids": {
-					"initialPopulationUuid": "725F4792-0A9A-49CB-8063-9BA1A57270EC",
-					"denominatorUuid": "AFCACA89-68B1-4415-8D48-341237EDEC02",
-					"numeratorUuid": "6E41C227-F801-45AC-8271-0E9325CE1481",
-					"denominatorExclusionUuid": "D71F6E54-6FC7-482A-AFFB-C09C66506EB7"
+					"initialPopulationUuid": "D00E7D31-7F59-468D-99C6-631D07715E59",
+					"denominatorUuid": "A52E93B8-A2D1-414E-94D0-90155E8FF81F",
+					"numeratorUuid": "539B0A53-F5B0-47CB-887E-392792E9D4ED",
+					"denominatorExclusionUuid": "0830DDCA-C45E-4D80-B359-E69E2F83D7B2"
 				}
 			},
 			{
 				"name": "4&8MonthsAfterStart",
 				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
 				"eMeasureUuids": {
-					"initialPopulationUuid": "A221C073-3EE6-46DE-AD68-98FB62B4590D",
-					"denominatorUuid": "CCF8EF1D-ACEB-4160-BECE-EBC6DE6AC295",
-					"numeratorUuid": "7B13A87F-621F-4682-BE2C-B0900AEF6AE5",
-					"denominatorExclusionUuid": "0271A3BE-3CF8-4E43-8C52-F14CF020E856"
+					"initialPopulationUuid": "95F5AFA0-CB23-4786-A2E0-0646C0494E4F",
+					"denominatorUuid": "1B9C4359-5DF7-4B6D-ACD8-C12175C67EFD",
+					"numeratorUuid": "92D313A7-3A3D-44EC-8A94-103CC0003A30",
+					"denominatorExclusionUuid": "7889D513-C24C-482F-8C9C-FC31F35E3999"
 				}
 			},
 			{
 				"name": "4MonthsOfStart",
 				"description": "Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia",
 				"eMeasureUuids": {
-					"initialPopulationUuid": "293D5F5C-912E-40AC-9C0D-4840E5F6E2B8",
-					"denominatorUuid": "E31974D3-5AB2-42F5-ACE3-77415D503785",
-					"numeratorUuid": "3948D321-8D57-4F5B-B3E1-3140D4E6CBBB",
-					"denominatorExclusionUuid": "366C029C-D36B-4585-88D8-824C10AEED5E"
+					"initialPopulationUuid": "750B4DDA-EC94-4082-9AB4-86824666D808",
+					"denominatorUuid": "2E3A7115-247D-4A0E-918C-AB581E13486A",
+					"numeratorUuid": "DE1952F9-9E35-4493-BA65-3F6CD8904059",
+					"denominatorExclusionUuid": "9FCE046B-5EF9-4A19-9D22-D3A6518EDA51"
 				}
 			}
 		]
-	},
-	{
-		"eMeasureId": "CMS138v6",
-		"metricType": "multiPerformanceRate",
-		"eMeasureUuid": "40280382-5abd-fa46-015b-1b7c6bb929d0",
-		"strata": [
-			{
-				"name": "screenedForUse",
-				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months",
-				"eMeasureUuids": {
-					"initialPopulationUuid": "95BF2369-1AA2-4A8B-9AF8-B1BD08A4DCA6",
-					"denominatorUuid": "3B551ED0-E6BE-4D1B-B657-7C5CBF0F9E5E",
-					"numeratorUuid": "03EB885E-F7CF-491D-B589-76C35404A6E8",
-					"denominatorExceptionUuid": "824B8FC1-D790-4CAF-8A68-F0607D24D14B"
-				}
-			},
-			{
-				"name": "intervention",
-				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
-				"eMeasureUuids": {
-					"initialPopulationUuid": "7C4B36B2-BC2F-42E2-AE60-2A3E461A441E",
-					"denominatorUuid": "AD464F50-958E-4557-8DCE-555614AEE6B8",
-					"numeratorUuid": "70DBF8C1-7DD3-4413-A501-021212C44181",
-					"denominatorExceptionUuid": "6ACFDD9F-4D31-45F8-9516-6D4BCB5BEF20"
-				}
-			},
-			{
-				"name": "overall",
-				"description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user",
-				"eMeasureUuids": {
-					"initialPopulationUuid": "C1A04121-5A7B-4279-A87C-396A80308933",
-					"denominatorUuid": "D851152D-D00B-4A21-9E6A-A29E2E772E97",
-					"numeratorUuid": "C0CCE0E5-CD1A-4F94-8A75-F750EA4D4251",
-					"denominatorExceptionUuid": "FE9E6C69-EB6B-4423-96FD-4C718E983522"
-				}
-			}
-		]
-	},
-	{
-		"eMeasureId": "CMS347v1",
-		"metricType": "singlePerformanceRate",
-		"eMeasureUuid": "40280382-5b4d-eebc-015b-8245e0fa06b7"
 	}
 ]
