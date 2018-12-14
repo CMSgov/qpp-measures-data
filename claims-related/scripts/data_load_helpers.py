@@ -9,6 +9,10 @@ def format_column_title(c_name):
     for from_ch_g, to_ch in {"([-,*'#])\n": '', ' -./: ;': '_'}.items():
         for ch in from_ch_g:
             c_name = c_name.replace(ch, to_ch).strip(' _')
+
+    if c_name.lower() == 'measure_id':
+        return 'measure'
+
     return c_name.lower()
 
 

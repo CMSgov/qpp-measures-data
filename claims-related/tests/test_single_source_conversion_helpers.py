@@ -1,5 +1,6 @@
 """Tests for single_source_conversion_helpers.py."""
 import itertools
+import pytest
 
 from scripts import single_source_conversion_helpers
 
@@ -21,7 +22,6 @@ def test_determine_element_category():
         'ENCOUNTER_CODE_1',
         'PROC_CODE',
         'DENOM_CODE',
-        'not_a_valid_element_category',
     ]
 
     expected_element_categories = [
@@ -37,7 +37,6 @@ def test_determine_element_category():
         'ENCOUNTER_CODE',
         'PROC_CODE',
         'ADDITIONAL_PROCEDURE_CODE',
-        None
     ]
 
     output = [
@@ -46,6 +45,13 @@ def test_determine_element_category():
     ]
 
     assert output == expected_element_categories
+
+
+def test_determine_element_category_invalid_element():
+    """Test that a NotImplementedError is raised for invalid element categories."""
+    element_name = 'not_a_valid_element_category'
+    with pytest.raises(NotImplementedError):
+        single_source_conversion_helpers.determine_element_category(element_name)
 
 
 def test_get_gender():

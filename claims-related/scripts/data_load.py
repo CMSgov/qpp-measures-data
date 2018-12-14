@@ -67,7 +67,12 @@ def excel_to_csv(excel_path):
     }
 
     with open(excel_path, 'rb') as fname:
-        single_source = pd.read_excel(fname, sheetname=-1, dtypes=column_dtypes)
+        single_source = pd.read_excel(fname, sheetname=' Codes', dtypes=column_dtypes)
+
+    # Remove unused columns from DataFrame.
+    for col in single_source.columns:
+        if 'Unnamed' in col:
+            del single_source[col]
 
     csv_path = excel_path.replace('xlsx', 'csv')
     single_source.to_csv(csv_path, index=False)

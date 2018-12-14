@@ -32,9 +32,9 @@ from single_source_conversion_helpers import (
 
 # Default filepaths for all required resources.
 DEFAULT_SINGLE_SOURCE_CSV_PATH = (
-    '/home/jovyan/work/data/2018_Claims_SingleSource_Bayes_Feedback_05032018.csv'
+    '/home/jovyan/work/data/2019_Claims_SingleSource_v1.0.csv'
 )
-DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source-2018.json'
+DEFAULT_OUTPUT_JSON_PATH = '/home/jovyan/work/data/qpp-single-source-2019.json'
 
 
 def _convert_measure_ids_to_match_nava_format(single_source_dict):
