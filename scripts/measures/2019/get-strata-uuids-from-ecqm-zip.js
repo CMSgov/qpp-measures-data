@@ -108,7 +108,6 @@ function extractStrata(measure) {
 rimraf.sync(tmpDir);
 new AdmZip(zipPath).extractAllTo(tmpDir, true);
 // each measure has its own zip, collect name of SimpleXML files
-let count = 0;
 const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   const zip = new AdmZip(path.join(tmpDir, measureZip));
   const filename = zip.getEntries()

@@ -10,7 +10,6 @@ const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
 fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp)));
 
-
 /*
 Takes the quality measures from the build-2019-measures and adds them to the measures-data.json
 Running this will generate a file at util/measures/generated-ecqm-data.json
