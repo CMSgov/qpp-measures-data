@@ -5,7 +5,6 @@ const parse = require('csv-parse/lib/sync');
 
 const currentYear = 2019;
 
-const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
