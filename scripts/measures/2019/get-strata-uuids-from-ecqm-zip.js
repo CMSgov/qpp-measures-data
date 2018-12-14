@@ -63,7 +63,6 @@ function extractStrata(measure) {
   // our version of 'strata' are described as 'numerators'
   // parse out strata descriptions from numerator text
   // descriptions are like "Numerator 1: Patients who initiated treatment within 14 days of the diagnosis\nNumerator 2: Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
-  console.log(measure.subjectOf[0].measureAttribute[0].value[0].$.value);
   const description = measure.subjectOf
     .find(item => item.measureAttribute[0].code[0].$.code === 'NUMER')
     .measureAttribute[0].value[0].$.value;
@@ -115,14 +114,13 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   const filename = zip.getEntries()
     .find(entry => entry.entryName.match(/v[0-9]\.xml$/))
     .entryName;
-  count++;
 
   // extract 'CMS75v5.xml' to /xmls
-  zip.extractEntryTo(filename, tmpDir + '/xmls', false, true);
+  // this duplicates the path. Instead of writing to `'/tmp/ecqm/xmls' the path is actually '/tmp/ecqm/xmls/tmp/ecqm/xmls/'`
+  zip.extractEntryTo(filename, tmpPath, false, true);
   return filename.split('/')[1];
 });
-console.log('Count: ' + count);
-console.log(xmlFiles);
+
 // parse files into JavaScript objects
 const promisifiedParseString = Promise.promisify(parseString);
 Promise.all(

@@ -10,6 +10,33 @@ const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
 fs.writeFileSync(path.join(__dirname, outputPath), enrichMeasures(JSON.parse(qpp)));
 
+
+/*
+Takes the quality measures from the build-2019-measures and adds them to the measures-data.json
+Running this will generate a file at util/measures/generated-ecqm-data.json
+
+Usage: Ran as part of the build-2019-measures.sh script
+
+Each ecqm entry will look similar to this in measures-data.json
+  {
+    "eMeasureId": "CMS117v5",
+    "eMeasureUuid": "40280381-52fc-3a32-0153-1a4ba57f0b8a",
+    "strata": [
+      {
+        "name": "strata1",
+        "description": "Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "DA379EC2-EE2E-4548-AEF0-DD4F14F80279",
+          "denominatorUuid": "CC8AFFF0-A436-42CD-8322-5EBCEF9CBF06",
+          "numeratorUuid": "AE7A33AF-0DA7-4772-A23C-2D2CA732D53A",
+          "denominatorExclusionUuid": "19d26b5e-9be2-4313-80f4-67be1e0dde37",
+          "denominatorExceptionUuid": "01a1c883-e2e6-4aec-81de-17f3cd9b63b3"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+*/
 function enrichMeasures(measures) {
   mergeGeneratedEcqmData(measures);
   addQualityStrataNames(measures);
