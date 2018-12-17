@@ -58,11 +58,24 @@
     <strata>
       <name>LVSD</name>
       <description>Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF &lt; 40% who were prescribed beta-blocker therapy</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>D37F8791-745C-422B-AC54-AFE90EF73403</initialPopulationUuid>
+        <denominatorUuid>FA3204A5-C7E7-4DCF-883C-E30E1EAF6B15</denominatorUuid>
+        <numeratorUuid>B0B86C82-753C-41B6-ABC0-C40605738B19</numeratorUuid>
+        <denominatorExceptionUuid>5C10D849-3AAF-4AB8-AC42-C41593EA4B41</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
       <name>priorMI</name>
       <description>Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a prior (within the past 3 years) myocardial infarction who were prescribed beta-blocker therapy</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>FF8E828F-3079-422E-8A60-DC7E07DC04EB</initialPopulationUuid>
+        <denominatorUuid>87EBA461-3E66-45D9-9798-E0BD11ED7D3E</denominatorUuid>
+        <numeratorUuid>8C4B62DB-A300-4FAC-ACE1-9DBADC125338</numeratorUuid>
+        <denominatorExceptionUuid>F46DADC8-C8A8-4CDD-8599-07B771C60DD5</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-8cfbf64110c1</eMeasureUuid>
   </measure>
   <measure>
     <title>Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)</title>
@@ -2332,15 +2345,34 @@
     <strata>
       <name>screenedForUse</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>D03DA272-DBB3-4F46-B19B-CF3262A23C2E</initialPopulationUuid>
+        <denominatorUuid>0F1384E0-350D-43B9-8C17-1140837F342E</denominatorUuid>
+        <numeratorUuid>1356052C-4C82-4859-85B4-D04ACF269564</numeratorUuid>
+        <denominatorExceptionUuid>A8DBEC91-05EF-4897-80E4-39400B23F030</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
       <name>overall</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>C4D32BC0-8DBE-4766-BF47-7718D1569C79</initialPopulationUuid>
+        <denominatorUuid>C1195308-7F73-409B-A4FF-8F17A4AA772E</denominatorUuid>
+        <numeratorUuid>D10D6789-32F2-4A72-9588-611C4765FC13</numeratorUuid>
+        <denominatorExceptionUuid>29CD08BD-BFA6-4208-80C6-24DD96862EB4</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
       <name>tobacco</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>1D17B8A9-4DBF-448A-BB7F-879223A0A825</initialPopulationUuid>
+        <denominatorUuid>C33FDC75-14E2-4A57-A18E-130D26411C92</denominatorUuid>
+        <numeratorUuid>98958164-44A0-4759-AF5C-86EFB56AF1BA</numeratorUuid>
+        <denominatorExceptionUuid>EA9FE5F4-3057-495E-B5E5-83554CE39944</denominatorExceptionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6240-b6b9-0162-54815a310c2c</eMeasureUuid>
   </measure>
   <measure>
     <title>Controlling High Blood Pressure</title>
@@ -4349,6 +4381,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
@@ -4356,15 +4389,34 @@
     <strata>
       <name>4MonthsOfEnd</name>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>D00E7D31-7F59-468D-99C6-631D07715E59</initialPopulationUuid>
+        <denominatorUuid>A52E93B8-A2D1-414E-94D0-90155E8FF81F</denominatorUuid>
+        <numeratorUuid>539B0A53-F5B0-47CB-887E-392792E9D4ED</numeratorUuid>
+        <denominatorExclusionUuid>0830DDCA-C45E-4D80-B359-E69E2F83D7B2</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
       <name>4&amp;8MonthsAfterStart</name>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) between 4 and 8 months after the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>95F5AFA0-CB23-4786-A2E0-0646C0494E4F</initialPopulationUuid>
+        <denominatorUuid>1B9C4359-5DF7-4B6D-ACD8-C12175C67EFD</denominatorUuid>
+        <numeratorUuid>92D313A7-3A3D-44EC-8A94-103CC0003A30</numeratorUuid>
+        <denominatorExclusionUuid>7889D513-C24C-482F-8C9C-FC31F35E3999</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
       <name>4MonthsOfStart</name>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the start of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>750B4DDA-EC94-4082-9AB4-86824666D808</initialPopulationUuid>
+        <denominatorUuid>2E3A7115-247D-4A0E-918C-AB581E13486A</denominatorUuid>
+        <numeratorUuid>DE1952F9-9E35-4493-BA65-3F6CD8904059</numeratorUuid>
+        <denominatorExclusionUuid>9FCE046B-5EF9-4A19-9D22-D3A6518EDA51</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-63106f9201b2</eMeasureUuid>
   </measure>
   <measure>
     <title>Maternal Depression Screening</title>

@@ -11,6 +11,7 @@ pi_csv='../../../util/measures/'$currentPerformanceYear'/pi-measures.csv'
 ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
 ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 
+enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 cost_measures='../../../staging/'$currentPerformanceYear'/measures-data-cost.json'
 cost_csv='../../../util/measures/'$currentPerformanceYear'/cost-measures.csv'
 
@@ -28,21 +29,25 @@ node scripts/measures/$currentPerformanceYear/import-pi-measures.js \
 node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 	$ia_csv $ia_measures
 
-# 3. Add COST measures to the staging measures-data-cost.json file:
+# 3. Enrich `measures-data.json` file, run:
+node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
+	$quality_measures $enriched_quality_measures
+  
+# 4. Add COST measures to the staging measures-data-cost.json file:
 node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
 	$cost_csv $cost_measures
 
-# 4. Merge the array/jsonfile-per-measureType into a combined array of all measures
+# 5. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	$quality_measures $pi_measures $ia_measures $cost_measures $final_measures
+	$enriched_quality_measures $pi_measures $ia_measures $cost_measures $final_measures
 
-# 5. To regenerate the `measures-data.xml` file, run:
+# 6. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/convert-json-to-xml.js \
 		> measures/$currentPerformanceYear/measures-data.xml
 
-# 6. Validate the resulting measures-data.json file:
+# 7. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
