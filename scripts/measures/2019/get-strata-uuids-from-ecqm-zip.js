@@ -116,7 +116,7 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
 
   // extract 'CMS75v5.xml' to /xmls
   // this duplicates the path. Instead of writing to `'/tmp/ecqm/xmls' the path is actually '/tmp/ecqm/xmls/tmp/ecqm/xmls/'`
-  zip.extractEntryTo(filename, tmpPath, false, true);
+  zip.extractEntryTo(filename, tmpPath, false, false);
   return filename.split('/')[1];
 });
 
@@ -124,7 +124,7 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
 const promisifiedParseString = Promise.promisify(parseString);
 Promise.all(
   xmlFiles.map(xmlFile => {
-    return promisifiedParseString(fs.readFileSync(path.join(tmpPath, tmpPath, xmlFile)));
+    return promisifiedParseString(fs.readFileSync(path.join(tmpPath, xmlFile)));
   })
 )
 // extract data from converted JavaScript objects
