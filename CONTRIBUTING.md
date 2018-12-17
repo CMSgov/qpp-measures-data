@@ -24,7 +24,7 @@ To regenerate and validate data, do the following:
 
 ```
 npm run build:measures $YEAR         # generates measures/$YEAR/measures-data.json and measures/$YEAR/measures-data.xml
-npm run build:benchmarks        # generates benchmarks/2017.json
+npm run build:benchmarks        # generates benchmarks/2018.json
 npm run build:clinical-clusters # generates clinical-clusters/clinical-clusters.json
 ```
 
