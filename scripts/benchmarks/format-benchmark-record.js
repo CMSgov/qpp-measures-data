@@ -124,11 +124,11 @@ const formatDecileGenerator = function(record) {
     if (!definedPredecessor &&
       definedSuccessor &&
       nextIndex === array.length) {
-      if (isInverseMeasure && (index === 1 || index === 2)) {
+      if (isInverseMeasure && (index === 1)) {
         return 100;
       } else if (isInverseMeasure) {
         return 0;
-      } else if (index === 1 || index === 2) {
+      } else if (index === 1) {
         return 0;
       } else {
         return 100;
