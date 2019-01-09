@@ -1,5 +1,71 @@
 [
   {
+    "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
+    "eMeasureId": "CMS122v7",
+    "nqfEMeasureId": null,
+    "nqfId": "0059",
+    "measureId": "001",
+    "description": "Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "intermediateOutcome",
+    "primarySteward": "National Committee for Quality Assurance",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "submissionMethods": [
+      "claims",
+      "electronicHealthRecord",
+      "cmsWebInterface",
+      "registry"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "internalMedicine",
+      "preventiveMedicine",
+      "nephrology"
+    ],
+    "measureSpecification": {}
+  },
+  {
+    "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
+    "eMeasureId": "CMS135v7",
+    "nqfEMeasureId": "2907",
+    "nqfId": "0081",
+    "measureId": "005",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed ACE inhibitor or ARB therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "process",
+    "primarySteward": "Physician Consortium for Performance Improvement",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isHighPriority": false,
+    "isInverse": false,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "submissionMethods": [
+      "electronicHealthRecord",
+      "registry"
+    ],
+    "measureSets": [
+      "cardiology",
+      "familyMedicine",
+      "internalMedicine",
+      "hospitalists"
+    ],
+    "measureSpecification": {}
+  },
+  {
     "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
