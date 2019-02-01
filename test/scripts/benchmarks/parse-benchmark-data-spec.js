@@ -13,7 +13,7 @@ const runTest = function(benchmarksCsv) {
   return JSON.parse(benchmark);
 };
 
-describe.only('parse benchmark data', function() {
+describe('parse benchmark data', function() {
   it('should create new measures and ignore duplicate measureIds', () => {
     const measures = runTest(testCsv);
     // 279 rows with Y in Benchmark column
