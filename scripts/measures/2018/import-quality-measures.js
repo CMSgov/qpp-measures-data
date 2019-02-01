@@ -58,12 +58,12 @@ const MAIN_FIELDS = {
 
 // Source CSV column names below are mapped to their measures data names
 const SUBMISSION_METHODS = {
-  claimsMethod: 'claims',
-  certifiedSurveyVendorMethod: 'certifiedSurveyVendor',
-  electronicHealthRecordMethod: 'electronicHealthRecord',
-  cmsWebInterfaceMethod: 'cmsWebInterface',
-  administrativeClaimsMethod: 'administrativeClaims',
-  registryMethod: 'registry'
+  methodsClaims: 'claims',
+  methodsCertifiedSurveyVendor: 'certifiedSurveyVendor',
+  methodsElectronicHealthRecord: 'electronicHealthRecord',
+  methodsCmsWebInterface: 'cmsWebInterface',
+  methodsAdministrativeClaims: 'administrativeClaims',
+  methodsRegistry: 'registry'
 };
 
 // Source CSV column names below are identical to their measures data names so no mapping
