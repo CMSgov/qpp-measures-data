@@ -105,6 +105,41 @@
 	{
 		"eMeasureId": "CMS347v1",
 		"metricType": "singlePerformanceRate",
-		"eMeasureUuid": "40280382-5b4d-eebc-015b-8245e0fa06b7"
+		"eMeasureUuid": "40280382-5b4d-eebc-015b-8245e0fa06b7",
+		"strata": [
+			{
+				"name" : "clinicalASCVD",
+				"description": "Patients aged ≥ 21 years at the beginning of the measurement period with clinical ASCVD diagnosis",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "B5249FB8-86D2-4633-BCF8-705EAAA35F04",
+					"denominatorUuid": "CC35FC48-FA75-4E8C-8949-BC2B4D152F72",
+					"numeratorUuid": "53656F0F-97C7-4537-907E-4C8D836A5853",
+					"denominatorExclusionUuid": "6C1F017F-F0C4-4346-B823-0BC24E3BFA9C",
+					"denominatorExceptionUuid": "F13A488B-6F7F-45E3-8216-1A7A679ADBFD"
+				}
+			},
+			{
+				"name" : ">21Familial",
+				"description": "Patients aged ≥ 21 years at the beginning of the measurement period who have ever had a fasting or direct laboratory result of LDL-C ≥ 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "F1948A70-E9EE-427F-9D1F-9489B902DFAB",
+					"denominatorUuid": "C44EA250-22FE-4FF1-835B-BD718A9E71FA",
+					"numeratorUuid": "632ECBD0-8C77-40E9-AE21-795891D5CD64",
+					"denominatorExclusionUuid": "C5AA9EF4-FC68-4844-A45A-4985E81DA8A1",
+					"denominatorExceptionUuid": "B55F6B97-ABF6-4F44-90C5-D02D99DE55DA"
+				}
+			},
+			{
+				"name" : "between40And75",
+				"description": "Patients aged 40 to 75 years at the beginning of the measurement period with Type 1 or Type 2 diabetes and with an LDL-C result of 70–189 mg/dL recorded as the highest fasting or direct laboratory test result in the measurement year or during the two years prior to the beginning of the measurement period",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "E44CE0A2-A08E-48CC-B022-5B54F808FB61",
+					"denominatorUuid": "01B3E154-5F42-4905-BDDD-E2A34B8C1DB2",
+					"numeratorUuid": "5E64B1E4-1F1A-4B3B-B148-5044F6B30760",
+					"denominatorExclusionUuid": "1354D37B-998F-434E-8039-99F6CCC987FD",
+					"denominatorExceptionUuid": "3D0BD8CB-CB77-407A-A367-080F53D880DD"
+				}
+			}
+		]
 	}
 ]
