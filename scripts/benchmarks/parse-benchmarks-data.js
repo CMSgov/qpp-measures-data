@@ -17,8 +17,7 @@ const BENCHMARK_CSV_COLUMNS = [
   'decile8',
   'decile9',
   'decile10',
-  'isToppedOut',
-  ''
+  'isToppedOut'
 ];
 // Utils
 const { formatBenchmarkRecord } = require('./format-benchmark-record');

@@ -8,7 +8,7 @@
 
 # generate benchmarks
 echo "generating new benchmarks JSON"
-node scripts/benchmarks/merge-benchmark-data.js | tee benchmarks/2018.json
+node scripts/benchmarks/merge-benchmark-data.js > benchmarks/2018.json
 
 # validate benchmarks
 echo "validating new benchmarks JSON"
