@@ -9,7 +9,6 @@ const testCsv = 'test/scripts/benchmarks/fixtures/test-benchmarks.csv';
 const runTest = function(benchmarksCsv) {
   const cmd = 'cat ' + testCsv + ' | ' + 'node ./scripts/benchmarks/parse-benchmarks-data.js 2015 2017';
   const benchmark = execSync(cmd).toString();
-  console.log(benchmark);
   return JSON.parse(benchmark);
 };
 
