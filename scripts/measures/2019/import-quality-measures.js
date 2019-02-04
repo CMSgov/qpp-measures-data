@@ -60,7 +60,7 @@ const MAIN_FIELDS = {
 const SUBMISSION_METHODS = {
   methodsClaims: 'claims',
   methodsCertifiedSurveyVendor: 'certifiedSurveyVendor',
-  electronicHealthRecordMethod: 'electronicHealthRecord',
+  methodsElectronicHealthRecord: 'electronicHealthRecord',
   methodsCmsWebInterface: 'cmsWebInterface',
   methodsAdministrativeClaims: 'administrativeClaims',
   methodsRegistry: 'registry'
@@ -71,7 +71,8 @@ const MEASURE_SPECIFICATIONS = [
   `default`,
   `claims`,
   `registry`,
-  `cmsWebInterface`
+  `cmsWebInterface`,
+  `electronicHealthRecord`
 ];
 
 const MEASURE_SETS = [
@@ -113,8 +114,7 @@ const MEASURE_SETS = [
   'geriatrics',
   'urgentCare',
   'skilledNursingFacility',
-  'dentistry',
-  'blank'
+  'dentistry'
 ];
 
 // Mapping values within the measureType column to valid enums
