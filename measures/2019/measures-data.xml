@@ -28,7 +28,13 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_001_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_001_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_DM2_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS122v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)</title>
@@ -56,7 +62,11 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>hospitalists</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_005_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS135v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Antiplatelet Therapy</title>
@@ -83,7 +93,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_006_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Beta-Blocker Therapy - Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF &lt; 40%)</title>
@@ -112,7 +125,11 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_007_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS145v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>LVSD</name>
       <description>Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF &lt; 40% who were prescribed beta-blocker therapy</description>
@@ -162,7 +179,11 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>hospitalists</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_008_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS144v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Anti-Depressant Medication Management</title>
@@ -189,7 +210,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS128v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>&gt;=84Days</name>
       <description>Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).</description>
@@ -215,7 +239,7 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -223,7 +247,12 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_012_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_012_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS143v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Age-Related Macular Degeneration (AMD): Dilated Macular Examination</title>
@@ -241,14 +270,18 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_014_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_014_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care</title>
@@ -266,7 +299,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -274,7 +307,12 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_019_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_019_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS142v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Perioperative Care: Selection of Prophylactic Antibiotic - First OR Second-Generation Cephalosporin</title>
@@ -292,7 +330,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -305,7 +343,11 @@
     <measureSet>generalSurgery</measureSet>
     <measureSet>thoracicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_021_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_021_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Perioperative Care: Venous Thromboembolism (VTE) Prophylaxis (When Indicated in ALL Patients)</title>
@@ -323,7 +365,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -337,7 +379,11 @@
     <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_023_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_023_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older</title>
@@ -355,7 +401,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -366,7 +412,11 @@
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_024_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_024_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Screening for Osteoporosis for Women Aged 65-85 Years of Age</title>
@@ -395,7 +445,11 @@
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>rheumatology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_039_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_039_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Preoperative Beta-Blocker in Patients with Isolated CABG Surgery</title>
@@ -413,13 +467,16 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>anesthesiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_044_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Medication Reconciliation Post-Discharge</title>
@@ -438,7 +495,7 @@
     <isInverse>false</isInverse>
     <overallAlgorithm>overallStratumOnly</overallAlgorithm>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -448,7 +505,11 @@
     <measureSet>generalSurgery</measureSet>
     <measureSet>nephrology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_046_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_046_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
     <strata>
       <name>18-64</name>
       <description>Medication Reconciliation Post-Discharge: 18-64 years of age</description>
@@ -504,7 +565,11 @@
     <measureSet>nephrology</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_047_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_047_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older</title>
@@ -522,7 +587,7 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -533,7 +598,11 @@
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_048_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_048_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older</title>
@@ -551,7 +620,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -562,7 +631,11 @@
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_050_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_050_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Chronic Obstructive Pulmonary Disease (COPD): Spirometry Evaluation</title>
@@ -580,13 +653,17 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_051_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_051_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy</title>
@@ -604,13 +681,17 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_052_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_052_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Treatment for Children with Upper Respiratory Infection (URI)</title>
@@ -628,7 +709,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -638,7 +719,11 @@
     <measureSet>otolaryngology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_065_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS154v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Testing for Children with Pharyngitis</title>
@@ -666,7 +751,11 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_066_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS146v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow</title>
@@ -689,7 +778,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_067_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hematology: Myelodysplastic Syndrome (MDS): Documentation of Iron Stores in Patients Receiving Erythropoietin Therapy</title>
@@ -712,7 +804,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_068_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hematology: Multiple Myeloma: Treatment with Bisphosphonates</title>
@@ -735,7 +830,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_069_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hematology: Chronic Lymphocytic Leukemia (CLL): Baseline Flow Cytometry</title>
@@ -758,7 +856,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_070_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections</title>
@@ -776,7 +877,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -785,7 +886,11 @@
     <measureSet>anesthesiology</measureSet>
     <measureSet>interventionalRadiology</measureSet>
     <measureSet>hospitalists</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_076_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_076_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Acute Otitis Externa (AOE): Topical Therapy</title>
@@ -803,7 +908,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -815,7 +920,11 @@
     <measureSet>otolaryngology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_091_MIPSCQM%20(1).pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_091_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy - Avoidance of Inappropriate Use</title>
@@ -833,7 +942,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -845,7 +954,11 @@
     <measureSet>otolaryngology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_093_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_093_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients</title>
@@ -872,7 +985,11 @@
     <measureSet>urology</measureSet>
     <measureSet>oncology</measureSet>
     <measureSet>radiationOncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_102_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS129v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer</title>
@@ -896,7 +1013,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_104_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Major Depressive Disorder (MDD): Suicide Risk Assessment</title>
@@ -922,7 +1042,10 @@
     <measureSet>emergencyMedicine</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS161v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Osteoarthritis (OA): Function and Pain Assessment</title>
@@ -940,7 +1063,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -950,7 +1073,11 @@
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>physicalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_109_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_109_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Influenza Immunization</title>
@@ -989,7 +1116,13 @@
     <measureSet>infectiousDisease</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_110_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_110_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV7_CMSWebInterface.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS147v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pneumococcal Vaccination Status for Older Adults</title>
@@ -1025,7 +1158,12 @@
     <measureSet>nephrology</measureSet>
     <measureSet>infectiousDisease</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_111_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_111_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS127v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Breast Cancer Screening</title>
@@ -1054,7 +1192,13 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_112_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_112_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV5_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS125v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Colorectal Cancer Screening</title>
@@ -1082,7 +1226,13 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_113_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_113_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV6_CMSWebInterface.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS130v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Avoidance of Antibiotic Treatment in Adults With Acute Bronchitis</title>
@@ -1110,7 +1260,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_116_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Diabetes: Eye Exam</title>
@@ -1128,7 +1281,7 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1138,7 +1291,12 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_117_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_117_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS131v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF &lt; 40%)</title>
@@ -1163,7 +1321,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_118_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Diabetes: Medical Attention for Nephropathy</title>
@@ -1192,7 +1353,11 @@
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>urology</measureSet>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_119_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS134v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation</title>
@@ -1219,7 +1384,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>podiatry</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_126_MIPSCQM%20(1).pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention - Evaluation of Footwear</title>
@@ -1243,7 +1411,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>podiatry</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_127_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan</title>
@@ -1284,7 +1455,12 @@
     <measureSet>rheumatology</measureSet>
     <measureSet>podiatry</measureSet>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_128_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_128_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS69v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Documentation of Current Medications in the Medical Record</title>
@@ -1302,7 +1478,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1337,7 +1513,12 @@
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_130_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_130_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS68v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pain Assessment and Follow-Up</title>
@@ -1355,7 +1536,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1368,7 +1549,11 @@
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_131_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_131_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Screening for Depression and Follow-Up Plan</title>
@@ -1401,7 +1586,13 @@
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_134_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_134_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV12_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS2v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Melanoma: Continuity of Care - Recall System</title>
@@ -1425,7 +1616,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>dermatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_137_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Melanoma: Coordination of Care</title>
@@ -1449,7 +1643,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>dermatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_138_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care</title>
@@ -1467,14 +1664,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_141_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_141_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Oncology: Medical and Radiation - Pain Intensity Quantified</title>
@@ -1492,7 +1693,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1500,7 +1701,11 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
     <measureSet>radiationOncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_143_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS157v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Oncology: Medical and Radiation - Plan of Care for Moderate to Severe Pain</title>
@@ -1525,7 +1730,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
     <measureSet>radiationOncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_144_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy</title>
@@ -1551,7 +1759,11 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
     <measureSet>interventionalRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_145_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_145_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radiology: Inappropriate Use of "Probably Benign" Assessment Category in Screening Mammograms</title>
@@ -1569,14 +1781,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_146_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_146_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy</title>
@@ -1594,14 +1810,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_147_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_147_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Falls: Risk Assessment</title>
@@ -1619,7 +1839,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1634,7 +1854,11 @@
     <measureSet>neurology</measureSet>
     <measureSet>podiatry</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_154_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_154_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Falls: Plan of Care</title>
@@ -1652,7 +1876,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1667,7 +1891,11 @@
     <measureSet>neurology</measureSet>
     <measureSet>podiatry</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_155_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_155_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HIV/AIDS: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis</title>
@@ -1693,7 +1921,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS52v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>CD4&lt;200/mm3</name>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3</description>
@@ -1729,7 +1960,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_164_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Deep Sternal Wound Infection Rate</title>
@@ -1747,13 +1981,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_165_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Stroke</title>
@@ -1771,13 +2008,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_166_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure</title>
@@ -1795,13 +2035,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_167_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration</title>
@@ -1825,7 +2068,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_168_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Tuberculosis Screening</title>
@@ -1849,7 +2095,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_176_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity</title>
@@ -1873,7 +2122,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_177_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Functional Status Assessment</title>
@@ -1898,7 +2150,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_178_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Assessment and Classification of Disease Prognosis</title>
@@ -1923,7 +2178,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_179_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rheumatoid Arthritis (RA): Glucocorticoid Management</title>
@@ -1948,7 +2206,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_180_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Elder Maltreatment Screen and Follow-Up Plan</title>
@@ -1966,7 +2227,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -1978,7 +2239,11 @@
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_181_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_181_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Outcome Assessment</title>
@@ -1996,7 +2261,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -2005,7 +2270,11 @@
     <measureSet>physicalMedicine</measureSet>
     <measureSet>nephrology</measureSet>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_182_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_182_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Colonoscopy Interval for Patients with a History of Adenomatous Polyps&#xD;
@@ -2024,13 +2293,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_185_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Stroke and Stroke Rehabilitation: Thrombolytic Therapy</title>
@@ -2055,7 +2327,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_187_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery</title>
@@ -2080,7 +2355,11 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_191_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS133v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataracts: Complications within 30 Days Following Cataract Surgery Requiring Additional Surgical Procedures</title>
@@ -2098,14 +2377,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_192_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS132v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radiology: Stenosis Measurement in Carotid Imaging Reports</title>
@@ -2123,14 +2406,18 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_195_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_195_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis</title>
@@ -2155,7 +2442,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_205_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Knee Impairments</title>
@@ -2179,7 +2469,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_217_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Hip Impairments</title>
@@ -2203,7 +2496,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_218_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments</title>
@@ -2227,7 +2523,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_219_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Low Back Impairments</title>
@@ -2251,7 +2550,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_220_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Shoulder Impairments</title>
@@ -2275,7 +2577,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_221_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with Elbow, Wrist or Hand Impairments</title>
@@ -2299,7 +2604,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_222_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Change for Patients with General Orthopedic Impairments</title>
@@ -2323,7 +2631,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>physicalTherapyOccupationalTherapy</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_223_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radiology: Reminder System for Screening Mammograms</title>
@@ -2341,14 +2652,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_225_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_225_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention</title>
@@ -2399,7 +2714,13 @@
     <measureSet>neurosurgical</measureSet>
     <measureSet>podiatry</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_226_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_226_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV10_CMSWebInterface_UPDATES.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS138v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>screenedForUse</name>
       <description>Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months</description>
@@ -2462,7 +2783,13 @@
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>vascularSurgery</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_236_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_226_MedicarePartBClaims.pdf</claims>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_HTN2_CMSWebInterface.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS165v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Use of High-Risk Medications in the Elderly</title>
@@ -2481,7 +2808,7 @@
     <isInverse>true</isInverse>
     <overallAlgorithm>overallStratumOnly</overallAlgorithm>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -2493,7 +2820,11 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>rheumatology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_238_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS156v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>overall</name>
       <description>Percentage of patients who were ordered at least one high-risk medication</description>
@@ -2526,7 +2857,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS155v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>BMI</name>
       <description>Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period</description>
@@ -2562,7 +2896,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS117v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cardiac Rehabilitation Patient Referral from an Outpatient Setting</title>
@@ -2588,7 +2925,10 @@
     <measureSet>cardiology</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_243_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Barrett's Esophagus</title>
@@ -2606,14 +2946,18 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>pathology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_249_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_250_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radical Prostatectomy Pathology Reporting</title>
@@ -2631,7 +2975,7 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -2639,7 +2983,11 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>pathology</measureSet>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_250_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_250_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain</title>
@@ -2664,7 +3012,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_254_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_254_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rh Immunoglobulin (Rhogam) for Rh-Negative Pregnant Women at Risk of Fetal Blood Exposure</title>
@@ -2689,7 +3041,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_255_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_255_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Open Repair of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #7)</title>
@@ -2713,7 +3069,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_258_MIPSCQM%20(1).pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post Operative Day #2)</title>
@@ -2737,7 +3096,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_259_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)</title>
@@ -2761,7 +3123,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_260_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness</title>
@@ -2785,7 +3150,11 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_261_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_261_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Image Confirmation of Successful Excision of Image-Localized Breast Lesion</title>
@@ -2803,12 +3172,15 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_262_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Sentinel Lymph Node Biopsy for Invasive Breast Cancer</title>
@@ -2826,13 +3198,16 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>generalSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_264_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Biopsy Follow-Up</title>
@@ -2850,7 +3225,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -2859,7 +3234,10 @@
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_265_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy</title>
@@ -2884,7 +3262,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_268_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_268_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Inflammatory Bowel Disease (IBD): Preventive Care: Corticosteroid Related Iatrogenic Injury -   Bone Loss Assessment</title>
@@ -2908,7 +3290,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_271_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Inflammatory Bowel Disease (IBD): Assessment of Hepatitis B Virus (HBV) Status Before Initiating Anti-TNF (Tumor Necrosis Factor) Therapy</title>
@@ -2932,7 +3317,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_275_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Sleep Apnea: Severity Assessment at Initial Diagnosis</title>
@@ -2957,7 +3345,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_277_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy</title>
@@ -2982,7 +3373,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_279_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Dementia: Cognitive Assessment</title>
@@ -3008,7 +3402,10 @@
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS149v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Dementia: Functional Status Assessment</title>
@@ -3034,7 +3431,10 @@
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_282_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management</title>
@@ -3060,7 +3460,10 @@
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_283_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia</title>
@@ -3086,7 +3489,10 @@
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_286_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Dementia: Education and Support of Caregivers for Patients with Dementia</title>
@@ -3112,7 +3518,10 @@
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_288_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Parkinson's Disease: Psychiatric Symptoms Assessment for Patients with Parkinson's Disease</title>
@@ -3130,13 +3539,16 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_290_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Parkinson's Disease: Cognitive Impairment or Dysfunction Assessment for Patients with Parkinson's Disease</title>
@@ -3160,7 +3572,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_291_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Parkinson's Disease: Rehabilitative Therapy Options</title>
@@ -3184,7 +3599,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_293_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataracts: Improvement in Patient's Visual Function within 90 Days Following Cataract Surgery</title>
@@ -3208,7 +3626,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_303_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataracts: Patient Satisfaction within 90 Days Following Cataract Surgery</title>
@@ -3231,7 +3652,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_304_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Initiation and Engagement of Alcohol and Other Drug Dependence Treatment</title>
@@ -3258,7 +3682,11 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_317_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS137v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>14DaysOfDiagnosis</name>
       <description>Patients who initiated treatment within 14 days of the diagnosis</description>
@@ -3292,7 +3720,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS124v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Chlamydia Screening for Women</title>
@@ -3317,7 +3748,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS153v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented</title>
@@ -3366,7 +3800,11 @@
     <measureSet>nephrology</measureSet>
     <measureSet>urgentCare</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_317_MedicarePartBClaims.pdf</claims>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS22v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Falls: Screening for Future Fall Risk</title>
@@ -3395,7 +3833,11 @@
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>nephrology</measureSet>
     <measureSet>podiatry</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_CARE2_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS139v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients</title>
@@ -3413,14 +3855,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_320_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_320_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>CAHPS for MIPs Clinician/Group Survey</title>
@@ -3445,7 +3891,9 @@
     <submissionMethod>certifiedSurveyVendor</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Preoperative Evaluation in Low-Risk Surgery Patients</title>
@@ -3463,13 +3911,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_322_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Routine Testing After Percutaneous Coronary Intervention (PCI)</title>
@@ -3487,13 +3938,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_323_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients</title>
@@ -3517,7 +3971,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_324_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Major Depressive Disorder (MDD): Coordination of Care of Patients with Specific Comorbid Conditions</title>
@@ -3541,7 +3998,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_325_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy</title>
@@ -3559,7 +4019,7 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -3569,7 +4029,11 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_326_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_326_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pediatric Kidney Disease: ESRD Patients Receiving Dialysis: Hemoglobin Level &lt; 10g/dL</title>
@@ -3593,7 +4057,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_328_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Catheter Use at Initiation of Hemodialysis</title>
@@ -3616,7 +4083,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_329_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Catheter Use for Greater Than or Equal to 90 Days</title>
@@ -3640,7 +4110,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_330_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)</title>
@@ -3668,7 +4141,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_331_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use)</title>
@@ -3696,7 +4172,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_332_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Sinusitis: Computerized Tomography (CT) for Acute Sinusitis (Overuse)</title>
@@ -3714,7 +4193,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -3724,7 +4203,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_333_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Maternity Care: Elective Delivery or Early Induction Without Medical Indication at &gt;= 37 and &lt; 39 Weeks (Overuse)</title>
@@ -3747,7 +4229,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_335_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Maternity Care: Post-Partum Follow-Up and Care Coordination</title>
@@ -3770,7 +4255,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_336_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Psoriasis: Tuberculosis (TB) Prevention for Patients with Psoriasis, Psoriatic Arthritis and Rheumatoid Arthritis on a Biological Immune Response Modifier</title>
@@ -3796,7 +4284,10 @@
     <measureSet>dermatology</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_337_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HIV Viral Load Suppression</title>
@@ -3823,7 +4314,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_338_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HIV Medical Visit Frequency</title>
@@ -3848,7 +4342,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_340_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pain Brought Under Control Within 48 Hours</title>
@@ -3873,7 +4370,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_342_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Screening Colonoscopy Adenoma Detection Rate</title>
@@ -3897,7 +4397,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_343_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)</title>
@@ -3922,7 +4425,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>cardiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_344_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Asymptomatic Patients Undergoing Carotid Artery Stenting (CAS) Who Are Stroke Free or Discharged Alive</title>
@@ -3948,7 +4454,10 @@
     <measureSet>cardiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_345_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Asymptomatic Patients Undergoing Carotid Endarterectomy (CEA) Who Are Stroke Free or Discharged Alive</title>
@@ -3973,7 +4482,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_346_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) Who Are Discharged Alive</title>
@@ -3997,7 +4509,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_347_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HRS-3: Implantable Cardioverter-Defibrillator (ICD) Complications Rate</title>
@@ -4022,7 +4537,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_348_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>30</name>
       <description>Complications or mortality at 30 days</description>
@@ -4054,7 +4572,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_350_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Total Knee Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation</title>
@@ -4078,7 +4599,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_351_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Total Knee Replacement: Preoperative Antibiotic Infusion with Proximal Tourniquet</title>
@@ -4102,7 +4626,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_352_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Total Knee Replacement: Identification of Implanted Prosthesis in Operative Report</title>
@@ -4126,7 +4653,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_353_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Anastomotic Leak Intervention</title>
@@ -4149,7 +4679,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_354_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Unplanned Reoperation within the 30 Day Postoperative Period</title>
@@ -4174,7 +4707,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_355_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Unplanned Hospital Readmission within 30 Days of Principal Procedure</title>
@@ -4199,7 +4735,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>plasticSurgery</measureSet>
     <measureSet>generalSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_356_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Surgical Site Infection (SSI)</title>
@@ -4226,7 +4765,10 @@
     <measureSet>plasticSurgery</measureSet>
     <measureSet>vascularSurgery</measureSet>
     <measureSet>generalSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_357_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Patient-Centered Surgical Risk Assessment and Communication</title>
@@ -4244,7 +4786,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -4256,7 +4798,10 @@
     <measureSet>generalSurgery</measureSet>
     <measureSet>thoracicSurgery</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_358_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies</title>
@@ -4280,7 +4825,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_360_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Reporting to a Radiation Dose Index Registry</title>
@@ -4304,7 +4852,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_361_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Computed Tomography (CT) Images Available for Patient Follow-up and Comparison Purposes</title>
@@ -4328,7 +4879,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_362_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines</title>
@@ -4352,7 +4906,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_364_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Follow-Up Care for Children Prescribed ADHD Medication (ADD)</title>
@@ -4378,7 +4935,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS136v8.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>visitWithin30Days</name>
       <description>Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.</description>
@@ -4415,7 +4975,12 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_370_MIPSCQM.pdf</registry>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_MH1_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS159v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Depression Utilization of the PHQ-9 Tool</title>
@@ -4443,7 +5008,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS160v7.html</electronicHealthRecord>
+    </measureSpecification>
     <strata>
       <name>4MonthsOfEnd</name>
       <description>Office visit, Psych visit, or Face to Face Interaction (No ED) within 4 months of the end of the measurement period that leads to a diagnosis of major depression including remission or dysthymia</description>
@@ -4497,7 +5065,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS82v6.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Closing the Referral Loop: Receipt of Specialist Report</title>
@@ -4542,7 +5113,11 @@
     <measureSet>urology</measureSet>
     <measureSet>oncology</measureSet>
     <measureSet>rheumatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_374_MIPSCQM.pdf</registry>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS50v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Knee Replacement</title>
@@ -4566,7 +5141,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS66v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Hip Replacement</title>
@@ -4590,7 +5168,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS56v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Functional Status Assessments for Congestive Heart Failure</title>
@@ -4615,7 +5196,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS90v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Children Who Have Dental Decay or Cavities</title>
@@ -4633,13 +5217,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>dentistry</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS75v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists</title>
@@ -4664,7 +5251,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>dentistry</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS74v8.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment</title>
@@ -4689,7 +5279,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS177v7.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adherence to Antipsychotic Medications For Individuals with Schizophrenia</title>
@@ -4715,7 +5308,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_383_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery</title>
@@ -4739,7 +5335,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_384_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Primary Rhegmatogenous Retinal Detachment Surgery: Visual Acuity Improvement Within 90 Days of Surgery</title>
@@ -4763,7 +5362,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_385_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences</title>
@@ -4787,7 +5389,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_386_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users</title>
@@ -4812,7 +5417,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_387_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataract Surgery with Intra-Operative Complications (Unplanned Rupture of Posterior Capsule Requiring Unplanned Vitrectomy)</title>
@@ -4830,13 +5438,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>true</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_388_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Cataract Surgery: Difference Between Planned and Final Refraction</title>
@@ -4860,7 +5471,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>ophthalmology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_389_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hepatitis C: Discussion and Shared Decision Making Surrounding Treatment Options</title>
@@ -4884,7 +5498,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_390_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Follow-Up After Hospitalization for Mental Illness (FUH)</title>
@@ -4910,7 +5527,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_391_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>30days</name>
       <description>The percentage of discharges for which the patient received follow-up within 30 days after discharge</description>
@@ -4943,7 +5563,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_392_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>18-64F</name>
       <description>Females 18-64 years of age</description>
@@ -4987,7 +5610,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>electrophysiologyCardiacSpecialist</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_393_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Immunizations for Adolescents</title>
@@ -5013,7 +5639,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_394_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>meningococcal</name>
       <description>Patients who had one dose of meningococcal vaccine on or between the patient�s 11th and 13th birthdays</description>
@@ -5047,14 +5676,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>pathology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_395_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_395_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Lung Cancer Reporting (Resection Specimens)</title>
@@ -5079,7 +5712,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>pathology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_396_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_396_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Melanoma Reporting</title>
@@ -5097,14 +5734,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>pathology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_397_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_397_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Optimal Asthma Control</title>
@@ -5132,7 +5773,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>otolaryngology</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_398_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>overall</name>
       <description>Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation</description>
@@ -5186,7 +5830,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_400_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis</title>
@@ -5212,7 +5859,10 @@
     <measureSet>gastroenterology</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_401_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Tobacco Use and Help with Quitting Among Adolescents</title>
@@ -5255,7 +5905,10 @@
     <measureSet>oncology</measureSet>
     <measureSet>rheumatology</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_402_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Adult Kidney Disease: Referral to Hospice</title>
@@ -5279,7 +5932,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>nephrology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_403_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Anesthesiology Smoking Abstinence</title>
@@ -5303,7 +5959,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>anesthesiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_404_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Follow-up Imaging for Incidental Abdominal Lesions</title>
@@ -5311,7 +5970,7 @@
     <nqfEMeasureId/>
     <nqfId/>
     <measureId>405</measureId>
-    <description>Percentage of final reports for abdominal imaging studies for patients aged 18 years and older with one or more of the following noted incidentally with follow_up imaging recommended- Liver lesion � 0.5 cm- Cystic kidney lesion &lt; 1.0 cm- Adrenal lesion � 1.0 cm</description>
+    <description>Percentage of final reports for abdominal imaging studies for patients aged 18 years and older with one or more of the following noted incidentally with follow up imaging recommended- Liver lesion =&lt; 0.5 cm- Cystic kidney lesion &lt; 1.0 cm- Adrenal lesion =&lt; 1.0 cm</description>
     <nationalQualityStrategyDomain>Effective Clinical Care</nationalQualityStrategyDomain>
     <measureType>process</measureType>
     <primarySteward>American College of Radiology</primarySteward>
@@ -5328,7 +5987,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_405_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_405_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients</title>
@@ -5353,7 +6016,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_406_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_406_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Treatment of Methicillin-Susceptible Staphylococcus Aureus (MSSA) Bacteremia</title>
@@ -5379,7 +6046,11 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>hospitalists</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_407_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_407_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Opioid Therapy Follow-up Evaluation</title>
@@ -5397,7 +6068,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -5408,7 +6079,10 @@
     <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_408_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Clinical Outcome Post Endovascular Stroke Treatment</title>
@@ -5433,7 +6107,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_409_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Psoriasis: Clinical Response to Systemic Medications</title>
@@ -5455,10 +6132,12 @@
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
-    <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>dermatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_410_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Depression Remission at Six Months</title>
@@ -5483,7 +6162,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_411_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>12-17</name>
       <description/>
@@ -5509,7 +6191,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -5520,7 +6202,10 @@
     <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_412_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Door to Puncture Time for Endovascular Stroke Treatment</title>
@@ -5545,7 +6230,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_413_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Evaluation or Interview for Risk of Opioid Misuse</title>
@@ -5563,7 +6251,7 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
@@ -5574,7 +6262,10 @@
     <measureSet>physicalMedicine</measureSet>
     <measureSet>neurology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_414_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older</title>
@@ -5592,14 +6283,18 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_415_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_415_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years</title>
@@ -5624,7 +6319,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_416_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_416_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Open Repair of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) Where Patients Are Discharged Alive</title>
@@ -5648,7 +6347,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_417_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Osteoporosis Management in Women Who Had a Fracture</title>
@@ -5676,7 +6378,11 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_418_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_418_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Overuse of Imaging for the Evaluation of Primary Headache</title>
@@ -5701,7 +6407,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_419_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_419_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Varicose Vein Treatment with Saphenous Ablation: Outcome Survey</title>
@@ -5726,7 +6436,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_420_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Assessment of Retrievable Inferior Vena Cava (IVC) Filters for Removal</title>
@@ -5750,7 +6463,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_421_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury</title>
@@ -5775,7 +6491,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_422_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_422_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Perioperative Temperature Management</title>
@@ -5793,13 +6513,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>anesthesiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_424_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Photodocumentation of Cecal Intubation</title>
@@ -5817,14 +6540,18 @@
     <isHighPriority>false</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_425_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_425_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pelvic Organ Prolapse: Preoperative Assessment of Occult Stress Urinary Incontinence</title>
@@ -5849,7 +6576,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_428_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Pelvic Organ Prolapse: Preoperative Screening for Uterine Malignancy</title>
@@ -5875,7 +6605,11 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_429_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_429_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy</title>
@@ -5893,13 +6627,16 @@
     <isHighPriority>true</isHighPriority>
     <isInverse>false</isInverse>
     <isIcdImpacted>false</isIcdImpacted>
-    <isToppedOutByProgram>false</isToppedOutByProgram>
+    <isToppedOutByProgram>true</isToppedOutByProgram>
     <category>quality</category>
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>anesthesiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_430_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Unhealthy Alcohol Use: Screening &amp; Brief Counseling</title>
@@ -5935,7 +6672,10 @@
     <measureSet>urology</measureSet>
     <measureSet>oncology</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_431_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair</title>
@@ -5960,7 +6700,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_432_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair</title>
@@ -5985,7 +6728,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_433_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Proportion of Patients Sustaining a Ureter Injury at the Time of Pelvic Organ Prolapse Repair</title>
@@ -6010,7 +6756,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>urology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_434_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Quality of Life Assessment For Patients With Primary Headache Disorders</title>
@@ -6035,7 +6784,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_435_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_435_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques</title>
@@ -6060,7 +6813,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>diagnosticRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_436_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_436_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Rate of Surgical Conversion from Lower Extremity Endovascular Revascularization Procedure</title>
@@ -6085,7 +6842,11 @@
     <submissionMethod>claims</submissionMethod>
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_437_MIPSCQM.pdf</registry>
+      <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_437_MedicarePartBClaims.pdf</claims>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Statin Therapy for the Prevention and Treatment of Cardiovascular Disease</title>
@@ -6114,7 +6875,12 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>preventiveMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_438_MIPSCQM.pdf</registry>
+      <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV13_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS347v2.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Age Appropriate Screening Colonoscopy</title>
@@ -6138,7 +6904,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>gastroenterology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_439_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Basal Cell Carcinoma (BCC)/Squamous Cell Carcinoma (SCC): Biopsy Reporting Time - Pathologist to Clinician</title>
@@ -6162,7 +6931,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>dermatology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_440_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)</title>
@@ -6189,7 +6961,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>vascularSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_441_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Persistence of Beta-Blocker Treatment After a Heart Attack</title>
@@ -6215,7 +6990,10 @@
     <measureSet>cardiology</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_442_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Non-Recommended Cervical Cancer Screening in Adolescent Females</title>
@@ -6241,7 +7019,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_443_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Medication Management for People with Asthma</title>
@@ -6267,7 +7048,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_444_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG)</title>
@@ -6291,7 +7075,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>thoracicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_445_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Operative Mortality Stratified by the Five STS-EACTS Mortality Categories</title>
@@ -6314,7 +7101,10 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_446_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Workup Prior to Endometrial Ablation</title>
@@ -6338,7 +7128,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_448_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HER2 Negative or Undocumented Breast Cancer Patients Spared Treatment with HER2-Targeted Therapies</title>
@@ -6362,7 +7155,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_449_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Trastuzumab Received By Patients With AJCC Stage I (T1c) - III And HER2 Positive Breast Cancer Receiving Adjuvant Chemotherapy</title>
@@ -6386,7 +7182,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_450_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy</title>
@@ -6410,7 +7209,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_451_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies</title>
@@ -6434,7 +7236,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_452_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Percentage of Patients Who Died from Cancer Receiving Chemotherapy in the Last 14 Days of Life (lower score - better)</title>
@@ -6458,7 +7263,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_453_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Percentage of Patients who Died from Cancer with More than One Emergency Department Visit in the Last 30 Days of Life (lower score - better)</title>
@@ -6482,7 +7290,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_454_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Percentage of Patients Who Died from Cancer Admitted to the Intensive Care Unit (ICU) in the Last 30 Days of Life (lower score - better)</title>
@@ -6507,7 +7318,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
     <measureSet>geriatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_455_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Percentage of Patients Who Died From Cancer Not Admitted To Hospice (lower score - better)</title>
@@ -6531,7 +7345,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_456_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score - better)</title>
@@ -6555,7 +7372,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_457_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>All-cause Hospital Readmission</title>
@@ -6578,7 +7398,9 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>administrativeClaims</submissionMethod>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Back Pain Following Lumbar Discectomy/Laminotomy</title>
@@ -6603,7 +7425,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_459_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Back Pain Following Lumbar Fusion</title>
@@ -6628,7 +7453,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_460_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Leg Pain Following Lumbar Discectomy and/or Laminotomy</title>
@@ -6653,7 +7481,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_461_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy</title>
@@ -6678,7 +7509,10 @@
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <measureSet>urology</measureSet>
     <measureSet>oncology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS645v2.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)</title>
@@ -6702,7 +7536,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>anesthesiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_463_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use</title>
@@ -6730,7 +7567,10 @@
     <measureSet>pediatrics</measureSet>
     <measureSet>infectiousDisease</measureSet>
     <measureSet>urgentCare</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_464_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Uterine Artery Embolization Technique: Documenttion of Angigraphic Endpoints and Interrogation of Ovarian Arteries</title>
@@ -6754,7 +7594,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>interventionalRadiology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_465_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Developmental Screening in the First Three Years of Life</title>
@@ -6779,7 +7622,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_467_MIPSCQM.pdf</registry>
+    </measureSpecification>
     <strata>
       <name>&lt;1</name>
       <description>Children in the eligible population who turned 1 during the performance period. (Birth to 1 year of age) who were screened for risk of developmental, behavioral and social delays using a standardized tool with interpretation and report within 12 months preceding or on their birthday</description>
@@ -6822,7 +7668,10 @@
     <measureSet>internalMedicine</measureSet>
     <measureSet>physicalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_468_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Functional Status Following Lumbar Fusion Surgery</title>
@@ -6847,7 +7696,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_469_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change In Functional Status Following Total Knee Replacement Surgery</title>
@@ -6871,7 +7723,10 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_470_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Functional Status Following Lumbar Discectomy/Laminotomy Surgery</title>
@@ -6896,7 +7751,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_471_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture</title>
@@ -6922,7 +7780,10 @@
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS249v1.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Average Change in Leg Pain Following Lumbar Fusion Surgery</title>
@@ -6947,7 +7808,10 @@
     <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSet>neurosurgical</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>Y</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_473_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>Zoster (Shingles) Vaccination</title>
@@ -6978,7 +7842,10 @@
     <measureSet>infectiousDisease</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSet>skilledNursingFacility</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_474_MIPSCQM.pdf</registry>
+    </measureSpecification>
   </measure>
   <measure>
     <title>HIV Screening</title>
@@ -7006,7 +7873,10 @@
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>preventiveMedicine</measureSet>
     <measureSet>infectiousDisease</measureSet>
-    <measureSpecification/>
+    <measureSpecification>
+      <default>N</default>
+      <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS349v1.html</electronicHealthRecord>
+    </measureSpecification>
   </measure>
   <measure>
     <category>pi</category>
