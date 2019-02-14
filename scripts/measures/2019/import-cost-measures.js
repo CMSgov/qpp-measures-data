@@ -18,7 +18,8 @@ const COST_CSV_COLUMN_NAMES = {
   'lastPerformanceYear': 'lastPerformanceYear',
   'isInverse': 'isInverse',
   'overallAlgorithm': 'overallAlgorithm',
-  'submissionMethods': 'submissionMethods'
+  'submissionMethods': 'submissionMethods',
+  'measureSpecification': 'measureSpecification'
 };
 
 // Accounts for TRUE, True, true, X, x...
