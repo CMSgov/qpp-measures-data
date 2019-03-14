@@ -16,7 +16,7 @@ Make changes on a feature branch, then open a pull request. Make sure CI passes 
 
 ### Performance year
 
-$YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2018. $YEAR is currently only supported as
+$YEAR refers to the performance year; this argument is required. $YEAR is currently only supported as
 a command-line argument for measures generation, not benchmarks or clinical clusters.
 
 ### Generating data
