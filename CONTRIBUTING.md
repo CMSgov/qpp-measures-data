@@ -16,8 +16,8 @@ Make changes on a feature branch, then open a pull request. Make sure CI passes 
 
 ### Performance year
 
-$YEAR refers to the performance year. For measures data, providing a $YEAR is optional. If omitted, it defaults to 2018. $YEAR is currently only supported as
-a command-line argument for measures generation, not benchmarks or clinical clusters.
+$YEAR refers to the performance year; this command-line argument is required.  $YEAR is currently only supported as
+a command-line argument for measures and benchmarks generation, not supported for clinical clusters.
 
 ### Generating data
 To regenerate and validate data, do the following:
@@ -52,12 +52,12 @@ The csv is formatted for the script to run correctly. If the new version does no
 
 ### Additional benchmarks
 
-To add or update benchmarks, you'll want to convert the csv file into JSON with the `scripts/benchmarks/parse-benchmarks-data.js`. `parse-benchmarks-data.js` relies on a set of columns to be present and additional empty columns can cause the parsing to fail. See that file for additional instructions on how to generate the JSON file.
-Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/$YEAR/measures-data.json` for the correct usage. If none are matched, either a padded `000` digit will be used for `measureId`s with all digits or a non-spaced version of the `measureId` will be used.
+For 2019, only 'full images' of benchmark data are accepted; the csv must contain a full list of includede benchmarks. Incremental files are no longer supported.
 
-After you have the parsed JSON file, move the CSV and JSON into `staging/benchmarks/csv` and `staging/benchmarks/json`. We do this for auditing and regeneration purposes. You'll notice a number prepended to both files. We number each file to enforce ordering of merges. Currently, if two benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, the one that exists in the larger numbered file will overwrite the smaller one.
+  To update benchmarks, run `npm run build:benchmarks $YEAR`.
+  `build-benchmarks` will call `parse-benchmarks-data.js` directly and validate the data right after.
 
-To update the benchmarks file after the JSON file is in place, run `npm run build:benchmarks` and verify the changes are as expected. (You can run `git diff`.)
+   Please verify the changes are as expected. (You can run `git diff`.)
 
 ### Deleting measures and benchmarks
 

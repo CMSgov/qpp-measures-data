@@ -1,5 +1,6 @@
 // Libraries
 const parse = require('csv-parse');
+const _ = require('lodash');
 // Constants
 // Note: Older benchmarks CSVs provided to us (and perhaps future ones)
 // end with an extraneous blank column. To accommodate that, just add an
@@ -58,7 +59,8 @@ if (benchmarkYear && performanceYear) {
           if (benchmark) benchmarks.push(benchmark);
         });
 
-        process.stdout.write(JSON.stringify(benchmarks, null, 2));
+        const orderedBenchmarks = _.sortBy(benchmarks, ['measureId']);
+        process.stdout.write(JSON.stringify(orderedBenchmarks, null, 2));
       }
     });
   });
