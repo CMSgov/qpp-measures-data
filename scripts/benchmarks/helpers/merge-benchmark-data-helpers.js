@@ -59,7 +59,8 @@ const mergeBenchmarkLayers = (benchmarkLayers, benchmarkJsonDir) => {
   if (mergeConflicts.length > 0) {
     throw new Error('Merge Conflicts: ' + JSON.stringify(mergeConflicts[0]));
   } else {
-    return [...mergedBenchmarks.values()];
+    const orderedBenchmarks = _.sortBy([...mergedBenchmarks.values()], ['measureId', 'submissionMethod']);
+    return orderedBenchmarks;
   }
 };
 
