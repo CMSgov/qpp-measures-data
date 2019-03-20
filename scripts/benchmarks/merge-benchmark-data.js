@@ -1,8 +1,13 @@
 const helpers = require('./helpers/merge-benchmark-data-helpers.js');
 
-const BENCHMARK_JSON_DIR = '../../staging/2018/benchmarks/json/';
-const BENCHMARK_LAYER_FILES = helpers.getOrderedFileNames(__dirname, BENCHMARK_JSON_DIR);
+const performanceYear = process.argv[2];
 
-const formattedBenchmarks = helpers.mergeBenchmarkLayers(BENCHMARK_LAYER_FILES);
+if (performanceYear) {
+  const jsonDir = `../../staging/${performanceYear}/benchmarks/json/`;
+  const benchmarkLayerFiles = helpers.getOrderedFileNames(__dirname, jsonDir);
+  const formattedBenchmarks = helpers.mergeBenchmarkLayers(benchmarkLayerFiles, jsonDir);
 
-process.stdout.write(JSON.stringify(formattedBenchmarks, null, 2));
+  process.stdout.write(JSON.stringify(formattedBenchmarks, null, 2));
+} else {
+  console.log('Please provide a performance year like so: `node merge-benchmark-data.js 2017`');
+}

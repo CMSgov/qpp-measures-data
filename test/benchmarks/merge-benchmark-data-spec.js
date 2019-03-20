@@ -2,7 +2,6 @@ const chai = require('chai');
 const assert = chai.assert;
 
 const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
-const JSON_FIXTURES_DIR = '../../test/benchmarks/files/';
 
 describe('mergeBenchmarkData', function() {
   describe('getOrderedFileNames', function() {
@@ -39,9 +38,11 @@ describe('mergeBenchmarkData', function() {
   });
 
   describe('getBenchmarkKey', function() {
+    const JSON_FIXTURES_DIR = '../../../test/benchmarks/files/';
+    const baseLayer = 'base_layer.json';
+
     it('joins correctly two layers', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../../test/benchmarks/files/overwrite_001_claims.json';
+      const secondLayer = 'overwrite_001_claims.json';
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
@@ -50,8 +51,7 @@ describe('mergeBenchmarkData', function() {
     });
 
     it('joins a third independent layer', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const thirdLayer = '../../../../test/benchmarks/files/independent_layer.json';
+      const thirdLayer = 'independent_layer.json';
 
       const layers = [baseLayer, thirdLayer];
 
@@ -110,8 +110,7 @@ describe('mergeBenchmarkData', function() {
     });
 
     it('throws an error when a measure is missing a field ', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../../test/benchmarks/files/missing_id_layer.json';
+      const secondLayer = 'missing_id_layer.json';
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
