@@ -41,7 +41,7 @@ const mergeBenchmarkLayers = (benchmarkLayers, benchmarkJsonDir) => {
   const mergeConflicts = [];
 
   benchmarkLayers.forEach((benchmarkLayer) => {
-    const benchmarkFile = JSON.parse(fs.readFileSync(path.join(__dirname, benchmarkJsonDir, benchmarkLayer), 'utf8'));
+    const benchmarkFile = JSON.parse(fs.readFileSync(path.join(benchmarkJsonDir, benchmarkLayer), 'utf8'));
     benchmarkFile.forEach((benchmark) => {
       const benchmarkKey = getBenchmarkKey(benchmark);
       if (mergedBenchmarks.has(benchmarkKey) && !_.isEqual(mergedBenchmarks.get(benchmarkKey), benchmark)) {
