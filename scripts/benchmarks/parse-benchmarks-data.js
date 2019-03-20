@@ -59,7 +59,7 @@ if (benchmarkYear && performanceYear) {
           if (benchmark) benchmarks.push(benchmark);
         });
 
-        const orderedBenchmarks = _.sortBy(benchmarks, ['measureId']);
+        const orderedBenchmarks = _.sortBy(benchmarks, ['measureId', 'submissionMethod']);
         process.stdout.write(JSON.stringify(orderedBenchmarks, null, 2));
       }
     });
