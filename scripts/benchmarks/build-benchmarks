@@ -23,7 +23,7 @@ if [[ -z "$performanceYear" ]]; then
   echo 'Performance year unspecified.'
   exit 126
 else
-  stagingDirectory=staging/${performanceYear}/benchmarks/
+  stagingDirectory=staging/${performanceYear}/benchmarks
   benchmarkYear=$(($performanceYear-2))
   csvFilename=${stagingDirectory}/benchmarks.csv
   benchmarkBaseFilename=${stagingDirectory}/json/benchmarks.json
