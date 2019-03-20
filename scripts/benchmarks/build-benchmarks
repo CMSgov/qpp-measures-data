@@ -23,14 +23,19 @@ if [[ -z "$performanceYear" ]]; then
   echo 'Performance year unspecified.'
   exit 126
 else
+  stagingDirectory=staging/${performanceYear}/benchmarks/
   benchmarkYear=$(($performanceYear-2))
-  csvFilename=staging/${performanceYear}/benchmarks.csv
+  csvFilename=${stagingDirectory}/benchmarks.csv
+  benchmarkBaseFilename=${stagingDirectory}/json/benchmarks.json
   benchmarkFilename=benchmarks/${performanceYear}.json
 
   # generate benchmarks base
   echo 'Generating new benchmarks JSON.'
-  cat $csvFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkFilename 
+  cat $csvFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkBaseFilename 
 
+  echo 'Squashing staging JSON.'
+  node scripts/benchmarks/merge-benchmark-data.js $performanceYear > $benchmarkFilename
+ 
   # validate benchmarks
   echo 'Validating new benchmarks JSON.'
   cat $benchmarkFilename | node scripts/validate-data.js benchmarks $performanceYear
