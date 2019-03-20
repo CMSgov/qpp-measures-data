@@ -1,4 +1,5 @@
 const chai = require('chai');
+const path = require('path');
 const assert = chai.assert;
 
 const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
@@ -38,7 +39,7 @@ describe('mergeBenchmarkData', function() {
   });
 
   describe('getBenchmarkKey', function() {
-    const JSON_FIXTURES_DIR = '../../../test/benchmarks/files/';
+    const JSON_FIXTURES_DIR = path.join(__dirname, 'files/');
     const baseLayer = 'base_layer.json';
 
     it('joins correctly two layers', function() {
