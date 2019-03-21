@@ -1,4 +1,5 @@
 const chai = require('chai');
+const path = require('path');
 const assert = chai.assert;
 
 const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
@@ -38,55 +39,22 @@ describe('mergeBenchmarkData', function() {
   });
 
   describe('getBenchmarkKey', function() {
-    it('joins correctly two layers', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../../test/benchmarks/files/overwrite_001_claims.json';
+    const JSON_FIXTURES_DIR = path.join(__dirname, 'files/');
+    const baseLayer = 'base_layer.json';
+
+    it('throws error when there are duplicate benchmarks between layers', function() {
+      const secondLayer = 'overwrite_001_claims.json';
 
       const layers = [baseLayer, secondLayer];
-
-      const resultingBenchmarks = [{
-        measureId: '001',
-        benchmarkYear: 2015,
-        performanceYear: 2017,
-        submissionMethod: 'claims',
-        deciles: [
-          100,
-          50,
-          25,
-          20.31,
-          16.22,
-          11.02,
-          10,
-          7.41,
-          4
-        ]
-      },
-      {
-        measureId: '001',
-        benchmarkYear: 2015,
-        performanceYear: 2017,
-        submissionMethod: 'electronicHealthRecord',
-        deciles: [
-          100,
-          54.67,
-          35.9,
-          25.62,
-          19.33,
-          14.14,
-          9.09,
-          3.33,
-          0
-        ]
-      }];
-      assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers), resultingBenchmarks);
+      assert.throws(() => {
+        mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR);
+      }, /Merge Conflicts: /);
     });
 
-    it('joins a third independent layer', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../../test/benchmarks/files/overwrite_001_claims.json';
-      const thirdLayer = '../../../../test/benchmarks/files/independent_layer.json';
+    it('joins a third independent layer w/ benchmarks in the correct ordering', function() {
+      const thirdLayer = 'independent_layer.json';
 
-      const layers = [baseLayer, secondLayer, thirdLayer];
+      const layers = [baseLayer, thirdLayer];
 
       const resultingBenchmarks = [{
         measureId: '001',
@@ -95,11 +63,11 @@ describe('mergeBenchmarkData', function() {
         submissionMethod: 'claims',
         deciles: [
           100,
-          50,
-          25,
+          35,
+          25.71,
           20.31,
           16.22,
-          11.02,
+          13.04,
           10,
           7.41,
           4
@@ -138,17 +106,34 @@ describe('mergeBenchmarkData', function() {
           7.41,
           4
         ]
+      },
+      {
+        measureId: 'dmComposite',
+        benchmarkYear: 2016,
+        performanceYear: 2018,
+        submissionMethod: 'cmsWebInterface',
+        isToppedOut: false,
+        deciles: [
+          0,
+          29.9,
+          29.9,
+          34.33,
+          38.81,
+          43.32,
+          48.21,
+          53.64,
+          60.37
+        ]
       }];
-      assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers), resultingBenchmarks);
+      assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR), resultingBenchmarks);
     });
 
     it('throws an error when a measure is missing a field ', function() {
-      const baseLayer = '../../../../test/benchmarks/files/base_layer.json';
-      const secondLayer = '../../../../test/benchmarks/files/missing_id_layer.json';
+      const secondLayer = 'missing_id_layer.json';
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
-        mergeBenchmarkData.mergeBenchmarkLayers(layers);
+        mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR);
       }, /Key is missing: measureId/);
     });
   });
