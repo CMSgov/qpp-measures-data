@@ -42,7 +42,7 @@ describe('mergeBenchmarkData', function() {
     const JSON_FIXTURES_DIR = path.join(__dirname, 'files/');
     const baseLayer = 'base_layer.json';
 
-    it('joins correctly two layers', function() {
+    it('throws error when there are duplicate benchmarks between layers', function() {
       const secondLayer = 'overwrite_001_claims.json';
 
       const layers = [baseLayer, secondLayer];
@@ -51,7 +51,7 @@ describe('mergeBenchmarkData', function() {
       }, /Merge Conflicts: /);
     });
 
-    it('joins a third independent layer', function() {
+    it('joins a third independent layer w/ benchmarks in the correct ordering', function() {
       const thirdLayer = 'independent_layer.json';
 
       const layers = [baseLayer, thirdLayer];
@@ -105,6 +105,24 @@ describe('mergeBenchmarkData', function() {
           10,
           7.41,
           4
+        ]
+      },
+      {
+        measureId: 'dmComposite',
+        benchmarkYear: 2016,
+        performanceYear: 2018,
+        submissionMethod: 'cmsWebInterface',
+        isToppedOut: false,
+        deciles: [
+          0,
+          29.9,
+          29.9,
+          34.33,
+          38.81,
+          43.32,
+          48.21,
+          53.64,
+          60.37
         ]
       }];
       assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR), resultingBenchmarks);
