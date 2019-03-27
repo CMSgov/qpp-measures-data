@@ -25,6 +25,18 @@ describe('clinical cluster functionality', () => {
     assert.equal(1, clusters.length);
   });
 
+  it('measures in 130 and 317 are ignored completely for EMA', () => {
+    const data = main.getClinicalClusterData();
+    ['130', '317'].forEach((measureId) => {
+      let clusters = data.filter(c => c.measureId === measureId && c.submissionMethod === 'registry');
+      assert.isArray(clusters);
+      assert.equal(0, clusters.length);
+      clusters = data.filter(c => c.measureId === measureId && c.submissionMethod === 'claims');
+      assert.isArray(clusters);
+      assert.equal(1, clusters.length);
+    });
+  });
+
   it('measures in specialClusterRelations has measureIds without optionals', () => {
     // registry 051 and 052 should only have 130 in their clinicalCluster for registry
     const data = main.getClinicalClusterData();
