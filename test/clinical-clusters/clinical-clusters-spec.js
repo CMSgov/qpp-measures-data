@@ -28,7 +28,6 @@ describe('clinical cluster functionality', () => {
   it('cluster for measure 317 in 2018 should exist only for claims and not registry', () => {
     const data = main.getClinicalClusterData(2018);
     let clusters = data.filter(c => c.measureId === '317' && c.submissionMethod === 'registry');
-    console.log(JSON.stringify(data));
     assert.isArray(clusters);
     assert.equal(0, clusters.length);
     clusters = data.filter(c => c.measureId === '317' && c.submissionMethod === 'claims');
