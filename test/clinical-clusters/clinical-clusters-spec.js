@@ -25,6 +25,16 @@ describe('clinical cluster functionality', () => {
     assert.equal(1, clusters.length);
   });
 
+  it('cluster for measure 317 in 2018 should exist only for claims and not registry', () => {
+    const data = main.getClinicalClusterData(2018);
+    let clusters = data.filter(c => c.measureId === '317' && c.submissionMethod === 'registry');
+    assert.isArray(clusters);
+    assert.equal(0, clusters.length);
+    clusters = data.filter(c => c.measureId === '317' && c.submissionMethod === 'claims');
+    assert.isArray(clusters);
+    assert.equal(1, clusters.length);
+  });
+
   it('measures in specialClusterRelations has measureIds without optionals', () => {
     // registry 051 and 052 should only have 130 in their clinicalCluster for registry
     const data = main.getClinicalClusterData();
