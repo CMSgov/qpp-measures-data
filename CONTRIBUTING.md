@@ -87,7 +87,7 @@ We also use Travis CI to run tests on every branch.
 
 ## Versioning, publishing, and creating new releases
 
-1. Bump the `version` using `npm version <patch | minor | major>` when making changes to `measures/$YEAR/measures-data.json` or `benchmarks/$YEAR.json`. You can also choose to bump the version when making changes elsewhere.
+1. Bump the `version` using `npm version <patch | minor | major>` when making changes to anything other than comments/documentation. Use `minor` when making changes to datasets (e.g. `measures/$YEAR/measures-data.json` or `benchmarks/$YEAR.json`), or `patch` otherwise.
 
 2. Publish a new version after bumping the version number:
 ```
