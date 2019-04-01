@@ -24,7 +24,8 @@ const PI_CSV_COLUMN_NAMES = {
   'reportingCategory': 'reportingCategory',
   'substitutes': 'substitutes',
   'measureSpecification': 'measureSpecification',
-  'measureSets': 'measureSets'
+  'measureSets': 'measureSets',
+  'exclusion': 'exclusion'
 };
 
 // Accounts for TRUE, True, true, X, x...
