@@ -11,7 +11,7 @@ Detailed information about what is being changed and rationale for interesting d
 #### Release checklist:
 Tasks that must be done prior to merging this PR, including testing.
 
-* [ ] [Package version updated](../CONTRIBUTING.md#versioning-publishing-and-creating-new-releases)
+* [ ] [Package version updated](https://github.com/CMSgov/qpp-measures-data/blob/master/CONTRIBUTING.md#versioning-publishing-and-creating-new-releases)
 * [ ] Documentation updated
 * [ ] Unit tests added/passing
 * [ ] Verified working locally
