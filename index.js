@@ -52,8 +52,14 @@ exports.getMeasuresSchema = function(performanceYear = 2017) {
  * @return {Array<ClinicalCluster>}
  */
 exports.getClinicalClusterData = function(performanceYear = 2017) {
-  return JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters.json')));
+  let clusterData = [];
+  try {
+    clusterData = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters.json')));
+  } catch (e) {
+    console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
+  }
+  return clusterData;
 };
 
 /**
