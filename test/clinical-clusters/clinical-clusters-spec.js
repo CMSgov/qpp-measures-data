@@ -57,4 +57,9 @@ describe('clinical cluster functionality', () => {
       .map(c => c.clinicalClusters[0].measureIds);
     assert.deepEqual(measuresIds, [ [ '091', '093' ], [ '091', '093' ] ]);
   });
+
+  it('Should handel missing years gracefully', () => {
+    const data = main.getClinicalClusterData(2000);
+    assert.deepEqual(data, []);
+  });
 });
