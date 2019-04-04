@@ -3,6 +3,7 @@ const assert = chai.assert;
 const main = require('./../../index');
 
 describe('clinical cluster functionality', () => {
+
   it('can load clinical cluster data', () => {
     const data = main.getClinicalClusterData();
     assert.isArray(data);
@@ -56,5 +57,10 @@ describe('clinical cluster functionality', () => {
       .filter(c => c.clinicalClusters && c.clinicalClusters.find(c => c.name === 'acuteOtitisExterna'))
       .map(c => c.clinicalClusters[0].measureIds);
     assert.deepEqual(measuresIds, [ [ '091', '093' ], [ '091', '093' ] ]);
+  });
+
+  it('Should handel missing years gracefully', () => {
+    const data = main.getClinicalClusterData(2000);
+    assert.deepEqual(data, []);
   });
 });
