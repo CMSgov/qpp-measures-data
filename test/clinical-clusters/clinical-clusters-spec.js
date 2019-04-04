@@ -3,7 +3,6 @@ const assert = chai.assert;
 const main = require('./../../index');
 
 describe('clinical cluster functionality', () => {
-
   it('can load clinical cluster data', () => {
     const data = main.getClinicalClusterData();
     assert.isArray(data);
