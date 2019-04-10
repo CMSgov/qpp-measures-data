@@ -87,6 +87,8 @@ const specialClusterRelations = {
     claims: [
       {measureId: '130', optionals: []},
       {measureId: '317', optionals: []},
+      {measureId: '117', optionals: []},
+      {measureId: '226', optionals: []},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
     ],
@@ -97,6 +99,7 @@ const specialClusterRelations = {
       {measureId: '424', optionals: []},
       {measureId: '430', optionals: []},
       {measureId: '317', optionals: []},
+      {measureId: '134', optionals: []},
       {measureId: '051', optionals: ['052']},
       {measureId: '052', optionals: ['051']},
       {measureId: '398', optionals: ['444']},
