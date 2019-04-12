@@ -49,6 +49,30 @@ describe('clinical cluster functionality', () => {
     assert.deepEqual(['130', '052'], cluster052.clinicalClusters[0].measureIds);
   });
 
+  it('cluster for measure 134 and 47 in 2018 should not exist only for registry', () => {
+    const data = main.getClinicalClusterData(2018);
+    ['134', '47'].forEach((m) => {
+      const clusters = data.filter(c => c.measureId === m && c.submissionMethod === 'registry');
+      assert.isArray(clusters);
+      assert.equal(0, clusters.length);
+    });
+  });
+
+  it('cluster for measure 1 and 117 in 2018 should not exist only for claims', () => {
+    const data = main.getClinicalClusterData(2018);
+    ['1', '117'].forEach((m) => {
+      const clusters = data.filter(c => c.measureId === m && c.submissionMethod === 'claims');
+      assert.isArray(clusters);
+      assert.equal(0, clusters.length);
+    });
+  });
+
+  it('clinical cluster for measure 226 in 2018 should not exist only for claims', () => {
+    const data = main.getClinicalClusterData(2018);
+    const clusters = data.filter(c => c.measureId === '226' && c.submissionMethod === 'claims');
+    assert.equal(undefined, clusters.clinicalClusters);
+  });
+
   it('Cluster input files are processed properly', () => {
     // registry Acute Otitis Externa should have 91 and 93
     const data = main.getClinicalClusterData();
