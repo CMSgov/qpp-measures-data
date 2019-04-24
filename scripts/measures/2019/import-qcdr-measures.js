@@ -140,9 +140,13 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
       throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
         'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath + ' ' + nthPerformanceRate);
     }
+    // A rate description will fit on a single line, remove any superfluous text
+    // then trim all remaining whitespace.
+    const desc = _.trim(_.split(strata[index], '\n')[0]);
+
     newMeasure['strata'].push({
       'name': strataName,
-      'description': strata[index]
+      'description': desc
     });
   });
 

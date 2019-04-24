@@ -10,7 +10,7 @@ const _ = require('lodash');
 const year = 2019;
 const testCsv = '../../../test/scripts/measures/' + year + '/fixtures/test-qcdr.csv';
 const testMeasures = '../../../test/scripts/measures/' + year + '/fixtures/test-qcdr-measures.json';
-const qcdrStrataNamesFile = '../../../util/measures/' + '2018' + '/qcdr-measures-strata-names.json';
+const qcdrStrataNamesFile = '../../../util/measures/' + year + '/qcdr-measures-strata-names.json';
 const outputPath = path.join(__dirname, year.toString(), '../../' + testMeasures);
 
 // Function which executes script and reads in output file to a JS object.
@@ -39,12 +39,12 @@ const validateDefaults = function(measure) {
   assert.sameDeepMembers(['registry'], measure.submissionMethods);
 };
 
-describe(year + ' import measures', () => {
+describe.only(year + ' import measures', () => {
   it('should create new measures', () => {
     const measures = runTest(testMeasures, testCsv);
     assert.lengthOf(measures, 4);
 
-    const multiPerformanceRateMeasure = _.find(measures, {measureId: 'NPA3'});
+    const multiPerformanceRateMeasure = _.find(measures, {measureId: 'NPA28'});
     validateDefaults(multiPerformanceRateMeasure);
     assert.lengthOf(multiPerformanceRateMeasure.strata, 2);
     assert.strictEqual('overallStratumOnly', multiPerformanceRateMeasure.overallAlgorithm);
