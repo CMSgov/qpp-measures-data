@@ -39,7 +39,7 @@ const validateDefaults = function(measure) {
   assert.sameDeepMembers(['registry'], measure.submissionMethods);
 };
 
-describe.only(year + ' import measures', () => {
+describe(year + ' import measures', () => {
   it('should create new measures', () => {
     const measures = runTest(testMeasures, testCsv);
     assert.lengthOf(measures, 4);
