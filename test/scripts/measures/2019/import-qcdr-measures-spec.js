@@ -60,7 +60,7 @@ describe(year + ' import measures', () => {
 
     const nonProportionalMeasure = _.find(measures, {measureId: 'HCPR19'});
     validateDefaults(nonProportionalMeasure);
-    assert.strictEqual('nonProportion', nonProportionalMeasure.metricType);
+    assert.strictEqual('nonProportional', nonProportionalMeasure.metricType);
   });
 
   it('should be fine with duplicates and merge them properly', () => {
