@@ -41,14 +41,11 @@ const config = {
       mappings: {
         'Process': 'process',
         'Outcome': 'outcome',
-        'Patient Engagement/ Experience': 'patientEngagementExperience',
-        'Efficiency': 'efficiency',
+        'Patient Engagement/Experience': 'patientEngagementExperience',
+        'Efficiency and Cost/Resource Use': 'efficiency',
         'Intermediate Outcome': 'intermediateOutcome',
         'Structure': 'structure',
-        'Patient Reported Outcome': 'outcome',
-        'Composite': 'outcome',
-        'Cost/Resource Use': 'efficiency',
-        'Cost/resource Use': 'efficiency',
+        'Patient Reported Outcome (PRO)': 'outcome',
         'Clinical Process Effectiveness': 'process'
       }
     },
@@ -113,6 +110,8 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
     newMeasure['overallAlgorithm'] = 'sumNumerators';
   } else if (overallPerformanceRate === 'weighted average') {
     newMeasure['overallAlgorithm'] = 'weightedAverage';
+  } else if (overallPerformanceRate === 'simple average') {
+    newMeasure['overallAlgorithm'] = 'simpleAverage';
   }
 
   // Add the names and descriptions of strata
@@ -222,7 +221,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
         newMeasure['metricType'] = 'registrySinglePerformanceRate';
       }
     } else {
-      newMeasure['metricType'] = 'nonProportion';
+      newMeasure['metricType'] = 'nonProportional';
     }
 
     newMeasure['submissionMethods'] = ['registry'];
