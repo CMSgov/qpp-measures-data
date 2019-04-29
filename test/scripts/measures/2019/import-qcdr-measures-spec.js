@@ -58,9 +58,9 @@ describe(year + ' import measures', () => {
     assert.strictEqual('weightedAverage', multiPerformanceRateMeasureWeighted.overallAlgorithm);
     assert.lengthOf(multiPerformanceRateMeasureWeighted.strata, 2);
 
-    const nonProportionalMeasure = _.find(measures, {measureId: 'HCPR19'});
-    validateDefaults(nonProportionalMeasure);
-    assert.strictEqual('nonProportional', nonProportionalMeasure.metricType);
+    const nonProportionMeasure = _.find(measures, {measureId: 'HCPR19'});
+    validateDefaults(nonProportionMeasure);
+    assert.strictEqual('nonProportion', nonProportionMeasure.metricType);
   });
 
   it('should be fine with duplicates and merge them properly', () => {
