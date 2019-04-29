@@ -221,7 +221,7 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
         newMeasure['metricType'] = 'registrySinglePerformanceRate';
       }
     } else {
-      newMeasure['metricType'] = 'nonProportional';
+      newMeasure['metricType'] = 'nonProportion';
     }
 
     newMeasure['submissionMethods'] = ['registry'];
