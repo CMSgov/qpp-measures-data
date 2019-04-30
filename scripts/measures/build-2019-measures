@@ -17,6 +17,9 @@ cost_csv='../../../util/measures/'$currentPerformanceYear'/cost-measures.csv'
 
 final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
 
+qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
+qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
+
 # 0. Add quality measures to the staging measures-data-quality.json file:
 node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
 	$quality_csv $quality_strata $quality_measures
@@ -41,13 +44,17 @@ node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 	$enriched_quality_measures $pi_measures $ia_measures $cost_measures $final_measures
 
-# 6. To regenerate the `measures-data.xml` file, run:
+# 6. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
+node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
+	$final_measures $qcdr_csv $qcdr_strata
+
+# 7. To regenerate the `measures-data.xml` file, run:
 echo "generating measures-data.xml from measures-data.json"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/convert-json-to-xml.js \
 		> measures/$currentPerformanceYear/measures-data.xml
 
-# 7. Validate the resulting measures-data.json file:
+# 8. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear

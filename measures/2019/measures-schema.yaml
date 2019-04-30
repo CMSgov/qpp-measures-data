@@ -18,7 +18,7 @@ definitions:
         enum: [ia, quality, pi, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
-        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, nonProportional, cahps, costScore]
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer
@@ -172,7 +172,7 @@ definitions:
       },
       {
         properties: {
-          metricType: { enum: [singlePerformanceRate, nonProportional, cahps, registrySinglePerformanceRate, costScore] }
+          metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, costScore] }
         }
       }
     ]
