@@ -12,7 +12,7 @@ ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
 ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 
 cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
-cahps_measures='../../../staging/'$currentPerformanceYear'/cahps-measures.json'
+cahps_measures='../../../staging/'$currentPerformanceYear'/measures-data-cahps.json'
 
 enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 cost_measures='../../../staging/'$currentPerformanceYear'/measures-data-cost.json'
@@ -36,7 +36,7 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 	$ia_csv $ia_measures
 
 # 3. Add CAHPS measures to the staging cahps-measures.json file:
-node scripts/measures/$currentPerformanceYear/add-cahps-measures.js \
+node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
 	$cahps_csv $cahps_measures
 
 # 4. Enrich `measures-data.json` file, run:
@@ -49,7 +49,7 @@ node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
 
 # 6. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	$enriched_quality_measures $pi_measures $ia_measures $cost_measures $final_measures
+	$enriched_quality_measures $pi_measures $cahps_measures $ia_measures $cost_measures $final_measures
 
 # 7. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
