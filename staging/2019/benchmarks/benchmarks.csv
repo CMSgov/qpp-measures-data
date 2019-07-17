@@ -3,6 +3,7 @@ Table 2: Updated MIPS Benchmark Results Using DY2016 and PY2018 Logic,,,,,,,,,,,
 Measure_Name,Measure_ID,Submission_Method,Measure_Type,Benchmark,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,TOPPED_OUT
 Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),1,EHR,Intermediate Outcome,Y,77.14 - 60.79,60.78 - 48.49,48.48 - 38.90,38.89 - 31.60,31.59 - 25.88,25.87 - 20.56,20.55 - 14.72,<= 14.71,No
 Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),1,Claims,Intermediate Outcome,Y,44.44 - 29.04,29.03 - 19.52,19.51 - 14.72,14.71 - 11.12,11.11 - 8.34,8.33 - 5.57,5.56 - 2.79,<= 2.78,No
+Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),1,cmsWebInterface,Intermediate Outcome,Y,100 - 70,70 - 60,60 - 50,50 - 40,40 - 30,30 - 20,20 - 10,<= 10,No
 Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),1,Registry/QCDR,Intermediate Outcome,Y,68.31 - 50.63,50.62 - 37.51,37.50 - 28.70,28.69 - 20.01,20.00 - 13.60,13.59 - 9.03,9.02 - 2.71,<= 2.70,No
 Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD),5,EHR,Process,Y,74.19 - 78.56,78.57 - 82.13,82.14 - 85.18,85.19 - 87.92,87.93 - 90.90,90.91 - 93.74,93.75 - 97.72,>= 97.73,No
 Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD),5,Registry/QCDR,Process,Y,93.33 - 96.96,96.97 - 98.40,98.41 - 99.99,--,--,--,--,100,Yes
@@ -63,15 +64,18 @@ Osteoarthritis (OA): Function and Pain Assessment,109,Claims,Process,Y,87.28 - 9
 Osteoarthritis (OA): Function and Pain Assessment,109,Registry/QCDR,Process,Y,34.62 - 63.00,63.01 - 86.63,86.64 - 94.37,94.38 - 99.99,--,--,--,100,No
 Preventive Care and Screening: Influenza Immunization,110,EHR,Process,Y,15.50 - 23.63,23.64 - 31.20,31.21 - 38.65,38.66 - 46.76,46.77 - 56.01,56.02 - 67.49,67.50 - 84.98,>= 84.99,No
 Preventive Care and Screening: Influenza Immunization,110,Claims,Process,Y,29.52 - 41.41,41.42 - 56.31,56.32 - 71.18,71.19 - 82.88,82.89 - 94.14,94.15 - 99.41,99.42 - 99.99,100,No
+Preventive Care and Screening: Influenza Immunization,110,cmsWebInterface,Process,Y,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No
 Preventive Care and Screening: Influenza Immunization,110,Registry/QCDR,Process,Y,29.85 - 41.42,41.43 - 53.84,53.85 - 66.02,66.03 - 76.93,76.94 - 87.80,87.81 - 96.40,96.41 - 99.99,100,No
 Pneumococcal Vaccination Status for Older Adults,111,EHR,Process,Y,19.01 - 31.06,31.07 - 42.70,42.71 - 53.43,53.44 - 62.85,62.86 - 71.81,71.82 - 80.42,80.43 - 90.40,>= 90.41,No
 Pneumococcal Vaccination Status for Older Adults,111,Claims,Process,Y,49.76 - 61.10,61.11 - 70.10,70.11 - 77.31,77.32 - 82.95,82.96 - 89.43,89.44 - 95.66,95.67 - 99.99,100,No
 Pneumococcal Vaccination Status for Older Adults,111,Registry/QCDR,Process,Y,30.23 - 44.52,44.53 - 55.55,55.56 - 63.63,63.64 - 70.42,70.43 - 76.37,76.38 - 83.76,83.77 - 95.44,>= 95.45,No
 Breast Cancer Screening,112,EHR,Process,Y,22.28 - 32.74,32.75 - 42.31,42.32 - 51.05,51.06 - 58.43,58.44 - 65.67,65.68 - 73.43,73.44 - 82.30,>= 82.31,No
 Breast Cancer Screening,112,Claims,Process,Y,44.44 - 52.07,52.08 - 58.44,58.45 - 64.28,64.29 - 70.96,70.97 - 79.84,79.85 - 90.23,90.24 - 99.99,100,No
+Breast Cancer Screening,112,cmsWebInterface,Process,Y,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No
 Breast Cancer Screening,112,Registry/QCDR,Process,Y,35.99 - 48.25,48.26 - 57.57,57.58 - 67.38,67.39 - 75.24,75.25 - 85.30,85.31 - 93.44,93.45 - 99.99,100,No
 Colorectal Cancer Screening,113,EHR,Process,Y,13.49 - 24.00,24.01 - 33.96,33.97 - 44.38,44.39 - 54.79,54.80 - 64.00,64.01 - 73.37,73.38 - 83.50,>= 83.51,No
 Colorectal Cancer Screening,113,Claims,Process,Y,36.60 - 50.99,51.00 - 62.49,62.50 - 71.22,71.23 - 79.99,80.00 - 88.63,88.64 - 97.72,97.73 - 99.99,100,No
+Colorectal Cancer Screening,113,cmsWebInterface,Process,Y,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No
 Colorectal Cancer Screening,113,Registry/QCDR,Process,Y,35.90 - 49.50,49.51 - 60.82,60.83 - 70.87,70.88 - 80.61,80.62 - 90.40,90.41 - 96.97,96.98 - 99.99,100,No
 Avoidance of Antibiotic Treatment in Adults With Acute Bronchitis,116,Registry/QCDR,Process,Y,44.27 - 57.07,57.08 - 72.02,72.03 - 83.77,83.78 - 90.98,90.99 - 95.56,95.57 - 97.54,97.55 - 99.99,100,No
 Diabetes: Eye Exam,117,EHR,Process,Y,20.61 - 31.99,32.00 - 45.52,45.53 - 66.01,66.02 - 89.11,89.12 - 95.64,95.65 - 98.25,98.26 - 99.72,>= 99.73,No
@@ -92,6 +96,7 @@ Pain Assessment and Follow-Up,131,Claims,Process,Y,80.57 - 96.91,96.92 - 99.63,9
 Pain Assessment and Follow-Up,131,Registry/QCDR,Process,Y,15.80 - 39.99,40.00 - 62.78,62.79 - 84.05,84.06 - 95.25,95.26 - 99.54,99.55 - 99.99,--,100,No
 Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,EHR,Process,Y,4.88 - 10.17,10.18 - 17.59,17.60 - 28.28,28.29 - 42.29,42.30 - 56.82,56.83 - 73.29,73.30 - 87.49,>= 87.50,No
 Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,Claims,Process,Y,12.94 - 53.91,53.92 - 80.22,80.23 - 96.98,96.99 - 99.99,--,--,--,100,Yes
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,cmsWebInterface,Process,Y,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No
 Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,Registry/QCDR,Process,Y,17.11 - 45.64,45.65 - 73.81,73.82 - 90.05,90.06 - 98.49,98.50 - 99.99,--,--,100,No
 Melanoma: Continuity of Care - Recall System,137,Registry/QCDR,Structure,Y,83.83 - 94.33,94.34 - 98.79,98.80 - 99.99,--,--,--,--,100,No
 Melanoma: Coordination of Care,138,Registry/QCDR,Process,Y,49.44 - 63.63,63.64 - 78.25,78.26 - 92.58,92.59 - 99.99,--,--,--,100,No
@@ -125,8 +130,12 @@ Elder Maltreatment Screen and Follow-Up Plan,181,Claims,Process,Y,55.38 - 97.31,
 Elder Maltreatment Screen and Follow-Up Plan,181,Registry/QCDR,Process,Y,50.65 - 66.03,66.04 - 77.77,77.78 - 89.28,89.29 - 96.78,96.79 - 99.99,--,--,100,No
 Functional Outcome Assessment,182,Claims,Process,Y,--,--,--,--,--,--,--,100,Yes
 Functional Outcome Assessment,182,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-"Colonoscopy Interval for Patients with a History of Adenomatous Polyps- Avoidance of Inappropriate Use",185,Claims,Process,Y,98.57 - 99.99,--,--,--,--,--,--,100,Yes
-"Colonoscopy Interval for Patients with a History of Adenomatous Polyps- Avoidance of Inappropriate Use",185,Registry/QCDR,Process,Y,61.64 - 84.99,85.00 - 90.53,90.54 - 95.41,95.42 - 98.40,98.41 - 99.99,--,--,100,Yes
+"Colonoscopy Interval for Patients with a History of Adenomatous Polyps
+
+- Avoidance of Inappropriate Use",185,Claims,Process,Y,98.57 - 99.99,--,--,--,--,--,--,100,Yes
+"Colonoscopy Interval for Patients with a History of Adenomatous Polyps
+
+- Avoidance of Inappropriate Use",185,Registry/QCDR,Process,Y,61.64 - 84.99,85.00 - 90.53,90.54 - 95.41,95.42 - 98.40,98.41 - 99.99,--,--,100,Yes
 Stroke and Stroke Rehabilitation: Thrombolytic Therapy,187,Registry/QCDR,Process,Y,88.89 - 96.48,96.49 - 99.99,--,--,--,--,--,100,Yes
 Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,EHR,Outcome,Y,85.25 - 90.62,90.63 - 93.40,93.41 - 95.58,95.59 - 96.87,96.88 - 97.82,97.83 - 98.77,98.78 - 99.99,100,No
 Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,Registry/QCDR,Outcome,Y,94.37 - 96.87,96.88 - 98.97,98.98 - 99.99,--,--,--,--,100,Yes
@@ -145,10 +154,12 @@ Functional Status Change for Patients with Other General Orthopaedic Impairments
 Radiology: Reminder System for Screening Mammograms,225,Claims,Structure,Y,99.36 - 99.99,--,--,--,--,--,--,100,Yes
 Radiology: Reminder System for Screening Mammograms,225,Registry/QCDR,Structure,Y,--,--,--,--,--,--,--,100,Yes
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,Claims,Process,N,--,--,--,--,--,--,--,--,--
+Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,cmsWebInterface,Process,Y,0 - 55.22,55.22 - 61.76,61.76 - 68.18,68.18 - 73.85,73.85 - 79.55,79.55 - 85.67,85.67 - 92.31,>= 92.31,No
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,EHR,Process,N,--,--,--,--,--,--,--,--,--
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Controlling High Blood Pressure,236,EHR,Intermediate Outcome,Y,51.46 - 56.82,56.83 - 60.94,60.95 - 64.67,64.68 - 68.17,68.18 - 72.00,72.01 - 76.25,76.26 - 82.20,>= 82.21,No
 Controlling High Blood Pressure,236,Claims,Intermediate Outcome,Y,58.57 - 63.97,63.98 - 68.82,68.83 - 73.90,73.91 - 78.56,78.57 - 83.32,83.33 - 88.31,88.32 - 94.88,>= 94.89,No
+Controlling High Blood Pressure,236,cmsWebInterface,Intermediate Outcome,Y,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No
 Controlling High Blood Pressure,236,Registry/QCDR,Intermediate Outcome,Y,52.41 - 60.04,60.05 - 65.67,65.68 - 70.61,70.62 - 76.82,76.83 - 84.61,84.62 - 93.39,93.40 - 99.99,100,No
 Use of High-Risk Medications in the Elderly,238,EHR,Process,Y,8.04 - 4.75,4.74 - 2.68,2.67 - 1.32,1.31 - 0.54,0.53 - 0.05,0.04 - 0.01,--,0,Yes
 Use of High-Risk Medications in the Elderly,238,Registry/QCDR,Process,Y,0.68 - 0.29,0.28 - 0.14,0.13 - 0.01,--,--,--,--,0,Yes
@@ -193,6 +204,7 @@ Chlamydia Screening for Women,310,EHR,Process,Y,16.67 - 22.30,22.31 - 28.04,28.0
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,EHR,Process,Y,19.56 - 24.13,24.14 - 28.18,28.19 - 32.30,32.31 - 36.66,36.67 - 42.11,42.12 - 50.69,50.70 - 74.54,>= 74.55,No
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,Claims,Process,Y,34.25 - 45.47,45.48 - 58.48,58.49 - 73.28,73.29 - 89.40,89.41 - 98.06,98.07 - 99.99,--,100,No
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,Registry/QCDR,Process,Y,25.75 - 30.80,30.81 - 35.46,35.47 - 42.56,42.57 - 59.14,59.15 - 83.48,83.49 - 97.31,97.32 - 99.99,100,No
+Falls: Screening for Future Fall Risk,318,cmsWebInterface,Process,Y,0 - 43.42,43.42 - 50.42,50.42 - 58.45,58.45 - 66,66 - 73.39,73.39 - 81.79,81.79 - 90.73,>= 90.73,No
 Falls: Screening for Future Fall Risk,318,EHR,Process,Y,7.24 - 20.26,20.27 - 36.40,36.41 - 52.24,52.25 - 66.72,66.73 - 78.59,78.60 - 88.50,88.51 - 96.55,>= 96.56,No
 Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,Claims,Process,Y,95.24 - 97.72,97.73 - 99.99,--,--,--,--,--,100,Yes
 Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,Registry/QCDR,Process,Y,85.00 - 89.73,89.74 - 93.60,93.61 - 95.94,95.95 - 97.72,97.73 - 98.95,98.96 - 99.99,--,100,Yes
@@ -353,7 +365,7 @@ Asthma Assessment and Classification,AAAAI11,Registry/QCDR,Process,N,--,--,--,--
 Lung Function/Spirometry Evaluation,AAAAI12,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Asthma Control: Minimal Important Difference Improvement,AAAAI17,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Penicillin Allergy: Appropriate Removal or Confirmation,AAAAI18,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Asthma: Assessment of Asthma Control Ð Ambulatory Care Setting,AAAAI2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Asthma: Assessment of Asthma Control ï¿½ Ambulatory Care Setting,AAAAI2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Documentation of Clinical Response to Allergen Immunotherapy within One Year,AAAAI6,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Achievement of Projected Effective Dose of Standardized Allergens for Patient Treated With Allergen Immunotherapy for at Least One Year ,AAAAI8,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Assessment of Asthma Symptoms Prior to Administration of Allergen Immunotherapy Injection(s) ,AAAAI9,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -379,8 +391,8 @@ Exercise and Appropriate Physical Activity Counseling for Patients with MS,AAN8,
 Querying About Symptoms of Autonomic Dysfunction for Patients with Parkinson's Disease ,AAN9,Registry/QCDR,Process,Y,61.54 - 82.60,82.61 - 92.85,92.86 - 94.58,94.59 - 97.49,97.50 - 99.99,--,--,100,No
 Otitis Media with Effusion: Avoidance of Topical Intranasal Corticosteroids,AAO11,Registry/QCDR,Process,Y,99.60 - 99.99,--,--,--,--,--,--,100,Yes
 Topical Ear Drop Monotherapy for Children with Acute Tympanostomy Tube Otorrhea ,AAO12,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Inappropriate Use of Magnetic Resonance Imaging or Computed Tomography Scan for BellÕs Palsy (Inverse Measure),AAO13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Inappropriate Use of Antiviral Monotherapy for BellÕs Palsy (Inverse Measure),AAO14,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Inappropriate Use of Magnetic Resonance Imaging or Computed Tomography Scan for Bellï¿½s Palsy (Inverse Measure),AAO13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Inappropriate Use of Antiviral Monotherapy for Bellï¿½s Palsy (Inverse Measure),AAO14,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Percentage of patients with cerumen impaction and a suggestive history of a non-intact tympanic membrane who receive just manual removal.,AAO15,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Audiometric Evaluation for Older Adults with Hearing Loss ,AAO16,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Advanced Diagnostic Imaging of Bilateral Presbycusis or Symmetric Sensorineural Hearing Loss-Avoidance of Inappropriate Use ,AAO17,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -395,12 +407,12 @@ Percentage of patients with allergic rhinitis who do not receive IgG-based immun
 Otitis Media with Effusion: Diagnostic Evaluation - Assessment of Tympanic Membrane Mobility,AAO26,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Otitis Media with Effusion: Resolution of Otitis Media with Effusion in Children,AAO27,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Otitis Media with Effusion: Resolution of Otitis Media with Effusion in Adults,AAO28,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Otitis Media with Effusion: Antihistamines or Decongestants Ð Avoidance of Inappropriate Use,AAO8,Registry/QCDR,Process,Y,--,--,--,--,--,--,--,100,Yes
+Otitis Media with Effusion: Antihistamines or Decongestants ï¿½ Avoidance of Inappropriate Use,AAO8,Registry/QCDR,Process,Y,--,--,--,--,--,--,--,100,Yes
 All Patients Who Die an Expected Death with an ICD that Has Been Deactivated,ABFM1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Patients Admitted to ICU who Have Care Preferences Documented,ABFM2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Patients Treated with an Opioid Who Are Given a Bowel Regimen,ABFM3,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Palliative Care Ð Spiritual Assessment,ABFM4,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Palliative CareÑTreatment Preferences,ABFM5,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Palliative Care ï¿½ Spiritual Assessment,ABFM4,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Palliative Careï¿½Treatment Preferences,ABFM5,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Palliative Care Timely Dyspnea Screening & Treatment,ABFM6,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Pain Brought Under Control within the first three visits,ABFM7,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Measuring the Value-Functions of Primary Care: Provider Level Continuity Measure,ABFM8,Registry/QCDR,Structure,N,--,--,--,--,--,--,--,--,--
@@ -508,11 +520,11 @@ Hip Arthroplasty: Postoperative Complications within 90 Days Following the Proce
 Hip Arthroplasty: Shared Decision-Making: Trial of Conservative (Non-surgical) Therapy,AJRR3,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Hip Arthroplasty: Venous Thromboembolic and Cardiovascular Risk Evaluation,AJRR4,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Comprehensive Diabetic Foot Examination,APMA1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Coronary Artery Bypass Graft (CABG): Prolonged Intubation Ð Inverse Measure,AQI18,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Coronary Artery Bypass Graft (CABG): Stroke Ð Inverse Measure,AQI41,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Coronary Artery Bypass Graft (CABG): Post-Operative Renal Failure Ð Inverse Measure,AQI42,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Coronary Artery Bypass Graft (CABG): Prolonged Intubation ï¿½ Inverse Measure,AQI18,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Coronary Artery Bypass Graft (CABG): Stroke ï¿½ Inverse Measure,AQI41,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Coronary Artery Bypass Graft (CABG): Post-Operative Renal Failure ï¿½ Inverse Measure,AQI42,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Patient-Reported Experience with Anesthesia ,AQI48,Registry/QCDR,Patient Reported Outcome,Y,55.23 - 60.02,60.03 - 94.51,94.52 - 99.08,99.09 - 99.98,99.99 - 99.99,--,--,100,Yes
-Adherence to Blood Conservation Guidelines for Cardiac Operations using Cardiopulmonary Bypass (CPB) Ð Composite,AQI49,Registry/QCDR,Composite,N,--,--,--,--,--,--,--,--,--
+Adherence to Blood Conservation Guidelines for Cardiac Operations using Cardiopulmonary Bypass (CPB) ï¿½ Composite,AQI49,Registry/QCDR,Composite,N,--,--,--,--,--,--,--,--,--
 Application of Lung-Protective Ventilation during General Anesthesia,AQI50,Registry/QCDR,Intermediate Outcome,Y,99.14 - 99.45,99.46 - 99.82,99.83 - 99.99,--,--,--,--,100,Yes
 Assessment of Patients for Obstructive Sleep Apnea,AQI51,Registry/QCDR,Process,Y,79.31 - 92.61,92.62 - 96.39,96.40 - 99.34,99.35 - 99.79,99.80 - 99.94,99.95 - 99.99,--,100,Yes
 Documentation of Anticoagulant and Antiplatelet Medications when Performing Neuraxial Anesthesia/Analgesia or Interventional Pain Procedures,AQI53,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -547,7 +559,7 @@ Hospital admissions/complications within 30 days of TRUS Biopsy,AQUA8,Registry/Q
 Risk Standardized Mortality Rate within 30 days following Trauma Operation,ARCO10,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Head CT or MRI Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation within 45 minutes of ED Arrival,ARCO11,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 STK-01: Venous Thromboembolism (VTE) Prophylaxis,ARCO12,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-STK 02: Ischemic stroke patients management -Ê,ARCO13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+STK 02: Ischemic stroke patients management -ï¿½,ARCO13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 "Diabetes: Nutritional, Weight Loss Counseling, Reduction of Sedentary Behavior",ARCO15,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Dyspnea or Heart Failure: Use of BNP or NT- pro BNP screening,ARCO16,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Heart Failure: Use of Aldosterone Antagonists and Diuretics for Symptom Control,ARCO17,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -594,7 +606,7 @@ Breast Reconstruction: Flap Loss,ASPS6,Registry/QCDR,Outcome,N,--,--,--,--,--,--
 Rate of Blood Transfusion for Patients Undergoing Autologous Breast Reconstruction,ASPS7,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Coordination of Care for Patients Undergoing Breast Reconstruction,ASPS8,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Length of Stay Following Autologous Breast Reconstruction,ASPS9,Registry/QCDR,Intermediate Outcome,N,--,--,--,--,--,--,--,--,--
-CompleteÊassessmentÊandÊevaluationÊof patientÕsÊpelvicÊorganÊprolapseÊpriorÊto surgicalÊrepair,AUGS1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Completeï¿½assessmentï¿½andï¿½evaluationï¿½of patientï¿½sï¿½pelvicï¿½organï¿½prolapseï¿½priorï¿½to surgicalï¿½repair,AUGS1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Documentation of offering a preoperative pessary for Pelvic Organ Prolapse,AUGS10,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Documentation that a trial of conservative management was offered prior to use of procedure based therapy for urgency urinary incontinence,AUGS11,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Preoperative assessment of sexual function prior to pelvic organ prolapse repair,AUGS3,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -668,7 +680,7 @@ CureOneEGFRTTP,CURE7,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 CureOneALKTTP,CURE8,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 CureOneROS1TTP,CURE9,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Three Day All Cause Return ED Visit Rate,ECPR11,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Door to Diagnostic Evaluation by a Provider Ð Emergency Department (ED) Patients,ECPR2,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Door to Diagnostic Evaluation by a Provider ï¿½ Emergency Department (ED) Patients,ECPR2,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Mean Time from Emergency Department (ED) Arrival to ED Departure for Discharged Lower Acuity ED Patients,ECPR5,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Mean Time from Emergency Department (ED) Arrival to ED Departure for Discharged Higher Acuity ED Patients,ECPR6,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Avoid Head CT for Patients with Uncomplicated Syncope,ECPR39,Registry/QCDR,Process,Y,83.33 - 84.77,84.78 - 87.17,87.18 - 88.44,88.45 - 90.90,90.91 - 92.67,92.68 - 94.43,94.44 - 96.98,>= 96.99,No
@@ -680,7 +692,7 @@ Avoidance of Opiate Prescriptions for Low Back Pain or Migraines,ECPR46,Registry
 Avoidance of Opiate Prescriptions for Greater Than 3 Days Duration for Acute Pain ,ECPR47,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Avoidance of Long-Acting (LA) or Extended-Release (ER) Opiate Prescriptions ,ECPR48,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Avoidance of Tramadol or Codeine for Children,ECPR49,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Door to Diagnostic Evaluation by a Provider Within 30 Minutes Ð Urgent Care Patients,ECPR50,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Door to Diagnostic Evaluation by a Provider Within 30 Minutes ï¿½ Urgent Care Patients,ECPR50,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Preoperative Frailty Assessment,EPREOP28,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Preoperative Assessment for Opioid Dependence Risk ,EPREOP29,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Short-term Pain Management/Maximum Pain Score,EPREOP4,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
@@ -688,7 +700,7 @@ Review of Functional Status Assessment for Patients with Osteoarthritis,FORCE20,
 Review of Pain Status Assessment for Patients with Osteoarthritis,FORCE21,Registry/QCDR,Patient Reported Outcome,N,--,--,--,--,--,--,--,--,--
 Improvement in Pain after Knee Replacement,FORCE22,Registry/QCDR,Patient Reported Outcome,N,--,--,--,--,--,--,--,--,--
 Improvement in Pain after Hip Replacement,FORCE23,Registry/QCDR,Patient Reported Outcome,N,--,--,--,--,--,--,--,--,--
-Appropriate management of anticoagulation in the peri-procedural period rate Ð EGD,GIQIC10,Registry/QCDR,Process,Y,31.25 - 52.34,52.35 - 61.53,61.54 - 66.77,66.78 - 81.35,81.36 - 90.90,90.91 - 98.90,98.91 - 99.99,100,No
+Appropriate management of anticoagulation in the peri-procedural period rate ï¿½ EGD,GIQIC10,Registry/QCDR,Process,Y,31.25 - 52.34,52.35 - 61.53,61.54 - 66.77,66.78 - 81.35,81.36 - 90.90,90.91 - 98.90,98.91 - 99.99,100,No
 Appropriate indication for colonoscopy,GIQIC12,Registry/QCDR,Process,Y,83.71 - 87.91,87.92 - 90.17,90.18 - 91.82,91.83 - 93.51,93.52 - 95.00,95.01 - 96.57,96.58 - 98.14,>= 98.15,No
 Appropriate follow-up interval of 3 years recommended based on pathology findings from screening colonoscopy in average-risk patients,GIQIC15,Registry/QCDR,Process,Y,61.11 - 71.42,71.43 - 76.09,76.10 - 79.19,79.20 - 83.66,83.67 - 87.12,87.13 - 90.23,90.24 - 93.74,>= 93.75,No
 Appropriate follow-up interval of 5 years for colonoscopies with findings of sessile serrated polyps < 10 mm without dysplasia,GIQIC17,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -696,13 +708,13 @@ Appropriate follow-up interval of not less than 5 years for colonoscopies with f
 Appropriate indication for esophagogastroduodenoscopy (EGD),GIQIC19,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Appropriate follow-up interval of 10 years for colonoscopies with only hyperplastic polyp findings,GIQIC20,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 HAdv1 - Use of high risk sleep medications in the elderly,HADV1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-HAdv2 - Atrial Fibrillation Prevention and Treatment Ð Lifestyle and Disease Factor Assessment,HADV2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Mean Length of Stay for Inpatients Ð Pneumonia,HCPR3,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Mean Length of Stay for Inpatients Ð CHF,HCPR4,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Mean Length of Stay for Inpatients Ð COPD,HCPR5,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+HAdv2 - Atrial Fibrillation Prevention and Treatment ï¿½ Lifestyle and Disease Factor Assessment,HADV2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Mean Length of Stay for Inpatients ï¿½ Pneumonia,HCPR3,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Mean Length of Stay for Inpatients ï¿½ CHF,HCPR4,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Mean Length of Stay for Inpatients ï¿½ COPD,HCPR5,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Stroke Venous Thromboembolism (VTE) Prophylaxis,HCPR13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Venous Thromboembolism (VTE) Prophylaxis,HCPR14,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-PhysicianÕs Orders for Life-Sustaining Treatment (POLST) Form,HCPR16,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Physicianï¿½s Orders for Life-Sustaining Treatment (POLST) Form,HCPR16,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Pressure Ulcers - Risk Assessment and Plan of Care,HCPR17,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Unintentional Weight Loss - Risk Assessment and Plan of Care,HCPR18,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 30 Day All-Cause Readmission Rate for Discharged Inpatients,HCPR19,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
@@ -790,7 +802,7 @@ Risk standardized rate of patients who experienced a pulmonary complication foll
 Risk standardized rate of patients who experienced a postoperative complication following a primary Laparoscopic Roux-en-Y Gastric Bypass or  Laparoscopic Sleeve Gastrectomy operation,MBSAQIP12,Registry/QCDR,Composite,N,--,--,--,--,--,--,--,--,--
 "Risk standardized rate of patients who experienced postoperative nausea, vomiting or fluid/electrolyte/nutritional depletion following a primary Laparoscopic Roux-en-Y Gastric Bypass or  Laparoscopic Sleeve Gastrectomy operation",MBSAQIP7,Registry/QCDR,Outcome,Y,2.13 - 1.85,1.84 - 1.29,1.28 - 0.40,0.39 - 0.01,--,--,--,0,Yes
 Risk standardized rate of patients who experienced an extended length of stay (> 3 days) following a primary Laparoscopic Roux-en-Y Gastric Bypass or  Laparoscopic Sleeve Gastrectomy operation,MBSAQIP8,Registry/QCDR,Outcome,Y,--,--,--,--,--,--,--,0,Yes
-Use of a ÒPEG TestÓ to Manage Patients Receiving Opioids,MEDNAX52,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Use of a ï¿½PEG Testï¿½ to Manage Patients Receiving Opioids,MEDNAX52,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 MEX1: Heel Pain Treatment Outcomes for Adults,MEX1,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Vascular Testing Outcome Measure Supervised Programs,MEX10,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 MEX2018-19: Non-Invasive Vascular Testing in Patients with Abnormal CVI Screening That Completed Hyperbaric Oxygen Therapy ,MEX11,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
@@ -969,7 +981,7 @@ Zoster (Shingles) Vaccination,PPRNET34,Registry/QCDR,Process,N,--,--,--,--,--,--
 Antiplatelet Medication for High Risk Patients,PPRNET8,Registry/QCDR,Process,Y,27.68 - 36.18,36.19 - 41.59,41.60 - 47.90,47.91 - 50.61,50.62 - 59.08,59.09 - 67.67,67.68 - 74.60,>= 74.61,No
 Combination chemotherapy received within 4 months of diagnosis by women under 70 with AJCC stage IA (T1c) to III ER/PR negative breast cancer,QOPI11,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 GCSF administered to patients who received chemotherapy for metastatic cancer (Lower Score -Better),QOPI15,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Oncology: Treatment Summary Communication Ð Radiation Oncology,QOPI21,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+Oncology: Treatment Summary Communication ï¿½ Radiation Oncology,QOPI21,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 External Beam Radiotherapy for Bone Metastases,QOPI22,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 "Chemotherapy administered to patients with metastatic solid tumor with performance status of 3, 4, or undocumented  (Lower Score - Better)",QOPI5,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Central Line Ultrasound Guidance,QUANTUM31,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -1009,16 +1021,16 @@ Urgent Result:  Breast Specimen Radiography,SMD23,Registry/QCDR,Process,N,--,--,
 Critical Result:  Testicular Torsion,SMD24,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Critical Result:  Subdural hematoma,SMD25,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 "GI Radiography Result Notification
-¥Critical Result:  Bowel Obstruction
-¥Critical Result:  Sigmoid Volvulus",SMD26,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+ï¿½Critical Result:  Bowel Obstruction
+ï¿½Critical Result:  Sigmoid Volvulus",SMD26,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 "Chest Imaging Result Notification:
-¥Critical Result:  Pneumothorax
-¥Critical Result:  Tension Pneumothorax
-¥Follow Up Result:  Suspicious Lung Nodule",SMD27,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
+ï¿½Critical Result:  Pneumothorax
+ï¿½Critical Result:  Tension Pneumothorax
+ï¿½Follow Up Result:  Suspicious Lung Nodule",SMD27,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 "Musculoskeletal Radiology Result Notification:
-¥Critical Result:  Fracture C-Spine
-¥Urgent Result: Osteomyelitis
-¥Urgent Result:  Meniscal Tear
+ï¿½Critical Result:  Fracture C-Spine
+ï¿½Urgent Result: Osteomyelitis
+ï¿½Urgent Result:  Meniscal Tear
 ",SMD28,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Cardiovascular Monitoring for People with Cardiovascular Disease and Schizophrenia,SMX1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Diabetes Screening for People With Schizophrenia or Bipolar Disorder Who Are Using Antipsychotic Medications,SMX2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
@@ -1035,12 +1047,12 @@ MRI  of the lumbar spine without prior conservative care,SPINEIQ7,Registry/QCDR,
 Assessment and Management of Muscle Spasticity--Inpatient,SQOD1,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Management of Muscle Spasticity--Outpatient,SQOD2,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Post-Acute Brain Injury: Depression Screening and Follow-Up Plan of Care,SQOD3,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
-Family TrainingÑInpatient Rehabilitation/Skilled Nursing Facility-Discharged to Home,SQOD4,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Family Trainingï¿½Inpatient Rehabilitation/Skilled Nursing Facility-Discharged to Home,SQOD4,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Functional Assessment to Determine Rehabilitation Needs,SQOD5,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Prolonged Length of Stay Following Coronary Artery Bypass Grafting,STS1,Registry/QCDR,Outcome,Y,8.26 - 6.97,6.96 - 5.89,5.88 - 4.63,4.62 - 3.50,3.49 - 2.74,2.73 - 1.84,1.83 - 0.01,0,No
 Operative Mortality for Lobectomy,STS10,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Lobectomy Ð Air Leak Greater than 5 Days,STS11,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
-Lobectomy Ð Unplanned Return to OR,STS12,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Lobectomy ï¿½ Air Leak Greater than 5 Days,STS11,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
+Lobectomy ï¿½ Unplanned Return to OR,STS12,Registry/QCDR,Outcome,N,--,--,--,--,--,--,--,--,--
 Recording Performance Status Prior to Lung Cancer Resection,STS13,Registry/QCDR,Process,N,--,--,--,--,--,--,--,--,--
 Prolonged Length of Stay for Coronary Artery Bypass Grafting (CABG) + Valve Replacement,STS3,Registry/QCDR,Outcome,Y,21.21 - 14.30,14.29 - 9.10,9.09 - 7.46,7.45 - 5.01,5.00 - 4.77,4.76 - 2.71,2.70 - 0.01,0,Yes
 Prolonged Length of Stay following Valve Surgery,STS5,Registry/QCDR,Outcome,Y,8.00 - 5.89,5.88 - 5.27,5.26 - 4.09,4.08 - 3.46,3.45 - 3.04,3.03 - 1.62,1.61 - 0.01,0,No
