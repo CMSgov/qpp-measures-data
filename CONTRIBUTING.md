@@ -23,7 +23,7 @@ a command-line argument for measures and benchmarks generation, not supported fo
 To regenerate and validate data, do the following:
 
 ```
-npm run build:measures $YEAR         # generates measures/$YEAR/measures-data.json and measures/$YEAR/measures-data.xml
+npm run build:measures $YEAR         # generates measures/$YEAR/measures-data.json
 npm run build:benchmarks        # generates benchmarks/2018.json
 npm run build:clinical-clusters # generates clinical-clusters/clinical-clusters.json
 ```
@@ -40,7 +40,7 @@ cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2
 ```
 ### Additional measures
 
-`util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/$YEAR/measures-data.json` and `measures/$YEAR/measures-data.xml` by running `npm run build:measures`.
+`util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/$YEAR/measures-data.json` by running `npm run build:measures`.
 
 The csv is formatted for the script to run correctly. If the new version does not conform to how the csv is expected, it will cause the npm build step to fail. When your work is complete, make sure to send the updated `qcdr-measures-v<#>.csv` with a bumped version number back to PIMMS with instructions to use it as the base to make the next set of changes. The next person to update measures-data will thank you!
 
