@@ -102,5 +102,124 @@
 				}
 			}
 		]
+	},
+	{
+		"eMeasureId": "CMS135v7",
+		"metricType": "singlePerformanceRate",
+		"eMeasureUuid": "40280382-6240-b6b9-0162-5462542a0b59",
+		"strata": [
+			{
+				"name": "Within12Months",
+				"description": "Patients who were prescribed ACE inhibitor or ARB therapy within a 12-month period when seen in the outpatient setting",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "24092CC9-3820-4099-9F70-D0BFAC65AE89",
+					"denominatorUuid": "D18CEF8F-9533-4B09-8A69-003F327CE469",
+					"numeratorUuid": "41EF9FF5-7260-41D8-88E6-760F876C66FB",
+					"denominatorExceptionUuid": "635D1D87-8196-453D-9A80-332E6FBD4F7F"
+				}
+			},
+			{
+				"name": "EachHospitalDischarge",
+				"description": "Patients who were prescribed ACE inhibitor or ARB therapy at each hospital discharge",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "B859035C-8ECD-4F04-86D9-546BBF293396",
+					"denominatorUuid": "89C9D1EC-FDAD-4982-9CE4-F144E8A85A53",
+					"numeratorUuid": "88762E67-6197-4F77-9800-46707A34C062",
+					"denominatorExceptionUuid": "1504BDD4-8AAD-4B91-87C3-5F0B12B6E97D"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS144v7",
+		"metricType": "singlePerformanceRate",
+		"eMeasureUuid": "40280382-6240-b6b9-0162-547042330ba8",
+		"strata": [
+			{
+				"name": "Within12Months",
+				"description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "FF41D325-76E0-4566-A25A-8C408AC1EE7C",
+					"denominatorUuid": "D9E6BC34-DBAA-4C4D-BC38-DC1B4FD99FD1",
+					"numeratorUuid": "26D7073D-0C8C-4848-9B80-BEE422A2C581",
+					"denominatorExceptionUuid": "920C2B5A-5F6B-4A32-8A5B-0DB7D4BFFDE4"
+				}
+			},
+			{
+				"name": "EachHospitalDischarge",
+				"description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy at each hospital discharge",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "F7EE681D-64D5-48BB-9F93-D88A36A24647",
+					"denominatorUuid": "68E9F779-6446-4FE1-A120-4CF69F1F782B",
+					"numeratorUuid": "973E2DFA-192A-474E-A963-A93D691380B3",
+					"denominatorExceptionUuid": "9BDB3B97-C1C7-4F35-9BA0-A354C204369B"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS157v7",
+		"metricType": "singlePerformanceRate",
+		"eMeasureUuid": "40280382-6258-7581-0162-91426b9911ee",
+		"strata": [
+			{
+				"name": "Chemotherapy",
+				"description": "Face to Face Encounter with Ongoing Chemotherapy",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "09EDD5D3-ECFE-4D10-A0F7-43573D2071CA",
+					"denominatorUuid": "8A25EE19-D0E8-4211-84D9-BED5D7E2B915",
+					"numeratorUuid": "833E7403-F20F-4505-967F-5F93AB729E8D"
+				}
+			},
+			{
+				"name": "RadiationTherapy",
+				"description": "Radiation Treatment with Cancer Diagnosis",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "C7ABD4C6-1B7C-4168-BFD2-F81C7B070780",
+					"denominatorUuid": "8117F8AC-F9EF-4824-828F-0472DBDC8535",
+					"numeratorUuid": "9D2B6FFF-DB32-476B-A185-6078D50EFB0C"
+				}
+			}
+		]
+	},
+	{
+		"eMeasureId": "CMS347v2",
+		"metricType": "singlePerformanceRate",
+		"eMeasureUuid": "40280382-610b-e7a4-0161-9a6155603811",
+		"strata": [
+			{
+				"name": "clinicalASCVD",
+				"description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "B8CAA667-4F5E-4CB1-88E0-ECD9702389EF",
+					"denominatorUuid": "8E7F3638-494A-41F5-9741-13DE1BC62433",
+					"denominatorExclusionUuid": "8ADFC7E4-5840-42D5-8BAC-CF6F3DAFD51D",
+					"numeratorUuid": "434B2A88-7C68-486E-A629-D0416DFB2C98",
+					"denominatorExceptionUuid": "C3C77B50-D21E-48B5-A986-91053FA2271E"
+				}
+			},
+			{
+				"name": ">21Familial",
+				"description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "B4C17248-386D-4CC5-83DF-1056A613B5B6",
+					"denominatorUuid": "5AAD787D-8862-48A9-B3E8-677038DBB209",
+					"denominatorExclusionUuid": "C8F028DD-E14A-45D1-B614-1FBF883872D3",
+					"numeratorUuid": "33BB1512-C0B0-4A32-AF56-7AA8976EF424",
+					"denominatorExceptionUuid": "79649D36-E894-4C77-A546-D36D03D32D41"
+				}
+			},
+			{
+				"name": "between40And75",
+				"description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+				"eMeasureUuids": {
+					"initialPopulationUuid": "AE9FCC5C-749A-4C35-870E-FD93CFFD098E",
+					"denominatorUuid": "60E98526-8DF8-46DA-B4B5-F021FCFB3076",
+					"denominatorExclusionUuid": "4139C888-F034-42C0-B0E0-05F1DA48C303",
+					"numeratorUuid": "DD0E5714-23DB-4CC9-8C8E-198EEC05F3BD",
+					"denominatorExceptionUuid": "7EDBAED7-8055-4619-B41F-533C168324B1"
+				}
+			}
+		]
 	}
 ]

@@ -34,6 +34,16 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_DM2_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS122v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9249c8ab1447</eMeasureUuid>
+    <strata>
+      <description>Patients whose most recent HbA1c level (performed during the measurement period) is &gt;9.0%</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>A15C0CC7-E072-4D9F-BB29-80429C6335DB</initialPopulationUuid>
+        <denominatorUuid>F50E5334-415D-482F-A30D-0623C082B602</denominatorUuid>
+        <numeratorUuid>BD70E166-D478-41A4-B8C8-041CE9F75850</numeratorUuid>
+        <denominatorExclusionUuid>B88574B5-AE7B-4AAF-9925-6E4D75B595FA</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)</title>
@@ -202,6 +212,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
@@ -209,13 +220,24 @@
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS128v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>&gt;=84Days</name>
-      <description>Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).</description>
+      <description>Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>D040D054-4927-4D01-BC57-F810953D2829</initialPopulationUuid>
+        <denominatorUuid>0CCC6796-3957-4921-9DAA-C35169A3A7AB</denominatorUuid>
+        <numeratorUuid>E93F4D1A-F0BD-4F3E-A731-7F569B2467CB</numeratorUuid>
+        <denominatorExclusionUuid>7D73AE83-6F35-48B6-94B4-4D5C26475599</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>&gt;=180Days</name>
-      <description>Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)</description>
+      <description>Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>F7243F23-FA80-4FCC-A4E4-F23A430F19E4</initialPopulationUuid>
+        <denominatorUuid>9DFB4D33-98B4-490B-8A9D-30029F5A6113</denominatorUuid>
+        <numeratorUuid>731C990A-340C-49D4-A87B-A7C3B839860D</numeratorUuid>
+        <denominatorExclusionUuid>9AB4EA72-C8A9-4975-84DD-3A26CFE64FAE</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-92901c56156e</eMeasureUuid>
   </measure>
   <measure>
     <title>Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation</title>
@@ -246,6 +268,16 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_012_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS143v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-54983d1b0cc1</eMeasureUuid>
+    <strata>
+      <description>Patients who have an optic nerve head evaluation during one or more office visits within 12 months</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>CAB25784-D997-43A0-ABFB-1F4037879C78</initialPopulationUuid>
+        <denominatorUuid>DC3619D0-AC3B-48CF-9DB1-492BAB59382C</denominatorUuid>
+        <numeratorUuid>3908F921-7D5C-465F-9645-F02B38786EEF</numeratorUuid>
+        <denominatorExceptionUuid>3A1D3772-CE76-48BF-80C2-087A06E76FAA</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Age-Related Macular Degeneration (AMD): Dilated Macular Examination</title>
@@ -304,6 +336,16 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_019_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS142v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-549114a80c89</eMeasureUuid>
+    <strata>
+      <description>Patients with documentation, at least once within 12 months, of the findings of the dilated macular or fundus exam via communication to the physician who manages the patient's diabetic care</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>5747BDD1-7F73-4CBD-9BD7-5886EF236324</initialPopulationUuid>
+        <denominatorUuid>00714830-5C9C-411B-9D8A-3BED7FFBEE99</denominatorUuid>
+        <numeratorUuid>F3CAD65E-4340-4976-8019-14619CFBB3CD</numeratorUuid>
+        <denominatorExceptionUuid>ACCEF775-3911-41DB-8293-70D7EF13599F</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Perioperative Care: Selection of Prophylactic Antibiotic - First OR Second-Generation Cephalosporin</title>
@@ -703,6 +745,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_065_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS154v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92b0570d1611</eMeasureUuid>
+    <strata>
+      <description>Children without a prescription for antibiotic medication on or 3 days after the outpatient or ED visit for an upper respiratory infection</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>26F062A6-77DB-4B29-A61F-19E29E943127</initialPopulationUuid>
+        <denominatorUuid>16CDA3DE-0D9C-4F12-85ED-265ACCE9C53A</denominatorUuid>
+        <numeratorUuid>209B1996-15C2-43F5-BBE6-CB32F962BAFB</numeratorUuid>
+        <denominatorExclusionUuid>FD81B017-8B38-4646-B0B0-7C36101C66BA</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Appropriate Testing for Children with Pharyngitis</title>
@@ -734,6 +786,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_066_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS146v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92aa410d15fa</eMeasureUuid>
+    <strata>
+      <description>Children with a group A streptococcus test in the 7-day period from 3 days prior through 3 days after the diagnosis of pharyngitis</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>89270E43-AD2F-43E1-910C-A261B6564BC5</initialPopulationUuid>
+        <denominatorUuid>746CDA64-25E9-42CA-BAFE-EF53A7DD5B89</denominatorUuid>
+        <numeratorUuid>41F00603-CEC7-4A5C-A7FF-6C82CA63B242</numeratorUuid>
+        <denominatorExclusionUuid>FCB39D55-0BB2-4405-8FBF-C6BBB686D6BD</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow</title>
@@ -960,6 +1022,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_102_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS129v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-501e58af08c9</eMeasureUuid>
+    <strata>
+      <description>Patients who did not have a bone scan performed at any time since diagnosis of prostate cancer</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>427E4C5C-E523-428E-A20E-60313EC5FA46</initialPopulationUuid>
+        <denominatorUuid>BB551AC1-D201-46CB-96F8-A0E0848F3B0B</denominatorUuid>
+        <numeratorUuid>F53E6A1A-7EDF-4AC7-9B74-49A6DE5E9944</numeratorUuid>
+        <denominatorExceptionUuid>478363AB-FCA8-4EC6-8CC6-1977455B372B</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer</title>
@@ -1008,12 +1080,22 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>emergencyMedicine</measureSet>
     <measureSet>familyMedicine</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS161v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-54a885810d2b</eMeasureUuid>
+    <strata>
+      <description>Patients with a suicide risk assessment completed during the visit in which a new diagnosis or recurrent episode was identified</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>33FD7F21-04D7-4EBD-A82B-F783766A2D73</initialPopulationUuid>
+        <denominatorUuid>C2249005-1B28-46B0-ADF7-19AB17FE5590</denominatorUuid>
+        <numeratorUuid>B012B952-499D-4432-A793-6CDE12630E0C</numeratorUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Osteoarthritis (OA): Function and Pain Assessment</title>
@@ -1089,6 +1171,16 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV7_CMSWebInterface.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS147v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-5096917708e0</eMeasureUuid>
+    <strata>
+      <description>Patients who received an influenza immunization OR who reported previous receipt of an influenza immunization</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>4034509E-A7C9-4067-AEC6-B356CA0DD2F5</initialPopulationUuid>
+        <denominatorUuid>4AE15148-711D-4785-8433-4385D9D257DC</denominatorUuid>
+        <numeratorUuid>CAD38C39-7093-4BA4-B8BD-5A297079F1CF</numeratorUuid>
+        <denominatorExceptionUuid>F9FF5A51-8FBE-4DAC-92CD-17F295496456</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Pneumococcal Vaccination Status for Older Adults</title>
@@ -1129,6 +1221,16 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_111_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS127v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92877e281530</eMeasureUuid>
+    <strata>
+      <description>Patients who have ever received a pneumococcal vaccination</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>AD7E66D5-D06C-4079-8086-8B2978CA1AEF</initialPopulationUuid>
+        <denominatorUuid>FC166E13-A380-466E-8E38-2E86261ADB21</denominatorUuid>
+        <numeratorUuid>BE0E99DE-0998-4E13-AEE7-8012513CF47E</numeratorUuid>
+        <denominatorExclusionUuid>A791271E-6A92-406C-B67B-C6F6175F3FE7</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Breast Cancer Screening</title>
@@ -1163,6 +1265,16 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV5_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS125v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-927500b514ef</eMeasureUuid>
+    <strata>
+      <description>Women with one or more mammograms during the measurement period or the 15 months prior to the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>9CA3765E-674E-48DC-BAB3-AF1841F10436</initialPopulationUuid>
+        <denominatorUuid>765F291C-E122-4258-BA57-CD2036C1E9DD</denominatorUuid>
+        <numeratorUuid>7C63166F-CAFA-4786-A469-E8DE4942AD5C</numeratorUuid>
+        <denominatorExclusionUuid>F7FA46A4-D0DE-4BCD-A111-E85DEC1226DC</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Colorectal Cancer Screening</title>
@@ -1196,6 +1308,21 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV6_CMSWebInterface.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS130v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92959376159d</eMeasureUuid>
+    <strata>
+      <description>Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria: 
+- Fecal occult blood test (FOBT) during the measurement period 
+- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period 
+- Colonoscopy during the measurement period or the nine years prior to the measurement period
+- FIT-DNA during the measurement period or the two years prior to the measurement period 
+- CT Colonography during the measurement period or the four years prior to the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>92842C82-25C1-4262-BD71-537BB8400E96</initialPopulationUuid>
+        <denominatorUuid>F2257E5C-85C1-41BC-8F9D-FC5118FA7363</denominatorUuid>
+        <numeratorUuid>A537E11B-5A76-4A55-8DDE-6FB83FEC87FB</numeratorUuid>
+        <denominatorExclusionUuid>79DF7019-7CD4-4D38-BFA0-6C6DFC261B53</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Avoidance of Antibiotic Treatment in Adults With Acute Bronchitis</title>
@@ -1258,6 +1385,17 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_117_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS131v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9241a52a13fd</eMeasureUuid>
+    <strata>
+      <description>Patients with an eye screening for diabetic retinal disease. This includes diabetics who had one of the following:
+A retinal or dilated eye exam by an eye care professional in the measurement period or a negative retinal exam (no evidence of retinopathy) by an eye care professional in the year prior to the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>47D97F49-B5D4-4F0C-BE7E-CF33065EEC68</initialPopulationUuid>
+        <denominatorUuid>B69DBC72-834A-41A1-B796-B3408E531D9C</denominatorUuid>
+        <numeratorUuid>88F63A33-6D05-4BD2-8159-2C3712CA5638</numeratorUuid>
+        <denominatorExclusionUuid>C865E42B-466C-4CD5-9EA2-46C532AE818A</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF &lt; 40%)</title>
@@ -1317,6 +1455,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_119_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS134v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92106b67138d</eMeasureUuid>
+    <strata>
+      <description>Patients with a screening for nephropathy or evidence of nephropathy during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>39C4CA1F-EC2B-4934-BEBD-A256081AF8FE</initialPopulationUuid>
+        <denominatorUuid>C71183B7-7C20-4A94-9D2B-176D8DBC6F52</denominatorUuid>
+        <numeratorUuid>153A985A-362E-4CAD-B384-AE7D95C11C2B</numeratorUuid>
+        <denominatorExclusionUuid>3BCC377E-F65F-4307-BB8A-3761CDEB90F5</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation</title>
@@ -1417,6 +1565,17 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_128_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS69v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-5fa6-fe85-0160-3275a2f02cb9</eMeasureUuid>
+    <strata>
+      <description>Patients with a documented BMI during the encounter or during the previous twelve months, AND when the BMI is outside of normal parameters, a follow-up plan is documented during the encounter or during the previous twelve months of the current encounter</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>4E3EEFD7-3134-4781-8FE5-849C13D046B8</initialPopulationUuid>
+        <denominatorUuid>D5A0C410-972C-4C78-BBB6-B0CFB84AC53A</denominatorUuid>
+        <numeratorUuid>2A8A0EA4-0245-47BC-9351-D0F78AC19338</numeratorUuid>
+        <denominatorExceptionUuid>141080C7-29D2-457A-89B6-5B85E14DD57B</denominatorExceptionUuid>
+        <denominatorExclusionUuid>0F1DFD76-5CD7-4A5C-B45C-DF48ECF5E5D2</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Documentation of Current Medications in the Medical Record</title>
@@ -1474,6 +1633,16 @@
       <claims>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2019_Measure_130_MedicarePartBClaims.pdf</claims>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS68v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-5fa6-fe85-0160-0ea3e0012376</eMeasureUuid>
+    <strata>
+      <description>Eligible professional or eligible clinician attests to documenting, updating or reviewing the patient's current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications' name, dosages, frequency and route of administration</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>2C662755-088C-4C75-8401-FF2DA63A971E</initialPopulationUuid>
+        <denominatorUuid>D4D2DEE7-385A-4C28-A09C-884A062A97AA</denominatorUuid>
+        <numeratorUuid>4E058941-CA3D-48BF-BABC-358F3A9FE2AF</numeratorUuid>
+        <denominatorExceptionUuid>146E4DDD-4E52-492D-B150-61DF3BE52676</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Pain Assessment and Follow-Up</title>
@@ -1546,6 +1715,17 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_PREV12_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS2v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-5fa6-fe85-0160-0ed2838423ca</eMeasureUuid>
+    <strata>
+      <description>Patients screened for depression on the date of the encounter using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the positive screen</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>8D585C42-FBE0-4483-A76B-AAE1B438D49F</initialPopulationUuid>
+        <denominatorUuid>A3A052E8-9EC1-4FEC-9A23-A5B5C6476F3B</denominatorUuid>
+        <numeratorUuid>6B246B02-74B6-4BEC-B86D-678A8EECDD66</numeratorUuid>
+        <denominatorExceptionUuid>3EAECEB3-06CB-468B-9226-A6E0FFB5AE4F</denominatorExceptionUuid>
+        <denominatorExclusionUuid>39E39011-497D-4623-A7BB-3CCC2FBFA645</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Melanoma: Continuity of Care - Recall System</title>
@@ -1862,23 +2042,42 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>allergyImmunology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS52v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>CD4&lt;200/mm3</name>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>71E7C594-FEF2-4BD9-BABD-2EA57E8DDF78</initialPopulationUuid>
+        <denominatorUuid>ED3D68FB-5E40-4AF9-A2CB-A3BBDFAA9CA7</denominatorUuid>
+        <numeratorUuid>1C3A2E69-608E-4223-91F1-B17856C5DF3F</numeratorUuid>
+        <denominatorExceptionUuid>3A7BE237-709A-4C5B-9B56-5B986ADFEADE</denominatorExceptionUuid>
+        <denominatorExclusionUuid>0432D1BB-5DE2-45CF-9A85-6DCF63A0900E</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>CD4&lt;500/mm3OrCD4&lt;15%</name>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>E10CEF10-C0D8-4EF8-9306-E09C0CFBEBCA</initialPopulationUuid>
+        <denominatorUuid>38296D5C-88CD-4D36-81C1-53B1C1B3D4A7</denominatorUuid>
+        <numeratorUuid>EF777C94-7CA0-4894-A06B-7E64F6027A4C</numeratorUuid>
+        <denominatorExceptionUuid>5320E2B2-29DB-4121-ACFF-5C1F5C1BB803</denominatorExceptionUuid>
+        <denominatorExclusionUuid>718987D3-6A58-4DEA-9D34-CC2F8BC9A960</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>atDiagnosis</name>
       <description>Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>B855F277-DD52-48E1-9C44-5A0CE16C9C64</initialPopulationUuid>
+        <denominatorUuid>0104DCC6-E976-4A7F-9DBD-4B14D48C1CD1</denominatorUuid>
+        <numeratorUuid>56360B75-89AA-416C-AD4A-6E38FF0EE138</numeratorUuid>
+        <denominatorExclusionUuid>52725B47-3AA3-4D11-B688-92E835AD5AA4</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-92e5585c16ad</eMeasureUuid>
   </measure>
   <measure>
     <title>Coronary Artery Bypass Graft (CABG): Prolonged Intubation</title>
@@ -2286,6 +2485,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_191_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS133v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-54705e6c0bb0</eMeasureUuid>
+    <strata>
+      <description>Patients who had best-corrected visual acuity of 20/40 or better (distance or near) achieved within 90 days following cataract surgery</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>DA5802D7-5D0B-4560-9DBB-AD2F596C80FD</initialPopulationUuid>
+        <denominatorUuid>A0A03921-EAF1-4781-BC96-5AD5F04EAB82</denominatorUuid>
+        <numeratorUuid>E7E63A54-0AD8-4905-B766-ACDF89DF4D13</numeratorUuid>
+        <denominatorExclusionUuid>36F823EC-7E3E-4A56-A4DB-2A3353BB1093</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Cataracts: Complications within 30 Days Following Cataract Surgery Requiring Additional Surgical Procedures</title>
@@ -2314,6 +2523,16 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_192_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS132v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-547e6afb0c02</eMeasureUuid>
+    <strata>
+      <description>Patients who had one or more specified operative procedures for any of the following major complications within 30 days following cataract surgery: retained nuclear fragments, endophthalmitis, dislocated or wrong power IOL, retinal detachment, or wound dehiscence</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>90CB94D3-A909-4A54-AC3C-E2A131AF50C3</initialPopulationUuid>
+        <denominatorUuid>AEA53BEE-666A-49EC-8E7D-50A03BF34444</denominatorUuid>
+        <numeratorUuid>13F9C2C6-A9A4-4BF0-B66A-770F568B73BF</numeratorUuid>
+        <denominatorExclusionUuid>BD5C5DAA-1F7A-40C3-9DFF-591664B9C0F8</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Radiology: Stenosis Measurement in Carotid Imaging Reports</title>
@@ -2703,6 +2922,16 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_HTN2_CMSWebInterface.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS165v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92d6e6db1680</eMeasureUuid>
+    <strata>
+      <description>Patients whose blood pressure at the most recent visit is adequately controlled (systolic blood pressure &lt; 140 mmHg and diastolic blood pressure &lt; 90 mmHg) during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>A096B729-ECCA-4C7A-9CA0-A601D8D70396</initialPopulationUuid>
+        <denominatorUuid>BA4CB92A-1635-4E1B-BC23-1ED7B967072A</denominatorUuid>
+        <numeratorUuid>A815D9EA-5CE0-4AD8-A703-BC69D19E360B</numeratorUuid>
+        <denominatorExclusionUuid>4A61F526-AFFA-465F-89C9-B2DB8E6ECEBC</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Use of High-Risk Medications in the Elderly</title>
@@ -2738,13 +2967,24 @@
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS156v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>overall</name>
-      <description>Percentage of patients who were ordered at least one high-risk medication</description>
+      <description>Patients with an order for at least one high-risk medication during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>35872DE4-ADC6-4D3D-B439-B3248FEF3456</initialPopulationUuid>
+        <denominatorUuid>2FCB1E4B-CA28-4F1E-827D-2F5E378FF222</denominatorUuid>
+        <numeratorUuid>A5797141-A910-4FA0-8A5F-32FB348848A0</numeratorUuid>
+        <denominatorExclusionUuid>BD7DEC25-34DE-4E75-843E-50720AD7FF8C</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>2+</name>
-      <description>Percentage of patients who were ordered at least two of the same high-risk medication</description>
+      <description>Patients with at least two orders for the same high-risk medication during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>FEDC857A-3B2E-49D5-89BC-366075AD6403</initialPopulationUuid>
+        <denominatorUuid>877B83EF-716C-4B0B-AE4C-0F9689A946A8</denominatorUuid>
+        <numeratorUuid>51CCFD8B-C7B1-492F-88DE-041AD08FDAED</numeratorUuid>
+        <denominatorExclusionUuid>DEDFBFA0-DB7C-413B-8B22-A734590D83CE</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-92c7a9811647</eMeasureUuid>
   </measure>
   <measure>
     <title>Weight Assessment and Counseling for Nutrition and Physical Activity for Children and Adolescents</title>
@@ -2768,22 +3008,39 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS155v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>BMI</name>
       <description>Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>8B54A9C1-94A1-4849-B655-D9EABC06D132</initialPopulationUuid>
+        <denominatorUuid>CFA40B68-749C-4695-93CD-AE5309CADBF0</denominatorUuid>
+        <numeratorUuid>909538E9-AA38-46E2-AA0D-AA197025B3DA</numeratorUuid>
+        <denominatorExclusionUuid>F3EB129E-4A98-4CAD-8DCA-A7B829AA6549</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>nutrition</name>
-      <description>Patients who had counseling for nutrition during a visit that occurs during the measurement period</description>
+      <description>Patients who had counseling for nutrition during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>C6AE5AA5-70F6-4572-BFB7-FC92CC697341</initialPopulationUuid>
+        <denominatorUuid>EA90375E-8866-4DB0-9331-5CCF9DED26F4</denominatorUuid>
+        <numeratorUuid>65E4A114-23DD-4DBA-AB9A-4AAB2BB03CC1</numeratorUuid>
+        <denominatorExclusionUuid>70080BA6-56E1-4A9D-9FE2-803662AFAB09</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>physicalActivity</name>
-      <description>Patients who had counseling for physical activity during a visit that occurs during the measurement period</description>
+      <description>Patients who had counseling for physical activity during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>72869D14-4B0B-4716-B3AF-F139588BBB14</initialPopulationUuid>
+        <denominatorUuid>C23F3E0F-D6B1-4370-8FE1-4906619A4A1B</denominatorUuid>
+        <numeratorUuid>3E62E73D-886D-48AD-89E2-7321847EF4B7</numeratorUuid>
+        <denominatorExclusionUuid>C365FE78-44EF-4BE0-BBC2-0F053454D210</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-92bfc82f162f</eMeasureUuid>
   </measure>
   <measure>
     <title>Childhood Immunization Status</title>
@@ -2806,10 +3063,21 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS117v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9253847b1483</eMeasureUuid>
+    <strata>
+      <description>Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>126CEE42-1754-49E3-AE45-8F5AA850C4B5</initialPopulationUuid>
+        <denominatorUuid>F67ACA73-115E-42AA-82DE-7D4F83FD8D2B</denominatorUuid>
+        <numeratorUuid>B74AD40F-6DEB-4687-95A4-C62DE03ED270</numeratorUuid>
+        <denominatorExclusionUuid>96BF01DE-5052-480B-BA67-C74A6D4DF0A3</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Cardiac Rehabilitation Patient Referral from an Outpatient Setting</title>
@@ -3292,12 +3560,23 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>neurology</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSet>geriatrics</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS149v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-aaad978c1b8b</eMeasureUuid>
+    <strata>
+      <description>Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12-month period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>A3B84895-314B-4BD9-8A43-59D2E03C2CB6</initialPopulationUuid>
+        <denominatorUuid>968A2AAD-3A68-4441-8B21-0034AA76155A</denominatorUuid>
+        <numeratorUuid>8C9729F4-4DB8-421C-960C-BEE98F624340</numeratorUuid>
+        <denominatorExceptionUuid>DD0B3CEF-1234-45B7-9C5B-74FEE9746A2E</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Dementia: Functional Status Assessment</title>
@@ -3562,6 +3841,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>pediatrics</measureSet>
@@ -3569,13 +3849,24 @@
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS137v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>14DaysOfDiagnosis</name>
       <description>Patients who initiated treatment within 14 days of the diagnosis</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>452021F9-5466-45A8-9528-0F92E70C95DD</initialPopulationUuid>
+        <denominatorUuid>39C79E71-7369-46C3-AD5F-1C5D83BA474A</denominatorUuid>
+        <numeratorUuid>22DE67FC-79C0-4725-BDE3-3C9B0A1ACAF7</numeratorUuid>
+        <denominatorExclusionUuid>B0687FEA-DC33-40B2-95F7-279E11E3AB28</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>30DaysOfVisit</name>
-      <description>Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit</description>
+      <description>Patients who initiated treatment and who had two or more additional services with an alcohol, opioid, or other drug abuse or dependence diagnosis within 30 days of the initiation visit</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>C7127400-8034-45D1-8227-6C244349AB6E</initialPopulationUuid>
+        <denominatorUuid>B636C467-23C5-4A23-8709-C71641B1A3AE</denominatorUuid>
+        <numeratorUuid>C3D3C7F3-CADA-45E9-A5AA-A05A3C04A76A</numeratorUuid>
+        <denominatorExclusionUuid>089CFF04-2838-4B37-8BDA-647E7B94C709</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-92a37a9b15df</eMeasureUuid>
   </measure>
   <measure>
     <title>Cervical Cancer Screening</title>
@@ -3598,12 +3889,27 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS124v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92660f2414b9</eMeasureUuid>
+    <strata>
+      <description>Women with one or more screenings for cervical cancer. Appropriate screenings are defined by any one of the following criteria:
+
+- Cervical cytology performed during the measurement period or the two years prior to the measurement period for women who are at least 21 years old at the time of the test
+ 
+- Cervical cytology/human papillomavirus (HPV) co-testing performed during the measurement period or the four years prior to the measurement period for women who are at least 30 years old at the time of the test</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>CC6370F0-F018-412A-97C1-D4979EEBF5A4</initialPopulationUuid>
+        <denominatorUuid>1F51C21F-CE89-46BE-B306-A8D1A8B18442</denominatorUuid>
+        <numeratorUuid>58569B1E-E97B-4733-BC6A-1AF476D2721C</numeratorUuid>
+        <denominatorExclusionUuid>CED31130-5537-4E93-9AE7-DE8DABA70A9E</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Chlamydia Screening for Women</title>
@@ -3626,11 +3932,22 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSet>pediatrics</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS153v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-97958ac818e6</eMeasureUuid>
+    <strata>
+      <description>Women with at least one chlamydia test during the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>74AD1F30-A634-433F-A963-41A64ECA9826</initialPopulationUuid>
+        <denominatorUuid>687CDBAD-DDA9-40AC-A60A-6DD530DCAF3A</denominatorUuid>
+        <numeratorUuid>D541817E-208C-43E0-A55D-D574700525D2</numeratorUuid>
+        <denominatorExclusionUuid>BDE65498-086A-43E4-BEBB-9F283C16EBB4</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented</title>
@@ -3707,6 +4024,7 @@
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
     <submissionMethod>cmsWebInterface</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>orthopedicSurgery</measureSet>
@@ -3716,6 +4034,16 @@
       <cmsWebInterface>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2019_Measure_CARE2_CMSWebInterface_UPDATED.pdf</cmsWebInterface>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS139v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9208ce991364</eMeasureUuid>
+    <strata>
+      <description>Patients who were screened for future fall risk at least once within the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>6BB57058-1BA6-4CC8-82A0-36DDE72E01D3</initialPopulationUuid>
+        <denominatorUuid>8586069F-F8C7-44C1-B3A6-1078F5F5936E</denominatorUuid>
+        <numeratorUuid>726DED9F-9CBC-4FEE-B261-4AB16657126D</numeratorUuid>
+        <denominatorExclusionUuid>794FFEE9-6FB6-4DF7-A723-9BABEDEA8E23</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients</title>
@@ -4772,19 +5100,31 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS136v8.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>visitWithin30Days</name>
-      <description>Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.</description>
+      <description>Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>F5F4C658-6848-4004-B5B8-AF2C5DC0A1C1</initialPopulationUuid>
+        <denominatorUuid>8184F88D-D587-4DEC-B64C-E222741965D1</denominatorUuid>
+        <numeratorUuid>42F25D08-0B43-4388-B256-BA276FDE48B8</numeratorUuid>
+        <denominatorExclusionUuid>38CA7B94-B1BC-4B89-8093-BE3C175F0BE1</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
     <strata>
-      <name>visitAndFollowups</name>
-      <description>Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended.</description>
+      <description>Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>C6C60AD7-0901-4140-9C55-6870E043D311</initialPopulationUuid>
+        <denominatorUuid>39641D8A-C01D-4AB3-B92A-52C1B94E34CC</denominatorUuid>
+        <numeratorUuid>226956ED-22B1-4722-9179-EBD7C4AC9ECC</numeratorUuid>
+        <denominatorExclusionUuid>DE032C8E-7AA3-479A-9BCA-9597A80CCAE0</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-929d3fb415c3</eMeasureUuid>
   </measure>
   <measure>
     <title>Depression Remission at Twelve Months</title>
@@ -4796,7 +5136,7 @@
     <nationalQualityStrategyDomain>Effective Clinical Care</nationalQualityStrategyDomain>
     <measureType>outcome</measureType>
     <primarySteward>Minnesota Community Measurement</primarySteward>
-    <metricType>multiPerformanceRate</metricType>
+    <metricType>singlePerformanceRate</metricType>
     <firstPerformanceYear>2017</firstPerformanceYear>
     <lastPerformanceYear/>
     <isHighPriority>true</isHighPriority>
@@ -4820,13 +5160,15 @@
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS159v7.html</electronicHealthRecord>
     </measureSpecification>
     <strata>
-      <name>12-17</name>
-      <description/>
+      <description>Adolescent patients 12 to 17 years of age and adult patients 18 years of age and older who achieved remission at twelve months as demonstrated by a twelve month (+/- 60 days) PHQ-9 or PHQ-9M score of less than five</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>28EF715E-00EF-495A-B529-9FEF83EDA5FF</initialPopulationUuid>
+        <denominatorUuid>81429A7D-591D-4EE0-B1E0-AE7A3AA96D56</denominatorUuid>
+        <numeratorUuid>F4580E7F-EB6C-42AB-93A8-9AF1A4FD46EE</numeratorUuid>
+        <denominatorExclusionUuid>6B6C8B54-B290-4258-BD5A-9B3562036108</denominatorExclusionUuid>
+      </eMeasureUuids>
     </strata>
-    <strata>
-      <name>18+</name>
-      <description/>
-    </strata>
+    <eMeasureUuid>40280382-6258-7581-0162-626f31a0009e</eMeasureUuid>
   </measure>
   <measure>
     <title>Depression Utilization of the PHQ-9 Tool</title>
@@ -4910,9 +5252,19 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS82v6.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-974e086f181e</eMeasureUuid>
+    <strata>
+      <description>Children with documentation of maternal screening or treatment for postpartum depression for the mother</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>0ABD1F84-09B1-421D-BE08-10F3B2413456</initialPopulationUuid>
+        <denominatorUuid>B484793F-FF58-49CD-9F29-289B5246BF22</denominatorUuid>
+        <numeratorUuid>8E82739E-EE2A-4FA3-8593-01754A177BAB</numeratorUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Closing the Referral Loop: Receipt of Specialist Report</title>
@@ -4961,6 +5313,15 @@
       <registry>https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2019_Measure_374_MIPSCQM.pdf</registry>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS50v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-5467c36a0b71</eMeasureUuid>
+    <strata>
+      <description>Number of patients with a referral, for which the referring provider received a report from the provider to whom the patient was referred</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>0229D504-DC16-4B65-B0D4-EFBBEEE290E4</initialPopulationUuid>
+        <denominatorUuid>E666FF2F-A334-4FD8-8374-19087A06961F</denominatorUuid>
+        <numeratorUuid>4075E039-7118-460C-9356-D8B329DE183D</numeratorUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Knee Replacement</title>
@@ -4983,10 +5344,21 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS66v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9b6651201a04</eMeasureUuid>
+    <strata>
+      <description>Patients with patient-reported functional status assessment results (i.e., VR-12, PROMIS-10 Global Health, KOOS, KOOS Jr.) in the 90 days prior to or on the day of the primary TKA procedure, and in the 270 - 365 days after the TKA procedure</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>F8EB92AC-C55A-466B-9345-4CD5572B29D6</initialPopulationUuid>
+        <denominatorUuid>2CFF455B-6103-4B2E-A3B3-EAA20AECA766</denominatorUuid>
+        <numeratorUuid>E9FCC926-AFB3-4A33-BD7E-656C96E131C1</numeratorUuid>
+        <denominatorExclusionUuid>02D4C01D-BDF8-4686-B3B1-486ADB6463C0</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Functional Status Assessment for Total Hip Replacement</title>
@@ -5009,10 +5381,21 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>orthopedicSurgery</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS56v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-97717ae2188b</eMeasureUuid>
+    <strata>
+      <description>Patients with patient-reported functional status assessment results (i.e., VR-12, PROMIS-10-Global Health, HOOS, HOOS Jr.) in the 90 days prior to or on the day of the primary THA procedure, and in the 270 - 365 days after THA procedure</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>18FA6F98-08F5-49BD-8909-14AE4EA22420</initialPopulationUuid>
+        <denominatorUuid>B9A584E2-8869-469E-B492-07613B0A6152</denominatorUuid>
+        <numeratorUuid>B28BF434-F43C-4982-A7E3-7E52E27E9C1B</numeratorUuid>
+        <denominatorExclusionUuid>1282FBA4-2F72-406A-9354-3A1E6E92ADD9</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Functional Status Assessments for Congestive Heart Failure</title>
@@ -5035,11 +5418,22 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS90v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9214c9a9139e</eMeasureUuid>
+    <strata>
+      <description>Patients with patient-reported functional status assessment results (ie, VR-12; VR-36; KCCQ; PROMIS-10 Global Health, PROMIS-29) present in the EHR two weeks before or during the initial FSA encounter and results for the follow-up FSA at least 30 days but no more than 180 days after the initial functional status assessment</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>2CCC4C8A-32E2-4EF3-8EB7-38773DAD3DC4</initialPopulationUuid>
+        <denominatorUuid>52F79D36-2C65-4FD3-8605-9B8E122F54D8</denominatorUuid>
+        <numeratorUuid>EC0ED867-67DD-4F6A-9EA8-7B2B4D9BE70B</numeratorUuid>
+        <denominatorExclusionUuid>FDADE71D-E911-47BF-A2C0-0FCD3F736AA0</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Children Who Have Dental Decay or Cavities</title>
@@ -5062,10 +5456,21 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>dentistry</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS75v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-930923861702</eMeasureUuid>
+    <strata>
+      <description>Children who had cavities or decayed teeth</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>E3EAD500-A4F2-45C2-A370-B5C191DC7825</initialPopulationUuid>
+        <denominatorUuid>466991C9-1413-4FDA-9DE5-B1B0A262271B</denominatorUuid>
+        <numeratorUuid>007F6693-32AC-43C3-B97D-6DBCA05F9F3E</numeratorUuid>
+        <denominatorExclusionUuid>7CAC738B-EEBA-4683-88C6-CF344BF47A87</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists</title>
@@ -5088,11 +5493,22 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>dentistry</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS74v8.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92fea60316ee</eMeasureUuid>
+    <strata>
+      <description>Children who receive a fluoride varnish application</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>4DAE1F06-ACAC-4FE8-B2DB-6819D5106076</initialPopulationUuid>
+        <denominatorUuid>8A1CEA1D-8C98-441A-BB1B-2844586B5E82</denominatorUuid>
+        <numeratorUuid>A89FFB85-F438-466C-AB5F-7EB31310285B</numeratorUuid>
+        <denominatorExclusionUuid>072B2944-36FE-4557-B332-EB91FE97421A</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment</title>
@@ -5115,11 +5531,21 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>pediatrics</measureSet>
     <measureSet>mentalBehavioralHealth</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS177v7.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6240-b6b9-0162-54b832d90d52</eMeasureUuid>
+    <strata>
+      <description>Patient visits with an assessment for suicide risk</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>0F0FB2E3-6F44-4A80-9D8B-B7CD02CC3595</initialPopulationUuid>
+        <denominatorUuid>E008C006-7EA5-4BD8-B6A7-89927F8C9625</denominatorUuid>
+        <numeratorUuid>FCE22FCD-291F-4606-93E9-B77588BBF50B</numeratorUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Adherence to Antipsychotic Medications For Individuals with Schizophrenia</title>
@@ -7269,11 +7695,22 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>urology</measureSet>
     <measureSet>oncology</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS645v2.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-610b-e7a4-0161-7c19ad7c2a5d</eMeasureUuid>
+    <strata>
+      <description>Patients with a bone density evaluation within the two years prior to the start of or less than three months after the start of ADT treatment</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>6943043A-E370-49DE-9B16-56E61CE9F062</initialPopulationUuid>
+        <denominatorUuid>F4A7E971-A676-425D-B0BD-1951F3F22407</denominatorUuid>
+        <numeratorUuid>4EB0E993-A98D-4E42-8B7E-158BDC19F521</numeratorUuid>
+        <denominatorExceptionUuid>84B0E025-DC5A-4B45-BC2E-8B71E64907D4</denominatorExceptionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)</title>
@@ -7530,12 +7967,23 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS249v1.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-92de53e31699</eMeasureUuid>
+    <strata>
+      <description>Female patients who received an order for at least one DXA scan in the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>14C62E37-7B68-4636-B6D3-65FCFA922B85</initialPopulationUuid>
+        <denominatorUuid>99FEE774-9169-4A52-A890-7175726E40F6</denominatorUuid>
+        <numeratorUuid>6E2DF1CA-216E-44CC-8587-AE7D3B743048</numeratorUuid>
+        <denominatorExclusionUuid>0FB2B684-8D8D-44C6-9945-0B16543FF95E</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <title>Average Change in Leg Pain Following Lumbar Fusion Surgery</title>
@@ -7618,6 +8066,7 @@
     <isRegistryMeasure>false</isRegistryMeasure>
     <isRiskAdjusted>false</isRiskAdjusted>
     <submissionMethod>electronicHealthRecord</submissionMethod>
+    <submissionMethod>registry</submissionMethod>
     <measureSet>familyMedicine</measureSet>
     <measureSet>internalMedicine</measureSet>
     <measureSet>obstetricsGynecology</measureSet>
@@ -7626,6 +8075,16 @@
     <measureSpecification>
       <electronicHealthRecord>https://ecqi.healthit.gov/system/files/ecqm/measures/CMS349v1.html</electronicHealthRecord>
     </measureSpecification>
+    <eMeasureUuid>40280382-6258-7581-0162-9242b345140c</eMeasureUuid>
+    <strata>
+      <description>Patients with documentation of an HIV test between age 15-65 before the end of the measurement period</description>
+      <eMeasureUuids>
+        <initialPopulationUuid>B478EA80-2D7B-4F58-A8CD-E2F2BE3E40AA</initialPopulationUuid>
+        <denominatorUuid>0BF35D9B-3766-4FFE-A0B8-20709C608D82</denominatorUuid>
+        <numeratorUuid>3678ABF6-E7B9-4926-B3DB-494A4D7972A2</numeratorUuid>
+        <denominatorExclusionUuid>E898D041-EDD9-4D7C-9EDA-E2C5D0A76F0C</denominatorExclusionUuid>
+      </eMeasureUuids>
+    </strata>
   </measure>
   <measure>
     <category>pi</category>
