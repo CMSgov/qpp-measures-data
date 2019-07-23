@@ -110,7 +110,7 @@
 		"strata": [
 			{
 				"name": "Within12Months",
-				"description": "Patients who were prescribed ACE inhibitor or ARB therapy within a 12-month period when seen in the outpatient setting",
+				"description": "Patients who were prescribed ACE inhibitor or ARB therapy within a 12-month period",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "24092CC9-3820-4099-9F70-D0BFAC65AE89",
 					"denominatorUuid": "D18CEF8F-9533-4B09-8A69-003F327CE469",
@@ -119,7 +119,7 @@
 				}
 			},
 			{
-				"name": "EachHospitalDischarge",
+				"name": "HospitalDischarge",
 				"description": "Patients who were prescribed ACE inhibitor or ARB therapy at each hospital discharge",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "B859035C-8ECD-4F04-86D9-546BBF293396",
@@ -137,7 +137,7 @@
 		"strata": [
 			{
 				"name": "Within12Months",
-				"description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
+				"description": "Percentage of patients aged >= 18 years with a diagnosis of heart failure with a current or prior L.V.E.F. < 40% who were prescribed beta-blocker therapy within a 12-month period",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "FF41D325-76E0-4566-A25A-8C408AC1EE7C",
 					"denominatorUuid": "D9E6BC34-DBAA-4C4D-BC38-DC1B4FD99FD1",
@@ -146,8 +146,8 @@
 				}
 			},
 			{
-				"name": "EachHospitalDischarge",
-				"description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy at each hospital discharge",
+				"name": "HospitalDischarge",
+				"description": "Percentage of patients aged >= 18 years with a diagnosis of heart failure with a current or prior LVEF < 40% who were prescribed beta-blocker therapy at each hospital discharge",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "F7EE681D-64D5-48BB-9F93-D88A36A24647",
 					"denominatorUuid": "68E9F779-6446-4FE1-A120-4CF69F1F782B",
@@ -189,7 +189,7 @@
 		"strata": [
 			{
 				"name": "clinicalASCVD",
-				"description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+				"description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical ASCVD",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "B8CAA667-4F5E-4CB1-88E0-ECD9702389EF",
 					"denominatorUuid": "8E7F3638-494A-41F5-9741-13DE1BC62433",
@@ -200,7 +200,7 @@
 			},
 			{
 				"name": ">21Familial",
-				"description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+				"description": "Adults aged >= 21 years who had fasting or direct LDL-C level >= 190 mg/dL or have been previously or currently diagnosed with of familial or pure HCL",
 				"eMeasureUuids": {
 					"initialPopulationUuid": "B4C17248-386D-4CC5-83DF-1056A613B5B6",
 					"denominatorUuid": "5AAD787D-8862-48A9-B3E8-677038DBB209",
