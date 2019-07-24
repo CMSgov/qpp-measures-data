@@ -126,10 +126,7 @@ const MEASURE_TYPES = {
   'efficiency': 'efficiency',
   'intermediate outcome': 'intermediateOutcome',
   'structure': 'structure',
-  'patient reported outcome': 'outcome',
-  'composite': 'outcome',
-  'cost/resource use': 'efficiency',
-  'clinical process effectiveness': 'process'
+  'patient reported outcome': 'patientReportedOutcome'
 };
 
 // markers are what the CSV creators chose as field values;
