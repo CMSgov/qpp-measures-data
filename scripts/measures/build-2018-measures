@@ -49,18 +49,12 @@ node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
 	$final_measures $qcdr_csv $qcdr_strata
 
-# 2. To regenerate the `measures-data.xml` file, run:
-echo "generating measures-data.xml from measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/convert-json-to-xml.js \
-		> measures/$currentPerformanceYear/measures-data.xml
-
-# 3. Validate the resulting measures-data.json file:
+# 2. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json against schema"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
 
-# 4. Validate that measures actually existed in their listed firstPerformanceYear and the years after
+# 3. Validate that measures actually existed in their listed firstPerformanceYear and the years after
 echo "validating that measures actually existed in their listed firstPerformanceYear and the years after"
 cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-measures-past-existence.js $currentPerformanceYear
