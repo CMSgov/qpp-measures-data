@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 const parse = require('csv-parse/lib/sync');
+const stratifications = require('../../../util/measures/2019/additional-stratifications.json');
 
 const currentYear = 2019;
-
+const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
 const qpp = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
@@ -38,8 +39,8 @@ Each ecqm entry will look similar to this in measures-data.json
 */
 function enrichMeasures(measures) {
   mergeGeneratedEcqmData(measures);
+  enrichStratifications(measures);
   addQualityStrataNames(measures);
-  addRequiredRegistrySubmissionMethod(measures);
   return JSON.stringify(measures, null, 2);
 };
 
@@ -51,7 +52,7 @@ function mergeGeneratedEcqmData(measures) {
   const generatedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/generated-ecqm-data.json'), 'utf8'));
 
   measures.forEach(function(qppItem, index) {
-    if (qppItem.category !== 'quality') return;
+    if (qppItem.category !== QUALITY_CATEGORY) return;
     const ecqmInfo = _.find(generatedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
     if (!ecqmInfo) return;
     if (ecqmInfo.strata.name) ecqmInfo.strata.name = measures[index].strata.name;
@@ -63,7 +64,7 @@ function mergeGeneratedEcqmData(measures) {
   // This is a manually created file from from the eCQM_EP_EC_May_CurrentYear.zip for the missing measures.
   const manuallyAddedEcqmStrataJson = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/manually-created-missing-measures.json'), 'utf8'));
   measures.forEach(function(qppItem, index) {
-    if (qppItem.category !== 'quality') return;
+    if (qppItem.category !== QUALITY_CATEGORY) return;
     const manualEcqmInfo = _.find(manuallyAddedEcqmStrataJson, {'eMeasureId': qppItem.eMeasureId});
     if (!manualEcqmInfo) return;
     measures[index].eMeasureUuid = manualEcqmInfo.eMeasureUuid;
@@ -87,7 +88,7 @@ function addQualityStrataNames(measures) {
     const currentStrataName = strata[1];
     if (_.isEmpty(currentNumeratorUuid)) return;
     measures.forEach(function(qppItem, qppIndex) {
-      if (qppItem.category !== 'quality' || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
+      if (qppItem.category !== QUALITY_CATEGORY || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
       measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
         if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
             measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
@@ -98,11 +99,25 @@ function addQualityStrataNames(measures) {
   });
 }
 
-function addRequiredRegistrySubmissionMethod(measures) {
-  const eCQMeasures = measures.filter(m => m.eMeasureUuid !== undefined);
-  eCQMeasures.forEach(m => {
-    if (m.submissionMethods.includes('electronicHealthRecord') && !m.submissionMethods.includes('registry')) {
-      m.submissionMethods.push('registry');
-    }
-  });
+/**
+ * Adds in each SubPopulation's stratification UUIDs
+ * This JSON document used to derive this is generated using get-stratifications.js
+ */
+function enrichStratifications(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      const stratification = stratifications.find(stratum => stratum.eMeasureId === measure.eMeasureId);
+      if (stratification && stratification.strataMaps) {
+        console.log('Found measure :' + measure.eMeasureId + '\n');
+        measure.strata.forEach(subPopulation => {
+          const mapping = stratification.strataMaps.find(map =>
+            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          if (mapping) {
+            subPopulation.eMeasureUuids.strata = mapping.strata;
+            console.log('adding mapping: ' + mapping.strata);
+          }
+        });
+      }
+    });
 }
