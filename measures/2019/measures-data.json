@@ -161,8 +161,7 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "submissionMethods": [
-      "electronicHealthRecord",
-      "registry"
+      "electronicHealthRecord"
     ],
     "measureSets": [
       "cardiology",
@@ -3234,8 +3233,7 @@
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
-      "cmsWebInterface",
-      "registry"
+      "cmsWebInterface"
     ],
     "measureSets": [
       "allergyImmunology",
@@ -5987,8 +5985,12 @@
         "eMeasureUuids": {
           "initialPopulationUuid": "750B4DDA-EC94-4082-9AB4-86824666D808",
           "denominatorUuid": "2E3A7115-247D-4A0E-918C-AB581E13486A",
-          "numeratorUuid": "DE1952F9-9E35-4493-BA65-3F6CD8904059",
-          "denominatorExclusionUuid": "9FCE046B-5EF9-4A19-9D22-D3A6518EDA51"
+          "numeratorUuid": "9FCE046B-5EF9-4A19-9D22-D3A6518EDA51",
+          "denominatorExclusionUuid": "DE1952F9-9E35-4493-BA65-3F6CD8904059",
+          "strata": [
+            "1FD9CB54-2485-43C9-A9CB-041E6FE078F0",
+            "B4B269AE-AE95-4FFF-AD3A-0C7F62DC0C72"
+          ]
         }
       }
     ],
