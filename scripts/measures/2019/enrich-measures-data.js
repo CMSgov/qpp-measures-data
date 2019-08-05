@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
 const parse = require('csv-parse/lib/sync');
-const stratifications = require('../../../util/measures/2019/additional-stratifications.json');
 
 const currentYear = 2019;
+const cpcPlusGroups = require('../../../util/measures/' + currentYear + '/cpc+-measure-groups.json');
+const stratifications = require('../../../util/measures/' + currentYear + '/additional-stratifications.json');
 const QUALITY_CATEGORY = 'quality';
 const measuresDataPath = process.argv[2];
 const outputPath = process.argv[3];
@@ -40,6 +41,7 @@ Each ecqm entry will look similar to this in measures-data.json
 function enrichMeasures(measures) {
   mergeGeneratedEcqmData(measures);
   enrichStratifications(measures);
+  enrichCPCPlusMeasures(measures);
   addQualityStrataNames(measures);
   return JSON.stringify(measures, null, 2);
 };
@@ -121,3 +123,20 @@ function enrichStratifications(measures) {
       }
     });
 }
+
+/**
+ * Will add extra metadata to CPC+ measures
+ * @param {array} measures
+ */
+function enrichCPCPlusMeasures(measures) {
+  measures
+    .filter(measure => measure.category === QUALITY_CATEGORY)
+    .forEach(measure => {
+      Object.keys(cpcPlusGroups).forEach((groupId) => {
+        const match = cpcPlusGroups[groupId].find((id) => id === measure.eMeasureId);
+        if (match !== undefined) {
+          measure.cpcPlusGroup = groupId;
+        }
+      });
+    });
+};
