@@ -196,7 +196,7 @@ function mapInput(rawInput, fieldName) {
 
     // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
     if (fieldName === 'measureId') {
-      return _.padStart(input, 3, '0');
+      return _.padStart(input, 3, '0').toUpperCase();
     } else if (fieldName === 'nqfId') {
       return _.padStart(input, 4, '0');
     }
@@ -288,7 +288,6 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     measure['submissionMethods'] = submissionMethods;
     measure['measureSets'] = measureSets;
     measure['measureSpecification'] = measureSpecification;
-
     return measure;
   });
 
