@@ -26,6 +26,7 @@ const BENCHMARK_CSV_COLUMNS = [
 const { formatBenchmarkRecord } = require('./format-benchmark-record');
 // Data
 let benchmarksData = '';
+
 /**
  *
  * Script to generate benchmark.json file from csv
