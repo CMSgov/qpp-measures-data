@@ -296,7 +296,8 @@
           "denominatorUuid": "0CCC6796-3957-4921-9DAA-C35169A3A7AB",
           "numeratorUuid": "E93F4D1A-F0BD-4F3E-A731-7F569B2467CB",
           "denominatorExclusionUuid": "7D73AE83-6F35-48B6-94B4-4D5C26475599"
-        }
+        },
+        "name": ">=84Days"
       },
       {
         "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.",
@@ -305,7 +306,8 @@
           "denominatorUuid": "9DFB4D33-98B4-490B-8A9D-30029F5A6113",
           "numeratorUuid": "731C990A-340C-49D4-A87B-A7C3B839860D",
           "denominatorExclusionUuid": "9AB4EA72-C8A9-4975-84DD-3A26CFE64FAE"
-        }
+        },
+        "name": ">=180Days"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-92901c56156e"
@@ -2367,7 +2369,8 @@
           "numeratorUuid": "1C3A2E69-608E-4223-91F1-B17856C5DF3F",
           "denominatorExceptionUuid": "3A7BE237-709A-4C5B-9B56-5B986ADFEADE",
           "denominatorExclusionUuid": "0432D1BB-5DE2-45CF-9A85-6DCF63A0900E"
-        }
+        },
+        "name": "CD4<200/mm3"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/mm3 or a CD4 percentage below 15%",
@@ -2377,7 +2380,8 @@
           "numeratorUuid": "EF777C94-7CA0-4894-A06B-7E64F6027A4C",
           "denominatorExceptionUuid": "5320E2B2-29DB-4121-ACFF-5C1F5C1BB803",
           "denominatorExclusionUuid": "718987D3-6A58-4DEA-9D34-CC2F8BC9A960"
-        }
+        },
+        "name": "CD4<500/mm3OrCD4<15%"
       },
       {
         "description": "Patients who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV",
@@ -2386,7 +2390,8 @@
           "denominatorUuid": "0104DCC6-E976-4A7F-9DBD-4B14D48C1CD1",
           "numeratorUuid": "56360B75-89AA-416C-AD4A-6E38FF0EE138",
           "denominatorExclusionUuid": "52725B47-3AA3-4D11-B688-92E835AD5AA4"
-        }
+        },
+        "name": "atDiagnosis"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-92e5585c16ad"
@@ -3407,7 +3412,8 @@
           "denominatorUuid": "2FCB1E4B-CA28-4F1E-827D-2F5E378FF222",
           "numeratorUuid": "A5797141-A910-4FA0-8A5F-32FB348848A0",
           "denominatorExclusionUuid": "BD7DEC25-34DE-4E75-843E-50720AD7FF8C"
-        }
+        },
+        "name": "overall"
       },
       {
         "description": "Patients with at least two orders for the same high-risk medication during the measurement period",
@@ -3416,7 +3422,8 @@
           "denominatorUuid": "877B83EF-716C-4B0B-AE4C-0F9689A946A8",
           "numeratorUuid": "51CCFD8B-C7B1-492F-88DE-041AD08FDAED",
           "denominatorExclusionUuid": "DEDFBFA0-DB7C-413B-8B22-A734590D83CE"
-        }
+        },
+        "name": "2+"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-92c7a9811647",
@@ -3464,7 +3471,8 @@
             "0F14D3D6-23D1-46D7-83CD-FCE0BFFF7D29",
             "F595B144-786B-4BBE-9854-9442911E2437"
           ]
-        }
+        },
+        "name": "BMI"
       },
       {
         "description": "Patients who had counseling for nutrition during the measurement period",
@@ -3477,7 +3485,8 @@
             "2472B8CB-32F2-4D8C-AB0C-202467ADC977",
             "DE79F033-E918-4CB2-9A84-E9A841486409"
           ]
-        }
+        },
+        "name": "nutrition"
       },
       {
         "description": "Patients who had counseling for physical activity during the measurement period",
@@ -3490,7 +3499,8 @@
             "F9617BDD-16F0-4CF1-A33C-D6F14CE932B2",
             "6F03F0A8-09DB-43A6-B2D6-A735F7A55858"
           ]
-        }
+        },
+        "name": "physicalActivity"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-92bfc82f162f"
@@ -4428,7 +4438,8 @@
             "F7764C47-6BAE-4359-A3DF-9C452DC95A33",
             "44729C98-B535-4C78-8BC3-A716323B9965"
           ]
-        }
+        },
+        "name": "14DaysOfDiagnosis"
       },
       {
         "description": "Patients who initiated treatment and who had two or more additional services with an alcohol, opioid, or other drug abuse or dependence diagnosis within 30 days of the initiation visit",
@@ -4441,7 +4452,8 @@
             "2A93884C-D881-447F-BA9B-F2EA0A2F30F4",
             "7ECED382-8389-4028-9623-36ED3537E010"
           ]
-        }
+        },
+        "name": "30DaysOfVisit"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-92a37a9b15df",
@@ -5866,7 +5878,8 @@
           "denominatorUuid": "8184F88D-D587-4DEC-B64C-E222741965D1",
           "numeratorUuid": "42F25D08-0B43-4388-B256-BA276FDE48B8",
           "denominatorExclusionUuid": "38CA7B94-B1BC-4B89-8093-BE3C175F0BE1"
-        }
+        },
+        "name": "visitWithin30Days"
       },
       {
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
@@ -5875,7 +5888,8 @@
           "denominatorUuid": "39641D8A-C01D-4AB3-B92A-52C1B94E34CC",
           "numeratorUuid": "226956ED-22B1-4722-9179-EBD7C4AC9ECC",
           "denominatorExclusionUuid": "DE032C8E-7AA3-479A-9BCA-9597A80CCAE0"
-        }
+        },
+        "name": "visitAndFollowups"
       }
     ],
     "eMeasureUuid": "40280382-6258-7581-0162-929d3fb415c3"

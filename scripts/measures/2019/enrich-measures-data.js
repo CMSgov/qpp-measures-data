@@ -78,29 +78,6 @@ function mergeGeneratedEcqmData(measures) {
   });
 }
 
-/*
- * Uses numeratorUuid field as a common id to map each strata name (only in `enriched-measures-data-quality.json`)
- * to a particular strata (in `quality-strata.csv`)
- */
-function addQualityStrataNames(measures) {
-  const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/quality-strata.csv'), 'utf8'));
-  qualityStrataCsv.forEach(function(strata, csvIndex) {
-    const currentMeasureId = _.padStart(strata[0], 3, '0');
-    const currentNumeratorUuid = strata[6];
-    const currentStrataName = strata[1];
-    if (_.isEmpty(currentNumeratorUuid)) return;
-    measures.forEach(function(qppItem, qppIndex) {
-      if (qppItem.category !== QUALITY_CATEGORY || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
-      measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
-        if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
-            measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
-          measures[qppIndex].strata[strataIndex].name = currentStrataName;
-        }
-      });
-    });
-  });
-}
-
 /**
  * Adds in each SubPopulation's stratification UUIDs
  * This JSON document used to derive this is generated using get-stratifications.js
@@ -140,3 +117,26 @@ function enrichCPCPlusMeasures(measures) {
       });
     });
 };
+
+/*
+ * Uses numeratorUuid field as a common id to map each strata name (only in `enriched-measures-data-quality.json`)
+ * to a particular strata (in `quality-strata.csv`)
+ */
+function addQualityStrataNames(measures) {
+  const qualityStrataCsv = parse(fs.readFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/quality-strata.csv'), 'utf8'));
+  qualityStrataCsv.forEach(function(strata, csvIndex) {
+    const currentMeasureId = _.padStart(strata[0], 3, '0');
+    const currentNumeratorUuid = strata[6];
+    const currentStrataName = strata[1];
+    if (_.isEmpty(currentNumeratorUuid)) return;
+    measures.forEach(function(qppItem, qppIndex) {
+      if (qppItem.category !== QUALITY_CATEGORY || _.isNull(qppItem.eMeasureId) || qppItem.measureId !== currentMeasureId) return;
+      measures[qppIndex].strata.forEach(function(measureStrata, strataIndex) {
+        if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
+            measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
+          measures[qppIndex].strata[strataIndex].name = currentStrataName;
+        }
+      });
+    });
+  });
+}
