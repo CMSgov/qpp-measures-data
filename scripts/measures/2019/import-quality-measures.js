@@ -53,7 +53,8 @@ const MAIN_FIELDS = {
   isInverse: false,
   overallAlgorithm: undefined,
   isIcdImpacted: false,
-  isToppedOutByProgram: false
+  isToppedOutByProgram: false,
+  isClinicalGuidelineChanged: false
 };
 
 // Source CSV column names below are mapped to their measures data names
