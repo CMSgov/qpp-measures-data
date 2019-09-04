@@ -14,6 +14,8 @@ ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
 cahps_measures='../../../staging/'$currentPerformanceYear'/measures-data-cahps.json'
 
+qpp_single_source_json='../../../claims-related/data/qpp-single-source-'$currentPerformanceYear'.json'
+
 enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 cost_measures='../../../staging/'$currentPerformanceYear'/measures-data-cost.json'
 cost_csv='../../../util/measures/'$currentPerformanceYear'/cost-measures.csv'
@@ -41,7 +43,7 @@ node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
 
 # 4. Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
-	$quality_measures $enriched_quality_measures
+	$quality_measures $qpp_single_source_json $enriched_quality_measures
   
 # 5. Add COST measures to the staging measures-data-cost.json file:
 node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
