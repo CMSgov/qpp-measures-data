@@ -22,7 +22,7 @@ definitions:
       firstPerformanceYear:
         description: Year in which the measure was introduced.
         type: integer
-        default: 2018
+        default: 2017
       lastPerformanceYear:
         description: Year in which the measure was deprecated.
         type: [integer, 'null']
@@ -31,7 +31,7 @@ definitions:
         description: URL link for Measure Specification PDF to download by Submission Method.
         items: { $ref: #/definitions/measureSpecification }
       measureSets:
-        description: PI measures can belong to the transition measure set. Quality measures can belong to multiple measure sets that represent different specialties.
+        description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
@@ -76,7 +76,10 @@ definitions:
         type: boolean
         default: false
       substitutes:
-        description: Identifiers of other PI measure that can be used instead of the current meausre.
+        description: Identifiers of other PI measures that can be used instead of the current measure.
+        oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
+      exclusion:
+        description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
     required: [weight, objective, isRequired, isBonus, measureSets]
 
