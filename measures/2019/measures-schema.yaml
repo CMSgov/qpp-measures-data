@@ -80,7 +80,6 @@ definitions:
         oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
       exclusion:
         description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
-        oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
     required: [weight, objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
