@@ -44,7 +44,6 @@ function enrichMeasures(measures) {
   enrichStratifications(measures);
   enrichCPCPlusMeasures(measures);
   addQualityStrataNames(measures);
-  addRequiredRegistrySubmissionMethod(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
 };
@@ -141,15 +140,6 @@ function addQualityStrataNames(measures) {
         }
       });
     });
-  });
-}
-
-function addRequiredRegistrySubmissionMethod(measures) {
-  const eCQMeasures = measures.filter(m => m.eMeasureUuid !== undefined);
-  eCQMeasures.forEach(m => {
-    if (m.submissionMethods.includes('electronicHealthRecord') && !m.submissionMethods.includes('registry')) {
-      m.submissionMethods.push('registry');
-    }
   });
 }
 
