@@ -32,6 +32,22 @@
     "metricType": "singlePerformanceRate"
   },
   {
+    "eMeasureId": "CMS123v7",
+    "eMeasureUuid": "40280382-62c4-de26-0162-fe2505800cc9",
+    "strata": [
+      {
+        "description": "Patients who received visual, pulse and sensory foot examinations during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "7567276B-C419-4192-9302-B74184432984",
+          "denominatorUuid": "181114D4-30C3-4373-883B-1089B4B5F78C",
+          "numeratorUuid": "1B37DBE9-2193-4846-95BD-A3F3DFF21D5A",
+          "denominatorExclusionUuid": "169882FC-8B2E-4632-862C-3081579CB7AD"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
     "eMeasureId": "CMS124v7",
     "eMeasureUuid": "40280382-6258-7581-0162-92660f2414b9",
     "strata": [
@@ -438,6 +454,22 @@
     "metricType": "multiPerformanceRate"
   },
   {
+    "eMeasureId": "CMS158v7",
+    "eMeasureUuid": "40280382-6240-b6b9-0162-4357a47700a0",
+    "strata": [
+      {
+        "description": "Patients who were tested for hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "49599685-9BDF-47C9-BB1E-202ADF6B55D9",
+          "denominatorUuid": "6B389B1A-9632-4019-99D9-CD24E99019D3",
+          "numeratorUuid": "669CF8F6-1057-4271-A316-DD596583E28D",
+          "denominatorExceptionUuid": "67C5914D-0148-4F0F-ACFD-AA944F54F507"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
     "eMeasureId": "CMS159v7",
     "eMeasureUuid": "40280382-6258-7581-0162-626f31a0009e",
     "strata": [
@@ -451,7 +483,7 @@
         }
       }
     ],
-    "metricType": "singlePerformanceRate"
+    "metricType": "multiPerformanceRate"
   },
   {
     "eMeasureId": "CMS161v7",
@@ -469,6 +501,22 @@
     "metricType": "singlePerformanceRate"
   },
   {
+    "eMeasureId": "CMS164v7",
+    "eMeasureUuid": "40280382-6258-7581-0162-92cdaf46165e",
+    "strata": [
+      {
+        "description": "Patients who had an active medication of aspirin or another antiplatelet during the measurement year",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C57051F4-17D9-47DE-9DF2-51643CDABD58",
+          "denominatorUuid": "752CC7C9-81E7-4BD8-9496-AB6A0DF2DE5B",
+          "numeratorUuid": "5F4568C2-DC8A-4BFA-8CCE-285F7711502F",
+          "denominatorExclusionUuid": "B3CA16ED-2D7C-4405-AFDA-B9A6CC95D5E8"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
     "eMeasureId": "CMS165v7",
     "eMeasureUuid": "40280382-6258-7581-0162-92d6e6db1680",
     "strata": [
@@ -479,6 +527,37 @@
           "denominatorUuid": "BA4CB92A-1635-4E1B-BC23-1ED7B967072A",
           "numeratorUuid": "A815D9EA-5CE0-4AD8-A703-BC69D19E360B",
           "denominatorExclusionUuid": "4A61F526-AFFA-465F-89C9-B2DB8E6ECEBC"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS167v7",
+    "eMeasureUuid": "40280382-6240-b6b9-0162-549464d50cab",
+    "strata": [
+      {
+        "description": "Patients who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy AND the presence or absence of macular edema during one or more office visits within 12 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "FCBFF0B8-B971-43AE-8857-6B24614F92EC",
+          "denominatorUuid": "F8B1B06D-2874-4DC2-AE04-F5D7678E8953",
+          "numeratorUuid": "0111C6AA-3644-4CD7-8052-00FE44F2AD2F",
+          "denominatorExceptionUuid": "2F9D9572-502D-4173-9E5E-BCE69360F8C4"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS169v7",
+    "eMeasureUuid": "40280382-6240-b6b9-0162-4384eed500fa",
+    "strata": [
+      {
+        "description": "Patients in the denominator with evidence of an assessment for alcohol or other substance use following or concurrent with the new diagnosis, and prior to or concurrent with the initiation of treatment for that diagnosis",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B5D53C19-EA5F-4DE7-9936-B111E13EC0B9",
+          "denominatorUuid": "0EB447F0-9072-4B0D-92FB-CDB408C2AD2B",
+          "numeratorUuid": "6426681C-98C5-40C3-90FA-31FA53C3AB38"
         }
       }
     ],
@@ -626,6 +705,22 @@
           "denominatorUuid": "F4A7E971-A676-425D-B0BD-1951F3F22407",
           "numeratorUuid": "4EB0E993-A98D-4E42-8B7E-158BDC19F521",
           "denominatorExceptionUuid": "84B0E025-DC5A-4B45-BC2E-8B71E64907D4"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS65v8",
+    "eMeasureUuid": "40280382-6258-7581-0162-92f8faf516db",
+    "strata": [
+      {
+        "description": "Patients whose follow-up blood pressure is at least 10 mmHg less than their baseline blood pressure or is adequately controlled.\n\nIf a follow-up blood pressure reading is not recorded during the measurement year, the patient's blood pressure is assumed \"not improved.\"",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "EDC27A6E-F2EF-4B75-8CA3-57586AB78FAE",
+          "denominatorUuid": "6270E4EF-5AA6-4A26-846F-44C4FDB1E76F",
+          "numeratorUuid": "DBB13EAD-A093-4D33-A9D1-126DB7D8CA08",
+          "denominatorExclusionUuid": "0B4E6D89-5D86-4723-89EF-6D053139F2C9"
         }
       }
     ],
