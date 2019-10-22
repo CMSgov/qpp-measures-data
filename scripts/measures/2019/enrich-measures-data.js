@@ -139,7 +139,7 @@ function addQualityStrataNames(measures) {
           measures[qppIndex].strata[strataIndex].name = currentStrataName;
         }
         if (qppItem.eMeasureId === 'CMS159v7') {
-          const name = {'name':'18+'};
+          const name = {'name': '18+'};
           measures[qppIndex].strata.push(name);
         }
       });
