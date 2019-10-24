@@ -90,13 +90,12 @@
         ]
       },
       {
-        "name": "generalOncology",
+        "name": "neurosurgical",
         "measureIds": [
-          "047",
+          "021",
+          "023",
           "130",
-          "226",
-          "250",
-          "317"
+          "226"
         ]
       },
       {
@@ -119,30 +118,62 @@
         ]
       },
       {
+        "name": "infectiousDisease",
+        "measureIds": [
+          "110",
+          "111",
+          "130",
+          "407"
+        ]
+      },
+      {
+        "name": "physicalTherapyOccupationalTherapy",
+        "measureIds": [
+          "128",
+          "130",
+          "131",
+          "182"
+        ]
+      },
+      {
         "name": "dermatology",
         "measureIds": [
           "130",
           "226",
           "317"
         ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "lungCare",
+        "measureIds": [
+          "051",
+          "052",
+          "130"
+        ]
       },
       {
-        "name": "rheumatology",
+        "name": "generalCare",
         "measureIds": [
-          "047",
-          "128",
           "130",
           "226",
+          "134",
           "317"
         ]
       },
       {
-        "name": "neurosurgical",
+        "name": "preventiveCare",
         "measureIds": [
-          "021",
-          "023",
           "130",
-          "226"
+          "317"
+        ]
+      },
+      {
+        "name": "colonoscopyCare",
+        "measureIds": [
+          "130",
+          "425"
         ]
       }
     ]
@@ -164,13 +195,12 @@
         ]
       },
       {
-        "name": "generalOncology",
+        "name": "neurosurgical",
         "measureIds": [
-          "047",
+          "021",
+          "023",
           "130",
-          "226",
-          "250",
-          "317"
+          "226"
         ]
       },
       {
@@ -199,24 +229,16 @@
           "226",
           "317"
         ]
-      },
+      }
+    ],
+    "clinicalClusters": [
       {
-        "name": "rheumatology",
+        "name": "generalCare",
         "measureIds": [
-          "047",
-          "128",
           "130",
           "226",
+          "134",
           "317"
-        ]
-      },
-      {
-        "name": "neurosurgical",
-        "measureIds": [
-          "021",
-          "023",
-          "130",
-          "226"
         ]
       }
     ]
@@ -238,16 +260,6 @@
         ]
       },
       {
-        "name": "generalOncology",
-        "measureIds": [
-          "047",
-          "130",
-          "226",
-          "250",
-          "317"
-        ]
-      },
-      {
         "name": "allergyImmunology",
         "measureIds": [
           "110",
@@ -264,14 +276,22 @@
           "226",
           "317"
         ]
-      },
+      }
+    ],
+    "clinicalClusters": [
       {
-        "name": "rheumatology",
+        "name": "generalCare",
         "measureIds": [
-          "047",
-          "128",
           "130",
           "226",
+          "134",
+          "317"
+        ]
+      },
+      {
+        "name": "preventiveCare",
+        "measureIds": [
+          "130",
           "317"
         ]
       }
@@ -284,32 +304,12 @@
     "lastPerformanceYear": null,
     "specialtySets": [
       {
-        "name": "generalOncology",
-        "measureIds": [
-          "047",
-          "130",
-          "226",
-          "250",
-          "317"
-        ]
-      },
-      {
         "name": "hospitalists",
         "measureIds": [
           "047",
           "076",
           "130",
           "407"
-        ]
-      },
-      {
-        "name": "rheumatology",
-        "measureIds": [
-          "047",
-          "128",
-          "130",
-          "226",
-          "317"
         ]
       }
     ],
@@ -320,36 +320,6 @@
           "021",
           "023",
           "047"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "250",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "specialtySets": [
-      {
-        "name": "generalOncology",
-        "measureIds": [
-          "047",
-          "130",
-          "226",
-          "250",
-          "317"
-        ]
-      }
-    ],
-    "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "099",
-          "100",
-          "249",
-          "250",
-          "251"
         ]
       }
     ]
@@ -370,19 +340,17 @@
         ]
       },
       {
+        "name": "anesthesiology",
+        "measureIds": [
+          "076"
+        ]
+      },
+      {
         "name": "interventionalRadiology",
         "measureIds": [
           "076",
           "145",
           "437"
-        ]
-      },
-      {
-        "name": "anesthesiology",
-        "measureIds": [
-          "076",
-          "130",
-          "317"
         ]
       }
     ]
@@ -398,6 +366,15 @@
         "measureIds": [
           "047",
           "076",
+          "130",
+          "407"
+        ]
+      },
+      {
+        "name": "infectiousDisease",
+        "measureIds": [
+          "110",
+          "111",
           "130",
           "407"
         ]
@@ -512,6 +489,15 @@
           "226",
           "317"
         ]
+      },
+      {
+        "name": "infectiousDisease",
+        "measureIds": [
+          "110",
+          "111",
+          "130",
+          "407"
+        ]
       }
     ],
     "clinicalClusters": [
@@ -567,6 +553,15 @@
           "226",
           "317"
         ]
+      },
+      {
+        "name": "infectiousDisease",
+        "measureIds": [
+          "110",
+          "111",
+          "130",
+          "407"
+        ]
       }
     ],
     "clinicalClusters": [
@@ -595,13 +590,12 @@
         ]
       },
       {
-        "name": "rheumatology",
+        "name": "physicalTherapyOccupationalTherapy",
         "measureIds": [
-          "047",
           "128",
           "130",
-          "226",
-          "317"
+          "131",
+          "182"
         ]
       }
     ],
@@ -651,15 +645,217 @@
     ]
   },
   {
-    "measureId": "156",
+    "measureId": "131",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "specialtySets": [
       {
-        "name": "radiationOncology",
+        "name": "physicalTherapyOccupationalTherapy",
         "measureIds": [
-          "156"
+          "128",
+          "130",
+          "131",
+          "182"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "chiropracticCare",
+        "measureIds": [
+          "131",
+          "182"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "182",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "physicalTherapyOccupationalTherapy",
+        "measureIds": [
+          "128",
+          "130",
+          "131",
+          "182"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "chiropracticCare",
+        "measureIds": [
+          "131",
+          "182"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "249",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "250",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "395",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      },
+      {
+        "name": "pathologyLungCancer",
+        "measureIds": [
+          "395",
+          "396"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "396",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      },
+      {
+        "name": "pathologyLungCancer",
+        "measureIds": [
+          "395",
+          "396"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "397",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
         ]
       }
     ]
@@ -706,6 +902,32 @@
           "001",
           "117",
           "128"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "117",
+    "submissionMethod": "claims",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "diabeticCare",
+        "measureIds": [
+          "001",
+          "117",
+          "128"
+        ]
+      },
+      {
+        "name": "eyeCare",
+        "measureIds": [
+          "012",
+          "014",
+          "019",
+          "117",
+          "141"
         ]
       }
     ]
@@ -773,78 +995,6 @@
     ]
   },
   {
-    "measureId": "099",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "099",
-          "100",
-          "249",
-          "250",
-          "251"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "100",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "099",
-          "100",
-          "249",
-          "250",
-          "251"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "249",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "099",
-          "100",
-          "249",
-          "250",
-          "251"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "251",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "099",
-          "100",
-          "249",
-          "250",
-          "251"
-        ]
-      }
-    ]
-  },
-  {
     "measureId": "405",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
@@ -875,61 +1025,73 @@
     ]
   },
   {
-    "measureId": "131",
+    "measureId": "012",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "chiropracticCare",
+        "name": "eyeCare",
         "measureIds": [
-          "131",
-          "182"
+          "012",
+          "014",
+          "019",
+          "117",
+          "141"
         ]
       }
     ]
   },
   {
-    "measureId": "182",
+    "measureId": "014",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "chiropracticCare",
+        "name": "eyeCare",
         "measureIds": [
-          "131",
-          "182"
+          "012",
+          "014",
+          "019",
+          "117",
+          "141"
         ]
       }
     ]
   },
   {
-    "measureId": "395",
+    "measureId": "019",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "pathologyLungCancer",
+        "name": "eyeCare",
         "measureIds": [
-          "395",
-          "396"
+          "012",
+          "014",
+          "019",
+          "117",
+          "141"
         ]
       }
     ]
   },
   {
-    "measureId": "396",
+    "measureId": "141",
     "submissionMethod": "claims",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "pathologyLungCancer",
+        "name": "eyeCare",
         "measureIds": [
-          "395",
-          "396"
+          "012",
+          "014",
+          "019",
+          "117",
+          "141"
         ]
       }
     ]
@@ -1012,36 +1174,6 @@
     ]
   },
   {
-    "measureId": "185",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "endoscopyAndPolypSurveillance",
-        "measureIds": [
-          "185",
-          "320"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "320",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "endoscopyAndPolypSurveillance",
-        "measureIds": [
-          "185",
-          "320"
-        ]
-      }
-    ]
-  },
-  {
     "measureId": "102",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
@@ -1052,8 +1184,7 @@
         "measureIds": [
           "102",
           "143",
-          "144",
-          "156"
+          "144"
         ]
       }
     ]
@@ -1069,8 +1200,7 @@
         "measureIds": [
           "102",
           "143",
-          "144",
-          "156"
+          "144"
         ]
       }
     ]
@@ -1086,25 +1216,115 @@
         "measureIds": [
           "102",
           "143",
-          "144",
-          "156"
+          "144"
         ]
       }
     ]
   },
   {
-    "measureId": "156",
+    "measureId": "249",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "specialtySets": [
       {
-        "name": "radiationOncology",
+        "name": "pathology",
         "measureIds": [
-          "102",
-          "143",
-          "144",
-          "156"
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "250",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "395",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathologyLungCancer",
+        "measureIds": [
+          "395",
+          "396"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "396",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
+        ]
+      }
+    ],
+    "clinicalClusters": [
+      {
+        "name": "pathologyLungCancer",
+        "measureIds": [
+          "395",
+          "396"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "397",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "specialtySets": [
+      {
+        "name": "pathology",
+        "measureIds": [
+          "249",
+          "250",
+          "395",
+          "396",
+          "397"
         ]
       }
     ]
@@ -1248,35 +1468,49 @@
     ]
   },
   {
-    "measureId": "398",
+    "measureId": "130",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "asthmaCare",
+        "name": "chronicObstructivePulmonaryDiseaseCopdCare",
         "measureIds": [
-          "110",
-          "130",
-          "226",
-          "398"
+          "130"
         ]
-      }
-    ]
-  },
-  {
-    "measureId": "444",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
+      },
       {
-        "name": "asthmaCare",
+        "name": "osteoporosisCare",
         "measureIds": [
-          "110",
           "130",
-          "226",
-          "444"
+          "226"
+        ]
+      },
+      {
+        "name": "coronaryDiseaseCare",
+        "measureIds": [
+          "130",
+          "226"
+        ]
+      },
+      {
+        "name": "heartFailureCare",
+        "measureIds": [
+          "130"
+        ]
+      },
+      {
+        "name": "colonoscopyCare",
+        "measureIds": [
+          "130",
+          "425"
+        ]
+      },
+      {
+        "name": "preventiveCare",
+        "measureIds": [
+          "130",
+          "317"
         ]
       }
     ]
@@ -1359,8 +1593,7 @@
         "name": "melanomaCare",
         "measureIds": [
           "137",
-          "138",
-          "224"
+          "138"
         ]
       }
     ]
@@ -1375,24 +1608,7 @@
         "name": "melanomaCare",
         "measureIds": [
           "137",
-          "138",
-          "224"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "224",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "melanomaCare",
-        "measureIds": [
-          "137",
-          "138",
-          "224"
+          "138"
         ]
       }
     ]
@@ -1409,6 +1625,28 @@
           "130",
           "226",
           "024"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "226",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "osteoporosisCare",
+        "measureIds": [
+          "130",
+          "226"
+        ]
+      },
+      {
+        "name": "coronaryDiseaseCare",
+        "measureIds": [
+          "130",
+          "226"
         ]
       }
     ]
@@ -1500,8 +1738,7 @@
         "measureIds": [
           "331",
           "332",
-          "333",
-          "334"
+          "333"
         ]
       }
     ]
@@ -1517,8 +1754,7 @@
         "measureIds": [
           "331",
           "332",
-          "333",
-          "334"
+          "333"
         ]
       }
     ]
@@ -1534,55 +1770,7 @@
         "measureIds": [
           "331",
           "332",
-          "333",
-          "334"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "334",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "adultSinusitisCare",
-        "measureIds": [
-          "331",
-          "332",
-          "333",
-          "334"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "099",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathologyBreastCancer",
-        "measureIds": [
-          "099",
-          "251"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "251",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathologyBreastCancer",
-        "measureIds": [
-          "099",
-          "251"
+          "333"
         ]
       }
     ]
@@ -1618,53 +1806,6 @@
     ]
   },
   {
-    "measureId": "014",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "ageRelatedMacularDegeneration",
-        "measureIds": [
-          "014",
-          "140"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "140",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "ageRelatedMacularDegeneration",
-        "measureIds": [
-          "014",
-          "140"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "122",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "adultRenalDiseaseCare",
-        "measureIds": [
-          "110",
-          "122",
-          "130",
-          "226"
-        ]
-      }
-    ]
-  },
-  {
     "measureId": "329",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
@@ -1690,36 +1831,6 @@
         "measureIds": [
           "329",
           "330"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "327",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pediatricKidneyDiseaseCare",
-        "measureIds": [
-          "327",
-          "328"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "328",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pediatricKidneyDiseaseCare",
-        "measureIds": [
-          "327",
-          "328"
         ]
       }
     ]
@@ -2058,23 +2169,6 @@
         "name": "breastSurgeryCare",
         "measureIds": [
           "262",
-          "263",
-          "264"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "263",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "breastSurgeryCare",
-        "measureIds": [
-          "262",
-          "263",
           "264"
         ]
       }
@@ -2090,7 +2184,6 @@
         "name": "breastSurgeryCare",
         "measureIds": [
           "262",
-          "263",
           "264"
         ]
       }
@@ -2122,36 +2215,6 @@
         "measureIds": [
           "384",
           "385"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "395",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathologyLungCancer",
-        "measureIds": [
-          "395",
-          "396"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "396",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "pathologyLungCancer",
-        "measureIds": [
-          "395",
-          "396"
         ]
       }
     ]
@@ -2270,7 +2333,7 @@
     ]
   },
   {
-    "measureId": "426",
+    "measureId": "424",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -2279,14 +2342,13 @@
         "name": "anesthesiologyCare",
         "measureIds": [
           "424",
-          "430",
-          "426"
+          "430"
         ]
       }
     ]
   },
   {
-    "measureId": "427",
+    "measureId": "430",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -2295,8 +2357,7 @@
         "name": "anesthesiologyCare",
         "measureIds": [
           "424",
-          "430",
-          "427"
+          "430"
         ]
       }
     ]
@@ -2312,7 +2373,8 @@
         "measureIds": [
           "408",
           "412",
-          "414"
+          "414",
+          "468"
         ]
       }
     ]
@@ -2328,7 +2390,8 @@
         "measureIds": [
           "408",
           "412",
-          "414"
+          "414",
+          "468"
         ]
       }
     ]
@@ -2344,13 +2407,47 @@
         "measureIds": [
           "408",
           "412",
-          "414"
+          "414",
+          "468"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "468",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "opioidCare",
+        "measureIds": [
+          "408",
+          "412",
+          "414",
+          "468"
         ]
       }
     ]
   },
   {
     "measureId": "047",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "palliativeCare",
+        "measureIds": [
+          "047",
+          "134",
+          "342"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "134",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -2414,6 +2511,37 @@
     ]
   },
   {
+    "measureId": "317",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "preventiveCare",
+        "measureIds": [
+          "130",
+          "317"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "110",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "immunizationCare",
+        "measureIds": [
+          "110",
+          "111",
+          "474"
+        ]
+      }
+    ]
+  },
+  {
     "measureId": "111",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
@@ -2423,7 +2551,24 @@
         "name": "immunizationCare",
         "measureIds": [
           "110",
-          "111"
+          "111",
+          "474"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "474",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "immunizationCare",
+        "measureIds": [
+          "110",
+          "111",
+          "474"
         ]
       }
     ]
@@ -2545,22 +2690,6 @@
     ]
   },
   {
-    "measureId": "359",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "optimizingPatientExposureToIonizingRadiation",
-        "measureIds": [
-          "359",
-          "360",
-          "361"
-        ]
-      }
-    ]
-  },
-  {
     "measureId": "360",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
@@ -2569,7 +2698,6 @@
       {
         "name": "optimizingPatientExposureToIonizingRadiation",
         "measureIds": [
-          "359",
           "360",
           "361"
         ]
@@ -2585,7 +2713,6 @@
       {
         "name": "optimizingPatientExposureToIonizingRadiation",
         "measureIds": [
-          "359",
           "360",
           "361"
         ]
@@ -2604,7 +2731,8 @@
           "350",
           "351",
           "352",
-          "353"
+          "353",
+          "470"
         ]
       }
     ]
@@ -2621,7 +2749,8 @@
           "350",
           "351",
           "352",
-          "353"
+          "353",
+          "470"
         ]
       }
     ]
@@ -2638,7 +2767,8 @@
           "350",
           "351",
           "352",
-          "353"
+          "353",
+          "470"
         ]
       }
     ]
@@ -2655,7 +2785,26 @@
           "350",
           "351",
           "352",
-          "353"
+          "353",
+          "470"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "470",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "totalKneeReplacement",
+        "measureIds": [
+          "350",
+          "351",
+          "352",
+          "353",
+          "470"
         ]
       }
     ]
@@ -2754,6 +2903,54 @@
           "283",
           "286",
           "288"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "460",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2018,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "lumbarFusionNewSet",
+        "measureIds": [
+          "460",
+          "469",
+          "473"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "469",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "lumbarFusionNewSet",
+        "measureIds": [
+          "460",
+          "469",
+          "473"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "473",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "lumbarFusionNewSet",
+        "measureIds": [
+          "460",
+          "469",
+          "473"
         ]
       }
     ]
