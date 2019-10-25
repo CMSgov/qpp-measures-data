@@ -22,7 +22,7 @@ const _ = require('lodash');
 const parse = require('csv-parse/lib/sync');
 
 const MAX_SPECIALITY_SET_SIZE = 6;
-const SUPPORTED_PERFORMANCE_YEARS = [2017];
+const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019];
 
 let measuresJson = '';
 const performanceYear = parseInt(process.argv[2], 10);
@@ -46,15 +46,8 @@ const specialSpecialtySetRelations = {
     ]
   },
   2019: {
-    claims: [
-      { name: 'anesthesiology', action: 'replace', measureIds: ['076', '130', '317'] },
-      { name: 'dermatology', action: 'replace', measureIds: ['130', '226', '317'] },
-      { name: 'rheumatology', action: 'add', measureIds: ['047', '128', '130', '226', '317'] },
-      { name: 'neurosurgical', action: 'replace', measureIds: ['021', '023', '130', '226'] }
-    ],
-    registry: [
-      { name: 'dentistry', action: 'remove', measureIds: ['378', '379'] }
-    ]
+    claims: [],
+    registry: []
   }
 };
 
@@ -122,33 +115,24 @@ const specialClusterRelations = {
       {measureId: '118', optionals: ['007', '006']},
       {measureId: '005', optionals: ['008']},
       {measureId: '008', optionals: ['005']},
-      {measureId: '426', optionals: ['427']},
-      {measureId: '427', optionals: ['426']},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
     ]
   },
   2019: {
     claims: [
-      {measureId: '130', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '117', optionals: []},
-      {measureId: '226', optionals: []},
       {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      {measureId: '113', optionals: ['112']},
+      {measureId: '117', optionals: ['001', '128']},
+      {measureId: '130', optionals: ['051', '052']},
+      {measureId: '130', optionals: ['134']},
+      {measureId: '130', optionals: ['425']}
     ],
     registry: [
-      {measureId: '110', optionals: []},
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '424', optionals: []},
-      {measureId: '430', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '134', optionals: []},
+      {measureId: '047', optionals: ['342']},
+      {measureId: '134', optionals: ['342']},
       {measureId: '051', optionals: ['052']},
       {measureId: '052', optionals: ['051']},
-      {measureId: '398', optionals: ['444']},
-      {measureId: '444', optionals: ['398']},
       {measureId: '024', optionals: ['418']},
       {measureId: '418', optionals: ['024']},
       {measureId: '006', optionals: ['118', '007']},
@@ -156,8 +140,6 @@ const specialClusterRelations = {
       {measureId: '118', optionals: ['007', '006']},
       {measureId: '005', optionals: ['008']},
       {measureId: '008', optionals: ['005']},
-      {measureId: '426', optionals: ['427']},
-      {measureId: '427', optionals: ['426']},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
     ]
