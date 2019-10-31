@@ -168,11 +168,12 @@ Promise.all(
       const strata = extractStrata(measure);
       const version = measure.versionNumber[0].$.value.split('.')[0];
       const eMeasureId = `CMS${emeasureid}v${version}`;
+      const mType = (strata.length > 1 || emeasureid === '159') ? 'multiPerformanceRate' : 'singlePerformanceRate';
       return {
         eMeasureId,
         eMeasureUuid: measure.id[0].$.root,
         strata: strata,
-        metricType: strata.length > 1 ? 'multiPerformanceRate' : 'singlePerformanceRate'
+        metricType: mType
       };
     }));
   })
