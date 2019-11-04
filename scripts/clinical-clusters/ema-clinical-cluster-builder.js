@@ -91,15 +91,15 @@ const specialClusterRelations = {
     claims: [
       {measureId: '130', optionals: []},
       {measureId: '317', optionals: []},
-      {measureId: '117', optionals: ['001', '128']},
+      {measureId: '117', optionals: []},
       {measureId: '226', optionals: []},
       {measureId: '112', optionals: ['113']},
       {measureId: '113', optionals: ['112']}
     ],
     registry: [
-      {measureId: '110', optionals: ['398', '444', '111']},
-      {measureId: '130', optionals: ['024', '418']},
-      {measureId: '226', optionals: ['024', '418']},
+      {measureId: '110', optionals: []},
+      {measureId: '130', optionals: []},
+      {measureId: '226', optionals: []},
       {measureId: '424', optionals: []},
       {measureId: '430', optionals: []},
       {measureId: '317', optionals: []},
