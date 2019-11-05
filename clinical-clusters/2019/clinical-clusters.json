@@ -143,33 +143,6 @@
           "317"
         ]
       }
-    ],
-    "clinicalClusters": [
-      {
-        "name": "lungCare",
-        "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "generalCare",
-        "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "preventiveCare",
-        "measureIds": [
-          "130",
-          "317"
-        ]
-      },
-      {
-        "name": "colonoscopyCare",
-        "measureIds": [
-          "130"
-        ]
-      }
     ]
   },
   {
@@ -224,14 +197,6 @@
           "317"
         ]
       }
-    ],
-    "clinicalClusters": [
-      {
-        "name": "generalCare",
-        "measureIds": [
-          "226"
-        ]
-      }
     ]
   },
   {
@@ -265,23 +230,6 @@
         "measureIds": [
           "130",
           "226",
-          "317"
-        ]
-      }
-    ],
-    "clinicalClusters": [
-      {
-        "name": "generalCare",
-        "measureIds": [
-          "130",
-          "226",
-          "317"
-        ]
-      },
-      {
-        "name": "preventiveCare",
-        "measureIds": [
-          "130",
           "317"
         ]
       }
@@ -522,7 +470,8 @@
         "measureIds": [
           "130",
           "226",
-          "134"
+          "134",
+          "317"
         ]
       }
     ]
@@ -592,6 +541,7 @@
       {
         "name": "diabeticCare",
         "measureIds": [
+          "001",
           "117",
           "128"
         ]
@@ -706,10 +656,7 @@
         "name": "pathology",
         "measureIds": [
           "249",
-          "250",
-          "395",
-          "396",
-          "397"
+          "250"
         ]
       }
     ]
@@ -736,10 +683,7 @@
         "name": "pathology",
         "measureIds": [
           "249",
-          "250",
-          "395",
-          "396",
-          "397"
+          "250"
         ]
       }
     ]
@@ -762,16 +706,6 @@
       }
     ],
     "clinicalClusters": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "249",
-          "250",
-          "395",
-          "396",
-          "397"
-        ]
-      },
       {
         "name": "pathologyLungCancer",
         "measureIds": [
@@ -800,16 +734,6 @@
     ],
     "clinicalClusters": [
       {
-        "name": "pathology",
-        "measureIds": [
-          "249",
-          "250",
-          "395",
-          "396",
-          "397"
-        ]
-      },
-      {
         "name": "pathologyLungCancer",
         "measureIds": [
           "395",
@@ -824,18 +748,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "specialtySets": [
-      {
-        "name": "pathology",
-        "measureIds": [
-          "249",
-          "250",
-          "395",
-          "396",
-          "397"
-        ]
-      }
-    ],
-    "clinicalClusters": [
       {
         "name": "pathology",
         "measureIds": [
@@ -887,32 +799,9 @@
       {
         "name": "diabeticCare",
         "measureIds": [
+          "001",
           "117",
-          "001"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "117",
-    "submissionMethod": "claims",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "diabeticCare",
-        "measureIds": [
-          "117"
-        ]
-      },
-      {
-        "name": "eyeCare",
-        "measureIds": [
-          "012",
-          "014",
-          "019",
-          "117",
-          "141"
+          "128"
         ]
       }
     ]
@@ -926,8 +815,9 @@
       {
         "name": "lungCare",
         "measureIds": [
-          "130",
-          "051"
+          "051",
+          "052",
+          "130"
         ]
       }
     ]
@@ -941,8 +831,9 @@
       {
         "name": "lungCare",
         "measureIds": [
-          "130",
-          "052"
+          "051",
+          "052",
+          "130"
         ]
       }
     ]
@@ -1451,46 +1342,37 @@
     ]
   },
   {
-    "measureId": "130",
+    "measureId": "398",
     "submissionMethod": "registry",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "clinicalClusters": [
       {
-        "name": "chronicObstructivePulmonaryDiseaseCopdCare",
+        "name": "asthmaCare",
         "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "osteoporosisCare",
-        "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "coronaryDiseaseCare",
-        "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "heartFailureCare",
-        "measureIds": [
-          "130"
-        ]
-      },
-      {
-        "name": "colonoscopyCare",
-        "measureIds": [
+          "110",
           "130",
-          "425"
+          "226",
+          "398",
+          "444"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "measureId": "444",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
       {
-        "name": "preventiveCare",
+        "name": "asthmaCare",
         "measureIds": [
-          "130"
+          "110",
+          "130",
+          "226",
+          "398",
+          "444"
         ]
       }
     ]
@@ -1605,26 +1487,6 @@
           "130",
           "226",
           "024"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "226",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "osteoporosisCare",
-        "measureIds": [
-          "226"
-        ]
-      },
-      {
-        "name": "coronaryDiseaseCare",
-        "measureIds": [
-          "226"
         ]
       }
     ]
@@ -2417,7 +2279,8 @@
       {
         "name": "palliativeCare",
         "measureIds": [
-          "047"
+          "047",
+          "134"
         ]
       }
     ]
@@ -2431,6 +2294,7 @@
       {
         "name": "palliativeCare",
         "measureIds": [
+          "047",
           "134"
         ]
       }
@@ -2493,23 +2357,8 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "130",
           "317"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "110",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "immunizationCare",
-        "measureIds": [
-          "110",
-          "111",
-          "474"
         ]
       }
     ]
@@ -2524,24 +2373,7 @@
         "name": "immunizationCare",
         "measureIds": [
           "110",
-          "111",
-          "474"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "474",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2019,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "immunizationCare",
-        "measureIds": [
-          "110",
-          "111",
-          "474"
+          "111"
         ]
       }
     ]
