@@ -125,8 +125,9 @@ const specialClusterRelations = {
       {measureId: '113', optionals: ['112']},
       {measureId: '117', optionals: []},
       {measureId: '130', optionals: []},
+      {measureId: '134', optionals: ['317']},
       {measureId: '226', optionals: []},
-      {measureId: '317', optionals: []}
+      {measureId: '317', optionals: ['134']}
     ],
     registry: [
       {measureId: '047', optionals: ['342']},
