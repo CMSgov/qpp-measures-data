@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=$(($1))
-maxPerformanceYear=2019
+maxPerformanceYear=2020
 
 if (( $currentPerformanceYear >= 2018 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
   exec scripts/measures/build-${currentPerformanceYear}-measures
