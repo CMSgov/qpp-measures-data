@@ -233,23 +233,6 @@
           "317"
         ]
       }
-    ],
-    "clinicalClusters": [
-      {
-        "name": "generalCare",
-        "measureIds": [
-          "130",
-          "226",
-          "317"
-        ]
-      },
-      {
-        "name": "preventiveCare",
-        "measureIds": [
-          "130",
-          "317"
-        ]
-      }
     ]
   },
   {
@@ -487,7 +470,8 @@
         "measureIds": [
           "130",
           "226",
-          "134"
+          "134",
+          "317"
         ]
       }
     ]
@@ -1025,9 +1009,10 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "112",
+          "113",
           "130",
-          "317",
-          "112"
+          "317"
         ]
       }
     ]
@@ -1041,9 +1026,10 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "112",
+          "113",
           "130",
-          "317",
-          "113"
+          "317"
         ]
       }
     ]
@@ -1336,8 +1322,9 @@
       {
         "name": "chronicObstructivePulmonaryDiseaseCopdCare",
         "measureIds": [
-          "130",
-          "051"
+          "051",
+          "052",
+          "130"
         ]
       }
     ]
@@ -1351,44 +1338,9 @@
       {
         "name": "chronicObstructivePulmonaryDiseaseCopdCare",
         "measureIds": [
-          "130",
-          "052"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "398",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "asthmaCare",
-        "measureIds": [
-          "110",
-          "130",
-          "226",
-          "398",
-          "444"
-        ]
-      }
-    ]
-  },
-  {
-    "measureId": "444",
-    "submissionMethod": "registry",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "clinicalClusters": [
-      {
-        "name": "asthmaCare",
-        "measureIds": [
-          "110",
-          "130",
-          "226",
-          "398",
-          "444"
+          "051",
+          "052",
+          "130"
         ]
       }
     ]
@@ -1500,9 +1452,10 @@
       {
         "name": "osteoporosisCare",
         "measureIds": [
+          "024",
           "130",
           "226",
-          "024"
+          "418"
         ]
       }
     ]
@@ -1516,6 +1469,7 @@
       {
         "name": "osteoporosisCare",
         "measureIds": [
+          "024",
           "130",
           "226",
           "418"
@@ -1898,9 +1852,11 @@
       {
         "name": "coronaryDiseaseCare",
         "measureIds": [
+          "006",
+          "007",
+          "118",
           "130",
-          "226",
-          "006"
+          "226"
         ]
       }
     ]
@@ -1914,9 +1870,11 @@
       {
         "name": "coronaryDiseaseCare",
         "measureIds": [
+          "006",
+          "007",
+          "118",
           "130",
-          "226",
-          "007"
+          "226"
         ]
       }
     ]
@@ -1930,9 +1888,11 @@
       {
         "name": "coronaryDiseaseCare",
         "measureIds": [
+          "006",
+          "007",
+          "118",
           "130",
-          "226",
-          "118"
+          "226"
         ]
       }
     ]
@@ -1946,8 +1906,9 @@
       {
         "name": "heartFailureCare",
         "measureIds": [
-          "130",
-          "005"
+          "005",
+          "008",
+          "130"
         ]
       }
     ]
@@ -1961,8 +1922,9 @@
       {
         "name": "heartFailureCare",
         "measureIds": [
-          "130",
-          "008"
+          "005",
+          "008",
+          "130"
         ]
       }
     ]
@@ -2296,7 +2258,8 @@
         "name": "palliativeCare",
         "measureIds": [
           "047",
-          "134"
+          "134",
+          "342"
         ]
       }
     ]
@@ -2311,7 +2274,8 @@
         "name": "palliativeCare",
         "measureIds": [
           "047",
-          "134"
+          "134",
+          "342"
         ]
       }
     ]
@@ -2341,9 +2305,10 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "112",
+          "113",
           "130",
-          "317",
-          "112"
+          "317"
         ]
       }
     ]
@@ -2357,9 +2322,10 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "112",
+          "113",
           "130",
-          "317",
-          "113"
+          "317"
         ]
       }
     ]
@@ -2373,6 +2339,8 @@
       {
         "name": "preventiveCare",
         "measureIds": [
+          "112",
+          "113",
           "130",
           "317"
         ]
@@ -2389,7 +2357,24 @@
         "name": "immunizationCare",
         "measureIds": [
           "110",
-          "111"
+          "111",
+          "474"
+        ]
+      }
+    ]
+  },
+  {
+    "measureId": "474",
+    "submissionMethod": "registry",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "clinicalClusters": [
+      {
+        "name": "immunizationCare",
+        "measureIds": [
+          "110",
+          "111",
+          "474"
         ]
       }
     ]
