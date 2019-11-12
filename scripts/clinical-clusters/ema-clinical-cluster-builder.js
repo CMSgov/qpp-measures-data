@@ -121,30 +121,15 @@ const specialClusterRelations = {
   },
   2019: {
     claims: [
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']},
       {measureId: '117', optionals: []},
       {measureId: '130', optionals: []},
       {measureId: '226', optionals: []},
       {measureId: '317', optionals: []}
     ],
     registry: [
-      {measureId: '047', optionals: ['342']},
       {measureId: '110', optionals: []},
       {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '134', optionals: ['342']},
-      {measureId: '051', optionals: ['052']},
-      {measureId: '052', optionals: ['051']},
-      {measureId: '024', optionals: ['418']},
-      {measureId: '418', optionals: ['024']},
-      {measureId: '006', optionals: ['118', '007']},
-      {measureId: '007', optionals: ['118', '006']},
-      {measureId: '118', optionals: ['007', '006']},
-      {measureId: '005', optionals: ['008']},
-      {measureId: '008', optionals: ['005']},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      {measureId: '226', optionals: []}
     ]
   }
 };
