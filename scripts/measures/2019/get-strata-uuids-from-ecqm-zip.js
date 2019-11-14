@@ -157,10 +157,6 @@ Promise.all(
         console.warn('WARNING: CMS160v7 has one numerator but two initial populations and needs to be added manually - see /tmp/ecqm/EC_CMS160v7_NQF0712_Dep_PHQ9.zip');
         return;
       }
-      if (emeasureid === '22') {
-        console.warn('WARNING: CMS22v7 does not contain a strata and does not need uuids');
-        return;
-      }
       if (emeasureid === '347') {
         console.warn('WARNING: CMS347v2 does not contain a strata and does not need uuids');
         return;
