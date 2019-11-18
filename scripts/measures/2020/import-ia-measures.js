@@ -63,9 +63,7 @@ function convertIaCsvsToMeasures(iaCSVRows) {
       row['weight'] = row['weight'].toLowerCase(); // Schema expects lowercased weight
     }
     if (row['subcategoryId']) { // Values need to be camelcased, but come in as seperate words, this would convert "Population Management" to "populationManagement"
-      row['subcategoryId'] = row['subcategoryId'].replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
-        return index == 0 ? word.toLowerCase() : word.toUpperCase();
-      }).replace(/\s+/g, '');
+      row['subcategoryId'] = _.camelCase(row['subcategoryId'])
     }
     _.each(IA_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
       measure[measureKeyName] = mapInput(row[columnName]);

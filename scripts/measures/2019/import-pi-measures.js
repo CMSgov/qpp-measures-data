@@ -73,6 +73,8 @@ function convertPiCsvsToMeasures(piCSVRows) {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
       } else if (measureKeyName === 'substitutes') {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
+      } else if (measureKeyName === 'objective') { // Values need to be camelcased, but come in as seperate words
+        measure[measureKeyName] = _.camelCase(row[columnName])
       } else {
         measure[measureKeyName] = mapInput(row[columnName]);
       }
