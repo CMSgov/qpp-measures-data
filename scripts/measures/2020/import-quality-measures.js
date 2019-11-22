@@ -115,7 +115,14 @@ const MEASURE_SETS = [
   'geriatrics',
   'urgentCare',
   'skilledNursingFacility',
-  'dentistry'
+  'dentistry',
+  'endocrinology', // New in 2020 here and below!
+  'nutritionDietician',
+  'pulmonology',
+  'chiropracticMedicine',
+  'clinicalSocialWork',
+  'audiology',
+  'speechLanguagePathology'
 ];
 
 // Mapping values within the measureType column to valid enums
@@ -296,8 +303,8 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
 }
 
 function importQualityMeasures() {
-  const qualityCsv = getCsv(qualityMeasuresPath, 4);
-  const strataCsv = getCsv(qualityStrataPath, 4);
+  const qualityCsv = getCsv(qualityMeasuresPath, 2);
+  const strataCsv = getCsv(qualityStrataPath, 2);
   checkQualityCsvHeaders(qualityCsv);
   const qualityMeasures = convertQualityStrataCsvsToMeasures(qualityCsv, strataCsv);
   const qualityMeasuresJson = JSON.stringify(qualityMeasures, null, 2);

@@ -26,12 +26,12 @@ qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
 qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
 
 # 0. Add quality measures to the staging measures-data-quality.json file:
-# node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
-# 	$quality_csv $quality_strata $quality_measures
+node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
+ 	$quality_csv $quality_strata $quality_measures
 
 # 1. Add PI measures to the staging measures-data-pi.json file:
-# node scripts/measures/$currentPerformanceYear/import-pi-measures.js \
-# 	$pi_csv $pi_measures
+node scripts/measures/$currentPerformanceYear/import-pi-measures.js \
+ 	$pi_csv $pi_measures
 
 # 2. Add IA measures to the staging measures-data-ia.json file:
 node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
@@ -53,8 +53,8 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # 6. Merge the array/jsonfile-per-measureType into a combined array of all measures
  node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	 $ia_measures $final_measures
-# As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $pi_measures $cost_measures
+	 $ia_measures $pi_measures $quality_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
+# As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $cost_measures
 
 # 7. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 # node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
