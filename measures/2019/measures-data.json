@@ -57179,7 +57179,7 @@
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "efficiency",
     "isHighPriority": false,
-    "isInverse": false,
+    "isInverse": true,
     "isRiskAdjusted": false,
     "primarySteward": "Practice Insights by McKesson Specialty Health in Collaboration with The US Oncology Network",
     "firstPerformanceYear": 2019,
@@ -58287,75 +58287,6 @@
     "isIcdImpacted": false,
     "isToppedOutByProgram": false,
     "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
-    "measureId": "ARCO12",
-    "title": "Venous Thromboembolism (VTE) Prophylaxis",
-    "description": "This measure captures the proportion of ischemic or hemorrhagic stroke patients who received VTE prophylaxis or have documentation why no VTE prophylaxis was given on the day of or the day after hospital admission. This measure is a part of a set of eight nationally implemented measures that address stroke care (STK-2: Discharged on Antithrombotic Therapy, STK-3: Anticoagulation Therapy for Atrial Fibrillation/Flutter, STK-4: Thrombolytic Therapy, STK-5: Antithrombotic Therapy By End of Hospital Day 2, STK-6 Discharged on Statin Medication, STK-8: Stroke Education, and STK-10: Assessed for Rehabilitation) that are used in The Joint Commission's hospital accreditation and Disease-Specific Care certification programs.",
-    "nqfId": "0434",
-    "nationalQualityStrategyDomain": "Patient Safety",
-    "measureType": "process",
-    "isHighPriority": false,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "ReportingMD",
-    "firstPerformanceYear": 2017,
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "isToppedOutByProgram": false,
-    "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
-    "measureId": "ARCO13",
-    "title": "Ischemic stroke patients management",
-    "description": "This measure will be calculated with 4 performance rates:\nRate 1: The percent of ischemic stroke patients prescribed antithrombotic therapy at hospital discharge;\nRate 2: The percent of ischemic stroke patients who had antithrombotic therapy administered by end of hospital day two; \nRate 3: The percent of ischemic stroke patients with an LDL greater than or equal to 100 mg/dL, OR LDL not measured, OR who were on a lipid-lowering medication prior to hospital arrival who were prescribed statin medication at hospital discharge\nRate 4: Overall performance rate",
-    "nqfId": null,
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "process",
-    "isHighPriority": false,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "ReportingMD",
-    "firstPerformanceYear": 2017,
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "isToppedOutByProgram": false,
-    "metricType": "registryMultiPerformanceRate",
-    "overallAlgorithm": "overallStratumOnly",
-    "strata": [
-      {
-        "name": "antithrombotic",
-        "description": "The percent of ischemic stroke patients prescribed antithrombotic therapy at hospital discharge;"
-      },
-      {
-        "name": "antithrombotic2",
-        "description": "The percent of ischemic stroke patients who had antithrombotic therapy administered by end of hospital day two;"
-      },
-      {
-        "name": "LDL",
-        "description": "The percent of ischemic stroke patients with an LDL greater than or equal to 100 mg/dL, OR LDL not measured, OR who were on a lipid-lowering medication prior to hospital arrival who were prescribed statin medication at hospital discharge"
-      },
-      {
-        "name": "overall",
-        "description": "Overall performance rate"
-      }
-    ],
     "submissionMethods": [
       "registry"
     ]
