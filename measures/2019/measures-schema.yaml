@@ -6,16 +6,24 @@ uniqueItemProperties: ['measureId'] # used by ajv-keywords
 
 definitions:
   measure:
+    title: 'Measure'
     type: object
+    anyOf:
+      - { $ref: #/definitions/iaMeasure }
+      - { $ref: #/definitions/piMeasure }
+      - { $ref: #/definitions/qualityMeasure }
+      - { $ref: #/definitions/aggregateCostMeasure }
+
+  iaMeasure:
+    title: 'IA Measure'
+    type: object
+    additionalProperties: false
     properties:
       measureId:
         type: string
         description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
       title: { type: string }
       description: { type: string }
-      category:
-        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.
-        enum: [ia, quality, pi, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
         enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
@@ -30,20 +38,13 @@ definitions:
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
         items: { $ref: #/definitions/measureSpecification }
+      # Change: added this property, needs description
+      isClinicalGuidelineChanged:
+        type: boolean
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
-    anyOf:
-      - { $ref: #/definitions/iaMeasure }
-      - { $ref: #/definitions/piMeasure }
-      - { $ref: #/definitions/qualityMeasure }
-      - { $ref: #/definitions/aggregateCostMeasure }
-
-  iaMeasure:
-    type: object
-    properties:
       category: { const ia }
       weight:
         description: Determines the points granted for attesting to the measure.
@@ -55,8 +56,36 @@ definitions:
     required: [weight, subcategoryId]
 
   piMeasure:
+    title: 'PI Measure'
     type: object
+    additionalProperties: false
     properties:
+      measureId:
+        type: string
+        description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
+      title: { type: string }
+      description: { type: string }
+      metricType:
+        description: Type of measurement that the measure requires in order to attest.
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
+      firstPerformanceYear:
+        description: Year in which the measure was introduced.
+        type: integer
+        default: 2017
+      lastPerformanceYear:
+        description: Year in which the measure was deprecated.
+        type: [integer, 'null']
+        default: 'null'
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        items: { $ref: #/definitions/measureSpecification }
+      # Change: added this property, needs description
+      isClinicalGuidelineChanged:
+        type: boolean
+      measureSets:
+        description: Quality measures can belong to multiple measure sets that represent different specialties.
+        type: array
+        items: { $ref: #/definitions/measureSets }
       category: { const pi }
       reportingCategory:
         description: The reporting category of the PI measure.
@@ -83,23 +112,80 @@ definitions:
     required: [weight, objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
+    title: 'Cost Measure'
     type: object
+    additionalProperties: false
     properties:
-      category: { const cost }
-    isInverse:
-        description: If true, a lower performance rate correlates with better performance.
-        type: boolean
-        default: false
-    overallAlgorithm:
-        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+      measureId:
         type: string
-    submissionMethods:
-        description: Possible methods for submitting performance data for the measure.
+        description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
+      title: { type: string }
+      description: { type: string }
+      metricType:
+        description: Type of measurement that the measure requires in order to attest.
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
+      firstPerformanceYear:
+        description: Year in which the measure was introduced.
+        type: integer
+        default: 2017
+      lastPerformanceYear:
+        description: Year in which the measure was deprecated.
+        type: [integer, 'null']
+        default: 'null'
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        items: { $ref: #/definitions/measureSpecification }
+      # Change: added this property, needs description
+      isClinicalGuidelineChanged:
+        type: boolean
+      measureSets:
+        description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
+        items: { $ref: #/definitions/measureSets }
+      category: { const cost }
+      isInverse:
+          description: If true, a lower performance rate correlates with better performance.
+          type: boolean
+          default: false
+      overallAlgorithm:
+          description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+          # change: added null option, could do more strict validation
+          type: ['null', string]
+      submissionMethods:
+          description: Possible methods for submitting performance data for the measure.
+          type: array
 
   qualityMeasure:
+    title: 'Quality Measure'
     type: object
+    additionalProperties: false
     properties:
+      measureId:
+        type: string
+        description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
+      title: { type: string }
+      description: { type: string }
+      metricType:
+        description: Type of measurement that the measure requires in order to attest.
+        enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
+      firstPerformanceYear:
+        description: Year in which the measure was introduced.
+        type: integer
+        default: 2017
+      lastPerformanceYear:
+        description: Year in which the measure was deprecated.
+        type: [integer, 'null']
+        default: 'null'
+      measureSpecification:
+        description: URL link for Measure Specification PDF to download by Submission Method.
+        items: { $ref: #/definitions/measureSpecification }
+      # Change: added this property, needs description
+      isClinicalGuidelineChanged:
+        type: boolean
+      measureSets:
+        description: Quality measures can belong to multiple measure sets that represent different specialties.
+        type: array
+        items: { $ref: #/definitions/measureSets }
       category: { const quality }
       nationalQualityStrategyDomain: { type: ['null', string] }
       measureType:
@@ -182,6 +268,7 @@ definitions:
 
   performanceStrata:
     type: object
+    additionalProperties: false
     properties:
       description:
         type: string
@@ -251,6 +338,7 @@ definitions:
 
   measureSpecification:
     type: object
+    additionalProperties: false
     properties:
       default:
         type: string
@@ -307,6 +395,7 @@ definitions:
 
   eligibilityOption:
     type: object
+    additionalProperties: false
     properties:
       sexCode:
         description: Gender identifier in the case of measures that apply to one gender only.
@@ -319,9 +408,10 @@ definitions:
         type: number
       diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      diagnosisExclusionCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       procedureCodes:
-        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         type: array
+        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         items: { $ref: #/definitions/codeObject }
       additionalProcedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
@@ -333,6 +423,7 @@ definitions:
 
   performanceOption:
     type: object
+    additionalProperties: false
     properties:
       optionType:
         description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
@@ -345,6 +436,7 @@ definitions:
 
   codeObject:
     type: object
+    additionalProperties: false
     properties:
       code:
         description: The HCPCS or CPT code represented as a string.
