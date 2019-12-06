@@ -53,6 +53,8 @@ const config = {
       index: 6,
       mappings: {
         'High Priority': true,
+        Yes: true,
+        No: false,
         default: false
       }
     },
