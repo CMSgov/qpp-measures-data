@@ -18,6 +18,7 @@ const Constants = require('../constants.js');
 
 const ajv = new Ajv({ verbose: true });
 require('ajv-keywords')(ajv, 'uniqueItemProperties');
+require('ajv-merge-patch')(ajv);
 
 const schemaType = process.argv[2];
 const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
