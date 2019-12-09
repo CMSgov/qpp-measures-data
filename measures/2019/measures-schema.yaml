@@ -44,6 +44,7 @@ definitions:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
 
   iaMeasure:
     $merge:
@@ -62,7 +63,7 @@ definitions:
           subcategoryId:
             description: IA category which the measure incentivizes.
             oneOf: [{ $ref: #/definitions/subcategoryIds }]
-        required: [weight, subcategoryId]
+        required: [category, weight, subcategoryId]
 
   piMeasure:
     $merge:
@@ -96,7 +97,7 @@ definitions:
             oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
           exclusion:
             description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
-        required: [weight, objective, isRequired, isBonus, measureSets]
+        required: [category, weight, objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
     $merge:
@@ -119,6 +120,7 @@ definitions:
           submissionMethods:
               description: Possible methods for submitting performance data for the measure.
               type: array
+        required: [category]
 
   qualityMeasure:
     $merge:
@@ -207,7 +209,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
+        required: [category, nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
 
   performanceStrata:
     type: object
