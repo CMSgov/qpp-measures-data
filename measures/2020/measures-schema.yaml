@@ -1,4 +1,4 @@
-$id: https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2019/measures-schema.yaml
+$id: https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2020/measures-schema.yaml
 $schema: http://json-schema.org/draft-07/schema
 type: array
 items: { $ref: #/definitions/measure }
@@ -40,8 +40,8 @@ definitions:
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
         items: { $ref: #/definitions/measureSpecification }
-      # Change: added this property, needs description
       isClinicalGuidelineChanged:
+        description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise
         type: boolean
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
