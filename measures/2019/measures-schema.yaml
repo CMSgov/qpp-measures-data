@@ -37,9 +37,6 @@ definitions:
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
         items: { $ref: #/definitions/measureSpecification }
-      isClinicalGuidelineChanged:
-        description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise
-        type: boolean
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
@@ -148,6 +145,9 @@ definitions:
           nqfId:
             description: Identifier for the National Quality Forum (NQF) measure.
             type: ['null', string]
+          isClinicalGuidelineChanged:
+            description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise
+            type: boolean
           isHighPriority:
             description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
             type: boolean
