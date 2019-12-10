@@ -92,8 +92,11 @@ function enrichStratifications(measures) {
       if (stratification && stratification.strataMaps) {
         console.log('Found measure :' + measure.eMeasureId + '\n');
         measure.strata.forEach(subPopulation => {
-          const mapping = stratification.strataMaps.find(map =>
+          let mapping = false;
+          if (subPopulation.eMeasureUuids) {
+            mapping = stratification.strataMaps.find(map =>
             map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+          }
           if (mapping) {
             subPopulation.eMeasureUuids.strata = mapping.strata;
             console.log('adding mapping: ' + mapping.strata);
@@ -137,10 +140,6 @@ function addQualityStrataNames(measures) {
         if (_.get(measureStrata, 'eMeasureUuids.numeratorUuid') &&
             measureStrata.eMeasureUuids.numeratorUuid === currentNumeratorUuid) {
           measures[qppIndex].strata[strataIndex].name = currentStrataName;
-        }
-        if (qppItem.eMeasureId === 'CMS159v7') {
-          const name = {'name': '18+'};
-          measures[qppIndex].strata.push(name);
         }
       });
     });
