@@ -95,7 +95,7 @@ function enrichStratifications(measures) {
           let mapping = false;
           if (subPopulation.eMeasureUuids) {
             mapping = stratification.strataMaps.find(map =>
-            map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
+              map.numeratorUuid === subPopulation.eMeasureUuids.numeratorUuid);
           }
           if (mapping) {
             subPopulation.eMeasureUuids.strata = mapping.strata;
