@@ -4,12 +4,7 @@
 
 ## Quality Payment Program Measures Data Repository
 
-This repository hosts measures data for QPP and supports functionality to import
-measures data as an NPM module. All 2018 quality, PI (Promoting Interoperability, 
-formerly ACI), and IA measures were added as of 
-[release 1.1.3](https://github.com/CMSgov/qpp-measures-data/releases/tag/1.1.3). QCDR measures will be added later in 2018.
-
-This is the v2 source of truth for QPP measures data. The previous measures data API is no longer available (qpp.cms.gov/api). The transition to using qpp-measures-data as a
+This is the source of truth for QPP measures data. The previous measures data API is no longer available (qpp.cms.gov/api). The transition to using qpp-measures-data as a
 source of truth for CMS is ongoing and this data may be subject to
 modifications. Stability in the API contract for
 qpp-measures-data is prioritized but not guaranteed.
