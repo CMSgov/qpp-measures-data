@@ -6,6 +6,16 @@ uniqueItemProperties: ['measureId'] # used by ajv-keywords
 
 definitions:
   measure:
+    title: 'Measure'
+    type: object
+    anyOf:
+      - { $ref: #/definitions/iaMeasure }
+      - { $ref: #/definitions/piMeasure }
+      - { $ref: #/definitions/qualityMeasure }
+      - { $ref: #/definitions/aggregateCostMeasure }
+
+  baseMeasure:
+    title: 'Base Measure'
     type: object
     properties:
       measureId:
@@ -13,9 +23,6 @@ definitions:
         description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
       title: { type: string }
       description: { type: string }
-      category:
-        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.
-        enum: [ia, quality, pi, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
         enum: [boolean, proportion, singlePerformanceRate, multiPerformanceRate, registrySinglePerformanceRate, registryMultiPerformanceRate, nonProportion, cahps, costScore]
@@ -35,153 +42,178 @@ definitions:
         type: array
         items: { $ref: #/definitions/measureSets }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
-    anyOf:
-      - { $ref: #/definitions/iaMeasure }
-      - { $ref: #/definitions/piMeasure }
-      - { $ref: #/definitions/qualityMeasure }
-      - { $ref: #/definitions/aggregateCostMeasure }
 
   iaMeasure:
-    type: object
-    properties:
-      category: { const ia }
-      weight:
-        description: Determines the points granted for attesting to the measure.
-        enum: [null, medium, high]
-        default: medium
-      subcategoryId:
-        description: IA category which the measure incentivizes.
-        oneOf: [{ $ref: #/definitions/subcategoryIds }]
-    required: [weight, subcategoryId]
+    $merge:
+      source:
+        { $ref: #/definitions/baseMeasure }
+      with:
+        title: 'IA Measure'
+        type: object
+        additionalProperties: false
+        properties:
+          category: { const ia }
+          weight:
+            description: Determines the points granted for attesting to the measure.
+            enum: [null, medium, high]
+            default: medium
+          subcategoryId:
+            description: IA category which the measure incentivizes.
+            oneOf: [{ $ref: #/definitions/subcategoryIds }]
+        required: [category, weight, subcategoryId]
 
   piMeasure:
-    type: object
-    properties:
-      category: { const pi }
-      reportingCategory:
-        description: The reporting category of the PI measure.
-        enum: [required, bonus, exclusion, null]
-      weight:
-        description: Determines the performance score points granted for attesting to the measure.
-        enum: [null, 0, 5, 10, 20, 40]
-      objective:
-        description: PI category which the measure incentivizes.
-        oneOf: [{ $ref: #/definitions/objectives }]
-      isRequired:
-        description: If true, attesting to the measure is required in order to receive a non-zero PI score.
-        type: boolean
-        default: false
-      isBonus:
-        description: If true, attesting to the measure will qualify the provider for PI bonus points.
-        type: boolean
-        default: false
-      substitutes:
-        description: Identifiers of other PI measures that can be used instead of the current measure.
-        oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
-      exclusion:
-        description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
-    required: [weight, objective, isRequired, isBonus, measureSets]
+    $merge:
+      source:
+        { $ref: #/definitions/baseMeasure }
+      with:
+        title: 'PI Measure'
+        type: object
+        additionalProperties: false
+        properties:
+          category: { const pi }
+          reportingCategory:
+            description: The reporting category of the PI measure.
+            enum: [required, bonus, exclusion, null]
+          weight:
+            description: Determines the performance score points granted for attesting to the measure.
+            enum: [null, 0, 5, 10, 20, 40]
+          objective:
+            description: PI category which the measure incentivizes.
+            oneOf: [{ $ref: #/definitions/objectives }]
+          isRequired:
+            description: If true, attesting to the measure is required in order to receive a non-zero PI score.
+            type: boolean
+            default: false
+          isBonus:
+            description: If true, attesting to the measure will qualify the provider for PI bonus points.
+            type: boolean
+            default: false
+          substitutes:
+            description: Identifiers of other PI measures that can be used instead of the current measure.
+            oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
+          exclusion:
+            description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
+        required: [category, weight, objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
-    type: object
-    properties:
-      category: { const cost }
-    isInverse:
-        description: If true, a lower performance rate correlates with better performance.
-        type: boolean
-        default: false
-    overallAlgorithm:
-        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-        type: string
-    submissionMethods:
-        description: Possible methods for submitting performance data for the measure.
-        type: array
+    $merge:
+      source:
+        { $ref: #/definitions/baseMeasure }
+      with:
+        title: 'Cost Measure'
+        type: object
+        additionalProperties: false
+        properties:
+          category: { const cost }
+          isInverse:
+              description: If true, a lower performance rate correlates with better performance.
+              type: boolean
+              default: false
+          overallAlgorithm:
+              description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+              # change: added null option, could do more strict validation
+              type: ['null', string]
+          submissionMethods:
+              description: Possible methods for submitting performance data for the measure.
+              type: array
+        required: [category]
 
   qualityMeasure:
-    type: object
-    properties:
-      category: { const quality }
-      nationalQualityStrategyDomain: { type: ['null', string] }
-      measureType:
-        description: Quality category which the measure incentivizes.
-        oneOf: [{ $ref: #/definitions/measureTypes }]
-      eMeasureId:
-        description: Identifier for Electronic Clinical Quality Measures (ECQM).
-        type: ['null', string]
-      eMeasureUuid:
-        description: UUID for Electronic Clinical Quality Measures (ECQM).
-        type: string
-      nqfEMeasureId:
-        description: Identifier for measure specified in the Health Quality Measure Format (HQMF).
-        type: ['null', string]
-      nqfId:
-        description: Identifier for the National Quality Forum (NQF) measure.
-        type: ['null', string]
-      isHighPriority:
-        description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
-        type: boolean
-        default: false
-      isInverse:
-        description: If true, a lower performance rate correlates with better performance.
-        type: boolean
-        default: false
-      overallAlgorithm:
-        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-        enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly]
-      strata:
-        description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
-        type: array
-        items: { $ref: #/definitions/performanceStrata }
-      primarySteward:
-        description: Organization who submits and maintains the measure.
-        type: string
-      submissionMethods:
-        description: Possible methods for submitting performance data for the measure.
-        type: array
-        items: { $ref: #/definitions/methods }
-      eligibilityOptions:
-        description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
-        type: array
-        items: { $ref: #/definitions/eligibilityOption }
-      performanceOptions:
-        description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
-        type: array
-        items: { $ref: #/definitions/performanceOption }
-      isRegistryMeasure:
-        description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
-        type: boolean
-        default: false
-      isRiskAdjusted:
-        type: boolean
-        default: false
-      cpcPlusGroup:
-        description: CPC+ group which the measure belongs
-        type: string
-      isIcdImpacted:
-        type: boolean
-        default: false
-      isToppedOutByProgram:
-        type: boolean
-        default: false
-    # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
-    # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
-    oneOf: [
-      {
-        properties: {
-          metricType: { enum: [multiPerformanceRate, registryMultiPerformanceRate] }
-        },
-        required: [overallAlgorithm, strata]
-      },
-      {
-        properties: {
-          metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, costScore] }
-        }
-      }
-    ]
-    required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
+    $merge:
+      source:
+        { $ref: #/definitions/baseMeasure }
+      with:
+        title: 'Quality Measure'
+        type: object
+        additionalProperties: false
+        properties:
+          category: { const quality }
+          nationalQualityStrategyDomain: { type: ['null', string] }
+          measureType:
+            description: Quality category which the measure incentivizes.
+            oneOf: [{ $ref: #/definitions/measureTypes }]
+          eMeasureId:
+            description: Identifier for Electronic Clinical Quality Measures (ECQM).
+            type: ['null', string]
+          eMeasureUuid:
+            description: UUID for Electronic Clinical Quality Measures (ECQM).
+            type: string
+          nqfEMeasureId:
+            description: Identifier for measure specified in the Health Quality Measure Format (HQMF).
+            type: ['null', string]
+          nqfId:
+            description: Identifier for the National Quality Forum (NQF) measure.
+            type: ['null', string]
+          isClinicalGuidelineChanged:
+            description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise
+            type: boolean
+          isHighPriority:
+            description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
+            type: boolean
+            default: false
+          isInverse:
+            description: If true, a lower performance rate correlates with better performance.
+            type: boolean
+            default: false
+          overallAlgorithm:
+            description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+            enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly]
+          strata:
+            description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
+            type: array
+            items: { $ref: #/definitions/performanceStrata }
+          primarySteward:
+            description: Organization who submits and maintains the measure.
+            type: string
+          submissionMethods:
+            description: Possible methods for submitting performance data for the measure.
+            type: array
+            items: { $ref: #/definitions/methods }
+          eligibilityOptions:
+            description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
+            type: array
+            items: { $ref: #/definitions/eligibilityOption }
+          performanceOptions:
+            description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
+            type: array
+            items: { $ref: #/definitions/performanceOption }
+          isRegistryMeasure:
+            description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
+            type: boolean
+            default: false
+          isRiskAdjusted:
+            type: boolean
+            default: false
+          cpcPlusGroup:
+            description: CPC+ group which the measure belongs
+            type: string
+          isIcdImpacted:
+            type: boolean
+            default: false
+          isToppedOutByProgram:
+            type: boolean
+            default: false
+        # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
+        # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
+        oneOf: [
+          {
+            properties: {
+              metricType: { enum: [multiPerformanceRate, registryMultiPerformanceRate] }
+            },
+            required: [overallAlgorithm, strata]
+          },
+          {
+            properties: {
+              metricType: { enum: [singlePerformanceRate, nonProportion, cahps, registrySinglePerformanceRate, costScore] }
+            }
+          }
+        ]
+        required: [category, nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
 
   performanceStrata:
     type: object
+    additionalProperties: false
     properties:
       description:
         type: string
@@ -251,6 +283,7 @@ definitions:
 
   measureSpecification:
     type: object
+    additionalProperties: false
     properties:
       default:
         type: string
@@ -307,6 +340,7 @@ definitions:
 
   eligibilityOption:
     type: object
+    additionalProperties: false
     properties:
       sexCode:
         description: Gender identifier in the case of measures that apply to one gender only.
@@ -319,9 +353,10 @@ definitions:
         type: number
       diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      diagnosisExclusionCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
       procedureCodes:
-        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         type: array
+        description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         items: { $ref: #/definitions/codeObject }
       additionalProcedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
@@ -333,6 +368,7 @@ definitions:
 
   performanceOption:
     type: object
+    additionalProperties: false
     properties:
       optionType:
         description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
@@ -345,6 +381,7 @@ definitions:
 
   codeObject:
     type: object
+    additionalProperties: false
     properties:
       code:
         description: The HCPCS or CPT code represented as a string.
