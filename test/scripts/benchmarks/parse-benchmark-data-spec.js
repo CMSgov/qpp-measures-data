@@ -15,7 +15,7 @@ const runTest = function(benchmarksCsv) {
 describe('parse benchmark data', function() {
   it('should create new measures and ignore duplicate measureIds', () => {
     const measures = runTest(testCsv);
-    // 279 rows with Y in Benchmark column
-    assert.equal(measures.length, 279);
+    // 311 rows with Y in Benchmark column
+    assert.equal(measures.length, 311);
   });
 });
