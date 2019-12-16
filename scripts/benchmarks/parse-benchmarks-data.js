@@ -12,6 +12,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'submissionMethod',
   'measureType',
   'benchmark',
+  'standardDeviation',
+  'average',
   'decile3',
   'decile4',
   'decile5',
@@ -20,7 +22,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'decile8',
   'decile9',
   'decile10',
-  'isToppedOut'
+  'isToppedOut',
+  'isToppedOutByProgram'
 ];
 // Utils
 const { formatBenchmarkRecord } = require('./format-benchmark-record');
@@ -49,7 +52,7 @@ if (benchmarkYear && performanceYear) {
   });
 
   process.stdin.on('end', function() {
-    parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 4}, function(err, records) {
+    parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 3}, function(err, records) {
       if (err) {
         console.log(err);
       } else {

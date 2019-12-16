@@ -13,14 +13,10 @@ const Constants = require('../../constants.js');
  * @enum {string}
  */
 const SUBMISSION_METHOD_MAP = {
-  'claims': 'claims',
-  'registry': 'registry',
-  'registry/qcdr': 'registry',
-  'cmswebinterface': 'cmsWebInterface',
-  'administrativeclaims': 'administrativeClaims',
-  'ehr': 'electronicHealthRecord',
-  'cmsapprovedcahpsvendor': 'certifiedSurveyVendor',
-  'cahpssurveyvendor': 'certifiedSurveyVendor'
+  'ecqm': 'electronicHealthRecord',
+  'medicarepartbclaims': 'claims',
+  'mipscqm': 'registry',
+  'qcdrmeasure': 'registry'
 };
 
 /**
@@ -56,6 +52,15 @@ const formatIsToppedOut = function(isToppedOut) {
   return false;
 };
 
+const formatIsToppedOutByProgram = function(isToppedOutByProgram) {
+  // These come in formatted as 'Yes - see "Scoring Examples" tab of spreadsheet' or 'No'
+  // We want to just look at whether it says yes/no
+  if (isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
+    return true;
+  }
+  return false;
+};
+
 const floatRegex = /([0-9]*[.]?[0-9]+)/g;
 
 /**
@@ -78,7 +83,8 @@ const floatRegex = /([0-9]*[.]?[0-9]+)/g;
  *  decile8: string?,
  *  decile9: string?,
  *  decile10: string?,
- *  isToppedOut: string}} record
+ *  isToppedOut: string,
+ *  isToppedOutByProgram: string}} record
  *  @returns {function}
  */
 const formatDecileGenerator = function(record) {
@@ -187,7 +193,8 @@ const formatMeasureId = (measureId, performanceYear) => {
  *  decile8: string?,
  *  decile9: string?,
  *  decile10: string?,
- *  isToppedOut: string
+ *  isToppedOut: string,
+ *  isToppedOutByProgram: string
  *  }} record - csv record object
  * @param {{
  *  benchmarkYear: string,
@@ -216,6 +223,7 @@ const formatBenchmarkRecord = function(record, options) {
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
     isToppedOut: formatIsToppedOut(record.isToppedOut),
+    isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles: [
       record.decile1,
       record.decile2,
