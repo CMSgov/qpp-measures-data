@@ -53,7 +53,8 @@ describe('formatBenchmarkRecord', function() {
         decile8: ' -- ',
         decile9: ' -- ',
         decile10: '100',
-        isToppedOut: 'Yes'
+        isToppedOut: 'Yes',
+        isToppedOutByProgram: 'No'
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -75,7 +76,8 @@ describe('formatBenchmarkRecord', function() {
         decile8: ' -- ',
         decile9: ' -- ',
         decile10: '100',
-        isToppedOut: 'Yes'
+        isToppedOut: 'Yes',
+        isToppedOutByProgram: 'No'
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -88,7 +90,7 @@ describe('formatBenchmarkRecord', function() {
       const record = {
         measureName: 'Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients',
         qualityId: '102',
-        submissionMethod: 'EHR',
+        submissionMethod: 'eCQM',
         measureType: 'Process',
         benchmark: 'N',
         decile3: ' -- ',
@@ -99,7 +101,8 @@ describe('formatBenchmarkRecord', function() {
         decile8: ' -- ',
         decile9: ' -- ',
         decile10: ' -- ',
-        isToppedOut: ' -- '
+        isToppedOut: ' -- ',
+        isToppedOutByProgram: '--'
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -112,7 +115,7 @@ describe('formatBenchmarkRecord', function() {
       const record = {
         measureName: 'Diabetes: Hemoglobin A1c Poor Control',
         qualityId: '1',
-        submissionMethod: 'EHR',
+        submissionMethod: 'eCQM',
         measureType: 'Outcome',
         benchmark: 'Y',
         decile3: '54.67 - 35.91',
@@ -123,7 +126,8 @@ describe('formatBenchmarkRecord', function() {
         decile8: '9.09 -  3.34',
         decile9: '3.33 -  0.01',
         decile10: '0',
-        isToppedOut: 'No'
+        isToppedOut: 'No',
+        isToppedOutByProgram: 'No'
       };
       const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
       const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
@@ -135,7 +139,7 @@ describe('formatBenchmarkRecord', function() {
       const record = {
         measureName: 'Diabetes: Hemoglobin A1c Poor Control',
         qualityId: '1',
-        submissionMethod: 'EHR',
+        submissionMethod: 'eCQM',
         measureType: 'Outcome',
         benchmark: 'Y',
         decile3: '54.67 - 35.91',
@@ -146,7 +150,8 @@ describe('formatBenchmarkRecord', function() {
         decile8: '9.09 -  3.34',
         decile9: '3.33 -  0.01',
         decile10: '0',
-        isToppedOut: 'No'
+        isToppedOut: 'No',
+        isToppedOutByProgram: 'No'
       };
       const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
       const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
@@ -160,7 +165,7 @@ describe('formatBenchmarkRecord', function() {
         const record = {
           measureName: 'Documentation of Current Medications in the Medical Record',
           qualityId: '130',
-          submissionMethod: 'EHR',
+          submissionMethod: 'eCQM',
           measureType: 'Process',
           benchmark: 'Y',
           decile3: '76.59 - 87.88',
@@ -171,7 +176,8 @@ describe('formatBenchmarkRecord', function() {
           decile8: '98.28 - 99.12',
           decile9: '99.13 - 99.75',
           decile10: '>= 99.76',
-          isToppedOut: 'Yes'
+          isToppedOut: 'Yes',
+          isToppedOutByProgram: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -182,6 +188,7 @@ describe('formatBenchmarkRecord', function() {
           assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
           assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
           assert.deepEqual(benchmark.deciles, [0, 76.59, 87.89, 92.74, 95.36, 97.09, 98.28, 99.13, 99.76], 'deciles');
+          assert.equal(benchmark.isToppedOutByProgram, false);
         });
       });
 
@@ -189,7 +196,7 @@ describe('formatBenchmarkRecord', function() {
         const record = {
           measureName: 'Breast Cancer Resection Pathology Reporting: pT Category (Primary Tumor) and pN Category (Regional Lymph Nodes) with Histologic Grade',
           qualityId: '99',
-          submissionMethod: 'Claims',
+          submissionMethod: 'Medicare Part B Claims',
           measureType: 'Process',
           benchmark: 'Y',
           decile3: '--',
@@ -200,7 +207,8 @@ describe('formatBenchmarkRecord', function() {
           decile8: '--',
           decile9: '--',
           decile10: '100',
-          isToppedOut: 'Yes'
+          isToppedOut: 'Yes',
+          isToppedOutByProgram: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -222,7 +230,7 @@ describe('formatBenchmarkRecord', function() {
             const record = {
               measureName: 'Diabetes: Hemoglobin A1c Poor Control',
               qualityId: '1',
-              submissionMethod: 'EHR',
+              submissionMethod: 'eCQM',
               measureType: 'Outcome',
               benchmark: 'Y',
               decile3: '54.67 - 35.91',
@@ -233,7 +241,8 @@ describe('formatBenchmarkRecord', function() {
               decile8: '9.09 -  3.34',
               decile9: '3.33 -  0.01',
               decile10: '0',
-              isToppedOut: 'No'
+              isToppedOut: 'No',
+              isToppedOutByProgram: 'Yes - words'
             };
             const benchmark = formatBenchmarkRecord(record, options);
 
@@ -243,6 +252,7 @@ describe('formatBenchmarkRecord', function() {
             assert.equal(benchmark.benchmarkYear, 2016, 'benchmarkYear');
             assert.equal(benchmark.performanceYear, 2018, 'performanceYear');
             assert.deepEqual(benchmark.deciles, [100, 54.67, 35.90, 25.62, 19.33, 14.14, 9.09, 3.33, 0], 'deciles');
+            assert.equal(benchmark.isToppedOutByProgram, true);
           });
         });
         describe('When Decile 10 is less than or equal to x', function() {
@@ -250,7 +260,7 @@ describe('formatBenchmarkRecord', function() {
             const record = {
               measureName: 'Diabetes: Hemoglobin A1c Poor Control',
               qualityId: '1',
-              submissionMethod: 'Claims',
+              submissionMethod: 'Medicare Part B Claims',
               measureType: 'Outcome',
               benchmark: 'Y',
               decile3: '35.00 - 25.72',
@@ -261,7 +271,8 @@ describe('formatBenchmarkRecord', function() {
               decile8: '10.00 -  7.42',
               decile9: '7.41 -  4.01',
               decile10: '<=  4.00',
-              isToppedOut: 'No'
+              isToppedOut: 'No',
+              isToppedOutByProgram: 'No'
             };
             const benchmark = formatBenchmarkRecord(record, options);
 
@@ -279,7 +290,7 @@ describe('formatBenchmarkRecord', function() {
         const record = {
           measureName: 'Anaphylaxis During Anesthesia Care',
           qualityId: '1', // ABG 11
-          submissionMethod: 'Registry/QCDR',
+          submissionMethod: 'MIPS CQM',
           measureType: 'Outcome',
           benchmark: 'Y',
           decile3: '--',
@@ -290,7 +301,8 @@ describe('formatBenchmarkRecord', function() {
           decile8: '--',
           decile9: '--',
           decile10: '0',
-          isToppedOut: 'Yes'
+          isToppedOut: 'Yes',
+          isToppedOutByProgram: 'No'
         };
 
         it('should return the correct benchmark object', function() {
@@ -308,7 +320,7 @@ describe('formatBenchmarkRecord', function() {
         const record = {
           measureName: 'Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation',
           qualityId: '12',
-          submissionMethod: 'Claims',
+          submissionMethod: 'Medicare Part B Claims',
           measureType: 'Process',
           benchmark: 'Y',
           decile3: '99.01 - 99.99',
@@ -319,7 +331,8 @@ describe('formatBenchmarkRecord', function() {
           decile8: '--',
           decile9: '--',
           decile10: '100',
-          isToppedOut: 'Y'
+          isToppedOut: 'Y',
+          isToppedOutByProgram: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -336,7 +349,7 @@ describe('formatBenchmarkRecord', function() {
         const record = {
           measureName: 'CT IV Contrast Extravasation Rate (Low Osmolar Contrast Media)',
           qualityId: '1', // ACRad 20
-          submissionMethod: 'Registry/QCDR',
+          submissionMethod: 'QCDR Measure',
           measureType: 'Outcome',
           benchmark: 'Y',
           decile3: '0.13 -  0.13',
@@ -347,7 +360,8 @@ describe('formatBenchmarkRecord', function() {
           decile8: '--',
           decile9: '--',
           decile10: '0',
-          isToppedOut: 'Y'
+          isToppedOut: 'Y',
+          isToppedOutByProgram: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
