@@ -16,7 +16,8 @@ const SUBMISSION_METHOD_MAP = {
   'ecqm': 'electronicHealthRecord',
   'medicarepartbclaims': 'claims',
   'mipscqm': 'registry',
-  'qcdrmeasure': 'registry'
+  'qcdrmeasure': 'registry',
+  'cmswebinterface': 'cmsWebInterface'
 };
 
 /**
