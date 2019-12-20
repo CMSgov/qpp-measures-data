@@ -18,9 +18,15 @@ const COST_CSV_COLUMN_NAMES = {
   'lastPerformanceYear': 'lastPerformanceYear',
   'isInverse': 'isInverse',
   'overallAlgorithm': 'overallAlgorithm',
-  'submissionMethods': 'submissionMethods',
-  'measureSpecification': 'measureSpecification'
+  'submissionMethods': 'submissionMethods'
 };
+
+// Source CSV column names below are identical to their measures data names so no mapping
+const MEASURE_SPECIFICATIONS = [
+  `measureInformation`,
+  `codeList`,
+  `changeLog`
+];
 
 // Accounts for TRUE, True, true, X, x...
 // and people sometimes insert extra spaces
@@ -56,6 +62,8 @@ function mapInput(rawInput) {
  */
 function convertCostCsvsToMeasures(costCSVRows) {
   return costCSVRows.map((row) => {
+    const measureSpecification = {};
+
     const measure = {};
     measure['category'] = 'cost';
     if (row['description']) {
@@ -69,6 +77,13 @@ function convertCostCsvsToMeasures(costCSVRows) {
         measure[measureKeyName] = mapInput(row[columnName]);
       }
     });
+
+    _.each(MEASURE_SPECIFICATIONS, (measureSpec) => {
+      if (row[measureSpec]) {
+        measureSpecification[measureSpec] = row[measureSpec];
+      }
+    });
+    measure['measureSpecification'] = measureSpecification;
     return measure;
   });
 }
