@@ -2,7 +2,7 @@
   {
     "category": "cost",
     "title": "Elective Outpatient Percutaneous Coronary Intervention (PCI)",
-    "description": "The Elective Outpatient PCI cost measure is meant to apply to clinicians who perform Elective Outpatient PCIs for Medicare beneficiaries during the performance period. This surgical procedure is meant to place a coronary artery stent for heart disease in a non-emergent, outpatient setting. The measure evaluates a clinician's risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or \"episode window.\" The cost measure is calculated by determining the risk-adjusted episode cost, averaged across all of a clinician's episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo elective outpatient PCI surgery to place a coronary stent for heart disease during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from the PCI surgery that triggers the episode through 30 days after the trigger.",
     "measureId": "COST_EOPCI_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -12,12 +12,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-op-pci.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-op-pci.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-op-pci.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-op-pci.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Revascularization for Lower Extremity Chronic Critical Limb Ischemia",
-    "description": "The Revascularization for Lower Extremity Chronic Critical Limb Ischemia cost measure is meant to apply to clinicians who perform elective revascularization for lower extremity chronic critical limb ischemia for Medicare beneficiaries during the performance period. This surgical procedure is meant to alleviate symptoms of pain and difficulty walking associated with chronic limb ischemia and excludes those patients who require emergent revascularization for acute limb ischemia. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo elective revascularization surgery for lower extremity chronic critical limb ischemia during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from 30 days prior to the revascularization procedure that triggers the episode through 90 days after the trigger.",
     "measureId": "COST_CCLI_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -27,12 +31,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-rleccli.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-rleccli.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-rleccli.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-rleccli.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Simple Pneumonia with Hospitalization",
-    "description": "The Simple Pneumonia with Hospitalization cost measure is meant to apply to clinicians who manage the inpatient care of Medicare beneficiaries hospitalized with simple pneumonia during the performance period. This acute inpatient medical condition episode group is meant to capture patients who are hospitalized for pneumonia without severe complicating factors. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries hospitalized with simple pneumonia during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 30 days after the trigger.",
     "measureId": "COST_SPH_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -42,12 +50,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-pna-hosp.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-pna-hosp.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-pna-hosp.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-pna-hosp.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Screening/Surveillance Colonoscopy",
-    "description": "The Screening/Surveillance Colonoscopy cost measure is meant to apply to clinicians who perform screening/surveillance colonoscopy procedures for Medicare beneficiaries during the performance period. Screening and surveillance colonoscopies are preventative care procedures that are meant to detect the presence of colorectal cancer (CRC) among patients who are at average risk or high risk of CRC, respectively. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who receive a screening/surveillance colonoscopy. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the screening/surveillance colonoscopy procedure that triggers the episode through 14 days after the trigger.",
     "measureId": "COST_SSC_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -57,12 +69,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-ss-clnscpy.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-ss-clnscpy.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-ss-clnscpy.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-ss-clnscpy.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Knee Arthroplasty",
-    "description": "The Knee Arthroplasty cost measure is meant to apply to clinicians who perform elective total and partial knee arthroplasties during the performance period for Medicare beneficiaries. This surgical procedure is meant to replace a patient’s own poorly functional knee with an artificial one, thereby reducing pain and increasing mobility. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo an elective knee arthroplasty during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from 30 days prior to the knee arthroplasty that triggers the episode through 90 days after the trigger.",
     "measureId": "COST_KA_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -72,12 +88,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-knee-arthro.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-knee-arthro.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-knee-arthro.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-knee-arthro.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Routine Cataract Removal with Intraocular Lens (IOL) Implantation",
-    "description": "The Routine Cataract Removal with IOL Implantation cost measure is meant to apply to clinicians who perform Routine Cataract Removal with IOL Implantation procedures for Medicare beneficiaries during the performance period. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo a procedure for routine cataract removal with IOL implantation during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from 60 days prior to the cataract removal procedure that triggers the episode through 90 days after the trigger.",
     "measureId": "COST_IOL_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -87,12 +107,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-cataract.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-cataract.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-cataract.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-cataract.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Intracranial Hemorrhage or Cerebral Infarction",
-    "description": "The Intracranial Hemorrhage or Cerebral Infarction cost measure is meant to apply to clinicians who manage the inpatient care of Medicare beneficiaries hospitalized for an intracranial hemorrhage or cerebral infarction during the performance period. This cost measure excludes those patients whose initial hospitalization was due to a subarachnoid hemorrhage or a cerebral infarction which received thrombolytic therapy. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries hospitalized for cerebral infarction or intracranial hemorrhage during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 90 days after the trigger.",
     "measureId": "COST_IHCI_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -102,12 +126,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-ich-cva.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-ich-cva.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-ich-cva.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-ich-cva.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "ST-Elevation Myocardial Infarction (STEMI) with Percutaneous Coronary Intervention (PCI)",
-    "description": "The STEMI with PCI cost measure is meant to apply to clinicians who manage the inpatient care of Medicare beneficiaries hospitalized during the performance period for a STEMI requiring PCI. This acute medical condition captures the care of those patients who present with STEMI indicating complete blockage of a coronary artery who emergently receive PCI as treatment. The measure evaluates a clinician’s risk-adjusted cost for the episode group by averaging it across all episodes attributed to the clinician. The cost of each episode is the sum of the cost to Medicare for services performed by the attributed clinician and other health care providers over the length of the episode, or “episode window.” The cost measure is calculated by determining the risk-adjusted episode cost,  averaged across all of a clinician’s episodes during the performance period.",
+    "description": "A clinician’s risk-adjusted cost to Medicare for beneficiaries who present with STEMI, indicating complete blockage of a coronary artery, who emergently receive PCI as treatment during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 30 days after the trigger.",
     "measureId": "COST_STEMI_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -117,12 +145,16 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-stemi-pci.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-ebcm-stemi-pci.pdf",
+      "codeList": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-codes-list-stemi-pci.xlsx",
+      "changeLog": "https://qpp.cms.gov/docs/cost_specifications/2019-11-11-changelog-stemi-pci.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Medicare Spending Per Beneficiary (MSPB)",
-    "description": "The Medicare Spending Per Beneficiary (MSPB) measure evaluates solo practitioners and groups on their spending efficiency and is risk-adjusted to account for patients' risk profiles. Solo practitioners and groups are identified by their National Provider Identification (NPI) and Taxpayer Identification Number (TIN) combination. Specifically, the MSPB measure assesses the average spend for Medicare services performed by providers/groups per episode of care. Each episode comprises the period immediately prior to, during, and following a patient's hospital stay.",
+    "description": "The risk-adjusted cost to Medicare for all Parts A and B services performed for an inpatient beneficiary as a result of a clinician’s care during the period 3 days prior to the patient’s hospital stay through 30 days after discharge.",
     "measureId": "MSPB_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2017,
@@ -132,12 +164,14 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-mspb.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2019-04-16-mif-mspb.pdf"
+    }
   },
   {
     "category": "cost",
     "title": "Total Per Capita Costs (TPCC)",
-    "description": "The Total Per Capita Costs (TPCC) measure is a payment-standardized, annualized, risk-adjusted, and specialty-adjusted measure that evaluates the overall efficiency of care provided to beneficiaries attributed to solo practitioners and groups, as identified by their Medicare Taxpayer Identification Number (TIN).",
+    "description": "The overall, payment-standardized, annualized, risk-adjusted, and specialty-adjusted cost of care provided to beneficiaries attributed to their primary care clinicians.",
     "measureId": "TPCC_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2017,
@@ -147,6 +181,8 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-tpcc.pdf"
+    "measureSpecification": {
+      "measureInformation": "https://qpp.cms.gov/docs/cost_specifications/2018-12-21-mif-tpcc.pdf"
+    }
   }
 ]
