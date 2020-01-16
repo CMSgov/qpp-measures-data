@@ -14,8 +14,7 @@ ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
 cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
 cahps_measures='../../../staging/'$currentPerformanceYear'/measures-data-cahps.json'
 
-qpp_single_source_json='../../../claims-related/data/qpp-single-source-'$currentPerformanceYear'.json'
-
+ecqm_ehr_links='../../../util/measures/'$currentPerformanceYear'/ecqm-ehr-links.csv'
 enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
 cost_measures='../../../staging/'$currentPerformanceYear'/measures-data-cost.json'
 cost_csv='../../../util/measures/'$currentPerformanceYear'/cost-measures.csv'
@@ -44,8 +43,8 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 #	$cahps_csv $cahps_measures
 
 # 4. Enrich `measures-data.json` file, run:
-# node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
-#	$quality_measures $qpp_single_source_json $enriched_quality_measures
+node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
+	$quality_measures $ecqm_ehr_links $enriched_quality_measures
   
 # 5. Add COST measures to the staging measures-data-cost.json file:
 # node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
@@ -53,7 +52,7 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # 6. Merge the array/jsonfile-per-measureType into a combined array of all measures
  node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	 $ia_measures $pi_measures $quality_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
+	 $ia_measures $pi_measures $enriched_quality_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
 # As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $cost_measures
 
 # 7. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
