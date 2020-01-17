@@ -22,11 +22,7 @@ const COST_CSV_COLUMN_NAMES = {
 };
 
 // Source CSV column names below are identical to their measures data names so no mapping
-const MEASURE_SPECIFICATIONS = [
-  `measureInformation`,
-  `codeList`,
-  `changeLog`
-];
+const MEASURE_SPECIFICATIONS = [ 'default' ];
 
 // Accounts for TRUE, True, true, X, x...
 // and people sometimes insert extra spaces
