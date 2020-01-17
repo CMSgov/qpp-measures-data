@@ -18,8 +18,8 @@ const webInterfaceLinksData = fs.readFileSync(path.join(__dirname, webInterfaceL
 const claimsLinksData = fs.readFileSync(path.join(__dirname, claimsLinksPath), 'utf8');
 
 const measures = JSON.parse(measuresData);
-
 const parseConfig = { columns: true, skip_empty_lines: true };
+
 const ecqmEhrLinks = parse(ecqmEhrLinksData, parseConfig);
 const webIntefaceLinks = parse(webInterfaceLinksData, parseConfig);
 const claimsLinks = parse(claimsLinksData, parseConfig);
