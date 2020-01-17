@@ -109,14 +109,14 @@ definitions:
         additionalProperties: false
         properties:
           category: { const cost }
-        isInverse:
+          isInverse:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
             default: false
-        overallAlgorithm:
+          overallAlgorithm:
             description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-            type: string
-        submissionMethods:
+            type: ['null', string]
+          submissionMethods:
             description: Possible methods for submitting performance data for the measure.
             type: array
 
@@ -291,6 +291,8 @@ definitions:
       claims:
         type: string
       cmsWebInterface:
+        type: string
+      measureInformation:
         type: string
 
   measureSets:
