@@ -61,13 +61,13 @@ node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
 	$cost_csv $cost_measures
 
 # 7. Merge the array/jsonfile-per-measureType into a combined array of all measures
- node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
+node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 	 $ia_measures $enriched_pi_measures $enriched_quality_measures $cost_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
 # As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $cost_measures
 
 # 8. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
-# node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
-#	$final_measures $qcdr_csv $qcdr_strata
+node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
+	$final_measures $qcdr_csv $qcdr_strata
 
 # 9. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
