@@ -55,7 +55,6 @@ const formatIsToppedOut = function(isToppedOut) {
   return false;
 };
 
-
 const formatIsHighPriority = function(highPriority) {
   if (highPriority.trim().toLowerCase() === 'y') {
     return true;
