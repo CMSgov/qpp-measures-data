@@ -17,7 +17,9 @@ const SUBMISSION_METHOD_MAP = {
   'medicarepartbclaims': 'claims',
   'mipscqm': 'registry',
   'qcdrmeasure': 'registry',
-  'cmswebinterface': 'cmsWebInterface'
+  'cmswebinterface': 'cmsWebInterface',
+  'administrativeclaims': 'administrativeClaims',
+  'certifiedsurveyvendor': 'certifiedSurveyVendor'
 };
 
 /**
@@ -48,6 +50,13 @@ const formatSubmissionMethod = function(submissionMethod) {
 
 const formatIsToppedOut = function(isToppedOut) {
   if (isToppedOut.trim().toLowerCase() === 'yes') {
+    return true;
+  }
+  return false;
+};
+
+const formatIsHighPriority = function(highPriority) {
+  if (highPriority.trim().toLowerCase() === 'y') {
     return true;
   }
   return false;
@@ -195,6 +204,7 @@ const formatMeasureId = (measureId, performanceYear) => {
  *  decile9: string?,
  *  decile10: string?,
  *  isToppedOut: string,
+ *  isHighPriority: string,
  *  isToppedOutByProgram: string
  *  }} record - csv record object
  * @param {{
@@ -224,6 +234,7 @@ const formatBenchmarkRecord = function(record, options) {
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
     isToppedOut: formatIsToppedOut(record.isToppedOut),
+    isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles: [
       record.decile1,
