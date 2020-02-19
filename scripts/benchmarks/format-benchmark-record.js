@@ -235,7 +235,7 @@ const formatBenchmarkRecord = function(record, options) {
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
     isToppedOut: formatIsToppedOut(record.isToppedOut),
-    isHighPriority: formatIsHighPriority(record.isHighPriority),
+    isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles: [
       record.decile1,

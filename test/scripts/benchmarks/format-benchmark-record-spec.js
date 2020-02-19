@@ -54,7 +54,8 @@ describe('formatBenchmarkRecord', function() {
         decile9: ' -- ',
         decile10: '100',
         isToppedOut: 'Yes',
-        isToppedOutByProgram: 'No'
+        isToppedOutByProgram: 'No',
+        isHighPriority: 'No'
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -77,7 +78,8 @@ describe('formatBenchmarkRecord', function() {
         decile9: ' -- ',
         decile10: '100',
         isToppedOut: 'Yes',
-        isToppedOutByProgram: 'No'
+        isToppedOutByProgram: 'No',
+        isHighPriority: 'No'
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -102,7 +104,8 @@ describe('formatBenchmarkRecord', function() {
         decile9: ' -- ',
         decile10: ' -- ',
         isToppedOut: ' -- ',
-        isToppedOutByProgram: '--'
+        isToppedOutByProgram: '--',
+        isHighPriority: ' -- '
       };
       const benchmark = formatBenchmarkRecord(record, options);
 
@@ -127,7 +130,8 @@ describe('formatBenchmarkRecord', function() {
         decile9: '3.33 -  0.01',
         decile10: '0',
         isToppedOut: 'No',
-        isToppedOutByProgram: 'No'
+        isToppedOutByProgram: 'No',
+        isHighPriority: 'No'
       };
       const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
       const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
@@ -151,7 +155,8 @@ describe('formatBenchmarkRecord', function() {
         decile9: '3.33 -  0.01',
         decile10: '0',
         isToppedOut: 'No',
-        isToppedOutByProgram: 'No'
+        isToppedOutByProgram: 'No',
+        isHighPriority: 'No'
       };
       const benchmark1 = formatBenchmarkRecord(record, {benchmarkYear: 2002, performanceYear: 2017});
       const benchmark2 = formatBenchmarkRecord(record, {benchmarkYear: 2004, performanceYear: 2018});
@@ -177,7 +182,8 @@ describe('formatBenchmarkRecord', function() {
           decile9: '99.13 - 99.75',
           decile10: '>= 99.76',
           isToppedOut: 'Yes',
-          isToppedOutByProgram: 'No'
+          isToppedOutByProgram: 'No',
+          isHighPriority: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -208,7 +214,8 @@ describe('formatBenchmarkRecord', function() {
           decile9: '--',
           decile10: '100',
           isToppedOut: 'Yes',
-          isToppedOutByProgram: 'No'
+          isToppedOutByProgram: 'No',
+          isHighPriority: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -242,7 +249,8 @@ describe('formatBenchmarkRecord', function() {
               decile9: '3.33 -  0.01',
               decile10: '0',
               isToppedOut: 'No',
-              isToppedOutByProgram: 'Yes - words'
+              isToppedOutByProgram: 'Yes - words',
+              isHighPriority: 'No'
             };
             const benchmark = formatBenchmarkRecord(record, options);
 
@@ -272,7 +280,8 @@ describe('formatBenchmarkRecord', function() {
               decile9: '7.41 -  4.01',
               decile10: '<=  4.00',
               isToppedOut: 'No',
-              isToppedOutByProgram: 'No'
+              isToppedOutByProgram: 'No',
+              isHighPriority: 'No'
             };
             const benchmark = formatBenchmarkRecord(record, options);
 
@@ -302,7 +311,8 @@ describe('formatBenchmarkRecord', function() {
           decile9: '--',
           decile10: '0',
           isToppedOut: 'Yes',
-          isToppedOutByProgram: 'No'
+          isToppedOutByProgram: 'No',
+          isHighPriority: 'No'
         };
 
         it('should return the correct benchmark object', function() {
@@ -332,7 +342,8 @@ describe('formatBenchmarkRecord', function() {
           decile9: '--',
           decile10: '100',
           isToppedOut: 'Y',
-          isToppedOutByProgram: 'No'
+          isToppedOutByProgram: 'No',
+          isHighPriority: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 
@@ -361,7 +372,8 @@ describe('formatBenchmarkRecord', function() {
           decile9: '--',
           decile10: '0',
           isToppedOut: 'Y',
-          isToppedOutByProgram: 'No'
+          isToppedOutByProgram: 'No',
+          isHighPriority: 'No'
         };
         const benchmark = formatBenchmarkRecord(record, options);
 

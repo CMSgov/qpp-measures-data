@@ -11,8 +11,6 @@ const BENCHMARK_CSV_COLUMNS = [
   'qualityId',
   'submissionMethod',
   'measureType',
-  //New 2020 data update
-  'isHighPriority',
   'benchmark',
   'standardDeviation',
   'average',
@@ -43,6 +41,11 @@ const benchmarks = [];
 const benchmarkYear = process.argv[2];
 const performanceYear = process.argv[3];
 
+// New 2020 data update
+if (performanceYear >= 2020) {
+  BENCHMARK_CSV_COLUMNS.push('isHighPriority');
+}
+
 if (benchmarkYear && performanceYear) {
   process.stdin.setEncoding('utf8');
 
@@ -54,7 +57,7 @@ if (benchmarkYear && performanceYear) {
   });
 
   process.stdin.on('end', function() {
-    //Quote option update to handle 2020 data
+    // Quote option update to handle 2020 data
     parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 3, quote: '"'}, function(err, records) {
       if (err) {
         console.log(err);
