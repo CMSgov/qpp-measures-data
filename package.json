@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "nyc mocha --recursive --timeout 5000",
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:benchmarks2020": "node scripts/benchmarks/helpers/convert-2020-to-csv.js",
@@ -31,6 +31,7 @@
     "eslint-plugin-react": "7.1.0",
     "lodash": "^4.17.15",
     "mocha": "5.2.0",
+    "nyc": "^15.0.0",
     "pdf-to-text": "0.0.6",
     "request": "2.87.0",
     "request-promise": "4.2.2",
