@@ -28,9 +28,8 @@ exports.getBenchmarksData = function() {
 /**
  * @return {{}} - Object representation of the Benchmarks Schema
  */
-exports.getBenchmarksSchema = function() {
-  const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
-  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear, 'benchmarks-schema.yaml'));
+exports.getBenchmarksSchema = function(performanceYear = Constants.currentPerformanceYear) {
+  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'));
 };
 
 /**
