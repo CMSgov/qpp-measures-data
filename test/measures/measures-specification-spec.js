@@ -2,15 +2,19 @@ const chai = require('chai');
 const assert = chai.assert;
 const rp = require('request-promise');
 const Promise = require('bluebird');
+const Constants = require('../../constants.js');
 
 const measuresData = require('../../index.js');
-
+var fs = require('fs');
 function checkUrl(s) {
+
   return rp({method: 'HEAD', uri: s.url})
     .then(body => {
       return ({
         measureId: s.measureId,
         submissionMethod: s.url,
+        performanceYear: s.performanceYear,
+        firstPerformanceYear: s.firstPerformanceYear,
         success: true,
         httpStatus: body.statusCode
       });
@@ -18,7 +22,13 @@ function checkUrl(s) {
     .catch(body => {
       return ({
         measureId: s.measureId,
-        submissionMethod: s.url,
+        eMeasureId: s.eMeasureId,
+        title: s.title,
+        nqfId: s.nqfId,
+        submissionMethod: s.submissionMethod,
+        url: s.url,
+        performanceYear: s.performanceYear,
+        firstPerformanceYear: s.firstPerformanceYear,
         success: false,
         httpStatus: body.statusCode
       });
@@ -26,29 +36,60 @@ function checkUrl(s) {
 };
 
 // this will run once a day on travis
-if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
-  it('has valid specification links', function() {
-    this.timeout(12000);
-    this.retries(3); // retry for transient network failures
+//if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
+const measures = []
+let performanceYears = Constants.validPerformanceYears;
+performanceYears.forEach( yr =>
+  measuresData.getMeasuresDataByPerfYear( yr ).forEach( measure => measures.push({ 'measure': measure, 'performanceYear':yr }))
+)
+it('has valid specification links', function() {
 
-    const specs = [];
-    const measures = measuresData.getMeasuresData();
-    measures
-      .map(m => ({measureId: m.measureId, measureSpecification: m.measureSpecification}))
-      .filter(s => !!s.measureSpecification)
-      .forEach(s => {
-        Object.values(s.measureSpecification).forEach(url => {
-          specs.push({measureId: s.measureId, url: url});
+  this.timeout(0);
+  this.retries(3); // retry for transient network failures
+
+  const specs = [];
+
+  measures
+    .map(m => ({measureId: m.measure.measureId, measureSpecification: m.measure.measureSpecification,
+      firstPerformanceYear: m.measure.firstPerformanceYear, performanceYear: m.performanceYear,
+      eMeasureId: m.measure.eMeasureId, title: m.measure.title, nqfId: m.measure.nqfId
+    }))
+    .filter(s => !!s.measureSpecification)
+    .forEach(s => {
+      if(typeof s.measureSpecification === 'object'){
+        /*Object.values(s.measureSpecification).forEach(url => {
+          specs.push({measureId: s.measureId, url: url, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
+            eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
+        });*/
+
+        Object.keys(s.measureSpecification).forEach(key => {
+          specs.push({measureId: s.measureId, submissionMethod: key,
+            url: s.measureSpecification[key],
+            firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
+            eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
         });
-      });
 
-    return Promise.map(specs, s => checkUrl(s), { concurrency: 20 })
-      .then(results => {
-        const failures = results.filter(r => !r.success);
-        if (failures.length > 0) {
-          console.log(failures);
-        }
-        assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
-      });
-  });
-}
+      }
+      else{
+        specs.push({measureId: s.measureId, url: s.measureSpecification, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
+          eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
+      }
+
+    })
+
+
+
+
+  return Promise.map(specs, s => checkUrl(s), { concurrency: 20 })
+    .then(results => {
+      const failures = results.filter(r => !r.success);
+      if (failures.length > 0) {
+        console.log(failures);
+        fs.writeFileSync( 'test/measures/measure-link-failures.txt',  JSON.stringify(failures, null, 2));
+      }
+      assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
+    })
+  //)
+});
+
+//}

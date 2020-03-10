@@ -47,6 +47,15 @@ exports.getMeasuresSchema = function(performanceYear = 2017) {
   return YAML.load(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'));
 };
 
+
+/**
+ * @return {Array<Measure>}
+ */
+exports.getMeasuresDataByPerfYear = function(performanceYear) {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json')));
+};
+
 /**
  * @return {Array<ClinicalCluster>}
  */
