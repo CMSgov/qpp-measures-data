@@ -51,9 +51,7 @@ if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
 
     measures
       .map(m => ({
-        measureId: m.measure.measureId, measureSpecification: m.measure.measureSpecification,
-        firstPerformanceYear: m.measure.firstPerformanceYear, performanceYear: m.performanceYear,
-        eMeasureId: m.measure.eMeasureId, title: m.measure.title, nqfId: m.measure.nqfId
+        measureId: m.measure.measureId, measureSpecification: m.measure.measureSpecification, firstPerformanceYear: m.measure.firstPerformanceYear, performanceYear: m.performanceYear, eMeasureId: m.measure.eMeasureId, title: m.measure.title, nqfId: m.measure.nqfId
       }))
       .filter(s => !!s.measureSpecification)
       .forEach(s => {
@@ -69,13 +67,11 @@ if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
               firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
               eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
           });
-
         }
         else {
           specs.push({measureId: s.measureId, url: s.measureSpecification, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
             eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
         }
-
       });
 
     return Promise.map(specs, s => checkUrl(s), { concurrency: 20 })
@@ -83,10 +79,9 @@ if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
         const failures = results.filter(r => !r.success);
         if (failures.length > 0) {
           console.log(failures);
-          fs.writeFileSync('test/measures/measure-link-failures.txt', JSON.stringify(failures, null, 2));
+          // fs.writeFileSync('test/measures/measure-link-failures.txt', JSON.stringify(failures, null, 2));
         }
         assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
       });
   });
-
 }
