@@ -5,7 +5,7 @@ const Promise = require('bluebird');
 const Constants = require('../../constants.js');
 
 const measuresData = require('../../index.js');
-let fs = require('fs');
+const fs = require('fs');
 
 function checkUrl(s) {
   return rp({method: 'HEAD', uri: s.url})
@@ -36,7 +36,7 @@ function checkUrl(s) {
 };
 
 // this will run once a day on travis
-// if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
+ if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
 const measures = [];
 const performanceYears = Constants.validPerformanceYears;
 performanceYears.forEach(yr =>
@@ -57,11 +57,11 @@ it('has valid specification links', function() {
     }))
     .filter(s => !!s.measureSpecification)
     .forEach(s => {
-      if (typeof s.measureSpecification === 'object'){
-        /*Object.values(s.measureSpecification).forEach(url => {
+      if (typeof s.measureSpecification === 'object') {
+        /* Object.values(s.measureSpecification).forEach(url => {
           specs.push({measureId: s.measureId, url: url, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
             eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
-        });*/
+        }); */
 
         Object.keys(s.measureSpecification).forEach(key => {
           specs.push({measureId: s.measureId, submissionMethod: key,
@@ -76,7 +76,7 @@ it('has valid specification links', function() {
           eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
       }
 
-    })
+    });
 
 
 
@@ -86,11 +86,10 @@ it('has valid specification links', function() {
       const failures = results.filter(r => !r.success);
       if (failures.length > 0) {
         console.log(failures);
-        fs.writeFileSync( 'test/measures/measure-link-failures.txt',  JSON.stringify(failures, null, 2));
+        fs.writeFileSync('test/measures/measure-link-failures.txt', JSON.stringify(failures, null, 2));
       }
       assert.equal(0, failures.length, 'One or more measure specifications link is invalid');
-    })
-  //)
+    });
 });
 
-//}
+}
