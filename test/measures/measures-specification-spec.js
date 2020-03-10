@@ -5,9 +5,9 @@ const Promise = require('bluebird');
 const Constants = require('../../constants.js');
 
 const measuresData = require('../../index.js');
-var fs = require('fs');
-function checkUrl(s) {
+let fs = require('fs');
 
+function checkUrl(s) {
   return rp({method: 'HEAD', uri: s.url})
     .then(body => {
       return ({
@@ -36,27 +36,28 @@ function checkUrl(s) {
 };
 
 // this will run once a day on travis
-//if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
-const measures = []
-let performanceYears = Constants.validPerformanceYears;
-performanceYears.forEach( yr =>
-  measuresData.getMeasuresDataByPerfYear( yr ).forEach( measure => measures.push({ 'measure': measure, 'performanceYear':yr }))
-)
-it('has valid specification links', function() {
+// if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
+const measures = [];
+const performanceYears = Constants.validPerformanceYears;
+performanceYears.forEach(yr =>
+  measuresData.getMeasuresDataByPerfYear(yr).forEach(measure => measures.push({'measure': measure, 'performanceYear': yr}))
+);
 
+it('has valid specification links', function() {
   this.timeout(0);
   this.retries(3); // retry for transient network failures
 
   const specs = [];
 
   measures
-    .map(m => ({measureId: m.measure.measureId, measureSpecification: m.measure.measureSpecification,
+    .map(m => ({
+      measureId: m.measure.measureId, measureSpecification: m.measure.measureSpecification,
       firstPerformanceYear: m.measure.firstPerformanceYear, performanceYear: m.performanceYear,
       eMeasureId: m.measure.eMeasureId, title: m.measure.title, nqfId: m.measure.nqfId
     }))
     .filter(s => !!s.measureSpecification)
     .forEach(s => {
-      if(typeof s.measureSpecification === 'object'){
+      if (typeof s.measureSpecification === 'object'){
         /*Object.values(s.measureSpecification).forEach(url => {
           specs.push({measureId: s.measureId, url: url, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
             eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
