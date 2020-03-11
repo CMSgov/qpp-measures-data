@@ -5,7 +5,7 @@ const Promise = require('bluebird');
 const Constants = require('../../constants.js');
 
 const measuresData = require('../../index.js');
-const fs = require('fs');
+// const fs = require('fs');
 
 function checkUrl(s) {
   return rp({method: 'HEAD', uri: s.url})
@@ -67,8 +67,7 @@ if (process.env.TRAVIS_EVENT_TYPE === 'cron') {
               firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
               eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
           });
-        }
-        else {
+        } else {
           specs.push({measureId: s.measureId, url: s.measureSpecification, firstPerformanceYear: s.firstPerformanceYear, performanceYear: s.performanceYear,
             eMeasureId: s.eMeasureId, title: s.title, nqfId: s.nqfId});
         }
