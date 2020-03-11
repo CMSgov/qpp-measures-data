@@ -16,15 +16,14 @@ Make changes on a feature branch, then open a pull request. Make sure CI passes 
 
 ### Performance year
 
-$YEAR refers to the performance year; this command-line argument is required.  $YEAR is currently only supported as
-a command-line argument for measures and benchmarks generation, not supported for clinical clusters.
+$YEAR refers to the performance year; this command-line argument is required.  $YEAR is currently only supported as a command-line argument for measures and benchmarks generation, not supported for clinical clusters.
 
 ### Generating data
 To regenerate and validate data, do the following:
 
 ```
 npm run build:measures $YEAR         # generates measures/$YEAR/measures-data.json
-npm run build:benchmarks        # generates benchmarks/2018.json
+npm run build:benchmarks $YEAR       # generates benchmarks/$YEAR.json
 npm run build:clinical-clusters # generates clinical-clusters/clinical-clusters.json
 ```
 
