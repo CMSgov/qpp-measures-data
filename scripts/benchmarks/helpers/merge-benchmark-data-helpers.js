@@ -49,7 +49,7 @@ const mergeBenchmarkLayers = (benchmarkLayers, benchmarkJsonDir) => {
     benchmarkFile.forEach((benchmark) => {
       const benchmarkKey = getBenchmarkKey(benchmark, isPerformanceBenchmark);
       if (isPerformanceBenchmark) {
-        benchmark.benchmarkYear = benchmark.performanceYear;
+        benchmark.benchmarkYear = benchmark.performanceYear - 2;
       }
       if (mergedBenchmarks.has(benchmarkKey) && !_.isEqual(mergedBenchmarks.get(benchmarkKey), benchmark)) {
         mergeConflicts.push({
