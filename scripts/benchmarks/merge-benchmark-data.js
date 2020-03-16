@@ -1,4 +1,4 @@
-const { getOrderedFileNames, mergeBenchmarkLayers } = require('./helpers/merge-benchmark-data-helpers.js');
+const { getOrderedFileNames, mergeBenchmarkFiles, validateUniqueConstraints } = require('./helpers/merge-benchmark-data-helpers.js');
 const path = require('path');
 
 const performanceYear = process.argv[2];
@@ -20,7 +20,9 @@ if (performanceYear) {
         return 0;
       }
     });
-  const formattedBenchmarks = mergeBenchmarkLayers(benchmarkLayerFiles, jsonDir);
+  const formattedBenchmarks = mergeBenchmarkFiles(benchmarkLayerFiles, jsonDir);
+
+  validateUniqueConstraints(formattedBenchmarks);
 
   process.stdout.write(JSON.stringify(formattedBenchmarks, null, 2));
 } else {
