@@ -47,7 +47,7 @@ describe('mergeBenchmarkData', function() {
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
-        mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR);
+        mergeBenchmarkData.mergeBenchmarkFiles(layers, JSON_FIXTURES_DIR);
       }, /Merge Conflicts: /);
     });
 
@@ -125,7 +125,28 @@ describe('mergeBenchmarkData', function() {
           60.37
         ]
       }];
-      assert.deepEqual(mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR), resultingBenchmarks);
+      assert.deepEqual(mergeBenchmarkData.mergeBenchmarkFiles(layers, JSON_FIXTURES_DIR), resultingBenchmarks);
+    });
+
+    it('properly merges in performance benchmarks', () => {
+      const performance = 'performance-benchmarks.json';
+      const layers = [baseLayer, performance];
+      const merged = mergeBenchmarkData.mergeBenchmarkFiles(layers, JSON_FIXTURES_DIR);
+
+      console.log('hello');
+
+      const claims001 = merged.find(m => m.measureId === '001' && m.submissionMethod === 'claims');
+      // Does not pull the deciles from the performance benchmark
+      assert.notDeepEqual(claims001.deciles, [100, 90, 80, 70, 60, 50, 40, 30, 20, 10]);
+      // Does not populate benchmark year for non-performance benchmarks
+      assert.notEqual(claims001.benchmarkYear, claims001.performanceYear);
+
+      const dummy = merged.find(m => m.measureId === 'dummy');
+      // Topped out and program topped out default to false
+      assert.isFalse(dummy.isToppedOut);
+      assert.isFalse(dummy.isToppedOutByProgram);
+      // Benchmark year is the same as the performance year for performance benchmarks
+      assert.equal(dummy.performanceYear, dummy.benchmarkYear);
     });
 
     it('throws an error when a measure is missing a field ', function() {
@@ -133,8 +154,44 @@ describe('mergeBenchmarkData', function() {
 
       const layers = [baseLayer, secondLayer];
       assert.throws(() => {
-        mergeBenchmarkData.mergeBenchmarkLayers(layers, JSON_FIXTURES_DIR);
+        mergeBenchmarkData.mergeBenchmarkFiles(layers, JSON_FIXTURES_DIR);
       }, /Key is missing: measureId/);
+    });
+  });
+
+  describe('validateUniqueConstraints()', () => {
+    it('does nothing if there are no duplicate benchmarks by keys measureId, performanceYear, benchmarkYear, and submissionMethod', () => {
+      const testData = [{
+        measureId: 'test',
+        performanceYear: 2019,
+        benchmarkYear: 2017,
+        submissionMethod: 'method'
+      }, {
+        measureId: 'test2',
+        performanceYear: 2019,
+        benchmarkYear: 2017,
+        submissionMethod: 'method'
+      }, {
+        measureId: 'test',
+        perforamnceYear: 2018,
+        benchmarkYear: 2017,
+        submissionMethod: 'method'
+      }, {
+        measureId: 'test',
+        performanceYear: 2019,
+        benchmarkYear: 2018,
+        submissionMethod: 'method'
+      }, {
+        measureId: 'test',
+        performanceYear: 2019,
+        benchmarkYear: 2017,
+        submissionMethod: 'anotherMethod'
+      }];
+      try {
+        mergeBenchmarkData.validateUniqueConstraints(testData);
+      } finally {
+        assert.isTrue(true);
+      }
     });
   });
 });

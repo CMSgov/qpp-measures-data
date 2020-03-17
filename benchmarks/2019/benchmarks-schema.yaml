@@ -16,7 +16,7 @@ definitions:
       isToppedOut:
         description: isToppedOut is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
         type: boolean
-        isToppedOutByProgram:
+      isToppedOutByProgram:
         description: isToppedOutByProgram is a boolean value that indicates whether or not a Topped Out Measure will receive special scoring. If “true” the measure cannot earn more than 7 points.
         type: boolean
       benchmarkYear:
