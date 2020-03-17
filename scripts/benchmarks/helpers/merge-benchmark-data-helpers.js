@@ -159,12 +159,13 @@ const mergeBenchmarkFiles = (benchmarkFileNames, benchmarkJsonDir) => {
  * @returns {void}
  */
 const validateUniqueConstraints = (benchmarks) => {
-  benchmarks = [];
+  benchmarks = benchmarks || [];
   let failedCount = 0;
   for (const benchmark of benchmarks) {
-    if (!benchmarks
-      .some(b => UNIQUE_COLUMN_CONSTRAINT
-        .every(key => benchmark[key] === b[key]))) {
+    if (benchmarks
+      .filter(b => UNIQUE_COLUMN_CONSTRAINT
+        .every(key => benchmark[key] === b[key]))
+      .length === 1) {
       continue;
     } else {
       console.log('Duplicate key constraint failed for benchmark:');
