@@ -60,6 +60,9 @@ Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very 
 Adult Major Depressive Disorder (MDD): Suicide Risk Assessment,107,eCQM,Process,Y,36,33.9,1.51 - 3.56,3.57 - 8.10,8.11 - 17.48,17.49 - 30.28,30.29 - 54.72,54.73 - 77.56,77.57 - 96.66,>= 96.67,No,No
 Osteoarthritis (OA): Function and Pain Assessment,109,Medicare Part B Claims,Process,Y,22.9,89.2,87.28 - 95.71,95.72 - 98.71,98.72 - 99.88,99.89 - 99.99,--,--,--,100,Yes,"Yes - see ""Scoring Examples"" tab of spreadsheet"
 Osteoarthritis (OA): Function and Pain Assessment,109,MIPS CQM,Process,Y,35,73.7,34.62 - 63.00,63.01 - 86.63,86.64 - 94.37,94.38 - 99.99,--,--,--,100,No,No
+Preventive Care and Screening: Influenza Immunization,110,eCQM,Process,Y,28.1,42,15.50 - 23.63,23.64 - 31.20,31.21 - 38.65,38.66 - 46.76,46.77 - 56.01,56.02 - 67.49,67.50 - 84.98,>= 84.99,No,No
+Preventive Care and Screening: Influenza Immunization,110,Medicare Part B Claims,Process,Y,32.3,64.2,29.52 - 41.41,41.42 - 56.31,56.32 - 71.18,71.19 - 82.88,82.89 - 94.14,94.15 - 99.41,99.42 - 99.99,100,No,No
+Preventive Care and Screening: Influenza Immunization,110,MIPS CQM,Process,Y,31.4,61.8,29.85 - 41.42,41.43 - 53.84,53.85 - 66.02,66.03 - 76.93,76.94 - 87.80,87.81 - 96.40,96.41 - 99.99,100,No,No
 Pneumococcal Vaccination Status for Older Adults,111,eCQM,Process,Y,30.1,50.8,19.01 - 31.06,31.07 - 42.70,42.71 - 53.43,53.44 - 62.85,62.86 - 71.81,71.82 - 80.42,80.43 - 90.40,>= 90.41,No,No
 Pneumococcal Vaccination Status for Older Adults,111,Medicare Part B Claims,Process,Y,24.8,71.6,49.76 - 61.10,61.11 - 70.10,70.11 - 77.31,77.32 - 82.95,82.96 - 89.43,89.44 - 95.66,95.67 - 99.99,100,No,No
 Pneumococcal Vaccination Status for Older Adults,111,MIPS CQM,Process,Y,28.4,58.4,30.23 - 44.52,44.53 - 55.55,55.56 - 63.63,63.64 - 70.42,70.43 - 76.37,76.38 - 83.76,83.77 - 95.44,>= 95.45,No,No
@@ -86,6 +89,9 @@ Documentation of Current Medications in the Medical Record,130,Medicare Part B C
 Documentation of Current Medications in the Medical Record,130,MIPS CQM,Process,Y,30.5,82.6,68.06 - 90.27,90.28 - 97.23,97.24 - 99.50,99.51 - 99.99,--,--,--,100,Yes,"Yes - see ""Scoring Examples"" tab of spreadsheet"
 Pain Assessment and Follow-Up,131,Medicare Part B Claims,Process,Y,25,87.9,80.57 - 96.91,96.92 - 99.63,99.64 - 99.99,--,--,--,--,100,Yes,"Yes - see ""Scoring Examples"" tab of spreadsheet"
 Pain Assessment and Follow-Up,131,MIPS CQM,Process,Y,38.2,65.1,15.80 - 39.99,40.00 - 62.78,62.79 - 84.05,84.06 - 95.25,95.26 - 99.54,99.55 - 99.99,--,100,No,No
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,eCQM,Process,Y,32.2,37.1,4.88 - 10.17,10.18 - 17.59,17.60 - 28.28,28.29 - 42.29,42.30 - 56.82,56.83 - 73.29,73.30 - 87.49,>= 87.50,No,No
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,Medicare Part B Claims,Process,Y,39.6,69.3,12.94 - 53.91,53.92 - 80.22,80.23 - 96.98,96.99 - 99.99,--,--,--,100,Yes,No
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,MIPS CQM,Process,Y,38.5,67.7,17.11 - 45.64,45.65 - 73.81,73.82 - 90.05,90.06 - 98.49,98.50 - 99.99,--,--,100,No,No
 Melanoma: Continuity of Care - Recall System,137,MIPS CQM,Structure,Y,23,88.6,83.83 - 94.33,94.34 - 98.79,98.80 - 99.99,--,--,--,--,100,No,No
 Melanoma: Coordination of Care,138,MIPS CQM,Process,Y,30.2,75.8,49.44 - 63.63,63.64 - 78.25,78.26 - 92.58,92.59 - 99.99,--,--,--,100,No,No
 Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care,141,Medicare Part B Claims,Outcome,Y,10.8,97.6,--,--,--,--,--,--,--,100,Yes,"Yes - see ""Scoring Examples"" tab of spreadsheet"
@@ -1039,6 +1045,7 @@ Screening For Osteoporosis ,WCHQ15,QCDR measure,Process,N,--,--,--,--,--,--,--,-
 Controlling High Blood Pressure: eGFR Test Annually,WCHQ32,QCDR measure,Process,N,--,--,--,--,--,--,--,--,--,--,--,No
 Diabetes Care All or None Process Measure: Optimal Testing,WCHQ9,QCDR measure,Process,N,--,--,--,--,--,--,--,--,--,--,--,No
 Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),1,cmsWebInterface,Intermediate Outcome,Y,--,--,100 - 70,70 - 60,60 - 50,50 - 40,40 - 30,30 - 20,20 - 10,<= 10,No,No
+Preventive Care and Screening: Influenza Immunization,110,cmsWebInterface,Process,Y,--,--,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No,No
 Breast Cancer Screening,112,cmsWebInterface,Process,Y,--,--,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No,No
 Colorectal Cancer Screening,113,cmsWebInterface,Process,Y,--,--,0 - 30,30 - 40,40 - 50,50 - 60,60 - 70,70 - 80,80 - 90,>= 90,No,No
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,cmsWebInterface,Process,N,--,--,--,--,--,--,--,--,--,--,--,--
