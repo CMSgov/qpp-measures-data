@@ -24,7 +24,7 @@ function enrichMeasures(measures) {
   addRequiredRegistrySubmissionMethod(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
-};
+}
 
 /**
  * Will add extra metadata to PI measure that are not directly available
@@ -63,7 +63,7 @@ function enrichCPCPlusMeasures(measures) {
         }
       });
     });
-};
+}
 
 /**
  * Add `isInverse` attribute to measures based on inverse-measures.json

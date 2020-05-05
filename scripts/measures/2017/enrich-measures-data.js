@@ -20,7 +20,7 @@ function enrichMeasures(measures) {
   enrichStratifications(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
-};
+}
 
 /**
  * Will add extra metadata to ACI measure that are not directly available
@@ -59,7 +59,7 @@ function enrichCPCPlusMeasures(measures) {
         }
       });
     });
-};
+}
 
 /**
  * Will add measureSpecification links and it's submission method types to measures.
@@ -77,7 +77,7 @@ function enrichAddMeasuresSpecification(measures) {
     return measure;
   });
   return measureData;
-};
+}
 
 /**
  * Add `isInverse` attribute to measures based on inverse-measures.json
