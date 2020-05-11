@@ -191,9 +191,6 @@ definitions:
           isIcdImpacted:
             type: boolean
             default: false
-          isToppedOutByProgram:
-            type: boolean
-            default: false
         # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
         # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
         oneOf: [
@@ -209,7 +206,7 @@ definitions:
             }
           }
         ]
-        required: [category, nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
+        required: [category, nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object

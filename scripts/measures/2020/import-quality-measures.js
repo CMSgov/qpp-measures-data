@@ -53,7 +53,6 @@ const MAIN_FIELDS = {
   isInverse: false,
   overallAlgorithm: undefined,
   isIcdImpacted: false,
-  isToppedOutByProgram: false,
   isClinicalGuidelineChanged: false
 };
 

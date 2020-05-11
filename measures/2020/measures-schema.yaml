@@ -78,9 +78,6 @@ definitions:
           reportingCategory:
             description: The reporting category of the PI measure.
             enum: [required, bonus, exclusion, null]
-          weight:
-            description: Determines the performance score points granted for attesting to the measure.
-            enum: [null, 0, 5, 10, 20, 40]
           objective:
             description: PI category which the measure incentivizes.
             oneOf: [{ $ref: #/definitions/objectives }]
@@ -97,7 +94,7 @@ definitions:
             oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
           exclusion:
             description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
-        required: [weight, objective, isRequired, isBonus, measureSets]
+        required: [objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
     $merge:
@@ -192,9 +189,6 @@ definitions:
           isIcdImpacted:
             type: boolean
             default: false
-          isToppedOutByProgram:
-            type: boolean
-            default: false
         # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
         # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
         oneOf: [
@@ -210,7 +204,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted, isToppedOutByProgram]
+        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object

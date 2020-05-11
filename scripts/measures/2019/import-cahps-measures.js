@@ -46,7 +46,6 @@ const cahpsMeasureTemplate = {
   strata: [],
   isHighPriority: true,
   isIcdImpacted: false,
-  isToppedOutByProgram: false,
   primarySteward: 'Agency for Healthcare Research & Quality',
   submissionMethods: [
     'certifiedSurveyVendor'
