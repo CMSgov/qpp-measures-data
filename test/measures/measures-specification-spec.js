@@ -32,7 +32,7 @@ function checkUrl(s) {
         httpStatus: body.statusCode
       });
     });
-};
+}
 
 // this will run once a day on travis
 if (process.env.TRAVIS_EVENT_TYPE === 'cron') {

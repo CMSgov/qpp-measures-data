@@ -68,7 +68,7 @@ function generateCahpsMeasure(record, idx) {
     measureId: measureId,
     nqfId: nqfIdMap[measureTitle] || null
   };
-};
+}
 
 function generateCahpsAcoMeasure(record, idx) {
   const measureTitle = record['ACO Measure Description in the Repository'].trim();
@@ -84,7 +84,7 @@ function generateCahpsAcoMeasure(record, idx) {
     nqfId: nqfIdMap[measureTitle] || null,
     firstPerformanceYear: 2018
   };
-};
+}
 
 function importCahpsMeasures(cahpsMeasuresCsv, cahpsMeasuresFilepath) {
   const cahpsMeasuresData = fs.readFileSync(path.join(__dirname, cahpsMeasuresCsv), {encoding: 'utf8'});
@@ -100,7 +100,7 @@ function importCahpsMeasures(cahpsMeasuresCsv, cahpsMeasuresFilepath) {
   });
 
   fs.writeFileSync(path.join(__dirname, cahpsMeasuresFilepath), JSON.stringify(cahpsMeasures, null, 2), {encoding: 'utf8', flag: 'w'});
-};
+}
 
 const cahpsMeasuresCsv = process.argv[2];
 const outputFilepath = process.argv[3];
