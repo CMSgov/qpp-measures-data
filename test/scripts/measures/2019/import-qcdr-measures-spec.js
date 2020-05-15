@@ -31,8 +31,7 @@ const validateDefaults = function(measure) {
     eMeasureId: null,
     nqfEMeasureId: null,
     isRegistryMeasure: true,
-    isIcdImpacted: false,
-    isToppedOutByProgram: false
+    isIcdImpacted: false
   });
   // Need chai > 4.1.2 to use deepInclude, so check lists like so
   assert.sameDeepMembers([], measure.measureSets);

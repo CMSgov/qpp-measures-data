@@ -21,8 +21,7 @@ const config = {
     nqfEMeasureId: null,
     measureSets: [],
     isRegistryMeasure: true,
-    isIcdImpacted: false,
-    isToppedOutByProgram: false
+    isIcdImpacted: false
   },
   mapped_fields: {
     // qcdrName: 0

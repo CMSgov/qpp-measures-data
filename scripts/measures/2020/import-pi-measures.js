@@ -18,7 +18,6 @@ const PI_CSV_COLUMN_NAMES = {
   'metricType': 'metricType',
   'firstPerformanceYear': 'firstPerformanceYear',
   'lastPerformanceYear': 'lastPerformanceYear',
-  'weight': 'weight',
   'objective': 'objective',
   'isBonus': 'isBonus',
   'reportingCategory': 'reportingCategory',
@@ -67,13 +66,11 @@ function convertPiCsvsToMeasures(piCSVRows) {
       row['description'] = row['description'].replace(/(\r\n\t|\n|\r\t)/gm, '');
     }
     _.each(PI_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
-      if (measureKeyName === 'weight') {
-        measure[measureKeyName] = row[columnName] === 'null' ? null : Number(mapInput(row[columnName]));
-      } else if (measureKeyName === 'measureSets') {
+      if (measureKeyName === 'measureSets') {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
       } else if (measureKeyName === 'substitutes') {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
-      } else if (measureKeyName === 'objective') { // Values need to be camelcased, but come in as seperate words
+      } else if (measureKeyName === 'objective') { // Values need to be camel-cased, but come in as separate words
         measure[measureKeyName] = _.camelCase(row[columnName]);
       } else {
         measure[measureKeyName] = mapInput(row[columnName]);
