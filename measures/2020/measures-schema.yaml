@@ -39,7 +39,9 @@ definitions:
         default: 'null'
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
-        items: { $ref: #/definitions/measureSpecification }
+        anyOf:
+          - { $ref: #/definitions/measureSpecification }
+          - { type: 'null' }
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
