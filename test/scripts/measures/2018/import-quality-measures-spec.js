@@ -58,7 +58,9 @@ describe(year + ' import quality measures', function() {
 
 after(function() {
   try {
-    fs.unlinkSync(outputPath);
+    if (fs.existsSync(outputPath)) {
+      fs.unlinkSync(outputPath);
+    }
   } catch (err) {
     console.log('Warning: ', outputPath, ' should have been deleted but was not.');
   }

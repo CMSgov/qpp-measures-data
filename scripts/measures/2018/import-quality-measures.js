@@ -227,7 +227,7 @@ function addMultiPerformanceRateStrata(measures, strataRows) {
   });
 
   return measures;
-};
+}
 
 /**
  * [convertCsvToMeasures description]
@@ -290,7 +290,7 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
   });
 
   return addMultiPerformanceRateStrata(measures, strataCsvRows);
-};
+}
 
 function importQualityMeasures() {
   const qualityCsv = getCsv(qualityMeasuresPath, 4);

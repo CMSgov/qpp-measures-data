@@ -38,7 +38,7 @@ function cleanUpString(input) {
   input = input.replace(/\n/g, ' ');
 
   return (input.replace(/\s\s+/g, ' ')).trim();
-};
+}
 
 function getRates(path, cb) {
   pdfToText.pdfToText(path, function(err, data) {

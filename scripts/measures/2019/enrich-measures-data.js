@@ -46,7 +46,7 @@ function enrichMeasures(measures) {
   addQualityStrataNames(measures);
   enrichClaimsRelatedMeasures(measures);
   return JSON.stringify(measures, null, 2);
-};
+}
 
 /**
  * Merges the updated 2018 generated measure data UUID's into the current quality measures.
@@ -121,7 +121,7 @@ function enrichCPCPlusMeasures(measures) {
         }
       });
     });
-};
+}
 
 /*
  * Uses numeratorUuid field as a common id to map each strata name (only in `enriched-measures-data-quality.json`)

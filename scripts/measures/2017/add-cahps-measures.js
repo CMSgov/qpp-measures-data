@@ -92,7 +92,7 @@ function generateCahpsMeasure(record, idx) {
       'generalPracticeFamilyMedicine'
     ]
   };
-};
+}
 
 process.stdin.on('end', function() {
   parse(cahpsMeasuresData, {columns: CAHPS_CSV_COLUMNS, from: 2}, function(err, records) {
