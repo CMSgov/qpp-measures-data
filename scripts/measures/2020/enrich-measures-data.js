@@ -14,7 +14,8 @@ const webInterfaceLinksPath = process.argv[4];
 const claimsLinksPath = process.argv[5];
 const cqmLinksPath = process.argv[6];
 const generatedEcqmDataPath = process.argv[7];
-const outputPath = process.argv[8];
+const manuallyCreatedEcqmDataPath = process.argv[8]
+const outputPath = process.argv[9];
 
 const measuresData = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
 const ecqmEhrLinksData = fs.readFileSync(path.join(__dirname, ecqmEhrLinksPath), 'utf8');
@@ -22,6 +23,7 @@ const webInterfaceLinksData = fs.readFileSync(path.join(__dirname, webInterfaceL
 const claimsLinksData = fs.readFileSync(path.join(__dirname, claimsLinksPath), 'utf8');
 const cqmLinksData = fs.readFileSync(path.join(__dirname, cqmLinksPath), 'utf8');
 const generatedEcqmData = fs.readFileSync(path.join(__dirname, generatedEcqmDataPath), 'utf8');
+const manuallyCreatedEcqmData = fs.readFileSync(path.join(__dirname, manuallyCreatedEcqmDataPath), 'utf8');
 
 const measures = JSON.parse(measuresData);
 const parseConfig = { columns: true, skip_empty_lines: true };
@@ -31,11 +33,13 @@ const webIntefaceLinks = parse(webInterfaceLinksData, parseConfig);
 const claimsLinks = parse(claimsLinksData, parseConfig);
 const cqmLinks = parse(cqmLinksData, parseConfig);
 const generatedEcqms = JSON.parse(generatedEcqmData);
+const manuallyCreatedEcqms = JSON.parse(manuallyCreatedEcqmData);
 
 mergeEcqmEhrLinks(measures, ecqmEhrLinks);
 mergeWebInterfaceLinks(measures, webIntefaceLinks);
 mergeClaimsLinks(measures, claimsLinks);
 mergeCqmLinks(measures, cqmLinks);
 mergeEcqmData(measures, generatedEcqms);
+mergeEcqmData(measures, manuallyCreatedEcqms);
 
 fs.writeFileSync(path.join(__dirname, outputPath), JSON.stringify(measures, null, 2));
