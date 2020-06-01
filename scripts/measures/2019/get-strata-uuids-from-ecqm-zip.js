@@ -37,7 +37,7 @@ const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
 const tmpDir = '/tmp/ecqm';
 const tmpPath = '/tmp/ecqm/xmls';
-const zipPath = process.argv[2];z
+const zipPath = process.argv[2];
 if (!zipPath) {
   console.log('Missing required argument <path to zip>');
   process.exit(1);

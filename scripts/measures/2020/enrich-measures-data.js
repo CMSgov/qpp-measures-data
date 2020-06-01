@@ -15,8 +15,8 @@ const webInterfaceLinksPath = process.argv[4];
 const claimsLinksPath = process.argv[5];
 const cqmLinksPath = process.argv[6];
 const generatedEcqmDataPath = process.argv[7];
-const manuallyCreatedEcqmDataPath = process.argv[8]
-const additionalStratificationsPath = process.argv[9]
+const manuallyCreatedEcqmDataPath = process.argv[8];
+const additionalStratificationsPath = process.argv[9];
 const outputPath = process.argv[10];
 
 const measuresData = fs.readFileSync(path.join(__dirname, measuresDataPath), 'utf8');
