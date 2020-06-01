@@ -54,8 +54,6 @@ function extractStrata(measure) {
 
   // pull out uuids for each stratum
   const components = measure.component.slice(1);
-  console.log('Strata size: ' + strata.length)
-  console.log('components size: ' + components.length)
   components.forEach((component, index) => {
     const ids = component.populationCriteriaSection[0].component;
     const eMeasureUuids = {
@@ -73,7 +71,6 @@ function extractStrata(measure) {
     if (denominatorExclusion) {
       eMeasureUuids.denominatorExclusionUuid = denominatorExclusion.denominatorExclusionCriteria[0].id[0].$.root;
     }
-    console.log('eMeasureUuids: ' + eMeasureUuids)
     strata[index].eMeasureUuids = eMeasureUuids;
   });
 
