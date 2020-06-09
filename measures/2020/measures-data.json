@@ -2108,7 +2108,8 @@
           "denominatorUuid": "C83C6F65-F50D-4545-83DD-A0EABED91538",
           "numeratorUuid": "44D71D80-B43C-4AC4-964A-6AABB3DAC342",
           "denominatorExclusionUuid": "4E226FB8-3240-48E1-8DEA-F7324732C75A"
-        }
+        },
+        "name": ">=84Days"
       },
       {
         "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.",
@@ -2117,7 +2118,8 @@
           "denominatorUuid": "5561C63B-E35B-46F5-89AE-8D54B52160F9",
           "numeratorUuid": "57B3291B-3C4E-4AD4-A6BB-53D9D9E4B91B",
           "denominatorExclusionUuid": "0E3A329A-0BCF-4AFD-92F4-14FB80CAE0DE"
-        }
+        },
+        "name": ">=180Days"
       }
     ],
     "eMeasureUuid": "40280382-6963-bf5e-0169-e4d266793da0"
@@ -4906,7 +4908,8 @@
             "2DA1E2EA-DE50-4F13-98D6-51E8941BC569",
             "9D57E15C-BD1F-45BD-BD9B-62A7466A5E78"
           ]
-        }
+        },
+        "name": "BMI"
       },
       {
         "description": "Patients who had counseling for nutrition during the measurement period",
@@ -4919,7 +4922,8 @@
             "D0FD25BF-DD85-4AB3-9C98-354DBA19056C",
             "FAC2DF2E-B30D-48BE-9768-7FE1E92DC240"
           ]
-        }
+        },
+        "name": "nutrition"
       },
       {
         "description": "Patients who had counseling for physical activity during the measurement period",
@@ -4932,7 +4936,8 @@
             "DDD2EA7F-CDB1-4084-BE73-966B6E077A89",
             "BED73598-F3E8-4DFD-A5EC-CB3247902E19"
           ]
-        }
+        },
+        "name": "physicalActivity"
       }
     ],
     "eMeasureUuid": "40280382-6963-bf5e-0169-777a70c70ab7"
@@ -5793,7 +5798,8 @@
             "52FA7EBD-D865-43F2-8135-EBE7FF0FE8C5",
             "EE4E8F74-AE9D-47DD-97D9-AE2C95E363BE"
           ]
-        }
+        },
+        "name": "14DaysOfDiagnosis"
       },
       {
         "description": "Engagement in ongoing treatment includes two additional interventions or a medication for the treatment of AOD abuse or dependence within 34 days of the initiation visit. For patients who initiated treatment with a medication, at least one of the two engagement events must be a treatment intervention (i.e., engagement for these members cannot be satisfied with medication treatment alone).",
@@ -5806,7 +5812,8 @@
             "8B770A9D-88F7-4274-AF02-F813CEB316D9",
             "49EDA3F5-6C8A-4DB5-A144-F201F4259B26"
           ]
-        }
+        },
+        "name": "30DaysOfVisit"
       }
     ],
     "eMeasureUuid": "40280382-6963-bf5e-0169-eefce996426d"
@@ -6890,7 +6897,8 @@
           "denominatorUuid": "E13D81BB-8FD5-4CE0-9885-B9BD988E1CFD",
           "numeratorUuid": "2720C875-C4E5-40EB-A4AE-A7B032EA9D6C",
           "denominatorExclusionUuid": "822CC41D-1864-4A27-9F66-012187A9E33F"
-        }
+        },
+        "name": "visitWithin30Days"
       },
       {
         "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
@@ -6899,7 +6907,8 @@
           "denominatorUuid": "2D0AB075-53D3-4183-9809-81E3C69E7A53",
           "numeratorUuid": "1792D093-5FDD-49E0-BD81-0E31783F35A0",
           "denominatorExclusionUuid": "D7278999-1937-4CBF-B72F-F359AAD7C97B"
-        }
+        },
+        "name": "visitAndFollowups"
       }
     ],
     "eMeasureUuid": "40280382-68d3-a5fe-0168-e9118c0c0726"
@@ -6955,7 +6964,11 @@
             "4A779584-DBC5-4A07-8E9F-A7502BA537E8",
             "28EB1666-9599-452B-A722-5FDB1BA72FF4"
           ]
-        }
+        },
+        "name": "12-17"
+      },
+      {
+        "name": "18+"
       }
     ],
     "eMeasureUuid": "40280382-6963-bf5e-016a-03dca9e446e0"
