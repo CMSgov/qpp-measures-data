@@ -4,6 +4,9 @@ currentPerformanceYear=2020
 quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
 quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
 quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+generated_ecqm_data='../../../util/measures/'$currentPerformanceYear'/generated-ecqm-data.json'
+manually_created_ecqm_data='../../../util/measures/'$currentPerformanceYear'/manually-created-missing-measures.json'
+additional_stratifications='../../../util/measures/'$currentPerformanceYear'/additional-stratifications.json'
 
 pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
 pi_csv='../../../util/measures/'$currentPerformanceYear'/pi-measures.csv'
@@ -50,7 +53,8 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # 4. Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
-	$quality_measures $ecqm_ehr_links $web_interface_links $claims_links $cqm_links $enriched_quality_measures
+	$quality_measures $ecqm_ehr_links $web_interface_links $claims_links $cqm_links $generated_ecqm_data \
+	$manually_created_ecqm_data $additional_stratifications $enriched_quality_measures
   
 # 5. Enrich `measures-data-pi.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-pi-measures-data.js \
