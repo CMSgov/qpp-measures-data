@@ -1,0 +1,25 @@
+name: QPP Measures Data PR CI/Checks
+on: 
+  pull_request:
+    types: [opened, synchronize]
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
+      - name: Version Check
+        uses: EndBug/version-check@v1
+        id: check
+      - name: Version Not Updated
+        if: steps.check.outputs.changed == 'false'
+        run: 'echo "No version change found!"'
+
+
