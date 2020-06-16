@@ -1,8 +1,8 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 replacers:
-  - search: '/QPPA-(\d+)/gi'
-    replace: '[QPPA-$1](https://jira.cms.gov/browse/QPPA-$1)'
+  - search: '/QPP([^\-]+)-(\d+)/gi'
+    replace: '[QPP$1-$2](https://jira.cms.gov/browse/QPP$1-$2)'
 change-template: '- $TITLE (#$NUMBER)'
 version-resolver:
   major:

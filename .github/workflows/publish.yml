@@ -60,9 +60,9 @@ jobs:
           - CMSgov/qpp-submissions-api
     steps:
       - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1.1.0
+        uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59 #v1.1.1
         with:
-          token: ${{ secrets.GITHUB_USER_TOKEN }}
+          token: ${{ secrets.GH_USER_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
           client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
@@ -71,19 +71,12 @@ jobs:
   notify-slack:
     runs-on: ubuntu-latest
     needs: publish-npm
-    strategy:
-      matrix:
-        channel:
-          - p-qppsf-scoring
-          - p-wi
-          - p-qppsf-api-team
     steps:
-    - uses: actions/checkout@v2
-    - name: Slack Notification
-      uses: rtCamp/action-slack-notify@v2.0.2
+    - name: Notify APP Submissions API Channel
+      uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
       env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_CHANNEL: ${{ matrix.channel }}
+        SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
+        SLACK_CHANNEL: "p-qppsf-api"
         SLACK_MESSAGE: "`qpp-measures-data` has been updated to version <${{github.event.release.html_url}}|${{ github.event.release.tag_name }}>"
         SLACK_TITLE: New qpp-measures-data release
         SLACK_USERNAME: releaseNotify
