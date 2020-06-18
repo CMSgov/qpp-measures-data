@@ -1,0 +1,27 @@
+name: QPP Measures Release Notes Drafter
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release_draft:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout Codebase
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Detect and tag new version
+        id: package-version
+        uses: salsify/action-detect-and-tag-new-version@68bbe8670f415d304e02942186441939c4692aa6 #v1.0.3
+
+      - name: Draft release notes
+        uses: release-drafter/release-drafter@06d4616a80cd7c09ea3cf12214165ad6c1859e67 #v5.11
+        with:
+          config-name: release-draft.yml
+          version: v${{ steps.package-version.outputs.current-version }}
+          tag: v${{ steps.package-version.outputs.current-version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

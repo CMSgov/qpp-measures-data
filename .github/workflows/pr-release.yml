@@ -1,0 +1,29 @@
+name: QPP Measures Data PR CI/Checks
+on: 
+  pull_request:
+    types: [opened, synchronize]
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v2
+      - name: Configure Node version and registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
+      - name: Version Check
+        uses: EndBug/version-check@a45f6f582d50047e42a4534ffb74b77a2c3af811 #v1.3.0
+        id: check
+      - name: Version Not Updated
+        if: steps.check.outputs.changed == 'false'
+        run: 'echo "No version change found!"'
+
+
