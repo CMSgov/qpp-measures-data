@@ -14,7 +14,7 @@ const path = require('path');
 // Some measures have an NqfId (NQF: National Quality Forum) of '0005'
 const defaultNqfId = '0005';
 const nqfIdMap = {
-  'CAHPS for MIPS SSM: Getting Timely Care, Appointments and Information': defaultNqfId,
+  'CAHPS for MIPS SSM: Getting Timely Care, Appointments, and Information': defaultNqfId,
   'CAHPS for MIPS SSM: How Well Providers Communicate': defaultNqfId,
   'CAHPS for MIPS SSM: Patient\'s Rating of Provider': defaultNqfId,
   'CAHPS for MIPS SSM: Courteous and Helpful Office Staff': defaultNqfId
