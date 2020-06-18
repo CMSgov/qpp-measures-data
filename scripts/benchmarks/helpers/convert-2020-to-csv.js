@@ -62,7 +62,6 @@ parser.on('readable', function() {
       record['Measure ID'],
       record['Collection Type'].replace(/[\n\r]+/g, ''),
       record['Measure Type'].replace(/[\n\r]+/g, ''),
-      record['High Priority'],
       record['Measure has a Benchmark'],
       '',
       record['Average Performance Rate'],
@@ -75,7 +74,8 @@ parser.on('readable', function() {
       record['Decile 9'],
       record['Decile 10'],
       record['Topped Out'],
-      record['Seven Point Cap']
+      record['Seven Point Cap'],
+      record['High Priority']
     );
 
     output.push('\n' + convertedrecord.toString());
