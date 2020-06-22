@@ -6,27 +6,6 @@ on:
 
 jobs:
 
-  publish-gpr:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout Codebase
-        uses: actions/checkout@v2
-
-      - name: Configure Node version and registry
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Publish to GitHub Package Registry
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
   publish-npm:
     runs-on: ubuntu-latest
     steps:
