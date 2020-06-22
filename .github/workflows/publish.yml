@@ -37,6 +37,7 @@ jobs:
           - CMSgov/qpp-scoring-engines
           - CMSgov/beneficiary-reporting-api
           - CMSgov/qpp-submissions-api
+          - CMSgov/self-nomination-api
     steps:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@1708dda5703a768a0fb0ef6a7a03a0c3805ebc59 #v1.1.1
