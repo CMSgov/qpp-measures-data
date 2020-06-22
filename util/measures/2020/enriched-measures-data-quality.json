@@ -38,7 +38,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_DM-2_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_001_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_001_MIPSCQM_v4.1.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da3833273869",
+    "strata": [
+      {
+        "description": "Patients whose most recent HbA1c level (performed during the measurement period) is >9.0%",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "1DAA17CC-1F6C-4883-9887-C1F1F72589B9",
+          "denominatorUuid": "AE3CD839-EC29-4826-B4F9-B2305474402C",
+          "numeratorUuid": "2CC2A289-445C-4F15-AFC4-80B934AF5E1E",
+          "denominatorExclusionUuid": "6F7B3C8C-9741-454B-9C02-3F279DD08B53"
+        }
+      }
+    ]
   },
   {
     "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -73,7 +85,28 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms135v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_005_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-7d10cd6f0f3f",
+    "strata": [
+      {
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "6D023944-ABF3-4F2C-A4E4-ADB2DDCD8478",
+          "denominatorUuid": "EFBCE92A-D635-4000-9C4F-EDD98AF5DE06",
+          "numeratorUuid": "440B9AB7-C94C-44D8-8A8F-DDBA5E1A5226",
+          "denominatorExceptionUuid": "57C66872-B1B4-4542-ACA6-7A309F99BDCD"
+        }
+      },
+      {
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C4E7E554-AA42-42D2-9711-875F3624B482",
+          "denominatorUuid": "489B9FD1-CB7E-4DF2-9966-B1A2CC8E2D9F",
+          "numeratorUuid": "A533AFC9-D94F-49E2-8633-5C874F8EFA5F",
+          "denominatorExceptionUuid": "9904A746-34B3-4835-84F4-9EBE6EF17521"
+        }
+      }
+    ]
   },
   {
     "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
@@ -141,7 +174,28 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms145v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_007_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6e62c160040e",
+    "strata": [
+      {
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "95AD7A85-FFC2-4176-AC65-22F0C78EB3F7",
+          "denominatorUuid": "9A539FCC-45A6-4584-9973-6910731DD618",
+          "numeratorUuid": "C2745442-23E2-485B-8F6A-A8AC5A166A0F",
+          "denominatorExceptionUuid": "B50BA716-173F-46EC-B792-F031140FCD94"
+        }
+      },
+      {
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "F86426BC-4113-4E5D-A504-582158094828",
+          "denominatorUuid": "9A753C70-1505-4926-A628-43E99134B090",
+          "numeratorUuid": "9F8A4285-B48A-4103-B208-73BA5E590DFC",
+          "denominatorExceptionUuid": "D46FB5D7-9DD5-4D24-A0E3-6B4153B00D73"
+        }
+      }
+    ]
   },
   {
     "title": "Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -176,7 +230,28 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms144v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6e5d8c750401",
+    "strata": [
+      {
+        "description": "Patients who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B5BA2AAA-23BB-4873-985C-A6CF186DAE36",
+          "denominatorUuid": "525A2333-CBF9-47F7-8665-157C5425DF64",
+          "numeratorUuid": "A016DE53-2DA9-40D5-8239-EB7624D02EE9",
+          "denominatorExceptionUuid": "4A1D8928-D27C-4A03-BC51-660480D1D079"
+        }
+      },
+      {
+        "description": "Patients who were prescribed beta-blocker therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "86AA2F89-6850-4754-A747-56414EB7DD3A",
+          "denominatorUuid": "FE9D45B5-7F09-4122-8FCF-7285A91506BE",
+          "numeratorUuid": "20080AEE-B52B-4295-B77D-E97CFAF4C65E",
+          "denominatorExceptionUuid": "F207DF88-E439-4567-B2E0-72041833A6B4"
+        }
+      }
+    ]
   },
   {
     "title": "Anti-Depressant Medication Management",
@@ -212,14 +287,27 @@
     },
     "strata": [
       {
-        "name": ">=84Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+        "description": "Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "10AA5F2F-0D06-4DE5-ACCC-43235FE0F8D8",
+          "denominatorUuid": "C83C6F65-F50D-4545-83DD-A0EABED91538",
+          "numeratorUuid": "44D71D80-B43C-4AC4-964A-6AABB3DAC342",
+          "denominatorExclusionUuid": "4E226FB8-3240-48E1-8DEA-F7324732C75A"
+        },
+        "name": ">=84Days"
       },
       {
-        "name": ">=180Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+        "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D545D66C-ADAC-4543-AB1B-BDD36B282A84",
+          "denominatorUuid": "5561C63B-E35B-46F5-89AE-8D54B52160F9",
+          "numeratorUuid": "57B3291B-3C4E-4AD4-A6BB-53D9D9E4B91B",
+          "denominatorExclusionUuid": "0E3A329A-0BCF-4AFD-92F4-14FB80CAE0DE"
+        },
+        "name": ">=180Days"
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e4d266793da0"
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
@@ -253,7 +341,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms143v8",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_012_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_012_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6d6e4a420276",
+    "strata": [
+      {
+        "description": "Patients who have an optic nerve head evaluation during one or more office visits within 12 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3E03F430-62F2-44A6-9267-5522991ABD7A",
+          "denominatorUuid": "F73CDFE3-29C4-434D-870C-37D24441243B",
+          "numeratorUuid": "18E4A3FD-7BC9-4F58-95B7-31C5F2F1FC3C",
+          "denominatorExceptionUuid": "E7311917-396F-4C68-93DA-2D0A826D2CC4"
+        }
+      }
+    ]
   },
   {
     "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
@@ -317,7 +417,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms142v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_019_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6d6f735d0283",
+    "strata": [
+      {
+        "description": "Patients with documentation, at least once within 12 months, of the findings of the dilated macular or fundus exam via communication to the physician who manages the patient's diabetic care",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3261969E-C0AD-4B3A-B67A-B5239AC94A39",
+          "denominatorUuid": "2E383042-A49E-48F3-889C-0FEB88F91F77",
+          "numeratorUuid": "02301E9F-3459-4D5F-848D-130482379EDB",
+          "denominatorExceptionUuid": "B6C69100-C64E-4C12-8D8D-BA636250786A"
+        }
+      }
+    ]
   },
   {
     "title": "Perioperative Care: Selection of Prophylactic Antibiotic - First OR Second-Generation Cephalosporin",
@@ -689,7 +801,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms154v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_065_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6e659e5c041f",
+    "strata": [
+      {
+        "description": "Children without a prescription for antibiotic medication on or 3 days after the outpatient or ED visit for an upper respiratory infection",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E8FD857F-1937-48E5-A521-66129FEF1278",
+          "denominatorUuid": "CE3EA202-E3F3-40A4-8CEC-27EFB9F2CD65",
+          "numeratorUuid": "030E29D4-C74D-457D-8A96-BCE215FC76E6",
+          "denominatorExclusionUuid": "2262A5A1-C510-4F19-A674-929DDCE0F4DC"
+        }
+      }
+    ]
   },
   {
     "title": "Appropriate Testing for Children with Pharyngitis",
@@ -724,7 +848,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms146v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_066_MIPSCQM_v4.1.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-c9a5388a3177",
+    "strata": [
+      {
+        "description": "Children with a group A streptococcus test in the 7-day period from 3 days prior through 3 days after the diagnosis of pharyngitis",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B652B2AA-C94C-413F-A179-C28AF8215B6F",
+          "denominatorUuid": "EFA22A65-3E5F-4AE6-80E1-F11E60B9F914",
+          "numeratorUuid": "03AACA65-E4BE-4882-90EA-16CDE046B649",
+          "denominatorExclusionUuid": "23A7B3B1-3A92-4AE5-B927-1900E9F3EAD3"
+        }
+      }
+    ]
   },
   {
     "title": "Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow",
@@ -919,7 +1055,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms129v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_102_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-667f-ecc3-0167-5765d56e4840",
+    "strata": [
+      {
+        "description": "Patients who did not have a bone scan performed at any time since diagnosis of prostate cancer",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0ADE5A3C-17A5-4064-BF47-668F4DDCEEC4",
+          "denominatorUuid": "DB997F72-D2A1-439A-82B2-DE8B575A558E",
+          "numeratorUuid": "1B9F2544-3D12-4650-832E-9DA453C8DCC4",
+          "denominatorExceptionUuid": "CEBE0AFD-8367-45B9-AC3B-6ED583607FD6"
+        }
+      }
+    ]
   },
   {
     "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
@@ -981,7 +1129,18 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms161v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6dc1a7040310",
+    "strata": [
+      {
+        "description": "Patients with a suicide risk assessment completed during the visit in which a new diagnosis or recurrent episode was identified",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "F74EA264-FF5D-4AAA-AF04-241FE0DFB057",
+          "denominatorUuid": "8C1F94B8-D880-4F57-BC18-E308A6B085CE",
+          "numeratorUuid": "FDF9459C-492A-4467-95EE-D046F06AC1D7"
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Influenza Immunization",
@@ -1029,7 +1188,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_PREV7_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_110_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_110_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6dbc990502f4",
+    "strata": [
+      {
+        "description": "Patients who received an influenza immunization OR who reported previous receipt of an influenza immunization",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C0858490-CEC2-40F2-AD1E-35C39A8D2CF4",
+          "denominatorUuid": "CC8CE048-1026-49FF-82F8-0CA0D1AC44F7",
+          "numeratorUuid": "9429BD6E-104C-4C06-ABAB-55D09B0EF823",
+          "denominatorExceptionUuid": "060851E7-2D73-434A-A37B-8C59034E715D"
+        }
+      }
+    ]
   },
   {
     "title": "Pneumococcal Vaccination Status for Older Adults",
@@ -1073,7 +1244,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms127v8",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_111_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_111_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0168-e79c6f8e0583",
+    "strata": [
+      {
+        "description": "Patients who have ever received a pneumococcal vaccination before the end of the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5CD22B31-3037-49F6-8846-4D66B44D4702",
+          "denominatorUuid": "88D5A954-25B2-4157-9ECB-4AE3FA7DC795",
+          "numeratorUuid": "D657E70B-8B2B-442A-A887-E172B4A58280",
+          "denominatorExclusionUuid": "CBFE14F2-8A5B-420A-99B7-C7B99A34D3F4"
+        }
+      }
+    ]
   },
   {
     "title": "Breast Cancer Screening",
@@ -1111,7 +1294,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_PREV5_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_112_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_112_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da4fbfb93891",
+    "strata": [
+      {
+        "description": "Women with one or more mammograms during the 27 months prior to the end of the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "655077CB-1920-4299-95B3-C24026C1F644",
+          "denominatorUuid": "43EC65FF-15C5-4B3E-8DBD-AD792A9D0B0B",
+          "numeratorUuid": "66B40C8B-36FB-49E4-93D6-D60F35E1801D",
+          "denominatorExclusionUuid": "76407883-BC98-41EC-98CD-18126D901774"
+        }
+      }
+    ]
   },
   {
     "title": "Colorectal Cancer Screening",
@@ -1148,7 +1343,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_PREV6_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_113_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_113_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da566ea338a5",
+    "strata": [
+      {
+        "description": "Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria: \n- Fecal occult blood test (FOBT) during the measurement period \n- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period \n- Colonoscopy during the measurement period or the nine years prior to the measurement period\n- FIT-DNA during the measurement period or the two years prior to the measurement period \n- CT Colonography during the measurement period or the four years prior to the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E9E3FABC-E0FB-4F58-800D-4D5925AC0382",
+          "denominatorUuid": "2C9DB74A-24A4-4E9B-BA08-4B4D1216B683",
+          "numeratorUuid": "1D18C7AB-CFD7-48E7-99F0-583C1719496D",
+          "denominatorExclusionUuid": "93D5A552-8925-4D67-AFE3-FD3CBB679FCB"
+        }
+      }
+    ]
   },
   {
     "title": "Avoidance of Antibiotic Treatment in Adults With Acute Bronchitis",
@@ -1219,7 +1426,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms131v8",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_117_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_117_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da28b8f63854",
+    "strata": [
+      {
+        "description": "Patients with an eye screening for diabetic retinal disease. This includes diabetics who had one of the following:\n•Diabetic with a diagnosis of retinopathy that overlaps the measurement period and a retinal or dilated eye exam by an eye care professional in the measurement period\n•Diabetic with no diagnosis of retinopathy overlapping the measurement period and a retinal or dilated eye exam by an eye care professional in the measurement period or the year prior to the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "CE8F8C2C-262E-4BCE-B828-F05E744666EB",
+          "denominatorUuid": "31E6188E-0569-4015-9A86-D4A38830D6EC",
+          "numeratorUuid": "F38B8654-4FEE-4397-86E0-E62098CD044A",
+          "denominatorExclusionUuid": "5DBE851C-9D39-4479-A8A2-0C64083F2A20"
+        }
+      }
+    ]
   },
   {
     "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
@@ -1288,7 +1507,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms134v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_119_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da49f1e93882",
+    "strata": [
+      {
+        "description": "Patients with a screening for nephropathy or evidence of nephropathy during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C2A0B8D4-8026-4A7A-B635-9D87BA320600",
+          "denominatorUuid": "93A01D6E-ABC7-420C-85E0-2C8E34C6368B",
+          "numeratorUuid": "7F90D098-A158-45A4-A2E6-DF7E2E75F83E",
+          "denominatorExclusionUuid": "559CE8DF-4CA4-4FC5-9439-76EE307037DF"
+        }
+      }
+    ]
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation",
@@ -1406,7 +1637,20 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms069v8",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_128_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_128_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e8dc81613f8b",
+    "strata": [
+      {
+        "description": "Patients with a documented BMI during the encounter or during the previous twelve months, AND when the BMI is outside of normal parameters, a follow-up plan is documented during the encounter or during the previous twelve months of the current encounter",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "39C3A0B7-E98A-40CB-80A1-3372AB9847E9",
+          "denominatorUuid": "09C58E81-56E1-417A-BBF4-2F397B93195A",
+          "numeratorUuid": "81E4B01B-E6EE-4901-91B5-C0C26642768B",
+          "denominatorExceptionUuid": "8D59830E-AAFD-4832-B59F-A8ACA7B4F3F6",
+          "denominatorExclusionUuid": "42BF4D67-116B-4253-97CC-F996DF7FB057"
+        }
+      }
+    ]
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -1473,7 +1717,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms068v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_130_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_130_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0169-0c589537118f",
+    "strata": [
+      {
+        "description": "Eligible professional or eligible clinician attests to documenting, updating or reviewing the patient's current medications using all immediate resources available on the date of the encounter. This list must include ALL known prescriptions, over-the-counters, herbals and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications' name, dosages, frequency and route of administration.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "A6DABDC3-2E60-435D-BC94-888561EA383B",
+          "denominatorUuid": "AC6813F8-2411-4D4E-ACCD-3BCE094D8218",
+          "numeratorUuid": "E64BD324-C96C-4287-A515-D16B17778480",
+          "denominatorExceptionUuid": "D8B84799-2481-4AE1-965C-D8EA597173D1"
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
@@ -1519,7 +1775,20 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_PREV12_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_134_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_134_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0169-0c9018ca11d2",
+    "strata": [
+      {
+        "description": "Patients screened for depression on the date of the encounter or up to 14 days prior to the date of the encounter using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the eligible encounter",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "45D03089-5245-44A4-A3BC-744E775E3755",
+          "denominatorUuid": "21AAC89C-A927-4A71-8DF7-129EFD51DA08",
+          "numeratorUuid": "658634EE-4328-4BA2-AC9B-A6499EF49FD1",
+          "denominatorExceptionUuid": "0C0CEB34-509A-4FBC-9AF5-322AF53E7C80",
+          "denominatorExclusionUuid": "FAEEC269-82F2-4BEB-B39B-2500AA230BF6"
+        }
+      }
+    ]
   },
   {
     "title": "Melanoma: Continuity of Care - Recall System",
@@ -1644,7 +1913,26 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms157v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_143_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e4c228c93d69",
+    "strata": [
+      {
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "96D039E8-8003-4C52-831D-7F02CA9137FA",
+          "denominatorUuid": "429BC211-FC13-4F04-B09F-43D9EEE03E56",
+          "numeratorUuid": "4A93119E-FAD1-4CE0-A984-D102611D9D39"
+        }
+      },
+      {
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E2FF2CBD-A268-4738-B93A-1A276C96E4F3",
+          "denominatorUuid": "CC02F86F-29D1-42A1-A91D-38DB8FA5B29F",
+          "numeratorUuid": "4D442FA4-3A1E-4694-8737-CA398278A591"
+        }
+      }
+    ]
   },
   {
     "title": "Oncology: Medical and Radiation - Plan of Care for Moderate to Severe Pain",
@@ -2245,7 +2533,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms133v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_191_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6d6846910246",
+    "strata": [
+      {
+        "description": "Cataract surgeries with best-corrected visual acuity of 20/40 or better (distance or near) achieved in the operative eye within 90 days following cataract surgery",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "7BD7DBAE-F964-416C-9425-55BD52D3ED71",
+          "denominatorUuid": "31B3054B-2AA0-4E6A-AAA4-86ECBBF77EE5",
+          "numeratorUuid": "7BD24126-79D4-4F8A-9A44-83427380F63A",
+          "denominatorExclusionUuid": "028326AB-0021-48C1-8FE0-F03F7BCBB017"
+        }
+      }
+    ]
   },
   {
     "title": "Radiology: Stenosis Measurement in Carotid Imaging Reports",
@@ -2602,17 +2902,36 @@
     "strata": [
       {
         "name": "screenedForUse",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D8C43D40-88C5-4CBE-B13F-B340ED7B6F5E",
+          "denominatorUuid": "10BBDBA1-A63C-4B66-8788-D193D9F9C462",
+          "numeratorUuid": "6EA80A06-9FEB-4A7C-A879-D37017E022D8",
+          "denominatorExceptionUuid": "E19C7C19-F358-4A0C-B506-A3EF104E43F5"
+        }
       },
       {
         "name": "overall",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4A5E0CA8-23F4-4B40-B521-B0EB98DE4C19",
+          "denominatorUuid": "E2AC3364-ECF8-4B9A-BC7E-88F0638C9EF2",
+          "numeratorUuid": "65501208-ACA6-49D3-A44C-2E65A46FD0C5",
+          "denominatorExceptionUuid": "21B0D1D6-E5CE-4D50-899E-9665897FFCF2"
+        }
       },
       {
         "name": "tobacco",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "664B4D06-0934-4A6E-BD9B-569460958414",
+          "denominatorUuid": "FCC62D91-8CD7-4627-B01D-5D92888D8EDD",
+          "numeratorUuid": "0E3F6868-3C2B-4372-B67B-42A15973D824",
+          "denominatorExceptionUuid": "FF00F193-4EC5-4B3A-BD1F-6ACD6784E52D"
+        }
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6d717fd50298"
   },
   {
     "title": "Controlling High Blood Pressure",
@@ -2655,7 +2974,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_HTN2_CMSWebInterface_v4.1.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_236_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_236_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-da5e74be38bf",
+    "strata": [
+      {
+        "description": "Patients whose most recent blood pressure is adequately controlled (systolic blood pressure < 140 mmHg and diastolic blood pressure < 90 mmHg) during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "1A3C24A5-7E9E-461B-BEB8-834822CC0942",
+          "denominatorUuid": "E822DECB-5DD1-421D-BFCE-F5DA550EE238",
+          "numeratorUuid": "9306E83B-3C3B-4CDF-B3EA-F99AEFC55F87",
+          "denominatorExclusionUuid": "965140D9-663B-4B08-99F9-19E14AE0CB5C"
+        }
+      }
+    ]
   },
   {
     "title": "Use of High-Risk Medications in the Elderly",
@@ -2698,13 +3029,26 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Percentage of patients who were ordered at least one high-risk medication"
+        "description": "Percentage of patients who were ordered at least one high-risk medication",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "BE15DD42-EFD6-4411-A68A-D699C0C3DBAC",
+          "denominatorUuid": "F85A502D-70EC-400A-A609-4F5EB4071195",
+          "numeratorUuid": "DB02EE17-BCD7-4A92-B897-A7CD2758BA06",
+          "denominatorExclusionUuid": "9AE5CDEA-0F3F-43FF-8203-C1EE4135CCC4"
+        }
       },
       {
         "name": "2+",
-        "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
+        "description": "Percentage of patients who were ordered at least two of the same high-risk medication",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5BD930B9-FD7E-4E2D-8FFA-DF49EE8C8CDE",
+          "denominatorUuid": "497CF391-D298-439C-BC30-346FD3E66133",
+          "numeratorUuid": "CC94435D-FBEA-4165-AF0A-B363FC86FDFC",
+          "denominatorExclusionUuid": "F34C12CB-8CD7-48D6-B000-B363030A2A7A"
+        }
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e86d29c73ee1"
   },
   {
     "title": "Weight Assessment and Counseling for Nutrition and Physical Activity for Children and Adolescents",
@@ -2739,18 +3083,49 @@
     },
     "strata": [
       {
-        "name": "BMI",
-        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "AF20B4EA-8720-497D-9E04-C8EF65DBFEB4",
+          "denominatorUuid": "9016B929-550D-49D1-BDE6-256F3C7F155B",
+          "numeratorUuid": "EF75177A-DCB6-4100-9D2D-D9624D4D6D4B",
+          "denominatorExclusionUuid": "12351F43-07E0-426A-B7C6-C3E06116AA3A",
+          "strata": [
+            "2DA1E2EA-DE50-4F13-98D6-51E8941BC569",
+            "9D57E15C-BD1F-45BD-BD9B-62A7466A5E78"
+          ]
+        },
+        "name": "BMI"
       },
       {
-        "name": "nutrition",
-        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+        "description": "Patients who had counseling for nutrition during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "88CC8524-A7CA-446F-AE28-326807D64F7C",
+          "denominatorUuid": "164F40FC-BF3F-4441-BD40-04CDA5A5D640",
+          "numeratorUuid": "267F0874-EF8B-479D-8671-43B308D0406A",
+          "denominatorExclusionUuid": "60023A54-574A-4EF7-A392-C57A0FC0CEC4",
+          "strata": [
+            "D0FD25BF-DD85-4AB3-9C98-354DBA19056C",
+            "FAC2DF2E-B30D-48BE-9768-7FE1E92DC240"
+          ]
+        },
+        "name": "nutrition"
       },
       {
-        "name": "physicalActivity",
-        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
+        "description": "Patients who had counseling for physical activity during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "CD15F841-E9E3-4590-8987-F2D9AB6FBEEF",
+          "denominatorUuid": "C12E4929-A04F-41E0-AC0F-AF96C00C0051",
+          "numeratorUuid": "94FB21A1-59C3-4AAC-8AA5-B6A43CCDA676",
+          "denominatorExclusionUuid": "402E85ED-3C39-4F6C-846A-7B5862454ACB",
+          "strata": [
+            "DDD2EA7F-CDB1-4084-BE73-966B6E077A89",
+            "BED73598-F3E8-4DFD-A5EC-CB3247902E19"
+          ]
+        },
+        "name": "physicalActivity"
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-0169-777a70c70ab7"
   },
   {
     "title": "Childhood Immunization Status",
@@ -2780,7 +3155,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms117v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6a17-9fbf-016a-513598af15ad",
+    "strata": [
+      {
+        "description": "Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B78C6383-A669-4BF5-9258-DF63224E7A29",
+          "denominatorUuid": "701B6FAC-F352-4AA6-A612-3447F2049BA6",
+          "numeratorUuid": "DB617C11-2EA3-4936-94F6-A80D04C7B5C6",
+          "denominatorExclusionUuid": "0EF8BDCE-03FC-4430-8856-EE65D143DB10"
+        }
+      }
+    ]
   },
   {
     "title": "Cardiac Rehabilitation Patient Referral from an Outpatient Setting",
@@ -3254,7 +3641,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms149v8"
-    }
+    },
+    "eMeasureUuid": "40280382-667f-ecc3-0167-57507cca4701",
+    "strata": [
+      {
+        "description": "Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12-month period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D90F0CF9-4A53-4A75-AEA2-16094AC5957F",
+          "denominatorUuid": "78F54EAC-EC0F-42C4-8D6E-D8A53D3B1DC3",
+          "numeratorUuid": "6E9AFABE-774F-401E-9F45-1DCB43A3ED30",
+          "denominatorExceptionUuid": "1732A275-1C46-44E5-8D5D-6D77DB9BD575"
+        }
+      }
+    ]
   },
   {
     "title": "Dementia: Functional Status Assessment",
@@ -3574,14 +3973,35 @@
     },
     "strata": [
       {
-        "name": "14DaysOfDiagnosis",
-        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+        "description": "Initiation of treatment includes either an intervention or medication for the treatment of AOD abuse or dependence within 14 days of the diagnosis",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E1F6440D-6DDB-4C77-AF42-947522D58071",
+          "denominatorUuid": "CCF03F23-DCDA-4F3B-8248-8DD25D805775",
+          "numeratorUuid": "01E2A3CA-F3AC-41BF-BCEE-EC62092CE245",
+          "denominatorExclusionUuid": "22C77E3E-6FF5-44D1-B564-DC3B56A9B0F0",
+          "strata": [
+            "52FA7EBD-D865-43F2-8135-EBE7FF0FE8C5",
+            "EE4E8F74-AE9D-47DD-97D9-AE2C95E363BE"
+          ]
+        },
+        "name": "14DaysOfDiagnosis"
       },
       {
-        "name": "30DaysOfVisit",
-        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+        "description": "Engagement in ongoing treatment includes two additional interventions or a medication for the treatment of AOD abuse or dependence within 34 days of the initiation visit. For patients who initiated treatment with a medication, at least one of the two engagement events must be a treatment intervention (i.e., engagement for these members cannot be satisfied with medication treatment alone).",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "9FE99D0A-793A-4198-BE90-C205F20B36B8",
+          "denominatorUuid": "FE3255B1-F309-4359-B00F-13D567A06EE7",
+          "numeratorUuid": "CBA80254-E6CE-41C6-9B50-938C8EEE4337",
+          "denominatorExclusionUuid": "AD224F69-6840-441C-AE6C-A124763162CE",
+          "strata": [
+            "8B770A9D-88F7-4274-AF02-F813CEB316D9",
+            "49EDA3F5-6C8A-4DB5-A144-F201F4259B26"
+          ]
+        },
+        "name": "30DaysOfVisit"
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-0169-eefce996426d"
   },
   {
     "title": "Cervical Cancer Screening",
@@ -3613,7 +4033,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms124v8"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0169-39f1e5b42b20",
+    "strata": [
+      {
+        "description": "Women with one or more screenings for cervical cancer. Appropriate screenings are defined by any one of the following criteria:\n\n- Cervical cytology performed during the measurement period or the two years prior to the measurement period for women who are at least 21 years old at the time of the test\n \n- Cervical cytology/human papillomavirus (HPV) co-testing performed during the measurement period or the four years prior to the measurement period for women who are at least 30 years old at the time of the test",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4F08D5BF-993F-42C9-821F-FA6440868C52",
+          "denominatorUuid": "863AC2ED-CFE4-4F5B-88D3-FAB16560EE65",
+          "numeratorUuid": "A6D2DB58-DBD4-4A09-B6DA-E26EAE0568A1",
+          "denominatorExclusionUuid": "A3299BD5-4800-4FDE-A4AE-36CF5AA7EBF6"
+        }
+      }
+    ]
   },
   {
     "title": "Chlamydia Screening for Women",
@@ -3644,7 +4076,23 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms153v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-775236410a91",
+    "strata": [
+      {
+        "description": "Women with at least one chlamydia test during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "F8D0CC24-EC89-4F5C-BD43-0367F1C76F4E",
+          "denominatorUuid": "AA331259-39A3-4EFD-A176-D5183C356FA0",
+          "numeratorUuid": "4983E976-82F9-43E6-A771-88358321A9FD",
+          "denominatorExclusionUuid": "3BE1CBBC-F25F-4D9D-A091-FEF0563F80A5",
+          "strata": [
+            "863EBEBA-FECF-4248-9453-5281C23FA658",
+            "8F41A4E4-E6A7-4B27-93D7-B699C85A26B7"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented",
@@ -3701,7 +4149,20 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms022v8",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2020_Measure_317_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_317_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-6a17-9fbf-016a-31c183a90723",
+    "strata": [
+      {
+        "description": "Patients who were screened for high blood pressure AND have a recommended follow-up plan documented, as indicated if the blood pressure is pre-hypertensive or hypertensive",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5501DEA5-8E9A-48D6-9A19-3BAC97D2E5D6",
+          "denominatorUuid": "17E3FDFC-C058-492D-AC5E-A3CA399B4F9D",
+          "numeratorUuid": "92D677EB-BDB8-49E2-87FF-2F9DF69F79DA",
+          "denominatorExceptionUuid": "C367CB9D-9A93-4598-B741-2BB07D0AC39B",
+          "denominatorExclusionUuid": "84A208E9-C415-4EA3-B69E-D81AC96A8CC4"
+        }
+      }
+    ]
   },
   {
     "title": "Falls: Screening for Future Fall Risk",
@@ -3740,7 +4201,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms139v8",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_CARE-2_CMSWebInterface_v4.1.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0169-53832b023431",
+    "strata": [
+      {
+        "description": "Patients who were screened for future fall risk at least once within the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "91BB31AA-6984-414D-9960-D57F983EDB50",
+          "denominatorUuid": "80CB02DB-5D1B-4167-A2F7-4737728EAE03",
+          "numeratorUuid": "23D5306B-3B40-42CA-8377-92CEA6A1802B",
+          "denominatorExclusionUuid": "63896800-A1A4-4162-9417-FDF7135643B0"
+        }
+      }
+    ]
   },
   {
     "title": "Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients",
@@ -4603,14 +5076,27 @@
     },
     "strata": [
       {
-        "name": "visitWithin30Days",
-        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
+        "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "683F5905-CC36-4B82-AC22-38904C8298BD",
+          "denominatorUuid": "E13D81BB-8FD5-4CE0-9885-B9BD988E1CFD",
+          "numeratorUuid": "2720C875-C4E5-40EB-A4AE-A7B032EA9D6C",
+          "denominatorExclusionUuid": "822CC41D-1864-4A27-9F66-012187A9E33F"
+        },
+        "name": "visitWithin30Days"
       },
       {
-        "name": "visitAndFollowups",
-        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
+        "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "2F7B388C-C3BC-4A25-AF3E-E30389970BAC",
+          "denominatorUuid": "2D0AB075-53D3-4183-9809-81E3C69E7A53",
+          "numeratorUuid": "1792D093-5FDD-49E0-BD81-0E31783F35A0",
+          "denominatorExclusionUuid": "D7278999-1937-4CBF-B72F-F359AAD7C97B"
+        },
+        "name": "visitAndFollowups"
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-68d3-a5fe-0168-e9118c0c0726"
   },
   {
     "title": "Depression Remission at Twelve Months",
@@ -4653,14 +5139,24 @@
     },
     "strata": [
       {
-        "name": "12-17",
-        "description": ""
+        "description": "Adolescent patients 12 to 17 years of age and adult patients 18 years of age and older who achieved remission at twelve months as demonstrated by a twelve month (+/- 60 days) PHQ-9 or PHQ-9M score of less than five",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3E189A2F-18C6-4788-80AD-7B6D31977E23",
+          "denominatorUuid": "9374A2BA-D848-4631-BD7F-B9301CB16C6F",
+          "numeratorUuid": "A5976BE6-7F1C-419D-898D-7AFEB141A355",
+          "denominatorExclusionUuid": "368D79F7-DFF9-4987-B870-266C0560A1CE",
+          "strata": [
+            "4A779584-DBC5-4A07-8E9F-A7502BA537E8",
+            "28EB1666-9599-452B-A722-5FDB1BA72FF4"
+          ]
+        },
+        "name": "12-17"
       },
       {
-        "name": "18+",
-        "description": ""
+        "name": "18+"
       }
-    ]
+    ],
+    "eMeasureUuid": "40280382-6963-bf5e-016a-03dca9e446e0"
   },
   {
     "title": "Closing the Referral Loop: Receipt of Specialist Report",
@@ -4714,7 +5210,18 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms050v8",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_374_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-667f-ecc3-0167-575c0f0447f0",
+    "strata": [
+      {
+        "description": "Number of patients with a referral, for which the referring provider received a report from the provider to whom the patient was referred",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E1DD6CEB-0B6C-4842-AB6F-A5578D95CDF6",
+          "denominatorUuid": "82B8DE01-6187-4D29-900A-A14A1EF3D2B7",
+          "numeratorUuid": "DF7F0205-E148-4FAE-82E9-45D72EEB84EC"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessment for Total Knee Replacement",
@@ -4744,7 +5251,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms066v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e96310694017",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment    results (i.e., VR-12, PROMIS-10 Global Health, Knee Injury and Osteoarthritis Outcome Score [KOOS], KOOS Jr.) in the 90 days prior to or on the day of the primary TKA procedure, and in the 270 - 365 days after the TKA procedure",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3017D62E-6E32-4D4D-8C0D-3A9573BD788E",
+          "denominatorUuid": "47B4739C-F407-40A2-8BB1-88D759656030",
+          "numeratorUuid": "FE591C1D-132F-46FA-BA47-518E79457B98",
+          "denominatorExclusionUuid": "6C70B6F7-2B61-41CD-A7AF-49B1D2A599C9"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessment for Total Hip Replacement",
@@ -4774,7 +5293,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms056v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-72b83a880718",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment  results (i.e., VR-12, PROMIS-10-Global Health, Hip Disability and Osteoarthritis Outcome Score [HOOS], HOOS Jr.) in the 90 days prior to or on the day of the primary THA procedure, and in the 270 - 365 days after the THA procedure",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5A7BFA25-834D-4C48-AF51-00D95114A421",
+          "denominatorUuid": "A80C742F-D5B3-4C39-8975-2912469D4D24",
+          "numeratorUuid": "7A85EAAD-8EBE-43C0-8783-F1C173522E36",
+          "denominatorExclusionUuid": "69289D3E-3C99-4B41-B6D6-671CB3569999"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessments for Congestive Heart Failure",
@@ -4805,7 +5336,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms090v9"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-7272c0b306be",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment  results (i.e., Veterans RAND 12-item health survey [VR-12]; VR-36; Kansas City Cardiomyopathy Questionnaire [KCCQ]; KCCQ-12;  Minnesota Living with Heart Failure Questionnaire [MLHFQ]; PROMIS  -10 Global Health, PROMIS-29) present in the EHR two weeks before or during the initial FSA encounter and results for the follow-up FSA at least 30 days but no more than 180 days after the initial functional status assessment",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "DD08013C-68E3-49EA-9A96-F3DC70558C61",
+          "denominatorUuid": "6D8103B9-95E5-4002-91C6-1365CC5A0C16",
+          "numeratorUuid": "91023EF8-E70C-4080-B4A6-29B0BA5F9A5B",
+          "denominatorExclusionUuid": "5AE96AB3-9901-4BFE-BA70-303E6B35DC96"
+        }
+      }
+    ]
   },
   {
     "title": "Children Who Have Dental Decay or Cavities",
@@ -4835,7 +5378,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms075v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-b522f1a02370",
+    "strata": [
+      {
+        "description": "Children who had a diagnosis of cavities or decayed teeth overlapping the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C5875B6A-E68B-4C75-905F-4DE0EE14E452",
+          "denominatorUuid": "F83895DB-4FD9-40DA-B606-420D8402DD02",
+          "numeratorUuid": "3D646A8E-2672-4B25-87E6-7B70645391EE",
+          "denominatorExclusionUuid": "24F0C3EF-2AA4-4F91-96D5-9B3EA445A0C7"
+        }
+      }
+    ]
   },
   {
     "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
@@ -4866,7 +5421,24 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms074v9"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-7278084c06db",
+    "strata": [
+      {
+        "description": "Children who receive a fluoride varnish application during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "FE63B220-546D-4677-BB95-E235125220F6",
+          "denominatorUuid": "489397A5-B24C-4162-B409-7E6A753F6F6A",
+          "numeratorUuid": "CB5FB914-5F42-4B40-B2F5-F238D382999F",
+          "denominatorExclusionUuid": "BCE3A499-3B79-46FA-BD65-9E78295CCB30",
+          "strata": [
+            "8A4A9149-68EE-487C-806B-2E7F786ABF8F",
+            "127B7D73-FB64-47EF-AC15-58C0B5F11578",
+            "B3F4AF4C-906C-4A6C-89F1-D44C2ECE7CD0"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -4898,7 +5470,18 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms177v8"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-6dc350b80329",
+    "strata": [
+      {
+        "description": "Patient visits with an assessment for suicide risk",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "57E186C3-9BA6-4EA0-8ED3-A7B002CE738F",
+          "denominatorUuid": "D02E6B26-38A2-44F9-8532-EDB5B86ADDE5",
+          "numeratorUuid": "AB5AD2BA-F0C8-4C38-8A84-0B57DAB1A6A2"
+        }
+      }
+    ]
   },
   {
     "title": "Adherence to Antipsychotic Medications For Individuals with Schizophrenia",
@@ -6473,7 +7056,40 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms347v3",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2020_Measure_PREV13_CMSWebInterface_v4.1.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2020_Measure_438_MIPSCQM_v4.2.pdf"
-    }
+    },
+    "eMeasureUuid": "40280382-68d3-a5fe-0169-0c78bec911bb",
+    "strata": [
+      {
+        "description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5D20C66D-C4F2-44AC-BA79-C1380946E1C1",
+          "denominatorUuid": "C081303E-ED3B-4E1E-ACC0-8CC7ECE656E9",
+          "numeratorUuid": "BC30AEB0-3B11-4B36-B4C2-4015786A8299",
+          "denominatorExclusionUuid": "14C86844-FA28-433B-8164-FDAB264B9601",
+          "denominatorExceptionUuid": "4227DDA4-0619-41C5-9039-C697FDF30F62"
+        }
+      },
+      {
+        "description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "CF4897D2-651D-47A5-8704-440827AC2A82",
+          "denominatorUuid": "076E8C02-49B0-41A8-807C-3753160EE256",
+          "numeratorUuid": "B9CF111C-24C0-4D71-A44A-3E549BA267BE",
+          "denominatorExclusionUuid": "6E37FB0C-0F94-4A6B-B3E3-DA9C73145B49",
+          "denominatorExceptionUuid": "67B7DF57-40CD-4FB9-AA56-9BCDD985ADCD"
+        }
+      },
+      {
+        "description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "A16AFA05-7CAE-42BC-B905-8D4091C442CB",
+          "denominatorUuid": "3E840CA1-EF27-4939-9BF8-36E7A50A69E8",
+          "numeratorUuid": "433EFB69-22B1-4BC0-8864-838ADB30A072",
+          "denominatorExclusionUuid": "00B756AB-1265-42B3-A50D-46623CBC4BA7",
+          "denominatorExceptionUuid": "3FB31319-105F-4FA1-BD36-C683C281587"
+        }
+      }
+    ]
   },
   {
     "title": "Age Appropriate Screening Colonoscopy",
@@ -7024,7 +7640,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms645v3"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-c08817902d03",
+    "strata": [
+      {
+        "description": "Patients with a bone density evaluation within the two years prior to the start of or less than three months after the start of ADT treatment",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "9B77D15F-09B7-4744-9A44-F05769D1D2D8",
+          "denominatorUuid": "869769A6-5A1F-4C0D-8FC0-A8818E7F4F66",
+          "numeratorUuid": "D73B864A-680E-45EF-8082-23A541B4E802",
+          "denominatorExceptionUuid": "0B94B8A9-1294-4CE0-8021-D4B993E3F3F9"
+        }
+      }
+    ]
   },
   {
     "title": "Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)",
@@ -7274,7 +7902,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms249v2"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-de72aa4339da",
+    "strata": [
+      {
+        "description": "Female patients who received an order for at least one DXA scan in the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "076784AC-D2CA-439F-A802-72D421724A8E",
+          "denominatorUuid": "455FABD1-41BA-40DB-811B-8DB4938D8C59",
+          "numeratorUuid": "05837144-1391-4CE8-810D-FC5629C0B729",
+          "denominatorExclusionUuid": "C06BC21E-7A1B-4CD7-B627-DD1321348271"
+        }
+      }
+    ]
   },
   {
     "title": "Leg Pain After Lumbar Fusion",
@@ -7339,7 +7979,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms349v2"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-ca44fb0d3253",
+    "strata": [
+      {
+        "description": "Patients with documentation of an HIV test performed on or after their 15th birthday and before their 66th birthday",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "EB598957-5695-4CB6-A82C-232A27AEE6B3",
+          "denominatorUuid": "E373ADE6-D02F-49D0-AB0A-C5FBD0FE0B61",
+          "numeratorUuid": "946ECA95-8105-4B1F-B7D1-6FEBFC95551F",
+          "denominatorExclusionUuid": "E0F15B90-8A4D-49B1-9134-2D06D1B0F729"
+        }
+      }
+    ]
   },
   {
     "title": "International Prostate Symptom Score (IPSS) or American Urological Association-Symptom Index (AUA-SI) Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia",
@@ -7370,7 +8022,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2020/cms771v1"
-    }
+    },
+    "eMeasureUuid": "40280382-6963-bf5e-0169-e6713f5a3df1",
+    "strata": [
+      {
+        "description": "Patients with a documented improvement of at least 3 points in their urinary symptom score during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C58EED2B-10FB-454A-A3F2-6C8475575868",
+          "denominatorUuid": "F7A05A48-AF98-4849-80A9-E8D6D60430AB",
+          "numeratorUuid": "CFDA6A04-F9A7-44E6-B1F7-310BFCA2791A",
+          "denominatorExclusionUuid": "6948734D-357C-470D-BE2A-13D1A6CD1756"
+        }
+      }
+    ]
   },
   {
     "title": "Multimodal Pain Management",

@@ -1,0 +1,21 @@
+name: QPP Measures Data Feature PR CI/Checks
+on: 
+  pull_request:
+    types: [opened, synchronize]
+    branches: [ develop ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v2
+      - name: Configure Node version and registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: npm test
