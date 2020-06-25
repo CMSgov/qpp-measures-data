@@ -1,7 +1,7 @@
 name: QPP Measures Release Notes Drafter
 on:
   push:
-    branches: [ master ]
+    branches: [ release/* ]
 
 jobs:
   release_draft:
