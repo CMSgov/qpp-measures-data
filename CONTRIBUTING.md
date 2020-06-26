@@ -82,7 +82,7 @@ When making changes to measures-data, include tests in the tests directory and m
 npm test
 ```
 
-We also use Travis CI to run tests on every branch.
+We also use Github Actions CI to run tests on every branch.
 
 ## Versioning, publishing, and creating new releases
 
