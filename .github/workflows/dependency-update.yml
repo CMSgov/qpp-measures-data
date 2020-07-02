@@ -1,0 +1,57 @@
+name: QPP Measures Data Dependency Updates
+
+on:
+  repository_dispatch:
+    types: [ lib-update-event ]
+
+jobs:
+  libUpdateEvent:
+    runs-on: ubuntu-latest
+    steps:
+
+      # we are explicitly checking out "develop" branch, so that it can serve as the "base" for PR.
+      - name: Checkout Develop Branch
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+
+      - name: Setup Node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.14.2
+
+      - name: Extract Dependency Name
+        id: lib
+        uses: actions/github-script@v2.0.0
+        with:
+          result-encoding: string
+          script: |
+            let clientPayload = context.payload.client_payload;
+            let publicPackageName = clientPayload.public_package;
+            let revision = clientPayload.tag_name.replace('v', '');
+            let packageName = publicPackageName + '@' + revision;
+            return packageName;
+      - name: Update Dependency
+        run: npm install ${{steps.lib.outputs.result}} --save-dev --save-exact
+
+      - name: Create Pull Request
+        id: pr
+        uses: peter-evans/create-pull-request@172ec762f8ac8e050062398456fccd30444f8f30 # pin@v2
+        with:
+          token: ${{ secrets.GH_USER_TOKEN }}
+          commit-message: Updating dependency ${{ steps.lib.outputs.result }}
+          title: Update library -  ${{steps.lib.outputs.result}}
+          branch: update_${{github.event.client_payload.public_package}}_${{github.event.client_payload.tag_name}}
+          body: |
+            🎁 🍻
+            Auto generated pull request for upgrading `${{steps.lib.outputs.result}}`.
+            For details vist: ${{github.event.client_payload.html_url}}
+
+      - name: Send Notification in QPPSF Slack
+        uses: rtCamp/action-slack-notify@773196b4bd0a8ba5e6912147b9bfaad152f04969 # pin@v2.0.2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
+          SLACK_CHANNEL: "p-qppsf-api"
+          SLACK_TITLE: ${{steps.lib.outputs.result}} released
+          SLACK_USERNAME: releaseNotify
+          SLACK_MESSAGE: "@here - a PR is awaiting your kind perusal :kiss: https://github.com/CMSgov/qpp-measures-data/pull/${{steps.pr.outputs.pull-request-number}}"
