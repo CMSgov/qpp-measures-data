@@ -489,7 +489,14 @@
         "optionType": "eligiblePopulationExclusion",
         "qualityCodes": [
           {
-            "code": "G2081"
+            "code": "G2081",
+            "placesOfService": [
+              "32",
+              "33",
+              "34",
+              "54",
+              "56"
+            ]
           }
         ]
       },
@@ -18026,42 +18033,24 @@
     ],
     "performanceOptions": [
       {
-        "optionType": "eligiblePopulationExclusion",
-        "qualityCodes": [
-          {
-            "code": "G9714"
-          }
-        ]
-      },
-      {
-        "optionType": "performanceMet",
-        "qualityCodes": [
-          {
-            "code": "G2012"
-          }
-        ]
-      },
-      {
-        "optionType": "performanceMet",
-        "qualityCodes": [
-          {
-            "code": "G2103"
-          }
-        ]
-      },
-      {
-        "optionType": "performanceMet",
-        "qualityCodes": [
-          {
-            "code": "G2104"
-          }
-        ]
-      },
-      {
         "optionType": "performanceMet",
         "qualityCodes": [
           {
             "code": "3072F",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P",
+              "8P"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
+          {
+            "code": "G2102",
             "modifierExclusions": [
               "1P",
               "2P",
@@ -18074,15 +18063,78 @@
         ]
       },
       {
-        "optionType": "performanceNotMet",
+        "optionType": "performanceMet",
         "qualityCodes": [
           {
-            "code": "G2015"
+            "code": "G2102"
           }
         ]
       },
       {
         "optionType": "performanceNotMet",
+        "qualityCodes": [
+          {
+            "code": "G2103",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P"
+            ],
+            "modifiers": [
+              "8P"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "performanceMet",
+        "qualityCodes": [
+          {
+            "code": "G2103"
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
+          {
+            "code": "G2104",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P"
+            ],
+            "modifiers": [
+              "8P"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "performanceMet",
+        "qualityCodes": [
+          {
+            "code": "G2104"
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationExclusion",
+        "qualityCodes": [
+          {
+            "code": "G2105",
+            "placesOfService": [
+              "32",
+              "33",
+              "34",
+              "54",
+              "56"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationExclusion",
         "qualityCodes": [
           {
             "code": "G2106"
@@ -18090,10 +18142,18 @@
         ]
       },
       {
-        "optionType": "performanceNotMet",
+        "optionType": "eligiblePopulationExclusion",
         "qualityCodes": [
           {
             "code": "G2107"
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationExclusion",
+        "qualityCodes": [
+          {
+            "code": "G9714"
           }
         ]
       }
@@ -26357,13 +26417,7 @@
             ]
           },
           {
-            "code": "G9909",
-            "modifierExclusions": [
-              "1P",
-              "2P",
-              "3P",
-              "8P"
-            ]
+            "code": "G9909"
           }
         ]
       }
@@ -26529,22 +26583,6 @@
     ],
     "performanceOptions": [
       {
-        "optionType": "eligiblePopulationExclusion",
-        "qualityCodes": [
-          {
-            "code": "G2115"
-          }
-        ]
-      },
-      {
-        "optionType": "eligiblePopulationExclusion",
-        "qualityCodes": [
-          {
-            "code": "G2116"
-          }
-        ]
-      },
-      {
         "optionType": "performanceMet",
         "qualityCodes": [
           {
@@ -26609,6 +26647,22 @@
         "qualityCodes": [
           {
             "code": "G9231"
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationExclusion",
+        "qualityCodes": [
+          {
+            "code": "G2115"
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationExclusion",
+        "qualityCodes": [
+          {
+            "code": "G2116"
           }
         ]
       },
@@ -40095,7 +40149,29 @@
         "optionType": "performanceMet",
         "qualityCodes": [
           {
-            "code": "3095F"
+            "code": "3095F",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P",
+              "8P"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
+          {
+            "code": "3095F",
+            "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P"
+            ],
+            "modifiers": [
+              "8P"
+            ]
           }
         ]
       },
@@ -40119,7 +40195,14 @@
         "optionType": "eligiblePopulationExclusion",
         "qualityCodes": [
           {
-            "code": "G9938"
+            "code": "G9938",
+            "placesOfService": [
+              "32",
+              "33",
+              "34",
+              "54",
+              "56"
+            ]
           }
         ]
       },
@@ -40136,14 +40219,6 @@
         "qualityCodes": [
           {
             "code": "G2127"
-          }
-        ]
-      },
-      {
-        "optionType": "performanceNotMet",
-        "qualityCodes": [
-          {
-            "code": "3095F"
           }
         ]
       },
@@ -40266,73 +40341,257 @@
         "minAge": 0,
         "procedureCodes": [
           {
-            "code": "99201"
+            "code": "99201",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99202"
+            "code": "99202",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99203"
+            "code": "99203",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99204"
+            "code": "99204",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99205"
+            "code": "99205",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99211"
+            "code": "99211",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99212"
+            "code": "99212",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99213"
+            "code": "99213",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99214"
+            "code": "99214",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99215"
+            "code": "99215",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99221"
+            "code": "99221",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99222"
+            "code": "99222",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99223"
+            "code": "99223",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99231"
+            "code": "99231",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99232"
+            "code": "99232",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99233"
+            "code": "99233",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99238"
+            "code": "99238",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99239"
+            "code": "99239",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99241"
+            "code": "99241",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99242"
+            "code": "99242",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99243"
+            "code": "99243",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99244"
+            "code": "99244",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           },
           {
-            "code": "99245"
+            "code": "99245",
+            "modifierExclusions": [
+              "GQ",
+              "GT",
+              "95"
+            ],
+            "placesOfServiceExclusions": [
+              "02"
+            ]
           }
         ]
       }
@@ -40669,40 +40928,88 @@
         "minAge": 0,
         "procedureCodes": [
           {
-            "code": "44388"
+            "code": "44388",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "44389"
+            "code": "44389",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "44392"
+            "code": "44392",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "44394"
+            "code": "44394",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "44404"
+            "code": "44404",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "45378"
+            "code": "45378",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "45380"
+            "code": "45380",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "45381"
+            "code": "45381",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "45384"
+            "code": "45384",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "45385"
+            "code": "45385",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "G0105"
+            "code": "G0105",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           },
           {
-            "code": "G0121"
+            "code": "G0121",
+            "modifierExclusions": [
+              "73",
+              "74"
+            ]
           }
         ]
       }
