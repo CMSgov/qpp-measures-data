@@ -11002,7 +11002,7 @@
   {
     "measureId": "AQI48",
     "title": "Patient-Reported Experience with Anesthesia",
-    "description": "Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care and who reported a positive experience.\n\nThis measure will consist of two performance rates:\n\nAQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care\nAQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care\n\nNOTE: The measure requires that a valid survey, as defined in the numerator of AQI48a, be sent to patients between discharge from the facility and within 30 days of facility discharge. To report AQI48b, a minimum number of 20 surveys with the mandatory question completed must be reported. ** In order to be scored on this measure, clinicians must report BOTH AQI48a AND AQI48b.\n\nPerformance Rate Descriptions:\n\nThis measure has two performance rates. The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care. The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care.",
+    "description": "Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care and who reported a positive experience.\n\nThis measure will consist of two performance rates:\n\nRate 1: AQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care\nRate 2: AQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care\n\nNOTE: The measure requires that a valid survey, as defined in the numerator of AQI48a, be sent to patients between discharge from the facility and within 30 days of facility discharge. To report AQI48b, a minimum number of 20 surveys with the mandatory question completed must be reported. ** In order to be scored on this measure, clinicians must report BOTH AQI48a AND AQI48b.\n\nPerformance Rate Descriptions:\n\nThis measure has two performance rates. The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care. The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -11020,7 +11020,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surveyed",
+        "description": "AQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care"
+      },
+      {
+        "name": "overall",
+        "description": "AQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11916,7 +11925,7 @@
   {
     "measureId": "AHSQC10",
     "title": "Ventral Hernia Repair: Pain and Functional Status Assessment",
-    "description": "Percentage of patients aged 18 years and older who have undergone ventral hernia repair and who completed baseline and 30 day follow-up patient-reported functional status assessments, and achieved at least a 10% improvement in functional status score from baseline.\n\nPerformance Rate Descriptions:\n\n1. Patients who achieved at least a 10% improvement in functional status score from baseline.\n2. patients who completed baseline and 30 day follow-up patient-reported functional status assessments,",
+    "description": "Percentage of patients aged 18 years and older who have undergone ventral hernia repair and who completed baseline and 30 day follow-up patient-reported functional status assessments, and achieved at least a 10% improvement in functional status score from baseline.\n\nPerformance Rate Descriptions:\n\nRate 1: Patients who achieved at least a 10% improvement in functional status score from baseline.\nRate 2: patients who completed baseline and 30 day follow-up patient-reported functional status assessments.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -11934,7 +11943,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Patients who achieved at least a 10% improvement in functional status score from baseline."
+      },
+      {
+        "name": "followup",
+        "description": "patients who completed baseline and 30 day follow-up patient-reported functional status assessments."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11942,7 +11960,7 @@
   {
     "measureId": "AHSQC6",
     "title": "Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period",
-    "description": "Percentage of patients aged 18 years and older who have undergone abdominal wall reconstruction defined as ventral hernia repair with myofascial release (abdominal wall fascial layer separated from muscular layer) who had a surgical site occurrence requiring procedural intervention within the 30 day postoperative period. Surgical site occurrences include any surgical site infections (superficial, deep, organ space) or any of the following: wound cellulitis, non-healing incisional wound, fascial disruption, skin or soft tissue ischemia, skin or soft tissue necrosis, wound serous drainage, wound purulent drainage, chronic sinus drainage, localized stab wound infection, stitch abscess, seroma, infected seroma, hematoma, infected hematoma, exposed biologic mesh, exposed synthetic mesh, contaminated biologic mesh, contaminated synthetic mesh, infected biologic mesh, infected synthetic mesh, mucocutaneous anastomosis disruption, enterocutaneous fistula). Procedural interventions include any of the following: wound opening, wound debridement, suture excision, percutaneous drainage, partial mesh removal, complete mesh removal.\n\nThis measure is reported as three performance rates stratified by hernia width:\n1) Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Any hernia width (overall rate)\n2) Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of ≤10cm\n3) Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of >10cm\n\nPerformance Rate Descriptions:\n\nPerformance Rate 1) All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up\n\nPerformance Rate 2) All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up with hernia width < 10cm\n\nPerformance Rate 3) All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up with hernia width > 10cm",
+    "description": "Percentage of patients aged 18 years and older who have undergone abdominal wall reconstruction defined as ventral hernia repair with myofascial release (abdominal wall fascial layer separated from muscular layer) who had a surgical site occurrence requiring procedural intervention within the 30 day postoperative period. Surgical site occurrences include any surgical site infections (superficial, deep, organ space) or any of the following: wound cellulitis, non-healing incisional wound, fascial disruption, skin or soft tissue ischemia, skin or soft tissue necrosis, wound serous drainage, wound purulent drainage, chronic sinus drainage, localized stab wound infection, stitch abscess, seroma, infected seroma, hematoma, infected hematoma, exposed biologic mesh, exposed synthetic mesh, contaminated biologic mesh, contaminated synthetic mesh, infected biologic mesh, infected synthetic mesh, mucocutaneous anastomosis disruption, enterocutaneous fistula). Procedural interventions include any of the following: wound opening, wound debridement, suture excision, percutaneous drainage, partial mesh removal, complete mesh removal.\n\nThis measure is reported as three performance rates stratified by hernia width:\nRate 1: Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Any hernia width (overall rate)\nRate 2: Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of ≤10cm\nRate 3: Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of >10cm",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "outcome",
@@ -11960,7 +11978,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Any hernia width (overall rate)"
+      },
+      {
+        "name": "<=10cm",
+        "description": "Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of ≤10cm"
+      },
+      {
+        "name": ">10cm",
+        "description": "Abdominal Wall Reconstruction Surgical Site Occurrence Requiring Procedural Intervention within the 30 Day Postoperative Period-Hernia width of >10cm"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12631,7 +12662,7 @@
   {
     "measureId": "IRIS59",
     "title": "Regaining Vision After Cataract Surgery",
-    "description": "Percentage of eyes of patients aged 18 years and older with a diagnosis of cataract who had cataract surgery and 20/20 best-corrected distance visual acuity or better OR an improvement in best-corrected distance visual acuity within 30 days following the cataract surgery. Weighted average of performance rates reported.\n\nPerformance Rate Descriptions:\n\nRate 1 includes eyes of  patients with no comorbidities or additional procedures on the same date as the cataract surgery,\nRate 2 includes eyes of  patients with comorbidities with a pre-operative visual acuity of 20/200 or better, and\nRate 3 includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse",
+    "description": "Percentage of eyes of patients aged 18 years and older with a diagnosis of cataract who had cataract surgery and 20/20 best-corrected distance visual acuity or better OR an improvement in best-corrected distance visual acuity within 30 days following the cataract surgery. Weighted average of performance rates reported.\n\nPerformance Rate Descriptions:\n\nRate 1: includes eyes of  patients with no comorbidities or additional procedures on the same date as the cataract surgery,\nRate 2: includes eyes of  patients with comorbidities with a pre-operative visual acuity of 20/200 or better, and\nRate 3: includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -12649,7 +12680,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "nocomorbidities",
+        "description": "includes eyes of  patients with no comorbidities or additional procedures on the same date as the cataract surgery,"
+      },
+      {
+        "name": "comorbidities&20/200",
+        "description": "includes eyes of  patients with comorbidities with a pre-operative visual acuity of 20/200 or better, and"
+      },
+      {
+        "name": "comorbidities&20/400",
+        "description": "includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12681,7 +12725,7 @@
   {
     "measureId": "IRIS60",
     "title": "Visual Acuity Improvement Following Cataract Surgery Combined with a Trabeculectomy or an Aqueous Shunt Procedure",
-    "description": "Percentage of eyes of patients who underwent cataract surgery combined with a trabeculectomy or an aqueous shunt procedure who had their visual acuity improve 1 or 2 or more Snellen lines from their preoperative visual acuity between 3 and 6 months postoperatively.  Weighted average of performance rates reported.\n\nPerformance Rate Descriptions:\n\nRate 1 includes eyes of patients with a pre-operative visual acuity of better than 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively\nRate 2 includes eyes of patients with a pre-operative visual acuity of 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively\nRate 3 includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively",
+    "description": "Percentage of eyes of patients who underwent cataract surgery combined with a trabeculectomy or an aqueous shunt procedure who had their visual acuity improve 1 or 2 or more Snellen lines from their preoperative visual acuity between 3 and 6 months postoperatively.  Weighted average of performance rates reported.\n\nPerformance Rate Descriptions:\n\nRate 1: includes eyes of patients with a pre-operative visual acuity of better than 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively\nRate 2: includes eyes of patients with a pre-operative visual acuity of 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively\nRate 3: includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -12699,7 +12743,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "better20/200",
+        "description": "includes eyes of patients with a pre-operative visual acuity of better than 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively"
+      },
+      {
+        "name": "20/200",
+        "description": "includes eyes of patients with a pre-operative visual acuity of 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively"
+      },
+      {
+        "name": "20/400",
+        "description": "includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14066,7 +14123,7 @@
   {
     "measureId": "ASPS10",
     "title": "Patient Satisfaction with Information Provided during Breast Reconstruction",
-    "description": "Percentage of patients aged 18 years and older who had breast reconstruction who reported a score of 65 or higher on the BREAST-Q Satisfaction with Information scale, within 120 days of the procedure.\n\nThis measure is reported as three rates stratified by procedure:\n•Reporting Criteria 1: Implant Breast Reconstruction Procedures\n•Reporting Criteria 2: Autologous Breast Reconstruction Procedures\n•Total Rate: All breast reconstruction Procedures\n\nPerformance Rate Descriptions:\n\n3- Implant-based breast reconstruction, autologous breast reconstruction, all breast reconstruction",
+    "description": "Percentage of patients aged 18 years and older who had breast reconstruction who reported a score of 65 or higher on the BREAST-Q Satisfaction with Information scale, within 120 days of the procedure.\n\nThis measure is reported as three rates stratified by procedure:\nRate 1: Implant Breast Reconstruction Procedures\nRate 2: Autologous Breast Reconstruction Procedures\nRate 3: All breast reconstruction Procedures",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -14084,7 +14141,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "implant",
+        "description": "Implant Breast Reconstruction Procedures"
+      },
+      {
+        "name": "autologous",
+        "description": "Autologous Breast Reconstruction Procedures"
+      },
+      {
+        "name": "overall",
+        "description": "All breast reconstruction Procedures"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14260,7 +14330,7 @@
   {
     "measureId": "CDR1",
     "title": "Adequate Off-loading of Diabetic Foot Ulcer at each visit",
-    "description": "Percentage of visits in which diabetic foot ulcers among patients aged 18 years and received adequate off-loading during a 12-month reporting period, stratified by location of the ulcer.\n\nThe location of the diabetic foot ulcer on the foot (e.g. heel/midfoot vs. toes) determines the type of off-loading device that is appropriate, the patient's risk of falling, the probability of successful off-loading and thus the likelihood of major amputation. The clinician needs to assess the most appropriate off-loading option based on many different factors.\n\nThere are three rates reported for this measure.\nThe three rates will be risk stratified into two buckets (location of wound and/or ulcer) which are the following:\n1.\tMidfoot/heel\n2.\tToes\n3.\tThe average of the two risk stratified buckets which will be the performance rate in the XML submitted.\n\nPerformance Rate Descriptions:\n\nThere are three rates reported for this measure.\nThe three rates will be risk stratified into two buckets (location of wound and/or ulcer) which are the following:\n1.\tMidfoot/heel\n2.\tToes\n3.\tThe average of the two risk stratified buckets which will be the performance rate in the JSON XML submitted.",
+    "description": "Percentage of visits in which diabetic foot ulcers among patients aged 18 years and received adequate off-loading during a 12-month reporting period, stratified by location of the ulcer.\n\nThe location of the diabetic foot ulcer on the foot (e.g. heel/midfoot vs. toes) determines the type of off-loading device that is appropriate, the patient's risk of falling, the probability of successful off-loading and thus the likelihood of major amputation. The clinician needs to assess the most appropriate off-loading option based on many different factors.\n\nThere are three rates reported for this measure.\nThe three rates will be risk stratified into two buckets (location of wound and/or ulcer) which are the following:\nRate 1: Midfoot/heel\nRate 2: Toes\nRate 3: The average of the two risk stratified buckets which will be the performance rate in the JSON submitted.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
@@ -14278,7 +14348,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "midfoot/heel",
+        "description": "Midfoot/heel"
+      },
+      {
+        "name": "toes",
+        "description": "Toes"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the two risk stratified buckets which will be the performance rate in the JSON submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14286,7 +14369,7 @@
   {
     "measureId": "CDR2",
     "title": "Diabetic Foot Ulcer (DFU) Healing or Closure",
-    "description": "Percentage of diabetic foot ulcers among patients age 18 or older that have achieved healing or closure within 6 months, stratified by the Wound Healing Index. Healing or closure is defined as complete epithelialization without drainage or the need for a dressing over the closed ulceration, although venous compression would still be required.\n\nThere are four rates reported for this measure.\nThree of the rates will be risk stratified into three buckets (minimum-maximum) which are the following:\n1. 0.00 – 62.42\n2. 62.42 – 73.19\n3. 73.19 – 93.45\n4. The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure.\nThree of the rates will be risk stratified into three buckets (minimum-maximum) which are the following:\n1. 0.00 - 62.42\n2. 62.42 - 73.19\n3. 73.19 - 93.45\n4. The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.",
+    "description": "Percentage of diabetic foot ulcers among patients age 18 or older that have achieved healing or closure within 6 months, stratified by the Wound Healing Index. Healing or closure is defined as complete epithelialization without drainage or the need for a dressing over the closed ulceration, although venous compression would still be required.\n\nThere are four rates reported for this measure.\nThree of the rates will be risk stratified into three buckets (minimum-maximum) which are the following:\nRate 1: 0.00 -62.42\nRate 2: 62.42 -73.19\nRate 3: 73.19 -93.45\nRate 4: The average of the three risk stratified buckets which will be the performance rate in the JSON submitted.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -14304,7 +14387,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "bucket1",
+        "description": "0.00 -62.42"
+      },
+      {
+        "name": "bucket2",
+        "description": "62.42 -73.19"
+      },
+      {
+        "name": "bucket3",
+        "description": "73.19 -93.45"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14312,7 +14412,7 @@
   {
     "measureId": "CDR6",
     "title": "Venous Leg Ulcer (VLU) outcome measure: Healing or Closure",
-    "description": "Percentage of venous leg ulcers among patients age 18 or older that have achieved healing or closure within 12 months, stratified by the Wound Healing Index.  Healing or closure is defined as complete epithelialization without drainage or the need for a dressing over the closed ulceration, although venous compression would still be required.\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure.\n\nThree of the rates will be risk stratified into three buckets (minimum-maximum)which are the following:\n1. 0.00-73.24\n2. 73.24 - 80.26\n3. 80.26 - 87.21\n4. The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.",
+    "description": "Percentage of venous leg ulcers among patients age 18 or older that have achieved healing or closure within 12 months, stratified by the Wound Healing Index.  Healing or closure is defined as complete epithelialization without drainage or the need for a dressing over the closed ulceration, although venous compression would still be required.\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure.\n\nThree of the rates will be risk stratified into three buckets (minimum-maximum)which are the following:\nRate 1: 0.00-73.24\nRate 2: 73.24 - 80.26\nRate 3: 80.26 - 87.21\nRate 4: The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -14330,7 +14430,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "bucket1",
+        "description": "0.00-73.24"
+      },
+      {
+        "name": "bucket2",
+        "description": "73.24 - 80.26"
+      },
+      {
+        "name": "bucket3",
+        "description": "80.26 - 87.21"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14890,7 +15007,7 @@
   {
     "measureId": "GIQIC21",
     "title": "Appropriate follow-up interval of not less than 5 years for colonoscopies with findings of 1-2 tubular adenomas < 10 mm OR of 10 years for colonoscopies with only hyperplastic polyp findings in rectum or sigmoid",
-    "description": "Percentage of average-risk patients aged 50 years to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings of 1 of 2 tubular adenomas < 10 mm with a recommended follow-up interval of not less than 5 years OR pathology findings of only hyperplastic polyp findings in rectum or sigmoid with a recommended follow-up interval of 10 years for repeat colonoscopy documented in their colonoscopy report\n\nPerformance Rate Descriptions:\n\nThis measure will be calculated with 3 performance rates:\n1) Overall percentage of patients given an appropriate follow-up interval of greater than 5 years or of 10 years for their next colonoscopies based on specific findings of their screening colonoscopy associated with longer follow-up intervals\n2) Percentage of patients with screening colonoscopy findings of 1-2 tubular adenomas < 10 mm given an appropriate follow-up interval of not less than 5 years for their next colonoscopies\n3) Percentage of patients with screening colonoscopy findings of only hyperplastic polyp findings in rectum or sigmoid given an appropriate follow-up interval of 10 years for their next colonoscopies",
+    "description": "Percentage of average-risk patients aged 50 years to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings of 1 of 2 tubular adenomas < 10 mm with a recommended follow-up interval of not less than 5 years OR pathology findings of only hyperplastic polyp findings in rectum or sigmoid with a recommended follow-up interval of 10 years for repeat colonoscopy documented in their colonoscopy report\n\nPerformance Rate Descriptions:\n\nThis measure will be calculated with 3 performance rates:\nRate 1: Overall percentage of patients given an appropriate follow-up interval of greater than 5 years or of 10 years for their next colonoscopies based on specific findings of their screening colonoscopy associated with longer follow-up intervals\nRate 2: 1 to 2 tubular adenomas < 10 mm OR\nRate 3: only hyperplastic polyp(s) in rectum or sigmoid",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
     "measureType": "process",
@@ -14908,7 +15025,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall percentage of patients given an appropriate follow-up interval of greater than 5 years or of 10 years for their next colonoscopies based on specific findings of their screening colonoscopy associated with longer follow-up intervals"
+      },
+      {
+        "name": "tubular",
+        "description": "1 to 2 tubular adenomas < 10 mm OR"
+      },
+      {
+        "name": "hyperplastic",
+        "description": "only hyperplastic polyp(s) in rectum or sigmoid"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14916,7 +15046,7 @@
   {
     "measureId": "GIQIC22",
     "title": "Screening Colonoscopy Adenoma Detection Rate",
-    "description": "The percentage of patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy",
+    "description": "The percentage of patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy.\n\nThis measure will be calculated with 3 performance rates:\nRate 1: Overall percentage of patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy\nRate 2: Percentage of male patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy\nRate 3: Percentage of female patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -14934,7 +15064,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall percentage of patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "malePatients",
+        "description": "Percentage of male patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "femalePatients",
+        "description": "Percentage of female patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15038,7 +15181,7 @@
   {
     "measureId": "IROMS11",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in knee rehabilitation of patients with knee injury measured via their validated Knee Outcome Survey (KOS) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",
-    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the KOS change score for patients with knee injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a PT/OT performance measure at the eligible PT/OT or PT/OT group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\n1) Overall proportion of patients not achieving an MCID in KOS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in KOS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in KOS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the KOS change score for patients with knee injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a PT/OT performance measure at the eligible PT/OT or PT/OT group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\nRate 1: Overall proportion of patients not achieving an MCID in KOS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in KOS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in KOS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15056,7 +15199,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15064,7 +15232,7 @@
   {
     "measureId": "IROMS13",
     "title": "Failure to Progress (FTP): Proportion of patients not achieving a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with hip, leg or ankle injuries using the validated Lower Extremity Function Scale (LEFS) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",
-    "description": "The proportion of patients failing to achieve an MCID of nine (9) points or more improvement in the LEFS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients achieving an MCID in LEFS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in LEFS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in LEFS change score will be reported.\n6)  A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of nine (9) points or more improvement in the LEFS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients achieving an MCID in LEFS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in LEFS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in LEFS change score will be reported.\nRate 6:  A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15082,7 +15250,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15090,7 +15283,7 @@
   {
     "measureId": "IROMS15",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with neck pain/injury measured via the validated Neck Disability Index (NDI).",
-    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the NDI change score for neck pain/injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted NDI change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\n1) Overall proportion of patients achieving an MCID in NDI change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in NDI change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in NDI change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the NDI change score for neck pain/injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted NDI change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\nRate 1: Overall proportion of patients achieving an MCID in NDI change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in NDI change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in NDI change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15108,7 +15301,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15116,7 +15334,7 @@
   {
     "measureId": "IROMS19",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with arm, shoulder, and hand injury measured via the validated Disability of Arm Shoulder and Hand (DASH) score, Quick Disability of Arm Shoulder and Hand (QDASH) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",
-    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the DASH change score or eight (8) points or more improvement in the QDASH change score for patients with arm, shoulder, and hand injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted DASH change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical and occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\n1) Overall proportion of patients achieving an MCID in DASH change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in DASH change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in DASH change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the DASH change score or eight (8) points or more improvement in the QDASH change score for patients with arm, shoulder, and hand injury patients treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted DASH change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical and occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\nRate 1: Overall proportion of patients achieving an MCID in DASH change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in DASH change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in DASH change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15134,7 +15352,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15238,7 +15481,7 @@
   {
     "measureId": "HCPR19",
     "title": "30 Day All Cause Readmit Rate for Discharged Inpatients",
-    "description": "Risk-Standardized Rate of All-cause Readmission to the Discharging Hospital and Hospitalist Physician Group within 30 Days of Initial Hospital Discharge\n\nPerformance Rate Descriptions:\n\n1. Readmission Rate for All Discharged Inpatients (Overall Reporting Rate)\n\n2. Readmission Rate for Discharged Pneumonia Patients\n\n3. Readmission Rate for Discharged CHF Patients\n\n4. Readmission Rate for Discharged COPD Patients",
+    "description": "Risk-Standardized Rate of All-cause Readmission to the Discharging Hospital and Hospitalist Physician Group within 30 Days of Initial Hospital Discharge\n\nPerformance Rate Descriptions:\n\nRate 1: Readmission Rate for All Discharged Inpatients (Overall Reporting Rate)\n\nRate 2: Readmission Rate for Discharged Pneumonia Patients\n\nRate 3: Readmission Rate for Discharged CHF Patients\n\nRate 4: Readmission Rate for Discharged COPD Patients",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "outcome",
@@ -15766,7 +16009,7 @@
   {
     "measureId": "IROMS12",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in revalidation patients with knee injury pain.",
-    "description": "The proportion of patients failing to achieve  MCID of two (2) points or more improvement in the NPRS change score for patients with knee injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
+    "description": "The proportion of patients failing to achieve  MCID of two (2) points or more improvement in the NPRS change score for patients with knee injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15784,7 +16027,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15792,7 +16060,7 @@
   {
     "measureId": "IROMS14",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with hip, leg or ankle (lower extremity except knee) injury.",
-    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15810,7 +16078,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15818,7 +16111,7 @@
   {
     "measureId": "IROMS16",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with neck pain/injury.",
-    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with neck pain/injury treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with neck pain/injury treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15836,7 +16129,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15844,7 +16162,7 @@
   {
     "measureId": "IROMS17",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation patients with low back pain measured via the validated Modified Low Back Pain Disability Questionnaire (MDQ) score.",
-    "description": "The proportion of patients failing to achieve an MCID of six (6) points or more improvement in the MDQ change score for patients with low back pain treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\n1) Overall proportion of patients not achieving an MCID in MDQ change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in MDQ change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in MDQ change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of six (6) points or more improvement in the MDQ change score for patients with low back pain treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n\nRate 1: Overall proportion of patients not achieving an MCID in MDQ change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in MDQ change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in MDQ change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15862,7 +16180,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15870,7 +16213,7 @@
   {
     "measureId": "IROMS18",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in revalidation patients with low back pain.",
-    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with low back pain treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with low back pain treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15888,7 +16231,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15896,7 +16264,7 @@
   {
     "measureId": "IROMS20",
     "title": "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS),  in rehabilitation patients with arm, shoulder, or hand injury.",
-    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with arm, shoulder, or hand injury treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline DASH score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\n1) Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\n2) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\n3) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n4) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\n5) The proportion of patients not achieving an MCID in the NPRS change score will be reported.\n6) A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
+    "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with arm, shoulder, or hand injury treated during the observation period will be reported.\n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group.  The risk adjustment will be calculated using a logistic regression model using: baseline DASH score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.\n\nPerformance Rate Descriptions:\n\nSix measures will be reported, two overall performance measures and four stratified performance measures are to be included:\nRate 1: Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 2: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor operative (surgical) patients:\nRate 3: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 4: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.\n\nFor non-operative (non-surgical) patients:\nRate 5: The proportion of patients not achieving an MCID in the NPRS change score will be reported.\nRate 6: A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15914,7 +16282,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15946,7 +16339,7 @@
   {
     "measureId": "MBHR10",
     "title": "Symptom Improvement in adults with ADHD",
-    "description": "The percentage of adult patients (18 years of age or older) with a diagnosis of ADHD who show a reduction in symptoms of .25 (25%) on the Adult ADHD Self-Report Scale (ASRS-v1.1 - referred to as ASRS) 18 item self-report scale of ADHD symptoms within 2 to 6 months after initially reporting significant symptoms\n\nPerformance Rate Descriptions:\n\n1. Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan  2. Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-6 months after index date",
+    "description": "The percentage of adult patients (18 years of age or older) with a diagnosis of ADHD who show a reduction in symptoms of .25 (25%) on the Adult ADHD Self-Report Scale (ASRS-v1.1 - referred to as ASRS) 18 item self-report scale of ADHD symptoms within 2 to 6 months after initially reporting significant symptoms\n\nPerformance Rate Descriptions:\n\nRate 1: Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan \nRate 2: Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-6 months after index date",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -15964,7 +16357,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "screening",
+        "description": "Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan"
+      },
+      {
+        "name": "overall",
+        "description": "Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-6 months after index date"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16044,7 +16446,7 @@
   {
     "measureId": "MBHR5",
     "title": "Screening and monitoring for psychosocial problems among children and youth",
-    "description": "Percentage of children from 3.00 to 17.99 years of age who are administered a parent-report, standardized and validated screening tool to assess broad-band psychosocial problems during an intake visit AND who demonstrated a reliable change in parent-reported problem behaviors 2 to 6 months after initial positive screen for externalizing and internalizing behavior problems.\n\nPerformance Rate Descriptions:\n\n1. Patient administered a psychiatric screening to assess health broad-band psychosocial problem 2. Patient administered a psychiatric or behavioral health intake visit with a positive PSC-ES/PSC-IS screening who demonstrated a reliable improvement of 2 or more points on parent-report version of the PSC-ES/PSC-IS assessment taken 2 to 6 months later",
+    "description": "Percentage of children from 3.00 to 17.99 years of age who are administered a parent-report, standardized and validated screening tool to assess broad-band psychosocial problems during an intake visit AND who demonstrated a reliable change in parent-reported problem behaviors 2 to 6 months after initial positive screen for externalizing and internalizing behavior problems.\n\nPerformance Rate Descriptions:\n\nRate 1: Patient administered a psychiatric screening to assess health broad-band psychosocial problem \nRate 2: Patient administered a psychiatric or behavioral health intake visit with a positive PSC-ES/PSC-IS screening who demonstrated a reliable improvement of 2 or more points on parent-report version of the PSC-ES/PSC-IS assessment taken 2 to 6 months later",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16062,7 +16464,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "broadband",
+        "description": "Patient administered a psychiatric screening to assess health broad-band psychosocial problem"
+      },
+      {
+        "name": "overall",
+        "description": "Patient administered a psychiatric or behavioral health intake visit with a positive PSC-ES/PSC-IS screening who demonstrated a reliable improvement of 2 or more points on parent-report version of the PSC-ES/PSC-IS assessment taken 2 to 6 months later"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16070,7 +16481,7 @@
   {
     "measureId": "MBHR6",
     "title": "Sleep Quality Screening and Sleep Response at 3-months",
-    "description": "Percentage of patients 18 years and older who reported sleep quality concerns (e.g., insomnia) with documentation of a standardized tool AND demonstrated a response to treatment at three months (+/- 60 days) after index visit\n\nPerformance Rate Descriptions:\n\n1. Documentation of a standardized tool to assess sleep quality and a document care of plan (e.g. Pittsburgh Sleep Quality Index (PSQI), the Insomnia Severity Index (ISI))  2. Patient demonstrated an Insomnia Severity Index (ISI) that is reduced by 25% or greater from the index Insomnia Severity Index (ISI) score, three months (+/- 60 days) after index date",
+    "description": "Percentage of patients 18 years and older who reported sleep quality concerns (e.g., insomnia) with documentation of a standardized tool AND demonstrated a response to treatment at three months (+/- 60 days) after index visit\n\nPerformance Rate Descriptions:\n\nRate 1: Documentation of a standardized tool to assess sleep quality and a document care of plan (e.g. Pittsburgh Sleep Quality Index (PSQI), the Insomnia Severity Index (ISI))  \nRate 2: Patient demonstrated an Insomnia Severity Index (ISI) that is reduced by 25% or greater from the index Insomnia Severity Index (ISI) score, three months (+/- 60 days) after index date",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16088,7 +16499,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "reported",
+        "description": "Documentation of a standardized tool to assess sleep quality and a document care of plan (e.g. Pittsburgh Sleep Quality Index (PSQI), the Insomnia Severity Index (ISI))"
+      },
+      {
+        "name": "overall",
+        "description": "Patient demonstrated an Insomnia Severity Index (ISI) that is reduced by 25% or greater from the index Insomnia Severity Index (ISI) score, three months (+/- 60 days) after index date"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16144,7 +16564,7 @@
   {
     "measureId": "MBHR9",
     "title": "Outcome monitoring of ADHD functional impairment in children and youth",
-    "description": "Percentage of children aged 4 through 18 years, with a diagnosis of attention deficit/hyperactivity disorder (ADHD), who demonstrate a change score of 0.25 or greater on the Weiss Functional Impairment Rating Scale - Parent Report (WFIRS-P) within 2 to 6 months after an initial positive finding of functional impairment.\n\nPerformance Rate Descriptions:\n\n1.\tThe percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit \n2.\tThe percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit, and a clinically significant, baseline WFIRS-P total mean score of 0.65 or greater.",
+    "description": "Percentage of children aged 4 through 18 years, with a diagnosis of attention deficit/hyperactivity disorder (ADHD), who demonstrate a change score of 0.25 or greater on the Weiss Functional Impairment Rating Scale - Parent Report (WFIRS-P) within 2 to 6 months after an initial positive finding of functional impairment.\n\nPerformance Rate Descriptions:\n\nRate 1: The percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit \nRate 2: The percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit, and a clinically significant, baseline WFIRS-P total mean score of 0.65 or greater.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16162,7 +16582,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "4to18",
+        "description": "The percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit"
+      },
+      {
+        "name": "overall",
+        "description": "The percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit, and a clinically significant, baseline WFIRS-P total mean score of 0.65 or greater."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16626,7 +17055,7 @@
   {
     "measureId": "HM5",
     "title": "Functional Status Change for Patients With Neck Functional Status Deficit",
-    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the neck who achieve a Minimal Clinically Important Difference (MCID) in the Neck Disability Index (NDI) or equivalent score that indicates a functional improvement greater than zero. Two rates will be reported:\n•\tThe overall proportion of patients achieving an MCID in NDI change score.\n•\tThe Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via NDI or equivalent tool) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nSubmission Criteria 1: All patients Neck (surgical)\nSubmission Criteria 2: All patients Neck (non-surgical)\nSubmission Criteria 3: All patients Neck (surgical and non-surgical)",
+    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the neck who achieve a Minimal Clinically Important Difference (MCID) in the Neck Disability Index (NDI) or equivalent score that indicates a functional improvement greater than zero. Two rates will be reported:\n•\tThe overall proportion of patients achieving an MCID in NDI change score.\n•\tThe Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via NDI or equivalent tool) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nRate 1: All patients Neck (surgical)\nRate 2: All patients Neck (non-surgical)\nRate 3: All patients Neck (surgical and non-surgical)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16644,7 +17073,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surgical",
+        "description": "All patients Neck (surgical)"
+      },
+      {
+        "name": "nonsurgical",
+        "description": "All patients Neck (non-surgical)"
+      },
+      {
+        "name": "overall",
+        "description": "All patients Neck (surgical and non-surgical)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16652,7 +17094,7 @@
   {
     "measureId": "HM6",
     "title": "Functional Status Change for Patients With Low Back Functional Status Deficit",
-    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the low back who achieve a Minimal Clinically Important Difference (MCID) in the Modified Oswestry Low Back Pain Questionnaire (ODI) or equivalent score that indicates a functional improvement greater than zero. Two rates will be reported:\n·        The overall proportion of patients achieving an MCID in NDI change score.\n·        The Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via NDI or equivalent tool) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nSubmission Criteria 1: All patients (surgical)\nSubmission Criteria 2: All patients (non-surgical)\nSubmission Criteria 3: All patients (surgical and non-surgical)",
+    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the low back who achieve a Minimal Clinically Important Difference (MCID) in the Modified Oswestry Low Back Pain Questionnaire (ODI) or equivalent score that indicates a functional improvement greater than zero. Two rates will be reported:\n·        The overall proportion of patients achieving an MCID in NDI change score.\n·        The Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via NDI or equivalent tool) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nRate 1: All patients (surgical)\nRate 2: All patients (non-surgical)\nRate 3: All patients (surgical and non-surgical)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16670,7 +17112,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surgical",
+        "description": "All patients (surgical)"
+      },
+      {
+        "name": "nonsurgical",
+        "description": "All patients (non-surgical)"
+      },
+      {
+        "name": "overall",
+        "description": "All patients (surgical and non-surgical)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16678,7 +17133,7 @@
   {
     "measureId": "HM7",
     "title": "Functional Status Change for Patients with Vestibular Dysfunction",
-    "description": "Percentage of patients aged 14 years and older diagnosed with vestibular dysfunction who achieve a Minimal Clinically Important Difference (MCID) as measured via the validated Dizziness Handicap Inventory or equivalent instrument to indicate functional, emotional, and physical improvement\n·        Submission Age Criteria 1: Patients aged 14-17 years of age\n·        Submission Age Criteria 2: Patients aged 18-64 years of age\n·        Submission Age Criteria 3: Patients aged 65 years and older\n·        Submission Criteria 4: Overall total rate of patients aged 14 years and older\nThe measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nSUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter\nSUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter\nSUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter\nSUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter",
+    "description": "Percentage of patients aged 14 years and older diagnosed with vestibular dysfunction who achieve a Minimal Clinically Important Difference (MCID) as measured via the validated Dizziness Handicap Inventory or equivalent instrument to indicate functional, emotional, and physical improvement\n·        Submission Age Criteria 1: Patients aged 14-17 years of age\n·        Submission Age Criteria 2: Patients aged 18-64 years of age\n·        Submission Age Criteria 3: Patients aged 65 years and older\n·        Submission Criteria 4: Overall total rate of patients aged 14 years and older\nThe measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nRate 1: Patients aged 14-17 years of age on date of encounter\nRate 2: Patients aged 18-64 years and older on date of encounter\nRate 3: Patients aged 65 years of age and older on date of encounter\nRate 4: Patients aged 14 years of age and older on date of encounter",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16696,7 +17151,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "14to17",
+        "description": "Patients aged 14-17 years of age on date of encounter"
+      },
+      {
+        "name": "18to64",
+        "description": "Patients aged 18-64 years and older on date of encounter"
+      },
+      {
+        "name": "65over",
+        "description": "Patients aged 65 years of age and older on date of encounter"
+      },
+      {
+        "name": "overall",
+        "description": "Patients aged 14 years of age and older on date of encounter"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16704,7 +17176,7 @@
   {
     "measureId": "HM8",
     "title": "Functional Status Change for Patients With Lower Extremity Functional Status Deficit",
-    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the lower extremity who achieve a Minimal Clinically Important Difference (MCID) in Lower Extremity Functional Scale (LEFS) score that indicates a functional improvement greater than zero. Two rates will be reported:\n•\tThe overall proportion of patients achieving an MCID in LEFS change score.\n•\tThe Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via LEFS) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nSUBMISSION CRITERIA 1: Foot and Ankle operative (surgical) patients\nSUBMISSION CRITERIA 2: Foot and Ankle (non-surgical) patients\nSUBMISSION CRITERIA 3: Knee operative (surgical) patients\nSUBMISSION CRITERIA 4: Knee (non-surgical) patients\nSUBMISSION CRITERIA 5: Hip and Pelvis operative (surgical) patients\nSUBMISSION CRITERIA 6: Hip and Pelvis (non-surgical) patients\nSUBMISSION CRITERIA 7: Foot, Ankle, Knee, Hip and Pelvis (surgical) patients\nSUBMISSION CRITERIA 8: Foot, Ankle, Knee, Hip and Pelvis (non-surgical) patients\nSUBMISSION CRITERIA 9: Foot, Ankle, Knee, Hip and Pelvis (surgical and non-surgical patients)",
+    "description": "Percentage of patients aged 18 years or older with a functional deficit related to the lower extremity who achieve a Minimal Clinically Important Difference (MCID) in Lower Extremity Functional Scale (LEFS) score that indicates a functional improvement greater than zero. Two rates will be reported:\n•\tThe overall proportion of patients achieving an MCID in LEFS change score.\n•\tThe Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via LEFS) proportion is greater than zero.\n\nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.\n\nPerformance Rate Descriptions:\n\nRate 1: Foot and Ankle operative (surgical) patients\nRate 2: Foot and Ankle (non-surgical) patients\nRate 3: Knee operative (surgical) patients\nRate 4: Knee (non-surgical) patients\nRate 5: Hip and Pelvis operative (surgical) patients\nRate 6: Hip and Pelvis (non-surgical) patients\nRate 7: Foot, Ankle, Knee, Hip and Pelvis (surgical) patients\nRate 8: Foot, Ankle, Knee, Hip and Pelvis (non-surgical) patients\nRate 9: Foot, Ankle, Knee, Hip and Pelvis (surgical and non-surgical patients)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "outcome",
@@ -16722,7 +17194,44 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "ft-s",
+        "description": "Foot and Ankle operative (surgical) patients"
+      },
+      {
+        "name": "ft-ns",
+        "description": "Foot and Ankle (non-surgical) patients"
+      },
+      {
+        "name": "k-s",
+        "description": "Knee operative (surgical) patients"
+      },
+      {
+        "name": "k-ns",
+        "description": "Knee (non-surgical) patients"
+      },
+      {
+        "name": "hp-s",
+        "description": "Hip and Pelvis operative (surgical) patients"
+      },
+      {
+        "name": "hp-ns",
+        "description": "Hip and Pelvis (non-surgical) patients"
+      },
+      {
+        "name": "fakhp-s",
+        "description": "Foot, Ankle, Knee, Hip and Pelvis (surgical) patients"
+      },
+      {
+        "name": "fakhp-ns",
+        "description": "Foot, Ankle, Knee, Hip and Pelvis (non-surgical) patients"
+      },
+      {
+        "name": "overall",
+        "description": "Foot, Ankle, Knee, Hip and Pelvis (surgical and non-surgical patients)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -18386,7 +18895,7 @@
   {
     "measureId": "ONSQIR21",
     "title": "Patient Reported Health-Related Quality of Life (HRQoL) during Treatment for Advanced Cancer",
-    "description": "Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life. Two rates are reported: 1. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart. 2. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life.\n\nPerformance Rate Descriptions:\n\nThis  measure reports 2 performance rates, the first is patients with active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart; and the second measure is the performance measure of the recent score indicates the same or better quality of life.",
+    "description": "Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life. Two rates are reported: 1. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart. 2. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life.\n\nPerformance Rate Descriptions:\n\nThis  measure reports 2 performance rates: \nRate 1: is patients with active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart \nRate 2: measure is the performance measure of the recent score indicates the same or better quality of life",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
     "measureType": "outcome",
@@ -18404,7 +18913,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "diagnosis",
+        "description": "is patients with active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart"
+      },
+      {
+        "name": "overall",
+        "description": "measure is the performance measure of the recent score indicates the same or better quality of life"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -18796,7 +19314,7 @@
   {
     "measureId": "RCOIR1",
     "title": "CKD 3-5 Patients Seen at the Recommended Frequency Levels",
-    "description": "CKD 3-5 Patients Seen at Recommended Frequency Levels is the percentage of patients aged 18\nyears and older with a diagnosis for CKD 3-5 that have been seen by the nephrologist or\nnephrologist’s team member in the office setting within the lowest value of the suggested frequency\nrange per the Kidney Disease: Improving Global Outcomes (KDIGO).\n\nPerformance Rate Descriptions:\n\nThis measure will be calculated with 3 performance rates:\n1) Patients 18 years and older with a diagnosis of CKD stage 3, not receiving renal replacement therapy, and had 2 or more office-based encounters in the past 12 months.\n2) Patients 18 years and older with a diagnosis of CKD stage 4, not receiving renal replacement therapy, and had 3 or more office-based encounters in the past 12 months.\n3) Patients 18 years and older with a diagnosis of CKD stage 5, not receiving renal replacement therapy, and had 8 or more office-based encounters in the past 12 months.",
+    "description": "CKD 3-5 Patients Seen at Recommended Frequency Levels is the percentage of patients aged 18\nyears and older with a diagnosis for CKD 3-5 that have been seen by the nephrologist or\nnephrologist’s team member in the office setting within the lowest value of the suggested frequency\nrange per the Kidney Disease: Improving Global Outcomes (KDIGO).\n\nPerformance Rate Descriptions:\n\nThis measure will be calculated with 3 performance rates:\nRate 1: Patients 18 years and older with a diagnosis of CKD stage 3, not receiving renal replacement therapy, and had 2 or more office-based encounters in the past 12 months.\nRate 2: Patients 18 years and older with a diagnosis of CKD stage 4, not receiving renal replacement therapy, and had 3 or more office-based encounters in the past 12 months.\nRate 3: Patients 18 years and older with a diagnosis of CKD stage 5, not receiving renal replacement therapy, and had 8 or more office-based encounters in the past 12 months.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
@@ -18814,7 +19332,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "three",
+        "description": "Patients 18 years and older with a diagnosis of CKD stage 3, not receiving renal replacement therapy, and had 2 or more office-based encounters in the past 12 months."
+      },
+      {
+        "name": "four",
+        "description": "Patients 18 years and older with a diagnosis of CKD stage 4, not receiving renal replacement therapy, and had 3 or more office-based encounters in the past 12 months."
+      },
+      {
+        "name": "five",
+        "description": "Patients 18 years and older with a diagnosis of CKD stage 5, not receiving renal replacement therapy, and had 8 or more office-based encounters in the past 12 months."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -19998,7 +20529,7 @@
   {
     "measureId": "CDR5",
     "title": "Adequate Compression at each visit for Patients with VLUs",
-    "description": "Percentage of venous leg ulcer visits among patients aged 18 years and older in which adequate compression is provided within the 12-month reporting period. Compression method should be appropriate to documented arterial supply.\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure.\nThe four rates will be risk stratified into three buckets which are the following:\n1.\tNormal arterial supply- No restrictions on type of compression\n2.\tCompression bandaging with special considerations (e.g. short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)\n3.\tCompression bandaging not usually recommended\n4.\tThe average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.",
+    "description": "Percentage of venous leg ulcer visits among patients aged 18 years and older in which adequate compression is provided within the 12-month reporting period. Compression method should be appropriate to documented arterial supply.\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure.\nThe four rates will be risk stratified into three buckets which are the following:\nRate 1: Normal arterial supply - No restrictions on type of compression\nRate 2: Compression bandaging with special considerations (e.g. short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)\nRate 3: Compression bandaging not usually recommended\nRate 4: The average of the three risk stratified buckets which will be the performance rate in the JSON submitted.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
@@ -20016,7 +20547,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "normal",
+        "description": "Normal arterial supply - No restrictions on type of compression"
+      },
+      {
+        "name": "considerations",
+        "description": "Compression bandaging with special considerations (e.g. short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)"
+      },
+      {
+        "name": "notrecommended",
+        "description": "Compression bandaging not usually recommended"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -20072,7 +20620,7 @@
   {
     "measureId": "USWR23",
     "title": "Non Invasive Arterial Assessment of patients with lower extremity wounds or ulcers for determination of healing potential",
-    "description": "Percentage of patients aged 18 years or older with a non healing lower extremity wounds or ulcers that underwent a non-invasive arterial assessment once in a 12 month period, stratified by severity of arterial disease (as measured via ABI, perfusion pressure, or transcutaneous oximetry) .\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure. The four rates will be risk stratified into three buckets which are the following:\n1.\tNo evidence of arterial disease and ischemia is not a contributor to non-healing\n2.\tPossible arterial compromise (possible reduced flow), but the patient may still be able to heal the wound(s) or ulcer(s)\n3.\tEvidence of arterial disease- patient should be referred to specialist for vascular assessment if not currently in the care of a vascular expert. Ischemia may be the reason the patient has failed to heal.\n4.\tThe average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.",
+    "description": "Percentage of patients aged 18 years or older with a non healing lower extremity wounds or ulcers that underwent a non-invasive arterial assessment once in a 12 month period, stratified by severity of arterial disease (as measured via ABI, perfusion pressure, or transcutaneous oximetry) .\n\nPerformance Rate Descriptions:\n\nThere are four rates reported for this measure. The four rates will be risk stratified into three buckets which are the following:\nRate 1: No evidence of arterial disease and ischemia is not a contributor to non-healing\nRate 2: Possible arterial compromise (possible reduced flow), but the patient may still be able to heal the wound(s) or ulcer(s)\nRate 3: Evidence of arterial disease- patient should be referred to specialist for vascular assessment if not currently in the care of a vascular expert. Ischemia may be the reason the patient has failed to heal.\nRate 4: The average of the three risk stratified buckets which will be the performance rate in the JSON submitted.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
     "measureType": "process",
@@ -20090,7 +20638,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "noevidence",
+        "description": "No evidence of arterial disease and ischemia is not a contributor to non-healing"
+      },
+      {
+        "name": "possiblecompromise",
+        "description": "Possible arterial compromise (possible reduced flow), but the patient may still be able to heal the wound(s) or ulcer(s)"
+      },
+      {
+        "name": "evidence",
+        "description": "Evidence of arterial disease- patient should be referred to specialist for vascular assessment if not currently in the care of a vascular expert. Ischemia may be the reason the patient has failed to heal."
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
