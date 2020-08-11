@@ -20,7 +20,7 @@
   "ARCO17":["aldosterone","diuretics"],
   "ASPS10":["implant","autologous","overall"],
   "ASPS20":["disruption","drain","overall"],
-  "GIQIC21":["tubular","hyperplastic"],
+  "GIQIC21":["overall","tubular","hyperplastic"],
   "IGR10":["obtainment","contrast","pulmonary","diastolic","cardiac"],
   "IGR9":["dyspnea","aortic"],
   "IRIS40":["nocomorbidities","200","400"],
@@ -45,16 +45,17 @@
   "RCOIR1":["three","four","five"],
   "SMX10":["13under","14over"],
   "SMX11":["9to11","17to21"],
-  "HCPR3":["overall","expected"],
-  "HM5":["surgical","nonsurgical","overall"],
-  "HM6":["surgical","nonsurgical","overall"],
-  "HM7":["14to17","18to64","65over","overall"],
-  "HM8":["ft-s","ft-ns","k-s","k-ns","hp-s","hp-ns","fakhp-s","fakhp-ns","overall"],
-  "IRIS55":["20/30+","20/200","20/400"],
-  "IRIS59":["nocomorbidities","comorbidities&20/200","comorbidities&20/400"],
-  "IRIS60":["better20/200","20/200","20/400"],
-  "MBHR10":["asrs&careplan","overall"],
-  "MBHR9":["4to18","overall"],
-  "NIPM19":["cervical/thoracic","lumbar"],
-  "NIPM22":["cervical/thoracic","lumbar"]
+  "HCPR3":["overall","expected"], //"overallStratumOnly"
+  "HM5":["surgical","nonsurgical","overall"],//"overallStratumOnly"
+  "HM6":["surgical","nonsurgical","overall"],//"overallStratumOnly"
+  "HM7":["14to17","18to64","65over","overall"],//"overallStratumOnly"
+  "HM8":["foot/ankle-surgical","foot/ankle-nonsurgical","knee-surgical","knee-nonsurgical","hip/pelvis-surgical","hip/pelvis-nonsurgical","foot/ankle/knee/hip/pelvis-surgical","ankle/knee/hip/pelvis-nonsurgical","overall"],//"overallStratumOnly"
+  "IRIS55":["20/30+","20/200","20/400"],//"weightedAverage"
+  "IRIS59":["nocomorbidities","comorbidities&20/200","comorbidities&20/400"],//"weightedAverage"
+  "IRIS60":["better20/200","20/200","20/400"],//"weightedAverage"
+  "MBHR10":["screening","overall"],//"overallStratumOnly"
+  "MBHR9":["4to18","overall"],//"overallStratumOnly"
+  "NIPM19":["cervical/thoracic","lumbar"],//"weightedAverage"
+  "NIPM22":["cervical/thoracic","lumbar"],//"weightedAverage"
+  "GIQIC22":["overall","malePatients", "femalePatients"]//"overallStratumOnly"
 }
