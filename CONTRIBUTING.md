@@ -82,7 +82,7 @@ When making changes to measures-data, include tests in the tests directory and m
 npm test
 ```
 
-We also use Travis CI to run tests on every branch.
+We also use Github Actions CI to run tests on every branch.
 
 ## Versioning, publishing, and creating new releases
 
@@ -99,6 +99,50 @@ npm publish
   - The release title should be a short description of the release contents.
   - The release notes should contain appropriate, standardized headers like "Added", "Changed", "Removed", "Fixed", and relevant details.
   - Please read [the standards](http://keepachangelog.com/en/0.3.0/) prior to creating release notes.
+
+## Debugging
+
+This repository uses GitHub Action for CI/CD. The actions that are used can be found in `.github/workflows/` folder and are self-explanatory. GitHub Actions are pretty straight forward and easy to understand, this section offers a few tips around debugging and get the detailed logs at your finger tips. 
+ 
+### Runner Diagnostic Logging
+
+[Runner diagnostic logging](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/managing-a-workflow-run#enabling-runner-diagnostic-logging) provides additional log files that contain information about how a runner is executing an action.
+To enable runner diagnostic logging, set the secret `ACTIONS_RUNNER_DEBUG` to `true` in the repository that contains the workflow.
+
+### Step Debug Logging
+
+[Step debug logging](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/managing-a-workflow-run#enabling-step-debug-logging) increases the verbosity of a job's logs during and after a job's execution.
+To enable step debug logging set the secret `ACTIONS_STEP_DEBUG` to `true` in the repository that contains the workflow.
+
+### Output Various Context Variables
+Well above two approaches will vomit a lot of things at you, most of it is not even useful to you as a developer and it is easy to get lost. Use the following approach to dump the context data, which is all what you need most of the time to resolve the problem in hand.
+```yml
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Dump job context
+        env:
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo "$JOB_CONTEXT"
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo "$STEPS_CONTEXT"
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo "$RUNNER_CONTEXT"
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+        run: echo "$STRATEGY_CONTEXT"
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo "$MATRIX_CONTEXT"
+```
 
 ## Licenses
 
