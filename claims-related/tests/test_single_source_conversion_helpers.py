@@ -140,6 +140,28 @@ def test_find_min_max_age_years():
     assert output.equals(pd.Series(data=[18.0, 75.0], index=['min_age', 'max_age']))
 
 
+def test_merge_multiple_eligibility_options():
+    """Test merging of multiple eligibility options"""
+    input = {
+        "01.00": {
+            "eligibilityOptions": ["elOpt1", "elOpt2"],
+            "performanceOptions": [{"pOpt1": "pval1"}, {"pOpt2": "pval2"}]
+        },
+        "01.01": {
+            "eligibilityOptions": ["elOpt3", "elOpt4"],
+            "performanceOptions": [{"pOpt3": "pval3"}, {"pOpt2": "pval2"}]
+        }
+    }
+    expected_output = {
+        "01.00": {
+            "eligibilityOptions": ["elOpt1", "elOpt2", "elOpt3"],
+            "performanceOptions": [{"pOpt1": "pval1"}, {"pOpt2": "pval2"}, {"pOpt3": "pval3"}]
+        }
+    }
+    output = single_source_conversion_helpers.merge_multiple_eligibility_options(input)
+    assert output == expected_output
+
+
 class TestRowToDictFunctions():
     """Test procedure_codes_to_dict and quality_codes_to_dict methods."""
 

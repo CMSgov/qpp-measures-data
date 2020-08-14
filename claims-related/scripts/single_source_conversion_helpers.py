@@ -1,5 +1,6 @@
 """Methods to assist in the conversion of single source Excel to JSON."""
 import collections
+import json
 import re
 
 import numpy as np
@@ -220,12 +221,15 @@ def merge_multiple_eligibility_options(single_source_dict):
             single_source_dict[measure_to_update]['eligibilityOptions'].append(
                 single_source_dict[measure]['eligibilityOptions'][0])
             # If the new eligibility option has new performance options as well, add those too.
-            if (
-                single_source_dict[measure]['performanceOptions'] !=
-                single_source_dict[measure_to_update]['performanceOptions']
-            ):
-                single_source_dict[measure_to_update]['performanceOptions'] += \
-                    single_source_dict[measure]['performanceOptions']
+
+            new_performance_options = [json.loads(x) for x in (
+                    set(json.dumps(x_new, sort_keys=True)
+                        for x_new in single_source_dict[measure]['performanceOptions']) -
+                    set(json.dumps(x_old, sort_keys=True)
+                        for x_old in single_source_dict[measure_to_update]['performanceOptions'])
+            )]
+
+            single_source_dict[measure_to_update]['performanceOptions'] += new_performance_options
 
             measures_to_delete.append(measure)
 
