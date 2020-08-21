@@ -6,7 +6,7 @@ const path = require('path');
 
 const fs = require('fs');
 
-const topline = 'Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2017 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,';
+const topline = 'Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2018 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,';
 const secline = '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,TOPPED_OUT,SevenPointCap,HighPriority';
 const output = [];
 const convertedrecord = [];
