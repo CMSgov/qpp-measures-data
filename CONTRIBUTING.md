@@ -14,6 +14,12 @@ npm install
 
 Make changes on a feature branch, then open a pull request. Make sure CI passes on your branch, and you include any relevant new tests.
 
+### Pull Requests
+
+Create a pull request for your branch via GitHub. The PR template will have instructions on where to add details in the description. Once the PR is created, the users specified in the CODEOWNERS file will be automatically added as reviewers. 
+
+When there are enough reviews, one of the maintainers with write access will merge the PR via a squash commit and delete the branch. It will be merged back into the `develop` branch. Do not update the package version in your branch, this will be done at the time a new release is made.
+
 ### Performance year
 
 $YEAR refers to the performance year; this command-line argument is required.  $YEAR is currently only supported as a command-line argument for measures and benchmarks generation, not supported for clinical clusters.

@@ -7,14 +7,14 @@ const path = require('path');
 const fs = require('fs');
 
 const topline = 'Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2018 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,';
-const secline = '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,High_Priority, Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,TOPPED_OUT,SevenPointCap';
+const secline = '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority';
 const output = [];
 const convertedrecord = [];
 
 // Create the parser
 const parser = parse({
   delimiter: ',',
-  from: 2,
+  from: 1,
   columns: true
 });
 
@@ -34,9 +34,6 @@ try {
 
 // Read source data line by line and convert
 parser.on('readable', function() {
-  output.push(topline);
-  output.push(secline);
-
   let record;
 
   while (record = parser.read()) {
@@ -73,9 +70,9 @@ parser.on('readable', function() {
       record['Decile 8'],
       record['Decile 9'],
       record['Decile 10'],
-      record['Topped Out'],
-      record['Seven Point Cap'],
-      record['High Priority']
+      record['Topped Out'] === 'Y' ? 'Yes' : 'No',
+      record['Seven Point Cap'] === 'Y' ? 'Yes' : 'No',
+      record['High Priority'] === 'Y' ? 'Y' : 'N'
     );
 
     output.push('\n' + convertedrecord.toString());
@@ -90,6 +87,7 @@ parser.on('error', function(err) {
 
 // Write converted data to target file
 parser.on('end', function() {
-  console.log(output.join(''));
+  output.unshift(secline);
+  output.unshift(topline);
   fs.writeFileSync(targetFile, output.join(''));
 });
