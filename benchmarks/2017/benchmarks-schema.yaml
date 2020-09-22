@@ -22,7 +22,7 @@ definitions:
         items:
           type: [number]
         minItems: 9
-        maxItems: 9
+        maxItems: 10
       submissionMethod:
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
     required: [measureId, performanceYear, benchmarkYear, submissionMethod, deciles]
