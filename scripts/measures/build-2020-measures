@@ -7,6 +7,7 @@ quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quali
 generated_ecqm_data='../../../util/measures/'$currentPerformanceYear'/generated-ecqm-data.json'
 manually_created_ecqm_data='../../../util/measures/'$currentPerformanceYear'/manually-created-missing-measures.json'
 additional_stratifications='../../../util/measures/'$currentPerformanceYear'/additional-stratifications.json'
+cpc_groups='../../../util/measures/'$currentPerformanceYear'/cpc+-measure-groups.json'
 
 pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
 pi_csv='../../../util/measures/'$currentPerformanceYear'/pi-measures.csv'
@@ -56,7 +57,7 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 # 4. Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
 	$quality_measures $ecqm_ehr_links $web_interface_links $claims_links $cqm_links $generated_ecqm_data \
-	$manually_created_ecqm_data $additional_stratifications $claims_related_info $enriched_quality_measures
+	$manually_created_ecqm_data $additional_stratifications $claims_related_info $cpc_groups $enriched_quality_measures
   
 # 5. Enrich `measures-data-pi.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-pi-measures-data.js \
