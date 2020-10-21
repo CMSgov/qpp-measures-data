@@ -10,7 +10,7 @@ const parseString = require('xml2js').parseString;
 const tmpDir = '/tmp/ecqm';
 const tmpPath = '/tmp/ecqm/xmls';
 const currentYear = '2020';
-const zipPath = '../../../staging/' + currentYear + '/EP-EC-eCQM-2019-05-v2.zip';
+const zipPath = '../../../staging/' + currentYear + '/EP-EC-eCQM-2019-05-v3.zip';
 if (!zipPath) {
   console.log('Missing required argument <path to zip>');
   process.exit(1);
