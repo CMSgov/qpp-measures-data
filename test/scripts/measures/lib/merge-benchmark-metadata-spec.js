@@ -65,7 +65,7 @@ describe('merge-benchmark-metadata', () => {
     const expectedMeasures = [
       {measureId: '0', measureSpecification: {}},
       {measureId: '1', measureSpecification: {}, isIcdImpacted: false, icdImpacted: [], isClinicalGuidelinesChanged: true, clinicalGuidelinesChanged: ['electronicHealthRecord', 'cmsWebInterface'], benchmarks: { claims: 'removed' }},
-      {measureId: '2', measureSpecification: {}, isIcdImpacted: true, icdImpacted: ['claims'], isClinicalGuidelinesChanged: false, clinicalGuidelinesChanged: [], benchmarks: {certifiedSurveyVendor: 'flat', registry: 'removed'}}
+      {measureId: '2', measureSpecification: {}, isIcdImpacted: true, icdImpacted: ['claims'], isClinicalGuidelinesChanged: false, clinicalGuidelinesChanged: [], benchmarks: {registry: 'removed'}}
     ];
 
     mergeBenchmarkMetadata(measures, metadata, true);

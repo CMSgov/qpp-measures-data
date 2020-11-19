@@ -31,7 +31,6 @@ function aggregateBenchmarks(fieldMap, data, type, benchmarks = {}) {
   }, benchmarks);
 }
 
-const FLAT_METHODS = buildHeaderMap('Flat');
 const REMOVED_METHODS = buildHeaderMap('Removed');
 const IMPACTED_METHODS = buildHeaderMap('Truncated');
 const GUIDELINE_METHODS = buildHeaderMap('Suppressed');
@@ -49,9 +48,7 @@ module.exports = (measures, benchmarkMetadata, benchmarkField = false) => {
       measure.isClinicalGuidelinesChanged = !!clinicalGuidelinesChanged.length;
 
       if (benchmarkField) {
-        let benchmarks = aggregateBenchmarks(FLAT_METHODS, benchmark, 'flat', {});
-        benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed', benchmarks);
-        measure.benchmarks = benchmarks;
+        measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed', {});
       }
     }
   }
