@@ -21,7 +21,9 @@ const Constants = require('../../../constants.js');
 const CONSTANT_FIELDS = {
   category: 'quality',
   isRegistryMeasure: false,
-  isRiskAdjusted: false
+  isRiskAdjusted: false,
+  icdImpacted: [],
+  clinicalGuidelineChanged: []
 };
 
 // Ignored fields are present in the source CSV but not imported
