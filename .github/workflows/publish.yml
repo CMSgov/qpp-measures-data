@@ -2,7 +2,7 @@ name: QPP Measures Data Publish
 
 on:
   release:
-  
+
     types: [ published ]
 
 jobs:
@@ -34,12 +34,14 @@ jobs:
     needs: publish-npm
     strategy:
       matrix:
-        repo: 
+        repo:
           - CMSgov/qpp-scoring-engines
           - CMSgov/beneficiary-reporting-api
           - CMSgov/qpp-submissions-api
           - CMSgov/self-nomination-api
           - CMSgov/beneficiary-reporting-client
+          - CMSgov/claims-to-quality-analyzer
+          - CMSgov/qpp-ui
 
     steps:
       - name: Repository Dispatch
@@ -49,7 +51,7 @@ jobs:
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
           client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
-  
+
   # make an announcement to relevant slack channels
   notify-slack:
     runs-on: ubuntu-latest

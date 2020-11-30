@@ -1156,8 +1156,8 @@
   },
   {
     "category": "ia",
-    "title": "COVID-19 Clinical Data Reporting with or without Clinical Trial",
-    "description": "In order to receive credit for this improvement activity, a MIPS eligible clinician or group must: (1) Participate in a COVID-19 clinical trial utilizing a drug or biological product to treat a patient with a COVID-19 infection and report their findings through a clinical data repository or clinical data registry for the duration of their study; or (2) participate in the care of patients diagnosed with COVID-19 and simultaneously submit relevant clinical data to a clinical data registry for ongoing or future COVID-19 research.",
+    "title": "COVID-19 Clinical Trials",
+    "description": "To receive credit for this activity, a MIPS-eligible clinician must participate in a COVID-19 clinical trial utilizing a drug or biological product to treat a patient with a COVID-19 infection and report their findings through a clincal data repository or clinical data registry for the duration of their study.  For more information on the COVID-19 clinical trials we refer readers to the U.S. National Library of Medicine website at: https://clinicaltrials.gov/ct2/results?cond=COVID-19.",
     "measureId": "IA_ERP_3",
     "metricType": "boolean",
     "firstPerformanceYear": 2020,
@@ -1834,6 +1834,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1866,6 +1868,7 @@
         }
       }
     ],
+    "cpcPlusGroup": "Outcome_Measure",
     "eligibilityOptions": [
       {
         "diagnosisCodes": [
@@ -2354,6 +2357,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -2371,6 +2376,7 @@
     "eMeasureUuid": "40280382-6963-bf5e-0169-7d10cd6f0f3f",
     "strata": [
       {
+        "name": "Within12Months",
         "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy within a 12-month period when seen in the outpatient setting",
         "eMeasureUuids": {
           "initialPopulationUuid": "6D023944-ABF3-4F2C-A4E4-ADB2DDCD8478",
@@ -2380,6 +2386,7 @@
         }
       },
       {
+        "name": "HospitalDischarge",
         "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy at each hospital discharge",
         "eMeasureUuids": {
           "initialPopulationUuid": "C4E7E554-AA42-42D2-9711-875F3624B482",
@@ -2410,6 +2417,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -2443,6 +2452,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -2460,6 +2471,7 @@
     "eMeasureUuid": "40280382-6963-bf5e-0169-6e62c160040e",
     "strata": [
       {
+        "name": "LVSD",
         "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
         "eMeasureUuids": {
           "initialPopulationUuid": "95AD7A85-FFC2-4176-AC65-22F0C78EB3F7",
@@ -2469,6 +2481,7 @@
         }
       },
       {
+        "name": "priorMI",
         "description": "Patients with a prior (within the past 3 years) myocardial infarction",
         "eMeasureUuids": {
           "initialPopulationUuid": "F86426BC-4113-4E5D-A504-582158094828",
@@ -2499,6 +2512,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -2516,6 +2531,7 @@
     "eMeasureUuid": "40280382-6963-bf5e-0169-6e5d8c750401",
     "strata": [
       {
+        "name": "<=12Months",
         "description": "Patients who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
         "eMeasureUuids": {
           "initialPopulationUuid": "B5BA2AAA-23BB-4873-985C-A6CF186DAE36",
@@ -2525,6 +2541,7 @@
         }
       },
       {
+        "name": "HospitalDischarge",
         "description": "Patients who were prescribed beta-blocker therapy at each hospital discharge",
         "eMeasureUuids": {
           "initialPopulationUuid": "86AA2F89-6850-4754-A747-56414EB7DD3A",
@@ -2556,6 +2573,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -2611,6 +2630,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -3126,6 +3147,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -3547,6 +3570,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -3591,6 +3616,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5864,6 +5891,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -8295,6 +8324,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -15426,6 +15457,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -15806,6 +15839,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -15836,6 +15871,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -16099,6 +16136,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -16268,6 +16307,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -16451,6 +16492,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -16676,6 +16719,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -16723,6 +16768,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -16770,6 +16817,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -16800,6 +16849,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -16830,6 +16881,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -16860,6 +16913,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -17018,6 +17073,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -17576,6 +17633,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -17622,6 +17681,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -17652,6 +17713,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -17695,6 +17758,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -18745,6 +18810,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -18980,6 +19047,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -19175,6 +19244,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -19382,6 +19453,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -19416,6 +19489,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -19966,6 +20041,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -19998,6 +20075,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -20047,6 +20126,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -20082,6 +20163,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -20113,6 +20196,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -21043,6 +21128,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -21500,6 +21587,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -21904,6 +21993,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -21934,6 +22025,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -21964,6 +22057,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -22398,6 +22493,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -22413,6 +22510,7 @@
     "eMeasureUuid": "40280382-6963-bf5e-0169-e4c228c93d69",
     "strata": [
       {
+        "name": "Chemotherapy",
         "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
         "eMeasureUuids": {
           "initialPopulationUuid": "96D039E8-8003-4C52-831D-7F02CA9137FA",
@@ -22421,6 +22519,7 @@
         }
       },
       {
+        "name": "RadiationTherapy",
         "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
         "eMeasureUuids": {
           "initialPopulationUuid": "E2FF2CBD-A268-4738-B93A-1A276C96E4F3",
@@ -22450,6 +22549,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -22481,6 +22582,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -23295,6 +23398,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -23440,6 +23545,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -23551,6 +23658,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -23864,6 +23973,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -24131,6 +24242,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24161,6 +24274,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24191,6 +24306,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24221,6 +24338,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24251,6 +24370,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24281,6 +24402,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24312,6 +24435,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -24343,6 +24468,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -25454,6 +25581,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -25646,6 +25775,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25676,6 +25807,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25707,6 +25840,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -25751,6 +25886,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -25864,6 +26001,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25895,6 +26034,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25927,6 +26068,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25959,6 +26102,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -25991,6 +26136,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -26023,6 +26170,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -26055,6 +26204,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -26087,6 +26238,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -26181,6 +26334,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -28230,6 +28385,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -28264,6 +28421,7 @@
         }
       }
     ],
+    "cpcPlusGroup": "Outcome_Measure",
     "eligibilityOptions": [
       {
         "diagnosisCodes": [
@@ -28484,6 +28642,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -28546,6 +28706,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -28622,6 +28784,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -28664,6 +28828,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -28696,6 +28862,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -28800,6 +28968,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -28903,6 +29073,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -29118,6 +29290,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29148,6 +29322,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29178,6 +29354,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29208,6 +29386,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -29319,6 +29499,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29349,6 +29531,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29382,6 +29566,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -29620,6 +29806,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29650,6 +29838,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29682,6 +29872,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29714,6 +29906,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -29760,6 +29954,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29794,6 +29990,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29827,6 +30025,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29860,6 +30060,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29894,6 +30096,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29924,6 +30128,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29954,6 +30160,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -29984,6 +30192,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -30014,6 +30224,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -30045,6 +30257,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -30108,6 +30322,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -30152,6 +30368,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -30199,6 +30417,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -31096,6 +31316,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface"
@@ -31147,6 +31369,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -31265,6 +31489,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
@@ -31294,6 +31520,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -31324,6 +31552,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -31354,6 +31584,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -31384,6 +31616,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -31932,6 +32166,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -31966,6 +32202,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32000,6 +32238,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32034,6 +32274,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32064,6 +32306,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32094,6 +32338,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32126,6 +32372,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32159,6 +32407,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32190,6 +32440,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32221,6 +32473,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32253,6 +32507,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32293,6 +32549,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32323,6 +32581,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32353,6 +32613,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32383,6 +32645,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32414,6 +32678,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32445,6 +32711,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32478,6 +32746,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32514,6 +32784,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32544,6 +32816,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -32575,6 +32849,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32630,6 +32906,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface",
@@ -32689,6 +32967,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -32754,6 +33034,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32796,6 +33078,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32838,6 +33122,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32881,6 +33167,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32923,6 +33211,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -32971,6 +33261,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -33014,6 +33306,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33047,6 +33341,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33077,6 +33373,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33107,6 +33405,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33137,6 +33437,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33168,6 +33470,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33198,6 +33502,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33229,6 +33535,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33271,6 +33579,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33323,6 +33633,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33354,6 +33666,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33403,6 +33717,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -33509,6 +33825,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -33603,6 +33921,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -33701,6 +34021,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33765,6 +34087,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33797,6 +34121,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33829,6 +34155,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33879,6 +34207,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -33909,6 +34239,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -34077,6 +34409,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -34237,6 +34571,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34272,6 +34608,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34303,6 +34641,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34333,6 +34673,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34368,6 +34710,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34399,6 +34743,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34434,6 +34780,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -34464,6 +34812,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -34738,6 +35088,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -42033,6 +42385,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -42438,6 +42792,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -42469,6 +42825,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -42499,6 +42857,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -42655,6 +43015,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -42685,6 +43047,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -42834,6 +43198,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -42909,6 +43275,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -42939,6 +43307,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -42984,6 +43354,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43015,6 +43387,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43046,6 +43420,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43077,6 +43453,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -43367,6 +43745,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -43616,6 +43996,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "claims",
       "registry"
@@ -43711,6 +44093,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface",
@@ -43731,6 +44115,7 @@
     "eMeasureUuid": "40280382-68d3-a5fe-0169-0c78bec911bb",
     "strata": [
       {
+        "name": "clinicalASCVD",
         "description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
         "eMeasureUuids": {
           "initialPopulationUuid": "5D20C66D-C4F2-44AC-BA79-C1380946E1C1",
@@ -43741,6 +44126,7 @@
         }
       },
       {
+        "name": ">21Familial",
         "description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
         "eMeasureUuids": {
           "initialPopulationUuid": "CF4897D2-651D-47A5-8704-440827AC2A82",
@@ -43751,13 +44137,14 @@
         }
       },
       {
+        "name": "between40And75",
         "description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
         "eMeasureUuids": {
           "initialPopulationUuid": "A16AFA05-7CAE-42BC-B905-8D4091C442CB",
           "denominatorUuid": "3E840CA1-EF27-4939-9BF8-36E7A50A69E8",
           "numeratorUuid": "433EFB69-22B1-4BC0-8864-838ADB30A072",
           "denominatorExclusionUuid": "00B756AB-1265-42B3-A50D-46623CBC4BA7",
-          "denominatorExceptionUuid": "3FB31319-105F-4FA1-BD36-C683C281587"
+          "denominatorExceptionUuid": "3FB31319-105F-4FA1-BD36-C683C2815870"
         }
       }
     ]
@@ -43782,6 +44169,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43812,6 +44201,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43843,6 +44234,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43876,6 +44269,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43908,6 +44303,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43941,6 +44338,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -43971,6 +44370,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44001,6 +44402,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44031,6 +44434,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44061,6 +44466,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44091,6 +44498,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44121,6 +44530,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44152,6 +44563,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44182,6 +44595,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "administrativeClaims"
     ],
@@ -44208,6 +44623,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44239,6 +44656,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44270,6 +44689,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44301,6 +44722,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -44345,6 +44768,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44375,6 +44800,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44408,6 +44835,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44438,6 +44867,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44471,6 +44902,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44502,6 +44935,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44532,6 +44967,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44563,6 +45000,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -44607,6 +45046,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44638,6 +45079,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -44684,6 +45127,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -44727,6 +45172,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44757,6 +45204,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "registry"
     ],
@@ -44789,6 +45238,8 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],

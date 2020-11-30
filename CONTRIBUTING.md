@@ -92,19 +92,19 @@ We also use Github Actions CI to run tests on every branch.
 
 ## Versioning, publishing, and creating new releases
 
-1. Bump the `version` using `npm version <patch | minor | major>` when making changes to anything other than comments/documentation. Use `minor` when making changes to datasets (e.g. `measures/$YEAR/measures-data.json` or `benchmarks/$YEAR.json`), or `patch` otherwise.
+The release process is semi-automated via github actions. A number of steps are necessarily left manual (such as versioning) and require intervention from the user.
 
-2. Publish a new version after bumping the version number:
-```
-npm login # as cmsgov
-npm publish
-```
+1. Create a release branch `release/*` either off of `develop` to pull all changes, or `master` if cherry-picking only certain changes.
 
-3. [Create a release](https://github.com/CMSgov/qpp-measures-data/releases) in Github after the new version is published.
-  - The tag version should be 'v[version of module just published]', e.g. 'v1.0.0-alpha.1'. (Note the `v` prefix).
-  - The release title should be a short description of the release contents.
-  - The release notes should contain appropriate, standardized headers like "Added", "Changed", "Removed", "Fixed", and relevant details.
-  - Please read [the standards](http://keepachangelog.com/en/0.3.0/) prior to creating release notes.
+2. Bump the `version` using `npm version <patch | minor | major>`. Use `minor` when making changes to datasets (e.g. `measures/$YEAR/measures-data.json` or `benchmarks/$YEAR.json`), or `patch` otherwise.  Use `major` if adding a new program year to the dataset.
+  
+3. Push the release branch to github and open a pull request against the `master` branch.
+
+4. Github actions will automatically [create a release](https://github.com/CMSgov/qpp-measures-data/releases) and tag based off the version in `package.json`. Review the draft release page and publish it.
+
+5. Merge the release branch into into `master` via the merge-commit merge strategy.
+
+6. On merge, github actions will automatically publish a package to npm and post notifications. Additionally, a PR will be created to backfill `develop` from `master` if necessary. Review and merge.
 
 ## Debugging
 
