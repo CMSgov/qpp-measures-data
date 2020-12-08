@@ -2588,7 +2588,7 @@
     },
     "strata": [
       {
-        "description": "Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date.",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).",
         "eMeasureUuids": {
           "initialPopulationUuid": "10AA5F2F-0D06-4DE5-ACCC-43235FE0F8D8",
           "denominatorUuid": "C83C6F65-F50D-4545-83DD-A0EABED91538",
@@ -2598,7 +2598,7 @@
         "name": ">=84Days"
       },
       {
-        "description": "Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date.",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)",
         "eMeasureUuids": {
           "initialPopulationUuid": "D545D66C-ADAC-4543-AB1B-BDD36B282A84",
           "denominatorUuid": "5561C63B-E35B-46F5-89AE-8D54B52160F9",
@@ -28734,7 +28734,7 @@
         "name": "BMI"
       },
       {
-        "description": "Patients who had counseling for nutrition during the measurement period",
+        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period",
         "eMeasureUuids": {
           "initialPopulationUuid": "88CC8524-A7CA-446F-AE28-326807D64F7C",
           "denominatorUuid": "164F40FC-BF3F-4441-BD40-04CDA5A5D640",
@@ -28748,7 +28748,7 @@
         "name": "nutrition"
       },
       {
-        "description": "Patients who had counseling for physical activity during the measurement period",
+        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period",
         "eMeasureUuids": {
           "initialPopulationUuid": "CD15F841-E9E3-4590-8987-F2D9AB6FBEEF",
           "denominatorUuid": "C12E4929-A04F-41E0-AC0F-AF96C00C0051",
@@ -30272,7 +30272,7 @@
     },
     "strata": [
       {
-        "description": "Initiation of treatment includes either an intervention or medication for the treatment of AOD abuse or dependence within 14 days of the diagnosis",
+        "description": "Patients who initiated treatment within 14 days of the diagnosis",
         "eMeasureUuids": {
           "initialPopulationUuid": "E1F6440D-6DDB-4C77-AF42-947522D58071",
           "denominatorUuid": "CCF03F23-DCDA-4F3B-8248-8DD25D805775",
@@ -30286,7 +30286,7 @@
         "name": "14DaysOfDiagnosis"
       },
       {
-        "description": "Engagement in ongoing treatment includes two additional interventions or a medication for the treatment of AOD abuse or dependence within 34 days of the initiation visit. For patients who initiated treatment with a medication, at least one of the two engagement events must be a treatment intervention (i.e., engagement for these members cannot be satisfied with medication treatment alone).",
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit",
         "eMeasureUuids": {
           "initialPopulationUuid": "9FE99D0A-793A-4198-BE90-C205F20B36B8",
           "denominatorUuid": "FE3255B1-F309-4359-B00F-13D567A06EE7",
@@ -32863,7 +32863,7 @@
     },
     "strata": [
       {
-        "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority within 30 days after the IPSD.",
+        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.",
         "eMeasureUuids": {
           "initialPopulationUuid": "683F5905-CC36-4B82-AC22-38904C8298BD",
           "denominatorUuid": "E13D81BB-8FD5-4CE0-9885-B9BD988E1CFD",
@@ -32873,7 +32873,7 @@
         "name": "visitWithin30Days"
       },
       {
-        "description": "Patients who had at least one face-to-face visit with a practitioner with prescribing authority during the Initiation Phase, and at least two follow-up visits during the Continuation and Maintenance Phase. One of the two visits during the Continuation and Maintenance Phase may be a telephone visit with a practitioner.",
+        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended.",
         "eMeasureUuids": {
           "initialPopulationUuid": "2F7B388C-C3BC-4A25-AF3E-E30389970BAC",
           "denominatorUuid": "2D0AB075-53D3-4183-9809-81E3C69E7A53",
@@ -32928,7 +32928,7 @@
     },
     "strata": [
       {
-        "description": "Adolescent patients 12 to 17 years of age and adult patients 18 years of age and older who achieved remission at twelve months as demonstrated by a twelve month (+/- 60 days) PHQ-9 or PHQ-9M score of less than five",
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\r\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\r\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5.",
         "eMeasureUuids": {
           "initialPopulationUuid": "3E189A2F-18C6-4788-80AD-7B6D31977E23",
           "denominatorUuid": "9374A2BA-D848-4631-BD7F-B9301CB16C6F",
@@ -32942,7 +32942,8 @@
         "name": "12-17"
       },
       {
-        "name": "18+"
+        "name": "18+",
+        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\r\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\r\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
       }
     ],
     "eMeasureUuid": "40280382-6963-bf5e-016a-03dca9e446e0"
