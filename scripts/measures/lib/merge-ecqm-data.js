@@ -6,9 +6,10 @@ module.exports = (measures, generatedEcqms) => {
         measure.strata.forEach(function(strata, index) {
           if (strata.name) {
             if (generatedEcqm.strata[index] === undefined) {
-              generatedEcqm.strata.push({'name': strata.name});
+              generatedEcqm.strata.push({'name': strata.name, description: strata.description});
             } else {
               generatedEcqm.strata[index].name = strata.name;
+              generatedEcqm.strata[index].description = strata.description;
             }
           }
         });
