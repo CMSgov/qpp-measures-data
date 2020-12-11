@@ -22,7 +22,7 @@ describe('benchmarks getter functions', function() {
     });
   });
 
-  describe('getBenchmarksSchema', function() {
+  describe.skip('getBenchmarksSchema', function() {
     it('should return a string', function() {
       assert.isObject(getBenchmarksSchema());
     });
