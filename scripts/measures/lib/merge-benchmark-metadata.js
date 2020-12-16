@@ -44,8 +44,8 @@ module.exports = (measures, benchmarkMetadata, benchmarkField = false) => {
 
       measure.icdImpacted = icdImpacted;
       measure.isIcdImpacted = !!icdImpacted.length;
-      measure.clinicalGuidelinesChanged = clinicalGuidelinesChanged;
-      measure.isClinicalGuidelinesChanged = !!clinicalGuidelinesChanged.length;
+      measure.clinicalGuidelineChanged = clinicalGuidelinesChanged;
+      measure.isClinicalGuidelineChanged = !!clinicalGuidelinesChanged.length;
 
       if (benchmarkField) {
         measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed', {});
