@@ -22,7 +22,7 @@ const _ = require('lodash');
 const parse = require('csv-parse/lib/sync');
 
 const MAX_SPECIALITY_SET_SIZE = 6;
-const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019];
+const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020];
 
 let measuresJson = '';
 const performanceYear = parseInt(process.argv[2], 10);
@@ -46,6 +46,10 @@ const specialSpecialtySetRelations = {
     ]
   },
   2019: {
+    claims: [],
+    registry: []
+  },
+  2020: {
     claims: [],
     registry: []
   }
@@ -131,6 +135,10 @@ const specialClusterRelations = {
       {measureId: '130', optionals: []},
       {measureId: '226', optionals: []}
     ]
+  },
+  2020: {
+    claims: [],
+    registry: []
   }
 };
 
@@ -194,7 +202,6 @@ function populateClinicalClusters(clusterMap, measures, submissionMethod, filePa
     .groupBy('clusterName')
     .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
     .value();
-
   // read the grouped measures and populate the cluster name
   byClusterName.forEach(clinicalCluster => {
     clinicalCluster.measureIds.forEach(measureId => {
