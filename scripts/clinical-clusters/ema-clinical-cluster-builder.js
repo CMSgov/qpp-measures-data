@@ -50,8 +50,8 @@ const specialSpecialtySetRelations = {
     registry: []
   },
   2020: {
-      claims: [],
-      registry: []
+    claims: [],
+    registry: []
   }
 };
 
@@ -137,8 +137,8 @@ const specialClusterRelations = {
     ]
   },
   2020: {
-      claims: [],
-      registry: []
+    claims: [],
+    registry: []
   }
 };
 
