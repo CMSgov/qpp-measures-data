@@ -77,7 +77,7 @@ jobs:
             ref: master
         - name: Create Pull Request
           id: pr
-          uses: peter-evans/create-pull-request@172ec762f8ac8e050062398456fccd30444f8f30 #v2
+          uses: peter-evans/create-pull-request@45c510e1f68ba052e3cd911f661a799cfb9ba3a3 #v3.6.0
           with:
             token: ${{ secrets.GH_USER_TOKEN }}
             commit-message: Backfill develop with ${{ github.event.release.tag_name }}
