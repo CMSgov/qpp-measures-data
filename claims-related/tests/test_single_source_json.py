@@ -515,16 +515,19 @@ def test_age(single_source_df, single_source_output_json):
         if measure_id not in source_dict:
             source_dict[measure_id] = {}
 
+        min_age = source_dict[measure_id].get("minAge", 1000)
+        max_age = source_dict[measure_id].get("maxAge", 0)
+
         if re.match(month_regex, row.age):
-            source_dict[measure_id]["minAge"] = str(
+            source_dict[measure_id]["minAge"] = min(str(
                 float(re.match(month_regex, row.age).groups()[0]) / 12
-            )
+            ), min_age, key=float)
         elif "≥" in row.age or ">" in row.age:
-            source_dict[measure_id]["minAge"] = re.findall(r"\d+", row.age)[0]
+            source_dict[measure_id]["minAge"] = min(re.findall(r"\d+", row.age)[0], min_age, key=float)
         else:
-            source_dict[measure_id]["minAge"], source_dict[measure_id][
-                "maxAge"
-            ] = re.findall(r"\d+", row.age)
+            row_min, row_max = re.findall(r"\d+", row.age)
+            source_dict[measure_id]["minAge"] = min(row_min, min_age, key=float)
+            source_dict[measure_id]["maxAge"] = max(row_max, max_age, key=float)
 
     for measure in single_source_output_json:
         format_json_age(output_dict, measure)
