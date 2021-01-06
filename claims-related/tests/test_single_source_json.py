@@ -781,18 +781,6 @@ def test_is_icd_impacted(measures_source_json, single_source_output_json):
     assert compare_dicts(source_dict, output_dict) == {}
 
 
-def test_is_topped_out_by_program(measures_source_json, single_source_output_json):
-    """Test that all source isToppedOutByProgram values are in the single source json."""
-    source_dict = format_top_level_json_attribute(
-        measures_source_json, "isToppedOutByProgram"
-    )
-    output_dict = format_top_level_json_attribute(
-        single_source_output_json, "isToppedOutByProgram"
-    )
-
-    assert compare_dicts(source_dict, output_dict) == {}
-
-
 def test_is_clinical_guideline_changed(measures_source_json, single_source_output_json):
     """Test that all source isClinicalGuidelineChanged values are in the single source json."""
     source_dict = format_top_level_json_attribute(
