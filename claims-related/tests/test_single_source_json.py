@@ -9,7 +9,7 @@ CURRENT_YEAR = "2020"
 CSV_VERSION = "v1.4"
 
 # Source data files. QPP_MEASURES_DATA_ROOT needs configuring.
-QPP_MEASURES_DATA_ROOT = "./qpp-measures-data/"
+QPP_MEASURES_DATA_ROOT = "../"
 SINGLE_SOURCE_OUTPUT_JSON = os.path.join(
     QPP_MEASURES_DATA_ROOT, "measures", CURRENT_YEAR, "measures-data.json"
 )
@@ -20,7 +20,7 @@ SINGLE_SOURCE_CSV = os.path.join(
     f"{CURRENT_YEAR}_Claims_SingleSource_{CSV_VERSION}.csv",
 )
 MEASURES_SOURCE_JSON = os.path.join(
-    QPP_MEASURES_DATA_ROOT, "staging", CURRENT_YEAR, "measures-data-quality.json"
+    QPP_MEASURES_DATA_ROOT, "util", "measures", CURRENT_YEAR, "enriched-measures-data-quality.json"
 )
 
 
