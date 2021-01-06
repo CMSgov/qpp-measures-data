@@ -629,6 +629,10 @@ def test_performance_options(single_source_df, single_source_output_json):
         if "performanceOptions" in measure:
             output_dict[measure["measureId"]] = measure["performanceOptions"]
 
+    # Sort step needed for unordered lists of dictionaries
+    source_dict = {k: sorted(v, key=lambda x: x["optionType"]) for k, v in source_dict.items()}
+    output_dict = {k: sorted(v, key=lambda x: x["optionType"]) for k, v in output_dict.items()}
+
     assert compare_dicts(source_dict, output_dict) == {}
 
 
