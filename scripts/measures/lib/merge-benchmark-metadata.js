@@ -48,7 +48,7 @@ module.exports = (measures, benchmarkMetadata, benchmarkField = false) => {
       measure.isClinicalGuidelineChanged = !!clinicalGuidelinesChanged.length;
 
       if (benchmarkField) {
-        measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed', {});
+        measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed');
       }
     }
   }
