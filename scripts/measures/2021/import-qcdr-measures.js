@@ -74,7 +74,7 @@ const config = {
       }
     },
     primarySteward: 15,
-    firstPerformanceYear: 16,
+    firstPerformanceYear: 16
     // submissionPathway: 18
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
@@ -118,7 +118,6 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   }
   newMeasure['strata'] = [];
 
-
   // Add the names and descriptions of strata
   let strataName;
   const measureId = record[mappedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
@@ -127,9 +126,9 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   // Measure description column contains performance rate description
   // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
   const strata = _.split(strataDescription, /\s*[Rr]ate [0-9]+:\s*/);
-  //drop anything before the first performance rate
+  // drop anything before the first performance rate
   // (usually a description/meta-information)
-  strata.shift()
+  strata.shift();
 
   newMeasure['strata'] = [];
   _.each(strata, function(stratum, index) {
@@ -142,10 +141,6 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
     // i + 1 because Rates in the csv are numbered starting from 1
     if (_.lowerCase(strataName) === 'overall' &&
       index + 1 !== nthPerformanceRate) {
-        console.info(JSON.stringify(index, null, 2))
-        console.info(JSON.stringify(strata, null, 2))
-        console.info(JSON.stringify(stratum, null, 2))
-        console.info(JSON.stringify(qcdrStrataNames[measureId], null, 2))
       throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
         'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath + ' ' + nthPerformanceRate);
     }
