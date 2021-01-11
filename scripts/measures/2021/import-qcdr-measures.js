@@ -74,8 +74,7 @@ const config = {
       }
     },
     primarySteward: 15,
-    firstPerformanceYear: 16
-    // strataDescription: 17,
+    firstPerformanceYear: 16,
     // submissionPathway: 18
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
@@ -85,7 +84,8 @@ const config = {
     continuous: 10,
     ratio: 11,
     numberOfPerformanceRates: 12,
-    overallPerformanceRate: 13
+    overallPerformanceRate: 13,
+    strataDescription: 17
   }
 };
 
@@ -98,10 +98,10 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   // the names do not come from a source outside of this codebase. They were
   // created by manually selecting distinct keywords from the associated
   // performance rate description and are used when submitting to the API.
-  // const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
-  // const qcdrStrataNames = JSON.parse(strataNames);
+  const strataNames = fs.readFileSync(path.join(__dirname, qcdrStrataNamesDataPath), 'utf8');
+  const qcdrStrataNames = JSON.parse(strataNames);
   const referencedFields = config.referenced_fields;
-  // const mappedFields = config.mapped_fields;
+  const mappedFields = config.mapped_fields;
 
   newMeasure['metricType'] = 'registryMultiPerformanceRate';
 
@@ -118,42 +118,46 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
   }
   newMeasure['strata'] = [];
 
-  // TODO: readd strata parsing once strata names are finalized
 
-  // // Add the names and descriptions of strata
-  // let strataName;
-  // const measureId = record[mappedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
-  // const strataDescription = _.trim(record[mappedFields.strataDescription]);
+  // Add the names and descriptions of strata
+  let strataName;
+  const measureId = record[mappedFields.measureId].replace(/\s/g, ''); // "MOA 1" becomes "MOA1"
+  const strataDescription = _.trim(record[referencedFields.strataDescription]);
 
-  // // Measure description column contains performance rate description
-  // // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
-  // const strata = _.split(strataDescription, /\s*[Rr]ate [0-9]+:\s*/);
-  // // Drop anything before 'Rate 1' (usually a description of the measure)
-  // strata.shift();
+  // Measure description column contains performance rate description
+  // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
+  const strata = _.split(strataDescription, /\s*[Rr]ate [0-9]+:\s*/);
+  //drop anything before the first performance rate
+  // (usually a description/meta-information)
+  strata.shift()
 
-  // newMeasure['strata'] = [];
-  // _.each(strata, function(stratum, index) {
-  //   if (_.isUndefined(qcdrStrataNames[measureId])) {
-  //     throw TypeError('Missing strata for ' + measureId + '. Should ' +
-  //       'be in ' + qcdrStrataNamesDataPath + ', but isn\'t.');
-  //   }
-  //   strataName = qcdrStrataNames[measureId][index];
+  newMeasure['strata'] = [];
+  _.each(strata, function(stratum, index) {
+    if (_.isUndefined(qcdrStrataNames[measureId])) {
+      throw TypeError('Missing strata for ' + measureId + '. Should ' +
+        'be in ' + qcdrStrataNamesDataPath + ', but isn\'t.');
+    }
+    strataName = qcdrStrataNames[measureId][index];
 
-  //   // i + 1 because Rates in the csv are numbered starting from 1
-  //   if (_.lowerCase(strataName) === 'overall' &&
-  //     index + 1 !== nthPerformanceRate) {
-  //     throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
-  //       'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath + ' ' + nthPerformanceRate);
-  //   }
-  //   // A rate description will fit on a single line, remove any superfluous text
-  //   // then trim all remaining whitespace.
-  //   const desc = _.trim(_.split(strata[index], '\n')[0]);
+    // i + 1 because Rates in the csv are numbered starting from 1
+    if (_.lowerCase(strataName) === 'overall' &&
+      index + 1 !== nthPerformanceRate) {
+        console.info(JSON.stringify(index, null, 2))
+        console.info(JSON.stringify(strata, null, 2))
+        console.info(JSON.stringify(stratum, null, 2))
+        console.info(JSON.stringify(qcdrStrataNames[measureId], null, 2))
+      throw TypeError('"Overall" strata for ' + measureId + ' in QCDR ' +
+        'CSV doesn\'t match the name in ' + qcdrStrataNamesDataPath + ' ' + nthPerformanceRate);
+    }
+    // A rate description will fit on a single line, remove any superfluous text
+    // then trim all remaining whitespace.
+    const desc = _.trim(_.split(strata[index], '\n')[0]);
 
-  //   newMeasure['strata'].push({
-  //     'name': strataName,
-  //     'description': desc
-  //   });
-  // });
+    newMeasure['strata'].push({
+      'name': strataName,
+      'description': desc
+    });
+  });
 
   return newMeasure;
 };
