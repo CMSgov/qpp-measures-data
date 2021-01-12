@@ -26470,6 +26470,14 @@
     ],
     "performanceOptions": [
       {
+        "optionType": "eligiblePopulationException",
+        "qualityCodes": [
+          {
+            "code": "G9904"
+          }
+        ]
+      },
+      {
         "optionType": "performanceMet",
         "qualityCodes": [
           {
@@ -26477,12 +26485,22 @@
           },
           {
             "code": "G9903"
-          },
-          {
-            "code": "G9904"
-          },
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
           {
             "code": "G9905"
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationException",
+        "qualityCodes": [
+          {
+            "code": "G9907"
           }
         ]
       },
@@ -26491,10 +26509,12 @@
         "qualityCodes": [
           {
             "code": "G9906"
-          },
-          {
-            "code": "G9907"
-          },
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
           {
             "code": "G9908"
           }
@@ -26515,6 +26535,20 @@
           {
             "code": "4004F",
             "modifierExclusions": [
+              "1P",
+              "2P",
+              "3P",
+              "8P"
+            ]
+          }
+        ]
+      },
+      {
+        "optionType": "eligiblePopulationException",
+        "qualityCodes": [
+          {
+            "code": "4004F",
+            "modifierExclusions": [
               "2P",
               "3P",
               "8P"
@@ -26524,14 +26558,13 @@
             ]
           },
           {
-            "code": "4004F",
-            "modifierExclusions": [
-              "1P",
-              "2P",
-              "3P",
-              "8P"
-            ]
-          },
+            "code": "G9909"
+          }
+        ]
+      },
+      {
+        "optionType": "performanceNotMet",
+        "qualityCodes": [
           {
             "code": "4004F",
             "modifierExclusions": [
@@ -26542,9 +26575,6 @@
             "modifiers": [
               "8P"
             ]
-          },
-          {
-            "code": "G9909"
           }
         ]
       }
