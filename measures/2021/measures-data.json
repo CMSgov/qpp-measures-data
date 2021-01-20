@@ -9612,6 +9612,62 @@
     }
   },
   {
+    "title": "Hospital-Wide, 30-Day, All-Cause Unplanned Readmission (HWR) Rate for the Merit-Based Incentive Payment System (MIPS) Groups",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "479",
+    "description": "This measure is a re-specified version of the measure, “Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition” (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group’s readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
+    "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "3493",
+    "measureId": "480",
+    "description": "This measure is a re-specified version of the measure, “Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)” (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (“provider”) and assesses each provider’s complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
     "measureId": "AAAAI17",
     "title": "Asthma Control: Minimal Important Difference Improvement",
     "description": "Percentage of patients aged 12 years and older whose asthma is not well-controlled as indicated by the Asthma Control Test, Asthma Control Questionnaire, or Asthma Therapy Assessment Questionnaire and who demonstrated a minimal important difference improvement upon a subsequent office visit during the 12-month reporting period. National Quality Strategy Domain: Person and Caregiver-Centered Experience and Outcomes Outcome Measure",
@@ -16354,7 +16410,7 @@
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
-        "name": "broadb&",
+        "name": "broadband",
         "description": "Patient administered a psychiatric screening to assess health broad-band psychosocial problem"
       },
       {
