@@ -1167,7 +1167,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Security%20Risk%20Analysis.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1235,7 +1237,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20ePrescribing.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1269,7 +1273,9 @@
     "isBonus": true,
     "reportingCategory": "bonus",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Query%20of%20PDMP.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1288,7 +1294,9 @@
     "substitutes": [
       "PI_HIE_5"
     ],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Support%20Electronic%20Referral%20Loops%20by%20Sending%20Health%20Info.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1324,7 +1332,9 @@
     "substitutes": [
       "PI_HIE_5"
     ],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Support%20Electronic%20Referral%20Loops%20by%20Receiving%20Reconciling%20Health%20Information.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1361,7 +1371,9 @@
       "PI_HIE_1",
       "PI_HIE_4"
     ],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Health%20Information%20Exchange%20(HIE)%20Bi-Directional%20Exchange.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1378,7 +1390,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Provide%20Patients%20Electronic%20Access%20to%20Their%20Health%20Information.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1395,7 +1409,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Syndromic%20Surveillance%20Reporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1480,7 +1496,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Immunization%20Registry%20Reporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1565,7 +1583,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Electronic%20Case%20Reporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1650,7 +1670,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Public%20Health%20Registry%20Reporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1735,7 +1757,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": null,
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2021%20MIPS%20PI%20Clinical%20Data%20Registry%20Reporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null
   },
@@ -1843,7 +1867,12 @@
       "endocrinology",
       "nutritionDietician"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms122v9",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_DM-2_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_001_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_001_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -1877,7 +1906,10 @@
       "internalMedicine",
       "hospitalists"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms135v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_005_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
@@ -1910,7 +1942,9 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_006_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
@@ -1944,7 +1978,9 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_007_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -1979,7 +2015,10 @@
       "hospitalists",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms144v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_008_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Anti-Depressant Medication Management",
@@ -2004,7 +2043,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": ">=84Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+      },
+      {
+        "name": ">=180Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -2013,7 +2061,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms128v9"
+    }
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
@@ -2043,7 +2093,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms143v9"
+    }
   },
   {
     "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
@@ -2074,7 +2126,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_014_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_014_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care",
@@ -2105,7 +2160,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms142v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_019_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Perioperative Care: Selection of Prophylactic Antibiotic – First OR Second-Generation Cephalosporin",
@@ -2142,7 +2200,10 @@
       "thoracicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_021_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_021_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Perioperative Care: Venous Thromboembolism (VTE) Prophylaxis (When Indicated in ALL Patients)",
@@ -2180,7 +2241,10 @@
       "urology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_023_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_023_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older",
@@ -2215,7 +2279,10 @@
       "preventiveMedicine",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_024_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_024_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Screening for Osteoporosis for Women Aged 65-85 Years of Age",
@@ -2251,7 +2318,10 @@
       "geriatrics",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_039_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_039_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Preoperative Beta-Blocker in Patients with Isolated CABG Surgery",
@@ -2282,7 +2352,9 @@
       "anesthesiology",
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_044_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Advance Care Plan",
@@ -2334,7 +2406,10 @@
       "pulmonology",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_047_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_047_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older",
@@ -2369,7 +2444,9 @@
       "urology",
       "geriatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_048_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older",
@@ -2404,7 +2481,10 @@
       "urology",
       "geriatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_050_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_050_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy",
@@ -2434,7 +2514,9 @@
     "measureSets": [
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_052_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Treatment for Upper Respiratory Infection (URI)",
@@ -2468,7 +2550,10 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms154v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_065_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Testing for Pharyngitis",
@@ -2502,7 +2587,10 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms146v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_066_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow",
@@ -2532,7 +2620,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_067_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hematology: Multiple Myeloma: Treatment with Bisphosphonates",
@@ -2560,7 +2650,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_069_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hematology: Chronic Lymphocytic Leukemia (CLL): Baseline Flow Cytometry",
@@ -2590,7 +2682,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_070_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections",
@@ -2623,7 +2717,10 @@
       "interventionalRadiology",
       "hospitalists"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_076_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_076_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy – Avoidance of Inappropriate Use",
@@ -2659,7 +2756,10 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_093_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_093_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients",
@@ -2692,7 +2792,10 @@
       "oncology",
       "radiationOncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms129v10",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_102_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
@@ -2722,7 +2825,9 @@
     "measureSets": [
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_104_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -2755,7 +2860,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms161v9"
+    }
   },
   {
     "title": "Preventive Care and Screening: Influenza Immunization",
@@ -2803,7 +2910,12 @@
       "endocrinology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms147v10",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV7_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_110_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_110_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Pneumococcal Vaccination Status for Older Adults",
@@ -2849,7 +2961,11 @@
       "endocrinology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms069v9",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_111_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_111_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Breast Cancer Screening",
@@ -2884,7 +3000,11 @@
       "obstetricsGynecology",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV5_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_112_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_112_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Colorectal Cancer Screening",
@@ -2918,7 +3038,11 @@
       "familyMedicine",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV6_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_113_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_113_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Avoidance of Antibiotic Treatment for Acute Bronchitis/Bronchiolitis",
@@ -2953,7 +3077,9 @@
       "preventiveMedicine",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_116_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes: Eye Exam",
@@ -2988,7 +3114,11 @@
       "ophthalmology",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms131v9",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_117_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_117_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
@@ -3020,7 +3150,9 @@
       "skilledNursingFacility",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_118_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes: Medical Attention for Nephropathy",
@@ -3056,7 +3188,10 @@
       "nephrology",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms134v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_119_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy – Neurological Evaluation",
@@ -3091,7 +3226,9 @@
       "physicalTherapyOccupationalTherapy",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_126_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention – Evaluation of Footwear",
@@ -3122,7 +3259,9 @@
       "podiatry",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_127_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
@@ -3172,7 +3311,11 @@
       "nutritionDietician",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms069v9",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_128_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_128_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -3237,7 +3380,11 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms068v10",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_130_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_130_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
@@ -3281,7 +3428,12 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms002v10",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV12_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_134_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_134_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Melanoma: Continuity of Care – Recall System",
@@ -3311,7 +3463,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_137_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Melanoma: Coordination of Care",
@@ -3341,7 +3495,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_138_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care",
@@ -3372,7 +3528,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_141_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_141_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Oncology: Medical and Radiation – Pain Intensity Quantified",
@@ -3404,7 +3563,10 @@
       "oncology",
       "radiationOncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms157v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_143_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Oncology: Medical and Radiation - Plan of Care for Pain",
@@ -3437,7 +3599,9 @@
       "oncology",
       "radiationOncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_144_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy",
@@ -3469,7 +3633,10 @@
       "diagnosticRadiology",
       "interventionalRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_145_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_145_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiology: Inappropriate Use of “Probably Benign” Assessment Category in Screening Mammograms",
@@ -3498,7 +3665,10 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_146_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_146_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy",
@@ -3529,7 +3699,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_147_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_147_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Falls: Risk Assessment",
@@ -3571,7 +3744,10 @@
       "skilledNursingFacility",
       "audiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_154_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_154_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Falls: Plan of Care",
@@ -3613,7 +3789,10 @@
       "skilledNursingFacility",
       "audiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_155_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_155_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Prolonged Intubation",
@@ -3643,7 +3822,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_164_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure",
@@ -3673,7 +3854,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_167_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration",
@@ -3703,7 +3886,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_168_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Tuberculosis Screening Prior to First Course Biologic Therapy",
@@ -3733,7 +3918,9 @@
     "measureSets": [
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_176_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity",
@@ -3763,7 +3950,9 @@
     "measureSets": [
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_177_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Functional Status Assessment",
@@ -3794,7 +3983,9 @@
       "orthopedicSurgery",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_178_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Glucocorticoid Management",
@@ -3825,7 +4016,9 @@
       "orthopedicSurgery",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_180_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Elder Maltreatment Screen and Follow-Up Plan",
@@ -3866,7 +4059,10 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_181_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_181_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Outcome Assessment",
@@ -3905,7 +4101,10 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_182_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_182_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Colonoscopy Interval for Patients with a History of Adenomatous Polyps – Avoidance of Inappropriate Use",
@@ -3935,7 +4134,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_185_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Stroke and Stroke Rehabilitation: Thrombolytic Therapy",
@@ -3966,7 +4167,9 @@
       "emergencyMedicine",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_187_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery",
@@ -3997,7 +4200,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_191_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiology: Stenosis Measurement in Carotid Imaging Reports",
@@ -4028,7 +4233,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_195_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_195_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis",
@@ -4059,7 +4267,9 @@
       "pediatrics",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_205_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Knee Impairments",
@@ -4091,7 +4301,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_217_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Hip Impairments",
@@ -4123,7 +4335,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_218_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments",
@@ -4155,7 +4369,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_219_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Low Back Impairments",
@@ -4187,7 +4403,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_220_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Shoulder Impairments",
@@ -4219,7 +4437,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_221_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",
@@ -4251,7 +4471,9 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_222_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiology: Reminder System for Screening Mammograms",
@@ -4282,7 +4504,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_225_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_225_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
@@ -4307,7 +4532,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
+      },
+      {
+        "name": "tobacco",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
+      }
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -4346,7 +4584,12 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms138v9",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV10_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_226_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_226_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "claims": "removed",
       "registry": "removed"
@@ -4390,7 +4633,11 @@
       "endocrinology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_HTN2_CMSWebInterface.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_236_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_236_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Use of High-Risk Medications in Older Adults",
@@ -4429,7 +4676,20 @@
       "skilledNursingFacility",
       "pulmonology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms156v9",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_238_MIPSCQM.pdf"
+    },
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Percentage of patients who were ordered at least one high-risk medication"
+      },
+      {
+        "name": "2+",
+        "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
+      }
+    ],
     "benchmarks": {
       "registry": "removed"
     }
@@ -4457,7 +4717,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "BMI",
+        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+      },
+      {
+        "name": "nutrition",
+        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+      },
+      {
+        "name": "physicalActivity",
+        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4465,7 +4738,9 @@
       "pediatrics",
       "nutritionDietician"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms155v9"
+    }
   },
   {
     "title": "Childhood Immunization Status",
@@ -4527,7 +4802,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_243_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Barrett’s Esophagus",
@@ -4558,7 +4835,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_249_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_249_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radical Prostatectomy Pathology Reporting",
@@ -4590,7 +4870,10 @@
       "pathology",
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_250_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_250_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain",
@@ -4621,7 +4904,10 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_254_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_254_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Open Repair of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #7)",
@@ -4651,7 +4937,9 @@
     "measureSets": [
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_258_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -4681,7 +4969,9 @@
     "measureSets": [
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_259_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -4712,7 +5002,9 @@
       "vascularSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_260_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness",
@@ -4743,7 +5035,10 @@
     "measureSets": [
       "audiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_261_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_261_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Sentinel Lymph Node Biopsy for Invasive Breast Cancer",
@@ -4773,7 +5068,9 @@
     "measureSets": [
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_264_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Biopsy Follow-Up",
@@ -4806,7 +5103,9 @@
       "otolaryngology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_265_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy",
@@ -4836,7 +5135,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_268_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Inflammatory Bowel Disease (IBD): Assessment of Hepatitis B Virus (HBV) Status Before Initiating Anti-TNF (Tumor Necrosis Factor) Therapy",
@@ -4866,7 +5167,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_275_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Sleep Apnea: Severity Assessment at Initial Diagnosis",
@@ -4899,7 +5202,9 @@
       "neurology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_277_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy",
@@ -4932,7 +5237,9 @@
       "neurology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_279_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Cognitive Assessment",
@@ -4999,7 +5306,9 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_282_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management",
@@ -5033,7 +5342,9 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_283_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia",
@@ -5067,7 +5378,9 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_286_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Education and Support of Caregivers for Patients with Dementia",
@@ -5101,7 +5414,9 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_288_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Parkinson’s Disease: Psychiatric Symptoms Assessment for Patients with Parkinson’s Disease",
@@ -5131,7 +5446,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_290_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Parkinson’s Disease: Cognitive Impairment or Dysfunction Assessment for Patients with Parkinson's Disease",
@@ -5161,7 +5478,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_291_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Parkinson’s Disease: Rehabilitative Therapy Options",
@@ -5191,7 +5510,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_293_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: Improvement in Patient’s Visual Function within 90 Days Following Cataract Surgery",
@@ -5221,7 +5542,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_303_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: Patient Satisfaction within 90 Days Following Cataract Surgery",
@@ -5251,7 +5574,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_304_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Initiation and Engagement of Alcohol and Other Drug Dependence Treatment",
@@ -5276,7 +5601,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "14DaysOfDiagnosis",
+        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+      },
+      {
+        "name": "30DaysOfVisit",
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -5285,7 +5619,9 @@
       "internalMedicine",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms137v9"
+    }
   },
   {
     "title": "Cervical Cancer Screening",
@@ -5403,7 +5739,11 @@
       "urgentCare",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms022v9",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_317_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_317_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "claims": "removed",
       "registry": "removed"
@@ -5445,7 +5785,10 @@
       "physicalTherapyOccupationalTherapy",
       "audiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms139v9",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_CARE-2_CMSWebInterface.pdf"
+    }
   },
   {
     "title": "Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients",
@@ -5476,7 +5819,10 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_320_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_320_MIPSCQM.pdf"
+    }
   },
   {
     "title": "CAHPS for MIPs Clinician/Group Survey",
@@ -5537,7 +5883,9 @@
     "measureSets": [
       "cardiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_322_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Routine Testing After Percutaneous Coronary Intervention (PCI)",
@@ -5567,7 +5915,9 @@
     "measureSets": [
       "cardiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_323_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients",
@@ -5597,7 +5947,9 @@
     "measureSets": [
       "cardiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_324_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
@@ -5631,7 +5983,10 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_326_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_326_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)",
@@ -5666,7 +6021,9 @@
       "otolaryngology",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_331_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use)",
@@ -5701,7 +6058,9 @@
       "otolaryngology",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_332_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Sinusitis: Computerized Tomography (CT) for Acute Sinusitis (Overuse)",
@@ -5729,7 +6088,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_333_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Maternity Care: Elective Delivery or Early Induction Without Medical Indication at < 39 Weeks (Overuse)",
@@ -5759,7 +6120,9 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_335_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Maternity Care: Postpartum Follow-up and Care Coordination",
@@ -5789,7 +6152,9 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_336_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Psoriasis: Tuberculosis (TB) Prevention for Patients with Psoriasis, Psoriatic Arthritis and Rheumatoid Arthritis on a Biological Immune Response Modifier",
@@ -5821,7 +6186,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_337_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV Viral Load Suppression",
@@ -5854,7 +6221,9 @@
       "internalMedicine",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_338_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV Medical Visit Frequency",
@@ -5885,7 +6254,9 @@
       "allergyImmunology",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_340_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Pain Brought Under Control Within 48 Hours",
@@ -5916,7 +6287,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_342_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -5948,7 +6321,9 @@
       "vascularSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_344_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Implantable Cardioverter-Defibrillator (ICD) Complications Rate",
@@ -5973,12 +6348,23 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "30",
+        "description": "Complications or mortality at 30 days"
+      },
+      {
+        "name": "90",
+        "description": "Complications at 90 days"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_348_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Total Knee Replacement: Shared Decision-Making: Trial of Conservative (Non-surgical) Therapy",
@@ -6008,7 +6394,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_350_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Total Knee Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation",
@@ -6038,7 +6426,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_351_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Anastomotic Leak Intervention",
@@ -6068,7 +6458,9 @@
     "measureSets": [
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_354_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Unplanned Reoperation within the 30 Day Postoperative Period",
@@ -6099,7 +6491,9 @@
       "plasticSurgery",
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_355_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Unplanned Hospital Readmission within 30 Days of Principal Procedure",
@@ -6130,7 +6524,9 @@
       "plasticSurgery",
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_356_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Surgical Site Infection (SSI)",
@@ -6163,7 +6559,9 @@
       "vascularSurgery",
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_357_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Patient-Centered Surgical Risk Assessment and Communication",
@@ -6199,7 +6597,9 @@
       "thoracicSurgery",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_358_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies",
@@ -6229,7 +6629,9 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_360_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines",
@@ -6259,7 +6661,9 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_364_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Follow-Up Care for Children Prescribed ADHD Medication (ADD)",
@@ -6284,7 +6688,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "visitWithin30Days",
+        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
+      },
+      {
+        "name": "visitAndFollowups",
+        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -6292,7 +6705,9 @@
       "pediatrics",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms136v10"
+    }
   },
   {
     "title": "Depression Remission at Twelve Months",
@@ -6317,7 +6732,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "12-17",
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      },
+      {
+        "name": "18+",
+        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface",
@@ -6331,7 +6755,11 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms159v9",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_MH1_CMSWebInterface.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_370_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Closing the Referral Loop: Receipt of Specialist Report",
@@ -6384,7 +6812,9 @@
       "endocrinology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_374_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Assessment for Total Knee Replacement",
@@ -6414,7 +6844,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms066v9"
+    }
   },
   {
     "title": "Functional Status Assessment for Total Hip Replacement",
@@ -6444,7 +6876,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms056v9"
+    }
   },
   {
     "title": "Functional Status Assessments for Congestive Heart Failure",
@@ -6475,7 +6909,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms090v10"
+    }
   },
   {
     "title": "Children Who Have Dental Decay or Cavities",
@@ -6536,7 +6972,9 @@
       "pediatrics",
       "dentistry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms074v10"
+    }
   },
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -6601,7 +7039,9 @@
       "mentalBehavioralHealth",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_383_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery",
@@ -6631,7 +7071,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_384_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Primary Rhegmatogenous Retinal Detachment Surgery: Visual Acuity Improvement Within 90 Days of Surgery",
@@ -6661,7 +7103,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_385_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences",
@@ -6691,7 +7135,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_386_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users",
@@ -6722,7 +7168,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_387_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataract Surgery: Difference Between Planned and Final Refraction",
@@ -6752,7 +7200,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_389_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hepatitis C: Discussion and Shared Decision Making Surrounding Treatment Options",
@@ -6780,7 +7230,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_390_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Follow-Up After Hospitalization for Mental Illness (FUH)",
@@ -6805,7 +7257,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "30days",
+        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
+      },
+      {
+        "name": "overall",
+        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6814,7 +7275,9 @@
       "pediatrics",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_391_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cardiac Tamponade and/or Pericardiocentesis Following Atrial Fibrillation Ablation",
@@ -6839,14 +7302,37 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "18-64F",
+        "description": "Females 18-64 years of age"
+      },
+      {
+        "name": "18-64M",
+        "description": "Males 18-64 years of age"
+      },
+      {
+        "name": "65+F",
+        "description": "Females 65 years of age and older"
+      },
+      {
+        "name": "65+M",
+        "description": "Males 65 years of age and older"
+      },
+      {
+        "name": "overall",
+        "description": "Overall percentage of patients with cardiac tamponade and/or pericardiocentesis occurring within 30 days"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_392_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Infection within 180 Days of Cardiac Implantable Electronic Device (CIED) Implantation, Replacement, or Revision",
@@ -6876,7 +7362,9 @@
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_393_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Immunizations for Adolescents",
@@ -6901,7 +7389,24 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "meningococcal",
+        "description": "Patients who had one dose of meningococcal vaccine on or between the patient�s 11th and 13th birthdays"
+      },
+      {
+        "name": "Tdap",
+        "description": "Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient�s 10th and 13th birthdays"
+      },
+      {
+        "name": "HPV",
+        "description": "Patients who have completed the HPV vaccine with defferent dates of service on or between the patient's 9th and 13th birthdays"
+      },
+      {
+        "name": "overall",
+        "description": "All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6909,7 +7414,9 @@
       "familyMedicine",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_394_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Lung Cancer Reporting (Biopsy/Cytology Specimens)",
@@ -6940,7 +7447,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_395_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_395_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Lung Cancer Reporting (Resection Specimens)",
@@ -6971,7 +7481,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_396_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_396_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Melanoma Reporting",
@@ -7002,7 +7515,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_397_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_397_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimal Asthma Control",
@@ -7027,7 +7543,36 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
+      },
+      {
+        "name": "5-17",
+        "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation."
+      },
+      {
+        "name": "18-50",
+        "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
+      },
+      {
+        "name": "ACT5-17",
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 5 to 17 with Asthma"
+      },
+      {
+        "name": "ACT18-50",
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
+      },
+      {
+        "name": "lowRisk5-17",
+        "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
+      },
+      {
+        "name": "lowRisk18-50",
+        "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -7039,7 +7584,9 @@
       "pediatrics",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_398_MIPSCQM.pdf"
+    }
   },
   {
     "title": "One-Time Screening for Hepatitis C Virus (HCV) for Patients at Risk",
@@ -7071,7 +7618,9 @@
       "internalMedicine",
       "nephrology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_400_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis",
@@ -7103,7 +7652,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_401_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Tobacco Use and Help with Quitting Among Adolescents",
@@ -7153,7 +7704,9 @@
       "urgentCare",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_402_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Anesthesiology Smoking Abstinence",
@@ -7183,7 +7736,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_404_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Follow-up Imaging for Incidental Abdominal Lesions",
@@ -7214,7 +7769,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_405_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_405_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients",
@@ -7245,7 +7803,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_406_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_406_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Opioid Therapy Follow-up Evaluation",
@@ -7273,7 +7834,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_408_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Clinical Outcome Post Endovascular Stroke Treatment",
@@ -7304,7 +7867,9 @@
       "interventionalRadiology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_409_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",
@@ -7334,7 +7899,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_410_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Documentation of Signed Opioid Treatment Agreement",
@@ -7362,7 +7929,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_412_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Door to Puncture Time for Endovascular Stroke Treatment",
@@ -7393,7 +7962,9 @@
       "interventionalRadiology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_413_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Evaluation or Interview for Risk of Opioid Misuse",
@@ -7421,7 +7992,9 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_414_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older",
@@ -7451,7 +8024,9 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_415_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years",
@@ -7482,7 +8057,10 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_416_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_416_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Osteoporosis Management in Women Who Had a Fracture",
@@ -7517,7 +8095,10 @@
       "orthopedicSurgery",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_418_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_418_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Overuse of Imaging for the Evaluation of Primary Headache",
@@ -7547,7 +8128,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_419_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Varicose Vein Treatment with Saphenous Ablation: Outcome Survey",
@@ -7578,7 +8161,9 @@
       "interventionalRadiology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_420_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Assessment of Retrievable Inferior Vena Cava (IVC) Filters for Removal",
@@ -7608,7 +8193,9 @@
     "measureSets": [
       "interventionalRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_421_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury",
@@ -7639,7 +8226,10 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_422_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_422_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Perioperative Temperature Management",
@@ -7669,7 +8259,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_424_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Photodocumentation of Cecal Intubation",
@@ -7700,7 +8292,10 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_425_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_425_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Pelvic Organ Prolapse: Preoperative Screening for Uterine Malignancy",
@@ -7732,7 +8327,10 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_429_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_429_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) – Combination Therapy",
@@ -7762,7 +8360,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_430_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Unhealthy Alcohol Use: Screening & Brief Counseling",
@@ -7809,7 +8409,9 @@
       "pulmonology",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_431_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "registry": "removed"
     }
@@ -7843,7 +8445,9 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_432_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair",
@@ -7874,7 +8478,9 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_433_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Proportion of Patients Sustaining a Ureter Injury at the Time of Pelvic Organ Prolapse Repair",
@@ -7905,7 +8511,9 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_434_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Quality of Life Assessment For Patients With Primary Headache Disorders",
@@ -7934,7 +8542,10 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_435_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_435_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques",
@@ -7965,7 +8576,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_436_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_436_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Surgical Conversion from Lower Extremity Endovascular Revascularization Procedure",
@@ -7994,7 +8608,10 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_437_MedicarePartBClaims.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_437_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
@@ -8030,7 +8647,11 @@
       "preventiveMedicine",
       "endocrinology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms347v4",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV13_CMSWebInterface.pdf",
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_438_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Age Appropriate Screening Colonoscopy",
@@ -8060,7 +8681,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_439_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "registry": "removed"
     }
@@ -8094,7 +8717,9 @@
       "dermatology",
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_440_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)",
@@ -8127,7 +8752,9 @@
       "internalMedicine",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_441_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Non-Recommended Cervical Cancer Screening in Adolescent Females",
@@ -8159,7 +8786,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_443_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Medication Management for People with Asthma",
@@ -8193,7 +8822,9 @@
       "pediatrics",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_444_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG)",
@@ -8223,7 +8854,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_445_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Workup Prior to Endometrial Ablation",
@@ -8253,7 +8886,9 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_448_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Treatment for Patients with Stage I (T1c) - III HER2 Positive Breast Cancer",
@@ -8283,7 +8918,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_450_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "registry": "removed"
     }
@@ -8316,7 +8953,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_451_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies",
@@ -8346,7 +8985,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_452_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Percentage of Patients Who Died from Cancer Receiving Chemotherapy in the Last 14 Days of Life (lower score – better)",
@@ -8376,7 +9017,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_453_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Percentage of Patients Who Died from Cancer Admitted to the Intensive Care Unit (ICU) in the Last 30 Days of Life (lower score – better)",
@@ -8407,7 +9050,9 @@
       "oncology",
       "geriatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_455_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score – better)",
@@ -8437,7 +9082,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_457_MIPSCQM.pdf"
+    }
   },
   {
     "title": "All-cause Hospital Readmission",
@@ -8496,7 +9143,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_459_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Back Pain After Lumbar Fusion",
@@ -8527,7 +9176,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_460_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Leg Pain After Lumbar Discectomy/Laminectomy",
@@ -8558,7 +9209,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_461_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy",
@@ -8620,7 +9273,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_463_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use",
@@ -8653,7 +9308,9 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_464_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and Interrogation of Ovarian Arteries",
@@ -8683,7 +9340,9 @@
     "measureSets": [
       "interventionalRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_465_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Continuity of Pharmacotherapy for Opioid Use Disorder (OUD)",
@@ -8716,7 +9375,9 @@
       "physicalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_468_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status After Lumbar Fusion",
@@ -8747,7 +9408,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_469_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status After Primary Total Knee Replacement",
@@ -8777,7 +9440,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_470_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status After Lumbar Discectomy/Laminectomy",
@@ -8808,7 +9473,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_471_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture",
@@ -8840,7 +9507,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms249v3"
+    }
   },
   {
     "title": "Leg Pain After Lumbar Fusion",
@@ -8871,7 +9540,9 @@
       "orthopedicSurgery",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_473_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV Screening",
@@ -8905,7 +9576,9 @@
       "preventiveMedicine",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms349v3"
+    }
   },
   {
     "title": "Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia",
@@ -8936,7 +9609,9 @@
       "urology",
       "geriatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms771v2"
+    }
   },
   {
     "title": "Multimodal Pain Management",
@@ -8966,7 +9641,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_477_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Neck Impairments",
@@ -8998,9 +9675,407 @@
       "physicalTherapyOccupationalTherapy",
       "chiropracticMedicine"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_478_MIPSCQM.pdf"
+    },
     "benchmarks": {
       "registry": "removed"
+    }
+  },
+  {
+    "title": "Hospital-Wide, 30-Day, All-Cause Unplanned Readmission (HWR) Rate for the Merit-Based Incentive Payment System (MIPS) Groups",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "479",
+    "description": "This measure is a re-specified version of the measure, “Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition” (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group’s readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
+    "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "3493",
+    "measureId": "480",
+    "description": "This measure is a re-specified version of the measure, “Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)” (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (“provider”) and assesses each provider’s complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
+    "category": "cost",
+    "title": "Medicare Spending Per Beneficiary (MSPB)",
+    "description": "The risk-adjusted cost to Medicare for all Parts A and B services performed for an inpatient beneficiary as a result of a clinician's care during the period 3 days prior to the patient's hospital stay through 30 days after discharge.",
+    "measureId": "MSPB_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-mspb-clinician.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Total Per Capita Costs (TPCC)",
+    "description": "The overall, payment-standardized, annualized, risk-adjusted, and specialty-adjusted cost of care provided to beneficiaries attributed to their primary care clinicians.",
+    "measureId": "TPCC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-tpcc.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Routine Cataract Removal with Intraocular Lens (IOL) Implantation",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who undergo a procedure for routine cataract removal with IOL implantation during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from 60 days prior to the cataract removal procedure that triggers the episode through 90 days after the trigger.",
+    "measureId": "COST_IOL_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-cataract.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Intracranial Hemorrhage or Cerebral Infarction",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries hospitalized for cerebral infarction or intracranial hemorrhage during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 90 days after the trigger.",
+    "measureId": "COST_IHCI_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-ich-cva.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Knee Arthroplasty",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who undergo an elective knee arthroplasty during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from 30 days prior to the knee arthroplasty that triggers the episode through 90 days after the trigger.",
+    "measureId": "COST_KA_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-knee-arthro.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Elective Outpatient Percutaneous Coronary Intervention (PCI)",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who undergo elective outpatient PCI surgery to place a coronary stent for heart disease during the performance period. Includes costs of services clinically related to the attributed clinician’s role in managing care from the PCI surgery that triggers the episode through 30 days after the trigger.",
+    "measureId": "COST_EOPCI_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-op-pci.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Simple Pneumonia with Hospitalization",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries hospitalized with simple pneumonia during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 30 days after the trigger.",
+    "measureId": "COST_SPH_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-pna-hosp.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Revascularization for Lower Extremity Chronic Critical Limb Ischemia",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who undergo elective revascularization surgery for lower extremity chronic critical limb ischemia during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from 30 days prior to the revascularization procedure that triggers the episode through 90 days after the trigger.",
+    "measureId": "COST_CCLI_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-rleccli.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Screening/Surveillance Colonoscopy",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who receive a screening/surveillance colonoscopy. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the screening/surveillance colonoscopy procedure that triggers the episode through 14 days after the trigger.",
+    "measureId": "COST_SSC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-ss-clnscpy.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "ST-Elevation Myocardial Infarction (STEMI) with Percutaneous Coronary Intervention (PCI)",
+    "description": "A clinician's risk-adjusted cost to Medicare for beneficiaries who present with STEMI, indicating complete blockage of a coronary artery, who emergently receive PCI as treatment during the performance period. Includes costs of services that are clinically related to the attributed clinician’s role in managing care from the inpatient hospitalization that triggers the episode through 30 days after the trigger.",
+    "measureId": "COST_STEMI_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications//2020-12-14-mif-ebcm-stemi-pci.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Acute Kidney Injury Requiring New Inpatient Dialysis",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Acute Kidney Injury Requiring New Inpatient Dialysis episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who receive their first inpatient dialysis service for acute kidney injury during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 30 days after the trigger.",
+    "measureId": "COST_AKID_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-aki-new-hd.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Elective Primary Hip Arthroplasty",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Elective Primary Hip Arthroplasty episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who receive an elective primary hip arthroplasty during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 30 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_PHA_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-el-ha.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Femoral or Inguinal Hernia Repair",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Femoral or Inguinal Hernia Repair episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo surgical procedure to repair a femoral or inguinal hernia during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 30 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_FIHR_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-fihr.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Hemodialysis Access Creation",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Hemodialysis Access Creation episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo a procedure for the creation of graft or fistula access for long-term hemodialysis during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 60 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_HAC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-hd-access.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Inpatient Chronic Obstructive Pulmonary Disease (COPD) Exacerbation",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Inpatient COPD Exacerbation episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who receive inpatient treatment for an acute exacerbation of COPD during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 60 days after the trigger.",
+    "measureId": "COST_COPDE_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-ip-copd.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Lower Gastrointestinal Hemorrhage (groups only)",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Lower Gastrointestinal Hemorrhage episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who receive inpatient non-surgical treatment for acute bleeding in the lower gastrointestinal tract during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 35 days after the trigger.",
+    "measureId": "COST_LGH_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-lgi-bleed.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Lumbar Spine Fusion for Degenerative Disease, 1-3 Levels",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Lumbar Spine Fusion for Degenerative Disease, 1-3 Levels episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo surgery for lumbar spine fusion during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 30 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_LSFDD_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-l-fusion.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Lumpectomy Partial Mastectomy, Simple Mastectomy",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Lumpectomy, Partial Mastectomy, Simple Mastectomy episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo partial or total mastectomy for breast cancer during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 30 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_LPMSM_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-lump-mast.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Non-Emergent Coronary Artery Bypass Graft (CABG)",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Non-Emergent CABG episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who undergo a CABG procedure during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 30 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
+    "measureId": "COST_NECABG_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-ne-cabg.pdf"
+    }
+  },
+  {
+    "category": "cost",
+    "title": "Renal or Ureteral Stone Surgical Treatment",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized1 Medicare allowed amount,2 and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Renal or Ureteral Stone Surgical Treatment episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for beneficiaries who receive surgical treatment for renal or ureteral stones during the performance period. The cost measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 90 days prior to the clinical event that opens, or “triggers,” the episode through 30 days after the trigger.",
+    "measureId": "COST_RUSST_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2020,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": null,
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2020-12-14-mif-ebcm-rn-stone.pdf"
     }
   },
   {
@@ -11112,7 +12187,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "abdomen",
+        "description": "Percent of CT Abdomen-pelvis exams with contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level"
+      },
+      {
+        "name": "chest",
+        "description": "Percent of CT Chest exams without contrast (single phase scan) for which Dose"
+      },
+      {
+        "name": "head",
+        "description": "Percent of CT Head/brain exams without contrast (single phase scan) for which Dose"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11306,7 +12394,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Patients who achieved at least a 10% improvement in functional status score from baseline."
+      },
+      {
+        "name": "followup",
+        "description": "Patients who completed baseline and 30 day follow-up patient-reported functional status assessments,"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11332,7 +12429,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up"
+      },
+      {
+        "name": "<=10cm",
+        "description": "All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up with hernia width < 10cm"
+      },
+      {
+        "name": ">10cm",
+        "description": "All patients in the cohort who have undergone ventral hernia repair with myofascial release with 30 day postoperative follow up with hernia width > 10cm"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11478,7 +12588,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surveyed",
+        "description": "The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
+      },
+      {
+        "name": "overall",
+        "description": "The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -11936,7 +13055,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "implant",
+        "description": "Implant-based breast reconstruction,"
+      },
+      {
+        "name": "autologous",
+        "description": "Autologous breast reconstruction,"
+      },
+      {
+        "name": "overall",
+        "description": "All breast reconstruction"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12106,7 +13238,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: FOR REPORTING"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12132,7 +13277,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: FOR REPORTING"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12158,7 +13316,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: FOR REPORTING"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12568,7 +13739,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "midfoot/heel",
+        "description": "Midfoot/heel"
+      },
+      {
+        "name": "toes",
+        "description": "Toes"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the two risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12594,7 +13778,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "bucket1",
+        "description": "0.00 - 62.42"
+      },
+      {
+        "name": "bucket2",
+        "description": "62.42 - 73.19"
+      },
+      {
+        "name": "bucket3",
+        "description": "73.19 - 93.45"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12620,7 +13821,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "normal",
+        "description": "Normal arterial supply- No restrictions on type of compression"
+      },
+      {
+        "name": "considerations",
+        "description": "Compression bandaging with special considerations (e.g. short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)"
+      },
+      {
+        "name": "notrecommended",
+        "description": "Compression bandaging not usually recommended"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -12646,7 +13864,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "bucket1",
+        "description": "0.00-73.24"
+      },
+      {
+        "name": "bucket2",
+        "description": "73.24 - 80.26"
+      },
+      {
+        "name": "bucket3",
+        "description": "80.26 - 87.21"
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13224,7 +14459,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall percentage of patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "malePatients",
+        "description": "Percentage of male patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "femalePatients",
+        "description": "Percentage of female patients aged 50 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13250,7 +14498,36 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall percentage of procedures among average-risk patients aged 50 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report"
+      },
+      {
+        "name": "biopsy&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient"
+      },
+      {
+        "name": "hyperPolyps&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient"
+      },
+      {
+        "name": "1-2adenoma&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient"
+      },
+      {
+        "name": "3-4adenomas&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient"
+      },
+      {
+        "name": "5-10adenoma&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (≥ 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
+      },
+      {
+        "name": "neoplasm&FollowUp",
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp ≥ 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13444,7 +14721,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "qolSelfAssessment",
+        "description": "Percentage of patients aged 50 years and older evaluated for hearing loss, who are screened to determine if the hearing loss is impacting their QoL with a self-assessment measure."
+      },
+      {
+        "name": "qolPlan&Intervention",
+        "description": "Percentage of patients aged 50 years and older diagnosed with a mild or greater hearing loss in at least one ear or identified with a hearing loss that impacts their hearing-related QoL who receive an audiologic care plan AND hearing loss intervention(s)."
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients who report a MCID improvement in hearing-related quality of life (QoL) within 12 months of hearing loss diagnosis if they received an audiologic care plan AND hearing loss intervention(s )."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13470,7 +14760,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "tinnitusScreen",
+        "description": "Percentage of patients aged 18 years and older who are screened for presence of bothersome subjective tinnitus"
+      },
+      {
+        "name": "screenReferOrAssess",
+        "description": "Percentage of patients aged 18 years and older reporting bothersome tinnitus symptoms AND referred for further investigation OR assessed with clinical evaluation for tinnitus severity and a validated self-assessment tool (THI, TRQ, TFI) to determine the impact of tinnitus on their HRQoL."
+      },
+      {
+        "name": "qolPlan&Intervention",
+        "description": "Percentage of patients aged 18 years and older reporting bothersome tinnitus that is impacting their HRQoL who receive a tinnitus-related care plan AND tinnitus-related intervention(s), treatment(s), or management"
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older identified with bothersome tinnitus that is impacting their HRQoL who have received a tinnitus-related care plan, and tinnitus-related intervention(s), treatment(s), or management AND who report a MCID improvement in the impact of tinnitus on the HRQoL within 12 months of initial identification."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13496,7 +14803,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "bppvScreen",
+        "description": "Percentage of patients aged 18 years and older, who report BPPV-related symptoms and who are screened with a dizziness assessment questionnaire, undergo positional nystagmus testing, and are referred, identified or diagnosed BPPV."
+      },
+      {
+        "name": "bppv&Plan",
+        "description": "Percentage of patients who are screened with a dizziness assessment questionnaire, undergo positional nystagmus testing, and are diagnosed or identified with BPPV who received a BPPV-related care plan on the date the BPPV was identified or diagnosed and received vestibular intervention(s) or treatment(s) within 30 days of the documented BPPV-related care plan."
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients who received a BPPV-related care plan, and vestibular intervention(s) or treatment(s) , AND who have an improvement in nystagmus OR report an improvement in BPPV-related symptoms, AND report a MCID improvement of BPPV-related QoL."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13546,7 +14866,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surgical",
+        "description": "Submission Criteria 1: All patients Neck (surgical)"
+      },
+      {
+        "name": "nonsurgical",
+        "description": "Submission Criteria 2: All patients Neck (non-surgical)"
+      },
+      {
+        "name": "overall",
+        "description": "Submission Criteria 3: All patients Neck (surgical and non-surgical)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13572,7 +14905,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "surgical",
+        "description": "Submission Criteria 1: All patients (surgical)"
+      },
+      {
+        "name": "nonsurgical",
+        "description": "Submission Criteria 2: All patients (non-surgical)"
+      },
+      {
+        "name": "overall",
+        "description": "Submission Criteria 3: All patients (surgical and non-surgical)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13598,7 +14944,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "14to17",
+        "description": "SUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter"
+      },
+      {
+        "name": "18to64",
+        "description": "SUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter"
+      },
+      {
+        "name": "65over",
+        "description": "SUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter"
+      },
+      {
+        "name": "overall",
+        "description": "SUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13624,7 +14987,44 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "ft-s",
+        "description": "SUBMISSION CRITERIA 1: Foot and Ankle operative (surgical) patients"
+      },
+      {
+        "name": "ft-ns",
+        "description": "SUBMISSION CRITERIA 2: Foot and Ankle (non-surgical) patients"
+      },
+      {
+        "name": "k-s",
+        "description": "SUBMISSION CRITERIA 3: Knee operative (surgical) patients"
+      },
+      {
+        "name": "k-ns",
+        "description": "SUBMISSION CRITERIA 4: Knee (non-surgical) patients"
+      },
+      {
+        "name": "hp-s",
+        "description": "SUBMISSION CRITERIA 5: Hip and Pelvis operative (surgical) patients"
+      },
+      {
+        "name": "hp-ns",
+        "description": "SUBMISSION CRITERIA 6: Hip and Pelvis (non-surgical) patients"
+      },
+      {
+        "name": "fakhp-s",
+        "description": "SUBMISSION CRITERIA 7: Foot, Ankle, Knee, Hip and Pelvis (surgical) patients"
+      },
+      {
+        "name": "fakhp-ns",
+        "description": "SUBMISSION CRITERIA 8: Foot, Ankle, Knee, Hip and Pelvis (non-surgical) patients"
+      },
+      {
+        "name": "overall",
+        "description": "SUBMISSION CRITERIA 9: Foot, Ankle, Knee, Hip and Pelvis (surgical and non-surgical patients)"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13650,7 +15050,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "snhl&scheduleOrRefer",
+        "description": "Percentage of patients aged 18 years and older, who are evaluated for hearing loss and who indicate, via a hearing self-assessment tool, that the hearing loss is impacting their hearing-related QoL, and if diagnosed with a bilateral moderate to profound SNHL and less than 60% open set speech recognition are scheduled or referred for cochlear implant candidacy testing."
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older, who are evaluated for hearing loss and who indicate, via a hearing self-assessment tool, that the hearing loss is impacting their hearing-related QoL, and if Percentage of patients aged 18 years or older evaluated for hearing loss who complete a hearing self-assessment tool that indicated an impact of hearing QoL, and if diagnosed with a bilateral moderate to profound SNHL and less than 60% open set speech recognition are scheduled or referred for cochlear implant candidacy testing AND demonstrate a MCID improvement in self-assessment of HRQoL or an improvement in speech recognition within 18 months of cochlear implant activation."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13772,7 +15181,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "mpiStudy",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography studies using a Stress Test Type that includes exercise performed on patients 18 years of age or older."
+      },
+      {
+        "name": "mpiTreatment",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography exercise studies where the stress heart rate >= 85% of maximum heart rate and three or more minutes of exercise performed on patients 18 years of age or older."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13798,7 +15216,12 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "abnormalMpiStudy",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13824,7 +15247,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "mpiStudy",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies where the imaging protocol used was stress only performed on patients 18 years of age or older."
+      },
+      {
+        "name": "mpiTreatment",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies where 9 or less millisieverts of radiation were administered per ASNC guideline recommendations on patients 18 years of age or older."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -13850,7 +15282,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "mpiStudy",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies using Attenuation Correction performed on patients 18 years of age or older."
+      },
+      {
+        "name": "appropriateForObese",
+        "description": "Percentage of SPECT-MPI or Stress Echocardiography imaging studies where the Imaging Protocol was appropriate for morbidly obese patients on patients 18 years of age or older."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14476,7 +15917,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "20/30+",
+        "description": "Includes eyes of patients with mild to moderate stage glaucoma and a 20/30 or better post-operative best-corrected distance visual acuity"
+      },
+      {
+        "name": "20/200",
+        "description": "Includes eyes of patients with severe stage glaucoma or a pre-operative best-corrected visual acuity of 20/200 and a 2 lines or better improvement in the post-operative best-corrected distance visual acuity from preoperative visual acuity"
+      },
+      {
+        "name": "20/400",
+        "description": "Includes eyes of patients with a pre-operative best-corrected visual acuity of 20/400 and a 1 line or better improvement in the post-operative best-corrected distance visual acuity from pre-operative visual acuity"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14574,7 +16028,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "nocomorbidities",
+        "description": "Includes eyes of patients with no comorbidities or additional procedures on the same date as the cataract surgery,"
+      },
+      {
+        "name": "comorbidities&20/200",
+        "description": "Includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/200 or better, and"
+      },
+      {
+        "name": "comorbidities&20/400",
+        "description": "Includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14624,7 +16091,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "better20/200",
+        "description": "Includes eyes of patients with a pre-operative visual acuity of better than 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively"
+      },
+      {
+        "name": "20/200",
+        "description": "Includes eyes of patients with a pre-operative visual acuity of 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively"
+      },
+      {
+        "name": "20/400",
+        "description": "Includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14650,7 +16130,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14676,7 +16181,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14702,7 +16232,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14728,7 +16283,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14754,7 +16334,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in NDI change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14780,7 +16385,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14806,7 +16436,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14832,7 +16487,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14858,7 +16538,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14884,7 +16589,32 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "notachieving",
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "overall",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "operativeMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "operativeRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      },
+      {
+        "name": "nonOpMCID",
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+      },
+      {
+        "name": "nonOpRisk",
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -14934,7 +16664,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "screening",
+        "description": "Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan"
+      },
+      {
+        "name": "overall",
+        "description": "Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-10 months after index date"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15080,7 +16819,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "broadband",
+        "description": "Patient administered a psychiatric screening to assess health broad-band psychosocial problem"
+      },
+      {
+        "name": "overall",
+        "description": "Patient administered a psychiatric or behavioral health intake visit with a positive PSC-ES/PSC-IS screening who demonstrated a reliable improvement of 2 or more points on parent-report version of the PSC-ES/PSC-IS assessment taken 2 to 10 months later"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15106,7 +16854,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "reported",
+        "description": "Documentation of a standardized tool to assess sleep quality and a document care of plan (e.g. Pittsburgh Sleep Quality Index (PSQI), the Insomnia Severity Index (ISI))"
+      },
+      {
+        "name": "overall",
+        "description": "Patient demonstrated an Insomnia Severity Index (ISI) that is reduced by 5 points or greater from the index Insomnia Severity Index (ISI) score, three months (+/- 60 days) after index date"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -15180,7 +16937,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "4to18",
+        "description": "The percentage of patients 4 to 18 years of age receiving a psychiatric or behavioral health intake visit  and a clinically significant, baseline WFIRS-P total mean score of 0.65 or greater."
+      },
+      {
+        "name": "overall",
+        "description": "The percentage of patients who demonstrated a positive improvement (a score reduction) of 0.25 or more points on the total mean score of the WFIRS-P assessment taken 2 to 10 months later."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16406,7 +18172,16 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "diagnosis",
+        "description": "The first is patients with active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart;"
+      },
+      {
+        "name": "overall",
+        "description": "The second measure is the performance measure of the recent score indicates the same or better quality of life."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -16720,7 +18495,20 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "simpleAverage",
-    "strata": [],
+    "strata": [
+      {
+        "name": "assessment",
+        "description": "Percentage of individuals (aged 18+ years) with baseline assessment in 5 mental health domains (depression, anxiety, substance use, suicide ideation and psychosis); and for function and recovery."
+      },
+      {
+        "name": "followUp",
+        "description": "Percentage of individuals (aged 18+ years) monitored with follow-up for improvement or maintenance of symptom severity, functioning and recovery based on results from validated assessment tools."
+      },
+      {
+        "name": "adjustment",
+        "description": "Percentage of individuals (aged 18+ years) whose clinician used their data from validated tools, to make decisions about adjustments to their care plan."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]
@@ -17682,7 +19470,24 @@
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
-    "strata": [],
+    "strata": [
+      {
+        "name": "noevidence",
+        "description": "No evidence of arterial disease and ischemia is not a contributor to non-healing"
+      },
+      {
+        "name": "possiblecompromise",
+        "description": "Possible arterial compromise (possible reduced flow), but the patient may still be able to heal the wound(s) or ulcer(s)"
+      },
+      {
+        "name": "evidence",
+        "description": "Evidence of arterial disease- patient should be referred to specialist for vascular assessment if not currently in the care of a vascular expert. Ischemia may be the reason the patient has failed to heal."
+      },
+      {
+        "name": "overall",
+        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+      }
+    ],
     "submissionMethods": [
       "registry"
     ]

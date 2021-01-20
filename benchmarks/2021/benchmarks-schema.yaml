@@ -1,0 +1,31 @@
+id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: #/definitions/benchmark }
+
+definitions:
+  benchmark:
+    type: object
+    properties:
+      measureId:
+        description: measureId corresponds to a measure object's measureId.
+        type: string
+      performanceYear:
+        description: The performanceYear four digit integer corresponds to the time period of the performance data that was submitted for scoring.
+        type: number
+      isToppedOut:
+        description: isToppedOut is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
+        type: boolean
+      benchmarkYear:
+        description: The benchmarkYear four digit integer corresponds to the time period of the performance data that was used to generate this benchmark. The submitted performance data will be compared against the benchmarkYear's results.
+        type: number
+      deciles:
+        description: The deciles list object is a list of 9 numbers representing deciles of measurement values for a given measure, performance year and submission method. The 9 numbers represent the inclusive lower bounds of deciles 2 through 10. The upper and lower bounds of the measurement value range are implied to be 100 and 0 respectively for direct measures and 0 and 100 respectively for inverse measures. The range of any given decile begins at its lower bound and continues up to but does not include the subsequent decile's lower bound. If the subsequent decile's lower bound is equal to the current decile's lower bound, then that decile is undefined or, in other words, empty. In the case of NonProp and Cost measures there will be 10 deciles.
+        type: array
+        items:
+          type: [number]
+        minItems: 9
+        maxItems: 10
+      submissionMethod:
+        enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
+    required: [measureId, performanceYear, benchmarkYear, submissionMethod, deciles]

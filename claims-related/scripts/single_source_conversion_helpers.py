@@ -2,6 +2,7 @@
 import collections
 import json
 import re
+import itertools
 
 import numpy as np
 import pandas as pd
@@ -201,12 +202,15 @@ def merge_multiple_performance_options(performance_options):
     # Merge quality codes for ones with the same codeset_number.
     # Only relevant when there are multiple code sets.
     for number, set_list in multiple_code_sets.items():
-        new_quality_codes = [
-            code for option in set_list for code in option['qualityCodes']
+
+        keyed_options = ((x["optionType"], x["qualityCodes"]) for x in set_list)
+        sorted_keyed_options = sorted(keyed_options, key=lambda x: x[0])
+        new_opts = [
+            {"optionType": opt_type,
+             "qualityCodes": [c for _, codes in opts for c in codes]}
+            for opt_type, opts in itertools.groupby(sorted_keyed_options, lambda x: x[0])
         ]
-        new_option = set_list[0].copy()
-        new_option['qualityCodes'] = new_quality_codes
-        updated_performance_options.append(new_option)
+        updated_performance_options.extend(new_opts)
 
     return updated_performance_options
 
