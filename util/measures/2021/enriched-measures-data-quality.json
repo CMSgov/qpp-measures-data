@@ -36,6 +36,7 @@
       "nutritionDietician"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms122v9",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_DM-2_CMSWebInterface.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_001_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_001_MIPSCQM.pdf"
@@ -74,6 +75,7 @@
       "hospitalists"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms135v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_005_MIPSCQM.pdf"
     }
   },
@@ -182,6 +184,7 @@
       "skilledNursingFacility"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms144v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_008_MIPSCQM.pdf"
     }
   },
@@ -208,7 +211,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": ">=84Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+      },
+      {
+        "name": ">=180Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -217,7 +229,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms128v9"
+    }
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
@@ -247,7 +261,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms143v9"
+    }
   },
   {
     "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
@@ -313,6 +329,7 @@
       "ophthalmology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms142v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_019_MIPSCQM.pdf"
     }
   },
@@ -702,6 +719,7 @@
       "urgentCare"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms154v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_065_MIPSCQM.pdf"
     }
   },
@@ -738,6 +756,7 @@
       "urgentCare"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms146v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_066_MIPSCQM.pdf"
     }
   },
@@ -771,36 +790,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_067_MIPSCQM.pdf"
-    }
-  },
-  {
-    "title": "Hematology: Multiple Myeloma: Treatment with Bisphosphonates",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "069",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of multiple myeloma, not in remission, who were prescribed or received intravenous bisphosphonate therapy within the 12-month reporting period.",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "process",
-    "primarySteward": "American Society of Hematology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": false,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_069_MIPSCQM.pdf"
     }
   },
   {
@@ -942,6 +931,7 @@
       "radiationOncology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms129v10",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_102_MIPSCQM.pdf"
     }
   },
@@ -1008,7 +998,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms161v9"
+    }
   },
   {
     "title": "Preventive Care and Screening: Influenza Immunization",
@@ -1057,6 +1049,7 @@
       "pulmonology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms147v10",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV7_CMSWebInterface.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_110_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_110_MIPSCQM.pdf"
@@ -1107,6 +1100,7 @@
       "pulmonology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms069v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_111_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_111_MIPSCQM.pdf"
     }
@@ -1259,6 +1253,7 @@
       "endocrinology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms131v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_117_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_117_MIPSCQM.pdf"
     }
@@ -1332,6 +1327,7 @@
       "endocrinology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms134v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_119_MIPSCQM.pdf"
     }
   },
@@ -1454,6 +1450,7 @@
       "pulmonology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms069v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_128_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_128_MIPSCQM.pdf"
     }
@@ -1522,6 +1519,7 @@
       "speechLanguagePathology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms068v10",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_130_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_130_MIPSCQM.pdf"
     }
@@ -1569,6 +1567,7 @@
       "speechLanguagePathology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms002v10",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV12_CMSWebInterface.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_134_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_134_MIPSCQM.pdf"
@@ -1703,6 +1702,7 @@
       "radiationOncology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms157v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_143_MIPSCQM.pdf"
     }
   },
@@ -1774,38 +1774,6 @@
     "measureSpecification": {
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_145_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_145_MIPSCQM.pdf"
-    }
-  },
-  {
-    "title": "Radiology: Inappropriate Use of “Probably Benign” Assessment Category in Screening Mammograms",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0508",
-    "measureId": "146",
-    "description": "Percentage of final reports for screening mammograms that are classified as “probably benign”.",
-    "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
-    "measureType": "process",
-    "primarySteward": "American College of Radiology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": true,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "claims",
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_146_MedicarePartBClaims.pdf",
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_146_MIPSCQM.pdf"
     }
   },
   {
@@ -2670,7 +2638,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
+      },
+      {
+        "name": "tobacco",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
+      }
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -2710,12 +2691,14 @@
       "speechLanguagePathology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms138v9",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV10_CMSWebInterface.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_226_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_226_MIPSCQM.pdf"
     },
     "benchmarks": {
       "claims": "removed",
+      "electronicHealthRecord": "removed",
       "registry": "removed"
     }
   },
@@ -2801,9 +2784,21 @@
       "pulmonology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms156v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_238_MIPSCQM.pdf"
     },
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Percentage of patients who were ordered at least one high-risk medication"
+      },
+      {
+        "name": "2+",
+        "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
+      }
+    ],
     "benchmarks": {
+      "electronicHealthRecord": "removed",
       "registry": "removed"
     }
   },
@@ -2830,7 +2825,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "BMI",
+        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+      },
+      {
+        "name": "nutrition",
+        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+      },
+      {
+        "name": "physicalActivity",
+        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -2838,7 +2846,9 @@
       "pediatrics",
       "nutritionDietician"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms155v9"
+    }
   },
   {
     "title": "Childhood Immunization Status",
@@ -3699,7 +3709,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "14DaysOfDiagnosis",
+        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+      },
+      {
+        "name": "30DaysOfVisit",
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -3708,7 +3727,9 @@
       "internalMedicine",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms137v9"
+    }
   },
   {
     "title": "Cervical Cancer Screening",
@@ -3827,11 +3848,13 @@
       "skilledNursingFacility"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms022v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_317_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_317_MIPSCQM.pdf"
     },
     "benchmarks": {
       "claims": "removed",
+      "electronicHealthRecord": "removed",
       "registry": "removed"
     }
   },
@@ -3872,6 +3895,7 @@
       "audiology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms139v9",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_CARE-2_CMSWebInterface.pdf"
     }
   },
@@ -4148,36 +4172,6 @@
     }
   },
   {
-    "title": "Adult Sinusitis: Computerized Tomography (CT) for Acute Sinusitis (Overuse)",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "333",
-    "description": "Percentage of patients aged 18 years and older, with a diagnosis of acute sinusitis who had a computerized tomography (CT) scan of the paranasal sinuses ordered at the time of diagnosis or received within 28 days after date of diagnosis.",
-    "nationalQualityStrategyDomain": "Efficiency and Cost Reduction",
-    "measureType": "efficiency",
-    "primarySteward": "American Academy of Otolaryngology – Head and Neck Surgery Foundation",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": true,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_333_MIPSCQM.pdf"
-    }
-  },
-  {
     "title": "Maternity Care: Elective Delivery or Early Induction Without Medical Indication at < 39 Weeks (Overuse)",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -4408,38 +4402,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_344_MIPSCQM.pdf"
-    }
-  },
-  {
-    "title": "Implantable Cardioverter-Defibrillator (ICD) Complications Rate",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "348",
-    "description": "Patients with physician-specific risk-standardized rates of procedural complications following the first time implantation of an ICD.",
-    "nationalQualityStrategyDomain": "Patient Safety",
-    "measureType": "outcome",
-    "primarySteward": "American College of Cardiology Foundation",
-    "metricType": "multiPerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": true,
-    "overallAlgorithm": "weightedAverage",
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "strata": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_348_MIPSCQM.pdf"
     }
   },
   {
@@ -4764,7 +4726,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "visitWithin30Days",
+        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
+      },
+      {
+        "name": "visitAndFollowups",
+        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4772,7 +4743,9 @@
       "pediatrics",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms136v10"
+    }
   },
   {
     "title": "Depression Remission at Twelve Months",
@@ -4797,7 +4770,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "12-17",
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      },
+      {
+        "name": "18+",
+        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      }
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface",
@@ -4812,6 +4794,7 @@
       "clinicalSocialWork"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms159v9",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_MH1_CMSWebInterface.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_370_MIPSCQM.pdf"
     }
@@ -4899,7 +4882,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms066v9"
+    }
   },
   {
     "title": "Functional Status Assessment for Total Hip Replacement",
@@ -4929,7 +4914,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms056v9"
+    }
   },
   {
     "title": "Functional Status Assessments for Congestive Heart Failure",
@@ -4960,7 +4947,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms090v10"
+    }
   },
   {
     "title": "Children Who Have Dental Decay or Cavities",
@@ -5021,7 +5010,9 @@
       "pediatrics",
       "dentistry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms074v10"
+    }
   },
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -5252,36 +5243,6 @@
     }
   },
   {
-    "title": "Hepatitis C: Discussion and Shared Decision Making Surrounding Treatment Options",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "390",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of hepatitis C with whom a physician or other qualified healthcare professional reviewed the range of treatment options appropriate to their genotype and demonstrated a shared decision making approach with the patient. To meet the measure, there must be documentation in the patient record of a discussion between the physician or other qualified healthcare professional and the patient that includes all of the following: treatment choices appropriate to genotype, risks and benefits, evidence of effectiveness, and patient preferences toward treatment.",
-    "nationalQualityStrategyDomain": "Person and Caregiver-Centered Experience and Outcomes",
-    "measureType": "process",
-    "primarySteward": "American Gastroenterological Association",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_390_MIPSCQM.pdf"
-    }
-  },
-  {
     "title": "Follow-Up After Hospitalization for Mental Illness (FUH)",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -5304,7 +5265,16 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "30days",
+        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
+      },
+      {
+        "name": "overall",
+        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5340,7 +5310,28 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "18-64F",
+        "description": "Females 18-64 years of age"
+      },
+      {
+        "name": "18-64M",
+        "description": "Males 18-64 years of age"
+      },
+      {
+        "name": "65+F",
+        "description": "Females 65 years of age and older"
+      },
+      {
+        "name": "65+M",
+        "description": "Males 65 years of age and older"
+      },
+      {
+        "name": "overall",
+        "description": "Overall percentage of patients with cardiac tamponade and/or pericardiocentesis occurring within 30 days"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5406,7 +5397,24 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "meningococcal",
+        "description": "Patients who had one dose of meningococcal vaccine on or between the patient�s 11th and 13th birthdays"
+      },
+      {
+        "name": "Tdap",
+        "description": "Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient�s 10th and 13th birthdays"
+      },
+      {
+        "name": "HPV",
+        "description": "Patients who have completed the HPV vaccine with defferent dates of service on or between the patient's 9th and 13th birthdays"
+      },
+      {
+        "name": "overall",
+        "description": "All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5543,7 +5551,36 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
+      },
+      {
+        "name": "5-17",
+        "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation."
+      },
+      {
+        "name": "18-50",
+        "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
+      },
+      {
+        "name": "ACT5-17",
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 5 to 17 with Asthma"
+      },
+      {
+        "name": "ACT18-50",
+        "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
+      },
+      {
+        "name": "lowRisk5-17",
+        "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
+      },
+      {
+        "name": "lowRisk18-50",
+        "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5780,36 +5817,6 @@
     }
   },
   {
-    "title": "Opioid Therapy Follow-up Evaluation",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "408",
-    "description": "All patients 18 and older prescribed opiates for longer than six weeks duration who had a follow-up evaluation conducted at least every three months during Opioid Therapy documented in the medical record.",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "process",
-    "primarySteward": "American Academy of Neurology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_408_MIPSCQM.pdf"
-    }
-  },
-  {
     "title": "Clinical Outcome Post Endovascular Stroke Treatment",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -5875,36 +5882,6 @@
     }
   },
   {
-    "title": "Documentation of Signed Opioid Treatment Agreement",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "412",
-    "description": "All patients 18 and older prescribed opiates for longer than six weeks duration who signed an opioid treatment agreement at least once during Opioid Therapy documented in the medical record.",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "process",
-    "primarySteward": "American Academy of Neurology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_412_MIPSCQM.pdf"
-    }
-  },
-  {
     "title": "Door to Puncture Time for Endovascular Stroke Treatment",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -5935,36 +5912,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_413_MIPSCQM.pdf"
-    }
-  },
-  {
-    "title": "Evaluation or Interview for Risk of Opioid Misuse",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "414",
-    "description": "All patients 18 and older prescribed opiates for longer than six weeks duration evaluated for risk of opioid misuse using a brief validated instrument (e.g. Opioid Risk Tool, Screener and Opioid Assessment for Patients with Pain, revised (SOAPP-R)) or patient interview documented at least once during Opioid Therapy in the medical record.",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "process",
-    "primarySteward": "American Academy of Neurology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_414_MIPSCQM.pdf"
     }
   },
   {
@@ -6487,38 +6434,6 @@
     }
   },
   {
-    "title": "Quality of Life Assessment For Patients With Primary Headache Disorders",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "435",
-    "description": "Percentage of patients with a diagnosis of primary headache disorder whose health related quality of life (HRQoL) was assessed with a tool(s) during at least two visits during the 12 month measurement period AND whose health related quality of life score stayed the same or improved.",
-    "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "patientReportedOutcome",
-    "primarySteward": "American Academy of Neurology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": false,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "claims",
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_435_MedicarePartBClaims.pdf",
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_435_MIPSCQM.pdf"
-    }
-  },
-  {
     "title": "Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -6550,38 +6465,6 @@
     "measureSpecification": {
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_436_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_436_MIPSCQM.pdf"
-    }
-  },
-  {
-    "title": "Rate of Surgical Conversion from Lower Extremity Endovascular Revascularization Procedure",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "437",
-    "description": "Inpatients assigned to endovascular treatment for obstructive arterial disease, the percent of patients who undergo unplanned major amputation or surgical bypass within 48 hours of the index procedure.",
-    "nationalQualityStrategyDomain": "Patient Safety",
-    "measureType": "outcome",
-    "primarySteward": "Society of Interventional Radiology",
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": true,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "claims",
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {
-      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_437_MedicarePartBClaims.pdf",
-      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_437_MIPSCQM.pdf"
     }
   },
   {
@@ -6619,6 +6502,7 @@
       "endocrinology"
     ],
     "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms347v4",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV13_CMSWebInterface.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021Measure_438_MIPSCQM.pdf"
     }
@@ -7057,34 +6941,6 @@
     }
   },
   {
-    "title": "All-cause Hospital Readmission",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "1789",
-    "measureId": "458",
-    "description": "The 30-day All-Cause Hospital Readmission measure is a risk-standardized readmission rate for beneficiaries age 65 or older who were hospitalized at a short-stay acute care hospital and experienced an unplanned readmission for any cause to an acute care hospital within 30 days of discharge.",
-    "nationalQualityStrategyDomain": "Communication and Care Coordination",
-    "measureType": "outcome",
-    "primarySteward": "Yale University",
-    "metricType": "costScore",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": 2021,
-    "isHighPriority": true,
-    "isInverse": true,
-    "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
-    "submissionMethods": [
-      "administrativeClaims"
-    ],
-    "measureSets": [],
-    "measureSpecification": {}
-  },
-  {
     "title": "Back Pain After Lumbar Discectomy/Laminectomy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -7477,7 +7333,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms249v3"
+    }
   },
   {
     "title": "Leg Pain After Lumbar Fusion",
@@ -7544,7 +7402,9 @@
       "preventiveMedicine",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms349v3"
+    }
   },
   {
     "title": "Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia",
@@ -7575,7 +7435,9 @@
       "urology",
       "geriatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms771v2"
+    }
   },
   {
     "title": "Multimodal Pain Management",
@@ -7645,5 +7507,61 @@
     "benchmarks": {
       "registry": "removed"
     }
+  },
+  {
+    "title": "Hospital-Wide, 30-Day, All-Cause Unplanned Readmission (HWR) Rate for the Merit-Based Incentive Payment System (MIPS) Groups",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "479",
+    "description": "This measure is a re-specified version of the measure, “Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition” (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group’s readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
+    "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "3493",
+    "measureId": "480",
+    "description": "This measure is a re-specified version of the measure, “Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)” (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (“provider”) and assesses each provider’s complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
   }
 ]
