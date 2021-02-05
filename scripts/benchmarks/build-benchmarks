@@ -36,12 +36,19 @@ else
   stagingDirectory=staging/${performanceYear}/benchmarks
   benchmarkYear=$(($performanceYear-2))
   csvFilename=${stagingDirectory}/benchmarks.csv
+  cahpsCSVFilename=${stagingDirectory}/benchmarks_cahps.csv
   benchmarkBaseFilename=${stagingDirectory}/json/benchmarks.json
+  benchmarkCAHPSFilename=${stagingDirectory}/json/benchmarks_cahps.json
   benchmarkFilename=benchmarks/${performanceYear}.json
 
   # generate benchmarks base
   echo 'Generating new benchmarks JSON.'
   cat $csvFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkBaseFilename 
+
+  if [[ -f "$cahpsCSVFilename" ]]; then
+    echo 'Generating CAHPS benchmarks JSON.'
+    cat $cahpsCSVFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkCAHPSFilename 
+  fi
 
   echo 'Squashing staging JSON.'
   node scripts/benchmarks/merge-benchmark-data.js $performanceYear > $benchmarkFilename
