@@ -85,8 +85,8 @@ function generateCahpsAcoMeasure(record, idx) {
   };
 }
 
-function importCahpsMeasures(cahpsMeasuresCsv, cahpsMeasuresFilepath) {
-  const cahpsMeasuresData = fs.readFileSync(path.join(__dirname, cahpsMeasuresCsv), {encoding: 'utf8'});
+function importCahpsMeasures(cahpsCsv, cahpsMeasuresFilepath) {
+  const cahpsMeasuresData = fs.readFileSync(path.join(__dirname, cahpsCsv), {encoding: 'utf8'});
   const records = parse(cahpsMeasuresData, {columns: CAHPS_CSV_COLUMNS, from: 2});
   const cahpsMeasures = [];
 
