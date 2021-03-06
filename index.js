@@ -8,6 +8,14 @@ const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
 const Constants = require('./constants.js');
 
 /**
+ * @return {Array<number>}
+ * An array of all the years that the library has data for
+ */
+exports.getValidPerformanceYears = function() {
+  return Constants.validPerformanceYears;
+};
+
+/**
  *
  * @return {{}} - benchmarks data -
  * An object keyed by performance year with array values
@@ -23,6 +31,23 @@ exports.getBenchmarksData = function() {
   });
 
   return benchmarksByYear;
+};
+
+/**
+ *
+ * @return {Array<number>}
+ * An array of years that the library has benchmarks for
+ */
+exports.getBenchmarksYears = function() {
+  const benchmarksYears = new Set();
+
+  fs.readdirSync(path.join(__dirname, 'benchmarks')).forEach(function(file) {
+    if (benchmarkJsonFileRegEx.test(file)) {
+      benchmarksYears.add(+file.match(yearRegEx)[0]);
+    }
+  });
+
+  return Array.from(benchmarksYears);
 };
 
 /**
