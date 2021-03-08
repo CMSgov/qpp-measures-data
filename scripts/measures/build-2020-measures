@@ -52,9 +52,9 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # Uncomment the below data set ingestion scripts as we receive the data for 2020
 
-# 3. Add CAHPS measures to the staging cahps-measures.json file:
-# node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
-#	$cahps_csv $cahps_measures
+3. Add CAHPS measures to the staging cahps-measures.json file:
+node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
+	$cahps_csv $cahps_measures
 
 # 4. Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
@@ -71,7 +71,7 @@ node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
 
 # 7. Merge the array/jsonfile-per-measureType into a combined array of all measures
 node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
-	 $ia_measures $enriched_pi_measures $enriched_quality_measures $cost_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
+	 $ia_measures $enriched_pi_measures $enriched_quality_measures $cost_measures $cahps_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
 # As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $cost_measures
 
 # 8. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
