@@ -8153,7 +8153,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method"
+      },
+      {
+        "name": "counseling",
+        "description": "All patients who were identified as unhealthy alcohol users who received brief counseling"
+      },
+      {
+        "name": "overall",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
