@@ -2,6 +2,7 @@ const parse = require('csv-parse/lib/sync');
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
+const mergeBenchmarkMetadata = require('../lib/merge-benchmark-metadata');
 
 /**
  * [config defines how to generate QCDR measures from origin CSV file]
@@ -308,13 +309,17 @@ function importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesD
   // identical except for the QCDR Organization Name which we don't care about)
   const qcdrMeasures = _.uniqBy(convertCsvToMeasures(qcdrCsv, config, qcdrStrataNamesDataPath), 'measureId');
 
-  const mergedMeasures = mergeMeasures(allMeasures, qcdrMeasures, outputPath);
-  return JSON.stringify(addMissingRegistryFlags(mergedMeasures), null, 2);
+  return addMissingRegistryFlags(mergeMeasures(allMeasures, qcdrMeasures, outputPath));
 }
 
 const measuresDataPath = process.argv[2];
 const qcdrMeasuresDataPath = process.argv[3];
 const qcdrStrataNamesDataPath = process.argv[4];
+const benchmarksMetadataPath = process.argv[5];
 
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, measuresDataPath);
-fs.writeFileSync(path.join(__dirname, measuresDataPath), newMeasures);
+const benchmarksMetadataData = fs.readFileSync(path.join(__dirname, benchmarksMetadataPath), 'utf8');
+const benchmarksMetadata = parse(benchmarksMetadataData, { columns: true, skip_empty_lines: true });
+
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, benchmarksMetadata, measuresDataPath);
+mergeBenchmarkMetadata(newMeasures, benchmarksMetadata);
+fs.writeFileSync(path.join(__dirname, measuresDataPath), JSON.stringify(newMeasures, null, 2));

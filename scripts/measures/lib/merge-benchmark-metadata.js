@@ -42,10 +42,12 @@ module.exports = (measures, benchmarkMetadata, benchmarkField = false) => {
       const icdImpacted = aggregateMethods(IMPACTED_METHODS, benchmark);
       const clinicalGuidelinesChanged = aggregateMethods(GUIDELINE_METHODS, benchmark);
 
-      measure.icdImpacted = icdImpacted;
-      measure.isIcdImpacted = !!icdImpacted.length;
-      measure.clinicalGuidelineChanged = clinicalGuidelinesChanged;
-      measure.isClinicalGuidelineChanged = !!clinicalGuidelinesChanged.length;
+      if (!measure.isRegistryMeasure) {
+        measure.icdImpacted = icdImpacted;
+        measure.isIcdImpacted = !!icdImpacted.length;
+        measure.clinicalGuidelineChanged = clinicalGuidelinesChanged;
+        measure.isClinicalGuidelineChanged = !!clinicalGuidelinesChanged.length;
+      }
 
       if (benchmarkField) {
         measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed');
