@@ -209,7 +209,12 @@ definitions:
         oneOf: [
           {
             properties: {
-              metricType: { enum: [multiPerformanceRate, registryMultiPerformanceRate] }
+              metricType: { enum: [multiPerformanceRate, registryMultiPerformanceRate] },
+              strata: {
+                type: 'array',
+                minItems: 1,
+                items: { $ref: #/definitions/performanceStrata }
+              }
             },
             required: [overallAlgorithm, strata]
           },
