@@ -59,7 +59,7 @@ node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
 # 4. Enrich `measures-data.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
 	$quality_measures $ecqm_ehr_links $web_interface_links $claims_links $cqm_links $generated_ecqm_data \
-	$manually_created_ecqm_data $additional_stratifications $claims_related_info $cpc_groups $benchmark_metadata $enriched_quality_measures
+	$manually_created_ecqm_data $additional_stratifications $claims_related_info $cpc_groups $enriched_quality_measures
   
 # 5. Enrich `measures-data-pi.json` file, run:
 node scripts/measures/$currentPerformanceYear/enrich-pi-measures-data.js \
@@ -76,7 +76,7 @@ node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
 
 # 8. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
 node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
-	$final_measures $qcdr_csv $qcdr_strata
+	$final_measures $qcdr_csv $qcdr_strata $benchmark_metadata
 
 # 9. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"

@@ -2697,11 +2697,6 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV10_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_226_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_226_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "claims": "removed",
-      "electronicHealthRecord": "removed",
-      "registry": "removed"
     }
   },
   {
@@ -2799,11 +2794,7 @@
         "name": "2+",
         "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
       }
-    ],
-    "benchmarks": {
-      "electronicHealthRecord": "removed",
-      "registry": "removed"
-    }
+    ]
   },
   {
     "title": "Weight Assessment and Counseling for Nutrition and Physical Activity for Children and Adolescents",
@@ -3862,11 +3853,6 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms022v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_317_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_317_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "claims": "removed",
-      "electronicHealthRecord": "removed",
-      "registry": "removed"
     }
   },
   {
@@ -6321,7 +6307,20 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [],
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method"
+      },
+      {
+        "name": "counseling",
+        "description": "All patients who were identified as unhealthy alcohol users who received brief counseling"
+      },
+      {
+        "name": "overall",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
+      }
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6345,9 +6344,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_431_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "registry": "removed"
     }
   },
   {
@@ -6553,9 +6549,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_439_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "registry": "removed"
     }
   },
   {
@@ -6790,9 +6783,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_450_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "registry": "removed"
     }
   },
   {
@@ -7521,9 +7511,6 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_478_MIPSCQM.pdf"
-    },
-    "benchmarks": {
-      "registry": "removed"
     }
   },
   {
