@@ -186,11 +186,11 @@ definitions:
             type: array
             items: { $ref: #/definitions/programs }
           requiredForPrograms:
-            description: Programs that the measure can be submitted to
+            description: Programs that the measure is required to be submitted to
             type: array
             items: { $ref: #/definitions/programs }
           allowedVendors:
-            description: Programs that the measure can be submitted to
+            description: List of QCDR Registries that are allowed to submit the QCDR measure
             type: array
             items: { type: string }
           isRegistryMeasure:
