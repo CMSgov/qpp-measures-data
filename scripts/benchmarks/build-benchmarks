@@ -35,11 +35,17 @@ if [[ -z "$performanceYear" ]]; then
 else
   stagingDirectory=staging/${performanceYear}/benchmarks
   benchmarkYear=$(($performanceYear-2))
+  sourceFilename=${stagingDirectory}/source.csv
   csvFilename=${stagingDirectory}/benchmarks.csv
   cahpsCSVFilename=${stagingDirectory}/benchmarks_cahps.csv
   benchmarkBaseFilename=${stagingDirectory}/json/benchmarks.json
   benchmarkCAHPSFilename=${stagingDirectory}/json/benchmarks_cahps.json
   benchmarkFilename=benchmarks/${performanceYear}.json
+
+  if [[ -f "$sourceFilename" ]]; then
+    echo "Pre-processing source file."
+    node scripts/benchmarks/helpers/pre-process-source-csv.js $performanceYear
+  fi
 
   # generate benchmarks base
   echo 'Generating new benchmarks JSON.'

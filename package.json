@@ -11,7 +11,6 @@
     "test": "nyc mocha --recursive --timeout 5000",
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
-    "build:benchmarks2020": "node scripts/benchmarks/helpers/convert-2020-to-csv.js",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh"
