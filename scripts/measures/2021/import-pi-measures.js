@@ -70,6 +70,8 @@ function convertPiCsvsToMeasures(piCSVRows) {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
       } else if (measureKeyName === 'substitutes') {
         measure[measureKeyName] = _.isEmpty(row[columnName]) ? [] : [].concat(row[columnName].toString().split(','));
+      } else if (measureKeyName === 'exclusion') {
+        measure[measureKeyName] = _.isEmpty(row[columnName]) ? null : [].concat(row[columnName].toString().split(','));
       } else if (measureKeyName === 'objective') { // Values need to be camel-cased, but come in as separate words
         measure[measureKeyName] = _.camelCase(row[columnName]);
       } else {
