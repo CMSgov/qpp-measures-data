@@ -6,6 +6,8 @@ const path = require('path');
 
 const fs = require('fs');
 
+const programYear = process.argv[2];
+
 const topline = 'Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2018 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,';
 const secline = '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority';
 const output = [];
@@ -19,9 +21,9 @@ const parser = parse({
 });
 
 // File containing source data to be converted
-const sourceFile = path.resolve(__dirname, '../../../staging/2020/benchmarks/source.csv');
+const sourceFile = path.resolve(__dirname, `../../../staging/${programYear}/benchmarks/source.csv`);
 // File to write converted data to. If file does not exist, it will be created.
-const targetFile = path.resolve(__dirname, '../../../staging/2020/benchmarks/benchmarks.csv');
+const targetFile = path.resolve(__dirname, `../../../staging/${programYear}/benchmarks/benchmarks.csv`);
 
 // Load source data
 try {
