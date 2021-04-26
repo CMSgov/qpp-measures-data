@@ -52,7 +52,8 @@ const cahpsMeasureTemplate = {
   ],
   measureSets: [
     'generalPracticeFamilyMedicine'
-  ]
+  ],
+  allowedPrograms: ['mips', 'app1']
 };
 
 function generateCahpsMeasure(record, idx) {

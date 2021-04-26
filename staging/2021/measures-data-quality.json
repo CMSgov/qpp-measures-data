@@ -21,6 +21,12 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf",
+      "app1"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -59,6 +65,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -93,6 +104,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -126,6 +142,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -160,6 +181,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -196,15 +222,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": ">=84Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
-      },
-      {
-        "name": ">=180Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "electronicHealthRecord"
@@ -214,7 +235,17 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": ">=84Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+      },
+      {
+        "name": ">=180Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+      }
+    ]
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
@@ -238,6 +269,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -268,6 +304,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -299,6 +340,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -330,6 +376,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -367,6 +418,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -405,6 +461,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -440,6 +501,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -476,6 +542,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -507,6 +578,14 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "requiredForPrograms": [
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -559,6 +638,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -594,6 +678,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -629,6 +718,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -659,6 +753,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -693,6 +792,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -727,6 +831,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -757,6 +866,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -787,6 +901,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -820,6 +939,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -856,6 +980,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -889,6 +1018,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -919,6 +1053,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -952,6 +1091,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1000,6 +1144,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1046,6 +1195,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1081,6 +1235,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1115,6 +1274,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1150,6 +1314,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1185,6 +1354,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1217,6 +1391,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -1253,6 +1432,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1288,6 +1472,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1319,6 +1508,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1369,6 +1563,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1434,6 +1633,12 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf",
+      "app1"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -1478,6 +1683,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1508,6 +1718,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1538,6 +1753,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -1569,6 +1789,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -1601,6 +1826,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1632,6 +1862,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -1664,6 +1899,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -1695,6 +1935,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -1737,6 +1982,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -1779,6 +2029,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1809,6 +2064,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1839,6 +2099,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1869,6 +2134,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1899,6 +2169,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1929,6 +2204,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1960,6 +2240,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -1991,6 +2276,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2032,6 +2322,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2071,6 +2366,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2101,6 +2401,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2132,6 +2437,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -2163,6 +2473,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2194,6 +2509,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2225,6 +2545,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2257,6 +2582,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2289,6 +2619,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2321,6 +2656,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2353,6 +2693,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2385,6 +2730,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2417,6 +2767,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2449,19 +2804,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": "screenedForUse",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
-      },
-      {
-        "name": "overall",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
-      },
-      {
-        "name": "tobacco",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "claims",
@@ -2501,7 +2847,21 @@
       "audiology",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
+      },
+      {
+        "name": "tobacco",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
+      }
+    ]
   },
   {
     "title": "Controlling High Blood Pressure",
@@ -2525,6 +2885,12 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf",
+      "app1"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -2565,6 +2931,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -2615,6 +2986,19 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "electronicHealthRecord"
+    ],
+    "measureSets": [
+      "pediatrics",
+      "nutritionDietician"
+    ],
+    "measureSpecification": {},
     "strata": [
       {
         "name": "BMI",
@@ -2628,15 +3012,7 @@
         "name": "physicalActivity",
         "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
       }
-    ],
-    "submissionMethods": [
-      "electronicHealthRecord"
-    ],
-    "measureSets": [
-      "pediatrics",
-      "nutritionDietician"
-    ],
-    "measureSpecification": {}
+    ]
   },
   {
     "title": "Childhood Immunization Status",
@@ -2660,6 +3036,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -2690,6 +3071,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2722,6 +3108,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2753,6 +3144,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2785,6 +3181,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2816,6 +3217,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2846,6 +3252,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2876,6 +3287,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2907,6 +3323,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -2938,6 +3359,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -2968,6 +3394,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3001,6 +3432,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3031,6 +3467,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3061,6 +3502,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3094,6 +3540,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3127,6 +3578,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -3161,6 +3617,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3194,6 +3655,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3228,6 +3694,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3262,6 +3733,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3296,6 +3772,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3326,6 +3807,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3356,6 +3842,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3386,6 +3877,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3416,6 +3912,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3447,15 +3948,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": "14DaysOfDiagnosis",
-        "description": "Patients who initiated treatment within 14 days of the diagnosis"
-      },
-      {
-        "name": "30DaysOfVisit",
-        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "electronicHealthRecord"
@@ -3465,7 +3961,17 @@
       "internalMedicine",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": "14DaysOfDiagnosis",
+        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+      },
+      {
+        "name": "30DaysOfVisit",
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+      }
+    ]
   },
   {
     "title": "Cervical Cancer Screening",
@@ -3489,6 +3995,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -3521,6 +4032,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -3552,6 +4068,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -3607,6 +4128,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface"
@@ -3645,6 +4171,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -3676,6 +4207,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
@@ -3707,6 +4242,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3737,6 +4277,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3767,6 +4312,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3797,6 +4347,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -3831,6 +4386,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3866,6 +4426,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3901,6 +4466,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3931,6 +4501,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3961,6 +4536,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -3993,6 +4573,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4026,6 +4611,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4057,6 +4647,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4088,6 +4683,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4120,6 +4720,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4150,6 +4755,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4180,6 +4790,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4210,6 +4825,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4241,6 +4861,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4272,6 +4897,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4305,6 +4935,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4341,6 +4976,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4371,6 +5011,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4402,6 +5047,19 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "electronicHealthRecord"
+    ],
+    "measureSets": [
+      "pediatrics",
+      "mentalBehavioralHealth"
+    ],
+    "measureSpecification": {},
     "strata": [
       {
         "name": "visitWithin30Days",
@@ -4411,15 +5069,7 @@
         "name": "visitAndFollowups",
         "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
       }
-    ],
-    "submissionMethods": [
-      "electronicHealthRecord"
-    ],
-    "measureSets": [
-      "pediatrics",
-      "mentalBehavioralHealth"
-    ],
-    "measureSpecification": {}
+    ]
   },
   {
     "title": "Depression Remission at Twelve Months",
@@ -4444,15 +5094,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": "12-17",
-        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
-      },
-      {
-        "name": "18+",
-        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "electronicHealthRecord",
@@ -4467,7 +5112,17 @@
       "geriatrics",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": "12-17",
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      },
+      {
+        "name": "18+",
+        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+      }
+    ]
   },
   {
     "title": "Closing the Referral Loop: Receipt of Specialist Report",
@@ -4491,6 +5146,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "registry"
@@ -4544,6 +5204,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4574,6 +5239,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4604,6 +5274,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4635,6 +5310,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4665,6 +5345,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4696,6 +5381,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -4728,6 +5418,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4761,6 +5456,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4791,6 +5491,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4821,6 +5526,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4851,6 +5561,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4882,6 +5597,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -4913,15 +5633,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": "30days",
-        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
-      },
-      {
-        "name": "overall",
-        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "registry"
@@ -4931,7 +5646,17 @@
       "pediatrics",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": "30days",
+        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
+      },
+      {
+        "name": "overall",
+        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
+      }
+    ]
   },
   {
     "title": "Cardiac Tamponade and/or Pericardiocentesis Following Atrial Fibrillation Ablation",
@@ -4956,6 +5681,18 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "electrophysiologyCardiacSpecialist"
+    ],
+    "measureSpecification": {},
     "strata": [
       {
         "name": "18-64F",
@@ -4977,14 +5714,7 @@
         "name": "overall",
         "description": "Overall percentage of patients with cardiac tamponade and/or pericardiocentesis occurring within 30 days"
       }
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "electrophysiologyCardiacSpecialist"
-    ],
-    "measureSpecification": {}
+    ]
   },
   {
     "title": "Infection within 180 Days of Cardiac Implantable Electronic Device (CIED) Implantation, Replacement, or Revision",
@@ -5008,6 +5738,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5039,6 +5774,19 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "pediatrics"
+    ],
+    "measureSpecification": {},
     "strata": [
       {
         "name": "meningococcal",
@@ -5056,15 +5804,7 @@
         "name": "overall",
         "description": "All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes"
       }
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "familyMedicine",
-      "pediatrics"
-    ],
-    "measureSpecification": {}
+    ]
   },
   {
     "title": "Lung Cancer Reporting (Biopsy/Cytology Specimens)",
@@ -5088,6 +5828,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5119,6 +5864,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5150,6 +5900,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5182,6 +5937,23 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "allergyImmunology",
+      "familyMedicine",
+      "internalMedicine",
+      "otolaryngology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "measureSpecification": {},
     "strata": [
       {
         "name": "overall",
@@ -5211,19 +5983,7 @@
         "name": "lowRisk18-50",
         "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
       }
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "allergyImmunology",
-      "familyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "pulmonology"
-    ],
-    "measureSpecification": {}
+    ]
   },
   {
     "title": "One-Time Screening for Hepatitis C Virus (HCV) for Patients at Risk",
@@ -5247,6 +6007,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5279,6 +6044,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5311,6 +6081,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5361,6 +6136,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5391,6 +6171,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5422,6 +6207,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5453,6 +6243,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5484,6 +6279,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5514,6 +6314,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5545,6 +6350,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5575,6 +6385,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5606,6 +6421,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5641,6 +6461,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5671,6 +6496,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5702,6 +6532,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5732,6 +6567,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5763,6 +6603,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5793,6 +6638,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5824,6 +6674,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -5856,6 +6711,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5887,19 +6747,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
-    "strata": [
-      {
-        "name": "screenedForUse",
-        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method"
-      },
-      {
-        "name": "counseling",
-        "description": "All patients who were identified as unhealthy alcohol users who received brief counseling"
-      },
-      {
-        "name": "overall",
-        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
-      }
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
     ],
     "submissionMethods": [
       "registry"
@@ -5922,7 +6773,21 @@
       "pulmonology",
       "clinicalSocialWork"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method"
+      },
+      {
+        "name": "counseling",
+        "description": "All patients who were identified as unhealthy alcohol users who received brief counseling"
+      },
+      {
+        "name": "overall",
+        "description": "All patients who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
+      }
+    ]
   },
   {
     "title": "Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair",
@@ -5946,6 +6811,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -5977,6 +6847,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6008,6 +6883,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6039,6 +6919,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "claims",
       "registry"
@@ -6070,6 +6955,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord",
       "cmsWebInterface",
@@ -6106,6 +6996,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6136,6 +7031,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6167,6 +7067,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6200,6 +7105,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6232,6 +7142,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6266,6 +7181,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6296,6 +7216,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6326,6 +7251,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6356,6 +7286,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6386,6 +7321,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6416,6 +7356,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6446,6 +7391,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6477,6 +7427,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6507,6 +7462,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6538,6 +7498,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6569,6 +7534,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6600,6 +7570,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -6632,6 +7607,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6662,6 +7642,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6695,6 +7680,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6725,6 +7715,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6758,6 +7753,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6789,6 +7789,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6819,6 +7824,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6850,6 +7860,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -6882,6 +7897,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -6913,6 +7933,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -6947,6 +7972,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "electronicHealthRecord"
     ],
@@ -6978,6 +8008,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -7008,6 +8043,11 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "cpcPlus",
+      "pcf"
+    ],
     "submissionMethods": [
       "registry"
     ],
@@ -7040,6 +8080,10 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "administrativeClaims"
     ],
@@ -7068,6 +8112,9 @@
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "mips"
+    ],
     "submissionMethods": [
       "administrativeClaims"
     ],

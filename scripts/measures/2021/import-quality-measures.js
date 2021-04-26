@@ -126,6 +126,19 @@ const MEASURE_SETS = [
   'speechLanguagePathology'
 ];
 
+// map program names from the appropriate fields
+const PROGRAMS = {
+  programMIPS: 'mips',
+  programCPCPlus: 'cpcPlus',
+  programPCF: 'pcf',
+  programAPP1: 'app1'
+};
+
+// map program names for measurements required for a program
+const REQUIRED_FOR_PROGRAM = {
+  requiredPCF: 'pcf'
+};
+
 // Mapping values within the measureType column to valid enums
 const MEASURE_TYPES = {
   // there should be no capital letters in the keys below
@@ -155,6 +168,8 @@ function getCsv(csvPath, firstNonHeaderRow) {
 function checkQualityCsvHeaders(parsedCsv) {
   const allMeasureFields = Object.keys(MAIN_FIELDS).concat(
     Object.keys(SUBMISSION_METHODS),
+    Object.keys(PROGRAMS),
+    Object.keys(REQUIRED_FOR_PROGRAM),
     MEASURE_SETS,
     MEASURE_SPECIFICATIONS,
     IGNORED_FIELDS
@@ -262,6 +277,8 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     const submissionMethods = [];
     const measureSets = [];
     const measureSpecification = {};
+    const allowedPrograms = [];
+    const requiredForPrograms = [];
 
     // loop through each row of quality-measures.csv (which we've already
     // parsed into objects with csv headers as keys and row values as values)
@@ -274,6 +291,16 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
         // multiple csv columns map into the submission methods measure field
         if (input === true) {
           submissionMethods.push(SUBMISSION_METHODS[fieldName]);
+        }
+      } else if (PROGRAMS[fieldName]) {
+        // multiple csv columns map into the programs measure field
+        if (input === true) {
+          allowedPrograms.push(PROGRAMS[fieldName]);
+        }
+      } else if (REQUIRED_FOR_PROGRAM[fieldName]) {
+        // multiple csv columns map into the requiredForProgram measure field
+        if (input === true) {
+          requiredForPrograms.push(REQUIRED_FOR_PROGRAM[fieldName]);
         }
       } else if (MEASURE_SETS.includes(fieldName)) {
         // multiple csv columns map into the measure sets measure field
@@ -292,13 +319,10 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
       measure[measureKey] = measureValue;
     });
 
-    // TODO: remove once strata information provided
-    if (measure.metricType === 'multiPerformanceRate') {
-      measure['strata'] = [];
-    }
-
     // We don't assign these directly to `measure` above because we want to
     // maintain legacy key ordering for easy diffing in measures-data.json
+    measure['allowedPrograms'] = allowedPrograms;
+    requiredForPrograms.length && (measure['requiredForPrograms'] = requiredForPrograms);
     measure['submissionMethods'] = submissionMethods;
     measure['measureSets'] = measureSets;
     measure['measureSpecification'] = measureSpecification;

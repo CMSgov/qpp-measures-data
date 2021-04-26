@@ -25,7 +25,6 @@ const config = {
     isIcdImpacted: false
   },
   mapped_fields: {
-    // qcdrName: 0
     measureId: 1,
     title: 2,
     description: 3,
@@ -75,8 +74,17 @@ const config = {
       }
     },
     primarySteward: 15,
-    firstPerformanceYear: 16
-    // submissionPathway: 18
+    firstPerformanceYear: 16,
+    allowedVendors: {
+      index: 0,
+      transform: (value) => value.split(/;/).map(_.trim)
+    },
+    allowedPrograms: {
+      index: 18,
+      mappings: {
+        'Traditional MIPS': ['mips', 'cpcPlus', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
+      }
+    }
     // `metricType` is a sourced field but not represented here since it maps from
     // multiple columns-- you can find it by searching in the code below
   },
@@ -191,13 +199,15 @@ const convertCsvToMeasures = function(records, config, qcdrStrataNamesDataPath) 
         }
       } else {
         const value = _.trim(record[columnObject.index]);
-        const mappedValue = columnObject.mappings[value];
-        const defaultValue = columnObject.mappings['default'];
+        const mappedValue = columnObject.mappings ? columnObject.mappings[value] : value;
+        const defaultValue = columnObject.mappings ? columnObject.mappings['default'] : value;
 
         // some measure data requires mapping CSV data to new value, e.g. Yes, No -> true, false, use this is applicable
         // otherwise use a default if it exists
         // if no default or mapped value, use the value as-is
-        if (!_.isUndefined(mappedValue)) {
+        if (columnObject.transform) {
+          newMeasure[measureKey] = columnObject.transform(value);
+        } else if (!_.isUndefined(mappedValue)) {
           newMeasure[measureKey] = mappedValue;
         } else if (!_.isUndefined(defaultValue)) {
           newMeasure[measureKey] = defaultValue;
