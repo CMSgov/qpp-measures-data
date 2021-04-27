@@ -181,6 +181,18 @@ definitions:
             description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
             type: array
             items: { $ref: #/definitions/performanceOption }
+          allowedPrograms:
+            description: Programs that the measure can be submitted to
+            type: array
+            items: { $ref: #/definitions/programs }
+          requiredForPrograms:
+            description: Programs that the measure is required to be submitted to
+            type: array
+            items: { $ref: #/definitions/programs }
+          allowedVendors:
+            description: List of QCDR Registries that are allowed to submit the QCDR measure
+            type: array
+            items: { type: string }
           isRegistryMeasure:
             description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
             type: boolean
@@ -224,7 +236,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
+        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, allowedPrograms, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object
@@ -397,6 +409,13 @@ definitions:
         type: array
         items: { $ref: #/definitions/codeObject }
     required: [optionType, qualityCodes]
+
+  programs:
+    enum:
+      - mips
+      - cpcPlus
+      - pcf
+      - app1
 
   codeObject:
     type: object
