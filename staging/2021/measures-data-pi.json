@@ -71,7 +71,7 @@
     "category": "pi",
     "measureId": "PI_EP_1",
     "title": "e-Prescribing",
-    "description": "At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using CEHRT.",
+    "description": "At least one permissible prescription written by the MIPS eligible clinician is transmitted electronically using CEHRT.",
     "isRequired": true,
     "metricType": "proportion",
     "firstPerformanceYear": 2017,
@@ -82,7 +82,9 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_LVPP_1"
+    ]
   },
   {
     "category": "pi",
@@ -135,7 +137,9 @@
     ],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_LVOTC_1"
+    ]
   },
   {
     "category": "pi",
@@ -171,7 +175,9 @@
     ],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_LVITC_2"
+    ]
   },
   {
     "category": "pi",
@@ -193,7 +199,7 @@
   {
     "category": "pi",
     "measureId": "PI_HIE_5",
-    "title": "Health Information Exchange (HIE) Bi-Directional Exchange",
+    "title": "Health Information Exchange(HIE) Bi-Directional Exchange",
     "description": "The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.",
     "isRequired": true,
     "metricType": "boolean",
@@ -242,7 +248,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_2_EX_1",
+      "PI_PHCDRR_2_EX_2",
+      "PI_PHCDRR_2_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -259,7 +269,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_2_EX_1",
+      "PI_PHCDRR_2_EX_2",
+      "PI_PHCDRR_2_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -273,7 +287,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_2_EX_2",
+      "PI_PHCDRR_2_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -290,7 +307,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_2_EX_1",
+      "PI_PHCDRR_2_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -307,7 +327,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_2_EX_1",
+      "PI_PHCDRR_2_EX_2"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -327,7 +350,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_1_EX_1",
+      "PI_PHCDRR_1_EX_2",
+      "PI_PHCDRR_1_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -344,7 +371,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_1_EX_1",
+      "PI_PHCDRR_1_EX_2",
+      "PI_PHCDRR_1_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -358,7 +389,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_1_EX_2",
+      "PI_PHCDRR_1_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -375,7 +409,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_1_EX_1",
+      "PI_PHCDRR_1_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -392,7 +429,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_1_EX_1",
+      "PI_PHCDRR_1_EX_2"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -412,7 +452,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_3_EX_1",
+      "PI_PHCDRR_3_EX_2",
+      "PI_PHCDRR_3_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -429,7 +473,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_3_EX_1",
+      "PI_PHCDRR_3_EX_2",
+      "PI_PHCDRR_3_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -443,7 +491,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_3_EX_2",
+      "PI_PHCDRR_3_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -460,7 +511,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_3_EX_1",
+      "PI_PHCDRR_3_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -477,7 +531,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_3_EX_1",
+      "PI_PHCDRR_3_EX_2"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -497,7 +554,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_4_EX_1",
+      "PI_PHCDRR_4_EX_2",
+      "PI_PHCDRR_4_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -514,7 +575,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_4_EX_1",
+      "PI_PHCDRR_4_EX_2",
+      "PI_PHCDRR_4_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -528,7 +593,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_4_EX_2",
+      "PI_PHCDRR_4_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -545,7 +613,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_4_EX_1",
+      "PI_PHCDRR_4_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -562,7 +633,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_4_EX_1",
+      "PI_PHCDRR_4_EX_2"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -582,7 +656,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_5_EX_1",
+      "PI_PHCDRR_5_EX_2",
+      "PI_PHCDRR_5_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -599,7 +677,11 @@
     "substitutes": [],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_PHCDRR_5_EX_1",
+      "PI_PHCDRR_5_EX_2",
+      "PI_PHCDRR_5_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -613,7 +695,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_5_EX_2",
+      "PI_PHCDRR_5_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -630,7 +715,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_5_EX_1",
+      "PI_PHCDRR_5_EX_3"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
@@ -647,7 +735,10 @@
     "objective": "publicHealthAndClinicalDataExchange",
     "isBonus": false,
     "reportingCategory": "exclusion",
-    "substitutes": [],
+    "substitutes": [
+      "PI_PHCDRR_5_EX_1",
+      "PI_PHCDRR_5_EX_2"
+    ],
     "measureSpecification": null,
     "measureSets": [],
     "exclusion": null
