@@ -10566,6 +10566,37 @@
     "measureSpecification": {}
   },
   {
+    "title": "All-Cause Unplanned Admissions for Patients with Multiple Chronic Conditions for ACOs (MCC)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "MCC1",
+    "description": "Rate of risk-standardized acute, unplanned hospital admissions among Medicare fee-for-service (FFS) beneficiaries 65 years and older with multiple chronic conditions (MCCs) who are assigned to the Accountable Care Organization (ACO)",
+    "nationalQualityStrategyDomain": "Outcome",
+    "measureType": "outcome",
+    "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isClinicalGuidelineChanged": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "clinicalGuidelineChanged": [],
+    "allowedPrograms": [
+      "app1"
+    ],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
     "category": "cost",
     "title": "Medicare Spending Per Beneficiary (MSPB)",
     "description": "The risk-adjusted cost to Medicare for all Parts A and B services performed for an inpatient beneficiary as a result of a clinician's care during the period 3 days prior to the patient's hospital stay through 30 days after discharge.",
@@ -18042,7 +18073,7 @@
   {
     "measureId": "IGR16",
     "title": "Myocardial Perfusion Imaging (MPI) Studies, Transthoracic Echo (TTE), or Stress Echocardiography Imaging Studies - Adequate Reporting for Appropriate Interventions",
-    "description": "This is a multi-strata measure consisting of the following strata: \n1. Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older.\n2 .Percentage of Single Photon Emission Computed Tomography (SPECT), Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI), transthoracic echocardiography, or stress echocardiography imaging studies where the Left Ventricle Ejection Fraction (LVEF) was calculated and included in the report performed on patients 18 years of age or older.\n\nThe overall performance will be calculated using a weighted average.",
+    "description": "This is a multi-strata measure consisting of the following strata: \n1. Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older.\n2. Percentage of Single Photon Emission Computed Tomography (SPECT), Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI), transthoracic echocardiography, or stress echocardiography imaging studies where the Left Ventricle Ejection Fraction (LVEF) was calculated and included in the report performed on patients 18 years of age or older.\n\nThe overall performance will be calculated using a weighted average.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "process",
@@ -18072,6 +18103,10 @@
       {
         "name": "abnormalMpiStudy",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older."
+      },
+      {
+        "name": "mpiLvef",
+        "description": "Percentage of Single Photon Emission Computed Tomography (SPECT), Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI), transthoracic echocardiography, or stress echocardiography imaging studies where the Left Ventricle Ejection Fraction (LVEF) was calculated and included in the report performed on patients 18 years of age or older."
       }
     ],
     "submissionMethods": [
