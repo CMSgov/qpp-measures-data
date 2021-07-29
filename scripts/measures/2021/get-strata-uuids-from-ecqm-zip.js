@@ -86,9 +86,9 @@ const xmlFiles = fs.readdirSync(tmpDir)
     const zip = new AdmZip(path.join(tmpDir, measureZip));
     const { entryName: filename } = zip.getEntries()
       .find(({entryName}) => {
-        const [folder,filename] = entryName.split('/');
-        return filename.includes('.xml') && filename.includes(folder)
-      })
+        const [folder, filename] = entryName.split('/');
+        return filename.includes('.xml') && filename.includes(folder);
+      });
 
     // extract 'CMS75v5.xml' to /xmls
     zip.extractEntryTo(filename, tmpPath, false, true);
