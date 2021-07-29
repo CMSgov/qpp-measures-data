@@ -10,7 +10,7 @@ const parseString = require('xml2js').parseString;
 const tmpDir = '/tmp/ecqm';
 const tmpPath = '/tmp/ecqm/xmls';
 const currentYear = '2021';
-const zipPath = '../../../staging/' + currentYear + '/EP-EC-eCQM-2019-05-v3.zip';
+const zipPath = '../../../staging/' + currentYear + '/EP-EC-eCQM-2020-05.zip';
 if (!zipPath) {
   console.log('Missing required argument <path to zip>');
   process.exit(1);
@@ -81,17 +81,19 @@ function extractStrata(measure) {
 rimraf.sync(tmpDir);
 new AdmZip(zipPath).extractAllTo(tmpDir, true);
 // each measure has its own zip, collect name of SimpleXML files
-const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
-  const zip = new AdmZip(path.join(tmpDir, measureZip));
-  const filename = zip.getEntries()
-    .find(entry => entry.entryName.match(/v[0-9]\.xml$/))
-    .entryName;
+const xmlFiles = fs.readdirSync(tmpDir)
+  .map(measureZip => {
+    const zip = new AdmZip(path.join(tmpDir, measureZip));
+    const { entryName: filename } = zip.getEntries()
+      .find(({entryName}) => {
+        const [folder, filename] = entryName.split('/');
+        return filename.includes('.xml') && filename.includes(folder);
+      });
 
-  // extract 'CMS75v5.xml' to /xmls
-  // this duplicates the path. Instead of writing to `'/tmp/ecqm/xmls' the path is actually '/tmp/ecqm/xmls/tmp/ecqm/xmls/'`
-  zip.extractEntryTo(filename, tmpPath, false, false);
-  return filename.split('/')[1];
-});
+    // extract 'CMS75v5.xml' to /xmls
+    zip.extractEntryTo(filename, tmpPath, false, true);
+    return filename.split('/')[1];
+  });
 
 // parse files into JavaScript objects
 const promisifiedParseString = Promise.promisify(parseString);
