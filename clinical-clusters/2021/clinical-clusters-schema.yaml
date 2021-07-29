@@ -1,0 +1,36 @@
+id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/clinical-clusters-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: #/definitions/ClusterType }
+definitions:
+  ClusterType:
+    type: object
+    properties:
+      measureId:
+        type: string
+        description: The measure identifier
+      firstPerformanceYear:
+        description: Year in which the measure was introduced.
+        type: integer
+        default: 2017
+      lastPerformanceYear:
+        description: Year in which the measure was deprecated.
+        type: [integer, 'null']
+        default: 'null'
+      clinicalClusters:
+        type: array
+        items: { $ref: #/definitions/ClinicalClusterType }
+      specialtySets:
+        type: array
+        items: { $ref: #/definitions/ClinicalClusterType }
+  ClinicalClusterType:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Cluster or Specialty name
+      measureIds:
+        type: array
+        items:
+          type: string
+          description: Measure identifier
