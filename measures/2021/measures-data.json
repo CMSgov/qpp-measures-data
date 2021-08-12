@@ -18732,11 +18732,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "exerciseAsStressor",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography studies using a Stress Test Type that includes exercise performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiTreatment",
+        "name": "hrAndMinExercised",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography exercise studies where the stress heart rate >= 85% of maximum heart rate and three or more minutes of exercise performed on patients 18 years of age or older."
       }
     ],
@@ -18775,11 +18775,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "abnormalMpiStudy",
+        "name": "perfusionDefects",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiLvef",
+        "name": "lvefDocumented",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT), Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI), transthoracic echocardiography, or stress echocardiography imaging studies where the Left Ventricle Ejection Fraction (LVEF) was calculated and included in the report performed on patients 18 years of age or older."
       }
     ],
@@ -18818,11 +18818,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "stressOnlyProtocol",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies where the imaging protocol used was stress only performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiTreatment",
+        "name": "9OrLessMillisieverts",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies where 9 or less millisieverts of radiation were administered per ASNC guideline recommendations on patients 18 years of age or older."
       }
     ],
@@ -18861,11 +18861,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "attentuationCorrectn",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies using Attenuation Correction performed on patients 18 years of age or older."
       },
       {
-        "name": "appropriateForObese",
+        "name": "obesityProtocol",
         "description": "Percentage of SPECT-MPI or Stress Echocardiography imaging studies where the Imaging Protocol was appropriate for morbidly obese patients on patients 18 years of age or older."
       }
     ],
