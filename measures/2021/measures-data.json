@@ -1969,7 +1969,20 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_DM-2_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_001_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_001_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d78a0d406b3",
+    "strata": [
+      {
+        "description": "Patients whose most recent HbA1c level (performed during the measurement period) is >9.0%",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C7396995-408E-4254-BF40-D2CD2A97E858",
+          "denominatorUuid": "02793E57-2555-4145-BECF-1BE0F6CAED62",
+          "numeratorUuid": "44E72F3A-B3EC-42E6-85DB-928A9515255C",
+          "denominatorExclusionUuid": "3FAC8D80-C279-47FC-B001-5E41407757AF"
+        }
+      }
+    ],
+    "cpcPlusGroup": "Outcome_Measure"
   },
   {
     "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -2011,7 +2024,30 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms135v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_005_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9895226d00fe",
+    "strata": [
+      {
+        "name": "Within12Months",
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "590BCACE-13CA-4CF8-BDDE-007A35D05A2B",
+          "denominatorUuid": "A56A5A7F-B981-48CC-BFBD-2EB27A294DAD",
+          "numeratorUuid": "D2BE9791-4C01-4403-99EE-6D2B3B1C27F9",
+          "denominatorExceptionUuid": "BFED94C0-70A0-4ECC-8E7E-89996A29AAE7"
+        }
+      },
+      {
+        "name": "HospitalDischarge",
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "97DD6D6F-CE23-4C4A-8AC4-D1479BAE2565",
+          "denominatorUuid": "D0466F55-B262-4060-94FF-14ED1E8D7267",
+          "numeratorUuid": "F1DE987F-3149-4920-B146-E318F7069715",
+          "denominatorExceptionUuid": "AF7AF77C-15CB-496A-BC4E-7F41AF50CC5D"
+        }
+      }
+    ]
   },
   {
     "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
@@ -2093,7 +2129,30 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms145v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_007_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98988f540135",
+    "strata": [
+      {
+        "name": "LVSD",
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C8AFA985-2388-41DF-8AE2-05C4BE4E77C9",
+          "denominatorUuid": "13FB25BF-DD03-48D3-8088-03E203EFA540",
+          "numeratorUuid": "D457813A-E76D-4BF8-B653-84B73B355847",
+          "denominatorExceptionUuid": "85E384BB-2C9E-4BEF-B14F-72F3A0C97997"
+        }
+      },
+      {
+        "name": "priorMI",
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "32D51C08-635E-4CA7-A4C7-960B023BB9AD",
+          "denominatorUuid": "27B59C9C-3B15-4D7C-AFBB-D5CCAA642C19",
+          "numeratorUuid": "60310BDB-A417-49A0-A055-7E5C1C273C01",
+          "denominatorExceptionUuid": "ED454452-BE62-4C4E-A45A-1BF4F79E3933"
+        }
+      }
+    ]
   },
   {
     "title": "Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -2136,7 +2195,30 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms144v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_008_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98972d42011e",
+    "strata": [
+      {
+        "name": "<=12Months",
+        "description": "Patients who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "065E56F2-BC96-4306-9CB3-8D5E727A8EC9",
+          "denominatorUuid": "04025C9A-D1F0-44D0-8214-D8E9E592BD89",
+          "numeratorUuid": "AAB85AF3-3582-4C34-9C36-4339A2DE059C",
+          "denominatorExceptionUuid": "092B3C50-14DA-48DC-985C-A73DA2693793"
+        }
+      },
+      {
+        "name": "HospitalDischarge",
+        "description": "Patients who were prescribed beta-blocker therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "78DA301F-CCF0-452B-BE03-497F9DAC5E7E",
+          "denominatorUuid": "307ACFDF-3ED9-4164-A9DD-2CCC3B84A7A3",
+          "numeratorUuid": "59CA6C03-0C8B-45B7-8E4F-E3BBFD89296F",
+          "denominatorExceptionUuid": "6CED6D74-B23A-4DA1-8677-8C00DD9EE901"
+        }
+      }
+    ]
   },
   {
     "title": "Anti-Depressant Medication Management",
@@ -2179,14 +2261,27 @@
     },
     "strata": [
       {
-        "name": ">=84Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "57D85599-15C7-41DB-AA2B-A822DFA3D590",
+          "denominatorUuid": "F8DA7718-407C-4506-A0AC-EAA244583AA3",
+          "numeratorUuid": "73BEC504-0B7D-4EA1-BD42-F1F29BFBBE36",
+          "denominatorExclusionUuid": "11AB50E5-468A-47EA-87F6-7365A68A2695"
+        },
+        "name": ">=84Days"
       },
       {
-        "name": ">=180Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "867C82CD-4C9C-4366-87C6-2295EF09B1AB",
+          "denominatorUuid": "77F157BE-AF09-478E-ADEB-9F66CE228BC5",
+          "numeratorUuid": "F3B54143-CDFC-4563-B4CA-19169A12252D",
+          "denominatorExclusionUuid": "56391018-F5C8-4D4C-886C-71C36085610C"
+        },
+        "name": ">=180Days"
       }
-    ]
+    ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d7f304f06ee"
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
@@ -2223,7 +2318,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms143v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9999e27a042b",
+    "strata": [
+      {
+        "description": "Patients who have an optic nerve head evaluation during one or more office visits within 12 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "A985907B-E233-49E6-B3B3-9DAECFA00563",
+          "denominatorUuid": "0FBAF9DC-C698-42B6-B03C-5AAAF94F2C44",
+          "numeratorUuid": "41AE9BE4-61C3-4548-8FDE-9FDEB00B3808",
+          "denominatorExceptionUuid": "358A7208-4389-4B7C-AE2A-0AFDE1AB8F25"
+        }
+      }
+    ]
   },
   {
     "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
@@ -2301,7 +2408,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms142v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_019_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-99a391370450",
+    "strata": [
+      {
+        "description": "Patients with documentation, at least once within 12 months, of the findings of the dilated macular or fundus exam via communication to the physician who manages the patient's diabetic care",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D005FECC-3926-49E8-9D49-50DF068523C7",
+          "denominatorUuid": "43257C96-8E3F-4B4B-9267-7548AC7A0739",
+          "numeratorUuid": "35E27C5F-1848-43A0-966B-3CED3639B936",
+          "denominatorExceptionUuid": "6BCF0B1A-9558-45DF-A5A7-90279E6A9B49"
+        }
+      }
+    ]
   },
   {
     "title": "Perioperative Care: Selection of Prophylactic Antibiotic – First OR Second-Generation Cephalosporin",
@@ -2744,7 +2863,24 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms154v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_065_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d9305330758",
+    "strata": [
+      {
+        "description": "URI episodes without a prescription for antibiotic medication on or 3 days after the outpatient visit, telephone visit, online assessment, observation stay or emergency department visit for an upper respiratory infection",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D4AD84B2-546B-46FB-A588-9216E6CAC5B6",
+          "denominatorUuid": "71DACCC3-6D55-454C-93D7-C8C4B9781CBE",
+          "numeratorUuid": "6BC0B7BE-8692-477C-B423-3858B7ECF706",
+          "denominatorExclusionUuid": "1B14341C-12AE-4B05-93D3-BB7882951128",
+          "strata": [
+            "EA32A714-3087-469C-B034-64883750692D",
+            "35CE0304-E632-4165-B2B5-E6DAF916F155",
+            "3F38BFB5-D0D3-4132-B7E4-51E4DC3B7143"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Appropriate Testing for Pharyngitis",
@@ -2786,7 +2922,24 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms146v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_066_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9e37b26f089a",
+    "strata": [
+      {
+        "description": "A group A streptococcus test in the seven-day period from three days prior to the episode date through three days after the episode date",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "048A9A82-63D7-45F5-848F-947BFDCA37F1",
+          "denominatorUuid": "F271D59F-B538-4868-965A-AC9F3D8CC212",
+          "numeratorUuid": "0AAE606F-A1AD-4B8E-B999-4F55C5BB313F",
+          "denominatorExclusionUuid": "38C9F894-9D3A-4122-B159-B5BE7E88CDBC",
+          "strata": [
+            "0111CBFC-16DF-44A9-B960-837518049C2B",
+            "B95BDC0E-19BB-4661-8857-F48AE5CC045F",
+            "F809D8EC-A125-45A7-A336-1D7A46C4FA17"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Hematology: Myelodysplastic Syndrome (MDS) and Acute Leukemias: Baseline Cytogenetic Testing Performed on Bone Marrow",
@@ -2986,7 +3139,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms129v10",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_102_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-988ab12a00b7",
+    "strata": [
+      {
+        "description": "Patients who did not have a bone scan performed at any time since diagnosis of prostate cancer",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "6F2742B3-89C2-44DB-B884-870352B6F2D9",
+          "denominatorUuid": "7601AA43-5078-49B6-85DD-843B9178AD5E",
+          "numeratorUuid": "FB1A1EE4-76C0-4272-8DD5-CCC275559E92",
+          "denominatorExceptionUuid": "BF332E8F-BD5F-464E-A9BF-0C92A058D19E"
+        }
+      }
+    ]
   },
   {
     "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
@@ -3063,7 +3228,18 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms161v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98ab3dc7018b",
+    "strata": [
+      {
+        "description": "Patient visits during which a new diagnosis of MDD, single or recurrent episode, was identified and a suicide risk assessment was completed during the visit",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "6AE028E4-F2AB-4021-AE51-8307D0A223D7",
+          "denominatorUuid": "A197002D-CC8C-4BC2-8ACF-EEE54FD356BF",
+          "numeratorUuid": "84D60531-27E4-4ED4-A68E-27C5BD90F210"
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Influenza Immunization",
@@ -3121,7 +3297,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV7_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_110_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_110_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98a8ea4d0169",
+    "strata": [
+      {
+        "description": "Patients who received an influenza immunization OR who reported previous receipt of an influenza immunization",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "EC467309-99B3-4EF7-936E-F8BBBA8A2D84",
+          "denominatorUuid": "1129DA7B-0B9E-4E5F-86CB-43598130E3BE",
+          "numeratorUuid": "2B655B5D-1751-4F2C-88B6-7546F5F3FEE1",
+          "denominatorExceptionUuid": "615E9A89-AAF3-4302-8602-FFB7CDEB05BA"
+        }
+      }
+    ]
   },
   {
     "title": "Pneumococcal Vaccination Status for Older Adults",
@@ -3176,7 +3364,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms127v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_111_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_111_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d81c756070c",
+    "strata": [
+      {
+        "description": "Patients who have ever received a pneumococcal vaccination before the end of the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D6BF1254-F95E-4017-A040-36C784B48A67",
+          "denominatorUuid": "8B7E7DFF-9391-45E8-A9A9-FCFEFEFFE317",
+          "numeratorUuid": "A62E019A-F0FA-4799-9BC8-EA0C4889EA19",
+          "denominatorExclusionUuid": "C77A1344-549C-47AD-B3AF-8F622B074681"
+        }
+      }
+    ]
   },
   {
     "title": "Breast Cancer Screening",
@@ -3221,7 +3421,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV5_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_112_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_112_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d6793ec0657",
+    "strata": [
+      {
+        "description": "Women with one or more mammograms during the 27 months prior to the end of the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "186D78A2-9734-4860-B0CE-D804A3652EA6",
+          "denominatorUuid": "292B7874-95B8-4576-8E85-CEFB1AFD27ED",
+          "numeratorUuid": "A5F303A3-11CF-4BB2-8D2E-6AE0C857D9B5",
+          "denominatorExclusionUuid": "9BBBA758-2D9F-41A6-9C11-1088B674BD2E"
+        }
+      }
+    ]
   },
   {
     "title": "Colorectal Cancer Screening",
@@ -3265,7 +3477,19 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV6_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_113_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_113_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d6e026b066b",
+    "strata": [
+      {
+        "description": "Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria: \n- Fecal occult blood test (FOBT) during the measurement period \n- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period \n- Colonoscopy during the measurement period or the nine years prior to the measurement period\n- FIT-DNA during the measurement period or the two years prior to the measurement period \n- CT Colonography during the measurement period or the four years prior to the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0C34F7DA-92D7-4B44-9A24-E4950853A642",
+          "denominatorUuid": "7D6E33BB-31BA-42A9-9447-73A6B47F07D5",
+          "numeratorUuid": "97995C43-D36C-417F-A1A6-7C379A7F46FF",
+          "denominatorExclusionUuid": "81F6DC72-FA7A-433E-9DFA-A889343F6008"
+        }
+      }
+    ]
   },
   {
     "title": "Avoidance of Antibiotic Treatment for Acute Bronchitis/Bronchiolitis",
@@ -3351,7 +3575,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms131v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_117_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_117_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d72a6ec0692",
+    "strata": [
+      {
+        "description": "Patients with an eye screening for diabetic retinal disease. This includes diabetics who had one of the following:\n•Diabetic with a diagnosis of retinopathy that overlaps the measurement period and a retinal or dilated eye exam by an eye care professional in the measurement period\n•Diabetic with no diagnosis of retinopathy overlapping the measurement period and a retinal or dilated eye exam by an eye care professional in the measurement period or the year prior to the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C7C7715D-9DB2-4DF9-8952-3B072EF2C206",
+          "denominatorUuid": "6A4825B1-B1B7-45E4-A2BC-DF633F7C9715",
+          "numeratorUuid": "E06A8B68-12F2-4936-A08F-44F4B01833CD",
+          "denominatorExclusionUuid": "B39B756C-553A-479B-9808-3032D99E439B"
+        }
+      }
+    ]
   },
   {
     "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
@@ -3434,7 +3670,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms134v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_119_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d7c32a106d4",
+    "strata": [
+      {
+        "description": "Patients with a screening for nephropathy or evidence of nephropathy during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "403CB3B1-EDC5-42E7-8F49-DE5482F96927",
+          "denominatorUuid": "3258CBA9-311E-4B3A-8B3D-52A117228645",
+          "numeratorUuid": "DB24F137-A9DC-4F40-BD7A-913FB0331EAC",
+          "denominatorExclusionUuid": "15A00AAE-9BC4-4E30-BBA2-946DFB15CD53"
+        }
+      }
+    ]
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy – Neurological Evaluation",
@@ -3573,7 +3821,20 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms069v9",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_128_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_128_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9995e1f90412",
+    "strata": [
+      {
+        "description": "Patients with a documented BMI during the encounter or during the previous twelve months, AND when the BMI is outside of normal parameters, a follow-up plan is documented during the encounter or during the previous twelve months of the current encounter",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3E32D9BB-3E5D-4D04-A8FE-C3304B782E92",
+          "denominatorUuid": "D6590CC1-1156-48B4-8455-5540F23FDDB5",
+          "numeratorUuid": "462979D4-8A62-4DAC-9887-3085ED46BD2F",
+          "denominatorExceptionUuid": "5CFA9CF5-F847-4C43-B828-3EEA31E1B8E8",
+          "denominatorExclusionUuid": "4CA78179-B2BF-41DC-A84F-47CE165F5002"
+        }
+      }
+    ]
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -3647,7 +3908,19 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms068v10",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_130_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_130_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-999107e803fd",
+    "strata": [
+      {
+        "description": "Eligible professional or eligible clinician attests to documenting, updating or reviewing the patient's current medications using all immediate resources available on the date of the encounter",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "11F99084-383C-4CDC-8519-56858014D884",
+          "denominatorUuid": "07F5DB6C-B8EB-4614-AE90-84B76494A721",
+          "numeratorUuid": "EF429DD9-F8C1-48B7-8DFB-BF4B48A17E03",
+          "denominatorExceptionUuid": "1AD53991-E199-4729-95D7-D2668D25616D"
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
@@ -3702,7 +3975,20 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV12_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_134_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_134_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9989a2cf03d2",
+    "strata": [
+      {
+        "description": "Patients screened for depression on the date of the encounter or up to 14 days prior to the date of the encounter using an age-appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the eligible encounter",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D5104BF0-8328-47AC-862A-379E5A8323FA",
+          "denominatorUuid": "B172437E-0F4D-40C4-B707-996315432E53",
+          "numeratorUuid": "BB36DD9F-8AEC-40B3-B377-192F7CEE77C8",
+          "denominatorExceptionUuid": "D64A72F7-224F-486A-805C-CBA9BD06354F",
+          "denominatorExclusionUuid": "671BD08B-E02D-44F4-85B0-CB776CB0D029"
+        }
+      }
+    ]
   },
   {
     "title": "Melanoma: Continuity of Care – Recall System",
@@ -3855,7 +4141,28 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms157v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_143_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-988d211d00d6",
+    "strata": [
+      {
+        "name": "Chemotherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "9EC8C903-6703-4894-A50C-B527280BF031",
+          "denominatorUuid": "B9762119-E99D-4CA7-AFD2-E04E5C6DA5EC",
+          "numeratorUuid": "2989C5F0-2301-4E9E-A6CB-258076E08E8D"
+        }
+      },
+      {
+        "name": "RadiationTherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "00CD5E45-80B5-466B-B966-DB544C983968",
+          "denominatorUuid": "9E0BE4F2-1A3E-4AC2-8FDD-964499040B3A",
+          "numeratorUuid": "500BBB7E-6FA3-4CAB-BBC3-A95F3BCF98AE"
+        }
+      }
+    ]
   },
   {
     "title": "Oncology: Medical and Radiation - Plan of Care for Pain",
@@ -4543,7 +4850,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms133v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_191_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-999d514f043e",
+    "strata": [
+      {
+        "description": "Cataract surgeries with best-corrected visual acuity of 20/40 or better (distance or near) achieved in the operative eye within 90 days following cataract surgery",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "9D0D39BC-532D-4190-8280-038AC505A33F",
+          "denominatorUuid": "0B734BD9-2577-4DB7-9906-282DB6344FA9",
+          "numeratorUuid": "DA0E1ADA-4EF4-42E7-B8C3-5AD1DF7A6942",
+          "denominatorExclusionUuid": "187261B4-967A-4BD5-BA4D-8276EACDD384"
+        }
+      }
+    ]
   },
   {
     "title": "Radiology: Stenosis Measurement in Carotid Imaging Reports",
@@ -4970,17 +5289,36 @@
     "strata": [
       {
         "name": "screenedForUse",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "FF12FAC1-3D9A-4174-9C05-B313984408DB",
+          "denominatorUuid": "69248984-A61F-4E87-B75B-73EA2EFCE11F",
+          "numeratorUuid": "370D70D8-5872-4742-BE13-F17720FD33B1",
+          "denominatorExceptionUuid": "7D72D403-963E-44DF-8F18-F95A90418C66"
+        }
       },
       {
         "name": "overall",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use and identified as a tobacco user who received tobacco cessation intervention",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "AFFE52DA-9272-4F23-9761-45E35ACE8FD0",
+          "denominatorUuid": "D61839FF-8407-4EAD-8D2B-B6C68FDB5D60",
+          "numeratorUuid": "38833BA5-0B98-45C5-9FA3-B01481B5BC53",
+          "denominatorExceptionUuid": "ECC8E00F-60E8-4D0A-81B5-B4AFF39026F9"
+        }
       },
       {
         "name": "tobacco",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user"
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received tobacco cessation intervention if identified as a tobacco user",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B986CD1C-A155-48EC-BE5A-3F5508491265",
+          "denominatorUuid": "87010EBD-E324-477C-BDF1-D8690B282D6A",
+          "numeratorUuid": "0ED2B666-DBBE-4BF3-A886-A4FF54774382",
+          "denominatorExceptionUuid": "F5AD9DAC-1160-4DFF-BD03-DCE12AB12696"
+        }
       }
     ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-99aa63300462",
     "benchmarks": {
       "claims": "removed",
       "electronicHealthRecord": "removed",
@@ -5036,7 +5374,20 @@
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_HTN2_CMSWebInterface_v5.0.pdf",
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_236_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_236_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9da6456007ab",
+    "strata": [
+      {
+        "description": "Patients whose most recent blood pressure is adequately controlled (systolic blood pressure < 140 mmHg and diastolic blood pressure < 90 mmHg) during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "87338BA5-170B-4264-9E59-6A4A3A57C785",
+          "denominatorUuid": "B2E2AA67-26CD-48CB-9536-094F1D047149",
+          "numeratorUuid": "63DAFD4E-CBD5-4BEE-BE19-E64337356748",
+          "denominatorExclusionUuid": "9B6EDB4C-A390-4833-A135-2A2AC6334126"
+        }
+      }
+    ],
+    "cpcPlusGroup": "Outcome_Measure"
   },
   {
     "title": "Use of High-Risk Medications in Older Adults",
@@ -5087,13 +5438,16 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Percentage of patients who were ordered at least one high-risk medication"
-      },
-      {
-        "name": "2+",
-        "description": "Percentage of patients who were ordered at least two of the same high-risk medication"
+        "description": "Percentage of patients who were ordered at least one high-risk medication",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3E177A28-30DE-4381-8C7A-B42CD914DA33",
+          "denominatorUuid": "E7E1C3BB-730F-4020-9BF3-3AA508B914FC",
+          "numeratorUuid": "827502FD-FF19-45FB-974B-B7F32B281873",
+          "denominatorExclusionUuid": "14F9E2DB-C09F-4E06-AFBD-C1E5E178D920"
+        }
       }
     ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d752d1a069e",
     "benchmarks": {
       "electronicHealthRecord": "removed",
       "registry": "removed"
@@ -5139,18 +5493,49 @@
     },
     "strata": [
       {
-        "name": "BMI",
-        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "9E3EA1A3-A9F6-4201-AB27-730159AE3933",
+          "denominatorUuid": "3B78FA52-5E6A-4303-B0C8-814C0193AC2B",
+          "numeratorUuid": "D1C92A35-8591-4EC4-8E9B-2EBD1EA18351",
+          "denominatorExclusionUuid": "3C70608B-18FE-4B72-A6D7-91D943E911D6",
+          "strata": [
+            "448FCA10-812D-4903-B543-E6E8E7FBEF76",
+            "8B3991A7-E8D9-4AC2-826A-85509403162B"
+          ]
+        },
+        "name": "BMI"
       },
       {
-        "name": "nutrition",
-        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "6C91B9DD-6F96-4BC0-84CB-846DD842C622",
+          "denominatorUuid": "7C12DAFF-C8D9-4F30-BBE7-189DB25E2E23",
+          "numeratorUuid": "B421B619-B8DE-4C8E-A1ED-325ECBF84958",
+          "denominatorExclusionUuid": "C42B42A0-17E2-4A37-993B-C917C9175FC5",
+          "strata": [
+            "27547B31-B1C5-44A7-B29E-90076761C77A",
+            "7146FA26-F771-48ED-A079-99B5E7F868F2"
+          ]
+        },
+        "name": "nutrition"
       },
       {
-        "name": "physicalActivity",
-        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
+        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "FE1D7F2D-742F-473E-A27B-F032E73B8CC4",
+          "denominatorUuid": "7991ABCD-4420-43BB-924F-EE83042CB3B9",
+          "numeratorUuid": "4C2B1545-7C5F-4D4A-B95E-A79BBA28BAC7",
+          "denominatorExclusionUuid": "6783A696-C02C-40FE-BFDB-94E9EBB03B3D",
+          "strata": [
+            "CE10198E-5303-4EE8-A924-0078CB258C1E",
+            "8FD1AEF2-5112-47CC-A854-5194000091EB"
+          ]
+        },
+        "name": "physicalActivity"
       }
-    ]
+    ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9da0c2cd078a"
   },
   {
     "title": "Childhood Immunization Status",
@@ -5187,7 +5572,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms117v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d6e75580676",
+    "strata": [
+      {
+        "description": "Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C250C33A-DB0C-4BCA-B960-1C4233F43F4B",
+          "denominatorUuid": "6CC68F62-3E17-4A10-8612-5496F0D42E85",
+          "numeratorUuid": "74914562-4904-47EB-84D4-72C25964B5B0",
+          "denominatorExclusionUuid": "4556ED56-B7FF-47F5-A84E-B3916BA13EB2"
+        }
+      }
+    ]
   },
   {
     "title": "Cardiac Rehabilitation Patient Referral from an Outpatient Setting",
@@ -5767,7 +6164,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms149v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98a9d3bf017a",
+    "strata": [
+      {
+        "description": "Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12-month period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "FA642DFE-1C0D-4724-9538-B0F199C9CEFD",
+          "denominatorUuid": "115AD8E4-8FC1-484C-8F7A-426DEEFD989F",
+          "numeratorUuid": "6621BE4E-4E50-46A6-8952-E9AE5B45540B",
+          "denominatorExceptionUuid": "C4504094-168D-437D-B8AB-7C28DC3D1FB7"
+        }
+      }
+    ]
   },
   {
     "title": "Dementia: Functional Status Assessment",
@@ -6158,14 +6567,35 @@
     },
     "strata": [
       {
-        "name": "14DaysOfDiagnosis",
-        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+        "description": "Patients who initiated treatment within 14 days of the diagnosis",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0D7EB2C8-A8C7-406E-9F6F-961C85CB5791",
+          "denominatorUuid": "3A93FF10-3E3A-47E4-9D97-EFB6B6241BE1",
+          "numeratorUuid": "F2EC55BA-4652-4705-84DC-6AC184A5C4C1",
+          "denominatorExclusionUuid": "00DAA49B-10E5-4E02-A9B9-20911A88C14A",
+          "strata": [
+            "C447FBC7-B826-4CE1-A23C-4932EAE2A587",
+            "B9348806-52DD-415D-9496-EA21566DFD21"
+          ]
+        },
+        "name": "14DaysOfDiagnosis"
       },
       {
-        "name": "30DaysOfVisit",
-        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "13982B0A-1AE1-48AD-A1C7-6A7CA3A8ECD6",
+          "denominatorUuid": "9092B765-3F9C-4067-9695-673B7A0AA818",
+          "numeratorUuid": "6B89D395-0750-4DB2-BAAF-6ADBBE802592",
+          "denominatorExclusionUuid": "36BE31B3-B355-42DA-ACC9-75EFF0A0F553",
+          "strata": [
+            "598BEF83-C10C-4A99-95F1-85B66842C4BC",
+            "06E5DF8B-6BAD-4F9C-9F6D-A653F4B0208A"
+          ]
+        },
+        "name": "30DaysOfVisit"
       }
-    ]
+    ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d81b6570705"
   },
   {
     "title": "Cervical Cancer Screening",
@@ -6204,7 +6634,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms124v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d8c44fe0746",
+    "strata": [
+      {
+        "description": "Women with one or more screenings for cervical cancer. Appropriate screenings are defined by any one of the following criteria:\n*  Cervical cytology performed during the measurement period or the two years prior to the measurement period for women who are at least 21 years old at the time of the test\n\n*  Cervical human papillomavirus (HPV) testing performed during the measurement period or the four years prior to the measurement period for women who are 30 years or older at the time of the test",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "ECFD977D-D1A2-487B-8033-CC9E61B5B5F7",
+          "denominatorUuid": "C373C463-77DF-4C19-80E0-2A344BD3FEA2",
+          "numeratorUuid": "7502090C-3073-419F-8A76-63CEF417107B",
+          "denominatorExclusionUuid": "1F694042-1951-404A-B0CB-92527C9505CB"
+        }
+      }
+    ]
   },
   {
     "title": "Chlamydia Screening for Women",
@@ -6242,7 +6684,23 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms153v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d4e202e05e3",
+    "strata": [
+      {
+        "description": "Women with at least one chlamydia test during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3ECA314C-7C3B-4A78-8B1C-736D90B1066F",
+          "denominatorUuid": "E1043B38-DB72-4D88-931E-F80450F8AA58",
+          "numeratorUuid": "DAC328D0-B833-435E-ACA7-9A57FE8F62B7",
+          "denominatorExclusionUuid": "5FE92D37-26D2-4F15-AD37-B0A084FC4DF4",
+          "strata": [
+            "A4B4EAB9-C09A-4D3C-ACD1-7C1B778F3C54",
+            "3C09C16C-1CEF-4E9A-8311-BA78FE66734E"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented",
@@ -6307,6 +6765,19 @@
       "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2021_Measure_317_MedicarePartBClaims.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_317_MIPSCQM.pdf"
     },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-996316c403a1",
+    "strata": [
+      {
+        "description": "Patient visits where patients were screened for high blood pressure AND have a recommended follow-up plan documented, as indicated, if the blood pressure is pre-hypertensive or hypertensive",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "1CD3E749-5317-4DCB-AF01-42A208A63873",
+          "denominatorUuid": "2F333EF9-774E-4748-B277-2F43957DBE18",
+          "numeratorUuid": "8A271814-D327-4D9D-A239-CDB5A9A4F423",
+          "denominatorExceptionUuid": "5E0F3AD0-A2AF-4231-9EB2-D39DF6B6C34E",
+          "denominatorExclusionUuid": "E6F8A291-F63A-4567-BBAE-A828761C3474"
+        }
+      }
+    ],
     "benchmarks": {
       "claims": "removed",
       "electronicHealthRecord": "removed",
@@ -6357,7 +6828,19 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms139v9",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_CARE-2_CMSWebInterface_v5.0.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d9aa4f50774",
+    "strata": [
+      {
+        "description": "Patients who were screened for future fall risk at least once within the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C47726CD-2A7B-4B6C-802E-7E8301E36027",
+          "denominatorUuid": "72599758-6E09-4680-AB93-F433DB231544",
+          "numeratorUuid": "5729CEBB-00AD-4D45-9529-435743474321",
+          "denominatorExclusionUuid": "14F60175-B484-460C-86EE-7B14CC87F0C7"
+        }
+      }
+    ]
   },
   {
     "title": "Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients",
@@ -7322,14 +7805,27 @@
     },
     "strata": [
       {
-        "name": "visitWithin30Days",
-        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
+        "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "258C7C5D-33A9-4344-8D26-D35CE7FD11FF",
+          "denominatorUuid": "2D031600-3FF7-43FB-8D07-56D05DFB1092",
+          "numeratorUuid": "91F1B47D-8357-4D1F-982C-F1CA45EA80B2",
+          "denominatorExclusionUuid": "EF583993-6453-4B51-97B3-84FAF366B3F6"
+        },
+        "name": "visitWithin30Days"
       },
       {
-        "name": "visitAndFollowups",
-        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended."
+        "description": "Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "6FFE774B-CFA8-481E-B201-1CFC738E4685",
+          "denominatorUuid": "0F80BF70-B407-4E09-9803-3AAB15CA9E14",
+          "numeratorUuid": "A823E7C1-8B1E-4A75-AFF2-BF4946F8980D",
+          "denominatorExclusionUuid": "7705EDA2-8A0B-4E3F-A83B-483B5F9BD87A"
+        },
+        "name": "visitAndFollowups"
       }
-    ]
+    ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9dab7a4b07c4"
   },
   {
     "title": "Depression Remission at Twelve Months",
@@ -7379,14 +7875,21 @@
     },
     "strata": [
       {
-        "name": "12-17",
-        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "BBB0D5FB-58B3-4F52-B34B-FE1FA70FA37A",
+          "denominatorUuid": "ABA073DB-F22A-40DF-85BA-D4C817E9DA42",
+          "numeratorUuid": "779282B6-7FFE-4261-A979-833C6D7E9BD5",
+          "denominatorExclusionUuid": "51BDFCA5-362F-429A-A776-5FC9A2E0EFC1"
+        },
+        "name": "12-17"
       },
       {
         "name": "18+",
         "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an\ninitial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve\nmonths as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
       }
-    ]
+    ],
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9e951ae1097e"
   },
   {
     "title": "Closing the Referral Loop: Receipt of Specialist Report",
@@ -7447,7 +7950,18 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms050v9",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_374_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9983f7b003c1",
+    "strata": [
+      {
+        "description": "Number of patients with a referral, for which the referring provider received a report from the provider to whom the patient was referred",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "84909538-B21D-4FEF-A39A-5B6CD8E5ABF6",
+          "denominatorUuid": "E2423A7C-4CDC-4AC3-9A62-C5A42AA6EC90",
+          "numeratorUuid": "D88B2BC2-B510-448B-AD39-EC0424E0A5B2"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessment for Total Knee Replacement",
@@ -7484,7 +7998,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms066v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d4b226a05d0",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment results (i.e., Veterans RAND 12-item health survey [VR-12], Patient-Reported Outcomes Measurement Information System [PROMIS]-10 Global Health, Knee Injury and Osteoarthritis Outcome Score [KOOS], KOOS Jr.) in the 90 days prior to or on the day of the primary TKA procedure, and in the 270 - 365 days after the TKA procedure",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "07F00615-05B2-4CB4-AD59-EC4800002403",
+          "denominatorUuid": "6C43F178-73B0-4492-8F87-05CDE817D19A",
+          "numeratorUuid": "BF424716-C760-4911-B3EA-3D359C2B8634",
+          "denominatorExclusionUuid": "0EF25614-4C56-4E77-A2FC-120D57E92D78"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessment for Total Hip Replacement",
@@ -7521,7 +8047,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms056v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d3ba3b30572",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment  results (i.e., Veterans RAND 12-item health survey [VR-12], Patient-Reported Outcomes Measurement Information System [PROMIS]-10-Global Health, Hip Disability and Osteoarthritis Outcome Score [HOOS], HOOS Jr.) in the 90 days prior to or on the day of the primary THA procedure, and in the 270 - 365 days after the THA procedure",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "688AFBFB-1F6B-4C19-8DF5-DEE620488A63",
+          "denominatorUuid": "F03E5B4A-29F5-4126-B6D2-149F2301F99B",
+          "numeratorUuid": "CE0EDD99-1953-4E2D-BD17-53B3125A7220",
+          "denominatorExclusionUuid": "0D631113-333A-4177-8228-895337056ACD"
+        }
+      }
+    ]
   },
   {
     "title": "Functional Status Assessments for Congestive Heart Failure",
@@ -7559,7 +8097,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms090v10"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9e6fc13d08f2",
+    "strata": [
+      {
+        "description": "Patients with patient-reported functional status assessment  results (i.e., Veterans RAND 12-item health survey [VR-12]; VR-36; Kansas City Cardiomyopathy Questionnaire [KCCQ]; KCCQ-12; Minnesota Living with Heart Failure Questionnaire [MLHFQ]; Patient-Reported Outcomes Measurement Information System [PROMIS]-10 Global Health, PROMIS-29) present in the EHR two weeks before or during the initial FSA encounter and results for the follow-up FSA at least 30 days but no more than 180 days after the initial FSA",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4BB978B2-C988-444B-A11B-82FF49D2DA33",
+          "denominatorUuid": "FB611C04-1B03-44CF-9520-BFD5DDC546E7",
+          "numeratorUuid": "5AF174D3-3FCC-4081-8102-01ADDEE7C0AA",
+          "denominatorExclusionUuid": "0F338C02-C66E-4F3C-AB8B-2C44B9C2392C"
+        }
+      }
+    ]
   },
   {
     "title": "Children Who Have Dental Decay or Cavities",
@@ -7596,7 +8146,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms075v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d56875005f8",
+    "strata": [
+      {
+        "description": "Children who had a diagnosis of cavities or decayed teeth overlapping the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "78E06F92-E035-4AFC-9290-33CD6F0F6E1F",
+          "denominatorUuid": "8DFABFF0-A1E4-432F-960B-E3AAB8738F76",
+          "numeratorUuid": "BDEF3B51-CBFD-4425-8772-35B4F5927E4F",
+          "denominatorExclusionUuid": "4C15ACA6-8FCE-4328-8441-4B1AA7521949"
+        }
+      }
+    ]
   },
   {
     "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
@@ -7634,7 +8196,24 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms074v10"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9d602fc3061a",
+    "strata": [
+      {
+        "description": "Children who receive a fluoride varnish application during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "98E4F56E-2A4A-43CF-B89B-E5DC8E9A1348",
+          "denominatorUuid": "D630F0DC-A7DD-4DE5-8F8A-43C6C9F0BD6D",
+          "numeratorUuid": "3920E2F1-A3D1-4C0B-829A-AA5EB1BDD46A",
+          "denominatorExclusionUuid": "2F2944A9-C372-4347-B19C-BD4C3BBC81BB",
+          "strata": [
+            "F06F7349-B75E-450A-854E-B93A3119A545",
+            "BC21022F-7A08-4AA4-A53C-689BA51D1378",
+            "51E2DEC7-217A-436E-B27F-BC2DA9384534"
+          ]
+        }
+      }
+    ]
   },
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -7673,7 +8252,18 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms177v9"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98abf9c0019d",
+    "strata": [
+      {
+        "description": "Patient visits with an assessment for suicide risk",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0F2BD817-7BC3-41FA-90F9-C85AE36CA859",
+          "denominatorUuid": "7B01C86F-68C7-4D7F-88CC-5377C869AE52",
+          "numeratorUuid": "D01E6E8D-D6CD-40EC-BC02-E709AA53996A"
+        }
+      }
+    ]
   },
   {
     "title": "Adherence to Antipsychotic Medications For Individuals with Schizophrenia",
@@ -9347,7 +9937,43 @@
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms347v4",
       "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2021_Measure_PREV13_CMSWebInterface_v5.0.pdf",
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2021_Measure_438_MIPSCQM.pdf"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-989a534a0146",
+    "strata": [
+      {
+        "name": "clinicalASCVD",
+        "description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "C32CF047-AD16-4D19-A86B-C598FAFA5D2F",
+          "denominatorUuid": "C0FE1159-81F5-449B-83EB-3395FC3A3210",
+          "numeratorUuid": "17D080CB-6211-4E3E-AD9A-DFA623DD6F42",
+          "denominatorExclusionUuid": "15EFD92A-56D4-45C6-B39F-89570858B544",
+          "denominatorExceptionUuid": "95596CBC-9665-4BA2-BB88-4768D9576F7C"
+        }
+      },
+      {
+        "name": ">21Familial",
+        "description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "164ECE60-97E5-4F72-8FE1-D1C62E04D174",
+          "denominatorUuid": "DA3E9773-E6F9-415E-B6DF-9DFDAB829D91",
+          "numeratorUuid": "01B500BB-4556-4CF4-9676-28FA2392147C",
+          "denominatorExclusionUuid": "BABDCD3E-75C1-40A5-8527-C9EBDDBB5E55",
+          "denominatorExceptionUuid": "84CD03D9-6BAA-4C56-9205-2F5A22CBDEE6"
+        }
+      },
+      {
+        "name": "between40And75",
+        "description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "44D2CD88-3F1C-4908-AFA7-5EB3D2B46F79",
+          "denominatorUuid": "1A916B14-DA81-4CBD-AA50-78CBFDEC7BD4",
+          "numeratorUuid": "0EAEA873-BD9C-4CF8-9989-BB138F2BDFE5",
+          "denominatorExclusionUuid": "EA99DDF7-D7D0-4B83-BA2C-9DA99548055C",
+          "denominatorExceptionUuid": "120861DA-61F1-48CC-BA99-27EE9073D896"
+        }
+      }
+    ]
   },
   {
     "title": "Age Appropriate Screening Colonoscopy",
@@ -9998,7 +10624,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms645v4"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-991e164e0307",
+    "strata": [
+      {
+        "description": "Patients with a bone density evaluation within the two years prior to the start of or less than three months after the start of ADT treatment",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "52F12771-64AC-4236-88D1-5780F5709BE8",
+          "denominatorUuid": "74889BF4-21BB-4F5A-BD12-3707FA6F0063",
+          "numeratorUuid": "244CFA99-6642-431B-9335-15BAD232C9D2",
+          "denominatorExceptionUuid": "FF123268-78C8-4439-8CD0-B3A0003497D6"
+        }
+      }
+    ]
   },
   {
     "title": "Prevention of Post-Operative Vomiting (POV) – Combination Therapy (Pediatrics)",
@@ -10304,7 +10942,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms249v3"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-9876b21e0093",
+    "strata": [
+      {
+        "description": "Female patients who received an order for at least one DXA scan in the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "F0A68A1B-0261-411C-BE9E-9AFCDA263676",
+          "denominatorUuid": "5676A192-5602-44B5-886A-23A045008F0F",
+          "numeratorUuid": "906BE36C-F868-4A84-9C5F-75D2A259801C",
+          "denominatorExclusionUuid": "634D7208-01BE-40B0-AAD9-27DC6ED13395"
+        }
+      }
+    ]
   },
   {
     "title": "Leg Pain After Lumbar Fusion",
@@ -10383,7 +11033,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms349v3"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-98e8f5530275",
+    "strata": [
+      {
+        "description": "Patients with documentation of an HIV test performed on or after their 15th birthday and before their 66th birthday",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "121D9C35-175C-4768-930C-CE4681DB7988",
+          "denominatorUuid": "E61633B7-37B5-430A-9890-CF4F9E659096",
+          "numeratorUuid": "77F4ABB1-BA6B-4C29-85FE-C6A8E570C59B",
+          "denominatorExclusionUuid": "5B47F56E-B8F7-4830-82E7-602D11E27262"
+        }
+      }
+    ]
   },
   {
     "title": "Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia",
@@ -10421,7 +11083,19 @@
     ],
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2021/cms771v2"
-    }
+    },
+    "eMeasureUuid": "2c928085-7198-38ee-0171-996032910386",
+    "strata": [
+      {
+        "description": "Patients with a documented improvement of at least 3 points in their urinary symptom score during the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "245B975E-C587-407F-9B57-81ABB16DF313",
+          "denominatorUuid": "11A690EA-0BCD-4249-984F-F9A15752F8FC",
+          "numeratorUuid": "1FB963C1-ED0D-403F-A117-4371F5BFB3FE",
+          "denominatorExclusionUuid": "FBF8B98B-A767-433C-9957-DFCA8DAEC1C9"
+        }
+      }
+    ]
   },
   {
     "title": "Multimodal Pain Management",
@@ -10512,7 +11186,7 @@
     "nationalQualityStrategyDomain": "Communication and Care Coordination",
     "measureType": "outcome",
     "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
-    "metricType": "singlePerformanceRate",
+    "metricType": "costScore",
     "firstPerformanceYear": 2021,
     "lastPerformanceYear": null,
     "isHighPriority": true,
@@ -10544,7 +11218,7 @@
     "nationalQualityStrategyDomain": "Patient Safety",
     "measureType": "outcome",
     "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
-    "metricType": "singlePerformanceRate",
+    "metricType": "costScore",
     "firstPerformanceYear": 2021,
     "lastPerformanceYear": null,
     "isHighPriority": true,
@@ -10575,7 +11249,7 @@
     "nationalQualityStrategyDomain": "Outcome",
     "measureType": "outcome",
     "primarySteward": "Centers for Medicare & Medicaid Services (CMS)",
-    "metricType": "singlePerformanceRate",
+    "metricType": "costScore",
     "firstPerformanceYear": 2021,
     "lastPerformanceYear": null,
     "isHighPriority": true,
@@ -11402,7 +12076,7 @@
     "description": "The percentage of patients, aged 18 years and older, with a diagnosis of dermatitis where at an initial (index) visit have a patient reported itch severity assessments performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -11594,7 +12268,7 @@
     "description": "The percentage of patients, aged 18 years and older, with a diagnosis of psoriasis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -11626,7 +12300,7 @@
     "description": "Percentage of patients whose quality of life assessment results are maintained or improved during the measurement period.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -11914,7 +12588,7 @@
     "description": "Percentage of patients (or caregivers as appropriate) with an active diagnosis of a movement disorder, multiple sclerosis, a neuromuscular disorder, dementia, or stroke who reported a fall occurred and those that fell had a plan of care for falls documented at every visit",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Patient Safety",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -12266,7 +12940,7 @@
     "description": "Percentage of neurotology patients whose most recent Quality of Life scores were maintained or improved during the measurement period.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -12555,7 +13229,7 @@
     "description": "The Person-Centered Primary Care Measure Performance Measure (PCPCM PRO-PM) utilizes the PCPCM PROM (a comprehensive and parsimonious set of 11 patient-reported items) to assess the broad scope of primary care: accessibility; comprehensive, whole person focus; integration of care across acute and chronic illness, prevention, mental health, and life events; coordinating care in a fragmented system; knowing the patient as a person; developing a relationship through key life events; advocacy; providing care in a family context; providing care in a community context; goal-oriented care; and, disease, illness, and prevention management. The PCPCM PRO-PM performance measure, generated from the patient reported instrument, goes beyond usual patient experience or satisfaction measures, to use the on-the-ground view of patients to assess elements of primary care missed by usual measures and gives clinicians a distinctive and comprehensive view from a patient’s perspective.\n\n1. My practice makes it easy for me to get care.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n2. My practice is able to provide most of my care.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all \n3. In caring for me, my doctor considers all the factors that affect my health.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n4. My practice coordinates the care I get from multiple places.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n5. My doctor or practice knows me as a person.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n6. My doctor and I have been through a lot together.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n7. My doctor or practice stands up for me.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n8. The care I get takes into account knowledge of my family.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n9. The care I get in this practice is informed by knowledge of my community.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n10. Over time, my practice helps me to stay healthy.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all\n11. Over time, my practice helps me to meet my goals.\nDefinitely\t\tMostly\t\tSomewhat\t\tNot at all",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -14308,7 +14982,7 @@
     "description": "Percentage of patients aged 18 years and older who have undergone ventral hernia repair and who completed baseline and 30 day follow-up patient-reported functional status assessments, and achieved at least a 10% improvement in functional status score from baseline.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -14564,7 +15238,7 @@
     "description": "Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care and who reported a positive experience. \n\nThis measure will consist of two performance rates:\n\nAQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care \nAQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care\n\nNOTE: The measure requires that a valid survey, as defined in the numerator of AQI48a, be sent to patients between discharge from the facility and within 30 days of facility discharge. To report AQI48b, a minimum number of 20 surveys with the mandatory question completed must be reported. ** In order to be scored on this measure, clinicians must report BOTH AQI48a AND AQI48b.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -15243,7 +15917,7 @@
     "description": "Percentage of patients aged 18 years and older who had breast reconstruction who reported a score of 65 or higher on the BREAST-Q Satisfaction with Information scale, within 120 days of the procedure. \n\nThis measure is reported as three rates stratified by procedure:\n•Reporting Criteria 1: Implant Breast Reconstruction Procedures \n•Reporting Criteria 2: Autologous Breast Reconstruction Procedures\n•Total Rate: All breast reconstruction Procedures",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -15323,7 +15997,7 @@
     "description": "Percentage of patients aged 15 years and older who had a rhinoplasty procedure who demonstrated improvement* in functional and/or aesthetic satisfaction using a validated patient satisfaction tool (such as SCHNOS, NOSE, SNOT, RHINO) within a year following their procedure. \n*pre-test and post-test scores must be documented in the patient record",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -15457,7 +16131,7 @@
     "description": "Percentage of patients aged 18 and older who underwent facial reconstruction after skin cancer resection who responded to the (6 question) Face-Q Satisfaction with Information: Appearance Module within 60 days of the procedure and scored 15 (52%) or higher or if scored lower than 15 (52%) there is documentation of a provider call to the patient or follow-up visit within 30 days of completion of the tool",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -15960,7 +16634,7 @@
     "description": "Percentage of patients 18 years of age and older who obtained at least a 10% improvement in knee pain and/or function as measured by validated patient-reported outcome measures (PROMs) completed up to 90 days prior to and 9 to 15 months after undergoing primary total knee arthroplasty (TKA) surgery. PROMs include any validated measures of knee-related measures of pain and/or function, such as KOOS-Pain, KOOS-ADL, KOOS-PS, and KOOS-JR.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -15995,7 +16669,7 @@
     "description": "Percentage of patients 13 years of age and older who obtained at least a 10% improvement in knee pain and/or function as measured by validated patient-reported outcome measures (PROMs) completed up to 90 days prior to and 9 to 15 months after undergoing primary anterior cruciate ligament reconstruction (ALCR) surgery. PROMs include any validated measures of knee-related measures of pain and/or function, such as KOOS-Pain, KOOS-ADL, KOOS-PS, and KOOS-JR.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -16061,7 +16735,7 @@
     "description": "Percentage of patients 13 years of age and older who obtained at least a 10% improvement in knee pain and/or function as measured by validated patient-reported outcome measures (PROMs) completed up to 90 days prior to and 9 to 15 months after undergoing primary arthroscopic partial meniscectomy (APM) surgery. PROMs include any validated measures of knee-related measures of pain and/or function, such as KOOS-Pain, KOOS-ADL, KOOS-PS, and KOOS-JR.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -16094,7 +16768,7 @@
     "description": "Percentage of patients 18 years of age and older who obtained an improvement of at least 1 minimal clinically important difference (MCID) in hip pain and/or function as measured by validated patient-reported outcome measures (PROMs) completed up to 90 days prior to and 9 to 15 months after undergoing primary total hip arthroplasty (THA) surgery. PROMs include any validated measures of hip-related pain and/or function with MCID thresholds supported by literature, including HOOS-Pain (24 points), HOOS-PS (23 points), and HOOS-JR (18 points).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -16129,7 +16803,7 @@
     "description": "Percentage of patients 18 years of age and older who obtained an improvement of at least 1 minimal clinically important difference (MCIDO) in shoulder pain and/or function as measured by validated patient-reported outcome measures (PROMs) completed up to 90 days prior to and 9 to 15 months after undergoing primary total shoulder arthroplasty (TSA) surgery. PROMs include any validated measures of shoulder-related pain and/or function with MCID thresholds supported by literature, including PSS (11.4 points) and ASES (13.6 points).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -16965,7 +17639,7 @@
     "description": "Percentage of patients 18 years of age and older with osteoarthritis who completed baseline and follow-up patient-reported pain status assessment and reviewed the results of this assessment with their care provider.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -16998,7 +17672,7 @@
     "description": "This is a patient-reported outcome performance measure (PRO-PM) consisting of a patient-reported outcome measure (PROM) of risk-adjusted change in functional status (FS) for patients aged 14 years+ who have experienced a stroke with sequelae impacting functional abilities related to use of the foot, leg, and lower trunk. The change in FS is assessed using the Stroke Lower Extremity (SLE) FS PROM. In order to fairly measure performance between providers, the measure is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure (PM) at the patient level, individual clinician level, and clinic level to assess quality. Free public access is available at https://www.fotoinc.com/science-of-foto/nqf-measure-specifications.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -17030,7 +17704,7 @@
     "description": "This is a patient-reported outcome performance measure (PRO-PM) consisting of a patient-reported outcome measure (PROM) of risk-adjusted change in functional status (FS) for patients aged 14 years+ who have experienced a stroke with sequelae impacting functional abilities related to use of the hand, arm, and upper trunk. The change in FS is assessed using the Stroke Upper Extremity (SUE) FS PROM. In order to fairly measure performance between providers, the measure is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure (PM) at the patient level, individual clinician level, and clinic level to assess quality. Free public access is available at https://www.fotoinc.com/science-of-foto/nqf-measure-specifications.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -17062,7 +17736,7 @@
     "description": "This is a patient-reported outcome performance measure (PRO-PM) consisting of a patient-reported outcome measure (PROM) of risk-adjusted change in functional status (FS) for patients aged 14 years+ with lymphedema or other causes of regional swelling. For patients with such conditions affecting the leg, foot, groin, or lower trunk regions, the change in FS is assessed using the FOTO Lower Extremity Regional Swelling (LERS) FS PROM. For patients with such conditions affecting the arm, hand, chest, or breast body regions, the change in FS is assessed using the FOTO Upper Extremity Regional Swelling (UERS) FS PROM. In order to fairly measure performance between providers, the measure is adjusted to patient characteristics known to be associated with FS outcomes (risk adjusted) and used as a performance measure (PM) at the patient level, individual clinician level, and clinic level to assess quality. Free public access is available at https://www.fotoinc.com/science-of-foto/nqf-measure-specifications.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -17469,7 +18143,7 @@
     "description": "Percentage of patients aged 50 years and older, who are screened with a hearing loss self-assessment tool that indicated an impact on hearing-related QoL AND if diagnosed with a mild or greater hearing loss in at least one ear or identified with a hearing loss, receive an audiologic care plan and hearing loss intervention(s) AND report a meaningful clinically important difference (MCID) improvement in hearing-related quality of life (QoL) within 12 months of hearing loss diagnosis.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -17516,7 +18190,7 @@
     "description": "Percentage of patients aged 18 years and older who are screened for bothersome subjective tinnitus AND, if patient reports symptoms, assessed with clinical evaluation for tinnitus severity and impact on hearing-related quality of life (HRQoL) using a validated self-assessment tool AND, if identified with tinnitus that impacts the patients HRQoL, receive a tinnitus-related care plan, and tinnitus-related intervention(s), treatment(s), or management AND who report a meaningful clinically important difference (MCID) improvement in the impact of tinnitus on the patient’s HRQoL within 12 months of initial identification.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -17567,7 +18241,7 @@
     "description": "Percentage of patients aged 18 years and older, who report benign paroxysmal positional vertigo (BPPV)-related symptoms and are screened with a dizziness assessment questionnaire and undergo positional nystagmus testing AND, if diagnosed or identified with BPPV, received a BPPV-related care plan and vestibular intervention(s) or treatment(s) AND who have an improvement in nystagmus or report an improvement in BPPV-related symptoms, and report a meaningful clinically important difference (MCID) improvement of BPPV-related quality of life (QoL).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -17693,7 +18367,7 @@
     "description": "Percentage of patients aged 18 years or older with a functional deficit related to the low back who achieve a Minimal Clinically Important Difference (MCID) in the Modified Oswestry Low Back Pain Questionnaire (ODI) or equivalent score that indicates a functional improvement greater than zero. Two rates will be reported:\n· The overall proportion of patients achieving an MCID in NDI change score.\n· The Risk-Adjusted MCID proportional difference where the difference between the risk adjusted predicted MCID and the observed MCID (measured via NDI or equivalent tool) proportion is greater than zero.\n \nThe measure contains two goals: 1) for patients to achieve an unadjusted MCID greater than zero and, 2) for patients to achieve a risk adjusted MCID where the difference between the risk adjusted predicted MCID and the observed MCID proportion will be greater than zero. The measure is adjusted to patient characteristics known to be associated with functional status and quality of life outcomes (risk adjusted) and used as a performance measure at the patient level, at the individual clinician level, and at the clinic level to assess quality.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -17862,7 +18536,7 @@
     "description": "Percentage of patients aged 18 years and older, who are evaluated for hearing loss and complete a hearing loss self-assessment tool that indicated an impact of hearing-related quality of life (QoL), and if diagnosed with a bilateral moderate to profound sensorineural hearing loss (SNHL) and less than 60% open set speech recognition are scheduled or referred for cochlear implant candidacy testing AND for patients who undergo cochlear implantation, demonstrate a meaningful clinically important difference (MCID) improvement in self-assessment of Hearing-related QoL or an improvement in speech recognition within 18 months of cochlear implant activation.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -18058,11 +18732,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "exerciseAsStressor",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography studies using a Stress Test Type that includes exercise performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiTreatment",
+        "name": "hrAndMinExercised",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) or Stress Echocardiography exercise studies where the stress heart rate >= 85% of maximum heart rate and three or more minutes of exercise performed on patients 18 years of age or older."
       }
     ],
@@ -18101,11 +18775,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "abnormalMpiStudy",
+        "name": "perfusionDefects",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies that were abnormal and contained perfusion defects documentation including location, severity, and size performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiLvef",
+        "name": "lvefDocumented",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT), Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI), transthoracic echocardiography, or stress echocardiography imaging studies where the Left Ventricle Ejection Fraction (LVEF) was calculated and included in the report performed on patients 18 years of age or older."
       }
     ],
@@ -18144,11 +18818,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "stressOnlyProtocol",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) and Positron Emission Tomography (PET) Myocardial Perfusion Imaging (MPI) studies where the imaging protocol used was stress only performed on patients 18 years of age or older."
       },
       {
-        "name": "mpiTreatment",
+        "name": "9OrLessMillisieverts",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies where 9 or less millisieverts of radiation were administered per ASNC guideline recommendations on patients 18 years of age or older."
       }
     ],
@@ -18187,11 +18861,11 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "mpiStudy",
+        "name": "attentuationCorrectn",
         "description": "Percentage of Single Photon Emission Computed Tomography (SPECT) Myocardial Perfusion Imaging (MPI) studies using Attenuation Correction performed on patients 18 years of age or older."
       },
       {
-        "name": "appropriateForObese",
+        "name": "obesityProtocol",
         "description": "Percentage of SPECT-MPI or Stress Echocardiography imaging studies where the Imaging Protocol was appropriate for morbidly obese patients on patients 18 years of age or older."
       }
     ],
@@ -19277,7 +19951,7 @@
     "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the KOS change score for patients with knee injury treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a PT/OT performance measure at the eligible PT/OT or PT/OT group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19339,7 +20013,7 @@
     "description": "The proportion of patients failing to achieve MCID of two (2) points or more improvement in the NPRS change score for patients with knee injuries treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline KOS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19401,7 +20075,7 @@
     "description": "The proportion of patients failing to achieve an MCID of nine (9) points or more improvement in the LEFS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19463,7 +20137,7 @@
     "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with hip, leg, or ankle injuries treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: LEFS score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19525,7 +20199,7 @@
     "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the NDI change score for neck pain/injury patients treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted NDI change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19587,7 +20261,7 @@
     "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with neck pain/injury treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline NDI score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19649,7 +20323,7 @@
     "description": "The proportion of patients failing to achieve an MCID of six (6) points or more improvement in the MDQ change score for patients with low back pain treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19711,7 +20385,7 @@
     "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with low back pain treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19773,7 +20447,7 @@
     "description": "The proportion of patients failing to achieve an MCID of ten (10) points or more improvement in the DASH change score or eight (8) points or more improvement in the QDASH change score for patients with arm, shoulder, and hand injury patients treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted DASH change proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline MDQ score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit).\n\nThese measures will serve as a physical and occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19835,7 +20509,7 @@
     "description": "The proportion of patients failing to achieve an MCID of two (2) points or more improvement in the NPRS change score for patients with arm, shoulder, or hand injury treated during the observation period will be reported. \n\nAdditionally, a risk-adjusted MCID proportional difference will be determined by calculating the difference between the risk model predicted and observed MCID proportion will reported for each physical therapist or physical therapy group. The risk adjustment will be calculated using a logistic regression model using: baseline DASH score, baseline pain score, age, sex, payer, and symptom duration (time from surgery or injury to baseline physical therapy visit). \n\nThese measures will serve as a physical or occupational therapy performance measure at the eligible physical or occupational therapist or physical or occupational therapy group level.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
@@ -19929,7 +20603,7 @@
     "description": "The percentage of adult patients (18 years of age or older) with a diagnosis of ADHD who show a reduction in symptoms of 25% on the Adult ADHD Self-Report Scale (ASRS-v1.1)- 18 item self-report scale of ADHD symptoms within 2 to 10months after initially reporting significant symptoms. There are two aspects to this measure. The first is the assessment of the use of the ASRS v.1. during the denominator identification period (Criteria 1 also referred to as Time 1) and the second is the assessment of improvement in the ASRS v.1.1 from the first administration to the second administration of the ASRS v.1.1 (Criteria 2 also referred to as Time 2).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20036,7 +20710,7 @@
     "description": "The percentage of adult patients (18 years of age or older) with an anxiety disorder (generalized anxiety disorder, social anxiety disorder, or panic disorder) who demonstrated a response to treatment at 6-months (+/- 60 days) after an index visit.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -20068,7 +20742,7 @@
     "description": "The percentage of adult patients (18 years of age or older) who report chronic pain issues and demonstrated a response to treatment at one month from the index score",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20101,7 +20775,7 @@
     "description": "The percentage of adult patients (18 years of age or older) with a mood or anxiety disorder who report concerns related to their psychosocial function and demonstrated a response to treatment six months (+/- 120 days) after the index visit",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20133,7 +20807,7 @@
     "description": "Percentage of children from 3 to 17 years of age who are receiving a psychiatric or behavioral health intake visit AND who demonstrated a reliable change in parent-reported problem behaviors 2 to 10 months after initial positive screen for externalizing and internalizing behavior problems.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20176,7 +20850,7 @@
     "description": "Percentage of patients 18 years and older who reported sleep quality concerns (e.g., insomnia) with documentation of a standardized tool AND demonstrated a response to treatment at three months (+/- 60 days) after index visit",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20219,7 +20893,7 @@
     "description": "The percentage of patients with a history of a traumatic event (i.e., an experience that was unusually or especially frightening, horrible, or traumatic) who report symptoms consistent with PTSD for at least one month following the traumatic event AND with documentation of a standardized symptom monitor (PCL-5 for adults, CATS for child/adolescent) AND demonstrated a response to treatment at six months (+/- 120 days) after the index visit.\n\nThis measure is a multi-strata measure, which addresses symptom monitoring for both child and adult patients being treated for post-traumatic stress symptoms. Assessment instruments monitoring severity of symptoms for PTSD are validated either for adult or child populations. Thus, while the measurement structure will be similar for both populations, the specified instruments for symptom monitoring will be different.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20251,7 +20925,7 @@
     "description": "The percentage of adult patients (18 years of age or older) who report problems with drinking alcohol AND with documentation of a standardized screening tool (e.g., AUDIT, AUDIT-C, DAST, TAPS) AND demonstrated a response to treatment at three months (+/- 60 days) after the index visit",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20283,7 +20957,7 @@
     "description": "Percentage of children aged 4 through 18 years, with a diagnosis of attention deficit/hyperactivity disorder (ADHD), who demonstrate a change score of 0.25 or greater on the Weiss Functional Impairment Rating Scale - Parent Report (WFIRS-P) within 2 to 10 months after an initial positive finding of functional impairment.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20463,7 +21137,7 @@
     "description": "Percentage of patients with a who have a lesser toe deformity (hammer and claw toes) causing pain that receive an intervention and have clinically significant reduction in pain as a result of that intervention",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -20881,7 +21555,7 @@
     "description": "Percentage of radical prostatectomy patients that are socially continent (0 - 1 pads per day) at 12 months after surgery",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
@@ -21140,7 +21814,7 @@
     "description": "Measurement of the change in patient reported quality of life following epidural lysis of adhesions. Quality of life measurement on standardized scale includes pain, mobility, analgesic medication use, and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21172,7 +21846,7 @@
     "description": "Measurement of the change in patient reported quality of life following medial branch radiofrequency ablation. Quality of life measurement on standardized scale includes mobility, analgesic medication use, psychological well-being and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21204,7 +21878,7 @@
     "description": "Measurement of the change in patient reported quality of life following spinal cord stimular implantation for failed back surgery syndrome. Quality of life measurement on standardized scale includes pain, mobility, analgesic medication use, psychological well-being and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21236,7 +21910,7 @@
     "description": "Measurement of the change in patient reported quality of life following caudal, lumbar, thoracic, or cervical epidural corticosteroid injection. Quality of life measurement on standardized scale includes pain, mobility, psychological well-being, analgesic medication use, and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21268,7 +21942,7 @@
     "description": "Measurement of the change in patient reported quality of life following major joint corticosteroid injection. Quality of life measurement on standardized scale includes pain, mobility, analgesic medication use, and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21300,7 +21974,7 @@
     "description": "Measurement of the change in patient reported quality of life following intrathecal pump implantation. Quality of life measurement on standardized scale includes pain, mobility, psychological well-being, and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21332,7 +22006,7 @@
     "description": "Measurement of the change in patient reported quality of life following interspinous indirect decompression (spacer). Quality of life measurement on standardized scale includes pain, mobility, psychological well-being, analgesic medication use, and activities of daily living.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21812,7 +22486,7 @@
     "description": "Percentage of patients 18 years of age and older who completed a baseline and, within the CY(calendar year) reporting period of Jan. 1, 20xx - Dec.31, 20xx, a follow-up quality of life (QoL) patient-reported outcomes assessment (VR-12, SF-12, SF-36, PROMIS Global 10 or equivalent Computer Adaptive Test (CAT) assessment if available) which yielded a physical component score that showed a statistically significant improvement in comparison to initial assessment or who had already reported a score in which there is no room for statistical improvement. The use of Patient Reported Outcomes (PROs) in clinical research is well documented. In addition, the AAOS Quality Outcomes Work Group recommends that QoL PROs in the clinical setting can lead to improved care.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -21940,7 +22614,7 @@
     "description": "Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life. Two rates are reported: 1. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart. 2. Percentage of patients aged 18 and older with an active diagnosis of advanced cancer (Stage III or Stage IV) receiving chemotherapy and/or immunotherapy for treatment of cancer, who have HRQOL assessed on the FACT-G (Version 4) or PROMIS Global Health short form (Version 1.2) at least twice during the measurement period at least 90 days apart, where the most recent total score indicates the same or better quality of life.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -22207,7 +22881,7 @@
     "description": "Percentage of cancer patients currently receiving chemotherapy or radiation therapy who report significant pain improvement (high to moderate, moderate to low, or high to low) within 30 days",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -22745,7 +23419,7 @@
     "description": "Upper Extremity Edema Improvement is the percentage of procedures for patients with ESRD that present with upper\nextremity edema and report an improvement within 48 hours after an intervention has been performed.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -22905,7 +23579,7 @@
     "description": "Percentage of patients aged 18 and older with a diagnosis of heel pain who receive an intervention intended to treat the heel pain and experience a clinically significant decrease in heel pain.\nPatients who have had at least two visits during the reporting period",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -22969,7 +23643,7 @@
     "description": "Percentage of patients with a who have a hallux valgus (bunion) deformity causing pain that receive an intervention and have clinically significant reduction in pain as a result of that intervention",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23001,7 +23675,7 @@
     "description": "Percentage of patients aged 6 to 18 years with a diagnosis of heel pain who receive an intervention intended to treat the heel pain and experience a clinically significant decrease in heel pain.\nPatients who have had at least two visits during the reporting period",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23321,7 +23995,7 @@
     "description": "Calculation of the percent of patients who meet the substantial clinical benefit (SCB) thresholds for improvement in back or neck pain following a spine surgical intervention (cervical or lumbar)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23353,7 +24027,7 @@
     "description": "Calculation of the percent of patients who meet the substantial clinical benefit (SCB) thresholds for improvement in leg or arm pain following a spine surgical intervention (cervical or lumbar)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23385,7 +24059,7 @@
     "description": "Calculation of the percent of patients who meet the substantial clinical benefit (SCB) thresholds for improvement in pain-related disability following a spine surgical intervention (cervical or lumbar)",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23417,7 +24091,7 @@
     "description": "Calculation of the percent of patients who are 'Very satisfied' or 'Somewhat satisfied' with their surgical outcome following a spine surgical intervention (cervical or lumbar).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
@@ -23449,7 +24123,7 @@
     "description": "Calculation of the percent of patients who require unplanned hospital readmission following spine surgical intervention (cervical or lumbar).",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Effective Clinical Care",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": false,
@@ -23724,7 +24398,7 @@
     "description": "All eligible patients with wounds or ulcers who completed of Wound Outcome Questionnaire who showed 10% improvement at discharge or transfer to another site of care during the 12 month reporting period.",
     "nqfId": null,
     "nationalQualityStrategyDomain": "Person and Caregiver Centered Experience and Outcomes",
-    "measureType": "outcome",
+    "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
