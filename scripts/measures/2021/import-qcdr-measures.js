@@ -44,7 +44,7 @@ const config = {
         'Efficiency and Cost/Resource Use': 'efficiency',
         'Intermediate Outcome': 'intermediateOutcome',
         'Structure': 'structure',
-        'Patient Reported Outcome (PRO)': 'outcome',
+        'Patient Reported Outcome (PRO)': 'patientReportedOutcome',
         'Clinical Process Effectiveness': 'process'
       }
     },
