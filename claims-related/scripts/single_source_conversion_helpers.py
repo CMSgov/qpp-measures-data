@@ -223,9 +223,9 @@ def merge_multiple_eligibility_options(single_source_dict):
     for measure in single_source_dict:
 
         if measure.count(".") == 0:
-            option_group = 0
+            option_group = "00"
         else:
-            option_group = int(measure.split(".")[1])
+            option_group = measure.split(".")[1]
 
         curMeas = single_source_dict[measure]
         for eo in curMeas['eligibilityOptions']:
