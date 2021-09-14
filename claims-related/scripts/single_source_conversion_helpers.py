@@ -217,31 +217,31 @@ def merge_multiple_performance_options(performance_options):
 
 def merge_multiple_eligibility_options(single_source_dict):
     """Merge together measures with multiple options denominated by .00 vs .01, etc."""
-    measures_to_delete = []
+
+    merged_single_source = {}
+
     for measure in single_source_dict:
-        if re.split('\.', measure)[1] != '00':
-            measure_to_update = re.split('\.', measure)[0] + '.00'
-            # FIXME: Why is only the first eligibility option included?
-            single_source_dict[measure_to_update]['eligibilityOptions'].append(
-                single_source_dict[measure]['eligibilityOptions'][0])
-            # If the new eligibility option has new performance options as well, add those too.
 
-            new_performance_options = [json.loads(x) for x in (
-                    set(json.dumps(x_new, sort_keys=True)
-                        for x_new in single_source_dict[measure]['performanceOptions']) -
-                    set(json.dumps(x_old, sort_keys=True)
-                        for x_old in single_source_dict[measure_to_update]['performanceOptions'])
-            )]
+        if measure.count(".") == 0:
+            option_group = 0
+        else:
+            option_group = int(measure.split(".")[1])
 
-            single_source_dict[measure_to_update]['performanceOptions'] += new_performance_options
+        curMeas = single_source_dict[measure]
+        for eo in curMeas['eligibilityOptions']:
+            eo["optionGroup"] = option_group
+        for po in curMeas["performanceOptions"]:
+            po["optionGroup"] = option_group
 
-            measures_to_delete.append(measure)
+        merged_measure_id = measure.split(".")[0]
+        merged_data = merged_single_source.get(merged_measure_id, {})
+        merged_data["eligibilityOptions"] = merged_data.get("eligibilityOptions", []) + \
+                                            curMeas["eligibilityOptions"]
+        merged_data["performanceOptions"] = merged_data.get("performanceOptions", []) + \
+                                            curMeas["performanceOptions"]
+        merged_single_source[merged_measure_id] = merged_data
 
-    # Remove the measures that don't end in .00.
-    for measure in measures_to_delete:
-        single_source_dict.pop(measure)
-
-    return single_source_dict
+    return merged_single_source
 
 
 def add_row_level_information_to_dataframe(single_source_df):
