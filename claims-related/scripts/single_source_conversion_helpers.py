@@ -27,7 +27,7 @@ def determine_element_category(element):
     """Determine the category that the data_element belongs to."""
     # FIXME: Allow for case-insensitive treatment of these strings.
     for category in (QUALITY_CODE_CATEGORY):
-        if element.endswith(category):
+        if len(re.findall(".*{}_*\d*".format(category), element)) != 0:
             return category
 
     # Use starts_with to cover the case of additional diagnosis codes, which end in _B.
@@ -41,7 +41,7 @@ def determine_element_category(element):
         return 'ADDITIONAL_PROCEDURE_CODE'
 
     # Drop duplicate PD elements, since these are capture in PN, PN_X, etc.
-    if element.endswith('_PD'):
+    if len(re.findall(".*_PD_?\d?$", element)) != 0:
         return 'DROP'
 
     # If the data element is not something we know how to handle, raise an error.
