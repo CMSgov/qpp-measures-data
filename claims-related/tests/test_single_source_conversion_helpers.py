@@ -1,7 +1,10 @@
 """Tests for single_source_conversion_helpers.py."""
 import itertools
 import pytest
-
+import sys
+import os
+import json
+sys.path.insert(0, "{}/../scripts".format(os.path.abspath(os.path.curdir)))
 from scripts import single_source_conversion_helpers
 
 import pandas as pd
@@ -144,22 +147,34 @@ def test_merge_multiple_eligibility_options():
     """Test merging of multiple eligibility options"""
     input = {
         "01.00": {
-            "eligibilityOptions": ["elOpt1", "elOpt2"],
+            "eligibilityOptions": [{"elOpt1": "elVal1"}, {"elOpt2": "elVal2"}],
             "performanceOptions": [{"pOpt1": "pval1"}, {"pOpt2": "pval2"}]
         },
         "01.01": {
-            "eligibilityOptions": ["elOpt3", "elOpt4"],
+            "eligibilityOptions": [{"elOpt3": "elVal3"}, {"elOpt4": "elVal4"}],
             "performanceOptions": [{"pOpt3": "pval3"}, {"pOpt2": "pval2"}]
         }
     }
     expected_output = {
-        "01.00": {
-            "eligibilityOptions": ["elOpt1", "elOpt2", "elOpt3"],
-            "performanceOptions": [{"pOpt1": "pval1"}, {"pOpt2": "pval2"}, {"pOpt3": "pval3"}]
+        "01": {
+            "eligibilityOptions": [
+                {"elOpt1": "elVal1", "optionGroup": "00"},
+                {"elOpt2": "elVal2", "optionGroup": "00"},
+                {"elOpt3": "elVal3", "optionGroup": "01"},
+                {"elOpt4": "elVal4", "optionGroup": "01"}
+            ],
+            "performanceOptions": [
+                {"pOpt1": "pval1", "optionGroup": "00"},
+                {"pOpt2": "pval2", "optionGroup": "00"},
+                {"pOpt2": "pval2", "optionGroup": "01"},
+                {"pOpt3": "pval3", "optionGroup": "01"}
+            ]
         }
     }
     output = single_source_conversion_helpers.merge_multiple_eligibility_options(input)
-    assert output == expected_output
+    srt_out = [json.dumps(s, sort_keys=True) for s in output]
+    srt_expected = [json.dumps(s, sort_keys=True) for s in expected_output]
+    assert srt_out == srt_expected
 
 
 class TestRowToDictFunctions():
