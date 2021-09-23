@@ -1,10 +1,7 @@
 """Tests for single_source_conversion_helpers.py."""
 import itertools
 import pytest
-import sys
-import os
 import json
-sys.path.insert(0, "{}/../scripts".format(os.path.abspath(os.path.curdir)))
 from scripts import single_source_conversion_helpers
 
 import pandas as pd

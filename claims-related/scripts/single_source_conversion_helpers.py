@@ -274,14 +274,11 @@ def add_row_level_information_to_dataframe(single_source_df):
     single_source_df.modifier.fillna('', inplace=True)
     single_source_df['modifiers'], single_source_df['modifierExclusions'] = \
         zip(*single_source_df['modifier'].map(convert_inclusion_exclusion_string_to_lists))
-        #list(single_source_df['modifier'].apply(convert_inclusion_exclusion_string_to_lists)) #.astype(list)
 
     # Process places of service (POS) into two lists: POS to include, POS to exclude.
     single_source_df.place_of_service.fillna('', inplace=True)
     single_source_df['placesOfService'], single_source_df['placesOfServiceExclusions'] = \
         zip(*single_source_df['place_of_service'].map(convert_inclusion_exclusion_string_to_lists))
-        # list(single_source_df['place_of_service'].apply(
-            # convert_inclusion_exclusion_string_to_lists)) #.astype(list)
 
     # Assign additional diagnosis codes if present.
     single_source_df['is_additional_diagnosis_code'] = single_source_df['data_element_name'].apply(
@@ -321,13 +318,13 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
             codeset_df['element_category'].isin(ENC_PROC_CODE_CATEGORY)
         ].apply(
             lambda row: procedure_codes_to_dict(row), axis=1, result_type = 'reduce'
-        )) #.tolist()
+        ))
 
         additional_procedure_codes = list(codeset_df[
             codeset_df['element_category'].isin(ADDITIONAL_ENC_PROC_CODE_CATEGORY)
         ].apply(
             lambda row: procedure_codes_to_dict(row), axis=1, result_type = 'reduce'
-        )) #.tolist()
+        ))
 
         dx_codes_df = codeset_df[codeset_df['element_category'].isin(DX_CODE_CATEGORY)]
 
