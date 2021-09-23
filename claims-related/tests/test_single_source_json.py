@@ -263,7 +263,6 @@ def format_source_procedure_codes(single_source_df):
     # Scrape and format csv diagnosis codes
     for row in single_source_df.itertuples():
         if any(len(re.findall(x, row.data_element_name)) > 0 for x in ["PROC_CODE_?\d?$", "ENCOUNTER_CODE_?\d?$"]):
-        # if any(x in row.data_element_name for x in ["PROC_CODE", "ENCOUNTER_CODE"]):
             # Format the measure id from the CSV.
             measure_id = "{:03.0f}".format(float(row.measure))
             measure_decimal = int(row.measure[-1:])
@@ -579,11 +578,9 @@ def test_performance_options(single_source_df, single_source_output_json):
         "G_CODE_DENOM_CODE.*",
         "CPT_II_DENOM_CODE.*",
     ]
-    # single_source_df = single_source_df[single_source_df["measure"] == "024.00"]
+
     for row in single_source_df.itertuples():
-        if (
-            # any(x in row.measure for x in [".01", ".02"]) and row.codeset_number == -1
-        ) or any(len(re.findall(x, row.data_element_name)) > 0 for x in perf_names):
+        if any(len(re.findall(x, row.data_element_name)) > 0 for x in perf_names):
             continue
 
         measure_id = "{:03.0f}".format(float(row.measure))
