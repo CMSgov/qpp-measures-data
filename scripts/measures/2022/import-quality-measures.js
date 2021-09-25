@@ -123,7 +123,9 @@ const MEASURE_SETS = [
   'chiropracticMedicine',
   'clinicalSocialWork',
   'audiology',
-  'speechLanguagePathology'
+  'speechLanguagePathology',
+  'clinicalSocialWork',
+  'certifiedNurseMidwife'
 ];
 
 // map program names from the appropriate fields
