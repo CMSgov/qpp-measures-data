@@ -5,8 +5,8 @@ import os
 import pandas as pd
 from pprint import pprint
 
-CURRENT_YEAR = "2020"
-CSV_VERSION = "v1.4"
+CURRENT_YEAR = "2021"
+CSV_VERSION = "v1.2"
 
 # Source data files. QPP_MEASURES_DATA_ROOT needs configuring.
 QPP_MEASURES_DATA_ROOT = "../"
@@ -53,7 +53,11 @@ def single_source_df():
     native_ss["codeset_number"] = native_ss["data_element_name"].str.extract(
         r"_([0-9]+)", expand=False
     )
+    native_ss["option_group"] = native_ss["measure"].str.extract(
+        r"\.([0-9]+)", expand=False
+    ).str.zfill(2)
     native_ss["codeset_number"].fillna(-1, inplace=True)
+    native_ss["option_group"].fillna("00", inplace=True)
     native_ss["codeset_number"] = native_ss["codeset_number"].astype(int)
     dx_two = re.compile("^DX_CODE_2")
     for row in native_ss.itertuples():
@@ -258,16 +262,16 @@ def format_source_procedure_codes(single_source_df):
     source_proc_codes = {}
     # Scrape and format csv diagnosis codes
     for row in single_source_df.itertuples():
-        if any(x in row.data_element_name for x in ["PROC_CODE", "ENCOUNTER_CODE"]):
+        if any(len(re.findall(x, row.data_element_name)) > 0 for x in ["PROC_CODE_?\d?$", "ENCOUNTER_CODE_?\d?$"]):
             # Format the measure id from the CSV.
             measure_id = "{:03.0f}".format(float(row.measure))
             measure_decimal = int(row.measure[-1:])
             proc_obj = {}
 
-            if any(x == row.data_element_name for x in ["PROC_CODE", "ENCOUNTER_CODE"]):
-                i = 0
-            else:
+            if row.data_element_name.split("_")[-1].isnumeric():
                 i = int(row.data_element_name[-1:]) - 1
+            else:
+                i = 0
 
             if measure_decimal > i:
                 i = measure_decimal
@@ -404,6 +408,7 @@ def match_perf_opts(single_source_df_perf_opts, perf_opt, measure_id):
         if (
             perf_opt["optionType"] == opt["optionType"]
             and perf_opt["codeset"] == opt["codeset"]
+            and perf_opt["optionGroup"] == opt["optionGroup"]
         ):
             return i
 
@@ -421,7 +426,14 @@ def compare_dicts(source_dict, output_dict):
     error_dict = {}
     for measure_id, measure in source_dict.items():
         if measure_id in output_dict:
-            if measure != output_dict[measure_id]:
+            output_measure = output_dict[measure_id]
+            if isinstance(measure, list):
+                measure_comp = sorted(json.dumps(x, sort_keys=True) for x in measure)
+                output_measure_comp = sorted(json.dumps(x, sort_keys=True) for x in output_measure)
+            else:
+                measure_comp = measure
+                output_measure_comp = output_measure
+            if measure_comp != output_measure_comp:
                 error_dict[measure_id] = {
                     "error": "Measure ID " + measure_id + " values are not equal.",
                     "values": {"source": measure, "output": output_dict[measure_id]},
@@ -451,7 +463,7 @@ def test_measure_id(single_source_df, measures_source_json, single_source_output
     for measure in single_source_output_json:
         output_measures = format_json_measure_id(output_measures, measure)
 
-    assert output_measures == source_measures
+    assert sorted(output_measures) == sorted(source_measures)
 
 
 def test_dx_code(source_diagnosis_codes, single_source_output_json):
@@ -560,32 +572,35 @@ def test_performance_options(single_source_df, single_source_output_json):
 
     pd_list = {}
     perf_names = [
-        "PROC_CODE",
-        "DX_CODE",
-        "ENCOUNTER_CODE",
-        "G_CODE_DENOM_CODE",
-        "CPT_II_DENOM_CODE",
+        "PROC_CODE$",
+        "DX_CODE$",
+        "ENCOUNTER_CODE.*",
+        "G_CODE_DENOM_CODE.*",
+        "CPT_II_DENOM_CODE.*",
     ]
 
     for row in single_source_df.itertuples():
-        if (
-            any(x in row.measure for x in [".01", ".02"]) and row.codeset_number == -1
-        ) or any(x in row.data_element_name for x in perf_names):
+        if any(len(re.findall(x, row.data_element_name)) > 0 for x in perf_names):
             continue
 
         measure_id = "{:03.0f}".format(float(row.measure))
 
-        if row.data_element_name.endswith("PD"):
+        if len(re.findall("PD_?\d?$", row.data_element_name)) != 0:
             pd_list[measure_id] = row.data_element_name
             continue
 
         if measure_id not in source_dict:
             source_dict[measure_id] = []
 
-        perf_opt = {"qualityCodes": [], "codeset": row.codeset_number}
+        perf_opt = {"qualityCodes": [], "codeset": row.codeset_number, "optionType": None,
+                    "optionGroup": row.option_group}
+
         for key in perf_opts_map.keys():
-            if row.data_element_name.endswith(key):
+            if len(re.findall("{}_?\d?$".format(key), row.data_element_name)) != 0:
                 perf_opt["optionType"] = perf_opts_map[key]
+                perf_opt["optionGroup"] = row.option_group
+            else:
+                continue
         quality_code_obj = {"code": row.code}
 
         if pd.notnull(row.modifier):
@@ -621,6 +636,9 @@ def test_performance_options(single_source_df, single_source_output_json):
                 source_dict[measure_id][index]["qualityCodes"].append(quality_code_obj)
                 continue
 
+        if perf_opt["optionType"] is None:
+            continue
+
         perf_opt["qualityCodes"].append(quality_code_obj)
         source_dict[measure_id].append(perf_opt)
 
@@ -630,7 +648,8 @@ def test_performance_options(single_source_df, single_source_output_json):
 
     for measure in single_source_output_json:
         if "performanceOptions" in measure:
-            output_dict[measure["measureId"]] = measure["performanceOptions"]
+            m_id = measure["measureId"].split(".")[0]
+            output_dict[m_id] = output_dict.get(m_id, []) + measure["performanceOptions"]
 
     # Sort step needed for unordered lists of dictionaries
     source_dict = {k: sorted(v, key=lambda x: x["optionType"]) for k, v in source_dict.items()}
