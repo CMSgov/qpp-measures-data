@@ -5,7 +5,7 @@ services:
     volumes:
       - ./:/home/jovyan/work:rw
       - ../measures/:/home/jovyan/measures:rw
-      - ../:/home/:ro
+      - ../:/home/:rw
     command: bash -c "start-notebook.sh --NotebookApp.token=''"
     ports:
       - 8888:8888
