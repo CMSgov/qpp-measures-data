@@ -22,7 +22,7 @@ const _ = require('lodash');
 const parse = require('csv-parse/lib/sync');
 
 const MAX_SPECIALITY_SET_SIZE = 6;
-const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020];
+const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020, 2021];
 
 let measuresJson = '';
 const performanceYear = parseInt(process.argv[2], 10);
@@ -50,6 +50,10 @@ const specialSpecialtySetRelations = {
     registry: []
   },
   2020: {
+    claims: [],
+    registry: []
+  },
+  2021: {
     claims: [],
     registry: []
   }
@@ -137,6 +141,10 @@ const specialClusterRelations = {
     ]
   },
   2020: {
+    claims: [],
+    registry: []
+  },
+  2021: {
     claims: [],
     registry: []
   }
