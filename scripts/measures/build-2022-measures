@@ -52,7 +52,7 @@ node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
 
 # Uncomment the below data set ingestion scripts as we receive the data for 2020
 
-3. Add CAHPS measures to the staging cahps-measures.json file:
+# 3. Add CAHPS measures to the staging cahps-measures.json file:
 node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
 	$cahps_csv $cahps_measures
 

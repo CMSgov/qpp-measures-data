@@ -23,16 +23,13 @@ const CONSTANT_FIELDS = {
   isRegistryMeasure: false,
   isRiskAdjusted: false,
   icdImpacted: [],
+  isClinicalGuidelineChanged: false,
+  isIcdImpacted: false,
   clinicalGuidelineChanged: []
 };
 
-// Ignored fields are present in the source CSV but not imported
-// into measures data by this script
-const IGNORED_FIELDS = [
-  'eMeasureUuid',
-  'numStrataClaims',
-  'numStrataRegistry',
-  'numStrataEcqm'
+const REFERENCED_FIELDS = [
+  'numStrataRegistry'
 ];
 
 // Main set of fields below mapped to their default values
@@ -48,14 +45,12 @@ const MAIN_FIELDS = {
   nationalQualityStrategyDomain: undefined,
   measureType: undefined,
   primarySteward: undefined,
-  metricType: null,
+  // metricType: null,
   firstPerformanceYear: 2017,
   lastPerformanceYear: null,
   isHighPriority: false,
   isInverse: false,
-  overallAlgorithm: undefined,
-  isClinicalGuidelineChanged: false,
-  isIcdImpacted: false
+  overallAlgorithm: undefined
 };
 
 // Source CSV column names below are mapped to their measures data names
@@ -69,13 +64,13 @@ const SUBMISSION_METHODS = {
 };
 
 // Source CSV column names below are identical to their measures data names so no mapping
-const MEASURE_SPECIFICATIONS = [
-  `default`,
-  `claims`,
-  `registry`,
-  `cmsWebInterface`,
-  `electronicHealthRecord`
-];
+// const MEASURE_SPECIFICATIONS = [
+//   `default`,
+//   `claims`,
+//   `registry`,
+//   `cmsWebInterface`,
+//   `electronicHealthRecord`
+// ];
 
 const MEASURE_SETS = [
   'allergyImmunology',
@@ -131,7 +126,6 @@ const MEASURE_SETS = [
 // map program names from the appropriate fields
 const PROGRAMS = {
   programMIPS: 'mips',
-  programCPCPlus: 'cpcPlus',
   programPCF: 'pcf',
   programAPP1: 'app1'
 };
@@ -150,15 +144,47 @@ const MEASURE_TYPES = {
   'efficiency': 'efficiency',
   'intermediate outcome': 'intermediateOutcome',
   'structure': 'structure',
-  'patient reported outcome': 'patientReportedOutcome'
+  'patient reported outcome': 'patientReportedOutcome',
+  'patient-reported outcome-based performance measure': 'patientReportedOutcome'
 };
+
+const OVERALL_ALGORITHMS = {
+  'simple average': 'simpleAverage',
+  'weighted average': 'weightedAverage',
+  'sum numerators': 'sumNumerators',
+  'overall stratum only': 'overallStratumOnly'
+};
+
+// Measure IDs for CAHPS Measures
+const CAHPS_MEASURES = [
+  'ACO321',
+  '321'
+];
+
+// Measure IDs for CostScore Measures
+const COST_MEASURES = [
+  '458',
+  '479',
+  '480',
+  '484'
+];
 
 // markers are what the CSV creators chose as field values;
 // they use different conventions for different columns
+// any perf year that is not the current year, that is not in a date column, should be ignored
 const MARKERS = {
   truthy: ['true', 'x', 'y'],
-  falsy: ['false', 'null', 'n/a', '-', 'n']
+  falsy: ['false', 'null', 'n/a', '-', 'n', ...(_.initial(Constants.validPerformanceYears))]
 };
+
+const ALL_MEASURE_FIELDS = Object.keys(MAIN_FIELDS).concat(
+  _.keys(SUBMISSION_METHODS),
+  _.keys(PROGRAMS),
+  _.keys(REQUIRED_FOR_PROGRAM),
+  MEASURE_SETS,
+  // MEASURE_SPECIFICATIONS,
+  REFERENCED_FIELDS
+);
 
 function getCsv(csvPath, firstNonHeaderRow) {
   const csv = fs.readFileSync(path.join(__dirname, csvPath), 'utf8');
@@ -168,26 +194,10 @@ function getCsv(csvPath, firstNonHeaderRow) {
 // Make sure the quality CSV isn't missing any fields, and doesn't have any
 // extra unrecognized fields either (besides IGNORED_FIELDS)
 function checkQualityCsvHeaders(parsedCsv) {
-  const allMeasureFields = Object.keys(MAIN_FIELDS).concat(
-    _.keys(SUBMISSION_METHODS),
-    _.keys(PROGRAMS),
-    _.keys(REQUIRED_FOR_PROGRAM),
-    MEASURE_SETS,
-    MEASURE_SPECIFICATIONS,
-    IGNORED_FIELDS
-  );
   const allCsvFields = _.keys(_.head(parsedCsv));
-
-  if (!_.isEmpty(_.xor(allMeasureFields, allCsvFields))) {
-    let errorMsg = 'Check the quality CSV header row. ';
-    const missingFieldsInCsv = _.difference(allMeasureFields, allCsvFields);
-    const extraFieldsInCsv = _.difference(allCsvFields, allMeasureFields);
-    if (!_.isEmpty(missingFieldsInCsv)) {
-      errorMsg += '\nThe CSV is missing fields: ' + missingFieldsInCsv;
-    } else if (!_.isEmpty(extraFieldsInCsv)) {
-      errorMsg += '\nThe CSV has unrecognized fields: ' + extraFieldsInCsv;
-    }
-    throw Error(errorMsg);
+  const missingFieldsInCsv = _.difference(ALL_MEASURE_FIELDS, allCsvFields);
+  if (!_.isEmpty(missingFieldsInCsv)) {
+    throw Error('The CSV is missing fields: ' + missingFieldsInCsv);
   }
 }
 
@@ -198,37 +208,56 @@ function mapInput(rawInput, fieldName) {
 
   if (fieldName === 'measureType') {
     return MEASURE_TYPES[input];
-  }
-
-  if (fieldName === 'description') {
-    return rawInput.trim().replace(/(\r\n\t|\n|\r|\r\t)/gm, '');
-  }
-
-  if (MARKERS.truthy.includes(input)) {
-    return true;
-  } else if (MARKERS.falsy.includes(input)) {
-    // we return false here; the eventual value will be the default value in
-    // QUALITY_CSV_CONFIG, e.g. null
-    return false;
-  } else {
-    // Specific fields with potentially truthy or falsy (e.g. N/A) values go below
-    if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
-      if (Constants.validPerformanceYears.includes(Number(input))) {
-        return Number(input);
-      } else {
-        throw Error(input + ' in field ' + fieldName + ' is not a valid performance year');
-      }
+  } else if (fieldName === 'overallAlgorithm') {
+    if (MARKERS.falsy.includes(input)) {
+      return undefined;
+    } else if (OVERALL_ALGORITHMS[input]) {
+      return OVERALL_ALGORITHMS[input];
+    } else if (/^\d+/.test(input)) {
+      // numeric values indicate an overall stratum
+      return 'overallStratumOnly';
+    } else {
+      // unknown value, will trigger validation error
+      return 'unknown';
     }
-
-    // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
-    if (fieldName === 'measureId') {
-      return _.padStart(input, 3, '0').toUpperCase();
-    } else if (fieldName === 'nqfId') {
+  } else if (['description', 'primarySteward', 'title'].includes(fieldName)) {
+    let text = rawInput.trim();
+    // replace non-standard dashes
+    text = text.replace(/\p{Pd}/gm, '-');
+    // replace non-standard quotes
+    text = text.replace(/(“|”)/gm, '"');
+    text = text.replace(/’/gm, '\'');
+    // remove non printing and non-ascii characters (not in the 0-127 block)
+    // eslint-disable-next-line no-control-regex
+    text = text.replace(/(\r\n\t|\n|\r|\r\t|[^\x00-\x7F])/gm, '');
+    return text;
+  } else if (fieldName === 'firstPerformanceYear' || fieldName === 'lastPerformanceYear') {
+    if (Constants.validPerformanceYears.includes(Number(input))) {
+      return Number(input);
+    } else {
+      return null;
+    }
+  } else if (fieldName === 'measureId') { // Excel strips leading zeroes from the measureIds/nqfIds and we restore them here
+    return _.padStart(input, 3, '0').toUpperCase();
+  } else if (fieldName === 'nqfId') {
+    if (MARKERS.falsy.includes(input)) {
+      return null;
+    } else {
       return _.padStart(input, 4, '0');
     }
   }
 
-  return rawInput.trim();
+  // Some fields have values for multiple years, but should include a truthy identifier if the value is true for current year
+  const firstValue = _.first(_.split(input, /\s/));
+  if (MARKERS.truthy.includes(input) || MARKERS.truthy.includes(firstValue)) {
+    return true;
+  } else if (MARKERS.falsy.includes(input) || MARKERS.falsy.includes(firstValue)) {
+    // we return false here; the eventual value will be the default value in
+    // QUALITY_CSV_CONFIG, e.g. null
+    return false;
+  } else {
+    return rawInput.trim();
+  }
 }
 
 // loop through all the strata in the strata csv and add them to the measure object
@@ -281,48 +310,65 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     const measureSpecification = {};
     const allowedPrograms = [];
     const requiredForPrograms = [];
+    let perfRates;
 
     // loop through each row of quality-measures.csv (which we've already
     // parsed into objects with csv headers as keys and row values as values)
     // and use the associated header to decide how to process each column value.
     _.each(row, (userInput, fieldName) => {
-      const input = mapInput(userInput, fieldName);
-      if (_.has(MAIN_FIELDS, fieldName)) {
-        measure[fieldName] = input || MAIN_FIELDS[fieldName];
-      } else if (SUBMISSION_METHODS[fieldName]) {
-        // multiple csv columns map into the submission methods measure field
-        if (input === true) {
-          submissionMethods.push(SUBMISSION_METHODS[fieldName]);
+      if (ALL_MEASURE_FIELDS.includes(fieldName)) {
+        const input = mapInput(userInput, fieldName);
+        if (_.has(MAIN_FIELDS, fieldName)) {
+          measure[fieldName] = input || MAIN_FIELDS[fieldName];
+        } else if (SUBMISSION_METHODS[fieldName]) {
+          // multiple csv columns map into the submission methods measure field
+          if (input === true) {
+            submissionMethods.push(SUBMISSION_METHODS[fieldName]);
+          }
+        } else if (PROGRAMS[fieldName]) {
+          // multiple csv columns map into the programs measure field
+          if (input === true) {
+            allowedPrograms.push(PROGRAMS[fieldName]);
+          }
+        } else if (REQUIRED_FOR_PROGRAM[fieldName]) {
+          // multiple csv columns map into the requiredForProgram measure field
+          if (input === true) {
+            requiredForPrograms.push(REQUIRED_FOR_PROGRAM[fieldName]);
+          }
+        } else if (MEASURE_SETS.includes(fieldName)) {
+          // multiple csv columns map into the measure sets measure field
+          if (input === true) {
+            measureSets.push(fieldName);
+          }
+        // } else if (MEASURE_SPECIFICATIONS.includes(fieldName)) {
+        //   // measure spec columns are stored within the measureSpecification object
+        //   if (input) {
+        //     measureSpecification[fieldName] = input;
+        //   }
+        } else if (fieldName === 'numStrataRegistry') {
+          perfRates = input;
         }
-      } else if (PROGRAMS[fieldName]) {
-        // multiple csv columns map into the programs measure field
-        if (input === true) {
-          allowedPrograms.push(PROGRAMS[fieldName]);
-        }
-      } else if (REQUIRED_FOR_PROGRAM[fieldName]) {
-        // multiple csv columns map into the requiredForProgram measure field
-        if (input === true) {
-          requiredForPrograms.push(REQUIRED_FOR_PROGRAM[fieldName]);
-        }
-      } else if (MEASURE_SETS.includes(fieldName)) {
-        // multiple csv columns map into the measure sets measure field
-        if (input === true) {
-          measureSets.push(fieldName);
-        }
-      } else if (MEASURE_SPECIFICATIONS.includes(fieldName)) {
-        // measure spec columns are stored within the measureSpecification object
-        if (input) {
-          measureSpecification[fieldName] = input;
-        }
-      }
+      } // else ignore unused fields
     });
 
     _.each(CONSTANT_FIELDS, (measureValue, measureKey) => {
       measure[measureKey] = measureValue;
     });
 
+    let metricType;
+    if (CAHPS_MEASURES.includes(measure.measureId)) {
+      metricType = 'cahps';
+    } else if (COST_MEASURES.includes(measure.measureId)) {
+      metricType = 'costScore';
+    } else if (perfRates === '1') {
+      metricType = 'singlePerformanceRate';
+    } else {
+      metricType = 'multiPerformanceRate';
+    }
+
     // We don't assign these directly to `measure` above because we want to
     // maintain legacy key ordering for easy diffing in measures-data.json
+    measure['metricType'] = metricType;
     measure['allowedPrograms'] = allowedPrograms;
     requiredForPrograms.length && (measure['requiredForPrograms'] = requiredForPrograms);
     measure['submissionMethods'] = submissionMethods;
@@ -331,7 +377,9 @@ function convertQualityStrataCsvsToMeasures(qualityCsvRows, strataCsvRows) {
     return measure;
   });
 
-  return addMultiPerformanceRateStrata(measures, strataCsvRows);
+  const activeMeasures = _.filter(measures, (measure) => _.isNull(measure.lastPerformanceYear) || measure.lastPerformanceYear > Constants.currentPerformanceYear);
+
+  return addMultiPerformanceRateStrata(activeMeasures, strataCsvRows);
 }
 
 function importQualityMeasures() {

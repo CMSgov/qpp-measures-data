@@ -63,7 +63,12 @@ function convertCostCsvsToMeasures(costCSVRows) {
     const measure = {};
     measure['category'] = 'cost';
     if (row['description']) {
+      // clean up whitespace
       row['description'] = row['description'].replace(/(\r\n\t|\n|\r\t)/gm, '');
+      // clean up quotes
+      row['description'] = row['description'].replace(/(“|”)/gm, '"');
+      // clean up apostrophes
+      row['description'] = row['description'].replace(/(’)/gm, '\'');
     }
     _.each(COST_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
       if (measureKeyName === 'submissionMethods') {
