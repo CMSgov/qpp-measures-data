@@ -288,7 +288,7 @@ def add_row_level_information_to_dataframe(single_source_df):
     # Parts of a multiple code set grouping will have codeset number equal to that grouping number,
     # e.g. '_2' --> 2. Rows that are not part of a multiple code set will have codeset_number -1.
     single_source_df['codeset_number'] = \
-        single_source_df['data_element_name'].str.extract(r'_([0-9]+)', expand=False)
+        single_source_df['data_element_name'].str.extract(r'_([0-9]+)_', expand=False)
     single_source_df['codeset_number'].fillna(-1, inplace=True)
     single_source_df['codeset_number'] = single_source_df['codeset_number'].astype(int)
     
