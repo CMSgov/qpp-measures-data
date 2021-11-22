@@ -27,6 +27,22 @@ const PI_CSV_COLUMN_NAMES = {
   'exclusion': 'exclusion'
 };
 
+const OBJECTIVES = {
+  'attestation': 'attestation',
+  'public health and clinical data registry reporting': 'publicHealthAndClinicalDataRegistryReporting',
+  'health information exchange': 'healthInformationExchange',
+  'e-prescribing': 'electronicPrescribing',
+  'coordination of care through patient engagement': 'coordinationOfCareThroughPatientEngagement',
+  'patient electronic access': 'patientElectronicAccess',
+  'protect patient health information': 'protectPatientHealthInformation',
+  'public health reporting': 'publicHealthReporting',
+  'medication reconciliation': 'medicationReconciliation',
+  'patient specific education': 'patientSpecificEducation',
+  'secure messaging': 'secureMessaging',
+  'public health and clinical data exchange': 'publicHealthAndClinicalDataExchange',
+  'provider to patient exchange': 'providerToPatientExchange'
+};
+
 // Accounts for TRUE, True, true, X, x...
 // and people sometimes insert extra spaces
 function cleanInput(input) {
@@ -69,11 +85,13 @@ function convertPiCsvsToMeasures(piCSVRows) {
       if (measureKeyName === 'measureSets') {
         measure[measureKeyName] = mapInput(row[columnName]) === null ? [] : [].push(row[columnName]);
       } else if (measureKeyName === 'substitutes') {
-        measure[measureKeyName] = _.isEmpty(row[columnName]) ? [] : [].concat(row[columnName].toString().split(','));
+        row[columnName] = row[columnName].replace(/N\/A/gmi, '');
+        measure[measureKeyName] = _.isEmpty(row[columnName]) ? [] : [].concat(_.map(row[columnName].toString().split(','), _.trim));
       } else if (measureKeyName === 'exclusion') {
-        measure[measureKeyName] = _.isEmpty(row[columnName]) ? null : [].concat(row[columnName].toString().split(','));
+        row[columnName] = row[columnName].replace(/N\/A/gmi, '');
+        measure[measureKeyName] = _.isEmpty(row[columnName]) ? null : [].concat(_.map(row[columnName].toString().split(','), _.trim));
       } else if (measureKeyName === 'objective') { // Values need to be camel-cased, but come in as separate words
-        measure[measureKeyName] = _.camelCase(row[columnName]);
+        measure[measureKeyName] = OBJECTIVES[_.toLower(_.trim(row[columnName]))];
       } else {
         measure[measureKeyName] = mapInput(row[columnName]);
       }
