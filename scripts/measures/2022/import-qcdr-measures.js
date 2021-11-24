@@ -334,6 +334,6 @@ const benchmarksMetadataPath = process.argv[5];
 const benchmarksMetadataData = fs.readFileSync(path.join(__dirname, benchmarksMetadataPath), 'utf8');
 const benchmarksMetadata = parse(benchmarksMetadataData, { columns: true, skip_empty_lines: true });
 
-const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, benchmarksMetadata, measuresDataPath);
+const newMeasures = importMeasures(measuresDataPath, qcdrMeasuresDataPath, qcdrStrataNamesDataPath, measuresDataPath);
 mergeBenchmarkMetadata(newMeasures, benchmarksMetadata, true);
 fs.writeFileSync(path.join(__dirname, measuresDataPath), JSON.stringify(newMeasures, null, 2));
