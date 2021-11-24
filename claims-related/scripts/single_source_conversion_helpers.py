@@ -27,7 +27,7 @@ def determine_element_category(element):
     """Determine the category that the data_element belongs to."""
     # FIXME: Allow for case-insensitive treatment of these strings.
     for category in (QUALITY_CODE_CATEGORY):
-        if element.endswith(category):
+        if len(re.findall(".*{}_*\d*".format(category), element)) != 0:
             return category
 
     # Use starts_with to cover the case of additional diagnosis codes, which end in _B.
@@ -41,7 +41,7 @@ def determine_element_category(element):
         return 'ADDITIONAL_PROCEDURE_CODE'
 
     # Drop duplicate PD elements, since these are capture in PN, PN_X, etc.
-    if element.endswith('_PD'):
+    if len(re.findall(".*_PD_?\d?$", element)) != 0:
         return 'DROP'
 
     # If the data element is not something we know how to handle, raise an error.
@@ -217,31 +217,31 @@ def merge_multiple_performance_options(performance_options):
 
 def merge_multiple_eligibility_options(single_source_dict):
     """Merge together measures with multiple options denominated by .00 vs .01, etc."""
-    measures_to_delete = []
+
+    merged_single_source = {}
+
     for measure in single_source_dict:
-        if re.split('\.', measure)[1] != '00':
-            measure_to_update = re.split('\.', measure)[0] + '.00'
-            # FIXME: Why is only the first eligibility option included?
-            single_source_dict[measure_to_update]['eligibilityOptions'].append(
-                single_source_dict[measure]['eligibilityOptions'][0])
-            # If the new eligibility option has new performance options as well, add those too.
 
-            new_performance_options = [json.loads(x) for x in (
-                    set(json.dumps(x_new, sort_keys=True)
-                        for x_new in single_source_dict[measure]['performanceOptions']) -
-                    set(json.dumps(x_old, sort_keys=True)
-                        for x_old in single_source_dict[measure_to_update]['performanceOptions'])
-            )]
+        if measure.count(".") == 0:
+            option_group = "00"
+        else:
+            option_group = measure.split(".")[1]
 
-            single_source_dict[measure_to_update]['performanceOptions'] += new_performance_options
+        curMeas = single_source_dict[measure]
+        for eo in curMeas['eligibilityOptions']:
+            eo["optionGroup"] = option_group
+        for po in curMeas["performanceOptions"]:
+            po["optionGroup"] = option_group
 
-            measures_to_delete.append(measure)
+        merged_measure_id = measure.split(".")[0]
+        merged_data = merged_single_source.get(merged_measure_id, {})
+        merged_data["eligibilityOptions"] = merged_data.get("eligibilityOptions", []) + \
+                                            curMeas["eligibilityOptions"]
+        merged_data["performanceOptions"] = merged_data.get("performanceOptions", []) + \
+                                            curMeas["performanceOptions"]
+        merged_single_source[merged_measure_id] = merged_data
 
-    # Remove the measures that don't end in .00.
-    for measure in measures_to_delete:
-        single_source_dict.pop(measure)
-
-    return single_source_dict
+    return merged_single_source
 
 
 def add_row_level_information_to_dataframe(single_source_df):
@@ -259,6 +259,7 @@ def add_row_level_information_to_dataframe(single_source_df):
         'is_additional_diagnosis_code'
         'codeset_number': for measures with multiple code sets
     """
+    pd.set_option('mode.chained_assignment', None)
     single_source_df['element_category'] = single_source_df['data_element_name'].apply(
         determine_element_category
     )
@@ -271,14 +272,13 @@ def add_row_level_information_to_dataframe(single_source_df):
 
     # Process the modifiers into two lists: modifiers to include, modifiers to exclude.
     single_source_df.modifier.fillna('', inplace=True)
-    single_source_df[['modifiers', 'modifierExclusions']] = \
-        single_source_df['modifier'].apply(convert_inclusion_exclusion_string_to_lists).astype(list)
+    single_source_df['modifiers'], single_source_df['modifierExclusions'] = \
+        zip(*single_source_df['modifier'].map(convert_inclusion_exclusion_string_to_lists))
 
     # Process places of service (POS) into two lists: POS to include, POS to exclude.
     single_source_df.place_of_service.fillna('', inplace=True)
-    single_source_df[['placesOfService', 'placesOfServiceExclusions']] = \
-        single_source_df['place_of_service'].apply(
-            convert_inclusion_exclusion_string_to_lists).astype(list)
+    single_source_df['placesOfService'], single_source_df['placesOfServiceExclusions'] = \
+        zip(*single_source_df['place_of_service'].map(convert_inclusion_exclusion_string_to_lists))
 
     # Assign additional diagnosis codes if present.
     single_source_df['is_additional_diagnosis_code'] = single_source_df['data_element_name'].apply(
@@ -291,7 +291,8 @@ def add_row_level_information_to_dataframe(single_source_df):
         single_source_df['data_element_name'].str.extract(r'_([0-9]+)', expand=False)
     single_source_df['codeset_number'].fillna(-1, inplace=True)
     single_source_df['codeset_number'] = single_source_df['codeset_number'].astype(int)
-
+    
+    pd.set_option('mode.chained_assignment', 'warn')
     return single_source_df
 
 
@@ -313,17 +314,17 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
     eligibility_options = []
     # Each distinct codeset creates a new eligibility option.
     for codeset_number, codeset_df in eligibility_df.groupby('codeset_number'):
-        procedure_codes = codeset_df[
+        procedure_codes = list(codeset_df[
             codeset_df['element_category'].isin(ENC_PROC_CODE_CATEGORY)
         ].apply(
-            lambda row: procedure_codes_to_dict(row), axis=1, reduce=True
-        ).tolist()
+            lambda row: procedure_codes_to_dict(row), axis=1, result_type = 'reduce'
+        ))
 
-        additional_procedure_codes = codeset_df[
+        additional_procedure_codes = list(codeset_df[
             codeset_df['element_category'].isin(ADDITIONAL_ENC_PROC_CODE_CATEGORY)
         ].apply(
-            lambda row: procedure_codes_to_dict(row), axis=1, reduce=True
-        ).tolist()
+            lambda row: procedure_codes_to_dict(row), axis=1, result_type = 'reduce'
+        ))
 
         dx_codes_df = codeset_df[codeset_df['element_category'].isin(DX_CODE_CATEGORY)]
 
@@ -364,5 +365,5 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
             eligibility_option.pop(k)
 
         eligibility_options.append(eligibility_option)
-
+    
     return eligibility_options

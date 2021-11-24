@@ -394,6 +394,9 @@ definitions:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
         type: array
         items: { $ref: #/definitions/codeObject }
+      optionGroup:
+        description: An identifier for grouping eligibility options together that need to be met together.
+        type: string
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
@@ -408,6 +411,9 @@ definitions:
         description: A list of quality codes, all of which must be present to meet the performance option.
         type: array
         items: { $ref: #/definitions/codeObject }
+      optionGroup:
+        description: An identifier for grouping eligibility options together that need to be met together.
+        type: string
     required: [optionType, qualityCodes]
 
   programs:
