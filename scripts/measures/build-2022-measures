@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+currentPerformanceYear=2022
+
+quality_csv='../../../util/measures/'$currentPerformanceYear'/quality-measures.csv'
+quality_strata='../../../util/measures/'$currentPerformanceYear'/quality-strata.csv'
+quality_measures='../../../staging/'$currentPerformanceYear'/measures-data-quality.json'
+generated_ecqm_data='../../../util/measures/'$currentPerformanceYear'/generated-ecqm-data.json'
+manually_created_ecqm_data='../../../util/measures/'$currentPerformanceYear'/manually-created-missing-measures.json'
+additional_stratifications='../../../util/measures/'$currentPerformanceYear'/additional-stratifications.json'
+cpc_groups='../../../util/measures/'$currentPerformanceYear'/cpc+-measure-groups.json'
+
+pi_measures='../../../staging/'$currentPerformanceYear'/measures-data-pi.json'
+pi_csv='../../../util/measures/'$currentPerformanceYear'/pi-measures.csv'
+pi_links='../../../util/measures/'$currentPerformanceYear'/pi-links.csv'
+enriched_pi_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-pi.json'
+
+ia_measures='../../../staging/'$currentPerformanceYear'/measures-data-ia.json'
+ia_csv='../../../util/measures/'$currentPerformanceYear'/ia-measures.csv'
+
+cahps_csv='../../../util/measures/'$currentPerformanceYear'/cahps-measures.csv'
+cahps_measures='../../../staging/'$currentPerformanceYear'/measures-data-cahps.json'
+
+claims_related_info='../../../claims-related/data/qpp-single-source-'$currentPerformanceYear'.json'
+
+ecqm_ehr_links='../../../util/measures/'$currentPerformanceYear'/ecqm-ehr-links.csv'
+web_interface_links='../../../util/measures/'$currentPerformanceYear'/web-interface-links.csv'
+claims_links='../../../util/measures/'$currentPerformanceYear'/claims-links.csv'
+cqm_links='../../../util/measures/'$currentPerformanceYear'/cqm-links.csv'
+
+enriched_quality_measures='../../../util/measures/'$currentPerformanceYear'/enriched-measures-data-quality.json'
+cost_measures='../../../staging/'$currentPerformanceYear'/measures-data-cost.json'
+cost_csv='../../../util/measures/'$currentPerformanceYear'/cost-measures.csv'
+
+final_measures='../../../measures/'$currentPerformanceYear'/measures-data.json'
+
+qcdr_csv='../../../util/measures/'$currentPerformanceYear'/qcdr-measures.csv'
+qcdr_strata='../../../util/measures/'$currentPerformanceYear'/qcdr-measures-strata-names.json'
+
+benchmark_metadata='../../../util/measures/'$currentPerformanceYear'/benchmark-metadata.csv'
+
+# 0. Add quality measures to the staging measures-data-quality.json file:
+node scripts/measures/$currentPerformanceYear/import-quality-measures.js \
+ 	$quality_csv $quality_strata $quality_measures
+
+# 1. Add PI measures to the staging measures-data-pi.json file:
+node scripts/measures/$currentPerformanceYear/import-pi-measures.js \
+ 	$pi_csv $pi_measures
+
+# 2. Add IA measures to the staging measures-data-ia.json file:
+node scripts/measures/$currentPerformanceYear/import-ia-measures.js \
+	$ia_csv $ia_measures
+
+# Uncomment the below data set ingestion scripts as we receive the data for 2020
+
+# 3. Add CAHPS measures to the staging cahps-measures.json file:
+node scripts/measures/$currentPerformanceYear/import-cahps-measures.js \
+	$cahps_csv $cahps_measures
+
+# 4. Enrich `measures-data.json` file, run:
+node scripts/measures/$currentPerformanceYear/enrich-measures-data.js \
+	$quality_measures $ecqm_ehr_links $web_interface_links $claims_links $cqm_links $generated_ecqm_data \
+	$manually_created_ecqm_data $additional_stratifications $claims_related_info $cpc_groups $enriched_quality_measures
+  
+# 5. Enrich `measures-data-pi.json` file, run:
+node scripts/measures/$currentPerformanceYear/enrich-pi-measures-data.js \
+	$pi_measures $pi_links $enriched_pi_measures
+
+# 6. Add COST measures to the staging measures-data-cost.json file:
+node scripts/measures/$currentPerformanceYear/import-cost-measures.js \
+	$cost_csv $cost_measures
+
+# 7. Merge the array/jsonfile-per-measureType into a combined array of all measures
+node scripts/measures/$currentPerformanceYear/merge-measures-data.js \
+	 $ia_measures $enriched_pi_measures $enriched_quality_measures $cost_measures $cahps_measures $final_measures # Note quality measures won't be in this list once enriched_quality_measures are created.
+# As these datasets are created, add these to the line above: $enriched_quality_measures  $cahps_measures $cost_measures
+
+# 8. Import and merge QCDR measures after previous measures have been built, as this has conflict-resolution logic
+node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
+	$final_measures $qcdr_csv $qcdr_strata $benchmark_metadata
+
+# 9. Validate the resulting measures-data.json file:
+echo "validating new measures-data.json"
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear

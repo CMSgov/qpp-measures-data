@@ -25,18 +25,18 @@ const config = {
     isIcdImpacted: false
   },
   mapped_fields: {
-    measureId: 1,
-    title: 2,
-    description: 3,
+    measureId: 2,
+    title: 4,
+    description: 5,
     nqfId: {
-      index: 4,
+      index: 6,
       mappings: {
         'N/A': null
       }
     },
-    nationalQualityStrategyDomain: 5,
+    nationalQualityStrategyDomain: 7,
     measureType: {
-      index: 7,
+      index: 9,
       mappings: {
         'Process': 'process',
         'Outcome': 'outcome',
@@ -49,7 +49,7 @@ const config = {
       }
     },
     isHighPriority: {
-      index: 6,
+      index: 8,
       mappings: {
         'High Priority': true,
         Yes: true,
@@ -58,7 +58,7 @@ const config = {
       }
     },
     isInverse: {
-      index: 8,
+      index: 10,
       mappings: {
         No: false,
         Yes: true,
@@ -66,21 +66,21 @@ const config = {
       }
     },
     isRiskAdjusted: {
-      index: 14,
+      index: 17,
       mappings: {
         No: false,
         Yes: true,
         default: false
       }
     },
-    primarySteward: 15,
-    firstPerformanceYear: 16,
+    primarySteward: 18,
+    firstPerformanceYear: 19,
     allowedVendors: {
       index: 0,
       transform: (value) => value.split(/;/).map(_.trim)
     },
     allowedPrograms: {
-      index: 18,
+      index: 20,
       mappings: {
         'Traditional MIPS': ['mips', 'cpcPlus', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
       }
@@ -89,12 +89,12 @@ const config = {
     // multiple columns-- you can find it by searching in the code below
   },
   referenced_fields: {
-    proportional: 9,
-    continuous: 10,
-    ratio: 11,
-    numberOfPerformanceRates: 12,
-    overallPerformanceRate: 13,
-    strataDescription: 17
+    proportional: 11,
+    continuous: 12,
+    ratio: 13,
+    numberOfPerformanceRates: 14,
+    overallPerformanceRate: 16,
+    strataDescription: 15
   }
 };
 
