@@ -82,7 +82,7 @@ const config = {
     allowedPrograms: {
       index: 20,
       mappings: {
-        'Traditional MIPS': ['mips', 'cpcPlus', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
+        'Traditional MIPS': ['mips', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
       }
     }
     // `metricType` is a sourced field but not represented here since it maps from
