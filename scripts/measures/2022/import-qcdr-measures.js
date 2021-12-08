@@ -44,7 +44,7 @@ const config = {
         'Efficiency and Cost/Resource Use': 'efficiency',
         'Intermediate Outcome': 'intermediateOutcome',
         'Structure': 'structure',
-        'Patient Reported Outcome (PRO)': 'patientReportedOutcome',
+        'Patient-Reported Outcome-based Performance Measure (PRO-PM)': 'patientReportedOutcome',
         'Clinical Process Effectiveness': 'process'
       }
     },
@@ -82,7 +82,7 @@ const config = {
     allowedPrograms: {
       index: 20,
       mappings: {
-        'Traditional MIPS': ['mips', 'cpcPlus', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
+        'Traditional MIPS': ['mips', 'pcf'] // currently the only value, and mips corresponds to all non apm programs, as things develop, will require proper parsing.
       }
     }
     // `metricType` is a sourced field but not represented here since it maps from
@@ -134,7 +134,7 @@ const addMultiPerformanceRateDetails = function(newMeasure, record, qcdrStrataNa
 
   // Measure description column contains performance rate description
   // Split '*summary* Rate 1: text Rate 2: text' into [text, text]
-  const strata = _.split(strataDescription, /\s*[Rr]ate [0-9]+:\s*/);
+  const strata = _.split(strataDescription, /\s*[Rr]ate [0-9]+[:.)]\s*/);
   // drop anything before the first performance rate
   // (usually a description/meta-information)
   strata.shift();
