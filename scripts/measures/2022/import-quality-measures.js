@@ -2,6 +2,7 @@ const parse = require('csv-parse/lib/sync');
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
+const XRegExp = require('xregexp');
 
 const Constants = require('../../../constants.js');
 /**
@@ -223,7 +224,8 @@ function mapInput(rawInput, fieldName) {
   } else if (['description', 'primarySteward', 'title'].includes(fieldName)) {
     let text = rawInput.trim();
     // replace non-standard dashes
-    text = text.replace(/\p{Pd}/gm, '-');
+    // XRegExp needed since js does not support unicode regexes (e.g., \p{...})
+    text = text.replace(XRegExp('\\p{Pd}', 'gm'), '-');
     // replace non-standard quotes
     text = text.replace(/(“|”)/gm, '"');
     text = text.replace(/’/gm, '\'');
