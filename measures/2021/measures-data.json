@@ -22309,12 +22309,16 @@
     "lastPerformanceYear": null,
     "isHighPriority": false,
     "isInverse": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "isClinicalGuidelineChanged": false,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "claims",
+      "electronicHealthRecord",
+      "cmsWebInterface"
+    ],
     "clinicalGuidelineChanged": [],
     "allowedPrograms": [
       "mips",
@@ -22528,7 +22532,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Breast Cancer Screening",
@@ -38621,12 +38626,14 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
@@ -39547,7 +39554,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -40021,12 +40029,14 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "cmsWebInterface"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
@@ -40882,7 +40892,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Melanoma: Continuity of Care – Recall System",
