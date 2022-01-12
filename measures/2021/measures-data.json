@@ -22309,12 +22309,16 @@
     "lastPerformanceYear": null,
     "isHighPriority": false,
     "isInverse": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "isClinicalGuidelineChanged": false,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "claims",
+      "electronicHealthRecord",
+      "registry"
+    ],
     "clinicalGuidelineChanged": [],
     "allowedPrograms": [
       "mips",
@@ -22528,7 +22532,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Breast Cancer Screening",
@@ -38621,12 +38626,14 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
@@ -39547,7 +39554,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -40021,12 +40029,14 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": false,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "cmsWebInterface"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
@@ -40882,7 +40892,8 @@
           }
         ]
       }
-    ]
+    ],
+    "benchmarks": {}
   },
   {
     "title": "Melanoma: Continuity of Care – Recall System",
@@ -81859,7 +81870,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS12",
@@ -81921,7 +81935,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS13",
@@ -81983,7 +82000,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS14",
@@ -82045,7 +82065,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS15",
@@ -82107,7 +82130,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS16",
@@ -82169,7 +82195,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS17",
@@ -82231,7 +82260,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS18",
@@ -82293,7 +82325,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS19",
@@ -82355,7 +82390,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "IROMS20",
@@ -82417,7 +82455,10 @@
     ],
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "MBHR1",
