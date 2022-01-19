@@ -56,7 +56,7 @@ const formatIsToppedOut = function(isToppedOut) {
 };
 
 const formatIsHighPriority = function(highPriority) {
-  if (highPriority.trim().toLowerCase() === 'y') {
+  if (highPriority && highPriority.trim().toLowerCase() === 'y') {
     return true;
   }
   return false;
@@ -65,7 +65,7 @@ const formatIsHighPriority = function(highPriority) {
 const formatIsToppedOutByProgram = function(isToppedOutByProgram) {
   // These come in formatted as 'Yes - see "Scoring Examples" tab of spreadsheet' or 'No'
   // We want to just look at whether it says yes/no
-  if (isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
+  if (isToppedOutByProgram && isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
     return true;
   }
   return false;
