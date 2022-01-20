@@ -16,6 +16,12 @@ definitions:
       isToppedOut:
         description: isToppedOut is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
         type: boolean
+      isToppedOutByProgram:
+        description: isToppedOutByProgram is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
+        type: boolean
+      isHighPriority:
+        description: whether the measure is a high priority measure or not
+        type: boolean
       benchmarkYear:
         description: The benchmarkYear four digit integer corresponds to the time period of the performance data that was used to generate this benchmark. The submitted performance data will be compared against the benchmarkYear's results.
         type: number

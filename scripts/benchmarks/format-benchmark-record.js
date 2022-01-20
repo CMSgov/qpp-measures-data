@@ -19,7 +19,7 @@ const SUBMISSION_METHOD_MAP = {
   'qcdrmeasure': 'registry',
   'cmswebinterface': 'cmsWebInterface',
   'administrativeclaims': 'administrativeClaims',
-  'certifiedsurveyvendor': 'certifiedSurveyVendor'
+  'cahpssurveyvendor': 'certifiedSurveyVendor'
 };
 
 /**
