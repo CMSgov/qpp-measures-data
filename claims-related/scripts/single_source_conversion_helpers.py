@@ -288,7 +288,7 @@ def add_row_level_information_to_dataframe(single_source_df):
     # Parts of a multiple code set grouping will have codeset number equal to that grouping number,
     # e.g. '_2' --> 2. Rows that are not part of a multiple code set will have codeset_number -1.
     single_source_df['codeset_number'] = \
-        single_source_df['data_element_name'].str.extract(r'_([0-9]+)', expand=False)
+        single_source_df['data_element_name'].str.extract(r'_([0-9]+)_', expand=False)
     single_source_df['codeset_number'].fillna(-1, inplace=True)
     single_source_df['codeset_number'] = single_source_df['codeset_number'].astype(int)
     
@@ -313,6 +313,18 @@ def extract_eligibility_options_from_measure_dataframe(measure_df):
 
     eligibility_options = []
     # Each distinct codeset creates a new eligibility option.
+
+    # This bit of code is to handle when common eligibility options are not explicitly part of a group
+    codeset_numbers = eligibility_df["codeset_number"].unique()
+    if -1 in codeset_numbers and 1 in codeset_numbers:
+        un_numbered = eligibility_df[eligibility_df["codeset_number"] == -1]
+        new_elig_out = eligibility_df[eligibility_df["codeset_number"] != -1]
+        for c in (set(codeset_numbers) - {-1}):
+            new_numbered = un_numbered.copy()
+            new_numbered["codeset_number"] = c
+            new_elig_out = new_elig_out.append(new_numbered)
+        eligibility_df = new_elig_out
+
     for codeset_number, codeset_df in eligibility_df.groupby('codeset_number'):
         procedure_codes = list(codeset_df[
             codeset_df['element_category'].isin(ENC_PROC_CODE_CATEGORY)
