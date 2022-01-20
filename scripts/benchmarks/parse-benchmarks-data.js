@@ -12,9 +12,10 @@ const BENCHMARK_CSV_COLUMNS = [
   'submissionMethod',
   'measureType',
   'benchmark',
-  // standardDeviation, average, and isToppedOutByProgram are *not* columns in the 2022 benchmark data
-  // 'standardDeviation',
-  // 'average',
+  /** standardDeviation and average are *not* included in the 2022 benchmark data
+  'standardDeviation',
+  'average',
+  */
   'decile3',
   'decile4',
   'decile5',
@@ -23,8 +24,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'decile8',
   'decile9',
   'decile10',
-  'isToppedOut'
-  // 'isToppedOutByProgram'
+  'isToppedOut',
+  'isToppedOutByProgram'
 ];
 // Utils
 const { formatBenchmarkRecord } = require('./format-benchmark-record');
@@ -43,7 +44,7 @@ const benchmarkYear = process.argv[2];
 const performanceYear = process.argv[3];
 
 // New 2020 data update
-if (performanceYear === 2020) {
+if (performanceYear >= 2020) {
   BENCHMARK_CSV_COLUMNS.push('isHighPriority');
 }
 
