@@ -12,10 +12,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'submissionMethod',
   'measureType',
   'benchmark',
-  /** standardDeviation and average are *not* included in the 2022 benchmark data
   'standardDeviation',
   'average',
-  */
   'decile3',
   'decile4',
   'decile5',
