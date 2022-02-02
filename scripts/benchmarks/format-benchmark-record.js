@@ -236,7 +236,18 @@ const formatBenchmarkRecord = function(record, options) {
     isToppedOut: formatIsToppedOut(record.isToppedOut),
     isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
-    deciles: [
+    deciles: options.benchmarkType === 'MCC' ? [
+      record.decile1,
+      record.decile2,
+      record.decile3,
+      record.decile4,
+      record.decile5,
+      record.decile6,
+      record.decile7,
+      record.decile8,
+      record.decile9,
+      record.decile10
+    ] : [
       record.decile1,
       record.decile2,
       record.decile3,
@@ -253,74 +264,7 @@ const formatBenchmarkRecord = function(record, options) {
   };
 };
 
-/**
- *
- * @param {{
- *  measureName: string,
- *  qualityId: string,
- *  submissionMethod: string,
- *  measureType: string,
- *  benchmark: string,
- *  decile1: string?,
- *  decile2: string?,
- *  decile3: string?,
- *  decile4: string?,
- *  decile5: string?,
- *  decile6: string?,
- *  decile7: string?,
- *  decile8: string?,
- *  decile9: string?,
- *  decile10: string?,
- *  isToppedOut: string,
- *  isHighPriority: string,
- *  isToppedOutByProgram: string
- *  }} record - csv record object
- * @param {{
- *  benchmarkYear: string,
- *  performanceYear: string
- * }} options - 4 digit year strings for benchmark and performance years
- * @returns {{
- *  measureId: string,
- *  benchmarkYear: string,
- *  performanceYear: string,
- *  submissionMethod: string,
- *  deciles: Array<null|number>
- *  } | undefined
- * } - benchmark object
- */
-const formatMCCBenchmarkRecord = function(record, options) {
-  /**
-   * NOTE: Some of the benchmarks don't correspond to
-   * any of the measures currently in our json.
-   * NOTE: Quality measurement measureIds are equal to their qualityIds.
-   */
-
-  if (record.benchmark.trim() !== 'Y') return;
-  return {
-    measureId: formatMeasureId(record.qualityId, options.performanceYear),
-    benchmarkYear: parseInt(options.benchmarkYear),
-    performanceYear: parseInt(options.performanceYear),
-    submissionMethod: formatSubmissionMethod(record.submissionMethod),
-    isToppedOut: formatIsToppedOut(record.isToppedOut),
-    isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
-    isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
-    deciles: [
-      record.decile1,
-      record.decile2,
-      record.decile3,
-      record.decile4,
-      record.decile5,
-      record.decile6,
-      record.decile7,
-      record.decile8,
-      record.decile9,
-      record.decile10
-    ]
-  };
-};
-
 module.exports = {
   formatBenchmarkRecord,
-  formatMeasureId,
-  formatMCCBenchmarkRecord
+  formatMeasureId
 };

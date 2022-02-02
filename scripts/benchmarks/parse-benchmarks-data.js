@@ -26,7 +26,7 @@ const BENCHMARK_CSV_COLUMNS = [
   'isToppedOutByProgram'
 ];
 // Utils
-const { formatBenchmarkRecord, formatMCCBenchmarkRecord } = require('./format-benchmark-record');
+const { formatBenchmarkRecord } = require('./format-benchmark-record');
 // Data
 let benchmarksData = '';
 
@@ -64,7 +64,7 @@ if (benchmarkYear && performanceYear) {
         console.log(err);
       } else {
         records.forEach(function(record) {
-          const benchmark = benchmarkType === 'MCC' ? formatMCCBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear}) : formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear});
+          const benchmark = benchmarkType === 'MCC' ? formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear, benchmarkType}) : formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear});
 
           if (benchmark) benchmarks.push(benchmark);
         });
