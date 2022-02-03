@@ -1,415 +1,413 @@
 Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2018 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,
 Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority
-Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,MIPS CQM,Intermediate Outcome,Y,28.350615930852474,37.54,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
-Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,Medicare Part B Claims,Intermediate Outcome,Y,22.24385892172491,18.70,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
-Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,eCQM,Intermediate Outcome,Y,26.39277658499758,47.96,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
-Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD),005,MIPS CQM,Process,Y,11.818326377646711,94.50,92.31 - 96.29,96.30 - 98.30,98.31 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD),005,eCQM,Process,Y,15.250286536539436,79.52,70.26 - 75.75,75.76 - 78.64,78.65 - 81.81,81.82 - 85.46,85.47 - 88.88,88.89 - 92.30,92.31 - 95.39,>= 95.40,No,No,N
-Coronary Artery Disease (CAD): Antiplatelet Therapy,006,MIPS CQM,Process,Y,14.356245030758245,86.66,77.91 - 83.11,83.12 - 86.50,86.51 - 89.42,89.43 - 92.62,92.63 - 95.90,95.91 - 99.66,99.67 - 99.99,100.00,No,No,N
-Coronary Artery Disease (CAD): Beta-Blocker Therapy  Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%),007,MIPS CQM,Process,Y,10.651483109106294,90.22,80.65 - 86.80,86.81 - 89.99,90.00 - 91.85,91.86 - 96.91,96.92 - 99.99,--,--,100.00,No,No,N
-Coronary Artery Disease (CAD): Beta-Blocker Therapy  Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%),007,eCQM,Process,Y,9.836280679315138,86.77,82.14 - 84.65,84.66 - 86.55,86.56 - 88.32,88.33 - 89.99,90.00 - 91.66,91.67 - 93.51,93.52 - 95.99,>= 96.00,No,No,N
-Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD),008,MIPS CQM,Process,Y,11.909241084854784,94.84,95.00 - 97.55,97.56 - 99.09,99.10 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD),008,eCQM,Process,Y,11.458766644611364,88.65,84.96 - 87.75,87.76 - 90.10,90.11 - 91.28,91.29 - 92.57,92.58 - 94.25,94.26 - 95.61,95.62 - 97.33,>= 97.34,No,No,N
-Anti-Depressant Medication Management,009,eCQM,Process,Y,17.10774315617552,75.44,66.30 - 74.22,74.23 - 78.17,78.18 - 80.42,80.43 - 82.49,82.50 - 84.64,84.65 - 86.72,86.73 - 90.90,>= 90.91,No,No,N
-Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation,012,eCQM,Process,Y,20.424231262749455,86.54,79.71 - 86.73,86.74 - 91.38,91.39 - 94.84,94.85 - 96.83,96.84 - 98.25,98.26 - 99.16,99.17 - 99.88,>= 99.89,No,No,N
-Age-Related Macular Degeneration (AMD): Dilated Macular Examination,014,MIPS CQM,Process,Y,17.77528803939919,90.95,88.05 - 92.58,92.59 - 95.84,95.85 - 97.86,97.87 - 99.33,99.34 - 99.99,--,--,100.00,Yes,Yes,N
-Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care,019,MIPS CQM,Process,Y,23.69830589878273,87.23,79.11 - 90.90,90.91 - 96.91,96.92 - 99.64,99.65 - 99.99,--,--,--,100.00,Yes,Yes,Y
-Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care,019,eCQM,Process,Y,23.780080640682268,77.48,62.50 - 72.40,72.41 - 80.36,80.37 - 85.82,85.83 - 90.31,90.32 - 93.70,93.71 - 96.86,96.87 - 99.02,>= 99.03,No,No,Y
-Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older,024,MIPS CQM,Process,Y,37.10483787782119,63.48,12.07 - 44.99,45.00 - 61.64,61.65 - 77.96,77.97 - 87.35,87.36 - 97.05,97.06 - 99.99,--,100.00,No,No,Y
+Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,MIPS CQM,Intermediate Outcome,Y,28.437221815991542,37.34,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
+Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,Medicare Part B Claims,Intermediate Outcome,Y,21.106739210039187,17.85,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
+Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%),001,eCQM,Intermediate Outcome,Y,25.499759638871495,44.92,79.99 - 70.01,70.00 - 60.01,60.00 - 50.01,50.00 - 40.01,40.00 - 30.01,30.00 - 20.01,20.00 - 10.01,<= 10.00,No,No,Y
+Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD),005,MIPS CQM,Process,Y,12.879030068328849,94.02,92.00 - 96.29,96.30 - 98.28,98.29 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD),005,eCQM,Process,Y,15.17672690103017,79.55,70.26 - 75.75,75.76 - 78.56,78.57 - 81.81,81.82 - 85.46,85.47 - 88.88,88.89 - 92.30,92.31 - 95.38,>= 95.39,No,No,N
+Coronary Artery Disease (CAD): Antiplatelet Therapy,006,MIPS CQM,Process,Y,14.426340429782982,86.61,77.78 - 83.01,83.02 - 86.48,86.49 - 89.38,89.39 - 92.65,92.66 - 96.12,96.13 - 99.83,99.84 - 99.99,100.00,No,No,N
+Coronary Artery Disease (CAD): Beta-Blocker Therapy  Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%),007,MIPS CQM,Process,Y,10.617278602218505,90.27,80.76 - 86.80,86.81 - 89.99,90.00 - 91.85,91.86 - 96.91,96.92 - 99.99,--,--,100.00,No,No,N
+Coronary Artery Disease (CAD): Beta-Blocker Therapy  Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%),007,eCQM,Process,Y,9.680569585746442,86.90,82.14 - 84.74,84.75 - 86.58,86.59 - 88.45,88.46 - 90.17,90.18 - 91.79,91.80 - 93.58,93.59 - 95.99,>= 96.00,No,No,N
+Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD),008,MIPS CQM,Process,Y,12.847040117788637,94.47,94.35 - 97.49,97.50 - 99.07,99.08 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD),008,eCQM,Process,Y,11.362631086584784,88.72,85.00 - 87.82,87.83 - 90.12,90.13 - 91.28,91.29 - 92.58,92.59 - 94.25,94.26 - 95.64,95.65 - 97.30,>= 97.31,No,No,N
+Anti-Depressant Medication Management,009,eCQM,Process,Y,17.130643155448833,75.52,65.42 - 74.13,74.14 - 78.06,78.07 - 80.75,80.76 - 82.60,82.61 - 84.83,84.84 - 87.39,87.40 - 91.06,>= 91.07,No,No,N
+Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation,012,eCQM,Process,Y,19.77925830506149,86.82,79.88 - 86.82,86.83 - 91.40,91.41 - 94.63,94.64 - 96.68,96.69 - 98.14,98.15 - 99.17,99.18 - 99.99,100.00,No,No,N
+Age-Related Macular Degeneration (AMD): Dilated Macular Examination,014,MIPS CQM,Process,Y,17.992128154452896,90.82,87.99 - 92.44,92.45 - 95.81,95.82 - 97.85,97.86 - 99.33,99.34 - 99.99,--,--,100.00,Yes,Yes,N
+Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care,019,MIPS CQM,Process,Y,24.074269201609983,86.94,78.82 - 90.36,90.37 - 96.62,96.63 - 99.67,99.68 - 99.99,--,--,--,100.00,Yes,Yes,Y
+Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care,019,eCQM,Process,Y,24.16097378631091,76.62,61.26 - 71.42,71.43 - 78.94,78.95 - 84.81,84.82 - 89.43,89.44 - 93.28,93.29 - 96.51,96.52 - 98.90,>= 98.91,No,No,Y
+Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older,024,MIPS CQM,Process,Y,35.930216377984706,66.07,22.73 - 49.99,50.00 - 66.81,66.82 - 81.52,81.53 - 89.35,89.36 - 96.35,96.36 - 99.99,--,100.00,No,No,Y
 Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older,024,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Screening for Osteoporosis for Women Aged 65-85 Years of Age,039,MIPS CQM,Process,Y,31.74844989327246,52.72,17.30 - 31.00,31.01 - 45.22,45.23 - 56.70,56.71 - 66.26,66.27 - 75.29,75.30 - 83.32,83.33 - 95.59,>= 95.60,No,No,N
-Screening for Osteoporosis for Women Aged 65-85 Years of Age,039,Medicare Part B Claims,Process,Y,29.83233275490952,64.92,35.96 - 46.99,47.00 - 59.99,60.00 - 70.67,70.68 - 78.45,78.46 - 88.59,88.60 - 97.57,97.58 - 99.99,100.00,No,No,N
-Advance Care Plan,047,MIPS CQM,Process,Y,35.63421892966543,68.20,27.11 - 51.82,51.83 - 71.88,71.89 - 85.04,85.05 - 93.52,93.53 - 98.26,98.27 - 99.76,99.77 - 99.99,100.00,No,No,Y
-Advance Care Plan,047,Medicare Part B Claims,Process,Y,29.611211638173643,85.64,83.21 - 98.45,98.46 - 99.76,99.77 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older,048,MIPS CQM,Process,Y,36.041408568090446,62.19,17.86 - 37.81,37.82 - 57.44,57.45 - 71.42,71.43 - 85.59,85.60 - 95.61,95.62 - 99.66,99.67 - 99.99,100.00,No,No,N
-Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older,050,MIPS CQM,Process,Y,29.220105499660832,77.55,53.01 - 72.17,72.18 - 84.28,84.29 - 91.37,91.38 - 96.59,96.60 - 99.99,--,--,100.00,No,No,Y
-Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy,052,MIPS CQM,Process,Y,20.31503014115053,86.33,70.09 - 81.31,81.32 - 90.89,90.90 - 97.94,97.95 - 99.81,99.82 - 99.99,--,--,100.00,Yes,Yes,N
+Screening for Osteoporosis for Women Aged 65-85 Years of Age,039,MIPS CQM,Process,Y,31.52513551358337,52.00,16.80 - 28.88,28.89 - 44.23,44.24 - 55.17,55.18 - 64.50,64.51 - 74.01,74.02 - 82.64,82.65 - 95.50,>= 95.51,No,No,N
+Screening for Osteoporosis for Women Aged 65-85 Years of Age,039,Medicare Part B Claims,Process,Y,29.343202997425582,66.43,37.50 - 51.84,51.85 - 62.06,62.07 - 72.33,72.34 - 79.99,80.00 - 91.53,91.54 - 97.77,97.78 - 99.99,100.00,No,No,N
+Advance Care Plan,047,MIPS CQM,Process,Y,35.241780137062555,68.60,28.58 - 52.16,52.17 - 72.05,72.06 - 85.27,85.28 - 93.66,93.67 - 98.32,98.33 - 99.75,99.76 - 99.99,100.00,No,No,Y
+Advance Care Plan,047,Medicare Part B Claims,Process,Y,30.82147827660991,84.26,75.63 - 97.85,97.86 - 99.62,99.63 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older,048,MIPS CQM,Process,Y,37.45687716756774,58.73,11.59 - 27.53,27.54 - 49.78,49.79 - 66.88,66.89 - 81.75,81.76 - 94.00,94.01 - 99.67,99.68 - 99.99,100.00,No,No,N
+Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older,050,MIPS CQM,Process,Y,29.419106461413502,77.02,50.60 - 71.65,71.66 - 82.09,82.10 - 90.88,90.89 - 96.59,96.60 - 99.99,--,--,100.00,No,No,Y
+Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy,052,MIPS CQM,Process,Y,19.93590424941287,86.79,70.37 - 81.65,81.66 - 94.18,94.19 - 97.94,97.95 - 99.84,99.85 - 99.99,--,--,100.00,Yes,Yes,N
 Appropriate Treatment for Upper Respiratory Infection (URI),065,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Treatment for Upper Respiratory Infection (URI),065,eCQM,Process,Y,13.317855397262061,87.86,81.70 - 85.41,85.42 - 88.32,88.33 - 90.90,90.91 - 92.94,92.95 - 95.42,95.43 - 97.72,97.73 - 99.99,100.00,No,No,Y
-Appropriate Testing for Pharyngitis,066,MIPS CQM,Process,Y,14.551362898435437,89.57,84.39 - 88.72,88.73 - 91.83,91.84 - 93.89,93.90 - 95.64,95.65 - 97.29,97.30 - 99.99,--,100.00,No,No,Y
-Appropriate Testing for Pharyngitis,066,eCQM,Process,Y,25.271923619725733,72.36,57.92 - 68.74,68.75 - 75.44,75.45 - 80.90,80.91 - 85.16,85.17 - 88.16,88.17 - 92.03,92.04 - 95.82,>= 95.83,No,No,Y
-Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections,076,MIPS CQM,Process,Y,13.310987206114374,95.27,95.92 - 99.30,99.31 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections,076,Medicare Part B Claims,Process,Y,14.88960285930336,96.36,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy  Avoidance of Inappropriate Use,093,MIPS CQM,Process,Y,13.387386808291259,91.37,86.36 - 91.29,91.30 - 94.02,94.03 - 96.17,96.18 - 97.49,97.50 - 99.22,99.23 - 99.99,--,100.00,Yes,Yes,Y
+Appropriate Treatment for Upper Respiratory Infection (URI),065,eCQM,Process,Y,13.293098555813371,88.21,82.14 - 86.05,86.06 - 88.66,88.67 - 91.31,91.32 - 93.54,93.55 - 95.79,95.80 - 98.01,98.02 - 99.99,100.00,No,No,Y
+Appropriate Testing for Pharyngitis,066,MIPS CQM,Process,Y,14.507412102880775,89.62,84.44 - 88.88,88.89 - 91.83,91.84 - 93.93,93.94 - 95.64,95.65 - 97.36,97.37 - 99.99,--,100.00,No,No,Y
+Appropriate Testing for Pharyngitis,066,eCQM,Process,Y,25.528487905878883,72.27,55.26 - 67.64,67.65 - 75.44,75.45 - 80.95,80.96 - 85.38,85.39 - 88.20,88.21 - 92.19,92.20 - 95.87,>= 95.88,No,No,Y
+Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections,076,MIPS CQM,Process,Y,13.953329425079113,94.90,95.60 - 98.95,98.96 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Prevention of Central Venous Catheter (CVC) - Related Bloodstream Infections,076,Medicare Part B Claims,Process,Y,14.799147378630245,96.40,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy  Avoidance of Inappropriate Use,093,MIPS CQM,Process,Y,14.190574214579213,90.99,86.21 - 91.13,91.14 - 94.01,94.02 - 96.14,96.15 - 97.49,97.50 - 99.21,99.22 - 99.99,--,100.00,Yes,Yes,Y
 Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients,102,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients,102,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer,104,MIPS CQM,Process,Y,17.12534785428999,91.63,83.62 - 94.24,94.25 - 99.99,--,--,--,--,--,100.00,Yes,Yes,N
-Adult Major Depressive Disorder (MDD): Suicide Risk Assessment,107,eCQM,Process,Y,34.184598859113976,31.18,1.15 - 2.69,2.70 - 7.36,7.37 - 14.61,14.62 - 28.76,28.77 - 46.52,46.53 - 71.59,71.60 - 90.79,>= 90.80,No,No,N
-Preventive Care and Screening: Influenza Immunization,110,MIPS CQM,Process,Y,30.544015217690337,66.88,35.39 - 50.60,50.61 - 62.46,62.47 - 74.25,74.26 - 84.62,84.63 - 92.75,92.76 - 98.46,98.47 - 99.99,100.00,No,No,N
-Preventive Care and Screening: Influenza Immunization,110,Medicare Part B Claims,Process,Y,28.581561320715025,79.82,63.20 - 78.84,78.85 - 87.23,87.24 - 93.67,93.68 - 98.70,98.71 - 99.99,--,--,100.00,No,No,N
-Preventive Care and Screening: Influenza Immunization,110,eCQM,Process,Y,26.299997048923593,44.18,18.75 - 28.56,28.57 - 36.94,36.95 - 44.20,44.21 - 51.25,51.26 - 58.62,58.63 - 67.60,67.61 - 80.39,>= 80.40,No,No,N
-Pneumococcal Vaccination Status for Older Adults,111,MIPS CQM,Process,Y,26.44039234691005,64.12,42.58 - 55.57,55.58 - 64.49,64.50 - 70.29,70.30 - 74.99,75.00 - 79.62,79.63 - 85.87,85.88 - 96.29,>= 96.30,No,No,N
-Pneumococcal Vaccination Status for Older Adults,111,Medicare Part B Claims,Process,Y,22.679779322126336,80.48,67.34 - 75.92,75.93 - 81.10,81.11 - 86.87,86.88 - 92.78,92.79 - 97.69,97.70 - 99.99,--,100.00,No,No,N
-Pneumococcal Vaccination Status for Older Adults,111,eCQM,Process,Y,29.128222397433778,52.07,20.82 - 35.05,35.06 - 46.55,46.56 - 56.47,56.48 - 64.71,64.72 - 72.55,72.56 - 79.88,79.89 - 88.31,>= 88.32,No,No,N
-Breast Cancer Screening,112,MIPS CQM,Process,Y,30.366220194838874,56.34,24.55 - 41.49,41.50 - 51.24,51.25 - 60.64,60.65 - 68.27,68.28 - 74.86,74.87 - 84.77,84.78 - 97.66,>= 97.67,No,No,N
-Breast Cancer Screening,112,Medicare Part B Claims,Process,Y,24.59624922608836,78.46,64.66 - 74.99,75.00 - 81.65,81.66 - 86.44,86.45 - 91.03,91.04 - 95.82,95.83 - 98.84,98.85 - 99.99,100.00,No,No,N
-Breast Cancer Screening,112,eCQM,Process,Y,25.40013471939807,49.43,24.92 - 36.03,36.04 - 45.49,45.50 - 52.86,52.87 - 59.39,59.40 - 65.40,65.41 - 72.11,72.12 - 80.68,>= 80.69,No,No,N
-Colorectal Cancer Screening,113,MIPS CQM,Process,Y,33.87097049274731,56.79,17.93 - 34.79,34.80 - 51.80,51.81 - 61.05,61.06 - 74.18,74.19 - 82.03,82.04 - 92.40,92.41 - 99.42,>= 99.43,No,No,N
-Colorectal Cancer Screening,113,Medicare Part B Claims,Process,Y,26.65439656042094,78.12,57.94 - 70.46,70.47 - 82.00,82.01 - 89.66,89.67 - 95.56,95.57 - 99.31,99.32 - 99.99,--,100.00,No,No,N
-Colorectal Cancer Screening,113,eCQM,Process,Y,28.717893109006514,46.97,16.32 - 28.65,28.66 - 39.99,40.00 - 49.24,49.25 - 57.82,57.83 - 66.73,66.74 - 74.98,74.99 - 84.36,>= 84.37,No,No,N
+Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer,104,MIPS CQM,Process,Y,16.754307941584734,91.72,83.62 - 94.24,94.25 - 98.30,98.31 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Adult Major Depressive Disorder (MDD): Suicide Risk Assessment,107,eCQM,Process,Y,33.6039181917063,30.32,1.52 - 2.95,2.96 - 7.40,7.41 - 14.28,14.29 - 25.84,25.85 - 45.30,45.31 - 67.70,67.71 - 90.37,>= 90.38,No,No,N
+Preventive Care and Screening: Influenza Immunization,110,MIPS CQM,Process,Y,30.714474407563145,66.38,34.52 - 49.41,49.42 - 61.90,61.91 - 73.34,73.35 - 83.73,83.74 - 92.56,92.57 - 98.36,98.37 - 99.99,100.00,No,No,N
+Preventive Care and Screening: Influenza Immunization,110,Medicare Part B Claims,Process,Y,28.196600621347827,79.93,63.32 - 78.73,78.74 - 86.97,86.98 - 93.18,93.19 - 98.35,98.36 - 99.99,--,--,100.00,No,No,N
+Preventive Care and Screening: Influenza Immunization,110,eCQM,Process,Y,25.347133128768572,43.88,20.13 - 29.03,29.04 - 36.86,36.87 - 43.83,43.84 - 50.67,50.68 - 57.65,57.66 - 65.92,65.93 - 78.07,>= 78.08,No,No,N
+Pneumococcal Vaccination Status for Older Adults,111,MIPS CQM,Process,Y,26.58235380521441,63.66,41.61 - 54.67,54.68 - 63.59,63.60 - 69.76,69.77 - 74.56,74.57 - 79.44,79.45 - 85.74,85.75 - 96.43,>= 96.44,No,No,N
+Pneumococcal Vaccination Status for Older Adults,111,Medicare Part B Claims,Process,Y,22.431625676360174,80.84,67.64 - 76.15,76.16 - 81.83,81.84 - 87.49,87.50 - 93.32,93.33 - 97.59,97.60 - 99.99,--,100.00,No,No,N
+Pneumococcal Vaccination Status for Older Adults,111,eCQM,Process,Y,28.827875177720284,52.82,22.14 - 36.49,36.50 - 48.08,48.09 - 57.67,57.68 - 65.43,65.44 - 72.87,72.88 - 80.23,80.24 - 88.35,>= 88.36,No,No,N
+Breast Cancer Screening,112,MIPS CQM,Process,Y,30.432281653173444,56.30,23.06 - 39.42,39.43 - 50.84,50.85 - 60.55,60.56 - 68.10,68.11 - 74.86,74.87 - 85.06,85.07 - 98.24,>= 98.25,No,No,N
+Breast Cancer Screening,112,Medicare Part B Claims,Process,Y,23.28285167494925,79.84,66.67 - 76.13,76.14 - 82.66,82.67 - 87.03,87.04 - 91.71,91.72 - 96.14,96.15 - 98.85,98.86 - 99.99,100.00,No,No,N
+Breast Cancer Screening,112,eCQM,Process,Y,24.713591636628415,51.60,28.57 - 39.38,39.39 - 48.51,48.52 - 55.55,55.56 - 61.47,61.48 - 67.43,67.44 - 73.50,73.51 - 81.08,>= 81.09,No,No,N
+Colorectal Cancer Screening,113,MIPS CQM,Process,Y,33.951884462952535,56.06,16.44 - 33.37,33.38 - 50.48,50.49 - 59.83,59.84 - 72.06,72.07 - 81.93,81.94 - 92.35,92.36 - 99.73,>= 99.74,No,No,N
+Colorectal Cancer Screening,113,Medicare Part B Claims,Process,Y,25.71613271656771,79.11,60.82 - 72.72,72.73 - 82.72,82.73 - 89.65,89.66 - 95.56,95.57 - 99.27,99.28 - 99.99,--,100.00,No,No,N
+Colorectal Cancer Screening,113,eCQM,Process,Y,27.823717452045507,49.56,20.83 - 33.32,33.33 - 44.03,44.04 - 52.81,52.82 - 61.03,61.04 - 69.00,69.01 - 76.17,76.18 - 84.33,>= 84.34,No,No,N
 Avoidance of Antibiotic Treatment for Acute Bronchitis/Bronchiolitis,116,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Diabetes: Eye Exam,117,MIPS CQM,Process,Y,23.738385483873923,90.27,94.31 - 97.85,97.86 - 99.32,99.33 - 99.85,99.86 - 99.99,--,--,--,100.00,Yes,Yes,N
+Diabetes: Eye Exam,117,MIPS CQM,Process,Y,24.243399386223125,89.67,93.62 - 97.56,97.57 - 99.21,99.22 - 99.81,99.82 - 99.99,--,--,--,100.00,Yes,Yes,N
 Diabetes: Eye Exam,117,Medicare Part B Claims,Process,Y,0.0,100.00,--,--,--,--,--,--,--,100.00,Yes,No,N
-Diabetes: Eye Exam,117,eCQM,Process,Y,37.647815072552625,52.86,13.19 - 22.02,22.03 - 31.85,31.86 - 44.61,44.62 - 65.96,65.97 - 95.93,95.94 - 99.13,99.14 - 99.99,100.00,No,No,N
-Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%),118,MIPS CQM,Process,Y,13.48857905772208,80.57,71.43 - 75.60,75.61 - 78.24,78.25 - 81.38,81.39 - 84.20,84.21 - 86.98,86.99 - 91.99,92.00 - 99.99,100.00,No,No,N
-Diabetes: Medical Attention for Nephropathy,119,MIPS CQM,Process,Y,17.806321491449427,84.43,70.74 - 79.50,79.51 - 85.05,85.06 - 89.73,89.74 - 94.02,94.03 - 98.09,98.10 - 99.99,--,100.00,No,No,N
-Diabetes: Medical Attention for Nephropathy,119,eCQM,Process,Y,15.72254123919505,81.63,72.45 - 77.77,77.78 - 81.70,81.71 - 84.66,84.67 - 87.34,87.35 - 90.42,90.43 - 93.97,93.98 - 98.86,>= 98.87,No,No,N
-"Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy  Neurological Evaluation",126,MIPS CQM,Process,Y,26.110174948792157,84.06,73.01 - 84.96,84.97 - 93.57,93.58 - 98.55,98.56 - 99.99,--,--,--,100.00,Yes,No,N
-"Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention  Evaluation of Footwear",127,MIPS CQM,Process,Y,27.87893305395298,82.19,66.30 - 80.11,80.12 - 92.70,92.71 - 98.69,98.70 - 99.99,--,--,--,100.00,Yes,No,N
-Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,MIPS CQM,Process,Y,30.80595249627927,72.81,35.17 - 55.71,55.72 - 76.03,76.04 - 88.50,88.51 - 95.80,95.81 - 99.07,99.08 - 99.99,--,100.00,No,No,N
-Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,Medicare Part B Claims,Process,Y,20.301832553396856,91.07,92.37 - 98.57,98.58 - 99.71,99.72 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,eCQM,Process,Y,29.11000695791344,51.51,23.35 - 28.13,28.14 - 34.67,34.68 - 43.56,43.57 - 56.80,56.81 - 73.59,73.60 - 86.17,86.18 - 95.38,>= 95.39,No,No,N
-Documentation of Current Medications in the Medical Record,130,MIPS CQM,Process,Y,27.55310012217565,84.65,77.92 - 90.46,90.47 - 95.59,95.60 - 98.14,98.15 - 99.68,99.69 - 99.99,--,--,100.00,Yes,Yes,Y
-Documentation of Current Medications in the Medical Record,130,Medicare Part B Claims,Process,Y,13.367224642320881,96.87,99.67 - 99.96,99.97 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Documentation of Current Medications in the Medical Record,130,eCQM,Process,Y,19.765456256508198,87.13,80.38 - 88.23,88.24 - 92.35,92.36 - 95.25,95.26 - 97.16,97.17 - 98.41,98.42 - 99.32,99.33 - 99.89,>= 99.90,Yes,Yes,Y
-Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,MIPS CQM,Process,Y,34.88221711837133,71.82,34.63 - 60.10,60.11 - 79.69,79.70 - 89.60,89.61 - 97.13,97.14 - 99.41,99.42 - 99.99,--,100.00,No,No,N
-Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,Medicare Part B Claims,Process,Y,27.6422478764487,89.00,95.29 - 99.50,99.51 - 99.99,--,--,--,--,--,100.00,Yes,Yes,N
-Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,eCQM,Process,Y,31.12095272651875,37.83,6.33 - 12.66,12.67 - 20.79,20.80 - 30.76,30.77 - 42.71,42.72 - 55.95,55.96 - 70.43,70.44 - 87.35,>= 87.36,No,No,N
-Melanoma: Continuity of Care  Recall System,137,MIPS CQM,Structure,Y,17.008436822016424,94.40,98.18 - 99.99,--,--,--,--,--,--,100.00,No,No,Y
-Melanoma: Coordination of Care,138,MIPS CQM,Process,Y,24.523529191920765,87.92,81.28 - 95.99,96.00 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care,141,MIPS CQM,Outcome,Y,29.89395806415984,75.52,46.38 - 69.02,69.03 - 81.81,81.82 - 90.43,90.44 - 95.41,95.42 - 98.27,98.28 - 99.99,--,100.00,No,No,Y
-Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care,141,Medicare Part B Claims,Outcome,Y,14.029899792867374,96.44,--,--,--,--,--,--,--,100.00,No,No,Y
-Oncology: Medical and Radiation  Pain Intensity Quantified,143,MIPS CQM,Process,Y,22.483619761211173,89.67,90.07 - 95.86,95.87 - 98.59,98.60 - 99.55,99.56 - 99.99,--,--,--,100.00,Yes,Yes,Y
-Oncology: Medical and Radiation  Pain Intensity Quantified,143,eCQM,Process,Y,24.85520844035345,83.97,75.43 - 87.05,87.06 - 92.85,92.86 - 95.98,95.99 - 97.43,97.44 - 98.31,98.32 - 98.98,98.99 - 99.82,>= 99.83,Yes,No,Y
-Oncology: Medical and Radiation - Plan of Care for Pain,144,MIPS CQM,Process,Y,26.820250785591874,80.46,66.67 - 78.71,78.72 - 87.38,87.39 - 93.21,93.22 - 96.79,96.80 - 98.96,98.97 - 99.99,--,100.00,No,No,Y
-Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy,145,MIPS CQM,Process,Y,17.621400719744177,92.87,93.69 - 98.99,99.00 - 99.91,99.92 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy,145,Medicare Part B Claims,Process,Y,24.236351917394213,86.27,76.12 - 89.82,89.83 - 95.99,96.00 - 99.69,99.70 - 99.99,--,--,--,100.00,Yes,Yes,Y
-Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy,147,MIPS CQM,Process,Y,11.434364673032153,96.08,97.16 - 99.77,99.78 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy,147,Medicare Part B Claims,Process,Y,24.702313645533476,83.91,60.77 - 82.21,82.22 - 95.23,95.24 - 98.32,98.33 - 99.99,--,--,--,100.00,Yes,Yes,Y
-Falls: Plan of Care,155,MIPS CQM,Process,Y,21.400845125374005,91.31,93.10 - 97.89,97.90 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Falls: Plan of Care,155,Medicare Part B Claims,Process,Y,22.241374629049538,91.23,95.74 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Coronary Artery Bypass Graft (CABG): Prolonged Intubation,164,MIPS CQM,Outcome,Y,4.564814797454562,6.04,9.52 - 7.90,7.89 - 5.67,5.66 - 5.18,5.17 - 3.86,3.85 - 3.46,3.45 - 2.71,2.70 - 0.01,0.00,No,No,Y
-Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure,167,MIPS CQM,Outcome,Y,3.7397739087930018,2.71,3.96 - 3.52,3.51 - 2.56,2.55 - 1.97,1.96 - 1.52,1.51 - 0.96,0.95 - 0.01,--,0.00,No,No,Y
-Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration,168,MIPS CQM,Outcome,Y,2.2539282879614264,2.65,4.20 - 3.47,3.46 - 2.68,2.67 - 2.31,2.30 - 1.71,1.70 - 1.61,1.60 - 0.59,0.58 - 0.01,0.00,No,No,Y
-Tuberculosis Screening Prior to First Course Biologic Therapy,176,MIPS CQM,Process,Y,25.40636474848573,82.95,60.00 - 81.96,81.97 - 90.90,90.91 - 97.94,97.95 - 99.99,--,--,--,100.00,Yes,No,N
-Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity,177,MIPS CQM,Process,Y,32.26390078637488,73.34,47.31 - 69.94,69.95 - 78.03,78.04 - 87.59,87.60 - 92.80,92.81 - 98.91,98.92 - 99.99,--,100.00,No,No,N
-Rheumatoid Arthritis (RA): Functional Status Assessment,178,MIPS CQM,Process,Y,19.162724834143724,90.59,87.85 - 92.44,92.45 - 96.70,96.71 - 99.06,99.07 - 99.99,--,--,--,100.00,Yes,Yes,N
-Rheumatoid Arthritis (RA): Glucocorticoid Management,180,MIPS CQM,Process,Y,13.992462062486924,97.21,--,--,--,--,--,--,--,100.00,Yes,Yes,N
-Elder Maltreatment Screen and Follow-Up Plan,181,MIPS CQM,Process,Y,19.280102599304215,92.50,92.48 - 97.80,97.81 - 99.59,99.60 - 99.99,--,--,--,--,100.00,Yes,No,Y
-Elder Maltreatment Screen and Follow-Up Plan,181,Medicare Part B Claims,Process,Y,19.872660855724035,93.77,99.10 - 99.83,99.84 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Functional Outcome Assessment,182,MIPS CQM,Process,Y,21.92809487667928,93.02,98.52 - 99.65,99.66 - 99.86,99.87 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Colonoscopy Interval for Patients with a History of Adenomatous Polyps  Avoidance of Inappropriate Use,185,MIPS CQM,Process,Y,26.698577271021456,85.92,81.25 - 89.36,89.37 - 97.86,97.87 - 99.48,99.49 - 99.99,--,--,--,100.00,Yes,No,Y
-Stroke and Stroke Rehabilitation: Thrombolytic Therapy,187,MIPS CQM,Process,Y,18.82842550428632,90.29,86.46 - 93.41,93.42 - 96.14,96.15 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,MIPS CQM,Outcome,Y,11.006119683878746,94.63,92.83 - 95.51,95.52 - 97.32,97.33 - 98.54,98.55 - 99.99,--,--,--,100.00,No,No,Y
-Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,eCQM,Outcome,Y,14.446354027318316,91.62,88.67 - 93.01,93.02 - 95.34,95.35 - 96.82,96.83 - 97.96,97.97 - 98.80,98.81 - 99.63,99.64 - 99.99,100.00,No,No,Y
+Diabetes: Eye Exam,117,eCQM,Process,Y,35.98001754755805,49.87,13.79 - 21.69,21.70 - 30.01,30.02 - 40.33,40.34 - 54.54,54.55 - 83.20,83.21 - 98.33,98.34 - 99.88,>= 99.89,No,No,N
+Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%),118,MIPS CQM,Process,Y,13.34375787752791,80.78,71.43 - 75.85,75.86 - 78.49,78.50 - 81.78,81.79 - 84.50,84.51 - 87.26,87.27 - 91.99,92.00 - 99.99,100.00,No,No,N
+Diabetes: Medical Attention for Nephropathy,119,MIPS CQM,Process,Y,17.455317129120573,84.42,70.87 - 78.51,78.52 - 84.46,84.47 - 89.34,89.35 - 93.84,93.85 - 97.82,97.83 - 99.99,--,100.00,No,No,N
+Diabetes: Medical Attention for Nephropathy,119,eCQM,Process,Y,15.283345109421653,82.14,73.58 - 78.56,78.57 - 82.36,82.37 - 85.24,85.25 - 87.85,87.86 - 90.70,90.71 - 93.87,93.88 - 98.35,>= 98.36,No,No,N
+"Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy  Neurological Evaluation",126,MIPS CQM,Process,Y,25.373828753155202,85.88,75.76 - 89.77,89.78 - 96.42,96.43 - 99.66,99.67 - 99.99,--,--,--,100.00,Yes,No,N
+"Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention  Evaluation of Footwear",127,MIPS CQM,Process,Y,26.35941950905673,85.03,73.68 - 87.51,87.52 - 98.01,98.02 - 99.99,--,--,--,--,100.00,Yes,No,N
+Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,MIPS CQM,Process,Y,30.442806020945827,74.78,37.57 - 61.05,61.06 - 80.68,80.69 - 91.80,91.81 - 97.48,97.49 - 99.52,99.53 - 99.99,--,100.00,No,No,N
+Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,Medicare Part B Claims,Process,Y,20.141596659181044,91.10,92.39 - 98.51,98.52 - 99.72,99.73 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan,128,eCQM,Process,Y,28.798316580266576,52.03,23.95 - 29.01,29.02 - 35.83,35.84 - 44.98,44.99 - 57.81,57.82 - 73.46,73.47 - 86.07,86.08 - 95.31,>= 95.32,No,No,N
+Documentation of Current Medications in the Medical Record,130,MIPS CQM,Process,Y,26.773939705472433,85.69,80.57 - 91.75,91.76 - 96.35,96.36 - 98.80,98.81 - 99.86,99.87 - 99.99,--,--,100.00,Yes,Yes,Y
+Documentation of Current Medications in the Medical Record,130,Medicare Part B Claims,Process,Y,13.253804300215851,96.86,99.65 - 99.96,99.97 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Documentation of Current Medications in the Medical Record,130,eCQM,Process,Y,20.129344894248955,87.03,80.60 - 88.40,88.41 - 92.51,92.52 - 95.31,95.32 - 97.15,97.16 - 98.39,98.40 - 99.30,99.31 - 99.88,>= 99.89,Yes,Yes,Y
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,MIPS CQM,Process,Y,34.366316149997004,73.86,37.96 - 66.95,66.96 - 84.56,84.57 - 92.90,92.91 - 98.11,98.12 - 99.68,99.69 - 99.99,--,100.00,No,No,N
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,Medicare Part B Claims,Process,Y,25.209449593035238,90.47,96.55 - 99.65,99.66 - 99.99,--,--,--,--,--,100.00,Yes,Yes,N
+Preventive Care and Screening: Screening for Depression and Follow-Up Plan,134,eCQM,Process,Y,31.314188671027285,39.20,7.07 - 13.93,13.94 - 22.45,22.46 - 33.21,33.22 - 45.26,45.27 - 57.99,58.00 - 71.70,71.71 - 88.82,>= 88.83,No,No,N
+Melanoma: Continuity of Care  Recall System,137,MIPS CQM,Structure,Y,17.060918576084326,94.40,98.15 - 99.99,--,--,--,--,--,--,100.00,No,No,Y
+Melanoma: Coordination of Care,138,MIPS CQM,Process,Y,24.51528699444679,87.95,81.28 - 96.02,96.03 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care,141,MIPS CQM,Outcome,Y,29.77772980376029,75.58,46.51 - 68.60,68.61 - 81.77,81.78 - 90.39,90.40 - 95.41,95.42 - 98.37,98.38 - 99.99,--,100.00,No,No,Y
+Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care,141,Medicare Part B Claims,Outcome,Y,13.95083309713755,96.49,--,--,--,--,--,--,--,100.00,No,No,Y
+Oncology: Medical and Radiation  Pain Intensity Quantified,143,MIPS CQM,Process,Y,22.903785816489954,89.61,90.82 - 96.59,96.60 - 98.73,98.74 - 99.74,99.75 - 99.99,--,--,--,100.00,Yes,Yes,Y
+Oncology: Medical and Radiation  Pain Intensity Quantified,143,eCQM,Process,Y,24.614072551422666,84.37,76.92 - 87.43,87.44 - 92.99,93.00 - 96.03,96.04 - 97.48,97.49 - 98.41,98.42 - 99.14,99.15 - 99.84,>= 99.85,Yes,No,Y
+Oncology: Medical and Radiation - Plan of Care for Pain,144,MIPS CQM,Process,Y,26.925735737096936,80.53,64.63 - 79.58,79.59 - 87.49,87.50 - 93.54,93.55 - 97.12,97.13 - 99.15,99.16 - 99.99,--,100.00,No,No,Y
+Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy,145,MIPS CQM,Process,Y,17.387509872665404,93.01,94.11 - 99.08,99.09 - 99.97,99.98 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Radiology: Exposure Dose Indices or Exposure Time and Number of Images Reported for Procedures Using Fluoroscopy,145,Medicare Part B Claims,Process,Y,24.727704405966747,85.86,74.01 - 89.63,89.64 - 95.73,95.74 - 99.58,99.59 - 99.99,--,--,--,100.00,Yes,Yes,Y
+Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy,147,MIPS CQM,Process,Y,11.303125736525145,96.13,97.16 - 99.84,99.85 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy,147,Medicare Part B Claims,Process,Y,25.006084528054917,83.75,60.00 - 82.21,82.22 - 95.23,95.24 - 98.23,98.24 - 99.99,--,--,--,100.00,Yes,Yes,Y
+Falls: Plan of Care,155,MIPS CQM,Process,Y,20.022078982378154,92.27,94.30 - 98.63,98.64 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Falls: Plan of Care,155,Medicare Part B Claims,Process,Y,22.42408199690115,90.94,95.00 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Coronary Artery Bypass Graft (CABG): Prolonged Intubation,164,MIPS CQM,Outcome,Y,4.774832551194543,7.97,11.69 - 10.01,10.00 - 8.34,8.33 - 7.64,7.63 - 5.67,5.66 - 5.07,5.06 - 3.78,3.77 - 0.01,0.00,No,No,Y
+Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure,167,MIPS CQM,Outcome,Y,3.0031756372806093,2.59,3.92 - 3.24,3.23 - 2.51,2.50 - 2.01,2.00 - 1.44,1.43 - 1.20,1.19 - 0.01,--,0.00,No,No,Y
+Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration,168,MIPS CQM,Outcome,Y,2.0671516705164774,2.48,4.00 - 3.47,3.46 - 2.71,2.70 - 2.06,2.05 - 1.65,1.64 - 1.29,1.28 - 0.01,--,0.00,No,No,Y
+Tuberculosis Screening Prior to First Course Biologic Therapy,176,MIPS CQM,Process,Y,24.464950656850387,84.79,67.44 - 84.37,84.38 - 94.99,95.00 - 99.52,99.53 - 99.99,--,--,--,100.00,Yes,No,N
+Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity,177,MIPS CQM,Process,Y,31.409779043315307,75.07,50.74 - 71.89,71.90 - 79.66,79.67 - 88.80,88.81 - 94.56,94.57 - 99.39,99.40 - 99.99,--,100.00,No,No,N
+Rheumatoid Arthritis (RA): Functional Status Assessment,178,MIPS CQM,Process,Y,19.570571238870738,90.87,88.57 - 93.32,93.33 - 97.84,97.85 - 99.68,99.69 - 99.99,--,--,--,100.00,Yes,Yes,N
+Rheumatoid Arthritis (RA): Glucocorticoid Management,180,MIPS CQM,Process,Y,12.987046389926716,97.51,--,--,--,--,--,--,--,100.00,Yes,Yes,N
+Elder Maltreatment Screen and Follow-Up Plan,181,MIPS CQM,Process,Y,20.06512690418497,92.42,94.23 - 98.56,98.57 - 99.79,99.80 - 99.99,--,--,--,--,100.00,Yes,No,Y
+Elder Maltreatment Screen and Follow-Up Plan,181,Medicare Part B Claims,Process,Y,19.138450266357328,94.16,99.11 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Functional Outcome Assessment,182,MIPS CQM,Process,Y,17.618893531673912,94.86,98.59 - 99.71,99.72 - 99.97,99.98 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Colonoscopy Interval for Patients with a History of Adenomatous Polyps  Avoidance of Inappropriate Use,185,MIPS CQM,Process,Y,26.83912239911027,85.78,81.40 - 89.36,89.37 - 98.27,98.28 - 99.55,99.56 - 99.99,--,--,--,100.00,Yes,No,Y
+Stroke and Stroke Rehabilitation: Thrombolytic Therapy,187,MIPS CQM,Process,Y,18.828425504286315,90.29,86.46 - 93.41,93.42 - 96.14,96.15 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,MIPS CQM,Outcome,Y,12.027938076910038,94.41,92.76 - 95.51,95.52 - 97.34,97.35 - 98.54,98.55 - 99.99,--,--,--,100.00,No,No,Y
+Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery,191,eCQM,Outcome,Y,14.493440196476833,91.59,88.70 - 92.97,92.98 - 95.30,95.31 - 96.82,96.83 - 97.92,97.93 - 98.80,98.81 - 99.63,99.64 - 99.99,100.00,No,No,Y
 "HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis",205,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Functional Status Change for Patients with Knee Impairments,217,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,18.227134948381458,54.91,42.22 - 44.89,44.90 - 48.27,48.28 - 50.78,50.79 - 54.20,54.21 - 60.22,60.23 - 67.99,68.00 - 81.81,>= 81.82,No,No,Y
-Functional Status Change for Patients with Hip Impairments,218,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,16.008437222375797,51.64,36.73 - 42.62,42.63 - 45.70,45.71 - 49.99,50.00 - 54.38,54.39 - 58.35,58.36 - 62.85,62.86 - 72.21,>= 72.22,No,No,Y
-"Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments",219,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,16.21649728402826,50.97,35.48 - 43.99,44.00 - 47.99,48.00 - 51.12,51.13 - 53.84,53.85 - 57.75,57.76 - 63.32,63.33 - 68.74,>= 68.75,No,No,Y
-Functional Status Change for Patients with Low Back Impairments,220,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,20.229483480088103,56.31,39.68 - 45.78,45.79 - 48.25,48.26 - 54.89,54.90 - 59.99,60.00 - 65.65,65.66 - 72.05,72.06 - 87.17,>= 87.18,No,No,Y
-Functional Status Change for Patients with Shoulder Impairments,221,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,20.29238024629261,52.22,35.44 - 40.17,40.18 - 43.86,43.87 - 47.04,47.05 - 52.80,52.81 - 59.46,59.47 - 71.22,71.23 - 81.42,>= 81.43,No,No,Y
-"Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",222,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,18.199858946704122,54.72,41.41 - 44.35,44.36 - 49.47,49.48 - 51.91,51.92 - 58.32,58.33 - 61.89,61.90 - 71.92,71.93 - 79.99,>= 80.00,No,No,Y
+Functional Status Change for Patients with Knee Impairments,217,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,19.540007208360063,59.01,42.89 - 47.07,47.08 - 49.99,50.00 - 52.84,52.85 - 60.97,60.98 - 67.85,67.86 - 75.85,75.86 - 88.45,>= 88.46,No,No,Y
+Functional Status Change for Patients with Hip Impairments,218,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,16.811126436679228,52.78,40.43 - 42.62,42.63 - 48.27,48.28 - 50.67,50.68 - 54.89,54.90 - 58.96,58.97 - 63.21,63.22 - 72.40,>= 72.41,No,No,Y
+"Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments",219,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,17.205576874103233,52.15,36.67 - 43.51,43.52 - 48.38,48.39 - 51.47,51.48 - 53.91,53.92 - 60.52,60.53 - 66.32,66.33 - 74.46,>= 74.47,No,No,Y
+Functional Status Change for Patients with Low Back Impairments,220,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,20.30091180631407,57.43,40.75 - 45.78,45.79 - 48.96,48.97 - 54.89,54.90 - 62.18,62.19 - 68.28,68.29 - 74.02,74.03 - 87.17,>= 87.18,No,No,Y
+Functional Status Change for Patients with Shoulder Impairments,221,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,20.59973032535445,53.24,35.59 - 40.23,40.24 - 44.63,44.64 - 50.97,50.98 - 53.32,53.33 - 61.84,61.85 - 73.84,73.85 - 81.43,>= 81.44,No,No,Y
+"Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",222,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,Y,18.344387656462292,55.18,38.71 - 44.35,44.36 - 49.99,50.00 - 52.35,52.36 - 58.69,58.70 - 62.95,62.96 - 72.05,72.06 - 78.56,>= 78.57,No,No,Y
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention,226,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Controlling High Blood Pressure,236,MIPS CQM,Intermediate Outcome,Y,21.532743028983234,63.74,20.00 - 29.99,30.00 - 39.99,40.00 - 49.99,50.00 - 59.99,60.00 - 69.99,70.00 - 79.99,80.00 - 89.99,>= 90.00,No,No,Y
-Controlling High Blood Pressure,236,Medicare Part B Claims,Intermediate Outcome,Y,18.668868031364333,74.89,20.00 - 29.99,30.00 - 39.99,40.00 - 49.99,50.00 - 59.99,60.00 - 69.99,70.00 - 79.99,80.00 - 89.99,>= 90.00,No,No,Y
-Controlling High Blood Pressure,236,eCQM,Intermediate Outcome,Y,16.443624064165398,62.16,51.06 - 56.30,56.31 - 60.13,60.14 - 63.63,63.64 - 67.04,67.05 - 70.64,70.65 - 74.94,74.95 - 80.83,>= 80.84,No,No,Y
+Controlling High Blood Pressure,236,MIPS CQM,Intermediate Outcome,Y,21.72239809372658,63.68,20.00 - 29.99,30.00 - 39.99,40.00 - 49.99,50.00 - 59.99,60.00 - 69.99,70.00 - 79.99,80.00 - 89.99,>= 90.00,No,No,Y
+Controlling High Blood Pressure,236,Medicare Part B Claims,Intermediate Outcome,Y,18.59809111261229,75.06,20.00 - 29.99,30.00 - 39.99,40.00 - 49.99,50.00 - 59.99,60.00 - 69.99,70.00 - 79.99,80.00 - 89.99,>= 90.00,No,No,Y
+Controlling High Blood Pressure,236,eCQM,Intermediate Outcome,Y,16.123326091295606,62.80,51.76 - 56.80,56.81 - 60.66,60.67 - 64.10,64.11 - 67.51,67.52 - 71.10,71.11 - 75.53,75.54 - 81.42,>= 81.43,No,No,Y
 Use of High-Risk Medications in Older Adults,238,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Use of High-Risk Medications in Older Adults,238,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Weight Assessment and Counseling for Nutrition and Physical Activity for Children/Adolescents,239,eCQM,Process,Y,18.58471324950724,36.99,25.64 - 29.12,29.13 - 31.20,31.21 - 32.85,32.86 - 34.66,34.67 - 39.76,39.77 - 49.68,49.69 - 63.87,>= 63.88,No,No,N
-Childhood Immunization Status,240,eCQM,Process,Y,17.61927796263764,39.40,23.44 - 31.81,31.82 - 37.26,37.27 - 41.62,41.63 - 45.93,45.94 - 50.04,50.05 - 53.22,53.23 - 59.68,>= 59.69,No,No,N
-Cardiac Rehabilitation Patient Referral from an Outpatient Setting,243,MIPS CQM,Process,Y,28.360979925066598,37.54,12.75 - 17.02,17.03 - 23.75,23.76 - 29.86,29.87 - 36.32,36.33 - 45.83,45.84 - 59.48,59.49 - 90.90,>= 90.91,No,No,Y
-Barretts Esophagus,249,MIPS CQM,Process,Y,3.3149067868807944,99.65,--,--,--,--,--,--,--,100.00,Yes,Yes,N
-Barretts Esophagus,249,Medicare Part B Claims,Process,Y,0.4316728757255558,99.93,--,--,--,--,--,--,--,100.00,Yes,Yes,N
-Radical Prostatectomy Pathology Reporting,250,MIPS CQM,Process,Y,1.0397061119059148,99.87,--,--,--,--,--,--,--,100.00,Yes,Yes,N
-Radical Prostatectomy Pathology Reporting,250,Medicare Part B Claims,Process,Y,9.89,98.59,--,--,--,--,--,--,--,100.00,Yes,Yes,N
-Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain,254,MIPS CQM,Process,Y,9.072691129360685,94.21,91.09 - 93.41,93.42 - 95.37,95.38 - 96.69,96.70 - 98.00,98.01 - 99.52,99.53 - 99.99,--,100.00,Yes,Yes,N
+Weight Assessment and Counseling for Nutrition and Physical Activity for Children/Adolescents,239,eCQM,Process,Y,18.813389682017018,37.64,26.13 - 29.53,29.54 - 31.66,31.67 - 33.32,33.33 - 35.55,35.56 - 41.22,41.23 - 50.47,50.48 - 64.79,>= 64.80,No,No,N
+Childhood Immunization Status,240,eCQM,Process,Y,17.543140918768728,39.38,23.53 - 31.63,31.64 - 37.13,37.14 - 41.29,41.30 - 45.73,45.74 - 49.99,50.00 - 53.35,53.36 - 59.90,>= 59.91,No,No,N
+Cardiac Rehabilitation Patient Referral from an Outpatient Setting,243,MIPS CQM,Process,Y,27.892023705614434,37.34,13.27 - 17.47,17.48 - 23.75,23.76 - 29.86,29.87 - 36.45,36.46 - 45.75,45.76 - 59.00,59.01 - 90.90,>= 90.91,No,No,Y
+Barretts Esophagus,249,MIPS CQM,Process,Y,3.2902050122561315,99.65,--,--,--,--,--,--,--,100.00,Yes,Yes,N
+Barretts Esophagus,249,Medicare Part B Claims,Process,Y,0.42790692000818625,99.93,--,--,--,--,--,--,--,100.00,Yes,Yes,N
+Radical Prostatectomy Pathology Reporting,250,MIPS CQM,Process,Y,1.0310960133966212,99.88,--,--,--,--,--,--,--,100.00,Yes,Yes,N
+Radical Prostatectomy Pathology Reporting,250,Medicare Part B Claims,Process,Y,9.889999999999999,98.59,--,--,--,--,--,--,--,100.00,Yes,Yes,N
+Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain,254,MIPS CQM,Process,Y,12.825907168757167,93.30,90.55 - 93.40,93.41 - 95.23,95.24 - 96.66,96.67 - 97.99,98.00 - 99.37,99.38 - 99.99,--,100.00,Yes,Yes,N
 Rate of Open Repair of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #7),258,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #2),259,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)",260,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness,261,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness,261,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Sentinel Lymph Node Biopsy for Invasive Breast Cancer,264,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Biopsy Follow-Up,265,MIPS CQM,Process,Y,28.28746056855719,86.38,85.06 - 97.19,97.20 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy,268,MIPS CQM,Process,Y,37.449475218541366,51.93,12.88 - 21.23,21.24 - 29.84,29.85 - 53.69,53.70 - 67.56,67.57 - 75.46,75.47 - 99.99,--,100.00,No,No,N
+Biopsy Follow-Up,265,MIPS CQM,Process,Y,28.370546057433724,86.44,85.77 - 97.44,97.45 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy,268,MIPS CQM,Process,Y,38.07529639500363,47.54,5.26 - 15.37,15.38 - 22.21,22.22 - 46.21,46.22 - 59.54,59.55 - 74.99,75.00 - 99.99,--,100.00,No,No,N
 Inflammatory Bowel Disease (IBD): Assessment of Hepatitis B Virus (HBV) Status Before Initiating Anti-TNF (Tumor Necrosis Factor) Therapy,275,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Sleep Apnea: Severity Assessment at Initial Diagnosis,277,MIPS CQM,Process,Y,36.58005777254427,65.00,24.14 - 40.33,40.34 - 58.91,58.92 - 78.78,78.79 - 94.15,94.16 - 99.99,--,--,100.00,No,No,N
-Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy,279,MIPS CQM,Process,Y,27.250470648897426,85.03,78.32 - 90.90,90.91 - 96.55,96.56 - 99.42,99.43 - 99.99,--,--,--,100.00,Yes,Yes,N
-Dementia: Cognitive Assessment,281,eCQM,Process,Y,31.24576851377409,38.27,7.19 - 13.03,13.04 - 21.30,21.31 - 29.99,30.00 - 41.83,41.84 - 55.99,56.00 - 71.52,71.53 - 88.88,>= 88.89,No,No,N
-Dementia: Functional Status Assessment,282,MIPS CQM,Process,Y,27.755196699953427,86.50,83.13 - 97.19,97.20 - 99.99,--,--,--,--,--,100.00,Yes,No,N
-Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management,283,MIPS CQM,Process,Y,21.405292504106157,91.08,90.91 - 99.54,99.55 - 99.99,--,--,--,--,--,100.00,Yes,Yes,N
-Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia,286,MIPS CQM,Process,Y,21.955258867922083,91.42,93.37 - 99.72,99.73 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Dementia: Education and Support of Caregivers for Patients with Dementia,288,MIPS CQM,Process,Y,30.071476023944022,83.48,63.85 - 92.54,92.55 - 99.18,99.19 - 99.99,--,--,--,--,100.00,Yes,No,Y
-Assessment of Mood Disorders and Psychosis for Patients with Parkinsons Disease,290,MIPS CQM,Process,Y,28.178981960124545,83.17,64.07 - 86.35,86.36 - 94.43,94.44 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Assessment of Cognitive Impairment or Dysfunction for Patients with Parkinsons Disease,291,MIPS CQM,Process,Y,33.890520737716216,76.84,32.76 - 73.38,73.39 - 92.05,92.06 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Rehabilitative Therapy Referral for Patients with Parkinsons Disease,293,MIPS CQM,Process,Y,38.303532489307294,66.70,15.58 - 40.19,40.20 - 77.61,77.62 - 84.52,84.53 - 95.27,95.28 - 99.99,--,--,100.00,No,No,Y
+Sleep Apnea: Severity Assessment at Initial Diagnosis,277,MIPS CQM,Process,Y,36.28687335806643,64.77,24.14 - 40.33,40.34 - 56.46,56.47 - 77.77,77.78 - 93.87,93.88 - 99.99,--,--,100.00,No,No,N
+Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy,279,MIPS CQM,Process,Y,26.043663030419605,85.80,80.00 - 90.90,90.91 - 96.55,96.56 - 99.28,99.29 - 99.83,99.84 - 99.99,--,--,100.00,Yes,Yes,N
+Dementia: Cognitive Assessment,281,eCQM,Process,Y,31.035204075430485,38.40,7.41 - 13.72,13.73 - 21.93,21.94 - 30.50,30.51 - 41.45,41.46 - 55.53,55.54 - 71.42,71.43 - 88.68,>= 88.69,No,No,N
+Dementia: Functional Status Assessment,282,MIPS CQM,Process,Y,26.82081348085345,87.57,84.02 - 98.27,98.28 - 99.99,--,--,--,--,--,100.00,Yes,No,N
+Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management,283,MIPS CQM,Process,Y,20.422302856549972,91.97,93.95 - 99.85,99.86 - 99.99,--,--,--,--,--,100.00,Yes,Yes,N
+Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia,286,MIPS CQM,Process,Y,21.09926404231887,92.12,94.56 - 99.87,99.88 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Dementia: Education and Support of Caregivers for Patients with Dementia,288,MIPS CQM,Process,Y,28.775613293242774,85.02,76.19 - 94.10,94.11 - 99.64,99.65 - 99.99,--,--,--,--,100.00,Yes,No,Y
+Assessment of Mood Disorders and Psychosis for Patients with Parkinsons Disease,290,MIPS CQM,Process,Y,28.06173791586708,83.38,64.07 - 86.35,86.36 - 94.43,94.44 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Assessment of Cognitive Impairment or Dysfunction for Patients with Parkinsons Disease,291,MIPS CQM,Process,Y,33.310628212878534,78.06,40.25 - 75.57,75.58 - 92.49,92.50 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Rehabilitative Therapy Referral for Patients with Parkinsons Disease,293,MIPS CQM,Process,Y,37.704936323689985,67.23,16.16 - 43.35,43.36 - 79.43,79.44 - 82.68,82.69 - 95.23,95.24 - 99.99,--,--,100.00,No,No,Y
 Cataracts: Improvement in Patients Visual Function within 90 Days Following Cataract Surgery,303,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Cataracts: Patient Satisfaction within 90 Days Following Cataract Surgery,304,MIPS CQM,Patient Engagement/Experience,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Initiation and Engagement of Alcohol and Other Drug Dependence Treatment,305,eCQM,Process,Y,5.891295660296799,3.23,0.76 - 1.05,1.06 - 1.31,1.32 - 1.60,1.61 - 1.93,1.94 - 2.55,2.56 - 3.95,3.96 - 7.04,>= 7.05,No,No,Y
-Cervical Cancer Screening,309,eCQM,Process,Y,23.45052824452815,34.00,11.25 - 17.64,17.65 - 24.55,24.56 - 31.62,31.63 - 38.79,38.80 - 45.88,45.89 - 53.49,53.50 - 65.78,>= 65.79,No,No,N
-Chlamydia Screening for Women,310,eCQM,Process,Y,19.155909256041916,36.41,19.12 - 26.12,26.13 - 30.73,30.74 - 35.71,35.72 - 40.36,40.37 - 45.82,45.83 - 52.16,52.17 - 63.39,>= 63.40,No,No,N
+Initiation and Engagement of Alcohol and Other Drug Dependence Treatment,305,eCQM,Process,Y,5.911907236567625,3.51,0.78 - 1.07,1.08 - 1.37,1.38 - 1.66,1.67 - 2.07,2.08 - 2.89,2.90 - 4.40,4.41 - 7.68,>= 7.69,No,No,Y
+Cervical Cancer Screening,309,eCQM,Process,Y,24.009597505152477,35.32,12.33 - 18.87,18.88 - 25.80,25.81 - 32.86,32.87 - 39.85,39.86 - 47.15,47.16 - 55.11,55.12 - 68.73,>= 68.74,No,No,N
+Chlamydia Screening for Women,310,eCQM,Process,Y,19.923001810683427,37.81,19.86 - 26.91,26.92 - 31.57,31.58 - 36.86,36.87 - 41.66,41.67 - 47.58,47.59 - 54.38,54.39 - 65.66,>= 65.67,No,No,N
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented,317,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Falls: Screening for Future Fall Risk,318,eCQM,Process,Y,34.876631286796794,55.71,14.21 - 30.15,30.16 - 46.36,46.37 - 61.45,61.46 - 74.33,74.34 - 85.17,85.18 - 93.43,93.44 - 98.09,>= 98.10,No,No,Y
-Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,MIPS CQM,Process,Y,23.778908639925596,87.72,87.65 - 93.14,93.15 - 95.34,95.35 - 97.06,97.07 - 98.35,98.36 - 99.61,99.62 - 99.99,--,100.00,Yes,Yes,Y
-Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,Medicare Part B Claims,Process,Y,22.345417681936983,89.55,81.08 - 97.43,97.44 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
-Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Preoperative Evaluation in Low-Risk Surgery Patients,322,MIPS CQM,Efficiency,Y,8.39795804750538,2.04,1.22 - 0.20,0.19 - 0.01,--,--,--,--,--,0.00,No,No,Y
-Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Routine Testing After Percutaneous Coronary Intervention (PCI),323,MIPS CQM,Efficiency,Y,5.318814538526239,0.87,0.05 - 0.01,--,--,--,--,--,--,0.00,No,No,Y
-"Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients",324,MIPS CQM,Efficiency,Y,7.419436374220828,2.77,3.50 - 0.43,0.42 - 0.01,--,--,--,--,--,0.00,No,No,Y
-Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy,326,MIPS CQM,Process,Y,14.274652281411896,92.25,82.65 - 95.99,96.00 - 99.07,99.08 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse),331,MIPS CQM,Process,Y,29.689212463028195,35.28,65.71 - 51.86,51.85 - 41.76,41.75 - 30.01,30.00 - 20.39,20.38 - 10.72,10.71 - 4.01,4.00 - 0.01,0.00,No,No,Y
-Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use),332,MIPS CQM,Process,Y,18.81564594173012,79.25,69.39 - 73.57,73.58 - 76.87,76.88 - 81.44,81.45 - 85.70,85.71 - 90.05,90.06 - 97.99,98.00 - 99.99,100.00,No,No,Y
+Falls: Screening for Future Fall Risk,318,eCQM,Process,Y,34.70606230077277,54.28,13.88 - 27.94,27.95 - 43.19,43.20 - 58.36,58.37 - 71.66,71.67 - 83.13,83.14 - 92.58,92.59 - 98.05,>= 98.06,No,No,Y
+Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,MIPS CQM,Process,Y,23.443050208409066,87.75,87.10 - 92.41,92.42 - 95.12,95.13 - 96.95,96.96 - 98.27,98.28 - 99.49,99.50 - 99.99,--,100.00,Yes,Yes,Y
+Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients,320,Medicare Part B Claims,Process,Y,22.203553032816753,89.72,81.08 - 97.43,97.44 - 99.99,--,--,--,--,--,100.00,Yes,Yes,Y
+Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Preoperative Evaluation in Low-Risk Surgery Patients,322,MIPS CQM,Efficiency,Y,8.965195937381385,2.38,1.60 - 0.20,0.19 - 0.01,--,--,--,--,--,0.00,No,No,Y
+Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Routine Testing After Percutaneous Coronary Intervention (PCI),323,MIPS CQM,Efficiency,Y,5.285519488276836,0.86,0.05 - 0.01,--,--,--,--,--,--,0.00,No,No,Y
+"Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients",324,MIPS CQM,Efficiency,Y,11.094096355033315,3.65,3.91 - 0.55,0.54 - 0.01,--,--,--,--,--,0.00,No,No,Y
+Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy,326,MIPS CQM,Process,Y,14.413587319062758,92.23,82.81 - 95.44,95.45 - 99.05,99.06 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse),331,MIPS CQM,Process,Y,31.03226191553734,37.42,70.27 - 55.66,55.65 - 44.31,44.30 - 32.88,32.87 - 21.44,21.43 - 11.85,11.84 - 4.36,4.35 - 0.01,0.00,No,No,Y
+Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use),332,MIPS CQM,Process,Y,18.96020491221219,79.41,69.39 - 73.82,73.83 - 77.26,77.27 - 82.04,82.05 - 85.70,85.71 - 90.47,90.48 - 98.56,98.57 - 99.99,100.00,No,No,Y
 Maternity Care: Elective Delivery (Without Medical Indication) at < 39 Weeks (Overuse),335,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Maternity Care: Postpartum Follow-up and Care Coordination,336,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-HIV Viral Load Suppression,338,MIPS CQM,Outcome,Y,13.753902009954095,88.24,77.17 - 86.33,86.34 - 88.10,88.11 - 92.77,92.78 - 95.55,95.56 - 98.24,98.25 - 99.99,--,100.00,No,No,Y
-HIV Medical Visit Frequency,340,MIPS CQM,Process,Y,21.53043130268811,70.46,50.57 - 58.05,58.06 - 61.47,61.48 - 68.70,68.71 - 72.21,72.22 - 88.35,88.36 - 96.91,96.92 - 99.99,100.00,No,No,Y
+HIV Viral Load Suppression,338,MIPS CQM,Outcome,Y,13.56112388463776,87.52,76.60 - 84.71,84.72 - 88.05,88.06 - 91.64,91.65 - 93.72,93.73 - 98.03,98.04 - 99.99,--,100.00,No,No,Y
+HIV Medical Visit Frequency,340,MIPS CQM,Process,Y,22.07878906353554,71.66,50.57 - 58.05,58.06 - 61.89,61.90 - 70.62,70.63 - 84.92,84.93 - 88.63,88.64 - 96.91,96.92 - 99.99,100.00,No,No,Y
 "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",344,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Total Knee or Hip Replacement: Shared Decision-Making: Trial of Conservative (Non-surgical) Therapy,350,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Total Knee or Hip Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation,351,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Anastomotic Leak Intervention,354,MIPS CQM,Outcome,Y,24.697588506050234,10.09,7.80 - 4.51,4.50 - 3.86,3.85 - 1.90,1.89 - 0.84,0.83 - 0.01,--,--,0.00,No,No,Y
-Unplanned Reoperation within the 30 Day Postoperative Period,355,MIPS CQM,Outcome,Y,11.763719297818056,3.71,3.55 - 2.03,2.02 - 1.21,1.20 - 0.65,0.64 - 0.01,--,--,--,0.00,No,No,Y
-Unplanned Hospital Readmission within 30 Days of Principal Procedure,356,MIPS CQM,Outcome,Y,7.368280997411886,3.96,6.19 - 4.01,4.00 - 2.79,2.78 - 2.15,2.14 - 1.07,1.06 - 0.01,--,--,0.00,No,No,Y
-Surgical Site Infection (SSI),357,MIPS CQM,Outcome,Y,11.55120771172402,3.36,2.71 - 1.06,1.05 - 0.40,0.39 - 0.01,--,--,--,--,0.00,No,No,Y
-Patient-Centered Surgical Risk Assessment and Communication,358,MIPS CQM,Process,Y,29.945588816954913,83.17,71.08 - 88.58,88.59 - 96.84,96.85 - 99.61,99.62 - 99.99,--,--,--,100.00,Yes,No,Y
-Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies,360,MIPS CQM,Process,Y,33.130362079411036,82.72,67.86 - 96.47,96.48 - 99.71,99.72 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines,364,MIPS CQM,Process,Y,23.967306066345866,84.28,61.97 - 79.06,79.07 - 96.36,96.37 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Anastomotic Leak Intervention,354,MIPS CQM,Outcome,Y,24.45738830644247,9.96,7.80 - 4.51,4.50 - 3.86,3.85 - 1.97,1.96 - 0.84,0.83 - 0.01,--,--,0.00,No,No,Y
+Unplanned Reoperation within the 30 Day Postoperative Period,355,MIPS CQM,Outcome,Y,11.272914416116024,3.49,3.23 - 1.93,1.92 - 1.12,1.11 - 0.61,0.60 - 0.01,--,--,--,0.00,No,No,Y
+Unplanned Hospital Readmission within 30 Days of Principal Procedure,356,MIPS CQM,Outcome,Y,7.1085176476724055,3.90,5.95 - 4.18,4.17 - 2.81,2.80 - 2.17,2.16 - 1.07,1.06 - 0.01,--,--,0.00,No,No,Y
+Surgical Site Infection (SSI),357,MIPS CQM,Outcome,Y,11.885727422681414,3.40,2.56 - 1.05,1.04 - 0.40,0.39 - 0.01,--,--,--,--,0.00,No,No,Y
+Patient-Centered Surgical Risk Assessment and Communication,358,MIPS CQM,Process,Y,29.640768459982983,83.62,72.00 - 90.06,90.07 - 97.29,97.30 - 99.74,99.75 - 99.99,--,--,--,100.00,Yes,No,Y
+Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies,360,MIPS CQM,Process,Y,33.0432486056097,82.85,70.67 - 97.03,97.04 - 99.72,99.73 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines,364,MIPS CQM,Process,Y,23.959398663114314,84.06,61.39 - 78.94,78.95 - 95.64,95.65 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
 Follow-Up Care for Children Prescribed ADHD Medication (ADD),366,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Depression Remission at Twelve Months,370,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Depression Remission at Twelve Months,370,eCQM,Outcome,Y,10.6400693772016,11.67,3.67 - 4.86,4.87 - 6.96,6.97 - 8.32,8.33 - 10.78,10.79 - 13.93,13.94 - 17.64,17.65 - 25.41,>= 25.42,No,No,Y
-Closing the Referral Loop: Receipt of Specialist Report,374,MIPS CQM,Process,Y,30.307716502655346,81.31,62.79 - 85.63,85.64 - 94.75,94.76 - 98.61,98.62 - 99.99,--,--,--,100.00,Yes,No,Y
-Closing the Referral Loop: Receipt of Specialist Report,374,eCQM,Process,Y,30.523649894059563,36.16,7.71 - 12.49,12.50 - 18.72,18.73 - 26.31,26.32 - 37.09,37.10 - 51.18,51.19 - 66.66,66.67 - 87.31,>= 87.32,No,No,Y
-Functional Status Assessment for Total Knee Replacement,375,eCQM,Process,Y,12.981691583288995,12.54,2.65 - 4.62,4.63 - 6.61,6.62 - 8.88,8.89 - 10.90,10.91 - 13.78,13.79 - 20.72,20.73 - 28.30,>= 28.31,No,No,Y
-Functional Status Assessment for Total Hip Replacement,376,eCQM,Process,Y,13.54191617059523,13.31,4.07 - 5.33,5.34 - 5.76,5.77 - 9.65,9.66 - 12.67,12.68 - 16.86,16.87 - 19.99,20.00 - 28.22,>= 28.23,No,No,Y
+Depression Remission at Twelve Months,370,eCQM,Outcome,Y,10.169949208824155,11.26,3.62 - 4.79,4.80 - 6.83,6.84 - 8.22,8.23 - 10.41,10.42 - 13.50,13.51 - 16.66,16.67 - 23.90,>= 23.91,No,No,Y
+Closing the Referral Loop: Receipt of Specialist Report,374,MIPS CQM,Process,Y,30.2425879030215,81.25,63.18 - 84.30,84.31 - 94.11,94.12 - 98.51,98.52 - 99.99,--,--,--,100.00,Yes,No,Y
+Closing the Referral Loop: Receipt of Specialist Report,374,eCQM,Process,Y,30.0496770382908,34.98,7.59 - 12.23,12.24 - 17.92,17.93 - 24.99,25.00 - 34.34,34.35 - 47.82,47.83 - 64.85,64.86 - 86.12,>= 86.13,No,No,Y
+Functional Status Assessment for Total Knee Replacement,375,eCQM,Process,Y,12.981691583288997,12.54,2.65 - 4.62,4.63 - 6.61,6.62 - 8.88,8.89 - 10.90,10.91 - 13.78,13.79 - 20.72,20.73 - 28.30,>= 28.31,No,No,Y
+Functional Status Assessment for Total Hip Replacement,376,eCQM,Process,Y,13.54808093328313,13.69,4.31 - 5.40,5.41 - 6.67,6.68 - 10.61,10.62 - 12.72,12.73 - 16.86,16.87 - 20.97,20.98 - 28.22,>= 28.23,No,No,Y
 Functional Status Assessments for Heart Failure,377,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Children Who Have Dental Decay or Cavities,378,eCQM,Outcome,Y,3.266932316483123,0.62,0.88 - 0.42,0.41 - 0.01,--,--,--,--,--,0.00,No,No,Y
-"Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",379,eCQM,Process,Y,6.074992562634367,4.47,0.18 - 0.42,0.43 - 0.94,0.95 - 2.13,2.14 - 3.39,3.40 - 5.22,5.23 - 8.57,8.58 - 11.31,>= 11.32,No,No,N
-Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment,382,eCQM,Process,Y,29.799612804845786,34.67,5.79 - 11.99,12.00 - 17.47,17.48 - 28.46,28.47 - 35.84,35.85 - 51.74,51.75 - 59.73,59.74 - 84.14,>= 84.15,No,No,Y
-Adherence to Antipsychotic Medications For Individuals with Schizophrenia,383,MIPS CQM,Intermediate Outcome,Y,20.805116482325626,88.83,81.08 - 93.01,93.02 - 95.55,95.56 - 99.31,99.32 - 99.99,--,--,--,100.00,No,No,Y
-Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery,384,MIPS CQM,Outcome,Y,6.321183050233609,96.29,93.33 - 96.42,96.43 - 97.91,97.92 - 99.99,--,--,--,--,100.00,Yes,No,Y
+Children Who Have Dental Decay or Cavities,378,eCQM,Outcome,Y,3.36175411873827,0.64,0.87 - 0.37,0.36 - 0.01,--,--,--,--,--,0.00,No,No,Y
+"Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",379,eCQM,Process,Y,5.895602475720707,4.26,0.20 - 0.44,0.45 - 1.00,1.01 - 1.79,1.80 - 3.12,3.13 - 4.91,4.92 - 7.23,7.24 - 11.23,>= 11.24,No,No,N
+Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment,382,eCQM,Process,Y,30.40035645809465,35.62,5.79 - 12.19,12.20 - 18.48,18.49 - 28.76,28.77 - 36.88,36.89 - 51.89,51.90 - 64.56,64.57 - 87.93,>= 87.94,No,No,Y
+Adherence to Antipsychotic Medications For Individuals with Schizophrenia,383,MIPS CQM,Intermediate Outcome,Y,20.23262413680636,89.64,82.57 - 93.25,93.26 - 95.93,95.94 - 99.99,--,--,--,--,100.00,No,No,Y
+Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery,384,MIPS CQM,Outcome,Y,6.321183050233606,96.29,93.33 - 96.42,96.43 - 97.91,97.92 - 99.99,--,--,--,--,100.00,Yes,No,Y
 Adult Primary Rhegmatogenous Retinal Detachment Surgery: Visual Acuity Improvement Within 90 Days of Surgery,385,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences,386,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users,387,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Cataract Surgery: Difference Between Planned and Final Refraction,389,MIPS CQM,Outcome,Y,36.55538714941849,61.33,21.48 - 29.53,29.54 - 39.34,39.35 - 69.93,69.94 - 92.85,92.86 - 97.13,97.14 - 99.86,99.87 - 99.99,100.00,No,No,Y
+Cataract Surgery: Difference Between Planned and Final Refraction,389,MIPS CQM,Outcome,Y,36.387412085082495,61.65,22.58 - 30.50,30.51 - 40.47,40.48 - 69.93,69.94 - 92.85,92.86 - 97.19,97.20 - 99.86,99.87 - 99.99,100.00,No,No,Y
 Follow-Up After Hospitalization for Mental Illness (FUH),391,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Cardiac Tamponade and/or Pericardiocentesis Following Atrial Fibrillation Ablation,392,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Infection within 180 Days of Cardiac Implantable Electronic Device (CIED) Implantation, Replacement, or Revision",393,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Immunizations for Adolescents,394,MIPS CQM,Process,Y,16.265454491100503,19.80,5.88 - 7.68,7.69 - 11.99,12.00 - 17.49,17.50 - 21.68,21.69 - 25.55,25.56 - 31.57,31.58 - 39.99,>= 40.00,No,No,N
-Lung Cancer Reporting (Biopsy/Cytology Specimens),395,MIPS CQM,Process,Y,8.619133042945434,98.92,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Lung Cancer Reporting (Biopsy/Cytology Specimens),395,Medicare Part B Claims,Process,Y,6.849993243641624,98.93,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Lung Cancer Reporting (Resection Specimens),396,MIPS CQM,Process,Y,3.9184028703998717,99.56,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Lung Cancer Reporting (Resection Specimens),396,Medicare Part B Claims,Process,Y,1.1916644253161621,99.67,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Melanoma Reporting,397,MIPS CQM,Process,Y,7.874602602526525,98.21,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Melanoma Reporting,397,Medicare Part B Claims,Process,Y,3.426292983705312,98.88,99.26 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Optimal Asthma Control,398,MIPS CQM,Outcome,Y,33.575756362684366,65.58,33.17 - 41.11,41.12 - 48.04,48.05 - 69.54,69.55 - 91.27,91.28 - 99.99,--,--,100.00,No,No,Y
+Immunizations for Adolescents,394,MIPS CQM,Process,Y,16.42626627726433,20.63,6.45 - 8.10,8.11 - 12.49,12.50 - 18.18,18.19 - 21.73,21.74 - 25.56,25.57 - 33.32,33.33 - 45.44,>= 45.45,No,No,N
+Lung Cancer Reporting (Biopsy/Cytology Specimens),395,MIPS CQM,Process,Y,8.566595707356301,98.93,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Lung Cancer Reporting (Biopsy/Cytology Specimens),395,Medicare Part B Claims,Process,Y,6.768760426877459,98.95,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Lung Cancer Reporting (Resection Specimens),396,MIPS CQM,Process,Y,3.906801961744664,99.56,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Lung Cancer Reporting (Resection Specimens),396,Medicare Part B Claims,Process,Y,1.1916644253161637,99.67,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Melanoma Reporting,397,MIPS CQM,Process,Y,7.840087218382764,98.23,--,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Melanoma Reporting,397,Medicare Part B Claims,Process,Y,3.426292983705313,98.88,99.26 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Optimal Asthma Control,398,MIPS CQM,Outcome,Y,33.514447981350756,68.60,35.71 - 44.11,44.12 - 57.49,57.50 - 79.24,79.25 - 99.99,--,--,--,100.00,No,No,Y
 One-Time Screening for Hepatitis C Virus (HCV) for all Patients,400,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis,401,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Tobacco Use and Help with Quitting Among Adolescents,402,MIPS CQM,Process,Y,14.237199553803697,92.73,89.41 - 94.11,94.12 - 96.87,96.88 - 98.63,98.64 - 99.73,99.74 - 99.99,--,--,100.00,Yes,Yes,N
-Anesthesiology Smoking Abstinence,404,MIPS CQM,Intermediate Outcome,Y,21.15230374382401,74.81,59.90 - 66.66,66.67 - 73.09,73.10 - 78.81,78.82 - 84.71,84.72 - 89.18,89.19 - 92.86,92.87 - 99.88,>= 99.89,No,No,Y
-Appropriate Follow-up Imaging for Incidental Abdominal Lesions,405,MIPS CQM,Process,Y,23.307273412508916,86.78,75.47 - 88.45,88.46 - 96.35,96.36 - 98.60,98.61 - 99.99,--,--,--,100.00,Yes,No,Y
+Tobacco Use and Help with Quitting Among Adolescents,402,MIPS CQM,Process,Y,14.240773820959582,92.72,89.37 - 94.12,94.13 - 96.87,96.88 - 98.66,98.67 - 99.75,99.76 - 99.99,--,--,100.00,Yes,Yes,N
+Anesthesiology Smoking Abstinence,404,MIPS CQM,Intermediate Outcome,Y,23.340171980709183,72.28,53.76 - 63.02,63.03 - 70.58,70.59 - 76.57,76.58 - 83.02,83.03 - 88.98,88.99 - 92.90,92.91 - 99.59,>= 99.60,No,No,Y
+Appropriate Follow-up Imaging for Incidental Abdominal Lesions,405,MIPS CQM,Process,Y,23.06559985303327,86.98,75.71 - 88.75,88.76 - 96.34,96.35 - 98.59,98.60 - 99.99,--,--,--,100.00,Yes,No,Y
 Appropriate Follow-up Imaging for Incidental Abdominal Lesions,405,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients,406,MIPS CQM,Process,Y,15.282086727936063,6.13,6.67 - 3.18,3.17 - 0.01,--,--,--,--,--,0.00,Yes,Yes,Y
+Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients,406,MIPS CQM,Process,Y,15.282086727936056,6.13,6.67 - 3.18,3.17 - 0.01,--,--,--,--,--,0.00,Yes,Yes,Y
 Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients,406,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Clinical Outcome Post Endovascular Stroke Treatment,409,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Psoriasis: Clinical Response to Systemic Medications,410,MIPS CQM,Outcome,Y,26.579951517025194,79.36,58.22 - 73.07,73.08 - 84.67,84.68 - 91.75,91.76 - 96.58,96.59 - 99.99,--,--,100.00,No,No,Y
+Psoriasis: Clinical Response to Systemic Medications,410,MIPS CQM,Outcome,Y,26.64389062726964,79.34,58.22 - 72.72,72.73 - 84.67,84.68 - 91.88,91.89 - 96.61,96.62 - 99.99,--,--,100.00,No,No,Y
 Door to Puncture Time for Endovascular Stroke Treatment,413,MIPS CQM,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older,415,MIPS CQM,Efficiency,Y,10.823906719887919,90.23,82.24 - 86.72,86.73 - 90.47,90.48 - 94.54,94.55 - 96.61,96.62 - 98.16,98.17 - 99.32,99.33 - 99.99,100.00,No,No,Y
-Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years,416,MIPS CQM,Efficiency,Y,21.82355123037772,16.58,25.15 - 17.93,17.92 - 12.61,12.60 - 9.32,9.31 - 5.57,5.56 - 2.08,2.07 - 0.01,--,0.00,No,No,Y
+Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older,415,MIPS CQM,Efficiency,Y,10.819873977276867,90.24,82.27 - 86.77,86.78 - 90.47,90.48 - 94.65,94.66 - 96.61,96.62 - 98.14,98.15 - 99.32,99.33 - 99.99,100.00,No,No,Y
+Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years,416,MIPS CQM,Efficiency,Y,21.812535292258726,16.54,25.00 - 17.87,17.86 - 12.51,12.50 - 9.20,9.19 - 5.57,5.56 - 2.01,2.00 - 0.01,--,0.00,No,No,Y
 Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years,416,Medicare Part B Claims,Efficiency,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Osteoporosis Management in Women Who Had a Fracture,418,MIPS CQM,Process,Y,25.10775210419695,18.25,3.33 - 3.99,4.00 - 5.06,5.07 - 8.08,8.09 - 10.70,10.71 - 15.11,15.12 - 21.61,21.62 - 54.54,>= 54.55,No,No,N
+Osteoporosis Management in Women Who Had a Fracture,418,MIPS CQM,Process,Y,25.107752104196948,18.25,3.33 - 3.99,4.00 - 5.06,5.07 - 8.08,8.09 - 10.70,10.71 - 15.11,15.12 - 21.61,21.62 - 54.54,>= 54.55,No,No,N
 Osteoporosis Management in Women Who Had a Fracture,418,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Overuse of Imaging for the Evaluation of Primary Headache,419,MIPS CQM,Process,Y,19.61277685887792,14.41,23.08 - 14.42,14.41 - 9.24,9.23 - 5.07,5.06 - 4.36,4.35 - 2.95,2.94 - 1.54,1.53 - 0.01,0.00,Yes,Yes,Y
+Overuse of Imaging for the Evaluation of Primary Headache,419,MIPS CQM,Process,Y,19.501491344485725,14.78,28.67 - 15.49,15.48 - 9.53,9.52 - 5.51,5.50 - 4.43,4.42 - 2.95,2.94 - 1.54,1.53 - 0.01,0.00,No,No,Y
 Varicose Vein Treatment with Saphenous Ablation: Outcome Survey,420,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Appropriate Assessment of Retrievable Inferior Vena Cava (IVC) Filters for Removal,421,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury,422,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury,422,Medicare Part B Claims,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Perioperative Temperature Management,424,MIPS CQM,Outcome,Y,6.5649160915029485,97.92,98.08 - 99.27,99.28 - 99.74,99.75 - 99.90,99.91 - 99.96,99.97 - 99.99,--,--,100.00,Yes,No,Y
-Photodocumentation of Cecal Intubation,425,MIPS CQM,Process,Y,12.862110675881317,93.67,92.57 - 95.24,95.25 - 97.17,97.18 - 98.26,98.27 - 99.01,99.02 - 99.52,99.53 - 99.95,99.96 - 99.99,100.00,Yes,Yes,N
-Prevention of Post-Operative Nausea and Vomiting (PONV)  Combination Therapy,430,MIPS CQM,Process,Y,6.5882161897628,97.75,98.21 - 99.19,99.20 - 99.60,99.61 - 99.78,99.79 - 99.90,99.91 - 99.98,99.99 - 99.99,--,100.00,Yes,Yes,Y
+Perioperative Temperature Management,424,MIPS CQM,Outcome,Y,5.83965670559966,98.24,98.40 - 99.55,99.56 - 99.88,99.89 - 99.96,99.97 - 99.99,--,--,--,100.00,Yes,No,Y
+Photodocumentation of Cecal Intubation,425,MIPS CQM,Process,Y,10.957859213505307,95.09,94.66 - 96.49,96.50 - 97.83,97.84 - 98.64,98.65 - 99.18,99.19 - 99.45,99.46 - 99.95,99.96 - 99.99,100.00,Yes,Yes,N
+Prevention of Post-Operative Nausea and Vomiting (PONV)  Combination Therapy,430,MIPS CQM,Process,Y,6.727891692920131,97.85,98.38 - 99.33,99.34 - 99.67,99.68 - 99.87,99.88 - 99.98,99.99 - 99.99,--,--,100.00,Yes,Yes,Y
 Preventive Care and Screening: Unhealthy Alcohol Use: Screening & Brief Counseling,431,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair,432,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair,433,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques,436,MIPS CQM,Process,Y,13.793395145682661,96.83,99.54 - 99.90,99.91 - 99.98,99.99 - 99.99,--,--,--,--,100.00,Yes,Yes,N
-Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques,436,Medicare Part B Claims,Process,Y,18.702433184711104,93.67,96.37 - 98.66,98.67 - 99.53,99.54 - 99.92,99.93 - 99.99,--,--,--,100.00,Yes,Yes,N
-Statin Therapy for the Prevention and Treatment of Cardiovascular Disease,438,MIPS CQM,Process,Y,15.745079564619166,83.86,69.70 - 75.53,75.54 - 80.94,80.95 - 84.99,85.00 - 90.90,90.91 - 99.80,99.81 - 99.99,--,100.00,No,No,N
-Statin Therapy for the Prevention and Treatment of Cardiovascular Disease,438,eCQM,Process,Y,11.528772861889554,71.76,65.52 - 68.68,68.69 - 70.99,71.00 - 73.11,73.12 - 75.21,75.22 - 77.48,77.49 - 80.19,80.20 - 83.62,>= 83.63,No,No,N
+Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques,436,MIPS CQM,Process,Y,12.00205063714294,97.37,99.49 - 99.88,99.89 - 99.98,99.99 - 99.99,--,--,--,--,100.00,Yes,Yes,N
+Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques,436,Medicare Part B Claims,Process,Y,19.69160767668695,93.26,96.31 - 98.66,98.67 - 99.54,99.55 - 99.93,99.94 - 99.99,--,--,--,100.00,Yes,Yes,N
+Statin Therapy for the Prevention and Treatment of Cardiovascular Disease,438,MIPS CQM,Process,Y,15.786014983705742,82.95,69.39 - 73.52,73.53 - 78.91,78.92 - 84.15,84.16 - 89.12,89.13 - 99.49,99.50 - 99.99,--,100.00,No,No,N
+Statin Therapy for the Prevention and Treatment of Cardiovascular Disease,438,eCQM,Process,Y,11.480381632553538,71.54,64.96 - 68.41,68.42 - 70.67,70.68 - 72.91,72.92 - 75.10,75.11 - 77.38,77.39 - 80.01,80.02 - 83.42,>= 83.43,No,No,N
 Age Appropriate Screening Colonoscopy,439,MIPS CQM,Efficiency,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Skin Cancer: Biopsy Reporting Time  Pathologist to Clinician,440,MIPS CQM,Process,Y,2.652457497889701,99.24,99.55 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
-Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control),441,MIPS CQM,Intermediate Outcome,Y,24.841253888472053,54.41,30.23 - 39.98,39.99 - 51.48,51.49 - 61.89,61.90 - 67.58,67.59 - 72.54,72.55 - 76.39,76.40 - 80.60,>= 80.61,No,No,Y
+Skin Cancer: Biopsy Reporting Time  Pathologist to Clinician,440,MIPS CQM,Process,Y,3.6977502737431114,99.02,99.52 - 99.99,--,--,--,--,--,--,100.00,Yes,Yes,Y
+Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control),441,MIPS CQM,Intermediate Outcome,Y,25.232092470629762,53.25,28.24 - 39.01,39.02 - 47.37,47.38 - 59.46,59.47 - 66.66,66.67 - 72.21,72.22 - 76.34,76.35 - 80.60,>= 80.61,No,No,Y
 Non-Recommended Cervical Cancer Screening in Adolescent Females,443,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG),445,MIPS CQM,Outcome,Y,2.2875631028443673,2.43,3.36 - 2.87,2.86 - 2.55,2.54 - 2.28,2.27 - 1.73,1.72 - 1.24,1.23 - 0.01,--,0.00,No,No,Y
+Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG),445,MIPS CQM,Outcome,Y,2.1499621900035164,2.42,3.85 - 3.29,3.28 - 2.64,2.63 - 2.18,2.17 - 1.70,1.69 - 1.28,1.27 - 0.01,--,0.00,No,No,Y
 Appropriate Workup Prior to Endometrial Ablation,448,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Appropriate Treatment for Patients with Stage I (T1c) - III HER2 Positive Breast Cancer,450,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy,451,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies,452,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Percentage of Patients Who Died from Cancer Receiving Chemotherapy in the Last 14 Days of Life (lower score  better),453,MIPS CQM,Process,Y,7.776164020382502,11.92,17.86 - 15.23,15.22 - 13.69,13.68 - 11.31,11.30 - 9.39,9.38 - 6.32,6.31 - 4.77,4.76 - 0.01,0.00,No,No,Y
+Percentage of Patients Who Died from Cancer Receiving Chemotherapy in the Last 14 Days of Life (lower score  better),453,MIPS CQM,Process,Y,7.9021433556667375,12.05,17.86 - 15.92,15.91 - 13.80,13.79 - 11.44,11.43 - 9.39,9.38 - 6.46,6.45 - 4.77,4.76 - 0.01,0.00,No,No,Y
 Percentage of Patients Who Died from Cancer Admitted to the Intensive Care Unit (ICU) in the Last 30 Days of Life (lower score  better),455,MIPS CQM,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score  better),457,MIPS CQM,Outcome,Y,11.219683429820554,8.88,14.81 - 11.27,11.26 - 8.78,8.77 - 5.39,5.38 - 4.16,4.15 - 2.54,2.53 - 1.36,1.35 - 0.01,0.00,No,No,Y
+Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score  better),457,MIPS CQM,Outcome,Y,11.219683429820549,8.88,14.81 - 11.27,11.26 - 8.78,8.77 - 5.39,5.38 - 4.16,4.15 - 2.54,2.53 - 1.36,1.35 - 0.01,0.00,No,No,Y
 Back Pain After Lumbar Discectomy/Laminectomy,459,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Back Pain After Lumbar Fusion,460,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Leg Pain After Lumbar Discectomy/Laminectomy,461,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy,462,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Prevention of Post-Operative Vomiting (POV)  Combination Therapy (Pediatrics),463,MIPS CQM,Process,Y,6.504251374426914,97.71,97.30 - 98.92,98.93 - 99.73,99.74 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use,464,MIPS CQM,Process,Y,8.627095271255248,92.26,86.79 - 91.22,91.23 - 93.03,93.04 - 95.58,95.59 - 96.39,96.40 - 97.61,97.62 - 98.46,98.47 - 99.99,100.00,Yes,No,Y
+Prevention of Post-Operative Vomiting (POV)  Combination Therapy (Pediatrics),463,MIPS CQM,Process,Y,6.440186812873615,97.71,97.24 - 98.69,98.70 - 99.72,99.73 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use,464,MIPS CQM,Process,Y,8.703089139788943,92.15,86.79 - 90.90,90.91 - 92.91,92.92 - 95.56,95.57 - 96.39,96.40 - 97.61,97.62 - 98.46,98.47 - 99.99,100.00,Yes,No,Y
 Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and Interrogation of Ovarian Arteries,465,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Continuity of Pharmacotherapy for Opioid Use Disorder (OUD),468,MIPS CQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status After Lumbar Fusion,469,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status After Primary Total Knee Replacement,470,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status After Lumbar Discectomy/Laminectomy,471,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture,472,eCQM,Process,Y,1.3247170573987015,0.23,--,--,--,--,--,--,--,0.00,Yes,Yes,Y
+Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture,472,eCQM,Process,Y,1.317441331385789,0.23,--,--,--,--,--,--,--,0.00,Yes,Yes,Y
 Leg Pain After Lumbar Fusion,473,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-HIV Screening,475,eCQM,Process,Y,13.627676290894684,15.19,3.56 - 6.41,6.42 - 9.15,9.16 - 12.31,12.32 - 15.83,15.84 - 19.06,19.07 - 23.61,23.62 - 33.17,>= 33.18,No,No,N
+HIV Screening,475,eCQM,Process,Y,13.7902954657852,14.91,3.64 - 6.15,6.16 - 8.83,8.84 - 11.84,11.85 - 14.92,14.93 - 18.21,18.22 - 22.71,22.72 - 31.63,>= 31.64,No,No,N
 Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia,476,eCQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Multimodal Pain Management,477,MIPS CQM,Process,Y,17.012614579001074,88.40,80.46 - 85.94,85.95 - 91.91,91.92 - 96.15,96.16 - 98.70,98.71 - 99.59,99.60 - 99.92,99.93 - 99.99,100.00,Yes,No,Y
+Multimodal Pain Management,477,MIPS CQM,Process,Y,19.626674710301106,87.56,80.65 - 86.39,86.40 - 93.14,93.15 - 96.70,96.71 - 98.68,98.69 - 99.51,99.52 - 99.92,99.93 - 99.99,100.00,Yes,No,Y
 Functional Status Change for Patients with Neck Impairments,478,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Intravesical Bacillus-Calmette Guerin for Non-muscle Invasive Bladder Cancer,481,eCQM,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Hemodialysis Vascular Access: Practitioner Level Long-term Catheter Rate,482,MIPS CQM,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM),483,MIPS CQM,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Achievement of Projected Effective Dose of Standardized Allergens for Patient Treated With Allergen Immunotherapy for at Least One Year,AAAAI8,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Penicillin Allergy: Appropriate Removal or Confirmation,AAAAI18,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Achievement of Projected Effective Dose of Standardized Allergens for Patient Treated With Allergen Immunotherapy for at Least One Year,AAAAI8,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Asthma Control: Minimal Important Difference Improvement,AAAAI17,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Asthma: Assessment of Asthma Control – Ambulatory Care Setting,AAAAI2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Documentation of Clinical Response to Allergen Immunotherapy within One Year,AAAAI6,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Melanoma: – Appropriate Surgical Margins,AAD12,QCDR Measure,Intermediate Outcome,Y,5.160402715920165,96.56,91.80 - 96.42,96.43 - 98.54,98.55 - 99.99,--,--,--,--,100.00,Yes,No,Y
-Skin Cancer Surgery: Post-Operative Complications,AAD11,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Melanoma: – Appropriate Surgical Margins,AAD12,QCDR Measure,Intermediate Outcome,Y,5.160402715920164,96.56,91.80 - 96.42,96.43 - 98.54,98.55 - 99.99,--,--,--,--,100.00,Yes,No,Y
 Melanoma: Tracking and Evaluation of Recurrence,AAD14,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Skin Cancer Surgery: Post-Operative Complications,AAD11,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Psoriasis – Improvement in Patient-Reported Itch Severity,AAD9,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Dermatitis – Improvement in Patient-Reported Itch Severity,AAD10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Chronic Skin Conditions: Patient Reported Quality-of-Life,AAD8,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Mildly Atypical Dysplastic Nevi – Appropriate Non-Excision,AAD13,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Skin Cancer: Biopsy Reporting Time - Clinician to Patient,AAD6,QCDR Measure,Process,Y,20.16643050382244,93.23,96.99 - 98.80,98.81 - 99.79,99.80 - 99.99,--,--,--,--,100.00,Yes,No,Y
-Psoriasis: Screening for Psoriatic Arthritis,AAD7,QCDR Measure,Process,Y,30.249371739683315,84.84,82.68 - 95.25,95.26 - 97.69,97.70 - 99.36,99.37 - 99.99,--,--,--,100.00,Yes,No,Y
+Psoriasis: Screening for Psoriatic Arthritis,AAD7,QCDR Measure,Process,Y,29.782633761825014,84.98,83.21 - 94.54,94.55 - 97.29,97.30 - 99.03,99.04 - 99.99,--,--,--,100.00,Yes,No,Y
+Skin Cancer: Biopsy Reporting Time - Clinician to Patient,AAD6,QCDR Measure,Process,Y,19.77669247959255,93.51,97.37 - 98.88,98.89 - 99.83,99.84 - 99.99,--,--,--,--,100.00,Yes,No,Y
 Patient reported falls and plan of care,AAN34,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Quality of Life Outcome for Patients with Neurologic Conditions,AAN22,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Medication Prescribed For Acute Migraine Attack,AAN5,QCDR Measure,Process,Y,15.618193091201032,61.55,47.33 - 53.69,53.70 - 57.15,57.16 - 62.85,62.86 - 67.36,67.37 - 71.42,71.43 - 76.34,76.35 - 80.72,>= 80.73,No,No,N
-Diabetes/Pre-Diabetes Screening for Patients with DSP,AAN28,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Exercise and Appropriate Physical Activity Counseling for Patients with MS,AAN8,QCDR Measure,Process,Y,23.175668193900393,74.68,56.67 - 67.79,67.80 - 74.16,74.17 - 80.02,80.03 - 86.59,86.60 - 91.52,91.53 - 94.51,94.52 - 98.97,>= 98.98,No,No,N
-Comprehensive Epilepsy Care Center Referral or Discussion for Patients with Epilepsy,AAN29,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Migraine Preventive Therapy Management,AAN30,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Acute Treatment Prescribed for Cluster Headache,AAN31,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Exercise and Appropriate Physical Activity Counseling for Patients with MS,AAN8,QCDR Measure,Process,Y,22.815934811151507,74.81,56.67 - 69.27,69.28 - 74.16,74.17 - 80.02,80.03 - 85.70,85.71 - 91.32,91.33 - 94.51,94.52 - 98.97,>= 98.98,No,No,N
 Preventive Treatment Prescribed for Cluster Headache,AAN32,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Pediatric Medication reconciliation,AAN25,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Querying and Follow-Up About Symptoms of Autonomic Dysfunction for Patients with Parkinson's Disease,AAN9,QCDR Measure,Process,Y,32.60854113959295,70.18,38.82 - 59.99,60.00 - 70.19,70.20 - 87.10,87.11 - 91.68,91.69 - 96.25,96.26 - 97.33,97.34 - 99.99,100.00,No,No,N
+Medication Prescribed For Acute Migraine Attack,AAN5,QCDR Measure,Process,Y,16.48430389772259,62.74,47.37 - 53.69,53.70 - 57.68,57.69 - 63.85,63.86 - 67.49,67.50 - 71.89,71.90 - 77.62,77.63 - 83.40,>= 83.41,No,No,N
+Acute Treatment Prescribed for Cluster Headache,AAN31,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Migraine Preventive Therapy Management,AAN30,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Comprehensive Epilepsy Care Center Referral or Discussion for Patients with Epilepsy,AAN29,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Diabetes/Pre-Diabetes Screening for Patients with DSP,AAN28,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Activity counseling for back pain,AAN26,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Pediatric Medication reconciliation,AAN25,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Querying and Follow-Up About Symptoms of Autonomic Dysfunction for Patients with Parkinson's Disease,AAN9,QCDR Measure,Process,Y,32.825097829992316,69.89,34.78 - 59.99,60.00 - 70.02,70.03 - 87.10,87.11 - 92.15,92.16 - 96.25,96.26 - 97.36,97.37 - 99.99,100.00,No,No,N
 Tympanostomy Tubes: Resolution of Otitis Media with Effusion (OME) in Adults and Children,AAO36,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Tympanostomy Tubes: Topical Ear Drop Monotherapy for Acute Otorrhea,AAO12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Standard Benign Positional Paroxysmal Vertigo (BPPV) Management,AAO32,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Bell's Palsy: Inappropriate Use of Magnetic Resonance Imaging or Computed Tomography Scan,AAO13,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Dysphonia: Postoperative Laryngeal Examination,AAO34,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Age-Related Hearing Loss: Audiometric Evaluation,AAO16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Bell's Palsy: Inappropriate Use of Magnetic Resonance Imaging or Computed Tomography Scan,AAO13,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Standard Benign Positional Paroxysmal Vertigo (BPPV) Management,AAO32,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Age-Related Hearing Loss: Audiometric Evaluation,AAO16,QCDR Measure,Process,Y,10.510884041474977,91.79,90.00 - 92.70,92.71 - 94.26,94.27 - 95.82,95.83 - 96.02,96.03 - 96.60,96.61 - 97.63,97.64 - 98.79,>= 98.80,Yes,No,Y
+Allergic Rhinitis: Avoidance of Leukotriene Inhibitors,AAO24,QCDR Measure,Process,Y,5.508434871674883,95.75,90.74 - 93.95,93.96 - 96.60,96.61 - 98.97,98.98 - 99.58,99.59 - 99.99,--,--,100.00,Yes,No,Y
+Tympanostomy Tubes: Hearing Test,AAO20,QCDR Measure,Process,Y,19.497226292908515,85.29,79.63 - 87.26,87.27 - 88.88,88.89 - 89.80,89.81 - 91.99,92.00 - 94.58,94.59 - 96.14,96.15 - 98.10,>= 98.11,No,No,N
 Benign Positional Paroxysmal Vertigo (BPPV): Dix-Hallpike and Canalith Repositioning,AAO35,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Tympanostomy Tubes: Hearing Test,AAO20,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Allergic Rhinitis: Avoidance of Leukotriene Inhibitors,AAO24,QCDR Measure,Process,Y,5.37011290937469,95.87,91.19 - 94.67,94.68 - 97.27,97.28 - 98.92,98.93 - 99.38,99.39 - 99.99,--,--,100.00,Yes,No,Y
 Otitis Media with Effusion (OME): Hearing Test for Chronic OME > 3 months,AAO21,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Allergic Rhinitis: Intranasal Corticosteroids or Oral Antihistamines,AAO23,QCDR Measure,Process,Y,22.268127049014744,64.70,49.92 - 58.77,58.78 - 64.46,64.47 - 67.99,68.00 - 72.07,72.08 - 75.96,75.97 - 86.17,86.18 - 89.51,>= 89.52,No,No,N
-Pediatric OSA: Objective Assessment of Positive Airway Pressure Therapy Adherence,AASM1,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Pediatric OSA: Objective Assessment of OSA Signs and Symptoms in Children with Complex Medical Conditions,AASM2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Allergic Rhinitis: Intranasal Corticosteroids or Oral Antihistamines,AAO23,QCDR Measure,Process,Y,21.675206225755552,64.29,49.92 - 58.77,58.78 - 62.74,62.75 - 67.29,67.30 - 71.49,71.50 - 75.62,75.63 - 84.28,84.29 - 89.34,>= 89.35,No,No,N
 Adult OSA: Screening for Adult OSA by Primary Care Physicians,AASM3,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Pediatric OSA: Objective Assessment of OSA Signs and Symptoms in Children with Complex Medical Conditions,AASM2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Pediatric OSA: Objective Assessment of Positive Airway Pressure Therapy Adherence,AASM1,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Measuring the Value-Functions of Primary Care: Physician Level Continuity of Care Measure,ABFM12,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Hypotension Prevention After Spinal Placement for Elective Cesarean Section,ABG40,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Use of Capnography for non-Operating Room anesthesia Measure,ABG43,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Known or Suspected Difficult Airway Mitigation Strategies,ABG42,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Upper Extremity Nerve Blockade in Shoulder Surgery,ABG41,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Chest Pain – Avoidance of admission for adult patients with low-risk chest pain.,ACEP59,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-ED Median Time from ED arrival to ED departure for all Adult Patients,ACEP50,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Syncope – Avoidance of admission for adult patients with low-risk syncope,ACEP60,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-ED Median Time from ED arrival to ED departure for all Pediatric ED Patients,ACEP51,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Sepsis Management: Septic Shock: Lactate Clearance Rate of >=10,ACEP30,QCDR Measure,Outcome,Y,6.352834376511372,79.37,73.73 - 74.99,75.00 - 77.21,77.22 - 78.71,78.72 - 79.99,80.00 - 82.60,82.61 - 86.41,86.42 - 88.88,>= 88.89,No,No,Y
-Appropriate Utilization of Focused Assessment with Sonography for Trauma (FAST) Exam in the Emergency Department,ACEP54,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Emergency Department Utilization of CT for Pulmonary Embolism,ACEP22,QCDR Measure,Process,Y,15.69956626178191,34.26,22.92 - 25.43,25.44 - 28.78,28.79 - 30.63,30.64 - 37.79,37.80 - 40.61,40.62 - 46.13,46.14 - 52.35,>= 52.36,No,No,Y
-Appropriate Use of Imaging for Recurrent Renal Colic,ACEP53,QCDR Measure,Process,Y,25.452517405798783,80.70,63.64 - 79.99,80.00 - 84.71,84.72 - 91.05,91.06 - 94.63,94.64 - 97.05,97.06 - 98.84,98.85 - 99.99,100.00,No,No,Y
-Coagulation Studies in Patients Presenting with Chest Pain with No Coagulopathy or Bleeding,ACEP21,QCDR Measure,Process,Y,8.015966181301817,8.23,12.85 - 9.40,9.39 - 7.49,7.48 - 5.95,5.94 - 4.74,4.73 - 3.58,3.57 - 2.68,2.67 - 0.01,0.00,No,No,Y
-Avoidance of Opioid therapy for dental pain.,ACEP62,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older,ACEP19,QCDR Measure,Process,Y,10.698397614019777,68.21,59.44 - 62.23,62.24 - 65.51,65.52 - 66.86,66.87 - 69.87,69.88 - 71.92,71.93 - 77.26,77.27 - 82.09,>= 82.10,No,No,Y
-"Avoidance of Chest X-ray in pediatric patients with Asthma, Bronchiolitis or Croup",ACEP61,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Tobacco Use: Screening and Cessation Intervention for Patients with Asthma and COPD,ACEP25,QCDR Measure,Process,Y,15.27573716495145,69.80,56.31 - 60.19,60.20 - 68.01,68.02 - 70.97,70.98 - 74.14,74.15 - 77.85,77.86 - 83.65,83.66 - 90.31,>= 90.32,No,No,N
+Sepsis Management: Septic Shock: Lactate Clearance Rate of >=10,ACEP30,QCDR Measure,Outcome,Y,6.352834376511369,79.37,73.73 - 74.99,75.00 - 77.21,77.22 - 78.71,78.72 - 79.99,80.00 - 82.60,82.61 - 86.41,86.42 - 88.88,>= 88.89,No,No,Y
+Chest Pain – Avoidance of admission for adult patients with low-risk chest pain.,ACEP59,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Follow-Up Care Coordination Documented in Discharge Summary,ACEP56,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Foley catheter use in the emergency department,ACEP31,QCDR Measure,Process,Y,16.794761654980963,76.42,64.41 - 66.17,66.18 - 77.82,77.83 - 78.70,78.71 - 85.87,85.88 - 89.51,89.52 - 92.06,92.07 - 93.47,>= 93.48,No,No,Y
-Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years,ACEP55,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Appropriate Foley catheter use in the emergency department,ACEP31,QCDR Measure,Process,Y,16.794761654980967,76.42,64.41 - 66.17,66.18 - 77.82,77.83 - 78.70,78.71 - 85.87,85.88 - 89.51,89.52 - 92.06,92.07 - 93.47,>= 93.48,No,No,Y
+Appropriate Utilization of Focused Assessment with Sonography for Trauma (FAST) Exam in the Emergency Department,ACEP54,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Sepsis Management: Septic Shock: Lactate Level Measurement, Antibiotics Ordered, and Fluid Resuscitation",ACEP48,QCDR Measure,Process,Y,15.66051581768625,83.66,75.00 - 79.16,79.17 - 84.43,84.44 - 88.93,88.94 - 92.12,92.13 - 93.87,93.88 - 94.68,94.69 - 96.49,>= 96.50,No,No,N
+Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years,ACEP55,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Tobacco Use: Screening and Cessation Intervention for Patients with Asthma and COPD,ACEP25,QCDR Measure,Process,Y,15.373129076527768,69.86,56.12 - 60.19,60.20 - 67.05,67.06 - 70.97,70.98 - 74.34,74.35 - 77.85,77.86 - 84.00,84.01 - 92.05,>= 92.06,No,No,N
+Avoidance of Opioid therapy for dental pain.,ACEP62,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Appropriate Emergency Department Utilization of Lumbar Spine Imaging for Atraumatic Low Back Pain,ACEP52,QCDR Measure,Process,Y,20.066187639001992,56.84,46.33 - 55.25,55.26 - 57.75,57.76 - 62.25,62.26 - 67.73,67.74 - 69.78,69.79 - 72.17,72.18 - 75.88,>= 75.89,No,No,Y
-Surgical Site Infection Rate - Mohs Micrographic Surgery,ACMS4,QCDR Measure,Outcome,Y,4.407433167551924,3.97,--,10.00 - 1.98,1.97 - 1.18,1.17 - 0.91,0.90 - 0.62,0.61 - 0.39,0.38 - 0.18,<= 0.17,No,No,Y
+Appropriate Use of Imaging for Recurrent Renal Colic,ACEP53,QCDR Measure,Process,Y,25.452517405798783,80.70,63.64 - 79.99,80.00 - 84.71,84.72 - 91.05,91.06 - 94.63,94.64 - 97.05,97.06 - 98.84,98.85 - 99.99,100.00,No,No,Y
+Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older,ACEP19,QCDR Measure,Process,Y,10.69839761401978,68.21,59.44 - 62.23,62.24 - 65.51,65.52 - 66.86,66.87 - 69.87,69.88 - 71.92,71.93 - 77.26,77.27 - 82.09,>= 82.10,No,No,Y
+"Avoidance of Chest X-ray in pediatric patients with Asthma, Bronchiolitis or Croup",ACEP61,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Coagulation Studies in Patients Presenting with Chest Pain with No Coagulopathy or Bleeding,ACEP21,QCDR Measure,Process,Y,8.00654262334069,8.18,12.85 - 9.40,9.39 - 7.45,7.44 - 5.95,5.94 - 4.74,4.73 - 3.53,3.52 - 2.59,2.58 - 0.01,0.00,No,No,Y
+Appropriate Emergency Department Utilization of CT for Pulmonary Embolism,ACEP22,QCDR Measure,Process,Y,15.699566261781909,34.26,22.92 - 25.43,25.44 - 28.78,28.79 - 30.63,30.64 - 37.79,37.80 - 40.61,40.62 - 46.13,46.14 - 52.35,>= 52.36,No,No,Y
+Surgical Site Infection Rate - Mohs Micrographic Surgery,ACMS4,QCDR Measure,Outcome,Y,4.407433167551923,3.97,--,10.00 - 1.98,1.97 - 1.18,1.17 - 0.91,0.90 - 0.62,0.61 - 0.39,0.38 - 0.18,<= 0.17,No,No,Y
 Photographic and/or Anatomic Map Documentation to Prevent Wrong-Site Surgery,ACMS10,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Post-Operative Management of Field Cancerization after Mohs Micrographic Surgery,ACMS9,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Limit quantity of opioids prescribed for pain management in patients following Mohs micrographic surgery,ACMS8,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Documentation of High-Risk Squamous Cell Carcinoma Stage in Mohs Micrographic Surgery Record,ACMS5,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Antibiotic Prophylaxis for High Risk Cardiac / Orthopedic Cases prior to Mohs micrographic surgery - Prevention of Overuse,ACMS3,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 COPD Exacerbation or CHF Exacerbation requiring Hospital Admission: Palliative Care Evaluation,ACQR16,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-COPD: Steroids for no more than 5 days in COPD Exacerbation,ACQR3,QCDR Measure,Efficiency and Cost/Resource Use,Y,4.03708994661378,95.68,92.21 - 95.07,95.08 - 95.91,95.92 - 96.35,96.36 - 97.34,97.35 - 98.47,98.48 - 99.01,99.02 - 99.99,100.00,No,No,Y
+COPD: Steroids for no more than 5 days in COPD Exacerbation,ACQR3,QCDR Measure,Efficiency and Cost/Resource Use,Y,4.037089946613779,95.68,92.21 - 95.07,95.08 - 95.91,95.92 - 96.35,96.36 - 97.34,97.35 - 98.47,98.48 - 99.01,99.02 - 99.99,100.00,No,No,Y
 ABCDEF Bundle - Early mobility for ICU patients,ACQR12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Sepsis: Hour One bundle,ACQR13,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Rheumatoid Arthritis Patients with Low Disease Activity or Remission,ACR16,QCDR Measure,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Gout: Serum Urate Target,ACR14,QCDR Measure,Intermediate Outcome,Y,16.875755149456477,44.86,31.94 - 35.70,35.71 - 40.90,40.91 - 43.23,43.24 - 49.99,50.00 - 54.54,54.55 - 61.53,61.54 - 66.66,>= 66.67,No,No,Y
-"Multi-strata weighted average for 3 CT Exam Types: Overall Percent of CT exams for which Dose Length Product is at or below the size-specific diagnostic reference level (for CT Abdomen-pelvis with contrast/single phase scan, CT Chest without contrast/single phase scan and CT Head/Brain without contrast/single phase scan)",ACRAD34,QCDR Measure,Outcome,Y,18.29327442457705,83.05,76.09 - 84.85,84.86 - 85.49,85.50 - 89.22,89.23 - 92.07,92.08 - 95.11,--,95.12 - 96.21,>= 96.22,No,No,Y
-Report Turnaround Time: Mammography,ACRAD25,QCDR Measure,Outcome,Y,33.72493253983911,23.85,37.52 - 26.52,26.51 - 19.64,19.63 - 14.59,14.58 - 10.13,10.12 - 5.33,5.32 - 2.14,2.13 - 0.59,<= 0.58,No,No,Y
-Report Turnaround Time: Radiography,ACRAD15,QCDR Measure,Outcome,Y,5.515527083340101,4.94,6.65 - 5.29,5.28 - 4.11,4.10 - 3.43,3.42 - 2.79,2.78 - 1.93,1.92 - 1.38,1.37 - 0.82,<= 0.81,No,No,Y
-Report Turnaround Time: Ultrasound (Excluding Breast US),ACRAD16,QCDR Measure,Outcome,Y,12.66921806390143,6.56,7.79 - 6.34,6.33 - 5.03,5.02 - 4.23,4.22 - 3.19,3.18 - 2.46,2.45 - 1.71,1.70 - 0.97,<= 0.96,No,No,Y
-Report Turnaround Time: MRI,ACRAD17,QCDR Measure,Outcome,Y,8.117850698651726,10.63,16.66 - 12.76,12.75 - 10.17,10.16 - 8.60,8.59 - 6.83,6.82 - 5.31,5.30 - 4.06,4.05 - 2.62,<= 2.61,No,No,Y
-Report Turnaround Time: CT,ACRAD18,QCDR Measure,Outcome,Y,12.049889637836865,6.54,6.98 - 5.31,5.30 - 4.43,4.42 - 3.95,3.94 - 3.11,3.10 - 2.47,2.46 - 1.69,1.68 - 1.16,<= 1.15,No,No,Y
-Report Turnaround Time: PET,ACRAD19,QCDR Measure,Outcome,Y,21.889585476251554,20.20,29.79 - 24.91,24.90 - 16.14,16.13 - 11.62,11.61 - 9.73,9.72 - 6.96,6.95 - 4.04,4.03 - 2.76,<= 2.75,No,No,Y
-Safe Hydroxychloroquine Dosing,ACR15,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Interpretation of CT Pulmonary Angiography (CTPA) for Pulmonary Embolism,ACRAD37,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Hepatitis B Safety Screening,ACR10,QCDR Measure,Process,Y,21.774457578941956,36.49,13.00 - 21.13,21.14 - 30.76,30.77 - 38.08,38.09 - 44.01,44.02 - 51.34,51.35 - 55.41,55.42 - 62.02,>= 62.03,No,No,Y
+Gout: Serum Urate Target,ACR14,QCDR Measure,Intermediate Outcome,Y,17.471021897253763,45.69,33.33 - 35.75,35.76 - 40.90,40.91 - 44.61,44.62 - 51.74,51.75 - 54.67,54.68 - 62.49,62.50 - 66.66,>= 66.67,No,No,Y
+"Multi-strata weighted average for 3 CT Exam Types: Overall Percent of CT exams for which Dose Length Product is at or below the size-specific diagnostic reference level (for CT Abdomen-pelvis with contrast/single phase scan, CT Chest without contrast/single phase scan and CT Head/Brain without contrast/single phase scan)",ACRAD34,QCDR Measure,Outcome,Y,18.34201747071374,83.28,77.32 - 84.85,84.86 - 85.85,85.86 - 90.46,90.47 - 91.65,91.66 - 95.11,--,95.12 - 97.12,>= 97.13,No,No,Y
+Report Turnaround Time: PET,ACRAD19,QCDR Measure,Outcome,Y,21.152018036750697,21.13,34.39 - 26.52,26.51 - 18.09,18.08 - 13.34,13.33 - 10.44,10.43 - 7.88,7.87 - 4.39,4.38 - 2.76,<= 2.75,No,No,Y
+Report Turnaround Time: Mammography,ACRAD25,QCDR Measure,Outcome,Y,35.57262928968945,26.77,38.66 - 28.23,28.22 - 22.69,22.68 - 17.72,17.71 - 12.78,12.77 - 8.56,8.55 - 3.99,3.98 - 0.92,<= 0.91,No,No,Y
+Report Turnaround Time: CT,ACRAD18,QCDR Measure,Outcome,Y,11.595903707381652,6.37,7.57 - 5.53,5.52 - 4.41,4.40 - 3.67,3.66 - 2.77,2.76 - 2.17,2.16 - 1.52,1.51 - 1.08,<= 1.07,No,No,Y
+Report Turnaround Time: MRI,ACRAD17,QCDR Measure,Outcome,Y,51.14772757220016,14.72,17.47 - 12.52,12.51 - 9.90,9.89 - 7.95,7.94 - 6.03,6.02 - 4.80,4.79 - 3.62,3.61 - 2.50,<= 2.49,No,No,Y
+Report Turnaround Time: Ultrasound (Excluding Breast US),ACRAD16,QCDR Measure,Outcome,Y,18.141109047202292,7.92,8.91 - 6.75,6.74 - 5.26,5.25 - 4.33,4.32 - 3.28,3.27 - 2.70,2.69 - 1.94,1.93 - 1.11,<= 1.10,No,No,Y
+Report Turnaround Time: Radiography,ACRAD15,QCDR Measure,Outcome,Y,6.253506488508969,5.45,7.93 - 5.90,5.89 - 4.52,4.51 - 3.59,3.58 - 2.70,2.69 - 1.89,1.88 - 1.34,1.33 - 0.85,<= 0.84,No,No,Y
 Incidental Coronary Artery Calcification Reported on Chest CT,ACRAD36,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Disease Activity Measurement for Patients with PsA,ACR12,QCDR Measure,Process,Y,29.473229817463437,37.15,9.33 - 12.04,12.05 - 19.43,19.44 - 33.43,33.44 - 41.22,41.23 - 48.47,48.48 - 68.86,68.87 - 85.02,>= 85.03,No,No,N
-Surveillance Imaging for Liver Nodules less than 10mm in Patients at Risk for Hepatocellular Carcinoma (HCC),ACRAD42,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Safe Hydroxychloroquine Dosing,ACR15,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Use of Quantitative Criteria for Oncologic FDG PET Imaging,ACRAD41,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Hepatitis B Safety Screening,ACR10,QCDR Measure,Process,Y,21.774457578941956,36.49,13.00 - 21.13,21.14 - 30.76,30.77 - 38.08,38.09 - 44.01,44.02 - 51.34,51.35 - 55.41,55.42 - 62.02,>= 62.03,No,No,Y
 Use of Structured Reporting in Prostate MRI,ACRAD40,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Disease Activity Measurement for Patients with PsA,ACR12,QCDR Measure,Process,Y,30.885312711417562,36.24,6.99 - 10.76,10.77 - 17.38,17.39 - 28.67,28.68 - 40.76,40.77 - 46.65,46.66 - 69.68,69.69 - 85.69,>= 85.70,No,No,N
 Use of Low Dose Cranial CT or MRI Examinations for Patients with Ventricular Shunts,ACRAD38,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Avoidance of Cerebral Hyperthermia for Procedures Involving Cardiopulmonary Bypass,AQI65,QCDR Measure,Outcome,Y,25.2787878044482,83.00,66.67 - 87.23,87.24 - 92.58,92.59 - 95.58,95.59 - 97.01,97.02 - 99.67,99.68 - 99.99,--,100.00,No,No,Y
+Interpretation of CT Pulmonary Angiography (CTPA) for Pulmonary Embolism,ACRAD37,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Surveillance Imaging for Liver Nodules less than 10mm in Patients at Risk for Hepatocellular Carcinoma (HCC),ACRAD42,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Avoidance of Cerebral Hyperthermia for Procedures Involving Cardiopulmonary Bypass,AQI65,QCDR Measure,Outcome,Y,25.278787804448193,83.00,66.67 - 87.23,87.24 - 92.58,92.59 - 95.58,95.59 - 97.01,97.02 - 99.67,99.68 - 99.99,--,100.00,No,No,Y
 Coronary Artery Bypass Graft (CABG): Prolonged Intubation – Inverse Measure,AQI18,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patient-Reported Experience with Anesthesia,AQI48,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,3.0375880919701985,92.47,90.28 - 90.79,90.80 - 91.72,91.73 - 92.29,92.30 - 92.94,92.95 - 94.03,94.04 - 95.30,95.31 - 96.35,>= 96.36,No,No,Y
+Patient-Reported Experience with Anesthesia,AQI48,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,3.207804672347732,92.61,90.30 - 91.10,91.11 - 91.90,91.91 - 92.49,92.50 - 93.08,93.09 - 94.22,94.23 - 95.41,95.42 - 96.65,>= 96.66,No,No,Y
 Prevention of Arterial Line-Related Bloodstream Infections,AQI73,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Perioperative Anemia Management,AQI72,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Adherence to Blood Conservation Guidelines for Cardiac Operations using Cardiopulmonary Bypass (CPB) – Composite,AQI49,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Use of Neuraxial Techniques and/or Peripheral Nerve Blocks for Total Knee Arthroplasty (TKA),AQI56,QCDR Measure,Process,Y,7.97201075987455,97.27,96.74 - 98.75,98.76 - 99.24,99.25 - 99.77,99.78 - 99.99,--,--,--,100.00,Yes,Yes,Y
+Use of Neuraxial Techniques and/or Peripheral Nerve Blocks for Total Knee Arthroplasty (TKA),AQI56,QCDR Measure,Process,Y,7.856412068389039,97.29,96.74 - 98.57,98.58 - 99.20,99.21 - 99.74,99.75 - 99.99,--,--,--,100.00,Yes,Yes,Y
 Safe Opioid Prescribing Practices,AQI57,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Obstructive Sleep Apnea: Patient Education,AQI62,QCDR Measure,Process,Y,14.520360206972251,94.73,95.66 - 98.32,98.33 - 99.39,99.40 - 99.67,99.68 - 99.87,99.88 - 99.99,--,--,100.00,Yes,Yes,N
+Obstructive Sleep Apnea: Patient Education,AQI62,QCDR Measure,Process,Y,10.787979866892682,96.75,97.76 - 99.11,99.12 - 99.61,99.62 - 99.79,99.80 - 99.99,--,--,--,100.00,Yes,Yes,N
 Consultation for Frail Patients,AQI67,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Obstructive Sleep Apnea: Mitigation Strategies,AQI68,QCDR Measure,Process,Y,17.87176402304382,91.51,89.99 - 95.65,95.66 - 97.46,97.47 - 98.37,98.38 - 99.33,99.34 - 99.67,99.68 - 99.95,99.96 - 99.99,100.00,Yes,No,Y
+Obstructive Sleep Apnea: Mitigation Strategies,AQI68,QCDR Measure,Process,Y,22.565526187707277,86.20,75.75 - 88.70,88.71 - 93.59,93.60 - 97.46,97.47 - 98.65,98.66 - 99.49,99.50 - 99.94,99.95 - 99.99,100.00,Yes,No,Y
 Intraoperative Antibiotic Redosing,AQI69,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Ambulatory Glucose Management,AQI71,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Stones: Repeat Shock Wave Lithotripsy (SWL) Within 6 Months of Initial Treatment,AQUA14,QCDR Measure,Outcome,Y,14.97502586108718,17.18,34.27 - 31.25,31.24 - 19.90,19.89 - 13.01,13.00 - 7.47,7.46 - 4.61,4.60 - 1.75,1.74 - 0.01,0.00,No,No,Y
 Hospital admissions or infectious complications within 30 days of TRUS Biopsy,AQUA8,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Non-Muscle Invasive Bladder Cancer: Early Surveillance Cystoscopy for Non-Muscle Invasive Bladder Cancer,AQUA18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Stones: Repeat Shock Wave Lithotripsy (SWL) Within 6 Months of Initial Treatment,AQUA14,QCDR Measure,Outcome,Y,14.97502586108718,17.18,34.27 - 31.25,31.24 - 19.90,19.89 - 13.01,13.00 - 7.47,7.46 - 4.61,4.60 - 1.75,1.74 - 0.01,0.00,No,No,Y
+Stones: Urinalysis Performed Before Surgical Stone Procedures,AQUA15,QCDR Measure,Process,Y,19.068841094981238,61.63,41.04 - 44.87,44.88 - 49.38,49.39 - 60.24,60.25 - 73.52,73.53 - 78.36,78.37 - 80.02,80.03 - 84.49,>= 84.50,No,No,Y
 Non-Muscle Invasive Bladder Cancer: Repeat Transurethral Resection of Bladder Tumor (TURBT) for T1 disease,AQUA16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Benign Prostate Hyperplasia (BPH): Inappropriate Lab & Imaging Services for Patients with BPH,AQUA26,QCDR Measure,Process,Y,10.117881162536909,10.29,17.11 - 14.80,14.79 - 12.51,12.50 - 8.02,8.01 - 5.64,5.63 - 3.19,3.18 - 1.79,1.78 - 0.01,0.00,No,No,Y
-Stones: Urinalysis Performed Before Surgical Stone Procedures,AQUA15,QCDR Measure,Process,Y,19.068841094981234,61.63,41.04 - 44.87,44.88 - 49.38,49.39 - 60.24,60.25 - 73.52,73.53 - 78.36,78.37 - 80.02,80.03 - 84.49,>= 84.50,No,No,Y
+Non-Muscle Invasive Bladder Cancer: Early Surveillance Cystoscopy for Non-Muscle Invasive Bladder Cancer,AQUA18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Benign Prostate Hyperplasia (BPH): Inappropriate Lab & Imaging Services for Patients with BPH,AQUA26,QCDR Measure,Process,Y,10.118959487493296,10.02,17.11 - 14.80,14.79 - 10.34,10.33 - 7.54,7.53 - 5.64,5.63 - 2.61,2.60 - 0.93,0.92 - 0.01,0.00,No,No,Y
 Visits to the ER or Urgent Care Following Reconstruction After Skin Cancer Resection,ASPS24,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patient Satisfaction with Information Prior to Facial Reconstruction After Skin Cancer Resection Procedures,ASPS26,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Avoidance of Opioid Prescriptions for Closure and Reconstruction After Skin Cancer Resection,ASPS29,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Continuation of Anticoagulation Therapy in the Office-based Setting for Closure and Reconstruction After Skin Cancer Resection Procedures,ASPS28,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Avoidance of Post-operative Systemic Antibiotics for Office-based Closures and Reconstruction After Skin Cancer Procedures,ASPS27,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Coordination of Care for Anticoagulated Patients Undergoing Reconstruction After Skin Cancer Resection,ASPS22,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Avoidance of Post-operative Systemic Antibiotics for Office-based Closures and Reconstruction After Skin Cancer Procedures,ASPS27,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Continuation of Anticoagulation Therapy in the Office-based Setting for Closure and Reconstruction After Skin Cancer Resection Procedures,ASPS28,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Avoidance of Opioid Prescriptions for Closure and Reconstruction After Skin Cancer Resection,ASPS29,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Turnaround Time (TAT) - Biopsies,CAP22,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Helicobacter pylori Status and Turnaround Time,CAP28,QCDR Measure,Process,Y,11.09175590247099,87.81,82.28 - 85.13,85.14 - 88.64,88.65 - 90.46,90.47 - 91.59,91.60 - 93.60,93.61 - 97.29,97.30 - 97.91,>= 97.92,No,No,Y
+Urinary Bladder Biopsy Diagnostic Requirements For Appropriate Patient Management,CAP30,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing Status in Colorectal Carcinoma, Endometrial, Gastroesophageal, or Small Bowel Carcinoma",CAP33,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Biomarker Status to Inform Clinical Management and Treatment Decisions in Patients with Non-small Cell Lung Cancer,CAP34,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Cancer Protocol and Turnaround Time for Gastrointestinal Carcinomas: Gastric, Esophageal, Colorectal and Hepatocellular Carcinomas",CAP35,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 p16 Immunohistochemistry Reporting for Human Papillomavirus in Patients with Oropharyngeal Squamous Cell Carcinoma (OPSCC),CAP36,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Cancer Protocol and Turnaround Time for Gynecologic and Genitourinary Carcinomas: Carcinoma of the Endometrium, Prostate, and Renal Tubular Origin",CAP37,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Prostate Cancer Reporting Best Practices,CAP38,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Helicobacter pylori Status and Turnaround Time,CAP28,QCDR Measure,Process,Y,11.286763690334325,88.01,81.41 - 85.55,85.56 - 88.74,88.75 - 90.88,90.89 - 91.87,91.88 - 93.60,93.61 - 97.45,97.46 - 97.91,>= 97.92,No,No,Y
-Turnaround Time (TAT) - Biopsies,CAP22,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Biomarker Status to Inform Clinical Management and Treatment Decisions in Patients with Non-small Cell Lung Cancer,CAP34,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Urinary Bladder Biopsy Diagnostic Requirements For Appropriate Patient Management,CAP30,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing Status in Colorectal Carcinoma, Endometrial, Gastroesophageal, or Small Bowel Carcinoma",CAP33,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patient-Reported Pain and/or Function Improvement after Total Shoulder Arthroplasty,CCOME8,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patient-Reported Pain and/or Function Improvement after Total Hip Arthroplasty,CCOME7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patient-Reported Pain and/or Function Improvement after ACLR Surgery,CCOME4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patient-Reported Pain and/or Function Improvement after APM Surgery,CCOME6,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Diabetic Foot Ulcer (DFU) Healing or Closure,CDR2,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Screening for Osteoporosis for Men Aged 70 Years and Older,CDR6,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patient-Reported Pain and/or Function Improvement after Total Hip Arthroplasty,CCOME7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patient-Reported Pain and/or Function Improvement after Total Shoulder Arthroplasty,CCOME8,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Diabetic Foot Ulcer (DFU) Healing or Closure,CDR2,QCDR Measure,Outcome,Y,9.493545072737602,19.58,14.29 - 14.99,15.00 - 16.35,16.36 - 17.02,17.03 - 20.16,20.17 - 24.79,24.80 - 25.80,25.81 - 34.47,>= 34.48,No,No,Y
+Screening for Osteoporosis for Men Aged 70 Years and Older,CDR6,QCDR Measure,Outcome,Y,10.36771484944191,24.70,12.28 - 17.58,17.59 - 22.57,22.58 - 27.79,27.80 - 29.65,29.66 - 31.24,31.25 - 32.83,32.84 - 35.41,>= 35.42,No,No,Y
 Appropriate Use of hyperbaric oxygen therapy for patients with diabetic foot ulcers,CDR8,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 qPTH >50% Reduction at End of Procedure,CESQIP9,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Post operative hypocalcemia after thyroidectomy surgery,CESQIP1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Related readmission for adrenal related problems,CESQIP5,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Door to Diagnostic Evaluation by a Provider Within 30 Minutes – Urgent Care Patients,ECPR50,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Discharge Prescription of Naloxone after Opioid Poisoning or Overdose,ECPR51,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Post operative hypocalcemia after thyroidectomy surgery,CESQIP1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Avoidance of Opiates for Low Back Pain or Migraines,ECPR46,QCDR Measure,Process,Y,5.171979174547414,96.43,93.01 - 96.72,96.73 - 98.20,98.21 - 98.86,98.87 - 99.07,99.08 - 99.48,99.49 - 99.99,--,100.00,Yes,No,Y
+Rh Status Evaluation and Treatment of Pregnant Women at Risk of Fetal Blood Exposure,ECPR41,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Avoid Head CT for Patients with Uncomplicated Syncope,ECPR39,QCDR Measure,Process,Y,6.516712255070396,92.28,87.31 - 88.20,88.21 - 90.55,90.56 - 92.85,92.86 - 95.64,95.65 - 97.09,97.10 - 99.99,--,100.00,No,No,Y
 Appropriate Treatment of Psychosis and Agitation in the Emergency Department,ECPR52,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Discharge Prescription of Naloxone after Opioid Poisoning or Overdose,ECPR51,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Door to Diagnostic Evaluation by a Provider Within 30 Minutes – Urgent Care Patients,ECPR50,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Avoidance of Long-Acting (LA) or Extended-Release (ER) Opiate Prescriptions and Opiate Prescriptions for Greater Than 3 Days Duration for Acute Pain,ECPR55,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Avoidance of Opiates for Low Back Pain or Migraines,ECPR46,QCDR Measure,Process,Y,5.221391331354086,96.35,92.58 - 96.67,96.68 - 98.16,98.17 - 98.78,98.79 - 99.06,99.07 - 99.38,99.39 - 99.99,--,100.00,Yes,No,Y
 Opioid Withdrawal: Initiation of Medication-Assisted Treatment (MAT) and Referral to Outpatient Opioid Treatment,ECPR56,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Clinician Reporting of Loss of Consciousness to State Department of Public Health or Department of Motor Vehicles,ECPR57,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Rh Status Evaluation and Treatment of Pregnant Women at Risk of Fetal Blood Exposure,ECPR41,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Avoid Head CT for Patients with Uncomplicated Syncope,ECPR39,QCDR Measure,Process,Y,6.604904692726463,92.13,86.90 - 88.20,88.21 - 90.54,90.55 - 92.58,92.59 - 94.48,94.49 - 97.09,97.10 - 99.99,--,100.00,No,No,Y
 Intraoperative Hypotension among Non-Emergent Noncardiac Surgical Cases,EPREOP31,QCDR Measure,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Ultrasound Guidance for Peripheral Nerve Block with Patient Experience,EPREOP30,QCDR Measure,Outcome,Y,4.714241586075545,87.92,82.86 - 86.57,86.58 - 86.95,86.96 - 87.94,87.95 - 88.64,88.65 - 90.31,90.32 - 92.77,92.78 - 94.02,>= 94.03,No,No,Y
-Functional Status Change in Balance Confidence,FOTO5,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Ultrasound Guidance for Peripheral Nerve Block with Patient Experience,EPREOP30,QCDR Measure,Outcome,Y,4.714241586075549,87.92,82.86 - 86.57,86.58 - 86.95,86.96 - 87.94,87.95 - 88.64,88.65 - 90.31,90.32 - 92.77,92.78 - 94.02,>= 94.03,No,No,Y
 Functional Status Change in Dizziness Impact,FOTO6,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status Change for Patients Post Stroke,FOTO7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Functional Status Change in Balance Confidence,FOTO5,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status Changes for Patients with Upper or Lower Quadrant Edema,FOTO4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Screening Colonoscopy Adenoma Detection Rate - Male,GIQIC24,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Screening Colonoscopy Adenoma Detection Rate - Female,GIQIC25,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Screening Colonoscopy Adenoma Detection Rate - Male,GIQIC24,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Appropriate follow-up interval based on pathology findings in screening colonoscopy,GIQIC23,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate management of anticoagulation in the peri-procedural period rate – EGD,GIQIC10,QCDR Measure,Process,Y,18.774096822695267,89.36,82.05 - 94.33,94.34 - 96.07,96.08 - 98.36,98.37 - 99.99,--,--,--,100.00,Yes,No,Y
+Appropriate management of anticoagulation in the peri-procedural period rate – EGD,GIQIC10,QCDR Measure,Process,Y,22.255179623190728,86.47,71.43 - 89.99,90.00 - 94.58,94.59 - 97.57,97.58 - 99.99,--,--,--,100.00,Yes,No,Y
 Physician’s Orders for Life-Sustaining Treatment (POLST) Form,HCPR16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Pressure Ulcers – Risk Assessment and Plan of Care,HCPR17,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Unintentional Weight Loss – Risk Assessment and Plan of Care,HCPR18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
@@ -423,98 +421,98 @@ Outcomes of Hearing Loss Treatment,HM10,QCDR Measure,Patient-Reported Outcome-Ba
 Outcomes of Treatment of Benign Paroxysmal Positional Vertigo,HM12,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Status Change for Patients with Vestibular Dysfunction,HM7,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Functional Benefit of a Cochlear Implant,HM9,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Transthoracic Echo (TTE) performance per ASE guidelines,IGR10,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Stress echo performance for shortness of breath per ASE guidelines,IGR9,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Transthoracic Echo (TTE) performance per ASE guidelines,IGR10,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Comprehensive TTE studies reporting a measured value of LVEF AND wall motion findings with LVEF less than 50%,IGR1,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Myocardial Perfusion Imaging (MPI) studies - Radiation Reduction Strategies,IGR17,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Evaluation of Left Ventricular Structure and Systolic Function with Transthoracic Echocardiography (TTE) to Guide Heart Failure and Cardiomyopathy Management,IGR14,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 "Parameters in stress echocardiography dobutamine testing for low flow, low gradient aortic stenosis",IGR2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Appropriate diagnosis verification and severity grading for valve disease through transthoracic echocardiography (TTE) quantitative parameters.,IGR12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Appropriate Evaluation of Left Ventricular Structure and Systolic Function with Transthoracic Echocardiography (TTE) to Guide Heart Failure and Cardiomyopathy Management,IGR14,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Myocardial Perfusion Imaging (MPI) or Stress Echocardiography Imaging Studies - Adequate Exercise Protocol,IGR15,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 "Myocardial Perfusion Imaging (MPI) Studies, Transthoracic Echo (TTE), or Stress Echocardiography Imaging Studies - Adequate Reporting for Appropriate Interventions",IGR16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Myocardial Perfusion Imaging (MPI) or Stress Echocardiography imaging studies - Improving Image Quality,IGR18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Glaucoma – Intraocular Pressure Reduction,IRIS2,QCDR Measure,Intermediate Outcome,Y,22.6494756929666,40.99,23.67 - 29.07,29.08 - 32.95,32.96 - 38.20,38.21 - 41.35,41.36 - 45.54,45.55 - 53.72,53.73 - 76.80,>= 76.81,No,No,Y
-Intraocular Pressure Reduction Following Laser Trabeculoplasty,IRIS43,QCDR Measure,Outcome,Y,32.34965066704075,37.17,11.00 - 13.63,13.64 - 15.72,15.73 - 20.82,20.83 - 26.38,26.39 - 54.96,54.97 - 74.99,75.00 - 90.31,>= 90.32,No,No,Y
-Acquired Involutional Entropion: Normalized lid position after surgical repair,IRIS6,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Adult Surgical Esotropia: Postoperative alignment,IRIS48,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Endothelial Keratoplasty - Post-operative improvement in best corrected visual acuity to 20/40 or better,IRIS1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Diabetic Macular Edema - Loss of Visual Acuity,IRIS13,QCDR Measure,Outcome,Y,8.137543420585724,85.52,80.35 - 83.11,83.12 - 85.53,85.54 - 87.00,87.01 - 88.18,88.19 - 89.21,89.22 - 91.15,91.16 - 93.93,>= 93.94,No,No,Y
-Evidence of anatomic closure of macular hole within 90 days after surgery as documented by OCT,IRIS46,QCDR Measure,Outcome,Y,30.830950733769924,58.58,15.79 - 51.91,51.92 - 61.21,61.22 - 68.21,68.22 - 71.99,72.00 - 73.32,73.33 - 88.09,88.10 - 97.55,>= 97.56,No,No,Y
-Acute Anterior Uveitis: Post-treatment Grade 0 anterior chamber cells,IRIS17,QCDR Measure,Outcome,Y,19.601795963635578,60.39,47.83 - 54.39,54.40 - 57.13,57.14 - 59.08,59.09 - 64.51,64.52 - 69.22,69.23 - 74.99,75.00 - 81.64,>= 81.65,No,No,Y
+Appropriate diagnosis verification and severity grading for valve disease through transthoracic echocardiography (TTE) quantitative parameters.,IGR12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Glaucoma – Intraocular Pressure Reduction,IRIS2,QCDR Measure,Intermediate Outcome,Y,23.009698244985675,41.35,23.43 - 28.89,28.90 - 32.88,32.89 - 38.03,38.04 - 41.35,41.36 - 45.87,45.88 - 57.52,57.53 - 78.27,>= 78.28,No,No,Y
 Visual Field Progression in Glaucoma,IRIS44,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Refractive Surgery: Patients with a postoperative uncorrected visual acuity (UCVA) of 20/20 or better within 30 days,IRIS23,QCDR Measure,Outcome,Y,22.039739757343515,77.06,57.50 - 80.94,80.95 - 82.85,82.86 - 83.99,84.00 - 87.03,87.04 - 90.27,90.28 - 92.30,92.31 - 95.08,>= 95.09,No,No,Y
-Visual Acuity Improvement Following Cataract Surgery Combined with a Trabeculectomy or an Aqueous Shunt Procedure,IRIS60,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Refractive Surgery: Patients with a postoperative correction within + or - 0.5 Diopter (D) of the intended correction,IRIS24,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Regaining Vision After Cataract Surgery,IRIS59,QCDR Measure,Outcome,Y,11.571662257040696,12.39,1.85 - 3.17,3.18 - 4.95,4.96 - 8.13,8.14 - 12.30,12.31 - 18.06,18.07 - 26.42,26.43 - 31.22,>= 31.23,No,No,Y
-Improvement of Macular Edema in Patients with Uveitis,IRIS35,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Improved Visual Acuity after Vitrectomy for Complications of Diabetic Retinopathy within 120 Days,IRIS58,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Endothelial Keratoplasty – Dislocation Requiring Surgical Intervention,IRIS38,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Idiopathic Intracranial Hypertension: Improvement of mean deviation or stability of mean deviation,IRIS57,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Intraocular Pressure Reduction Following Trabeculectomy or an Aqueous Shunt Procedure,IRIS39,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Adult Diplopia: Improvement of ocular deviation or absence of diplopia or functional improvement,IRIS56,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Improved visual acuity after epiretinal membrane treatment within 120 days,IRIS41,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Visual Acuity Improvement Following Cataract Surgery and Minimally Invasive Glaucoma Surgery,IRIS55,QCDR Measure,Outcome,Y,10.141639479097428,35.35,27.85 - 28.88,28.89 - 31.36,31.37 - 33.32,33.33 - 36.06,36.07 - 43.48,43.49 - 45.09,45.10 - 49.30,>= 49.31,No,No,Y
-Complications After Cataract Surgery,IRIS54,QCDR Measure,Outcome,Y,6.862154261284654,2.20,2.41 - 2.01,2.00 - 1.65,1.64 - 1.22,1.21 - 0.83,0.82 - 0.57,0.56 - 0.19,0.18 - 0.01,0.00,No,No,Y
-Chronic Anterior Uveitis - Post-treatment visual acuity,IRIS53,QCDR Measure,Outcome,Y,7.974328434325652,89.36,86.96 - 87.99,88.00 - 89.44,89.45 - 90.78,90.79 - 91.17,91.18 - 94.43,94.44 - 94.51,94.52 - 96.66,>= 96.67,No,No,Y
-Acute Anterior Uveitis: Post-treatment visual acuity,IRIS51,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Amblyopia: Interocular visual acuity,IRIS50,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Intraocular Pressure Reduction Following Laser Trabeculoplasty,IRIS43,QCDR Measure,Outcome,Y,32.34965066704075,37.17,11.00 - 13.63,13.64 - 15.72,15.73 - 20.82,20.83 - 26.38,26.39 - 54.96,54.97 - 74.99,75.00 - 90.31,>= 90.32,No,No,Y
+Evidence of anatomic closure of macular hole within 90 days after surgery as documented by OCT,IRIS46,QCDR Measure,Outcome,Y,30.830950733769924,58.58,15.79 - 51.91,51.92 - 61.21,61.22 - 68.21,68.22 - 71.99,72.00 - 73.32,73.33 - 88.09,88.10 - 97.55,>= 97.56,No,No,Y
+Endothelial Keratoplasty - Post-operative improvement in best corrected visual acuity to 20/40 or better,IRIS1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Adult Surgical Esotropia: Postoperative alignment,IRIS48,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Diabetic Macular Edema - Loss of Visual Acuity,IRIS13,QCDR Measure,Outcome,Y,8.119512113901123,85.64,80.60 - 83.17,83.18 - 85.55,85.56 - 87.10,87.11 - 88.37,88.38 - 89.42,89.43 - 91.38,91.39 - 93.88,>= 93.89,No,No,Y
 Surgical Pediatric Esotropia: Postoperative alignment,IRIS49,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients not achieving a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with hip, leg or ankle injuries using the validated Lower Extremity Function Scale (LEFS) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",IROMS13,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Acquired Involutional Entropion: Normalized lid position after surgical repair,IRIS6,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Amblyopia: Interocular visual acuity,IRIS50,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Acute Anterior Uveitis: Post-treatment Grade 0 anterior chamber cells,IRIS17,QCDR Measure,Outcome,Y,19.530592812368422,59.28,41.03 - 51.84,51.85 - 56.99,57.00 - 58.58,58.59 - 61.33,61.34 - 69.04,69.05 - 74.99,75.00 - 81.64,>= 81.65,No,No,Y
+Acute Anterior Uveitis: Post-treatment visual acuity,IRIS51,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Refractive Surgery: Patients with a postoperative uncorrected visual acuity (UCVA) of 20/20 or better within 30 days,IRIS23,QCDR Measure,Outcome,Y,22.03973975734352,77.06,57.50 - 80.94,80.95 - 82.85,82.86 - 83.99,84.00 - 87.03,87.04 - 90.27,90.28 - 92.30,92.31 - 95.08,>= 95.09,No,No,Y
+Chronic Anterior Uveitis - Post-treatment visual acuity,IRIS53,QCDR Measure,Outcome,Y,7.974328434325651,89.36,86.96 - 87.99,88.00 - 89.44,89.45 - 90.78,90.79 - 91.17,91.18 - 94.43,94.44 - 94.51,94.52 - 96.66,>= 96.67,No,No,Y
+Refractive Surgery: Patients with a postoperative correction within + or - 0.5 Diopter (D) of the intended correction,IRIS24,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Complications After Cataract Surgery,IRIS54,QCDR Measure,Outcome,Y,6.82118931889636,2.19,2.44 - 2.03,2.02 - 1.65,1.64 - 1.22,1.21 - 0.83,0.82 - 0.56,0.55 - 0.01,--,0.00,No,No,Y
+Improvement of Macular Edema in Patients with Uveitis,IRIS35,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Visual Acuity Improvement Following Cataract Surgery and Minimally Invasive Glaucoma Surgery,IRIS55,QCDR Measure,Outcome,Y,10.141639479097428,35.35,27.85 - 28.88,28.89 - 31.36,31.37 - 33.32,33.33 - 36.06,36.07 - 43.48,43.49 - 45.09,45.10 - 49.30,>= 49.31,No,No,Y
+Endothelial Keratoplasty – Dislocation Requiring Surgical Intervention,IRIS38,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Adult Diplopia: Improvement of ocular deviation or absence of diplopia or functional improvement,IRIS56,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Intraocular Pressure Reduction Following Trabeculectomy or an Aqueous Shunt Procedure,IRIS39,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Idiopathic Intracranial Hypertension: Improvement of mean deviation or stability of mean deviation,IRIS57,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Improved visual acuity after epiretinal membrane treatment within 120 days,IRIS41,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Improved Visual Acuity after Vitrectomy for Complications of Diabetic Retinopathy within 120 Days,IRIS58,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Regaining Vision After Cataract Surgery,IRIS59,QCDR Measure,Outcome,Y,11.482690749419639,12.35,1.96 - 3.17,3.18 - 4.95,4.96 - 8.13,8.14 - 12.42,12.43 - 17.53,17.54 - 25.95,25.96 - 31.22,>= 31.23,No,No,Y
+Visual Acuity Improvement Following Cataract Surgery Combined with a Trabeculectomy or an Aqueous Shunt Procedure,IRIS60,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in knee rehabilitation of patients with knee injury measured via their validated Knee Outcome Survey (KOS) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",IROMS11,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with hip, leg or ankle (lower extremity except knee) injury.",IROMS14,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with knee injury pain.",IROMS12,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with neck pain/injury.",IROMS16,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation patients with low back pain measured via the validated Modified Low Back Pain Disability Questionnaire (MDQ) score.",IROMS17,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with low back pain.",IROMS18,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with arm, shoulder, and hand injury measured via the validated Disability of Arm Shoulder and Hand (DASH) score, Quick Disability of Arm Shoulder and Hand (QDASH) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",IROMS19,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 "Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with arm, shoulder, or hand injury.",IROMS20,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with knee injury pain.",IROMS12,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with arm, shoulder, and hand injury measured via the validated Disability of Arm Shoulder and Hand (DASH) score, Quick Disability of Arm Shoulder and Hand (QDASH) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",IROMS19,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with low back pain.",IROMS18,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation patients with low back pain measured via the validated Modified Low Back Pain Disability Questionnaire (MDQ) score.,IROMS17,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with neck pain/injury.",IROMS16,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) in improvement in pain score, measured via the Numeric Pain Rating Scale (NPRS), in rehabilitation patients with hip, leg or ankle (lower extremity except knee) injury.",IROMS14,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Failure to Progress (FTP): Proportion of patients not achieving a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with hip, leg or ankle injuries using the validated Lower Extremity Function Scale (LEFS) score, or equivalent instrument which has undergone peer reviewed published validation and demonstrates a peer reviewed published MCID.",IROMS13,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Failure to Progress (FTP): Proportion of patients failing to achieve a Minimal Clinically Important Difference (MCID) to indicate functional improvement in rehabilitation of patients with neck pain/injury measured via the validated Neck Disability Index (NDI).,KEET01,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patients Suffering From a Hip Injury who Improve Physical Function,LMBR4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patients Suffering From a Shoulder Injury who Demonstrate Improved Pain,LMBR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patients Suffering From a Cervical Spine (Neck) Injury who Improve Physical Function,LMBR3,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patients Suffering From a Lumbar Spine (Low Back) Injury who Improve Physical Function,LMBR2,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Patients Suffering From a Knee Injury who Improve Physical Function,LMBR1,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patients Suffering From a Hip Injury who Demonstrate Improved Pain,LMBR9,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patients Suffering From a Shoulder Injury who Demonstrate Improved Pain,LMBR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patients Suffering From a Cervical Spine (Neck) Injury who Demonstrate Improved Pain,LMBR8,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patients Suffering From a Lumbar Spine (Low Back) Injury who Demonstrate Improved Pain,LMBR7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patients Suffering From a Knee Injury who Demonstrate Improved Pain,LMBR6,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patients Suffering From a Shoulder Injury who Improve Physical Function,LMBR5,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Sleep Quality Response at 3-months,MBHR14,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Monitoring for psychosocial problems among children and youth,MBHR5,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Symptom Improvement in adults with ADHD,MBHR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Outcome monitoring of ADHD functional impairment in children and youth,MBHR9,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patients Suffering From a Hip Injury who Improve Physical Function,LMBR4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patients Suffering From a Cervical Spine (Neck) Injury who Improve Physical Function,LMBR3,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patients Suffering From a Lumbar Spine (Low Back) Injury who Improve Physical Function,LMBR2,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Patients Suffering From a Knee Injury who Improve Physical Function,LMBR1,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Social Role Functioning Assessment utilizing PROMIS Adult Ability to Participate in Social Roles and Activities,MBHR13,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Posttraumatic Stress Disorder (PTSD) Outcome Assessment for Adults and Children,MBHR7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Anxiety Response at 6-months,MBHR2,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Pain Interference Response utilizing PROMIS,MBHR3,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Outcome monitoring of ADHD functional impairment in children and youth,MBHR9,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Symptom Improvement in adults with ADHD,MBHR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Alcohol Use Disorder Outcome Response,MBHR8,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Consideration of Cultural-Linguistic and Demographic Factors in Cognitive Assessment,MBHR15,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Sleep Quality Response at 3-months,MBHR14,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Posttraumatic Stress Disorder (PTSD) Outcome Assessment for Adults and Children,MBHR7,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Monitoring for psychosocial problems among children and youth,MBHR5,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Pain Interference Response utilizing PROMIS,MBHR3,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Anxiety Response at 6-months,MBHR2,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Cognitive Assessment with Counseling on Safety and Potential Risk,MBHR11,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Use of Anxiety Severity Measure,MBHR1,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Comprehensive Cognitive Assessment Assists with Differential Diagnosis,MBHR16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Improved Efficiency: Time Interval for reporting results of cognitive assessment,MBHR17,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Cognitive Assessment with Counseling on Safety and Potential Risk,MBHR11,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Consideration of Cultural-Linguistic and Demographic Factors in Cognitive Assessment,MBHR15,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Provision of Feedback Following a Cognitive or Mental Status Assessment with Documentation of Understanding of Test Results and Subsequent Healthcare Plan,MBHR12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Labor Epidural Failure when Converting from Labor Analgesia to Cesarean Section Anesthesia,MEDNAX54,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Use of a “PEG Test” to Manage Patients Receiving Opioids,MEDNAX56,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Use of ASPECTS (Alberta Stroke Program Early CT Score) for non-contrast CT Head performed for suspected acute stroke.,MEDNAX55,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Use of a “PEG Test” to Manage Patients Receiving Opioids,MEDNAX56,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Hammer Toe Outcome,MEX5,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Screening Coronary Calcium Scoring for Cardiovascular Risk Assessment Including Coronary Artery Calcification Regional Distribution Scoring,MSN13,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Use of Thyroid Imaging Reporting & Data System (TI-RADS) in Final Report to Stratify Thyroid Nodule Risk,MSN15,QCDR Measure,Process,Y,18.856670565682982,86.52,78.00 - 88.99,89.00 - 91.99,92.00 - 94.49,94.50 - 95.99,96.00 - 96.99,97.00 - 98.99,--,>= 99.00,No,No,Y
 Screening Abdominal Aortic Aneurysm Reporting with Recommendations,MSN16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Prostate Cancer: Active Surveillance/Watchful Waiting for Low Risk Prostate Cancer Patients,MUSIC4,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Prostate Cancer: Confirmation testing in low risk active surveillance eligible patients,MUSIC10,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Prostate Cancer: Follow-up testing for patients on active surveillance for at least 30 months,MUSIC11,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Repeat screening or surveillance colonoscopy recommended within one year due to inadequate/poor bowel preparation,NHCR4,QCDR Measure,Process,Y,29.53145645044563,63.55,31.25 - 48.38,48.39 - 64.32,64.33 - 69.50,69.51 - 76.91,76.92 - 85.55,85.56 - 94.11,94.12 - 95.23,>= 95.24,No,No,Y
+Prostate Cancer: Confirmation testing in low risk active surveillance eligible patients,MUSIC10,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Repeat screening or surveillance colonoscopy recommended within one year due to inadequate/poor bowel preparation,NHCR4,QCDR Measure,Process,Y,31.78705040740166,58.47,18.34 - 39.01,39.02 - 55.38,55.39 - 66.66,66.67 - 72.99,73.00 - 82.13,82.14 - 93.08,93.09 - 95.23,>= 95.24,No,No,Y
 Screening and Referral for Transportation Insecurity,NHII1,QCDR Measure,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Use of ultrasound guidance for vascular access,OEIS8,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Structured Walking Program Prior to Intervention for Claudication,OEIS7,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Appropriate non-invasive arterial testing for patients with intermittent claudication who are undergoing a LE peripheral vascular intervention,OEIS6,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Oncology: Supportive Care Drug Utilization in Last 14 Days of Life,PIMSH9,QCDR Measure,Efficiency and Cost/Resource Use,Y,5.4409610202722885,6.15,10.20 - 8.01,8.00 - 6.68,6.67 - 4.52,4.51 - 3.58,3.57 - 3.14,3.13 - 1.38,1.37 - 0.01,0.00,No,No,Y
 Oncology: Utilization of GCSF in Metastatic Colorectal Cancer,PIMSH2,QCDR Measure,Efficiency and Cost/Resource Use,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Oncology: Supportive Care Drug Utilization in Last 14 Days of Life,PIMSH9,QCDR Measure,Efficiency and Cost/Resource Use,Y,5.452675313585569,6.11,10.03 - 8.01,8.00 - 6.26,6.25 - 4.47,4.46 - 3.58,3.57 - 2.95,2.94 - 1.38,1.37 - 0.01,0.00,No,No,Y
-Oncology: Advance Care Planning in Metastatic Cancer Patients,PIMSH1,QCDR Measure,Patient Engagement/Experience,Y,27.61434795722823,31.45,3.41 - 4.70,4.71 - 11.10,11.11 - 30.83,30.84 - 38.29,38.30 - 46.42,46.43 - 57.29,57.30 - 64.45,>= 64.46,No,No,Y
-Oncology: Patient-Reported Pain Improvement,PIMSH4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,12.100591064663213,43.29,33.33 - 37.12,37.13 - 39.70,39.71 - 43.54,43.55 - 46.82,46.83 - 49.99,50.00 - 52.87,52.88 - 58.84,>= 58.85,No,No,Y
-Oncology: Hepatitis B serology testing and prophylactic treatment prior to receiving anti-CD20 targeting drugs,PIMSH10,QCDR Measure,Process,Y,24.925135842988773,47.91,17.65 - 38.70,38.71 - 40.39,40.40 - 47.91,47.92 - 57.68,57.69 - 64.23,64.24 - 73.32,73.33 - 79.99,>= 80.00,No,No,Y
+Oncology: Advance Care Planning in Metastatic Cancer Patients,PIMSH1,QCDR Measure,Patient Engagement/Experience,Y,27.41703232246352,30.45,3.23 - 4.07,4.08 - 9.67,9.68 - 30.12,30.13 - 37.78,37.79 - 46.14,46.15 - 57.06,57.07 - 64.37,>= 64.38,No,No,Y
+Oncology: Patient-Reported Pain Improvement,PIMSH4,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,12.086631807450896,43.04,33.23 - 36.35,36.36 - 39.09,39.10 - 43.20,43.21 - 46.85,46.86 - 49.99,50.00 - 52.51,52.52 - 58.81,>= 58.82,No,No,Y
 Oncology: Mutation testing for lung cancer completed prior to start of targeted therapy,PIMSH8,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Oncology: Hepatitis B serology testing and prophylactic treatment prior to receiving anti-CD20 targeting drugs,PIMSH10,QCDR Measure,Process,Y,24.951052428924203,47.16,18.35 - 23.80,23.81 - 40.19,40.20 - 45.82,45.83 - 57.41,57.42 - 64.23,64.24 - 73.13,73.14 - 79.99,>= 80.00,No,No,Y
 COVID-19 Vaccinations,PIMSH12,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Antiemetic Therapy for Low- and Minimal-Emetic-Risk Antineoplastic Agents - Avoidance of Overuse (Lower Score - Better).,POLAR1,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Improvement or Maintenance in Recovery for Individuals with a Mental Health and/or Substance Use Disorder,PP11,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
@@ -523,39 +521,39 @@ Reduction in Suicidal Ideation or Behavior Symptoms,PP13,QCDR Measure,Patient-Re
 "Measurement-based Care Processes: Index Assessment, Monitoring and Care Plan Review",PP10,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Use of Subarachnoid Block (SAB) in Older Patients Undergoing Low Energy Hip Fracture Repair,PQRANES2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Use of Peripheral Nerve Block within the Emergency Department in Patients Admitted with Low Energy Hip Fracture,PQRANES1,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Multi-gene next-generation sequencing panel recommended on Fine Needle Aspirations (FNA) of Thyroid Nodule(s) with indeterminate cytology,QMM22,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-DEXA/DXA and Fracture Risk Assessment for Patients with Osteopenia,QMM19,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-"Incorporating results of concurrent studies into Final Reports for Bone Marrow Aspirate of patients with Leukemia, Myelodysplastic syndrome, or Chronic Anemia",QMM21,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Use of Breast Cancer Risk Score on Mammography,QMM18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Opening Pressure in Lumbar Puncture,QMM20,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Appropriate Follow-up Recommendations for Ovarian-Adnexal Lesions using the Ovarian-Adnexal Reporting and Data System (O-RADS),QMM17,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 IVC Filter Management Confirmation,QMM16,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Appropriate Antiemetic Therapy for High- and Moderate Emetic Risk Antineoplastic Agents,QOPI27,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+"Incorporating results of concurrent studies into Final Reports for Bone Marrow Aspirate of patients with Leukemia, Myelodysplastic syndrome, or Chronic Anemia",QMM21,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+"Use of Breast Cancer Risk Score on Mammography",QMM18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Multi-gene next-generation sequencing panel recommended on Fine Needle Aspirations (FNA) of Thyroid Nodule(s) with indeterminate cytology,QMM22,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Appropriate Follow-up Recommendations for Ovarian-Adnexal Lesions using the Ovarian-Adnexal Reporting and Data System (O-RADS),QMM17,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Opening Pressure in Lumbar Puncture,QMM20,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+DEXA/DXA and Fracture Risk Assessment for Patients with Osteopenia,QMM19,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Concurrent Chemo radiation for Patients with a Diagnosis of Stage IIIB NSCLC,QOPI23,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Central Line Ultrasound Guidance,QUANTUM31,QCDR Measure,Process,Y,12.378179453718761,94.94,94.55 - 98.43,98.44 - 99.45,99.46 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
-Improved Access Site Bleeding,RCOIR7,QCDR Measure,Outcome,Y,7.373743938045686,88.52,80.40 - 85.44,85.45 - 87.66,87.67 - 92.14,92.15 - 92.95,92.96 - 94.18,94.19 - 94.94,94.95 - 95.74,>= 95.75,No,No,Y
+Appropriate Antiemetic Therapy for High- and Moderate Emetic Risk Antineoplastic Agents,QOPI27,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Central Line Ultrasound Guidance,QUANTUM31,QCDR Measure,Process,Y,12.37817945371876,94.94,94.55 - 98.43,98.44 - 99.45,99.46 - 99.99,--,--,--,--,100.00,Yes,Yes,Y
+Improved Access Site Bleeding,RCOIR7,QCDR Measure,Outcome,Y,7.343658921083298,88.69,80.54 - 85.44,85.45 - 87.83,87.84 - 92.21,92.22 - 93.05,93.06 - 94.22,94.23 - 94.83,94.84 - 95.74,>= 95.75,No,No,Y
+Tunneled Hemodialysis Catheter Success,RCOIR12,QCDR Measure,Outcome,Y,9.762411127432664,78.19,67.57 - 70.73,70.74 - 72.71,72.72 - 79.99,80.00 - 83.11,83.12 - 85.91,85.92 - 88.23,88.24 - 89.86,>= 89.87,No,No,Y
 Percutaneous Arteriovenous Fistula for Dialysis - Clinical Success Rate,RCOIR13,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Tunneled Hemodialysis Catheter Success,RCOIR12,QCDR Measure,Outcome,Y,9.74999247455957,77.91,67.57 - 69.68,69.69 - 72.71,72.72 - 78.04,78.05 - 82.90,82.91 - 85.91,85.92 - 87.84,87.85 - 89.86,>= 89.87,No,No,Y
-Upper Extremity Edema Improvement,RCOIR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,9.273229337881231,79.89,70.05 - 72.96,72.97 - 77.61,77.62 - 80.40,80.41 - 81.82,81.83 - 83.58,83.59 - 88.92,88.93 - 93.25,>= 93.26,No,No,Y
+Upper Extremity Edema Improvement,RCOIR10,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,Y,9.339970922085188,80.21,70.87 - 72.96,72.97 - 77.96,77.97 - 80.76,80.77 - 81.99,82.00 - 84.87,84.88 - 89.33,89.34 - 93.25,>= 93.26,No,No,Y
 End Stage Renal Disease (ESRD) Initiation of Home Dialysis or Self-Care,RCOIR5,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Use of Ankle Foot Orthotics to improve patient function,REGCLR7,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Heel Pain Treatment Outcomes for Adults,REGCLR1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Offloading with Remote Monitoring,REGCLR5,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Tendinitis/ Enthesopathy- Injection Treatment Outcomes for Adults,REGCLR2,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Use of Digital Imaging to Monitor and Improve Treatment Outcomes in Chronic Wound Healing,REGCLR6,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Bunion Outcome - Adult and Adolescent,REGCLR3,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Heel Pain Treatment Outcomes for Pediatric Patients,REGCLR4,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Offloading with Remote Monitoring,REGCLR5,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Use of Ankle Foot Orthotics to improve patient function,REGCLR7,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Use of Digital Imaging to Monitor and Improve Treatment Outcomes in Chronic Wound Healing,REGCLR6,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Heel Pain Treatment Outcomes for Adults,REGCLR1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Arteriovenous Graft Thrombectomy Success Rate,RPAQIR14,QCDR Measure,Outcome,Y,20.80769592433259,83.09,77.74 - 81.30,81.31 - 86.41,86.42 - 88.89,88.90 - 91.47,91.48 - 93.20,93.21 - 93.97,93.98 - 95.03,>= 95.04,No,No,Y
+Arteriovenous Fistulae Thrombectomy Success Rate,RPAQIR15,QCDR Measure,Outcome,Y,22.112910199225063,81.61,78.62 - 80.94,80.95 - 83.67,83.68 - 88.78,88.79 - 90.47,90.48 - 92.30,92.31 - 93.72,93.73 - 95.73,>= 95.74,No,No,Y
 Peritoneal Dialysis Catheter Success Rate,RPAQIR16,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Arteriovenous Fistulae Thrombectomy Success Rate,RPAQIR15,QCDR Measure,Outcome,Y,22.38014972455289,81.33,78.05 - 80.94,80.95 - 83.07,83.08 - 87.29,87.30 - 89.65,89.66 - 92.30,92.31 - 94.04,94.05 - 95.73,>= 95.74,No,No,Y
-Arteriovenous Graft Thrombectomy Success Rate,RPAQIR14,QCDR Measure,Outcome,Y,20.99125406207346,82.79,76.16 - 81.24,81.25 - 86.40,86.41 - 88.71,88.72 - 90.95,90.96 - 93.09,93.10 - 93.74,93.75 - 95.23,>= 95.24,No,No,Y
-Rate of Timely Documentation Transmission to Dialysis Unit/Referring Physician,RPAQIR13,QCDR Measure,Process,Y,28.63743097510883,89.35,95.86 - 97.23,97.24 - 98.07,98.08 - 98.66,98.67 - 99.22,99.23 - 99.39,99.40 - 99.57,99.58 - 99.92,>= 99.93,Yes,Yes,Y
+Rate of Timely Documentation Transmission to Dialysis Unit/Referring Physician,RPAQIR13,QCDR Measure,Process,Y,28.34178643421809,89.55,95.90 - 97.23,97.24 - 98.20,98.21 - 98.60,98.61 - 99.18,99.19 - 99.39,99.40 - 99.56,99.57 - 99.92,>= 99.93,Yes,Yes,Y
 Transplant Referral,RPAQIR5,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Advance Directives Completed,RPAQIR18,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Ankylosing Spondylitis: Controlled Disease,UREQA1,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
-Ankylosing Spondylitis: Improved Disease Function,UREQA7,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Vitamin D level: Effective Control of Low Bone Mass/Osteopenia and Osteoporosis: Therapeutic Level Of 25 OH Vitamin D Level Achieved,UREQA8,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,N
-Screening for Osteoporosis for Men Aged 70 Years and Older,UREQA9,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
+Ankylosing Spondylitis: Improved Disease Function,UREQA7,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Ankylosing Spondylitis: Controlled Disease,UREQA1,QCDR Measure,Outcome,Y,18.714971624203358,14.08,0.44 - 1.46,1.47 - 2.44,2.45 - 4.40,4.41 - 9.97,9.98 - 18.05,18.06 - 28.48,28.49 - 42.01,>= 42.02,No,No,Y
 Ankylosing Spondylitis: Appropriate Pharmacologic Therapy,UREQA2,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,Y
+Screening for Osteoporosis for Men Aged 70 Years and Older,UREQA9,QCDR Measure,Process,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Adequate Compression at each visit for Patients with Venous Leg Ulcers (VLUs) appropriate to arterial supply,USWR32,QCDR Measure,Intermediate Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,N
 Pressure Ulcer* (PU) Healing or Closure (not on the lower extremity ),USWR31,QCDR Measure,Outcome,N,,--,--,--,--,--,--,--,--,--,--,--,Y
 Patient Reported Outcome of late effects of radiation symptoms following treatment with Hyperbaric Oxygen Therapy (HBOT),USWR26,QCDR Measure,Patient-Reported Outcome-Based Performance Measure,N,,--,--,--,--,--,--,--,--,--,--,--,Y
