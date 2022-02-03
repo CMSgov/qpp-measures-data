@@ -17,7 +17,7 @@ definitions:
         description: isToppedOut is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
         type: boolean
       isToppedOutByProgram:
-        description: isToppedOutByProgram is a boolean value that describes whether a benchmark's latter deciles repeat a value of 100 or, in the case of inverse measures, a value of 0.
+        description: isToppedOutByProgram is a boolean value that describes whether a benchmark isToppedOut is true for both the current year and the previous year. The effect is to cap the score at 7 points for that benchmark.
         type: boolean
       isHighPriority:
         description: whether the measure is a high priority measure (Outcome, Appropriate Use, Patient Experience, Patient Safety, Efficiency Measures, Care Coordination)
