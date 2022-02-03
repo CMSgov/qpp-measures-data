@@ -38,8 +38,10 @@ else
   sourceFilename=${stagingDirectory}/source.csv
   csvFilename=${stagingDirectory}/benchmarks.csv
   cahpsCSVFilename=${stagingDirectory}/benchmarks_cahps.csv
+  mccCSVFilename=${stagingDirectory}/benchmarks_mcc.csv
   benchmarkBaseFilename=${stagingDirectory}/json/benchmarks.json
   benchmarkCAHPSFilename=${stagingDirectory}/json/benchmarks_cahps.json
+  mccBenchmarkFilename=${stagingDirectory}/json/benchmarks_mcc.json
   benchmarkFilename=benchmarks/${performanceYear}.json
 
   if [[ -f "$sourceFilename" ]]; then
@@ -54,6 +56,13 @@ else
   if [[ -f "$cahpsCSVFilename" ]]; then
     echo 'Generating CAHPS benchmarks JSON.'
     cat $cahpsCSVFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkCAHPSFilename 
+  fi
+
+  if [[ -f "$mccCSVFilename" ]]; then
+    echo 'Generating MCC benchmarks JSON.'
+    # This is a new measure starting in 2021, this is why the benchmark and performance years are hard-coded to 2021
+    # TODO update these values for future years
+    cat $mccCSVFilename | node scripts/benchmarks/parse-benchmarks-data.js 2021 2021 MCC > $mccBenchmarkFilename 
   fi
 
   echo 'Squashing staging JSON.'
