@@ -22310,16 +22310,17 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": true,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [
       "claims",
-      "electronicHealthRecord",
       "registry"
     ],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
