@@ -22310,16 +22310,17 @@
     "isHighPriority": false,
     "isInverse": false,
     "isIcdImpacted": true,
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [
       "claims",
-      "electronicHealthRecord",
       "registry"
     ],
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "allowedPrograms": [
       "mips",
       "cpcPlus",
@@ -71134,7 +71135,10 @@
     "metricType": "nonProportion",
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "ACEP51",
@@ -71167,7 +71171,10 @@
     "metricType": "nonProportion",
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "measureId": "ACEP52",
