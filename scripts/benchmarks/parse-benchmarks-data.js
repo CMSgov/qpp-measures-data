@@ -25,6 +25,23 @@ const BENCHMARK_CSV_COLUMNS = [
   'isToppedOut',
   'isToppedOutByProgram'
 ];
+const MCC_BENCHMARK_CSV_COLUMNS = [
+  'qualityId',
+  'submissionMethod',
+  'benchmark',
+  'decile1',
+  'decile2',
+  'decile3',
+  'decile4',
+  'decile5',
+  'decile6',
+  'decile7',
+  'decile8',
+  'decile9',
+  'decile10',
+  'isToppedOut',
+  'isToppedOutByProgram'
+];
 // Utils
 const { formatBenchmarkRecord } = require('./format-benchmark-record');
 // Data
@@ -45,6 +62,7 @@ const benchmarkType = process.argv[4];
 // New 2020 data update
 if (performanceYear >= 2020) {
   BENCHMARK_CSV_COLUMNS.push('isHighPriority');
+  MCC_BENCHMARK_CSV_COLUMNS.push('isHighPriority');
 }
 
 if (benchmarkYear && performanceYear) {
@@ -59,7 +77,8 @@ if (benchmarkYear && performanceYear) {
 
   process.stdin.on('end', function() {
     // Quote option update to handle 2020 data
-    parse(benchmarksData, {columns: BENCHMARK_CSV_COLUMNS, from: 3, quote: '"'}, function(err, records) {
+    const columns = benchmarkType === 'MCC' ? MCC_BENCHMARK_CSV_COLUMNS : BENCHMARK_CSV_COLUMNS;
+    parse(benchmarksData, {columns, from: 3, quote: '"'}, function(err, records) {
       if (err) {
         console.log(err);
       } else {
