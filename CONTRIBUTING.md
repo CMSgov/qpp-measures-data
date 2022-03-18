@@ -94,17 +94,7 @@ We also use Github Actions CI to run tests on every branch.
 
 The release process is semi-automated via github actions. A number of steps are necessarily left manual (such as versioning) and require intervention from the user.
 
-1. Create a release branch `release/*` either off of `develop` to pull all changes, or `master` if cherry-picking only certain changes.
-
-2. Bump the `version` using `npm version <patch | minor | major>`. Use `minor` when making changes to datasets (e.g. `measures/$YEAR/measures-data.json` or `benchmarks/$YEAR.json`), or `patch` otherwise.  Use `major` if adding a new program year to the dataset.
-  
-3. Push the release branch to github and open a pull request against the `master` branch.
-
-4. Github actions will automatically [create a release](https://github.com/CMSgov/qpp-measures-data/releases) and tag based off the version in `package.json`. Review the draft release page and publish it.
-
-5. Merge the release branch into into `master` via the merge-commit merge strategy.
-
-6. On merge, github actions will automatically publish a package to npm and post notifications. Additionally, a PR will be created to backfill `develop` from `master` if necessary. Review and merge.
+Follow the steps outline in [Package Release Process for Measures Data](https://confluence.cms.gov/x/Wm-gI) to publish new version.
 
 ## Debugging
 
