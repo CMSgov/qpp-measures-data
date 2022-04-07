@@ -5871,9 +5871,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "registry"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -5890,7 +5892,8 @@
     ],
     "measureSpecification": {
       "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2022_Measure_326_MIPSCQM.pdf"
-    }
+    },
+    "benchmarks": {}
   },
   {
     "title": "Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)",
