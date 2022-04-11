@@ -200,9 +200,6 @@ definitions:
           isRiskAdjusted:
             type: boolean
             default: false
-          cpcPlusGroup:
-            description: CPC+ group which the measure belongs
-            type: string
           isIcdImpacted:
             type: boolean
             default: false
@@ -414,7 +411,6 @@ definitions:
   programs:
     enum:
       - mips
-      - cpcPlus
       - pcf
       - app1
 
