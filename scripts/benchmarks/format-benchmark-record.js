@@ -238,16 +238,16 @@ const formatBenchmarkRecord = function(record, options) {
     isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles: options.benchmarkType === 'MCC' ? [
-      record.decile1,
-      record.decile2,
-      record.decile3,
-      record.decile4,
-      record.decile5,
-      record.decile6,
-      record.decile7,
-      record.decile8,
-      record.decile9,
-      record.decile10
+      parseFloat(record.decile1),
+      parseFloat(record.decile2),
+      parseFloat(record.decile3),
+      parseFloat(record.decile4),
+      parseFloat(record.decile5),
+      parseFloat(record.decile6),
+      parseFloat(record.decile7),
+      parseFloat(record.decile8),
+      parseFloat(record.decile9),
+      parseFloat(record.decile10)
     ] : [
       record.decile1,
       record.decile2,
