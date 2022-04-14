@@ -21,8 +21,12 @@ definitions:
       measureId:
         type: string
         description: For quality measures, the measureId is the same as the quality number. For a Promoting Interoperability (PI, formerly ACI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.
-      title: { type: string }
-      description: { type: string }
+      title: 
+        type: string
+        description: The name of the measure.
+      description: 
+        type: string
+        description: A description of the measure for more detail with key words/phrases.
       category:
         description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.
         enum: [ia, quality, pi, cost]
@@ -129,7 +133,9 @@ definitions:
         additionalProperties: false
         properties:
           category: { const quality }
-          nationalQualityStrategyDomain: { type: ['null', string] }
+          nationalQualityStrategyDomain: 
+            type: ['null', string]
+            description: The area of health care quality (NQS Domain) which this measure improves.
           measureType:
             description: Quality category which the measure incentivizes.
             oneOf: [{ $ref: #/definitions/measureTypes }]
@@ -146,10 +152,11 @@ definitions:
             description: Identifier for the National Quality Forum (NQF) measure.
             type: ['null', string]
           isClinicalGuidelineChanged:
-            description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise
+            description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise.
             type: boolean
           clinicalGuidelineChanged:
             type: array
+            description: List of submissionMethods that have been suppressed for this year due to potentially no longer aligning with best practices or could lead to patient harm.
             items: { $ref: #/definitions/methods }
           isHighPriority:
             description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
@@ -199,15 +206,19 @@ definitions:
             default: false
           isRiskAdjusted:
             type: boolean
+            description: Risk adjustment refers to the inclusion of risk factors associated with a measure score in a statistical model of measured entity performance captured at the person, facility, community, or other levels. Measure developers often risk adjust outcome measures, however not all outcome measures need risk adjustment.
             default: false
           isIcdImpacted:
             type: boolean
+            description: If true, at least one submission method is listed in icdImpacted.
             default: false
           icdImpacted:
             type: array
+            description: List of submissionMethods where ICD 10 codes for the measure changed during the submission year. Used to truncate submissions data to only the first nine months of the performance year when the ICD 10 codes were unchanged. Typically impacts claims submissionMethod. Does not impact registry submissionMethod.
             items: { $ref: #/definitions/methods }
           benchmarks:
             type: object
+            description: The submissionMethods of the measure which have had their benchmarks removed for the current year.
             propertyNames: { $ref: #/definitions/methods }
             patternProperties:
               "":
@@ -240,22 +251,30 @@ definitions:
     properties:
       description:
         type: string
+        description: A detailed description of the strata, outlining exactly which type of patients it applies to.
       name:
         type: string
+        description: a one-word tag, unique to the strata.
         maxLength: 20
       eMeasureUuids:
         type: object
+        description: UUID for Electronic Clinical Quality Measures (ECQM).
         properties:
           initialPopulationUuid:
             type: string
+            description: UUID for the initial population.
           denominatorUuid:
             type: string
+            description: UUID for the denominator.
           numeratorUuid:
             type: string
+            description: UUID for the numerator.
           denominatorExclusionUuid:
             type: string
+            description: UUID for the denominator exclusion.
           denominatorExceptionUuid:
             type: string
+            description: UUID for the denominator exception.
 
   subcategoryIds:
     enum:
@@ -382,8 +401,16 @@ definitions:
       maxAge:
         description: The maximum patient age required for eligibility.
         type: number
-      diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
-      additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      diagnosisCodes: 
+        type: array
+        description: List of diagnosis codes and procedures of the patient.
+        items:
+          type: string
+      additionalDiagnosisCodes: 
+        type: array
+        description: Additional list of diagnosis codes and procedures of the patient for eligibility.
+        items:
+          type: string
       procedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         type: array
@@ -420,10 +447,26 @@ definitions:
       code:
         description: The HCPCS or CPT code represented as a string.
         type: string
-      modifiers:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      modifierExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      placesOfService:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      placesOfServiceExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      modifiers:
+        type: array
+        description: List of modifier codes that are relevant to a claim, regarding additional information about a patient encounter.
+        items:
+          type: string
+      modifierExclusions:
+        type: array
+        description: List of modifier codes that are excluded because they are opposites of the measure and thus cannot be submitted in the same measurementSet.
+        items:
+          type: string
+      placesOfService:
+        type: array
+        description: List of Place of Service Codes which are two-digit codes placed on health care professional claims to indicate the setting in which a service was provided.
+        items:
+          type: string
+      placesOfServiceExclusions:
+        type: array
+        description: List of Place of Service Codes that are excluded.
+        items:
+          type: string
     required: [code]
 
   qualityCodesSubmissionMethods:
