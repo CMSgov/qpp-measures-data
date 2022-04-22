@@ -268,7 +268,7 @@ function addMultiPerformanceRateStrata(measures, strataRows) {
   _.each(strataRows, row => {
     const measureId = mapInput(row.measureId, 'measureId');
     const stratumName = row.stratumName.trim();
-    const description = row.longDescription.trim();
+    const description = row.longDescription.trim().replace(/\r/g, '');
 
     const measure = _.find(measures, { measureId });
     if (!measure) {
