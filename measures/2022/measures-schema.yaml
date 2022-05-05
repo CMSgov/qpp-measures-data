@@ -152,7 +152,7 @@ definitions:
             description: Identifier for the National Quality Forum (NQF) measure.
             type: ['null', string]
           isClinicalGuidelineChanged:
-            description: True for measures that have been deemed as potentially no longer aligning with best practices or could lead to patient harm, false otherwise.
+            description: If true, at least one submission method is listed in clinicalGuidelinesChanged.
             type: boolean
           clinicalGuidelineChanged:
             type: array
