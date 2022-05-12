@@ -69,7 +69,7 @@ const processPerformanceBenchmark = (benchmark) => {
   //  Fix the underlining data where proportional measures to produce 9 deciles only by default.
   const nonPropMeasures2021 = ['ACRAD18', 'ACEP50', 'ACEP51', 'ACRAD17', 'ACRAD25', 'ACRAD19', 'ACRAD16', 'ACRAD15'];
   const trimmedDeciles = () => {
-    if (nonPropMeasures2021.includes(benchmark.measureId) && benchmark.performanceYear === 2021) {
+    if (nonPropMeasures2021.includes(benchmark.measureId) || benchmark.performanceYear !== 2021) {
       return benchmark.deciles;
     } else {
       return benchmark.deciles.slice(1);
