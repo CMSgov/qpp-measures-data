@@ -68,15 +68,27 @@ const processPerformanceBenchmark = (benchmark) => {
   // TODO: Kyle - This was a one-off for 2021 performance benchmarks. If you run this for 2022 performance benchmarks you're in trouble.
   //  Fix the underlining data where proportional measures to produce 9 deciles only by default.
   const nonPropMeasures2021 = ['ACRAD18', 'ACEP50', 'ACEP51', 'ACRAD17', 'ACRAD25', 'ACRAD19', 'ACRAD16', 'ACRAD15'];
+  const acMeasures2021 = ['479', '480'];
   const trimmedDeciles = () => {
-    if (nonPropMeasures2021.includes(benchmark.measureId) || benchmark.performanceYear !== 2021) {
+    if (nonPropMeasures2021.includes(benchmark.measureId) || acMeasures2021.includes(benchmark.measureId) || benchmark.performanceYear !== 2021) {
       return benchmark.deciles;
     } else {
       return benchmark.deciles.slice(1);
     }
   };
+  // Determines how to round Performance Benchmarks should be rounded per circumstance and business rules. Should mostly be 2.
+  const decimalPlaces = () => {
+    if (acMeasures2021.includes(benchmark.measureId) && benchmark.performanceYear >= 2021) {
+      return 4;
+    } else if (benchmark.performanceYear >= 2019 && benchmark.performanceYear < 2021) {
+      return 4;
+    } else {
+      return 2;
+    }
+  };
 
-  const averageDeciles = trimmedDeciles().map(d => _.round(d, (benchmark.performanceYear >= 2019 && benchmark.performanceYear < 2021 ? 4 : 2)));
+  const averageDeciles = trimmedDeciles()
+    .map(d => _.round(d, decimalPlaces()));
 
   return {
     measureId: benchmark.measureId,
