@@ -76,7 +76,7 @@ const processPerformanceBenchmark = (benchmark) => {
     }
   };
 
-  const averageDeciles = trimmedDeciles().map(d => _.round(d, (benchmark.performanceYear >= 2019 ? 4 : 2)));
+  const averageDeciles = trimmedDeciles().map(d => _.round(d, (benchmark.performanceYear >= 2019 && benchmark.performanceYear < 2021 ? 4 : 2)));
 
   return {
     measureId: benchmark.measureId,
