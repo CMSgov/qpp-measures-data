@@ -22,15 +22,15 @@ const getOrderedFileNames = (currentDir, relativePath) => fs.readdirSync(path.jo
  * Generates a key in an object to store benchmarks in. Benchmarks with the same key will overwrite one another, based on which was added
  * first. See mergeBenchmarkLayers() for more details.
  * @param {{
-  *   measureId: String,
-  *   performanceYear: Number,
-  *   benchmarkYear: Number,
-  *   submissionMethod: String,
-  *   deciles: [Number],
-  *   isToppedOut: Boolean,
-  *   isToppedOutByProgram: Boolean
-  * }} benchmark The benchmark to get the key for
-  * @returns {String} The benchmark key based on unique column constraints
+ *   measureId: String,
+ *   performanceYear: Number,
+ *   benchmarkYear: Number,
+ *   submissionMethod: String,
+ *   deciles: [Number],
+ *   isToppedOut: Boolean,
+ *   isToppedOutByProgram: Boolean
+ * }} benchmark The benchmark to get the key for
+ * @returns {String} The benchmark key based on unique column constraints
  */
 const getBenchmarkKey = (benchmark) => {
   let benchmarkKey = '';
@@ -55,22 +55,35 @@ const getBenchmarkKey = (benchmark) => {
  *   deciles: [Number]
  * }} benchmark the performance benchmark to process
  * @returns {{
-  *   measureId: String,
-  *   performanceYear: Number,
-  *   benchmarkYear: Number,
-  *   submissionMethod: String,
-  *   deciles: [Number],
-  *   isToppedOut: Boolean,
-  *   isToppedOutByProgram: Boolean
-  * }}
+ *   measureId: String,
+ *   performanceYear: Number,
+ *   benchmarkYear: Number,
+ *   submissionMethod: String,
+ *   deciles: [Number],
+ *   isToppedOut: Boolean,
+ *   isToppedOutByProgram: Boolean
+ * }}
  */
 const processPerformanceBenchmark = (benchmark) => {
+  // TODO: Kyle - This was a one-off for 2021 performance benchmarks. If you run this for 2022 performance benchmarks you're in trouble.
+  //  Fix the underlining data where proportional measures to produce 9 deciles only by default.
+  const nonPropMeasures2021 = ['ACRAD18', 'ACEP50', 'ACEP51', 'ACRAD17', 'ACRAD25', 'ACRAD19', 'ACRAD16', 'ACRAD15'];
+  const trimmedDeciles = () => {
+    if (nonPropMeasures2021.includes(benchmark.measureId) || benchmark.performanceYear !== 2021) {
+      return benchmark.deciles;
+    } else {
+      return benchmark.deciles.slice(1);
+    }
+  };
+
+  const averageDeciles = trimmedDeciles().map(d => _.round(d, (benchmark.performanceYear >= 2019 ? 4 : 2)));
+
   return {
     measureId: benchmark.measureId,
     performanceYear: benchmark.performanceYear,
     benchmarkYear: benchmark.performanceYear,
     submissionMethod: benchmark.submissionMethod,
-    deciles: benchmark.deciles.map(d => _.round(d, (benchmark.performanceYear >= 2019 ? 4 : 2))),
+    deciles: averageDeciles,
     isToppedOut: false,
     isToppedOutByProgram: false
   };
@@ -148,14 +161,14 @@ const mergeBenchmarkFiles = (benchmarkFileNames, benchmarkJsonDir) => {
 /**
  * Function to ensure that the benchmarks are all unique according to the column constraints outlined above
  * @param {[{
-  *   measureId: String,
-  *   performanceYear: Number,
-  *   benchmarkYear: Number,
-  *   submissionMethod: String,
-  *   deciles: [Number],
-  *   isToppedOut: Boolean,
-  *   isToppedOutByProgram: Boolean
-  * }]} benchmarks - the collection of benchmarks to evaluate
+ *   measureId: String,
+ *   performanceYear: Number,
+ *   benchmarkYear: Number,
+ *   submissionMethod: String,
+ *   deciles: [Number],
+ *   isToppedOut: Boolean,
+ *   isToppedOutByProgram: Boolean
+ * }]} benchmarks - the collection of benchmarks to evaluate
  * @returns {void}
  */
 const validateUniqueConstraints = (benchmarks) => {

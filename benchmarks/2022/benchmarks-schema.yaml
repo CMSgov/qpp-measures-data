@@ -33,5 +33,6 @@ definitions:
         minItems: 9
         maxItems: 10
       submissionMethod:
+        description: The method for submitting the measure performance data to which this benchmark applies.
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
     required: [measureId, performanceYear, benchmarkYear, submissionMethod, deciles]

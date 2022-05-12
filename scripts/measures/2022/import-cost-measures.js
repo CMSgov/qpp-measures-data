@@ -68,7 +68,6 @@ function convertCostCsvsToMeasures(costCSVRows) {
     }
     _.each(COST_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
       if (measureKeyName === 'submissionMethods') {
-        console.log('** ' + row[columnName]);
         measure[measureKeyName] = row[columnName] ? [row[columnName]] : [];
       } else {
         measure[measureKeyName] = mapInput(row[columnName]);

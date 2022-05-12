@@ -4447,6 +4447,14 @@
       {
         "name": "overall",
         "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class."
+      },
+      {
+        "name": "diagnosisException",
+        "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses."
+      },
+      {
+        "name": "eCQMTotalRate",
+        "description": "Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators)."
       }
     ]
   },
@@ -8295,7 +8303,7 @@
       },
       {
         "name": "counseling",
-        "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling"
+        "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
       }
     ]
   },
