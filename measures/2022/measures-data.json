@@ -1377,8 +1377,8 @@
   {
     "category": "pi",
     "measureId": "PI_HIE_5",
-    "title": "Health Information Exchange\r\n(HIE) Bi-Directional Exchange",
-    "description": "The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.\r\n\r\nThe MIPS eligible clinician or group must attest that they engage in bi-directional exchange with an HIE to support transitions of care.",
+    "title": "Health Information Exchange\n(HIE) Bi-Directional Exchange",
+    "description": "The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.\nThe MIPS eligible clinician or group must attest that they engage in bi-directional exchange with an HIE to support transitions of care.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2021,
@@ -1435,7 +1435,9 @@
       "default": "https://qpp.cms.gov/docs/pi_specifications/Measure%20Specifications/2022%20MIPS%20PI%20Measures%20Syndromic%20Surveillance%20Reporting.pdf"
     },
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      ""
+    ]
   },
   {
     "category": "pi",

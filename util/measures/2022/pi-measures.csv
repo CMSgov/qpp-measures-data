@@ -28,7 +28,6 @@ PI_HIE_4,Support Electronic Referral Loops By Receiving and Reconciling Health I
 PI_LVITC_2,Support Electronic Referral Loops By Receiving and Reconciling Health Information Exclusion,Any MIPS eligible clinician who receives transitions of care or referrals or has patient encounters in which the MIPS eligible clinician has never before encountered the patient fewer than 100 times during the performance period. ,FALSE ,boolean,2019,0,Health Information Exchange,FALSE,exclusion ,N/A,N/A
 PI_HIE_5,"Health Information Exchange
 (HIE) Bi-Directional Exchange","The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.
-
 The MIPS eligible clinician or group must attest that they engage in bi-directional exchange with an HIE to support transitions of care.","TRUE
 ",boolean,2021,40,Health Information Exchange,FALSE,required,"PI_HIE_1,
 PI_HIE_4",N/A
@@ -36,7 +35,8 @@ PI_PEA_1,Provide Patients Electronic Access to Their Health Information,"For at 
 PI_PHCDRR_2,Syndromic Surveillance Reporting,The MIPS eligible clinician is in active engagement with a public health agency to submit syndromic surveillance data from an urgent care setting.,"FALSE
 ",boolean,2017,5,Public Health and Clinical Data Exchange,TRUE,"bonus
 ","PI_PHCDRR_4,
-PI_PHCDRR_5",N/A
+PI_PHCDRR_5","N/A
+"
 PI_PHCDRR_1,Immunization Registry Reporting,The MIPS eligible clinician is in active engagement with a public health agency to submit immunization data and receive immunization forecasts and histories from the public health immunization registry/immunization information system (IIS).,"TRUE
 ",boolean,2017,null,Public Health and Clinical Data Exchange,FALSE,required,N/A,"PI_PHCDRR_1_EX_1,
 PI_PHCDRR_1_EX_2,
