@@ -3,7 +3,7 @@
     "category": "pi",
     "measureId": "PI_PPHI_1",
     "title": "Security Risk Analysis",
-    "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified electronic health record technology (CEHRT) in accordance with requirements in 45 CFR 164.312(a)(2)(iv) and 164.306(d)(3), implement security updates as necessary, and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
+    "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified electronic health record technology (CEHRT) in accordance with requirements in 45 CFR 164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), implement security updates as necessary, and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
@@ -19,8 +19,8 @@
   {
     "category": "pi",
     "measureId": "PI_PPHI_2",
-    "title": "Safety Assurance Factors for EHR\nResilience Guide (SAFER Guide)",
-    "description": "Conduct an annual self-assessment using the High Priority Practices Guide at any point during the calendar year in which the performance period occurs",
+    "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides)",
+    "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2022,
@@ -53,8 +53,8 @@
   {
     "category": "pi",
     "measureId": "PI_INFBLO_1",
-    "title": "Prevention of Information Blocking Attestation",
-    "description": "I attest to CMS that I - (A) did not knowingly and willfully take action (such as to disable functionality) to limit or restrict the compatibility or interoperability of certified EHR technology.",
+    "title": "Actions to Limit or Restrict the Compatibility of CEHRT",
+    "description": "I attest to CMS that I did not knowingly and willfully take action (such as to disable functionality) to limit or restrict the compatibility or interoperability of certified EHR technology.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
@@ -71,7 +71,7 @@
     "category": "pi",
     "measureId": "PI_EP_1",
     "title": "e-Prescribing",
-    "description": "At least one permissible prescription written by the MIPS eligible clinician is queried for a drug formulary and transmitted electronically using CEHRT.",
+    "description": "At least one permissible prescription written by the MIPS eligible clinician is  transmitted electronically using CEHRT.",
     "isRequired": true,
     "metricType": "proportion",
     "firstPerformanceYear": 2017,
@@ -107,7 +107,7 @@
     "category": "pi",
     "measureId": "PI_EP_2",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-    "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a Prescription Drug Monitoring Program (PDMP) for prescription drug history, except where prohibited and in accordance with applicable law.",
+    "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
     "isRequired": false,
     "metricType": "boolean",
     "firstPerformanceYear": 2019,
@@ -199,8 +199,8 @@
   {
     "category": "pi",
     "measureId": "PI_HIE_5",
-    "title": "Health Information Exchange\n(HIE) Bi-Directional Exchange",
-    "description": "The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.",
+    "title": "Health Information Exchange\r\n(HIE) Bi-Directional Exchange",
+    "description": "The MIPS eligible clinician or group must establish the technical capacity and workflows to engage in bi-directional exchange via an HIE for all patients seen by the eligible clinician and for any patient record stored or maintained in their EHR.\r\n\r\nThe MIPS eligible clinician or group must attest that they engage in bi-directional exchange with an HIE to support transitions of care.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2021,
@@ -220,7 +220,7 @@
     "category": "pi",
     "measureId": "PI_PEA_1",
     "title": "Provide Patients Electronic Access to Their Health Information",
-    "description": "For at least one unique patient seen by the MIPS eligible clinician: (1) The patient (or the patient-authorized representative) is provided timely access to view online, download, and transmit his or her health information; and (2) The MIPS eligible clinician ensures the patient's health information is available for the patient (or patient-authorized representative) to access using any application of their choice that is configured to meet the technical specifications of the Application Programing Interface (API) in the MIPS eligible clinician's certified electronic health record technology (CEHRT).",
+    "description": "For at least one unique patient seen by the MIPS eligible clinician: (1) The patient (or the patient-authorized representative) is provided timely access to view online, download, and transmit his or her health information; and (2) The MIPS eligible clinician ensures the patient's health information is available for the patient (or patient-authorized representative) to access using any application of their choice that is configured to meet the technical specifications of the Application Programming Interface (API) in the MIPS eligible clinician's certified electronic health record technology (CEHRT).",
     "isRequired": true,
     "metricType": "proportion",
     "firstPerformanceYear": 2017,
@@ -353,7 +353,7 @@
       "PI_PHCDRR_3_EX_1",
       "PI_PHCDRR_3_EX_2",
       "PI_PHCDRR_3_EX_3",
-      "PI_PHCDRR_4_EX_4"
+      "PI_PHCDRR_3_EX_4"
     ]
   },
   {
@@ -423,7 +423,7 @@
     "category": "pi",
     "measureId": "PI_PHCDRR_3_EX_4",
     "title": "Electronic Case Reporting Exclusion",
-    "description": "For the CY 2022 performance period/CY 2024 MIPS payment year only, the MIPS eligible clinician uses CEHRT that is not certified to the electronic case reporting certification criterion at CFR 170.315(f)(5) prior to the start of the performance period they select in CY 2022.",
+    "description": "For the CY 2022 performance period/CY 2024 MIPS payment year only, the MIPS eligible clinician uses CEHRT that is not certified to the electronic case reporting certification criterion at § 170.315(f)(5) prior to the start of the performance period they select in CY 2022.",
     "isRequired": false,
     "metricType": "boolean",
     "firstPerformanceYear": 2022,
@@ -458,7 +458,9 @@
     ],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      ""
+    ]
   },
   {
     "category": "pi",
@@ -478,6 +480,8 @@
     ],
     "measureSpecification": null,
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      ""
+    ]
   }
 ]
