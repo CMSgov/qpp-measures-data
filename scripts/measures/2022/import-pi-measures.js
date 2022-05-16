@@ -78,8 +78,11 @@ function convertPiCsvsToMeasures(piCSVRows) {
   return piCSVRows.map((row) => {
     const measure = {};
     measure['category'] = 'pi';
-    if (!row['description']) {
+    if (row['description']) {
       row['description'] = row['description'].replace(/(\r\n\t|\n|\r|\r\t)/gm, '');
+    }
+    if (row['title']) {
+      row['title'] = row['title'].replace(/(\r\n\t|\n|\r|\r\t)/gm, '');
     }
     _.each(PI_CSV_COLUMN_NAMES, (measureKeyName, columnName) => {
       if (measureKeyName === 'measureSets') {
