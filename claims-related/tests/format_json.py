@@ -29,6 +29,14 @@ def display(data, depth=0, parent_type=None):
             return f"\n{pad}" + str(data) 
         return str(data) 
 
+
+# import re
+# complete = display(data)
+# splt = re.split(r"(\d{3}:)", complete)
+# for s in splt:
+#     print(s)
+# print(len(splt))
+
 # print(display(data))
 with open("res.txt", "w") as f:
     f.write(display(data))
