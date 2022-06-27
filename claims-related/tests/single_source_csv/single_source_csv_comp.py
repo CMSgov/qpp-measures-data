@@ -1,5 +1,4 @@
 import glob
-
 import pandas as pd
 import sys
 import os
@@ -136,14 +135,34 @@ for i in report_mid:
         print("*Removed DEN*:" + str(removed_den[i]), file=f)
         print("*Changed DEN*:" + str(changed_den[i]), file=f)
 
+        for j in added_den[i]:
+            print("## For ADDED Data Element name " + j, file=f)
+            (den[j], modified_code[j], added_code[j], removed_code[j], changed_code[j]) = analyze_difference(mid[i], "DATA_ELEMENT_NAME",j, "CODE")
+            print("Codes Summary", file=f)
+            print("*Number of CODES*:" + str(len(added_code[j])), file=f)
+
+            print("### Codes added as part of Data Element", file=f)
+            print(den[j][den[j]["CODE"].isin(added_code[j])].to_markdown(tablefmt="grid"), file=f)
 
 
-        for j in modified_den[i]:
-            print("## For Data Element name " + j, file=f)
+        for j in removed_den[i]:
+            print("## For REMOVED Data Element name " + j, file=f)
             (den[j], modified_code[j], added_code[j], removed_code[j], changed_code[j]) = analyze_difference(mid[i],
                                                                                                              "DATA_ELEMENT_NAME",
-                                                                                                             j, "CODE",
-                                                                                                             False)
+                                                                                                             j, "CODE")
+            print("Codes Summary", file=f)
+            print("* Number of CODES*:" + str(len(removed_code[j])), file=f)
+
+            print("### Codes REMOVED as part of Data Element", file=f)
+            print(den[j][den[j]["CODE"].isin(removed_code[j])].to_markdown(tablefmt="grid"), file=f)
+
+
+        for j in changed_den[i]:
+
+            print("## For Data Element name " + j, file=f)
+            (den[j], modified_code[j], added_code[j], removed_code[j], changed_code[j]) = analyze_difference(mid[i],
+                                                                                                         "DATA_ELEMENT_NAME",
+                                                                                                         j, "CODE")
 
             print("Codes Summary", file=f)
             print("* Number of Added CODES*:" + str(len(added_code[j])), file=f)
@@ -159,3 +178,4 @@ for i in report_mid:
             if (len(changed_code[j]) > 0):
                 print("### modified Codes", file=f)
                 print(den[j][den[j]["CODE"].isin(modified_code[j])].to_markdown(tablefmt="grid"), file=f)
+
