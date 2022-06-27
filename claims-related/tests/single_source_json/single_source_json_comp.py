@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import os
 
-from measure_classes import *
+import measure_classes as mc
 from mixins import StringFormatterMixin
 
 
@@ -32,7 +32,7 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return key == "performanceOptions" and isinstance(data, list)
 
     def process_measure(self, id, code, filename):
-        m = Measure(id, filename)
+        m = mc.Measure(id, filename)
         m.eligibility_options = self.dispatch(
             "eligibilityOptions", code["eligibilityOptions"]
         )
@@ -43,7 +43,7 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return m
 
     def create_procedure_code(self, x):
-        pc = ProcedureCode()
+        pc = mc.ProcedureCode()
         pc.code = x["code"] if x.get("code") else None
         pc.modifier_exclusions = (
             sorted(x["modifierExclusions"]) if x.get("modifierExclusions") else []
@@ -62,7 +62,7 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return [self.create_procedure_code(x) for x in opt["additionalProcedureCodes"]]
 
     def create_eligibility_option(self, opt):
-        eo = EligibilityOption()
+        eo = mc.EligibilityOption()
         eo.diagnosis_codes = (
             sorted(opt["diagnosisCodes"]) if opt.get("diagnosisCodes") else []
         )
@@ -82,11 +82,11 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return [self.create_eligibility_option(opt) for opt in data]
 
     def process_measure_id(self, data):
-        mid = MeasureId(data)
+        mid = mc.MeasureId(data)
         return mid
 
     def create_quality_codes(self, code):
-        qc = QualityCode()
+        qc = mc.QualityCode()
         qc.code = code["code"]
         qc.modifiers = sorted(code["modifiers"]) if code.get("modifiers") else []
         qc.modifier_exclusions = (
@@ -103,7 +103,7 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return sorted([self.create_quality_codes(code) for code in codes])
 
     def create_performance_options(self, opt):
-        po = PerformanceOption()
+        po = mc.PerformanceOption()
         po.option_group = opt["optionGroup"] if opt.get("optionGroup") else None
         po.option_type = opt["optionType"]
         po.quality_codes = self.process_quality_codes(opt["qualityCodes"])

@@ -100,24 +100,27 @@ class Measure(StringFormatterMixin):
             self.diff_list = self.append_string(
                 f"**Performance options detail in {self.year} not in {other.year}:**"
             )
-            for x in in_1_not_in_2:
-                self.diff_list = self.append_string(str(x), add_tab=True)
+            for missing in in_1_not_in_2:
+                self.diff_list = self.append_string(str(missing), add_tab=True)
         if in_2_not_in_1:
             self.diff_list = self.append_string(
                 f"**Performance options detail in {other.year} not in {self.year}:**"
             )
-            for x in in_2_not_in_1:
-                self.diff_list = self.append_string(str(x), add_tab=True)
+            for missing in in_2_not_in_1:
+                self.diff_list = self.append_string(str(missing), add_tab=True)
 
         common_po_pairs = sorted([(po1, po2) for po1, po2 in zip(common1, common2)])
         self.diff_list = self.append_string(
             "**Common Performance option pairs that differ in detail:**"
         )
         for po1, po2 in common_po_pairs:
-            should_print = False
-            for attr in po1.__dict__.keys():
-                if po1.__dict__[attr] != po2.__dict__[attr]:
-                    should_print = True
+            should_print = any(
+                [
+                    True
+                    for attr in po1.__dict__.keys()
+                    if po1.__dict__[attr] != po2.__dict__[attr]
+                ]
+            )
             if should_print:
                 self.diff_list = self.append_string(
                     f"{self.year} Performance Option: {po1}", add_tab=True
@@ -194,9 +197,7 @@ class Measure(StringFormatterMixin):
 
     def compare_common_pairs(self, common_measures, other_year, attr):
         for m1, m2 in common_measures:
-            if m1 == m2:
-                pass
-            else:
+            if m1 != m2:
                 self.diff_list = self.append_string(
                     f"**Differing {attr} Pair for code {m1.code}:**"
                 )
