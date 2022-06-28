@@ -3,8 +3,8 @@ import pandas as pd
 import sys
 import os
 
+# Method to use pipenv run python <script> <Optional: Measure ID to be checked>
 # Change these files wherenver needed
-
 basefilename = "../../data/2020_Claims_SingleSource_v1.4.csv"
 newfilename = "../../data/2021_Claims_SingleSource_v1.3.csv"
 
@@ -192,7 +192,7 @@ for i in report_mid:
             print("* Number of Changed CODES*:" + str(len(changed_code[j])), file=f)
 
             if (len(added_code[j]) > 0):
-                printDf("### Added Codes", file=f)
+                print("### Added Codes", file=f)
                 printDf(den[j][den[j]["CODE"].isin(added_code[j])], f)
             if (len(removed_code[j]) > 0):
                 print("### Removed Codes", file=f)
