@@ -61,19 +61,12 @@ joint = joint.drop(["VERSION_new", "VERSION_base"], axis=1)[['VERSION',
                                                              'GENDER',
                                                             'CONST']]
 
-print("Checking if join is successful ( expected output none)")
-joint[joint.VERSION == "NONE"]
+#print("Checking if join is successful ( expected output none)")
+#joint[joint.VERSION == "NONE"]
 
 onlybase = joint[joint.VERSION == "BASE"]
-print("Base rows only")
-print(len(onlybase))
-print("new rows only")
 onlynew = joint[joint.VERSION == "NEW"]
-print(len(onlynew))
-print("coommon rows only")
 intersection = joint[joint.VERSION == "COMMON"]
-print(len(intersection))
-
 
 def columnToSet(df, column: str):
     return set(df[column].unique().tolist())
@@ -119,8 +112,20 @@ removed_den = {}
 
 with open("csv_report/Summary.md", "w") as f:
     print("# Single Source changes Summary", file=f)
-    print("Basefile = " + os.path.basename(basefilename))
-    print("newfile =" + os.path.basename(newfilename))
+    print("Basefile = " + os.path.basename(basefilename), file=f)
+    print("newfile =" + os.path.basename(newfilename), file=f)
+    print("## Analysis at file level", file=f)
+    print("Base rows only", file=f)
+    print(len(onlybase), file=f)
+    print("new rows only", file=f)
+    print(len(onlynew), file=f)
+    print("common rows only", file=f)
+    print(len(intersection), file=f)
+    print("## Analysis at Measure ID Level level", file=f)
+    print("*Added Measures*:" + str(len(added_mid)), file=f)
+    print("*Removed Measures*:" + str(len(removed_mid)), file=f)
+    print("*Changed Measures*:" + str(len(changed_mid)), file=f)
+    print("## Details at Measure ID Level level", file=f)
     print("*Added Measures*:" + str(added_mid), file=f)
     print("*Removed Measures*:" + str(removed_mid), file=f)
     print("*Changed Measures*:" + str(changed_mid), file=f)
@@ -135,7 +140,7 @@ if (len(sys.argv) > 1):
         report_mid = {}
 
 for i in report_mid:
-    filename = "csv_report/Measure" + i + ".md"
+    filename = "csv_report/Measure" + i.zfill(3) + ".md"
     with open(filename, "w") as f:
         print("# Comparison for Measure ID " + i + "", file=f)
         (mid[i], modified_den[i], added_den[i], removed_den[i], changed_den[i]) = analyze_difference(df, "Measure_ID",
@@ -190,9 +195,9 @@ for i in report_mid:
                 printDf("### Added Codes", file=f)
                 printDf(den[j][den[j]["CODE"].isin(added_code[j])], f)
             if (len(removed_code[j]) > 0):
-                print("### removed Codes", file=f)
+                print("### Removed Codes", file=f)
                 printDf(den[j][den[j]["CODE"].isin(removed_code[j])], f)
             if (len(changed_code[j]) > 0):
-                print("### modified Codes", file=f)
-                printDf(den[j][den[j]["CODE"].isin(modified_code[j])], f)
+                print("### Changed Codes", file=f)
+                printDf(den[j][den[j]["CODE"].isin(changed_code[j])], f)
 
