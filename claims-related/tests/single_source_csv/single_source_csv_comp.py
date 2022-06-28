@@ -24,6 +24,19 @@ key = newfile.columns.values.tolist()
 key.remove("VERSION")
 joint = newfile.merge(basefile, on=key, how="outer", suffixes=["_new", "_base"])
 
+def printDf(df,f):
+    columnOrder=['VERSION','Measure_ID',
+                  'DATA_ELEMENT_NAME',
+                  'CODING_SYSTEM',
+                  'CODE',
+                  'MODIFIER',
+                  'PLACE_OF_SERVICE',
+                  'AGE',
+                  'GENDER'
+                  ]
+    print(df[columnOrder].to_markdown(tablefmt="grid",index=False), file=f)
+
+
 
 def getJoinMeta(row):
     val = "NONE"
@@ -37,7 +50,16 @@ def getJoinMeta(row):
 
 
 joint["VERSION"] = joint.apply(getJoinMeta, axis=1)
-joint = joint.drop(["VERSION_new", "VERSION_base"], axis=1)
+joint = joint.drop(["VERSION_new", "VERSION_base"], axis=1)[['VERSION',
+                                                            'Measure_ID',
+                                                             'DATA_ELEMENT_NAME',
+                                                             'CODING_SYSTEM',
+                                                             'CODE',
+                                                             'MODIFIER',
+                                                             'PLACE_OF_SERVICE',
+                                                             'AGE',
+                                                             'GENDER',
+                                                            'CONST']]
 
 print("Checking if join is successful ( expected output none)")
 joint[joint.VERSION == "NONE"]
@@ -95,14 +117,13 @@ added_den = {}
 changed_den = {}
 removed_den = {}
 
-with open("csv_report/Summary.md", "a") as f:
+with open("csv_report/Summary.md", "w") as f:
     print("# Single Source changes Summary", file=f)
-    print("Basefile = " + basefilename)
-    print("newfile =" + newfilename)
+    print("Basefile = " + os.path.basename(basefilename))
+    print("newfile =" + os.path.basename(newfilename))
     print("*Added Measures*:" + str(added_mid), file=f)
     print("*Removed Measures*:" + str(removed_mid), file=f)
     print("*Changed Measures*:" + str(changed_mid), file=f)
-import sys
 
 report_mid = modified_mid
 
@@ -115,11 +136,8 @@ if (len(sys.argv) > 1):
 
 for i in report_mid:
     filename = "csv_report/Measure" + i + ".md"
-    files = glob.glob(filename)
-    for f in files:
-        os.remove(f)
-    with open(filename, "a") as f:
-        print("# Comparison for Measure ID " + i + "= ", file=f)
+    with open(filename, "w") as f:
+        print("# Comparison for Measure ID " + i + "", file=f)
         (mid[i], modified_den[i], added_den[i], removed_den[i], changed_den[i]) = analyze_difference(df, "Measure_ID",
                                                                                                      i,
                                                                                                      "DATA_ELEMENT_NAME",
@@ -142,7 +160,7 @@ for i in report_mid:
             print("*Number of CODES*:" + str(len(added_code[j])), file=f)
 
             print("### Codes added as part of Data Element", file=f)
-            print(den[j][den[j]["CODE"].isin(added_code[j])].to_markdown(tablefmt="grid"), file=f)
+            printDf(den[j][den[j]["CODE"].isin(added_code[j])], f)
 
 
         for j in removed_den[i]:
@@ -154,28 +172,27 @@ for i in report_mid:
             print("* Number of CODES*:" + str(len(removed_code[j])), file=f)
 
             print("### Codes REMOVED as part of Data Element", file=f)
-            print(den[j][den[j]["CODE"].isin(removed_code[j])].to_markdown(tablefmt="grid"), file=f)
+            printDf(den[j][den[j]["CODE"].isin(removed_code[j])], f)
 
 
         for j in changed_den[i]:
 
-            print("## For Data Element name " + j, file=f)
+            print("## For Data Element Name " + j, file=f)
             (den[j], modified_code[j], added_code[j], removed_code[j], changed_code[j]) = analyze_difference(mid[i],
                                                                                                          "DATA_ELEMENT_NAME",
                                                                                                          j, "CODE")
-
             print("Codes Summary", file=f)
             print("* Number of Added CODES*:" + str(len(added_code[j])), file=f)
             print("* Number of Removed CODES*:" + str(len(removed_code[j])), file=f)
             print("* Number of Changed CODES*:" + str(len(changed_code[j])), file=f)
 
             if (len(added_code[j]) > 0):
-                print("### Added Codes", file=f)
-                print(den[j][den[j]["CODE"].isin(added_code[j])].to_markdown(tablefmt="grid"), file=f)
+                printDf("### Added Codes", file=f)
+                printDf(den[j][den[j]["CODE"].isin(added_code[j])], f)
             if (len(removed_code[j]) > 0):
                 print("### removed Codes", file=f)
-                print(den[j][den[j]["CODE"].isin(removed_code[j])].to_markdown(tablefmt="grid"), file=f)
+                printDf(den[j][den[j]["CODE"].isin(removed_code[j])], f)
             if (len(changed_code[j]) > 0):
                 print("### modified Codes", file=f)
-                print(den[j][den[j]["CODE"].isin(modified_code[j])].to_markdown(tablefmt="grid"), file=f)
+                printDf(den[j][den[j]["CODE"].isin(modified_code[j])], f)
 
