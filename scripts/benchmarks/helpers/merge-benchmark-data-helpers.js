@@ -65,7 +65,7 @@ const getBenchmarkKey = (benchmark) => {
  * }}
  */
 const processPerformanceBenchmark = (benchmark) => {  // TODO: Kyle - This was a one-off for 2021 performance benchmarks. If you run this for 2022 performance benchmarks you're in trouble.
-  //  Fix the underlining data where proportional measures to produce 9 deciles only by default.
+  // Fix the underlining data where proportional measures to produce 9 deciles only by default.
   const nonPropMeasures2021 = ['ACRAD18', 'ACEP50', 'ACEP51', 'ACRAD17', 'ACRAD25', 'ACRAD19', 'ACRAD16', 'ACRAD15'];
   const acMeasures2021 = ['479', '480'];
   const trimmedDeciles = () => {
