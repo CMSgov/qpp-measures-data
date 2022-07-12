@@ -55,7 +55,7 @@ class FormatInitialCSV:
 
     def _create_clean_header(self, header):
         cleaned_header = [
-            re.sub(r"\n", "", col) for col in header if re.match(self.HEADER_CHARS, col)
+            col.replace("\n", "") for col in header if re.match(self.HEADER_CHARS, col)
         ]
         self._verify_header(cleaned_header)
         return [cleaned_header]
