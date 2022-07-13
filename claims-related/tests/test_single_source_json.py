@@ -6,7 +6,7 @@ import pandas as pd
 from pprint import pprint
 
 CURRENT_YEAR = "2021"
-CSV_VERSION = "v1.2"
+CSV_VERSION = "v1.3"
 
 # Source data files. QPP_MEASURES_DATA_ROOT needs configuring.
 QPP_MEASURES_DATA_ROOT = "../"
