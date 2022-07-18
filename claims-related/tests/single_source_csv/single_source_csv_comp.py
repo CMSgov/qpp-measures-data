@@ -15,7 +15,7 @@ def printDf(df, f):
                    ]
     # to markdown is better but unfortunately not supported by current docker
     # print(df[columnOrder].to_markdown(tablefmt="grid", index=False), file=f)
-    print(df[columnOrder], file=f)
+    print(df[columnOrder].to_string(index=False), file=f)
 
 
 def paragraph(f):
@@ -93,6 +93,8 @@ if __name__ == "__main__":
     key.remove("VERSION")
     joint = newfile.merge(basefile, on=key, how="outer", suffixes=["_new", "_base"])
 
+    pd.set_option('display.max_rows', None)
+    pd.set_option('expand_frame_repr', False)
 
     joint["VERSION"] = joint.apply(getJoinMeta, axis=1)
     joint = joint.drop(["VERSION_new", "VERSION_base"], axis=1)[['VERSION',
