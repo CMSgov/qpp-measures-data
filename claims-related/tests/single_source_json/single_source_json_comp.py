@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import os
+import argparse
 
 import measure_classes as mc
 from mixins import StringFormatterMixin
@@ -100,7 +101,8 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return qc
 
     def process_quality_codes(self, codes):
-        return sorted([self.create_quality_codes(code) for code in codes])
+        sorted_codes = sorted(codes, key=lambda x: x["code"])
+        return sorted([self.create_quality_codes(code) for code in sorted_codes])
 
     def create_performance_options(self, opt):
         po = mc.PerformanceOption()
@@ -110,7 +112,10 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
         return po
 
     def process_performance_options(self, data):
-        sorted_opts = sorted([self.create_performance_options(opt) for opt in data])
+        sorted_opts = sorted(
+            [self.create_performance_options(opt) for opt in data],
+            key=lambda x: x.option_type,
+        )
         return sorted_opts
 
     def dispatch(self, key, code):
@@ -162,19 +167,33 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
     def run(self):
         self.setup_report_dir()
         data1, data2 = self.load_file_data()
-        measures1 = [self.process_measure(d, data1[d], file1) for d in data1]
-        measures2 = [self.process_measure(d, data2[d], file2) for d in data2]
+        measures1 = [self.process_measure(d, data1[d], self.file1) for d in data1]
+        measures2 = [self.process_measure(d, data2[d], self.file2) for d in data2]
         self.diff_list = self.append_string(
             f"# SUMMARY DIFF REPORT COMPARING {self.file1} and {self.file2}"
         )
-        self.get_missing_measures(measures1, measures2, file1, file2)
+        self.get_missing_measures(measures1, measures2, self.file1, self.file2)
         common_measures = self.get_common_measures(measures1, measures2)
         self.write_summary_data()
         self.compare_common_pairs(common_measures, self.output_dir)
 
 
 if __name__ == "__main__":
-    file1 = "qpp-single-source-2020.json"
-    file2 = "qpp-single-source-2021.json"
-    runner = SingleSourceJsonComparisonRunner(file1, file2)
+    parser = argparse.ArgumentParser(
+        description="Creates markdown files to compare current and previous year's single source .json files"
+    )
+    parser.add_argument(
+        "--prev",
+        required=True,
+        help="Previous year's single source .json file.  EX: qpp-single-source-2021.json",
+    )
+    parser.add_argument(
+        "--curr",
+        required=True,
+        help="Current year's single source .json file.  EX: qpp-single-source-2022.json",
+    )
+    args = parser.parse_args()
+    prev_file = args.prev
+    curr_file = args.curr
+    runner = SingleSourceJsonComparisonRunner(prev_file, curr_file)
     runner.run()

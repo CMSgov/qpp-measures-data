@@ -9,7 +9,7 @@ import argparse
 # .csv format is not pretty.  This script will format the initial
 # .csv file to match the 2021_Claims_SingleSource_v1.3.csv file.
 
-# The new .csv file should be placed in /claims-related/data
+# The to-be-cleaned .csv file should be placed in /claims-related/data
 ######
 
 
@@ -43,7 +43,7 @@ class FormatInitialCSV:
     def _verify_header(cleaned_header):
         if cleaned_header != FormatInitialCSV.CORRECT_HEADERS:
             raise AttributeError(
-                "Please make sure that current and previous years have the same columns "
+                "Please make sure that current and previous years have the same columns"
             )
 
     @staticmethod
