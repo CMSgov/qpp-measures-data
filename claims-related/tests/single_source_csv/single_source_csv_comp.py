@@ -108,8 +108,6 @@ if __name__ == "__main__":
                                                                  'GENDER',
                                                                  'CONST']]
 
-    # print("Checking if join is successful ( expected output none)")
-    # joint[joint.VERSION == "NONE"]
 
     onlybase = joint[joint.VERSION == "BASE"]
     onlynew = joint[joint.VERSION == "NEW"]
