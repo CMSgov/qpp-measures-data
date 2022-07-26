@@ -14,6 +14,7 @@ def printDf(df, f):
                    'GENDER'
                    ]
     # to markdown is better but unfortunately not supported by current docker
+    # however this can be used if running locally ( Requirement Python 3.8 )
     # print(df[columnOrder].to_markdown(tablefmt="grid", index=False), file=f)
     print(df[columnOrder].to_string(index=False), file=f)
 
