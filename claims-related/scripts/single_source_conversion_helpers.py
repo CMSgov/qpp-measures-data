@@ -56,7 +56,7 @@ def find_min_max_age(age_string):
 
     If the maximum age is null, returns None as the upper bound.
     """
-    month_regex = re.compile('^≥(\d+)\smo$')
+    month_regex = re.compile('^≥(\d+)\s*mo$')
     if re.match(month_regex, age_string):
         min_age = float(re.match(month_regex, age_string).groups()[0]) / 12
         max_age = None
