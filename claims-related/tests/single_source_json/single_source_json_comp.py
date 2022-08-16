@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import os
-
+import argparse
 import measure_classes as mc
 from mixins import StringFormatterMixin
 
@@ -174,7 +174,11 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
 
 
 if __name__ == "__main__":
-    file1 = "qpp-single-source-2020.json"
-    file2 = "qpp-single-source-2021.json"
+    parser = argparse.ArgumentParser(description='Parse arguments')
+    parser.add_argument('--base', type=str, help='Base file expected under data ',default="qpp-single-source-2021.json")
+    parser.add_argument('--new', type=str, help='New file expected under data ',default="qpp-single-source-2022.json")
+    args = parser.parse_args()
+    file1 = args.base
+    file2 = args.new
     runner = SingleSourceJsonComparisonRunner(file1, file2)
     runner.run()
