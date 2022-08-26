@@ -216,7 +216,7 @@ definitions:
             type: array
             description: List of submissionMethods where ICD 10 codes for the measure changed during the submission year. Used to indicate that submissions data should be truncated to only the first nine months of the performance year when the ICD 10 codes were unchanged. Typically impacts claims submissionMethod. Does not impact registry submissionMethod.
             items: { $ref: #/definitions/methods }
-          benchmarks:
+          historic_benchmarks:
             type: object
             description: The submissionMethods of the measure which have had their benchmarks removed or flattened for the current year. A benchmark is marked as flat if the measure is determined to have the potential to result in inappropriate treatment of patients if the top decile is higher than 90%, or if inverse less than 10%. 
             propertyNames: { $ref: #/definitions/methods }
