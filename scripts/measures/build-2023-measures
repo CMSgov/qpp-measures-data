@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+currentPerformanceYear=2023
+
+node scripts/measures/$currentPerformanceYear/update-measures.js \
+	$currentPerformanceYear

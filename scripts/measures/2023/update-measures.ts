@@ -1,16 +1,22 @@
-const performanceYear = 2023
-const measuresFileName = `../../../measures/${performanceYear}/measures-data.json`;
-const changesDir = `../../../updates/measures/${performanceYear}/`;
-
 import _ from 'lodash';
 import fs from 'fs';
 import parse from 'csv-parse/lib/sync';
-
-import changelog from '../../../updates/measures/2023/Changelog.json';
-import measuresJson from '../../../measures/2023/measures-data.json';
+import path from 'path'
 
 import { initValidation } from '../lib/validation-util';
 
+const performanceYear = process.argv[2];
+
+const measuresPath = `../../../measures/${performanceYear}/measures-data.json`;
+const changesPath = `../../../updates/measures/${performanceYear}/`;
+
+const measuresJson = JSON.parse(
+    fs.readFileSync(path.join(__dirname, measuresPath), 'utf8')
+);
+
+const changelog = JSON.parse(
+    fs.readFileSync(path.join(__dirname, `${changesPath}Changelog.json`), 'utf8')
+);
 
 let numOfNewChangeFiles = 0;
 
@@ -37,23 +43,20 @@ const PI_CSV_COLUMN_NAMES = {
     'exclusion': 'exclusions',
 };
 
-//hard-type the changelog json to handle empty array (when the PY is first created).
-const typedChangelog: string[] = changelog;
-
 function makeChanges() {
-    const files = fs.readdirSync(changesDir);
+    const files = fs.readdirSync(path.join(__dirname, changesPath));
 
     files.forEach(fileName => {
         if(fileName != 'Changelog.json') {
-            if(!typedChangelog.includes(fileName)) {
+            if(!changelog.includes(fileName)) {
                 numOfNewChangeFiles++;
-                updateMeasuresWithChangeFile(fileName)
+                updateMeasuresWithChangeFile(fileName, changesPath)
             }
         }
     });
 
     if(numOfNewChangeFiles > 0) {
-        writeToFile(measuresJson, measuresFileName);
+        writeToFile(measuresJson, measuresPath);
     } else {
         console.info(
             '\x1b[33m%s\x1b[0m', 
@@ -62,8 +65,8 @@ function makeChanges() {
     }
 }
 
-function convertCsvToJson(fileName: string) {
-    const csv = fs.readFileSync(`${changesDir}${fileName}`, 'utf8');
+function convertCsvToJson(fileName: string, changesPath: string) {
+    const csv = fs.readFileSync(path.join(__dirname, `${changesPath}${fileName}`), 'utf8');
     const parsedCsv = parse(csv, {columns: true});
 
     return parsedCsv.map((row) => {
@@ -88,8 +91,8 @@ function convertCsvToJson(fileName: string) {
     });
 }
 
-function updateMeasuresWithChangeFile(fileName: string) {
-    const changeData = convertCsvToJson(fileName);
+function updateMeasuresWithChangeFile(fileName: string, changesPath: string) {
+    const changeData = convertCsvToJson(fileName, changesPath);
     let numOfFailures = 0;
 
     for (let i = 0; i < changeData.length; i++) {
@@ -114,7 +117,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
     }
 
     if(numOfFailures === 0) {
-        updateChangeLog(fileName);
+        updateChangeLog(fileName, changesPath);
         console.info(
             '\x1b[32m%s\x1b[0m', 
             `File '${fileName}' successfully ingested into measures-data ${performanceYear}`,
@@ -127,13 +130,13 @@ function updateMeasuresWithChangeFile(fileName: string) {
     }
 }
 
-function updateChangeLog(fileName: string) {
-    typedChangelog.push(fileName);
-    writeToFile(typedChangelog, `${changesDir}Changelog.json`);
+function updateChangeLog(fileName: string, changesPath: string) {
+    changelog.push(fileName);
+    writeToFile(changelog, `${changesPath}Changelog.json`);
 }
 
-function writeToFile(file: any, fileName: string) {
-    fs.writeFile(fileName, JSON.stringify(file, null, 2), function writeJSON(err) {
+function writeToFile(file: any, filePath: string) {
+    fs.writeFile(path.join(__dirname, filePath), JSON.stringify(file, null, 2), function writeJSON(err) {
         if (err) return console.log(err);
       })
 }
@@ -149,4 +152,4 @@ function updateMeasure(change) {
     }
 }
 
-makeChanges()
+makeChanges();
