@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import os
-import argparse
+
 import measure_classes as mc
 from mixins import StringFormatterMixin
 
@@ -162,12 +162,12 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
     def run(self):
         self.setup_report_dir()
         data1, data2 = self.load_file_data()
-        measures1 = [self.process_measure(d, data1[d], file1) for d in data1]
-        measures2 = [self.process_measure(d, data2[d], file2) for d in data2]
+        measures1 = [self.process_measure(d, data1[d], self.file1) for d in data1]
+        measures2 = [self.process_measure(d, data2[d], self.file2) for d in data2]
         self.diff_list = self.append_string(
             f"# SUMMARY DIFF REPORT COMPARING {self.file1} and {self.file2}"
         )
-        self.get_missing_measures(measures1, measures2, file1, file2)
+        self.get_missing_measures(measures1, measures2, self.file1, self.file2)
         common_measures = self.get_common_measures(measures1, measures2)
         self.write_summary_data()
         self.compare_common_pairs(common_measures, self.output_dir)
