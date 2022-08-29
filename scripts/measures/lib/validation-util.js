@@ -32,13 +32,13 @@ var baseValidationSchemaProperties = {
 };
 var ia_validationSchema = {
     type: 'object',
-    properties: __assign(__assign({}, baseValidationSchemaProperties), { weight: { type: 'string', nullable: true }, subcategory_name: { type: 'string', nullable: true } }),
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { weight: { type: 'string', nullable: true }, subcategoryId: { type: 'string', nullable: true } }),
     required: ['measureId', 'category'],
     additionalProperties: false,
 };
 var pi_validationSchema = {
     type: 'object',
-    properties: __assign(__assign({}, baseValidationSchemaProperties), { required: { type: 'string', nullable: true }, name: { type: 'string', nullable: true }, bonus: { type: 'string', nullable: true }, reporting_category: { type: 'string', nullable: true }, substitutes: { type: 'string', nullable: true }, exclusions: { type: 'string', nullable: true }, weight: { type: 'string', nullable: true }, subcategory_name: { type: 'string', nullable: true } }),
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { required: { type: 'string', nullable: true }, name: { type: 'string', nullable: true }, bonus: { type: 'string', nullable: true }, reportingCategory: { type: 'string', nullable: true }, substitutes: { type: 'string', nullable: true }, exclusions: { type: 'string', nullable: true }, weight: { type: 'string', nullable: true }, subcategoryId: { type: 'string', nullable: true } }),
     required: ['measureId', 'category'],
     additionalProperties: false,
 };

@@ -4,6 +4,7 @@ const changesDir = `../../../updates/measures/${performanceYear}/`;
 
 import _ from 'lodash';
 import fs from 'fs';
+import parse from 'csv-parse/lib/sync';
 
 import changelog from '../../../updates/measures/2023/Changelog.json';
 import measuresJson from '../../../measures/2023/measures-data.json';
@@ -12,6 +13,29 @@ import { initValidation } from '../lib/validation-util';
 
 
 let numOfNewChangeFiles = 0;
+
+const BASE_CSV_COLUMN_NAMES = {
+    'title': 'title',
+    'description': 'description',
+    'measureId': 'measure_id'
+}
+
+const IA_CSV_COLUMN_NAMES = {
+    ...BASE_CSV_COLUMN_NAMES,
+    'weight': 'weight',
+    'subcategoryId': 'subcategory_name'
+};
+
+const PI_CSV_COLUMN_NAMES = {
+    ...BASE_CSV_COLUMN_NAMES,
+    'required': 'required',
+    'isRequired': 'required',
+    'metricType': 'name',
+    'isBonus': 'bonus',
+    'reportingCategory': 'reporting_category',
+    'substitutes': 'substitutes',
+    'exclusion': 'exclusions',
+};
 
 //hard-type the changelog json to handle empty array (when the PY is first created).
 const typedChangelog: string[] = changelog;
@@ -38,9 +62,34 @@ function makeChanges() {
     }
 }
 
+function convertCsvToJson(fileName: string) {
+    const csv = fs.readFileSync(`${changesDir}${fileName}`, 'utf8');
+    const parsedCsv = parse(csv, {columns: true});
+
+    return parsedCsv.map((row) => {
+        const measure = {};
+        measure['category'] = row['category'].toLowerCase();
+        let csvColumnNames;
+        switch (measure['category']) {
+          case 'ia':
+              csvColumnNames = IA_CSV_COLUMN_NAMES;
+              break;
+          case 'pi':
+              csvColumnNames = PI_CSV_COLUMN_NAMES;
+              break;
+        }
+        _.each(csvColumnNames, (columnName, measureKeyName) => {
+          if(row[columnName]) {
+              measure[measureKeyName] = row[columnName];
+          }
+        });
+        
+        return measure;
+    });
+}
+
 function updateMeasuresWithChangeFile(fileName: string) {
-    const changeDataRaw = fs.readFileSync(`${changesDir}${fileName}`, 'utf8');
-    const changeData = JSON.parse(changeDataRaw);
+    const changeData = convertCsvToJson(fileName);
     let numOfFailures = 0;
 
     for (let i = 0; i < changeData.length; i++) {

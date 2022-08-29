@@ -15,18 +15,18 @@ interface baseMeasuresChange {
 
 interface IA_MeasuresChange extends baseMeasuresChange {
     weight?: string,
-    subcategory_name?: string,
+    subcategoryId?: string,
 };
 
 interface PI_MeasuresChange extends baseMeasuresChange {
     required?: string,
     name?: string,
     bonus?: string,
-    reporting_category?: string,
+    reportingCategory?: string,
     substitutes?: string,
     exclusions?: string,
     weight?: string,
-    subcategory_name?: string,
+    subcategoryId?: string,
 };
 
 const baseValidationSchemaProperties = {
@@ -41,7 +41,7 @@ const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
     properties: {
         ...baseValidationSchemaProperties,
         weight: { type: 'string', nullable: true },
-        subcategory_name: { type: 'string', nullable: true },
+        subcategoryId: { type: 'string', nullable: true },
     },
     required: ['measureId', 'category'],
     additionalProperties: false,
@@ -54,11 +54,11 @@ const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
         required: { type: 'string', nullable: true },
         name: { type: 'string', nullable: true },
         bonus: { type: 'string', nullable: true },
-        reporting_category: { type: 'string', nullable: true },
+        reportingCategory: { type: 'string', nullable: true },
         substitutes: { type: 'string', nullable: true },
         exclusions: { type: 'string', nullable: true },
         weight: { type: 'string', nullable: true },
-        subcategory_name: { type: 'string', nullable: true },
+        subcategoryId: { type: 'string', nullable: true },
     },
     required: ['measureId', 'category'],
     additionalProperties: false,
