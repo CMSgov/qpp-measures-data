@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --recursive --timeout 5000",
+    "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",

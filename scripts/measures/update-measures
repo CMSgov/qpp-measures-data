@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$(($1))
+maxPerformanceYear=2023
+
+if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+  exec scripts/measures/update-${currentPerformanceYear}-measures
+  exit
+else
+  echo 'Current performance year not valid!' $currentPerformanceYear;
+fi
