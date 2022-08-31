@@ -4,13 +4,11 @@ import parse from 'csv-parse/lib/sync';
 import path from 'path';
 
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
-import mergeBenchmarkMetadata from '../lib/merge-benchmark-metadata';
 
 const performanceYear = process.argv[2];
 
 const measuresPath = `../../../measures/${performanceYear}/measures-data.json`;
 const changesPath = `../../../updates/measures/${performanceYear}/`;
-const benchmarkMetaDataPath = `../../../util/measures/${performanceYear}/benchmark-metadata.csv`
 
 const measuresJson = JSON.parse(
     fs.readFileSync(path.join(__dirname, measuresPath), 'utf8')
@@ -18,11 +16,6 @@ const measuresJson = JSON.parse(
 
 const changelog = JSON.parse(
     fs.readFileSync(path.join(__dirname, `${changesPath}Changelog.json`), 'utf8')
-);
-
-const benchmarkMetaData = parse(
-    fs.readFileSync(path.join(__dirname, benchmarkMetaDataPath), 'utf8'),
-    { columns: true, skip_empty_lines: true }
 );
 
 //to determine if any new changes need to be written to measures-data.json.
@@ -66,7 +59,6 @@ function updateMeasures() {
     });
 
     if(numOfNewChangeFiles > 0) {
-        mergeBenchmarkMetadata(measuresJson, benchmarkMetaData, true);
         writeToFile(measuresJson, measuresPath);
     } else {
         console.info(
@@ -151,7 +143,7 @@ function updateChangeLog(fileName: string) {
 function writeToFile(file: any, filePath: string) {
     fs.writeFile(path.join(__dirname, filePath), JSON.stringify(file, null, 2), function writeJSON(err) {
         if (err) return console.log(err);
-      })
+    });
 }
 
 function updateMeasure(change: MeasuresChange) {

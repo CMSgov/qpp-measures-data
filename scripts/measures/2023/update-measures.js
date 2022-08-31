@@ -19,14 +19,11 @@ var fs_1 = __importDefault(require("fs"));
 var sync_1 = __importDefault(require("csv-parse/lib/sync"));
 var path_1 = __importDefault(require("path"));
 var validate_change_requests_1 = require("../lib/validate-change-requests");
-var merge_benchmark_metadata_1 = __importDefault(require("../lib/merge-benchmark-metadata"));
 var performanceYear = process.argv[2];
 var measuresPath = "../../../measures/" + performanceYear + "/measures-data.json";
 var changesPath = "../../../updates/measures/" + performanceYear + "/";
-var benchmarkMetaDataPath = "../../../util/measures/" + performanceYear + "/benchmark-metadata.csv";
 var measuresJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, measuresPath), 'utf8'));
 var changelog = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, changesPath + "Changelog.json"), 'utf8'));
-var benchmarkMetaData = sync_1.default(fs_1.default.readFileSync(path_1.default.join(__dirname, benchmarkMetaDataPath), 'utf8'), { columns: true, skip_empty_lines: true });
 //to determine if any new changes need to be written to measures-data.json.
 var numOfNewChangeFiles = 0;
 //These are only needed if the csv column names do not match the measures-data field names.
@@ -49,7 +46,6 @@ function updateMeasures() {
         }
     });
     if (numOfNewChangeFiles > 0) {
-        merge_benchmark_metadata_1.default(measuresJson, benchmarkMetaData, true);
         writeToFile(measuresJson, measuresPath);
     }
     else {
