@@ -17,11 +17,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.initValidation = exports.measureType = void 0;
 var ajv_1 = __importDefault(require("ajv"));
 var ajv = new ajv_1.default();
+/**
+ *  This file handles validation schema setup and validation runs
+ * for the change requests. Validation of the measures-data file
+ * is handled by `validate-data` and the measures-schema.yaml files.
+ */
 var measureType;
 (function (measureType) {
     measureType["ia"] = "ia";
     measureType["pi"] = "pi";
+    measureType["cost"] = "cost";
+    measureType["quality"] = "quality";
 })(measureType = exports.measureType || (exports.measureType = {}));
+;
+;
 ;
 ;
 var baseValidationSchemaProperties = {
@@ -42,6 +51,18 @@ var pi_validationSchema = {
     required: ['measureId', 'category'],
     additionalProperties: false,
 };
+var cost_validationSchema = {
+    type: 'object',
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { isInverse: { type: 'boolean', nullable: true }, overallAlgorithm: { type: 'string', nullable: true }, metricType: { type: 'string', nullable: true }, submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true } }),
+    required: ['measureId', 'category'],
+    additionalProperties: false,
+};
+var quality_validationSchema = {
+    type: 'object',
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { nqfId: { type: 'string', nullable: true }, nationalQualityStrategyDomain: { type: 'string', nullable: true }, isHighPriority: { type: 'boolean', nullable: true }, isInverse: { type: 'boolean', nullable: true }, isRiskAdjusted: { type: 'boolean', nullable: true }, primarySteward: { type: 'string', nullable: true }, allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true }, allowedPrograms: { type: 'array', items: { type: 'string' }, nullable: true }, eMeasureId: { type: 'string', nullable: true }, nqfEMeasureId: { type: 'string', nullable: true }, measureSets: { type: 'array', items: { type: 'string' }, nullable: true }, isRegistryMeasure: { type: 'boolean', nullable: true }, isIcdImpacted: { type: 'boolean', nullable: true }, metricType: { type: 'string', nullable: true }, submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true } }),
+    required: ['measureId', 'category'],
+    additionalProperties: false,
+};
 function initValidation(type) {
     return ajv.compile(getSchema(type));
 }
@@ -52,5 +73,9 @@ function getSchema(type) {
             return ia_validationSchema;
         case measureType.pi:
             return pi_validationSchema;
+        case measureType.cost:
+            return cost_validationSchema;
+        case measureType.quality:
+            return quality_validationSchema;
     }
 }

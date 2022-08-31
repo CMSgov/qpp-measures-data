@@ -1,14 +1,16 @@
 import _ from 'lodash';
 import fs from 'fs';
 import parse from 'csv-parse/lib/sync';
-import path from 'path'
+import path from 'path';
 
-import { initValidation } from '../lib/validation-util';
+import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
+import mergeBenchmarkMetadata from '../lib/merge-benchmark-metadata';
 
 const performanceYear = process.argv[2];
 
 const measuresPath = `../../../measures/${performanceYear}/measures-data.json`;
 const changesPath = `../../../updates/measures/${performanceYear}/`;
+const benchmarkMetaDataPath = `../../../util/measures/${performanceYear}/benchmark-metadata.csv`
 
 const measuresJson = JSON.parse(
     fs.readFileSync(path.join(__dirname, measuresPath), 'utf8')
@@ -18,8 +20,15 @@ const changelog = JSON.parse(
     fs.readFileSync(path.join(__dirname, `${changesPath}Changelog.json`), 'utf8')
 );
 
+const benchmarkMetaData = parse(
+    fs.readFileSync(path.join(__dirname, benchmarkMetaDataPath), 'utf8'),
+    { columns: true, skip_empty_lines: true }
+);
+
+//to determine if any new changes need to be written to measures-data.json.
 let numOfNewChangeFiles = 0;
 
+//These are only needed if the csv column names do not match the measures-data field names.
 const BASE_CSV_COLUMN_NAMES = {
     'title': 'title',
     'description': 'description',
@@ -43,19 +52,21 @@ const PI_CSV_COLUMN_NAMES = {
     'exclusion': 'exclusions',
 };
 
-function makeChanges() {
+function updateMeasures() {
     const files = fs.readdirSync(path.join(__dirname, changesPath));
 
     files.forEach(fileName => {
+        //find only the change files not yet present in the changelog.
         if(fileName != 'Changelog.json') {
             if(!changelog.includes(fileName)) {
                 numOfNewChangeFiles++;
-                updateMeasuresWithChangeFile(fileName, changesPath)
+                updateMeasuresWithChangeFile(fileName)
             }
         }
     });
 
     if(numOfNewChangeFiles > 0) {
+        mergeBenchmarkMetadata(measuresJson, benchmarkMetaData, true);
         writeToFile(measuresJson, measuresPath);
     } else {
         console.info(
@@ -65,7 +76,7 @@ function makeChanges() {
     }
 }
 
-function convertCsvToJson(fileName: string, changesPath: string) {
+function convertCsvToJson(fileName: string) {
     const csv = fs.readFileSync(path.join(__dirname, `${changesPath}${fileName}`), 'utf8');
     const parsedCsv = parse(csv, {columns: true});
 
@@ -81,6 +92,7 @@ function convertCsvToJson(fileName: string, changesPath: string) {
               csvColumnNames = PI_CSV_COLUMN_NAMES;
               break;
         }
+        //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
           if(row[columnName]) {
               measure[measureKeyName] = row[columnName];
@@ -91,15 +103,16 @@ function convertCsvToJson(fileName: string, changesPath: string) {
     });
 }
 
-function updateMeasuresWithChangeFile(fileName: string, changesPath: string) {
-    const changeData = convertCsvToJson(fileName, changesPath);
+function updateMeasuresWithChangeFile(fileName: string) {
+    const changeData = convertCsvToJson(fileName);
     let numOfFailures = 0;
 
     for (let i = 0; i < changeData.length; i++) {
-        const change = changeData[i];
+        const change = changeData[i] as MeasuresChange;
 
         if(change.category) {
-            const validate = initValidation(change.category);
+            //validation on the change request format. Validation on the updated measures data happens later.
+            const validate = initValidation(measureType[change.category]);
 
             if (validate(change)) {
                 updateMeasure(change);
@@ -117,7 +130,7 @@ function updateMeasuresWithChangeFile(fileName: string, changesPath: string) {
     }
 
     if(numOfFailures === 0) {
-        updateChangeLog(fileName, changesPath);
+        updateChangeLog(fileName);
         console.info(
             '\x1b[32m%s\x1b[0m', 
             `File '${fileName}' successfully ingested into measures-data ${performanceYear}`,
@@ -130,7 +143,7 @@ function updateMeasuresWithChangeFile(fileName: string, changesPath: string) {
     }
 }
 
-function updateChangeLog(fileName: string, changesPath: string) {
+function updateChangeLog(fileName: string) {
     changelog.push(fileName);
     writeToFile(changelog, `${changesPath}Changelog.json`);
 }
@@ -141,15 +154,16 @@ function writeToFile(file: any, filePath: string) {
       })
 }
 
-function updateMeasure(change) {
+function updateMeasure(change: MeasuresChange) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
             measuresJson[i] = {
                 ...measuresJson[i],
                 ...change as any,
             };
+            break;
         }
     }
 }
 
-makeChanges();
+updateMeasures();

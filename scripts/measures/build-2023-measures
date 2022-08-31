@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 currentPerformanceYear=2023
 
+# 1. Update the measures-data, if there are any updates:
 node scripts/measures/$currentPerformanceYear/update-measures.js \
 	$currentPerformanceYear
+
+# Can be removed when this functionality is handled by the UI and ingested like all other measures changes. 
+# 2. Ingest the Spec Urls, if those files exist:
+node scripts/measures/$currentPerformanceYear/ingest-links.js \
+	$currentPerformanceYear
+
+# 3. Validate the resulting measures-data.json file:
+echo "validating new measures-data.json"
+cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear
