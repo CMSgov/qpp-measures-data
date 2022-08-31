@@ -21,7 +21,7 @@ describe(year + ' validate data against schema', function() {
   });
 
   it('throws an error when we import measures with duplicate measureIds', () => {
-    const errorMessage = 'Invalid for 2018 performance year schema: data should pass "uniqueItemProperties" keyword validation\n';
+    const errorMessage = 'Invalid for 2018 performance year schema: data must pass "uniqueItemProperties" keyword validation\n';
     const message = validateMeasures(duplicateMeasuresFile);
     assert.include(message, errorMessage);
   });

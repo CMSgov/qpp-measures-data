@@ -88,16 +88,16 @@ definitions:
     type: object
     properties:
       category: { const cost }
-    isInverse:
-        description: If true, a lower performance rate correlates with better performance.
-        type: boolean
-        default: false
-    overallAlgorithm:
-        description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-        type: string
-    submissionMethods:
-        description: Possible methods for submitting performance data for the measure.
-        type: array
+      isInverse:
+          description: If true, a lower performance rate correlates with better performance.
+          type: boolean
+          default: false
+      overallAlgorithm:
+          description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
+          type: string
+      submissionMethods:
+          description: Possible methods for submitting performance data for the measure.
+          type: array
 
   qualityMeasure:
     type: object
