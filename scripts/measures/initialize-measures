@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+newPerformanceYear=$(($1))
+previousPerformanceYear=$(($newPerformanceYear-1))
+
+Red='\033[0;31m'
+Green='\033[0;32m'
+
+DIR="measures/${newPerformanceYear}/"
+if [ -d "$DIR" ]; then
+  echo -e "${Red}/measures/${newPerformanceYear}/ already exists. Canceling initialization."
+else
+  # Clone measures-data and schema.
+  cp -r measures/$previousPerformanceYear measures/$newPerformanceYear
+
+  # Increment eMeasureIds.
+  node scripts/measures/initialize-measures-data.js $newPerformanceYear
+
+  # Update the performance year in the measures-schema.
+  sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml   
+
+  # Clone yearly scripts.
+  cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
+
+  # Create updates directory and initialize the Changelog as an empty array.
+  mkdir updates/measures/$newPerformanceYear
+  echo "[]" > updates/measures/$newPerformanceYear/Changelog.json
+
+  # Create the util directory (for input data) and the benchmarks metadata.
+  mkdir util/measures/$newPerformanceYear
+  cp util/measures/$previousPerformanceYear/benchmark-metadata.csv util/measures/$newPerformanceYear/
+
+  echo -e "${Green}Measures year ${newPerformanceYear} initialized."
+fi

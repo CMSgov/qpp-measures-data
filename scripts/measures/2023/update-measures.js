@@ -20,10 +20,10 @@ var sync_1 = __importDefault(require("csv-parse/lib/sync"));
 var path_1 = __importDefault(require("path"));
 var validate_change_requests_1 = require("../lib/validate-change-requests");
 var performanceYear = process.argv[2];
-var measuresPath = "../../../measures/" + performanceYear + "/measures-data.json";
-var changesPath = "../../../updates/measures/" + performanceYear + "/";
+var measuresPath = "../../../measures/".concat(performanceYear, "/measures-data.json");
+var changesPath = "../../../updates/measures/".concat(performanceYear, "/");
 var measuresJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, measuresPath), 'utf8'));
-var changelog = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, changesPath + "Changelog.json"), 'utf8'));
+var changelog = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "".concat(changesPath, "Changelog.json")), 'utf8'));
 //to determine if any new changes need to be written to measures-data.json.
 var numOfNewChangeFiles = 0;
 //These are only needed if the csv column names do not match the measures-data field names.
@@ -53,8 +53,8 @@ function updateMeasures() {
     }
 }
 function convertCsvToJson(fileName) {
-    var csv = fs_1.default.readFileSync(path_1.default.join(__dirname, "" + changesPath + fileName), 'utf8');
-    var parsedCsv = sync_1.default(csv, { columns: true });
+    var csv = fs_1.default.readFileSync(path_1.default.join(__dirname, "".concat(changesPath).concat(fileName)), 'utf8');
+    var parsedCsv = (0, sync_1.default)(csv, { columns: true });
     return parsedCsv.map(function (row) {
         var measure = {};
         measure['category'] = row['category'].toLowerCase();
@@ -83,7 +83,7 @@ function updateMeasuresWithChangeFile(fileName) {
         var change = changeData[i];
         if (change.category) {
             //validation on the change request format. Validation on the updated measures data happens later.
-            var validate = validate_change_requests_1.initValidation(validate_change_requests_1.measureType[change.category]);
+            var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category]);
             if (validate(change)) {
                 updateMeasure(change);
             }
@@ -94,20 +94,20 @@ function updateMeasuresWithChangeFile(fileName) {
         }
         else {
             numOfFailures++;
-            console.error('\x1b[31m%s\x1b[0m', "[ERROR]: '" + fileName + "': category is required.");
+            console.error('\x1b[31m%s\x1b[0m', "[ERROR]: '".concat(fileName, "': category is required."));
         }
     }
     if (numOfFailures === 0) {
         updateChangeLog(fileName);
-        console.info('\x1b[32m%s\x1b[0m', "File '" + fileName + "' successfully ingested into measures-data " + performanceYear);
+        console.info('\x1b[32m%s\x1b[0m', "File '".concat(fileName, "' successfully ingested into measures-data ").concat(performanceYear));
     }
     else {
-        console.error('\x1b[31m%s\x1b[0m', "[ERROR]: Some changes failed for file '" + fileName + "'. More info logged above.");
+        console.error('\x1b[31m%s\x1b[0m', "[ERROR]: Some changes failed for file '".concat(fileName, "'. More info logged above."));
     }
 }
 function updateChangeLog(fileName) {
     changelog.push(fileName);
-    writeToFile(changelog, changesPath + "Changelog.json");
+    writeToFile(changelog, "".concat(changesPath, "Changelog.json"));
 }
 function writeToFile(file, filePath) {
     fs_1.default.writeFile(path_1.default.join(__dirname, filePath), JSON.stringify(file, null, 2), function writeJSON(err) {

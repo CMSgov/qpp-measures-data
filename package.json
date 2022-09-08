@@ -9,6 +9,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --recursive --timeout 5000",
+    "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
@@ -19,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.184",
+    "@types/node": "^18.7.16",
     "adm-zip": "0.4.13",
     "ajv": "^8.11.0",
     "ajv-keywords": "^5.1.0",
@@ -38,6 +40,7 @@
     "request": "2.87.0",
     "request-promise": "4.2.2",
     "rimraf": "2.6.1",
+    "typescript": "^4.8.3",
     "xml2js": "0.4.17"
   },
   "dependencies": {

@@ -3,9 +3,29 @@
 currentPerformanceYear=$(($1))
 maxPerformanceYear=2023
 
+Red='\033[0;31m'
+
+# This script is not made to work for years prior to 2023.
 if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
-  exec scripts/measures/update-${currentPerformanceYear}-measures
+
+  # Update the measures-data, if there are any updates:
+  node scripts/measures/$currentPerformanceYear/update-measures.js \
+    $currentPerformanceYear
+
+  echo -e "Ingesting the Spec Urls, if those files exist"
+  node scripts/measures/$currentPerformanceYear/ingest-links.js \
+    $currentPerformanceYear
+
+  echo -e "Ingesting the benchmarks metadata"
+  node scripts/measures/$currentPerformanceYear/ingest-benchmark-metadata.js \
+    $currentPerformanceYear
+
+  echo -e "validating new measures-data.json"
+  cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear
+  
   exit
+
 else
-  echo 'Current performance year not valid!' $currentPerformanceYear;
+  echo -e "${Red}Performance year ${currentPerformanceYear} not valid!"
 fi
