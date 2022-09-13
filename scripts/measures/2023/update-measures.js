@@ -1,4 +1,13 @@
 "use strict";
+/**
+ * @UpdateMeasures
+ *  This is the primary script behind maintaining the measures data.
+ *  It finds all new measures change files, validates their data and
+ * structure, updates/adds the specified measures, and reports and
+ * success or error messages back to the user.
+ *  Currently, this script is designed to intake CSVs, but will be
+ * refactored to accept JSON files once the front-end is created.
+ */
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -62,6 +71,7 @@ function updateMeasures() {
         (0, logger_1.info)("No new change files found.");
     }
 }
+//not needed once we only accept JSON change requests.
 function convertCsvToJson(fileName) {
     var csv = fs_1.default.readFileSync(path_1.default.join(__dirname, "".concat(changesPath).concat(fileName)), 'utf8');
     var parsedCsv = (0, sync_1.default)(csv, { columns: true });
@@ -104,7 +114,7 @@ function updateMeasuresWithChangeFile(fileName) {
         var change = changeData[i];
         if (change.category) {
             var isNew = isNewMeasure(change.measureId);
-            //validation on the change request format. Validation on the updated measures data happens later.
+            //validation on the change request format. Validation on the updated measures data happens later in update-measures.
             var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category], isNew);
             if (validate(change)) {
                 updateMeasure(change);

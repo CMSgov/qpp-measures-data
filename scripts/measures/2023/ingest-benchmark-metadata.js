@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * @IngestBenchmarkMetadata
+ *  Instead of utilizing an update process (as we do for measures),
+ * we handle benchmark metadata by updating the csv in /util and
+ * re-inject the data into the measures-data.json.
+ *  This is justified since benchmark metadata changes are simple and
+ * not error-prone.
+ */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

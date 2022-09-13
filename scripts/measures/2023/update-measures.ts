@@ -1,3 +1,13 @@
+/**
+ * @UpdateMeasures
+ *  This is the primary script behind maintaining the measures data.
+ *  It finds all new measures change files, validates their data and
+ * structure, updates/adds the specified measures, and reports and 
+ * success or error messages back to the user.
+ *  Currently, this script is designed to intake CSVs, but will be 
+ * refactored to accept JSON files once the front-end is created.
+ */
+
 import _ from 'lodash';
 import fs from 'fs';
 import parse from 'csv-parse/lib/sync';
@@ -76,6 +86,7 @@ function updateMeasures() {
     }
 }
 
+//not needed once we only accept JSON change requests.
 function convertCsvToJson(fileName: string) {
     const csv = fs.readFileSync(path.join(__dirname, `${changesPath}${fileName}`), 'utf8');
     const parsedCsv = parse(csv, {columns: true});
@@ -124,7 +135,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
 
         if(change.category) {
             const isNew = isNewMeasure(change.measureId);
-            //validation on the change request format. Validation on the updated measures data happens later.
+            //validation on the change request format. Validation on the updated measures data happens later in update-measures.
             const validate = initValidation(measureType[change.category], isNew);
 
             if (validate(change)) {

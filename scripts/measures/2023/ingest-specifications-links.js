@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * @IngestSpecificationsLinks
+ *  Instead of utilizing an update process (as we do for measures),
+ * we handle specs links by updating the CSVs in /util and
+ * re-inject the data into the measures-data.json.
+ *  This is justified since specs links changes are simple,
+ * handled internally, and not error-prone.
+ */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

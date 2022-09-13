@@ -1,7 +1,14 @@
+/**
+ * @InitializeMeasuresData
+ *  Currently this file just increments eMeasureIds from the previous year.
+ * e.g. CMS122v10 -> CMS122v11
+ *  Any future initialization logic added here should have its own function which
+ * is then called in initMeasuresData().
+ */
+
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
-
 import { error } from '../logger';
 
 const performanceYear = process.argv[2];

@@ -1,4 +1,11 @@
 "use strict";
+/**
+ * @InitializeMeasuresData
+ *  Currently this file just increments eMeasureIds from the previous year.
+ * e.g. CMS122v10 -> CMS122v11
+ *  Any future initialization logic added here should have its own function which
+ * is then called in initMeasuresData().
+ */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

@@ -2,11 +2,6 @@
 
 ## Getting Started
 
-Install the following homebrew dependencies:
-```
-brew install jq wget poppler
-```
-
 Run:
 ```
 npm install
@@ -28,9 +23,10 @@ $YEAR refers to the performance year; this command-line argument is required.  $
 To regenerate and validate data, do the following:
 
 ```
-npm run build:measures $YEAR         # generates measures/$YEAR/measures-data.json
-npm run build:benchmarks $YEAR       # generates benchmarks/$YEAR.json
-npm run build:clinical-clusters # generates clinical-clusters/clinical-clusters.json
+npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json
+npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json
+npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
+npm run build:clinical-clusters     # generates clinical-clusters/clinical-clusters.json
 ```
 
 ### Validation
@@ -43,21 +39,19 @@ e.g. from the base directory:
 ```
 cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2018
 ```
-### Additional measures
+### Initializing, Adding, Updating, and Deleting Measures
 
-`util/measures/qcdr-measures.csv` contains all the QCDR measure to be transformed into `measures/$YEAR/measures-data.json` by running `npm run build:measures`.
+To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds in the new measures-data file.
 
-The csv is formatted for the script to run correctly. If the new version does not conform to how the csv is expected, it will cause the npm build step to fail. When your work is complete, make sure to send the updated `qcdr-measures-v<#>.csv` with a bumped version number back to PIMMS with instructions to use it as the base to make the next set of changes. The next person to update measures-data will thank you!
+New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$Year folder with the file name as MM-DD-YYYY-01.csv (increment the final number in the name if multiple changes take place on the same day). IMPORTANT: Do *not* manually modify the Changelog.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 
-`cp` the new version of the CSV to `util/measures/qcdr-measures.csv`, run `npm run build:measures $YEAR`, and `git diff` to see changes are as expected to `measures/measures-data.json`.
+Deleting measures is handled manually. Simply remove the specified measures from `/measures/$YEAR/measures-data.json`. 
 
-#### Importing measures from CSV file
+### Importing Measures from a CSV File
 
-`scripts/measures/import-qcdr-measures.js` script handles importing QCDR measures from a CSV and converting them to the qpp-measures-data measure schema. The `convertCsvToMeasures` function can be replicated for new CSVs if appropriate.
+To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV UTF-8 (Comma delimited) (.csv)`. This will keep Unknown Characters out of the data set.
 
-IMPORTANT: To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV UTF-8 (Comma delimited) (.csv)`. This will keep Unknown Characters out of the data set.
-
-### Additional benchmarks
+### Additional Benchmarks
 
 For 2018-2019, only 'full images' of benchmark data are accepted; the csv must contain a full list of included benchmarks. Incremental files are no longer supported (2017 is no longer supported).
 
@@ -77,10 +71,6 @@ For 2018-2019, only 'full images' of benchmark data are accepted; the csv must c
   If 2 benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, an error will be thrown. Benchmarks cannot share this composite key.
 
   Please verify the changes are as expected. (You can run `git diff`.)
-
-### Deleting measures and benchmarks
-
-TODO: Support a safer way to delete benchmarks. You could add a key saying `delete: true` and have the generate step filter out benchmarks with those keys. This way you wouldn't change the generation artifacts.
 
 ## Testing
 

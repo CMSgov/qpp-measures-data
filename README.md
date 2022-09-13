@@ -4,7 +4,7 @@
 
 ## Quality Payment Program Measures Data Repository
 
-This is the source of truth for QPP measures data. The previous measures data API is no longer available (qpp.cms.gov/api). The transition to using qpp-measures-data as a source of truth for CMS is ongoing and this data may be subject to modifications. Stability in the API contract for qpp-measures-data is prioritized but not guaranteed.
+This is the source of truth for QPP measures data. Stability in the API contract for qpp-measures-data is prioritized but not guaranteed.
 
 ## How to Use qpp-measures-data
 

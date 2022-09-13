@@ -1,3 +1,12 @@
+/**
+ * @IngestSpecificationsLinks
+ *  Instead of utilizing an update process (as we do for measures),
+ * we handle specs links by updating the CSVs in /util and 
+ * re-inject the data into the measures-data.json.
+ *  This is justified since specs links changes are simple, 
+ * handled internally, and not error-prone. 
+ */
+
 import fs from 'fs';
 import path from 'path';
 import parse from 'csv-parse/lib/sync';

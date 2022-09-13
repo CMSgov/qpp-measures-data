@@ -1,3 +1,12 @@
+/**
+ * @IngestBenchmarkMetadata
+ *  Instead of utilizing an update process (as we do for measures),
+ * we handle benchmark metadata by updating the csv in /util and 
+ * re-inject the data into the measures-data.json.
+ *  This is justified since benchmark metadata changes are simple and
+ * not error-prone. 
+ */
+
 import fs from 'fs';
 import parse from 'csv-parse/lib/sync';
 import path from 'path';
