@@ -18,6 +18,7 @@ var lodash_1 = __importDefault(require("lodash"));
 var fs_1 = __importDefault(require("fs"));
 var sync_1 = __importDefault(require("csv-parse/lib/sync"));
 var path_1 = __importDefault(require("path"));
+var logger_1 = require("../../logger");
 var validate_change_requests_1 = require("../lib/validate-change-requests");
 var performanceYear = process.argv[2];
 var measuresPath = "../../../measures/".concat(performanceYear, "/measures-data.json");
@@ -34,6 +35,15 @@ var BASE_CSV_COLUMN_NAMES = {
 };
 var IA_CSV_COLUMN_NAMES = __assign(__assign({}, BASE_CSV_COLUMN_NAMES), { 'weight': 'weight', 'subcategoryId': 'subcategory_name' });
 var PI_CSV_COLUMN_NAMES = __assign(__assign({}, BASE_CSV_COLUMN_NAMES), { 'required': 'required', 'isRequired': 'required', 'metricType': 'name', 'isBonus': 'bonus', 'reportingCategory': 'reporting_category', 'substitutes': 'substitutes', 'exclusion': 'exclusions' });
+var arrayCSVfields = [
+    'substitutes',
+    'exclusions',
+    'submissionMethods',
+    'allowedVendors',
+    'allowedPrograms',
+    'measureSets',
+    'submissionMethods',
+];
 function updateMeasures() {
     var files = fs_1.default.readdirSync(path_1.default.join(__dirname, changesPath));
     files.forEach(function (fileName) {
@@ -49,7 +59,7 @@ function updateMeasures() {
         writeToFile(measuresJson, measuresPath);
     }
     else {
-        console.info('\x1b[33m%s\x1b[0m', "No new change files found.");
+        (0, logger_1.info)("No new change files found.");
     }
 }
 function convertCsvToJson(fileName) {
@@ -70,11 +80,22 @@ function convertCsvToJson(fileName) {
         //maps the csv column values to the matching measures-data fields.
         lodash_1.default.each(csvColumnNames, function (columnName, measureKeyName) {
             if (row[columnName]) {
+                if (arrayCSVfields.includes(columnName)) {
+                    measure[measureKeyName] = csvFieldToArray(row[columnName]);
+                }
                 measure[measureKeyName] = row[columnName];
             }
         });
         return measure;
     });
+}
+//converts field 'apples, ice cream, banana' to ['apples', 'ice cream', 'banana'].
+function csvFieldToArray(field) {
+    var arrayedField = field.split(',');
+    for (var i = 0; i < arrayedField.length; i++) {
+        arrayedField[i] = arrayedField[i].trim();
+    }
+    return arrayedField;
 }
 function updateMeasuresWithChangeFile(fileName) {
     var changeData = convertCsvToJson(fileName);
@@ -82,10 +103,14 @@ function updateMeasuresWithChangeFile(fileName) {
     for (var i = 0; i < changeData.length; i++) {
         var change = changeData[i];
         if (change.category) {
+            var isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later.
-            var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category]);
+            var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category], isNew);
             if (validate(change)) {
                 updateMeasure(change);
+                if (isNew) {
+                    (0, logger_1.info)("New measure '".concat(change.measureId, "' added."));
+                }
             }
             else {
                 numOfFailures++;
@@ -94,15 +119,15 @@ function updateMeasuresWithChangeFile(fileName) {
         }
         else {
             numOfFailures++;
-            console.error('\x1b[31m%s\x1b[0m', "[ERROR]: '".concat(fileName, "': category is required."));
+            (0, logger_1.error)("'".concat(fileName, "': category is required."));
         }
     }
     if (numOfFailures === 0) {
         updateChangeLog(fileName);
-        console.info('\x1b[32m%s\x1b[0m', "File '".concat(fileName, "' successfully ingested into measures-data ").concat(performanceYear));
+        (0, logger_1.info)("File '".concat(fileName, "' successfully ingested into measures-data ").concat(performanceYear));
     }
     else {
-        console.error('\x1b[31m%s\x1b[0m', "[ERROR]: Some changes failed for file '".concat(fileName, "'. More info logged above."));
+        (0, logger_1.error)("Some changes failed for file '".concat(fileName, "'. More info logged above."));
     }
 }
 function updateChangeLog(fileName) {
@@ -122,5 +147,9 @@ function updateMeasure(change) {
             break;
         }
     }
+}
+function isNewMeasure(measureId) {
+    var measure = lodash_1.default.find(measuresJson, { 'measureId': measureId });
+    return !measure;
 }
 updateMeasures();

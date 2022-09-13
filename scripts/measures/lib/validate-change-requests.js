@@ -42,19 +42,16 @@ var baseValidationSchemaProperties = {
 var ia_validationSchema = {
     type: 'object',
     properties: __assign(__assign({}, baseValidationSchemaProperties), { weight: { type: 'string', nullable: true }, subcategoryId: { type: 'string', nullable: true } }),
-    required: ['measureId', 'category'],
     additionalProperties: false,
 };
 var pi_validationSchema = {
     type: 'object',
-    properties: __assign(__assign({}, baseValidationSchemaProperties), { required: { type: 'string', nullable: true }, name: { type: 'string', nullable: true }, bonus: { type: 'string', nullable: true }, reportingCategory: { type: 'string', nullable: true }, substitutes: { type: 'string', nullable: true }, exclusions: { type: 'string', nullable: true }, weight: { type: 'string', nullable: true }, subcategoryId: { type: 'string', nullable: true } }),
-    required: ['measureId', 'category'],
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { required: { type: 'string', nullable: true }, name: { type: 'string', nullable: true }, bonus: { type: 'string', nullable: true }, reportingCategory: { type: 'string', nullable: true }, substitutes: { type: 'array', items: { type: 'string' }, nullable: true }, exclusions: { type: 'array', items: { type: 'string' }, nullable: true }, weight: { type: 'string', nullable: true }, subcategoryId: { type: 'string', nullable: true } }),
     additionalProperties: false,
 };
 var cost_validationSchema = {
     type: 'object',
     properties: __assign(__assign({}, baseValidationSchemaProperties), { isInverse: { type: 'boolean', nullable: true }, overallAlgorithm: { type: 'string', nullable: true }, metricType: { type: 'string', nullable: true }, submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true } }),
-    required: ['measureId', 'category'],
     additionalProperties: false,
 };
 var quality_validationSchema = {
@@ -63,19 +60,27 @@ var quality_validationSchema = {
     required: ['measureId', 'category'],
     additionalProperties: false,
 };
-function initValidation(type) {
-    return ajv.compile(getSchema(type));
+function initValidation(type, requireAll) {
+    return ajv.compile(getSchema(type, requireAll));
 }
 exports.initValidation = initValidation;
-function getSchema(type) {
+function createSchema(schema, requireAll) {
+    if (requireAll) {
+        return __assign(__assign({}, schema), { required: Object.keys(schema.properties) });
+    }
+    else {
+        return __assign(__assign({}, schema), { required: ['measureId', 'category'] });
+    }
+}
+function getSchema(type, requireAll) {
     switch (type) {
         case measureType.ia:
-            return ia_validationSchema;
+            return createSchema(ia_validationSchema, requireAll);
         case measureType.pi:
-            return pi_validationSchema;
+            return createSchema(pi_validationSchema, requireAll);
         case measureType.cost:
-            return cost_validationSchema;
+            return createSchema(cost_validationSchema, requireAll);
         case measureType.quality:
-            return quality_validationSchema;
+            return createSchema(quality_validationSchema, requireAll);
     }
 }

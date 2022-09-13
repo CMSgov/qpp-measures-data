@@ -31,8 +31,8 @@ interface PI_MeasuresChange extends baseMeasuresChange {
     name?: string,
     bonus?: string,
     reportingCategory?: string,
-    substitutes?: string,
-    exclusions?: string,
+    substitutes?: string[],
+    exclusions?: string[],
     weight?: string,
     subcategoryId?: string,
 };
@@ -78,7 +78,6 @@ const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
         weight: { type: 'string', nullable: true },
         subcategoryId: { type: 'string', nullable: true },
     },
-    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<IA_MeasuresChange>;
 
@@ -90,12 +89,11 @@ const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
         name: { type: 'string', nullable: true },
         bonus: { type: 'string', nullable: true },
         reportingCategory: { type: 'string', nullable: true },
-        substitutes: { type: 'string', nullable: true },
-        exclusions: { type: 'string', nullable: true },
+        substitutes: { type: 'array', items: { type: 'string' }, nullable: true },
+        exclusions: { type: 'array', items: { type: 'string' }, nullable: true },
         weight: { type: 'string', nullable: true },
         subcategoryId: { type: 'string', nullable: true },
     },
-    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<PI_MeasuresChange>;
 
@@ -108,7 +106,6 @@ const cost_validationSchema: JSONSchemaType<Cost_MeasuresChange> = {
         metricType: { type: 'string', nullable: true },
         submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
     },
-    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<Cost_MeasuresChange>;
 
@@ -136,19 +133,33 @@ const quality_validationSchema: JSONSchemaType<Quality_MeasuresChange> = {
     additionalProperties: false,
 } as JSONSchemaType<Quality_MeasuresChange>;
 
-export function initValidation(type: measureType) {
-    return ajv.compile(getSchema(type))
+export function initValidation(type: measureType, requireAll: boolean) {
+    return ajv.compile(getSchema(type, requireAll))
 }
 
-function getSchema(type: measureType) {
+function createSchema(schema: any, requireAll: boolean) {
+    if (requireAll) {
+        return {
+            ...schema,
+            required: Object.keys(schema.properties),
+        }
+    } else {
+        return {
+            ...schema,
+            required: ['measureId', 'category'],
+        }
+    }
+}
+
+function getSchema(type: measureType, requireAll: boolean) {
     switch (type) {
         case measureType.ia:
-            return ia_validationSchema;
+            return createSchema(ia_validationSchema, requireAll);
         case measureType.pi:
-            return pi_validationSchema;
+            return createSchema(pi_validationSchema, requireAll);
         case measureType.cost:
-            return cost_validationSchema;
+            return createSchema(cost_validationSchema, requireAll);
         case measureType.quality:
-            return quality_validationSchema;
+            return createSchema(quality_validationSchema, requireAll);
     }
 }

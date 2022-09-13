@@ -3,6 +3,7 @@ import fs from 'fs';
 import parse from 'csv-parse/lib/sync';
 import path from 'path';
 
+import { info, error} from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 
 const performanceYear = process.argv[2];
@@ -45,6 +46,16 @@ const PI_CSV_COLUMN_NAMES = {
     'exclusion': 'exclusions',
 };
 
+const arrayCSVfields = [
+    'substitutes',
+    'exclusions',
+    'submissionMethods',
+    'allowedVendors',
+    'allowedPrograms',
+    'measureSets',
+    'submissionMethods',
+]
+
 function updateMeasures() {
     const files = fs.readdirSync(path.join(__dirname, changesPath));
 
@@ -61,10 +72,7 @@ function updateMeasures() {
     if(numOfNewChangeFiles > 0) {
         writeToFile(measuresJson, measuresPath);
     } else {
-        console.info(
-            '\x1b[33m%s\x1b[0m', 
-            `No new change files found.`,
-        );
+        info(`No new change files found.`);
     }
 }
 
@@ -87,12 +95,24 @@ function convertCsvToJson(fileName: string) {
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
           if(row[columnName]) {
-              measure[measureKeyName] = row[columnName];
+            if(arrayCSVfields.includes(columnName)) {
+                measure[measureKeyName] = csvFieldToArray(row[columnName]);
+            }
+            measure[measureKeyName] = row[columnName];
           }
         });
         
         return measure;
     });
+}
+
+//converts field 'apples, ice cream, banana' to ['apples', 'ice cream', 'banana'].
+function csvFieldToArray(field: string) {
+    const arrayedField: string[] = field.split(',');
+    for (let i = 0; i < arrayedField.length; i++) {
+        arrayedField[i] = arrayedField[i].trim();
+    }
+    return arrayedField;
 }
 
 function updateMeasuresWithChangeFile(fileName: string) {
@@ -103,35 +123,30 @@ function updateMeasuresWithChangeFile(fileName: string) {
         const change = changeData[i] as MeasuresChange;
 
         if(change.category) {
+            const isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later.
-            const validate = initValidation(measureType[change.category]);
+            const validate = initValidation(measureType[change.category], isNew);
 
             if (validate(change)) {
                 updateMeasure(change);
+                if(isNew) {
+                    info(`New measure '${change.measureId}' added.`);
+                }
             } else {
                 numOfFailures++;
                 console.log(validate.errors)
             }
         } else {
             numOfFailures++;
-            console.error(
-                '\x1b[31m%s\x1b[0m', 
-                `[ERROR]: '${fileName}': category is required.`,
-            );
+            error(`'${fileName}': category is required.`);
         }
     }
 
     if(numOfFailures === 0) {
         updateChangeLog(fileName);
-        console.info(
-            '\x1b[32m%s\x1b[0m', 
-            `File '${fileName}' successfully ingested into measures-data ${performanceYear}`,
-        );
+        info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
     } else {
-        console.error(
-            '\x1b[31m%s\x1b[0m', 
-            `[ERROR]: Some changes failed for file '${fileName}'. More info logged above.`,
-        );
+        error(`Some changes failed for file '${fileName}'. More info logged above.`);
     }
 }
 
@@ -156,6 +171,11 @@ function updateMeasure(change: MeasuresChange) {
             break;
         }
     }
+}
+
+function isNewMeasure(measureId: string) {
+    const measure = _.find(measuresJson, {'measureId': measureId});
+    return !measure;
 }
 
 updateMeasures();

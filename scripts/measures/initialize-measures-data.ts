@@ -2,6 +2,8 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
+import { error } from '../logger';
+
 const performanceYear = process.argv[2];
 
 const measuresPath = `../../measures/${performanceYear}/measures-data.json`;
@@ -21,10 +23,7 @@ function incrementEMeasureId() {
             if (splitId.length === 2 && _.isNumber(+splitId[1])) {
                 measuresJson[i].eMeasureId = splitId[0] + 'v' + (+splitId[1]+1);
             } else {
-                console.error(
-                    '\x1b[31m%s\x1b[0m', 
-                    `[ERROR]: Failed to increment eMeasureId ${measuresJson[i].eMeasureId}`,
-                );
+                error(`Failed to increment eMeasureId ${measuresJson[i].eMeasureId}`);
             }
         }
     }

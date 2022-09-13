@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var lodash_1 = __importDefault(require("lodash"));
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
+var logger_1 = require("../logger");
 var performanceYear = process.argv[2];
 var measuresPath = "../../measures/".concat(performanceYear, "/measures-data.json");
 var measuresJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, measuresPath), 'utf8'));
@@ -20,7 +21,7 @@ function incrementEMeasureId() {
                 measuresJson[i].eMeasureId = splitId[0] + 'v' + (+splitId[1] + 1);
             }
             else {
-                console.error('\x1b[31m%s\x1b[0m', "[ERROR]: Failed to increment eMeasureId ".concat(measuresJson[i].eMeasureId));
+                (0, logger_1.error)("Failed to increment eMeasureId ".concat(measuresJson[i].eMeasureId));
             }
         }
     }
