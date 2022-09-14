@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-currentPerformanceYear=2021
+currentPerformanceYear=2022
 
 # generate EMA cluster data
-echo "Generating clinical cluster :"
+echo "Generating clinical clusters:"
 cat measures/$currentPerformanceYear/measures-data.json | node scripts/clinical-clusters/ema-clinical-cluster-builder.js $currentPerformanceYear ./util/clinical-clusters/$currentPerformanceYear/ClaimsClinical_Cluster.csv ./util/clinical-clusters/$currentPerformanceYear/RegistryClinicalCluster.csv | tee clinical-clusters/$currentPerformanceYear/clinical-clusters.json
 
-# validate EMA cluster
+# validate EMA clusters
 echo ""
-echo "Validating clinical-cluster.json produced: "
+echo "Validating clinical-clusters.json produced: "
 cat clinical-clusters/$currentPerformanceYear/clinical-clusters.json | node scripts/validate-data.js clinical-clusters $currentPerformanceYear
