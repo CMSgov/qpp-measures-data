@@ -14,13 +14,13 @@ else
   cp -r measures/$previousPerformanceYear measures/$newPerformanceYear
 
   # Increment eMeasureIds.
-  node scripts/measures/initialize-measures-data.js $newPerformanceYear
+  node dist/measures/initialize-measures-data.js $newPerformanceYear
 
   # Update the performance year in the measures-schema.
   sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml   
 
   # Clone yearly scripts.
-  cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
+  cp -r dist/measures/$previousPerformanceYear dist/measures/$newPerformanceYear
 
   # Create updates directory and initialize the Changelog as an empty array.
   mkdir updates/measures/$newPerformanceYear
