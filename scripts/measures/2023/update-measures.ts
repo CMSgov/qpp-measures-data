@@ -15,6 +15,7 @@ import path from 'path';
 
 import { info, error} from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
+import * as Constants from '../../constants';
 
 const performanceYear = process.argv[2];
 
@@ -31,40 +32,6 @@ const changelog = JSON.parse(
 
 //to determine if any new changes need to be written to measures-data.json.
 let numOfNewChangeFiles = 0;
-
-//These are only needed if the csv column names do not match the measures-data field names.
-const BASE_CSV_COLUMN_NAMES = {
-    'title': 'title',
-    'description': 'description',
-    'measureId': 'measure_id'
-}
-
-const IA_CSV_COLUMN_NAMES = {
-    ...BASE_CSV_COLUMN_NAMES,
-    'weight': 'weight',
-    'subcategoryId': 'subcategory_name'
-};
-
-const PI_CSV_COLUMN_NAMES = {
-    ...BASE_CSV_COLUMN_NAMES,
-    'required': 'required',
-    'isRequired': 'required',
-    'metricType': 'name',
-    'isBonus': 'bonus',
-    'reportingCategory': 'reporting_category',
-    'substitutes': 'substitutes',
-    'exclusion': 'exclusions',
-};
-
-const arrayCSVfields = [
-    'substitutes',
-    'exclusions',
-    'submissionMethods',
-    'allowedVendors',
-    'allowedPrograms',
-    'measureSets',
-    'submissionMethods',
-]
 
 function updateMeasures() {
     const files = fs.readdirSync(path.join(__dirname, changesPath));
@@ -96,17 +63,20 @@ function convertCsvToJson(fileName: string) {
         measure['category'] = row['category'].toLowerCase();
         let csvColumnNames;
         switch (measure['category']) {
-          case 'ia':
-              csvColumnNames = IA_CSV_COLUMN_NAMES;
-              break;
-          case 'pi':
-              csvColumnNames = PI_CSV_COLUMN_NAMES;
-              break;
+            case 'ia':
+                csvColumnNames = Constants.IA_CSV_COLUMN_NAMES;
+                break;
+            case 'pi':
+                csvColumnNames = Constants.PI_CSV_COLUMN_NAMES;
+                break;
+            case 'quality':
+                csvColumnNames = Constants.QUALITY_CSV_COLUMN_NAMES;
+                break;
         }
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
           if(row[columnName]) {
-            if(arrayCSVfields.includes(columnName)) {
+            if(Constants.arrayCSVfields.includes(columnName)) {
                 measure[measureKeyName] = csvFieldToArray(row[columnName]);
             }
             measure[measureKeyName] = row[columnName];
@@ -138,7 +108,9 @@ function updateMeasuresWithChangeFile(fileName: string) {
             //validation on the change request format. Validation on the updated measures data happens later in update-measures.
             const validate = initValidation(measureType[change.category], isNew);
 
-            if (validate(change)) {
+            if (change.yearRemoved && change.yearRemoved == +performanceYear) {
+                deleteMeasure(change.measureId);
+            } else if (validate(change)) {
                 updateMeasure(change);
                 if(isNew) {
                     info(`New measure '${change.measureId}' added.`);
@@ -170,6 +142,16 @@ function writeToFile(file: any, filePath: string) {
     fs.writeFile(path.join(__dirname, filePath), JSON.stringify(file, null, 2), function writeJSON(err) {
         if (err) return console.log(err);
     });
+}
+
+function deleteMeasure(measureId: string) {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].measureId == measureId) {
+            delete measuresJson[i];
+            info(`Measure '${measureId}' removed.`);
+            break;
+        }
+    }
 }
 
 function updateMeasure(change: MeasuresChange) {

@@ -19,6 +19,7 @@ interface baseMeasuresChange {
     category: string,
     title?: string,
     description?: string,
+    yearRemoved?: number,
 }
 
 interface IA_MeasuresChange extends baseMeasuresChange {
@@ -69,6 +70,7 @@ const baseValidationSchemaProperties = {
     category: { type: 'string' },
     title: { type: 'string', nullable: true },
     description: { type: 'string', nullable: true },
+    yearRemoved: { type: 'number', nullable: true },
 }
 
 const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {

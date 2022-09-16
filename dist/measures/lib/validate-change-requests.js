@@ -38,6 +38,7 @@ var baseValidationSchemaProperties = {
     category: { type: 'string' },
     title: { type: 'string', nullable: true },
     description: { type: 'string', nullable: true },
+    yearRemoved: { type: 'number', nullable: true },
 };
 var ia_validationSchema = {
     type: 'object',

@@ -19,6 +19,29 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -29,6 +52,7 @@ var sync_1 = __importDefault(require("csv-parse/lib/sync"));
 var path_1 = __importDefault(require("path"));
 var logger_1 = require("../../logger");
 var validate_change_requests_1 = require("../lib/validate-change-requests");
+var Constants = __importStar(require("../../constants"));
 var performanceYear = process.argv[2];
 var measuresPath = "../../../measures/".concat(performanceYear, "/measures-data.json");
 var changesPath = "../../../updates/measures/".concat(performanceYear, "/");
@@ -36,23 +60,6 @@ var measuresJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__di
 var changelog = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "".concat(changesPath, "Changelog.json")), 'utf8'));
 //to determine if any new changes need to be written to measures-data.json.
 var numOfNewChangeFiles = 0;
-//These are only needed if the csv column names do not match the measures-data field names.
-var BASE_CSV_COLUMN_NAMES = {
-    'title': 'title',
-    'description': 'description',
-    'measureId': 'measure_id'
-};
-var IA_CSV_COLUMN_NAMES = __assign(__assign({}, BASE_CSV_COLUMN_NAMES), { 'weight': 'weight', 'subcategoryId': 'subcategory_name' });
-var PI_CSV_COLUMN_NAMES = __assign(__assign({}, BASE_CSV_COLUMN_NAMES), { 'required': 'required', 'isRequired': 'required', 'metricType': 'name', 'isBonus': 'bonus', 'reportingCategory': 'reporting_category', 'substitutes': 'substitutes', 'exclusion': 'exclusions' });
-var arrayCSVfields = [
-    'substitutes',
-    'exclusions',
-    'submissionMethods',
-    'allowedVendors',
-    'allowedPrograms',
-    'measureSets',
-    'submissionMethods',
-];
 function updateMeasures() {
     var files = fs_1.default.readdirSync(path_1.default.join(__dirname, changesPath));
     files.forEach(function (fileName) {
@@ -81,16 +88,19 @@ function convertCsvToJson(fileName) {
         var csvColumnNames;
         switch (measure['category']) {
             case 'ia':
-                csvColumnNames = IA_CSV_COLUMN_NAMES;
+                csvColumnNames = Constants.IA_CSV_COLUMN_NAMES;
                 break;
             case 'pi':
-                csvColumnNames = PI_CSV_COLUMN_NAMES;
+                csvColumnNames = Constants.PI_CSV_COLUMN_NAMES;
+                break;
+            case 'quality':
+                csvColumnNames = Constants.QUALITY_CSV_COLUMN_NAMES;
                 break;
         }
         //maps the csv column values to the matching measures-data fields.
         lodash_1.default.each(csvColumnNames, function (columnName, measureKeyName) {
             if (row[columnName]) {
-                if (arrayCSVfields.includes(columnName)) {
+                if (Constants.arrayCSVfields.includes(columnName)) {
                     measure[measureKeyName] = csvFieldToArray(row[columnName]);
                 }
                 measure[measureKeyName] = row[columnName];
@@ -116,7 +126,10 @@ function updateMeasuresWithChangeFile(fileName) {
             var isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later in update-measures.
             var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category], isNew);
-            if (validate(change)) {
+            if (change.yearRemoved && change.yearRemoved == +performanceYear) {
+                deleteMeasure(change.measureId);
+            }
+            else if (validate(change)) {
                 updateMeasure(change);
                 if (isNew) {
                     (0, logger_1.info)("New measure '".concat(change.measureId, "' added."));
@@ -149,6 +162,15 @@ function writeToFile(file, filePath) {
         if (err)
             return console.log(err);
     });
+}
+function deleteMeasure(measureId) {
+    for (var i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].measureId == measureId) {
+            delete measuresJson[i];
+            (0, logger_1.info)("Measure '".concat(measureId, "' removed."));
+            break;
+        }
+    }
 }
 function updateMeasure(change) {
     for (var i = 0; i < measuresJson.length; i++) {
