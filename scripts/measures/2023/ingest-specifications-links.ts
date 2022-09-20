@@ -12,14 +12,14 @@ import path from 'path';
 import parse from 'csv-parse/lib/sync';
 import appRoot from 'app-root-path';
 
-import mergeEcqmEhrLinks from '../lib/merge-ecqm-ehr-links';
-import mergeWebInterfaceLinks from '../lib/merge-web-interface-links';
-import mergeClaimsLinks from '../lib/merge-claims-links';
-import mergeCqmLinks from '../lib/merge-cqm-links';
-import mergePiLinks from '../lib/merge-pi-links';
-import mergeCostLinks from '../lib/merge-cost-links';
-import mergeEcqmData from '../lib/merge-ecqm-data';
-import mergeStratifications from '../lib/merge-stratifications';
+import {mergeEcqmEhrLinks} from '../lib/merge-ecqm-ehr-links';
+import {mergeWebInterfaceLinks} from '../lib/merge-web-interface-links';
+import {mergeClaimsLinks} from '../lib/merge-claims-links';
+import {mergeCqmLinks} from '../lib/merge-cqm-links';
+import {mergePiLinks} from '../lib/merge-pi-links';
+import {mergeCostLinks} from '../lib/merge-cost-links';
+import {mergeEcqmData} from '../lib/merge-ecqm-data';
+import {mergeStratifications} from '../lib/merge-stratifications';
 
 const currentPerformanceYear = process.argv[2];
 
