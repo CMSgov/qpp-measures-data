@@ -14186,7 +14186,7 @@
       },
       {
         "name": "overall",
-        "description": "Strata 3: FOR REPORTING"
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "submissionMethods": [
@@ -14234,7 +14234,7 @@
       },
       {
         "name": "overall",
-        "description": "Strata 3: FOR REPORTING"
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "submissionMethods": [
@@ -14282,7 +14282,7 @@
       },
       {
         "name": "overall",
-        "description": "Strata 3: FOR REPORTING"
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "submissionMethods": [
@@ -15855,23 +15855,14 @@
     "strata": [
       {
         "name": "qolSelfAssessment",
-        "description": "Performance"
-      },
-      {
-        "name": "qolPlan&Intervention",
         "description": "Percentage of patients aged 50 years and older evaluated for hearing loss, who are screened to determine if the hearing loss is impacting their QoL with a self-assessment measure."
       },
       {
-        "name": "overall",
-        "description": "Performance"
-      },
-      {
+        "name": "qolPlan&Intervention",
         "description": "Percentage of patients aged 50 years and older diagnosed with a mild or greater hearing loss in at least one ear or identified with a hearing loss that impacts their hearing-related QoL who receive an audiologic care plan AND hearing loss intervention(s)."
       },
       {
-        "description": "Performance"
-      },
-      {
+        "name": "overall",
         "description": "Percentage of patients who report a MCID improvement in hearing-related quality of life (QoL) within 12 months of hearing loss diagnosis if they received an audiologic care plan AND hearing loss intervention(s )."
       }
     ],
@@ -15910,30 +15901,18 @@
     "strata": [
       {
         "name": "tinnitusScreen",
-        "description": "Performance"
-      },
-      {
-        "name": "screenReferOrAssess",
         "description": "Percentage of patients aged 18 years and older who are screened for presence of bothersome subjective tinnitus"
       },
       {
-        "name": "qolPlan&Intervention",
-        "description": "Performance"
-      },
-      {
-        "name": "overall",
+        "name": "screenReferOrAssess",
         "description": "Percentage of patients aged 18 years and older reporting bothersome tinnitus symptoms AND referred for further investigation OR assessed with clinical evaluation for tinnitus severity and a validated self-assessment tool (THI, TRQ, TFI) to determine the impact of tinnitus on their HRQoL."
       },
       {
-        "description": "Performance"
-      },
-      {
+        "name": "qolPlan&Intervention",
         "description": "Percentage of patients aged 18 years and older reporting bothersome tinnitus that is impacting their HRQoL who receive a tinnitus-related care plan AND tinnitus-related intervention(s), treatment(s), or management"
       },
       {
-        "description": "Performance"
-      },
-      {
+        "name": "overall",
         "description": "Percentage of patients aged 18 years and older identified with bothersome tinnitus that is impacting their HRQoL who have received a tinnitus-related care plan, and tinnitus-related intervention(s), treatment(s), or management AND who report a MCID improvement in the impact of tinnitus on the HRQoL within 12 months of initial identification."
       }
     ],
@@ -15972,23 +15951,14 @@
     "strata": [
       {
         "name": "bppvScreen",
-        "description": "Performance"
-      },
-      {
-        "name": "bppv&Plan",
         "description": "Percentage of patients aged 18 years and older, who report BPPV-related symptoms and who are screened with a dizziness assessment questionnaire, undergo positional nystagmus testing, and are referred, identified or diagnosed BPPV."
       },
       {
-        "name": "overall",
-        "description": "Performance"
-      },
-      {
+        "name": "bppv&Plan",
         "description": "Percentage of patients who are screened with a dizziness assessment questionnaire, undergo positional nystagmus testing, and are diagnosed or identified with BPPV who received a BPPV-related care plan on the date the BPPV was identified or diagnosed and received vestibular intervention(s) or treatment(s) within 30 days of the documented BPPV-related care plan."
       },
       {
-        "description": "Performance"
-      },
-      {
+        "name": "overall",
         "description": "Percentage of patients who received a BPPV-related care plan, and vestibular intervention(s) or treatment(s) , AND who have an improvement in nystagmus OR report an improvement in BPPV-related symptoms, AND report a MCID improvement of BPPV-related QoL."
       }
     ],
@@ -16078,16 +16048,10 @@
     "strata": [
       {
         "name": "snhl&scheduleOrRefer",
-        "description": "Performance"
-      },
-      {
-        "name": "overall",
         "description": "Percentage of patients aged 18 years and older, who are evaluated for hearing loss and who indicate, via a hearing self-assessment tool, that the hearing loss is impacting their hearing-related QoL, and if diagnosed with a bilateral moderate to profound SNHL and less than 60% open set speech recognition are scheduled or referred for cochlear implant candidacy testing."
       },
       {
-        "description": "Performance"
-      },
-      {
+        "name": "overall",
         "description": "Percentage of patients aged 18 years and older, who are evaluated for hearing loss and who indicate, via a hearing self-assessment tool, that the hearing loss is impacting their hearing-related QoL, and if Percentage of patients aged 18 years or older evaluated for hearing loss who complete a hearing self-assessment tool that indicated an impact of hearing QoL, and if diagnosed with a bilateral moderate to profound SNHL and less than 60% open set speech recognition are scheduled or referred for cochlear implant candidacy testing AND demonstrate a MCID improvement in self-assessment of HRQoL or an improvement in speech recognition within 18 months of cochlear implant activation."
       }
     ],
