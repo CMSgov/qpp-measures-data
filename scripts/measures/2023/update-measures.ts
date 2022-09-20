@@ -23,7 +23,7 @@ const performanceYear = process.argv[2];
 const measuresPath = `measures/${performanceYear}/measures-data.json`;
 const changesPath = `updates/measures/${performanceYear}/`;
 
-const measuresJson = JSON.parse(
+const measuresJson: any[] = JSON.parse(
     fs.readFileSync(path.join(appRoot+'', measuresPath), 'utf8')
 );
 
@@ -61,9 +61,9 @@ function convertCsvToJson(fileName: string) {
 
     return parsedCsv.map((row: any) => {
         const measure = {};
-        measure['Category'] = row['Category'].toLowerCase();
+        measure['category'] = row['Category'].toLowerCase();
         let csvColumnNames;
-        switch (measure['Category']) {
+        switch (measure['category']) {
             case 'ia':
                 csvColumnNames = Constants.IA_CSV_COLUMN_NAMES;
                 break;
@@ -77,7 +77,7 @@ function convertCsvToJson(fileName: string) {
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
           if(row[columnName]) {
-            measure[measureKeyName] = mapInput(columnName, row, measure['Category'], csvColumnNames);
+            measure[measureKeyName] = mapInput(columnName, row, measure['category'], csvColumnNames);
           }
         });
         
@@ -97,7 +97,17 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
     }
     //fields with comma seperated values.
     else if (Constants.ARRAY_CSV_FIELDS.includes(columnName)) {
-        return csvFieldToArray(csvRow[columnName], columnName, csvColumnNames);
+        const rawArray = csvFieldToArray(csvRow[columnName], columnName, csvColumnNames);
+        //map historic_benchmarks
+        if (columnName ===Constants.QUALITY_CSV_COLUMN_NAMES.historic_benchmarks) {
+            return rawArray.reduce((obj, item) => {
+                return {
+                    ...obj,
+                    [item]: 'removed',
+                };
+            }, {});
+        }
+        return rawArray;
     } 
     //metric type
     else if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.metricType) {
@@ -113,6 +123,16 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
     ) {
         return null;
     }
+    //numbers
+    else if (
+        columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear ||
+        columnName === Constants.BASE_CSV_COLUMN_NAMES.yearRemoved
+    ) {
+        if (columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear) {
+            warning('Year Added was changed. Was this deliberate?');
+        }
+        return +csvRow[columnName];
+    }
 
     return csvRow[columnName].trim();
 }
@@ -120,20 +140,24 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
 //converts field 'apples, ice cream, banana' to ['apples', 'icecream', 'banana'].
 function csvFieldToArray(fieldValue: string, fieldHeader: string, csvColumnNames: string[]) {
     const arrayedField: string[] = fieldValue.split(',');
-    const header = Object.keys(csvColumnNames).find(key => csvColumnNames[key] === fieldHeader);
 
     //.replace(/\s/g, "") removes all whitespace.
-    if (header === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
+    if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
         for (let i = 0; i < arrayedField.length; i++) {
             arrayedField[i] = Constants.MEASURE_TYPES[arrayedField[i].toLowerCase().replace(/\s/g, "")];
         }
     }
-    else if (header === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
+    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
         for (let i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.MEASURE_TYPES[arrayedField[i].replace(/\s/g, "")];
+            arrayedField[i] = Constants.MEASURE_SETS[arrayedField[i].replace(/\s/g, "")];
         }
     }
-    else if (Constants.COLLECTION_TYPES_FIELDS.includes(header+'')) {
+    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {        
+        for (let i = 0; i < arrayedField.length; i++) {
+            arrayedField[i] = Constants.ALLOWED_PROGRAMS[arrayedField[i].replace(/\s/g, "")];
+        }
+    }
+    else if (Constants.COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         for (let i = 0; i < arrayedField.length; i++) {
             arrayedField[i] = Constants.COLLECTION_TYPES[arrayedField[i].trim()];
             
@@ -163,13 +187,16 @@ function updateMeasuresWithChangeFile(fileName: string) {
     for (let i = 0; i < changeData.length; i++) {
         const change = changeData[i] as MeasuresChange;
 
-        if(change.Category) {
+        if(change.category) {
             const isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later in update-measures.
-            const validate = initValidation(measureType[change.Category], isNew);            
+            const validate = initValidation(measureType[change.category], isNew);            
 
             if (change.yearRemoved && change.yearRemoved == +performanceYear) {
                 deleteMeasure(change.measureId);
+            } else if (change.yearRemoved) {
+                numOfFailures++;
+                error(`'${fileName}': Year Removed is not current year.`);
             } else if (validate(change)) {
                 updateMeasure(change);
                 if(isNew) {
@@ -205,12 +232,12 @@ function writeToFile(file: any, filePath: string) {
 }
 
 function deleteMeasure(measureId: string) {
-    for (let i = 0; i < measuresJson.length; i++) {
-        if (measuresJson[i].measureId == measureId) {
-            delete measuresJson[i];
-            info(`Measure '${measureId}' removed.`);
-            break;
-        }
+    const measureIndex = _.findIndex(measuresJson, { measureId });
+    if (measureIndex > -1) {
+        measuresJson.splice(measureIndex, 1);
+        info(`Measure '${measureId}' removed.`);
+    } else {
+        warning(`Measure '${measureId}' not found.`);
     }
 }
 

@@ -19,6 +19,7 @@ exports.BASE_CSV_COLUMN_NAMES = {
     'measureId': 'measure_id',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'Year Added',
+    'category': 'Category',
 };
 exports.IA_CSV_COLUMN_NAMES = __assign(__assign({}, exports.BASE_CSV_COLUMN_NAMES), { 'weight': 'weight', 'subcategoryId': 'subcategory_name' });
 exports.PI_CSV_COLUMN_NAMES = __assign(__assign({}, exports.BASE_CSV_COLUMN_NAMES), { 'required': 'required', 'isRequired': 'required', 'metricType': 'name', 'isBonus': 'bonus', 'reportingCategory': 'reporting_category', 'substitutes': 'substitutes', 'exclusion': 'exclusions' });
@@ -75,9 +76,10 @@ exports.OVERALL_ALGORITHM = [
     'overallStratumOnly',
 ];
 exports.COLLECTION_TYPES_FIELDS = [
-    'clinicalGuidelineChanged',
-    'historic_benchmarks',
-    'icdImpacted',
+    'Collection Type(s) where Suppressed',
+    'Collection Type(s) where Historic Benchmark Removed',
+    'Collection Type(s) where Truncated',
+    'Collection Type(s) for Submission',
 ];
 exports.COLLECTION_TYPES = {
     'Part B Claims': 'claims',
@@ -88,11 +90,11 @@ exports.COLLECTION_TYPES = {
     'MIPS CQM': 'registry',
     'QCDR': 'registry',
 };
-exports.ALLOWED_PROGRAMS = [
-    'MIPS',
-    'APP',
-    'PCF',
-];
+exports.ALLOWED_PROGRAMS = {
+    'MIPS': 'mips',
+    'APP': 'app1',
+    'PCF': 'pcf',
+};
 exports.MEASURE_TYPES = {
     'process': 'process',
     'outcome': 'outcome',
@@ -141,5 +143,13 @@ exports.MEASURE_SETS = {
     'Geriatrics': 'geriatrics',
     'UrgentCare': 'urgentCare',
     'SkilledNursing Facility': 'skilledNursingFacility',
-    'Dentistry': 'dentistry'
+    'Dentistry': 'dentistry',
+    'Cinical Social Work': 'clinicalSocialWork',
+    'Audiology': 'audiology',
+    'CertifiedNurseMidwife': 'certifiedNurseMidwife',
+    'ChiropracticMedicine': 'chiropracticMedicine',
+    'Endocrinology': 'endocrinology',
+    'Nutrition/Dietician': 'nutritionDietician',
+    'Pulmonology': 'pulmonology',
+    'SpeechLanguagePathology': 'speechLanguagePathology',
 };

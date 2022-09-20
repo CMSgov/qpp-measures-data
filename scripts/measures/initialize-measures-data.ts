@@ -1,6 +1,6 @@
 /**
  * @InitializeMeasuresData
- *  Currently this file just increments eMeasureIds from the previous year.
+ *  Currently this file just removes the spec urls and increments eMeasureIds from the previous year.
  * e.g. CMS122v10 -> CMS122v11
  *  Any future initialization logic added here should have its own function which
  * is then called in initMeasuresData().
@@ -21,6 +21,9 @@ const measuresJson = JSON.parse(
 
 function initMeasuresData() {
     incrementEMeasureId();
+    removeSpecUrls();
+
+    writeToFile(measuresJson, measuresPath);
 }
 
 function incrementEMeasureId() {
@@ -34,7 +37,14 @@ function incrementEMeasureId() {
             }
         }
     }
-    writeToFile(measuresJson, measuresPath);
+}
+
+function removeSpecUrls() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].measureSpecification) {
+            measuresJson[i].measureSpecification = {};
+        }
+    }
 }
 
 function writeToFile(file: any, filePath: string) {

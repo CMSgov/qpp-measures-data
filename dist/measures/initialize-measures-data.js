@@ -1,7 +1,7 @@
 "use strict";
 /**
  * @InitializeMeasuresData
- *  Currently this file just increments eMeasureIds from the previous year.
+ *  Currently this file just removes the spec urls and increments eMeasureIds from the previous year.
  * e.g. CMS122v10 -> CMS122v11
  *  Any future initialization logic added here should have its own function which
  * is then called in initMeasuresData().
@@ -19,6 +19,8 @@ var measuresPath = "../../measures/".concat(performanceYear, "/measures-data.jso
 var measuresJson = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, measuresPath), 'utf8'));
 function initMeasuresData() {
     incrementEMeasureId();
+    removeSpecUrls();
+    writeToFile(measuresJson, measuresPath);
 }
 function incrementEMeasureId() {
     for (var i = 0; i < measuresJson.length; i++) {
@@ -32,7 +34,13 @@ function incrementEMeasureId() {
             }
         }
     }
-    writeToFile(measuresJson, measuresPath);
+}
+function removeSpecUrls() {
+    for (var i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].measureSpecification) {
+            measuresJson[i].measureSpecification = {};
+        }
+    }
 }
 function writeToFile(file, filePath) {
     fs_1.default.writeFile(path_1.default.join(__dirname, filePath), JSON.stringify(file, null, 2), function writeJSON(err) {

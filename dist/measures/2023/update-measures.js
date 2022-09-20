@@ -85,9 +85,9 @@ function convertCsvToJson(fileName) {
     var parsedCsv = (0, sync_1.default)(csv, { columns: true });
     return parsedCsv.map(function (row) {
         var measure = {};
-        measure['Category'] = row['Category'].toLowerCase();
+        measure['category'] = row['Category'].toLowerCase();
         var csvColumnNames;
-        switch (measure['Category']) {
+        switch (measure['category']) {
             case 'ia':
                 csvColumnNames = Constants.IA_CSV_COLUMN_NAMES;
                 break;
@@ -101,7 +101,7 @@ function convertCsvToJson(fileName) {
         //maps the csv column values to the matching measures-data fields.
         lodash_1.default.each(csvColumnNames, function (columnName, measureKeyName) {
             if (row[columnName]) {
-                measure[measureKeyName] = mapInput(columnName, row, measure['Category'], csvColumnNames);
+                measure[measureKeyName] = mapInput(columnName, row, measure['category'], csvColumnNames);
             }
         });
         return measure;
@@ -118,7 +118,15 @@ function mapInput(columnName, csvRow, category, csvColumnNames) {
     }
     //fields with comma seperated values.
     else if (Constants.ARRAY_CSV_FIELDS.includes(columnName)) {
-        return csvFieldToArray(csvRow[columnName], columnName, csvColumnNames);
+        var rawArray = csvFieldToArray(csvRow[columnName], columnName, csvColumnNames);
+        //map historic_benchmarks
+        if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.historic_benchmarks) {
+            return rawArray.reduce(function (obj, item) {
+                var _a;
+                return __assign(__assign({}, obj), (_a = {}, _a[item] = 'removed', _a));
+            }, {});
+        }
+        return rawArray;
     }
     //metric type
     else if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.metricType) {
@@ -132,24 +140,36 @@ function mapInput(columnName, csvRow, category, csvColumnNames) {
         csvRow[Constants.QUALITY_CSV_COLUMN_NAMES.metricType].includes('inglePerformanceRate')) {
         return null;
     }
+    //numbers
+    else if (columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear ||
+        columnName === Constants.BASE_CSV_COLUMN_NAMES.yearRemoved) {
+        if (columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear) {
+            (0, logger_1.warning)('Year Added was changed. Was this deliberate?');
+        }
+        return +csvRow[columnName];
+    }
     return csvRow[columnName].trim();
 }
 //converts field 'apples, ice cream, banana' to ['apples', 'icecream', 'banana'].
 function csvFieldToArray(fieldValue, fieldHeader, csvColumnNames) {
     var arrayedField = fieldValue.split(',');
-    var header = Object.keys(csvColumnNames).find(function (key) { return csvColumnNames[key] === fieldHeader; });
     //.replace(/\s/g, "") removes all whitespace.
-    if (header === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
+    if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
         for (var i = 0; i < arrayedField.length; i++) {
             arrayedField[i] = Constants.MEASURE_TYPES[arrayedField[i].toLowerCase().replace(/\s/g, "")];
         }
     }
-    else if (header === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
+    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
         for (var i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.MEASURE_TYPES[arrayedField[i].replace(/\s/g, "")];
+            arrayedField[i] = Constants.MEASURE_SETS[arrayedField[i].replace(/\s/g, "")];
         }
     }
-    else if (Constants.COLLECTION_TYPES_FIELDS.includes(header + '')) {
+    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {
+        for (var i = 0; i < arrayedField.length; i++) {
+            arrayedField[i] = Constants.ALLOWED_PROGRAMS[arrayedField[i].replace(/\s/g, "")];
+        }
+    }
+    else if (Constants.COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         for (var i = 0; i < arrayedField.length; i++) {
             arrayedField[i] = Constants.COLLECTION_TYPES[arrayedField[i].trim()];
         }
@@ -173,12 +193,16 @@ function updateMeasuresWithChangeFile(fileName) {
     var numOfFailures = 0;
     for (var i = 0; i < changeData.length; i++) {
         var change = changeData[i];
-        if (change.Category) {
+        if (change.category) {
             var isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later in update-measures.
-            var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.Category], isNew);
+            var validate = (0, validate_change_requests_1.initValidation)(validate_change_requests_1.measureType[change.category], isNew);
             if (change.yearRemoved && change.yearRemoved == +performanceYear) {
                 deleteMeasure(change.measureId);
+            }
+            else if (change.yearRemoved) {
+                numOfFailures++;
+                (0, logger_1.error)("'".concat(fileName, "': Year Removed is not current year."));
             }
             else if (validate(change)) {
                 updateMeasure(change);
@@ -215,12 +239,13 @@ function writeToFile(file, filePath) {
     });
 }
 function deleteMeasure(measureId) {
-    for (var i = 0; i < measuresJson.length; i++) {
-        if (measuresJson[i].measureId == measureId) {
-            delete measuresJson[i];
-            (0, logger_1.info)("Measure '".concat(measureId, "' removed."));
-            break;
-        }
+    var measureIndex = lodash_1.default.findIndex(measuresJson, { measureId: measureId });
+    if (measureIndex > -1) {
+        measuresJson.splice(measureIndex, 1);
+        (0, logger_1.info)("Measure '".concat(measureId, "' removed."));
+    }
+    else {
+        (0, logger_1.warning)("Measure '".concat(measureId, "' not found."));
     }
 }
 function updateBenchmarksMetaData(change) {

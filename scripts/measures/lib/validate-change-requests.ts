@@ -17,7 +17,7 @@ export enum measureType {
 
 interface baseMeasuresChange {
     measureId: string,
-    Category: string,
+    category: string,
     title?: string,
     description?: string,
     yearRemoved?: number,
@@ -62,7 +62,7 @@ interface Quality_MeasuresChange extends baseMeasuresChange {
     submissionMethods?: string[],
     overallAlgorithm?: string,
     clinicalGuidelineChanged?: string[],
-    historic_benchmarks?: string[],
+    historic_benchmarks?: object,
     icdImpacted?: string[],
 };
 
@@ -70,7 +70,7 @@ export type MeasuresChange = IA_MeasuresChange | PI_MeasuresChange | Cost_Measur
 
 const baseValidationSchemaProperties = {
     measureId: { type: 'string' },
-    Category: { type: 'string' },
+    category: { type: 'string' },
     title: { type: 'string', nullable: true },
     description: { type: 'string', nullable: true },
     yearRemoved: { type: 'number', nullable: true },
@@ -126,7 +126,7 @@ const quality_validationSchema: JSONSchemaType<Quality_MeasuresChange> = {
         isRiskAdjusted: { type: 'boolean', nullable: true },
         primarySteward: { type: 'string', nullable: true },
         allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
-        allowedPrograms: { type: 'array', items: { type: 'string', enum: Constants.ALLOWED_PROGRAMS }, nullable: true },
+        allowedPrograms: { type: 'array', items: { type: 'string', enum: Object.values(Constants.ALLOWED_PROGRAMS) }, nullable: true },
         eMeasureId: { type: 'string', nullable: true },
         nqfEMeasureId: { type: 'string', nullable: true },
         measureSets: { type: 'array', items: { type: 'string' }, nullable: true },
@@ -135,10 +135,10 @@ const quality_validationSchema: JSONSchemaType<Quality_MeasuresChange> = {
         submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
         overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
         clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
-        historic_benchmarks: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
+        historic_benchmarks: { type: 'object', nullable: true },
         icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
     },
-    required: ['measureId', 'Category'],
+    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<Quality_MeasuresChange>;
 
@@ -155,7 +155,7 @@ function createSchema(schema: any, requireAll: boolean) {
     } else {
         return {
             ...schema,
-            required: ['measureId', 'Category'],
+            required: ['measureId', 'category'],
         }
     }
 }

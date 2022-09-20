@@ -5,6 +5,7 @@ export const BASE_CSV_COLUMN_NAMES = {
     'measureId': 'measure_id',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'Year Added',
+    'category': 'Category',
 }
 
 export const IA_CSV_COLUMN_NAMES = {
@@ -82,9 +83,10 @@ export const OVERALL_ALGORITHM = [
 ]
 
 export const COLLECTION_TYPES_FIELDS = [
-    'clinicalGuidelineChanged',
-    'historic_benchmarks',
-    'icdImpacted',
+    'Collection Type(s) where Suppressed',
+    'Collection Type(s) where Historic Benchmark Removed',
+    'Collection Type(s) where Truncated',
+    'Collection Type(s) for Submission',
 ]
 
 
@@ -98,11 +100,11 @@ export const COLLECTION_TYPES = {
     'QCDR': 'registry',
 }
 
-export const ALLOWED_PROGRAMS = [
-    'MIPS',
-    'APP',
-    'PCF',
-]
+export const ALLOWED_PROGRAMS = {
+    'MIPS': 'mips',
+    'APP': 'app1',
+    'PCF': 'pcf',
+}
 
 export const MEASURE_TYPES = {
     'process': 'process',
@@ -153,5 +155,13 @@ export const MEASURE_SETS = {
     'Geriatrics': 'geriatrics',
     'UrgentCare': 'urgentCare',
     'SkilledNursing Facility': 'skilledNursingFacility',
-    'Dentistry': 'dentistry'
+    'Dentistry': 'dentistry',
+    'Cinical Social Work': 'clinicalSocialWork',
+    'Audiology': 'audiology',
+    'CertifiedNurseMidwife': 'certifiedNurseMidwife',
+    'ChiropracticMedicine': 'chiropracticMedicine',
+    'Endocrinology': 'endocrinology',
+    'Nutrition/Dietician': 'nutritionDietician',
+    'Pulmonology': 'pulmonology',
+    'SpeechLanguagePathology': 'speechLanguagePathology',
 };

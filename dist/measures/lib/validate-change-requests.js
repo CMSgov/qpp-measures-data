@@ -84,7 +84,7 @@ var measureType;
 ;
 var baseValidationSchemaProperties = {
     measureId: { type: 'string' },
-    Category: { type: 'string' },
+    category: { type: 'string' },
     title: { type: 'string', nullable: true },
     description: { type: 'string', nullable: true },
     yearRemoved: { type: 'number', nullable: true },
@@ -107,8 +107,8 @@ var cost_validationSchema = {
 };
 var quality_validationSchema = {
     type: 'object',
-    properties: __assign(__assign({}, baseValidationSchemaProperties), { nqfId: { type: 'string', nullable: true }, nationalQualityStrategyDomain: { type: 'string', nullable: true }, isHighPriority: { type: 'boolean', nullable: true }, isInverse: { type: 'boolean', nullable: true }, isRiskAdjusted: { type: 'boolean', nullable: true }, primarySteward: { type: 'string', nullable: true }, allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true }, allowedPrograms: { type: 'array', items: { type: 'string', enum: Constants.ALLOWED_PROGRAMS }, nullable: true }, eMeasureId: { type: 'string', nullable: true }, nqfEMeasureId: { type: 'string', nullable: true }, measureSets: { type: 'array', items: { type: 'string' }, nullable: true }, isRegistryMeasure: { type: 'boolean', nullable: true }, metricType: { type: 'string', enum: Constants.METRIC_TYPES, nullable: true }, submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true }, overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true }, clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: __spreadArray([], __read(new Set(Object.values(Constants.COLLECTION_TYPES))), false) }, nullable: true }, historic_benchmarks: { type: 'array', items: { type: 'string', enum: __spreadArray([], __read(new Set(Object.values(Constants.COLLECTION_TYPES))), false) }, nullable: true }, icdImpacted: { type: 'array', items: { type: 'string', enum: __spreadArray([], __read(new Set(Object.values(Constants.COLLECTION_TYPES))), false) }, nullable: true } }),
-    required: ['measureId', 'Category'],
+    properties: __assign(__assign({}, baseValidationSchemaProperties), { nqfId: { type: 'string', nullable: true }, nationalQualityStrategyDomain: { type: 'string', nullable: true }, isHighPriority: { type: 'boolean', nullable: true }, isInverse: { type: 'boolean', nullable: true }, isRiskAdjusted: { type: 'boolean', nullable: true }, primarySteward: { type: 'string', nullable: true }, allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true }, allowedPrograms: { type: 'array', items: { type: 'string', enum: Object.values(Constants.ALLOWED_PROGRAMS) }, nullable: true }, eMeasureId: { type: 'string', nullable: true }, nqfEMeasureId: { type: 'string', nullable: true }, measureSets: { type: 'array', items: { type: 'string' }, nullable: true }, isRegistryMeasure: { type: 'boolean', nullable: true }, metricType: { type: 'string', enum: Constants.METRIC_TYPES, nullable: true }, submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true }, overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true }, clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: __spreadArray([], __read(new Set(Object.values(Constants.COLLECTION_TYPES))), false) }, nullable: true }, historic_benchmarks: { type: 'object', nullable: true }, icdImpacted: { type: 'array', items: { type: 'string', enum: __spreadArray([], __read(new Set(Object.values(Constants.COLLECTION_TYPES))), false) }, nullable: true } }),
+    required: ['measureId', 'category'],
     additionalProperties: false,
 };
 function initValidation(type, requireAll) {
@@ -120,7 +120,7 @@ function createSchema(schema, requireAll) {
         return __assign(__assign({}, schema), { required: Object.keys(schema.properties) });
     }
     else {
-        return __assign(__assign({}, schema), { required: ['measureId', 'Category'] });
+        return __assign(__assign({}, schema), { required: ['measureId', 'category'] });
     }
 }
 function getSchema(type, requireAll) {
