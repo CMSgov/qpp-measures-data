@@ -10,6 +10,7 @@
 import fs from 'fs';
 import path from 'path';
 import parse from 'csv-parse/lib/sync';
+import appRoot from 'app-root-path';
 
 import mergeEcqmEhrLinks from '../lib/merge-ecqm-ehr-links';
 import mergeWebInterfaceLinks from '../lib/merge-web-interface-links';
@@ -22,47 +23,42 @@ import mergeStratifications from '../lib/merge-stratifications';
 
 const currentPerformanceYear = process.argv[2];
 
-const measuresDataPath = path.join(__dirname, `../../../measures/${currentPerformanceYear}/measures-data.json`);
-const ecqmEhrLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/ecqm-ehr-links.csv`);
-const webInterfaceLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/web-interface-links.csv`);
-const claimsLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/claims-links.csv`);
-const cqmLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/cqm-links.csv`);
-const piLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/pi-links.csv`);
-const costLinksPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/cost-links.csv`);
-const generatedEcqmPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/generated-ecqm-data.json`);
-const manuallyCreatedEcqmPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/manually-created-missing-measures.json`);
-const AdditionalStratificationsPath = path.join(__dirname, `../../../util/measures/${currentPerformanceYear}/additional-stratifications.json`);
+const measuresDataPath = path.join(appRoot+'', `measures/${currentPerformanceYear}/measures-data.json`);
+const ecqmEhrLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/ecqm-ehr-links.csv`);
+const webInterfaceLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/web-interface-links.csv`);
+const claimsLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/claims-links.csv`);
+const cqmLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/cqm-links.csv`);
+const piLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/pi-links.csv`);
+const costLinksPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/cost-links.csv`);
+const generatedEcqmPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/generated-ecqm-data.json`);
+const manuallyCreatedEcqmPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/manually-created-missing-measures.json`);
+const AdditionalStratificationsPath = path.join(appRoot+'', `util/measures/${currentPerformanceYear}/additional-stratifications.json`);
 
 const measures = JSON.parse(
     fs.readFileSync(measuresDataPath, 'utf8')
 );
 const parseConfig = { columns: true, skip_empty_lines: true };
 
-
-function getCsvIfExists(filePath: string) {
+function getFileDataIfExists(filePath: string, isCSV: boolean = false) {
     if(fs.existsSync(filePath)) {
         const fileData = fs.readFileSync(filePath, 'utf8');
-        return parse(fileData, parseConfig);
-    } else {
-        return [];
-    }
-}
 
-function getJsonIfExists(filePath: string) {
-    if(fs.existsSync(filePath)) {
-        const fileData = fs.readFileSync(filePath, 'utf8');
+        if(isCSV) {
+            return parse(fileData, parseConfig);
+        }
         return JSON.parse(fileData);
+
     } else {
         return [];
     }
 }
 
-mergeEcqmEhrLinks(measures, getCsvIfExists(ecqmEhrLinksPath));
-mergeWebInterfaceLinks(measures, getCsvIfExists(webInterfaceLinksPath));
-mergeClaimsLinks(measures, getCsvIfExists(claimsLinksPath));
-mergeCqmLinks(measures, getCsvIfExists(cqmLinksPath));
-mergePiLinks(measures, getCsvIfExists(piLinksPath));
-mergeCostLinks(measures, getCsvIfExists(costLinksPath));
-mergeEcqmData(measures, getJsonIfExists(generatedEcqmPath));
-mergeEcqmData(measures, getJsonIfExists(manuallyCreatedEcqmPath));
-mergeStratifications(measures, getJsonIfExists(AdditionalStratificationsPath));
+mergeEcqmEhrLinks(measures, getFileDataIfExists(ecqmEhrLinksPath, true));
+mergeWebInterfaceLinks(measures, getFileDataIfExists(webInterfaceLinksPath, true));
+mergeClaimsLinks(measures, getFileDataIfExists(claimsLinksPath, true));
+mergeCqmLinks(measures, getFileDataIfExists(cqmLinksPath, true));
+mergePiLinks(measures, getFileDataIfExists(piLinksPath, true));
+mergeCostLinks(measures, getFileDataIfExists(costLinksPath, true));
+mergeEcqmData(measures, getFileDataIfExists(generatedEcqmPath));
+mergeEcqmData(measures, getFileDataIfExists(manuallyCreatedEcqmPath));
+mergeStratifications(measures, getFileDataIfExists(AdditionalStratificationsPath));

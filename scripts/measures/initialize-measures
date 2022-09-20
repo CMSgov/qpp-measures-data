@@ -26,9 +26,10 @@ else
   mkdir updates/measures/$newPerformanceYear
   echo "[]" > updates/measures/$newPerformanceYear/Changelog.json
 
-  # Create the util directory (for input data) and the benchmarks metadata.
+  # Create the util directory (for input data) and the stratum files.
   mkdir util/measures/$newPerformanceYear
-  cp util/measures/$previousPerformanceYear/benchmark-metadata.csv util/measures/$newPerformanceYear/
+  cp util/measures/$previousPerformanceYear/qcdr-strata.csv util/measures/$newPerformanceYear/
+  cp util/measures/$previousPerformanceYear/quality-strata.csv util/measures/$newPerformanceYear/
 
   echo -e "${Green}Measures year ${newPerformanceYear} initialized."
 fi

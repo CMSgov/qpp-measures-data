@@ -9,6 +9,8 @@ npm install
 
 Make changes on a feature branch, then open a pull request. Make sure CI passes on your branch, and you include any relevant new tests.
 
+Make sure to generate/update the js files when updating the typescript files. e.g., running `tsc -w -p .` will recompile the typescript as you update it.
+
 ### Pull Requests
 
 Create a pull request for your branch via GitHub. The PR template will have instructions on where to add details in the description. Once the PR is created, the users specified in the CODEOWNERS file will be automatically added as reviewers. 

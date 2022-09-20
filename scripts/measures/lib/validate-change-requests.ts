@@ -1,3 +1,4 @@
+import * as Constants from '../../constants';
 import Ajv, { JSONSchemaType } from 'ajv';
 const ajv = new Ajv();
 
@@ -16,10 +17,11 @@ export enum measureType {
 
 interface baseMeasuresChange {
     measureId: string,
-    category: string,
+    Category: string,
     title?: string,
     description?: string,
     yearRemoved?: number,
+    firstPerformanceYear?: number,
 }
 
 interface IA_MeasuresChange extends baseMeasuresChange {
@@ -47,7 +49,6 @@ interface Cost_MeasuresChange extends baseMeasuresChange {
 
 interface Quality_MeasuresChange extends baseMeasuresChange {
     nqfId?: string,
-    nationalQualityStrategyDomain?: string,
     isHighPriority?: boolean,
     isInverse?: boolean,
     isRiskAdjusted?: boolean,
@@ -57,20 +58,23 @@ interface Quality_MeasuresChange extends baseMeasuresChange {
     eMeasureId?: string,
     nqfEMeasureId?: string,
     measureSets?: string[],
-    isRegistryMeasure?: boolean,
-    isIcdImpacted?: boolean,
     metricType?: string,
     submissionMethods?: string[],
+    overallAlgorithm?: string,
+    clinicalGuidelineChanged?: string[],
+    historic_benchmarks?: string[],
+    icdImpacted?: string[],
 };
 
 export type MeasuresChange = IA_MeasuresChange | PI_MeasuresChange | Cost_MeasuresChange | Quality_MeasuresChange;
 
 const baseValidationSchemaProperties = {
     measureId: { type: 'string' },
-    category: { type: 'string' },
+    Category: { type: 'string' },
     title: { type: 'string', nullable: true },
     description: { type: 'string', nullable: true },
     yearRemoved: { type: 'number', nullable: true },
+    firstPerformanceYear: { type: 'number', nullable: true },
 }
 
 const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
@@ -122,16 +126,19 @@ const quality_validationSchema: JSONSchemaType<Quality_MeasuresChange> = {
         isRiskAdjusted: { type: 'boolean', nullable: true },
         primarySteward: { type: 'string', nullable: true },
         allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
-        allowedPrograms: { type: 'array', items: { type: 'string' }, nullable: true },
+        allowedPrograms: { type: 'array', items: { type: 'string', enum: Constants.ALLOWED_PROGRAMS }, nullable: true },
         eMeasureId: { type: 'string', nullable: true },
         nqfEMeasureId: { type: 'string', nullable: true },
         measureSets: { type: 'array', items: { type: 'string' }, nullable: true },
         isRegistryMeasure: { type: 'boolean', nullable: true },
-        isIcdImpacted: { type: 'boolean', nullable: true },
-        metricType: { type: 'string', nullable: true },
+        metricType: { type: 'string', enum: Constants.METRIC_TYPES, nullable: true },
         submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
+        overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
+        clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
+        historic_benchmarks: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
+        icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
     },
-    required: ['measureId', 'category'],
+    required: ['measureId', 'Category'],
     additionalProperties: false,
 } as JSONSchemaType<Quality_MeasuresChange>;
 
@@ -148,7 +155,7 @@ function createSchema(schema: any, requireAll: boolean) {
     } else {
         return {
             ...schema,
-            required: ['measureId', 'category'],
+            required: ['measureId', 'Category'],
         }
     }
 }

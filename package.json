@@ -44,6 +44,7 @@
     "xml2js": "0.4.17"
   },
   "dependencies": {
+    "app-root-path": "^3.1.0",
     "load-yaml-file": "^1.0.0",
     "pre-commit": "^1.2.2",
     "xregexp": "^5.1.0",
@@ -52,5 +53,7 @@
   "pre-commit": [
     "pre-commit"
   ],
-  "eslintIgnore": ["/dist/**/*.js"]
+  "eslintIgnore": [
+    "/dist/**/*.js"
+  ]
 }
