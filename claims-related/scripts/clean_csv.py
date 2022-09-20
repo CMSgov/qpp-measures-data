@@ -5,7 +5,7 @@ import argparse
 
 
 ######
-# The result of exporting the .xsxl single source document to
+# The result of exporting the .xlsx single source document to
 # .csv format is not pretty.  This script will format the initial
 # .csv file to match the 2021_Claims_SingleSource_v1.3.csv file.
 
