@@ -10,26 +10,29 @@ DIR="measures/${newPerformanceYear}/"
 if [ -d "$DIR" ]; then
   echo -e "${Red}/measures/${newPerformanceYear}/ already exists. Canceling initialization."
 else
-  # Clone measures-data and schema.
+  echo -e "Cloning measures-data and schema..."
   cp -r measures/$previousPerformanceYear measures/$newPerformanceYear
 
-  # Increment eMeasureIds.
+  echo -e "Incrementing eMeasureIds and removing spec links..."
   node dist/measures/initialize-measures-data.js $newPerformanceYear
 
-  # Update the performance year in the measures-schema.
+  echo -e "Updating the performance year in the measures-schema..."
   sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml   
 
-  # Clone yearly scripts.
-  cp -r dist/measures/$previousPerformanceYear dist/measures/$newPerformanceYear
+  echo -e "Cloning yearly scripts..."
+  cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
 
-  # Create updates directory and initialize the Changelog as an empty array.
+  echo -e "Creating updates directory and initializing the Changelog as an empty array..."
   mkdir updates/measures/$newPerformanceYear
   echo "[]" > updates/measures/$newPerformanceYear/Changelog.json
 
-  # Create the util directory (for input data) and the stratum files.
+  echo -e "Creating the util directory (for input data) and the stratum files..."
   mkdir util/measures/$newPerformanceYear
   cp util/measures/$previousPerformanceYear/qcdr-strata.csv util/measures/$newPerformanceYear/
   cp util/measures/$previousPerformanceYear/quality-strata.csv util/measures/$newPerformanceYear/
+
+  echo -e "Compiling Typescript..."
+  tsc -p .
 
   echo -e "${Green}Measures year ${newPerformanceYear} initialized."
 fi

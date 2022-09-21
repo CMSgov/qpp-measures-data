@@ -12,11 +12,11 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   node dist/measures/$currentPerformanceYear/update-measures.js \
     $currentPerformanceYear
 
-  # echo -e "Ingesting the Spec Urls, if those files exist"
+  echo -e "Ingesting the Spec Urls, if those files exist"
   node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
     $currentPerformanceYear
   
-  # echo -e "Ingesting Quality and QCDR strata..."
+  echo -e "Ingesting Quality and QCDR strata..."
   node dist/measures/$currentPerformanceYear/ingest-strata.js \
     $currentPerformanceYear \
     util/measures/$currentPerformanceYear/qcdr-strata.csv
@@ -25,7 +25,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
     $currentPerformanceYear \
     util/measures/$currentPerformanceYear/quality-strata.csv
 
-  # echo -e "Validating new measures-data.json..."
+  echo -e "Validating new measures-data.json..."
   cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
   
