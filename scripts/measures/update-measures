@@ -12,7 +12,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   node dist/measures/$currentPerformanceYear/update-measures.js \
     $currentPerformanceYear
 
-  echo -e "Ingesting the Spec Urls, if those files exist"
+  echo -e "Ingesting the Spec Urls, if those files exist..."
   node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
     $currentPerformanceYear
   
