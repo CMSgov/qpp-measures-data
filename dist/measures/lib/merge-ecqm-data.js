@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mergeEcqmData = void 0;
 function mergeEcqmData(measures, generatedEcqms) {
-    generatedEcqms.forEach(function (generatedEcqm) {
-        var measure = measures.find(function (measure) { return measure.eMeasureId === generatedEcqm.eMeasureId; });
+    generatedEcqms.forEach((generatedEcqm) => {
+        const measure = measures.find(measure => measure.eMeasureId === generatedEcqm.eMeasureId);
         if (measure) {
             if (measure.strata) {
                 measure.strata.forEach(function (strata, index) {

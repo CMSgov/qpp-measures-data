@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mergeCostLinks = void 0;
-var lodash_1 = __importDefault(require("lodash"));
-var path = 'measureSpecification.default';
+const lodash_1 = __importDefault(require("lodash"));
+const path = 'measureSpecification.default';
 function mergeCostLinks(measures, costLinks) {
-    costLinks.forEach(function (costLink) {
-        var measure = measures.find(function (measure) { return measure.measureId === costLink.measureId; });
+    costLinks.forEach((costLink) => {
+        const measure = measures.find(measure => measure.measureId === costLink.measureId);
         if (measure) {
             lodash_1.default.set(measure, path, costLink.link);
         }

@@ -6,10 +6,10 @@ function info(message) {
 }
 exports.info = info;
 function warning(message) {
-    console.warn('\x1b[33m%s\x1b[0m', "[WARNING]: ".concat(message));
+    console.warn('\x1b[33m%s\x1b[0m', `[WARNING]: ${message}`);
 }
 exports.warning = warning;
 function error(message) {
-    console.error('\x1b[31m%s\x1b[0m', "[ERROR]: ".concat(message));
+    console.error('\x1b[31m%s\x1b[0m', `[ERROR]: ${message}`);
 }
 exports.error = error;

@@ -1,18 +1,6 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MEASURE_SETS = exports.MEASURE_TYPES = exports.ALLOWED_PROGRAMS = exports.COLLECTION_TYPES = exports.COLLECTION_TYPES_FIELDS = exports.OVERALL_ALGORITHM = exports.METRIC_TYPES = exports.BOOLEAN_CSV_FIELDS = exports.ARRAY_CSV_FIELDS = exports.QUALITY_CSV_COLUMN_NAMES = exports.PI_CSV_COLUMN_NAMES = exports.IA_CSV_COLUMN_NAMES = exports.BASE_CSV_COLUMN_NAMES = void 0;
-//These are only needed if the csv column names do not match the measures-data field names.
 exports.BASE_CSV_COLUMN_NAMES = {
     'title': 'title',
     'description': 'description',
@@ -21,8 +9,21 @@ exports.BASE_CSV_COLUMN_NAMES = {
     'firstPerformanceYear': 'Year Added',
     'category': 'Category',
 };
-exports.IA_CSV_COLUMN_NAMES = __assign(__assign({}, exports.BASE_CSV_COLUMN_NAMES), { 'weight': 'weight', 'subcategoryId': 'subcategory_name' });
-exports.PI_CSV_COLUMN_NAMES = __assign(__assign({}, exports.BASE_CSV_COLUMN_NAMES), { 'required': 'required', 'isRequired': 'required', 'metricType': 'name', 'isBonus': 'bonus', 'reportingCategory': 'reporting_category', 'substitutes': 'substitutes', 'exclusion': 'exclusions' });
+exports.IA_CSV_COLUMN_NAMES = {
+    ...exports.BASE_CSV_COLUMN_NAMES,
+    'weight': 'weight',
+    'subcategoryId': 'subcategory_name'
+};
+exports.PI_CSV_COLUMN_NAMES = {
+    ...exports.BASE_CSV_COLUMN_NAMES,
+    'required': 'required',
+    'isRequired': 'required',
+    'metricType': 'name',
+    'isBonus': 'bonus',
+    'reportingCategory': 'reporting_category',
+    'substitutes': 'substitutes',
+    'exclusion': 'exclusions',
+};
 exports.QUALITY_CSV_COLUMN_NAMES = {
     'title': 'Measure Title',
     'eMeasureId': 'CMS eCQM ID',
