@@ -43,11 +43,11 @@ cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2
 ```
 ### Initializing, Adding, Updating, and Deleting Measures
 
-To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last years spec links from the new measures-data file.
+To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
 
 New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$Year folder with the file name as MM-DD-YYYY-01.csv (increment the final number in the name if multiple changes take place on the same day). IMPORTANT: Do *not* manually modify the Changelog.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 
-Deleting measures is handled manually. Simply remove the specified measures from `/measures/$YEAR/measures-data.json`. 
+Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
 ### Importing Measures from a CSV File
 
