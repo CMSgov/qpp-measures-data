@@ -249,7 +249,10 @@ function deleteMeasure(measureId) {
     }
 }
 function updateBenchmarksMetaData(change) {
-    var metaData = {};
+    return {
+        isIcdImpacted: change['icdImpacted'] ? !!change['icdImpacted'].length : false,
+        isClinicalGuidelineChanged: change['clinicalGuidelineChanged'] ? !!change['clinicalGuidelineChanged'].length : false,
+    };
 }
 function updateMeasure(change) {
     for (var i = 0; i < measuresJson.length; i++) {

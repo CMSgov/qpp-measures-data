@@ -242,7 +242,10 @@ function deleteMeasure(measureId: string) {
 }
 
 function updateBenchmarksMetaData(change: MeasuresChange): any {
-    const metaData = {};
+    return {
+        isIcdImpacted: change['icdImpacted'] ? !!change['icdImpacted'].length :  false,
+        isClinicalGuidelineChanged: change['clinicalGuidelineChanged'] ? !!change['clinicalGuidelineChanged'].length :  false,
+    };
 
 }
 
