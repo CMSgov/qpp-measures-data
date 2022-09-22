@@ -8,6 +8,9 @@ Red='\033[0;31m'
 # This script is not made to work for years prior to 2023.
 if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
 
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
   # Update the measures-data, if there are any updates:
   node dist/measures/$currentPerformanceYear/update-measures.js \
     $currentPerformanceYear

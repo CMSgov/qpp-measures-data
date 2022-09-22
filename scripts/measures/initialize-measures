@@ -10,6 +10,9 @@ DIR="measures/${newPerformanceYear}/"
 if [ -d "$DIR" ]; then
   echo -e "${Red}/measures/${newPerformanceYear}/ already exists. Canceling initialization."
 else
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
   echo -e "Cloning measures-data and schema..."
   cp -r measures/$previousPerformanceYear measures/$newPerformanceYear
 
@@ -31,7 +34,7 @@ else
   cp util/measures/$previousPerformanceYear/qcdr-strata.csv util/measures/$newPerformanceYear/
   cp util/measures/$previousPerformanceYear/quality-strata.csv util/measures/$newPerformanceYear/
 
-  echo -e "Compiling Typescript..."
+  echo -e "Compiling Typescript with new files..."
   tsc -p .
 
   echo -e "${Green}Measures year ${newPerformanceYear} initialized."
