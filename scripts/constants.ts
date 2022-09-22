@@ -16,7 +16,6 @@ export const IA_CSV_COLUMN_NAMES = {
 
 export const PI_CSV_COLUMN_NAMES = {
     ...BASE_CSV_COLUMN_NAMES,
-    'required': 'required',
     'isRequired': 'required',
     'metricType': 'name',
     'isBonus': 'bonus',

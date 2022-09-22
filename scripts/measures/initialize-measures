@@ -20,7 +20,10 @@ else
   node dist/measures/initialize-measures-data.js $newPerformanceYear
 
   echo -e "Updating the performance year in the measures-schema..."
-  sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml   
+  sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml
+
+  echo -e "Updating the max performance year for updating measures..."
+  sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/update-measures
 
   echo -e "Cloning yearly scripts..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear

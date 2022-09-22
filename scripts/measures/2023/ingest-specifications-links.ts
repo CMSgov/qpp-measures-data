@@ -48,9 +48,8 @@ function getFileDataIfExists(filePath: string, isCSV: boolean = false) {
         }
         return JSON.parse(fileData);
 
-    } else {
-        return [];
     }
+    return [];
 }
 
 mergeEcqmEhrLinks(measures, getFileDataIfExists(ecqmEhrLinksPath, true));
