@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import os
+import argparse
 
 import measure_classes as mc
 from mixins import StringFormatterMixin
@@ -162,19 +163,23 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
     def run(self):
         self.setup_report_dir()
         data1, data2 = self.load_file_data()
-        measures1 = [self.process_measure(d, data1[d], file1) for d in data1]
-        measures2 = [self.process_measure(d, data2[d], file2) for d in data2]
+        measures1 = [self.process_measure(d, data1[d], self.file1) for d in data1]
+        measures2 = [self.process_measure(d, data2[d], self.file2) for d in data2]
         self.diff_list = self.append_string(
             f"# SUMMARY DIFF REPORT COMPARING {self.file1} and {self.file2}"
         )
-        self.get_missing_measures(measures1, measures2, file1, file2)
+        self.get_missing_measures(measures1, measures2, self.file1, self.file2)
         common_measures = self.get_common_measures(measures1, measures2)
         self.write_summary_data()
         self.compare_common_pairs(common_measures, self.output_dir)
 
 
 if __name__ == "__main__":
-    file1 = "qpp-single-source-2020.json"
-    file2 = "qpp-single-source-2021.json"
+    parser = argparse.ArgumentParser(description='Parse arguments')
+    parser.add_argument('--base', type=str, help='Base file expected under data ',default="qpp-single-source-2021.json")
+    parser.add_argument('--new', type=str, help='New file expected under data ',default="qpp-single-source-2022.json")
+    args = parser.parse_args()
+    file1 = args.base
+    file2 = args.new
     runner = SingleSourceJsonComparisonRunner(file1, file2)
     runner.run()

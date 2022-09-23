@@ -50,7 +50,7 @@ module.exports = (measures, benchmarkMetadata, benchmarkField = false) => {
       }
 
       if (benchmarkField) {
-        measure.benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed');
+        measure.historic_benchmarks = aggregateBenchmarks(REMOVED_METHODS, benchmark, 'removed');
       }
     }
   }

@@ -59,20 +59,30 @@ class Measure(StringFormatterMixin):
             f"\n{self.convert_list_to_bullets(sorted(list(set(common_quality_codes))))}",
             add_tab=True,
         )
-        quality_codes_only_in_po1 = [
-            x
-            for x in [
-                po2.quality_codes[0].code for po2 in sorted(self.performance_options)
-            ]
-            if x not in common_quality_codes
-        ]
-        quality_codes_only_in_po2 = [
-            x
-            for x in [
-                po2.quality_codes[0].code for po2 in sorted(other.performance_options)
-            ]
-            if x not in common_quality_codes
-        ]
+        quality_codes_only_in_po1 = list(
+            set(
+                [
+                    x
+                    for x in [
+                        po2.quality_codes[0].code
+                        for po2 in sorted(self.performance_options)
+                    ]
+                    if x not in common_quality_codes
+                ]
+            )
+        )
+        quality_codes_only_in_po2 = list(
+            set(
+                [
+                    x
+                    for x in [
+                        po2.quality_codes[0].code
+                        for po2 in sorted(other.performance_options)
+                    ]
+                    if x not in common_quality_codes
+                ]
+            )
+        )
 
         if len(quality_codes_only_in_po1):
             self.diff_list = self.append_string(
@@ -80,7 +90,7 @@ class Measure(StringFormatterMixin):
             )
         if len(quality_codes_only_in_po2):
             self.diff_list = self.append_string(
-                f"**There are {len(quality_codes_only_in_po2)} performance options in {self.year} but not {other.year}:** \n{self.convert_list_to_bullets(quality_codes_only_in_po2)}"
+                f"**There are {len(quality_codes_only_in_po2)} performance options in {other.year} but not {self.year}:** \n{self.convert_list_to_bullets(quality_codes_only_in_po2)}"
             )
 
         in_1_not_in_2 = [
@@ -109,7 +119,9 @@ class Measure(StringFormatterMixin):
             for missing in in_2_not_in_1:
                 self.diff_list = self.append_string(str(missing), add_tab=True)
 
-        common_po_pairs = sorted([(po1, po2) for po1, po2 in zip(common1, common2)])
+        common_po_pairs = sorted(
+            [(po1, po2) for po1, po2 in zip(sorted(common1), sorted(common2))]
+        )
         self.diff_list = self.append_string(
             "**Common Performance option pairs that differ in detail:**"
         )
