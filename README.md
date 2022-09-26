@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/CMSgov/qpp-measures-data.svg?branch=master)](https://travis-ci.org/CMSgov/qpp-measures-data)
 
+## Performance Year 2023 Data
+
+All Measure and Benchmark data for Performance Year 2023 is currently in progress and is subject to change.
+
 ## Quality Payment Program Measures Data Repository
 
 This is the source of truth for QPP measures data. The previous measures data API is no longer available (qpp.cms.gov/api). The transition to using qpp-measures-data as a source of truth for CMS is ongoing and this data may be subject to modifications. Stability in the API contract for qpp-measures-data is prioritized but not guaranteed.
