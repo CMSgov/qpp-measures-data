@@ -13,6 +13,7 @@ export enum measureType {
     pi = 'pi',
     cost = 'cost',
     quality = 'quality',
+    qcdr = 'qcdr',
   }
 
 interface baseMeasuresChange {
@@ -47,17 +48,18 @@ interface Cost_MeasuresChange extends baseMeasuresChange {
     submissionMethods?: string[],
 };
 
-interface Quality_MeasuresChange extends baseMeasuresChange {
+interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     nqfId?: string,
+    nationalQualityStrategyDomain?: string,
     isHighPriority?: boolean,
     isInverse?: boolean,
     isRiskAdjusted?: boolean,
     primarySteward?: string,
-    allowedVendors?: string[],
+    measureType?: string,
     allowedPrograms?: string[],
     eMeasureId?: string,
     nqfEMeasureId?: string,
-    measureSets?: string[],
+    isRegistryMeasure?: boolean,
     metricType?: string,
     submissionMethods?: string[],
     overallAlgorithm?: string,
@@ -66,7 +68,15 @@ interface Quality_MeasuresChange extends baseMeasuresChange {
     icdImpacted?: string[],
 };
 
-export type MeasuresChange = IA_MeasuresChange | PI_MeasuresChange | Cost_MeasuresChange | Quality_MeasuresChange;
+interface Quality_MeasuresChange extends Base_Quality_MeasuresChange {
+    measureSets?: string[],
+};
+
+interface QCDR_MeasuresChange extends Base_Quality_MeasuresChange {
+    allowedVendors?: string[],
+};
+
+export type MeasuresChange = IA_MeasuresChange | PI_MeasuresChange | Cost_MeasuresChange | Base_Quality_MeasuresChange;
 
 const baseValidationSchemaProperties = {
     measureId: { type: 'string' },
@@ -77,6 +87,41 @@ const baseValidationSchemaProperties = {
     firstPerformanceYear: { type: 'number', nullable: true },
 }
 
+const baseQualitySchemaProperties = {
+    ...baseValidationSchemaProperties,
+    nqfId: { type: 'string', nullable: true },
+    nationalQualityStrategyDomain: { type: 'string', nullable: true },
+    isHighPriority: { type: 'boolean', nullable: true },
+    isInverse: { type: 'boolean', nullable: true },
+    isRiskAdjusted: { type: 'boolean', nullable: true },
+    primarySteward: { type: 'string', nullable: true },
+    measureType: { type: 'string', nullable: true },
+    allowedPrograms: { type: 'array', items: { type: 'string', enum: Object.values(Constants.ALLOWED_PROGRAMS) }, nullable: true },
+    eMeasureId: { type: 'string', nullable: true },
+    nqfEMeasureId: { type: 'string', nullable: true },
+    isRegistryMeasure: { type: 'boolean', nullable: true },
+    metricType: { type: 'string', enum: Constants.METRIC_TYPES, nullable: true },
+    submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
+    overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
+    clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
+    historic_benchmarks: { type: 'object', nullable: true },
+    icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
+};
+
+const baseQualityRequiredFields = [
+    'measureId',
+    'category',
+    'title',
+    'description',
+    'primarySteward',
+    'measureType',
+    'isHighPriority',
+    'submissionMethods',
+    'isInverse',
+    'metricType',
+    'allowedPrograms',
+];
+
 const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
     type: 'object',
     properties: {
@@ -84,6 +129,7 @@ const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
         weight: { type: 'string', nullable: true },
         subcategoryId: { type: 'string', nullable: true },
     },
+    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<IA_MeasuresChange>;
 
@@ -100,6 +146,7 @@ const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
         weight: { type: 'string', nullable: true },
         subcategoryId: { type: 'string', nullable: true },
     },
+    required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<PI_MeasuresChange>;
 
@@ -118,57 +165,63 @@ const cost_validationSchema: JSONSchemaType<Cost_MeasuresChange> = {
 const quality_validationSchema: JSONSchemaType<Quality_MeasuresChange> = {
     type: 'object',
     properties: {
-        ...baseValidationSchemaProperties,
-        nqfId: { type: 'string', nullable: true },
-        nationalQualityStrategyDomain: { type: 'string', nullable: true },
-        isHighPriority: { type: 'boolean', nullable: true },
-        isInverse: { type: 'boolean', nullable: true },
-        isRiskAdjusted: { type: 'boolean', nullable: true },
-        primarySteward: { type: 'string', nullable: true },
-        allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
-        allowedPrograms: { type: 'array', items: { type: 'string', enum: Object.values(Constants.ALLOWED_PROGRAMS) }, nullable: true },
-        eMeasureId: { type: 'string', nullable: true },
-        nqfEMeasureId: { type: 'string', nullable: true },
+        ...baseQualitySchemaProperties,
         measureSets: { type: 'array', items: { type: 'string' }, nullable: true },
-        isRegistryMeasure: { type: 'boolean', nullable: true },
-        metricType: { type: 'string', enum: Constants.METRIC_TYPES, nullable: true },
-        submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
-        overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
-        clinicalGuidelineChanged: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
-        historic_benchmarks: { type: 'object', nullable: true },
-        icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
     },
     required: ['measureId', 'category'],
     additionalProperties: false,
 } as JSONSchemaType<Quality_MeasuresChange>;
 
-export function initValidation(type: measureType, requireAll: boolean) {
-    return ajv.compile(getSchema(type, requireAll))
+const qcdr_validationSchema: JSONSchemaType<QCDR_MeasuresChange> = {
+    type: 'object',
+    properties: {
+        ...baseQualitySchemaProperties,
+        allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
+    },
+    required: ['measureId', 'category'],
+    additionalProperties: false,
+} as JSONSchemaType<QCDR_MeasuresChange>;
+
+export function initValidation(type: measureType, isNewMeasure: boolean = false) {
+    return ajv.compile(getSchema(type, isNewMeasure))
 }
 
-function createSchema(schema: any, requireAll: boolean) {
-    if (requireAll) {
-        return {
-            ...schema,
-            required: Object.keys(schema.properties),
+function createSchema(schema: any, isNewMeasure: boolean) {
+    // If it's a new measure, some fields are required beyond the category and measureId.
+    if (isNewMeasure) {
+        switch (typeof schema) {
+            case typeof quality_validationSchema:
+                return {
+                    ...schema,
+                    required: [...baseQualityRequiredFields, 'measureSets'],
+                };
+            case typeof qcdr_validationSchema:
+                return {
+                    ...schema,
+                    required: [...baseQualityRequiredFields, 'allowedVendors', 'isRiskAdjusted'],
+                };
+            default:
+                return {
+                    ...schema,
+                    required: Object.keys(schema.properties),
+                };
         }
     } else {
-        return {
-            ...schema,
-            required: ['measureId', 'category'],
-        }
+        return schema;
     }
 }
 
-function getSchema(type: measureType, requireAll: boolean) {
+function getSchema(type: measureType, isNewMeasure: boolean) {
     switch (type) {
         case measureType.ia:
-            return createSchema(ia_validationSchema, requireAll);
+            return createSchema(ia_validationSchema, isNewMeasure);
         case measureType.pi:
-            return createSchema(pi_validationSchema, requireAll);
+            return createSchema(pi_validationSchema, isNewMeasure);
         case measureType.cost:
-            return createSchema(cost_validationSchema, requireAll);
+            return createSchema(cost_validationSchema, isNewMeasure);
         case measureType.quality:
-            return createSchema(quality_validationSchema, requireAll);
+            return createSchema(quality_validationSchema, false);
+        case measureType.qcdr:
+            return createSchema(qcdr_validationSchema, false);
     }
 }

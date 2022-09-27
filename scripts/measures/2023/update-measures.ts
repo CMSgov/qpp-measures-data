@@ -93,6 +93,13 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
 
     //fields with 'Yes' or 'No'
     if (Constants.BOOLEAN_CSV_FIELDS.includes(columnName)) {
+        //risk Adjusted
+        if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.isRiskAdjusted && category.trim() === 'Quality') {
+            if (csvRow[columnName].trim() === 'Y') {
+                warning('Quality measures cannot be Risk Adjusted. Setting isRiskAdjusted to false.');
+                return false;
+            }
+        }
         return csvFieldToBoolean(csvRow[columnName]);
     }
     //fields with comma seperated values.
@@ -108,12 +115,14 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
             }, {});
         }
         return rawArray;
-    } 
+    }
     //metric type
     else if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.metricType) {
         warning('Metric Type was changed. Was the strata file also updated to match?');
         if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim() === 'QCDR') {
             return 'registrySinglePerformanceRate';
+        } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim() === 'QCDR') {
+            return 'registryMultiPerformanceRate';
         }
     }
     //Overall Algorithm (Calculation Type)
@@ -197,6 +206,16 @@ function updateMeasuresWithChangeFile(fileName: string) {
             } else if (change.yearRemoved) {
                 numOfFailures++;
                 error(`'${fileName}': Year Removed is not current year.`);
+            } else if (isNew && change['metricType'].includes('ultiPerformanceRate') && !change['overallAlgorithm']) {
+                numOfFailures++;
+                error(`'${fileName}': New multiPerformanceRate measures require a Calculation Type.`);
+            } else if (
+                isNew && 
+                (change['submissionMethods']?.includes('electronicHealthRecord')) && 
+                !change['eMeasureId']
+                ) {
+                numOfFailures++;
+                error(`'${fileName}': CMS eCQM ID is required if one of the collection types is eCQM.`);
             } else if (validate(change)) {
                 updateMeasure(change);
                 if(isNew) {
