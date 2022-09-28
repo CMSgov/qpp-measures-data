@@ -33,6 +33,7 @@ const changelog = JSON.parse(
 
 //to determine if any new changes need to be written to measures-data.json.
 let numOfNewChangeFiles = 0;
+let numOfFailures = 0;
 
 function updateMeasures() {
     const files = fs.readdirSync(path.join(appRoot+'', changesPath));
@@ -77,7 +78,7 @@ function convertCsvToJson(fileName: string) {
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
           if(row[columnName]) {
-            measure[measureKeyName] = mapInput(columnName, row, measure['category'], csvColumnNames);
+            measure[measureKeyName] = mapInput(columnName, row, measure['category']);
           }
         });
         
@@ -85,7 +86,7 @@ function convertCsvToJson(fileName: string) {
     });
 }
 
-function mapInput(columnName: string, csvRow: any, category: string, csvColumnNames: any) {
+function mapInput(columnName: string, csvRow: any, category: string) {
     //remove this field if no change requests are made for it.
     if(csvRow[columnName] === '') {
         return undefined;
@@ -104,9 +105,9 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
     }
     //fields with comma seperated values.
     else if (Constants.ARRAY_CSV_FIELDS.includes(columnName)) {
-        const rawArray = csvFieldToArray(csvRow[columnName], columnName, csvColumnNames);
+        const rawArray = csvFieldToArray(csvRow[columnName], columnName);
         //map historic_benchmarks
-        if (columnName ===Constants.QUALITY_CSV_COLUMN_NAMES.historic_benchmarks) {
+        if (rawArray && columnName ===Constants.QUALITY_CSV_COLUMN_NAMES.historic_benchmarks) {
             return rawArray.reduce((obj, item) => {
                 return {
                     ...obj,
@@ -116,9 +117,16 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
         }
         return rawArray;
     }
+    //measure type
+    else if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
+        return mapItem(
+            columnName,
+            Constants.MEASURE_TYPES,
+            csvRow[columnName],
+        );
+    }
     //metric type
     else if (columnName === Constants.QUALITY_CSV_COLUMN_NAMES.metricType) {
-        warning('Metric Type was changed. Was the strata file also updated to match?');
         if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim() === 'QCDR') {
             return 'registrySinglePerformanceRate';
         } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim() === 'QCDR') {
@@ -137,9 +145,6 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
         columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear ||
         columnName === Constants.BASE_CSV_COLUMN_NAMES.yearRemoved
     ) {
-        if (columnName === Constants.BASE_CSV_COLUMN_NAMES.firstPerformanceYear) {
-            warning('Year Added was changed. Was this deliberate?');
-        }
         return +csvRow[columnName];
     }
 
@@ -147,36 +152,55 @@ function mapInput(columnName: string, csvRow: any, category: string, csvColumnNa
 }
 
 //converts field 'apples, ice cream, banana' to ['apples', 'icecream', 'banana'].
-function csvFieldToArray(fieldValue: string, fieldHeader: string, csvColumnNames: string[]) {
-    const arrayedField: string[] = fieldValue.split(',');
+function csvFieldToArray(fieldValue: string, fieldHeader: string) {
+    let arrayedField: string[] = fieldValue.split(',');
 
     //.replace(/\s/g, "") removes all whitespace.
-    if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureType) {
-        for (let i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.MEASURE_TYPES[arrayedField[i].toLowerCase().replace(/\s/g, "")];
-        }
+    // for (let i = 0; i < arrayedField.length; i++) {
+    //     arrayedField[i] = arrayedField[i].replace(/\s/g, "");
+    // }
+
+    if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
+        arrayedField = mapArrayItem(
+            fieldHeader,
+            Constants.MEASURE_SETS,
+            arrayedField,
+        );
     }
-    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.measureSets) {
-        for (let i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.MEASURE_SETS[arrayedField[i].replace(/\s/g, "")];
-        }
-    }
-    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {        
-        for (let i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.ALLOWED_PROGRAMS[arrayedField[i].replace(/\s/g, "")];
-        }
+    else if (fieldHeader === Constants.QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {
+        arrayedField = mapArrayItem(
+            fieldHeader,
+            Constants.ALLOWED_PROGRAMS,
+            arrayedField,
+        );
     }
     else if (Constants.COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
-        for (let i = 0; i < arrayedField.length; i++) {
-            arrayedField[i] = Constants.COLLECTION_TYPES[arrayedField[i].trim()];
-            
-        }
-    }
-
-    for (let i = 0; i < arrayedField.length; i++) {
-        arrayedField[i] = arrayedField[i].trim();
+        arrayedField = _.uniq(mapArrayItem(
+            fieldHeader,
+            Constants.COLLECTION_TYPES,
+            arrayedField,
+        ));
     }
     return arrayedField;
+}
+
+function mapArrayItem(field: string, map: any, values: string[]) {
+    for (let i = 0; i < values.length; i++) {
+        values[i] = mapItem(field, map, values[i]);
+    }
+
+    return values;
+}
+
+function mapItem(field: string, map: any, value: string) {
+    // .replace(/\s/g, "") removes all whitespace.
+    if (map[value.replace(/\s/g, "")]) {
+        return map[value.replace(/\s/g, "")];
+    }
+    else {
+        numOfFailures++;
+        error(`Invalid Value in '${field}' field: ${value}`);
+    }
 }
 
 //converts field 'Yes' to True and 'No' to False.
@@ -191,7 +215,6 @@ function csvFieldToBoolean(field: string) {
 
 function updateMeasuresWithChangeFile(fileName: string) {
     const changeData = convertCsvToJson(fileName);
-    let numOfFailures = 0;
 
     for (let i = 0; i < changeData.length; i++) {
         const change = changeData[i] as MeasuresChange;
@@ -199,10 +222,26 @@ function updateMeasuresWithChangeFile(fileName: string) {
         if(change.category) {
             const isNew = isNewMeasure(change.measureId);
             //validation on the change request format. Validation on the updated measures data happens later in update-measures.
-            const validate = initValidation(measureType[change.category], isNew);            
+            const validate = initValidation(measureType[change.category], isNew);   
+            
+            if (!isNew && change.firstPerformanceYear) {
+                warning(`'${fileName}': Year Added was changed. Was this deliberate?`);
+            }
+            if (!isNew && change['isInverse']) {
+                warning(`'${fileName}': 'isInverse' was changed. Was this deliberate?`);
+            }
+            if (!isNew && change['metricType']) {
+                warning(`'${fileName}': Metric Type was changed. Was the strata file also updated to match?`);
+            }
+            if (!isNew && change['overallAlgorithm']) {
+                warning(`'${fileName}': 'Calculation Type' was changed. Was the strata file also updated to match?`);
+            }
 
             if (change.yearRemoved && change.yearRemoved == +performanceYear) {
                 deleteMeasure(change.measureId);
+            } else if (outcomeHighPriorityCheck(change)) {
+                numOfFailures++;
+                error(`'${fileName}': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
             } else if (change.yearRemoved) {
                 numOfFailures++;
                 error(`'${fileName}': Year Removed is not current year.`);
@@ -216,7 +255,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
                 ) {
                 numOfFailures++;
                 error(`'${fileName}': CMS eCQM ID is required if one of the collection types is eCQM.`);
-            } else if (validate(change)) {
+            } else if (numOfFailures === 0 && validate(change)) {
                 updateMeasure(change);
                 if(isNew) {
                     info(`New measure '${change.measureId}' added.`);
@@ -237,6 +276,19 @@ function updateMeasuresWithChangeFile(fileName: string) {
     } else {
         error(`Some changes failed for file '${fileName}'. More info logged above.`);
     }
+    numOfFailures = 0;
+}
+
+function outcomeHighPriorityCheck(change: MeasuresChange): boolean {
+    const currentMeasure = _.find(measuresJson, {'measureId': change.measureId});
+
+    const type: string = change['measureType'] ? change['measureType'] : currentMeasure?.measureType;
+    const isHighPriority: string = change['isHighPriority'] ? change['isHighPriority'] : currentMeasure?.isHighPriority;
+
+    if (type?.includes('utcome') && !isHighPriority) {
+        return false;
+    }
+    return true;
 }
 
 function updateChangeLog(fileName: string) {

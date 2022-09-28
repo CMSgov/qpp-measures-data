@@ -49,6 +49,10 @@ New measures and updates to old measures are handled the same as each other. A C
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run init:measures $YEAR`.
+
+The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
+
 ### Importing Measures from a CSV File
 
 To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV UTF-8 (Comma delimited) (.csv)`. This will keep Unknown Characters out of the data set.
