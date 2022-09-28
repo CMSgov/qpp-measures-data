@@ -14,7 +14,7 @@ export enum measureType {
     cost = 'cost',
     quality = 'quality',
     qcdr = 'qcdr',
-  }
+}
 
 interface baseMeasuresChange {
     measureId: string,
@@ -76,7 +76,12 @@ interface QCDR_MeasuresChange extends Base_Quality_MeasuresChange {
     allowedVendors?: string[],
 };
 
-export type MeasuresChange = IA_MeasuresChange | PI_MeasuresChange | Cost_MeasuresChange | Base_Quality_MeasuresChange;
+export type MeasuresChange =
+    IA_MeasuresChange &
+    PI_MeasuresChange &
+    Cost_MeasuresChange &
+    Quality_MeasuresChange &
+    QCDR_MeasuresChange;
 
 const baseValidationSchemaProperties = {
     measureId: { type: 'string' },
