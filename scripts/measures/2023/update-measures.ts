@@ -91,14 +91,14 @@ function updateMeasuresWithChangeFile(fileName: string) {
                 if (!isOutcomeHighPriority(change)) {
                     throw new DataValidationError(fileName, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
-                if (change.yearRemoved) {
+                if (change.yearRemoved && change.yearRemoved !== +performanceYear) {
                     throw new DataValidationError(fileName, 'Year Removed is not current year.');
                 }
                 if (isNew && change.metricType?.includes('ultiPerformanceRate') && !change.overallAlgorithm) {
                     throw new DataValidationError(fileName, 'New multiPerformanceRate measures require a Calculation Type.');
                 }
 
-                if (change.yearRemoved && change.yearRemoved == +performanceYear) {
+                if (change.yearRemoved) {
                     deleteMeasure(change.measureId);
                 } else if (validate(change)) {
                     updateMeasure(change);
