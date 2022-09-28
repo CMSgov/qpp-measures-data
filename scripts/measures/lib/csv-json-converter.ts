@@ -72,7 +72,9 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         case QUALITY_CSV_COLUMN_NAMES.overallAlgorithm:
             if (csvRow[QUALITY_CSV_COLUMN_NAMES.metricType].includes('inglePerformanceRate')) return;
             break;
-        case BASE_CSV_COLUMN_NAMES.firstPerformanceYear || BASE_CSV_COLUMN_NAMES.yearRemoved:
+        case BASE_CSV_COLUMN_NAMES.firstPerformanceYear:
+            return +csvRow[columnName];
+        case BASE_CSV_COLUMN_NAMES.yearRemoved:
             return +csvRow[columnName];
     }
 
