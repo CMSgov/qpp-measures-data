@@ -68,10 +68,10 @@ function mapInput(columnName: string, csvRow: any, category: string) {
             } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim() === 'QCDR') {
                 return 'registryMultiPerformanceRate';
             }
-
+            break;
         case QUALITY_CSV_COLUMN_NAMES.overallAlgorithm:
             if (csvRow[QUALITY_CSV_COLUMN_NAMES.metricType].includes('inglePerformanceRate')) return;
-
+            break;
         case BASE_CSV_COLUMN_NAMES.firstPerformanceYear || BASE_CSV_COLUMN_NAMES.yearRemoved:
             return +csvRow[columnName];
     }
@@ -85,7 +85,7 @@ function mapInput(columnName: string, csvRow: any, category: string) {
                 return false;
             }
         }
-        return csvFieldToBoolean(csvRow[columnName], columnName);
+        return csvFieldToBoolean(columnName, csvRow[columnName]);
     }
 
     //fields with comma seperated values.

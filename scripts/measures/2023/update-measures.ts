@@ -88,7 +88,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
                     }
                 }
 
-                if (outcomeHighPriorityCheck(change)) {
+                if (!isOutcomeHighPriority(change)) {
                     throw new DataValidationError(fileName, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
                 if (change.yearRemoved) {
@@ -123,7 +123,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
     }
 }
 
-function outcomeHighPriorityCheck(change: MeasuresChange): boolean {
+function isOutcomeHighPriority(change: MeasuresChange): boolean {
     const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
 
     const type: string = change.measureType ? change.measureType : currentMeasure?.measureType;
