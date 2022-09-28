@@ -67,7 +67,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
                 throw new DataValidationError(fileName, 'Category is required.');
             } else {
                 const isNew = isNewMeasure(change.measureId);
-                //validation on the change request format. Validation on the updated measures data happens later in update-measures.
+                //validation on the change request. Validation on the updated measures data happens later in update-measures.
                 const validate = initValidation(measureType[change.category], isNew);
 
                 if (!isNew) {
