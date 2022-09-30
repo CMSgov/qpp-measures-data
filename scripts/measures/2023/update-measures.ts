@@ -31,8 +31,7 @@ const changelog = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', `${changesPath}changes.meta.json`), 'utf8')
 );
 
-
-function updateMeasures() {
+export function updateMeasures() {
     //to determine if any new changes need to be written to measures-data.json.
     let numOfNewChangeFiles = 0;
 
@@ -55,7 +54,7 @@ function updateMeasures() {
     }
 }
 
-function updateMeasuresWithChangeFile(fileName: string) {
+export function updateMeasuresWithChangeFile(fileName: string) {
     const csv = fs.readFileSync(path.join(appRoot + '', `${changesPath}${fileName}`), 'utf8');
     try {
         const changeData = convertCsvToJson(csv);
@@ -123,7 +122,7 @@ function updateMeasuresWithChangeFile(fileName: string) {
     }
 }
 
-function isOutcomeHighPriority(change: MeasuresChange): boolean {
+export function isOutcomeHighPriority(change: MeasuresChange): boolean {
     const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
 
     const type: string = change.measureType ? change.measureType : currentMeasure?.measureType;
@@ -135,18 +134,18 @@ function isOutcomeHighPriority(change: MeasuresChange): boolean {
     return true;
 }
 
-function updateChangeLog(fileName: string) {
+export function updateChangeLog(fileName: string) {
     changelog.push(fileName);
     writeToFile(changelog, `${changesPath}changes.meta.json`);
 }
 
-function writeToFile(file: any, filePath: string) {
+export function writeToFile(file: any, filePath: string) {
     fs.writeFile(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2), function writeJSON(err) {
         if (err) return console.log(err);
     });
 }
 
-function deleteMeasure(measureId: string) {
+export function deleteMeasure(measureId: string) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
     if (measureIndex > -1) {
         measuresJson.splice(measureIndex, 1);
@@ -156,7 +155,7 @@ function deleteMeasure(measureId: string) {
     }
 }
 
-function updateBenchmarksMetaData(change: MeasuresChange): any {
+export function updateBenchmarksMetaData(change: MeasuresChange): any {
     return {
         isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
         isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
@@ -164,7 +163,7 @@ function updateBenchmarksMetaData(change: MeasuresChange): any {
 
 }
 
-function updateMeasure(change: MeasuresChange) {
+export function updateMeasure(change: MeasuresChange) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
             measuresJson[i] = {
@@ -177,7 +176,7 @@ function updateMeasure(change: MeasuresChange) {
     }
 }
 
-function isNewMeasure(measureId: string) {
+export function isNewMeasure(measureId: string) {
     const measure = _.find(measuresJson, { 'measureId': measureId });
     return !measure;
 }
