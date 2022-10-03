@@ -92,3 +92,80 @@ exports.getClinicalClusterData = function(performanceYear = 2017) {
 exports.getClinicalClusterSchema = function(performanceYear = 2017) {
   return YAML.load(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'));
 };
+
+/**
+ * @return {Array<MVP>}
+ */
+exports.getMVPData = function(performanceYear = 2023) {
+  let mvpData = [];
+  let measuresData = [];
+  try {
+    mvpData = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'mvps', performanceYear.toString(), 'mvps.json')));
+    measuresData = this.getMeasuresData(performanceYear);
+  } catch (e) {
+    console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
+  }
+
+  mvpData.forEach(mvp => {
+    mvp.qualityMeasures = [];
+    mvp.iaMeasures = [];
+    mvp.costMeasures = [];
+    mvp.foundationPiMeasures = [];
+    mvp.foundationQualityMeasures = [];
+
+    // Hydrate quality measures
+    mvp.qualityMeasureIds.forEach(mId => {
+      const measure = measuresData.find(m => m.measureId === mId);
+      if (measure) {
+        mvp.qualityMeasures.push(measure);
+      }
+    });
+    delete mvp.qualityMeasureIds;
+
+    // Hydrate IA measures
+    mvp.iaMeasureIds.forEach(mId => {
+      const measure = measuresData.find(m => m.measureId === mId);
+      if (measure) {
+        mvp.iaMeasures.push(measure);
+      }
+    });
+    delete mvp.iaMeasureIds;
+
+    // Hydrate cost measures
+    mvp.costMeasureIds.forEach(mId => {
+      const measure = measuresData.find(m => m.measureId === mId);
+      if (measure) {
+        mvp.costMeasures.push(measure);
+      }
+    });
+    delete mvp.costMeasureIds;
+
+    // Hydrate foundation PI measures
+    mvp.foundationPiMeasureIds.forEach(mId => {
+      const measure = measuresData.find(m => m.measureId === mId);
+      if (measure) {
+        mvp.foundationPiMeasures.push(measure);
+      }
+    });
+    delete mvp.foundationPiMeasureIds;
+
+    // Hydrate foundation quality measures
+    mvp.foundationQualityMeasureIds.forEach(mId => {
+      const measure = measuresData.find(m => m.measureId === mId);
+      if (measure) {
+        mvp.foundationQualityMeasures.push(measure);
+      }
+    });
+    delete mvp.foundationQualityMeasureIds;
+  });
+
+  return mvpData;
+};
+
+/**
+ * @return {{}} - Object representation of the MVP Schema
+ */
+exports.getMVPSchema = function(performanceYear = 2023) {
+  return YAML.load(path.join(__dirname, 'mvps', performanceYear.toString(), 'mvps-schema.yaml'));
+};
