@@ -24,6 +24,7 @@ import {
 import { InvalidValueError } from './errors';
 
 export function convertCsvToJson(csv: any) {
+    
     const parsedCsv = parse(csv, { columns: true });
 
     return parsedCsv.map((row: any) => {

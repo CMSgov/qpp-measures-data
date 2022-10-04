@@ -15,7 +15,8 @@
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "pretest": "eslint test util scripts index.js",
-    "pre-commit": "tools/pre-commit.sh"
+    "pre-commit": "tools/pre-commit.sh",
+    "jest:cov": "TS_NODE_FILES=true NODE_OPTIONS='--max-old-space-size=3072' jest --coverage --coverage-prodivder=v8 --runInBand"
   },
   "license": "MIT",
   "devDependencies": {
@@ -37,6 +38,7 @@
     "jest": "^29.1.1",
     "lodash": "^4.17.21",
     "mocha": "5.2.0",
+    "mock-fs": "^5.1.4",
     "nyc": "^15.0.0",
     "pdf-to-text": "0.0.6",
     "request": "2.87.0",

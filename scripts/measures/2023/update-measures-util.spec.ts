@@ -1,0 +1,427 @@
+import fs from 'fs';
+import path from 'path';
+import appRoot from 'app-root-path';
+import mockFS from 'mock-fs';
+
+import * as UpdateMeasuresUtil from './update-measures-util';
+import * as csvConverter from '../lib/csv-json-converter';
+import * as logger from '../../logger';
+import _ from 'lodash';
+import { DataValidationError } from '../lib/errors';
+import { MeasuresChange } from '../lib/validate-change-requests';
+
+const allowedIaChange = {
+    title: 'Use of telehealth services that expand practice access',
+    description: 'Create and implement a standardized process for providing telehealth services to expand access to care.',
+    measureId: 'IA_EPA_2',
+    weight: 'medium',
+    subcategoryId: 'expandedPracticeAccess'
+};
+
+const allowedQualityChange = {
+    measureId: '001',
+    firstPerformanceYear: 2020,
+    isInverse: false,
+    metricType: 'singlePerformanceRate',
+    overallAlgorithm: 'overallStratumOnly',
+}
+
+const newQualityMeasure = {
+    measureId: 'NewId',
+    title: 'titleText',
+    description: 'descriptionText',
+    primarySteward: 'stewardId',
+    measureType: 'process',
+    isHighPriority: false,
+    submissionMethods: ['quality'],
+    allowedPrograms: ['mips'],
+    firstPerformanceYear: 2023,
+    isInverse: false,
+    metricType: 'singlePerformanceRate',
+}
+
+const measuresJson: any[] = JSON.parse(
+    fs.readFileSync(path.join(appRoot + '', `measures/2023/measures-data.json`), 'utf8')
+);
+
+describe('#update-measures-util', () => {
+    describe('updateMeasuresWithChangeFile', () => {
+        let volatileMeasures: any;
+        beforeEach(() => {
+            volatileMeasures = [...measuresJson];
+        });
+        let updateSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
+        beforeEach(() => {
+
+            mockFS({
+                'fakepath': {
+                    'test.csv': 'fakevalue',
+                },
+            });
+            updateSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasure');
+            deleteSpy = jest.spyOn(UpdateMeasuresUtil, 'deleteMeasure');
+            jest.spyOn(UpdateMeasuresUtil, 'updateChangeLog').mockImplementation(jest.fn());
+
+        });
+
+        afterEach(() => {
+            mockFS.restore();
+            jest.restoreAllMocks();
+        });
+
+        it('successfully updates IA measure', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedIaChange,
+                category: 'ia',
+            }]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('throws when category is not included', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([allowedIaChange]);
+
+            const loggerSpy = jest.spyOn(logger, 'error');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`'test.csv': Category is required.`);
+        });
+
+        it('logs warnings when certain fields are changed', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedQualityChange,
+                category: 'quality',
+            }]);
+
+            const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+            const infoSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'Year Added' was changed. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'isInverse' was changed. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'Calculation Type' was changed. Was the strata file also updated to match?`);
+
+            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('throws if eCQM but has no eMeasureId', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: 'USWR32',
+                submissionMethods: ['electronicHealthRecord', 'quality'],
+                category: 'qcdr',
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': CMS eCQM ID is required if one of the collection types is eCQM.`);
+        });
+
+        it('throws if outcome measure is not High Priority', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: '005',
+                measureType: 'outcome',
+                category: 'quality',
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
+        });
+
+        it('throws if deleting a measure for the wrong year', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: '005',
+                yearRemoved: 2016,
+                category: 'quality',
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': Year Removed is not current year.`);
+        });
+
+        it('throws if new multiPerfRate measure does not include a Calc Type', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...newQualityMeasure,
+                category: 'quality',
+                metricType: 'multiPerformanceRate',
+
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': New multiPerformanceRate measures require a Calculation Type.`);
+        });
+
+        it('deletes measure', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: '005',
+                yearRemoved: 2023,
+                category: 'quality',
+            }]);
+
+            const loggerSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('creates new measure', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...newQualityMeasure,
+                category: 'quality',
+
+            }]);
+
+            const loggerSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`New measure 'NewId' added.`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('logs any validation errors for bad fields', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: '005',
+                badField: false,
+                category: 'quality',
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': Validation Failed. More info logged above.`);
+            expect(logSpy).toBeCalledWith([{
+                instancePath: '',
+                keyword: 'additionalProperties',
+                message: 'must NOT have additional properties',
+                params: {
+                    additionalProperty: 'badField'
+                },
+                schemaPath: '#/additionalProperties',
+            }]);
+        });
+
+        it('logs any validation errors for bad data', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                measureId: '005',
+                metricType: 'baddata',
+                category: 'quality',
+            }]);
+
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(errorSpy).toBeCalledWith(`'test.csv': Validation Failed. More info logged above.`);
+            expect(logSpy).toBeCalledWith([{
+                instancePath: '/metricType',
+                keyword: 'enum',
+                message: 'must be equal to one of the allowed values',
+                params: {
+                    allowedValues: [
+                        'registrySinglePerformanceRate',
+                        'singlePerformanceRate',
+                        'multiPerformanceRate',
+                        'nonProportion',
+                        'costScore',
+                    ],
+                },
+                schemaPath: '#/properties/metricType/enum',
+            }]);
+        });
+    });
+
+    describe('updateChangeLog', () => {
+        beforeEach(() => {
+            mockFS({
+                'fakepath': {
+                    'changes.meta.json': '[]',
+                },
+            });
+        });
+
+        afterEach(() => {
+            mockFS.restore();
+        });
+
+        it('writes to the change file', () => {
+            expect(() => {
+                UpdateMeasuresUtil.updateChangeLog('test.csv', 'fakepath/');
+            }).not.toThrow();
+        });
+    });
+
+    describe('deleteMeasure', () => {
+        let volatileMeasures: any;
+        beforeEach(() => {
+            volatileMeasures = [...measuresJson];
+        });
+
+        it('should delete the measure if found', () => {
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            UpdateMeasuresUtil.deleteMeasure('001', volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: '001' })).toBeUndefined();
+            expect(infoSpy).toBeCalledWith(`Measure '001' removed.`);
+        });
+
+        it('should fail to delete the measure if not found', () => {
+            expect(() => {
+                UpdateMeasuresUtil.deleteMeasure('notameasureid', volatileMeasures);
+            }).toThrowError(
+                new DataValidationError('notameasureid', 'Measure not found.'),
+            );
+        });
+    });
+
+    describe('updateMeasure', () => {
+        let volatileMeasures: any;
+        beforeEach(() => {
+            volatileMeasures = [...measuresJson];
+        });
+
+        it('should update the measure if found', () => {
+            const change = {
+                measureId: '001',
+                metricType: 'testdata',
+                icdImpacted: [ 'testdata' ],
+                clinicalGuidelineChanged: [ 'testdata' ],
+            } as MeasuresChange;
+
+            UpdateMeasuresUtil.updateMeasure(change, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: '001' })).toEqual({
+                title: 'Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)',
+                eMeasureId: 'CMS122v11',
+                nqfEMeasureId: null,
+                nqfId: '0059',
+                measureId: '001',
+                description: 'Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period.',
+                nationalQualityStrategyDomain: 'Effective Clinical Care',
+                measureType: 'intermediateOutcome',
+                isHighPriority: true,
+                primarySteward: 'National Committee for Quality Assurance',
+                firstPerformanceYear: 2017,
+                lastPerformanceYear: null,
+                isInverse: true,
+                category: 'quality',
+                isRegistryMeasure: false,
+                isRiskAdjusted: false,
+                icdImpacted: [ 'testdata' ],
+                isClinicalGuidelineChanged: true,
+                isIcdImpacted: true,
+                clinicalGuidelineChanged: [ 'testdata' ],
+                metricType: 'testdata',
+                allowedPrograms: [
+                  'mips',
+                  'pcf',
+                  'app1'
+                ],
+                submissionMethods: [
+                  'claims',
+                  'electronicHealthRecord',
+                  'cmsWebInterface',
+                  'registry'
+                ],
+                measureSets: [
+                  'endocrinology',
+                  'familyMedicine',
+                  'internalMedicine',
+                  'nephrology',
+                  'preventiveMedicine'
+                ],
+                measureSpecification: {}
+            });
+        });
+
+        it.skip('add the measure if not found', () => {
+            expect(true).toBeFalsy();
+        });
+    });
+});
