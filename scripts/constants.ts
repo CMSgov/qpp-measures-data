@@ -25,6 +25,7 @@ export const PI_CSV_COLUMN_NAMES = {
 };
 
 export const QUALITY_CSV_COLUMN_NAMES = {
+    'category': 'Category',
     'title': 'Measure Title',
     'eMeasureId': 'CMS eCQM ID',
     'nqfEMeasureId': 'eCQM NQF',
@@ -65,6 +66,8 @@ export const BOOLEAN_CSV_FIELDS = [
     '*** Inverse',
     'Is Risk Adjusted ',
     'High Priority',
+    'bonus',
+    'required',
 ]
 
 export const METRIC_TYPES = [
