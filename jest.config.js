@@ -20,5 +20,4 @@ module.exports = {
     'node_modules',
     'coverage',
   ],
-  testEnvironment: 'node',
 };
