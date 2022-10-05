@@ -18,6 +18,7 @@ module.exports = {
     'dist',
     'test',
     'node_modules',
+    'coverage',
   ],
   testEnvironment: 'node',
 };
