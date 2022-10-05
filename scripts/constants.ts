@@ -29,17 +29,17 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'eMeasureId': 'CMS eCQM ID',
     'nqfEMeasureId': 'eCQM NQF',
     'nqfId': 'NQF',
-    'measureId': 'Quality Number (#) / QCDR #',
+    'measureId': '*** Quality Number (#) / QCDR #',
     'primarySteward': 'Primary Measure Steward',
     'allowedVendors': 'Allowed QCDR Vendor ID',
     'description': 'Measure Description',
-    'measureType': 'Measure Type  ',
+    'measureType': '*** Measure Type  ',
     'isHighPriority': 'High Priority',
-    'submissionMethods': 'Collection Type(s) for Submission',
+    'submissionMethods': '*** Collection Type(s) for Submission',
     'measureSets': 'Specialty Measure Sets',
-    'isInverse': 'Inverse',
-    'metricType': 'Metric Type',
-    'overallAlgorithm': 'Calculation Type',
+    'isInverse': '*** Inverse',
+    'metricType': '*** Metric Type',
+    'overallAlgorithm': '*** Calculation Type',
     'clinicalGuidelineChanged': 'Collection Type(s) where Suppressed',
     'historic_benchmarks': 'Collection Type(s) where Historic Benchmark Removed',
     'icdImpacted': 'Collection Type(s) where Truncated',
@@ -52,7 +52,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
 export const ARRAY_CSV_FIELDS = [
     'substitutes',
     'exclusions',
-    'Collection Type(s) for Submission',
+    '*** Collection Type(s) for Submission',
     'Allowed QCDR Vendor ID',
     'Allowed Program(s)',
     'Specialty Measure Sets',
@@ -62,7 +62,7 @@ export const ARRAY_CSV_FIELDS = [
 ]
 
 export const BOOLEAN_CSV_FIELDS = [
-    'Inverse',
+    '*** Inverse',
     'Is Risk Adjusted ',
     'High Priority',
 ]
@@ -85,17 +85,17 @@ export const COLLECTION_TYPES_FIELDS = [
     'Collection Type(s) where Suppressed',
     'Collection Type(s) where Historic Benchmark Removed',
     'Collection Type(s) where Truncated',
-    'Collection Type(s) for Submission',
+    '*** Collection Type(s) for Submission',
 ]
 
 
 export const COLLECTION_TYPES = {
-    'Part B Claims': 'claims',
+    'PartBClaims': 'claims',
     'CSV': 'certifiedSurveyVendor',
     'eCQM': 'electronicHealthRecord',
-    'CMS WI': 'cmsWebInterface',
-    'Admin Claims': 'administrativeClaims',
-    'MIPS CQM': 'registry',
+    'CMSWI': 'cmsWebInterface',
+    'AdminClaims': 'administrativeClaims',
+    'MIPSCQM': 'registry',
     'QCDR': 'registry',
 }
 
@@ -106,13 +106,13 @@ export const ALLOWED_PROGRAMS = {
 }
 
 export const MEASURE_TYPES = {
-    'process': 'process',
-    'outcome': 'outcome',
-    'patient engagement/experience': 'patientEngagementExperience',
-    'efficiency': 'efficiency',
-    'intermediateoutcome': 'intermediateOutcome',
-    'structure': 'structure',
-    'patientreportedoutcome': 'patientReportedOutcome'
+    'Process': 'process',
+    'Outcome': 'outcome',
+    'PatientEngagement/Experience': 'patientEngagementExperience',
+    'Efficiency': 'efficiency',
+    'IntermediateOutcome': 'intermediateOutcome',
+    'Structure': 'structure',
+    'PatientReportedOutcome': 'patientReportedOutcome'
 };
 
 export const MEASURE_SETS = {

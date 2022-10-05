@@ -45,9 +45,13 @@ cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2
 
 To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
 
-New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder with the file name as MM-DD-YYYY-01.csv (increment the final number in the name if multiple changes take place on the same day). IMPORTANT: Do *not* manually modify the Changelog.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
+New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder with the file name as MM-DD-YYYY-01.csv (increment the final number in the name if multiple changes take place on the same day). IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
+
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run init:measures $YEAR`.
+
+The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
 
 ### Importing Measures from a CSV File
 
