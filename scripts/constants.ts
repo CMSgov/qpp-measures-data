@@ -167,3 +167,27 @@ export const MEASURE_SETS = {
     'Pulmonology': 'pulmonology',
     'SpeechLanguagePathology': 'speechLanguagePathology',
 };
+
+export const IA_DEFAULT_VALUES = {
+    metricType: 'boolean',
+    lastPerformanceYear: null,
+};
+
+export const PI_DEFAULT_VALUES = {
+    lastPerformanceYear: null,
+    measureSets: [],
+};
+
+export const QUALITY_DEFAULT_VALUES = {
+    eMeasureId: null,
+    nqfEMeasureId: null,
+    nqfId: null,
+    lastPerformanceYear: null,
+    isRiskAdjusted: false,
+    icdImpacted: [],
+    isClinicalGuidelineChanged: false,
+    isIcdImpacted: false,
+    clinicalGuidelineChanged: [],
+    measureSets: [],
+    nationalQualityStrategyDomain: null,
+};

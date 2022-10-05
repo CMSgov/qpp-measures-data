@@ -5,10 +5,14 @@ import appRoot from 'app-root-path';
 
 import { convertCsvToJson } from './csv-json-converter';
 import * as logger from '../../logger';
+import { InvalidValueError } from './errors';
 
 const iaChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/iaMeasures.csv'), 'utf8');
 const piChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/piMeasures.csv'), 'utf8');
+const badPiMeasures = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/badPiMeasures.csv'), 'utf8');
 const qualityChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/qualityMeasures.csv'), 'utf8');
+const qcdrChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/qcdrMeasures.csv'), 'utf8');
+const badQcdrMeasures = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/badQcdrMeasures.csv'), 'utf8');
 
 const iaJson = {
     title: 'iaTitle',
@@ -91,5 +95,26 @@ describe('#csv-json-converter', () => {
         const loggerSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
         expect(convertCsvToJson(qualityChangesCSV)).toEqual([qualityJson, qcdrMeasure]);
         expect(loggerSpy).toBeCalledWith('Quality measures cannot be Risk Adjusted. Setting isRiskAdjusted to false.');
+    });
+
+    it('converts a QCDR multiPerfRate measure to json', () => {
+        expect(convertCsvToJson(qcdrChangesCSV)).toEqual([{
+            ...qcdrMeasure,
+            metricType: 'registryMultiPerformanceRate',
+            overallAlgorithm: 'simpleAverage',
+            yearRemoved: 2023,
+        }]);
+    });
+
+    it('throws InvalidValueError for badly mapped array data', () => {
+        expect(() => {
+            convertCsvToJson(badQcdrMeasures);
+        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'Part Baddata Claims'));
+    });
+
+    it('throws InvalidValueError for badly mapped boolean data', () => {
+        expect(() => {
+            convertCsvToJson(badPiMeasures);
+        }).toThrowError(new InvalidValueError('bonus', 'Yes'));
     });
 });

@@ -17,6 +17,11 @@ import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 import { convertCsvToJson } from '../lib/csv-json-converter';
 import { DataValidationError } from '../lib/errors';
+import { 
+    IA_DEFAULT_VALUES, 
+    PI_DEFAULT_VALUES, 
+    QUALITY_DEFAULT_VALUES 
+} from '../../constants';
 
 export function updateMeasuresWithChangeFile(
     fileName: string,
@@ -69,8 +74,12 @@ export function updateMeasuresWithChangeFile(
                 if (change.yearRemoved) {
                     exports.deleteMeasure(change.measureId, measuresJson);
                 } else if (validate(change)) {
-                    exports.updateMeasure(change, measuresJson);
-                    if (isNew) info(`New measure '${change.measureId}' added.`);
+                    if (isNew) {
+                        exports.addMeasure(change, measuresJson);
+                        info(`New measure '${change.measureId}' added.`);
+                    } else {
+                        exports.updateMeasure(change, measuresJson);
+                    }
                 } else {
                     console.log(validate.errors);
                     throw new DataValidationError(fileName, `Validation Failed. More info logged above.`);
@@ -83,9 +92,9 @@ export function updateMeasuresWithChangeFile(
 
     } catch (err) {
         if (err instanceof Error) {
-            error(err.message);
-        }
-        else {
+            error(err['message']);
+        } else {
+            /* istanbul ignore next */ 
             throw err;
         }
     }
@@ -117,10 +126,48 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
                 ...measuresJson[i],
                 ...change as any,
                 ...updateBenchmarksMetaData(change),
+                category: change.category === 'qcdr' ? 'quality' : change.category,
             };
             break;
         }
     }
+}
+
+export function addMeasure(change: MeasuresChange, measuresJson: any) {
+    const index = findFinalInCategory(change.category, measuresJson);
+    switch (change.category) {
+        case 'ia':
+            measuresJson.splice(index+1, 0, {
+                ...IA_DEFAULT_VALUES,
+                ...change,
+            });
+            break;
+    
+        case 'pi':
+            measuresJson.splice(index+1, 0, {
+                ...PI_DEFAULT_VALUES,
+                ...change,
+            });
+            break;
+    
+        case 'quality':
+            measuresJson.splice(index+1, 0, {
+                ...QUALITY_DEFAULT_VALUES,
+                ...change,
+                isRegistryMeasure: false,
+            });
+            break;
+    
+        case 'qcdr':
+            measuresJson.splice(index+1, 0, {
+                ...QUALITY_DEFAULT_VALUES,
+                ...change,
+                category: 'quality',
+                isRegistryMeasure: true,
+            });
+            break;
+    }
+    
 }
 
 function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
@@ -163,3 +210,30 @@ function isNewMeasure(measureId: string, measuresJson: any) {
     const measure = _.find(measuresJson, { 'measureId': measureId });
     return !measure;
 }
+
+function findFinalInCategory(category: string, measuresJson: any) {
+    let index: number = 0;
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].category === category) {
+            if (['ia', 'pi'].includes(category)) {
+                index = i;
+            }
+            else if (
+                    category === 'quality' && 
+                    !measuresJson[i].isRegistryMeasure &&
+                    !['cahps', 'costScore'].includes(measuresJson[i].metricType)
+                ) {
+                index = i;
+            }
+        }
+        else if (
+                category === 'qcdr' && 
+                measuresJson[i].category === 'quality' && 
+                !measuresJson[i].isRegistryMeasure
+            ) {
+            index = i;
+        }
+    }
+    return index;
+}
+

@@ -41,5 +41,7 @@ export function updateMeasures(performanceYear: string) {
         info('No new change files found.');
     }
 }
+
+ /* istanbul ignore next */ 
 if (process.argv[2] && process.argv[2] !== '--coverage')
     updateMeasures(process.argv[2]);

@@ -18,13 +18,85 @@ const allowedIaChange = {
     subcategoryId: 'expandedPracticeAccess'
 };
 
+const allowedIaNew = {
+    title: 'iaTitle',
+    description: 'iaDescription',
+    measureId: 'IA_EPA_2_NEW',
+    firstPerformanceYear: 2023,
+    category: 'ia',
+    weight: 'high',
+    subcategoryId: 'populationManagement',
+} as MeasuresChange;
+
+const allowedPiNew = {
+    title: 'piTitle',
+    description: 'piDescription',
+    measureId: 'PI_PPHI_1_NEW',
+    firstPerformanceYear: 2023,
+    category: 'pi',
+    isRequired: false,
+    metricType: 'boolean',
+    isBonus: true,
+    reportingCategory: 'required',
+    substitutes: [ 'PI_PPHI_2' ],
+    exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
+} as MeasuresChange;
+
+const allowedQualityNew = {
+    title: 'qualityTitle',
+    description: 'qualityDescription',
+    measureId: '133',
+    firstPerformanceYear: 2023,
+    category: 'quality',
+    primarySteward: 'stewardTitle',
+    measureType: 'process',
+    isHighPriority: false,
+    submissionMethods: [ 'registry', 'claims' ],
+    measureSets: [ 'nephrology', 'preventiveMedicine' ],
+    isInverse: false,
+    metricType: 'singlePerformanceRate',
+    allowedPrograms: [ 'mips' ],
+    isRiskAdjusted: false,
+} as MeasuresChange;
+
+const allowedQCDRNew = {
+    title: 'qualityTitle',
+    description: 'qualityDescription',
+    measureId: 'abc',
+    firstPerformanceYear: 2023,
+    category: 'qcdr',
+    primarySteward: 'stewardTitle',
+    measureType: 'process',
+    isHighPriority: false,
+    submissionMethods: [ 'registry', 'claims' ],
+    measureSets: [ 'nephrology', 'preventiveMedicine' ],
+    isInverse: false,
+    metricType: 'singlePerformanceRate',
+    allowedPrograms: [ 'mips' ],
+    allowedVendors: [ '123456', '654321'],
+    isRiskAdjusted: false,
+} as MeasuresChange;
+
+const allowedPiChange = {
+    title: 'piTitle',
+    description: 'piDescription',
+    measureId: 'PI_PPHI_1',
+    isBonus: true,
+    isRequired: false,
+};
+
 const allowedQualityChange = {
     measureId: '001',
     firstPerformanceYear: 2020,
     isInverse: false,
     metricType: 'singlePerformanceRate',
     overallAlgorithm: 'overallStratumOnly',
-}
+};
+
+const allowedQcdrChange = {
+    measureId: 'AQI49',
+    title: 'testTitle',
+};
 
 const newQualityMeasure = {
     measureId: 'NewId',
@@ -38,7 +110,7 @@ const newQualityMeasure = {
     firstPerformanceYear: 2023,
     isInverse: false,
     metricType: 'singlePerformanceRate',
-}
+};
 
 const measuresJson: any[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', `measures/2023/measures-data.json`), 'utf8')
@@ -50,7 +122,7 @@ describe('#update-measures-util', () => {
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
         });
-        let updateSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
+        let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
         beforeEach(() => {
 
             mockFS({
@@ -59,6 +131,7 @@ describe('#update-measures-util', () => {
                 },
             });
             updateSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasure');
+            addSpy = jest.spyOn(UpdateMeasuresUtil, 'addMeasure');
             deleteSpy = jest.spyOn(UpdateMeasuresUtil, 'deleteMeasure');
             jest.spyOn(UpdateMeasuresUtil, 'updateChangeLog').mockImplementation(jest.fn());
 
@@ -84,8 +157,113 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('successfully adds IA measure', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([allowedIaNew]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(addSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`New measure 'IA_EPA_2_NEW' added.`);
+        });
+
+        it('successfully updates PI measure', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedPiChange,
+                category: 'pi',
+            }]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).toBeCalled();
+            expect(addSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('successfully adds PI measure', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([allowedPiNew]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(addSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`New measure 'PI_PPHI_1_NEW' added.`);
+        });
+
+        it('successfully adds Quality measure', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([allowedQualityNew]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(addSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`New measure '133' added.`);
+        });
+
+        it('successfully updates QCDR measure', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedQcdrChange,
+                category: 'qcdr',
+            }]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).toBeCalled();
+            expect(addSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('successfully adds QCDR measure', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([allowedQCDRNew]);
+
+            const loggerSpy = jest.spyOn(logger, 'info');
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(updateSpy).not.toBeCalled();
+            expect(addSpy).toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(loggerSpy).toBeCalledWith(`New measure 'abc' added.`);
         });
 
         it('throws when category is not included', () => {
@@ -100,6 +278,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(loggerSpy).toBeCalledWith(`'test.csv': Category is required.`);
         });
@@ -120,6 +299,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(warningSpy).toBeCalledWith(`'test.csv': 'Year Added' was changed. Was this deliberate?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'isInverse' was changed. Was this deliberate?`);
@@ -145,6 +325,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(errorSpy).toBeCalledWith(`'test.csv': CMS eCQM ID is required if one of the collection types is eCQM.`);
         });
@@ -165,6 +346,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(errorSpy).toBeCalledWith(`'test.csv': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
         });
@@ -185,6 +367,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(errorSpy).toBeCalledWith(`'test.csv': Year Removed is not current year.`);
         });
@@ -206,6 +389,7 @@ describe('#update-measures-util', () => {
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
+            expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(errorSpy).toBeCalledWith(`'test.csv': New multiPerformanceRate measures require a Calculation Type.`);
         });
@@ -227,27 +411,6 @@ describe('#update-measures-util', () => {
             );
             expect(updateSpy).not.toBeCalled();
             expect(deleteSpy).toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
-        });
-
-        it('creates new measure', () => {
-
-            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
-                ...newQualityMeasure,
-                category: 'quality',
-
-            }]);
-
-            const loggerSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
-            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
-                'test.csv',
-                'fakepath/',
-                '2023',
-                volatileMeasures,
-            );
-            expect(updateSpy).toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`New measure 'NewId' added.`);
             expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
         });
 
@@ -372,6 +535,7 @@ describe('#update-measures-util', () => {
                 metricType: 'testdata',
                 icdImpacted: [ 'testdata' ],
                 clinicalGuidelineChanged: [ 'testdata' ],
+                category: 'quality',
             } as MeasuresChange;
 
             UpdateMeasuresUtil.updateMeasure(change, volatileMeasures);
@@ -419,9 +583,111 @@ describe('#update-measures-util', () => {
                 measureSpecification: {}
             });
         });
+    });
 
-        it.skip('add the measure if not found', () => {
-            expect(true).toBeFalsy();
+    describe('addMeasure', () => {
+        let volatileMeasures: any;
+        beforeEach(() => {
+            volatileMeasures = [...measuresJson];
+        });
+
+        it('adds the ia measure if not found', () => {
+            UpdateMeasuresUtil.addMeasure(allowedIaNew, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: 'IA_EPA_2_NEW' })).toEqual({
+                title: 'iaTitle',
+                description: 'iaDescription',
+                measureId: 'IA_EPA_2_NEW',
+                metricType: 'boolean',
+                firstPerformanceYear: 2023,
+                lastPerformanceYear: null,
+                category: 'ia',
+                weight: 'high',
+                subcategoryId: 'populationManagement',
+            });
+        });
+
+        it('adds the pi measure if not found', () => {
+            UpdateMeasuresUtil.addMeasure(allowedPiNew, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: 'PI_PPHI_1_NEW' })).toEqual({
+                title: 'piTitle',
+                description: 'piDescription',
+                measureId: 'PI_PPHI_1_NEW',
+                firstPerformanceYear: 2023,
+                lastPerformanceYear: null,
+                category: 'pi',
+                isRequired: false,
+                metricType: 'boolean',
+                isBonus: true,
+                reportingCategory: 'required',
+                substitutes: [ 'PI_PPHI_2' ],
+                exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
+                measureSets: [],
+            });
+        });
+
+        it('adds the quality measure if not found', () => {
+            UpdateMeasuresUtil.addMeasure(allowedQualityNew, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: '133' })).toEqual({
+                title: 'qualityTitle',
+                eMeasureId: null,
+                nqfEMeasureId: null,
+                nqfId: null,
+                measureId: '133',
+                description: 'qualityDescription',
+                nationalQualityStrategyDomain: null,
+                measureType: 'process',
+                isHighPriority: false,
+                primarySteward: 'stewardTitle',
+                firstPerformanceYear: 2023,
+                lastPerformanceYear: null,
+                isInverse: false,
+                category: 'quality',
+                isRegistryMeasure: false,
+                isRiskAdjusted: false,
+                icdImpacted: [],
+                isClinicalGuidelineChanged: false,
+                isIcdImpacted: false,
+                clinicalGuidelineChanged: [],
+                metricType: 'singlePerformanceRate',
+                allowedPrograms: [ 'mips' ],
+                submissionMethods: [ 'registry', 'claims' ],
+                measureSets: [ 'nephrology', 'preventiveMedicine' ],
+            });
+        });
+
+        it('adds the qcdr measure if not found', () => {
+            UpdateMeasuresUtil.addMeasure(allowedQCDRNew, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: 'abc' })).toEqual({
+                title: 'qualityTitle',
+                eMeasureId: null,
+                nqfEMeasureId: null,
+                nqfId: null,
+                measureId: 'abc',
+                description: 'qualityDescription',
+                nationalQualityStrategyDomain: null,
+                measureType: 'process',
+                isHighPriority: false,
+                primarySteward: 'stewardTitle',
+                firstPerformanceYear: 2023,
+                lastPerformanceYear: null,
+                isInverse: false,
+                category: 'quality',
+                isRegistryMeasure: true,
+                isRiskAdjusted: false,
+                icdImpacted: [],
+                isClinicalGuidelineChanged: false,
+                isIcdImpacted: false,
+                clinicalGuidelineChanged: [],
+                metricType: 'singlePerformanceRate',
+                allowedPrograms: [ 'mips' ],
+                submissionMethods: [ 'registry', 'claims' ],
+                measureSets: [ 'nephrology', 'preventiveMedicine' ],
+                allowedVendors: [ '123456', '654321'],
+            });
         });
     });
 });
