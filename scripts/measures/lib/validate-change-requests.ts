@@ -177,7 +177,7 @@ function createSchema(schema: any, isNewMeasure: boolean, type: measureType) {
                     ...schema,
                     required: [...baseQualityRequiredFields, 'allowedVendors', 'isRiskAdjusted'],
                 };
-            default:                
+            default:
                 return {
                     ...schema,
                     required: _.remove(Object.keys(schema.properties), (property) => {return property !== 'yearRemoved';}),
