@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "5.5.7",
+  "version": "5.5.8",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -9,6 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --recursive --timeout 5000",
+    "init:measures": "scripts/measures/initialize-measures",
+    "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
@@ -17,10 +19,12 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/lodash": "^4.14.184",
+    "@types/node": "^18.7.16",
     "adm-zip": "0.4.13",
-    "ajv": "6.12.3",
-    "ajv-keywords": "3.2.0",
-    "ajv-merge-patch": "^4.1.0",
+    "ajv": "^8.11.0",
+    "ajv-keywords": "^5.1.0",
+    "ajv-merge-patch": "^5.0.1",
     "bluebird": "3.5.0",
     "chai": "3.5.0",
     "commander": "2.9.0",
@@ -29,21 +33,27 @@
     "eslint-config-nava": "^2.0.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-react": "^7.20.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mocha": "5.2.0",
     "nyc": "^15.0.0",
     "pdf-to-text": "0.0.6",
     "request": "2.87.0",
     "request-promise": "4.2.2",
     "rimraf": "2.6.1",
+    "typescript": "^4.8.3",
     "xml2js": "0.4.17"
   },
   "dependencies": {
+    "app-root-path": "^3.1.0",
+    "load-yaml-file": "^1.0.0",
     "pre-commit": "^1.2.2",
     "xregexp": "^5.1.0",
     "yamljs": "^0.3.0"
   },
   "pre-commit": [
     "pre-commit"
+  ],
+  "eslintIgnore": [
+    "/dist/**/*.js"
   ]
 }

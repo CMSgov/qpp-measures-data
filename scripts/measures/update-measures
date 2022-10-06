@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$(($1))
+maxPerformanceYear=2023
+
+Red='\033[0;31m'
+
+# This script is not made to work for years prior to 2023.
+if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
+  # Update the measures-data, if there are any updates:
+  node dist/measures/$currentPerformanceYear/update-measures.js \
+    $currentPerformanceYear
+
+  echo -e "Ingesting the Spec Urls, if those files exist..."
+  node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
+    $currentPerformanceYear
+  
+  echo -e "Ingesting Quality and QCDR strata..."
+  node dist/measures/$currentPerformanceYear/ingest-strata.js \
+    $currentPerformanceYear \
+    util/measures/$currentPerformanceYear/qcdr-strata.csv
+  
+  node dist/measures/$currentPerformanceYear/ingest-strata.js \
+    $currentPerformanceYear \
+    util/measures/$currentPerformanceYear/quality-strata.csv
+
+  echo -e "Validating new measures-data.json..."
+  cat measures/$currentPerformanceYear/measures-data.json | \
+	node scripts/validate-data.js measures $currentPerformanceYear
+  
+  echo -e "Update complete."
+  exit
+
+else
+  echo -e "${Red}Performance year ${currentPerformanceYear} not valid!"
+fi
