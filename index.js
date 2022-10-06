@@ -97,11 +97,17 @@ exports.getClinicalClusterSchema = function(performanceYear = 2017) {
  * @return {Array<MVP>}
  */
 exports.getMVPData = function(performanceYear = 2023) {
+  const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
+
+  if (fs.existsSync(filePath)) {
+    return JSON.parse(fs.readFileSync(filePath));
+  }
+
   let mvpData = [];
   let measuresData = [];
   try {
     mvpData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, 'mvps', performanceYear.toString(), 'mvps.json')));
+      fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvps.json')));
     measuresData = this.getMeasuresData(performanceYear);
   } catch (e) {
     console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
@@ -160,6 +166,8 @@ exports.getMVPData = function(performanceYear = 2023) {
     delete mvp.foundationQualityMeasureIds;
   });
 
+  fs.writeFileSync(filePath, JSON.stringify(mvpData, null, 2));
+
   return mvpData;
 };
 
@@ -167,5 +175,5 @@ exports.getMVPData = function(performanceYear = 2023) {
  * @return {{}} - Object representation of the MVP Schema
  */
 exports.getMVPSchema = function(performanceYear = 2023) {
-  return YAML.load(path.join(__dirname, 'mvps', performanceYear.toString(), 'mvps-schema.yaml'));
+  return YAML.load(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'));
 };
