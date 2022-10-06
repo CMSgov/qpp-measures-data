@@ -130,7 +130,7 @@ exports.getMVPData = function(performanceYear = 2023) {
             allowedMvpPrograms.push(m.mvpId);
           }
         });
-        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.qualityMeasures.push(measure);
       }
     });
@@ -145,7 +145,7 @@ exports.getMVPData = function(performanceYear = 2023) {
             allowedMvpPrograms.push(m.mvpId);
           }
         });
-        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.iaMeasures.push(measure);
       }
     });
@@ -160,7 +160,7 @@ exports.getMVPData = function(performanceYear = 2023) {
             allowedMvpPrograms.push(m.mvpId);
           }
         });
-        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.costMeasures.push(measure);
       }
     });
@@ -175,7 +175,7 @@ exports.getMVPData = function(performanceYear = 2023) {
             allowedMvpPrograms.push(m.mvpId);
           }
         });
-        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.foundationPiMeasures.push(measure);
       }
     });
@@ -190,7 +190,7 @@ exports.getMVPData = function(performanceYear = 2023) {
             allowedMvpPrograms.push(m.mvpId);
           }
         });
-        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.foundationQualityMeasures.push(measure);
       }
     });
