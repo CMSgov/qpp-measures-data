@@ -107,7 +107,7 @@ exports.getMVPData = function(performanceYear = 2023) {
   let measuresData = [];
   try {
     mvpData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvps.json')));
+      fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json')));
     measuresData = this.getMeasuresData(performanceYear);
   } catch (e) {
     console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
