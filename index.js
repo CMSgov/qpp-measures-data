@@ -124,45 +124,83 @@ exports.getMVPData = function(performanceYear = 2023) {
     mvp.qualityMeasureIds.forEach(mId => {
       const measure = measuresData.find(m => m.measureId === mId);
       if (measure) {
+        const allowedMvpPrograms = [];
+        mvpData.forEach(m => {
+          if (m.qualityMeasureIds.includes(mId)) {
+            allowedMvpPrograms.push(m.mvpId);
+          }
+        });
+        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.qualityMeasures.push(measure);
       }
     });
-    delete mvp.qualityMeasureIds;
 
     // Hydrate IA measures
     mvp.iaMeasureIds.forEach(mId => {
       const measure = measuresData.find(m => m.measureId === mId);
       if (measure) {
+        const allowedMvpPrograms = [];
+        mvpData.forEach(m => {
+          if (m.iaMeasureIds.includes(mId)) {
+            allowedMvpPrograms.push(m.mvpId);
+          }
+        });
+        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.iaMeasures.push(measure);
       }
     });
-    delete mvp.iaMeasureIds;
 
     // Hydrate cost measures
     mvp.costMeasureIds.forEach(mId => {
       const measure = measuresData.find(m => m.measureId === mId);
       if (measure) {
+        const allowedMvpPrograms = [];
+        mvpData.forEach(m => {
+          if (m.costMeasureIds.includes(mId)) {
+            allowedMvpPrograms.push(m.mvpId);
+          }
+        });
+        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.costMeasures.push(measure);
       }
     });
-    delete mvp.costMeasureIds;
 
     // Hydrate foundation PI measures
     mvp.foundationPiMeasureIds.forEach(mId => {
       const measure = measuresData.find(m => m.measureId === mId);
       if (measure) {
+        const allowedMvpPrograms = [];
+        mvpData.forEach(m => {
+          if (m.foundationPiMeasureIds.includes(mId)) {
+            allowedMvpPrograms.push(m.mvpId);
+          }
+        });
+        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.foundationPiMeasures.push(measure);
       }
     });
-    delete mvp.foundationPiMeasureIds;
 
     // Hydrate foundation quality measures
     mvp.foundationQualityMeasureIds.forEach(mId => {
       const measure = measuresData.find(m => m.measureId === mId);
       if (measure) {
+        const allowedMvpPrograms = [];
+        mvpData.forEach(m => {
+          if (m.foundationQualityMeasureIds.includes(mId)) {
+            allowedMvpPrograms.push(m.mvpId);
+          }
+        });
+        measure.allowedPrograms ? measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
         mvp.foundationQualityMeasures.push(measure);
       }
     });
+  });
+
+  mvpData.forEach(mvp => {
+    delete mvp.qualityMeasureIds;
+    delete mvp.iaMeasureIds;
+    delete mvp.costMeasureIds;
+    delete mvp.foundationPiMeasureIds;
     delete mvp.foundationQualityMeasureIds;
   });
 
