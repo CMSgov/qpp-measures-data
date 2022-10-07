@@ -1,0 +1,23 @@
+name: QPP Benchmarks Data Slack Notification for Changes
+
+on:
+  push:
+    branches:
+    - develop
+    paths:
+    - 'benchmarks/**'
+
+jobs:
+
+  # make an announcement to relevant slack channels
+  notify-slack-channel:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify ITT via Benchmarks Channel
+      uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
+        SLACK_CHANNEL: "qppa-test-channel"
+        SLACK_MESSAGE: "The Benchmarks in `qpp-measures-data` have been updated. Check out <${{github.event.pull_request.html_url}}|the related PR> for more info."
+        SLACK_TITLE: New qpp-measures-data release
+        SLACK_USERNAME: Benchmark Bot
