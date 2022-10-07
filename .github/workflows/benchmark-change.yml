@@ -14,10 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Notify ITT via Benchmarks Channel
-      uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
+    - uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
+    - uses: 8BitJonny/gh-get-current-pr@2.1.2
+      id: PR
       env:
         SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
         SLACK_CHANNEL: "qppa-test-channel"
-        SLACK_MESSAGE: "The Benchmarks in `qpp-measures-data` have been updated. Check out <https://github.com/CMSgov/qpp-measures-data/pull/${{github.event.issue.number}}|the related PR> for more info."
+        SLACK_MESSAGE: "The Benchmarks in `qpp-measures-data` have been updated. Check <https://github.com/CMSgov/qpp-measures-data/pull/${{steps.PR.outputs.number}}|the related PR> for more info."
         SLACK_TITLE: New qpp-measures-data release
         SLACK_USERNAME: Benchmark Bot
