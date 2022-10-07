@@ -11,10 +11,6 @@ import parse from 'csv-parse/lib/sync';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { info, error, warning} from '../../logger';
-import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
-import * as Constants from '../../constants';
-
 const performanceYear = process.argv[2];
 const strataPath = process.argv[3];
 

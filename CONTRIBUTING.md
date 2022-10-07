@@ -84,6 +84,8 @@ When making changes to measures-data, include tests in the tests directory and m
 
 ```
 npm test
+npx jest
+npm run jest:cov
 ```
 
 We also use Github Actions CI to run tests on every branch.

@@ -25,6 +25,7 @@ export const PI_CSV_COLUMN_NAMES = {
 };
 
 export const QUALITY_CSV_COLUMN_NAMES = {
+    'category': 'Category',
     'title': 'Measure Title',
     'eMeasureId': 'CMS eCQM ID',
     'nqfEMeasureId': 'eCQM NQF',
@@ -65,6 +66,8 @@ export const BOOLEAN_CSV_FIELDS = [
     '*** Inverse',
     'Is Risk Adjusted ',
     'High Priority',
+    'bonus',
+    'required',
 ]
 
 export const METRIC_TYPES = [
@@ -163,4 +166,28 @@ export const MEASURE_SETS = {
     'Nutrition/Dietician': 'nutritionDietician',
     'Pulmonology': 'pulmonology',
     'SpeechLanguagePathology': 'speechLanguagePathology',
+};
+
+export const IA_DEFAULT_VALUES = {
+    metricType: 'boolean',
+    lastPerformanceYear: null,
+};
+
+export const PI_DEFAULT_VALUES = {
+    lastPerformanceYear: null,
+    measureSets: [],
+};
+
+export const QUALITY_DEFAULT_VALUES = {
+    eMeasureId: null,
+    nqfEMeasureId: null,
+    nqfId: null,
+    lastPerformanceYear: null,
+    isRiskAdjusted: false,
+    icdImpacted: [],
+    isClinicalGuidelineChanged: false,
+    isIcdImpacted: false,
+    clinicalGuidelineChanged: [],
+    measureSets: [],
+    nationalQualityStrategyDomain: null,
 };

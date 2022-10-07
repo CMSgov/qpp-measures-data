@@ -24,13 +24,14 @@ import {
 import { InvalidValueError } from './errors';
 
 export function convertCsvToJson(csv: any) {
+    
     const parsedCsv = parse(csv, { columns: true });
 
     return parsedCsv.map((row: any) => {
         const measure = {};
-        measure['category'] = row['Category'].toLowerCase().trim();
+        row['Category'] = row['Category'].toLowerCase().trim();
         let csvColumnNames;
-        switch (measure['category']) {
+        switch (row['Category']) {
             case 'ia':
                 csvColumnNames = IA_CSV_COLUMN_NAMES;
                 break;
@@ -40,11 +41,14 @@ export function convertCsvToJson(csv: any) {
             case 'quality':
                 csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
                 break;
+            case 'qcdr':
+                csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
+                break;
         }
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
             if (row[columnName]) {
-                measure[measureKeyName] = mapInput(columnName, row, measure['category']);
+                measure[measureKeyName] = mapInput(columnName, row, row['Category']);
             }
         });
 
@@ -53,19 +57,15 @@ export function convertCsvToJson(csv: any) {
 }
 
 function mapInput(columnName: string, csvRow: any, category: string) {
-    //remove this field if no change requests are made for it.
-    if (csvRow[columnName] === '') {
-        return undefined;
-    }
 
     switch (columnName) {
         case QUALITY_CSV_COLUMN_NAMES.measureType:
             return mapItem(columnName, MEASURE_TYPES, csvRow[columnName]);
 
         case QUALITY_CSV_COLUMN_NAMES.metricType:
-            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim() === 'QCDR') {
+            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim().toLowerCase() === 'qcdr') {
                 return 'registrySinglePerformanceRate';
-            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim() === 'QCDR') {
+            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim().toLowerCase() === 'qcdr') {
                 return 'registryMultiPerformanceRate';
             }
             break;
@@ -76,6 +76,8 @@ function mapInput(columnName: string, csvRow: any, category: string) {
             return +csvRow[columnName];
         case BASE_CSV_COLUMN_NAMES.yearRemoved:
             return +csvRow[columnName];
+        case IA_CSV_COLUMN_NAMES.subcategoryId:
+            return _.camelCase(csvRow[columnName]).trim();
     }
 
     //fields with 'Yes' or 'No'
@@ -123,6 +125,7 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
     }
+    return fieldValue.split(',').map(element => element.trim());;
 }
 
 function mapArrayItem(field: string, map: any, values: string) {
@@ -132,7 +135,7 @@ function mapArrayItem(field: string, map: any, values: string) {
         arrayedField[i] = mapItem(field, map, arrayedField[i]);
     }
 
-    return arrayedField;
+    return _.uniq(arrayedField);
 }
 
 function mapItem(field: string, map: any, value: string) {
