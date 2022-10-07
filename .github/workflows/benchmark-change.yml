@@ -14,10 +14,9 @@ jobs:
     name: Notify ITT via Benchmarks Channel
     runs-on: ubuntu-latest
     steps:
-    - uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
     - uses: 8BitJonny/gh-get-current-pr@2.1.2
       id: PR
-
+    - uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
       env:
         SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
         SLACK_CHANNEL: "qppa-test-channel"
