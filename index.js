@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const YAML = require('yamljs');
+const uniq = require('lodash/uniq');
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
@@ -131,6 +132,7 @@ exports.getMVPData = function(performanceYear = 2023) {
           }
         });
         measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms = uniq(measure.allowedPrograms);
         mvp.qualityMeasures.push(measure);
       }
     });
@@ -146,6 +148,7 @@ exports.getMVPData = function(performanceYear = 2023) {
           }
         });
         measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms = uniq(measure.allowedPrograms);
         mvp.iaMeasures.push(measure);
       }
     });
@@ -161,6 +164,7 @@ exports.getMVPData = function(performanceYear = 2023) {
           }
         });
         measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms = uniq(measure.allowedPrograms);
         mvp.costMeasures.push(measure);
       }
     });
@@ -176,6 +180,7 @@ exports.getMVPData = function(performanceYear = 2023) {
           }
         });
         measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms = uniq(measure.allowedPrograms);
         mvp.foundationPiMeasures.push(measure);
       }
     });
@@ -191,6 +196,7 @@ exports.getMVPData = function(performanceYear = 2023) {
           }
         });
         measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+        measure.allowedPrograms = uniq(measure.allowedPrograms);
         mvp.foundationQualityMeasures.push(measure);
       }
     });
