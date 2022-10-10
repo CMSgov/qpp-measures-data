@@ -1,27 +1,28 @@
 //These are only needed if the csv column names do not match the measures-data field names.
 export const BASE_CSV_COLUMN_NAMES = {
-    'title': 'title',
-    'description': 'description',
-    'measureId': 'measure_id',
+    'title': 'Measure Title',
+    'description': 'Measure Description',
+    'measureId': 'Measure ID',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'Year Added',
     'category': 'Category',
-}
+};
 
 export const IA_CSV_COLUMN_NAMES = {
     ...BASE_CSV_COLUMN_NAMES,
-    'weight': 'weight',
-    'subcategoryId': 'subcategory_name'
+    'weight': 'Weight',
+    'subcategoryId': 'Subcategory Name'
 };
 
 export const PI_CSV_COLUMN_NAMES = {
     ...BASE_CSV_COLUMN_NAMES,
-    'isRequired': 'required',
-    'metricType': 'name',
-    'isBonus': 'bonus',
-    'reportingCategory': 'reporting_category',
-    'substitutes': 'substitutes',
-    'exclusion': 'exclusions',
+    'isRequired': 'Required',
+    'metricType': 'Metric Type',
+    'isBonus': 'Bonus',
+    'objective': 'Objective',
+    'reportingCategory': 'Reporting Category',
+    'substitutes': 'Substitutes',
+    'exclusion': 'Exclusions',
 };
 
 export const QUALITY_CSV_COLUMN_NAMES = {
@@ -51,8 +52,8 @@ export const QUALITY_CSV_COLUMN_NAMES = {
 };
 
 export const ARRAY_CSV_FIELDS = [
-    'substitutes',
-    'exclusions',
+    'Substitutes',
+    'Exclusions',
     '*** Collection Type(s) for Submission',
     'Allowed QCDR Vendor ID',
     'Allowed Program(s)',
@@ -60,15 +61,15 @@ export const ARRAY_CSV_FIELDS = [
     'Collection Type(s) where Suppressed',
     'Collection Type(s) where Historic Benchmark Removed',
     'Collection Type(s) where Truncated',
-]
+];
 
 export const BOOLEAN_CSV_FIELDS = [
     '*** Inverse',
     'Is Risk Adjusted ',
     'High Priority',
-    'bonus',
-    'required',
-]
+    'Bonus',
+    'Required',
+];
 
 export const METRIC_TYPES = [
     'registrySinglePerformanceRate',
@@ -76,21 +77,20 @@ export const METRIC_TYPES = [
     'multiPerformanceRate',
     'nonProportion',
     'costScore',
-]
+];
 
 export const OVERALL_ALGORITHM = [
     'weightedAverage',
     'simpleAverage',
     'overallStratumOnly',
-]
+];
 
 export const COLLECTION_TYPES_FIELDS = [
     'Collection Type(s) where Suppressed',
     'Collection Type(s) where Historic Benchmark Removed',
     'Collection Type(s) where Truncated',
     '*** Collection Type(s) for Submission',
-]
-
+];
 
 export const COLLECTION_TYPES = {
     'PartBClaims': 'claims',
@@ -100,13 +100,13 @@ export const COLLECTION_TYPES = {
     'AdminClaims': 'administrativeClaims',
     'MIPSCQM': 'registry',
     'QCDR': 'registry',
-}
+};
 
 export const ALLOWED_PROGRAMS = {
     'MIPS': 'mips',
     'APP': 'app1',
     'PCF': 'pcf',
-}
+};
 
 export const MEASURE_TYPES = {
     'Process': 'process',
@@ -116,6 +116,41 @@ export const MEASURE_TYPES = {
     'IntermediateOutcome': 'intermediateOutcome',
     'Structure': 'structure',
     'PatientReportedOutcome': 'patientReportedOutcome'
+};
+
+export const OBJECTIVES = {
+    'ProtectPatientHealthInformation': 'protectPatientHealthInformation',
+    'PublicHealthAndClinicalDataExchange': 'publicHealthAndClinicalDataExchange',
+    'ProvidertoPatientExchange': 'providerToPatientExchange',
+    'e-Prescribing': 'electronicPrescribing',
+    'HealthInformation': 'healthInformationExchange',
+    'NULL': null,
+};
+
+export const REPORTING_CATEGORY = {
+    'Required': 'required',
+    'Bonus': 'bonus',
+    'Exclusion': 'exclusion',
+    'NULL': null,
+
+};
+
+export const WEIGHT = {
+    'high': 'high',
+    'medium': 'medium',
+    'NULL': null,
+};
+
+export const SUBCATEGORY_NAME = {
+    'AchievingHealthEquity': 'achievingHealthEquity',
+    'BehavioralAndMentalHealth': 'behavioralAndMentalHealth',
+    'BeneficiaryEngagement': 'beneficiaryEngagement',
+    'CareCoordination': 'careCoordination',
+    'EmergencyResponseAndPreparedness': 'emergencyResponseAndPreparedness',
+    'ExpandedPracticeAccess': 'expandedPracticeAccess',
+    'PatientSafetyAndPracticeAssessment': 'patientSafetyAndPracticeAssessment',
+    'PopulationManagement': 'populationManagement',
+    'NULL': null,
 };
 
 export const MEASURE_SETS = {
