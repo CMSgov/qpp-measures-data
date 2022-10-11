@@ -97,120 +97,124 @@ exports.getClinicalClusterSchema = function(performanceYear = 2017) {
 /**
  * @return {Array<MVP>}
  */
-exports.getMVPData = function(performanceYear = 2023) {
+exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
+  let mvpData = [];
 
   if (fs.existsSync(filePath)) {
-    return JSON.parse(fs.readFileSync(filePath));
+    mvpData = JSON.parse(fs.readFileSync(filePath));
+  } else {
+    let measuresData = [];
+    try {
+      mvpData = JSON.parse(
+        fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json')));
+      measuresData = this.getMeasuresData(performanceYear);
+    } catch (e) {
+      console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
+    }
+
+    mvpData.forEach(mvp => {
+      mvp.qualityMeasures = [];
+      mvp.iaMeasures = [];
+      mvp.costMeasures = [];
+      mvp.foundationPiMeasures = [];
+      mvp.foundationQualityMeasures = [];
+
+      // Hydrate quality measures
+      mvp.qualityMeasureIds.forEach(mId => {
+        const measure = measuresData.find(m => m.measureId === mId);
+        if (measure) {
+          const allowedMvpPrograms = [];
+          mvpData.forEach(m => {
+            if (m.qualityMeasureIds.includes(mId)) {
+              allowedMvpPrograms.push(m.mvpId);
+            }
+          });
+          measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+          measure.allowedPrograms = uniq(measure.allowedPrograms);
+          mvp.qualityMeasures.push(measure);
+        }
+      });
+
+      // Hydrate IA measures
+      mvp.iaMeasureIds.forEach(mId => {
+        const measure = measuresData.find(m => m.measureId === mId);
+        if (measure) {
+          const allowedMvpPrograms = [];
+          mvpData.forEach(m => {
+            if (m.iaMeasureIds.includes(mId)) {
+              allowedMvpPrograms.push(m.mvpId);
+            }
+          });
+          measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+          measure.allowedPrograms = uniq(measure.allowedPrograms);
+          mvp.iaMeasures.push(measure);
+        }
+      });
+
+      // Hydrate cost measures
+      mvp.costMeasureIds.forEach(mId => {
+        const measure = measuresData.find(m => m.measureId === mId);
+        if (measure) {
+          const allowedMvpPrograms = [];
+          mvpData.forEach(m => {
+            if (m.costMeasureIds.includes(mId)) {
+              allowedMvpPrograms.push(m.mvpId);
+            }
+          });
+          measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+          measure.allowedPrograms = uniq(measure.allowedPrograms);
+          mvp.costMeasures.push(measure);
+        }
+      });
+
+      // Hydrate foundation PI measures
+      mvp.foundationPiMeasureIds.forEach(mId => {
+        const measure = measuresData.find(m => m.measureId === mId);
+        if (measure) {
+          const allowedMvpPrograms = [];
+          mvpData.forEach(m => {
+            if (m.foundationPiMeasureIds.includes(mId)) {
+              allowedMvpPrograms.push(m.mvpId);
+            }
+          });
+          measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+          measure.allowedPrograms = uniq(measure.allowedPrograms);
+          mvp.foundationPiMeasures.push(measure);
+        }
+      });
+
+      // Hydrate foundation quality measures
+      mvp.foundationQualityMeasureIds.forEach(mId => {
+        const measure = measuresData.find(m => m.measureId === mId);
+        if (measure) {
+          const allowedMvpPrograms = [];
+          mvpData.forEach(m => {
+            if (m.foundationQualityMeasureIds.includes(mId)) {
+              allowedMvpPrograms.push(m.mvpId);
+            }
+          });
+          measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+          measure.allowedPrograms = uniq(measure.allowedPrograms);
+          mvp.foundationQualityMeasures.push(measure);
+        }
+      });
+    });
+
+    mvpData.forEach(mvp => {
+      delete mvp.qualityMeasureIds;
+      delete mvp.iaMeasureIds;
+      delete mvp.costMeasureIds;
+      delete mvp.foundationPiMeasureIds;
+      delete mvp.foundationQualityMeasureIds;
+    });
+
+    fs.writeFileSync(filePath, JSON.stringify(mvpData, null, 2));
   }
 
-  let mvpData = [];
-  let measuresData = [];
-  try {
-    mvpData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json')));
-    measuresData = this.getMeasuresData(performanceYear);
-  } catch (e) {
-    console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
+  if (mvpIds.length) {
+    mvpData = mvpData.filter(mvpDataItem => mvpIds.includes(mvpDataItem.mvpId));
   }
-
-  mvpData.forEach(mvp => {
-    mvp.qualityMeasures = [];
-    mvp.iaMeasures = [];
-    mvp.costMeasures = [];
-    mvp.foundationPiMeasures = [];
-    mvp.foundationQualityMeasures = [];
-
-    // Hydrate quality measures
-    mvp.qualityMeasureIds.forEach(mId => {
-      const measure = measuresData.find(m => m.measureId === mId);
-      if (measure) {
-        const allowedMvpPrograms = [];
-        mvpData.forEach(m => {
-          if (m.qualityMeasureIds.includes(mId)) {
-            allowedMvpPrograms.push(m.mvpId);
-          }
-        });
-        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
-        measure.allowedPrograms = uniq(measure.allowedPrograms);
-        mvp.qualityMeasures.push(measure);
-      }
-    });
-
-    // Hydrate IA measures
-    mvp.iaMeasureIds.forEach(mId => {
-      const measure = measuresData.find(m => m.measureId === mId);
-      if (measure) {
-        const allowedMvpPrograms = [];
-        mvpData.forEach(m => {
-          if (m.iaMeasureIds.includes(mId)) {
-            allowedMvpPrograms.push(m.mvpId);
-          }
-        });
-        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
-        measure.allowedPrograms = uniq(measure.allowedPrograms);
-        mvp.iaMeasures.push(measure);
-      }
-    });
-
-    // Hydrate cost measures
-    mvp.costMeasureIds.forEach(mId => {
-      const measure = measuresData.find(m => m.measureId === mId);
-      if (measure) {
-        const allowedMvpPrograms = [];
-        mvpData.forEach(m => {
-          if (m.costMeasureIds.includes(mId)) {
-            allowedMvpPrograms.push(m.mvpId);
-          }
-        });
-        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
-        measure.allowedPrograms = uniq(measure.allowedPrograms);
-        mvp.costMeasures.push(measure);
-      }
-    });
-
-    // Hydrate foundation PI measures
-    mvp.foundationPiMeasureIds.forEach(mId => {
-      const measure = measuresData.find(m => m.measureId === mId);
-      if (measure) {
-        const allowedMvpPrograms = [];
-        mvpData.forEach(m => {
-          if (m.foundationPiMeasureIds.includes(mId)) {
-            allowedMvpPrograms.push(m.mvpId);
-          }
-        });
-        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
-        measure.allowedPrograms = uniq(measure.allowedPrograms);
-        mvp.foundationPiMeasures.push(measure);
-      }
-    });
-
-    // Hydrate foundation quality measures
-    mvp.foundationQualityMeasureIds.forEach(mId => {
-      const measure = measuresData.find(m => m.measureId === mId);
-      if (measure) {
-        const allowedMvpPrograms = [];
-        mvpData.forEach(m => {
-          if (m.foundationQualityMeasureIds.includes(mId)) {
-            allowedMvpPrograms.push(m.mvpId);
-          }
-        });
-        measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
-        measure.allowedPrograms = uniq(measure.allowedPrograms);
-        mvp.foundationQualityMeasures.push(measure);
-      }
-    });
-  });
-
-  mvpData.forEach(mvp => {
-    delete mvp.qualityMeasureIds;
-    delete mvp.iaMeasureIds;
-    delete mvp.costMeasureIds;
-    delete mvp.foundationPiMeasureIds;
-    delete mvp.foundationQualityMeasureIds;
-  });
-
-  fs.writeFileSync(filePath, JSON.stringify(mvpData, null, 2));
 
   return mvpData;
 };
