@@ -24,6 +24,13 @@ const iaJson = {
     subcategoryId: 'populationManagement',
 };
 
+const iaNullFieldsJson = {
+    ...iaJson,
+    measureId: 'IA_EPA_3',
+    weight: null,
+    subcategoryId: null,
+};
+
 const piJson = {
     title: 'piTitle',
     description: 'piDescription',
@@ -31,11 +38,21 @@ const piJson = {
     firstPerformanceYear: 2018,
     category: 'pi',
     isRequired: false,
+    objective: 'publicHealthAndClinicalDataExchange',
     metricType: 'boolean',
     isBonus: true,
     reportingCategory: 'required',
     substitutes: [ 'PI_PPHI_2' ],
     exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
+};
+
+const piNullFieldsJson = {
+    ...piJson,
+    measureId: 'PI_PPHI_2',
+    objective: null,
+    reportingCategory: null,
+    substitutes: [],
+    exclusion: null,
 };
 
 const qualityJson = {
@@ -84,11 +101,11 @@ const qcdrMeasure = {
 
 describe('#csv-json-converter', () => {
     it('converts an IA csv to json', () => {
-        expect(convertCsvToJson(iaChangesCSV)).toEqual([iaJson]);
+        expect(convertCsvToJson(iaChangesCSV)).toEqual([iaJson, iaNullFieldsJson]);
     });
 
     it('converts a PI csv to json', () => {
-        expect(convertCsvToJson(piChangesCSV)).toEqual([piJson]);
+        expect(convertCsvToJson(piChangesCSV)).toEqual([piJson, piNullFieldsJson]);
     });
 
     it('converts a Quality csv to json', () => {
@@ -115,6 +132,6 @@ describe('#csv-json-converter', () => {
     it('throws InvalidValueError for badly mapped boolean data', () => {
         expect(() => {
             convertCsvToJson(badPiMeasures);
-        }).toThrowError(new InvalidValueError('bonus', 'Yes'));
+        }).toThrowError(new InvalidValueError('Bonus', 'Yes'));
     });
 });

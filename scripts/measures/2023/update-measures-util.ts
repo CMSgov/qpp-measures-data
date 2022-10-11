@@ -61,6 +61,9 @@ export function updateMeasuresWithChangeFile(
                     }
                 }
 
+                if (!isAllowedCostScore(change, measuresJson)) {
+                    throw new DataValidationError(fileName, `'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+                }
                 if (!isOutcomeHighPriority(change, measuresJson)) {
                     throw new DataValidationError(fileName, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
@@ -177,6 +180,18 @@ function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
 
 
     if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
+        return false;
+    }
+    return true;
+}
+
+function isAllowedCostScore(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    const type: string = change.metricType ? change.metricType : currentMeasure?.metricType;
+    const methods: string = change.submissionMethods ? change.submissionMethods : currentMeasure?.submissionMethods;
+
+    if (type === 'costScore' && (!methods?.includes('administrativeClaims') || methods?.length !== 1)) {
         return false;
     }
     return true;
