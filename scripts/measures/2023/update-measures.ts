@@ -8,9 +8,7 @@ import { updateMeasuresWithChangeFile, writeToFile } from './update-measures-uti
 
 export function updateMeasures(performanceYear: string) {
     const changesPath = `updates/measures/${performanceYear}/`;
-    const measuresPath = `measures/${performanceYear}/measures-data.json`;
-    console.log(changesPath);
-    
+    const measuresPath = `measures/${performanceYear}/measures-data.json`;    
 
     const changelog = JSON.parse(
         fs.readFileSync(path.join(appRoot + '', `${changesPath}changes.meta.json`), 'utf8')

@@ -33,6 +33,7 @@ interface IA_MeasuresChange extends baseMeasuresChange {
 interface PI_MeasuresChange extends baseMeasuresChange {
     isRequired?: boolean,
     metricType?: string,
+    objective?: string,
     isBonus?: boolean,
     reportingCategory?: string,
     substitutes?: string[],
@@ -133,6 +134,7 @@ const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
         ...baseValidationSchemaProperties,
         isRequired: { type: 'boolean', nullable: true },
         metricType: { type: 'string', nullable: true },
+        objective: { type: 'string', nullable: true },
         isBonus: { type: 'boolean', nullable: true },
         reportingCategory: { type: 'string', nullable: true },
         substitutes: { type: 'array', items: { type: 'string' }, nullable: true },

@@ -19,7 +19,11 @@ import {
     MEASURE_SETS,
     MEASURE_TYPES,
     PI_CSV_COLUMN_NAMES,
-    QUALITY_CSV_COLUMN_NAMES
+    QUALITY_CSV_COLUMN_NAMES,
+    OBJECTIVES,
+    REPORTING_CATEGORY,
+    WEIGHT,
+    SUBCATEGORY_NAME,
 } from '../../constants';
 import { InvalidValueError } from './errors';
 
@@ -61,7 +65,14 @@ function mapInput(columnName: string, csvRow: any, category: string) {
     switch (columnName) {
         case QUALITY_CSV_COLUMN_NAMES.measureType:
             return mapItem(columnName, MEASURE_TYPES, csvRow[columnName]);
-
+        case PI_CSV_COLUMN_NAMES.objective:
+            return mapItem(columnName, OBJECTIVES, csvRow[columnName]);
+        case PI_CSV_COLUMN_NAMES.reportingCategory:
+            return mapItem(columnName, REPORTING_CATEGORY, csvRow[columnName]);
+        case IA_CSV_COLUMN_NAMES.weight:
+            return mapItem(columnName, WEIGHT, csvRow[columnName]);
+        case IA_CSV_COLUMN_NAMES.subcategoryId:
+            return mapItem(columnName, SUBCATEGORY_NAME, csvRow[columnName]);
         case QUALITY_CSV_COLUMN_NAMES.metricType:
             if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim().toLowerCase() === 'qcdr') {
                 return 'registrySinglePerformanceRate';
@@ -76,8 +87,6 @@ function mapInput(columnName: string, csvRow: any, category: string) {
             return +csvRow[columnName];
         case BASE_CSV_COLUMN_NAMES.yearRemoved:
             return +csvRow[columnName];
-        case IA_CSV_COLUMN_NAMES.subcategoryId:
-            return _.camelCase(csvRow[columnName]).trim();
     }
 
     //fields with 'Yes' or 'No'
@@ -125,6 +134,12 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
     }
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue === 'NULL') {
+        return [];
+    }
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue === 'NULL') {
+        return null;
+    }
     return fieldValue.split(',').map(element => element.trim());;
 }
 
@@ -140,7 +155,7 @@ function mapArrayItem(field: string, map: any, values: string) {
 
 function mapItem(field: string, map: any, value: string) {
     // .replace(/\s/g, "") removes all whitespace.
-    if (map[value.replace(/\s/g, "")]) {
+    if (typeof map[value.replace(/\s/g, "")] !== 'undefined') {
         return map[value.replace(/\s/g, "")];
     }
     else {
