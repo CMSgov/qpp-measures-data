@@ -6,4 +6,21 @@ Constants.validPerformanceYears = [2017, 2018, 2019, 2020, 2021, 2022];
 // /scripts/measures/build-measures
 Constants.currentPerformanceYear = 2022;
 
+Constants.mvpMeasuresHelper = [{
+  measureIdKey: 'qualityMeasureIds',
+  enrichedMeasureKey: 'qualityMeasures'
+}, {
+  measureIdKey: 'iaMeasureIds',
+  enrichedMeasureKey: 'iaMeasures'
+}, {
+  measureIdKey: 'costMeasureIds',
+  enrichedMeasureKey: 'costMeasures'
+}, {
+  measureIdKey: 'foundationPiMeasureIds',
+  enrichedMeasureKey: 'foundationPiMeasures'
+}, {
+  measureIdKey: 'foundationQualityMeasureIds',
+  enrichedMeasureKey: 'foundationQualityMeasures'
+}];
+
 module.exports = Constants;
