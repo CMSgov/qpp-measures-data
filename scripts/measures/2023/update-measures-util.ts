@@ -82,6 +82,7 @@ export function updateMeasuresWithChangeFile(
                         info(`New measure '${change.measureId}' added.`);
                     } else {
                         exports.updateMeasure(change, measuresJson);
+                        info(`New measure '${change.measureId}' updated.`);
                     }
                 } else {
                     console.log(validate.errors);
@@ -128,9 +129,14 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
             measuresJson[i] = {
                 ...measuresJson[i],
                 ...change as any,
-                ...updateBenchmarksMetaData(change),
                 category: change.category === 'qcdr' ? 'quality' : change.category,
             };
+            if (change.category === 'quality') {
+                measuresJson[i] = {
+                    ...measuresJson[i],
+                    ...updateBenchmarksMetaData(change),
+                }
+            }
             break;
         }
     }
