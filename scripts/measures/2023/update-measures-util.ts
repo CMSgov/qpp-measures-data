@@ -82,7 +82,7 @@ export function updateMeasuresWithChangeFile(
                         info(`New measure '${change.measureId}' added.`);
                     } else {
                         exports.updateMeasure(change, measuresJson);
-                        info(`New measure '${change.measureId}' updated.`);
+                        info(`Measure '${change.measureId}' updated.`);
                     }
                 } else {
                     console.log(validate.errors);
