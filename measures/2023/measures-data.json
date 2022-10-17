@@ -1186,7 +1186,7 @@
     "category": "pi",
     "measureId": "PI_PPHI_2",
     "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-    "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+    "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
     "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2022,
@@ -1290,18 +1290,22 @@
     "category": "pi",
     "measureId": "PI_EP_2",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-    "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-    "isRequired": false,
+    "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+    "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2019,
     "lastPerformanceYear": null,
     "objective": "electronicPrescribing",
-    "isBonus": true,
-    "reportingCategory": "bonus",
+    "isBonus": false,
+    "reportingCategory": "required",
     "substitutes": [],
     "measureSpecification": {},
     "measureSets": [],
-    "exclusion": null
+    "exclusion": [
+      "PI_EP_2_EX_1",
+      "PI_EP_2_EX_2",
+      "PI_EP_2_EX_3"
+    ]
   },
   {
     "category": "pi",
@@ -1316,7 +1320,8 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [
-      "PI_HIE_5"
+      "PI_HIE_5",
+      "PI_HIE_6"
     ],
     "measureSpecification": {},
     "measureSets": [],
@@ -1354,7 +1359,8 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [
-      "PI_HIE_5"
+      "PI_HIE_5",
+      "PI_HIE_6"
     ],
     "measureSpecification": {},
     "measureSets": [],
@@ -1393,7 +1399,8 @@
     "reportingCategory": "required",
     "substitutes": [
       "PI_HIE_1",
-      "PI_HIE_4"
+      "PI_HIE_4",
+      "PI_HIE_6"
     ],
     "measureSpecification": {},
     "measureSets": [],
@@ -1604,27 +1611,6 @@
   },
   {
     "category": "pi",
-    "measureId": "PI_PHCDRR_3_EX_4",
-    "title": "Electronic Case Reporting Exclusion",
-    "description": "For the CY 2022 performance period/CY 2024 MIPS payment year only, the MIPS eligible clinician uses CEHRT that is not certified to the electronic case reporting certification criterion at CFR 170.315(f)(5) prior to the start of the performance period they select in CY 2022.",
-    "isRequired": false,
-    "metricType": "boolean",
-    "firstPerformanceYear": 2022,
-    "lastPerformanceYear": null,
-    "objective": "publicHealthAndClinicalDataExchange",
-    "isBonus": false,
-    "reportingCategory": "exclusion",
-    "substitutes": [
-      "PI_PHCDRR_3_EX_1",
-      "PI_PHCDRR_3_EX_2",
-      "PI_PHCDRR_3_EX_3"
-    ],
-    "measureSpecification": null,
-    "measureSets": [],
-    "exclusion": null
-  },
-  {
-    "category": "pi",
     "measureId": "PI_PHCDRR_4",
     "title": "Public Health Registry Reporting",
     "description": "The MIPS eligible clinician is in active engagement with a public health agency to submit data to public health registries.",
@@ -1661,6 +1647,74 @@
     ],
     "measureSpecification": {},
     "measureSets": [],
+    "exclusion": null
+  },
+  {
+    "lastPerformanceYear": null,
+    "measureSets": [],
+    "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
+    "description": "Any MIPS eligible clinician who is unable to electronically prescribe Schedule II opioids and Schedule III and IV drugs in accordance with applicable law during the performance period.",
+    "measureId": "PI_EP_2_EX_1",
+    "firstPerformanceYear": 2023,
+    "category": "pi",
+    "isRequired": false,
+    "metricType": "boolean",
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "exclusion",
+    "substitutes": [],
+    "exclusion": null
+  },
+  {
+    "lastPerformanceYear": null,
+    "measureSets": [],
+    "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
+    "description": "Any MIPS eligible clinician who writes fewer than 100 permissible prescriptions during the performance period",
+    "measureId": "PI_EP_2_EX_2",
+    "firstPerformanceYear": 2023,
+    "category": "pi",
+    "isRequired": false,
+    "metricType": "boolean",
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "exclusion",
+    "substitutes": [],
+    "exclusion": null
+  },
+  {
+    "lastPerformanceYear": null,
+    "measureSets": [],
+    "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
+    "description": "Any eligible clinician for which querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY",
+    "measureId": "PI_EP_2_EX_3",
+    "firstPerformanceYear": 2023,
+    "category": "pi",
+    "isRequired": false,
+    "metricType": "boolean",
+    "isBonus": false,
+    "objective": "electronicPrescribing",
+    "reportingCategory": "exclusion",
+    "substitutes": [],
+    "exclusion": null
+  },
+  {
+    "lastPerformanceYear": null,
+    "measureSets": [],
+    "title": "Enabling Exchange Under TEFCA",
+    "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
+    "measureId": "PI_HIE_6",
+    "firstPerformanceYear": 2023,
+    "category": "pi",
+    "isRequired": true,
+    "metricType": "boolean",
+    "isBonus": false,
+    "objective": "healthInformationExchange",
+    "reportingCategory": "required",
+    "substitutes": [
+      "PI_HIE_1",
+      "PI_HIE_4",
+      "PI_HIE_5"
+    ],
     "exclusion": null
   },
   {
