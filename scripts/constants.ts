@@ -4,7 +4,7 @@ export const BASE_CSV_COLUMN_NAMES = {
     'description': 'Measure Description',
     'measureId': 'Measure ID',
     'yearRemoved': 'Year Removed',
-    'firstPerformanceYear': 'Year Added',
+    'firstPerformanceYear': 'First Performance Year',
     'category': 'Category',
 };
 
@@ -48,7 +48,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'allowedPrograms': 'Allowed Program(s)',
     'isRiskAdjusted': 'Is Risk Adjusted ',
     'yearRemoved': 'Year Removed',
-    'firstPerformanceYear': 'Year Added',
+    'firstPerformanceYear': 'First Performance Year',
 };
 
 export const ARRAY_CSV_FIELDS = [
