@@ -17,10 +17,10 @@ import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 import { convertCsvToJson } from '../lib/csv-json-converter';
 import { DataValidationError } from '../lib/errors';
-import { 
-    IA_DEFAULT_VALUES, 
-    PI_DEFAULT_VALUES, 
-    QUALITY_DEFAULT_VALUES 
+import {
+    IA_DEFAULT_VALUES,
+    PI_DEFAULT_VALUES,
+    QUALITY_DEFAULT_VALUES
 } from '../../constants';
 
 export function updateMeasuresWithChangeFile(
@@ -98,7 +98,7 @@ export function updateMeasuresWithChangeFile(
         if (err instanceof Error) {
             error(err['message']);
         } else {
-            /* istanbul ignore next */ 
+            /* istanbul ignore next */
             throw err;
         }
     }
@@ -109,7 +109,7 @@ export function updateChangeLog(fileName: string, changesPath: string) {
         fs.readFileSync(path.join(appRoot + '', `${changesPath}changes.meta.json`), 'utf8')
     );
     changelog.push(fileName);
-    
+
     writeToFile(changelog, `${changesPath}changes.meta.json`);
 }
 
@@ -151,14 +151,14 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 ...change,
             });
             break;
-    
+
         case 'pi':
             measuresJson.splice(index+1, 0, {
                 ...PI_DEFAULT_VALUES,
                 ...change,
             });
             break;
-    
+
         case 'quality':
             measuresJson.splice(index+1, 0, {
                 ...QUALITY_DEFAULT_VALUES,
@@ -166,7 +166,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 isRegistryMeasure: false,
             });
             break;
-    
+
         case 'qcdr':
             measuresJson.splice(index+1, 0, {
                 ...QUALITY_DEFAULT_VALUES,
@@ -176,7 +176,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             });
             break;
     }
-    
+
 }
 
 function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
@@ -240,18 +240,18 @@ function findFinalInCategory(category: string, measuresJson: any) {
                 index = i;
             }
             else if (
-                    category === 'quality' && 
-                    !measuresJson[i].isRegistryMeasure &&
-                    !['cahps', 'costScore'].includes(measuresJson[i].metricType)
-                ) {
+                category === 'quality' &&
+                !measuresJson[i].isRegistryMeasure &&
+                !['cahps', 'costScore'].includes(measuresJson[i].metricType)
+            ) {
                 index = i;
             }
         }
         else if (
-                category === 'qcdr' && 
-                measuresJson[i].category === 'quality' && 
-                !measuresJson[i].isRegistryMeasure
-            ) {
+            category === 'qcdr' &&
+            measuresJson[i].category === 'quality' &&
+            !measuresJson[i].isRegistryMeasure
+        ) {
             index = i;
         }
     }

@@ -123,14 +123,14 @@ export const OBJECTIVES = {
     'PublicHealthAndClinicalDataExchange': 'publicHealthAndClinicalDataExchange',
     'ProvidertoPatientExchange': 'providerToPatientExchange',
     'e-Prescribing': 'electronicPrescribing',
-    'HealthInformation': 'healthInformationExchange',
+    'HealthInformationExchange': 'healthInformationExchange',
     'NULL': null,
 };
 
 export const REPORTING_CATEGORY = {
-    'Required': 'required',
-    'Bonus': 'bonus',
-    'Exclusion': 'exclusion',
+    'required': 'required',
+    'bonus': 'bonus',
+    'exclusion': 'exclusion',
     'NULL': null,
 
 };
