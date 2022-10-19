@@ -302,7 +302,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'Year Added' was changed. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'First Performance Year' was changed. Was this deliberate?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'isInverse' was changed. Was this deliberate?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type' was changed. Was the strata file also updated to match?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'Calculation Type' was changed. Was the strata file also updated to match?`);

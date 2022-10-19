@@ -167,8 +167,10 @@ function mapItem(field: string, map: any, value: string) {
 function csvFieldToBoolean(field: string, value: string) {
     switch (value) {
         case 'Y':
+        case 'TRUE':
             return true;
         case 'N':
+        case 'FALSE':
             return false;
         default:
             throw new InvalidValueError(field, value);

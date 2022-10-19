@@ -45,7 +45,7 @@ export function updateMeasuresWithChangeFile(
 
                 if (!isNew) {
                     if (change.firstPerformanceYear) warning(
-                        `'${fileName}': 'Year Added' was changed. Was this deliberate?`
+                        `'${fileName}': 'First Performance Year' was changed. Was this deliberate?`
                     );
                     if (!_.isUndefined(change.isInverse)) warning(
                         `'${fileName}': 'isInverse' was changed. Was this deliberate?`
