@@ -256,25 +256,7 @@ definitions:
         type: string
         description: a one-word tag, unique to the strata.
         maxLength: 20
-      eMeasureUuids:
-        type: object
-        description: UUID for Electronic Clinical Quality Measures (ECQM).
-        properties:
-          initialPopulationUuid:
-            type: string
-            description: UUID for the initial population.
-          denominatorUuid:
-            type: string
-            description: UUID for the denominator.
-          numeratorUuid:
-            type: string
-            description: UUID for the numerator.
-          denominatorExclusionUuid:
-            type: string
-            description: UUID for the denominator exclusion.
-          denominatorExceptionUuid:
-            type: string
-            description: UUID for the denominator exception.
+    required: [description, name]
 
   subcategoryIds:
     enum:
