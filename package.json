@@ -14,6 +14,7 @@
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
+    "export:measures": "scripts/measures/measures-json-to-csv",
     "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh",
     "jest:cov": "TS_NODE_FILES=true NODE_OPTIONS='--max-old-space-size=3072' jest --coverage --coverage-prodivder=v8 --runInBand"
@@ -36,6 +37,7 @@
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-react": "^7.20.0",
     "jest": "^29.1.1",
+    "json2csv": "^5.0.7",
     "lodash": "^4.17.21",
     "mocha": "5.2.0",
     "mock-fs": "^5.1.4",
