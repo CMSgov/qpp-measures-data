@@ -29,7 +29,12 @@ import { InvalidValueError } from './errors';
 
 export function convertCsvToJson(csv: any) {
     
-    const parsedCsv = parse(csv, { columns: true });
+    const parsedCsv: Object[] = parse(csv, { columns: true });
+    
+    //check if the CR includes a leading examples row, and remove.
+    if (parsedCsv[0]['Category'].includes('Value')) {
+        parsedCsv.splice(0,1);
+    }
 
     return parsedCsv.map((row: any) => {
         const measure = {};
