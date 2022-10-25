@@ -67,4 +67,4 @@ function writeToFile(file: any, filePath: string) {
     });
 }
 
-creatJson();
+createJson();

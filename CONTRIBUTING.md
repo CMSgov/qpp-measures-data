@@ -32,7 +32,7 @@ npm run build:clinical-clusters     # generates clinical-clusters/clinical-clust
 ```
 
 ### Generating measures CSVs
-To export CSVs of the measures data (by category):
+To export CSVs of the measures data (one for each category category):
 
 ```
 npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
