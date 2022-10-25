@@ -21,7 +21,7 @@ const measuresJson = JSON.parse(
 
 const validCategories = ['ia', 'pi', 'cost', 'quality', 'qcdr'];
 
-function creatJson() {
+function createJson() {
 
     if (!validCategories.includes(category)) {
         error(`category ${category} is not valid. Must be one of the following: ${validCategories.toString()}`)
