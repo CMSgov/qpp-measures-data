@@ -33,7 +33,7 @@ export function ingestStrata() {
   for (let i = 0; i < uniqueMeasureIds.length; i++) {
     const measureStrata = _.filter(strata, { measureId: uniqueMeasureIds[i] });
     const mappedStrata = measureStrata.map((stratum) => {
-      if (!stratum.name || !stratum.description) {
+      if (!stratum.stratumName || !stratum.description) {
         throw new DataValidationError(
           strataPath,
           "Name and description are required."
