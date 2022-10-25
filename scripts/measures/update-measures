@@ -4,6 +4,7 @@ currentPerformanceYear=$(($1))
 maxPerformanceYear=2023
 
 Red='\033[0;31m'
+Green='\033[0;32m'
 
 # This script is not made to work for years prior to 2023.
 if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
@@ -32,7 +33,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
   
-  echo -e "Update complete."
+  echo -e "${Green}Update complete."
   exit
 
 else

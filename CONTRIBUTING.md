@@ -31,6 +31,13 @@ npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
 npm run build:clinical-clusters     # generates clinical-clusters/clinical-clusters.json
 ```
 
+### Generating measures CSVs
+To export CSVs of the measures data (one for each category):
+
+```
+npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
+```
+
 ### Validation
 
 We've provided a simple tool to validate JSON against our JSON schemas. By providing an argument to indicate the schema against which to validate, it can be used as follows:
