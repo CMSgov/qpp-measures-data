@@ -117,7 +117,7 @@ exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
 /**
  * @return {Array<MVP>}
  */
-exports.createMVPDataFile = function(performanceYear, mvpIds) {
+exports.createMVPDataFile = function(performanceYear) {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
   let mvpData = [];
   let measuresData = [];
