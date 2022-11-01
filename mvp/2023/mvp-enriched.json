@@ -425,22 +425,6 @@
         "allowedPrograms": [
           "G0053"
         ]
-      },
-      {
-        "category": "ia",
-        "title": "Consultation of the Prescription Drug Monitoring program",
-        "description": "Review the history of controlled substance prescriptions for 90 percent* of patients using state prescription drug monitoring program (PDMP) data prior to the issuance of a Controlled Substance Schedule II (CSII) opioid prescription lasting longer than 3 days. *Apply exceptions for patients receiving palliative and hospice care.",
-        "measureId": "IA_PSPA_6",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0053",
-          "G0057",
-          "G0058"
-        ]
       }
     ],
     "costMeasures": [
@@ -499,18 +483,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -535,7 +523,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -566,7 +555,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -598,7 +588,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -684,10 +675,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -746,10 +734,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -776,10 +761,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -825,7 +807,7 @@
         "category": "pi",
         "measureId": "PI_PPHI_2",
         "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
         "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2022,
@@ -1364,8 +1346,8 @@
       },
       {
         "category": "ia",
-        "title": "Practice Improvements for Bilateral Exchange of Patient Information",
-        "description": "Ensure that there is bilateral exchange of necessary patient information to guide patient care, such as Open Notes, that could include one or more of the following: • Participate in a Health Information Exchange if available; and/or • Use structured referral notes.",
+        "title": "Practice Improvements to Align with OpenNotes Principles",
+        "description": "Adherence to the principles described in the OpenNotes initiative (https://www.opennotes.org) to ensure that patients have full access to their patient information to guide patient care.",
         "measureId": "IA_CC_13",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -1507,18 +1489,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -1543,7 +1529,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -1574,7 +1561,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -1606,7 +1594,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -1692,10 +1681,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -1754,10 +1740,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -1784,10 +1767,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -2316,22 +2296,6 @@
       },
       {
         "category": "ia",
-        "title": "Practice improvements that engage community resources to support patient health goals",
-        "description": "Select and screen for the health-related social needs (HRSN) that are relevant for your patient population using tools that have been tested with underserved populations. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded question/field for the capture of data. After screening, address HRSNs identified through at least one of the following:• Maintain formal relationships with community- based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or • Update a guide to available community resources, or work with community partners to provide a community resource guide and provide it to patients who are found to be at risk in one or more HRSN area; or• Record findings of screening and trigger follow-up within the electronic health record (EHR); then analyze EHR data on patients with one or more HRSN needed to identify and implement approaches to better serve their holistic needs through linkages with community resources. HRSNs prioritized by your practice might include health-harming legal needs, which require both health and legal support to resolve, areas such as food and housing insecurity, or needs such as exercise, nutrition, or chronic disease self-management.",
-        "measureId": "IA_CC_14",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "careCoordination",
-        "allowedPrograms": [
-          "G0055",
-          "G0056",
-          "G0057"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Implementation of practices/processes for developing regular individual care plans",
         "description": "Implementation of practices/processes, including a discussion on care, to develop regularly updated individual care plans for at-risk patients that are shared with the beneficiary or caregiver(s). Individual care plans should include consideration of a patient’s goals and priorities, as well as desired outcomes of care.",
         "measureId": "IA_CC_9",
@@ -2375,20 +2339,6 @@
       },
       {
         "category": "ia",
-        "title": "PCI Bleeding Campaign",
-        "description": "This activity is suspended; the PCI Bleeding Campaign ended in August 2021, making this activity obsolete for performance after that date.",
-        "measureId": "IA_PSPA_30",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2018,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0055"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Administration of the AHRQ Survey of Patient Safety Culture",
         "description": "Administration of the AHRQ Survey of Patient Safety Culture and submission of data to the comparative database (refer to AHRQ Survey of Patient Safety Culture website http://www.ahrq.gov/professionals/quality-patient-safety/patientsafetyculture/index.html). Note: This activity may be selected once every 4 years, to avoid duplicative information given that some of the modules may change on a year by year basis but over 4 years there would be a reasonable expectation for the set of modules to have undergone substantive change, for the improvement activities performance category score.",
         "measureId": "IA_PSPA_4",
@@ -2404,7 +2354,7 @@
       {
         "category": "ia",
         "title": "Use of QCDR data for ongoing practice assessment and improvements",
-        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:• Performance of activities that promote use of standard practices, tools and processes for quality improvement (for example, documented preventative screening and vaccinations that can be shared across MIPS eligible clinician or groups);• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);• Use of standardized processes for screening for social determinants of health such as food security, employment, and housing;• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or• Use of QCDR data for quality improvement such as comparative analysis across specific patient populations for adverse outcomes after an outpatient surgical procedure and corrective steps to address adverse outcomes.",
+        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:\n• Performance of activities that promote use of standard practices, tools, and processes for quality improvement (for example, documented preventive health efforts, like screening and vaccinations) that can be shared across MIPS eligible clinicians or groups);\n• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);\n• Use of standardized processes for screening for drivers of health, such as food security, housing stability, and transportation accessibility;\n• Generation and use of regular feedback reports that summarize local practice patterns and treatment outcomes, including for populations that are disadvantaged and/or underserved by the healthcare system;\n• Use of processes and tools that engage patients to improve adherence to treatment plans;\n• Implementation of patient self-action plans;\n• Implementation of shared clinical decision-making capabilities;\n• Use of QCDR patient experience data to inform and advance improvements in beneficiary engagement;\n• Promotion of collaborative learning network opportunities that are interactive;\n• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or\n• Use of QCDR data for quality improvement, such as comparative analysis across specific patient populations of adverse outcomes after an outpatient surgical procedure and corrective steps to address these outcomes.",
         "measureId": "IA_PSPA_7",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -2511,18 +2461,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -2547,7 +2501,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -2578,7 +2533,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -2610,7 +2566,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -2696,10 +2653,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -2758,10 +2712,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -2788,10 +2739,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -2837,7 +2785,7 @@
         "category": "pi",
         "measureId": "PI_PPHI_2",
         "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
         "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2022,
@@ -3402,8 +3350,8 @@
       },
       {
         "category": "ia",
-        "title": "Practice Improvements for Bilateral Exchange of Patient Information",
-        "description": "Ensure that there is bilateral exchange of necessary patient information to guide patient care, such as Open Notes, that could include one or more of the following: • Participate in a Health Information Exchange if available; and/or • Use structured referral notes.",
+        "title": "Practice Improvements to Align with OpenNotes Principles",
+        "description": "Adherence to the principles described in the OpenNotes initiative (https://www.opennotes.org) to ensure that patients have full access to their patient information to guide patient care.",
         "measureId": "IA_CC_13",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -3414,22 +3362,6 @@
           "G0054",
           "G0056",
           "G0058"
-        ]
-      },
-      {
-        "category": "ia",
-        "title": "Practice improvements that engage community resources to support patient health goals",
-        "description": "Select and screen for the health-related social needs (HRSN) that are relevant for your patient population using tools that have been tested with underserved populations. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded question/field for the capture of data. After screening, address HRSNs identified through at least one of the following:• Maintain formal relationships with community- based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or • Update a guide to available community resources, or work with community partners to provide a community resource guide and provide it to patients who are found to be at risk in one or more HRSN area; or• Record findings of screening and trigger follow-up within the electronic health record (EHR); then analyze EHR data on patients with one or more HRSN needed to identify and implement approaches to better serve their holistic needs through linkages with community resources. HRSNs prioritized by your practice might include health-harming legal needs, which require both health and legal support to resolve, areas such as food and housing insecurity, or needs such as exercise, nutrition, or chronic disease self-management.",
-        "measureId": "IA_CC_14",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "careCoordination",
-        "allowedPrograms": [
-          "G0055",
-          "G0056",
-          "G0057"
         ]
       },
       {
@@ -3483,7 +3415,7 @@
       {
         "category": "ia",
         "title": "Implementation of formal quality improvement methods, practice changes, or other practice improvement processes",
-        "description": "Adopt a formal model for quality improvement and create a culture in which all staff actively participates in improvement activities that could include one or more of the following, such as:• Participation in multisource feedback; • Train all staff in quality improvement methods;• Integrate practice change/quality improvement into staff duties;• Engage all staff in identifying and testing practices changes;• Designate regular team meetings to review data and plan improvement cycles;• Promote transparency and accelerate improvement by sharing practice level and panel level quality of care, patient experience and utilization data with staff;• Promote transparency and engage patients and families by sharing practice level quality of care, patient experience and utilization data with patients and families, including activities in which clinicians act upon patient experience data;• Participation in Bridges to Excellence;• Participation in American Board of Medical Specialties (ABMS) Multi-Specialty Portfolio Program.",
+        "description": "Adopt a formal model for quality improvement and create a culture in which all staff, including leadership, actively participates in improvement activities that could include one or more of the following, such as:\n• Participation in multisource feedback; \n• Train all staff in quality improvement methods;\n• Integrate practice change/quality improvement into staff duties;\n• Engage all staff in identifying and testing practices changes;\n• Designate regular team meetings to review data and plan improvement cycles;\n• Promote transparency and accelerate improvement by sharing practice level and panel level quality of care, patient experience and utilization data with staff;\n• Promote transparency and engage patients and families by sharing practice level quality of care, patient experience and utilization data with patients and families, including activities in which clinicians act upon patient experience data;\n• Participation in Bridges to Excellence;\n• Participation in American Board of Medical Specialties (ABMS) Multi-Specialty Portfolio Program.",
         "measureId": "IA_PSPA_19",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -3552,18 +3484,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -3588,7 +3524,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -3619,7 +3556,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -3651,7 +3589,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -3737,10 +3676,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -3799,10 +3735,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -3829,10 +3762,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -4287,22 +4217,6 @@
       },
       {
         "category": "ia",
-        "title": "Practice improvements that engage community resources to support patient health goals",
-        "description": "Select and screen for the health-related social needs (HRSN) that are relevant for your patient population using tools that have been tested with underserved populations. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded question/field for the capture of data. After screening, address HRSNs identified through at least one of the following:• Maintain formal relationships with community- based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or • Update a guide to available community resources, or work with community partners to provide a community resource guide and provide it to patients who are found to be at risk in one or more HRSN area; or• Record findings of screening and trigger follow-up within the electronic health record (EHR); then analyze EHR data on patients with one or more HRSN needed to identify and implement approaches to better serve their holistic needs through linkages with community resources. HRSNs prioritized by your practice might include health-harming legal needs, which require both health and legal support to resolve, areas such as food and housing insecurity, or needs such as exercise, nutrition, or chronic disease self-management.",
-        "measureId": "IA_CC_14",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "careCoordination",
-        "allowedPrograms": [
-          "G0055",
-          "G0056",
-          "G0057"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Implementation of improvements that contribute to more timely communication of test results",
         "description": "Timely communication of test results defined as timely identification of abnormal test results with timely follow-up.",
         "measureId": "IA_CC_2",
@@ -4350,7 +4264,7 @@
       {
         "category": "ia",
         "title": "Implementation of formal quality improvement methods, practice changes, or other practice improvement processes",
-        "description": "Adopt a formal model for quality improvement and create a culture in which all staff actively participates in improvement activities that could include one or more of the following, such as:• Participation in multisource feedback; • Train all staff in quality improvement methods;• Integrate practice change/quality improvement into staff duties;• Engage all staff in identifying and testing practices changes;• Designate regular team meetings to review data and plan improvement cycles;• Promote transparency and accelerate improvement by sharing practice level and panel level quality of care, patient experience and utilization data with staff;• Promote transparency and engage patients and families by sharing practice level quality of care, patient experience and utilization data with patients and families, including activities in which clinicians act upon patient experience data;• Participation in Bridges to Excellence;• Participation in American Board of Medical Specialties (ABMS) Multi-Specialty Portfolio Program.",
+        "description": "Adopt a formal model for quality improvement and create a culture in which all staff, including leadership, actively participates in improvement activities that could include one or more of the following, such as:\n• Participation in multisource feedback; \n• Train all staff in quality improvement methods;\n• Integrate practice change/quality improvement into staff duties;\n• Engage all staff in identifying and testing practices changes;\n• Designate regular team meetings to review data and plan improvement cycles;\n• Promote transparency and accelerate improvement by sharing practice level and panel level quality of care, patient experience and utilization data with staff;\n• Promote transparency and engage patients and families by sharing practice level quality of care, patient experience and utilization data with patients and families, including activities in which clinicians act upon patient experience data;\n• Participation in Bridges to Excellence;\n• Participation in American Board of Medical Specialties (ABMS) Multi-Specialty Portfolio Program.",
         "measureId": "IA_PSPA_19",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -4364,39 +4278,8 @@
       },
       {
         "category": "ia",
-        "title": "Leadership engagement in regular guidance and demonstrated commitment for implementing practice improvement changes",
-        "description": "Ensure full engagement of clinical and administrative leadership in practice improvement that could include one or more of the following:   • Make responsibility for guidance of practice change a component of clinical and administrative leadership roles; • Allocate time for clinical and administrative leadership for practice improvement efforts, including participation in regular team meetings; and/or• Incorporate population health, quality and patient experience metrics in regular reviews of practice performance.",
-        "measureId": "IA_PSPA_20",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "medium",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0057",
-          "G0059"
-        ]
-      },
-      {
-        "category": "ia",
-        "title": "Consultation of the Prescription Drug Monitoring program",
-        "description": "Review the history of controlled substance prescriptions for 90 percent* of patients using state prescription drug monitoring program (PDMP) data prior to the issuance of a Controlled Substance Schedule II (CSII) opioid prescription lasting longer than 3 days. *Apply exceptions for patients receiving palliative and hospice care.",
-        "measureId": "IA_PSPA_6",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0053",
-          "G0057",
-          "G0058"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Use of QCDR data for ongoing practice assessment and improvements",
-        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:• Performance of activities that promote use of standard practices, tools and processes for quality improvement (for example, documented preventative screening and vaccinations that can be shared across MIPS eligible clinician or groups);• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);• Use of standardized processes for screening for social determinants of health such as food security, employment, and housing;• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or• Use of QCDR data for quality improvement such as comparative analysis across specific patient populations for adverse outcomes after an outpatient surgical procedure and corrective steps to address adverse outcomes.",
+        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:\n• Performance of activities that promote use of standard practices, tools, and processes for quality improvement (for example, documented preventive health efforts, like screening and vaccinations) that can be shared across MIPS eligible clinicians or groups);\n• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);\n• Use of standardized processes for screening for drivers of health, such as food security, housing stability, and transportation accessibility;\n• Generation and use of regular feedback reports that summarize local practice patterns and treatment outcomes, including for populations that are disadvantaged and/or underserved by the healthcare system;\n• Use of processes and tools that engage patients to improve adherence to treatment plans;\n• Implementation of patient self-action plans;\n• Implementation of shared clinical decision-making capabilities;\n• Use of QCDR patient experience data to inform and advance improvements in beneficiary engagement;\n• Promotion of collaborative learning network opportunities that are interactive;\n• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or\n• Use of QCDR data for quality improvement, such as comparative analysis across specific patient populations of adverse outcomes after an outpatient surgical procedure and corrective steps to address these outcomes.",
         "measureId": "IA_PSPA_7",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -4466,18 +4349,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -4502,7 +4389,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -4533,7 +4421,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -4565,7 +4454,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -4651,10 +4541,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -4713,10 +4600,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -4743,10 +4627,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -5206,8 +5087,8 @@
       },
       {
         "category": "ia",
-        "title": "Practice Improvements for Bilateral Exchange of Patient Information",
-        "description": "Ensure that there is bilateral exchange of necessary patient information to guide patient care, such as Open Notes, that could include one or more of the following: • Participate in a Health Information Exchange if available; and/or • Use structured referral notes.",
+        "title": "Practice Improvements to Align with OpenNotes Principles",
+        "description": "Adherence to the principles described in the OpenNotes initiative (https://www.opennotes.org) to ensure that patients have full access to their patient information to guide patient care.",
         "measureId": "IA_CC_13",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -5294,24 +5175,8 @@
       },
       {
         "category": "ia",
-        "title": "Consultation of the Prescription Drug Monitoring program",
-        "description": "Review the history of controlled substance prescriptions for 90 percent* of patients using state prescription drug monitoring program (PDMP) data prior to the issuance of a Controlled Substance Schedule II (CSII) opioid prescription lasting longer than 3 days. *Apply exceptions for patients receiving palliative and hospice care.",
-        "measureId": "IA_PSPA_6",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "high",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0053",
-          "G0057",
-          "G0058"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Use of QCDR data for ongoing practice assessment and improvements",
-        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:• Performance of activities that promote use of standard practices, tools and processes for quality improvement (for example, documented preventative screening and vaccinations that can be shared across MIPS eligible clinician or groups);• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);• Use of standardized processes for screening for social determinants of health such as food security, employment, and housing;• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or• Use of QCDR data for quality improvement such as comparative analysis across specific patient populations for adverse outcomes after an outpatient surgical procedure and corrective steps to address adverse outcomes.",
+        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:\n• Performance of activities that promote use of standard practices, tools, and processes for quality improvement (for example, documented preventive health efforts, like screening and vaccinations) that can be shared across MIPS eligible clinicians or groups);\n• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);\n• Use of standardized processes for screening for drivers of health, such as food security, housing stability, and transportation accessibility;\n• Generation and use of regular feedback reports that summarize local practice patterns and treatment outcomes, including for populations that are disadvantaged and/or underserved by the healthcare system;\n• Use of processes and tools that engage patients to improve adherence to treatment plans;\n• Implementation of patient self-action plans;\n• Implementation of shared clinical decision-making capabilities;\n• Use of QCDR patient experience data to inform and advance improvements in beneficiary engagement;\n• Promotion of collaborative learning network opportunities that are interactive;\n• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or\n• Use of QCDR data for quality improvement, such as comparative analysis across specific patient populations of adverse outcomes after an outpatient surgical procedure and corrective steps to address these outcomes.",
         "measureId": "IA_PSPA_7",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -5398,18 +5263,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -5434,7 +5303,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -5465,7 +5335,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -5497,7 +5368,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -5583,10 +5455,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -5645,10 +5514,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -5675,10 +5541,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -5724,7 +5587,7 @@
         "category": "pi",
         "measureId": "PI_PPHI_2",
         "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
         "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2022,
@@ -6235,23 +6098,8 @@
       },
       {
         "category": "ia",
-        "title": "Leadership engagement in regular guidance and demonstrated commitment for implementing practice improvement changes",
-        "description": "Ensure full engagement of clinical and administrative leadership in practice improvement that could include one or more of the following:   • Make responsibility for guidance of practice change a component of clinical and administrative leadership roles; • Allocate time for clinical and administrative leadership for practice improvement efforts, including participation in regular team meetings; and/or• Incorporate population health, quality and patient experience metrics in regular reviews of practice performance.",
-        "measureId": "IA_PSPA_20",
-        "metricType": "boolean",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "weight": "medium",
-        "subcategoryId": "patientSafetyAndPracticeAssessment",
-        "allowedPrograms": [
-          "G0057",
-          "G0059"
-        ]
-      },
-      {
-        "category": "ia",
         "title": "Use of QCDR data for ongoing practice assessment and improvements",
-        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:• Performance of activities that promote use of standard practices, tools and processes for quality improvement (for example, documented preventative screening and vaccinations that can be shared across MIPS eligible clinician or groups);• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);• Use of standardized processes for screening for social determinants of health such as food security, employment, and housing;• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or• Use of QCDR data for quality improvement such as comparative analysis across specific patient populations for adverse outcomes after an outpatient surgical procedure and corrective steps to address adverse outcomes.",
+        "description": "Participation in a Qualified Clinical Data Registry (QCDR) and use of QCDR data for ongoing practice assessment and improvements in patient safety, including:\n• Performance of activities that promote use of standard practices, tools, and processes for quality improvement (for example, documented preventive health efforts, like screening and vaccinations) that can be shared across MIPS eligible clinicians or groups);\n• Use of standard questionnaires for assessing improvements in health disparities related to functional health status (for example, use of Seattle Angina Questionnaire, MD Anderson Symptom Inventory, and/or SF-12/VR-12 functional health status assessment);\n• Use of standardized processes for screening for drivers of health, such as food security, housing stability, and transportation accessibility;\n• Generation and use of regular feedback reports that summarize local practice patterns and treatment outcomes, including for populations that are disadvantaged and/or underserved by the healthcare system;\n• Use of processes and tools that engage patients to improve adherence to treatment plans;\n• Implementation of patient self-action plans;\n• Implementation of shared clinical decision-making capabilities;\n• Use of QCDR patient experience data to inform and advance improvements in beneficiary engagement;\n• Promotion of collaborative learning network opportunities that are interactive;\n• Use of supporting QCDR modules that can be incorporated into the certified EHR technology; or\n• Use of QCDR data for quality improvement, such as comparative analysis across specific patient populations of adverse outcomes after an outpatient surgical procedure and corrective steps to address these outcomes.",
         "measureId": "IA_PSPA_7",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
@@ -6321,18 +6169,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -6357,7 +6209,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -6388,7 +6241,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -6420,7 +6274,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -6506,10 +6361,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -6568,10 +6420,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -6598,10 +6447,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -6647,7 +6493,7 @@
         "category": "pi",
         "measureId": "PI_PPHI_2",
         "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
         "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2022,
@@ -6933,18 +6779,22 @@
         "category": "pi",
         "measureId": "PI_EP_2",
         "title": "Query of the Prescription Drug Monitoring Program (PDMP)",
-        "description": "For at least one Schedule II opioid electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history, except where prohibited and in accordance with applicable law.",
-        "isRequired": false,
+        "description": "For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history.",
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2019,
         "lastPerformanceYear": null,
         "objective": "electronicPrescribing",
-        "isBonus": true,
-        "reportingCategory": "bonus",
+        "isBonus": false,
+        "reportingCategory": "required",
         "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
-        "exclusion": null,
+        "exclusion": [
+          "PI_EP_2_EX_1",
+          "PI_EP_2_EX_2",
+          "PI_EP_2_EX_3"
+        ],
         "allowedPrograms": [
           "G0053",
           "G0054",
@@ -6969,7 +6819,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -7000,7 +6851,8 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
-          "PI_HIE_5"
+          "PI_HIE_5",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -7032,7 +6884,8 @@
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_1",
-          "PI_HIE_4"
+          "PI_HIE_4",
+          "PI_HIE_6"
         ],
         "measureSpecification": {},
         "measureSets": [],
@@ -7118,10 +6971,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_4",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -7180,10 +7030,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_5"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -7210,10 +7057,7 @@
         "objective": "publicHealthAndClinicalDataExchange",
         "isBonus": true,
         "reportingCategory": "bonus",
-        "substitutes": [
-          "PI_PHCDRR_2",
-          "PI_PHCDRR_4"
-        ],
+        "substitutes": [],
         "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
@@ -7259,7 +7103,7 @@
         "category": "pi",
         "measureId": "PI_PPHI_2",
         "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
-        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides beginning with the 2022 performance period.",
+        "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
         "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2022,
