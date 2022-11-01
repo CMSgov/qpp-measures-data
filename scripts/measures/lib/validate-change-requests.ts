@@ -48,7 +48,6 @@ interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     isRiskAdjusted?: boolean,
     primarySteward?: string,
     measureType?: string,
-    allowedPrograms?: string[],
     eMeasureId?: string,
     nqfEMeasureId?: string,
     isRegistryMeasure?: boolean,
@@ -89,7 +88,6 @@ const baseQualitySchemaProperties = {
     isRiskAdjusted: { type: 'boolean', nullable: true },
     primarySteward: { type: 'string', nullable: true },
     measureType: { type: 'string', nullable: true },
-    allowedPrograms: { type: 'array', items: { type: 'string', enum: Object.values(Constants.ALLOWED_PROGRAMS) }, nullable: true },
     eMeasureId: { type: 'string', nullable: true },
     nqfEMeasureId: { type: 'string', nullable: true },
     isRegistryMeasure: { type: 'boolean', nullable: true },
@@ -113,7 +111,6 @@ const baseQualityRequiredFields = [
     'submissionMethods',
     'isInverse',
     'metricType',
-    'allowedPrograms',
     'firstPerformanceYear',
 ];
 

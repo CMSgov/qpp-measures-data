@@ -45,7 +45,6 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'clinicalGuidelineChanged': 'Collection Type(s) where Suppressed',
     'historic_benchmarks': 'Collection Type(s) where Historic Benchmark Removed',
     'icdImpacted': 'Collection Type(s) where Truncated',
-    'allowedPrograms': 'Allowed Program(s)',
     'isRiskAdjusted': 'Is Risk Adjusted ',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'First Performance Year',
@@ -56,7 +55,6 @@ export const ARRAY_CSV_FIELDS = [
     'Exclusions',
     '*** Collection Type(s) for Submission',
     'Allowed QCDR Vendor ID',
-    'Allowed Program(s)',
     'Specialty Measure Sets',
     'Collection Type(s) where Suppressed',
     'Collection Type(s) where Historic Benchmark Removed',
@@ -100,12 +98,6 @@ export const COLLECTION_TYPES = {
     'AdminClaims': 'administrativeClaims',
     'MIPSCQM': 'registry',
     'QCDR': 'registry',
-};
-
-export const ALLOWED_PROGRAMS = {
-    'MIPS': 'mips',
-    'APP': 'app1',
-    'PCF': 'pcf',
 };
 
 export const MEASURE_TYPES = {

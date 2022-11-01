@@ -56,7 +56,6 @@ const allowedQualityNew = {
     measureSets: [ 'nephrology', 'preventiveMedicine' ],
     isInverse: false,
     metricType: 'singlePerformanceRate',
-    allowedPrograms: [ 'mips' ],
     isRiskAdjusted: false,
 } as MeasuresChange;
 
@@ -73,7 +72,6 @@ const allowedQCDRNew = {
     measureSets: [ 'nephrology', 'preventiveMedicine' ],
     isInverse: false,
     metricType: 'singlePerformanceRate',
-    allowedPrograms: [ 'mips' ],
     allowedVendors: [ '123456', '654321'],
     isRiskAdjusted: false,
 } as MeasuresChange;
@@ -306,6 +304,7 @@ describe('#update-measures-util', () => {
             expect(warningSpy).toBeCalledWith(`'test.csv': 'isInverse' was changed. Was this deliberate?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type' was changed. Was the strata file also updated to match?`);
             expect(warningSpy).toBeCalledWith(`'test.csv': 'Calculation Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
             expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
         });
@@ -696,7 +695,7 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
-                allowedPrograms: [ 'mips' ],
+                allowedPrograms: [ 'mips', 'pcf' ],
                 submissionMethods: [ 'registry', 'claims' ],
                 measureSets: [ 'nephrology', 'preventiveMedicine' ],
             });
@@ -727,7 +726,7 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
-                allowedPrograms: [ 'mips' ],
+                allowedPrograms: [ 'mips', 'pcf' ],
                 submissionMethods: [ 'registry', 'claims' ],
                 measureSets: [ 'nephrology', 'preventiveMedicine' ],
                 allowedVendors: [ '123456', '654321'],
