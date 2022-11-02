@@ -23,6 +23,11 @@ import {
     QUALITY_DEFAULT_VALUES
 } from '../../constants';
 
+const QUALITY_DEFAULT_PROGRAMS = [
+    'mips',
+    'pcf',
+];
+
 export function updateMeasuresWithChangeFile(
     fileName: string,
     changesPath: string,
@@ -55,6 +60,9 @@ export function updateMeasuresWithChangeFile(
                     );
                     if (change.overallAlgorithm) warning(
                         `'${fileName}': 'Calculation Type' was changed. Was the strata file also updated to match?`
+                    );
+                    if (change.metricType || change.isHighPriority || change.isInverse) warning(
+                        `'${fileName}': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
                     );
                     if (!isValidECQM(change, measuresJson)) {
                         throw new DataValidationError(fileName, 'CMS eCQM ID is required if one of the collection types is eCQM.');
@@ -146,33 +154,35 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
     const index = findFinalInCategory(change.category, measuresJson);
     switch (change.category) {
         case 'ia':
-            measuresJson.splice(index+1, 0, {
+            measuresJson.splice(index + 1, 0, {
                 ...IA_DEFAULT_VALUES,
                 ...change,
             });
             break;
 
         case 'pi':
-            measuresJson.splice(index+1, 0, {
+            measuresJson.splice(index + 1, 0, {
                 ...PI_DEFAULT_VALUES,
                 ...change,
             });
             break;
 
         case 'quality':
-            measuresJson.splice(index+1, 0, {
+            measuresJson.splice(index + 1, 0, {
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
                 isRegistryMeasure: false,
+                allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
             });
             break;
 
         case 'qcdr':
-            measuresJson.splice(index+1, 0, {
+            measuresJson.splice(index + 1, 0, {
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
                 category: 'quality',
                 isRegistryMeasure: true,
+                allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
             });
             break;
     }

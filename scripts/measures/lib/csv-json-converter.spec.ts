@@ -73,7 +73,6 @@ const qualityJson = {
     clinicalGuidelineChanged: [ 'registry' ],
     historic_benchmarks: { registry: 'removed' },
     icdImpacted: [ 'claims' ],
-    allowedPrograms: [ 'mips' ],
     isRiskAdjusted: false,
 };
 
@@ -95,7 +94,6 @@ const qcdrMeasure = {
     clinicalGuidelineChanged: [ 'registry' ],
     historic_benchmarks: { registry: 'removed' },
     icdImpacted: [ 'claims' ],
-    allowedPrograms: [ 'mips' ],
     isRiskAdjusted: true,
 };
 

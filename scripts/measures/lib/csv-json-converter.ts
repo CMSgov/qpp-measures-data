@@ -9,7 +9,6 @@ import parse from 'csv-parse/lib/sync';
 
 import { warning } from '../../logger';
 import {
-    ALLOWED_PROGRAMS,
     ARRAY_CSV_FIELDS,
     BASE_CSV_COLUMN_NAMES,
     BOOLEAN_CSV_FIELDS,
@@ -132,9 +131,6 @@ function mapHistoricBenchmarks(removedBenchmarks: string[]) {
 function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (fieldHeader === QUALITY_CSV_COLUMN_NAMES.measureSets) {
         return mapArrayItem(fieldHeader, MEASURE_SETS, fieldValue);
-    }
-    if (fieldHeader === QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {
-        return mapArrayItem(fieldHeader, ALLOWED_PROGRAMS, fieldValue);
     }
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
