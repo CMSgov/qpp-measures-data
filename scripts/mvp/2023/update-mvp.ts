@@ -1,7 +1,7 @@
 import fs from 'fs';
 import _ from 'lodash';
 
-import { createMVPDataFile } from '../../../index';
+import * as index from '../../../index';
 import {
   info,
   warning
@@ -22,7 +22,7 @@ export function updateMvps(performanceYear: string) {
     }
   }
 
-  createMVPDataFile;
+  index.createMVPDataFile(performanceYear);
 }
 
 /* istanbul ignore next */
