@@ -45,7 +45,8 @@ function getAllQcdrOrQualityMeasures() {
     for (let i = 0; i < measuresJson.length; i++) {
         if (
             category === 'quality' &&
-            !measuresJson[i].isRegistryMeasure &&
+            measuresJson[i].category === 'quality' &&
+            measuresJson[i].isRegistryMeasure &&
             !['cahps', 'costScore'].includes(measuresJson[i].metricType)
         ) {
             measuresOfCategory.push(measuresJson[i]);
@@ -53,7 +54,8 @@ function getAllQcdrOrQualityMeasures() {
         else if (
             category === 'qcdr' &&
             measuresJson[i].category === 'quality' &&
-            !measuresJson[i].isRegistryMeasure
+            !measuresJson[i].isRegistryMeasure &&
+            !measuresJson[i].measureId.includes('CAHPS_')
         ) {
             measuresOfCategory.push(measuresJson[i]);
         }
