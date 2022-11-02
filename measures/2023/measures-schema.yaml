@@ -50,7 +50,11 @@ definitions:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: #/definitions/measureSets }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
+      allowedPrograms:
+        description: Programs that the measure can be submitted to
+        type: array
+        items: { $ref: #/definitions/programs }
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear, allowedPrograms]
 
   iaMeasure:
     $merge:
@@ -188,10 +192,6 @@ definitions:
             description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
             type: array
             items: { $ref: #/definitions/performanceOption }
-          allowedPrograms:
-            description: Programs that the measure can be submitted to
-            type: array
-            items: { $ref: #/definitions/programs }
           requiredForPrograms:
             description: Programs that the measure is required to be submitted to
             type: array
@@ -244,7 +244,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, allowedPrograms, isRegistryMeasure, isIcdImpacted]
+        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object
