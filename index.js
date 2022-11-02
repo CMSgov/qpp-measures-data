@@ -118,7 +118,9 @@ exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
  * @return {Array<MVP>}
  */
 exports.createMVPDataFile = function(performanceYear) {
-  const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
+  const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
+  const measureFilePath = path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json');
+
   let mvpData = [];
   let measuresData = [];
   try {
@@ -143,7 +145,8 @@ exports.createMVPDataFile = function(performanceYear) {
     });
   });
 
-  fs.writeFileSync(filePath, JSON.stringify(mvpData, null, 2));
+  fs.writeFileSync(mvpFilePath, JSON.stringify(mvpData, null, 2));
+  fs.writeFileSync(measureFilePath, JSON.stringify(measuresData, null, 2));
 
   return mvpData;
 };
@@ -151,14 +154,18 @@ exports.createMVPDataFile = function(performanceYear) {
 exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresData, measureIdKey, enrichedMeasureKey) {
   mvpDataItem[measureIdKey].forEach(measureId => {
     const measure = measuresData.find(m => m.measureId === measureId);
+
     if (measure) {
-      const allowedMvpPrograms = [];
+      if (!measure.allowedPrograms) {
+        measure.allowedPrograms = [];
+      }
+
       mvpDataArray.forEach(m => {
         if (m[measureIdKey].includes(measureId)) {
-          allowedMvpPrograms.push(m.mvpId);
+          measure.allowedPrograms.push(m.mvpId);
         }
       });
-      measure.allowedPrograms ? measure.allowedPrograms = measure.allowedPrograms.concat(allowedMvpPrograms) : measure.allowedPrograms = allowedMvpPrograms;
+
       measure.allowedPrograms = uniq(measure.allowedPrograms);
       mvpDataItem[enrichedMeasureKey].push(measure);
     }
