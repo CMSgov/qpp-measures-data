@@ -54,7 +54,7 @@ definitions:
         description: Programs that the measure can be submitted to
         type: array
         items: { $ref: #/definitions/programs }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear, allowedPrograms]
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
 
   iaMeasure:
     $merge:
