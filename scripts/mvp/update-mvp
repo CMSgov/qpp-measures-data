@@ -12,7 +12,8 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   echo -e "Compiling Typescript..."
   tsc -p .
 
-  # Update the measures-data, if there are any updates:
+  # Update mvp-enriched, if there are any updates:
+  echo -e "Updating MVP data..."
   node dist/mvp/$currentPerformanceYear/update-mvp.js \
     $currentPerformanceYear
   

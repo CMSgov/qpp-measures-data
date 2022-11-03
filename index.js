@@ -99,7 +99,7 @@ exports.getClinicalClusterSchema = function(performanceYear = 2017) {
  */
 exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
-  let mvpData = [];
+  let mvpData;
 
   if (fs.existsSync(filePath)) {
     mvpData = JSON.parse(fs.readFileSync(filePath));
@@ -128,8 +128,21 @@ exports.createMVPDataFile = function(performanceYear) {
       fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json')));
     measuresData = this.getMeasuresData(performanceYear);
   } catch (e) {
-    console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
+    console.log('QPP mvp / measures data not found for year: ' + performanceYear + ' --> ' + e);
   }
+
+  const mvpIds = [];
+  mvpData.forEach(mvpDataItem => {
+    if (mvpDataItem.mvpId !== 'app1') {
+      mvpIds.push(mvpDataItem.mvpId);
+    }
+  });
+
+  // Reset the allowedPrograms to remove any MVP ID program names (we will add them back on line 173)
+  // This allows for removal of a measure from an MVP data item
+  measuresData.forEach(measure => {
+    measure.allowedPrograms = measure.allowedPrograms ? measure.allowedPrograms.filter(program => !mvpIds.includes(program)) : [];
+  });
 
   // Hydrate measures
   mvpData.forEach(mvp => {
@@ -156,10 +169,6 @@ exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresDa
     const measure = measuresData.find(m => m.measureId === measureId);
 
     if (measure) {
-      if (!measure.allowedPrograms) {
-        measure.allowedPrograms = [];
-      }
-
       mvpDataArray.forEach(m => {
         if (m[measureIdKey].includes(measureId)) {
           measure.allowedPrograms.push(m.mvpId);
