@@ -55,7 +55,7 @@ export function updateMeasuresWithChangeFile(
                     if (!_.isUndefined(change.isInverse)) warning(
                         `'${fileName}': 'isInverse' was changed. Was this deliberate?`
                     );
-                    if (change.metricType) warning(
+                    if (isMultiPerfRateChanged(change, measuresJson)) warning(
                         `'${fileName}': 'Metric Type' was changed. Was the strata file also updated to match?`
                     );
                     if (change.overallAlgorithm) warning(
@@ -223,6 +223,12 @@ function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any): boole
         return false;
     }
     return true;
+}
+
+function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    return change.metricType?.includes('ultiPerformanceRate') || currentMeasure.metricType?.includes('ultiPerformanceRate');
 }
 
 export function writeToFile(file: any, filePath: string) {
