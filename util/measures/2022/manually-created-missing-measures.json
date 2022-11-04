@@ -1,2 +1,223 @@
 [
+  {
+    "eMeasureId": "CMS135v10",
+    "eMeasureUuid": "2c928082-7845-d8ca-0178-4751d715017f",
+    "strata": [
+      {
+        "name": "Within12Months",
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5313ED35-301C-4753-8CA9-05552E717D1F",
+          "denominatorUuid": "570FB076-5F12-4C94-8A50-7F283F8DED8A",
+          "numeratorUuid": "BF01DEAD-19E1-42A0-A6D4-613C1507A050",
+          "denominatorExceptionUuid": "1F78614D-DE69-4264-B26F-98140A49E534"
+        }
+      },
+      {
+        "name": "HospitalDischarge",
+        "description": "Patients who were prescribed ACE inhibitor or ARB or ARNI therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "DF0E4886-677F-45EF-8464-5D9A953CC634",
+          "denominatorUuid": "D5B75FB2-130D-4127-B107-20694F353866",
+          "numeratorUuid": "E2B98AD1-89CF-4DDF-8BC7-9C5175D2E578",
+          "denominatorExceptionUuid": "D334C2C9-EC56-42B9-BF1F-6A1282C63FD7"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS138v10",
+    "eMeasureUuid": "2c928085-74e6-3120-0174-fa1e7b930317",
+    "strata": [
+      {
+        "name": "screenedForUse",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "05318779-D67D-47E0-809E-A1F9A5A6879A",
+          "denominatorUuid": "DB2DA60D-0EF4-4D8B-9EC8-C25BB0FB2A27",
+          "numeratorUuid": "9D92F4D0-8B7D-480C-BAF0-4B2774BEC1EE",
+          "denominatorExceptionUuid": "B8E0647F-F111-4DC5-B716-E47DDBE5EAB6"
+        }
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user who received tobacco cessation intervention on the date of the encounter or within the previous 12 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "DEA865F7-987D-470B-8ABA-6A86F3F6AE1D",
+          "denominatorUuid": "51A24760-470A-432B-829D-30099334C6B1",
+          "numeratorUuid": "24C1699B-1030-4FF7-9AAC-E776B39BD91B",
+          "denominatorExceptionUuid": "3F50FAD1-B4D1-4058-80B2-AA37633B4B51"
+        }
+      },
+      {
+        "name": "tobacco",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention if identified as a tobacco user on the date of the encounter or within the previous 12 months",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "7B5F16D7-4F1A-4313-A305-EB8685E8510C",
+          "denominatorUuid": "8DB29C6C-F3BC-4E31-AA2E-88DD40A58745",
+          "numeratorUuid": "DB239C8F-AD12-4B6D-86EA-7E0195B9B44C",
+          "denominatorExceptionUuid": "640B98A5-88BC-4379-B826-3A6FC748781F"
+        }
+      }
+    ],
+    "metricType": "multiPerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS144v10",
+    "eMeasureUuid": "2c928082-75b3-36dc-0175-b85c5d4b02eb",
+    "strata": [
+      {
+        "name": "<=12Months",
+        "description": "Patients who were prescribed beta-blocker therapy within a 12-month period when seen in the outpatient setting",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5EA691E6-BD2C-4449-A1DA-BF5A262B56CF",
+          "denominatorUuid": "AE2CE119-A34F-41F5-8677-6132D1E7E364",
+          "numeratorUuid": "F0D09158-014B-431B-B7A5-863E048257EE",
+          "denominatorExceptionUuid": "D1BF240D-5C3E-42AD-BCE1-0FFA6AC8B1FF"
+        }
+      },
+      {
+        "name": "HospitalDischarge",
+        "description": "Patients who were prescribed beta-blocker therapy at each hospital discharge",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "44E71BEB-54CA-4FB4-B301-76620040625F",
+          "denominatorUuid": "8285C2EE-85F1-4DCC-A0DB-96BE8F13919C",
+          "numeratorUuid": "2F977480-7EDE-4BEC-8E86-D3AAECF5781B",
+          "denominatorExceptionUuid": "6F9C178F-3475-4F42-A1DA-A960DC8A41B7"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS145v10",
+    "eMeasureUuid": "2c928085-7859-f261-0178-5ab4f9e400f9",
+    "strata": [
+      {
+        "name": "LVSD",
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "70874C81-8998-4357-9226-E4D0B227C8F3",
+          "denominatorUuid": "5EDB6A68-3CBC-47B1-8CE8-7E2B7852A7B1",
+          "numeratorUuid": "9CCC2C3B-4B1C-48F1-B7B6-C7B16D93A0EA",
+          "denominatorExceptionUuid": "4F8AC400-18CD-418D-BC7B-DBDE7A6BF52C"
+        }
+      },
+      {
+        "name": "priorMI",
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "1F9CE5CC-A45E-4858-B2B9-04926BB92264",
+          "denominatorUuid": "33B0E651-C015-409D-A3F8-9A95821C04A9",
+          "numeratorUuid": "75EFF8C9-0FD3-4762-845D-65EA0BF14952",
+          "denominatorExceptionUuid": "24CDC80F-8CB9-4829-B73F-DC6BE0A29C1C"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS156v10",
+    "eMeasureUuid": "2c928082-7871-00de-0178-890c248e04fe",
+    "strata": [
+      {
+        "name": "overall",
+        "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B4BB3D8E-0474-42A1-90A4-2F58310710E0",
+          "denominatorUuid": "5BC0D315-8924-48A4-8AD6-BFF90CEC5B18",
+          "denominatorExclusionUuid": "061D239D-174A-48DB-949B-2CFF94CAED8E",
+          "numeratorUuid": "0F4D147F-B63A-41CC-B00C-A709564481A6"
+        }
+      },
+      {
+        "name": "diagnosisException",
+        "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "F370300C-D7E4-4A81-9BBD-3A4E5CB78B51",
+          "denominatorUuid": "24DBDA51-C36B-429E-9120-576E8ED547CE",
+          "denominatorExclusionUuid": "10E11D31-D0EE-43E9-ACA3-3F7FE2B98792",
+          "numeratorUuid": "48FB291C-C088-4178-B5B4-BF2F3745AF08",
+          "numeratorExclusionUuid": "F6889182-9CE9-4991-A1CB-B1EC522CA7DC"
+        }
+      },
+      {
+        "name": "eCQMTotalRate",
+        "description": "Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators).",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "2DA995FB-F5F9-4CB1-9FED-74859E936F92",
+          "denominatorUuid": "57654FA5-D77B-4935-9CB4-A24D4A540769",
+          "denominatorExclusionUuid": "1B78F998-CACF-4EB3-9544-E7B839E1B3AC",
+          "numeratorUuid": "D6B75AA8-9A31-4991-94D9-2E7F7AC19F58"
+        }
+      }
+    ],
+    "metricType": "multiPerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS157v10",
+    "eMeasureUuid": "2c928082-756f-7d21-0175-7afd966605cb",
+    "strata": [
+      {
+        "name": "Chemotherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "A36CF284-796A-46E0-AA48-37A8A63A0B36",
+          "denominatorUuid": "4FB5E102-700D-43D5-8A85-1A058C08261D",
+          "numeratorUuid": "04DA3897-0A59-47A3-B319-86D1C5825630"
+        }
+      },
+      {
+        "name": "RadiationTherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "D3E40C33-84A1-4CA5-9C86-81A56AB45245",
+          "denominatorUuid": "5E330269-E6CE-4F67-A1FF-176D0571BFC3",
+          "numeratorUuid": "90C610AE-6E80-44F1-BD47-213E86530F80"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS347v5",
+    "eMeasureUuid": "2c928083-785f-6b4a-0178-5f79bc5c000e",
+    "strata": [
+      {
+        "name": "clinicalASCVD",
+        "description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "AA2ED4C4-6BC9-43C4-9DB8-D708B69D7DF0",
+          "denominatorUuid": "1DEE0403-A66A-45DB-BD2F-4E1A53279570",
+          "denominatorExclusionUuid": "D8807E15-2D7F-4AC4-8837-C6846955AB8F",
+          "numeratorUuid": "656B6437-7588-4FDB-A9B7-B63A22D20943",
+          "denominatorExceptionUuid": "97A83148-26C9-48BE-A52D-6E87EB113803"
+        }
+      },
+      {
+        "name": ">21Familial",
+        "description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "8F29CC8B-78A5-448B-A52D-5F91A06B6065",
+          "denominatorUuid": "BE5B7F44-2C4F-4FB3-A2C8-6BD6DDAE2D30",
+          "denominatorExclusionUuid": "ABD1703B-6F61-483B-9279-07DD4AD3876A",
+          "numeratorUuid": "58AEC9CD-61DC-4230-868A-B7D022CF31CE",
+          "denominatorExceptionUuid": "61F5B68F-44EC-4ECF-BB58-EBC0A96B5B66"
+        }
+      },
+      {
+        "name": "between40And75",
+        "description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "A64A1D36-CD51-459A-B2AE-225DDF30C853",
+          "denominatorUuid": "8417B03C-AD1E-48C3-BC1E-996C6B53C621",
+          "denominatorExclusionUuid": "C07D0CA9-172B-433E-A6D6-1ED882FE0EEA",
+          "numeratorUuid": "812D143A-D065-4D41-8DA9-53423889998D",
+          "denominatorExceptionUuid": "51EB2803-28DC-4B4A-81FB-0CF48509C878"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  }
 ]
