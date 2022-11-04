@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$(($1))
+maxPerformanceYear=2023
+
+Red='\033[0;31m'
+Green='\033[0;32m'
+
+# This script is not made to work for years prior to 2023.
+if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
+  # Update mvp-enriched, if there are any updates:
+  echo -e "Updating MVP data..."
+  node dist/mvp/$currentPerformanceYear/update-mvp.js \
+    $currentPerformanceYear
+  
+  echo -e "${Green}Update complete."
+  exit
+
+else
+  echo -e "${Red}Performance year ${currentPerformanceYear} not valid!"
+fi
