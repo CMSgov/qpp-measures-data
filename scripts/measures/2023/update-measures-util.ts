@@ -75,9 +75,6 @@ export function updateMeasuresWithChangeFile(
                 if (!isOutcomeHighPriority(change, measuresJson)) {
                     throw new DataValidationError(fileName, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
-                if (change.yearRemoved && change.yearRemoved !== +performanceYear) {
-                    throw new DataValidationError(fileName, 'Year Removed is not current year.');
-                }
                 if (isNew && change.metricType?.includes('ultiPerformanceRate') && !change.overallAlgorithm) {
                     throw new DataValidationError(fileName, 'New multiPerformanceRate measures require a Calculation Type.');
                 }

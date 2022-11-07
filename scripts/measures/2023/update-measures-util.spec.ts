@@ -88,7 +88,7 @@ const allowedQualityChange = {
     measureId: '001',
     firstPerformanceYear: 2020,
     isInverse: false,
-    metricType: 'singlePerformanceRate',
+    metricType: 'multiPerformanceRate',
     overallAlgorithm: 'overallStratumOnly',
 };
 
@@ -391,27 +391,6 @@ describe('#update-measures-util', () => {
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
             expect(errorSpy).toBeCalledWith(`'test.csv': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
-        });
-
-        it('throws if deleting a measure for the wrong year', () => {
-
-            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
-                measureId: '005',
-                yearRemoved: 2016,
-                category: 'quality',
-            }]);
-
-            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
-            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
-                'test.csv',
-                'fakepath/',
-                '2023',
-                volatileMeasures,
-            );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': Year Removed is not current year.`);
         });
 
         it('throws if new multiPerfRate measure does not include a Calc Type', () => {
