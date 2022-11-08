@@ -43,7 +43,7 @@ export function ingestStrata() {
         name: stratum.stratumName,
         description: stratum.description,
       };
-    });
+    });    
     measuresJson.find(
       (measure) => measure.measureId === uniqueMeasureIds[i]
     ).strata = mappedStrata;

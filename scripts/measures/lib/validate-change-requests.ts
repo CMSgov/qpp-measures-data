@@ -58,6 +58,7 @@ interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     historic_benchmarks?: object,
     icdImpacted?: string[],
     measureSets?: string[],
+    strata?: object[],
 };
 
 interface QCDR_MeasuresChange extends Base_Quality_MeasuresChange {
@@ -98,6 +99,7 @@ const baseQualitySchemaProperties = {
     historic_benchmarks: { type: 'object', nullable: true },
     icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
     measureSets: { type: 'array', items: { type: 'string' }, nullable: true },
+    strata: { type: 'array', items: { type: 'object' }, nullable: true },
 };
 
 const baseQualityRequiredFields = [
