@@ -3,10 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { info } from '../../logger';
+import { info, warning } from '../../logger';
 import { updateMeasuresWithChangeFile, writeToFile } from './update-measures-util';
 
 export function updateMeasures(performanceYear: string) {
+
     const changesPath = `updates/measures/${performanceYear}/`;
     const measuresPath = `measures/${performanceYear}/measures-data.json`;    
 
@@ -36,7 +37,7 @@ export function updateMeasures(performanceYear: string) {
     if (numOfNewChangeFiles > 0) {
         writeToFile(measuresJson, measuresPath);
     } else {
-        info('No new change files found.');
+        warning('No new change files found.');
     }
 }
 

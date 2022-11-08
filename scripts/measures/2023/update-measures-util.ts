@@ -40,7 +40,7 @@ export function updateMeasuresWithChangeFile(
     changesPath: string,
     performanceYear: string,
     measuresJson: any
-) {
+): number {
     strataPath = `util/measures/${performanceYear}/`;
 
     const csv = fs.readFileSync(path.join(appRoot + '', `${changesPath}${fileName}`), 'utf8');
@@ -131,6 +131,7 @@ export function updateMeasuresWithChangeFile(
 
         exports.updateChangeLog(fileName, changesPath);
         info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
+        return 0;
 
     } catch (err) {
         if (err instanceof Error) {
@@ -139,6 +140,7 @@ export function updateMeasuresWithChangeFile(
             /* istanbul ignore next */
             throw err;
         }
+        process.exit(1);
     }
 }
 
