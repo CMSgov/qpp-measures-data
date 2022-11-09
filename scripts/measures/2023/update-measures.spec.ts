@@ -15,7 +15,7 @@ const measuresJson: any[] = JSON.parse(
 describe('update-measures', () => {
     let volatileMeasures: any;
     let updateFileSpy: jest.SpyInstance, writeFileSpy: jest.SpyInstance;
-    let logSpy: any;
+    let logSpy: any, warningSpy: any;
 
     beforeEach(() => {
         volatileMeasures = [...measuresJson];
@@ -23,6 +23,7 @@ describe('update-measures', () => {
         updateFileSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasuresWithChangeFile').mockImplementation(jest.fn());
         writeFileSpy = jest.spyOn(UpdateMeasuresUtil, 'writeToFile').mockImplementation(jest.fn());
         logSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+        warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
     });
 
     afterEach(() => {
@@ -67,7 +68,7 @@ describe('update-measures', () => {
 
         expect(updateFileSpy).not.toBeCalled();
         expect(writeFileSpy).not.toBeCalled();
-        expect(logSpy).toBeCalledWith('No new change files found.');
+        expect(warningSpy).toBeCalledWith('No new change files found.');
     });
 
     it('handles an empty change file', () => {
@@ -84,6 +85,6 @@ describe('update-measures', () => {
 
         expect(updateFileSpy).not.toBeCalled();
         expect(writeFileSpy).not.toBeCalled();
-        expect(logSpy).toBeCalledWith('No new change files found.');
+        expect(warningSpy).toBeCalledWith('No new change files found.');
     });
 });

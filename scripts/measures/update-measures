@@ -8,7 +8,7 @@ Green='\033[0;32m'
 bold=$(tput bold)
 
 # checks the exit code of the last command and exits if not successful code 0.
-function exitIfFailure () {
+function exitOnFailure () {
   if (( $? != 0 )); then
     echo -e "${Red}\n${bold}Update failed."
     exit
@@ -24,28 +24,28 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   # Update the measures-data, if there are any updates:
   node dist/measures/$currentPerformanceYear/update-measures.js \
     $currentPerformanceYear
-  exitIfFailure
+  exitOnFailure
 
   echo -e "Ingesting the Spec Urls, if those files exist..."
   node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
     $currentPerformanceYear
-  exitIfFailure
+  exitOnFailure
   
   echo -e "Ingesting Quality and QCDR strata..."
   node dist/measures/$currentPerformanceYear/ingest-strata.js \
     $currentPerformanceYear \
     util/measures/$currentPerformanceYear/qcdr-strata.csv
-  exitIfFailure
+  exitOnFailure
 
   node dist/measures/$currentPerformanceYear/ingest-strata.js \
     $currentPerformanceYear \
     util/measures/$currentPerformanceYear/quality-strata.csv
-  exitIfFailure
+  exitOnFailure
 
   echo -e "Validating new measures-data.json..."
   cat measures/$currentPerformanceYear/measures-data.json | \
 	node scripts/validate-data.js measures $currentPerformanceYear
-  exitIfFailure
+  exitOnFailure
   
   echo -e "${Green}\n${bold}Update complete."
   exit
