@@ -32,8 +32,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "G0053"
         ],
         "submissionMethods": [
@@ -132,12 +130,12 @@
         "measureSpecification": {}
       },
       {
-        "title": "Tuberculosis Screening Prior to First Course Biologic Therapy",
+        "title": "Tuberculosis Screening Prior to First Course of Biologic and/or Immune Response Modifier Therapy",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "176",
-        "description": "If a patient has been newly prescribed a biologic disease-modifying anti-rheumatic drug (DMARD) therapy, then the medical record should indicate TB testing in the preceding 12-month period.",
+        "description": "If a patient has been newly prescribed a biologic and/or immune response modifier that includes a warning for potential reactivation of a latent infection, then the medical record should indicate TB testing in the preceding 12-month period.",
         "nationalQualityStrategyDomain": "Effective Clinical Care",
         "measureType": "process",
         "isHighPriority": false,
@@ -984,7 +982,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "187",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within two hours of time last known well and for whom IV alteplase was initiated within three hours of time last known well.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapywas initiated within 4.5 hours of time last known well.",
         "nationalQualityStrategyDomain": "Effective Clinical Care",
         "measureType": "process",
         "isHighPriority": false,
@@ -1903,12 +1901,12 @@
         "measureSpecification": {}
       },
       {
-        "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy - Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
+        "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
         "eMeasureId": "CMS145v11",
         "nqfEMeasureId": "0070e",
         "nqfId": "0070",
         "measureId": "007",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI or a current or prior LVEF < 40% who were prescribed beta-blocker therapy.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI or a current or prior LVEF ≤ 40% who were prescribed beta-blocker therapy.",
         "nationalQualityStrategyDomain": "Effective Clinical Care",
         "measureType": "process",
         "isHighPriority": false,
@@ -3033,12 +3031,12 @@
         "measureSpecification": {}
       },
       {
-        "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
+        "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": "0066",
         "measureId": "118",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period who also have diabetes OR a current or prior Left Ventricular Ejection Fraction (LVEF) < 40% who were prescribed ACE inhibitor or ARB therapy.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period who also have diabetes OR a current or prior Left Ventricular Ejection Fraction (LVEF) ≤ 40% who were prescribed ACE inhibitor or ARB therapy.",
         "nationalQualityStrategyDomain": "Effective Clinical Care",
         "measureType": "process",
         "isHighPriority": false,
@@ -3066,47 +3064,6 @@
           "cardiology",
           "endocrinology",
           "skilledNursingFacility"
-        ],
-        "measureSpecification": {}
-      },
-      {
-        "title": "Diabetes: Medical Attention for Nephropathy",
-        "eMeasureId": "CMS134v11",
-        "nqfEMeasureId": null,
-        "nqfId": "0062",
-        "measureId": "119",
-        "description": "The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period.",
-        "nationalQualityStrategyDomain": "Effective Clinical Care",
-        "measureType": "process",
-        "isHighPriority": false,
-        "primarySteward": "National Committee for Quality Assurance",
-        "firstPerformanceYear": 2017,
-        "lastPerformanceYear": null,
-        "isInverse": false,
-        "category": "quality",
-        "isRegistryMeasure": false,
-        "isRiskAdjusted": false,
-        "icdImpacted": [],
-        "isClinicalGuidelineChanged": false,
-        "isIcdImpacted": false,
-        "clinicalGuidelineChanged": [],
-        "metricType": "singlePerformanceRate",
-        "allowedPrograms": [
-          "mips",
-          "pcf",
-          "G0056"
-        ],
-        "submissionMethods": [
-          "electronicHealthRecord",
-          "registry"
-        ],
-        "measureSets": [
-          "endocrinology",
-          "familyMedicine",
-          "internalMedicine",
-          "nephrology",
-          "preventiveMedicine",
-          "urology"
         ],
         "measureSpecification": {}
       },
