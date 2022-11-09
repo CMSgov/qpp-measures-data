@@ -44,7 +44,12 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   echo -e "Validating new measures-data.json..."
   cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/validate-data.js measures $currentPerformanceYear
+	  node scripts/validate-data.js measures $currentPerformanceYear
+  exitOnFailure
+
+  echo -e "Updating mvp-enriched.json..."
+  node dist/mvp/$currentPerformanceYear/update-mvp.js \
+    $currentPerformanceYear
   exitOnFailure
   
   echo -e "${Green}\n${bold}Update complete."
