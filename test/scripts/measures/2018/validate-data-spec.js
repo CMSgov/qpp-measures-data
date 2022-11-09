@@ -20,7 +20,7 @@ describe(year + ' validate data against schema', function() {
     assert.equal(message, 'Valid for 2018 performance year schema\n');
   });
 
-  //fails because latest joi has stricter schema requirements and because of the added process.exit(1) to validate-data.
+  // fails because latest joi has stricter schema requirements and because of the added process.exit(1) to validate-data.
   it.skip('throws an error when we import measures with duplicate measureIds', () => {
     const errorMessage = 'Invalid for 2018 performance year schema: data must pass "uniqueItemProperties" keyword validation\n';
     const message = validateMeasures(duplicateMeasuresFile);
