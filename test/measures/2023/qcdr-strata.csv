@@ -1,0 +1,30 @@
+measureId,stratumName,description
+AQI48,surveyed,"The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
+AQI48,overall,"The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
+ASPS27,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+ASPS27,reconstruction,Strata 2: Reconstruction after skin cancer resection
+ASPS27,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+ASPS28,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+ASPS28,reconstruction,Strata 2: Reconstruction after skin cancer resection
+ASPS28,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+ASPS29,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+ASPS29,reconstruction,Strata 2: Reconstruction after skin cancer resection
+ASPS29,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+CDR2,bucket1,0.00 - 62.42
+CDR2,bucket2,62.42 - 73.19
+CDR2,bucket3,73.19 - 100
+CDR2,overall,The average of the three risk stratified buckets which will be the performance rate in the XML submitted.
+CDR6,bucket1,"VLUs likely to heal with conservative care,"
+CDR6,bucket2,"VLUs which might or might not heal, and"
+CDR6,bucket3,VLUs highly unlikely to heal with conservative care.
+CDR6,overall,The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.
+ACRAD34,abdomen,Percent of CT Abdomen-pelvis exams with contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+ACRAD34,chest,Percent of CT Chest exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+ACRAD34,head,Percent of CT Head/brain exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+GIQIC23,overall,Overall percentage of procedures among average-risk patients aged 50 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report
+GIQIC23,hyperPolyps&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient
+GIQIC23,1-2adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient
+GIQIC23,3-4adenomas&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient
+GIQIC23,5-10adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
+GIQIC23,neoplasm&FollowUp,"Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
+GIQIC23,serration&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient

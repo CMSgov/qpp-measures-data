@@ -28,76 +28,110 @@ const QUALITY_DEFAULT_PROGRAMS = [
     'pcf',
 ];
 
+const PLACEHOLDER_STRATA = [{
+    name: 'PLACEHOLDER',
+    description: 'WARNING: Update strata file with new measure strata before merging into the repo.'
+}];
+
+let strataPath: string;
+
 export function updateMeasuresWithChangeFile(
     fileName: string,
     changesPath: string,
     performanceYear: string,
     measuresJson: any
-) {
+): number {
+    strataPath = `util/measures/${performanceYear}/`;
+
     const csv = fs.readFileSync(path.join(appRoot + '', `${changesPath}${fileName}`), 'utf8');
+
     try {
         const changeData = convertCsvToJson(csv);
 
+        const acceptedChangeStack: MeasuresChange[] = [],
+            acceptedNewStack: MeasuresChange[] = [],
+            acceptedDeleteStack: MeasuresChange[] = [];
+
         for (let i = 0; i < changeData.length; i++) {
             const change = changeData[i] as MeasuresChange;
+            const measureId = change.measureId;
 
             if (!change.category) {
-                throw new DataValidationError(fileName, 'Category is required.');
+                throw new DataValidationError(measureId, 'Category is required.');
             } else {
-                const isNew = isNewMeasure(change.measureId, measuresJson);
+                const isNew = isNewMeasure(measureId, measuresJson);
                 //validation on the change request. Validation on the updated measures data happens later in update-measures.
                 const validate = initValidation(measureType[change.category], isNew);
 
                 if (!isNew) {
                     if (change.firstPerformanceYear) warning(
-                        `'${fileName}': 'First Performance Year' was changed. Was this deliberate?`
+                        `'${measureId}': 'First Performance Year' was changed. Was this deliberate?`
                     );
                     if (!_.isUndefined(change.isInverse)) warning(
-                        `'${fileName}': 'isInverse' was changed. Was this deliberate?`
+                        `'${measureId}': 'isInverse' was changed. Was this deliberate?`
                     );
-                    if (isMultiPerfRateChanged(change, measuresJson)) warning(
-                        `'${fileName}': 'Metric Type' was changed. Was the strata file also updated to match?`
+                    if (isMultiPerfRateChanged(change, measuresJson) && change.metricType) warning(
+                        `'${measureId}': 'Metric Type' was changed. Was the strata file also updated to match?`
                     );
                     if (change.overallAlgorithm) warning(
-                        `'${fileName}': 'Calculation Type' was changed. Was the strata file also updated to match?`
+                        `'${measureId}': 'Calculation Type' was changed. Was the strata file also updated to match?`
                     );
                     if (change.metricType || change.isHighPriority || change.isInverse) warning(
-                        `'${fileName}': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
+                        `'${measureId}': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
                     );
                     if (!isValidECQM(change, measuresJson)) {
-                        throw new DataValidationError(fileName, 'CMS eCQM ID is required if one of the collection types is eCQM.');
+                        throw new DataValidationError(measureId, 'CMS eCQM ID is required if one of the collection types is eCQM.');
                     }
                 }
 
                 if (!isAllowedCostScore(change, measuresJson)) {
-                    throw new DataValidationError(fileName, `'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+                    throw new DataValidationError(measureId, `'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
                 }
                 if (!isOutcomeHighPriority(change, measuresJson)) {
-                    throw new DataValidationError(fileName, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
+                    throw new DataValidationError(measureId, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
-                if (isNew && change.metricType?.includes('ultiPerformanceRate') && !change.overallAlgorithm) {
-                    throw new DataValidationError(fileName, 'New multiPerformanceRate measures require a Calculation Type.');
+                if (isNew && change.metricType?.includes('ultiPerformanceRate')) {
+                    warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\nUpdate strata file with new measure strata before merging into the repo.`);
+                    change.strata = PLACEHOLDER_STRATA;
+
+                    if (!change.overallAlgorithm) {
+                        throw new DataValidationError(measureId, 'New multiPerformanceRate measures require a Calculation Type.');
+                    }
                 }
 
                 if (change.yearRemoved) {
-                    exports.deleteMeasure(change.measureId, measuresJson);
+                    acceptedDeleteStack.push(change);
                 } else if (validate(change)) {
                     if (isNew) {
-                        exports.addMeasure(change, measuresJson);
-                        info(`New measure '${change.measureId}' added.`);
+                        acceptedNewStack.push(change);
                     } else {
-                        exports.updateMeasure(change, measuresJson);
-                        info(`Measure '${change.measureId}' updated.`);
+                        acceptedChangeStack.push(change);
                     }
                 } else {
                     console.log(validate.errors);
-                    throw new DataValidationError(fileName, `Validation Failed. More info logged above.`);
+                    throw new DataValidationError(measureId, `Validation Failed. More info logged above.`);
                 }
             }
         }
 
+        //ingest changed measures
+        for (let i = 0; i < acceptedChangeStack.length; i++) {
+            exports.updateMeasure(acceptedChangeStack[i], measuresJson);
+        }
+
+        //ingest new measures
+        for (let i = 0; i < acceptedNewStack.length; i++) {
+            exports.addMeasure(acceptedNewStack[i], measuresJson);
+        }
+
+        //ingest deleted measures
+        for (let i = 0; i < acceptedDeleteStack.length; i++) {
+            exports.deleteMeasure(acceptedDeleteStack[i].measureId, acceptedDeleteStack[i].category, measuresJson);
+        }
+
         exports.updateChangeLog(fileName, changesPath);
         info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
+        return 0;
 
     } catch (err) {
         if (err instanceof Error) {
@@ -106,6 +140,7 @@ export function updateMeasuresWithChangeFile(
             /* istanbul ignore next */
             throw err;
         }
+        process.exit(1);
     }
 }
 
@@ -118,13 +153,21 @@ export function updateChangeLog(fileName: string, changesPath: string) {
     writeToFile(changelog, `${changesPath}changes.meta.json`);
 }
 
-export function deleteMeasure(measureId: string, measuresJson: any) {
+export function deleteMeasure(measureId: string, category: string, measuresJson: any) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
     if (measureIndex > -1) {
+        if (['quality', 'qcdr'].includes(category)) {
+            //Get strata.
+            const strata = fs.readFileSync(path.join(appRoot + '', `${strataPath}${category}-strata.csv`), 'utf8');
+            //Update strata.
+            const updatedStrata = removeStrata(measureId, strata);
+            //Write out new file.
+            fs.writeFileSync(`${strataPath}/${category}-strata.csv`, updatedStrata);
+        }
         measuresJson.splice(measureIndex, 1);
         info(`Measure '${measureId}' removed.`);
     } else {
-        throw new DataValidationError(measureId, 'Measure not found.');
+        warning(`Attempted to delete ${measureId}, but not found.`);
     }
 }
 
@@ -142,6 +185,7 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
                     ...updateBenchmarksMetaData(change),
                 }
             }
+            info(`Measure '${change.measureId}' updated.`);
             break;
         }
     }
@@ -183,6 +227,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             });
             break;
     }
+    info(`New measure '${change.measureId}' added.`);
 
 }
 
@@ -271,3 +316,16 @@ function findFinalInCategory(category: string, measuresJson: any) {
     return index;
 }
 
+function removeStrata(measureId: string, strata: any): any {
+    
+    // Get an array of comma separated lines
+    const linesExceptFirst = strata.split('\n').slice(0);
+    
+    // Turn that into a data structure we can parse (array of arrays)
+    const linesArr = linesExceptFirst.map(line => line.split(','));
+    
+    const output = linesArr.filter(line => line[0] !== measureId).join("\n");
+
+    return output;
+    
+}

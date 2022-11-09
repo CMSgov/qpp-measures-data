@@ -35,7 +35,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'primarySteward': 'Primary Measure Steward',
     'allowedVendors': 'Allowed QCDR Vendor ID',
     'description': 'Measure Description',
-    'measureType': '*** Measure Type  ',
+    'measureType': '*** Measure Type',
     'isHighPriority': 'High Priority',
     'submissionMethods': '*** Collection Type(s) for Submission',
     'measureSets': 'Specialty Measure Sets',
@@ -45,7 +45,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'clinicalGuidelineChanged': 'Collection Type(s) where Suppressed',
     'historic_benchmarks': 'Collection Type(s) where Historic Benchmark Removed',
     'icdImpacted': 'Collection Type(s) where Truncated',
-    'isRiskAdjusted': 'Is Risk Adjusted ',
+    'isRiskAdjusted': 'Is Risk Adjusted',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'First Performance Year',
 };
@@ -63,7 +63,7 @@ export const ARRAY_CSV_FIELDS = [
 
 export const BOOLEAN_CSV_FIELDS = [
     '*** Inverse',
-    'Is Risk Adjusted ',
+    'Is Risk Adjusted',
     'High Priority',
     'Bonus',
     'Required',
@@ -71,6 +71,7 @@ export const BOOLEAN_CSV_FIELDS = [
 
 export const METRIC_TYPES = [
     'registrySinglePerformanceRate',
+    'registryMultiPerformanceRate',
     'singlePerformanceRate',
     'multiPerformanceRate',
     'nonProportion',
@@ -101,13 +102,14 @@ export const COLLECTION_TYPES = {
 };
 
 export const MEASURE_TYPES = {
-    'Process': 'process',
-    'Outcome': 'outcome',
-    'PatientEngagement/Experience': 'patientEngagementExperience',
-    'Efficiency': 'efficiency',
-    'IntermediateOutcome': 'intermediateOutcome',
-    'Structure': 'structure',
-    'PatientReportedOutcome': 'patientReportedOutcome'
+    'process': 'process',
+    'outcome': 'outcome',
+    'patientEngagement/experience': 'patientEngagementExperience',
+    'efficiency': 'efficiency',
+    'intermediateoutcome': 'intermediateOutcome',
+    'structure': 'structure',
+    'patientreportedoutcome': 'patientReportedOutcome',
+    'patient-reportedoutcome-basedperformancemeasure': 'patientReportedOutcome'
 };
 
 export const OBJECTIVES = {

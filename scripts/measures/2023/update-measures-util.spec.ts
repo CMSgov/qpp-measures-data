@@ -115,23 +115,31 @@ const measuresJson: any[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', `measures/2023/measures-data.json`), 'utf8')
 );
 
+const qualityStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/quality-strata.csv`), 'utf8');
+const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/qcdr-strata.csv`), 'utf8');
+
 describe('#update-measures-util', () => {
     describe('updateMeasuresWithChangeFile', () => {
         let volatileMeasures: any;
+        let processExitMock: jest.SpyInstance;
+        let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
+
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
-        });
-        let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
-        beforeEach(() => {
 
             mockFS({
                 'fakepath': {
                     'test.csv': 'fakevalue',
                 },
+                'util/measures/2023/': {
+                    'quality-strata.csv': qualityStrata,
+                    'qcdr-strata.csv': qcdrStrata,
+                }
             });
             updateSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasure');
             addSpy = jest.spyOn(UpdateMeasuresUtil, 'addMeasure');
             deleteSpy = jest.spyOn(UpdateMeasuresUtil, 'deleteMeasure');
+            processExitMock = jest.spyOn(process, 'exit').mockImplementation();
             jest.spyOn(UpdateMeasuresUtil, 'updateChangeLog').mockImplementation(jest.fn());
 
         });
@@ -279,7 +287,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`'test.csv': Category is required.`);
+            expect(loggerSpy).toBeCalledWith(`'IA_EPA_2': Category is required.`);
         });
 
         it('logs warnings when certain fields are changed', () => {
@@ -300,11 +308,11 @@ describe('#update-measures-util', () => {
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'First Performance Year' was changed. Was this deliberate?`);
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'isInverse' was changed. Was this deliberate?`);
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type' was changed. Was the strata file also updated to match?`);
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'Calculation Type' was changed. Was the strata file also updated to match?`);
-            expect(warningSpy).toBeCalledWith(`'test.csv': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
+            expect(warningSpy).toBeCalledWith(`'001': 'First Performance Year' was changed. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'001': 'isInverse' was changed. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'001': 'Metric Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toBeCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
             expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
         });
@@ -327,7 +335,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': CMS eCQM ID is required if one of the collection types is eCQM.`);
+            expect(errorSpy).toBeCalledWith(`'USWR32': CMS eCQM ID is required if one of the collection types is eCQM.`);
         });
 
         it('throws if outcome measure is not High Priority', () => {
@@ -348,7 +356,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
+            expect(errorSpy).toBeCalledWith(`'005': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
         });
 
         it('throws if metricType is costScore but submissionMethod does not include administrativeClaims', () => {
@@ -369,7 +377,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+            expect(errorSpy).toBeCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
         });
 
         it('throws if metricType is costScore but submissionMethod includes more than just administrativeClaims', () => {
@@ -390,7 +398,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+            expect(errorSpy).toBeCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
         });
 
         it('throws if new multiPerfRate measure does not include a Calc Type', () => {
@@ -412,7 +420,7 @@ describe('#update-measures-util', () => {
             expect(updateSpy).not.toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': New multiPerformanceRate measures require a Calculation Type.`);
+            expect(errorSpy).toBeCalledWith(`'NewId': New multiPerformanceRate measures require a Calculation Type.`);
         });
 
         it('deletes measure', () => {
@@ -452,7 +460,7 @@ describe('#update-measures-util', () => {
             );
             expect(updateSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': Validation Failed. More info logged above.`);
+            expect(errorSpy).toBeCalledWith(`'005': Validation Failed. More info logged above.`);
             expect(logSpy).toBeCalledWith([{
                 instancePath: '',
                 keyword: 'additionalProperties',
@@ -481,7 +489,7 @@ describe('#update-measures-util', () => {
             );
             expect(updateSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'test.csv': Validation Failed. More info logged above.`);
+            expect(errorSpy).toBeCalledWith(`'005': Validation Failed. More info logged above.`);
             expect(logSpy).toBeCalledWith([{
                 instancePath: '/metricType',
                 keyword: 'enum',
@@ -489,6 +497,7 @@ describe('#update-measures-util', () => {
                 params: {
                     allowedValues: [
                         'registrySinglePerformanceRate',
+                        'registryMultiPerformanceRate',
                         'singlePerformanceRate',
                         'multiPerformanceRate',
                         'nonProportion',
@@ -529,18 +538,18 @@ describe('#update-measures-util', () => {
         it('should delete the measure if found', () => {
             const infoSpy = jest.spyOn(logger, 'info');
 
-            UpdateMeasuresUtil.deleteMeasure('001', volatileMeasures);
+            UpdateMeasuresUtil.deleteMeasure('001', 'quality', volatileMeasures);
 
             expect(_.find(volatileMeasures, { measureId: '001' })).toBeUndefined();
             expect(infoSpy).toBeCalledWith(`Measure '001' removed.`);
         });
 
         it('should fail to delete the measure if not found', () => {
-            expect(() => {
-                UpdateMeasuresUtil.deleteMeasure('notameasureid', volatileMeasures);
-            }).toThrowError(
-                new DataValidationError('notameasureid', 'Measure not found.'),
-            );
+            const warningSpy = jest.spyOn(logger, 'warning');
+
+            UpdateMeasuresUtil.deleteMeasure('notameasureid', 'qcdr', volatileMeasures);
+
+            expect(warningSpy).toBeCalledWith(`Attempted to delete notameasureid, but not found.`);
         });
     });
 

@@ -27,13 +27,7 @@ import {
 import { InvalidValueError } from './errors';
 
 export function convertCsvToJson(csv: any) {
-    
-    const parsedCsv: Object[] = parse(csv, { columns: true });
-    
-    //check if the CR includes a leading examples row, and remove.
-    if (parsedCsv[0]['Category'].includes('Value')) {
-        parsedCsv.splice(0,1);
-    }
+    const parsedCsv = prepareCsv(csv);
 
     return parsedCsv.map((row: any) => {
         const measure = {};
@@ -68,7 +62,7 @@ function mapInput(columnName: string, csvRow: any, category: string) {
 
     switch (columnName) {
         case QUALITY_CSV_COLUMN_NAMES.measureType:
-            return mapItem(columnName, MEASURE_TYPES, csvRow[columnName]);
+            return mapItem(columnName, MEASURE_TYPES, csvRow[columnName].toLowerCase());
         case PI_CSV_COLUMN_NAMES.objective:
             return mapItem(columnName, OBJECTIVES, csvRow[columnName]);
         case PI_CSV_COLUMN_NAMES.reportingCategory:
@@ -78,9 +72,9 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         case IA_CSV_COLUMN_NAMES.subcategoryId:
             return mapItem(columnName, SUBCATEGORY_NAME, csvRow[columnName]);
         case QUALITY_CSV_COLUMN_NAMES.metricType:
-            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim().toLowerCase() === 'qcdr') {
+            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category === 'qcdr') {
                 return 'registrySinglePerformanceRate';
-            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim().toLowerCase() === 'qcdr') {
+            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category === 'qcdr') {
                 return 'registryMultiPerformanceRate';
             }
             break;
@@ -165,7 +159,7 @@ function mapItem(field: string, map: any, value: string) {
 }
 
 //converts field 'Yes' to True and 'No' to False.
-function csvFieldToBoolean(field: string, value: string) {
+function csvFieldToBoolean(field: string, value: string): boolean {
     switch (value) {
         case 'Y':
         case 'TRUE':
@@ -176,4 +170,27 @@ function csvFieldToBoolean(field: string, value: string) {
         default:
             throw new InvalidValueError(field, value);
     }
+}
+
+function prepareCsv(csv: any): any {
+    //parse csv.
+    const parsedCsv: Object[] = parse(csv, { columns: true });
+    
+    //trim keys in parsed csv.
+    for (let i = 0; i < parsedCsv.length; i++) {
+        Object.keys(parsedCsv[i]).forEach((key) => {
+            const trimmedKey = key.trim();
+            if (key !== trimmedKey) {
+                parsedCsv[i][trimmedKey] = parsedCsv[i][key];
+                delete parsedCsv[i][key];
+            }
+        });
+    }
+    
+    //check if the CR includes a leading examples row, and remove.
+    if (parsedCsv[0]['Category'].includes('Value')) {
+        parsedCsv.splice(0,1);
+    }
+
+    return parsedCsv;
 }
