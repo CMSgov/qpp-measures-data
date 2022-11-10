@@ -31,6 +31,13 @@ npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
 npm run build:clinical-clusters     # generates clinical-clusters/clinical-clusters.json
 ```
 
+### Generating measures CSVs
+To export CSVs of the measures data (one for each category):
+
+```
+npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
+```
+
 ### Validation
 
 We've provided a simple tool to validate JSON against our JSON schemas. By providing an argument to indicate the schema against which to validate, it can be used as follows:
@@ -45,7 +52,7 @@ cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2
 
 To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
 
-New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder with the file name as MM-DD-YYYY-01.csv (increment the final number in the name if multiple changes take place on the same day). IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
+New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder (NOTE: remove any trailing empty rows from the csv). IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
@@ -78,12 +85,18 @@ For 2018-2019, only 'full images' of benchmark data are accepted; the csv must c
 
   Please verify the changes are as expected. (You can run `git diff`.)
 
+### Creating and updating MVP (MIPS Value Pathway) data
+
+Each performance year, we will receive a file named `mvp.json` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. Then run `npm run update:mvp` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.json`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
+
 ## Testing
 
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
 
 ```
 npm test
+npx jest
+npm run jest:cov
 ```
 
 We also use Github Actions CI to run tests on every branch.

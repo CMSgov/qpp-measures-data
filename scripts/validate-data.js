@@ -29,6 +29,7 @@ function validate(schema, json) {
   } else {
     console.log(`Invalid for ${performanceYear} performance year schema: ${errors}`);
     console.log('Detailed error: ', details);
+    process.exit(1);
   }
 }
 

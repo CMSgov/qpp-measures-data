@@ -9,7 +9,6 @@ import parse from 'csv-parse/lib/sync';
 
 import { warning } from '../../logger';
 import {
-    ALLOWED_PROGRAMS,
     ARRAY_CSV_FIELDS,
     BASE_CSV_COLUMN_NAMES,
     BOOLEAN_CSV_FIELDS,
@@ -19,18 +18,22 @@ import {
     MEASURE_SETS,
     MEASURE_TYPES,
     PI_CSV_COLUMN_NAMES,
-    QUALITY_CSV_COLUMN_NAMES
+    QUALITY_CSV_COLUMN_NAMES,
+    OBJECTIVES,
+    REPORTING_CATEGORY,
+    WEIGHT,
+    SUBCATEGORY_NAME,
 } from '../../constants';
 import { InvalidValueError } from './errors';
 
 export function convertCsvToJson(csv: any) {
-    const parsedCsv = parse(csv, { columns: true });
+    const parsedCsv = prepareCsv(csv);
 
     return parsedCsv.map((row: any) => {
         const measure = {};
-        measure['category'] = row['Category'].toLowerCase().trim();
+        row['Category'] = row['Category'].toLowerCase().trim();
         let csvColumnNames;
-        switch (measure['category']) {
+        switch (row['Category']) {
             case 'ia':
                 csvColumnNames = IA_CSV_COLUMN_NAMES;
                 break;
@@ -40,11 +43,14 @@ export function convertCsvToJson(csv: any) {
             case 'quality':
                 csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
                 break;
+            case 'qcdr':
+                csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
+                break;
         }
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
             if (row[columnName]) {
-                measure[measureKeyName] = mapInput(columnName, row, measure['category']);
+                measure[measureKeyName] = mapInput(columnName, row, row['Category']);
             }
         });
 
@@ -53,19 +59,22 @@ export function convertCsvToJson(csv: any) {
 }
 
 function mapInput(columnName: string, csvRow: any, category: string) {
-    //remove this field if no change requests are made for it.
-    if (csvRow[columnName] === '') {
-        return undefined;
-    }
 
     switch (columnName) {
         case QUALITY_CSV_COLUMN_NAMES.measureType:
-            return mapItem(columnName, MEASURE_TYPES, csvRow[columnName]);
-
+            return mapItem(columnName, MEASURE_TYPES, csvRow[columnName].toLowerCase());
+        case PI_CSV_COLUMN_NAMES.objective:
+            return mapItem(columnName, OBJECTIVES, csvRow[columnName]);
+        case PI_CSV_COLUMN_NAMES.reportingCategory:
+            return mapItem(columnName, REPORTING_CATEGORY, csvRow[columnName]);
+        case IA_CSV_COLUMN_NAMES.weight:
+            return mapItem(columnName, WEIGHT, csvRow[columnName]);
+        case IA_CSV_COLUMN_NAMES.subcategoryId:
+            return mapItem(columnName, SUBCATEGORY_NAME, csvRow[columnName]);
         case QUALITY_CSV_COLUMN_NAMES.metricType:
-            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category.trim() === 'QCDR') {
+            if (csvRow[columnName].trim() === 'singlePerformanceRate' && category === 'qcdr') {
                 return 'registrySinglePerformanceRate';
-            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category.trim() === 'QCDR') {
+            } else if (csvRow[columnName].trim() === 'multiPerformanceRate' && category === 'qcdr') {
                 return 'registryMultiPerformanceRate';
             }
             break;
@@ -117,12 +126,16 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (fieldHeader === QUALITY_CSV_COLUMN_NAMES.measureSets) {
         return mapArrayItem(fieldHeader, MEASURE_SETS, fieldValue);
     }
-    if (fieldHeader === QUALITY_CSV_COLUMN_NAMES.allowedPrograms) {
-        return mapArrayItem(fieldHeader, ALLOWED_PROGRAMS, fieldValue);
-    }
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
     }
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue === 'NULL') {
+        return [];
+    }
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue === 'NULL') {
+        return null;
+    }
+    return fieldValue.split(',').map(element => element.trim());;
 }
 
 function mapArrayItem(field: string, map: any, values: string) {
@@ -132,12 +145,12 @@ function mapArrayItem(field: string, map: any, values: string) {
         arrayedField[i] = mapItem(field, map, arrayedField[i]);
     }
 
-    return arrayedField;
+    return _.uniq(arrayedField);
 }
 
 function mapItem(field: string, map: any, value: string) {
     // .replace(/\s/g, "") removes all whitespace.
-    if (map[value.replace(/\s/g, "")]) {
+    if (typeof map[value.replace(/\s/g, "")] !== 'undefined') {
         return map[value.replace(/\s/g, "")];
     }
     else {
@@ -146,13 +159,38 @@ function mapItem(field: string, map: any, value: string) {
 }
 
 //converts field 'Yes' to True and 'No' to False.
-function csvFieldToBoolean(field: string, value: string) {
+function csvFieldToBoolean(field: string, value: string): boolean {
     switch (value) {
         case 'Y':
+        case 'TRUE':
             return true;
         case 'N':
+        case 'FALSE':
             return false;
         default:
             throw new InvalidValueError(field, value);
     }
+}
+
+function prepareCsv(csv: any): any {
+    //parse csv.
+    const parsedCsv: Object[] = parse(csv, { columns: true });
+    
+    //trim keys in parsed csv.
+    for (let i = 0; i < parsedCsv.length; i++) {
+        Object.keys(parsedCsv[i]).forEach((key) => {
+            const trimmedKey = key.trim();
+            if (key !== trimmedKey) {
+                parsedCsv[i][trimmedKey] = parsedCsv[i][key];
+                delete parsedCsv[i][key];
+            }
+        });
+    }
+    
+    //check if the CR includes a leading examples row, and remove.
+    if (parsedCsv[0]['Category'].includes('Value')) {
+        parsedCsv.splice(0,1);
+    }
+
+    return parsedCsv;
 }

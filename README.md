@@ -22,9 +22,11 @@ To access the benchmarks data without installing the NPM repository, run `git cl
 (benchmark year 2015).
 
 ### Importing the qpp-measures-data module
+
 Functions take a string version argument and return the appropriate YAML schema or JSON data.
 
 The module can be used with the following pattern:
+
 ```javascript
 const qppMeasuresData = require('qpp-measures-data');
 const measuresData = qppMeasuresData.getMeasuresData($YEAR);
@@ -32,6 +34,9 @@ const measuresSchema = qppMeasuresData.getMeasuresSchema($YEAR);
 const benchmarksData = qppMeasuresData.getBenchmarksData();
 const benchmarkData$YEAR = benchmarksData[$YEAR];
 const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
+// Note: for the following function, the mvpIds is an optional parameter (array of MVP IDs to filter by)
+const mvpData = qppMeasuresData.getMVPData($YEAR, mvpIds);
+const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
 ```
 
 ## Contributing

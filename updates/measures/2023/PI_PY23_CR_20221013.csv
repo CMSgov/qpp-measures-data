@@ -1,0 +1,11 @@
+﻿Category,Measure ID,Measure Title,Measure Description,Required,Metric Type,Year Added,Year Removed,Objective,Bonus,Reporting Category,Substitutes,Exclusions
+PI,PI_PHCDRR_3_EX_4,,,,,,2023,,,,,
+PI,PI_EP_2,,"For at least one Schedule II opioid or Schedule III or IV drug electronically prescribed using CEHRT during the performance period, the MIPS eligible clinician uses data from CEHRT to conduct a query of a PDMP for prescription drug history. ",Y,,,,,N,required,,"PI_EP_2_EX_1, PI_EP_2_EX_2, PI_EP_2_EX_3"
+PI,PI_EP_2_EX_1,Query of the Prescription Drug Monitoring Program (PDMP) Exclusion ,Any MIPS eligible clinician who is unable to electronically prescribe Schedule II opioids and Schedule III and IV drugs in accordance with applicable law during the performance period. ,N,boolean,2023,,e-Prescribing,N,exclusion,NULL,NULL
+PI,PI_EP_2_EX_2,Query of the Prescription Drug Monitoring Program (PDMP) Exclusion ,Any MIPS eligible clinician who writes fewer than 100 permissible prescriptions during the performance period,N,boolean,2023,,e-Prescribing,N,exclusion,NULL,NULL
+PI,PI_EP_2_EX_3,Query of the Prescription Drug Monitoring Program (PDMP) Exclusion ,Any eligible clinician for which querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY ,N,boolean,2023,,e-Prescribing,N,exclusion,NULL,NULL
+PI,PI_HIE_1,,,,,,,,,,"PI_HIE_5, PI_HIE_6",
+PI,PI_HIE_4,,,,,,,,,,"PI_HIE_5, PI_HIE_6",
+PI,PI_HIE_5,,,,,,,,,,"PI_HIE_1, PI_HIE_4, PI_HIE_6",
+PI,PI_HIE_6,Enabling Exchange Under TEFCA,"Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange. ",Y,boolean,2023,,Health Information Exchange,N,required,"PI_HIE_1, PI_HIE_4, PI_HIE_5",NULL
+PI,PI_PPHI_2,,Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.,,,,,,,,,
