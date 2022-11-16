@@ -109,6 +109,9 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         return rawArray;
     }
 
+    // null field if the value entered in the CR is 'NULL'.
+    if (csvRow[columnName] === 'NULL') return null;
+
     return csvRow[columnName].trim();
 }
 

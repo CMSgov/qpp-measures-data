@@ -30,7 +30,7 @@ const QUALITY_DEFAULT_PROGRAMS = [
 
 const PLACEHOLDER_STRATA = [{
     name: 'PLACEHOLDER',
-    description: 'WARNING: Update strata file with new measure strata before merging into the repo.'
+    description: 'WARNING: Update strata file with new measure strata.'
 }];
 
 let strataPath: string;
@@ -91,12 +91,15 @@ export function updateMeasuresWithChangeFile(
                     throw new DataValidationError(measureId, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
                 if (isNew && change.metricType?.includes('ultiPerformanceRate')) {
-                    warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\nUpdate strata file with new measure strata before merging into the repo.`);
+                    warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\n         Update strata file with new measure strata before merging into the repo.`);
                     change.strata = PLACEHOLDER_STRATA;
 
                     if (!change.overallAlgorithm) {
                         throw new DataValidationError(measureId, 'New multiPerformanceRate measures require a Calculation Type.');
                     }
+                }
+                if (isNew && !change.measureSets && isOnlyAdminClaims(change)) {
+                    change.measureSets = [];
                 }
 
                 if (change.yearRemoved) {
@@ -317,15 +320,23 @@ function findFinalInCategory(category: string, measuresJson: any) {
 }
 
 function removeStrata(measureId: string, strata: any): any {
-    
+
     // Get an array of comma separated lines
     const linesExceptFirst = strata.split('\n').slice(0);
-    
+
     // Turn that into a data structure we can parse (array of arrays)
     const linesArr = linesExceptFirst.map(line => line.split(','));
-    
+
     const output = linesArr.filter(line => line[0] !== measureId).join("\n");
 
     return output;
-    
+
 }
+
+function isOnlyAdminClaims(change: MeasuresChange) {
+    return (
+        change.submissionMethods?.length === 1 &&
+        change.submissionMethods[0] === 'administrativeClaims'
+    );
+}
+
