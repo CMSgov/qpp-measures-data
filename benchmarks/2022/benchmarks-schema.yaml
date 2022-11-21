@@ -22,6 +22,10 @@ definitions:
       isHighPriority:
         description: whether the measure is a high priority measure (Outcome, Appropriate Use, Patient Experience, Patient Safety, Efficiency Measures, Care Coordination)
         type: boolean
+      isInverse:
+        type: boolean
+      metricType:
+        type: string
       benchmarkYear:
         description: The benchmarkYear four digit integer corresponds to the time period of the performance data that was used to generate this benchmark. The submitted performance data will be compared against the benchmarkYear's results.
         type: number
@@ -32,6 +36,48 @@ definitions:
           type: [number]
         minItems: 9
         maxItems: 10
+      percentiles:
+        type: object
+        properties:
+          0:
+            type: number
+            description: The 0th percentile.
+          1:
+            type: number
+            description: The 1st percentile.
+          10:
+            type: number
+            description: The 10th percentile.
+          20:
+            type: number
+            description: The 20th percentile.
+          30:
+            type: number
+            description: The 30th percentile.
+          40:
+            type: number
+            description: The 40th percentile.
+          50:
+            type: number
+            description: The 50th percentile.
+          60:
+            type: number
+            description: The 60th percentile.
+          70:
+            type: number
+            description: The 70th percentile.
+          80:
+            type: number
+            description: The 80th percentile.
+          90:
+            type: number
+            description: The 90th percentile.
+          99:
+            type: number
+            description: The 99th percentile.
+          100:
+            type: number
+            description: The 100th percentile.
       submissionMethod:
         description: The method for submitting the measure performance data to which this benchmark applies.
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
