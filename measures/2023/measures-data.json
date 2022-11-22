@@ -1438,24 +1438,6 @@
   },
   {
     "category": "pi",
-    "measureId": "PI_ONCACB_1",
-    "title": "ONC-ACB Surveillance Attestation",
-    "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-    "isRequired": false,
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "objective": "attestation",
-    "isBonus": false,
-    "reportingCategory": null,
-    "substitutes": [],
-    "measureSpecification": null,
-    "measureSets": [],
-    "exclusion": null,
-    "allowedPrograms": []
-  },
-  {
-    "category": "pi",
     "measureId": "PI_EP_1",
     "title": "e-Prescribing",
     "description": "At least one permissible prescription written by the MIPS eligible clinician is  transmitted electronically using CEHRT.",
@@ -1645,8 +1627,6 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [
-      "PI_HIE_1",
-      "PI_HIE_4",
       "PI_HIE_6"
     ],
     "measureSpecification": {},
@@ -2001,7 +1981,7 @@
     "lastPerformanceYear": null,
     "measureSets": [],
     "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
-    "description": "Any eligible clinician for which querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY",
+    "description": "Any MIPS eligible clinician for whom querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY 2023.",
     "measureId": "PI_EP_2_EX_3",
     "firstPerformanceYear": 2023,
     "category": "pi",
@@ -2028,8 +2008,6 @@
     "objective": "healthInformationExchange",
     "reportingCategory": "required",
     "substitutes": [
-      "PI_HIE_1",
-      "PI_HIE_4",
       "PI_HIE_5"
     ],
     "exclusion": null,
