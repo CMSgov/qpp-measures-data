@@ -42,7 +42,6 @@ interface PI_MeasuresChange extends baseMeasuresChange {
 
 interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     nqfId?: string,
-    nationalQualityStrategyDomain?: string,
     isHighPriority?: boolean,
     isInverse?: boolean,
     isRiskAdjusted?: boolean,
@@ -83,7 +82,6 @@ const baseValidationSchemaProperties = {
 const baseQualitySchemaProperties = {
     ...baseValidationSchemaProperties,
     nqfId: { type: 'string', nullable: true },
-    nationalQualityStrategyDomain: { type: 'string', nullable: true },
     isHighPriority: { type: 'boolean', nullable: true },
     isInverse: { type: 'boolean', nullable: true },
     isRiskAdjusted: { type: 'boolean', nullable: true },

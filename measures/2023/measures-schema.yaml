@@ -137,9 +137,6 @@ definitions:
         additionalProperties: false
         properties:
           category: { const quality }
-          nationalQualityStrategyDomain: 
-            type: ['null', string]
-            description: The area of health care quality (NQS Domain) which this measure improves.
           measureType:
             description: Quality category which the measure incentivizes.
             oneOf: [{ $ref: #/definitions/measureTypes }]
@@ -244,7 +241,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
+        required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object
