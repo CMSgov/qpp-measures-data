@@ -218,5 +218,4 @@ export const QUALITY_DEFAULT_VALUES = {
     isIcdImpacted: false,
     clinicalGuidelineChanged: [],
     measureSets: [],
-    nationalQualityStrategyDomain: null,
 };
