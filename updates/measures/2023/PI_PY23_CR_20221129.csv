@@ -1,0 +1,10 @@
+﻿Category,Measure ID,Measure Title,Measure Description,Required,Metric Type,First Performance Year,Year Removed,Objective,Bonus,Reporting Category,Substitutes,Exclusions
+Value: PI,,,,"Value: TRUE, FALSE","Value:  boolean, proportion",,Enter current PY if measure is to be removed,"Value:  Protect Patient Health Information, Public Health And Clinical Data Exchange, Provider to Patient Exchange, e-Prescribing, Health Information Exchange, NULL","Value: TRUE, FALSE","required, bonus, exclusion, NULL","** Comma delimited list  **
+
+If you need to remove ALL Substitutes, or for a new measure with no substitutes - enter NULL","** Comma delimited list  **
+
+If you need to remove ALL Exclusions, or for a new measure with no exclusions - enter NULL"
+PI,PI_PHCDRR_3,,,,,,,,,,,"PI_PHCDRR_3_EX_1, PI_PHCDRR_3_EX_2, PI_PHCDRR_3_EX_3"
+PI,PI_PHCDRR_3_EX_1,,,,,,,,,,"PI_PHCDRR_3_EX_2, PI_PHCDRR_3_EX_3",
+PI,PI_PHCDRR_3_EX_2,,,,,,,,,,"PI_PHCDRR_3_EX_1, PI_PHCDRR_3_EX_3",
+PI,PI_PHCDRR_3_EX_3,,,,,,,,,,"PI_PHCDRR_3_EX_1, PI_PHCDRR_3_EX_2",
