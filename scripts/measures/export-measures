@@ -14,8 +14,8 @@ if (( $currentPerformanceYear >= 2018 )) && (( $currentPerformanceYear <= $maxPe
   tsc -p .
 
   echo -e "Converting to CSV..."
-  mkdir tmp/
-  mkdir tmp/$currentPerformanceYear
+  mkdir -p tmp/
+  mkdir -p tmp/$currentPerformanceYear
   for category in "${categories[@]}"
   do
     node dist/measures/json-to-csv.js \
