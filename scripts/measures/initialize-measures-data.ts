@@ -22,6 +22,9 @@ const measuresJson = JSON.parse(
 function initMeasuresData() {
     incrementEMeasureId();
     removeSpecUrls();
+    removeIcdImpacted();
+    removeClinicalGuidelineChanged();
+    removeBenchmarksRemoved();
 
     writeToFile(measuresJson, measuresPath);
 }
@@ -43,6 +46,36 @@ function removeSpecUrls() {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureSpecification) {
             measuresJson[i].measureSpecification = {};
+        }
+    }
+}
+
+function removeIcdImpacted() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].isIcdImpacted) {
+            measuresJson[i].isIcdImpacted = false;
+        }
+        if (measuresJson[i].icdImpacted) {
+            measuresJson[i].icdImpacted = [];
+        }
+    }
+}
+
+function removeClinicalGuidelineChanged() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].isClinicalGuidelineChanged) {
+            measuresJson[i].isClinicalGuidelineChanged = false;
+        }
+        if (measuresJson[i].clinicalGuidelineChanged) {
+            measuresJson[i].clinicalGuidelineChanged = [];
+        }
+    }
+}
+
+function removeBenchmarksRemoved() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].historic_benchmarks) {
+            delete measuresJson[i].historic_benchmarks;
         }
     }
 }
