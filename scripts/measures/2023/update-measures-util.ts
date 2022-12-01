@@ -39,7 +39,8 @@ export function updateMeasuresWithChangeFile(
     fileName: string,
     changesPath: string,
     performanceYear: string,
-    measuresJson: any
+    measuresJson: any,
+    testMode: string = 'false',
 ): number {
     strataPath = `util/measures/${performanceYear}/`;
 
@@ -117,11 +118,6 @@ export function updateMeasuresWithChangeFile(
             }
         }
 
-        //ingest changed measures
-        for (let i = 0; i < acceptedChangeStack.length; i++) {
-            exports.updateMeasure(acceptedChangeStack[i], measuresJson);
-        }
-
         //ingest new measures
         for (let i = 0; i < acceptedNewStack.length; i++) {
             exports.addMeasure(acceptedNewStack[i], measuresJson);
@@ -132,8 +128,18 @@ export function updateMeasuresWithChangeFile(
             exports.deleteMeasure(acceptedDeleteStack[i].measureId, acceptedDeleteStack[i].category, measuresJson);
         }
 
-        exports.updateChangeLog(fileName, changesPath);
-        info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
+        //ingest changed measures
+        for (let i = 0; i < acceptedChangeStack.length; i++) {
+            exports.updateMeasure(acceptedChangeStack[i], measuresJson);
+        }
+
+        if (testMode === 'false') {
+            exports.updateChangeLog(fileName, changesPath);
+            info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
+        }
+        else {
+            info(`File '${fileName}' successfully processed and validated, but not persisted in test mode (-t)`);
+        }
         return 0;
 
     } catch (err) {
@@ -177,6 +183,14 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
 export function updateMeasure(change: MeasuresChange, measuresJson: any) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
+            // check if new exclusions and substitutes exist.
+            if (change.substitutes) {   
+                checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute');
+            }
+            if (change.exclusion) {   
+                checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion');
+            }
+
             measuresJson[i] = {
                 ...measuresJson[i],
                 ...change as any,
@@ -195,6 +209,14 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
 }
 
 export function addMeasure(change: MeasuresChange, measuresJson: any) {
+    // check if new exclusions and substitutes exist.
+    if (change.substitutes) {   
+        checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
+    }
+    if (change.exclusion) {   
+        checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion', true);
+    }
+
     const index = findFinalInCategory(change.category, measuresJson);
     switch (change.category) {
         case 'ia':
@@ -338,5 +360,25 @@ function isOnlyAdminClaims(change: MeasuresChange) {
         change.submissionMethods?.length === 1 &&
         change.submissionMethods[0] === 'administrativeClaims'
     );
+}
+
+function checkNewExclusionAndSubstitutes(
+    measureIds: string[], 
+    measureId: string, 
+    measuresJson: any, 
+    arrayType: string, 
+    isNew: boolean = false
+) {
+    for (let i = 0; i < measureIds.length; i++) {
+        if (!_.find(measuresJson, { 'measureId': measureIds[i] })) {
+            const rootMessage = `${arrayType} ${measureIds[i]} does not exist in the measures-data.json.`;
+            
+            if (isNew) {
+                warning(`${measureId}: ${rootMessage} Was it added later in this change request?`);
+            } else {
+                throw new DataValidationError(measureId, `${rootMessage}`);
+            }
+        }
+    }
 }
 

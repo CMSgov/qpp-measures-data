@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=$(($1))
+test_mode='false'
 maxPerformanceYear=2023
 
 Red='\033[0;31m'
@@ -15,6 +16,19 @@ function exitOnFailure () {
   fi
 }
 
+# checks for the -t (testmode) flag.
+OPTIND=2
+while getopts ":t" option; do
+  case $option in
+    t) 
+      test_mode='true';;
+    \?) 
+      echo "Error: Invalid flag. Only -t or none allowed."
+      exit;;
+  esac
+done
+
+
 # This script is not made to work for years prior to 2023.
 if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
 
@@ -23,34 +37,35 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   # Update the measures-data, if there are any updates:
   node dist/measures/$currentPerformanceYear/update-measures.js \
-    $currentPerformanceYear
+    $currentPerformanceYear $test_mode
   exitOnFailure
 
-  echo -e "Ingesting the Spec Urls, if those files exist..."
-  node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
-    $currentPerformanceYear
-  exitOnFailure
+  if [ $test_mode == 'false' ]; then
+    echo -e "Ingesting the Spec Urls, if those files exist..."
+    node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
+      $currentPerformanceYear
+    exitOnFailure
   
-  echo -e "Ingesting Quality and QCDR strata..."
-  node dist/measures/$currentPerformanceYear/ingest-strata.js \
-    $currentPerformanceYear \
-    util/measures/$currentPerformanceYear/qcdr-strata.csv
-  exitOnFailure
+    echo -e "Ingesting Quality and QCDR strata..."
+    node dist/measures/$currentPerformanceYear/ingest-strata.js \
+      $currentPerformanceYear \
+      util/measures/$currentPerformanceYear/qcdr-strata.csv
+    exitOnFailure
 
-  node dist/measures/$currentPerformanceYear/ingest-strata.js \
-    $currentPerformanceYear \
-    util/measures/$currentPerformanceYear/quality-strata.csv
-  exitOnFailure
+    node dist/measures/$currentPerformanceYear/ingest-strata.js \
+      $currentPerformanceYear \
+      util/measures/$currentPerformanceYear/quality-strata.csv
+    exitOnFailure
 
-  echo -e "Validating new measures-data.json..."
-  cat measures/$currentPerformanceYear/measures-data.json | \
-	  node scripts/validate-data.js measures $currentPerformanceYear
-  exitOnFailure
+    echo -e "Validating new measures-data.json..."
+    cat measures/$currentPerformanceYear/measures-data.json | \
+      node scripts/validate-data.js measures $currentPerformanceYear
+    exitOnFailure
 
-  echo -e "Updating mvp-enriched.json..."
-  node dist/mvp/$currentPerformanceYear/update-mvp.js \
-    $currentPerformanceYear
-  exitOnFailure
+    echo -e "Updating mvp-enriched.json..."
+    node dist/mvp/$currentPerformanceYear/update-mvp.js \
+      $currentPerformanceYear
+  fi
   
   echo -e "${Green}\n${bold}Update complete."
   exit
