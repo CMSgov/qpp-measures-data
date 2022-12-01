@@ -65,6 +65,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
     echo -e "Updating mvp-enriched.json..."
     node dist/mvp/$currentPerformanceYear/update-mvp.js \
       $currentPerformanceYear
+    exitOnFailure
   fi
   
   echo -e "${Green}\n${bold}Update complete."
