@@ -3,10 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { info, warning } from '../../logger';
+import { warning } from '../../logger';
 import { updateMeasuresWithChangeFile, writeToFile } from './update-measures-util';
 
-export function updateMeasures(performanceYear: string) {
+export function updateMeasures(performanceYear: string, testMode: string = 'false') {
 
     const changesPath = `updates/measures/${performanceYear}/`;
     const measuresPath = `measures/${performanceYear}/measures-data.json`;    
@@ -29,13 +29,15 @@ export function updateMeasures(performanceYear: string) {
             //find only the change files not yet present in the changelog.
             if (!changelog.includes(fileName)) {
                 numOfNewChangeFiles++;
-                updateMeasuresWithChangeFile(fileName, changesPath, performanceYear, measuresJson);
+                updateMeasuresWithChangeFile(fileName, changesPath, performanceYear, measuresJson, testMode);
             }
         }
     });
 
     if (numOfNewChangeFiles > 0) {
-        writeToFile(measuresJson, measuresPath);
+        if (testMode === 'false'){
+            writeToFile(measuresJson, measuresPath);
+        }
     } else {
         warning('No new change files found.');
     }
@@ -43,4 +45,4 @@ export function updateMeasures(performanceYear: string) {
 
  /* istanbul ignore next */ 
 if (process.argv[2] && process.argv[2] !== '--coverage')
-    updateMeasures(process.argv[2]);
+    updateMeasures(process.argv[2], process.argv[3]);
