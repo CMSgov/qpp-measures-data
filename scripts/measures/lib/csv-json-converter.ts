@@ -29,7 +29,7 @@ import { InvalidValueError } from './errors';
 export function convertCsvToJson(csv: any) {
     const parsedCsv = prepareCsv(csv);
 
-    return parsedCsv.map((row: any) => {
+    let mappedCsv = parsedCsv.map((row: any) => {
         const measure = {};
         row['Category'] = row['Category'].toLowerCase().trim();
         let csvColumnNames;
@@ -56,6 +56,11 @@ export function convertCsvToJson(csv: any) {
 
         return measure;
     });
+
+    //remove any empty rows
+    _.remove(mappedCsv, _.isEmpty);
+    
+    return mappedCsv;
 }
 
 function mapInput(columnName: string, csvRow: any, category: string) {
@@ -96,7 +101,7 @@ function mapInput(columnName: string, csvRow: any, category: string) {
                 return false;
             }
         }
-        return csvFieldToBoolean(columnName, csvRow[columnName]);
+        return csvFieldToBoolean(columnName, csvRow[columnName].trim());
     }
 
     //fields with comma seperated values.
@@ -108,6 +113,9 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         }
         return rawArray;
     }
+
+    // null field if the value entered in the CR is 'NULL'.
+    if (csvRow[columnName] === 'NULL') return null;
 
     return csvRow[columnName].trim();
 }
@@ -174,7 +182,7 @@ function csvFieldToBoolean(field: string, value: string): boolean {
 
 function prepareCsv(csv: any): any {
     //parse csv.
-    const parsedCsv: Object[] = parse(csv, { columns: true });
+    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true });
     
     //trim keys in parsed csv.
     for (let i = 0; i < parsedCsv.length; i++) {

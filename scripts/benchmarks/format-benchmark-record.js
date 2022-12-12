@@ -56,8 +56,8 @@ const formatIsToppedOut = function(isToppedOut) {
   return false;
 };
 
-const formatIsHighPriority = function(highPriority) {
-  if (highPriority.trim().toLowerCase() === 'y') {
+const formatBoolean = function(csvBoolean) {
+  if (csvBoolean.trim().toLowerCase() === 'y') {
     return true;
   }
   return false;
@@ -204,9 +204,12 @@ const formatMeasureId = (measureId, performanceYear) => {
  *  decile8: string?,
  *  decile9: string?,
  *  decile10: string?,
+ *  percentiles: object?,
  *  isToppedOut: string,
  *  isHighPriority: string,
- *  isToppedOutByProgram: string
+ *  isToppedOutByProgram: string,
+ *  isInverse: string?,
+ *  metricType: string?
  *  }} record - csv record object
  * @param {{
  *  benchmarkYear: string,
@@ -235,7 +238,9 @@ const formatBenchmarkRecord = function(record, options) {
     performanceYear: parseInt(options.performanceYear),
     submissionMethod: formatSubmissionMethod(record.submissionMethod),
     isToppedOut: formatIsToppedOut(record.isToppedOut),
-    isHighPriority: options.performanceYear >= 2020 ? formatIsHighPriority(record.isHighPriority) : undefined,
+    isHighPriority: options.performanceYear >= 2020 ? formatBoolean(record.isHighPriority) : undefined,
+    isInverse: options.performanceYear >= 2022 ? formatBoolean(record.isInverse) : undefined,
+    metricType: options.performanceYear >= 2022 ? record.metricType : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles: options.benchmarkType === 'MCC' ? [
       parseFloat(record.decile1),
@@ -261,7 +266,22 @@ const formatBenchmarkRecord = function(record, options) {
       record.decile10
     ]
       .map(formatDecileGenerator(record))
-      .slice(1, 10)
+      .slice(1, 10),
+    percentiles: record.percentiles ? {
+      0: record.percentiles[0],
+      1: record.percentiles[1],
+      10: record.percentiles[10],
+      20: record.percentiles[20],
+      30: record.percentiles[30],
+      40: record.percentiles[40],
+      50: record.percentiles[50],
+      60: record.percentiles[60],
+      70: record.percentiles[70],
+      80: record.percentiles[80],
+      90: record.percentiles[90],
+      99: record.percentiles[99],
+      100: record.percentiles[100]
+    } : undefined
   };
 };
 

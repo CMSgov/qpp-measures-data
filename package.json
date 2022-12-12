@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "5.5.9",
+  "version": "5.5.10",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "update:mvp": "scripts/mvp/update-mvp",
-    "export:measures": "scripts/measures/measures-json-to-csv",
+    "export:measures": "scripts/measures/export-measures",
     "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh",
     "jest:cov": "TS_NODE_FILES=true NODE_OPTIONS='--max-old-space-size=3072' jest --coverage --coverage-prodivder=v8 --runInBand"

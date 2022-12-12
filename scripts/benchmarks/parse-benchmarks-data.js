@@ -65,6 +65,14 @@ if (performanceYear >= 2020) {
   MCC_BENCHMARK_CSV_COLUMNS.push('isHighPriority');
 }
 
+// New 2022 data update
+if (performanceYear >= 2022) {
+  BENCHMARK_CSV_COLUMNS.push('isInverse');
+  BENCHMARK_CSV_COLUMNS.push('metricType');
+  MCC_BENCHMARK_CSV_COLUMNS.push('isInverse');
+  MCC_BENCHMARK_CSV_COLUMNS.push('metricType');
+}
+
 if (benchmarkYear && performanceYear) {
   process.stdin.setEncoding('utf8');
 

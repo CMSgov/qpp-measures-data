@@ -1,0 +1,13 @@
+﻿Category,Measure ID,Measure Title,Measure Description,Required,Metric Type,First Performance Year,Year Removed,Objective,Bonus,Reporting Category,Substitutes,Exclusions
+Value: PI,,,,"Value: TRUE, FALSE","Value:  boolean, proportion",,Enter current PY if measure is to be removed,"Value:  Protect Patient Health Information, Public Health And Clinical Data Exchange, Provider to Patient Exchange, e-Prescribing, Health Information Exchange, NULL","Value: TRUE, FALSE","required, bonus, exclusion, NULL","** Comma delimited list  **
+
+If you need to remove ALL Substitutes, or for a new measure with no substitutes - enter NULL","** Comma delimited list  **
+
+If you need to remove ALL Exclusions, or for a new measure with no exclusions - enter NULL"
+PI,PI_ONCACB_1,,,,,,2023,,,,,
+PI,PI_EP_2,,,,,,,,,,,"PI_EP_2_EX_1, PI_EP_2_EX_2, PI_EP_2_EX_3"
+PI,PI_EP_2_EX_3,,Any MIPS eligible clinician for whom querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY 2023.,,,,,,,,,
+PI,PI_HIE_1,,,,,,,,,,"PI_HIE_5, PI_HIE_6",
+PI,PI_HIE_4,,,,,,,,,,"PI_HIE_5, PI_HIE_6",
+PI,PI_HIE_5,,,,,,,,,,PI_HIE_6,
+PI,PI_HIE_6,,,,,,,,,,PI_HIE_5,
