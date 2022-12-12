@@ -101,7 +101,7 @@ function mapInput(columnName: string, csvRow: any, category: string) {
                 return false;
             }
         }
-        return csvFieldToBoolean(columnName, csvRow[columnName]);
+        return csvFieldToBoolean(columnName, csvRow[columnName].trim());
     }
 
     //fields with comma seperated values.
