@@ -2109,11 +2109,11 @@
             "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class."
           },
           {
-            "name": "diagnosisException",
+            "name": "appropriateDiagnosis",
             "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses."
           },
           {
-            "name": "eCQMTotalRate",
+            "name": "totalRate",
             "description": "Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators)."
           }
         ]
@@ -3110,27 +3110,27 @@
             "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
-            "name": "5-17yrs",
-            "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation."
+            "name": "pedCtrlNoExacRisk",
+            "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
-            "name": "18-50",
+            "name": "adultCtrlNoExacRisk",
             "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
-            "name": "ACT5-17",
+            "name": "pedsWellCtrl",
             "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 5 to 17 with Asthma"
           },
           {
-            "name": "ACT18-50",
+            "name": "adultsWellCtrl",
             "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
           },
           {
-            "name": "lowRisk5-17",
+            "name": "pedsNoRiskExac",
             "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
           },
           {
-            "name": "lowRisk18-50",
+            "name": "adultsNoRiskExac",
             "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
           }
         ]
