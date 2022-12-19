@@ -10164,8 +10164,12 @@
     "firstPerformanceYear": 2023,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "hip",
+        "description": "represents total hip arthroplasty"
+      },
+      {
+        "name": "knee",
+        "description": "represents total knee arthroplasty."
       }
     ],
     "isRegistryMeasure": true,
@@ -10204,8 +10208,12 @@
     "firstPerformanceYear": 2023,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "hip",
+        "description": "represents total hip arthroplasty"
+      },
+      {
+        "name": "knee",
+        "description": "represents total knee arthroplasty."
       }
     ],
     "isRegistryMeasure": true,
@@ -10244,8 +10252,20 @@
     "firstPerformanceYear": 2023,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "neckpain",
+        "description": "Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in neck pain."
+      },
+      {
+        "name": "backpain",
+        "description": "Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in back pain."
+      },
+      {
+        "name": "armpain",
+        "description": "Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in arm pain."
+      },
+      {
+        "name": "legpain",
+        "description": "Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID) in leg pain."
       }
     ],
     "isRegistryMeasure": true,
@@ -10383,8 +10403,12 @@
     "firstPerformanceYear": 2021,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "hip",
+        "description": "represents total hip arthroplasty"
+      },
+      {
+        "name": "knee",
+        "description": "represents total knee arthroplasty."
       }
     ],
     "isRegistryMeasure": true,
@@ -10423,8 +10447,16 @@
     "firstPerformanceYear": 2021,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "isRegistryMeasure": true,
@@ -10463,8 +10495,16 @@
     "firstPerformanceYear": 2021,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "isRegistryMeasure": true,
@@ -10503,8 +10543,16 @@
     "firstPerformanceYear": 2021,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
     ],
     "isRegistryMeasure": true,
@@ -12051,7 +12099,9 @@
     "primarySteward": "ABG QCDR",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268"
+      "5551268",
+      "6775913",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -12082,7 +12132,11 @@
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5551268",
-      "6169123"
+      "6169123",
+      "6775913",
+      "9181695",
+      "8947139",
+      "7746687"
     ],
     "allowedPrograms": [
       "mips",
@@ -12112,7 +12166,10 @@
     "primarySteward": "ABG QCDR",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268"
+      "5551268",
+      "6775913",
+      "9181695",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -12143,7 +12200,10 @@
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "5551268",
-      "6169123"
+      "6169123",
+      "6775913",
+      "9181695",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -12174,7 +12234,7 @@
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "5133825",
-      "4757099"
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -12205,7 +12265,8 @@
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "5133825",
-      "1725296"
+      "1725296",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -12236,8 +12297,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
-      "5133825",
-      "1725296"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12297,8 +12357,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
-      "5133825",
-      "1725296"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12328,8 +12387,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
-      "5133825",
-      "1725296"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12390,8 +12448,7 @@
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5133825",
-      "1718371",
-      "4757099"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -12422,8 +12479,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR); E-CPR (Emergency - Clinical Performance Registry)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5133825",
-      "1718371"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12454,7 +12510,8 @@
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5133825",
-      "1725296"
+      "1725296",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -12485,8 +12542,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5133825",
-      "1725296"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12607,8 +12663,8 @@
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "5133825",
-      "1718371",
-      "4757099"
+      "4757099",
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -12638,8 +12694,7 @@
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "5133825",
-      "1718371"
+      "5133825"
     ],
     "allowedPrograms": [
       "mips",
@@ -12670,8 +12725,7 @@
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "5133825",
-      "1718371",
-      "4757099"
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -12731,8 +12785,7 @@
     "primarySteward": "Acute Care Quality Registry",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "4672586",
-      "4757099"
+      "4672586"
     ],
     "allowedPrograms": [
       "mips",
@@ -12762,8 +12815,7 @@
     "primarySteward": "Acute Care Quality Registry",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "4672586",
-      "4757099"
+      "4672586"
     ],
     "allowedPrograms": [
       "mips",
@@ -12793,8 +12845,7 @@
     "primarySteward": "Acute Care Quality Registry",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "4672586",
-      "4757099"
+      "4672586"
     ],
     "allowedPrograms": [
       "mips",
@@ -12884,7 +12935,8 @@
     "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5598408"
+      "5598408",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -12914,7 +12966,8 @@
     "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5598408"
+      "5598408",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -12944,7 +12997,8 @@
     "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5598408"
+      "5598408",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -13005,7 +13059,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13036,7 +13092,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13067,7 +13125,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13098,7 +13158,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13129,7 +13191,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13160,7 +13224,9 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5303416",
-      "7746687"
+      "7746687",
+      "6704504",
+      "6394618"
     ],
     "allowedPrograms": [
       "mips",
@@ -13333,7 +13399,8 @@
     "allowedVendors": [
       "5303416",
       "6394618",
-      "7746687"
+      "7746687",
+      "6704504"
     ],
     "allowedPrograms": [
       "mips",
@@ -13395,7 +13462,8 @@
     "primarySteward": "American College of Radiology National Radiology Data Registry",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5303416"
+      "5303416",
+      "7746687"
     ],
     "allowedPrograms": [
       "mips",
@@ -13426,9 +13494,9 @@
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "5551268",
-      "6169123",
       "6775913",
-      "7746687"
+      "6169123",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13459,10 +13527,14 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5551268",
-      "6169123",
       "6775913",
-      "6394618",
-      "7746687"
+      "7746687",
+      "6169123",
+      "6704504",
+      "4757099",
+      "9181695",
+      "8947139",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -13504,8 +13576,9 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
+      "6169123",
       "5551268",
-      "6169123"
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13535,11 +13608,13 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
-      "6394618",
-      "7746687"
+      "7746687",
+      "6704504",
+      "9181695",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13602,11 +13677,10 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
-      "6394618",
-      "7746687"
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13636,9 +13710,13 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "5551268",
       "6169123",
-      "6775913"
+      "5551268",
+      "6775913",
+      "6704504",
+      "9181695",
+      "7746687",
+      ""
     ],
     "allowedPrograms": [
       "mips",
@@ -13668,10 +13746,12 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
-      "6394618"
+      "9181695",
+      "8947139",
+      "7746687"
     ],
     "allowedPrograms": [
       "mips",
@@ -13701,12 +13781,15 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
       "4757099",
-      "6394618",
-      "7746687"
+      "7746687",
+      "6704504",
+      "9181695",
+      "8947139",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -13737,10 +13820,11 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
-      "6394618"
+      "9181695",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13766,7 +13850,7 @@
       },
       {
         "name": "insulinPrior",
-        "description": "Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level >180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
+        "description": "Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
       },
       {
         "name": "insulinPostoperative",
@@ -13774,7 +13858,7 @@
       },
       {
         "name": "glucoseEducation",
-        "description": "Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level >180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
+        "description": "Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
       }
     ],
     "submissionMethods": [
@@ -13793,11 +13877,14 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
       "4757099",
-      "6394618"
+      "6704504",
+      "9181695",
+      "8947139",
+      "7746687"
     ],
     "allowedPrograms": [
       "mips",
@@ -13827,12 +13914,14 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
       "4757099",
-      "6394618",
-      "7746687"
+      "7746687",
+      "6704504",
+      "9181695",
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -13850,15 +13939,15 @@
     "strata": [
       {
         "name": "overall",
-        "description": "The overall measure score will be calculated as an average of the performance rates of part A and part B. (Rates 2 & 3)"
+        "description": "The overall measure score will be calculated as an average of the total cases of Rate 2 and Rate 3. "
       },
       {
         "name": "brachialRadialTibial",
-        "description": "Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the brachial, radial, posterior tibial or dorsalis pedis artery for whom the arterial line was inserted with all indicated elements of sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound techniques followed"
+        "description": " Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the brachial, radial, posterior tibial or dorsalis pedis artery for whom the arterial line was inserted with all indicated elements of sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound techniques followed"
       },
       {
         "name": "femoralAxillary",
-        "description": "Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the femoral or axillary artery for whom the arterial line was inserted with all indicated elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound technique is followed"
+        "description": " Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the femoral or axillary artery for whom the arterial line was inserted with all indicated elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound technique is followed"
       }
     ],
     "submissionMethods": [
@@ -14298,7 +14387,7 @@
       },
       {
         "name": "overall",
-        "description": "The average of the three risk stratified buckets which will be the performance rate in the XML submitted."
+        "description": "The performance rate is the average of the 3 WHI risk categories described in the risk stratification document."
       }
     ],
     "submissionMethods": [
@@ -14347,7 +14436,7 @@
       },
       {
         "name": "overall",
-        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
+        "description": "The performance rate is the average of the 3 stratified rates"
       }
     ],
     "submissionMethods": [
@@ -14396,10 +14485,11 @@
     "primarySteward": "E-CPR (Emergency - Clinical Performance Registry)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
-      "5133825",
       "1718371",
+      "5133825",
       "4757099",
-      "1725296"
+      "1725296",
+      "8483899"
     ],
     "allowedPrograms": [
       "mips",
@@ -14429,10 +14519,11 @@
     "primarySteward": "E-CPR (Emergency - Clinical Performance Registry)",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
-      "5133825",
       "1718371",
+      "5133825",
       "4757099",
-      "1725296"
+      "1725296",
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -14659,8 +14750,8 @@
     "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "6775913",
-      "6394618"
+      "8947139",
+      "6775913"
     ],
     "allowedPrograms": [
       "mips",
@@ -14690,9 +14781,9 @@
     "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
+      "8947139",
       "6169123",
-      "6775913",
-      "6394618"
+      "6775913"
     ],
     "allowedPrograms": [
       "mips",
@@ -14891,31 +14982,31 @@
     "strata": [
       {
         "name": "overall",
-        "description": "Overall percentage of procedures among average-risk patients aged 50 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report"
+        "description": "Overall percentage of procedures among average-risk patients aged 45 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report"
       },
       {
         "name": "hyperPolyps&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient"
       },
       {
         "name": "1-2adenoma&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient"
       },
       {
         "name": "3-4adenomas&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient"
       },
       {
         "name": "5-10adenoma&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient"
       },
       {
         "name": "neoplasm&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
       },
       {
         "name": "serration&FollowUp",
-        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient"
+        "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient"
       }
     ],
     "submissionMethods": [
@@ -14997,6 +15088,7 @@
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "4757099",
+      "1725296",
       "8483899"
     ],
     "allowedPrograms": [
@@ -15028,6 +15120,7 @@
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "4757099",
+      "1725296",
       "8483899"
     ],
     "allowedPrograms": [
@@ -15058,6 +15151,8 @@
     "primarySteward": "H-CPR (Hospitalist –Clinical Performance Registry)",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
+      "4757099",
+      "1725296",
       "8483899"
     ],
     "allowedPrograms": [
@@ -15153,7 +15248,7 @@
       "5133825",
       "1718371",
       "4757099",
-      "8483899"
+      "1725296 8483899"
     ],
     "allowedPrograms": [
       "mips",
@@ -16058,11 +16153,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16084,7 +16178,7 @@
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "operativeMCID",
@@ -16092,7 +16186,7 @@
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
@@ -16100,7 +16194,7 @@
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16119,11 +16213,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16141,27 +16234,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.    For operative (surgical) patients:"
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.   For non-operative (non-surgical) patients:"
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": " A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
       }
     ],
     "submissionMethods": [
@@ -16180,11 +16273,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16202,27 +16294,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in LEFS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in LEFS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16241,11 +16333,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16263,27 +16354,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16302,11 +16393,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16324,27 +16414,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16363,11 +16453,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16385,27 +16474,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in MDQ change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+        "description": " A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in MDQ change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in KOS change score will be reported."
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16424,11 +16513,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16446,27 +16534,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16485,11 +16573,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16507,19 +16594,19 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in DASH change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in DASH change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in DASH change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported. \r\n "
       },
       {
         "name": "nonOpMCID",
@@ -16527,7 +16614,7 @@
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16546,11 +16633,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16568,27 +16654,27 @@
     "strata": [
       {
         "name": "notachieving",
-        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "operativeMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
-        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported."
+        "description": "The proportion of patients not achieving an MCID in the NPRS change score will be reported. "
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16607,11 +16693,10 @@
     "primarySteward": "Keet Outcomes",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "3967247",
-      "1157686",
       "8411367",
       "7037323",
-      "2581402"
+      "1157686",
+      "3967247"
     ],
     "allowedPrograms": [
       "mips",
@@ -16633,7 +16718,7 @@
       },
       {
         "name": "overall",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+        "description": " A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will be reported. "
       },
       {
         "name": "operativeMCID",
@@ -16641,7 +16726,7 @@
       },
       {
         "name": "operativeRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will be reported. "
       },
       {
         "name": "nonOpMCID",
@@ -16649,7 +16734,7 @@
       },
       {
         "name": "nonOpRisk",
-        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported."
+        "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via NDI) proportion will be reported."
       }
     ],
     "submissionMethods": [
@@ -16665,10 +16750,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16698,7 +16783,7 @@
     "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16725,10 +16810,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16755,10 +16840,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16788,7 +16873,7 @@
     "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16818,7 +16903,7 @@
     "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16845,10 +16930,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16875,10 +16960,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16905,10 +16990,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "Limber Outcomes",
+    "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -16938,7 +17023,7 @@
     "primarySteward": "Patient360 in Collaboration with ETSU and Limber Health",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "1574559"
+      "3471690"
     ],
     "allowedPrograms": [
       "mips",
@@ -17016,7 +17101,7 @@
     "strata": [
       {
         "name": "screening",
-        "description": "Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan"
+        "description": "Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan "
       },
       {
         "name": "overall",
@@ -17369,7 +17454,9 @@
     "primarySteward": "ABG QCDR",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "5551268"
+      "5551268",
+      "6775913",
+      "9181695"
     ],
     "allowedPrograms": [
       "mips",
@@ -17432,7 +17519,9 @@
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5551268",
-      "7746687"
+      "7746687",
+      "6775913",
+      "9181695"
     ],
     "allowedPrograms": [
       "mips",
@@ -17556,9 +17645,9 @@
     "primarySteward": "MSN Healthcare Solutions, LLC",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5303416",
       "6394618",
-      "7746687"
+      "5303416",
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -17937,15 +18026,15 @@
     "strata": [
       {
         "name": "assessment",
-        "description": "Percentage of individuals who had a comprehensive index assessment using standardized tools to assess at least 3 of the following 6 domains: functioning, recovery, and symptom severity in depression, anxiety, substance use, and suicidal ideation and behavior."
+        "description": "Percentage of patients who had a comprehensive index assessment using standardized tools to assess at least three of the following six domains: (1) functioning, (2) recovery, (3) depression symptom severity, (4) anxiety symptom severity, (5) substance use symptoms severity, or (6) suicidal ideation and behavior symptoms severity."
       },
       {
         "name": "monitorAt90Days",
-        "description": "Percentage of individuals who were monitored 90 days (+/- 30 days) from the comprehensive index assessment using standardized tools to assess functioning, recovery, or symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
+        "description": "Percentage of patients who were monitored 90 days (+/- 30 days) from the comprehensive index assessment using standardized tools to assess (1) functioning, (2) recovery, or (3) symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
       },
       {
         "name": "maintnCareAt180Days",
-        "description": "Percentage of individuals with documentation of a clinical decision to adjust or maintain their care within 180 days from the comprehensive index assessment using standardized tools to assess functioning, recovery, and symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
+        "description": "Percentage of patients with documentation of a clinical decision to adjust or maintain their care between 7 and 180 days from the comprehensive index assessment."
       }
     ],
     "submissionMethods": [
@@ -18012,11 +18101,11 @@
     "strata": [
       {
         "name": "safetyPlanWithIn24hr",
-        "description": "The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician (concurrent or within 24 hours of the index clinical encounter)."
+        "description": "The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician (concurrent or within 24 hours of clinical encounter). "
       },
       {
         "name": "overall",
-        "description": "The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated (Numerator 1) AND reviewed and updated in collaboration between the individual and their clinician within 120 days after the index clinical encounter."
+        "description": "The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated AND reviewed and updated in collaboration between the individual and their clinician within 120 days after initiation (+/- 30 days)."
       }
     ],
     "submissionMethods": [
@@ -18062,10 +18151,10 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "The PQR-ANES",
+    "primarySteward": "The PQR",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "7746687"
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -18095,8 +18184,9 @@
     "primarySteward": "MSN Healthcare Solutions, LLC",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
+      "6394618",
       "5303416",
-      "6394618"
+      "1725296"
     ],
     "allowedPrograms": [
       "mips",
@@ -18126,8 +18216,9 @@
     "primarySteward": "MSN Healthcare Solutions, LLC",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
+      "6394618",
       "5303416",
-      "6394618"
+      "7746687"
     ],
     "allowedPrograms": [
       "mips",
@@ -18253,7 +18344,7 @@
     "primarySteward": "MSN Healthcare Solutions, LLC",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "6394618"
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -18283,7 +18374,7 @@
     "primarySteward": "MSN Healthcare Solutions, LLC",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "6394618"
+      "8947139"
     ],
     "allowedPrograms": [
       "mips",
@@ -18823,7 +18914,6 @@
     "primarySteward": "U.S. Wound Registry",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "6621356",
       "6853338"
     ],
     "allowedPrograms": [
@@ -18842,11 +18932,11 @@
     "strata": [
       {
         "name": "midfootHeel",
-        "description": "Midfoot/heel"
+        "description": "Midfoot/heel Rate"
       },
       {
         "name": "toes",
-        "description": "Toes"
+        "description": "Toes Rate"
       },
       {
         "name": "overall",
@@ -18929,7 +19019,7 @@
       },
       {
         "name": "overall",
-        "description": "The average of the three risk stratified buckets which will be the performance rate in the XML submitted."
+        "description": "The performance rate is the average of the three WHI stratified groups described in our risk stratification document."
       }
     ],
     "submissionMethods": [
