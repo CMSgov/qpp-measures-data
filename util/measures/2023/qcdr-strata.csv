@@ -1,78 +1,53 @@
-measureId,stratumName,description
-AQI48,surveyed,"The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
-AQI48,overall,"The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
-CDR2,bucket1,0.00 - 62.42
-CDR2,bucket2,62.42 - 73.19
-CDR2,bucket3,73.19 - 100
-CDR2,overall,The average of the three risk stratified buckets which will be the performance rate in the XML submitted.
-CDR6,bucket1,"VLUs likely to heal with conservative care,"
-CDR6,bucket2,"VLUs which might or might not heal, and"
-CDR6,bucket3,VLUs highly unlikely to heal with conservative care.
-CDR6,overall,The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.
+﻿measureId,stratumName,description
+AAD14,examPerformed,NUMERATOR CRITERIA 1: Documentation by the provider who performed the surgery that an exam for recurrence of melanoma was performed on the patient within the reporting period.
+AAD14,overall,NUMERATOR CRITERIA 2: All patients that were diagnosed with a recurrent melanoma in the current reporting year.
+AAD16,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD16,reconstruction,Strata 2: Reconstruction after skin cancer resection
+AAD16,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+AAD17,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD17,reconstruction,Strata 2: Reconstruction after skin cancer resection
+AAD17,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+AAD18,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD18,reconstruction,Strata 2: Reconstruction after skin cancer resection
+AAD18,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
 ACRAD34,abdomen,Percent of CT Abdomen-pelvis exams with contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
 ACRAD34,chest,Percent of CT Chest exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
 ACRAD34,head,Percent of CT Head/brain exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
-GIQIC23,overall,Overall percentage of procedures among average-risk patients aged 50 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report
-GIQIC23,hyperPolyps&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient
-GIQIC23,1-2adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient
-GIQIC23,3-4adenomas&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient
-GIQIC23,5-10adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
-GIQIC23,neoplasm&FollowUp,"Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
-GIQIC23,serration&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 50 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient
-IROMS11,notachieving,Overall proportion of patients not achieving an MCID in KOS change score will be reported.
-IROMS11,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.
-IROMS11,operativeMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
-IROMS11,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.
-IROMS11,nonOpMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
-IROMS11,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will reported.
-IROMS12,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS12,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.    For operative (surgical) patients:
-IROMS12,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS12,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.   For non-operative (non-surgical) patients:
-IROMS12,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS12,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS13,notachieving,Overall proportion of patients not achieving an MCID in LEFS change score will be reported.
-IROMS13,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.
-IROMS13,operativeMCID,The proportion of patients not achieving an MCID in LEFS change score will be reported.
-IROMS13,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.
-IROMS13,nonOpMCID,The proportion of patients not achieving an MCID in LEFS change score will be reported.
-IROMS13,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via LEFS) proportion will reported.
-IROMS14,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS14,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS14,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS14,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS14,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS14,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS16,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS16,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS16,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS16,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS16,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS16,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS17,notachieving,Overall proportion of patients not achieving an MCID in MDQ change score will be reported.
-IROMS17,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.
-IROMS17,operativeMCID,The proportion of patients not achieving an MCID in MDQ change score will be reported.
-IROMS17,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.
-IROMS17,nonOpMCID,The proportion of patients not achieving an MCID in MDQ change score will be reported.
-IROMS17,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via MDQ) proportion will reported.
-IROMS18,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS18,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS18,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS18,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS18,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS18,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS19,notachieving,Overall proportion of patients not achieving an MCID in DASH change score will be reported.
-IROMS19,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.
-IROMS19,operativeMCID,The proportion of patients not achieving an MCID in DASH change score will be reported.
-IROMS19,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.
-IROMS19,nonOpMCID,The proportion of patients not achieving an MCID in DASH change score will be reported.
-IROMS19,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will reported.
-IROMS20,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS20,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS20,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS20,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
-IROMS20,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported.
-IROMS20,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
+AJRR11,neckpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in neck pain."
+AJRR11,backpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in back pain."
+AJRR11,armpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in arm pain."
+AJRR11,legpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID) in leg pain."
+AJRR7,hip,represents total hip arthroplasty
+AJRR7,knee,represents total knee arthroplasty.
+AJRR8,hip,represents total hip arthroplasty
+AJRR8,knee,represents total knee arthroplasty.
+AJRR9,hip,represents total hip arthroplasty
+AJRR9,knee,represents total knee arthroplasty.
+AQI48,surveyed,"The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
+AQI48,overall,"The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
+AQI71,overall,"The overall measure score will be calculated as an average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
+AQI71,testedPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery whose blood glucose level is tested prior to the start of anesthesia"
+AQI71,insulinPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
+AQI71,insulinPostoperative,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who received insulin perioperatively and who received a follow-up blood glucose level check following the administration of insulin and prior to discharge"
+AQI71,glucoseEducation,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
+AQI73,overall,The overall measure score will be calculated as an average of the total cases of Rate 2 and Rate 3. 
+AQI73,brachialRadialTibial," Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the brachial, radial, posterior tibial or dorsalis pedis artery for whom the arterial line was inserted with all indicated elements of sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound techniques followed"
+AQI73,femoralAxillary," Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the femoral or axillary artery for whom the arterial line was inserted with all indicated elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound technique is followed"
+CDR2,bucket1,0.00 - 62.42
+CDR2,bucket2,62.42 - 73.19
+CDR2,bucket3,73.19 - 100
+CDR2,overall,The performance rate is the average of the 3 WHI risk categories described in the risk stratification document.
+CDR6,bucket1,"VLUs likely to heal with conservative care,"
+CDR6,bucket2,"VLUs which might or might not heal, and"
+CDR6,bucket3,VLUs highly unlikely to heal with conservative care.
+CDR6,overall,The performance rate is the average of the 3 stratified rates
+GIQIC23,overall,Overall percentage of procedures among average-risk patients aged 45 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report
+GIQIC23,hyperPolyps&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient
+GIQIC23,1-2adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient
+GIQIC23,3-4adenomas&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient
+GIQIC23,5-10adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
+GIQIC23,neoplasm&FollowUp,"Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
+GIQIC23,serration&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient
 HM7,14to17,SUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter
 HM7,18to64,SUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter
 HM7,65over,SUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter
@@ -86,36 +61,80 @@ IRIS59,comorbidities&20/400,Includes eyes of patients with comorbidities with a 
 IRIS60,better20/200,Includes eyes of patients with a pre-operative visual acuity of better than 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively
 IRIS60,20/200,Includes eyes of patients with a pre-operative visual acuity of 20/200 who had an improvement from their preoperative visual acuity of 2 or more lines between 3 and 6 months postoperatively
 IRIS60,20/400,Includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively
-MBHR10,screening,"Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan"
-MBHR10,overall,"Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-10 months after index date"
-AQI71,overall,"The overall measure score will be calculated as an average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
-AQI71,testedPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery whose blood glucose level is tested prior to the start of anesthesia"
-AQI71,insulinPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level >180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
-AQI71,insulinPostoperative,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who received insulin perioperatively and who received a follow-up blood glucose level check following the administration of insulin and prior to discharge"
-AQI71,glucoseEducation,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level >180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
-AQI73,overall,The overall measure score will be calculated as an average of the performance rates of part A and part B. (Rates 2 & 3)
-AQI73,brachialRadialTibial,"Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the brachial, radial, posterior tibial or dorsalis pedis artery for whom the arterial line was inserted with all indicated elements of sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound techniques followed"
-AQI73,femoralAxillary,"Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the femoral or axillary artery for whom the arterial line was inserted with all indicated elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound technique is followed"
-AAD14,examPerformed,NUMERATOR CRITERIA 1: Documentation by the provider who performed the surgery that an exam for recurrence of melanoma was performed on the patient within the reporting period.
-AAD14,overall,NUMERATOR CRITERIA 2: All patients that were diagnosed with a recurrent melanoma in the current reporting year.
+IROMS11,notachieving,Overall proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS11,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS11,operativeMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS11,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS11,nonOpMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS11,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported.
+IROMS12,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS12,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported. 
+IROMS12,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS12,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported. 
+IROMS12,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS12,nonOpRisk, A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported.
+IROMS13,notachieving,Overall proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS13,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS13,operativeMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS13,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS13,nonOpMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS13,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported.
+IROMS14,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS14,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS14,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS14,operativeRisk,"A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
+IROMS14,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS14,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported.
+IROMS16,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS16,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS16,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS16,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS16,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS16,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported.
+IROMS17,notachieving,Overall proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS17,overall, A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS17,operativeMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS17,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via KOS) proportion will be reported. 
+IROMS17,nonOpMCID,The proportion of patients not achieving an MCID in KOS change score will be reported.
+IROMS17,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported.
+IROMS18,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS18,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS18,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS18,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS18,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS18,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported.
+IROMS19,notachieving,Overall proportion of patients not achieving an MCID in DASH change score will be reported. 
+IROMS19,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported. 
+IROMS19,operativeMCID,The proportion of patients not achieving an MCID in DASH change score will be reported. 
+IROMS19,operativeRisk,"A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported."
+IROMS19,nonOpMCID,The proportion of patients not achieving an MCID in DASH change score will be reported.
+IROMS19,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported.
+IROMS20,notachieving,Overall proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS20,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS20,operativeMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS20,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported. 
+IROMS20,nonOpMCID,The proportion of patients not achieving an MCID in the NPRS change score will be reported. 
+IROMS20,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported.
 KEET01,notachieving,Overall proportion of patients not achieving an MCID in NDI change score will be reported.
-KEET01,overall,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.
+KEET01,overall, A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will be reported. 
 KEET01,operativeMCID,The proportion of patients not achieving an MCID in NDI change score will be reported.
-KEET01,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.
+KEET01,operativeRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will be reported. 
 KEET01,nonOpMCID,The proportion of patients not achieving an MCID in NDI change score will be reported.
-KEET01,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via NDI) proportion will reported.
+KEET01,nonOpRisk,A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via NDI) proportion will be reported.
+MBHR10,screening,"Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan "
+MBHR10,overall,"Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-10 months after index date"
+PP10,assessment,"Percentage of patients who had a comprehensive index assessment using standardized tools to assess at least three of the following six domains: (1) functioning, (2) recovery, (3) depression symptom severity, (4) anxiety symptom severity, (5) substance use symptoms severity, or (6) suicidal ideation and behavior symptoms severity."
+PP10,monitorAt90Days,"Percentage of patients who were monitored 90 days (+/- 30 days) from the comprehensive index assessment using standardized tools to assess (1) functioning, (2) recovery, or (3) symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
+PP10,maintnCareAt180Days,Percentage of patients with documentation of a clinical decision to adjust or maintain their care between 7 and 180 days from the comprehensive index assessment.
+PP12,safetyPlanWithIn24hr,"The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician (concurrent or within 24 hours of clinical encounter). "
+PP12,overall,"The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated AND reviewed and updated in collaboration between the individual and their clinician within 120 days after initiation (+/- 30 days)."
+USWR29,midfootHeel,Midfoot/heel Rate
+USWR29,toes,Toes Rate
+USWR29,overall,The average of the two risk stratified buckets which will be the performance rate in the JSON or XML file submitted.
 USWR31,likelyToHeal,"pressure ulcers likely to heal with conservative care,"
 USWR31,mayHeal,"pressure ulcers which may or may not heal,"
 USWR31,unlikelyToHeal,pressure ulcers which are unlikely to heal. The average of the three risk stratified buckets which will be the performance rate in the XML submitted.
-USWR31,overall,The average of the three risk stratified buckets which will be the performance rate in the XML submitted.
-USWR29,midfootHeel,Midfoot/heel
-USWR29,toes,Toes
-USWR29,overall,The average of the two risk stratified buckets which will be the performance rate in the JSON or XML file submitted.
-PP12,safetyPlanWithIn24hr,"The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician (concurrent or within 24 hours of the index clinical encounter)."
-PP12,overall,"The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated (Numerator 1) AND reviewed and updated in collaboration between the individual and their clinician within 120 days after the index clinical encounter."
-PP10,assessment,"Percentage of individuals who had a comprehensive index assessment using standardized tools to assess at least 3 of the following 6 domains: functioning, recovery, and symptom severity in depression, anxiety, substance use, and suicidal ideation and behavior."
-PP10,monitorAt90Days,"Percentage of individuals who were monitored 90 days (+/- 30 days) from the comprehensive index assessment using standardized tools to assess functioning, recovery, or symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
-PP10,maintnCareAt180Days,"Percentage of individuals with documentation of a clinical decision to adjust or maintain their care within 180 days from the comprehensive index assessment using standardized tools to assess functioning, recovery, and symptom severity in depression, anxiety, substance use, or suicidal ideation and behavior."
+USWR31,overall,The performance rate is the average of the three WHI stratified groups described in our risk stratification document.
 USWR32,noRestrictions,Normal arterial supply based on testing- No restrictions on type of compression
 USWR32,specialConsideration,"Compression bandaging with special considerations (e.g., short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)"
 USWR32,notRecommended,Compression bandaging not recommended
