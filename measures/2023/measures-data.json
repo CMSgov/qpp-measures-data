@@ -2239,12 +2239,12 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": ">=84Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks)."
+        "name": "84Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). "
       },
       {
-        "name": ">=180Days",
-        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)"
+        "name": "180Days",
+        "description": "Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)."
       }
     ]
   },
@@ -4367,16 +4367,16 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "screenedForUse",
+        "name": "screened",
         "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period"
       },
       {
         "name": "overall",
-        "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user who received tobacco cessation intervention on the date of the encounter or within the previous 12 months"
+        "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
       },
       {
-        "name": "tobacco",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention if identified as a tobacco user on the date of the encounter or within the previous 12 months"
+        "name": "combinedPopulations",
+        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
       }
     ]
   },
@@ -4475,11 +4475,11 @@
         "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class."
       },
       {
-        "name": "diagnosisException",
+        "name": "appropriateDiagnosis",
         "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses."
       },
       {
-        "name": "eCQMTotalRate",
+        "name": "totalRate",
         "description": "Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators)."
       }
     ]
@@ -4520,16 +4520,16 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "BMI",
-        "description": "Patients who had a height, weight and body mass index (BMI) percentile recorded during the measurement period"
+        "name": "percentiles",
+        "description": "Percentage of patients with height, weight, and body mass index (BMI) percentile documentation."
       },
       {
         "name": "nutrition",
-        "description": "Patients who had counseling for nutrition during a visit that occurs during the measurement period"
+        "description": "Percentage of patients with counseling for nutrition."
       },
       {
         "name": "physicalActivity",
-        "description": "Patients who had counseling for physical activity during a visit that occurs during the measurement period"
+        "description": "Percentage of patients with counseling for physical activity."
       }
     ]
   },
@@ -5366,12 +5366,12 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "14DaysOfDiagnosis",
-        "description": "Patients who initiated treatment within 14 days of the diagnosis"
+        "name": "14Days",
+        "description": "Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode."
       },
       {
-        "name": "30DaysOfVisit",
-        "description": "Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+        "name": "34Days",
+        "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation."
       }
     ]
   },
@@ -6312,7 +6312,7 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "visitWithin30Days",
+        "name": "30Days",
         "description": "Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase."
       },
       {
@@ -6363,12 +6363,12 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "12-17yrs",
-        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an initial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve months as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+        "name": "adolescents",
+        "description": "Percentage of adolescent patients (aged 12-17 years) with a diagnosis of major depression or dysthymia and an initial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve months as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5"
       },
       {
-        "name": "18+",
-        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an initial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve months as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5."
+        "name": "adults",
+        "description": "Percentage of adult patients (aged 18 years or older) with a diagnosis of major depression or dysthymia and an initial PHQ-9 or PHQ-9M score greater than nine during the index event who reached remission at twelve months as demonstrated by a twelve month (+/-60 days) PHQ-9 or PHQ-9M score of less than 5"
       }
     ]
   },
@@ -6836,7 +6836,7 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "30days",
+        "name": "30Days",
         "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
       },
       {
@@ -6880,19 +6880,19 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "18-64F",
+        "name": "female18-64",
         "description": "Females 18-64 years of age"
       },
       {
-        "name": "18-64M",
+        "name": "male18-64",
         "description": "Males 18-64 years of age"
       },
       {
-        "name": "65+F",
+        "name": "female65+",
         "description": "Females 65 years of age and older"
       },
       {
-        "name": "65+M",
+        "name": "male65+",
         "description": "Males 65 years of age and older"
       },
       {
@@ -6971,19 +6971,19 @@
     "strata": [
       {
         "name": "meningococcal",
-        "description": "Patients who had one dose of meningococcal vaccine on or between the patient's 11th and 13th birthdays"
+        "description": "Patients who had one dose of meningococcal vaccine (serogroups A, C, W, Y), on or between the patient’s 11th and 13th birthdays"
       },
       {
         "name": "Tdap",
-        "description": "Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient's 10th and 13th birthdays"
+        "description": "Patients who had one tetanus, diphtheria toxoids and acellular pertussis vaccine (Tdap) on or between the patient’s 10th and 13th birthdays"
       },
       {
         "name": "HPV",
-        "description": "Patients who have completed the HPV vaccine with defferent dates of service on or between the patient's 9th and 13th birthdays"
+        "description": "Patients who have completed the HPV vaccine series with different dates of service on or between the patient’s 9th and 13th birthdays"
       },
       {
         "name": "overall",
-        "description": "All patients who are compliant for Meningococcal, Tdap and HPV during the specified timeframes"
+        "description": "All patients who are compliant for Meningococcal (serogroups A, C, W, Y), Tdap and HPV during the specified timeframes"
       }
     ]
   },
@@ -7134,27 +7134,27 @@
         "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
       },
       {
-        "name": "5-17yrs",
-        "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation."
+        "name": "pedCtrlNoExacRisk",
+        "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation"
       },
       {
-        "name": "18-50",
+        "name": "adultCtrlNoExacRisk",
         "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
       },
       {
-        "name": "ACT5-17",
+        "name": "pedsWellCtrl",
         "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 5 to 17 with Asthma"
       },
       {
-        "name": "ACT18-50",
+        "name": "adultsWellCtrl",
         "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
       },
       {
-        "name": "lowRisk5-17",
+        "name": "pedsNoRiskExac",
         "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
       },
       {
-        "name": "lowRisk18-50",
+        "name": "adultsNoRiskExac",
         "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
       }
     ]
@@ -7845,7 +7845,7 @@
     "measureSpecification": {},
     "strata": [
       {
-        "name": "screenedForUse",
+        "name": "screened",
         "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
       },
       {
@@ -7853,7 +7853,7 @@
         "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
       },
       {
-        "name": "counseling",
+        "name": "combinedPopulations",
         "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
       }
     ]
@@ -9381,8 +9381,20 @@
     "firstPerformanceYear": 2023,
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "influenza",
+        "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+      },
+      {
+        "name": "Tdap",
+        "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+      },
+      {
+        "name": "herpesZoster",
+        "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+      },
+      {
+        "name": "pneumococcal",
+        "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
       }
     ],
     "isRegistryMeasure": false,
