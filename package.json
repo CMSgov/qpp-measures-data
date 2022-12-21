@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "5.5.10",
+  "version": "5.5.11",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "update:mvp": "scripts/mvp/update-mvp",
+    "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "scripts/measures/export-measures",
     "pretest": "eslint test util scripts index.js",
     "pre-commit": "tools/pre-commit.sh",
