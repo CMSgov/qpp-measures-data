@@ -41,7 +41,9 @@ rawMvpData.forEach((row) => {
       clinicalTopic: row["Clinical Topic"],
       title: row["MVP Title"],
       description: row["MVP Description"],
-      specialtiesMostApplicableTo: [row["Rheumatology"]],
+      specialtiesMostApplicableTo: row["Most Applicable Medical Specialties"]
+        .split(";")
+        .map((s) => s.trim()),
       clinicalTopics: row["Clinical Topic"],
       qualityMeasureIds: [] as any,
       iaMeasureIds: [] as any,
