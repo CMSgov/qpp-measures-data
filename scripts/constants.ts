@@ -118,6 +118,7 @@ export const OBJECTIVES = {
     'ProvidertoPatientExchange': 'providerToPatientExchange',
     'e-Prescribing': 'electronicPrescribing',
     'HealthInformationExchange': 'healthInformationExchange',
+    'attestation': 'attestation',
     'NULL': null,
 };
 
