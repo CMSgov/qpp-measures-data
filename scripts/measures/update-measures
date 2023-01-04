@@ -29,8 +29,8 @@ while getopts ":t" option; do
 done
 
 
-# This script is not made to work for years prior to 2023.
-if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+# This script is not made to work for years prior to 2022.
+if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
 
   echo -e "Compiling Typescript..."
   tsc -p .
@@ -45,7 +45,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
     node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
       $currentPerformanceYear
     exitOnFailure
-  
+
     echo -e "Ingesting Quality and QCDR strata..."
     node dist/measures/$currentPerformanceYear/ingest-strata.js \
       $currentPerformanceYear \
@@ -62,10 +62,13 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
       node scripts/validate-data.js measures $currentPerformanceYear
     exitOnFailure
 
-    echo -e "Updating mvp-enriched.json..."
-    node dist/mvp/$currentPerformanceYear/update-mvp.js \
-      $currentPerformanceYear
-    exitOnFailure
+    # mvps don't exist prior to PY2023.
+    if (( $currentPerformanceYear >= 2023 )); then
+      echo -e "Updating mvp-enriched.json..."
+      node dist/mvp/$currentPerformanceYear/update-mvp.js \
+        $currentPerformanceYear
+      exitOnFailure
+    fi
   fi
   
   echo -e "${Green}\n${bold}Update complete."
