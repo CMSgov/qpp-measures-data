@@ -199,7 +199,7 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
             if (change.category === 'quality') {
                 measuresJson[i] = {
                     ...measuresJson[i],
-                    ...updateBenchmarksMetaData(change),
+                    ...updateBenchmarksMetaData(change, measuresJson),
                 }
             }
             info(`Measure '${change.measureId}' updated.`);
@@ -302,10 +302,13 @@ export function writeToFile(file: any, filePath: string) {
     fs.writeFileSync(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2));
 }
 
-function updateBenchmarksMetaData(change: MeasuresChange): any {
+function updateBenchmarksMetaData(change: MeasuresChange, measuresJson: any): any {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+    const icdImpacted = change.icdImpacted ? change.icdImpacted : currentMeasure.icdImpacted;
+    const clinicalGuidelineChanged = change.clinicalGuidelineChanged ? change.clinicalGuidelineChanged : currentMeasure.clinicalGuidelineChanged;
     return {
-        isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
-        isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
+        isIcdImpacted: icdImpacted ? !!icdImpacted.length : false,
+        isClinicalGuidelineChanged: clinicalGuidelineChanged ? !!clinicalGuidelineChanged.length : false,
     };
 
 }
