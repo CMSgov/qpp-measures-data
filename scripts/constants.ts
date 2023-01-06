@@ -168,7 +168,7 @@ export const MEASURE_SETS = {
     'PlasticSurgery': 'plasticSurgery',
     'PreventiveMedicine': 'preventiveMedicine',
     'Neurology': 'neurology',
-    'Mental/BehavioralHealth/Psychiatry': 'mentalBehavioralHealth',
+    'Mental/BehavioralHealthandPsychiatry': 'mentalBehavioralHealth',
     'DiagnosticRadiology': 'diagnosticRadiology',
     'InterventionalRadiology': 'interventionalRadiology',
     'VascularSurgery': 'vascularSurgery',

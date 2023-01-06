@@ -147,6 +147,9 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
 }
 
 function mapArrayItem(field: string, map: any, values: string) {
+    // null field if the value entered in the CR is 'NULL'.
+    if (values === 'NULL') return [];
+
     const arrayedField: string[] = values.split(',');
 
     for (let i = 0; i < arrayedField.length; i++) {

@@ -39,23 +39,7 @@
           "electronicHealthRecord",
           "registry"
         ],
-        "measureSets": [
-          "allergyImmunology",
-          "cardiology",
-          "endocrinology",
-          "familyMedicine",
-          "geriatrics",
-          "infectiousDisease",
-          "internalMedicine",
-          "nephrology",
-          "obstetricsGynecology",
-          "oncology",
-          "otolaryngology",
-          "preventiveMedicine",
-          "pulmonology",
-          "rheumatology",
-          "skilledNursingFacility"
-        ],
+        "measureSets": [],
         "measureSpecification": {}
       },
       {
@@ -168,16 +152,20 @@
         "measureSets": [
           "audiology",
           "clinicalSocialWork",
+          "emergencyMedicine",
           "endocrinology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "mentalBehavioralHealth",
           "neurology",
+          "oncology",
           "orthopedicSurgery",
           "pediatrics",
           "physicalTherapyOccupationalTherapy",
           "preventiveMedicine",
-          "speechLanguagePathology"
+          "speechLanguagePathology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -212,6 +200,9 @@
         ],
         "measureSets": [
           "dermatology",
+          "familyMedicine",
+          "infectiousDisease",
+          "internalMedicine",
           "rheumatology"
         ],
         "measureSpecification": {}
@@ -222,7 +213,7 @@
         "nqfEMeasureId": null,
         "nqfId": "2523",
         "measureId": "177",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at 50% of encounters for RA for each patient during the measurement year.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the measurement year.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American College of Rheumatology",
@@ -1222,7 +1213,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -1337,7 +1328,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "187",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapywas initiated within 4.5 hours of time last known well.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapy was initiated within 4.5 hours of time last known well.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Heart Association",
@@ -1361,6 +1352,7 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "emergencyMedicine",
           "neurosurgical"
         ],
@@ -1417,7 +1409,7 @@
         "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": "1525",
+        "nqfId": null,
         "measureId": "326",
         "description": "Percentage of patients aged 18 years and older with atrial fibrillation (AF) or atrial flutter who were prescribed an FDA-approved oral anticoagulant drug for the prevention of thromboembolism during the measurement period.",
         "measureType": "process",
@@ -2418,7 +2410,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -2504,11 +2496,11 @@
       },
       {
         "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
-        "eMeasureId": "CMS144v11",
+        "eMeasureId": "CMS145v11",
         "nqfEMeasureId": "0070e",
         "nqfId": "0070",
         "measureId": "007",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) ≤ 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI or a current or prior LVEF ≤ 40% who were prescribed beta-blocker therapy.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Heart Association",
@@ -2546,7 +2538,7 @@
         "nqfEMeasureId": "0083e",
         "nqfId": "0083",
         "measureId": "008",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) ≤ 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Heart Association",
@@ -2738,16 +2730,20 @@
         "measureSets": [
           "audiology",
           "clinicalSocialWork",
+          "emergencyMedicine",
           "endocrinology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "mentalBehavioralHealth",
           "neurology",
+          "oncology",
           "orthopedicSurgery",
           "pediatrics",
           "physicalTherapyOccupationalTherapy",
           "preventiveMedicine",
-          "speechLanguagePathology"
+          "speechLanguagePathology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -2789,10 +2785,13 @@
           "familyMedicine",
           "geriatrics",
           "internalMedicine",
+          "oncology",
           "ophthalmology",
+          "otolaryngology",
           "pulmonology",
           "rheumatology",
-          "skilledNursingFacility"
+          "skilledNursingFacility",
+          "urology"
         ],
         "measureSpecification": {},
         "strata": [
@@ -2842,7 +2841,8 @@
         "measureSets": [
           "cardiology",
           "familyMedicine",
-          "internalMedicine"
+          "internalMedicine",
+          "preventiveMedicine"
         ],
         "measureSpecification": {}
       },
@@ -2850,7 +2850,7 @@
         "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": "1525",
+        "nqfId": null,
         "measureId": "326",
         "description": "Percentage of patients aged 18 years and older with atrial fibrillation (AF) or atrial flutter who were prescribed an FDA-approved oral anticoagulant drug for the prevention of thromboembolism during the measurement period.",
         "measureType": "process",
@@ -3051,7 +3051,7 @@
       {
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "3612",
         "lastPerformanceYear": null,
         "isRiskAdjusted": false,
         "icdImpacted": [],
@@ -3927,7 +3927,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -4199,7 +4199,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0005",
         "measureId": "321",
-        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                          Getting Timely Care, Appointments, and Information; (Not endorsed by NQF) How well Providers Communicate; (Not endorsed by NQF) Patient's Rating of Provider; (NQF endorsed # 0005) Access to Specialists; (Not endorsed by NQF) Health Promotion and Education; (Not endorsed by NQF) Shared Decision-Making; (Not endorsed by NQF)  Health Status and Functional Status; (Not endorsed by NQF) Courteous and Helpful Office Staff; (NQF endorsed # 0005) Care Coordination; (Not endorsed by NQF) Stewardship of Patient Resources. (Not endorsed by NQF)",
+        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by NQF)\n• How well Providers Communicate; (Not endorsed by NQF)\n• Patient’s Rating of Provider; (NQF endorsed # 0005)\n• Access to Specialists; (Not endorsed by NQF)\n• Health Promotion and Education; (Not endorsed by NQF)\n• Shared Decision-Making; (Not endorsed by NQF) \n• Health Status and Functional Status; (Not endorsed by NQF)\n• Courteous and Helpful Office Staff; (NQF endorsed # 0005)\n• Care Coordination; (Not endorsed by NQF)\n• Stewardship of Patient Resources. (Not endorsed by NQF)",
         "measureType": "patientEngagementExperience",
         "isHighPriority": true,
         "primarySteward": "Agency for Healthcare Research & Quality",
@@ -4228,7 +4228,9 @@
         ],
         "measureSets": [
           "familyMedicine",
-          "internalMedicine"
+          "internalMedicine",
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -4349,7 +4351,7 @@
         "nqfEMeasureId": null,
         "nqfId": "3568",
         "measureId": "483",
-        "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM PROM (a comprehensive and parsimonious set of 11 patient-reported items) to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient's relationship with the clinician or practice. Patients identify the PCPCM PROM as meaningful and able to communicate the quality of their care to their clinicians and/or care team. The items within the PCPCM PROM are based on extensive stakeholder engagement and comprehensive reviews of the literature.",
+        "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM Patient Reported Outcome Measure (PROM) a comprehensive and parsimonious set of 11 patient-reported items - to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient’s relationship with the clinician or practice.",
         "measureType": "patientReportedOutcome",
         "isHighPriority": true,
         "primarySteward": "The American Board of Family Medicine",
@@ -5272,7 +5274,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -5395,7 +5397,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0005",
         "measureId": "321",
-        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                          Getting Timely Care, Appointments, and Information; (Not endorsed by NQF) How well Providers Communicate; (Not endorsed by NQF) Patient's Rating of Provider; (NQF endorsed # 0005) Access to Specialists; (Not endorsed by NQF) Health Promotion and Education; (Not endorsed by NQF) Shared Decision-Making; (Not endorsed by NQF)  Health Status and Functional Status; (Not endorsed by NQF) Courteous and Helpful Office Staff; (NQF endorsed # 0005) Care Coordination; (Not endorsed by NQF) Stewardship of Patient Resources. (Not endorsed by NQF)",
+        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by NQF)\n• How well Providers Communicate; (Not endorsed by NQF)\n• Patient’s Rating of Provider; (NQF endorsed # 0005)\n• Access to Specialists; (Not endorsed by NQF)\n• Health Promotion and Education; (Not endorsed by NQF)\n• Shared Decision-Making; (Not endorsed by NQF) \n• Health Status and Functional Status; (Not endorsed by NQF)\n• Courteous and Helpful Office Staff; (NQF endorsed # 0005)\n• Care Coordination; (Not endorsed by NQF)\n• Stewardship of Patient Resources. (Not endorsed by NQF)",
         "measureType": "patientEngagementExperience",
         "isHighPriority": true,
         "primarySteward": "Agency for Healthcare Research & Quality",
@@ -5424,7 +5426,9 @@
         ],
         "measureSets": [
           "familyMedicine",
-          "internalMedicine"
+          "internalMedicine",
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -5543,7 +5547,7 @@
         "isHighPriority": true,
         "isInverse": true,
         "isRiskAdjusted": true,
-        "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR); E-CPR (Emergency - Clinical Performance Registry)",
+        "primarySteward": "5133825",
         "firstPerformanceYear": 2020,
         "allowedVendors": [
           "5133825",
@@ -6420,7 +6424,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -6725,7 +6729,9 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSets": [],
+        "measureSets": [
+          "orthopedicSurgery"
+        ],
         "measureSpecification": {}
       }
     ],
@@ -7552,7 +7558,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -8667,7 +8673,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -8814,16 +8820,20 @@
         "measureSets": [
           "audiology",
           "clinicalSocialWork",
+          "emergencyMedicine",
           "endocrinology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "mentalBehavioralHealth",
           "neurology",
+          "oncology",
           "orthopedicSurgery",
           "pediatrics",
           "physicalTherapyOccupationalTherapy",
           "preventiveMedicine",
-          "speechLanguagePathology"
+          "speechLanguagePathology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -8904,7 +8914,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0005",
         "measureId": "321",
-        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                          Getting Timely Care, Appointments, and Information; (Not endorsed by NQF) How well Providers Communicate; (Not endorsed by NQF) Patient's Rating of Provider; (NQF endorsed # 0005) Access to Specialists; (Not endorsed by NQF) Health Promotion and Education; (Not endorsed by NQF) Shared Decision-Making; (Not endorsed by NQF)  Health Status and Functional Status; (Not endorsed by NQF) Courteous and Helpful Office Staff; (NQF endorsed # 0005) Care Coordination; (Not endorsed by NQF) Stewardship of Patient Resources. (Not endorsed by NQF)",
+        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by NQF)\n• How well Providers Communicate; (Not endorsed by NQF)\n• Patient’s Rating of Provider; (NQF endorsed # 0005)\n• Access to Specialists; (Not endorsed by NQF)\n• Health Promotion and Education; (Not endorsed by NQF)\n• Shared Decision-Making; (Not endorsed by NQF) \n• Health Status and Functional Status; (Not endorsed by NQF)\n• Courteous and Helpful Office Staff; (NQF endorsed # 0005)\n• Care Coordination; (Not endorsed by NQF)\n• Stewardship of Patient Resources. (Not endorsed by NQF)",
         "measureType": "patientEngagementExperience",
         "isHighPriority": true,
         "primarySteward": "Agency for Healthcare Research & Quality",
@@ -8933,7 +8943,9 @@
         ],
         "measureSets": [
           "familyMedicine",
-          "internalMedicine"
+          "internalMedicine",
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -9069,7 +9081,8 @@
           "registry"
         ],
         "measureSets": [
-          "oncology"
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -9103,7 +9116,8 @@
           "registry"
         ],
         "measureSets": [
-          "oncology"
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -10032,7 +10046,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -10114,6 +10128,7 @@
           "familyMedicine",
           "geriatrics",
           "internalMedicine",
+          "obstetricsGynecology",
           "preventiveMedicine",
           "rheumatology"
         ],
@@ -10292,16 +10307,20 @@
         "measureSets": [
           "audiology",
           "clinicalSocialWork",
+          "emergencyMedicine",
           "endocrinology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "mentalBehavioralHealth",
           "neurology",
+          "oncology",
           "orthopedicSurgery",
           "pediatrics",
           "physicalTherapyOccupationalTherapy",
           "preventiveMedicine",
-          "speechLanguagePathology"
+          "speechLanguagePathology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -10349,10 +10368,14 @@
           "familyMedicine",
           "gastroenterology",
           "generalSurgery",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "mentalBehavioralHealth",
+          "nephrology",
           "neurology",
           "neurosurgical",
+          "nutritionDietician",
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
@@ -10364,6 +10387,7 @@
           "podiatry",
           "preventiveMedicine",
           "pulmonology",
+          "radiationOncology",
           "rheumatology",
           "speechLanguagePathology",
           "thoracicSurgery",
@@ -10464,7 +10488,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0005",
         "measureId": "321",
-        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                          Getting Timely Care, Appointments, and Information; (Not endorsed by NQF) How well Providers Communicate; (Not endorsed by NQF) Patient's Rating of Provider; (NQF endorsed # 0005) Access to Specialists; (Not endorsed by NQF) Health Promotion and Education; (Not endorsed by NQF) Shared Decision-Making; (Not endorsed by NQF)  Health Status and Functional Status; (Not endorsed by NQF) Courteous and Helpful Office Staff; (NQF endorsed # 0005) Care Coordination; (Not endorsed by NQF) Stewardship of Patient Resources. (Not endorsed by NQF)",
+        "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by NQF)\n• How well Providers Communicate; (Not endorsed by NQF)\n• Patient’s Rating of Provider; (NQF endorsed # 0005)\n• Access to Specialists; (Not endorsed by NQF)\n• Health Promotion and Education; (Not endorsed by NQF)\n• Shared Decision-Making; (Not endorsed by NQF) \n• Health Status and Functional Status; (Not endorsed by NQF)\n• Courteous and Helpful Office Staff; (NQF endorsed # 0005)\n• Care Coordination; (Not endorsed by NQF)\n• Stewardship of Patient Resources. (Not endorsed by NQF)",
         "measureType": "patientEngagementExperience",
         "isHighPriority": true,
         "primarySteward": "Agency for Healthcare Research & Quality",
@@ -10493,7 +10517,9 @@
         ],
         "measureSets": [
           "familyMedicine",
-          "internalMedicine"
+          "internalMedicine",
+          "oncology",
+          "urology"
         ],
         "measureSpecification": {}
       },
@@ -10564,6 +10590,7 @@
           "registry"
         ],
         "measureSets": [
+          "audiology",
           "cardiology",
           "certifiedNurseMidwife",
           "clinicalSocialWork",
@@ -10643,7 +10670,7 @@
         "nqfEMeasureId": null,
         "nqfId": "3568",
         "measureId": "483",
-        "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM PROM (a comprehensive and parsimonious set of 11 patient-reported items) to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient's relationship with the clinician or practice. Patients identify the PCPCM PROM as meaningful and able to communicate the quality of their care to their clinicians and/or care team. The items within the PCPCM PROM are based on extensive stakeholder engagement and comprehensive reviews of the literature.",
+        "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM Patient Reported Outcome Measure (PROM) a comprehensive and parsimonious set of 11 patient-reported items - to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient’s relationship with the clinician or practice.",
         "measureType": "patientReportedOutcome",
         "isHighPriority": true,
         "primarySteward": "The American Board of Family Medicine",
@@ -10676,7 +10703,7 @@
       {
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "3620",
         "lastPerformanceYear": null,
         "isRiskAdjusted": false,
         "icdImpacted": [],
@@ -11621,7 +11648,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -11703,6 +11730,7 @@
           "familyMedicine",
           "internalMedicine",
           "nephrology",
+          "nutritionDietician",
           "preventiveMedicine"
         ],
         "measureSpecification": {}
@@ -11800,25 +11828,7 @@
           "cmsWebInterface",
           "registry"
         ],
-        "measureSets": [
-          "allergyImmunology",
-          "cardiology",
-          "certifiedNurseMidwife",
-          "endocrinology",
-          "familyMedicine",
-          "geriatrics",
-          "infectiousDisease",
-          "internalMedicine",
-          "nephrology",
-          "obstetricsGynecology",
-          "oncology",
-          "otolaryngology",
-          "pediatrics",
-          "preventiveMedicine",
-          "pulmonology",
-          "rheumatology",
-          "skilledNursingFacility"
-        ],
+        "measureSets": [],
         "measureSpecification": {}
       },
       {
@@ -11851,23 +11861,7 @@
           "electronicHealthRecord",
           "registry"
         ],
-        "measureSets": [
-          "allergyImmunology",
-          "cardiology",
-          "endocrinology",
-          "familyMedicine",
-          "geriatrics",
-          "infectiousDisease",
-          "internalMedicine",
-          "nephrology",
-          "obstetricsGynecology",
-          "oncology",
-          "otolaryngology",
-          "preventiveMedicine",
-          "pulmonology",
-          "rheumatology",
-          "skilledNursingFacility"
-        ],
+        "measureSets": [],
         "measureSpecification": {}
       },
       {
@@ -11994,13 +11988,13 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "482",
-        "description": "Percentage of adult hemodialysis patient-months using a catheter continuously for three months or longer for vascular access attributable to an individual practitioner or group practice.",
+        "description": "Percentage of adult hemodialysis (HD) patient-months using a catheter continuously for three months or longer for vascular access attributable to an individual practitioner or group practice.",
         "measureType": "intermediateOutcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -12025,7 +12019,7 @@
       {
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "1662",
         "lastPerformanceYear": null,
         "isRiskAdjusted": false,
         "icdImpacted": [],
@@ -12937,7 +12931,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -14242,7 +14236,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -14387,10 +14381,13 @@
           "familyMedicine",
           "geriatrics",
           "internalMedicine",
+          "oncology",
           "ophthalmology",
+          "otolaryngology",
           "pulmonology",
           "rheumatology",
-          "skilledNursingFacility"
+          "skilledNursingFacility",
+          "urology"
         ],
         "measureSpecification": {},
         "strata": [
@@ -15661,7 +15658,7 @@
         "primarySteward": "Centers for Medicare & Medicaid Services",
         "firstPerformanceYear": 2022,
         "lastPerformanceYear": null,
-        "isInverse": false,
+        "isInverse": true,
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
