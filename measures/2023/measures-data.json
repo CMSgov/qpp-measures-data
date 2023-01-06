@@ -2257,6 +2257,7 @@
       "familyMedicine",
       "internalMedicine",
       "nephrology",
+      "nutritionDietician",
       "preventiveMedicine"
     ],
     "measureSpecification": {}
@@ -2338,11 +2339,11 @@
   },
   {
     "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
-    "eMeasureId": "CMS144v11",
+    "eMeasureId": "CMS145v11",
     "nqfEMeasureId": "0070e",
     "nqfId": "0070",
     "measureId": "007",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) ≤ 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI or a current or prior LVEF ≤ 40% who were prescribed beta-blocker therapy.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Heart Association",
@@ -2380,7 +2381,7 @@
     "nqfEMeasureId": "0083e",
     "nqfId": "0083",
     "measureId": "008",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) < 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of heart failure (HF) with a current or prior left ventricular ejection fraction (LVEF) ≤ 40% who were prescribed beta-blocker therapy either within a 12-month period when seen in the outpatient setting OR at each hospital discharge.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Heart Association",
@@ -2633,6 +2634,7 @@
       "familyMedicine",
       "geriatrics",
       "internalMedicine",
+      "obstetricsGynecology",
       "preventiveMedicine",
       "rheumatology"
     ],
@@ -2840,8 +2842,9 @@
       "registry"
     ],
     "measureSets": [
+      "emergencyMedicine",
       "familyMedicine",
-      "otolaryngology",
+      "infectiousDisease",
       "pediatrics",
       "urgentCare"
     ],
@@ -2879,6 +2882,8 @@
     "measureSets": [
       "emergencyMedicine",
       "familyMedicine",
+      "infectiousDisease",
+      "otolaryngology",
       "pediatrics",
       "urgentCare"
     ],
@@ -2962,7 +2967,7 @@
     "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "0390",
+    "nqfId": null,
     "measureId": "104",
     "description": "Percentage of patients, regardless of age, with a diagnosis of prostate cancer at high or very high risk of recurrence receiving external beam radiotherapy to the prostate who were prescribed androgen deprivation therapy in combination with external beam radiotherapy to the prostate.",
     "measureType": "process",
@@ -3058,25 +3063,7 @@
       "cmsWebInterface",
       "registry"
     ],
-    "measureSets": [
-      "allergyImmunology",
-      "cardiology",
-      "certifiedNurseMidwife",
-      "endocrinology",
-      "familyMedicine",
-      "geriatrics",
-      "infectiousDisease",
-      "internalMedicine",
-      "nephrology",
-      "obstetricsGynecology",
-      "oncology",
-      "otolaryngology",
-      "pediatrics",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "skilledNursingFacility"
-    ],
+    "measureSets": [],
     "measureSpecification": {}
   },
   {
@@ -3109,23 +3096,7 @@
       "electronicHealthRecord",
       "registry"
     ],
-    "measureSets": [
-      "allergyImmunology",
-      "cardiology",
-      "endocrinology",
-      "familyMedicine",
-      "geriatrics",
-      "infectiousDisease",
-      "internalMedicine",
-      "nephrology",
-      "obstetricsGynecology",
-      "oncology",
-      "otolaryngology",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "skilledNursingFacility"
-    ],
+    "measureSets": [],
     "measureSpecification": {}
   },
   {
@@ -3321,7 +3292,7 @@
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation",
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "0417",
+    "nqfId": null,
     "measureId": "126",
     "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetes mellitus who had a neurological examination of their lower extremities within 12 months.",
     "measureType": "process",
@@ -3349,7 +3320,6 @@
       "endocrinology",
       "familyMedicine",
       "internalMedicine",
-      "nutritionDietician",
       "physicalTherapyOccupationalTherapy",
       "podiatry",
       "preventiveMedicine"
@@ -3360,7 +3330,7 @@
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention - Evaluation of Footwear",
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "0416",
+    "nqfId": null,
     "measureId": "127",
     "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetes mellitus who were evaluated for proper footwear and sizing.",
     "measureType": "process",
@@ -3385,7 +3355,6 @@
       "registry"
     ],
     "measureSets": [
-      "nutritionDietician",
       "physicalTherapyOccupationalTherapy",
       "podiatry"
     ],
@@ -3558,16 +3527,20 @@
     "measureSets": [
       "audiology",
       "clinicalSocialWork",
+      "emergencyMedicine",
       "endocrinology",
       "familyMedicine",
+      "geriatrics",
       "internalMedicine",
       "mentalBehavioralHealth",
       "neurology",
+      "oncology",
       "orthopedicSurgery",
       "pediatrics",
       "physicalTherapyOccupationalTherapy",
       "preventiveMedicine",
-      "speechLanguagePathology"
+      "speechLanguagePathology",
+      "urology"
     ],
     "measureSpecification": {}
   },
@@ -3577,7 +3550,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "137",
-    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes: A target date for the next complete physical skin exam, AND A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment.",
+    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes:\n• A target date for the next complete physical skin exam, AND\n• A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment",
     "measureType": "structure",
     "isHighPriority": true,
     "primarySteward": "American Academy of Dermatology",
@@ -3990,6 +3963,9 @@
     ],
     "measureSets": [
       "dermatology",
+      "familyMedicine",
+      "infectiousDisease",
+      "internalMedicine",
       "rheumatology"
     ],
     "measureSpecification": {}
@@ -4000,7 +3976,7 @@
     "nqfEMeasureId": null,
     "nqfId": "2523",
     "measureId": "177",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at 50% of encounters for RA for each patient during the measurement year.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the measurement year.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American College of Rheumatology",
@@ -4222,7 +4198,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "187",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapywas initiated within 4.5 hours of time last known well.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapy was initiated within 4.5 hours of time last known well.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Heart Association",
@@ -4246,6 +4222,7 @@
       "registry"
     ],
     "measureSets": [
+      "cardiology",
       "emergencyMedicine",
       "neurosurgical"
     ],
@@ -4573,10 +4550,14 @@
       "familyMedicine",
       "gastroenterology",
       "generalSurgery",
+      "geriatrics",
+      "infectiousDisease",
       "internalMedicine",
       "mentalBehavioralHealth",
+      "nephrology",
       "neurology",
       "neurosurgical",
+      "nutritionDietician",
       "obstetricsGynecology",
       "oncology",
       "ophthalmology",
@@ -4588,6 +4569,7 @@
       "podiatry",
       "preventiveMedicine",
       "pulmonology",
+      "radiationOncology",
       "rheumatology",
       "speechLanguagePathology",
       "thoracicSurgery",
@@ -4696,10 +4678,13 @@
       "familyMedicine",
       "geriatrics",
       "internalMedicine",
+      "oncology",
       "ophthalmology",
+      "otolaryngology",
       "pulmonology",
       "rheumatology",
-      "skilledNursingFacility"
+      "skilledNursingFacility",
+      "urology"
     ],
     "measureSpecification": {},
     "strata": [
@@ -4795,6 +4780,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
+      "infectiousDisease",
       "pediatrics"
     ],
     "measureSpecification": {}
@@ -4831,7 +4817,8 @@
     "measureSets": [
       "cardiology",
       "familyMedicine",
-      "internalMedicine"
+      "internalMedicine",
+      "preventiveMedicine"
     ],
     "measureSpecification": {}
   },
@@ -5571,7 +5558,7 @@
     "measureSpecification": {}
   },
   {
-    "title": "Initiation and Engagement of Alcohol and Other Drug Dependence Treatment",
+    "title": "Initiation and Engagement of Substance Use Disorder Treatment",
     "eMeasureId": "CMS137v11",
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -5602,6 +5589,7 @@
     "measureSets": [
       "familyMedicine",
       "internalMedicine",
+      "mentalBehavioralHealth",
       "pediatrics"
     ],
     "measureSpecification": {},
@@ -5776,6 +5764,7 @@
     "measureSets": [
       "audiology",
       "familyMedicine",
+      "geriatrics",
       "internalMedicine",
       "nephrology",
       "orthopedicSurgery",
@@ -5825,7 +5814,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0005",
     "measureId": "321",
-    "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                          Getting Timely Care, Appointments, and Information; (Not endorsed by NQF) How well Providers Communicate; (Not endorsed by NQF) Patient's Rating of Provider; (NQF endorsed # 0005) Access to Specialists; (Not endorsed by NQF) Health Promotion and Education; (Not endorsed by NQF) Shared Decision-Making; (Not endorsed by NQF)  Health Status and Functional Status; (Not endorsed by NQF) Courteous and Helpful Office Staff; (NQF endorsed # 0005) Care Coordination; (Not endorsed by NQF) Stewardship of Patient Resources. (Not endorsed by NQF)",
+    "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The NQF endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by NQF)\n• How well Providers Communicate; (Not endorsed by NQF)\n• Patient’s Rating of Provider; (NQF endorsed # 0005)\n• Access to Specialists; (Not endorsed by NQF)\n• Health Promotion and Education; (Not endorsed by NQF)\n• Shared Decision-Making; (Not endorsed by NQF) \n• Health Status and Functional Status; (Not endorsed by NQF)\n• Courteous and Helpful Office Staff; (NQF endorsed # 0005)\n• Care Coordination; (Not endorsed by NQF)\n• Stewardship of Patient Resources. (Not endorsed by NQF)",
     "measureType": "patientEngagementExperience",
     "isHighPriority": true,
     "primarySteward": "Agency for Healthcare Research & Quality",
@@ -5854,7 +5843,9 @@
     ],
     "measureSets": [
       "familyMedicine",
-      "internalMedicine"
+      "internalMedicine",
+      "oncology",
+      "urology"
     ],
     "measureSpecification": {}
   },
@@ -5928,7 +5919,7 @@
     "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "1525",
+    "nqfId": null,
     "measureId": "326",
     "description": "Percentage of patients aged 18 years and older with atrial fibrillation (AF) or atrial flutter who were prescribed an FDA-approved oral anticoagulant drug for the prevention of thromboembolism during the measurement period.",
     "measureType": "process",
@@ -6344,6 +6335,7 @@
     ],
     "measureSets": [
       "generalSurgery",
+      "otolaryngology",
       "plasticSurgery"
     ],
     "measureSpecification": {}
@@ -6378,7 +6370,8 @@
     ],
     "measureSets": [
       "generalSurgery",
-      "plasticSurgery"
+      "plasticSurgery",
+      "thoracicSurgery"
     ],
     "measureSpecification": {}
   },
@@ -6805,8 +6798,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
-      "dentistry",
-      "pediatrics"
+      "dentistry"
     ],
     "measureSpecification": {}
   },
@@ -7011,6 +7003,7 @@
     ],
     "measureSets": [
       "familyMedicine",
+      "infectiousDisease",
       "internalMedicine"
     ],
     "measureSpecification": {}
@@ -7216,7 +7209,8 @@
     ],
     "measureSets": [
       "familyMedicine",
-      "pediatrics"
+      "infectiousDisease",
+      "internalMedicine"
     ],
     "measureSpecification": {},
     "strata": [
@@ -7527,6 +7521,7 @@
       "pediatrics",
       "physicalMedicine",
       "preventiveMedicine",
+      "pulmonology",
       "rheumatology",
       "thoracicSurgery",
       "urgentCare",
@@ -7574,7 +7569,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "405",
-    "description": "Percentage of final reports for imaging studies for patients aged 18 years and older with one or more of the following noted incidentally with a specific recommendation for no follow-up imaging recommended based on radiological findings: Cystic renal lesion that is simple appearing* (Bosniak I or II) Adrenal lesion less than or equal to 1.0 cm Adrenal lesion greater than 1.0 cm but less than or equal to 4.0 cm classified as likely benign or diagnostic benign by unenhanced CT or washout protocol CT, or MRI with in- and opposed-phase sequences or other equivalent institutional imaging protocols",
+    "description": "Percentage of final reports for imaging studies for patients aged 18 years and older with one or more of the following noted incidentally with a specific recommendation for no follow‐up imaging recommended based on radiological findings:\n• Cystic renal lesion that is simple appearing* (Bosniak I or II)\n• Adrenal lesion less than or equal to 1.0 cm\n• Adrenal lesion greater than 1.0 cm but less than or equal to 4.0 cm classified as likely benign or diagnostic benign by unenhanced CT or washout protocol CT, or MRI with in- and opposed-phase sequences or other equivalent institutional imaging protocols",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American College of Radiology",
@@ -8078,6 +8073,7 @@
       "registry"
     ],
     "measureSets": [
+      "audiology",
       "cardiology",
       "certifiedNurseMidwife",
       "clinicalSocialWork",
@@ -8593,7 +8589,8 @@
       "registry"
     ],
     "measureSets": [
-      "oncology"
+      "oncology",
+      "urology"
     ],
     "measureSpecification": {}
   },
@@ -8627,7 +8624,8 @@
       "registry"
     ],
     "measureSets": [
-      "oncology"
+      "oncology",
+      "urology"
     ],
     "measureSpecification": {}
   },
@@ -9054,7 +9052,9 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
+      "familyMedicine",
       "geriatrics",
+      "internalMedicine",
       "urology"
     ],
     "measureSpecification": {}
@@ -9099,7 +9099,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "478",
-    "description": "A patient-reported outcome measure (PROM) of risk-adjusted change in functional status (FS) for patients 14 years+ with neck impairments. The change in FS is assessed using the FOTO Neck FS PROM. The measure is adjusted to patient characteristics known to be associated with FS outcomes (risk-adjusted) and  used as a performance measure at the patient, individual clinician, and clinic levels to assess quality.",
+    "description": "A patient-reported outcome measure (PROM) of risk-adjusted change in functional status (FS) for patients 14 years+ with neck impairments. The change in FS is assessed using the FOTO Neck FS PROM. The measure is adjusted to patient characteristics known to be associated with FS outcomes (risk-adjusted) and used as a performance measure at the patient, individual clinician, and clinic levels to assess quality.",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -9201,7 +9201,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSets": [],
+    "measureSets": [
+      "orthopedicSurgery"
+    ],
     "measureSpecification": {}
   },
   {
@@ -9243,13 +9245,13 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "482",
-    "description": "Percentage of adult hemodialysis patient-months using a catheter continuously for three months or longer for vascular access attributable to an individual practitioner or group practice.",
+    "description": "Percentage of adult hemodialysis (HD) patient-months using a catheter continuously for three months or longer for vascular access attributable to an individual practitioner or group practice.",
     "measureType": "intermediateOutcome",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
     "firstPerformanceYear": 2022,
     "lastPerformanceYear": null,
-    "isInverse": false,
+    "isInverse": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -9277,7 +9279,7 @@
     "nqfEMeasureId": null,
     "nqfId": "3568",
     "measureId": "483",
-    "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM PROM (a comprehensive and parsimonious set of 11 patient-reported items) to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient's relationship with the clinician or practice. Patients identify the PCPCM PROM as meaningful and able to communicate the quality of their care to their clinicians and/or care team. The items within the PCPCM PROM are based on extensive stakeholder engagement and comprehensive reviews of the literature.",
+    "description": "The Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM) uses the PCPCM Patient Reported Outcome Measure (PROM) a comprehensive and parsimonious set of 11 patient-reported items - to assess the broad scope of primary care. Unlike other primary care measures, the PCPCM PRO-PM measures the high value aspects of primary care based on a patient’s relationship with the clinician or practice.",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "The American Board of Family Medicine",
@@ -9483,7 +9485,7 @@
   {
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "1662",
     "lastPerformanceYear": null,
     "isRiskAdjusted": false,
     "icdImpacted": [],
@@ -9549,7 +9551,7 @@
   {
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3661",
     "lastPerformanceYear": null,
     "isRiskAdjusted": false,
     "icdImpacted": [],
@@ -9581,7 +9583,7 @@
   {
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3612",
     "lastPerformanceYear": null,
     "isRiskAdjusted": false,
     "icdImpacted": [],
@@ -9612,7 +9614,7 @@
   {
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3620",
     "lastPerformanceYear": null,
     "isRiskAdjusted": false,
     "icdImpacted": [],
@@ -9687,7 +9689,7 @@
     "primarySteward": "Centers for Medicare & Medicaid Services",
     "firstPerformanceYear": 2022,
     "lastPerformanceYear": null,
-    "isInverse": false,
+    "isInverse": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -11274,7 +11276,7 @@
     "allowedVendors": [
       "5551268"
     ],
-    "description": "Percentage of patients aged 18 years or older, who undergo an elective procedure lasting 30 minutes or longer requiring inhalational general anesthesia who during the maintenance phase of the anesthetic have a total fresh gas flow < 1 L/min (< 2 L/min for Sevoflurane).",
+    "description": "Percentage of patients aged 18 years or older, who undergo an elective procedure lasting 30 minutes or longer requiring inhalational general anesthesia who during the maintenance phase of the anesthetic have a total fresh gas flow less than or equal to 1 L/min (less than or equal to 2 L/min for Sevoflurane).",
     "measureType": "efficiency",
     "isHighPriority": true,
     "submissionMethods": [
@@ -12752,7 +12754,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR); E-CPR (Emergency - Clinical Performance Registry)",
+    "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5133825",
@@ -12784,7 +12786,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR); E-CPR (Emergency - Clinical Performance Registry)",
+    "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5133825"
@@ -13944,39 +13946,6 @@
     ]
   },
   {
-    "measureId": "AQI57",
-    "title": "Safe Opioid Prescribing Practices",
-    "description": "Percentage of patients, aged 18 years and older, prescribed opioid medications for longer than six weeks’ duration for whom ALL of the following opioid prescribing best practices are followed:\n\n1. Chemical dependency screening (includes laboratory testing and/or questionnaire) within the immediate 6 months prior to the encounter\n2. Co-prescription of naloxone or documented discussion regarding offer of Naloxone co-prescription, if prescription is ?50 MME/day\n3. Non co-prescription of benzodiazepine medications by prescribing pain physician and documentation of a discussion with patient regarding risks of concomitant use of benzodiazepine and opioid medications.",
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
-    "firstPerformanceYear": 2018,
-    "allowedVendors": [
-      "5551268",
-      "6169123",
-      "6775913",
-      "7746687"
-    ],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
     "measureId": "AQI65",
     "title": "Avoidance of Cerebral Hyperthermia for Procedures Involving Cardiopulmonary Bypass",
     "description": "Percentage of patients, aged 18 years and older, undergoing a procedure using cardiopulmonary bypass who did not have a documented intraoperative pulmonary artery, oropharyngeal, or nasopharyngeal temperature greater than or equal to 37.0 degrees Celsius during the period of cardiopulmonary bypass",
@@ -14759,8 +14728,8 @@
     "title": "Appropriate Use of hyperbaric oxygen therapy for patients with diabetic foot ulcers",
     "description": "Percentage of patient with a diagnosis of a diabetic foot ulcer graded stage 3 or higher on the Wagner Grading System for Diabetic Foot Ulcers that received hyperbaric oxygen therapy (HBOT) appropriately, based on Medicare coverage criteria.",
     "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": false,
+    "measureType": "intermediateOutcome",
+    "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
     "primarySteward": "U.S. Wound Registry",
@@ -14999,38 +14968,6 @@
       "4757099",
       "8483899",
       "1725296"
-    ],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
-    "measureId": "ECPR57",
-    "title": "Clinician Reporting of Loss of Consciousness to State Department of Public Health or Department of Motor Vehicles",
-    "description": "Percentage of Patients At Risk for Recurrent Loss of Consciousness For Whom Loss of Consciousness Information Was Submitted to Department of Public Health or Department of Motor Vehicles",
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "E-CPR (Emergency - Clinical Performance Registry)",
-    "firstPerformanceYear": 2022,
-    "allowedVendors": [
-      "5133825",
-      "1718371",
-      "4757099"
     ],
     "allowedPrograms": [
       "mips",
@@ -15463,36 +15400,6 @@
     "allowedVendors": [
       "4757099",
       "1725296",
-      "8483899"
-    ],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
-    "measureId": "HCPR22",
-    "title": "Critical Care Transfer of Care – Use of Verbal Checklist or Protocol",
-    "description": "Percentage of Adult Patients Transferred from the Critical Care Service to a Non-critical Care Service Who Had Documented Use of a Verbal Protocol for the Transfer of Care Between the Transferring Clinician and the Accepting Clinician",
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "H-CPR (Hospitalist –Clinical Performance Registry)",
-    "firstPerformanceYear": 2018,
-    "allowedVendors": [
       "8483899"
     ],
     "allowedPrograms": [
@@ -16460,7 +16367,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16520,7 +16427,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16580,7 +16487,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16640,7 +16547,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16700,7 +16607,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16760,7 +16667,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16820,7 +16727,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16880,7 +16787,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -16940,7 +16847,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8411367",
@@ -17000,7 +16907,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Keet Outcomes",
+    "primarySteward": "Keet Outcomes; MIPSPRO",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "8411367",
@@ -18652,7 +18559,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MSN Healthcare Solutions, LLC",
+    "primarySteward": "MSN Healthcare Solutions QCDR II",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "8947139"
@@ -18676,13 +18583,13 @@
   {
     "measureId": "QMM22",
     "title": "Molecular Testing Recommended on Fine Needle Aspirations (FNA) of Thyroid Nodule(s) with Bethesda Category 3 or 4 Cytology Diagnosis",
-    "description": "The percentage of patients with a thyroid nodule of indeterminate cytology with a recommendation for a multi-gene next-generation sequencing panel (ThyroSeq V2) in Final Pathology Report, followed with direct communication to Patient/Ordering or Attending Provider regarding recommendation.",
+    "description": "The percentage of patients with a thyroid nodule fine needle aspiration (FNA) diagnosis by cytology of Bethesda category 3 or 4 with a recommendation for molecular testing in Final \nPathology Report, followed with direct communication to Patient/Ordering or Attending \nProvider regarding recommendation.",
     "nqfId": null,
     "measureType": "process",
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MSN Healthcare Solutions, LLC",
+    "primarySteward": "MSN Healthcare Solutions QCDR II",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "8947139"
