@@ -288,8 +288,8 @@ const formatBenchmarkRecord = function(record, options) {
       70: record.percentile70 ? parseFloat(record.percentile70) : undefined,
       80: record.percentile80 ? parseFloat(record.percentile80) : undefined,
       90: record.percentile90 ? parseFloat(record.percentile90) : undefined,
-      99: record.percentile99 ? parseFloat(record.percentile99) : undefined,
-    },
+      99: record.percentile99 ? parseFloat(record.percentile99) : undefined
+    }
   };
 };
 

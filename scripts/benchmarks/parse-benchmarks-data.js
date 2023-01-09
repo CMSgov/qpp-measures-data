@@ -36,7 +36,7 @@ const BENCHMARK_CSV_COLUMNS = [
   'percentile70',
   'percentile80',
   'percentile90',
-  'percentile99',
+  'percentile99'
 ];
 const MCC_BENCHMARK_CSV_COLUMNS = [
   'qualityId',
