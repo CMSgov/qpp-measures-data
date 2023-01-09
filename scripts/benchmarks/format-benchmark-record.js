@@ -204,12 +204,22 @@ const formatMeasureId = (measureId, performanceYear) => {
  *  decile8: string?,
  *  decile9: string?,
  *  decile10: string?,
- *  percentiles: object?,
  *  isToppedOut: string,
  *  isHighPriority: string,
  *  isToppedOutByProgram: string,
  *  isInverse: string?,
  *  metricType: string?
+ *  percentile1: string?,
+ *  percentile10: string?,
+ *  percentile20: string?,
+ *  percentile30: string?,
+ *  percentile40: string?,
+ *  percentile50: string?,
+ *  percentile60: string?,
+ *  percentile70: string?,
+ *  percentile80: string?,
+ *  percentile90: string?,
+ *  percentile99: string?,
  *  }} record - csv record object
  * @param {{
  *  benchmarkYear: string,
@@ -267,21 +277,19 @@ const formatBenchmarkRecord = function(record, options) {
     ]
       .map(formatDecileGenerator(record))
       .slice(1, 10),
-    percentiles: record.percentiles ? {
-      0: record.percentiles[0],
-      1: record.percentiles[1],
-      10: record.percentiles[10],
-      20: record.percentiles[20],
-      30: record.percentiles[30],
-      40: record.percentiles[40],
-      50: record.percentiles[50],
-      60: record.percentiles[60],
-      70: record.percentiles[70],
-      80: record.percentiles[80],
-      90: record.percentiles[90],
-      99: record.percentiles[99],
-      100: record.percentiles[100]
-    } : undefined
+    percentiles: {
+      1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
+      10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
+      20: record.percentile20 ? parseFloat(record.percentile20) : undefined,
+      30: record.percentile30 ? parseFloat(record.percentile30) : undefined,
+      40: record.percentile40 ? parseFloat(record.percentile40) : undefined,
+      50: record.percentile50 ? parseFloat(record.percentile50) : undefined,
+      60: record.percentile60 ? parseFloat(record.percentile60) : undefined,
+      70: record.percentile70 ? parseFloat(record.percentile70) : undefined,
+      80: record.percentile80 ? parseFloat(record.percentile80) : undefined,
+      90: record.percentile90 ? parseFloat(record.percentile90) : undefined,
+      99: record.percentile99 ? parseFloat(record.percentile99) : undefined,
+    },
   };
 };
 
