@@ -275,8 +275,7 @@ const formatBenchmarkRecord = function(record, options) {
       record.decile9,
       record.decile10
     ]
-      .map(formatDecileGenerator(record))
-      .slice(1, 10),
+      .map(formatDecileGenerator(record)),
     percentiles: {
       1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
       10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
