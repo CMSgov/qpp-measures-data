@@ -14,6 +14,8 @@ const BENCHMARK_CSV_COLUMNS = [
   'benchmark',
   'standardDeviation',
   'average',
+  'decile1',
+  'decile2',
   'decile3',
   'decile4',
   'decile5',
@@ -23,7 +25,18 @@ const BENCHMARK_CSV_COLUMNS = [
   'decile9',
   'decile10',
   'isToppedOut',
-  'isToppedOutByProgram'
+  'isToppedOutByProgram',
+  'percentile1',
+  'percentile10',
+  'percentile20',
+  'percentile30',
+  'percentile40',
+  'percentile50',
+  'percentile60',
+  'percentile70',
+  'percentile80',
+  'percentile90',
+  'percentile99'
 ];
 const MCC_BENCHMARK_CSV_COLUMNS = [
   'qualityId',
@@ -86,7 +99,7 @@ if (benchmarkYear && performanceYear) {
   process.stdin.on('end', function() {
     // Quote option update to handle 2020 data
     const columns = benchmarkType === 'MCC' ? MCC_BENCHMARK_CSV_COLUMNS : BENCHMARK_CSV_COLUMNS;
-    parse(benchmarksData, {columns, from: 3, quote: '"'}, function(err, records) {
+    parse(benchmarksData, {columns, from: 2, quote: '"'}, function(err, records) {
       if (err) {
         console.log(err);
       } else {
