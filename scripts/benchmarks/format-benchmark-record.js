@@ -57,7 +57,7 @@ const formatIsToppedOut = function(isToppedOut) {
 };
 
 const formatBoolean = function(csvBoolean) {
-  if (csvBoolean.trim().toLowerCase() === 'y') {
+  if (csvBoolean && csvBoolean.trim().toLowerCase() === 'y') {
     return true;
   }
   return false;
@@ -66,7 +66,7 @@ const formatBoolean = function(csvBoolean) {
 const formatIsToppedOutByProgram = function(isToppedOutByProgram) {
   // These come in formatted as 'Yes - see "Scoring Examples" tab of spreadsheet' or 'No'
   // We want to just look at whether it says yes/no
-  if (isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
+  if (isToppedOutByProgram && isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
     return true;
   }
   return false;
