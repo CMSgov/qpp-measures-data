@@ -38,19 +38,18 @@ jobs:
   # Make an announcement to other repositories of interest
   repo-dispatch:
     runs-on: ubuntu-latest
-    # todo: remove this:
-    # needs: publish-npm
+    needs: publish-npm
     strategy:
       matrix:
         repo:
-          # - CMSgov/qpp-scoring-engines
-          # - CMSgov/beneficiary-reporting-api
+          - CMSgov/qpp-scoring-engines
+          - CMSgov/beneficiary-reporting-api
           - CMSgov/qpp-submissions-api
-          # - CMSgov/self-nomination-api
-          # - CMSgov/beneficiary-reporting-client
-          # - CMSgov/qpp-submission-client
-          # - CMSgov/claims-to-quality-analyzer
-          # - CMSgov/qpp-ui
+          - CMSgov/self-nomination-api
+          - CMSgov/beneficiary-reporting-client
+          - CMSgov/qpp-submission-client
+          - CMSgov/claims-to-quality-analyzer
+          - CMSgov/qpp-ui
 
     steps:
       - name: Repository Dispatch
