@@ -61,3 +61,5 @@ mergeCostLinks(measures, getFileDataIfExists(costLinksPath, true));
 mergeEcqmData(measures, getFileDataIfExists(generatedEcqmPath));
 mergeEcqmData(measures, getFileDataIfExists(manuallyCreatedEcqmPath));
 mergeStratifications(measures, getFileDataIfExists(AdditionalStratificationsPath));
+
+fs.writeFileSync(measuresDataPath, JSON.stringify(measures, null, 2));
