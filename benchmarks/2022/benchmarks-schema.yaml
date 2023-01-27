@@ -39,9 +39,6 @@ definitions:
       percentiles:
         type: object
         properties:
-          0:
-            type: number
-            description: The 0th percentile.
           1:
             type: number
             description: The 1st percentile.
@@ -75,9 +72,6 @@ definitions:
           99:
             type: number
             description: The 99th percentile.
-          100:
-            type: number
-            description: The 100th percentile.
       submissionMethod:
         description: The method for submitting the measure performance data to which this benchmark applies.
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
