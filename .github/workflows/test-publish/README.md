@@ -36,6 +36,5 @@ act -j codebuild_trigger --watch --verbose
 ## Unit Test Only
 * PR to develop; i.e. the standard path for merging new dev code to develop
 ```
-act published -vv -b -j repo-dispatch -e .github/workflows/publish-test/publish-test.json --no-recurse
-act published -b -j dump-github-context -e .github/workflows/publish-test/publish-test.json --no-recurse
+act published -vv -b -j repo-dispatch -e .github/workflows/test-publish/publish-test.json --no-recurse
 ```
