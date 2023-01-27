@@ -4772,9 +4772,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "registry"
+    ],
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -10463,7 +10465,7 @@
     "primarySteward": "Centers for Medicare & Medicaid Services",
     "firstPerformanceYear": 2022,
     "lastPerformanceYear": null,
-    "isInverse": false,
+    "isInverse": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
