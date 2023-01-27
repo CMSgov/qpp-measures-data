@@ -1448,7 +1448,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresSecurityRiskAnalysis.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -1480,7 +1482,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -1574,7 +1578,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEPrescribing.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_LVPP_1"
@@ -1626,7 +1632,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_EP_2_EX_1",
@@ -1665,7 +1673,9 @@
       "PI_HIE_5",
       "PI_HIE_6"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_LVOTC_1"
@@ -1720,7 +1730,9 @@
       "PI_HIE_5",
       "PI_HIE_6"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_LVITC_2"
@@ -1774,7 +1786,9 @@
     "substitutes": [
       "PI_HIE_6"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -1806,7 +1820,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -1838,7 +1854,9 @@
     "isBonus": true,
     "reportingCategory": "bonus",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -1870,7 +1888,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresImmunizationRegistryReporting.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_PHCDRR_1_EX_1",
@@ -1969,7 +1989,9 @@
     "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresElectronicCaseReporting.pdf"
+    },
     "measureSets": [],
     "exclusion": [
       "PI_PHCDRR_3_EX_1",
@@ -2068,7 +2090,9 @@
     "isBonus": true,
     "reportingCategory": "bonus",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -2100,7 +2124,9 @@
     "isBonus": true,
     "reportingCategory": "bonus",
     "substitutes": [],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
+    },
     "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
@@ -2200,7 +2226,10 @@
       "M0002",
       "M0003",
       "M0004"
-    ]
+    ],
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+    }
   },
   {
     "lastPerformanceYear": null,
@@ -2260,7 +2289,11 @@
       "nutritionDietician",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_001_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11"
+    }
   },
   {
     "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -2298,7 +2331,10 @@
       "hospitalists",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_005_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms135v11"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
@@ -2335,7 +2371,9 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_006_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
@@ -2373,7 +2411,10 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_007_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms145v11"
+    }
   },
   {
     "title": "Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -2412,7 +2453,10 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_008_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms144v11"
+    }
   },
   {
     "title": "Anti-Depressant Medication Management",
@@ -2448,7 +2492,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms128v11"
+    },
     "strata": [
       {
         "name": "84Days",
@@ -2491,7 +2537,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms143v11"
+    }
   },
   {
     "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
@@ -2524,7 +2572,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_014_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care",
@@ -2558,7 +2608,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_019_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms142v11"
+    }
   },
   {
     "title": "Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older",
@@ -2597,7 +2650,10 @@
       "preventiveMedicine",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_024_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_024_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Screening for Osteoporosis for Women Aged 65-85 Years of Age",
@@ -2638,7 +2694,10 @@
       "preventiveMedicine",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_039_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_039_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Advance Care Plan",
@@ -2701,7 +2760,10 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_047_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_047_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older",
@@ -2739,7 +2801,9 @@
       "preventiveMedicine",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_048_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Urinary Incontinence: Plan of Care for Urinary Incontinence in Women Aged 65 Years and Older",
@@ -2777,7 +2841,9 @@
       "physicalTherapyOccupationalTherapy",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_050_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy",
@@ -2810,7 +2876,9 @@
     "measureSets": [
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_052_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Treatment for Upper Respiratory Infection (URI)",
@@ -2848,7 +2916,10 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_065_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms154v11"
+    }
   },
   {
     "title": "Appropriate Testing for Pharyngitis",
@@ -2887,7 +2958,10 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_066_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms146v11"
+    }
   },
   {
     "title": "Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy - Avoidance of Inappropriate Use",
@@ -2925,7 +2999,9 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_093_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients",
@@ -2961,7 +3037,10 @@
       "radiationOncology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_102_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms129v12"
+    }
   },
   {
     "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
@@ -2994,7 +3073,9 @@
     "measureSets": [
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_104_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -3031,7 +3112,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms161v11"
+    }
   },
   {
     "title": "Preventive Care and Screening: Influenza Immunization",
@@ -3064,7 +3147,11 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_110_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_110_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms147v12"
+    }
   },
   {
     "title": "Pneumococcal Vaccination Status for Older Adults",
@@ -3097,7 +3184,11 @@
       "registry"
     ],
     "measureSets": [],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_111_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_111_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms127v11"
+    }
   },
   {
     "title": "Breast Cancer Screening",
@@ -3136,7 +3227,11 @@
       "obstetricsGynecology",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_112_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_112_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms125v11"
+    }
   },
   {
     "title": "Colorectal Cancer Screening",
@@ -3174,7 +3269,11 @@
       "familyMedicine",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_113_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_113_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms130v11"
+    }
   },
   {
     "title": "Avoidance of Antibiotic Treatment for Acute Bronchitis/Bronchiolitis",
@@ -3213,7 +3312,9 @@
       "preventiveMedicine",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_116_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes: Eye Exam",
@@ -3250,7 +3351,10 @@
       "internalMedicine",
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_117_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms131v11"
+    }
   },
   {
     "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
@@ -3286,7 +3390,9 @@
       "endocrinology",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_118_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Peripheral Neuropathy - Neurological Evaluation",
@@ -3324,7 +3430,9 @@
       "podiatry",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_126_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Diabetes Mellitus: Diabetic Foot and Ankle Care, Ulcer Prevention - Evaluation of Footwear",
@@ -3358,7 +3466,9 @@
       "physicalTherapyOccupationalTherapy",
       "podiatry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_127_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
@@ -3415,7 +3525,11 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_128_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_128_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms069v11"
+    }
   },
   {
     "title": "Documentation of Current Medications in the Medical Record",
@@ -3486,7 +3600,10 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_130_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms068v12"
+    }
   },
   {
     "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
@@ -3542,7 +3659,11 @@
       "speechLanguagePathology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_134_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_134_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms002v12"
+    }
   },
   {
     "title": "Melanoma: Continuity of Care - Recall System",
@@ -3575,7 +3696,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_137_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Melanoma: Coordination of Care",
@@ -3608,7 +3731,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_138_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care",
@@ -3642,7 +3767,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_141_MedicarepartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_141_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Oncology: Medical and Radiation - Pain Intensity Quantified",
@@ -3678,7 +3806,10 @@
       "oncology",
       "radiationOncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_143_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms157v11"
+    }
   },
   {
     "title": "Oncology: Medical and Radiation - Plan of Care for Pain",
@@ -3713,7 +3844,9 @@
       "oncology",
       "radiationOncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_144_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiology: Exposure Dose Indices Reported for Procedures Using Fluoroscopy",
@@ -3748,7 +3881,10 @@
       "diagnosticRadiology",
       "interventionalRadiology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_145_MedicarePartBclaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_145_MIPSCQM.pdf"
+    },
     "historic_benchmarks": {
       "claims": "removed",
       "registry": "removed"
@@ -3786,7 +3922,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_147_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_147_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Falls: Plan of Care",
@@ -3831,7 +3970,10 @@
       "preventiveMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_155_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_155_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Prolonged Intubation",
@@ -3864,7 +4006,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_164_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Postoperative Renal Failure",
@@ -3897,7 +4041,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_167_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Coronary Artery Bypass Graft (CABG): Surgical Re-Exploration",
@@ -3930,7 +4076,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_168_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Tuberculosis Screening Prior to First Course of Biologic and/or Immune Response Modifier Therapy",
@@ -3968,7 +4116,9 @@
       "internalMedicine",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_176_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity",
@@ -4002,7 +4152,9 @@
     "measureSets": [
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_177_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Functional Status Assessment",
@@ -4037,7 +4189,9 @@
       "orthopedicSurgery",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_178_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rheumatoid Arthritis (RA): Glucocorticoid Management",
@@ -4072,7 +4226,9 @@
       "orthopedicSurgery",
       "rheumatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_180_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Elder Maltreatment Screen and Follow-Up Plan",
@@ -4116,7 +4272,10 @@
       "skilledNursingFacility",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_181_medicarepartbclaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_181_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Outcome Assessment",
@@ -4157,7 +4316,9 @@
       "preventiveMedicine",
       "speechLanguagePathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_182_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Colonoscopy Interval for Patients with a History of Adenomatous Polyps - Avoidance of Inappropriate Use",
@@ -4190,7 +4351,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_185_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Stroke and Stroke Rehabilitation: Thrombolytic Therapy",
@@ -4226,7 +4389,9 @@
       "emergencyMedicine",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_187_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery",
@@ -4260,7 +4425,10 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_191_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms133v11"
+    }
   },
   {
     "title": "HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis",
@@ -4294,7 +4462,9 @@
       "infectiousDisease",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_205_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Knee Impairments",
@@ -4329,7 +4499,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_217_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Hip Impairments",
@@ -4364,7 +4536,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_218_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments",
@@ -4399,7 +4573,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_219_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Low Back Impairments",
@@ -4434,7 +4610,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_220_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Shoulder Impairments",
@@ -4469,7 +4647,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_221_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",
@@ -4504,7 +4684,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_222_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
@@ -4577,7 +4759,11 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_226_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_226_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms138v11"
+    },
     "strata": [
       {
         "name": "screened",
@@ -4638,7 +4824,11 @@
       "rheumatology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_236_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_236_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms165v11"
+    }
   },
   {
     "title": "Use of High-Risk Medications in Older Adults",
@@ -4686,7 +4876,10 @@
       "skilledNursingFacility",
       "urology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_238_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms156v11"
+    },
     "strata": [
       {
         "name": "overall",
@@ -4735,7 +4928,9 @@
       "nutritionDietician",
       "pediatrics"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms155v11"
+    },
     "strata": [
       {
         "name": "percentiles",
@@ -4783,7 +4978,9 @@
       "infectiousDisease",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms117v11"
+    }
   },
   {
     "title": "Cardiac Rehabilitation Patient Referral from an Outpatient Setting",
@@ -4820,7 +5017,9 @@
       "internalMedicine",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_243_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Barrett's Esophagus",
@@ -4854,7 +5053,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_249_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_249_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radical Prostatectomy Pathology Reporting",
@@ -4889,7 +5091,10 @@
       "oncology",
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_250_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_250_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain",
@@ -4923,7 +5128,9 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_254_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -4956,7 +5163,9 @@
     "measureSets": [
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_259_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -4990,7 +5199,9 @@
       "neurosurgical",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_260_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Referral for Otologic Evaluation for Patients with Acute or Chronic Dizziness",
@@ -5024,7 +5235,10 @@
     "measureSets": [
       "audiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_261_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_261_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Sentinel Lymph Node Biopsy for Invasive Breast Cancer",
@@ -5057,7 +5271,9 @@
     "measureSets": [
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_264_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy",
@@ -5091,7 +5307,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_268_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Inflammatory Bowel Disease (IBD): Assessment of Hepatitis B Virus (HBV) Status Before Initiating Anti-TNF (Tumor Necrosis Factor) Therapy",
@@ -5124,7 +5342,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_275_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Sleep Apnea: Severity Assessment at Initial Diagnosis",
@@ -5160,7 +5380,9 @@
       "otolaryngology",
       "pulmonology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_277_MIPSCQM.pdf"
+    },
     "historic_benchmarks": {
       "registry": "removed"
     }
@@ -5199,7 +5421,9 @@
       "otolaryngology",
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_279_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Cognitive Assessment",
@@ -5237,7 +5461,9 @@
       "neurology",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms149v11"
+    }
   },
   {
     "title": "Dementia: Functional Status Assessment",
@@ -5274,7 +5500,9 @@
       "mentalBehavioralHealth",
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_282_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management",
@@ -5311,7 +5539,9 @@
       "neurology",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_283_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia",
@@ -5349,7 +5579,9 @@
       "neurology",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_286_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Dementia: Education and Support of Caregivers for Patients with Dementia",
@@ -5387,7 +5619,9 @@
       "neurology",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_288_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Assessment of Mood Disorders and Psychosis for Patients with Parkinson's Disease",
@@ -5421,7 +5655,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_290_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Assessment of Cognitive Impairment or Dysfunction for Patients with Parkinson's Disease",
@@ -5455,7 +5691,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_291_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rehabilitative Therapy Referral for Patients with Parkinson's Disease",
@@ -5489,7 +5727,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_293_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: Improvement in Patient's Visual Function within 90 Days Following Cataract Surgery",
@@ -5522,7 +5762,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_303_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataracts: Patient Satisfaction within 90 Days Following Cataract Surgery",
@@ -5555,7 +5797,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_304_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Initiation and Engagement of Substance Use Disorder Treatment",
@@ -5592,7 +5836,9 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms137v11"
+    },
     "strata": [
       {
         "name": "14Days",
@@ -5638,7 +5884,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms124v11"
+    }
   },
   {
     "title": "Chlamydia Screening for Women",
@@ -5673,7 +5921,9 @@
       "obstetricsGynecology",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms153v11"
+    }
   },
   {
     "title": "Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up Documented",
@@ -5730,7 +5980,11 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_317_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_317_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms022v11"
+    }
   },
   {
     "title": "Falls: Screening for Future Fall Risk",
@@ -5772,7 +6026,9 @@
       "physicalTherapyOccupationalTherapy",
       "podiatry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms139v11"
+    }
   },
   {
     "title": "Appropriate Follow-Up Interval for Normal Colonoscopy in Average Risk Patients",
@@ -5806,7 +6062,10 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_320_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_320_MIPSCQM.pdf"
+    }
   },
   {
     "title": "CAHPS for MIPS Clinician/Group Survey",
@@ -5880,7 +6139,9 @@
     "measureSets": [
       "cardiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_322_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients",
@@ -5913,7 +6174,9 @@
     "measureSets": [
       "cardiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_324_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
@@ -5951,7 +6214,9 @@
       "internalMedicine",
       "skilledNursingFacility"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_326_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)",
@@ -5990,7 +6255,9 @@
       "otolaryngology",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_331_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use)",
@@ -6028,7 +6295,9 @@
       "otolaryngology",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_332_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Maternity Care: Elective Delivery (Without Medical Indication) at < 39 Weeks (Overuse)",
@@ -6062,7 +6331,9 @@
       "certifiedNurseMidwife",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_335_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Maternity Care: Postpartum Follow-up and Care Coordination",
@@ -6096,7 +6367,9 @@
       "certifiedNurseMidwife",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_336_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV Viral Load Suppression",
@@ -6132,7 +6405,9 @@
       "infectiousDisease",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_338_MIPSCQM.pdf"
+    }
   },
   {
     "title": "HIV Medical Visit Frequency",
@@ -6166,7 +6441,9 @@
       "allergyImmunology",
       "infectiousDisease"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_340_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -6202,7 +6479,9 @@
       "neurosurgical",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_344_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Total Knee or Hip Replacement: Shared Decision-Making: Trial of Conservative (Non-surgical) Therapy",
@@ -6236,7 +6515,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_350_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Total Knee or Hip Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation",
@@ -6270,7 +6551,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_351_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Anastomotic Leak Intervention",
@@ -6303,7 +6586,9 @@
     "measureSets": [
       "generalSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_354_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Unplanned Reoperation within the 30 Day Postoperative Period",
@@ -6338,7 +6623,9 @@
       "otolaryngology",
       "plasticSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_355_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Unplanned Hospital Readmission within 30 Days of Principal Procedure",
@@ -6373,7 +6660,9 @@
       "plasticSurgery",
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_356_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Surgical Site Infection (SSI)",
@@ -6409,7 +6698,9 @@
       "plasticSurgery",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_357_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Patient-Centered Surgical Risk Assessment and Communication",
@@ -6448,7 +6739,9 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_358_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimizing Patient Exposure to Ionizing Radiation: Count of Potential High Dose Radiation Imaging Studies: Computed Tomography (CT) and Cardiac Nuclear Medicine Studies",
@@ -6481,7 +6774,9 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_360_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines",
@@ -6514,7 +6809,9 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_364_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Follow-Up Care for Children Prescribed ADHD Medication (ADD)",
@@ -6549,7 +6846,9 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms136v12"
+    },
     "strata": [
       {
         "name": "30Days",
@@ -6600,7 +6899,10 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_370_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms159v11"
+    },
     "strata": [
       {
         "name": "adolescents",
@@ -6665,7 +6967,10 @@
       "urology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_374_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms050v11"
+    }
   },
   {
     "title": "Functional Status Assessment for Total Hip Replacement",
@@ -6699,7 +7004,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms056v11"
+    }
   },
   {
     "title": "Functional Status Assessments for Heart Failure",
@@ -6734,7 +7041,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms090v12"
+    }
   },
   {
     "title": "Children Who Have Dental Decay or Cavities",
@@ -6767,7 +7076,9 @@
     "measureSets": [
       "dentistry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms075v11"
+    }
   },
   {
     "title": "Primary Caries Prevention Intervention as Offered by Primary Care Providers, including Dentists",
@@ -6800,7 +7111,9 @@
     "measureSets": [
       "dentistry"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms074v12"
+    }
   },
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
@@ -6835,7 +7148,9 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms177v11"
+    }
   },
   {
     "title": "Adherence to Antipsychotic Medications For Individuals with Schizophrenia",
@@ -6871,7 +7186,9 @@
       "internalMedicine",
       "mentalBehavioralHealth"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_383_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Primary Rhegmatogenous Retinal Detachment Surgery: No Return to the Operating Room Within 90 Days of Surgery",
@@ -6904,7 +7221,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_384_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Adult Primary Rhegmatogenous Retinal Detachment Surgery: Visual Acuity Improvement Within 90 Days of Surgery",
@@ -6937,7 +7256,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_385_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences",
@@ -6971,7 +7292,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_386_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users",
@@ -7006,7 +7329,9 @@
       "infectiousDisease",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_387_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Cataract Surgery: Difference Between Planned and Final Refraction",
@@ -7039,7 +7364,9 @@
     "measureSets": [
       "ophthalmology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_389_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Follow-Up After Hospitalization for Mental Illness (FUH)",
@@ -7075,7 +7402,9 @@
       "mentalBehavioralHealth",
       "pediatrics"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_391_MIPSCQM.pdf"
+    },
     "strata": [
       {
         "name": "30Days",
@@ -7120,7 +7449,9 @@
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_392_MIPSCQM.pdf"
+    },
     "strata": [
       {
         "name": "female18-64",
@@ -7176,7 +7507,9 @@
     "measureSets": [
       "electrophysiologyCardiacSpecialist"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_393_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Immunizations for Adolescents",
@@ -7212,7 +7545,9 @@
       "infectiousDisease",
       "internalMedicine"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_394_MIPSCQM.pdf"
+    },
     "strata": [
       {
         "name": "meningococcal",
@@ -7264,7 +7599,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_395_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_395_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Lung Cancer Reporting (Resection Specimens)",
@@ -7298,7 +7636,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_396_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_396_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Melanoma Reporting",
@@ -7332,7 +7673,10 @@
     "measureSets": [
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_397_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_397_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Optimal Asthma Control",
@@ -7372,7 +7716,9 @@
       "pediatrics",
       "pulmonology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_398_MIPSCQM.pdf"
+    },
     "strata": [
       {
         "name": "overall",
@@ -7438,7 +7784,9 @@
       "internalMedicine",
       "nephrology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_400_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis",
@@ -7473,7 +7821,9 @@
       "gastroenterology",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_401_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Tobacco Use and Help with Quitting Among Adolescents",
@@ -7527,7 +7877,9 @@
       "urgentCare",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_402_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Anesthesiology Smoking Abstinence",
@@ -7561,7 +7913,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_404_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Follow-up Imaging for Incidental Abdominal Lesions",
@@ -7595,7 +7949,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_405_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_405_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients",
@@ -7629,7 +7986,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_406_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_406_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Clinical Outcome Post Endovascular Stroke Treatment",
@@ -7664,7 +8024,9 @@
       "interventionalRadiology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_409_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",
@@ -7697,7 +8059,9 @@
     "measureSets": [
       "dermatology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_410_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Door to Puncture Time for Endovascular Stroke Treatment",
@@ -7732,7 +8096,9 @@
       "interventionalRadiology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_413_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older",
@@ -7766,7 +8132,9 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_415_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years",
@@ -7799,7 +8167,9 @@
     "measureSets": [
       "emergencyMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_416_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Osteoporosis Management in Women Who Had a Fracture",
@@ -7837,7 +8207,10 @@
       "obstetricsGynecology",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_418_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_418_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Overuse of Imaging for the Evaluation of Primary Headache",
@@ -7871,7 +8244,9 @@
     "measureSets": [
       "neurology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_419_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Varicose Vein Treatment with Saphenous Ablation: Outcome Survey",
@@ -7905,7 +8280,9 @@
       "interventionalRadiology",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_420_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Assessment of Retrievable Inferior Vena Cava (IVC) Filters for Removal",
@@ -7938,7 +8315,9 @@
     "measureSets": [
       "interventionalRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_421_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Performing Cystoscopy at the Time of Hysterectomy for Pelvic Organ Prolapse to Detect Lower Urinary Tract Injury",
@@ -7972,7 +8351,10 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_422_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_422_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Perioperative Temperature Management",
@@ -8006,7 +8388,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_424_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy",
@@ -8040,7 +8424,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_430_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Preventive Care and Screening: Unhealthy Alcohol Use: Screening & Brief Counseling",
@@ -8092,7 +8478,9 @@
       "urgentCare",
       "urology"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_431_MIPSCQM.pdf"
+    },
     "strata": [
       {
         "name": "screened",
@@ -8140,7 +8528,9 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_432_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair",
@@ -8174,7 +8564,9 @@
       "obstetricsGynecology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_433_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques",
@@ -8208,7 +8600,10 @@
     "measureSets": [
       "diagnosticRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_436_MedicarePartBClaims.pdf",
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_436_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
@@ -8249,7 +8644,10 @@
       "internalMedicine",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_438_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms347v6"
+    }
   },
   {
     "title": "Age Appropriate Screening Colonoscopy",
@@ -8282,7 +8680,9 @@
     "measureSets": [
       "gastroenterology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_439_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Skin Cancer: Biopsy Reporting Time - Pathologist to Clinician",
@@ -8316,7 +8716,9 @@
       "dermatology",
       "pathology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_440_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)",
@@ -8354,7 +8756,9 @@
       "internalMedicine",
       "vascularSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_441_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Non-Recommended Cervical Cancer Screening in Adolescent Females",
@@ -8389,7 +8793,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_443_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Risk-Adjusted Operative Mortality for Coronary Artery Bypass Graft (CABG)",
@@ -8422,7 +8828,9 @@
     "measureSets": [
       "thoracicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_445_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Workup Prior to Endometrial Ablation",
@@ -8455,7 +8863,9 @@
     "measureSets": [
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_448_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Appropriate Treatment for Patients with Stage I (T1c) - III HER2 Positive Breast Cancer",
@@ -8489,7 +8899,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_450_MIPSCQM.pdf"
+    }
   },
   {
     "title": "RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy",
@@ -8523,7 +8935,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_451_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies",
@@ -8557,7 +8971,9 @@
     "measureSets": [
       "oncology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_452_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Percentage of Patients Who Died from Cancer Receiving Systemic Cancer-Directed Therapy in the Last 14 Days of Life (lower score – better)",
@@ -8592,7 +9008,9 @@
       "oncology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_453_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score - better)",
@@ -8627,7 +9045,9 @@
       "oncology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_457_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Back Pain After Lumbar Surgery",
@@ -8661,7 +9081,9 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_459_MIPSCQM.pdf"
+    },
     "historic_benchmarks": {
       "registry": "removed"
     }
@@ -8698,7 +9120,9 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_461_MIPSCQM.pdf"
+    },
     "historic_benchmarks": {
       "registry": "removed"
     }
@@ -8737,7 +9161,9 @@
       "oncology",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms645v6"
+    }
   },
   {
     "title": "Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)",
@@ -8771,7 +9197,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_463_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use",
@@ -8807,7 +9235,9 @@
       "pediatrics",
       "urgentCare"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_464_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Uterine Artery Embolization Technique: Documentation of Angiographic Endpoints and Interrogation of Ovarian Arteries",
@@ -8840,7 +9270,9 @@
     "measureSets": [
       "interventionalRadiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_465_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Continuity of Pharmacotherapy for Opioid Use Disorder (OUD)",
@@ -8876,7 +9308,9 @@
       "mentalBehavioralHealth",
       "physicalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_468_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status After Primary Total Knee Replacement",
@@ -8910,7 +9344,9 @@
     "measureSets": [
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_470_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status After Lumbar Surgery",
@@ -8944,7 +9380,9 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_471_MIPSCQM.pdf"
+    },
     "historic_benchmarks": {
       "registry": "removed"
     }
@@ -8982,7 +9420,9 @@
       "internalMedicine",
       "obstetricsGynecology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms249v5"
+    }
   },
   {
     "title": "HIV Screening",
@@ -9021,7 +9461,9 @@
       "obstetricsGynecology",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms349v5"
+    }
   },
   {
     "title": "Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic Hyperplasia",
@@ -9057,7 +9499,9 @@
       "internalMedicine",
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms771v4"
+    }
   },
   {
     "title": "Multimodal Pain Management",
@@ -9091,7 +9535,9 @@
     "measureSets": [
       "anesthesiology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_477_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Functional Status Change for Patients with Neck Impairments",
@@ -9126,7 +9572,9 @@
       "orthopedicSurgery",
       "physicalTherapyOccupationalTherapy"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_478_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Hospital-Wide, 30-Day, All-Cause Unplanned Readmission (HWR) Rate for the Merit-Based Incentive Payment System (MIPS) Groups",
@@ -9237,7 +9685,9 @@
     "measureSets": [
       "urology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms646v3"
+    }
   },
   {
     "title": "Hemodialysis Vascular Access: Practitioner Level Long-term Catheter Rate",
@@ -9271,7 +9721,9 @@
     "measureSets": [
       "nephrology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_482_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Person-Centered Primary Care Measure Patient Reported Outcome Performance Measure (PCPCM PRO-PM)",
@@ -9307,7 +9759,9 @@
       "familyMedicine",
       "internalMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_483_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9339,7 +9793,10 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_485_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9371,7 +9828,10 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_486_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9441,7 +9901,10 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_487_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": "CMS951v1",
@@ -9480,7 +9943,11 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_488_MIPSCQM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms951v1"
+    }
   },
   {
     "eMeasureId": null,
@@ -9514,7 +9981,10 @@
       "mips",
       "pcf",
       "M0002"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_489_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9546,7 +10016,10 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_490_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9578,7 +10051,10 @@
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_491_MIPSCQM.pdf"
+    }
   },
   {
     "eMeasureId": null,
@@ -9601,8 +10077,8 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
+    "isInverse": true,
+    "metricType": "costScore",
     "firstPerformanceYear": 2023,
     "isRegistryMeasure": false,
     "allowedPrograms": [
@@ -9675,7 +10151,10 @@
       "mips",
       "pcf",
       "M0005"
-    ]
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_493_MIPSCQM.pdf"
+    }
   },
   {
     "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions",
@@ -9734,7 +10213,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-02-mif-mspb-clinician.pdf"
+    },
     "allowedPrograms": [
       "G0057",
       "G0059",
@@ -9755,7 +10236,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-02-mif-tpcc.pdf"
+    },
     "allowedPrograms": [
       "G0053",
       "G0055",
@@ -9778,7 +10261,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-13-mif-ebcm-cataract.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9794,7 +10279,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-ich-cva.pdf"
+    },
     "allowedPrograms": [
       "G0054"
     ]
@@ -9812,7 +10299,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-knee-arthro.pdf"
+    },
     "allowedPrograms": [
       "G0058"
     ]
@@ -9830,7 +10319,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-op-pci.pdf"
+    },
     "allowedPrograms": [
       "G0055"
     ]
@@ -9848,7 +10339,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-pna-hosp.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9864,7 +10357,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-rleccli.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9880,7 +10375,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-ss-clnscpy.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9896,7 +10393,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-stemi-pci.pdf"
+    },
     "allowedPrograms": [
       "G0055"
     ]
@@ -9914,7 +10413,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-aki-new-hd.pdf"
+    },
     "allowedPrograms": [
       "M0002"
     ]
@@ -9932,7 +10433,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-el-ha.pdf"
+    },
     "allowedPrograms": [
       "G0058"
     ]
@@ -9950,7 +10453,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-fihr.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9966,7 +10471,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-hd-access.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9982,7 +10489,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-ip-copd.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -9998,7 +10507,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-lgi-bleed.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10014,7 +10525,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-l-fusion.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10030,7 +10543,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-lump-mast.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10046,7 +10561,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-ne-cabg.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10062,7 +10579,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-rn-stone.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10078,7 +10597,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-colrec-rsct.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10094,7 +10615,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-mel-rsct.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10110,7 +10633,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-08-mif-ebcm-sepsis.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10126,7 +10651,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-12-methods-diabetes.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -10142,7 +10669,9 @@
     "submissionMethods": [
       "administrativeClaims"
     ],
-    "measureSpecification": {},
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2022-12-12-methods-chron-copd.pdf"
+    },
     "allowedPrograms": []
   },
   {
@@ -11043,7 +11572,7 @@
     "measureId": "QMM25",
     "primarySteward": "MSN Healthcare Solutions QCDR II",
     "allowedVendors": [
-      "8947139"
+      "7418330"
     ],
     "description": "The percentage of Final Reports on Urine cytology specimens, for patients of any age, that utilize The Paris System (TPS) for reporting urinary cytology.",
     "measureType": "process",
@@ -12411,7 +12940,7 @@
     "allowedVendors": [
       "5551268",
       "6775913",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -12441,11 +12970,11 @@
     "primarySteward": "ABG QCDR",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
       "9181695",
-      "8947139",
+      "7418330",
       "7746687"
     ],
     "allowedPrograms": [
@@ -12479,7 +13008,7 @@
       "5551268",
       "6775913",
       "9181695",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -12509,11 +13038,11 @@
     "primarySteward": "ABG QCDR",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "5551268",
       "6169123",
+      "5551268",
       "6775913",
       "9181695",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -13809,7 +14338,7 @@
       "5551268",
       "6775913",
       "6169123",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -13846,7 +14375,7 @@
       "6704504",
       "4757099",
       "9181695",
-      "8947139",
+      "7418330",
       "3471690"
     ],
     "allowedPrograms": [
@@ -13889,9 +14418,9 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
-      "6169123",
       "5551268",
-      "8947139"
+      "6169123",
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -13927,7 +14456,7 @@
       "7746687",
       "6704504",
       "9181695",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -13957,10 +14486,10 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
-      "8947139"
+      "6169123",
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -14026,11 +14555,11 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
+      "6169123",
       "9181695",
-      "8947139",
+      "7418330",
       "7746687"
     ],
     "allowedPrograms": [
@@ -14061,14 +14590,14 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
       "4757099",
       "7746687",
+      "6169123",
       "6704504",
       "9181695",
-      "8947139",
+      "7418330",
       "3471690"
     ],
     "allowedPrograms": [
@@ -14100,11 +14629,11 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
+      "6169123",
       "9181695",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -14157,13 +14686,13 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
       "4757099",
+      "6169123",
       "6704504",
       "9181695",
-      "8947139",
+      "7418330",
       "7746687"
     ],
     "allowedPrograms": [
@@ -14194,14 +14723,14 @@
     "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "6169123",
       "5551268",
       "6775913",
       "4757099",
       "7746687",
+      "6169123",
       "6704504",
       "9181695",
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -14997,8 +15526,8 @@
     "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
-      "8947139",
-      "6775913"
+      "6775913",
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -15028,9 +15557,9 @@
     "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
-      "8947139",
       "6169123",
-      "6775913"
+      "6775913",
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -18562,7 +19091,7 @@
     "primarySteward": "MSN Healthcare Solutions QCDR II",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",
@@ -18592,7 +19121,7 @@
     "primarySteward": "MSN Healthcare Solutions QCDR II",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
-      "8947139"
+      "7418330"
     ],
     "allowedPrograms": [
       "mips",

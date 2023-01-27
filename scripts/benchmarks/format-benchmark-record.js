@@ -6,6 +6,8 @@ const isInverseBenchmarkRecord = require('../../util/benchmarks/is-inverse-bench
 
 const Constants = require('../../constants.js');
 
+const _ = require('lodash');
+
 // Constants
 /**
  * Maps normalized (trimmed and squeezed) submission method values
@@ -57,7 +59,11 @@ const formatIsToppedOut = function(isToppedOut) {
 };
 
 const formatBoolean = function(csvBoolean) {
-  if (csvBoolean.trim().toLowerCase() === 'y') {
+  if (_.isUndefined(csvBoolean)) {
+    return undefined;
+  }
+
+  if (csvBoolean && csvBoolean.trim().toLowerCase() === 'y') {
     return true;
   }
   return false;
@@ -66,7 +72,7 @@ const formatBoolean = function(csvBoolean) {
 const formatIsToppedOutByProgram = function(isToppedOutByProgram) {
   // These come in formatted as 'Yes - see "Scoring Examples" tab of spreadsheet' or 'No'
   // We want to just look at whether it says yes/no
-  if (isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
+  if (isToppedOutByProgram && isToppedOutByProgram.trim().toLowerCase().split(' ')[0] === 'yes') {
     return true;
   }
   return false;
@@ -223,7 +229,8 @@ const formatMeasureId = (measureId, performanceYear) => {
  *  }} record - csv record object
  * @param {{
  *  benchmarkYear: string,
- *  performanceYear: string
+ *  performanceYear: string,
+ *  benchmarkType: string
  * }} options - 4 digit year strings for benchmark and performance years
  * @returns {{
  *  measureId: string,
@@ -242,17 +249,10 @@ const formatBenchmarkRecord = function(record, options) {
    */
 
   if (record.benchmark.trim() !== 'Y') return;
-  return {
-    measureId: formatMeasureId(record.qualityId, options.performanceYear),
-    benchmarkYear: parseInt(options.benchmarkYear),
-    performanceYear: parseInt(options.performanceYear),
-    submissionMethod: formatSubmissionMethod(record.submissionMethod),
-    isToppedOut: formatIsToppedOut(record.isToppedOut),
-    isHighPriority: options.performanceYear >= 2020 ? formatBoolean(record.isHighPriority) : undefined,
-    isInverse: options.performanceYear >= 2022 ? formatBoolean(record.isInverse) : undefined,
-    metricType: options.performanceYear >= 2022 ? record.metricType : undefined,
-    isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
-    deciles: options.benchmarkType === 'MCC' ? [
+
+  let deciles;
+  if (options.benchmarkType === 'MCC') {
+    deciles = [
       parseFloat(record.decile1),
       parseFloat(record.decile2),
       parseFloat(record.decile3),
@@ -263,7 +263,9 @@ const formatBenchmarkRecord = function(record, options) {
       parseFloat(record.decile8),
       parseFloat(record.decile9),
       parseFloat(record.decile10)
-    ] : [
+    ];
+  } else {
+    deciles = [
       record.decile1,
       record.decile2,
       record.decile3,
@@ -274,8 +276,24 @@ const formatBenchmarkRecord = function(record, options) {
       record.decile8,
       record.decile9,
       record.decile10
-    ]
-      .map(formatDecileGenerator(record)),
+    ].map(formatDecileGenerator(record));
+
+    if (parseInt(options.performanceYear) <= 2022) {
+      deciles = deciles.slice(1, 10);
+    };
+  }
+
+  return {
+    measureId: formatMeasureId(record.qualityId, options.performanceYear),
+    benchmarkYear: parseInt(options.benchmarkYear),
+    performanceYear: parseInt(options.performanceYear),
+    submissionMethod: formatSubmissionMethod(record.submissionMethod),
+    isToppedOut: formatIsToppedOut(record.isToppedOut),
+    isHighPriority: options.performanceYear >= 2020 ? formatBoolean(record.isHighPriority) : undefined,
+    isInverse: options.performanceYear >= 2022 ? formatBoolean(record.isInverse) : undefined,
+    metricType: options.performanceYear >= 2022 ? record.metricType : undefined,
+    isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
+    deciles,
     percentiles: {
       1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
       10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
