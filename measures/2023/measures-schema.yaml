@@ -17,6 +17,7 @@ definitions:
   baseMeasure:
     title: 'Base Measure'
     type: object
+    additionalProperties: false
     properties:
       measureId:
         type: string
@@ -245,6 +246,7 @@ definitions:
 
   performanceStrata:
     type: object
+    additionalProperties: false
     properties:
       description:
         type: string
@@ -305,6 +307,7 @@ definitions:
 
   measureSpecification:
     type: object
+    additionalProperties: false
     properties:
       default:
         type: string
@@ -315,6 +318,8 @@ definitions:
       cmsWebInterface:
         type: string
       measureInformation:
+        type: string
+      electronicHealthRecord:
         type: string
 
   measureSets:
@@ -371,6 +376,7 @@ definitions:
 
   eligibilityOption:
     type: object
+    additionalProperties: false
     properties:
       sexCode:
         description: Gender identifier in the case of measures that apply to one gender only.
@@ -405,6 +411,7 @@ definitions:
 
   performanceOption:
     type: object
+    additionalProperties: false
     properties:
       optionType:
         description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
@@ -435,6 +442,7 @@ definitions:
 
   codeObject:
     type: object
+    additionalProperties: false
     properties:
       code:
         description: The HCPCS or CPT code represented as a string.
