@@ -294,7 +294,7 @@ const formatBenchmarkRecord = function(record, options) {
     metricType: options.performanceYear >= 2022 ? record.metricType : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles,
-    percentiles: {
+    percentiles: options.performanceYear >= 2023 ? {
       1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
       10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
       20: record.percentile20 ? parseFloat(record.percentile20) : undefined,
@@ -306,7 +306,7 @@ const formatBenchmarkRecord = function(record, options) {
       80: record.percentile80 ? parseFloat(record.percentile80) : undefined,
       90: record.percentile90 ? parseFloat(record.percentile90) : undefined,
       99: record.percentile99 ? parseFloat(record.percentile99) : undefined
-    }
+    } : undefined
   };
 };
 

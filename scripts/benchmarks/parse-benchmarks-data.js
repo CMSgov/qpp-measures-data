@@ -65,16 +65,19 @@ if (performanceYear >= 2020) {
   MCC_BENCHMARK_CSV_COLUMNS.push('isHighPriority');
 }
 
+// New 2022 data update
+if (performanceYear >= 2022) {
+  const decile3Index = BENCHMARK_CSV_COLUMNS.findIndex((string) => string === 'decile3');
+  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile2');
+  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile1');
+}
+
 // New 2023 data update
 if (performanceYear >= 2023) {
   BENCHMARK_CSV_COLUMNS.push('isInverse');
   BENCHMARK_CSV_COLUMNS.push('metricType');
   MCC_BENCHMARK_CSV_COLUMNS.push('isInverse');
   MCC_BENCHMARK_CSV_COLUMNS.push('metricType');
-
-  const decile3Index = BENCHMARK_CSV_COLUMNS.findIndex((string) => string === 'decile3');
-  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile2');
-  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile1');
 
   const isHighPriorityIndex = BENCHMARK_CSV_COLUMNS.findIndex((string) => string === 'isHighPriority');
   BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile99');
