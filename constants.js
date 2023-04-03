@@ -21,6 +21,9 @@ Constants.mvpMeasuresHelper = [{
 }, {
   measureIdKey: 'foundationQualityMeasureIds',
   enrichedMeasureKey: 'foundationQualityMeasures'
+}, {
+  measureIdKey: 'administrativeClaimsMeasureIds',
+  enrichedMeasureKey: 'administrativeClaimsMeasures'
 }];
 
 module.exports = Constants;

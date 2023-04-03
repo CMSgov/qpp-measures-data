@@ -8,6 +8,9 @@
       "Rheumatology"
     ],
     "clinicalTopics": "Rheumatology",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Pneumococcal Vaccination Status for Older Adults",
@@ -1296,7 +1299,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "G0054",
@@ -1309,6 +1313,9 @@
       "Vascular Surgery"
     ],
     "clinicalTopics": "Stroke Care and Prevention",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Advance Care Plan",
@@ -2546,7 +2553,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "G0055",
@@ -2559,6 +2567,9 @@
       "Family Medicine"
     ],
     "clinicalTopics": "Heart Disease",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": true,
     "qualityMeasures": [
       {
         "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
@@ -3186,37 +3197,6 @@
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_441_MIPSCQM.pdf"
         }
-      },
-      {
-        "eMeasureId": null,
-        "nqfEMeasureId": null,
-        "nqfId": "3612",
-        "lastPerformanceYear": null,
-        "isRiskAdjusted": false,
-        "icdImpacted": [],
-        "isClinicalGuidelineChanged": false,
-        "isIcdImpacted": false,
-        "clinicalGuidelineChanged": [],
-        "measureSets": [],
-        "category": "quality",
-        "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
-        "measureId": "492",
-        "primarySteward": "Centers for Medicare & Medicaid Services",
-        "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
-        "measureType": "outcome",
-        "isHighPriority": true,
-        "submissionMethods": [
-          "administrativeClaims"
-        ],
-        "isInverse": true,
-        "metricType": "costScore",
-        "firstPerformanceYear": 2023,
-        "isRegistryMeasure": false,
-        "allowedPrograms": [
-          "mips",
-          "pcf",
-          "G0055"
-        ]
       }
     ],
     "iaMeasures": [
@@ -4133,6 +4113,39 @@
         "measureSets": [],
         "measureSpecification": {}
       }
+    ],
+    "administrativeClaimsMeasures": [
+      {
+        "eMeasureId": null,
+        "nqfEMeasureId": null,
+        "nqfId": "3612",
+        "lastPerformanceYear": null,
+        "isRiskAdjusted": false,
+        "icdImpacted": [],
+        "isClinicalGuidelineChanged": false,
+        "isIcdImpacted": false,
+        "clinicalGuidelineChanged": [],
+        "measureSets": [],
+        "category": "quality",
+        "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
+        "measureId": "492",
+        "primarySteward": "Centers for Medicare & Medicaid Services",
+        "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
+        "measureType": "outcome",
+        "isHighPriority": true,
+        "submissionMethods": [
+          "administrativeClaims"
+        ],
+        "isInverse": true,
+        "metricType": "costScore",
+        "firstPerformanceYear": 2023,
+        "isRegistryMeasure": false,
+        "allowedPrograms": [
+          "mips",
+          "pcf",
+          "G0055"
+        ]
+      }
     ]
   },
   {
@@ -4146,6 +4159,9 @@
       "Family Medicine"
     ],
     "clinicalTopics": "Chronic Disease Management",
+    "allowedVendors": [],
+    "hasCahps": true,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Coronary Artery Disease (CAD): Antiplatelet Therapy",
@@ -5531,7 +5547,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "G0057",
@@ -5542,6 +5559,9 @@
       "Emergency Medicine"
     ],
     "clinicalTopics": "Emergency Medicine",
+    "allowedVendors": [],
+    "hasCahps": true,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Avoidance of Antibiotic Treatment for Acute Bronchitis/Bronchiolitis",
@@ -6720,7 +6740,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "G0058",
@@ -6731,6 +6752,9 @@
       "Orthopedic Surgery"
     ],
     "clinicalTopics": "Lower Extremity Joint Repair",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": true,
     "qualityMeasures": [
       {
         "title": "Communication with the Physician or Other Clinician Managing On-Going Care Post-Fracture for Men and Women Aged 50 Years and Older",
@@ -6978,40 +7002,6 @@
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_470_MIPSCQM.pdf"
         }
-      },
-      {
-        "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
-        "eMeasureId": null,
-        "nqfEMeasureId": null,
-        "nqfId": "3493",
-        "measureId": "480",
-        "description": "This measure is a re-specified version of the measure, \"Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)\" (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (\"provider\") and assesses each provider's complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
-        "measureType": "outcome",
-        "isHighPriority": true,
-        "primarySteward": "Centers for Medicare & Medicaid Services",
-        "firstPerformanceYear": 2021,
-        "lastPerformanceYear": null,
-        "isInverse": true,
-        "category": "quality",
-        "isRegistryMeasure": false,
-        "isRiskAdjusted": false,
-        "icdImpacted": [],
-        "isClinicalGuidelineChanged": false,
-        "isIcdImpacted": false,
-        "clinicalGuidelineChanged": [],
-        "metricType": "costScore",
-        "allowedPrograms": [
-          "mips",
-          "pcf",
-          "G0058"
-        ],
-        "submissionMethods": [
-          "administrativeClaims"
-        ],
-        "measureSets": [
-          "orthopedicSurgery"
-        ],
-        "measureSpecification": {}
       }
     ],
     "iaMeasures": [
@@ -7902,6 +7892,42 @@
         "measureSets": [],
         "measureSpecification": {}
       }
+    ],
+    "administrativeClaimsMeasures": [
+      {
+        "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
+        "eMeasureId": null,
+        "nqfEMeasureId": null,
+        "nqfId": "3493",
+        "measureId": "480",
+        "description": "This measure is a re-specified version of the measure, \"Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)\" (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (\"provider\") and assesses each provider's complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
+        "measureType": "outcome",
+        "isHighPriority": true,
+        "primarySteward": "Centers for Medicare & Medicaid Services",
+        "firstPerformanceYear": 2021,
+        "lastPerformanceYear": null,
+        "isInverse": true,
+        "category": "quality",
+        "isRegistryMeasure": false,
+        "isRiskAdjusted": false,
+        "icdImpacted": [],
+        "isClinicalGuidelineChanged": false,
+        "isIcdImpacted": false,
+        "clinicalGuidelineChanged": [],
+        "metricType": "costScore",
+        "allowedPrograms": [
+          "mips",
+          "pcf",
+          "G0058"
+        ],
+        "submissionMethods": [
+          "administrativeClaims"
+        ],
+        "measureSets": [
+          "orthopedicSurgery"
+        ],
+        "measureSpecification": {}
+      }
     ]
   },
   {
@@ -7913,6 +7939,9 @@
       "Anesthesiology"
     ],
     "clinicalTopics": "Anesthesia",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Anesthesiology Smoking Abstinence",
@@ -9058,7 +9087,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "M0001",
@@ -9070,6 +9100,9 @@
       "Hematology"
     ],
     "clinicalTopics": "Oncology and Hematology",
+    "allowedVendors": [],
+    "hasCahps": true,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Advance Care Plan",
@@ -10486,7 +10519,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "M0005",
@@ -10500,6 +10534,9 @@
       "Geriatrics"
     ],
     "clinicalTopics": "Preventive Care",
+    "allowedVendors": [],
+    "hasCahps": true,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Screening for Osteoporosis for Women Aged 65-85 Years of Age",
@@ -12157,7 +12194,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "M0002",
@@ -12168,6 +12206,9 @@
       "Nephrology"
     ],
     "clinicalTopics": "Kidney Disease",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
@@ -13500,7 +13541,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "M0003",
@@ -13511,6 +13553,9 @@
       "Neurology"
     ],
     "clinicalTopics": "Episodic neurological conditions",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Advance Care Plan",
@@ -14846,7 +14891,8 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   },
   {
     "mvpId": "M0004",
@@ -14857,6 +14903,9 @@
       "Neurology"
     ],
     "clinicalTopics": "Cognitive-based neurological disorders",
+    "allowedVendors": [],
+    "hasCahps": false,
+    "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
         "title": "Advance Care Plan",
@@ -16321,6 +16370,7 @@
         "measureSets": [],
         "measureSpecification": {}
       }
-    ]
+    ],
+    "administrativeClaimsMeasures": []
   }
 ]
