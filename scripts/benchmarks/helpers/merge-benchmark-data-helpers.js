@@ -215,7 +215,7 @@ const validateMeasureIdsConstraints = (benchmarks) => {
   let failedCount = 0;
   for (const benchmark of benchmarks) {
     if (measuresData.getMeasuresData(benchmark.performanceYear)
-      .find(measure => measure.measureId == benchmark.measureId)) {
+      .find(measure => measure.measureId === benchmark.measureId)) {
       continue;
     } else {
       console.log('Valid measureId constraint failed for benchmark:');

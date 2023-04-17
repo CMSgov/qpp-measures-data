@@ -2,7 +2,7 @@ const {
   getOrderedFileNames,
   mergeBenchmarkFiles,
   validateUniqueConstraints,
-  validateMeasureIdsConstraints,
+  validateMeasureIdsConstraints
 } = require('./helpers/merge-benchmark-data-helpers.js');
 const path = require('path');
 
