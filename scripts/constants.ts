@@ -198,6 +198,105 @@ export const MEASURE_SETS = {
     'SpeechLanguagePathology': 'speechLanguagePathology',
 };
 
+export const QUALITY_MEASURES_ORDER = {
+    'title': undefined,
+    'eMeasureId': undefined,
+    'nqfEMeasureId': undefined,
+    'nqfId': undefined,
+    'measureId': undefined,
+    'description': undefined,
+    'measureType': undefined,
+    'isHighPriority': undefined,
+    'primarySteward': undefined,
+    'primarySteward1': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
+    'isInverse': undefined,
+    'category': undefined,
+    'isRegistryMeasure': undefined,
+    'isRiskAdjusted': undefined,
+    'icdImpacted': undefined,
+    'isClinicalGuidelineChanged': undefined,
+    'isIcdImpacted': undefined,
+    'clinicalGuidelineChanged': undefined,
+    'metricType': undefined,
+    'allowedPrograms': undefined,
+    'submissionMethods': undefined,
+    'measureSets': undefined,
+    'measureSpecification': undefined
+};
+
+export const QCDR_MEASURES_ORDER = {
+    'measureId': undefined,
+    'title': undefined,
+    'description': undefined,
+    'nqfId': undefined,
+    'measureType': undefined,
+    'isHighPriority': undefined,
+    'isInverse': undefined,
+    'isRiskAdjusted': undefined,
+    'primarySteward': undefined,
+    'firstPerformanceYear': undefined,
+    'allowedVendors': undefined,
+    'allowedPrograms': undefined,
+    'category': undefined,
+    'lastPerformanceYear': undefined,
+    'eMeasureId': undefined,
+    'nqfEMeasureId': undefined,
+    'measureSets': undefined,
+    'isRegistryMeasure': undefined,
+    'isIcdImpacted': undefined,
+    'metricType': undefined,
+    'submissionMethods': undefined
+};
+
+export const PI_MEASURES_ORDER = {
+    'category': undefined,
+    'measureId': undefined,
+    'title': undefined,
+    'description': undefined,
+    'isRequired': undefined,
+    'metricType': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
+    'objective': undefined,
+    'isBonus': undefined,
+    'reportingCategory': undefined,
+    'substitutes': undefined,
+    'measureSpecification': undefined,
+    'measureSets': undefined,
+    'exclusion': undefined,
+    'allowedPrograms': undefined
+};
+
+export const IA_MEASURES_ORDER = {
+    'category': undefined,
+    'title': undefined,
+    'description': undefined,
+    'measureId': undefined,
+    'metricType': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
+    'weight': undefined,
+    'subcategoryId': undefined,
+    'allowedPrograms': undefined
+};
+
+export const COST_MEASURES_ORDER = {
+    'category': undefined,
+    'title': undefined,
+    'description': undefined,
+    'measureId': undefined,
+    'metricType': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
+    'isInverse': undefined,
+    'overallAlgorithm': undefined,
+    'submissionMethods': undefined,
+    'measureSpecification': undefined,
+    'allowedPrograms': undefined
+};
+
 export const IA_DEFAULT_VALUES = {
     metricType: 'boolean',
     lastPerformanceYear: null,
