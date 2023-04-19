@@ -833,21 +833,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -862,10 +865,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -2087,21 +2087,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -2116,10 +2119,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -2895,7 +2895,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": true,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -2932,6 +2931,7 @@
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_238_MIPSCQM.pdf",
           "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms156v11"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "overall",
@@ -3076,7 +3076,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": true,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -3099,6 +3098,7 @@
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_392_MIPSCQM.pdf"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "female18-64",
@@ -3201,13 +3201,13 @@
     ],
     "iaMeasures": [
       {
-        "metricType": "boolean",
-        "lastPerformanceYear": null,
+        "category": "ia",
         "title": "Practice Improvements that Engage Community Resources to Address Drivers of Health",
         "description": "Select and screen for drivers of health that are relevant for the eligible clinician’s population using evidence-based tools. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded questions/fields for the capture of data. After screening, address identified drivers of health through at least one of the following:\r\n• Develop and maintain formal relationships with community-based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or \r\n• Work with community partners to provide and/or update a community resource guide for to patients who are found to have and/or be at risk in one or more areas of drivers of health; or\r\n• Record findings of screening and follow up within the electronic health record (EHR); identify screened patients with one or more needs associated with drivers of health and implement approaches to better serve their holistic needs through meaningful linkages to community resources. \r\n\r\nDrivers of health (also referred to as social determinants of health [SDOH] or health-related social needs [HSRN]) prioritized by the practice might include, but are not limited to, the following: food security; housing stability; transportation accessibility; interpersonal safety; legal challenges; and environmental exposures.",
         "measureId": "IA_AHE_12",
+        "metricType": "boolean",
         "firstPerformanceYear": 2017,
-        "category": "ia",
+        "lastPerformanceYear": null,
         "weight": "high",
         "subcategoryId": "achievingHealthEquity",
         "allowedPrograms": [
@@ -3647,21 +3647,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -3676,10 +3679,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -4116,35 +4116,36 @@
     ],
     "administrativeClaimsMeasures": [
       {
+        "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": "3612",
+        "measureId": "492",
+        "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
+        "measureType": "outcome",
+        "isHighPriority": true,
+        "primarySteward": "Centers for Medicare & Medicaid Services",
+        "firstPerformanceYear": 2023,
         "lastPerformanceYear": null,
+        "isInverse": true,
+        "category": "quality",
+        "isRegistryMeasure": false,
         "isRiskAdjusted": false,
         "icdImpacted": [],
         "isClinicalGuidelineChanged": false,
         "isIcdImpacted": false,
         "clinicalGuidelineChanged": [],
-        "measureSets": [],
-        "category": "quality",
-        "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
-        "measureId": "492",
-        "primarySteward": "Centers for Medicare & Medicaid Services",
-        "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
-        "measureType": "outcome",
-        "isHighPriority": true,
-        "submissionMethods": [
-          "administrativeClaims"
-        ],
-        "isInverse": true,
         "metricType": "costScore",
-        "firstPerformanceYear": 2023,
-        "isRegistryMeasure": false,
         "allowedPrograms": [
           "mips",
           "pcf",
           "G0055"
-        ]
+        ],
+        "submissionMethods": [
+          "administrativeClaims"
+        ],
+        "measureSets": [],
+        "measureSpecification": null
       }
     ]
   },
@@ -4450,7 +4451,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": false,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -4478,6 +4478,7 @@
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_398_MIPSCQM.pdf"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "overall",
@@ -4614,13 +4615,13 @@
         ]
       },
       {
-        "metricType": "boolean",
-        "lastPerformanceYear": null,
+        "category": "ia",
         "title": "Practice Improvements that Engage Community Resources to Address Drivers of Health",
         "description": "Select and screen for drivers of health that are relevant for the eligible clinician’s population using evidence-based tools. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded questions/fields for the capture of data. After screening, address identified drivers of health through at least one of the following:\r\n• Develop and maintain formal relationships with community-based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or \r\n• Work with community partners to provide and/or update a community resource guide for to patients who are found to have and/or be at risk in one or more areas of drivers of health; or\r\n• Record findings of screening and follow up within the electronic health record (EHR); identify screened patients with one or more needs associated with drivers of health and implement approaches to better serve their holistic needs through meaningful linkages to community resources. \r\n\r\nDrivers of health (also referred to as social determinants of health [SDOH] or health-related social needs [HSRN]) prioritized by the practice might include, but are not limited to, the following: food security; housing stability; transportation accessibility; interpersonal safety; legal challenges; and environmental exposures.",
         "measureId": "IA_AHE_12",
+        "metricType": "boolean",
         "firstPerformanceYear": 2017,
-        "category": "ia",
+        "lastPerformanceYear": null,
         "weight": "high",
         "subcategoryId": "achievingHealthEquity",
         "allowedPrograms": [
@@ -5081,21 +5082,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -5110,10 +5114,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -5894,13 +5895,13 @@
     ],
     "iaMeasures": [
       {
-        "metricType": "boolean",
-        "lastPerformanceYear": null,
+        "category": "ia",
         "title": "Practice Improvements that Engage Community Resources to Address Drivers of Health",
         "description": "Select and screen for drivers of health that are relevant for the eligible clinician’s population using evidence-based tools. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded questions/fields for the capture of data. After screening, address identified drivers of health through at least one of the following:\r\n• Develop and maintain formal relationships with community-based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or \r\n• Work with community partners to provide and/or update a community resource guide for to patients who are found to have and/or be at risk in one or more areas of drivers of health; or\r\n• Record findings of screening and follow up within the electronic health record (EHR); identify screened patients with one or more needs associated with drivers of health and implement approaches to better serve their holistic needs through meaningful linkages to community resources. \r\n\r\nDrivers of health (also referred to as social determinants of health [SDOH] or health-related social needs [HSRN]) prioritized by the practice might include, but are not limited to, the following: food security; housing stability; transportation accessibility; interpersonal safety; legal challenges; and environmental exposures.",
         "measureId": "IA_AHE_12",
+        "metricType": "boolean",
         "firstPerformanceYear": 2017,
-        "category": "ia",
+        "lastPerformanceYear": null,
         "weight": "high",
         "subcategoryId": "achievingHealthEquity",
         "allowedPrograms": [
@@ -6274,21 +6275,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -6303,10 +6307,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -7426,21 +7427,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -7455,10 +7459,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -8158,6 +8159,9 @@
         "isRegistryMeasure": true,
         "isIcdImpacted": false,
         "metricType": "registryMultiPerformanceRate",
+        "submissionMethods": [
+          "registry"
+        ],
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -8168,9 +8172,6 @@
             "name": "overall",
             "description": "The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
           }
-        ],
-        "submissionMethods": [
-          "registry"
         ]
       },
       {
@@ -8621,21 +8622,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -8650,10 +8654,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -10053,21 +10054,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -10082,10 +10086,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -10801,7 +10802,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": false,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -10864,6 +10864,7 @@
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_226_MIPSCQM.pdf",
           "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms138v11"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "screened",
@@ -11046,7 +11047,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": false,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -11086,6 +11086,7 @@
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_431_MIPSCQM.pdf"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "screened",
@@ -11181,15 +11182,34 @@
         }
       },
       {
+        "title": "Adult Immunization Status",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": "3620",
+        "measureId": "493",
+        "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; and pneumococcal.",
+        "measureType": "process",
+        "isHighPriority": false,
+        "primarySteward": "National Committee for Quality Assurance",
+        "firstPerformanceYear": 2023,
         "lastPerformanceYear": null,
+        "isInverse": false,
+        "category": "quality",
+        "isRegistryMeasure": false,
         "isRiskAdjusted": false,
         "icdImpacted": [],
         "isClinicalGuidelineChanged": false,
         "isIcdImpacted": false,
         "clinicalGuidelineChanged": [],
+        "metricType": "multiPerformanceRate",
+        "allowedPrograms": [
+          "mips",
+          "pcf",
+          "M0005"
+        ],
+        "submissionMethods": [
+          "registry"
+        ],
         "measureSets": [
           "allergyImmunology",
           "cardiology",
@@ -11207,20 +11227,10 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "category": "quality",
-        "title": "Adult Immunization Status",
-        "measureId": "493",
-        "primarySteward": "National Committee for Quality Assurance",
-        "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; and pneumococcal.",
-        "measureType": "process",
-        "isHighPriority": false,
-        "submissionMethods": [
-          "registry"
-        ],
-        "isInverse": false,
-        "metricType": "multiPerformanceRate",
+        "measureSpecification": {
+          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_493_MIPSCQM.pdf"
+        },
         "overallAlgorithm": "weightedAverage",
-        "firstPerformanceYear": 2023,
         "strata": [
           {
             "name": "influenza",
@@ -11238,16 +11248,7 @@
             "name": "pneumococcal",
             "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
           }
-        ],
-        "isRegistryMeasure": false,
-        "allowedPrograms": [
-          "mips",
-          "pcf",
-          "M0005"
-        ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_493_MIPSCQM.pdf"
-        }
+        ]
       }
     ],
     "iaMeasures": [
@@ -11272,13 +11273,13 @@
         ]
       },
       {
-        "metricType": "boolean",
-        "lastPerformanceYear": null,
+        "category": "ia",
         "title": "Practice Improvements that Engage Community Resources to Address Drivers of Health",
         "description": "Select and screen for drivers of health that are relevant for the eligible clinician’s population using evidence-based tools. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded questions/fields for the capture of data. After screening, address identified drivers of health through at least one of the following:\r\n• Develop and maintain formal relationships with community-based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or \r\n• Work with community partners to provide and/or update a community resource guide for to patients who are found to have and/or be at risk in one or more areas of drivers of health; or\r\n• Record findings of screening and follow up within the electronic health record (EHR); identify screened patients with one or more needs associated with drivers of health and implement approaches to better serve their holistic needs through meaningful linkages to community resources. \r\n\r\nDrivers of health (also referred to as social determinants of health [SDOH] or health-related social needs [HSRN]) prioritized by the practice might include, but are not limited to, the following: food security; housing stability; transportation accessibility; interpersonal safety; legal challenges; and environmental exposures.",
         "measureId": "IA_AHE_12",
+        "metricType": "boolean",
         "firstPerformanceYear": 2017,
-        "category": "ia",
+        "lastPerformanceYear": null,
         "weight": "high",
         "subcategoryId": "achievingHealthEquity",
         "allowedPrograms": [
@@ -11728,21 +11729,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -11757,10 +11761,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -12559,37 +12560,37 @@
         }
       },
       {
+        "title": "Adult Kidney Disease: Angiotensin Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": "1662",
+        "measureId": "489",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within a 12-month period.",
+        "measureType": "process",
+        "isHighPriority": false,
+        "primarySteward": "Renal Physicians Association",
+        "firstPerformanceYear": 2023,
         "lastPerformanceYear": null,
+        "isInverse": false,
+        "category": "quality",
+        "isRegistryMeasure": false,
         "isRiskAdjusted": false,
         "icdImpacted": [],
         "isClinicalGuidelineChanged": false,
         "isIcdImpacted": false,
         "clinicalGuidelineChanged": [],
-        "measureSets": [
-          "geriatrics",
-          "nephrology"
-        ],
-        "category": "quality",
-        "title": "Adult Kidney Disease: Angiotensin Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy",
-        "measureId": "489",
-        "primarySteward": "Renal Physicians Association",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within a 12-month period.",
-        "measureType": "process",
-        "isHighPriority": false,
-        "submissionMethods": [
-          "registry"
-        ],
-        "isInverse": false,
         "metricType": "singlePerformanceRate",
-        "firstPerformanceYear": 2023,
-        "isRegistryMeasure": false,
         "allowedPrograms": [
           "mips",
           "pcf",
           "M0002"
+        ],
+        "submissionMethods": [
+          "registry"
+        ],
+        "measureSets": [
+          "geriatrics",
+          "nephrology"
         ],
         "measureSpecification": {
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_489_MIPSCQM.pdf"
@@ -13075,21 +13076,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -13104,10 +13108,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -14425,21 +14426,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -14454,10 +14458,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",
@@ -14986,7 +14987,6 @@
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": true,
-        "overallAlgorithm": "overallStratumOnly",
         "category": "quality",
         "isRegistryMeasure": false,
         "isRiskAdjusted": false,
@@ -15023,6 +15023,7 @@
           "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_238_MIPSCQM.pdf",
           "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms156v11"
         },
+        "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
             "name": "overall",
@@ -15904,21 +15905,24 @@
         ]
       },
       {
-        "lastPerformanceYear": null,
-        "measureSets": [],
+        "category": "pi",
+        "measureId": "PI_HIE_6",
         "title": "Enabling Exchange Under TEFCA",
         "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-        "measureId": "PI_HIE_6",
-        "firstPerformanceYear": 2023,
-        "category": "pi",
         "isRequired": true,
         "metricType": "boolean",
-        "isBonus": false,
+        "firstPerformanceYear": 2023,
+        "lastPerformanceYear": null,
         "objective": "healthInformationExchange",
+        "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [
           "PI_HIE_5"
         ],
+        "measureSpecification": {
+          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+        },
+        "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
           "G0053",
@@ -15933,10 +15937,7 @@
           "M0002",
           "M0003",
           "M0004"
-        ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        }
+        ]
       },
       {
         "category": "pi",

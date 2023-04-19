@@ -1359,61 +1359,61 @@
     ]
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "Adopt Certified Health Information Technology for Security Tags for Electronic Health Record Data",
     "description": "Use security labeling services available in certified Health Information Technology (IT) for electronic health record (EHR) data to facilitate data segmentation. Certification criteria for security tags may be found in the ONC Health IT Certification Program at 45 CFR 170.315(b)(7) and (b)(8).",
     "measureId": "IA_AHE_10",
+    "metricType": "boolean",
     "firstPerformanceYear": 2023,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "medium",
     "subcategoryId": "achievingHealthEquity",
     "allowedPrograms": []
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "Create and Implement a Plan to Improve Care for Lesbian, Gay, Bisexual, Transgender, and Queer Patients",
     "description": "Create and implement a plan to improve care for lesbian, gay, bisexual, transgender, and queer (LGBTQ+) patients by understanding and addressing health disparities for this population. The plan may include an analysis of sexual orientation and gender identity (SO/GI) data to identify disparities in care for LGBTQ+ patients. Actions to implement this activity may also include identifying focused goals for addressing disparities in care, collecting and using patients pronouns and chosen names, training clinicians and staff on SO/GI terminology (including as supported by certified health IT and the Office of the National Coordinator for Health Information Technology US Core Data for Interoperability [USCDI]), identifying risk factors or behaviors specific to LGBTQ+ individuals, communicating SO/GI data security and privacy practices with patients, and/or utilizing anatomical inventories when documenting patient health histories.",
     "measureId": "IA_AHE_11",
+    "metricType": "boolean",
     "firstPerformanceYear": 2023,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "high",
     "subcategoryId": "achievingHealthEquity",
     "allowedPrograms": []
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "Create and Implement a Language Access Plan",
     "description": "Create and implement a language access plan to address communication barriers for individuals with limited English proficiency. The language access plan must align with standards for communication and language assistance defined in the National Standards for Culturally and Linguistically Appropriate Services (CLAS) in Health and Health Care (https://thinkculturalhealth.hhs.gov/clas).",
     "measureId": "IA_EPA_6",
+    "metricType": "boolean",
     "firstPerformanceYear": 2023,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "high",
     "subcategoryId": "expandedPracticeAccess",
     "allowedPrograms": []
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "COVID-19 Vaccine Achievement for Practice Staff",
     "description": "Demonstrate that the MIPS eligible clinician’s practice has maintained or achieved a rate of 100% of office staff staying up to date with COVID vaccines according to the Center for Disease Control and Prevention (https://www.cdc.gov/coronavirus/2019-ncov/vaccines/stay-up-to-date.html). Please note that those who are determined to have a medical contraindication specified by CDC recommendations are excluded from this activity.",
     "measureId": "IA_ERP_6",
+    "metricType": "boolean",
     "firstPerformanceYear": 2023,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "medium",
     "subcategoryId": "emergencyResponseAndPreparedness",
     "allowedPrograms": []
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "Practice Improvements that Engage Community Resources to Address Drivers of Health",
     "description": "Select and screen for drivers of health that are relevant for the eligible clinician’s population using evidence-based tools. If possible, use a screening tool that is health IT-enabled and includes standards-based, coded questions/fields for the capture of data. After screening, address identified drivers of health through at least one of the following:\r\n• Develop and maintain formal relationships with community-based organizations to strengthen the community service referral process, implementing closed-loop referrals where feasible; or \r\n• Work with community partners to provide and/or update a community resource guide for to patients who are found to have and/or be at risk in one or more areas of drivers of health; or\r\n• Record findings of screening and follow up within the electronic health record (EHR); identify screened patients with one or more needs associated with drivers of health and implement approaches to better serve their holistic needs through meaningful linkages to community resources. \r\n\r\nDrivers of health (also referred to as social determinants of health [SDOH] or health-related social needs [HSRN]) prioritized by the practice might include, but are not limited to, the following: food security; housing stability; transportation accessibility; interpersonal safety; legal challenges; and environmental exposures.",
     "measureId": "IA_AHE_12",
+    "metricType": "boolean",
     "firstPerformanceYear": 2017,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "high",
     "subcategoryId": "achievingHealthEquity",
     "allowedPrograms": [
@@ -1424,13 +1424,13 @@
     ]
   },
   {
-    "metricType": "boolean",
-    "lastPerformanceYear": null,
+    "category": "ia",
     "title": "Obtain or Renew an Approved Waiver for Provision of Buprenorphine as Medication-Assisted Treatment for Opioid Use Disorder",
     "description": "Complete any required training and obtain or renew an approved waiver for provision of medication-assisted treatment of opioid use disorders using buprenorphine. Note: This activity may be selected once for low-capacity waivers, as these do not expire, and once every 3 years for the expanded waiver, in keeping with renewal requirements.",
     "measureId": "IA_BMH_13",
+    "metricType": "boolean",
     "firstPerformanceYear": 2017,
-    "category": "ia",
+    "lastPerformanceYear": null,
     "weight": "medium",
     "subcategoryId": "behavioralAndMentalHealth",
     "allowedPrograms": []
@@ -2146,72 +2146,75 @@
     ]
   },
   {
-    "lastPerformanceYear": null,
-    "measureSets": [],
+    "category": "pi",
+    "measureId": "PI_EP_2_EX_1",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
     "description": "Any MIPS eligible clinician who is unable to electronically prescribe Schedule II opioids and Schedule III and IV drugs in accordance with applicable law during the performance period.",
-    "measureId": "PI_EP_2_EX_1",
-    "firstPerformanceYear": 2023,
-    "category": "pi",
     "isRequired": false,
     "metricType": "boolean",
-    "isBonus": false,
+    "firstPerformanceYear": 2023,
+    "lastPerformanceYear": null,
     "objective": "electronicPrescribing",
+    "isBonus": false,
     "reportingCategory": "exclusion",
     "substitutes": [],
+    "measureSets": [],
     "exclusion": null,
     "allowedPrograms": []
   },
   {
-    "lastPerformanceYear": null,
-    "measureSets": [],
+    "category": "pi",
+    "measureId": "PI_EP_2_EX_2",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
     "description": "Any MIPS eligible clinician who writes fewer than 100 permissible prescriptions during the performance period",
-    "measureId": "PI_EP_2_EX_2",
-    "firstPerformanceYear": 2023,
-    "category": "pi",
     "isRequired": false,
     "metricType": "boolean",
-    "isBonus": false,
+    "firstPerformanceYear": 2023,
+    "lastPerformanceYear": null,
     "objective": "electronicPrescribing",
+    "isBonus": false,
     "reportingCategory": "exclusion",
     "substitutes": [],
+    "measureSets": [],
     "exclusion": null,
     "allowedPrograms": []
   },
   {
-    "lastPerformanceYear": null,
-    "measureSets": [],
+    "category": "pi",
+    "measureId": "PI_EP_2_EX_3",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
     "description": "Any MIPS eligible clinician for whom querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY 2023.",
-    "measureId": "PI_EP_2_EX_3",
-    "firstPerformanceYear": 2023,
-    "category": "pi",
     "isRequired": false,
     "metricType": "boolean",
-    "isBonus": false,
+    "firstPerformanceYear": 2023,
+    "lastPerformanceYear": null,
     "objective": "electronicPrescribing",
+    "isBonus": false,
     "reportingCategory": "exclusion",
     "substitutes": [],
+    "measureSets": [],
     "exclusion": null,
     "allowedPrograms": []
   },
   {
-    "lastPerformanceYear": null,
-    "measureSets": [],
+    "category": "pi",
+    "measureId": "PI_HIE_6",
     "title": "Enabling Exchange Under TEFCA",
     "description": "Provide eligible clinicians with the opportunity to earn credit for the Health Information exchange objective if they: are a signatory to a “Framework Agreement” as that term is defined in the Common Agreement; enable secure, bi-directional exchange of information to occur for all unique patients of eligible clinicians, and all unique patient records stored or maintained in the EHR; and use the functions of CEHRT to support bidirectional exchange.",
-    "measureId": "PI_HIE_6",
-    "firstPerformanceYear": 2023,
-    "category": "pi",
     "isRequired": true,
     "metricType": "boolean",
-    "isBonus": false,
+    "firstPerformanceYear": 2023,
+    "lastPerformanceYear": null,
     "objective": "healthInformationExchange",
+    "isBonus": false,
     "reportingCategory": "required",
     "substitutes": [
       "PI_HIE_5"
     ],
+    "measureSpecification": {
+      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
+    },
+    "measureSets": [],
     "exclusion": null,
     "allowedPrograms": [
       "G0053",
@@ -2226,25 +2229,22 @@
       "M0002",
       "M0003",
       "M0004"
-    ],
-    "measureSpecification": {
-      "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2023MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-    }
+    ]
   },
   {
-    "lastPerformanceYear": null,
-    "measureSets": [],
+    "category": "pi",
+    "measureId": "PI_ONCACB_1",
     "title": "ONC-ACB Surveillance Attestation",
     "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-    "measureId": "PI_ONCACB_1",
-    "firstPerformanceYear": 2017,
-    "category": "pi",
     "isRequired": false,
     "metricType": "boolean",
-    "isBonus": false,
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
     "objective": "attestation",
+    "isBonus": false,
     "reportingCategory": null,
     "substitutes": [],
+    "measureSets": [],
     "exclusion": null,
     "allowedPrograms": []
   },
@@ -2471,7 +2471,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "simpleAverage",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -2495,6 +2494,7 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms128v11"
     },
+    "overallAlgorithm": "simpleAverage",
     "strata": [
       {
         "name": "84Days",
@@ -4703,7 +4703,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -4766,6 +4765,7 @@
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_226_MIPSCQM.pdf",
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms138v11"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "screened",
@@ -4845,7 +4845,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": true,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -4882,6 +4881,7 @@
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_238_MIPSCQM.pdf",
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms156v11"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "overall",
@@ -4910,7 +4910,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "simpleAverage",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -4933,6 +4932,7 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms155v11"
     },
+    "overallAlgorithm": "simpleAverage",
     "strata": [
       {
         "name": "percentiles",
@@ -5816,7 +5816,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "simpleAverage",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -5841,6 +5840,7 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms137v11"
     },
+    "overallAlgorithm": "simpleAverage",
     "strata": [
       {
         "name": "14Days",
@@ -6828,7 +6828,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -6851,6 +6850,7 @@
     "measureSpecification": {
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms136v12"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "30Days",
@@ -6875,7 +6875,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "weightedAverage",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -6905,6 +6904,7 @@
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_370_MIPSCQM.pdf",
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms159v11"
     },
+    "overallAlgorithm": "weightedAverage",
     "strata": [
       {
         "name": "adolescents",
@@ -7383,7 +7383,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -7407,6 +7406,7 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_391_MIPSCQM.pdf"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "30Days",
@@ -7431,7 +7431,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": true,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -7454,6 +7453,7 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_392_MIPSCQM.pdf"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "female18-64",
@@ -7526,7 +7526,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -7550,6 +7549,7 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_394_MIPSCQM.pdf"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "meningococcal",
@@ -7693,7 +7693,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -7721,6 +7720,7 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_398_MIPSCQM.pdf"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "overall",
@@ -8443,7 +8443,6 @@
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
     "isInverse": false,
-    "overallAlgorithm": "overallStratumOnly",
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -8483,6 +8482,7 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_431_MIPSCQM.pdf"
     },
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "screened",
@@ -9766,85 +9766,103 @@
     }
   },
   {
+    "title": "Psoriasis- Improvement in Patient-Reported Itch Severity",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
+    "measureId": "485",
+    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of psoriasis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "American Academy of Dermatology",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [
-      "dermatology"
-    ],
-    "category": "quality",
-    "title": "Psoriasis- Improvement in Patient-Reported Itch Severity",
-    "measureId": "485",
-    "primarySteward": "American Academy of Dermatology",
-    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of psoriasis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "dermatology"
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_485_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Dermatitis – Improvement in Patient-Reported Itch Severity",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
+    "measureId": "486",
+    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of dermatitis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "American Academy of Dermatology",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [
-      "dermatology"
-    ],
-    "category": "quality",
-    "title": "Dermatitis – Improvement in Patient-Reported Itch Severity",
-    "measureId": "486",
-    "primarySteward": "American Academy of Dermatology",
-    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of dermatitis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "dermatology"
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_486_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Screening for Social Drivers of Health",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
+    "measureId": "487",
+    "description": "Percent of patients 18 years and older screened for food insecurity, housing instability, transportation needs, utility difficulties, and interpersonal safety.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
     "measureSets": [
       "allergyImmunology",
       "audiology",
@@ -9886,38 +9904,39 @@
       "urology",
       "vascularSurgery"
     ],
-    "category": "quality",
-    "title": "Screening for Social Drivers of Health",
-    "measureId": "487",
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "description": "Percent of patients 18 years and older screened for food insecurity, housing instability, transportation needs, utility difficulties, and interpersonal safety.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_487_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Kidney Health Evaluation",
     "eMeasureId": "CMS951v1",
     "nqfEMeasureId": null,
     "nqfId": null,
+    "measureId": "488",
+    "description": "Percentage of patients aged 18-75 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "National Kidney Foundation",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry",
+      "electronicHealthRecord"
+    ],
     "measureSets": [
       "endocrinology",
       "familyMedicine",
@@ -9927,178 +9946,179 @@
       "preventiveMedicine",
       "urology"
     ],
-    "category": "quality",
-    "title": "Kidney Health Evaluation",
-    "measureId": "488",
-    "primarySteward": "National Kidney Foundation",
-    "description": "Percentage of patients aged 18-75 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry",
-      "electronicHealthRecord"
-    ],
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_488_MIPSCQM.pdf",
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2023/cms951v1"
     }
   },
   {
+    "title": "Adult Kidney Disease: Angiotensin Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "1662",
+    "measureId": "489",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within a 12-month period.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Renal Physicians Association",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [
-      "geriatrics",
-      "nephrology"
-    ],
-    "category": "quality",
-    "title": "Adult Kidney Disease: Angiotensin Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy",
-    "measureId": "489",
-    "primarySteward": "Renal Physicians Association",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within a 12-month period.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf",
       "M0002"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "geriatrics",
+      "nephrology"
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_489_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Appropriate Intervention of Immune-Related Diarrhea and/or Colitis in Patients Treated with Immune Checkpoint Inhibitors",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
+    "measureId": "490",
+    "description": "Percentage of patients, aged 18 years and older, with a diagnosis of cancer, on immune checkpoint inhibitor therapy, and grade 2 or above diarrhea and/or grade 2 or above colitis, who have immune checkpoint inhibitor therapy held and corticosteroids or immunosuppressants prescribed or administered.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Society for Immunotherapy of Cancer (SITC)",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [
-      "oncology"
-    ],
-    "category": "quality",
-    "title": "Appropriate Intervention of Immune-Related Diarrhea and/or Colitis in Patients Treated with Immune Checkpoint Inhibitors",
-    "measureId": "490",
-    "primarySteward": "Society for Immunotherapy of Cancer (SITC)",
-    "description": "Percentage of patients, aged 18 years and older, with a diagnosis of cancer, on immune checkpoint inhibitor therapy, and grade 2 or above diarrhea and/or grade 2 or above colitis, who have immune checkpoint inhibitor therapy held and corticosteroids or immunosuppressants prescribed or administered.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "oncology"
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_490_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing Status in Colorectal Carcinoma, Endometrial, Gastroesophageal, or Small Bowel Carcinoma",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "3661",
+    "measureId": "491",
+    "description": "Percentage of surgical pathology reports for primary colorectal, endometrial, gastroesophageal or small bowel carcinoma, biopsy or resection, that contain impression or conclusion of or recommendation for testing of mismatch repair (MMR) by immunohistochemistry (biomarkers MLH1, MSH2, MSH6, and PMS2), or microsatellite instability (MSI) by DNA-based testing status, or both.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "College of American Pathologists",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [
-      "pathology"
-    ],
-    "category": "quality",
-    "title": "Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing Status in Colorectal Carcinoma, Endometrial, Gastroesophageal, or Small Bowel Carcinoma",
-    "measureId": "491",
-    "primarySteward": "College of American Pathologists",
-    "description": "Percentage of surgical pathology reports for primary colorectal, endometrial, gastroesophageal or small bowel carcinoma, biopsy or resection, that contain impression or conclusion of or recommendation for testing of mismatch repair (MMR) by immunohistochemistry (biomarkers MLH1, MSH2, MSH6, and PMS2), or microsatellite instability (MSI) by DNA-based testing status, or both.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "pathology"
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_491_MIPSCQM.pdf"
     }
   },
   {
+    "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "3612",
+    "measureId": "492",
+    "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": true,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
-    "measureId": "492",
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "administrativeClaims"
-    ],
-    "isInverse": true,
     "metricType": "costScore",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": false,
     "allowedPrograms": [
       "mips",
       "pcf",
       "G0055"
-    ]
+    ],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": null
   },
   {
+    "title": "Adult Immunization Status",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "3620",
+    "measureId": "493",
+    "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; and pneumococcal.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "National Committee for Quality Assurance",
+    "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf",
+      "M0005"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
     "measureSets": [
       "allergyImmunology",
       "cardiology",
@@ -10116,20 +10136,10 @@
       "rheumatology",
       "skilledNursingFacility"
     ],
-    "category": "quality",
-    "title": "Adult Immunization Status",
-    "measureId": "493",
-    "primarySteward": "National Committee for Quality Assurance",
-    "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; and pneumococcal.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "multiPerformanceRate",
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_493_MIPSCQM.pdf"
+    },
     "overallAlgorithm": "weightedAverage",
-    "firstPerformanceYear": 2023,
     "strata": [
       {
         "name": "influenza",
@@ -10147,16 +10157,7 @@
         "name": "pneumococcal",
         "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
       }
-    ],
-    "isRegistryMeasure": false,
-    "allowedPrograms": [
-      "mips",
-      "pcf",
-      "M0005"
-    ],
-    "measureSpecification": {
-      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_493_MIPSCQM.pdf"
-    }
+    ]
   },
   {
     "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions",
@@ -10677,323 +10678,338 @@
     "allowedPrograms": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Getting Timely Care, Appointments, and Information",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0005",
     "measureId": "CAHPS_1",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0005",
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: How Well Providers Communicate",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0005",
     "measureId": "CAHPS_2",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0005",
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Patient’s Rating of Provider",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "CAHPS_3",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Access to Specialists",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "CAHPS_4",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Health Promotion and Education",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "CAHPS_5",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Shared Decision Making",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "CAHPS_6",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Health Status and Functional Status",
-    "description": "",
-    "measureType": "patientEngagementExperience",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "CAHPS_7",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Care Coordination",
-    "description": "",
-    "measureType": "patientEngagementExperience",
-    "measureId": "CAHPS_8",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
-    "isInverse": false,
-    "strata": [],
+    "measureId": "CAHPS_8",
+    "description": "",
+    "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
     "title": "CAHPS for MIPS SSM: Courteous and Helpful Office Staff",
-    "description": "",
-    "measureType": "patientEngagementExperience",
-    "measureId": "CAHPS_9",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0005",
-    "isInverse": false,
-    "strata": [],
-    "isHighPriority": true,
-    "isIcdImpacted": false,
-    "primarySteward": "Agency for Healthcare Research & Quality",
-    "submissionMethods": [
-      "certifiedSurveyVendor"
-    ],
-    "measureSets": [
-      "generalPracticeFamilyMedicine"
-    ],
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ],
-    "isRegistryMeasure": false
-  },
-  {
-    "category": "quality",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "metricType": "cahps",
-    "title": "CAHPS for MIPS SSM: Stewardship of Patient Resources",
+    "measureId": "CAHPS_9",
     "description": "",
     "measureType": "patientEngagementExperience",
-    "measureId": "CAHPS_11",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "isInverse": false,
-    "strata": [],
     "isHighPriority": true,
-    "isIcdImpacted": false,
     "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ],
     "submissionMethods": [
       "certifiedSurveyVendor"
     ],
     "measureSets": [
       "generalPracticeFamilyMedicine"
     ],
+    "measureSpecification": null,
+    "strata": []
+  },
+  {
+    "title": "CAHPS for MIPS SSM: Stewardship of Patient Resources",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "CAHPS_11",
+    "description": "",
+    "measureType": "patientEngagementExperience",
+    "isHighPriority": true,
+    "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isIcdImpacted": false,
+    "metricType": "cahps",
     "allowedPrograms": [
       "mips",
       "app1"
     ],
-    "isRegistryMeasure": false
+    "submissionMethods": [
+      "certifiedSurveyVendor"
+    ],
+    "measureSets": [
+      "generalPracticeFamilyMedicine"
+    ],
+    "measureSpecification": null,
+    "strata": []
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": true,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Risk-Standardized Routine Discharge Rate Following Elective Primary Hip and Knee Arthroplasty",
     "measureId": "AJRR9",
-    "primarySteward": "AAOS Orthopaedic Quality Resource Center",
-    "allowedVendors": [
-      "5224253"
-    ],
+    "title": "Risk-Standardized Routine Discharge Rate Following Elective Primary Hip and Knee Arthroplasty",
     "description": "Risk-standardized rate for routine discharge for elective primary total hip and knee arthroplasty",
+    "nqfId": null,
     "measureType": "outcome",
     "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": true,
+    "primarySteward": "AAOS Orthopaedic Quality Resource Center",
+    "firstPerformanceYear": 2023,
+    "allowedVendors": [
+      "5224253"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
     "submissionMethods": [
       "registry"
     ],
-    "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
     "overallAlgorithm": "simpleAverage",
-    "firstPerformanceYear": 2023,
     "strata": [
       {
         "name": "hip",
@@ -11003,41 +11019,41 @@
         "name": "knee",
         "description": "represents total knee arthroplasty."
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Physical Health Outcomes in Total Hip and Knee Arthroplasty",
     "measureId": "AJRR8",
+    "title": "Physical Health Outcomes in Total Hip and Knee Arthroplasty",
+    "description": "Percentage of patients with patient-reported meaningful improvement in quality of life (QOL) after elective total hip and knee arthroplasty",
+    "nqfId": null,
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "AAOS Orthopaedic Quality Resource Center",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5224253"
     ],
-    "description": "Percentage of patients with patient-reported meaningful improvement in quality of life (QOL) after elective total hip and knee arthroplasty",
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
     "submissionMethods": [
       "registry"
     ],
-    "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
     "overallAlgorithm": "weightedAverage",
-    "firstPerformanceYear": 2023,
     "strata": [
       {
         "name": "hip",
@@ -11047,41 +11063,41 @@
         "name": "knee",
         "description": "represents total knee arthroplasty."
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Improvement in Pain Assessment Following Spine Fusion Procedures",
     "measureId": "AJRR11",
+    "title": "Improvement in Pain Assessment Following Spine Fusion Procedures",
+    "description": "Percentage of patients with patient-reported meaningful improvement in pain following lumbar or cervical spine procedures",
+    "nqfId": null,
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "AAOS Orthopaedic Quality Resource Center",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5224253"
     ],
-    "description": "Percentage of patients with patient-reported meaningful improvement in pain following lumbar or cervical spine procedures",
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
     "submissionMethods": [
       "registry"
     ],
-    "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
     "overallAlgorithm": "simpleAverage",
-    "firstPerformanceYear": 2023,
     "strata": [
       {
         "name": "neckpain",
@@ -11099,140 +11115,140 @@
         "name": "legpain",
         "description": "Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID) in leg pain."
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Unplanned Hospital Readmission Following Spinal Fusion Surgery",
     "measureId": "SPINETRACK9",
+    "title": "Unplanned Hospital Readmission Following Spinal Fusion Surgery",
+    "description": "Percentage of patients with an unplanned readmission within 90 days following lumbar or cervical spine procedures",
+    "nqfId": null,
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "isInverse": true,
+    "isRiskAdjusted": false,
     "primarySteward": "AAOS Orthopaedic Quality Resource Center",
+    "firstPerformanceYear": 2020,
     "allowedVendors": [
       "5224253"
     ],
-    "description": "Percentage of patients with an unplanned readmission within 90 days following lumbar or cervical spine procedures",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": true,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2020,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Monitor and Improve Treatment Outcomes in Chronic Wound Healing",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "REGCLR8",
+    "title": "Monitor and Improve Treatment Outcomes in Chronic Wound Healing",
+    "description": "This measure is specifically for CHRONIC wounds. Those are wounds that have been present for an extended period of time and have not demonstrated healing. \nPercentage of patients presenting with a non-healing (chronic) wound (present for 6 weeks with no or limited response to treatment) who are currently visiting a provider responsible for their wound care,  who performs a re-assessment of the wound (The use of digital imaging to monitor the wound is encouraged) , and has used the information learned from that re-assessment to implement a change in treatment plan,  and whose wound healing rate has accelerated since implementation of the updated treatment plan.",
+    "nqfId": null,
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "Registry Clearinghouse",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "4117893"
     ],
-    "description": "This measure is specifically for CHRONIC wounds. Those are wounds that have been present for an extended period of time and have not demonstrated healing. \nPercentage of patients presenting with a non-healing (chronic) wound (present for 6 weeks with no or limited response to treatment) who are currently visiting a provider responsible for their wound care,  who performs a re-assessment of the wound (The use of digital imaging to monitor the wound is encouraged) , and has used the information learned from that re-assessment to implement a change in treatment plan,  and whose wound healing rate has accelerated since implementation of the updated treatment plan.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Provision of Feedback Following a Cognitive or Mental Status Assessment with Documentation of Understanding of Test Results and Subsequent Healthcare Plan with Timely Transmission of Results",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "MBHR18",
+    "title": "Provision of Feedback Following a Cognitive or Mental Status Assessment with Documentation of Understanding of Test Results and Subsequent Healthcare Plan with Timely Transmission of Results",
+    "description": "Percentage of patients, regardless of age, who received a standardized cognitive or mental status assessment followed by provision of feedback regarding test results and associated recommendations, who acknowledged understanding of test results and associated recommendations and healthcare plan.                                                                                                                                              \n\nAND                                                                \n\nPercentage of patients, regardless of age, for which the referring provider or patient receives reporting of assessment results within 14 days of the completion of feedback.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "4067715"
     ],
-    "description": "Percentage of patients, regardless of age, who received a standardized cognitive or mental status assessment followed by provision of feedback regarding test results and associated recommendations, who acknowledged understanding of test results and associated recommendations and healthcare plan.                                                                                                                                              \n\nAND                                                                \n\nPercentage of patients, regardless of age, for which the referring provider or patient receives reporting of assessment results within 14 days of the completion of feedback.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
     "measureSets": [],
-    "category": "quality",
-    "title": "Postoperative Ambulation",
-    "measureId": "AJRR7",
-    "primarySteward": "AAOS Orthopaedic Quality Resource Center",
-    "allowedVendors": [
-      "5224253"
-    ],
-    "description": "Percentage of patients ages 18 years and older, undergoing elective total hip and knee arthroplasty, who ambulated postoperatively on the day of surgery.",
-    "measureType": "process",
-    "isHighPriority": false,
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
     "submissionMethods": [
       "registry"
     ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": []
+  },
+  {
+    "measureId": "AJRR7",
+    "title": "Postoperative Ambulation",
+    "description": "Percentage of patients ages 18 years and older, undergoing elective total hip and knee arthroplasty, who ambulated postoperatively on the day of surgery.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
     "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
-    "overallAlgorithm": "simpleAverage",
+    "isRiskAdjusted": false,
+    "primarySteward": "AAOS Orthopaedic Quality Resource Center",
     "firstPerformanceYear": 2021,
+    "allowedVendors": [
+      "5224253"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "overallAlgorithm": "simpleAverage",
     "strata": [
       {
         "name": "hip",
@@ -11242,41 +11258,41 @@
         "name": "knee",
         "description": "represents total knee arthroplasty."
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Avoidance of Opioid Prescriptions for Closure and Reconstruction After Skin Cancer Resection",
     "measureId": "AAD18",
-    "primarySteward": "AAD’s DataDerm™",
-    "allowedVendors": [
-      "4649789"
-    ],
+    "title": "Avoidance of Opioid Prescriptions for Closure and Reconstruction After Skin Cancer Resection",
     "description": "Percentage of procedures in patients, aged 18 and older with a diagnosis of skin cancer, who had intermediate layer and/or complex linear closures OR reconstruction after skin cancer resection where opioid/narcotic therapy* was prescribed as first line therapy (as defined by a prescription in anticipation of or at time of surgery) for post-operative pain management by the reconstructing surgeon. (Inverse measure)",
+    "nqfId": null,
     "measureType": "process",
     "isHighPriority": true,
+    "isInverse": true,
+    "isRiskAdjusted": false,
+    "primarySteward": "AAD’s DataDerm™",
+    "firstPerformanceYear": 2021,
+    "allowedVendors": [
+      "4649789"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
     "submissionMethods": [
       "registry"
     ],
-    "isInverse": true,
-    "metricType": "registryMultiPerformanceRate",
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
     "overallAlgorithm": "overallStratumOnly",
-    "firstPerformanceYear": 2021,
     "strata": [
       {
         "name": "resection",
@@ -11290,89 +11306,41 @@
         "name": "overall",
         "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Continuation of Anticoagulation Therapy in the Office-based Setting for Closure and Reconstruction After Skin Cancer Resection Procedures",
     "measureId": "AAD17",
-    "primarySteward": "AAD’s DataDerm™",
-    "allowedVendors": [
-      "4649789"
-    ],
+    "title": "Continuation of Anticoagulation Therapy in the Office-based Setting for Closure and Reconstruction After Skin Cancer Resection Procedures",
     "description": "Percentage of procedures in patients, aged 18 and older with a diagnosis of skin cancer, on prescribed anticoagulation therapy, who had intermediate layer and/or complex linear closures OR reconstruction after skin cancer resection performed in the office-based setting where anticoagulant therapy was continued prior to surgery.\n\nThis measure is stratified by intermediate layer or complex linear closures AND reconstructive procedures.",
+    "nqfId": null,
     "measureType": "process",
     "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
     "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
-    "overallAlgorithm": "overallStratumOnly",
-    "firstPerformanceYear": 2021,
-    "strata": [
-      {
-        "name": "resection",
-        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
-      },
-      {
-        "name": "reconstruction",
-        "description": "Strata 2: Reconstruction after skin cancer resection"
-      },
-      {
-        "name": "overall",
-        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
-      }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ]
-  },
-  {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Avoidance of Post-operative Systemic Antibiotics for Office-based Closures and Reconstruction After Skin Cancer Procedures",
-    "measureId": "AAD16",
     "primarySteward": "AAD’s DataDerm™",
+    "firstPerformanceYear": 2021,
     "allowedVendors": [
       "4649789"
     ],
-    "description": "Percentage of procedures in patients aged 18 and older with a diagnosis of skin cancer who underwent intermediate layer or complex linear closure or reconstruction after skin cancer resection in the office-based* setting who were prescribed post-operative systemic antibiotics to be taken immediately following reconstruction surgery (inverse measure)\n\nThis measure is stratified by intermediate layer or complex linear closure or reconstructive procedures.",
-    "measureType": "process",
-    "isHighPriority": true,
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
     "submissionMethods": [
       "registry"
     ],
-    "isInverse": true,
-    "metricType": "registryMultiPerformanceRate",
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
     "overallAlgorithm": "overallStratumOnly",
-    "firstPerformanceYear": 2021,
     "strata": [
       {
         "name": "resection",
@@ -11386,507 +11354,550 @@
         "name": "overall",
         "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
       }
-    ],
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
+    "measureId": "AAD16",
+    "title": "Avoidance of Post-operative Systemic Antibiotics for Office-based Closures and Reconstruction After Skin Cancer Procedures",
+    "description": "Percentage of procedures in patients aged 18 and older with a diagnosis of skin cancer who underwent intermediate layer or complex linear closure or reconstruction after skin cancer resection in the office-based* setting who were prescribed post-operative systemic antibiotics to be taken immediately following reconstruction surgery (inverse measure)\n\nThis measure is stratified by intermediate layer or complex linear closure or reconstructive procedures.",
     "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Oncology: Mutation Testing for Stage IV Lung Cancer Completed Prior to the Start of Targeted Therapy",
-    "measureId": "PIMSH13",
-    "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
-    "allowedVendors": [
-      "8794712"
-    ],
-    "description": "Proportion of stage IV nsNSCLC patients tested for actionable biomarkers and received targeted therapy or chemotherapy based on biomarker results",
     "measureType": "process",
     "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ]
-  },
-  {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Antiemetic Therapy for Low- and Minimal-Emetic-Risk Antineoplastic Agents in the Infusion Center - Avoidance of Overuse (Lower Score - Better)",
-    "measureId": "PIMSH15",
-    "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
-    "allowedVendors": [
-      "8794712"
-    ],
-    "description": "Percentage of cancer patients aged 18 years and older treated with low- or minimal-emetic-risk antineoplastic agents in the infusion center who are administered inappropriate pre-treatment antiemetic therapy",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
     "isInverse": true,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
+    "isRiskAdjusted": false,
+    "primarySteward": "AAD’s DataDerm™",
+    "firstPerformanceYear": 2021,
+    "allowedVendors": [
+      "4649789"
+    ],
     "allowedPrograms": [
       "mips",
       "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "resection",
+        "description": "Strata 1: Intermediate layer or complex linear closures after skin cancer resection"
+      },
+      {
+        "name": "reconstruction",
+        "description": "Strata 2: Reconstruction after skin cancer resection"
+      },
+      {
+        "name": "overall",
+        "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+      }
     ]
   },
   {
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
+    "measureId": "PIMSH13",
+    "title": "Oncology: Mutation Testing for Stage IV Lung Cancer Completed Prior to the Start of Targeted Therapy",
+    "description": "Proportion of stage IV nsNSCLC patients tested for actionable biomarkers and received targeted therapy or chemotherapy based on biomarker results",
     "nqfId": null,
-    "lastPerformanceYear": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Appropriate Antiemetic Therapy for High- and Moderate-Emetic-Risk Antineoplastic Agents in the Infusion Center",
-    "measureId": "PIMSH16",
     "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "8794712"
     ],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": []
+  },
+  {
+    "measureId": "PIMSH15",
+    "title": "Antiemetic Therapy for Low- and Minimal-Emetic-Risk Antineoplastic Agents in the Infusion Center - Avoidance of Overuse (Lower Score - Better)",
+    "description": "Percentage of cancer patients aged 18 years and older treated with low- or minimal-emetic-risk antineoplastic agents in the infusion center who are administered inappropriate pre-treatment antiemetic therapy",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": true,
+    "isRiskAdjusted": false,
+    "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
+    "firstPerformanceYear": 2023,
+    "allowedVendors": [
+      "8794712"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": []
+  },
+  {
+    "measureId": "PIMSH16",
+    "title": "Appropriate Antiemetic Therapy for High- and Moderate-Emetic-Risk Antineoplastic Agents in the Infusion Center",
     "description": "Percentage of cancer patients aged 18 years and older treated with high- or moderate-emetic-risk antineoplastic agents in the infusion center who are administered appropriate pre-treatment antiemetic therapy",
+    "nqfId": null,
     "measureType": "process",
     "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
     "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
+    "isRiskAdjusted": false,
+    "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
     "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
+    "allowedVendors": [
+      "8794712"
+    ],
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Cement Use for Displaced Femoral Neck Fracture in Older Adults",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "AJRR10",
+    "title": "Cement Use for Displaced Femoral Neck Fracture in Older Adults",
+    "description": "Percentage of patients ages 70 years and older, undergoing hip arthroplasty with a displaced femoral neck fracture, who received a cemented femoral stem",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "AAOS Orthopaedic Quality Resource Center",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5224253"
     ],
-    "description": "Percentage of patients ages 70 years and older, undergoing hip arthroplasty with a displaced femoral neck fracture, who received a cemented femoral stem",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Ankylosing Spondylitis: Controlled Disease Or Improved Disease Function",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "UREQA10",
+    "title": "Ankylosing Spondylitis: Controlled Disease Or Improved Disease Function",
+    "description": "Percentage of qualifying visits for patients aged 18 years and older with a diagnosis of ankylosing spondylitis whose most recent BASDAI score is less than 4 OR who were in suboptimal disease control (BASDAI score >= 4.0) and who have seen an improvement by at least one point over the previous BASDAI score within the last 12 months.",
+    "nqfId": null,
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics)",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "1649514"
     ],
-    "description": "Percentage of qualifying visits for patients aged 18 years and older with a diagnosis of ankylosing spondylitis whose most recent BASDAI score is less than 4 OR who were in suboptimal disease control (BASDAI score >= 4.0) and who have seen an improvement by at least one point over the previous BASDAI score within the last 12 months.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Use of Structured Reporting for Urine Cytology Specimens",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "QMM25",
+    "title": "Use of Structured Reporting for Urine Cytology Specimens",
+    "description": "The percentage of Final Reports on Urine cytology specimens, for patients of any age, that utilize The Paris System (TPS) for reporting urinary cytology.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "MSN Healthcare Solutions QCDR II",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "7418330"
     ],
-    "description": "The percentage of Final Reports on Urine cytology specimens, for patients of any age, that utilize The Paris System (TPS) for reporting urinary cytology.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "High-Risk Human Papillomavirus Status to Inform Patient Prognosis in Oropharyngeal Squamous Cell Carcinoma",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "CAP39",
+    "title": "High-Risk Human Papillomavirus Status to Inform Patient Prognosis in Oropharyngeal Squamous Cell Carcinoma",
+    "description": "Percentage of pathology reports for suspected or confirmed invasive oropharyngeal squamous cell carcinoma (OPSCC) with high-risk HPV status documented",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "Pathologists Quality Registry",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5688621"
     ],
-    "description": "Percentage of pathology reports for suspected or confirmed invasive oropharyngeal squamous cell carcinoma (OPSCC) with high-risk HPV status documented",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Discontinuation of  Proton Pump Inhibitors for patients who do not meet criteria for long-term utilization.",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "THEPQR2",
+    "title": "Discontinuation of  Proton Pump Inhibitors for patients who do not meet criteria for long-term utilization.",
+    "description": "The percentage of patients on a Proton Pump Inhibitor with an appropriately documented indication or an order for discontinuation for not meeting criteria for long-term utilization.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "The PQR",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "1725296"
     ],
-    "description": "The percentage of patients on a Proton Pump Inhibitor with an appropriately documented indication or an order for discontinuation for not meeting criteria for long-term utilization.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Low dose cancer screening recommendation for computed tomography (CT) and computed tomography angiography (CTA) of chest with diagnosis of Emphysema.",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "QMM23",
+    "title": "Low dose cancer screening recommendation for computed tomography (CT) and computed tomography angiography (CTA) of chest with diagnosis of Emphysema.",
+    "description": "Percentage of emphysema patients, aged 50-77 at the time of service, undergoing a CT/CTA of the chest with a recommendation made to consider patient for low dose cancer screening documented in the Final Report.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "MSN Healthcare Solutions, LLC",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "6394618"
     ],
-    "description": "Percentage of emphysema patients, aged 50-77 at the time of service, undergoing a CT/CTA of the chest with a recommendation made to consider patient for low dose cancer screening documented in the Final Report.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "High Intensity Statin Prescribed for Acute and Subacute Ischemic Stroke and Transient Ischemic Attack (TIA)",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "THEPQR1",
-    "primarySteward": "The PQR",
-    "allowedVendors": [
-      "1725296"
-    ],
+    "title": "High Intensity Statin Prescribed for Acute and Subacute Ischemic Stroke and Transient Ischemic Attack (TIA)",
     "description": "Acute and subacute ischemic stroke and confirmed Transient Ischemic Attack (TIA) patients prescribed or continuing to take a high intensity statin at time of hospital discharge",
+    "nqfId": null,
     "measureType": "process",
     "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
     "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
+    "isRiskAdjusted": false,
+    "primarySteward": "The PQR",
     "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
+    "allowedVendors": [
+      "1725296"
+    ],
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Acute Rib Fracture Numbering on ED Trauma Patients",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "QMM24",
+    "title": "Acute Rib Fracture Numbering on ED Trauma Patients",
+    "description": "All patients, regardless of age, who undergo a CT/CTA of the chest in the Emergency Department with a diagnosis of an acute rib fracture(s), who have documentation of rib fracture numbering, laterality of rib fracture(s), and presence or absence of ribs fractured in two or more places.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "MSN Healthcare Solutions, LLC",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "6394618"
     ],
-    "description": "All patients, regardless of age, who undergo a CT/CTA of the chest in the Emergency Department with a diagnosis of an acute rib fracture(s), who have documentation of rib fracture numbering, laterality of rib fracture(s), and presence or absence of ribs fractured in two or more places.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Psoriasis – Appropriate Assessment & Treatment of Severe Psoriasis",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "AAD15",
+    "title": "Psoriasis – Appropriate Assessment & Treatment of Severe Psoriasis",
+    "description": "Percentage of patients with a diagnosis of severe psoriasis without a documented Body Surface Area (BSA) or a documented BSA greater than 10% for whom phototherapy or an oral systemic or biologic medication was prescribed.",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "AAD’s DataDerm™",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "4649789"
     ],
-    "description": "Percentage of patients with a diagnosis of severe psoriasis without a documented Body Surface Area (BSA) or a documented BSA greater than 10% for whom phototherapy or an oral systemic or biologic medication was prescribed.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Low Flow Inhalational General Anesthesia",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "ABG44",
+    "title": "Low Flow Inhalational General Anesthesia",
+    "description": "Percentage of patients aged 18 years or older, who undergo an elective procedure lasting 30 minutes or longer requiring inhalational general anesthesia who during the maintenance phase of the anesthetic have a total fresh gas flow less than or equal to 1 L/min (less than or equal to 2 L/min for Sevoflurane).",
+    "nqfId": null,
+    "measureType": "efficiency",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "ABG QCDR",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5551268"
     ],
-    "description": "Percentage of patients aged 18 years or older, who undergo an elective procedure lasting 30 minutes or longer requiring inhalational general anesthesia who during the maintenance phase of the anesthetic have a total fresh gas flow less than or equal to 1 L/min (less than or equal to 2 L/min for Sevoflurane).",
-    "measureType": "efficiency",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Patient-Reported Understanding of Discharge Diagnosis and Plan of Care after Emergency Department Visit",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "ECPR58",
+    "title": "Patient-Reported Understanding of Discharge Diagnosis and Plan of Care after Emergency Department Visit",
+    "description": "Percentage of Adult Patients Who Completed a Survey Regarding Their Emergency Department Visit Who Reported Understanding of Their Discharge Diagnosis and Plan of Care",
+    "nqfId": null,
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
     "primarySteward": "E-CPR (Emergency - Clinical Performance Registry)",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "1718371"
     ],
-    "description": "Percentage of Adult Patients Who Completed a Survey Regarding Their Emergency Department Visit Who Reported Understanding of Their Discharge Diagnosis and Plan of Care",
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
-  },
-  {
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
-    "lastPerformanceYear": null,
-    "isRiskAdjusted": false,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "measureSets": [],
-    "category": "quality",
-    "title": "Avoidance of Acute High-Risk Prescriptions in geriatric patients at discharge",
+    "clinicalGuidelineChanged": []
+  },
+  {
     "measureId": "ACEP63",
+    "title": "Avoidance of Acute High-Risk Prescriptions in geriatric patients at discharge",
+    "description": "The percentage of adults 65 years of age and older who were prescribed an Acute High-Risk Medication at discharge",
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": true,
+    "isRiskAdjusted": false,
     "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
+    "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5133825"
     ],
-    "description": "The percentage of adults 65 years of age and older who were prescribed an Acute High-Risk Medication at discharge",
-    "measureType": "process",
-    "isHighPriority": true,
-    "submissionMethods": [
-      "registry"
-    ],
-    "isInverse": true,
-    "metricType": "registrySinglePerformanceRate",
-    "firstPerformanceYear": 2023,
-    "isRegistryMeasure": true,
     "allowedPrograms": [
       "mips",
       "pcf"
-    ]
+    ],
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": []
   },
   {
     "measureId": "AAAAI17",
@@ -12094,6 +12105,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -12104,9 +12118,6 @@
         "name": "overall",
         "description": "NUMERATOR CRITERIA 2: All patients that were diagnosed with a recurrent melanoma in the current reporting year."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -14115,6 +14126,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
@@ -14129,9 +14143,6 @@
         "name": "head",
         "description": "Percent of CT Head/brain exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -14393,6 +14404,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -14403,9 +14417,6 @@
         "name": "overall",
         "description": "The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -14649,6 +14660,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -14671,9 +14685,6 @@
         "name": "glucoseEducation",
         "description": "Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -14746,6 +14757,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -14760,9 +14774,6 @@
         "name": "femoralAxillary",
         "description": " Percentage of patients, regardless of age, who undergo placement of a peripheral intra-arterial line in the femoral or axillary artery for whom the arterial line was inserted with all indicated elements of maximal sterile barrier technique, hand hygiene, skin preparation and, if ultrasound is used, sterile ultrasound technique is followed"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -15182,6 +15193,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -15200,9 +15214,6 @@
         "name": "overall",
         "description": "The performance rate is the average of the 3 WHI risk categories described in the risk stratification document."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -15231,6 +15242,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -15249,9 +15263,6 @@
         "name": "overall",
         "description": "The performance rate is the average of the 3 stratified rates"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -15756,6 +15767,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -15786,9 +15800,6 @@
         "name": "serration&FollowUp",
         "description": "Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16041,6 +16052,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -16059,9 +16073,6 @@
         "name": "overall",
         "description": "SUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16660,6 +16671,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
@@ -16674,9 +16688,6 @@
         "name": "20/400",
         "description": "Includes eyes of patients with a pre-operative best-corrected visual acuity of 20/400 and a 1 line or better improvement in the post-operative best-corrected distance visual acuity from pre-operative visual acuity"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16795,6 +16806,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
@@ -16809,9 +16823,6 @@
         "name": "comorbidities&20/400",
         "description": "Includes eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16870,6 +16881,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
@@ -16884,9 +16898,6 @@
         "name": "20/400",
         "description": "Includes eyes of patients with a pre-operative visual acuity of 20/400 who had an improvement from their preoperative visual acuity of 1 or more lines between 3 and 6 months postoperatively"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16918,6 +16929,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -16944,9 +16958,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -16978,6 +16989,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17004,9 +17018,6 @@
         "name": "nonOpRisk",
         "description": " A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17038,6 +17049,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17064,9 +17078,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17098,6 +17109,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17124,9 +17138,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17158,6 +17169,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17184,9 +17198,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17218,6 +17229,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17244,9 +17258,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via KOS) proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17278,6 +17289,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17304,9 +17318,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17338,6 +17349,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17364,9 +17378,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measured via DASH) proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17398,6 +17409,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17424,9 +17438,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17458,6 +17469,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17484,9 +17498,6 @@
         "name": "nonOpRisk",
         "description": "A risk-adjusted MCID proportional difference will be reported where the difference between the risk model predicted and observed MCID (measure via NDI) proportion will be reported."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -17845,6 +17856,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -17855,9 +17869,6 @@
         "name": "overall",
         "description": "Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-10 months after index date"
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -18771,6 +18782,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "simpleAverage",
     "strata": [
       {
@@ -18785,9 +18799,6 @@
         "name": "maintnCareAt180Days",
         "description": "Percentage of patients with documentation of a clinical decision to adjust or maintain their care between 7 and 180 days from the comprehensive index assessment."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -18846,6 +18857,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -18856,9 +18870,6 @@
         "name": "overall",
         "description": "The percentage of individuals for whom a suicide safety plan is initiated, reviewed, or updated AND reviewed and updated in collaboration between the individual and their clinician within 120 days after initiation (+/- 30 days)."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -19677,6 +19688,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -19691,9 +19705,6 @@
         "name": "overall",
         "description": "The average of the two risk stratified buckets which will be the performance rate in the JSON or XML file submitted."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -19752,6 +19763,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -19770,9 +19784,6 @@
         "name": "overall",
         "description": "The performance rate is the average of the three WHI stratified groups described in our risk stratification document."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   },
   {
@@ -19801,6 +19812,9 @@
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
     "metricType": "registryMultiPerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ],
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
@@ -19819,9 +19833,6 @@
         "name": "overall",
         "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
       }
-    ],
-    "submissionMethods": [
-      "registry"
     ]
   }
 ]
