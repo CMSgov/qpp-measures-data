@@ -48,7 +48,16 @@ function createJson() {
     setCategoriesArray(category, measuresOfCategory);
 
     writeToJsonFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.json`);
-    writeToCSVFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.csv`);
+
+    //strata field is not suited for CSVs, change to bool value (TRUE if exists).
+    if (['qcdr', 'quality'].includes(category)) {
+        const simplifiedForCSV = measuresOfCategory.map(measure => {
+            return { ...measure, strata: !!measure.strata }
+        });
+        writeToCSVFile(simplifiedForCSV, `tmp/${performanceYear}/${category}-measures.csv`);
+    } else {
+        writeToCSVFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.csv`);
+    }
 }
 
 function getAllQcdrOrQualityMeasures() {
