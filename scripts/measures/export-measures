@@ -21,7 +21,6 @@ if (( $currentPerformanceYear >= 2018 )) && (( $currentPerformanceYear <= $maxPe
     node dist/measures/json-to-csv.js \
       $currentPerformanceYear $category
 
-    json2csv -i tmp/$currentPerformanceYear/$category-measures.json -o tmp/$currentPerformanceYear/$category-measures.csv
   done
   
   echo -e "${Green}CSVs created: tmp/measures.csv"
