@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
+const measuresData = require('../../../index');
 
 const UNIQUE_COLUMN_CONSTRAINT = [
   'measureId',
@@ -137,7 +138,7 @@ const mergeBenchmarkFiles = (benchmarkFileNames, benchmarkJsonDir) => {
       if (isPerformanceBenchmark) {
         benchmark = processPerformanceBenchmark(benchmark);
       }
-      const benchmarkKey = getBenchmarkKey(!isPerformanceBenchmark ? benchmark : {...benchmark, benchmarkYear: benchmark.performanceYear - 2});
+      const benchmarkKey = getBenchmarkKey(!isPerformanceBenchmark ? benchmark : { ...benchmark, benchmarkYear: benchmark.performanceYear - 2 });
       if (mergedBenchmarks.has(benchmarkKey) && !_.isEqual(mergedBenchmarks.get(benchmarkKey), benchmark)) {
         if (!isPerformanceBenchmark) {
           mergeConflicts.push({
@@ -196,9 +197,44 @@ const validateUniqueConstraints = (benchmarks) => {
   }
 };
 
+/**
+ * Function to ensure that the benchmarks are all associated with existing measures for that year
+ * @param {[{
+ *   measureId: String,
+ *   performanceYear: Number,
+ *   benchmarkYear: Number,
+ *   submissionMethod: String,
+ *   deciles: [Number],
+ *   isToppedOut: Boolean,
+ *   isToppedOutByProgram: Boolean
+ * }]} benchmarks - the collection of benchmarks to evaluate
+ * @returns {void}
+ */
+const validateMeasureIdsConstraints = (benchmarks) => {
+  benchmarks = benchmarks || [];
+  let failedCount = 0;
+  for (const benchmark of benchmarks) {
+    if (measuresData.getMeasuresData(benchmark.performanceYear)
+      .find(measure => measure.measureId === benchmark.measureId)) {
+      continue;
+    } else {
+      console.log('Valid measureId constraint failed for benchmark:');
+      UNIQUE_COLUMN_CONSTRAINT.forEach(key => {
+        console.log(`  ${key}: ${benchmark[key]}`);
+      });
+      failedCount++;
+    }
+  }
+  if (failedCount > 0) {
+    console.log('Invalid measureIds found. Exiting.');
+    process.exit(failedCount);
+  }
+};
+
 module.exports = {
   getOrderedFileNames,
   getBenchmarkKey,
   mergeBenchmarkFiles,
-  validateUniqueConstraints
+  validateUniqueConstraints,
+  validateMeasureIdsConstraints
 };
