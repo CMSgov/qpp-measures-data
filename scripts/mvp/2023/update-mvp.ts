@@ -23,6 +23,7 @@ export function updateMvps(performanceYear: string) {
   }
 
   index.createMVPDataFile(performanceYear);
+  index.updateProgramNames(performanceYear);
 }
 
 /* istanbul ignore next */

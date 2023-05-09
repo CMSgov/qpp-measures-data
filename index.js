@@ -18,6 +18,50 @@ exports.getValidPerformanceYears = function() {
 
 /**
  *
+ * @return {void}
+ * Adds any new program name fields from the mvp.json file for the given performance year
+ */
+exports.updateProgramNames = function(performanceYear) {
+  let programNames;
+  const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
+  const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
+
+  let mvpData = [];
+
+  try {
+    programNames = JSON.parse(fs.readFileSync(programNamesFilePath));
+    mvpData = JSON.parse(
+      fs.readFileSync(mvpFilePath));
+
+    mvpData.forEach(mvp => {
+      if (!programNames[mvp.mvpId]) {
+        programNames[mvp.mvpId] = mvp.mvpId;
+      }
+    });
+
+    fs.writeFileSync(programNamesFilePath, JSON.stringify(programNames, null, 2));
+  } catch (e) {
+    console.log('Error parsing the program-names.json or mvp.json file: ' + ' --> ' + e);
+  }
+};
+
+/**
+ *
+ * @return {{}} - program names -
+ * An object keyed by program name containing the current program names
+ */
+exports.getProgramNames = function() {
+  const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
+
+  try {
+    return JSON.parse(fs.readFileSync(programNamesFilePath));
+  } catch (e) {
+    console.log('Error parsing the program-names.json file: ' + ' --> ' + e);
+  }
+};
+
+/**
+ *
  * @return {{}} - benchmarks data -
  * An object keyed by performance year with array values
  * containing the benchmarks for that performance year

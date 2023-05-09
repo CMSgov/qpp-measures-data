@@ -24673,9 +24673,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "registry"
+    ],
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -40696,7 +40698,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "nonProportion",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -40725,7 +40727,7 @@
     "primarySteward": "Centers for Medicare & Medicaid Services",
     "firstPerformanceYear": 2022,
     "lastPerformanceYear": null,
-    "isInverse": false,
+    "isInverse": true,
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
@@ -47562,7 +47564,8 @@
     "metricType": "registrySinglePerformanceRate",
     "submissionMethods": [
       "registry"
-    ]
+    ],
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IRIS23",
@@ -48352,9 +48355,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS12",
@@ -48417,9 +48418,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS13",
@@ -48482,9 +48481,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS14",
@@ -48547,9 +48544,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS16",
@@ -48612,9 +48607,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS17",
@@ -48677,9 +48670,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS18",
@@ -48742,9 +48733,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS19",
@@ -48807,9 +48796,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "IROMS20",
@@ -48872,9 +48859,7 @@
     "submissionMethods": [
       "registry"
     ],
-    "historic_benchmarks": {
-      "registry": "removed"
-    }
+    "historic_benchmarks": {}
   },
   {
     "measureId": "KEET01",

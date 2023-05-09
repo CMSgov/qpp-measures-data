@@ -65,12 +65,29 @@ if (performanceYear >= 2020) {
   MCC_BENCHMARK_CSV_COLUMNS.push('isHighPriority');
 }
 
-// New 2022 data update
-if (performanceYear >= 2022) {
+// New 2023 data update
+if (performanceYear >= 2023) {
   BENCHMARK_CSV_COLUMNS.push('isInverse');
   BENCHMARK_CSV_COLUMNS.push('metricType');
   MCC_BENCHMARK_CSV_COLUMNS.push('isInverse');
   MCC_BENCHMARK_CSV_COLUMNS.push('metricType');
+
+  const decile3Index = BENCHMARK_CSV_COLUMNS.findIndex((string) => string === 'decile3');
+  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile2');
+  BENCHMARK_CSV_COLUMNS.splice(decile3Index, 0, 'decile1');
+
+  const isHighPriorityIndex = BENCHMARK_CSV_COLUMNS.findIndex((string) => string === 'isHighPriority');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile99');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile90');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile80');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile70');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile60');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile50');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile40');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile30');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile20');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile10');
+  BENCHMARK_CSV_COLUMNS.splice(isHighPriorityIndex, 0, 'percentile1');
 }
 
 if (benchmarkYear && performanceYear) {
@@ -86,7 +103,7 @@ if (benchmarkYear && performanceYear) {
   process.stdin.on('end', function() {
     // Quote option update to handle 2020 data
     const columns = benchmarkType === 'MCC' ? MCC_BENCHMARK_CSV_COLUMNS : BENCHMARK_CSV_COLUMNS;
-    parse(benchmarksData, {columns, from: 3, quote: '"'}, function(err, records) {
+    parse(benchmarksData, {columns, from: 2, quote: '"'}, function(err, records) {
       if (err) {
         console.log(err);
       } else {
