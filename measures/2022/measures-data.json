@@ -2205,9 +2205,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -2268,9 +2270,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -14490,9 +14494,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -16893,10 +16899,15 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "icdImpacted": [
+      "registry",
+      "claims"
+    ],
+    "isClinicalGuidelineChanged": true,
+    "isIcdImpacted": true,
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -23718,6 +23729,9 @@
       }
     ],
     "eMeasureUuid": "2c928085-74e6-3120-0174-fa1e7b930317",
+    "historic_benchmarks": {
+      "cmsWebInterface": "removed"
+    },
     "eligibilityOptions": [
       {
         "minAge": 18,
@@ -24378,10 +24392,7 @@
           }
         ]
       }
-    ],
-    "historic_benchmarks": {
-      "cmsWebInterface": "removed"
-    }
+    ]
   },
   {
     "title": "Controlling High Blood Pressure",
@@ -24401,9 +24412,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -24756,9 +24769,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -25208,9 +25223,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -25732,9 +25749,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -25783,9 +25802,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -25822,9 +25843,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -25862,9 +25885,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -25902,9 +25927,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -28182,9 +28209,11 @@
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
     "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
+    "isClinicalGuidelineChanged": true,
     "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
+    "clinicalGuidelineChanged": [
+      "electronicHealthRecord"
+    ],
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
@@ -28677,9 +28706,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -30586,9 +30617,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -30622,9 +30655,12 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry",
+      "claims"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
@@ -40096,9 +40132,11 @@
     "category": "quality",
     "isRegistryMeasure": false,
     "isRiskAdjusted": false,
-    "icdImpacted": [],
+    "icdImpacted": [
+      "registry"
+    ],
     "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
+    "isIcdImpacted": true,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
