@@ -9,7 +9,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 import appRoot from 'app-root-path';
 
 import { mergeEcqmEhrLinks } from '../lib/merge-ecqm-ehr-links';
@@ -39,7 +39,7 @@ const claimsRelatedData = path.join(appRoot + '', `util/measures/${currentPerfor
 const measures = JSON.parse(
     fs.readFileSync(measuresDataPath, 'utf8')
 );
-const parseConfig = { columns: true, skip_empty_lines: true };
+const parseConfig = { columns: true, skip_empty_lines: true, bom: true };
 
 function getFileDataIfExists(filePath: string, isCSV: boolean = false) {
     if (fs.existsSync(filePath)) {

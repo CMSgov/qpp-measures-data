@@ -5,7 +5,7 @@
 *  This script can be removed once we no longer support CSV change requests.
 */
 import _ from 'lodash';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 
 import { warning } from '../../logger';
 import {
@@ -59,7 +59,7 @@ export function convertCsvToJson(csv: any) {
 
     //remove any empty rows
     _.remove(mappedCsv, _.isEmpty);
-    
+
     return mappedCsv;
 }
 
@@ -185,8 +185,8 @@ function csvFieldToBoolean(field: string, value: string): boolean {
 
 function prepareCsv(csv: any): any {
     //parse csv.
-    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true });
-    
+    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
+
     //trim keys in parsed csv.
     for (let i = 0; i < parsedCsv.length; i++) {
         Object.keys(parsedCsv[i]).forEach((key) => {
@@ -197,10 +197,10 @@ function prepareCsv(csv: any): any {
             }
         });
     }
-    
+
     //check if the CR includes a leading examples row, and remove.
     if (parsedCsv[0]['Category'].includes('Value')) {
-        parsedCsv.splice(0,1);
+        parsedCsv.splice(0, 1);
     }
 
     return parsedCsv;
