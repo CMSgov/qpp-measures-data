@@ -9,8 +9,5 @@
 #### Execution in Docker
 
 
-    docker-compose run  data-analysis python tests/single_source_csv/single_source_csv_comp.py --base data/2021_Claims_SingleSource_v1.3.csv --new data/2022_Claims_SingleSource_v6.0_08-12-2022.csv --measure 39
+    docker-compose run  data-analysis python tests/single_source_csv/single_source_csv_comp.py --base data/2021_Claims_SingleSource_v1.3.csv --new data/2022_Claims_SingleSource_v6.0_08-12-2022.csv --measure 14
 
-
-
-d
