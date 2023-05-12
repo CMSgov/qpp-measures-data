@@ -1,7 +1,7 @@
 version: "2"
 services:
   data-analysis:
-    image: bayesimpact/c2q-data-analysis
+    build: . 
     volumes:
       - ./:/home/jovyan/work:rw
       - ../measures/:/home/jovyan/measures:rw
