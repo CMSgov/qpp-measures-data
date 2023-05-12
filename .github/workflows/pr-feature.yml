@@ -17,5 +17,13 @@ jobs:
           node-version: 12
       - name: Install Dependencies
         run: npm ci
+        if: failure()
+        with:
+          name: npm-logs
+          path: ~/.npm/_logs
       - name: Run Tests
         run: npm test
+        if: failure()
+        with:
+          name: npm-logs
+          path: ~/.npm/_logs
