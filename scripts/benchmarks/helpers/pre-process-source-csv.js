@@ -35,7 +35,7 @@ try {
 }
 
 // Read source data line by line and convert
-parser.on('readable', function () {
+parser.on('readable', function() {
   let record;
 
   while (record = parser.read()) {
@@ -83,12 +83,12 @@ parser.on('readable', function () {
 });
 
 // Catch any parser error
-parser.on('error', function (err) {
+parser.on('error', function(err) {
   console.error(err.message);
 });
 
 // Write converted data to target file
-parser.on('end', function () {
+parser.on('end', function() {
   output.unshift(secline);
   output.unshift(topline);
   fs.writeFileSync(targetFile, output.join(''));
