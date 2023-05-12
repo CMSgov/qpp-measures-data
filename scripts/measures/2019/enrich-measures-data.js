@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const currentYear = 2019;
 const cpcPlusGroups = require('../../../util/measures/' + currentYear + '/cpc+-measure-groups.json');

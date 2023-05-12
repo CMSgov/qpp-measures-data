@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const currentYear = 2018;
 const piRelations = require('../../../util/measures/' + currentYear + '/pi-measure-relations.json');
