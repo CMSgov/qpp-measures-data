@@ -6,7 +6,7 @@
  */
 
 import appRoot from 'app-root-path';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
@@ -23,7 +23,7 @@ const measuresJson = JSON.parse(
 );
 const strata = parse(
   fs.readFileSync(path.join(appRoot + "", strataPath), "utf8"),
-  { columns: true, skip_empty_lines: true }
+  { columns: true, skip_empty_lines: true, bom: true }
 );
 
 export function ingestStrata() {

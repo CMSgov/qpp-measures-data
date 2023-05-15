@@ -3,7 +3,7 @@ const assert = chai.assert;
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const year = 2017;
 const mipsDataFormat = require('../../../index.js');

@@ -1,5 +1,5 @@
 // Libraries
-const parse = require('csv-parse');
+const parse = require('csv-parse').parse;
 const _ = require('lodash');
 // Constants
 // Note: Older benchmarks CSVs provided to us (and perhaps future ones)
@@ -103,12 +103,12 @@ if (benchmarkYear && performanceYear) {
   process.stdin.on('end', function() {
     // Quote option update to handle 2020 data
     const columns = benchmarkType === 'MCC' ? MCC_BENCHMARK_CSV_COLUMNS : BENCHMARK_CSV_COLUMNS;
-    parse(benchmarksData, {columns, from: 2, quote: '"'}, function(err, records) {
+    parse(benchmarksData, { columns, from: 2, quote: '"' }, function(err, records) {
       if (err) {
         console.log(err);
       } else {
         records.forEach(function(record) {
-          const benchmark = benchmarkType === 'MCC' ? formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear, benchmarkType}) : formatBenchmarkRecord(record, {benchmarkYear: benchmarkYear, performanceYear: performanceYear});
+          const benchmark = benchmarkType === 'MCC' ? formatBenchmarkRecord(record, { benchmarkYear: benchmarkYear, performanceYear: performanceYear, benchmarkType }) : formatBenchmarkRecord(record, { benchmarkYear: benchmarkYear, performanceYear: performanceYear });
 
           if (benchmark) benchmarks.push(benchmark);
         });

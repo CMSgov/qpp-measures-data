@@ -4,6 +4,7 @@
 
 Run:
 ```
+nvm use
 npm install
 ```
 
@@ -25,6 +26,7 @@ $YEAR refers to the performance year; this command-line argument is required.  $
 To regenerate and validate data, do the following:
 
 ```
+nvm use
 npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json
 npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json
 npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
@@ -35,6 +37,7 @@ npm run build:clinical-clusters     # generates clinical-clusters/clinical-clust
 To export CSVs of the measures data (one for each category):
 
 ```
+nvm use
 npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
 ```
 
@@ -73,7 +76,7 @@ For 2018-2019, only 'full images' of benchmark data are accepted; the csv must c
   To add or update benchmarks, rename your csv to 'benchmarks.csv'
   and place that file in staging/$YEAR/benchmarks/. 
   Replace any existing files of the same name.
-  Run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
+  Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
   $YEAR refers to the performance year you are looking to update. 
   See `build-benchmarks` for more detail.
 
@@ -89,7 +92,7 @@ For 2018-2019, only 'full images' of benchmark data are accepted; the csv must c
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
-Each performance year, we will receive a file named `mvp.json` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. Then run `npm run update:mvp` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.json`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
+Each performance year, we will receive a file named `mvp.json` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run update:mvp` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.json`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
 
 ## Testing
 

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 const mergePiLinks = require('../lib/merge-pi-links');
 
 const measuresDataPath = process.argv[2];
