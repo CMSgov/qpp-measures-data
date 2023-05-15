@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const mergeEcqmEhrLinks = require('../lib/merge-ecqm-ehr-links');
 const mergeWebInterfaceLinks = require('../lib/merge-web-interface-links');

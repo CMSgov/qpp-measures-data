@@ -1,7 +1,7 @@
 /* eslint no-cond-assign: off */
 
 // Libraries
-const parse = require('csv-parse');
+const parse = require('csv-parse').parse;
 const path = require('path');
 
 const fs = require('fs');

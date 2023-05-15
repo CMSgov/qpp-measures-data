@@ -8,7 +8,7 @@
 
 // Libraries
 const fs = require('fs');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 const path = require('path');
 
 // Some measures have an NqfId (NQF: National Quality Forum) of '0005'

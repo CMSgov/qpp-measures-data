@@ -19,7 +19,7 @@
  */
 const fs = require('fs');
 const _ = require('lodash');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const MAX_SPECIALITY_SET_SIZE = 6;
 const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020, 2021, 2022];
