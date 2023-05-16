@@ -294,19 +294,20 @@ const formatBenchmarkRecord = function(record, options) {
     metricType: options.performanceYear >= 2022 ? record.metricType : undefined,
     isToppedOutByProgram: formatIsToppedOutByProgram(record.isToppedOutByProgram),
     deciles,
-    percentiles: {
-      1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
-      10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
-      20: record.percentile20 ? parseFloat(record.percentile20) : undefined,
-      30: record.percentile30 ? parseFloat(record.percentile30) : undefined,
-      40: record.percentile40 ? parseFloat(record.percentile40) : undefined,
-      50: record.percentile50 ? parseFloat(record.percentile50) : undefined,
-      60: record.percentile60 ? parseFloat(record.percentile60) : undefined,
-      70: record.percentile70 ? parseFloat(record.percentile70) : undefined,
-      80: record.percentile80 ? parseFloat(record.percentile80) : undefined,
-      90: record.percentile90 ? parseFloat(record.percentile90) : undefined,
-      99: record.percentile99 ? parseFloat(record.percentile99) : undefined
-    }
+    percentiles: record.percentile1
+    ? {
+        1: record.percentile1 ? parseFloat(record.percentile1) : undefined,
+        10: record.percentile10 ? parseFloat(record.percentile10) : undefined,
+        20: record.percentile20 ? parseFloat(record.percentile20) : undefined,
+        30: record.percentile30 ? parseFloat(record.percentile30) : undefined,
+        40: record.percentile40 ? parseFloat(record.percentile40) : undefined,
+        50: record.percentile50 ? parseFloat(record.percentile50) : undefined,
+        60: record.percentile60 ? parseFloat(record.percentile60) : undefined,
+        70: record.percentile70 ? parseFloat(record.percentile70) : undefined,
+        80: record.percentile80 ? parseFloat(record.percentile80) : undefined,
+        90: record.percentile90 ? parseFloat(record.percentile90) : undefined,
+        99: record.percentile99 ? parseFloat(record.percentile99) : undefined
+    } : undefined,
   };
 };
 

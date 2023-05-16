@@ -9,7 +9,10 @@ const fs = require('fs');
 const programYear = process.argv[2];
 
 const topline = 'Table 2: Historical MIPS Quality Measure Benchmark Results; created using PY2018 data and PY2020 Eligibility Rules,,,,,,,,,,,,,,,,,';
-const secline = '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_1,Decile_2,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority';
+//Decile_1 and Decile_2 should not exist for before 2022.
+const secline = programYear > 2021
+  ? '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_1,Decile_2,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority'
+  : '\n' + 'Measure_Name,Measure_ID,Collection_Type,Measure_Type,Benchmark,Standard_Deviation,Average,Decile_3,Decile_4,Decile_5,Decile_6,Decile_7,Decile_8,Decile_9,Decile_10,Topped_Out,Seven_Point_Cap,High_Priority';
 const output = [];
 const convertedrecord = [];
 
@@ -17,7 +20,8 @@ const convertedrecord = [];
 const parser = parse({
   delimiter: ',',
   from: 1,
-  columns: true
+  columns: true,
+  bom: true
 });
 
 // File containing source data to be converted
