@@ -103,7 +103,7 @@ if (benchmarkYear && performanceYear) {
   process.stdin.on('end', function() {
     // Quote option update to handle 2020 data
     const columns = benchmarkType === 'MCC' ? MCC_BENCHMARK_CSV_COLUMNS : BENCHMARK_CSV_COLUMNS;
-    parse(benchmarksData, { columns, from: 2, quote: '"' }, function(err, records) {
+    parse(benchmarksData, { columns, from: 2, quote: '"', bom: true }, function(err, records) {
       if (err) {
         console.log(err);
       } else {
