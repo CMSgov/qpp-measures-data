@@ -17,8 +17,8 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
 
     def setup_report_dir(self):
         current_dir = Path().absolute()
-        output_dir = current_dir / "json_report"
-        source_dir = current_dir.parent.parent / "data"
+        output_dir = current_dir / "tests" / "single_source_json" / "json_report"
+        source_dir = current_dir
         os.makedirs(output_dir, exist_ok=True)
         self.output_dir = output_dir
         self.source_dir = source_dir
@@ -176,8 +176,8 @@ class SingleSourceJsonComparisonRunner(StringFormatterMixin):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Parse arguments')
-    parser.add_argument('--base', type=str, help='Base file expected under data ',default="qpp-single-source-2021.json")
-    parser.add_argument('--new', type=str, help='New file expected under data ',default="qpp-single-source-2022.json")
+    parser.add_argument('--base', type=str, help='Base file expected under data ',default="data/qpp-single-source-2021.json")
+    parser.add_argument('--new', type=str, help='New file expected under data ',default="data/qpp-single-source-2022.json")
     args = parser.parse_args()
     file1 = args.base
     file2 = args.new
