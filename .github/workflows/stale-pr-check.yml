@@ -1,0 +1,61 @@
+name: Stale PR Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC
+
+jobs:
+  stale-pr-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for Stale PRs
+        id: stale-pr-check
+        uses: sonia-stale-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
+        with:
+          pull-request-ignore-any-labels: 'wip'
+          pull-request-stale-comment: 'This PR has been automatically marked as stale because it has not had any activity in the last 30 days. It will be closed in 7 days if no further activity occurs. Thank you for your prompt attention.'
+          pull-request-close-comment: 'This PR has been automatically closed because it has not had any activity in the last 7 days.'
+          pull-request-days-before-stale: 1 # TESTING, change to 21 days afterwards
+          pull-request-days-before-close: 1 # TESTING, change to 7 days afterwards
+
+      - name: Send Slack Notification
+        uses: slackapi/slack-github-action@v1.24
+        if: ${{ steps.stale-pr-check.outputs.stale-pull-requests-count > 0 || steps.stale-pr-check.outputs.already-stale-pull-requests-count > 0 || steps.stale-pr-check.outputs.close-pull-requests-count > 0 }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_TO_P_QPPSF_API_TEAM_FEED }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "emoji": true,
+                    "text": ":tired: Stale PR Report"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://github.com/CMSgov/qpp-measures-data/pulls|measures-data>"
+                  }
+                },
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "* *Stale Pull Requests Count*: ${{ steps.stale-pr-check.outputs.stale-pull-requests-count }}\n * *Already Stale Pull Requests Count*: ${{ steps.stale-pr-check.outputs.already-stale-pull-requests-count }}\n * *Close Pull Requests Count*: ${{ steps.stale-pr-check.outputs.close-pull-requests-count }}\n@channel"
+                  }
+                }
+              ]
+            }
