@@ -8,11 +8,10 @@ on:
 jobs:
   stale-pr-check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check for Stale PRs
         id: stale-pr-check
-        uses: sonia-corporation/stale@v2.5.0
+        uses: sonia-corporation/stale@2.5.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
         with:
