@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check for Stale PRs
         id: stale-pr-check
-        uses: sonia-stale-action@v2.5.0
+        uses: sonia-corporation/stale@v2.5.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
         with:
