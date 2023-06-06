@@ -37,5 +37,5 @@ const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
 
 ## Contributing
 
-Before creating pull requests, please make sure to review
+Before creating pull requests, please make sure to review:
 [CONTRIBUTING.md](CONTRIBUTING.md).
