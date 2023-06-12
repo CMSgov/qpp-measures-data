@@ -18,8 +18,10 @@ jobs:
           pull-request-ignore-any-labels: 'wip'
           pull-request-stale-comment: 'This PR has been automatically marked as stale because it has not had any activity in the last 30 days. It will be closed in 7 days if no further activity occurs. Thank you for your prompt attention.'
           pull-request-close-comment: 'This PR has been automatically closed because it has not had any activity in the last 7 days.'
-          pull-request-days-before-stale: 1 # TESTING, change to 21 days afterwards
-          pull-request-days-before-close: 2 # TESTING, change to 7 days afterwards
+          pull-request-days-before-stale: 21
+          pull-request-days-before-close: 7
+          issue-days-before-stale: 21
+          issue-days-before-close: 7
 
       - name: Send Slack Notification
         uses: slackapi/slack-github-action@v1.24
