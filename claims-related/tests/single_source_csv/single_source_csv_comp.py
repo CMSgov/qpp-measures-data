@@ -15,8 +15,8 @@ def printDf(df, f):
                    ]
     # to markdown is better but unfortunately not supported by current docker
     # however this can be used if running locally ( Requirement Python 3.8 )
-    # print(df[columnOrder].to_markdown(tablefmt="grid", index=False), file=f)
-    print(df[columnOrder].to_string(index=False), file=f)
+    print(df[columnOrder].to_markdown(tablefmt="grid", index=False), file=f)
+    # print(df[columnOrder].to_string(index=False), file=f)
 
 
 def paragraph(f):
@@ -68,18 +68,21 @@ def analyze_difference(joint, partcolumn, partid, subcol, debug=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Parse arguments')
-    parser.add_argument('--base', type=str, help='Base file with path ',default="../../data/2020_Claims_SingleSource_v1.4.csv")
-    parser.add_argument('--new', type=str, help='New file with path ',default="../../data/2021_Claims_SingleSource_v1.3.csv")
+    parser.add_argument('--base', type=str, help='Base file with path ',default="data/2020_Claims_SingleSource_v1.4.csv")
+    parser.add_argument('--new', type=str, help='New file with path ',default="data/2021_Claims_SingleSource_v1.3.csv")
     parser.add_argument('--measure', type=str, default=None, action= 'append',help='MeasureId to be evaluated (optional)')
+    parser.add_argument('--output', type=str, help= 'output path (optional)', default="tests/single_source_csv/csv_report")
     args = parser.parse_args()
 
     # Method to use pipenv run python <script> <Optional: Measure ID to be checked>
     # Change these files wherenver needed
     basefilename = args.base
     newfilename = args.new
+    output = args.output
 
     basefile = pd.read_csv(basefilename, dtype=str)
     newfile = pd.read_csv(newfilename, dtype=str)
+    
 
     basefile.columns = basefile.columns.str.replace(' ', '_')
     newfile.columns = newfile.columns.str.replace(' ', '_')
@@ -115,7 +118,7 @@ if __name__ == "__main__":
     intersection = joint[joint.VERSION == "COMMON"]
 
     # Main function
-    os.makedirs("csv_report", exist_ok=True)
+    os.makedirs(output, exist_ok=True)
     (df, modified_mid, added_mid, removed_mid, changed_mid) = analyze_difference(joint, "CONST", "CONST", "Measure_ID")
 
     mid = {}
@@ -125,7 +128,7 @@ if __name__ == "__main__":
     changed_den = {}
     removed_den = {}
 
-    with open("csv_report/Summary.md", "w") as f:
+    with open(output+"/Summary.md", "w") as f:
         print("# Single Source changes Summary", file=f)
         print("Basefile = " + os.path.basename(basefilename), file=f)
         print("newfile =" + os.path.basename(newfilename), file=f)
@@ -159,7 +162,7 @@ if __name__ == "__main__":
         print("running report for all measures")
 
     for i in report_mid:
-        filename = "csv_report/Measure" + i.zfill(3) + ".md"
+        filename = output+"/Measure" + i.zfill(3) + ".md"
         with open(filename, "w") as f:
             print("# Comparison for Measure ID " + i + "", file=f)
             (mid[i], modified_den[i], added_den[i], removed_den[i], changed_den[i]) = analyze_difference(df, "Measure_ID",
