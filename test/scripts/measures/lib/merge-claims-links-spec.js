@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const mergeClaimsLinks = require('../../../../scripts/measures/lib/merge-claims-links');
+const mergeClaimsLinks = require('../../../../scripts/measures/lib/archive/merge-claims-links');
 
 describe('merge-claims-links', () => {
   it('should merge claimsLinks into base measure data', () => {
