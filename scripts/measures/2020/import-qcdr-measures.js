@@ -2,7 +2,7 @@ const parse = require('csv-parse/sync').parse;
 const _ = require('lodash');
 const fs = require('fs');
 const path = require('path');
-const mergeBenchmarkMetadata = require('../lib/merge-benchmark-metadata');
+const mergeBenchmarkMetadata = require('../lib/archive/merge-benchmark-metadata');
 
 /**
  * [config defines how to generate QCDR measures from origin CSV file]

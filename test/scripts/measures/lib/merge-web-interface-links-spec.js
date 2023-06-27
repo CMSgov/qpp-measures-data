@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const mergeWebInterfaceLinks = require('../../../../scripts/measures/lib/merge-web-interface-links');
+const mergeWebInterfaceLinks = require('../../../../scripts/measures/lib/archive/merge-web-interface-links');
 
 describe('merge-web-interface-links', () => {
   it('should merge webInterfaceLinks into base measures data', () => {
