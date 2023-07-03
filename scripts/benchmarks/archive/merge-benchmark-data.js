@@ -9,7 +9,7 @@ const path = require('path');
 const performanceYear = process.argv[2];
 
 if (performanceYear) {
-  const relativeJsonDir = `../../staging/${performanceYear}/benchmarks/json/`;
+  const relativeJsonDir = `../../../staging/${performanceYear}/benchmarks/json/`;
   const jsonDir = path.join(__dirname, relativeJsonDir);
   /**
    * Sort 'performance-benchmarks.json' to the bottom of the list if present so that it will only add benchmarks from final scoring if they
