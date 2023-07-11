@@ -25,9 +25,9 @@ const parser = parse({
 });
 
 // File containing source data to be converted
-const sourceFile = path.resolve(__dirname, `../../../staging/${programYear}/benchmarks/source.csv`);
+const sourceFile = path.resolve(__dirname, `../../../../staging/${programYear}/benchmarks/source.csv`);
 // File to write converted data to. If file does not exist, it will be created.
-const targetFile = path.resolve(__dirname, `../../../staging/${programYear}/benchmarks/benchmarks.csv`);
+const targetFile = path.resolve(__dirname, `../../../../staging/${programYear}/benchmarks/benchmarks.csv`);
 
 // Load source data
 try {

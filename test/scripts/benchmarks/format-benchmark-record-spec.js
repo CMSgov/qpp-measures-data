@@ -1,7 +1,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 // Utils
-const { formatBenchmarkRecord, formatMeasureId } = require('./../../../scripts/benchmarks/format-benchmark-record');
+const { formatBenchmarkRecord, formatMeasureId } = require('./../../../scripts/benchmarks/archive/format-benchmark-record');
 
 const options = {
   benchmarkYear: 2016,
