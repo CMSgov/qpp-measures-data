@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const mergeEcqmEhrLinks = require('../../../../scripts/measures/lib/merge-ecqm-ehr-links');
+const mergeEcqmEhrLinks = require('../../../../scripts/measures/lib/archive/merge-ecqm-ehr-links');
 
 describe('merge-ecqm-ehr-links', () => {
   it('should merge ecqmEhrLinks into base measures data', () => {

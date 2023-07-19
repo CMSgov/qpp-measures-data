@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const _ = require('lodash');
-const measuresData = require('../../../index');
+const measuresData = require('../../../../index');
 
 const UNIQUE_COLUMN_CONSTRAINT = [
   'measureId',

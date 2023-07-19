@@ -46,27 +46,27 @@ else
 
   if [[ -f "$sourceFilename" ]]; then
     echo "Pre-processing source file."
-    node scripts/benchmarks/helpers/pre-process-source-csv.js $performanceYear
+    node scripts/benchmarks/archive/helpers/pre-process-source-csv.js $performanceYear
   fi
 
   # generate benchmarks base
   echo 'Generating new benchmarks JSON.'
-  cat $csvFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkBaseFilename 
+  cat $csvFilename | node scripts/benchmarks/archive/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkBaseFilename 
 
   if [[ -f "$cahpsCSVFilename" ]]; then
     echo 'Generating CAHPS benchmarks JSON.'
-    cat $cahpsCSVFilename | node scripts/benchmarks/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkCAHPSFilename 
+    cat $cahpsCSVFilename | node scripts/benchmarks/archive/parse-benchmarks-data.js $benchmarkYear $performanceYear > $benchmarkCAHPSFilename 
   fi
 
   if [[ -f "$mccCSVFilename" ]]; then
     echo 'Generating MCC benchmarks JSON.'
     # This is a new measure starting in 2021, this is why the benchmark and performance years are hard-coded to 2021
     # TODO update these values for future years
-    cat $mccCSVFilename | node scripts/benchmarks/parse-benchmarks-data.js 2021 2021 MCC > $mccBenchmarkFilename 
+    cat $mccCSVFilename | node scripts/benchmarks/archive/parse-benchmarks-data.js 2021 2021 MCC > $mccBenchmarkFilename 
   fi
 
   echo 'Squashing staging JSON.'
-  node scripts/benchmarks/merge-benchmark-data.js $performanceYear > $benchmarkFilename
+  node scripts/benchmarks/archive/merge-benchmark-data.js $performanceYear > $benchmarkFilename
  
   # validate benchmarks
   echo 'Validating new benchmarks JSON.'

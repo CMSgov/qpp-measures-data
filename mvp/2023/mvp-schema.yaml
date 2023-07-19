@@ -52,10 +52,6 @@ definitions:
         type: array
         items: { $ref: #/definitions/qualityMeasure }
         description: An array of Outcome Administrative Claims measures applicable to this MVP
-      allowedVendors:
-        type: array
-        items: string
-        description: An array of Outcome Administrative Claims measures applicable to this MVP
       hasCahps:
         type: boolean
         description: Answers the question if MVP contains CAHPS
