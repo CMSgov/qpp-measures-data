@@ -73,12 +73,9 @@ function orderFields(measure: any) {
     //reorder the fields to stay consistent.
     const orderedValues = Object.assign({}, BENCHMARKS_ORDER, measure)
     //remove undefined fields.
-    return Object.entries(orderedValues)
-        .filter(([key, value]) => value !== undefined)
-        .reduce((obj, [key, value]) => {
-            obj[key] = value;
-            return obj;
-        }, {});
+    return _.filter(orderedValues, (value) => {
+        value !== undefined
+    });
 }
 
 function mapInput(columnName: string, csvRow: any) {
@@ -115,18 +112,18 @@ function csvFieldToBoolean(field: string, value: string): boolean {
 
 function prepareCsv(csv: any): any {
     //parse csv.
-    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
+    let parsedCsv: Object[] = parse(csv, {
+        columns: true,
+        relax_column_count: true,
+        bom: true,
+    });
 
     //trim keys in parsed csv.
-    for (let i = 0; i < parsedCsv.length; i++) {
-        Object.keys(parsedCsv[i]).forEach((key) => {
-            const trimmedKey = key.trim();
-            if (key !== trimmedKey) {
-                parsedCsv[i][trimmedKey] = parsedCsv[i][key];
-                delete parsedCsv[i][key];
-            }
+    parsedCsv = _.map(parsedCsv, (row) => {
+        return _.mapKeys(row, (key: string) => {
+            return key.trim();
         });
-    }
+    });
 
     return parsedCsv;
 }
