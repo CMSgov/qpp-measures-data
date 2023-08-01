@@ -16,7 +16,7 @@ import appRoot from 'app-root-path';
 import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 import { convertCsvToJson } from '../lib/csv-json-converter';
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 import {
     COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,

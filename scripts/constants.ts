@@ -50,6 +50,27 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'firstPerformanceYear': 'First Performance Year',
 };
 
+export const BENCHMARKS_COLUMN_NAMES = {
+    'measureId': 'measureId',
+    'isToppedOut': 'isToppedOut',
+    'isToppedOutByProgram': 'isToppedOutByProgram',
+    'isHighPriority': 'isHighPriority',
+    'submissionMethod': 'submissionMethod',
+    'isInverse': 'isInverse',
+    'metricType': 'metricType',
+};
+
+export const SUBMISSION_METHOD_MAP = {
+    'ecqm': 'electronicHealthRecord',
+    'medicarepartbclaims': 'claims',
+    'mipscqm': 'registry',
+    'qcdrmeasure': 'registry',
+    'cmswebinterface': 'cmsWebInterface',
+    'administrativeclaims': 'administrativeClaims',
+    'cahpssurveyvendor': 'certifiedSurveyVendor',
+    'certifiedsurveyvendor': 'certifiedSurveyVendor'
+};
+
 export const ARRAY_CSV_FIELDS = [
     'Substitutes',
     'Exclusions',
@@ -67,6 +88,11 @@ export const BOOLEAN_CSV_FIELDS = [
     'High Priority',
     'Bonus',
     'Required',
+    'benchmark',
+    'isHighPriority',
+    'isInverse',
+    'isToppedOut',
+    'isToppedOutByProgram',
 ];
 
 export const METRIC_TYPES = [
@@ -295,6 +321,19 @@ export const COST_MEASURES_ORDER = {
     'submissionMethods': undefined,
     'measureSpecification': undefined,
     'allowedPrograms': undefined
+};
+
+export const BENCHMARKS_ORDER = {
+    'measureId': undefined,
+    'benchmarkYear': undefined,
+    'performanceYear': undefined,
+    'submissionMethod': undefined,
+    'isToppedOut': undefined,
+    'isHighPriority': undefined,
+    'isInverse': undefined,
+    'metricType': undefined,
+    'isToppedOutByProgram': undefined,
+    'deciles': undefined,
 };
 
 export const IA_DEFAULT_VALUES = {
