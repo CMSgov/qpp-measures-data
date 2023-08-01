@@ -231,3 +231,27 @@ exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresDa
 exports.getMVPSchema = function(performanceYear = 2023) {
   return YAML.load(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'));
 };
+
+/**
+ * @return {Array<MVP>}
+ */
+exports.getMVPDataSlim = function(performanceYear = 2023) {
+  const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
+  let mvpData;
+
+  if (fs.existsSync(filePath)) {
+    mvpData = JSON.parse(fs.readFileSync(filePath));
+    mvpData.forEach(mvp => {
+      mvp.measureIds = [].concat(mvp.qualityMeasureIds,
+        mvp.iaMeasureIds,
+        mvp.costMeasureIds,
+        mvp.foundationPiMeasureIds,
+        mvp.foundationQualityMeasureIds,
+        mvp.administrativeClaimsMeasureIds);
+    });
+  } else {
+    console.log('mvp.json file does not exist');
+  }
+
+  return mvpData;
+};
