@@ -14,18 +14,7 @@ import {
 } from '../constants';
 import { InvalidValueError } from '../errors';
 
-type Benchmark = {
-    measureId?: string,
-    benchmarkYear?: number,
-    performanceYear?: number,
-    submissionMethod?: string,
-    isToppedOut?: boolean,
-    isHighPriority?: boolean,
-    isInverse?: boolean,
-    metricType?: string,
-    isToppedOutByProgram?: boolean,
-    percentiles?: object,
-}
+import { Benchmark } from './benchmarks.types';
 
 export function convertCsvToJson(csv: any, performanceYear: number) {
     const parsedCsv = prepareCsv(csv);
