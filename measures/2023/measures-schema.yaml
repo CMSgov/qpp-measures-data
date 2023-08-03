@@ -105,6 +105,8 @@ definitions:
             oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
           exclusion:
             description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
+          preprod:
+            description: Identifiers of associated PRE and PROD PI measures.
         required: [objective, isRequired, isBonus, measureSets]
 
   aggregateCostMeasure:
