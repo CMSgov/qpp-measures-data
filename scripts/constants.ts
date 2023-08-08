@@ -292,7 +292,8 @@ export const PI_MEASURES_ORDER = {
     'measureSpecification': undefined,
     'measureSets': undefined,
     'exclusion': undefined,
-    'allowedPrograms': undefined
+    'allowedPrograms': undefined,
+    'preprod': undefined
 };
 
 export const IA_MEASURES_ORDER = {
