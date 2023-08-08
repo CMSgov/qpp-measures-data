@@ -7,7 +7,7 @@ import * as UpdateMeasuresUtil from './update-measures-util';
 import * as csvConverter from '../lib/csv-json-converter';
 import * as logger from '../../logger';
 import _ from 'lodash';
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 import { MeasuresChange } from '../lib/validate-change-requests';
 
 const allowedIaChange = {

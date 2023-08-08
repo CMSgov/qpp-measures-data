@@ -70,7 +70,7 @@ export function benchmarkBusinessValidation(performanceYear: number, input?: Ben
       if (benchmark.isHighPriority !== (comparableMeasure as QualityMeasure).isHighPriority) {
         errors.push(
           new Error(
-            `Property mismatch for isHighPrority between Benchmark of id ${benchmarkMeasureId} it's Measure's data. Measure expeceted ${(comparableMeasure as QualityMeasure).isHighPriority} received ${benchmark.isHighPriority}.`
+            `Property mismatch for isHighPrority between Benchmark of id ${benchmarkMeasureId} and its Measure's data. Measure expected ${(comparableMeasure as QualityMeasure).isHighPriority} received ${benchmark.isHighPriority}.`
           )
         );
 
@@ -81,7 +81,7 @@ export function benchmarkBusinessValidation(performanceYear: number, input?: Ben
     if (_.has(benchmark, 'isInverse')) {
       if (benchmark.isInverse !== (comparableMeasure as QualityMeasure).isInverse) {
         errors.push(
-          new Error(`Property mismatch for isInverse between Benchmark of id ${benchmarkMeasureId} it's Measure's data. Measure expeceted ${(comparableMeasure as QualityMeasure).isInverse} received ${benchmark.isInverse}.`)
+          new Error(`Property mismatch for isInverse between Benchmark of id ${benchmarkMeasureId} its Measure's data. Measure expected ${(comparableMeasure as QualityMeasure).isInverse} received ${benchmark.isInverse}.`)
         );
 
         return;
