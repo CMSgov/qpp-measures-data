@@ -12,28 +12,33 @@ function readStagingJSONFile (fileName: string, performanceYear: number) {
   const benchmarksStagingJSONDirectory = appRoot + `/staging/${performanceYear}/benchmarks/json`
 
   return JSON.parse(
-    fs.readFileSync(path.join(benchmarksStagingJSONDirectory + '', 'benchmarks_cahps.json'), 'utf8')
-  ) as BenchmarkList ?? [];
+    fs.readFileSync(path.join(benchmarksStagingJSONDirectory + '', fileName), 'utf8')
+  ) as BenchmarkList;
 }
 
 export function benchmarkBusinessValidation(performanceYear: number, input?: BenchmarkList) {
-  let rawInput;
+  let rawInput, rawInputCahps;
+  let errors: Error[] = [];
 
   if (!input) {
-    rawInput = readStagingJSONFile('benchmarks_cahps.json', performanceYear);
+    rawInputCahps = readStagingJSONFile('benchmarks_cahps.json', performanceYear);
+    rawInput = readStagingJSONFile('benchmarks.json', performanceYear);
 
-    rawInput = rawInput.concat(
-      readStagingJSONFile('benchmarks.json', performanceYear)
-    );
+    rawInput = rawInput.concat(rawInputCahps);
 
     input = _.mapKeys(rawInput, ((benchmark: Benchmark) => {
         if (!benchmark.measureId) {
-          throw new Error(`no MeasureId provided for benchmark: ${benchmark}`)
+          errors.push(new Error(`no MeasureId provided for benchmark: ${JSON.stringify(benchmark)}`));
+          return;
         }
 
         return benchmark.measureId;
       })
     )
+  }
+
+  if (errors.length > 0) {
+    throw errors;
   }
 
   const indexedBenchmarks: BenchmarkList = input;
@@ -46,37 +51,45 @@ export function benchmarkBusinessValidation(performanceYear: number, input?: Ben
     return measure.measureId;
   })
 
-  let errors: Error[] = [];
+
 
   _.forEach(indexedBenchmarks, (benchmark, benchmarkMeasureId) => {
-    if (typeof benchmarkMeasureId !== 'string') {
-      errors.concat(
-        new Error(`Invalid MeasureId data type for ${benchmarkMeasureId} expected 'string", received '${typeof benchmarkMeasureId}'. 
-          ${JSON.stringify(benchmark, null, 2)}`
-        )
-      )
-    }
-
     const comparableMeasure = indexedMeasures[benchmarkMeasureId];
 
     if (!comparableMeasure) {
-      errors.push(new Error(`Benchmark has invalid measureId ${benchmarkMeasureId}`));
+      errors.push(
+        new Error(
+          `No comparable measure found for Benchmark with measureId: ${benchmarkMeasureId}`
+        )
+      );
+
+      return;
     }
 
     if (_.has(benchmark, 'isHighPriority')) {
       if (benchmark.isHighPriority !== (comparableMeasure as QualityMeasure).isHighPriority) {
-        //PropertyMismatch - isHighPriority
+        errors.push(
+          new Error(
+            `Property mismatch for isHighPrority between Benchmark of id ${benchmarkMeasureId} it's Measure's data. Measure expeceted ${(comparableMeasure as QualityMeasure).isHighPriority} received ${benchmark.isHighPriority}.`
+          )
+        );
+
+        return;
       }
     }
 
     if (_.has(benchmark, 'isInverse')) {
       if (benchmark.isInverse !== (comparableMeasure as QualityMeasure).isInverse) {
-        //PropertyMismatch - isInverse
+        errors.push(
+          new Error(`Property mismatch for isInverse between Benchmark of id ${benchmarkMeasureId} it's Measure's data. Measure expeceted ${(comparableMeasure as QualityMeasure).isInverse} received ${benchmark.isInverse}.`)
+        );
+
+        return;
       }
     }
   });
 
   if (errors.length > 0) {
-    throw new Error(JSON.stringify(errors));
+    throw errors;
   }
 }
