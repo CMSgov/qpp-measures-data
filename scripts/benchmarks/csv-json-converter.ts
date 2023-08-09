@@ -17,18 +17,7 @@ import {
 } from '../constants';
 import { InvalidValueError } from '../errors';
 
-export type Benchmark = {
-    measureId: string,
-    benchmarkYear: number,
-    performanceYear: number,
-    submissionMethod: string,
-    isToppedOut?: boolean,
-    isHighPriority?: boolean,
-    isInverse?: boolean,
-    metricType?: string,
-    isToppedOutByProgram?: boolean,
-    percentiles?: object,
-}
+import { Benchmark } from './benchmarks.types';
 
 // command to use this file:
 //  node ./dist/benchmarks/csv-json-converter.js ./util/2023/benchmarks/[fileName].csv [year] > ./util/2023/benchmarks/json/[fileName].json
