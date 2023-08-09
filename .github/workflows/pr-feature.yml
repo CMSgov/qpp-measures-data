@@ -17,5 +17,7 @@ jobs:
           node-version: 18
       - name: Install Dependencies
         run: npm ci
-      - name: Run Tests
+      - name: Run Mocha Tests
         run: npm test
+      - name: Run Jest Tests
+        run: npm jest:cov

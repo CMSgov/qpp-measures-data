@@ -91,14 +91,14 @@ describe('validation.business', () => {
 
     it('throws an error if a benchmark has mismatched data with isHighPriority', () => {
         testErrorsThrown(
-            'Property mismatch for isHighPrority between Benchmark of id 127 it\'s Measure\'s data. Measure expeceted false received true.',
+            'Property mismatch for isHighPrority between Benchmark of id 127 and its Measure\'s data. Measure expected false received true.',
             {42: { isHighPriority: true }},
         )
     })
 
     it('throws an error if a benchmark has mismatched data with isInverse', () => {
         testErrorsThrown(
-            'Property mismatch for isInverse between Benchmark of id 127 it\'s Measure\'s data. Measure expeceted false received true.',
+            'Property mismatch for isInverse between Benchmark of id 127 its Measure\'s data. Measure expected false received true.',
         {42: {isInverse: true}});
     })
 
