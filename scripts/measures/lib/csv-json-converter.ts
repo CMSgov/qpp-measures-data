@@ -24,7 +24,7 @@ import {
     WEIGHT,
     SUBCATEGORY_NAME,
 } from '../../constants';
-import { InvalidValueError } from './errors';
+import { InvalidValueError } from '../../errors';
 
 export function convertCsvToJson(csv: any) {
     const parsedCsv = prepareCsv(csv);

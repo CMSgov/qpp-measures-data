@@ -7,7 +7,6 @@ import * as UpdateMeasuresUtil from './update-measures-util';
 import * as csvConverter from '../lib/csv-json-converter';
 import * as logger from '../../logger';
 import _ from 'lodash';
-import { DataValidationError } from '../lib/errors';
 import { MeasuresChange } from '../lib/validate-change-requests';
 
 const allowedIaChange = {
@@ -563,8 +562,8 @@ describe('#update-measures-util', () => {
             const change = {
                 measureId: '001',
                 metricType: 'testdata',
-                icdImpacted: [ 'testdata' ],
-                clinicalGuidelineChanged: [ 'testdata' ],
+                icdImpacted: ['testdata'],
+                clinicalGuidelineChanged: ['testdata'],
                 category: 'quality',
             } as MeasuresChange;
 
@@ -586,30 +585,36 @@ describe('#update-measures-util', () => {
                 category: 'quality',
                 isRegistryMeasure: false,
                 isRiskAdjusted: false,
-                icdImpacted: [ 'testdata' ],
+                icdImpacted: ['testdata'],
                 isClinicalGuidelineChanged: true,
                 isIcdImpacted: true,
-                clinicalGuidelineChanged: [ 'testdata' ],
+                clinicalGuidelineChanged: ['testdata'],
                 metricType: 'testdata',
                 allowedPrograms: [
-                  'mips',
-                  'pcf',
-                  'app1'
+                    'mips',
+                    'pcf',
+                    'app1',
+                    'M0002',
                 ],
                 submissionMethods: [
-                  'claims',
-                  'electronicHealthRecord',
-                  'cmsWebInterface',
-                  'registry'
+                    'claims',
+                    'electronicHealthRecord',
+                    'cmsWebInterface',
+                    'registry'
                 ],
                 measureSets: [
-                  'endocrinology',
-                  'familyMedicine',
-                  'internalMedicine',
-                  'nephrology',
-                  'preventiveMedicine'
+                    'endocrinology',
+                    'familyMedicine',
+                    'internalMedicine',
+                    'nephrology',
+                    'nutritionDietician',
+                    'preventiveMedicine'
                 ],
-                measureSpecification: {}
+                measureSpecification: {
+                    claims: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_001_MedicarePartBClaims.pdf',
+                    electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
+                    registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
+                }
             });
         });
     });

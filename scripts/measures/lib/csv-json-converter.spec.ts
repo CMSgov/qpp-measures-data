@@ -5,7 +5,7 @@ import appRoot from 'app-root-path';
 
 import { convertCsvToJson } from './csv-json-converter';
 import * as logger from '../../logger';
-import { InvalidValueError } from './errors';
+import { InvalidValueError } from '../../errors';
 
 const iaChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/iaMeasures.csv'), 'utf8');
 const piChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/piMeasures.csv'), 'utf8');

@@ -16,7 +16,7 @@ import appRoot from 'app-root-path';
 import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 import { convertCsvToJson } from '../lib/csv-json-converter';
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 import {
     COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,
@@ -233,9 +233,11 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             break;
 
         case 'pi':
+            const preprod = populatePreProdArray(change, measuresJson);
             measuresJson.splice(index + 1, 0, orderFields({
                 ...PI_DEFAULT_VALUES,
                 ...change,
+                preprod
             }));
             break;
 
@@ -286,6 +288,17 @@ function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
         return false;
     }
     return true;
+}
+
+function populatePreProdArray(change: MeasuresChange, measuresJson: any) {
+    if (change.measureId.includes('_PRE') || change.measureId.includes('_PROD')) {
+        return undefined;
+    }
+    
+    const pre = _.find(measuresJson, { measureId: `${change.measureId}_PRE` });
+    const prod = _.find(measuresJson, { measureId: `${change.measureId}_PROD` });
+
+    return _.compact([pre?.measureId, prod?.measureId]);
 }
 
 function isAllowedCostScore(change: MeasuresChange, measuresJson: any): boolean {

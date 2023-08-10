@@ -7,7 +7,7 @@ import * as UpdateMeasuresUtil from './update-measures-util';
 import * as csvConverter from '../lib/csv-json-converter';
 import * as logger from '../../logger';
 import _ from 'lodash';
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 import { MeasuresChange } from '../lib/validate-change-requests';
 
 const allowedIaChange = {
@@ -39,8 +39,8 @@ const allowedPiNew = {
     objective: 'protectPatientHealthInformation',
     isBonus: true,
     reportingCategory: 'required',
-    substitutes: [ 'PI_PPHI_2' ],
-    exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
+    substitutes: ['PI_PPHI_2'],
+    exclusion: ['PI_EP_1', 'PI_EP_32'],
 } as MeasuresChange;
 
 const allowedQualityNew = {
@@ -52,8 +52,8 @@ const allowedQualityNew = {
     primarySteward: 'stewardTitle',
     measureType: 'process',
     isHighPriority: false,
-    submissionMethods: [ 'registry', 'claims' ],
-    measureSets: [ 'nephrology', 'preventiveMedicine' ],
+    submissionMethods: ['registry', 'claims'],
+    measureSets: ['nephrology', 'preventiveMedicine'],
     isInverse: false,
     metricType: 'singlePerformanceRate',
     isRiskAdjusted: false,
@@ -68,11 +68,11 @@ const allowedQCDRNew = {
     primarySteward: 'stewardTitle',
     measureType: 'process',
     isHighPriority: false,
-    submissionMethods: [ 'registry', 'claims' ],
-    measureSets: [ 'nephrology', 'preventiveMedicine' ],
+    submissionMethods: ['registry', 'claims'],
+    measureSets: ['nephrology', 'preventiveMedicine'],
     isInverse: false,
     metricType: 'singlePerformanceRate',
-    allowedVendors: [ '123456', '654321'],
+    allowedVendors: ['123456', '654321'],
     isRiskAdjusted: false,
 } as MeasuresChange;
 
@@ -563,8 +563,8 @@ describe('#update-measures-util', () => {
             const change = {
                 measureId: '001',
                 metricType: 'testdata',
-                icdImpacted: [ 'testdata' ],
-                clinicalGuidelineChanged: [ 'testdata' ],
+                icdImpacted: ['testdata'],
+                clinicalGuidelineChanged: ['testdata'],
                 category: 'quality',
             } as MeasuresChange;
 
@@ -586,30 +586,36 @@ describe('#update-measures-util', () => {
                 category: 'quality',
                 isRegistryMeasure: false,
                 isRiskAdjusted: false,
-                icdImpacted: [ 'testdata' ],
+                icdImpacted: ['testdata'],
                 isClinicalGuidelineChanged: true,
                 isIcdImpacted: true,
-                clinicalGuidelineChanged: [ 'testdata' ],
+                clinicalGuidelineChanged: ['testdata'],
                 metricType: 'testdata',
                 allowedPrograms: [
-                  'mips',
-                  'pcf',
-                  'app1'
+                    'mips',
+                    'pcf',
+                    'app1',
+                    'M0002',
                 ],
                 submissionMethods: [
-                  'claims',
-                  'electronicHealthRecord',
-                  'cmsWebInterface',
-                  'registry'
+                    'claims',
+                    'electronicHealthRecord',
+                    'cmsWebInterface',
+                    'registry'
                 ],
                 measureSets: [
-                  'endocrinology',
-                  'familyMedicine',
-                  'internalMedicine',
-                  'nephrology',
-                  'preventiveMedicine'
+                    'endocrinology',
+                    'familyMedicine',
+                    'internalMedicine',
+                    'nephrology',
+                    'nutritionDietician',
+                    'preventiveMedicine'
                 ],
-                measureSpecification: {}
+                measureSpecification: {
+                    claims: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_001_MedicarePartBClaims.pdf',
+                    electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
+                    registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
+                }
             });
         });
     });
@@ -650,9 +656,10 @@ describe('#update-measures-util', () => {
                 metricType: 'boolean',
                 isBonus: true,
                 objective: 'protectPatientHealthInformation',
+                preprod: [],
                 reportingCategory: 'required',
-                substitutes: [ 'PI_PPHI_2' ],
-                exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
+                substitutes: ['PI_PPHI_2'],
+                exclusion: ['PI_EP_1', 'PI_EP_32'],
                 measureSets: [],
             });
         });
@@ -681,9 +688,9 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
-                allowedPrograms: [ 'mips', 'pcf' ],
-                submissionMethods: [ 'registry', 'claims' ],
-                measureSets: [ 'nephrology', 'preventiveMedicine' ],
+                allowedPrograms: ['mips', 'pcf'],
+                submissionMethods: ['registry', 'claims'],
+                measureSets: ['nephrology', 'preventiveMedicine'],
             });
         });
 
@@ -711,10 +718,10 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
-                allowedPrograms: [ 'mips', 'pcf' ],
-                submissionMethods: [ 'registry', 'claims' ],
-                measureSets: [ 'nephrology', 'preventiveMedicine' ],
-                allowedVendors: [ '123456', '654321'],
+                allowedPrograms: ['mips', 'pcf'],
+                submissionMethods: ['registry', 'claims'],
+                measureSets: ['nephrology', 'preventiveMedicine'],
+                allowedVendors: ['123456', '654321'],
             });
         });
     });

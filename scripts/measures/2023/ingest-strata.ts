@@ -11,7 +11,7 @@ import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
 
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 
 const performanceYear = process.argv[2];
 const strataPath = process.argv[3];
