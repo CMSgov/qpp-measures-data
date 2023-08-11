@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$(($1))
+maxPerformanceYear=2023
+
+Red='\033[0;31m'
+Green='\033[0;32m'
+bold=$(tput bold)
+
+# checks the exit code of the last command and exits if not successful code 0.
+function exitOnFailure () {
+  if (( $? != 0 )); then
+    echo -e "${Red}\n${bold}Update failed."
+    exit
+  fi
+}
+
+# This script is not made to work for years prior to 2023.
+if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
+
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
+  for FILE in staging/$currentPerformanceYear/benchmarks/*; do
+    re='^(.+\/)*(.+)\.(.+)$'
+    if [[ $FILE =~ $re ]]; then
+      node dist/scripts/benchmarks/csv-json-converter.js staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear > staging/$currentPerformanceYear/benchmarks/json/${BASH_REMATCH[2]}.json
+      exitOnFailure
+    fi
+  done
+  
+  node dist/scripts/benchmarks/merge-benchmark-files.js staging/$currentPerformanceYear/benchmarks/json/ > ./benchmarks/$currentPerformanceYear.json
+
+
+  # validate benchmarks
+  echo -e "Validating new benchmarks JSON."
+  cat benchmarks/$currentPerformanceYear.json | node scripts/validate-data.js benchmarks $currentPerformanceYear
+  exitOnFailure
+  
+  echo -e "${Green}\n${bold}Update complete."
+  exit
+
+else
+  echo -e "${Red}${bold}Performance year ${currentPerformanceYear} not valid."
+fi

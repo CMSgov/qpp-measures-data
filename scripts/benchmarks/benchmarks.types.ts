@@ -155,10 +155,10 @@ export enum Method {
 }
 
 export type Benchmark = {
-  measureId?: string,
-  benchmarkYear?: number,
-  performanceYear?: number,
-  submissionMethod?: string,
+  measureId: string,
+  benchmarkYear: number,
+  performanceYear: number,
+  submissionMethod: string,
   isToppedOut?: boolean,
   isHighPriority?: boolean,
   isInverse?: boolean,

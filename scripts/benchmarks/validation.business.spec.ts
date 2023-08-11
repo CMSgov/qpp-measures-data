@@ -7,7 +7,7 @@ import mockFS from 'mock-fs';
 import * as logger from '../logger'
 
 import { benchmarkBusinessValidation } from './validation.business';
-import { BaseMeasure, Benchmark, BenchmarkList, MeasureList } from './benchmarks.types';
+import { BaseMeasure, Benchmark } from './benchmarks.types';
 
 const measuresJson: BaseMeasure[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', 'measures/2023/measures-data.json'), 'utf8')
