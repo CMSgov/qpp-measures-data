@@ -49,7 +49,7 @@ describe('validation.business', () => {
                 modifiedBenchmarks,
                 volatileBenchmarksCahps
             );
-            benchmarkBusinessValidation(2023);
+            benchmarkBusinessValidation('benchmarks.json', 2023);
 
             expect('').toBe('No error thrown when one expected');
         } catch (errors: any) {
@@ -76,7 +76,7 @@ describe('validation.business', () => {
     });
 
     it('validates 2023 benchmarks data', () => {
-        const result = benchmarkBusinessValidation(2023);
+        const result = benchmarkBusinessValidation('benchmarks.json', 2023);
 
         expect(logSpy).not.toBeCalled();
         expect(result).toBeFalsy();
