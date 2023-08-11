@@ -21,18 +21,24 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   echo -e "Compiling Typescript..."
   tsc -p .
 
+
+  # Convert all CSV benchmark files to JSON.
   for FILE in staging/$currentPerformanceYear/benchmarks/*; do
     re='^(.+\/)*(.+)\.(.+)$'
     if [[ $FILE =~ $re ]]; then
+      echo -e "Converting $FILE.csv to JSON..."
       node dist/scripts/benchmarks/csv-json-converter.js staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear > staging/$currentPerformanceYear/benchmarks/json/${BASH_REMATCH[2]}.json
       exitOnFailure
     fi
   done
   
+  
+  # merge all benchmark files into one.
+  echo -e "Merging individual JSON files..."
   node dist/scripts/benchmarks/merge-benchmark-files.js staging/$currentPerformanceYear/benchmarks/json/ > ./benchmarks/$currentPerformanceYear.json
 
 
-  # validate benchmarks
+  # Validate benchmarks.
   echo -e "Validating new benchmarks JSON."
   cat benchmarks/$currentPerformanceYear.json | node scripts/validate-data.js benchmarks $currentPerformanceYear
   exitOnFailure
