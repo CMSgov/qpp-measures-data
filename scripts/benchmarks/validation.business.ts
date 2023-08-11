@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { Benchmark, BenchmarkList, QualityMeasure } from './benchmarks.types';
-import { 
+import {
   BaseMeasure,
   MeasureList,
 } from './benchmarks.types';
@@ -8,7 +8,7 @@ import path from 'path';
 import appRoot from 'app-root-path';
 import fs from 'fs';
 
-function readStagingJSONFile (fileName: string, performanceYear: number) {
+function readStagingJSONFile(fileName: string, performanceYear: number) {
   const benchmarksStagingJSONDirectory = appRoot + `/staging/${performanceYear}/benchmarks/json`
 
   return JSON.parse(
@@ -16,32 +16,24 @@ function readStagingJSONFile (fileName: string, performanceYear: number) {
   ) as BenchmarkList;
 }
 
-export function benchmarkBusinessValidation(performanceYear: number, input?: BenchmarkList) {
-  let rawInput, rawInputCahps;
+export function benchmarkBusinessValidation(jsonName: string, performanceYear: number) {
   let errors: Error[] = [];
+  let indexedBenchmarks: BenchmarkList;
 
-  if (!input) {
-    rawInputCahps = readStagingJSONFile('benchmarks_cahps.json', performanceYear);
-    rawInput = readStagingJSONFile('benchmarks.json', performanceYear);
+  indexedBenchmarks = readStagingJSONFile(jsonName, performanceYear);
+  indexedBenchmarks = _.mapKeys(indexedBenchmarks, ((benchmark: Benchmark) => {
+    if (!benchmark.measureId) {
+      errors.push(new Error(`no MeasureId provided for benchmark: ${JSON.stringify(benchmark)}`));
+      return;
+    }
 
-    rawInput = rawInput.concat(rawInputCahps);
-
-    input = _.mapKeys(rawInput, ((benchmark: Benchmark) => {
-        if (!benchmark.measureId) {
-          errors.push(new Error(`no MeasureId provided for benchmark: ${JSON.stringify(benchmark)}`));
-          return;
-        }
-
-        return benchmark.measureId;
-      })
-    )
-  }
+    return benchmark.measureId;
+  }));
 
   if (errors.length > 0) {
     throw errors;
   }
 
-  const indexedBenchmarks: BenchmarkList = input;
 
   const measures: BaseMeasure[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', `measures/${performanceYear}/measures-data.json`), 'utf8')
@@ -93,3 +85,5 @@ export function benchmarkBusinessValidation(performanceYear: number, input?: Ben
     throw errors;
   }
 }
+
+benchmarkBusinessValidation(process.argv[2], parseInt(process.argv[3]));

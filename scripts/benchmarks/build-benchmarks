@@ -27,7 +27,14 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
     re='^(.+\/)*(.+)\.(.+)$'
     if [[ $FILE =~ $re ]]; then
       echo -e "Converting $FILE.csv to JSON..."
-      node dist/scripts/benchmarks/csv-json-converter.js staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear > staging/$currentPerformanceYear/benchmarks/json/${BASH_REMATCH[2]}.json
+      node dist/scripts/benchmarks/csv-json-converter.js \
+        staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear \
+        > staging/$currentPerformanceYear/benchmarks/json/${BASH_REMATCH[2]}.json
+      
+      # validate the JSON files before combining
+      node dist/scripts/benchmarks/validation.business.js \
+        ${BASH_REMATCH[2]}.json $currentPerformanceYear
+      
       exitOnFailure
     fi
   done
@@ -35,7 +42,9 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   
   # merge all benchmark files into one.
   echo -e "Merging individual JSON files..."
-  node dist/scripts/benchmarks/merge-benchmark-files.js staging/$currentPerformanceYear/benchmarks/json/ > ./benchmarks/$currentPerformanceYear.json
+  node dist/scripts/benchmarks/merge-benchmark-files.js \
+    staging/$currentPerformanceYear/benchmarks/json/ \
+    > ./benchmarks/$currentPerformanceYear.json
 
 
   # Validate benchmarks.
