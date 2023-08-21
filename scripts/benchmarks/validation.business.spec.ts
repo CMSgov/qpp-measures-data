@@ -7,7 +7,7 @@ import mockFS from 'mock-fs';
 import * as logger from '../logger'
 
 import { benchmarkBusinessValidation } from './validation.business';
-import { BaseMeasure, Benchmark, BenchmarkList, MeasureList } from './benchmarks.types';
+import { BaseMeasure, Benchmark } from './benchmarks.types';
 
 const measuresJson: BaseMeasure[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', 'measures/2023/measures-data.json'), 'utf8')
@@ -49,7 +49,7 @@ describe('validation.business', () => {
                 modifiedBenchmarks,
                 volatileBenchmarksCahps
             );
-            benchmarkBusinessValidation(2023);
+            benchmarkBusinessValidation('benchmarks.json', 2023);
 
             expect('').toBe('No error thrown when one expected');
         } catch (errors: any) {
@@ -76,7 +76,7 @@ describe('validation.business', () => {
     });
 
     it('validates 2023 benchmarks data', () => {
-        const result = benchmarkBusinessValidation(2023);
+        const result = benchmarkBusinessValidation('benchmarks.json', 2023);
 
         expect(logSpy).not.toBeCalled();
         expect(result).toBeFalsy();

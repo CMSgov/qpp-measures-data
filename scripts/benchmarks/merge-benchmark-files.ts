@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { Benchmark } from './csv-json-converter';
+import { Benchmark } from './benchmarks.types';
 
 // command to use this file:
 //  node ./dist/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
@@ -17,6 +17,10 @@ function mergeBenchmarkFiles(benchmarksPath: string) {
         const jsonFile = JSON.parse(
             fs.readFileSync(path.join(appRoot + '', `${benchmarksPath}${fileName}`), 'utf8')
         );
+        //remove the deciles column (which is still sometimes included in 3rd party files)
+        jsonFile.forEach(measure => {
+            delete measure.deciles;
+        });
         combinedBenchmarks.push(...jsonFile);
     });
     

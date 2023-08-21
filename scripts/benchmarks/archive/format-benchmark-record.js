@@ -2,7 +2,7 @@
 // Libraries
 const keyBy = require('lodash/keyBy');
 // Data
-const isInverseBenchmarkRecord = require('../../../util/benchmarks/is-inverse-benchmark-record');
+const isInverseBenchmarkRecord = require('./is-inverse-benchmark-record');
 
 const Constants = require('../../../constants.js');
 
