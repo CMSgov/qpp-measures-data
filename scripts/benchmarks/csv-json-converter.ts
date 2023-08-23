@@ -39,8 +39,8 @@ function convertCsvToJson(csvPath: string, performanceYear: number) {
         
         //maps the csv column values to the matching measures-data fields.
         _.each(BENCHMARKS_COLUMN_NAMES, (columnName, measureKeyName) => {
-            if (row[columnName]) {
-                measure[measureKeyName] = mapInput(columnName, row);
+            if (row[measureKeyName]) {
+                measure[columnName] = mapInput(measureKeyName, row);
             }
         });
         

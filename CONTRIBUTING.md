@@ -71,24 +71,14 @@ To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV
 
 ### Additional Benchmarks
 
-For 2018-2019, only 'full images' of benchmark data are accepted; the csv must contain a full list of included benchmarks. Incremental files are no longer supported (2017 is no longer supported).
+To add or update benchmarks, rename your csv to 'benchmarks.csv'
+and place that file in staging/$YEAR/benchmarks/. 
+Replace any existing files of the same name.
+Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
+$YEAR refers to the performance year you are looking to update. 
+See `build-benchmarks` for more detail.
 
-  To add or update benchmarks, rename your csv to 'benchmarks.csv'
-  and place that file in staging/$YEAR/benchmarks/. 
-  Replace any existing files of the same name.
-  Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
-  $YEAR refers to the performance year you are looking to update. 
-  See `build-benchmarks` for more detail.
-
-  `build-benchmarks` will call `parse-benchmarks-data.js` directly and validate the data right after. 
-  `parse-benchmarks-data.js` relies on a set of columns to be present and additional empty columns can cause the parsing to fail.
-   See that file for additional instructions on how to generate the JSON file.
-  
-  Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/$YEAR/measures-data.json` for the correct usage. If none are matched, either a padded `000` digit will be used for `measureId`s with all digits or a non-spaced version of the `measureId` will be used.
-
-  If 2 benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, an error will be thrown. Benchmarks cannot share this composite key.
-
-  Please verify the changes are as expected. (You can run `git diff`.)
+Please verify the changes are as expected. (You can run `git diff`.)
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
