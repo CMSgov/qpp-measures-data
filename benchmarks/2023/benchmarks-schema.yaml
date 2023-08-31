@@ -1,7 +1,7 @@
 $id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-schema.yaml
 $schema: http://json-schema.org/schema#
 type: array
-items: { $ref: #/definitions/benchmark }
+items: { $ref: '#/definitions/benchmark' }
 
 definitions:
   benchmark:
