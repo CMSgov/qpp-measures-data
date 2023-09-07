@@ -75,4 +75,7 @@ definitions:
       submissionMethod:
         description: The method for submitting the measure performance data to which this benchmark applies.
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
-    required: [measureId, performanceYear, benchmarkYear, submissionMethod, percentiles]
+      averagePerformanceRate:
+        description:  The Average Performance Rate for the Measure and CollectionType.
+        type: [number, 'null']
+    required: [measureId, performanceYear, benchmarkYear, submissionMethod, percentiles, averagePerformanceRate]

@@ -28,8 +28,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
     if [[ $FILE =~ $re ]]; then
       echo -e "Converting $FILE.csv to JSON..."
       node dist/scripts/benchmarks/csv-json-converter.js \
-        staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear \
-        > staging/$currentPerformanceYear/benchmarks/json/${BASH_REMATCH[2]}.json
+        staging/$currentPerformanceYear/benchmarks/${BASH_REMATCH[2]}.csv $currentPerformanceYear ${BASH_REMATCH[2]}
       
       # validate the JSON files before combining
       node dist/scripts/benchmarks/validation.business.js \
