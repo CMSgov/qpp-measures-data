@@ -43,7 +43,6 @@ describe('validation.business', () => {
     const testErrorsThrown = (message: string, changesToMerge: any) => {
         try {
             const modifiedBenchmarks = _.merge([], _.cloneDeep(volatileBenchmarks), changesToMerge)
-            console.log(modifiedBenchmarks[2])
 
             mockFileSystemResponse(
                 volatileMeasures, 
