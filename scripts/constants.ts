@@ -59,6 +59,7 @@ export const BENCHMARKS_COLUMN_NAMES = {
     'submissionMethod': 'submissionMethod',
     'isInverse': 'isInverse',
     'metricType': 'metricType',
+    'averagePerformanceRate': 'averagePerformanceRate',
 };
 
 export const SUBMISSION_METHOD_MAP = {

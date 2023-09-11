@@ -21,9 +21,10 @@ import { Benchmark } from './benchmarks.types';
 
 // command to use this file:
 //  node ./dist/benchmarks/csv-json-converter.js ./util/2023/benchmarks/[fileName].csv [year] > ./util/2023/benchmarks/json/[fileName].json
-function convertCsvToJson(csvPath: string, performanceYear: number) {
+function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
     const csv = fetchCSV(csvPath);
     const parsedCsv = prepareCsv(csv);
+    const jsonPath = `staging/${performanceYear}/benchmarks/json/${jsonFileName}.json`;
 
     const mappedCsv = parsedCsv.map((row) => {
         const measure: Benchmark = {
@@ -60,24 +61,30 @@ function convertCsvToJson(csvPath: string, performanceYear: number) {
             }
         }
         
-        //populate with False if it wasn't found in the csv.
+        //populate some default values if they are not found in the csv.
         measure.isToppedOutByProgram = measure.isToppedOutByProgram || false;
+        measure.averagePerformanceRate = measure.averagePerformanceRate || null;
+
         return orderFields(measure);
     });
 
-    // output to [filename].json
-    process.stdout.write(JSON.stringify(mappedCsv, null, 2));
+    // write to [filename].json
+    writeToFile(mappedCsv, jsonPath);
 }
 
 function fetchCSV(filePath: string) {
     return fs.readFileSync(path.join(appRoot + '', `${filePath}`), 'utf8');
 }
 
+export function writeToFile(file: any, filePath: string) {
+    fs.writeFileSync(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2));
+}
+
 function orderFields(benchmark: Benchmark) {
     //reorder the fields to stay consistent.
     const orderedValues = Object.assign({}, BENCHMARKS_ORDER, benchmark)
     //remove undefined fields.
-    return _.omitBy(orderedValues, _.isNil);
+    return _.omitBy(orderedValues, _.isUndefined);
 }
 
 function mapInput(columnName: string, csvRow: any) {
@@ -130,4 +137,4 @@ function prepareCsv(csv: any) {
     return parsedCsv;
 }
 
-convertCsvToJson(process.argv[2], parseInt(process.argv[3]));
+convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);

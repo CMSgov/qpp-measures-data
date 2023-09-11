@@ -165,6 +165,7 @@ export type Benchmark = {
   metricType?: string,
   isToppedOutByProgram?: boolean,
   percentiles?: object,
+  averagePerformanceRate?: number | null
 }
 
 export type BenchmarkList =  {
