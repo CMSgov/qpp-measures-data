@@ -1,7 +1,7 @@
 $id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-schema.yaml
 $schema: http://json-schema.org/schema#
 type: array
-items: { $ref: #/definitions/benchmark }
+items: { $ref: '#/definitions/benchmark' }
 
 definitions:
   benchmark:
@@ -75,4 +75,7 @@ definitions:
       submissionMethod:
         description: The method for submitting the measure performance data to which this benchmark applies.
         enum: [claims, registry, cmsWebInterface, administrativeClaims, electronicHealthRecord, certifiedSurveyVendor]
-    required: [measureId, performanceYear, benchmarkYear, submissionMethod, deciles]
+      averagePerformanceRate:
+        description:  The Average Performance Rate for the Measure and CollectionType.
+        type: [number, 'null']
+    required: [measureId, performanceYear, benchmarkYear, submissionMethod, percentiles]

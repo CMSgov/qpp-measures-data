@@ -52,12 +52,14 @@ export const QUALITY_CSV_COLUMN_NAMES = {
 
 export const BENCHMARKS_COLUMN_NAMES = {
     'measureId': 'measureId',
+    'qualityId': 'measureId',
     'isToppedOut': 'isToppedOut',
     'isToppedOutByProgram': 'isToppedOutByProgram',
     'isHighPriority': 'isHighPriority',
     'submissionMethod': 'submissionMethod',
     'isInverse': 'isInverse',
     'metricType': 'metricType',
+    'averagePerformanceRate': 'averagePerformanceRate',
 };
 
 export const SUBMISSION_METHOD_MAP = {
