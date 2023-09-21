@@ -8465,7 +8465,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf",
@@ -8478,7 +8478,8 @@
       "interventionalRadiology",
       "neurosurgical"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "split"
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",

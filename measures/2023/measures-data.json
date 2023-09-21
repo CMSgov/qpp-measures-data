@@ -8881,7 +8881,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf",
@@ -8896,7 +8896,8 @@
     ],
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_409_MIPSCQM.pdf"
-    }
+    },
+    "overallAlgorithm": "split"
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",
