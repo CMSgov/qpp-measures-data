@@ -1,23 +1,67 @@
-$id: https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2024/measures-schema.yaml
+$id: https://github.com/CMSgov/qpp-measures-data/blob/master/mvps/2024/mvps-schema.yaml
 $schema: http://json-schema.org/draft-07/schema
 type: array
-items: { $ref: '#/definitions/measure' }
-uniqueItemProperties: ['measureId'] # used by ajv-keywords
+items: { $ref: '#/definitions/mvp' }
+uniqueItemProperties: ['mvpId'] # used by ajv-keywords
 
 definitions:
-  measure:
-    title: 'Measure'
+  mvp:
+    title: 'MVP'
     type: object
-    anyOf:
-      - { $ref: '#/definitions/iaMeasure' }
-      - { $ref: '#/definitions/piMeasure' }
-      - { $ref: '#/definitions/qualityMeasure' }
-      - { $ref: '#/definitions/aggregateCostMeasure' }
+    properties:
+      mvpId:
+        type: string
+        description: The unique id for the MVP object
+      clinicalTopic:
+        type: string
+        description: The clinical topic of the MVP
+      title:
+        type: string
+        description: The title of the MVP
+      description:
+        type: string
+        description: The description of the MVP
+      specialtiesMostApplicableTo:
+        type: array
+        items: { type: string }
+        description: A list of one or more specialties that the MVP is most applicable to
+      clinicalTopics:
+        type: string
+        description: A longer description of the clinical topic(s)
+      qualityMeasures:
+        type: array
+        items: { $ref: '#/definitions/qualityMeasure' }
+        description: An array of quality measures applicable to this MVP
+      iaMeasures:
+        type: array
+        items: { $ref: '#/definitions/iaMeasure' }
+        description: An array of IA measures applicable to this MVP
+      costMeasures:
+        type: array
+        items: { $ref: '#/definitions/aggregateCostMeasure' }
+        description: An array of cost measures applicable to this MVP
+      foundationPiMeasures:
+        type: array
+        items: { $ref: '#/definitions/piMeasure' }
+        description: An array of foundation PI measures applicable to this MVP
+      foundationQualityMeasures:
+        type: array
+        items: { $ref: '#/definitions/qualityMeasure' }
+        description: An array of foundation quality measures applicable to this MVP
+      administrativeClaimsMeasures:
+        type: array
+        items: { $ref: '#/definitions/qualityMeasure' }
+        description: An array of Outcome Administrative Claims measures applicable to this MVP
+      hasCahps:
+        type: boolean
+        description: Answers the question if MVP contains CAHPS
+      hasOutcomeAdminClaims:
+        type: boolean
+        description: Answers the question if MVP contains Outcome Admin Claims
 
   baseMeasure:
     title: 'Base Measure'
     type: object
-    additionalProperties: false
     properties:
       measureId:
         type: string
@@ -51,10 +95,6 @@ definitions:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: '#/definitions/measureSets' }
-      allowedPrograms:
-        description: Programs that the measure can be submitted to
-        type: array
-        items: { $ref: '#/definitions/programs' }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
 
   iaMeasure:
@@ -140,6 +180,9 @@ definitions:
         additionalProperties: false
         properties:
           category: { const quality }
+          nationalQualityStrategyDomain: 
+            type: ['null', string]
+            description: The area of health care quality (NQS Domain) which this measure improves.
           measureType:
             description: Quality category which the measure incentivizes.
             oneOf: [{ $ref: '#/definitions/measureTypes' }]
@@ -172,7 +215,7 @@ definitions:
             default: false
           overallAlgorithm:
             description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-            enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly, split]
+            enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly]
           strata:
             description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
             type: array
@@ -192,6 +235,10 @@ definitions:
             description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
             type: array
             items: { $ref: '#/definitions/performanceOption' }
+          allowedPrograms:
+            description: Programs that the measure can be submitted to
+            type: array
+            items: { $ref: '#/definitions/programs' }
           requiredForPrograms:
             description: Programs that the measure is required to be submitted to
             type: array
@@ -244,11 +291,10 @@ definitions:
             }
           }
         ]
-        required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
+        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, allowedPrograms, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object
-    additionalProperties: false
     properties:
       description:
         type: string
@@ -257,7 +303,25 @@ definitions:
         type: string
         description: a one-word tag, unique to the strata.
         maxLength: 20
-    required: [description, name]
+      eMeasureUuids:
+        type: object
+        description: UUID for Electronic Clinical Quality Measures (ECQM).
+        properties:
+          initialPopulationUuid:
+            type: string
+            description: UUID for the initial population.
+          denominatorUuid:
+            type: string
+            description: UUID for the denominator.
+          numeratorUuid:
+            type: string
+            description: UUID for the numerator.
+          denominatorExclusionUuid:
+            type: string
+            description: UUID for the denominator exclusion.
+          denominatorExceptionUuid:
+            type: string
+            description: UUID for the denominator exception.
 
   subcategoryIds:
     enum:
@@ -273,7 +337,6 @@ definitions:
 
   objectives:
     enum:
-      - null
       - attestation
       - publicHealthAndClinicalDataRegistryReporting
       - healthInformationExchange
@@ -309,7 +372,6 @@ definitions:
 
   measureSpecification:
     type: object
-    additionalProperties: false
     properties:
       default:
         type: string
@@ -320,8 +382,6 @@ definitions:
       cmsWebInterface:
         type: string
       measureInformation:
-        type: string
-      electronicHealthRecord:
         type: string
 
   measureSets:
@@ -378,7 +438,6 @@ definitions:
 
   eligibilityOption:
     type: object
-    additionalProperties: false
     properties:
       sexCode:
         description: Gender identifier in the case of measures that apply to one gender only.
@@ -413,7 +472,6 @@ definitions:
 
   performanceOption:
     type: object
-    additionalProperties: false
     properties:
       optionType:
         description: The specific performance option corresponding to the quality codes (performance met, performance not met, etc.).
@@ -429,22 +487,9 @@ definitions:
       - mips
       - pcf
       - app1
-      - G0053
-      - G0054
-      - G0055
-      - G0056
-      - G0057
-      - G0058
-      - G0059
-      - M0001
-      - M0002
-      - M0003
-      - M0004
-      - M0005
 
   codeObject:
     type: object
-    additionalProperties: false
     properties:
       code:
         description: The HCPCS or CPT code represented as a string.

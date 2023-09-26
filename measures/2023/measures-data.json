@@ -8897,7 +8897,17 @@
     "measureSpecification": {
       "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_409_MIPSCQM.pdf"
     },
-    "overallAlgorithm": "split"
+    "overallAlgorithm": "split",
+    "strata": [
+      {
+        "name": "reporting",
+        "description": "Percentage of patients with mRS score assessed at 90 days following endovascular stroke intervention"
+      },
+      {
+        "name": "performance",
+        "description": "Percentage of patients with mRS score of 0 to 2 assessed at 90 days following endovascular stroke intervention"
+      }
+    ]
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",
