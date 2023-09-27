@@ -172,7 +172,7 @@ definitions:
             default: false
           overallAlgorithm:
             description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-            enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly]
+            enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly, split]
           strata:
             description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
             type: array

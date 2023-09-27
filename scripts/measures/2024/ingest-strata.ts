@@ -44,7 +44,7 @@ export function ingestStrata() {
         );
       }
       return {
-        ...currentStrata.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
+        ...currentStrata?.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
         name: stratum.stratumName,
         description: stratum.description,
       };
