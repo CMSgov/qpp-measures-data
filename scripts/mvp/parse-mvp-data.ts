@@ -56,16 +56,14 @@ rawMvpData.forEach((row) => {
 
     hydrateMeasureIds(newMvp, mvpCategory, measure);
 
-    newMvp.hasOutcomeAdminClaims =
-      _.isEmpty(newMvp.administrativeClaimsMeasureIds) ? false : true;
+    newMvp.hasOutcomeAdminClaims = !_.isEmpty(newMvp.administrativeClaimsMeasureIds);
     
     mvpData.push(newMvp);
 
   } else {
     hydrateMeasureIds(existingMvp, mvpCategory, measure);
     
-    existingMvp.hasOutcomeAdminClaims =
-      _.isEmpty(existingMvp.administrativeClaimsMeasureIds) ? false : true;
+    existingMvp.hasOutcomeAdminClaims = !_.isEmpty(existingMvp.administrativeClaimsMeasureIds);
   }
 });
 

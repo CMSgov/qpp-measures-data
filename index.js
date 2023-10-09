@@ -196,8 +196,7 @@ exports.createMVPDataFile = function(performanceYear) {
       this.populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
     });
 
-    mvp.hasOutcomeAdminClaims =
-      _.isEmpty(mvp.administrativeClaimsMeasureIds) ? false : true;
+    mvp.hasOutcomeAdminClaims = !_.isEmpty(mvp.administrativeClaimsMeasureIds);
   });
 
   mvpData.forEach(mvp => {
@@ -224,11 +223,11 @@ exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, me
         }
       });
       measure.allowedPrograms = uniq(measure.allowedPrograms);
-      
-      if (measure?.measureId === "321") {
+
+      if (measure.measureId === '321') {
         currentMvp.hasCahps = true;
       }
-      
+
       // update mvp-data with measures.
       currentMvp[enrichedMeasureKey].push(measure);
     }
