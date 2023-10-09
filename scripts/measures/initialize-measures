@@ -29,6 +29,7 @@ else
   echo -e "Updating the max performance year for the shell scripts..."
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/update-measures
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/measures-json-to-csv
+  sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/update-mvp
 
   echo -e "Cloning yearly scripts..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
