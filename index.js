@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const YAML = require('yamljs');
-const uniq = require('lodash/uniq');
+const _ = require('lodash');
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
@@ -194,6 +194,8 @@ exports.createMVPDataFile = function(performanceYear) {
       mvp[item.enrichedMeasureKey] = [];
       this.populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
     });
+
+    mvp.hasOutcomeAdminClaims = !_.isEmpty(mvp.administrativeClaimsMeasureIds);
   });
 
   mvpData.forEach(mvp => {
@@ -208,19 +210,25 @@ exports.createMVPDataFile = function(performanceYear) {
   return mvpData;
 };
 
-exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresData, measureIdKey, enrichedMeasureKey) {
-  mvpDataItem[measureIdKey].forEach(measureId => {
-    const measure = measuresData.find(m => m.measureId === measureId);
+exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, measureIdKey, enrichedMeasureKey) {
+  currentMvp[measureIdKey].forEach(measureId => {
+    const measure = measuresData.find(measure => measure.measureId === measureId);
 
     if (measure) {
-      mvpDataArray.forEach(m => {
-        if (m[measureIdKey].includes(measureId)) {
-          measure.allowedPrograms.push(m.mvpId);
+      allMvps.forEach(mvp => {
+        // update measuresData with MVP programNames.
+        if (mvp[measureIdKey].includes(measureId)) {
+          measure.allowedPrograms.push(mvp.mvpId);
         }
       });
+      measure.allowedPrograms = _.uniq(measure.allowedPrograms);
 
-      measure.allowedPrograms = uniq(measure.allowedPrograms);
-      mvpDataItem[enrichedMeasureKey].push(measure);
+      if (measure.measureId === '321') {
+        currentMvp.hasCahps = true;
+      }
+
+      // update mvp-data with measures.
+      currentMvp[enrichedMeasureKey].push(measure);
     }
   });
 };
