@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const YAML = require('yamljs');
-const uniq = require('lodash/uniq');
 const _ = require('lodash');
 
 const yearRegEx = /^[0-9]{4}/;
@@ -222,7 +221,7 @@ exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, me
           measure.allowedPrograms.push(mvp.mvpId);
         }
       });
-      measure.allowedPrograms = uniq(measure.allowedPrograms);
+      measure.allowedPrograms = _.uniq(measure.allowedPrograms);
 
       if (measure.measureId === '321') {
         currentMvp.hasCahps = true;
