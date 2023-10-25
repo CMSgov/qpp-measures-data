@@ -51,8 +51,8 @@ rawMvpData.forEach((row) => {
       foundationPiMeasureIds: [] as any,
       foundationQualityMeasureIds: [] as any,
       administrativeClaimsMeasureIds: [] as any,
+      hasCahps: false,
       hasOutcomeAdminClaims: false,
-      hasCahps: false
     };
 
     hydrateMeasureIds(newMvp, mvpCategory, measure);
