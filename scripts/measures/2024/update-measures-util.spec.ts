@@ -341,7 +341,7 @@ describe('#update-measures-util', () => {
             );
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims', the metricType is not 'costScore', and isInverse is false. Was this deliberate?`);
+            expect(warningSpy).toBeCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
