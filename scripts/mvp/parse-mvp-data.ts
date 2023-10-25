@@ -52,6 +52,7 @@ rawMvpData.forEach((row) => {
       foundationQualityMeasureIds: [] as any,
       administrativeClaimsMeasureIds: [] as any,
       hasOutcomeAdminClaims: false,
+      hasCahps: false
     };
 
     hydrateMeasureIds(newMvp, mvpCategory, measure);
@@ -85,8 +86,6 @@ function hydrateMeasureIds(mvp, mvpCategory, measure) {
         }
         if (measure?.measureId === "321") {
           mvp.hasCahps = true;
-        } else {
-          mvp.hasCahps = false;
         }
         mvp.qualityMeasureIds.push(measure.measureId);
       }
