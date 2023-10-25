@@ -85,6 +85,8 @@ function hydrateMeasureIds(mvp, mvpCategory, measure) {
         }
         if (measure?.measureId === "321") {
           mvp.hasCahps = true;
+        } else {
+          mvp.hasCahps = false;
         }
         mvp.qualityMeasureIds.push(measure.measureId);
       }
