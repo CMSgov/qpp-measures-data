@@ -50,12 +50,20 @@ rawMvpData.forEach((row) => {
       costMeasureIds: [] as any,
       foundationPiMeasureIds: [] as any,
       foundationQualityMeasureIds: [] as any,
+      administrativeClaimsMeasureIds: [] as any,
+      hasOutcomeAdminClaims: false,
     };
 
     hydrateMeasureIds(newMvp, mvpCategory, measure);
+
+    newMvp.hasOutcomeAdminClaims = !_.isEmpty(newMvp.administrativeClaimsMeasureIds);
+    
     mvpData.push(newMvp);
+
   } else {
     hydrateMeasureIds(existingMvp, mvpCategory, measure);
+    
+    existingMvp.hasOutcomeAdminClaims = !_.isEmpty(existingMvp.administrativeClaimsMeasureIds);
   }
 });
 
@@ -70,6 +78,14 @@ function hydrateMeasureIds(mvp, mvpCategory, measure) {
       if (mvpCategory === "Foundational") {
         mvp.foundationQualityMeasureIds.push(measure.measureId);
       } else if (mvpCategory === "Quality") {
+        // if it is an adminclaims measure, add it to that array.
+        if (measure?.submissionMethods.includes("administrativeClaims")) {
+          mvp.administrativeClaimsMeasureIds.push(measure.measureId);
+          break;
+        }
+        if (measure?.measureId === "321") {
+          mvp.hasCahps = true;
+        }
         mvp.qualityMeasureIds.push(measure.measureId);
       }
       break;
