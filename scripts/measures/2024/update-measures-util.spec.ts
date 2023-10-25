@@ -91,6 +91,15 @@ const allowedQualityChange = {
     overallAlgorithm: 'overallStratumOnly',
 };
 
+const allowedCostScoreQualityChange = {
+    measureId: '002',
+    firstPerformanceYear: 2020,
+    isInverse: false,
+    metricType: 'costScore',
+    overallAlgorithm: 'overallStratumOnly',
+    submissionMethods: ['administrativeClaims'],
+};
+
 const allowedQcdrChange = {
     measureId: 'AQI49',
     title: 'testTitle',
@@ -314,6 +323,25 @@ describe('#update-measures-util', () => {
             expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
             expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('logs warnings when certain fields are changed', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedCostScoreQualityChange,
+                category: 'quality',
+            }]);
+
+            const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(addSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(warningSpy).toBeCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims', the metricType is not 'costScore', and isInverse is false. Was this deliberate?`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
