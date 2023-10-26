@@ -21,6 +21,7 @@ import {
     COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,
     IA_MEASURES_ORDER,
+    METRIC_TYPES,
     PI_DEFAULT_VALUES,
     PI_MEASURES_ORDER,
     QCDR_MEASURES_ORDER,
@@ -96,6 +97,9 @@ export function updateMeasuresWithChangeFile(
                 if (!isOutcomeHighPriority(change, measuresJson)) {
                     throw new DataValidationError(measureId, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
+                if (isOnlyAdminClaims(change) && (change.metricType !== 'costScore' || !change.isInverse)) warning(
+                    `'${measureId}': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`
+                );
                 if (isNew && change.metricType?.includes('ultiPerformanceRate')) {
                     warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\n         Update strata file with new measure strata before merging into the repo.`);
                     change.strata = PLACEHOLDER_STRATA;
@@ -324,6 +328,7 @@ function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any): boole
     }
     return true;
 }
+
 
 function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: any): boolean {
     const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
