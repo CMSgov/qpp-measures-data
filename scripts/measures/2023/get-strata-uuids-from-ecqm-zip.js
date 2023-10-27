@@ -41,7 +41,7 @@ function extractStrata(measure, emeasureid) {
     .measureAttribute[0].value[0].$.value;
   const populationId = ['138', '156'];
   let strataDescriptions;
-  if(populationId.includes(emeasureid)) {
+  if (populationId.includes(emeasureid)) {
     strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '').split(/\n|\r|&#xA;/));
   } else {
     strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
@@ -90,7 +90,7 @@ const xmlFiles = fs.readdirSync(tmpDir)
     const zip = new AdmZip(path.join(tmpDir, measureZip));
     const { entryName: filename } = zip.getEntries()
       .find(({entryName}) => {
-        const filename = entryName.toString()
+        const filename = entryName.toString();
         return filename.includes('.xml') && filename.includes(folder);
       });
 
@@ -98,7 +98,6 @@ const xmlFiles = fs.readdirSync(tmpDir)
     zip.extractEntryTo(filename, tmpPath, false, true);
     return filename;
   });
-
 
 // parse files into JavaScript objects
 const promisifiedParseString = Promise.promisify(parseString);
@@ -112,9 +111,8 @@ Promise.all(
     return _.compact(docs.map(doc => {
       const measure = doc.QualityMeasureDocument;
       const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-      const test = measure.subjectOf[0].measureAttribute[0].code[0].originalText[0].$.value;
       // These must all be manually added. No accurate way to parse their uuid's
-      const ignoredMeasureIds = ['145', '157', '347'] //, '156', '157', '347'];
+      const ignoredMeasureIds = ['145', '157', '347'];
       if (ignoredMeasureIds.includes(emeasureid)) {
         console.warn('WARNING: CMS' + emeasureid + ' has one numerator but multiple populations and needs to be added manually');
         return;
