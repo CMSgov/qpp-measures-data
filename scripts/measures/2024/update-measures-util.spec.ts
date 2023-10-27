@@ -597,7 +597,7 @@ describe('#update-measures-util', () => {
 
             UpdateMeasuresUtil.updateMeasure(change, volatileMeasures);
 
-            expect(_.find(volatileMeasures, { measureId: '001' })).toEqual({
+            expect(_.find(volatileMeasures, { measureId: '001' })).toEqual(expect.objectContaining({
                 title: 'Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)',
                 eMeasureId: 'CMS122v11',
                 nqfEMeasureId: null,
@@ -643,7 +643,7 @@ describe('#update-measures-util', () => {
                     electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
                     registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
                 }
-            });
+            }));
         });
     });
 

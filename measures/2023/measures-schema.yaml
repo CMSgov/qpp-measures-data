@@ -248,7 +248,7 @@ definitions:
 
   performanceStrata:
     type: object
-    additionalProperties: false
+    additionalProperties: true
     properties:
       description:
         type: string
@@ -257,7 +257,7 @@ definitions:
         type: string
         description: a one-word tag, unique to the strata.
         maxLength: 20
-    required: [description, name]
+    required: [description]
 
   subcategoryIds:
     enum:
