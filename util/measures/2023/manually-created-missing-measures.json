@@ -1,0 +1,94 @@
+[
+  {
+    "eMeasureId": "CMS145v11",
+    "eMeasureUuid": "2c928083-7f47-c81f-017f-8e1c03421dc7",
+    "strata": [
+      {
+        "name": "LVSD",
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4E0D3490-1061-4C2C-B49D-4A31B2DBC197",
+          "denominatorUuid": "854ADFB2-FAFB-4632-9D74-19DB7EA25034",
+          "numeratorUuid": "45097018-5150-485C-8D87-61BB9BB0943B",
+          "denominatorExceptionUuid": "90C84B31-6F60-41C8-A576-37589C8EEBF5"
+        }
+      },
+      {
+        "name": "priorMI",
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "073B2941-D099-4142-97C0-E907CD7215D8",
+          "denominatorUuid": "00007C18-CC58-4BDB-9759-C08B59B809B1",
+          "numeratorUuid": "82ADC103-BB4D-4436-A0DF-11D8E5907473",
+          "denominatorExceptionUuid": "04EED69A-0FFD-4EF9-80BD-2A0D3C88BBE4"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS157v11",
+    "eMeasureUuid": "2c928084-7b7e-655a-017b-88e5bfb80591",
+    "strata": [
+      {
+        "name": "Chemotherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0F15C056-2D9F-4B90-A97F-14C34E6AD194",
+          "denominatorUuid": "D54AC8FB-CBA1-4569-9189-7EBFAA66574D",
+          "numeratorUuid": "151395B6-5CD8-4DB5-B86F-8D3DF5100C83"
+        }
+      },
+      {
+        "name": "RadiationTherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3BC00F94-27F6-45F2-90AC-E47D1BE70A1A",
+          "denominatorUuid": "BD5FB04B-8A49-4488-96B0-6A14BC904E39",
+          "numeratorUuid": "F6B603E8-D49B-4C4D-8AA3-3073626B7A59"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS347v5",
+    "eMeasureUuid": "2c928082-7fac-c041-017f-b8180fec068b",
+    "strata": [
+      {
+        "name": "clinicalASCVD",
+        "description": "Adults aged >= 21 years who were previously diagnosed with or currently have an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B12E750E-E32A-4DAF-93A4-2902B9A7A006",
+          "denominatorUuid": "D7210073-99D6-4616-8511-B15FF2C0DC36",
+          "denominatorExclusionUuid": "5912E99B-963C-4F45-AD54-95D17670B56C",
+          "numeratorUuid": "0DEB457A-D340-42D2-BD19-8038E502F8AA",
+          "denominatorExceptionUuid": "2F1166B5-43F2-4E45-BC3D-2E399BBD41FF"
+        }
+      },
+      {
+        "name": ">21Familial",
+        "description": "Adults aged >= 21 years who have ever had a fasting or direct low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial or pure hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0EC4214D-3153-4AAB-84E0-E9F18EB384B5",
+          "denominatorUuid": "4138280C-EE28-4B9D-A963-B9EB69CA2C8B",
+          "denominatorExclusionUuid": "EC8E047A-242B-4798-8A75-09BADEF9C278",
+          "numeratorUuid": "52221AD6-F254-4BD4-9FB5-07B0D9E14F32",
+          "denominatorExceptionUuid": "9F91E492-AEFF-45D3-8637-24DA32CC3363"
+        }
+      },
+      {
+        "name": "between40And75",
+        "description": "Adults aged 40-75 years with a diagnosis of diabetes with a fasting or direct LDL-C level of 70-189 mg/dL",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B2FD2F54-F64B-446A-B8D6-69E87CF6B1DB",
+          "denominatorUuid": "733BFDF4-72B5-4474-95CA-AD14BDD0F739",
+          "denominatorExclusionUuid": "800774E8-D7E7-45CF-8EF6-8D6F8538F60F",
+          "numeratorUuid": "C7164728-E597-499F-80DD-F6E42981E34F",
+          "denominatorExceptionUuid": "64BF25A1-2691-494E-B51F-1B99F5FCE795"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  }
+]

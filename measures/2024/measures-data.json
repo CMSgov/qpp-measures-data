@@ -12,13 +12,13 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0053",
       "G0056",
+      "G0053",
       "G0059",
       "M0001",
-      "M0005",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -35,6 +35,7 @@
       "mips",
       "app1",
       "G0053",
+      "M0001",
       "M0003",
       "M0004"
     ]
@@ -172,10 +173,10 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -206,9 +207,10 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0054",
       "G0055",
-      "G0056",
+      "M0002",
       "M0005"
     ]
   },
@@ -225,10 +227,9 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0055",
       "G0056",
-      "M0001",
-      "M0002"
+      "G0055",
+      "M0001"
     ]
   },
   {
@@ -263,10 +264,10 @@
       "app1",
       "G0053",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -378,12 +379,12 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0054",
       "G0056",
+      "G0054",
       "G0057",
       "G0059",
-      "M0005",
-      "M0002"
+      "M0002",
+      "M0005"
     ]
   },
   {
@@ -493,11 +494,12 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0054",
       "G0056",
+      "G0054",
       "G0058",
-      "M0005",
-      "M0002"
+      "M0001",
+      "M0002",
+      "M0005"
     ]
   },
   {
@@ -625,15 +627,15 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
-      "G0056",
       "G0057",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -664,12 +666,17 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0053",
+      "G0054",
+      "G0055",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
-      "M0002"
+      "M0002",
+      "M0003",
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -804,6 +811,7 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0053",
       "G0054",
       "G0055",
       "M0001",
@@ -824,6 +832,7 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0053",
       "G0055"
     ]
   },
@@ -887,8 +896,8 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0055",
-      "G0056"
+      "G0056",
+      "G0055"
     ]
   },
   {
@@ -904,8 +913,8 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0055",
       "G0056",
+      "G0055",
       "G0057",
       "G0058",
       "G0059"
@@ -968,7 +977,8 @@
     "subcategoryId": "patientSafetyAndPracticeAssessment",
     "allowedPrograms": [
       "mips",
-      "app1"
+      "app1",
+      "M0001"
     ]
   },
   {
@@ -989,8 +999,8 @@
   },
   {
     "category": "ia",
-    "title": "Use of decision support and standardized treatment protocols",
-    "description": "Use decision support and standardized treatment protocols to manage workflow in the team to meet patient needs.",
+    "title": "Use decision support—ideally platform-agnostic, interoperable clinical decision support (CDS) tools —and standardized treatment protocols to manage workflow on the care team to meet patient needs.",
+    "description": "Use decision support - ideally platform-agnostic, interoperable clinician decision support (CDS) tools - and standardized treatment protocols to manage workflow on the care team to meet patient needs. Clinicians should focus on utilizing open-source, freely available, interoperable CDS in completing the requirements of this activity.",
     "measureId": "IA_PSPA_16",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
@@ -1049,9 +1059,7 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0056",
-      "G0057",
-      "M0005"
+      "G0056"
     ]
   },
   {
@@ -1160,22 +1168,8 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0053"
-    ]
-  },
-  {
-    "category": "ia",
-    "title": "Consulting Appropriate Use Criteria (AUC) Using Clinical Decision Support when Ordering Advanced Diagnostic Imaging",
-    "description": "Clinicians attest that they are consulting specified applicable AUC through a qualified clinical decision support mechanism for all applicable imaging services furnished in an applicable setting, paid for under an applicable payment system, and ordered on or after January 1, 2018. This activity is for clinicians that are early adopters of the Medicare AUC program (2018 performance year) and for clinicians that begin the Medicare AUC program in future years as specified in our regulation at §414.94. The AUC program is required under section 218 of the Protecting Access to Medicare Act of 2014. Qualified mechanisms will be able to provide a report to the ordering clinician that can be used to assess patterns of image-ordering and improve upon those patterns to ensure that patients are receiving the most appropriate imaging for their individual condition.",
-    "measureId": "IA_PSPA_29",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2018,
-    "lastPerformanceYear": null,
-    "weight": "high",
-    "subcategoryId": "patientSafetyAndPracticeAssessment",
-    "allowedPrograms": [
-      "mips",
-      "app1"
+      "G0053",
+      "M0001"
     ]
   },
   {
@@ -1251,13 +1245,13 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0053",
       "G0056",
+      "G0053",
       "G0058",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -1332,7 +1326,11 @@
     "subcategoryId": "achievingHealthEquity",
     "allowedPrograms": [
       "mips",
-      "app1"
+      "app1",
+      "G0054",
+      "G0055",
+      "M0002",
+      "M0005"
     ]
   },
   {
@@ -1392,7 +1390,8 @@
     "subcategoryId": "emergencyResponseAndPreparedness",
     "allowedPrograms": [
       "mips",
-      "app1"
+      "app1",
+      "M0001"
     ]
   },
   {
@@ -1476,21 +1475,6 @@
   },
   {
     "category": "ia",
-    "title": "Implementation of co-location PCP and MH services",
-    "description": "Integration facilitation and promotion of the colocation of mental health and substance use disorder services in primary and/or non-primary clinical care settings.",
-    "measureId": "IA_BMH_6",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "weight": "high",
-    "subcategoryId": "behavioralAndMentalHealth",
-    "allowedPrograms": [
-      "mips",
-      "app1"
-    ]
-  },
-  {
-    "category": "ia",
     "title": "Implementation of Integrated Patient Centered Behavioral Health Model",
     "description": "Offer integrated behavioral health services to support patients with behavioral health needs who also have conditions such as dementia or other poorly controlled chronic illnesses.  The services could include one or more of the following: •  Use evidence-based treatment protocols and treatment to goal where appropriate;• Use evidence-based screening and case finding strategies to identify individuals at risk and in need of services;•  Ensure regular communication and coordinated workflows between MIPS eligible clinicians in primary care and behavioral health;•  Conduct regular case reviews for at-risk or unstable patients and those who are not responding to treatment;•  Use of a registry or health information technology functionality to support active care management and outreach to patients in treatment;•  Integrate behavioral health and medical care plans and facilitate integration through co-location of services when feasible; and/or•  Participate in the National Partnership to Improve Dementia Care Initiative, which promotes a multidimensional approach that includes public reporting, state-based coalitions, research, training, and revised surveyor guidance.",
     "measureId": "IA_BMH_7",
@@ -1533,8 +1517,7 @@
     "subcategoryId": "behavioralAndMentalHealth",
     "allowedPrograms": [
       "mips",
-      "app1",
-      "M0005"
+      "app1"
     ]
   },
   {
@@ -1579,7 +1562,9 @@
     "subcategoryId": "behavioralAndMentalHealth",
     "allowedPrograms": [
       "mips",
-      "app1"
+      "app1",
+      "G0057",
+      "M0001"
     ]
   },
   {
@@ -1595,18 +1580,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -1682,25 +1667,10 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0055",
       "G0056",
+      "G0055",
       "G0057",
       "M0005"
-    ]
-  },
-  {
-    "category": "ia",
-    "title": "Obtain or Renew an Approved Waiver for Provision of Buprenorphine as Medication-Assisted Treatment for Opioid Use Disorder",
-    "description": "This activity is suspended, as it is no longer available through or required by the Substance Abuse and Mental Health Services Administration (SAMHSA) or the Drug Enforcement Administration (DEA).",
-    "measureId": "IA_BMH_13",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "weight": "medium",
-    "subcategoryId": "behavioralAndMentalHealth",
-    "allowedPrograms": [
-      "mips",
-      "app1"
     ]
   },
   {
@@ -1722,25 +1692,25 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
   {
     "category": "pi",
     "measureId": "PI_PPHI_2",
-    "title": "High Priority Practices Guide of the Safety Assurance Factors for EHR  Resilience (SAFER) Guides",
+    "title": "SAFER Guides High Priority Practices Guide",
     "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
     "isRequired": true,
     "metricType": "boolean",
@@ -1756,18 +1726,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1790,18 +1760,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1824,18 +1794,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1860,18 +1830,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1894,18 +1864,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1932,18 +1902,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -1971,18 +1941,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2005,18 +1975,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2044,18 +2014,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2078,18 +2048,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2116,18 +2086,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2150,18 +2120,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2184,18 +2154,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": [
       "PI_PHCDRR_2_PRE",
@@ -2225,18 +2195,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": [
       "PI_PHCDRR_1_PRE",
@@ -2265,18 +2235,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2302,18 +2272,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2339,18 +2309,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2377,18 +2347,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": [
       "PI_PHCDRR_3_PRE",
@@ -2417,18 +2387,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2454,18 +2424,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2491,18 +2461,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2525,18 +2495,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": [
       "PI_PHCDRR_4_PRE",
@@ -2562,18 +2532,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": [
       "PI_PHCDRR_5_PRE",
@@ -2598,18 +2568,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2617,7 +2587,7 @@
     "category": "pi",
     "measureId": "PI_EP_2_EX_2",
     "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
-    "description": "Any MIPS eligible clinician who writes fewer than 100 permissible prescriptions during the performance period",
+    "description": "Any MIPS eligible clinician who does not electronically prescribe any Schedule II opioids or Schedule III or IV drugs during the performance period.",
     "isRequired": false,
     "metricType": "boolean",
     "firstPerformanceYear": 2023,
@@ -2631,51 +2601,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
-    ],
-    "preprod": []
-  },
-  {
-    "category": "pi",
-    "measureId": "PI_EP_2_EX_3",
-    "title": "Query of the Prescription Drug Monitoring Program (PDMP) Exclusion",
-    "description": "Any MIPS eligible clinician for whom querying a PDMP would impose an excessive workflow or cost burden prior to the start of the performance period they select in CY 2023.",
-    "isRequired": false,
-    "metricType": "boolean",
-    "firstPerformanceYear": 2023,
-    "lastPerformanceYear": null,
-    "objective": "electronicPrescribing",
-    "isBonus": false,
-    "reportingCategory": "exclusion",
-    "substitutes": [],
-    "measureSets": [],
-    "exclusion": null,
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "G0053",
-      "G0054",
-      "G0055",
-      "G0056",
-      "G0057",
-      "G0058",
-      "G0059",
-      "M0001",
-      "M0005",
-      "M0002",
-      "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2702,18 +2639,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2735,18 +2672,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "preprod": []
   },
@@ -2770,18 +2707,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2804,18 +2741,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2838,18 +2775,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2872,18 +2809,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2906,18 +2843,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2940,18 +2877,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -2974,18 +2911,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -3008,18 +2945,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -3042,18 +2979,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -3076,18 +3013,18 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ]
   },
   {
@@ -3115,7 +3052,8 @@
       "mips",
       "pcf",
       "app1",
-      "M0002"
+      "M0002",
+      "M0005"
     ],
     "submissionMethods": [
       "claims",
@@ -3195,7 +3133,8 @@
     "allowedPrograms": [
       "mips",
       "pcf",
-      "G0056"
+      "G0056",
+      "G0055"
     ],
     "submissionMethods": [
       "registry"
@@ -3493,8 +3432,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "claims",
@@ -3535,13 +3473,14 @@
     "allowedPrograms": [
       "mips",
       "pcf",
+      "G0056",
       "G0054",
       "G0055",
-      "G0056",
       "M0001",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "submissionMethods": [
       "claims",
@@ -3707,7 +3646,8 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0057"
     ],
     "submissionMethods": [
       "electronicHealthRecord",
@@ -3926,9 +3866,7 @@
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "M0002"
-    ],
+    "allowedPrograms": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -3959,10 +3897,7 @@
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "G0053",
-      "M0002"
-    ],
+    "allowedPrograms": [],
     "submissionMethods": [
       "claims",
       "electronicHealthRecord",
@@ -3994,8 +3929,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "claims",
@@ -4033,8 +3967,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "claims",
@@ -4148,7 +4081,8 @@
     "allowedPrograms": [
       "mips",
       "pcf",
-      "G0056"
+      "G0056",
+      "G0055"
     ],
     "submissionMethods": [
       "registry"
@@ -4257,8 +4191,7 @@
       "mips",
       "pcf",
       "G0055",
-      "G0058",
-      "M0005"
+      "G0058"
     ],
     "submissionMethods": [
       "claims",
@@ -5398,8 +5331,7 @@
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "claims",
@@ -5487,9 +5419,10 @@
       "mips",
       "pcf",
       "app1",
-      "G0054",
       "G0056",
-      "M0002"
+      "G0054",
+      "M0002",
+      "M0005"
     ],
     "submissionMethods": [
       "claims",
@@ -6446,7 +6379,8 @@
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "M0005"
     ],
     "submissionMethods": [
       "electronicHealthRecord"
@@ -6493,8 +6427,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "electronicHealthRecord"
@@ -6529,8 +6462,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "electronicHealthRecord"
@@ -8293,8 +8225,7 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "registry"
@@ -8668,7 +8599,8 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0057"
     ],
     "submissionMethods": [
       "registry"
@@ -8942,8 +8874,7 @@
     "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0005"
+      "pcf"
     ],
     "submissionMethods": [
       "registry"
@@ -9111,8 +9042,9 @@
     "allowedPrograms": [
       "mips",
       "pcf",
+      "G0056",
       "G0054",
-      "G0056"
+      "M0005"
     ],
     "submissionMethods": [
       "electronicHealthRecord",
@@ -10021,18 +9953,18 @@
       "mips",
       "pcf",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "submissionMethods": [
       "administrativeClaims"
@@ -10266,7 +10198,18 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0053",
+      "G0054",
+      "G0055",
+      "G0057",
+      "G0058",
+      "G0059",
+      "M0001",
+      "M0002",
+      "M0003",
+      "M0004",
+      "M0005"
     ],
     "submissionMethods": [
       "registry"
@@ -10337,7 +10280,8 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "M0002"
     ],
     "submissionMethods": [
       "registry",
@@ -10412,7 +10356,8 @@
     "metricType": "singlePerformanceRate",
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "M0001"
     ],
     "submissionMethods": [
       "registry"
@@ -10511,6 +10456,8 @@
     "allowedPrograms": [
       "mips",
       "pcf",
+      "G0053",
+      "M0002",
       "M0005"
     ],
     "submissionMethods": [
@@ -10579,18 +10526,18 @@
       "mips",
       "pcf",
       "app1",
+      "G0056",
       "G0053",
       "G0054",
       "G0055",
-      "G0056",
       "G0057",
       "G0058",
       "G0059",
       "M0001",
-      "M0005",
       "M0002",
       "M0003",
-      "M0004"
+      "M0004",
+      "M0005"
     ],
     "submissionMethods": [
       "administrativeClaims"
@@ -10615,7 +10562,7 @@
     "allowedPrograms": [
       "mips",
       "app1",
-      "G0057",
+      "G0055",
       "G0059",
       "M0003",
       "M0004"
@@ -10638,12 +10585,12 @@
     "allowedPrograms": [
       "mips",
       "app1",
+      "G0056",
       "G0053",
       "G0055",
-      "G0056",
       "M0001",
-      "M0005",
-      "M0002"
+      "M0002",
+      "M0005"
     ]
   },
   {
@@ -11832,7 +11779,8 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "M0001"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -11964,7 +11912,8 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0053"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -12228,7 +12177,8 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0059"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -12761,8 +12711,7 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "M0003"
+      "pcf"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -13534,8 +13483,7 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "G0057"
+      "pcf"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -15027,8 +14975,7 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf",
-      "G0059"
+      "pcf"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -15988,7 +15935,8 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0059"
     ],
     "category": "quality",
     "lastPerformanceYear": null,
@@ -16423,7 +16371,8 @@
     ],
     "allowedPrograms": [
       "mips",
-      "pcf"
+      "pcf",
+      "G0057"
     ],
     "category": "quality",
     "lastPerformanceYear": null,

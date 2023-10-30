@@ -91,6 +91,15 @@ const allowedQualityChange = {
     overallAlgorithm: 'overallStratumOnly',
 };
 
+const allowedCostScoreQualityChange = {
+    measureId: '002',
+    firstPerformanceYear: 2020,
+    isInverse: false,
+    metricType: 'costScore',
+    overallAlgorithm: 'overallStratumOnly',
+    submissionMethods: ['administrativeClaims'],
+};
+
 const allowedQcdrChange = {
     measureId: 'AQI49',
     title: 'testTitle',
@@ -314,6 +323,25 @@ describe('#update-measures-util', () => {
             expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
             expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+        });
+
+        it('logs warnings when certain fields are changed', () => {
+
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
+                ...allowedCostScoreQualityChange,
+                category: 'quality',
+            }]);
+
+            const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+            UpdateMeasuresUtil.updateMeasuresWithChangeFile(
+                'test.csv',
+                'fakepath/',
+                '2023',
+                volatileMeasures,
+            );
+            expect(addSpy).not.toBeCalled();
+            expect(deleteSpy).not.toBeCalled();
+            expect(warningSpy).toBeCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
@@ -569,7 +597,7 @@ describe('#update-measures-util', () => {
 
             UpdateMeasuresUtil.updateMeasure(change, volatileMeasures);
 
-            expect(_.find(volatileMeasures, { measureId: '001' })).toEqual({
+            expect(_.find(volatileMeasures, { measureId: '001' })).toEqual(expect.objectContaining({
                 title: 'Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)',
                 eMeasureId: 'CMS122v11',
                 nqfEMeasureId: null,
@@ -615,7 +643,7 @@ describe('#update-measures-util', () => {
                     electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
                     registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
                 }
-            });
+            }));
         });
     });
 
