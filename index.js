@@ -103,6 +103,14 @@ exports.getBenchmarksSchema = function(performanceYear = Constants.currentPerfor
 };
 
 /**
+ * @return {Array<Any>}
+ */
+exports.getBenchmarksExclusionReasons = function (performanceYear = Constants.currentPerformanceYear) {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmark-exclusion-reasons.json')));
+};
+
+/**
  * @return {Array<Measure>}
  */
 exports.getMeasuresData = function(performanceYear = 2017) {
