@@ -63,7 +63,9 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
         
         //populate some default values if they are not found in the csv.
         measure.isToppedOutByProgram = measure.isToppedOutByProgram || false;
-        measure.averagePerformanceRate = measure.averagePerformanceRate || null;
+        measure.averagePerformanceRate = measure.averagePerformanceRate
+            ? +measure.averagePerformanceRate
+            : null;
 
         return orderFields(measure);
     });
