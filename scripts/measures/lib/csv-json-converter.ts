@@ -161,8 +161,8 @@ function mapArrayItem(field: string, map: any, values: string) {
 
 function mapItem(field: string, map: any, value: string) {
     // .replace(/\s/g, "") removes all whitespace.
-    if (typeof map[value.replace(/\s/g, "")] !== 'undefined') {
-        return map[value.replace(/\s/g, "")];
+    if (typeof map[value.replace(/\s/g, "").toLowerCase()] !== 'undefined') {
+        return map[value.replace(/\s/g, "").toLowerCase()];
     }
     else {
         throw new InvalidValueError(field, value);
