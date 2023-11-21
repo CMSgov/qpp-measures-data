@@ -150,7 +150,7 @@ function mapArrayItem(field: string, map: any, values: string) {
     // null field if the value entered in the CR is 'NULL'.
     if (values === 'NULL') return [];
 
-    const arrayedField: string[] = values.split(',');
+    const arrayedField: string[] = values.replace(/\s/g, "").split(',').filter(n => n);
 
     for (let i = 0; i < arrayedField.length; i++) {
         arrayedField[i] = mapItem(field, map, arrayedField[i]);

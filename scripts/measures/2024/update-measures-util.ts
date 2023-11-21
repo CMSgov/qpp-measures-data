@@ -100,11 +100,11 @@ export function updateMeasuresWithChangeFile(
                 if (isOnlyAdminClaims(change) && (change.metricType !== 'costScore' || !change.isInverse)) warning(
                     `'${measureId}': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`
                 );
-                if (isNew && change.metricType?.includes('ultiPerformanceRate')) {
+                if (change.metricType?.includes('ultiPerformanceRate')) {
                     warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\n         Update strata file with new measure strata before merging into the repo.`);
                     change.strata = PLACEHOLDER_STRATA;
 
-                    if (!change.overallAlgorithm) {
+                    if (isNew && !change.overallAlgorithm) {
                         throw new DataValidationError(measureId, 'New multiPerformanceRate measures require a Calculation Type.');
                     }
                 }

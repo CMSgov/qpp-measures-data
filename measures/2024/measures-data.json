@@ -3379,45 +3379,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "Age-Related Macular Degeneration (AMD): Dilated Macular Examination",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0087",
-    "measureId": "014",
-    "description": "Percentage of patients aged 50 years and older with a diagnosis of age-related macular degeneration (AMD) who had a dilated macular examination performed which included documentation of the presence or absence of macular thickening or geographic atrophy or hemorrhage AND the level of macular degeneration severity during one or more office visits within the 12 month performance period.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American Academy of Ophthalmology",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "ophthalmology"
-    ],
-    "measureSpecification": {}
-  },
-  {
     "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes Care",
     "eMeasureId": "CMS142v12",
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "019",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed with documented communication to the physician who manages the ongoing care of the patient with diabetes mellitus regarding the findings of the macular or fundus exam at least once within 12 months.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed with documented communication to the physician who manages the ongoing care of the patient with diabetes mellitus regarding the findings of the macular or fundus exam at least once during the performance period.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Academy of Ophthalmology",
@@ -3666,12 +3633,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "Chronic Obstructive Pulmonary Disease (COPD): Long-Acting Inhaled Bronchodilator Therapy",
+    "title": "Chronic Obstructive Pulmonary Disease (COPD): Spirometry Evaluation for Long-Acting Inhaled Bronchodilator Therapy",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0102",
     "measureId": "052",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD (FEV1/FVC < 70%) and who have an FEV1 less than 60% predicted and have symptoms who were prescribed a long-acting inhaled bronchodilator.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD with a documented FEV1/FVC <70%  measured by spirometry, who are symptomatic and were prescribed a long-acting inhaled bronchodilator.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Thoracic Society",
@@ -3685,7 +3652,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -3696,7 +3663,17 @@
     "measureSets": [
       "pulmonology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "simpleAverage",
+    "historic_benchmarks": {
+      "registry": "removed"
+    },
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
   },
   {
     "title": "Appropriate Treatment for Upper Respiratory Infection (URI)",
@@ -3743,7 +3720,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "066",
-    "description": "The percentage of episodes for patients 3 years and older with a diagnosis of pharyngitis that resulted in an antibiotic order and a group A streptococcus (strep) test in the seven-day period from three days prior to the episode date through three days after the episode date.",
+    "description": "The percentage of episodes for patients 3 years and older with a diagnosis of pharyngitis that resulted in an antibiotic order on or within 3 days after the episode date and a group A Streptococcus (Strep) test in the seven-day period from three days prior to the episode date through three days after the episode date.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "National Committee for Quality Assurance",
@@ -3777,47 +3754,9 @@
     "measureSpecification": {}
   },
   {
-    "title": "Acute Otitis Externa (AOE): Systemic Antimicrobial Therapy - Avoidance of Inappropriate Use",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0654",
-    "measureId": "093",
-    "description": "Percentage of patients aged 2 years and older with a diagnosis of AOE who were not prescribed systemic antimicrobial therapy.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "American Academy of Otolaryngology - Head and Neck Surgery",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "emergencyMedicine",
-      "familyMedicine",
-      "internalMedicine",
-      "otolaryngology",
-      "pediatrics",
-      "urgentCare"
-    ],
-    "measureSpecification": {}
-  },
-  {
     "title": "Prostate Cancer: Avoidance of Overuse of Bone Scan for Staging Low Risk Prostate Cancer Patients",
     "eMeasureId": "CMS129v13",
-    "nqfEMeasureId": "0389e",
+    "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "102",
     "description": "Percentage of patients, regardless of age, with a diagnosis of prostate cancer at low (or very low) risk of recurrence receiving interstitial prostate brachytherapy, OR external beam radiotherapy to the prostate, OR radical prostatectomy who did not have a bone scan performed at any time since diagnosis of prostate cancer.",
@@ -3884,110 +3823,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "Adult Major Depressive Disorder (MDD): Suicide Risk Assessment",
-    "eMeasureId": "CMS161v12",
-    "nqfEMeasureId": "0104e",
-    "nqfId": null,
-    "measureId": "107",
-    "description": "Percentage of all patient visits for those patients that turn 18 or older during the measurement period in which a new or recurrent diagnosis of major depressive disorder (MDD) was identified and a suicide risk assessment was completed during the visit",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "Mathematica",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf",
-      "G0056"
-    ],
-    "submissionMethods": [
-      "electronicHealthRecord"
-    ],
-    "measureSets": [
-      "emergencyMedicine",
-      "familyMedicine",
-      "internalMedicine",
-      "mentalBehavioralHealth"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Preventive Care and Screening: Influenza Immunization",
-    "eMeasureId": "CMS147v13",
-    "nqfEMeasureId": null,
-    "nqfId": "0041",
-    "measureId": "110",
-    "description": "Percentage of patients aged 6 months and older seen for a visit during the measurement period who received an influenza immunization OR who reported previous receipt of an influenza immunization.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "National Committee for Quality Assurance",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [],
-    "submissionMethods": [
-      "claims",
-      "electronicHealthRecord",
-      "cmsWebInterface",
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Pneumococcal Vaccination Status for Older Adults",
-    "eMeasureId": "CMS127v12",
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "111",
-    "description": "Percentage of patients 66 years of age and older who have received a pneumococcal vaccine.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "National Committee for Quality Assurance",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [],
-    "submissionMethods": [
-      "claims",
-      "electronicHealthRecord",
-      "registry"
-    ],
-    "measureSets": [],
-    "measureSpecification": {}
-  },
-  {
     "title": "Breast Cancer Screening",
     "eMeasureId": "CMS125v12",
     "nqfEMeasureId": null,
     "nqfId": "2372",
     "measureId": "112",
-    "description": "Percentage of women 50 - 74 years of age who had a mammogram to screen for breast cancer in the 27 months prior to the end of the measurement period.",
+    "description": "Percentage of women 40 - 74 years of age who had a mammogram to screen for breast cancer in the 27 months prior to the end of the measurement period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -4012,11 +3853,7 @@
       "cmsWebInterface",
       "registry"
     ],
-    "measureSets": [
-      "familyMedicine",
-      "obstetricsGynecology",
-      "preventiveMedicine"
-    ],
+    "measureSets": [],
     "measureSpecification": {}
   },
   {
@@ -4050,10 +3887,7 @@
       "cmsWebInterface",
       "registry"
     ],
-    "measureSets": [
-      "familyMedicine",
-      "preventiveMedicine"
-    ],
+    "measureSets": [],
     "measureSpecification": {}
   },
   {
@@ -4273,28 +4107,7 @@
       "electronicHealthRecord",
       "registry"
     ],
-    "measureSets": [
-      "cardiology",
-      "endocrinology",
-      "familyMedicine",
-      "gastroenterology",
-      "generalSurgery",
-      "internalMedicine",
-      "mentalBehavioralHealth",
-      "nutritionDietician",
-      "obstetricsGynecology",
-      "orthopedicSurgery",
-      "otolaryngology",
-      "physicalMedicine",
-      "physicalTherapyOccupationalTherapy",
-      "plasticSurgery",
-      "podiatry",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "urology",
-      "vascularSurgery"
-    ],
+    "measureSets": [],
     "measureSpecification": {}
   },
   {
@@ -4414,6 +4227,7 @@
       "internalMedicine",
       "mentalBehavioralHealth",
       "neurology",
+      "nutritionDietician",
       "oncology",
       "orthopedicSurgery",
       "pediatrics",
@@ -4458,45 +4272,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "Melanoma: Coordination of Care",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "138",
-    "description": "Percentage of patient visits, regardless of age, with a new occurrence of melanoma that have a treatment plan documented in the chart that was communicated to the physician(s) providing continuing care within one month of diagnosis.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "American Academy of Dermatology",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "dermatology"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 15% OR Documentation of a Plan of Care",
+    "title": "Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 20% OR Documentation of a Plan of Care.",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "0563",
     "measureId": "141",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) whose glaucoma treatment has not failed (the most recent IOP was reduced by at least 15% from the pre-intervention level) OR if the most recent IOP was not reduced by at least 15% from the pre-intervention level, a plan of care was documented within the 12 month performance period.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) whose glaucoma treatment has not failed (the most recent IOP was reduced by at least 20% from the pre-intervention level) OR if the most recent IOP was not reduced by at least 20% from the pre-intervention level, a plan of care was documented within the 12 month performance period.",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "American Academy of Ophthalmology",
@@ -4627,40 +4408,6 @@
     "measureSets": [
       "diagnosticRadiology",
       "interventionalRadiology"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Nuclear Medicine: Correlation with Existing Imaging Studies for All Patients Undergoing Bone Scintigraphy",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "147",
-    "description": "Percentage of final reports for all patients, regardless of age, undergoing bone scintigraphy that include physician documentation of correlation with existing relevant imaging studies (e.g., x-ray, Magnetic Resonance Imaging (MRI), Computed Tomography (CT), etc.) that were performed.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "Society of Nuclear Medicine and Molecular Imaging",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "claims",
-      "registry"
-    ],
-    "measureSets": [
-      "diagnosticRadiology"
     ],
     "measureSpecification": {}
   },
@@ -4911,7 +4658,6 @@
     ],
     "measureSets": [
       "orthopedicSurgery",
-      "physicalTherapyOccupationalTherapy",
       "rheumatology"
     ],
     "measureSpecification": {}
@@ -5140,12 +4886,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "HIV/AIDS: Sexually Transmitted Disease Screening for Chlamydia, Gonorrhea, and Syphilis",
-    "eMeasureId": null,
+    "title": "Sexually Transmitted Infection (STI) Testing for People with HIV",
+    "eMeasureId": "CMS1188v1",
     "nqfEMeasureId": null,
-    "nqfId": "0409",
+    "nqfId": null,
     "measureId": "205",
-    "description": "Percentage of patients aged 13 years and older with a diagnosis of HIV/AIDS for whom chlamydia, gonorrhea, and syphilis screenings were performed at least once since the diagnosis of HIV infection.",
+    "description": "Percentage of patients 13 years of age and older with a diagnosis of HIV who had tests for syphilis, gonorrhea, and chlamydia performed within the performance period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "Health Resources and Services Administration",
@@ -5165,6 +4911,7 @@
       "pcf"
     ],
     "submissionMethods": [
+      "electronicHealthRecord",
       "registry"
     ],
     "measureSets": [
@@ -5274,7 +5021,8 @@
     "measureSets": [
       "chiropracticMedicine",
       "orthopedicSurgery",
-      "physicalTherapyOccupationalTherapy"
+      "physicalTherapyOccupationalTherapy",
+      "podiatry"
     ],
     "measureSpecification": {}
   },
@@ -5386,10 +5134,10 @@
   {
     "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
     "eMeasureId": "CMS138v12",
-    "nqfEMeasureId": "0028e",
-    "nqfId": "0028",
+    "nqfEMeasureId": null,
+    "nqfId": null,
     "measureId": "226",
-    "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user.",
+    "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times during the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -5422,27 +5170,23 @@
       "clinicalSocialWork",
       "dermatology",
       "endocrinology",
-      "familyMedicine",
       "gastroenterology",
       "generalSurgery",
-      "geriatrics",
       "infectiousDisease",
-      "internalMedicine",
       "mentalBehavioralHealth",
       "nephrology",
       "neurology",
       "neurosurgical",
       "nutritionDietician",
-      "obstetricsGynecology",
       "oncology",
       "ophthalmology",
       "orthopedicSurgery",
       "otolaryngology",
+      "pediatrics",
       "physicalMedicine",
       "physicalTherapyOccupationalTherapy",
       "plasticSurgery",
       "podiatry",
-      "preventiveMedicine",
       "pulmonology",
       "radiationOncology",
       "rheumatology",
@@ -6040,12 +5784,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "Sleep Apnea: Assessment of Adherence to Positive Airway Pressure Therapy",
+    "title": "Sleep Apnea: Assessment of Adherence to Obstructive Sleep Apnea (OSA) Therapy.",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "279",
-    "description": "Percentage of visits for patients aged 18 years and older with a diagnosis of obstructive sleep apnea who were prescribed positive airway pressure therapy who had documentation that adherence to positive airway pressure therapy was objectively measured.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea (OSA) that were prescribed an evidence-based therapy that had documentation that adherence to therapy was assessed at least annually through an objective informatics system or through self-reporting (if objective reporting is not available)",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Academy of Sleep Medicine",
@@ -6147,43 +5891,6 @@
       "geriatrics",
       "mentalBehavioralHealth",
       "neurology"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Dementia Associated Behavioral and Psychiatric Symptoms Screening and Management",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "283",
-    "description": "Percentage of patients with dementia for whom there was a documented screening for behavioral and psychiatric symptoms, including depression, and for whom, if symptoms screening was positive, there was also documentation of recommendations for management in the last 12 months.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American Academy of Neurology/American Psychiatric Association",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "clinicalSocialWork",
-      "geriatrics",
-      "mentalBehavioralHealth",
-      "neurology",
-      "physicalTherapyOccupationalTherapy"
     ],
     "measureSpecification": {}
   },
@@ -6327,7 +6034,9 @@
       "registry"
     ],
     "measureSets": [
-      "neurology"
+      "neurology",
+      "physicalTherapyOccupationalTherapy",
+      "speechLanguagePathology"
     ],
     "measureSpecification": {}
   },
@@ -6461,6 +6170,7 @@
       "electronicHealthRecord"
     ],
     "measureSets": [
+      "clinicalSocialWork",
       "familyMedicine",
       "internalMedicine",
       "mentalBehavioralHealth",
@@ -6580,23 +6290,21 @@
     ],
     "measureSets": [
       "allergyImmunology",
+      "audiology",
       "cardiology",
       "dermatology",
       "emergencyMedicine",
-      "familyMedicine",
       "gastroenterology",
       "generalSurgery",
-      "internalMedicine",
       "mentalBehavioralHealth",
       "nephrology",
       "neurology",
-      "obstetricsGynecology",
       "oncology",
       "orthopedicSurgery",
       "otolaryngology",
       "physicalMedicine",
       "plasticSurgery",
-      "preventiveMedicine",
+      "podiatry",
       "rheumatology",
       "skilledNursingFacility",
       "urgentCare",
@@ -6729,39 +6437,6 @@
     "nqfId": null,
     "measureId": "322",
     "description": "Percentage of stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), or cardiac magnetic resonance (CMR) performed in low-risk surgery patients 18 years or older for preoperative evaluation during the 12-month submission period.",
-    "measureType": "efficiency",
-    "isHighPriority": true,
-    "primarySteward": "American College of Cardiology Foundation",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": true,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "cardiology"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Testing in Asymptomatic, Low-Risk Patients",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "324",
-    "description": "Percentage of all stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), and cardiovascular magnetic resonance (CMR) performed in asymptomatic, low coronary heart disease (CHD) risk patients 18 years and older for initial detection and risk assessment.",
     "measureType": "efficiency",
     "isHighPriority": true,
     "primarySteward": "American College of Cardiology Foundation",
@@ -6972,12 +6647,12 @@
     "measureSpecification": {}
   },
   {
-    "title": "HIV Viral Load Suppression",
-    "eMeasureId": null,
+    "title": "HIV Viral Suppression",
+    "eMeasureId": "CMS314v1",
     "nqfEMeasureId": null,
-    "nqfId": "2082",
+    "nqfId": null,
     "measureId": "338",
-    "description": "The percentage of patients, regardless of age, with a diagnosis of HIV with a HIV viral load less than 200 copies/mL at last HIV viral load test during the measurement year.",
+    "description": "Percentage of patients, regardless of age, diagnosed with HIV prior to or during the first 90 days of the performance period, with an eligible encounter in the first 240 days of the performance period, whose last HIV viral load test result was less than 200 copies/mL during the performance period.",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Health Resources and Services Administration",
@@ -6997,6 +6672,7 @@
       "pcf"
     ],
     "submissionMethods": [
+      "electronicHealthRecord",
       "registry"
     ],
     "measureSets": [
@@ -7011,7 +6687,7 @@
     "title": "HIV Medical Visit Frequency",
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "2079",
+    "nqfId": null,
     "measureId": "340",
     "description": "Percentage of patients, regardless of age with a diagnosis of HIV who had at least one medical visit in each 6 month period of the 24 month measurement period, with a minimum of 60 days between medical visits.",
     "measureType": "process",
@@ -7317,6 +6993,7 @@
       "orthopedicSurgery",
       "otolaryngology",
       "plasticSurgery",
+      "podiatry",
       "thoracicSurgery",
       "urology",
       "vascularSurgery"
@@ -7546,7 +7223,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "376",
-    "description": "Percentage of patients 19 years of age and older who received an elective primary total hip arthroplasty (THA) and completed a functional status assessment within 90 days prior to the surgery and in the 270 – 365 days after the surgery.",
+    "description": "Percentage of patients 19 years of age and older who received an elective primary total hip arthroplasty (THA) and completed a functional status assessment within 90 days prior to the surgery and in the 300 – 425 days after the surgery.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -7615,7 +7292,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "378",
-    "description": "Percentage of children, 6 months - 20 years of age at the start of the measurement period, who have had tooth decay or cavities during the measurement period as determined by a dentist.",
+    "description": "Percentage of children, 1 - 20 years of age at the start of the measurement period, who have had tooth decay or cavities during the measurement period as determined by a dentist",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -7648,7 +7325,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "379",
-    "description": "Percentage of children, 6 months - 20 years of age, who received a fluoride varnish application during the measurement period as determined by a dentist.",
+    "description": "Percentage of children, 1 – 20 years of age, who received two fluoride varnish applications during the measurement period as determined by a dentist.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -7678,10 +7355,10 @@
   {
     "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
     "eMeasureId": "CMS177v12",
-    "nqfEMeasureId": "1365e",
+    "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "382",
-    "description": "Percentage of patient visits for those patients aged 6 through 17 years with a diagnosis of major depressive disorder (MDD) with an assessment for suicide risk.",
+    "description": "Percentage of patient visits for those patients aged 6 through 16 years at the start of the measurement period  with a diagnosis of major depressive disorder (MDD) with an assessment for suicide risk",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "Mathematica",
@@ -7818,7 +7495,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "386",
-    "description": "Percentage of patients diagnosed with Amyotrophic Lateral Sclerosis (ALS) who were offered assistance in planning for end of life issues (e.g., advance directives, invasive ventilation, hospice) at least once annually.",
+    "description": "Percentage of patients diagnosed with Amyotrophic Lateral Sclerosis (ALS) who were offered assistance in planning for end of life issues (e.g., advance directives, invasive ventilation, lawful physician-hastened death, or hospice) or whose existing end of life plan was reviewed or updated at least once annually or more frequency as clinically indicated (i.e., rapid progression)",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Academy of Neurology",
@@ -7913,52 +7590,6 @@
       "ophthalmology"
     ],
     "measureSpecification": {}
-  },
-  {
-    "title": "Follow-Up After Hospitalization for Mental Illness (FUH)",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "0576",
-    "measureId": "391",
-    "description": "The percentage of discharges for patients 6 years of age and older who were hospitalized for treatment of selected mental illness or intentional self-harm diagnoses and who had a follow-up visit with a mental health provider. Two rates are submitted: The percentage of discharges for which the patient received follow-up within 30 days after discharge The percentage of discharges for which the patient received follow-up within 7 days after discharge",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "National Committee for Quality Assurance",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "multiPerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "internalMedicine",
-      "mentalBehavioralHealth",
-      "pediatrics"
-    ],
-    "measureSpecification": {},
-    "overallAlgorithm": "overallStratumOnly",
-    "strata": [
-      {
-        "name": "30Days",
-        "description": "The percentage of discharges for which the patient received follow-up within 30 days after discharge"
-      },
-      {
-        "name": "overall",
-        "description": "The percentage of discharges for which the patient received follow-up within 7 days after discharge"
-      }
-    ]
   },
   {
     "title": "Cardiac Tamponade and/or Pericardiocentesis Following Atrial Fibrillation Ablation",
@@ -8278,12 +7909,12 @@
     ]
   },
   {
-    "title": "One-Time Screening for Hepatitis C Virus (HCV) for all Patients",
+    "title": "One-Time Screening for Hepatitis C Virus (HCV) and Treatment Initiation",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "400",
-    "description": "Percentage of patients age >= 18 years who received one-time screening for hepatitis C virus (HCV) infection.",
+    "description": "Percentage of patients age >= 18 years have never been tested for Hepatitis C Virus (HCV) infection who receive an HCV infection test AND who have treatment initiated within three months or who are referred to a clinician who treats HCV infection within one month if tested positive for HCV.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Gastroenterological Association",
@@ -8297,7 +7928,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -8310,7 +7941,17 @@
       "internalMedicine",
       "nephrology"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "simpleAverage",
+    "historic_benchmarks": {
+      "registry": "removed"
+    },
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
   },
   {
     "title": "Hepatitis C: Screening for Hepatocellular Carcinoma (HCC) in Patients with Cirrhosis",
@@ -8344,60 +7985,6 @@
       "familyMedicine",
       "gastroenterology",
       "internalMedicine"
-    ],
-    "measureSpecification": {}
-  },
-  {
-    "title": "Tobacco Use and Help with Quitting Among Adolescents",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "402",
-    "description": "The percentage of adolescents 12 to 20 years of age with a primary care visit during the measurement year for whom tobacco use status was documented and received help with quitting if identified as a tobacco user.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "National Committee for Quality Assurance",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "allergyImmunology",
-      "cardiology",
-      "clinicalSocialWork",
-      "dermatology",
-      "familyMedicine",
-      "gastroenterology",
-      "generalSurgery",
-      "internalMedicine",
-      "mentalBehavioralHealth",
-      "neurology",
-      "obstetricsGynecology",
-      "oncology",
-      "orthopedicSurgery",
-      "otolaryngology",
-      "pediatrics",
-      "physicalMedicine",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "thoracicSurgery",
-      "urgentCare",
-      "vascularSurgery"
     ],
     "measureSpecification": {}
   },
@@ -8691,7 +8278,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0053",
     "measureId": "418",
-    "description": "The percentage of women 50-85 years of age who suffered a fracture and who had either a bone mineral density (BMD) test or prescription for a drug to treat osteoporosis in the six months after the fracture.",
+    "description": "The percentage of women 65–85 years of age who suffered a fracture and who had either a bone mineral density (BMD) test or prescription for a drug to treat osteoporosis in the six months after the fracture.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -9099,7 +8686,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "438",
-    "description": "Percentage of the following patients - all considered at high risk of cardiovascular events - who were prescribed or were on statin therapy during the measurement period: \n*All patients who were previously diagnosed with or currently have a diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD), including an ASCVD procedure; OR \n*Patients aged >= 20 years who have ever had a low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial hypercholesterolemia; OR \n*Patients aged 40-75 years with a diagnosis of diabetes",
+    "description": "Percentage of the following patients - all considered at high risk of cardiovascular events - who were prescribed or were on statin therapy during the performance period:\r\n•\tAll patients who were previously diagnosed with or currently have a diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD), including an ASCVD procedure; OR\r\n•\tPatients aged 20 to 75 years who have ever had a low-density lipoprotein cholesterol (LDL-C) level ≥ 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial hypercholesterolemia; OR\r\n•\tPatients aged 40 to 75 years with a diagnosis of diabetes; OR\r\n•\tPatients aged 40 to 75 with a 10-year ASCVD risk score of ≥ 20 percent.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -9133,7 +8720,11 @@
       "internalMedicine",
       "preventiveMedicine"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "historic_benchmarks": {
+      "registry": "removed",
+      "electronicHealthRecord": "removed"
+    }
   },
   {
     "title": "Age Appropriate Screening Colonoscopy",
@@ -9940,7 +9531,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "477",
-    "description": "Percentage of patients, aged 18 years and older, undergoing selected surgical procedures that were managed with multimodal pain medicine.",
+    "description": "Percentage of patients, aged 18 years and older, undergoing selected surgical procedures that were managed with multimodal pain management.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Society of Anesthesiologists",
@@ -10190,7 +9781,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "485",
-    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of psoriasis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
+    "description": "The percentage of patients, aged 8 years and older, with a diagnosis of psoriasis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 3 or more points at a follow up visit.",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "American Academy of Dermatology",
@@ -10223,7 +9814,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "486",
-    "description": "The percentage of patients, aged 18 years and older, with a diagnosis of dermatitis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 2 or more points at a follow up visit.",
+    "description": "The percentage of patients, aged 8 years and older, with a diagnosis of dermatitis where at an initial (index) visit have a patient reported itch severity assessment performed, score greater than or equal to 4, and who achieve a score reduction of 3 or more points at a follow up visit.",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "American Academy of Dermatology",
@@ -10293,10 +9884,10 @@
       "allergyImmunology",
       "audiology",
       "cardiology",
+      "certifiedNurseMidwife",
       "chiropracticMedicine",
       "clinicalSocialWork",
       "dermatology",
-      "diagnosticRadiology",
       "emergencyMedicine",
       "endocrinology",
       "familyMedicine",
@@ -10325,6 +9916,7 @@
       "pulmonology",
       "rheumatology",
       "skilledNursingFacility",
+      "speechLanguagePathology",
       "thoracicSurgery",
       "urgentCare",
       "urology",
@@ -10574,6 +10166,462 @@
         "name": "pneumococcal",
         "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
       }
+    ]
+  },
+  {
+    "title": "Ambulatory Palliative Care Patients’ Experience of Feeling Heard and Understood",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "495",
+    "description": "The percentage of top-box responses among patients aged 18 years and older who had an ambulatory palliative care visit and report feeling heard and understood by their palliative care clinician and team within 2 months (60 days) of the ambulatory palliative care visit.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "American Academy of Hospice and Palliative Medicine (AAHPM)",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "internalMedicine",
+      "oncology"
+    ],
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "title": "Cardiovascular Disease (CVD) Risk Assessment Measure - Proportion of Pregnant/Postpartum Patients that Receive CVD Risk Assessment with a Standardized Instrument",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "496",
+    "description": "Percentage of pregnant or postpartum patients who received a cardiovascular disease (CVD) risk assessment with a standardized instrument.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "University of California, Irvine",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "certifiedNurseMidwife",
+      "obstetricsGynecology"
+    ]
+  },
+  {
+    "title": "Preventive Care and Wellness (composite)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "497",
+    "description": "Percentage of patients who received age- and sex-appropriate preventive screenings and wellness services. This measure is a composite of seven component measures that are based on recommendations for preventive care by the U.S. Preventive Services Task Force (USPSTF), Advisory Committee on Immunization Practices (ACIP), American Association of Clinical Endocrinology (AACE), and American College of Endocrinology (ACE).",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "geriatrics",
+      "internalMedicine",
+      "obstetricsGynecology",
+      "preventiveMedicine"
+    ],
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "title": "Connection to Community Service Provider",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "498",
+    "description": "Percent of patients 18 years or older who screen positive for one or more of the following health related social needs (HRSNs): food insecurity, housing instability, transportation needs, utility help needs, or interpersonal safety; and had contact with a Community Service Provider (CSP) for at least 1 of their HRSNs within 60 days after screening.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "OCHIN",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "allergyImmunology",
+      "audiology",
+      "cardiology",
+      "certifiedNurseMidwife",
+      "chiropracticMedicine",
+      "clinicalSocialWork",
+      "dermatology",
+      "emergencyMedicine",
+      "endocrinology",
+      "familyMedicine",
+      "gastroenterology",
+      "generalSurgery",
+      "geriatrics",
+      "infectiousDisease",
+      "internalMedicine",
+      "interventionalRadiology",
+      "mentalBehavioralHealth",
+      "nephrology",
+      "neurology",
+      "neurosurgical",
+      "nutritionDietician",
+      "obstetricsGynecology",
+      "oncology",
+      "ophthalmology",
+      "orthopedicSurgery",
+      "otolaryngology",
+      "pediatrics",
+      "physicalMedicine",
+      "physicalTherapyOccupationalTherapy",
+      "plasticSurgery",
+      "podiatry",
+      "preventiveMedicine",
+      "pulmonology",
+      "rheumatology",
+      "skilledNursingFacility",
+      "speechLanguagePathology",
+      "thoracicSurgery",
+      "urgentCare",
+      "urology",
+      "vascularSurgery"
+    ]
+  },
+  {
+    "title": "Appropriate screening and plan of care for elevated intraocular pressure following intravitreal or periocular steroid therapy",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "499",
+    "description": "Percentage of patients who had an intravitreal or periocular corticosteroid injection (e.g., triamcinolone, preservative-free triamcinolone, dexamethasone, dexamethasone intravitreal implant, or fluocinolone intravitreal implant) who, within seven (7) weeks following the date of injection, are screened for elevated intraocular pressure (IOP) with tonometry with documented IOP =<25 mm Hg for injected eye OR if the IOP was >25 mm Hg, a plan of care was documented.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "American Society of Retina Specialists",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "ophthalmology"
+    ]
+  },
+  {
+    "title": "Acute posterior vitreous detachment appropriate examination and follow-up",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "500",
+    "description": "Percentage of patients with a diagnosis of acute posterior vitreous detachment (PVD) in either eye who were appropriately evaluated during the initial exam and were re-evaluated no later than 8 weeks.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "American Society of Retina Specialists",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "ophthalmology"
+    ]
+  },
+  {
+    "title": "Acute posterior vitreous detachment and acute vitreous hemorrhage appropriate examination and follow-up",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "501",
+    "description": "Percentage of patients with a diagnosis of acute posterior vitreous detachment (PVD) and acute vitreous hemorrhage in either eye who were appropriately evaluated during the initial exam and were re-evaluated no later than 2 weeks.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "American Society of Retina Specialists",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "ophthalmology"
+    ]
+  },
+  {
+    "title": "Improvement or Maintenance of Functioning for Individuals with a Mental and/or Substance Use Disorder",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "502",
+    "description": "The percentage of individuals aged 18 and older with a mental and/or substance use disorder who demonstrated improvement or maintenance of functioning based on results from the 12-item World Health Organization Disability Assessment Schedule (WHODAS 2.0) or Sheehan Disability Index (SDS) 30 to 180 days after an index assessment.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "American Psychiatric Association",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "clinicalSocialWork",
+      "familyMedicine",
+      "internalMedicine",
+      "mentalBehavioralHealth",
+      "physicalTherapyOccupationalTherapy"
+    ]
+  },
+  {
+    "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "503",
+    "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "Insignia Health, LLC, a wholly owned subsidiary of Phreesia",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "allergyImmunology",
+      "cardiology",
+      "certifiedNurseMidwife",
+      "dermatology",
+      "endocrinology",
+      "familyMedicine",
+      "gastroenterology",
+      "internalMedicine",
+      "nephrology",
+      "neurology",
+      "obstetricsGynecology",
+      "oncology",
+      "physicalTherapyOccupationalTherapy",
+      "podiatry",
+      "preventiveMedicine",
+      "pulmonology",
+      "rheumatology",
+      "urology"
+    ],
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "title": "Initiation, Review, And/Or Update To Suicide Safety Plan For Individuals With Suicidal Thoughts, Behavior, Or Suicide Risk",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "504",
+    "description": "Percentage of adult aged 18 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "American Psychiatric Association",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "certifiedNurseMidwife",
+      "clinicalSocialWork",
+      "familyMedicine",
+      "internalMedicine",
+      "mentalBehavioralHealth",
+      "obstetricsGynecology"
+    ],
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "title": "Reduction in Suicidal Ideation or Behavior Symptoms",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "505",
+    "description": "The percentage of patients aged 18 and older with a mental and/or substance use disorder AND suicidal thoughts, behaviors or risk symptoms who demonstrated a reduction in suicidal ideation and/or behavior symptoms based on results from the Columbia-Suicide Severity Rating Scale (C-SSRS) 'Screen Version' or 'Since Last Visit' within 120 days after an index assessment.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "American Psychiatric Association",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "certifiedNurseMidwife",
+      "clinicalSocialWork",
+      "familyMedicine",
+      "mentalBehavioralHealth",
+      "obstetricsGynecology"
     ]
   },
   {
