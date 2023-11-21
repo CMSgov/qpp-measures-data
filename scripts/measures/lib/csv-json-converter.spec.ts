@@ -124,7 +124,7 @@ describe('#csv-json-converter', () => {
     it('throws InvalidValueError for badly mapped array data', () => {
         expect(() => {
             convertCsvToJson(badQcdrMeasures);
-        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'Part Baddata Claims'));
+        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'PartBaddataClaims'));
     });
 
     it('throws InvalidValueError for badly mapped boolean data', () => {
