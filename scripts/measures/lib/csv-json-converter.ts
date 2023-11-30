@@ -114,8 +114,8 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         return rawArray;
     }
 
-    // null field if the value entered in the CR is 'NULL'.
-    if (csvRow[columnName] === 'NULL') return null;
+    // null field if the value entered in the CR is 'null'.
+    if (csvRow[columnName].toLocaleLowerCase() === 'null') return null;
 
     return csvRow[columnName].trim();
 }
@@ -137,18 +137,18 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
     }
-    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue === 'NULL') {
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue.toLocaleLowerCase() === 'null') {
         return [];
     }
-    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue === 'NULL') {
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue.toLocaleLowerCase() === 'null') {
         return null;
     }
     return fieldValue.split(',').map(element => element.trim());;
 }
 
 function mapArrayItem(field: string, map: any, values: string) {
-    // null field if the value entered in the CR is 'NULL'.
-    if (values === 'NULL') return [];
+    // null field if the value entered in the CR is 'null'.
+    if (values.toLocaleLowerCase() === 'null') return [];
 
     const arrayedField: string[] = values.replace(/\s/g, "").split(',').filter(n => n);
 
