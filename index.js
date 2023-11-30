@@ -1,7 +1,7 @@
 // Libraries
 const fs = require('fs');
 const path = require('path');
-const YAML = require('yamljs');
+const YAML = require('yaml');
 const _ = require('lodash');
 
 const yearRegEx = /^[0-9]{4}/;
@@ -99,7 +99,7 @@ exports.getBenchmarksYears = function() {
  * @return {{}} - Object representation of the Benchmarks Schema
  */
 exports.getBenchmarksSchema = function(performanceYear = Constants.currentPerformanceYear) {
-  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'), 'utf8'));
 };
 
 /**
@@ -122,7 +122,7 @@ exports.getMeasuresData = function(performanceYear = 2017) {
  * @return {{}} - Object representation of the Measures Schema
  */
 exports.getMeasuresSchema = function(performanceYear = 2017) {
-  return YAML.load(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'), 'utf8'));
 };
 
 /**
@@ -142,8 +142,8 @@ exports.getClinicalClusterData = function(performanceYear = 2017) {
 /**
  * @return {{}} - Object representation of the Clinical Cluster Schema
  */
-exports.getClinicalClusterSchema = function(performanceYear = 2017) {
-  return YAML.load(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'));
+exports.getClinicalClusterSchema = function(performanceYear = 2023) {
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'), 'utf8'));
 };
 
 /**
@@ -245,7 +245,7 @@ exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, me
  * @return {{}} - Object representation of the MVP Schema
  */
 exports.getMVPSchema = function(performanceYear = 2023) {
-  return YAML.load(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'), 'utf8'));
 };
 
 /**
