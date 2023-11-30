@@ -66,7 +66,8 @@ definitions:
         type: object
         additionalProperties: false
         properties:
-          category: { const ia }
+          category:
+            enum: [ia]
           weight:
             description: Determines the points granted for attesting to the measure.
             enum: [null, medium, high]
@@ -85,7 +86,8 @@ definitions:
         type: object
         additionalProperties: false
         properties:
-          category: { const pi }
+          category:
+            enum: [pi]
           reportingCategory:
             description: The reporting category of the PI measure.
             enum: [required, bonus, exclusion, null]
@@ -118,7 +120,8 @@ definitions:
         type: object
         additionalProperties: false
         properties:
-          category: { const cost }
+          category:
+            enum: [cost]
           isInverse:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
@@ -139,7 +142,8 @@ definitions:
         type: object
         additionalProperties: false
         properties:
-          category: { const quality }
+          category:
+            enum: [quality]
           measureType:
             description: Quality category which the measure incentivizes.
             oneOf: [{ $ref: '#/definitions/measureTypes' }]

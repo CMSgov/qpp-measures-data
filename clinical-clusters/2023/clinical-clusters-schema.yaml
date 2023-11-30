@@ -1,7 +1,7 @@
 $id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/clinical-clusters-schema.yaml
 $schema: http://json-schema.org/schema#
 type: array
-items: { $ref: #/definitions/ClusterType }
+items: { $ref: '#/definitions/ClusterType' }
 definitions:
   ClusterType:
     type: object
@@ -19,10 +19,10 @@ definitions:
         default: 'null'
       clinicalClusters:
         type: array
-        items: { $ref: #/definitions/ClinicalClusterType }
+        items: { $ref: '#/definitions/ClinicalClusterType' }
       specialtySets:
         type: array
-        items: { $ref: #/definitions/ClinicalClusterType }
+        items: { $ref: '#/definitions/ClinicalClusterType' }
   ClinicalClusterType:
     type: object
     properties:

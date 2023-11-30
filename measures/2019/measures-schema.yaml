@@ -1,7 +1,7 @@
 $id: https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2019/measures-schema.yaml
 $schema: http://json-schema.org/draft-07/schema
 type: array
-items: { $ref: #/definitions/measure }
+items: { $ref: '#/definitions/measure' }
 uniqueItemProperties: ['measureId'] # used by ajv-keywords
 
 definitions:
@@ -9,10 +9,10 @@ definitions:
     title: 'Measure'
     type: object
     anyOf:
-      - { $ref: #/definitions/iaMeasure }
-      - { $ref: #/definitions/piMeasure }
-      - { $ref: #/definitions/qualityMeasure }
-      - { $ref: #/definitions/aggregateCostMeasure }
+      - { $ref: '#/definitions/iaMeasure' }
+      - { $ref: '#/definitions/piMeasure' }
+      - { $ref: '#/definitions/qualityMeasure' }
+      - { $ref: '#/definitions/aggregateCostMeasure' }
 
   baseMeasure:
     title: 'Base Measure'
@@ -36,36 +36,37 @@ definitions:
         default: 'null'
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
-        items: { $ref: #/definitions/measureSpecification }
+        items: { $ref: '#/definitions/measureSpecification' }
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
-        items: { $ref: #/definitions/measureSets }
+        items: { $ref: '#/definitions/measureSets' }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
 
   iaMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'IA Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const ia }
+          category:
+            enum: [ia]
           weight:
             description: Determines the points granted for attesting to the measure.
             enum: [null, medium, high]
             default: medium
           subcategoryId:
             description: IA category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/subcategoryIds }]
+            oneOf: [{ $ref: '#/definitions/subcategoryIds' }]
         required: [category, weight, subcategoryId]
 
   piMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'PI Measure'
         type: object
@@ -80,7 +81,7 @@ definitions:
             enum: [null, 0, 5, 10, 20, 40]
           objective:
             description: PI category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/objectives }]
+            oneOf: [{ $ref: '#/definitions/objectives' }]
           isRequired:
             description: If true, attesting to the measure is required in order to receive a non-zero PI score.
             type: boolean
@@ -91,7 +92,7 @@ definitions:
             default: false
           substitutes:
             description: Identifiers of other PI measures that can be used instead of the current measure.
-            oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
+            oneOf: [{ $ref: '#/definitions/arrayOfStringIdentifiers' }]
           exclusion:
             description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
         required: [category, weight, objective, isRequired, isBonus, measureSets]
@@ -99,13 +100,14 @@ definitions:
   aggregateCostMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'Cost Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const cost }
+          category:
+            enum: [cost]
           isInverse:
               description: If true, a lower performance rate correlates with better performance.
               type: boolean
@@ -122,17 +124,18 @@ definitions:
   qualityMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'Quality Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const quality }
+          category:
+            enum: [quality]
           nationalQualityStrategyDomain: { type: ['null', string] }
           measureType:
             description: Quality category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/measureTypes }]
+            oneOf: [{ $ref: '#/definitions/measureTypes' }]
           eMeasureId:
             description: Identifier for Electronic Clinical Quality Measures (ECQM).
             type: ['null', string]
@@ -162,22 +165,22 @@ definitions:
           strata:
             description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
             type: array
-            items: { $ref: #/definitions/performanceStrata }
+            items: { $ref: '#/definitions/performanceStrata' }
           primarySteward:
             description: Organization who submits and maintains the measure.
             type: string
           submissionMethods:
             description: Possible methods for submitting performance data for the measure.
             type: array
-            items: { $ref: #/definitions/methods }
+            items: { $ref: '#/definitions/methods' }
           eligibilityOptions:
             description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
             type: array
-            items: { $ref: #/definitions/eligibilityOption }
+            items: { $ref: '#/definitions/eligibilityOption' }
           performanceOptions:
             description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
             type: array
-            items: { $ref: #/definitions/performanceOption }
+            items: { $ref: '#/definitions/performanceOption' }
           isRegistryMeasure:
             description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
             type: boolean
@@ -354,17 +357,17 @@ definitions:
       maxAge:
         description: The maximum patient age required for eligibility.
         type: number
-      diagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
-      additionalDiagnosisCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
-      diagnosisExclusionCodes: { $ref: #/definitions/arrayOfStringIdentifiers }
+      diagnosisCodes: { $ref: '#/definitions/arrayOfStringIdentifiers' }
+      additionalDiagnosisCodes: { $ref: '#/definitions/arrayOfStringIdentifiers' }
+      diagnosisExclusionCodes: { $ref: '#/definitions/arrayOfStringIdentifiers' }
       procedureCodes:
         type: array
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
       additionalProcedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
         type: array
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
@@ -379,7 +382,7 @@ definitions:
       qualityCodes:
         description: A list of quality codes, all of which must be present to meet the performance option.
         type: array
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
     required: [optionType, qualityCodes]
 
   codeObject:
@@ -389,10 +392,10 @@ definitions:
       code:
         description: The HCPCS or CPT code represented as a string.
         type: string
-      modifiers:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      modifierExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      placesOfService:  { $ref: #/definitions/arrayOfStringIdentifiers }
-      placesOfServiceExclusions:  { $ref: #/definitions/arrayOfStringIdentifiers }
+      modifiers:  { $ref: '#/definitions/arrayOfStringIdentifiers' }
+      modifierExclusions:  { $ref: '#/definitions/arrayOfStringIdentifiers' }
+      placesOfService:  { $ref: '#/definitions/arrayOfStringIdentifiers' }
+      placesOfServiceExclusions:  { $ref: '#/definitions/arrayOfStringIdentifiers' }
     required: [code]
 
   qualityCodesSubmissionMethods:
