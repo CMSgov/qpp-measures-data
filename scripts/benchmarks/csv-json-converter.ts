@@ -90,15 +90,16 @@ function orderFields(benchmark: Benchmark) {
 }
 
 function mapInput(columnName: string, csvRow: any) {
+    const formattedColData = csvRow[columnName].replace(/\s/g, '').toLowerCase();
     //fields with 'Yes' or 'No'
     if (BOOLEAN_CSV_FIELDS.includes(columnName)) {
         return csvFieldToBoolean(columnName, csvRow[columnName].trim());
     }
     if (columnName === 'submissionMethod') {
-        return SUBMISSION_METHOD_MAP[csvRow[columnName].replace(/\s/g, '').toLowerCase()];
+        return SUBMISSION_METHOD_MAP[formattedColData];
     }
-    // null field if the value entered in the CR is 'NULL'.
-    if (csvRow[columnName] === 'NULL') {
+    // null field if the value entered in the CR is 'null'.
+    if (formattedColData === 'null') {
         return null;
     };
 
