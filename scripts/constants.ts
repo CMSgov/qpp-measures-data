@@ -110,6 +110,7 @@ export const OVERALL_ALGORITHM = [
     'weightedAverage',
     'simpleAverage',
     'overallStratumOnly',
+    'split',
 ];
 
 export const COLLECTION_TYPES_FIELDS = [
