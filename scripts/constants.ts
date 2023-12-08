@@ -8,6 +8,14 @@ export const BASE_CSV_COLUMN_NAMES = {
     'category': 'Category',
 };
 
+export const COST_CSV_COLUMN_NAMES = {
+    ...BASE_CSV_COLUMN_NAMES,
+    'isInverse': 'Inverse',
+    'metricType': 'Metric Type',
+    'overallAlgorithm': 'Calculation Type',
+    'submissionMethods': 'Collection Type(s) for Submission',
+};
+
 export const IA_CSV_COLUMN_NAMES = {
     ...BASE_CSV_COLUMN_NAMES,
     'weight': 'Weight',
@@ -77,6 +85,7 @@ export const ARRAY_CSV_FIELDS = [
     'Substitutes',
     'Exclusions',
     '*** Collection Type(s) for Submission',
+    'Collection Type(s) for Submission',
     'Allowed QCDR Vendor ID',
     'Specialty Measure Sets',
     'Collection Type(s) where Suppressed',
@@ -86,6 +95,7 @@ export const ARRAY_CSV_FIELDS = [
 
 export const BOOLEAN_CSV_FIELDS = [
     '*** Inverse',
+    'Inverse',
     'Is Risk Adjusted',
     'High Priority',
     'Bonus',
@@ -338,6 +348,11 @@ export const BENCHMARKS_ORDER = {
     'metricType': undefined,
     'isToppedOutByProgram': undefined,
     'deciles': undefined,
+};
+
+export const COST_DEFAULT_VALUES = {
+    metricType: 'costScore',
+    lastPerformanceYear: null,
 };
 
 export const IA_DEFAULT_VALUES = {

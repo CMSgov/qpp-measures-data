@@ -18,6 +18,7 @@ import { initValidation, MeasuresChange, measureType } from '../lib/validate-cha
 import { convertCsvToJson } from '../lib/csv-json-converter';
 import { DataValidationError } from '../../errors';
 import {
+    COST_DEFAULT_VALUES,
     COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,
     IA_MEASURES_ORDER,
@@ -32,6 +33,11 @@ import {
 const QUALITY_DEFAULT_PROGRAMS = [
     'mips',
     'pcf',
+];
+
+const COST_DEFAULT_PROGRAMS = [
+    'mips',
+    'app1',
 ];
 
 const PLACEHOLDER_STRATA = [{
@@ -108,7 +114,7 @@ export function updateMeasuresWithChangeFile(
                         throw new DataValidationError(measureId, 'New multiPerformanceRate measures require a Calculation Type.');
                     }
                 }
-                if (isNew && !change.measureSets && isOnlyAdminClaims(change)) {
+                if (isNew && !change.measureSets && isOnlyAdminClaims(change) && change.category !== 'cost') {
                     change.measureSets = [];
                 }
 
@@ -245,6 +251,15 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             }));
             break;
 
+        case 'cost':
+            measuresJson.splice(index + 1, 0, orderFields({
+                ...COST_DEFAULT_VALUES,
+                ...change,
+                category: 'cost',
+                allowedPrograms: COST_DEFAULT_PROGRAMS,
+            }));
+            break;
+
         case 'quality':
             measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
@@ -269,16 +284,18 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
 
 // organizes the fields to match the order of that specific category in measures-data
 function orderFields(measure: any) {
-    if (measure.category === 'pi') {
-        return Object.assign({}, PI_MEASURES_ORDER, measure)
-    } else if (measure.category === 'ia') {
-        return Object.assign({}, IA_MEASURES_ORDER, measure)
-    } else if (measure.category === 'quality' && !measure.isRegistryMeasure) {
-        return Object.assign({}, QUALITY_MEASURES_ORDER, measure)
-    } else if (measure.category === 'quality' && measure.isRegistryMeasure) {
-        return Object.assign({}, QCDR_MEASURES_ORDER, measure)
-    } else if (measure.category === 'cost') {
-        return Object.assign({}, COST_MEASURES_ORDER, measure)
+    switch (measure.category) {
+        case 'pi':
+            return Object.assign({}, PI_MEASURES_ORDER, measure);
+        case 'ia':
+            return Object.assign({}, IA_MEASURES_ORDER, measure);
+        case 'cost':
+            return Object.assign({}, COST_MEASURES_ORDER, measure);
+        case 'quality':
+            if (measure.isRegistryMeasure) {
+                return Object.assign({}, QCDR_MEASURES_ORDER, measure);
+            }
+            return Object.assign({}, QUALITY_MEASURES_ORDER, measure);
     }
 }
 
@@ -286,7 +303,6 @@ function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
     const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
 
     const eMeasureId: string = change.eMeasureId ? change.eMeasureId : currentMeasure?.eMeasureId;
-
 
     if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
         return false;
@@ -357,7 +373,7 @@ function findFinalInCategory(category: string, measuresJson: any) {
     let index: number = 0;
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].category === category) {
-            if (['ia', 'pi'].includes(category)) {
+            if (['ia', 'pi', 'cost'].includes(category)) {
                 index = i;
             }
             else if (

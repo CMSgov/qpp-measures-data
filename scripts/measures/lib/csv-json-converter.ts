@@ -23,6 +23,7 @@ import {
     REPORTING_CATEGORY,
     WEIGHT,
     SUBCATEGORY_NAME,
+    COST_CSV_COLUMN_NAMES,
 } from '../../constants';
 import { InvalidValueError } from '../../errors';
 
@@ -45,6 +46,9 @@ export function convertCsvToJson(csv: any) {
                 break;
             case 'qcdr':
                 csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
+                break;
+            case 'cost':
+                csvColumnNames = COST_CSV_COLUMN_NAMES;
                 break;
         }
         //maps the csv column values to the matching measures-data fields.
