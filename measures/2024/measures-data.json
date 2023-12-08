@@ -11645,6 +11645,103 @@
     ]
   },
   {
+    "category": "cost",
+    "title": "Psychoses and Related Conditions",
+    "description": "Patients who receive inpatient treatment for psychoses or related conditions during the performance period. Acute IP hospitals and inpatient psychiatric facilities (IPFs).",
+    "measureId": "COST_PRC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "M1369"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Depression",
+    "description": "Patients receiving medical care to manage and treat depression. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a Depression episode.",
+    "measureId": "COST_DEP_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "M0005",
+      "M1369"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Heart Failure",
+    "description": "Patients receiving medical care to manage and treat heart failure. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a Heart Failure episode.",
+    "measureId": "COST_HF_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "G0055",
+      "M0005"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Low Back Pain",
+    "description": "Patients receiving medical care to manage and treat low back pain. This chronic condition measure includes the costs of services that are  clinically related to the attributed clinician’s role in managing care during a Low Back Pain episode.",
+    "measureId": "COST_LBP_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "M1370"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Emergency Medicine",
+    "description": "Patients who have an Emergency Department (ED) during the year.",
+    "measureId": "COST_EDV_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2024,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "G0057"
+    ]
+  },
+  {
     "title": "CAHPS for MIPS SSM: Getting Timely Care, Appointments, and Information",
     "eMeasureId": null,
     "nqfEMeasureId": null,
