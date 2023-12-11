@@ -517,8 +517,9 @@
         "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
         "firstPerformanceYear": 2020,
         "allowedVendors": [
+          "3471690",
           "5598408",
-          "3471690"
+          "3967247"
         ],
         "allowedPrograms": [
           "mips",
@@ -549,8 +550,9 @@
         "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
         "firstPerformanceYear": 2020,
         "allowedVendors": [
+          "3471690",
           "5598408",
-          "3471690"
+          "3967247"
         ],
         "allowedPrograms": [
           "mips",
@@ -572,7 +574,7 @@
       {
         "measureId": "ACR15",
         "title": "Safe Hydroxychloroquine Dosing",
-        "description": "If a patient is using hydroxychloroquine, then the average daily dose should be less than or equal to 5 mg/kg",
+        "description": "If a patient is using hydroxychloroquine, then the average daily dose should be less than or equal to 5 mg/kg.",
         "nqfId": null,
         "measureType": "process",
         "isHighPriority": true,
@@ -581,8 +583,9 @@
         "primarySteward": "RISE (Rheumatology Informatics System for Effectiveness)",
         "firstPerformanceYear": 2021,
         "allowedVendors": [
+          "3471690",
           "5598408",
-          "3471690"
+          "3967247"
         ],
         "allowedPrograms": [
           "mips",
@@ -5382,8 +5385,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "G0055",
           "G0058",
           "M1367",
@@ -8388,8 +8389,7 @@
         "primarySteward": "ACEP's Clinical Emergency Data Registry (CEDR)",
         "firstPerformanceYear": 2020,
         "allowedVendors": [
-          "5133825",
-          "3471690"
+          "5133825"
         ],
         "allowedPrograms": [
           "mips",
@@ -8421,8 +8421,7 @@
         "firstPerformanceYear": 2020,
         "allowedVendors": [
           "5133825",
-          "1725296",
-          "3471690"
+          "1718371"
         ],
         "allowedPrograms": [
           "mips",
@@ -8453,11 +8452,12 @@
         "primarySteward": "E-CPR (Emergency - Clinical Performance Registry)",
         "firstPerformanceYear": 2018,
         "allowedVendors": [
-          "1718371",
           "5133825",
+          "3471690",
+          "1718371",
           "4757099",
           "1725296",
-          "3471690"
+          "3967247"
         ],
         "allowedPrograms": [
           "mips",
@@ -10488,8 +10488,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "G0055",
           "G0058",
           "M1367",
@@ -12998,7 +12996,11 @@
         "primarySteward": "ABG QCDR",
         "firstPerformanceYear": 2023,
         "allowedVendors": [
-          "5551268"
+          "5551268",
+          "6169123",
+          "6775913",
+          "9181695",
+          "7418330"
         ],
         "allowedPrograms": [
           "mips",
@@ -13023,7 +13025,7 @@
       {
         "measureId": "AQI48",
         "title": "Patient-Reported Experience with Anesthesia",
-        "description": "Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care and who reported a positive experience. \n\nThis measure will consist of two performance rates:\n\nAQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care \n\nAQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care\n\nNOTE: The measure requires that a valid survey, as defined in the numerator of AQI48a, be sent to patients between discharge from the facility and within 30 days of facility discharge. To report AQI48b, a minimum number of 20 surveys with the mandatory question completed must be reported. ** In order to be scored on this measure, clinicians must report BOTH AQI48a AND AQI48b.",
+        "description": "Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care and who reported a positive experience. \n\nThis measure will consist of two performance rates:\n\nAQI48a: Percentage of patients, aged 18 and older, who were surveyed on their patient experience and satisfaction with anesthesia care \n\nAQI48b: Percentage of patients, aged 18 and older, who completed a survey on their patient experience and satisfaction with anesthesia care who report a positive experience with anesthesia care within 60 days of receipt of the survey.\n\nNOTE: The measure requires that a valid survey, as defined in the numerator of AQI48a, be sent to patients between discharge from the facility and within 30 days of facility discharge. To report AQI48b, a minimum number of 20 surveys with the mandatory question completed must be reported. ** In order to be scored on this measure, clinicians must report BOTH AQI48a AND AQI48b.",
         "nqfId": null,
         "measureType": "patientReportedOutcome",
         "isHighPriority": true,
@@ -13033,14 +13035,14 @@
         "firstPerformanceYear": 2017,
         "allowedVendors": [
           "5551268",
-          "6775913",
-          "7746687",
+          "3471690",
           "6169123",
+          "6775913",
           "6704504",
-          "4757099",
           "9181695",
+          "4757099",
           "7418330",
-          "3471690"
+          "3967247"
         ],
         "allowedPrograms": [
           "mips",
@@ -13072,8 +13074,8 @@
       },
       {
         "measureId": "EPREOP31",
-        "title": "Intraoperative Hypotension among Non-Emergent Noncardiac Surgical Cases",
-        "description": "Percentage of general anesthesia cases in which mean arterial pressure (MAP) fell below 65 mmHg for cumulative total of 15 minutes or more",
+        "title": "Intraoperative Hypotension (IOH) among Non-Emergent Noncardiac Surgical Cases",
+        "description": "Percentage of general, neuraxial, or regional anesthesia care cases in which the mean arterial pressure (MAP) fell below 65 mmHg for a cumulative total of 15 minutes or more",
         "nqfId": null,
         "measureType": "intermediateOutcome",
         "isHighPriority": true,
@@ -15695,7 +15697,8 @@
         "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
         "firstPerformanceYear": 2023,
         "allowedVendors": [
-          "8794712"
+          "8794712",
+          "7037323"
         ],
         "allowedPrograms": [
           "mips",
@@ -15729,7 +15732,8 @@
         "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
         "firstPerformanceYear": 2018,
         "allowedVendors": [
-          "8794712"
+          "8794712",
+          "7037323"
         ],
         "allowedPrograms": [
           "mips",
@@ -20933,7 +20937,7 @@
       },
       {
         "measureId": "AAN5",
-        "title": "Medication Prescribed For Acute Migraine Attack",
+        "title": "Treatment Prescribed For Acute Migraine Attacks",
         "description": "Percentage of patients age 6 years and older with a diagnosis of migraine who were prescribed a guideline recommended or FDA approved/cleared treatment for acute migraine attacks within the measurement period.",
         "nqfId": null,
         "measureType": "process",
@@ -28562,8 +28566,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "M1366"
         ],
         "submissionMethods": [
@@ -31427,8 +31429,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "G0055",
           "G0058",
           "M1367",
@@ -39309,8 +39309,6 @@
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
         "allowedPrograms": [
-          "mips",
-          "pcf",
           "G0055",
           "G0058",
           "M1367",
