@@ -55,13 +55,3 @@ See ticket description.
 ---
 ### [ ⌥ Optional ] Are there any post-deployment tasks we need to perform?
 ---
-
-
-### [ ⌥ Optional] What gif best describes this PR or how it makes you feel?
-
-* For Chromium users: https://chrome.google.com/webstore/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep
-* For Firefox users: https://addons.mozilla.org/en-US/firefox/addon/gifs-for-github
-* After installing the extension, click on the "GIF" button in the comment box and search for a gif that describes your PR!
-
-
- <img src="https://media2.giphy.com/media/CkMnLcOgKOxfa/giphy.gif"/>

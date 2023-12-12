@@ -11,6 +11,10 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   echo -e "Compiling Typescript..."
   tsc -p .
+  
+  # Parse mvp data:
+  echo -e "Parsing mvp-raw.json..."
+  npm run parse:mvp $currentPerformanceYear
 
   # Update mvp-enriched, if there are any updates:
   echo -e "Updating mvp-enriched.json..."
