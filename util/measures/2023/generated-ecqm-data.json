@@ -449,49 +449,6 @@
     "metricType": "multiPerformanceRate"
   },
   {
-    "eMeasureId": "CMS156v11",
-    "eMeasureUuid": "2c928084-808a-9589-0180-d74bf7b7164d",
-    "strata": [
-      {
-        "description": "Rate 1: Patients with at least two orders of high-risk medications from the same drug class on different days.",
-        "eMeasureUuids": {
-          "initialPopulationUuid": "064940DC-3F04-4B31-88CA-367BE20AC510",
-          "denominatorUuid": "CD3CCAD3-3E90-4094-9987-9A9D2A5D574D",
-          "numeratorUuid": "E384D9B0-6AD6-45BC-B562-A57E46FC1E90",
-          "denominatorExclusionUuid": "CEC58D2D-4525-45B8-B320-FFB35B654DA8"
-        }
-      },
-      {
-        "description": "a. At least two orders of high-risk medications from the same drug class.",
-        "eMeasureUuids": {
-          "initialPopulationUuid": "5E28FE53-02D9-4A14-9721-74729FBF2F73",
-          "denominatorUuid": "5BE6C6E2-64FA-49D5-8D2E-B977E2AB62A7",
-          "numeratorUuid": "5577FDAE-5153-4B75-9B85-59CEF09CFC82",
-          "denominatorExclusionUuid": "82D62AA5-015B-4256-AF2B-C43D52622EFB"
-        }
-      },
-      {
-        "description": "b. At least two orders of high-risk medications from the same drug class with summed days supply greater than 90 days.",
-        "eMeasureUuids": {
-          "initialPopulationUuid": "2B4CFB1B-43D2-4ABA-AE55-CCF174208A3B",
-          "denominatorUuid": "725E725B-DF32-429A-BAEE-444AD4CE5FC7",
-          "numeratorUuid": "35C1118F-EBF8-470F-8B70-150CB04435AA",
-          "denominatorExclusionUuid": "AEA06864-DA4F-4ECD-93EC-BA6B94930337"
-        }
-      },
-      {
-        "description": "c. At least two orders of high-risk medications from the same drug class each exceeding average daily dose criteria."
-      },
-      {
-        "description": "Rate 2: Patients with at least two orders of high-risk medications from the same drug class (i.e., antipsychotics and benzodiazepines) on different days."
-      },
-      {
-        "description": "Total rate (the sum of the two previous numerators, deduplicated)."
-      }
-    ],
-    "metricType": "multiPerformanceRate"
-  },
-  {
     "eMeasureId": "CMS159v11",
     "eMeasureUuid": "2c928082-7fac-c041-017f-aee6377002a5",
     "strata": [
@@ -565,22 +522,6 @@
           "numeratorUuid": "CC44A071-CADC-414C-A55C-574E04A1E414",
           "denominatorExceptionUuid": "DF696C0F-8D01-4A4C-B00F-E1A2C59B9358",
           "denominatorExclusionUuid": "4EA871D1-4D5A-4347-9F69-B50C7E03381A"
-        }
-      }
-    ],
-    "metricType": "singlePerformanceRate"
-  },
-  {
-    "eMeasureId": "CMS249v5",
-    "eMeasureUuid": "2c928082-7ac4-569d-017a-ca2f0fa10205",
-    "strata": [
-      {
-        "description": "Female patients who received an order for at least one DXA scan in the measurement period",
-        "eMeasureUuids": {
-          "initialPopulationUuid": "4B34F4ED-1A49-4A8B-87E8-FABF70962F2B",
-          "denominatorUuid": "A89FF41B-8F0B-486D-A640-945054FB9CA4",
-          "numeratorUuid": "C86B7AF8-F152-478F-8CFC-ACCC0D4BA376",
-          "denominatorExclusionUuid": "1865BCB7-B020-4329-A3B7-7AEA32E0AC81"
         }
       }
     ],
