@@ -34,7 +34,7 @@ const costLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanc
 const generatedEcqmPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/generated-ecqm-data.json`);
 const manuallyCreatedEcqmPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/manually-created-missing-measures.json`);
 const AdditionalStratificationsPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/additional-stratifications.json`);
-const claimsRelatedData = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/enriched-measures-data-quality.json`);
+const claimsRelatedData = path.join(appRoot + '', `claims-related/data/qpp-single-source-${currentPerformanceYear}.json`);
 
 const measures = JSON.parse(
     fs.readFileSync(measuresDataPath, 'utf8')
