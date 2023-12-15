@@ -15,8 +15,7 @@ The docker-compose file in this directory mounts the correct directories for thi
 
 * `--single_source_filepath`
     * Path to the spreadsheet containing the claims-related data, e.g. `/claims-related/data/2017_Claims_IndivMeasures_SingleSourceVersion2_11082017_andrea_edit`
-* `--measures_data_filepath`
-    * Path to the measures data JSON, e.g. `/measures/measures-data.json`
+    * Note : If clean up is needed, after the creation of a CSV from XLSX, place the original in the archive directory. Clean up can be performed (for empty rows, junk characters etc) with clean_csv.py or manually.
 * `--output_filepath`
     * Path to write output to, e.g. `/claims-related/data/qpp-single-source.json`
 ### Local development
