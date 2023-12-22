@@ -9,9 +9,6 @@
   - 📗 Update any related documentation.
 -->
 
-[![ICF](https://th.bing.com/th/id/OIP.3z-X0lRS3oSl7MwvlsX72AAAAA?pid=ImgDet&rs=1)](https://www.icf.com/)
-
----
 ## Related Tickets & Documents
 <!--
 Mandatory if the ticket exists. Otherwise, the description section **must** contain the details.
