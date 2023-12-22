@@ -61,7 +61,7 @@ NOTE FOR TESTING: You may add the -t flag to the above update script to run the 
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
-The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run init:measures $YEAR`.
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`.
 
 The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
 
