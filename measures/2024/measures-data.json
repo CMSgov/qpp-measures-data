@@ -13064,8 +13064,16 @@
     "overallAlgorithm": "simpleAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "overall",
+        "description": "Simple average of Rate 2 and Rate 3"
+      },
+      {
+        "name": "male",
+        "description": "The percentage of male patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "female",
+        "description": "The percentage of female patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
       }
     ]
   },
@@ -13306,8 +13314,12 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "hip",
+        "description": "represents total hip arthroplasty"
+      },
+      {
+        "name": "knee",
+        "description": "represents total knee arthroplasty."
       }
     ]
   },
@@ -16198,11 +16210,11 @@
     "strata": [
       {
         "name": "surveyed",
-        "description": "The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
+        "description": "AQI48a, percentage of surgical patients who receive a survey of their experience with anesthesia care."
       },
       {
         "name": "overall",
-        "description": "The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
+        "description": "AQI48b, percentage of surgical patients who report a positive experience with anesthesia care."
       }
     ]
   },
@@ -16348,7 +16360,7 @@
     "strata": [
       {
         "name": "overall",
-        "description": "The overall measure score will be calculated as an average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
+        "description": "Average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
       },
       {
         "name": "testedPrior",
