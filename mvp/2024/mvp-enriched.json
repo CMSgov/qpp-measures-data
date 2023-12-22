@@ -432,7 +432,7 @@
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
           },
           {
             "name": "herpesZoster",
@@ -500,8 +500,16 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+          },
+          {
+            "name": "6points",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "AveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ]
       },
@@ -5903,8 +5911,16 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+          },
+          {
+            "name": "6points",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "AveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ]
       }
@@ -15680,8 +15696,16 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+          },
+          {
+            "name": "6points",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "AveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ]
       },
@@ -18356,7 +18380,7 @@
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
           },
           {
             "name": "herpesZoster",
@@ -18424,8 +18448,16 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+          },
+          {
+            "name": "6points",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "AveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ]
       }
@@ -20836,8 +20868,16 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+          },
+          {
+            "name": "6points",
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "AveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ]
       },
@@ -26253,7 +26293,7 @@
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
           },
           {
             "name": "herpesZoster",
@@ -26304,8 +26344,32 @@
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "influenza",
+            "description": "Percentage of patients who received an influenza immunization or who reported previous receipt of an influenza immunization"
+          },
+          {
+            "name": "pneumococcal",
+            "description": "Percentage of patients who received a pneumococcal vaccination on or after their 60th birthday"
+          },
+          {
+            "name": "mammogram",
+            "description": "Percentage of patients with a mammogram during the 27 months prior to the end of the measurement period"
+          },
+          {
+            "name": "colorectal",
+            "description": "Percentage of patients with one or more appropriate colorectal cancer screenings"
+          },
+          {
+            "name": "BMI",
+            "description": "Percentage of patients with a documented BMI, with follow-up plan if applicable, during the encounter or during the previous 12 months"
+          },
+          {
+            "name": "tobacco",
+            "description": "Percentage of patients screened for tobacco use and, if identified as a tobacco user, received cessation intervention during the encounter or within the previous six months"
+          },
+          {
+            "name": "HBP",
+            "description": "Percentage of visits where patients were screened for high blood pressure with a documented follow-up plan, as indicated"
           }
         ]
       },
@@ -26350,8 +26414,12 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "24hour",
+            "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the patient and their clinician (concurrent or within 24 hours of clinical encounter)"
+          },
+          {
+            "name": "overall",
+            "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician at the time the suicidal ideation, behavior or risk is identified (concurrent or within 24 hours of clinical encounter) AND reviewed and updated within 120 days after initiation."
           }
         ]
       }
@@ -28708,16 +28776,16 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "name": "screened",
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period"
+            "name": "reporting",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period"
           },
           {
-            "name": "overall",
-            "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
+            "name": "performance",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
           },
           {
             "name": "combinedPopulations",
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
           }
         ]
       },
@@ -28905,8 +28973,12 @@
         },
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "screening",
+            "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+          },
+          {
+            "name": "follow-up/trtmt",
+            "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
           }
         ]
       },
@@ -28998,11 +29070,11 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "name": "screened",
+            "name": "reporting",
             "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
           },
           {
-            "name": "overall",
+            "name": "performance",
             "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
           },
           {
@@ -29304,7 +29376,7 @@
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
           },
           {
             "name": "herpesZoster",
@@ -31513,16 +31585,16 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "name": "screened",
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period"
+            "name": "reporting",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period"
           },
           {
-            "name": "overall",
-            "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
+            "name": "performance",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
           },
           {
             "name": "combinedPopulations",
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
           }
         ]
       },
@@ -34314,8 +34386,12 @@
         },
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "screening",
+            "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+          },
+          {
+            "name": "follow-up/trtmt",
+            "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
           }
         ]
       },
@@ -34543,7 +34619,7 @@
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
           },
           {
             "name": "herpesZoster",
@@ -37082,8 +37158,12 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "24hour",
+            "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the patient and their clinician (concurrent or within 24 hours of clinical encounter)"
+          },
+          {
+            "name": "overall",
+            "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician at the time the suicidal ideation, behavior or risk is identified (concurrent or within 24 hours of clinical encounter) AND reviewed and updated within 120 days after initiation."
           }
         ]
       },
