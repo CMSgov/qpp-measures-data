@@ -17,13 +17,15 @@ AJRR11,neckpain,"Percentage of denominator patients who showed a statistically s
 AJRR11,backpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in back pain."
 AJRR11,armpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in arm pain."
 AJRR11,legpain,"Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID) in leg pain."
+AJRR12,hip,represents total hip arthroplasty
+AJRR12,knee,represents total knee arthroplasty.
 AJRR7,hip,represents total hip arthroplasty
 AJRR7,knee,represents total knee arthroplasty.
 AJRR9,hip,represents total hip arthroplasty
 AJRR9,knee,represents total knee arthroplasty.
-AQI48,surveyed,"The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
-AQI48,overall,"The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
-AQI71,overall,"The overall measure score will be calculated as an average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
+AQI48,surveyed,"AQI48a, percentage of surgical patients who receive a survey of their experience with anesthesia care."
+AQI48,overall,"AQI48b, percentage of surgical patients who report a positive experience with anesthesia care."
+AQI71,overall,"Average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
 AQI71,testedPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery whose blood glucose level is tested prior to the start of anesthesia"
 AQI71,insulinPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
 AQI71,insulinPostoperative,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who received insulin perioperatively and who received a follow-up blood glucose level check following the administration of insulin and prior to discharge"
@@ -35,13 +37,12 @@ GIQIC23,3-4adenomas&FollowUp,Percentage of complete and adequately prepped scree
 GIQIC23,5-10adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
 GIQIC23,neoplasm&FollowUp,"Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
 GIQIC23,serration&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient
+GIQIC26,overall,Simple average of Rate 2 and Rate 3
+GIQIC26,male,The percentage of male patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
+GIQIC26,female,The percentage of female patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
 HM7,14to17,SUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter
 HM7,18to64,SUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter
 HM7,65over,SUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter
 HM7,overall,SUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter
 MBHR10,screening,"Documentation of a standardized tool to assess ADHD (i.e., ASRS checklist) and a document care of plan "
 MBHR10,overall,"Patient demonstrated an ASRS score that is reduced by 25% or greater from the index score, 2-10 months after index date"
-USWR32,noRestrictions,Normal arterial supply based on testing- No restrictions on type of compression
-USWR32,specialConsideration,"Compression bandaging with special considerations (e.g., short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)"
-USWR32,notRecommended,Compression bandaging not recommended
-USWR32,overall,The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted.

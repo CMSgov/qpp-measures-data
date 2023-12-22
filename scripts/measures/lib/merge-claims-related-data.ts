@@ -14,9 +14,7 @@ export function mergeClaimsRelatedData(measures, claimsRelatedMeasures) {
   // now for each measure, add the attributes from the claims-related measures set
   measures.forEach(measure => {
     // if the measure is in claimsRelatedMeasures, we need to merge its attributes
-    const claimsRelatedMeasure = claimsRelatedMeasures.find(
-      claimsMeasure => claimsMeasure.measureId === measure.measureId
-    );
+    const claimsRelatedMeasure = claimsRelatedMeasures[measure.measureId];
 
     if (claimsRelatedMeasure) {
       for (const attribute of attributes) {

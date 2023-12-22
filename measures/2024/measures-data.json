@@ -3950,8 +3950,12 @@
     },
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "spirometry",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD who have a documented airflow obstruction (FEV1/FVC < 70%) as measured by spirometry."
+      },
+      {
+        "name": "bronchodilator",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD who have a documented airflow obstruction (FEV1/FVC < 70%) and are symptomatic, who were prescribed a long-acting inhaled bronchodilator."
       }
     ]
   },
@@ -5491,16 +5495,16 @@
     "overallAlgorithm": "split",
     "strata": [
       {
-        "name": "screened",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period"
+        "name": "reporting",
+        "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period"
       },
       {
-        "name": "overall",
-        "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
+        "name": "performance",
+        "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period"
       },
       {
         "name": "combinedPopulations",
-        "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
+        "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user"
       }
     ]
   },
@@ -8260,8 +8264,12 @@
     },
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "screening",
+        "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+      },
+      {
+        "name": "follow-up/trtmt",
+        "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
       }
     ]
   },
@@ -8880,11 +8888,11 @@
     "overallAlgorithm": "split",
     "strata": [
       {
-        "name": "screened",
+        "name": "reporting",
         "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
       },
       {
-        "name": "overall",
+        "name": "performance",
         "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
       },
       {
@@ -10490,7 +10498,7 @@
       },
       {
         "name": "Tdap",
-        "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap)  vaccine between 9 years prior to the the encounter and the end of the measurement period"
+        "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
       },
       {
         "name": "herpesZoster",
@@ -10538,8 +10546,20 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "heard",
+        "description": "Patient felt heard and understood by this provider and team"
+      },
+      {
+        "name": "bestInterest",
+        "description": "Patient felt this provider and team put my best interests first when making recommendations about my care"
+      },
+      {
+        "name": "seen",
+        "description": "Patient felt this provider and team saw me as a person, not just someone with a medical problem"
+      },
+      {
+        "name": "understood",
+        "description": "Patient felt this provider and team understood what is important to me in my life"
       }
     ]
   },
@@ -10616,8 +10636,32 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "influenza",
+        "description": "Percentage of patients who received an influenza immunization or who reported previous receipt of an influenza immunization"
+      },
+      {
+        "name": "pneumococcal",
+        "description": "Percentage of patients who received a pneumococcal vaccination on or after their 60th birthday"
+      },
+      {
+        "name": "mammogram",
+        "description": "Percentage of patients with a mammogram during the 27 months prior to the end of the measurement period"
+      },
+      {
+        "name": "colorectal",
+        "description": "Percentage of patients with one or more appropriate colorectal cancer screenings"
+      },
+      {
+        "name": "BMI",
+        "description": "Percentage of patients with a documented BMI, with follow-up plan if applicable, during the encounter or during the previous 12 months"
+      },
+      {
+        "name": "tobacco",
+        "description": "Percentage of patients screened for tobacco use and, if identified as a tobacco user, received cessation intervention during the encounter or within the previous six months"
+      },
+      {
+        "name": "HBP",
+        "description": "Percentage of visits where patients were screened for high blood pressure with a documented follow-up plan, as indicated"
       }
     ]
   },
@@ -10881,8 +10925,16 @@
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "overall",
+        "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+      },
+      {
+        "name": "6points",
+        "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+      },
+      {
+        "name": "AveChg",
+        "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
       }
     ]
   },
@@ -10927,8 +10979,12 @@
     "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "24hour",
+        "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the patient and their clinician (concurrent or within 24 hours of clinical encounter)"
+      },
+      {
+        "name": "overall",
+        "description": "Percentage of patients for whom a suicide safety plan is initiated, reviewed, or updated in collaboration between the individual and their clinician at the time the suicidal ideation, behavior or risk is identified (concurrent or within 24 hours of clinical encounter) AND reviewed and updated within 120 days after initiation."
       }
     ]
   },
@@ -12043,7 +12099,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "6853338"
@@ -12076,7 +12132,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "6853338"
@@ -12109,7 +12165,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "6853338"
@@ -12142,7 +12198,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": true,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "6853338"
@@ -12241,7 +12297,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "4302083"
@@ -12274,7 +12330,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "4302083"
@@ -12812,7 +12868,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS¨ Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "3927141"
@@ -12845,7 +12901,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS¨ Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "3927141"
@@ -12982,7 +13038,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "GIQuIC",
+    "primarySteward": "GIQuIC in Collaboration with American College of Gastroenterology, American Society for Gastrointestinal Endoscopy, and Health Catalyst",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "5846856"
@@ -13008,8 +13064,16 @@
     "overallAlgorithm": "simpleAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "overall",
+        "description": "Simple average of Rate 2 and Rate 3"
+      },
+      {
+        "name": "male",
+        "description": "The percentage of male patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
+      },
+      {
+        "name": "female",
+        "description": "The percentage of female patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy"
       }
     ]
   },
@@ -13250,8 +13314,12 @@
     "overallAlgorithm": "weightedAverage",
     "strata": [
       {
-        "name": "PLACEHOLDER",
-        "description": "WARNING: Update strata file with new measure strata."
+        "name": "hip",
+        "description": "represents total hip arthroplasty"
+      },
+      {
+        "name": "knee",
+        "description": "represents total knee arthroplasty."
       }
     ]
   },
@@ -13497,7 +13565,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "8933551"
@@ -13530,7 +13598,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "8933551"
@@ -13694,7 +13762,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Registry Clearinghouse",
+    "primarySteward": "Registry Clearinghouse in Collaboration with Ohio Foot and Ankle Medical Association",
     "firstPerformanceYear": 2023,
     "allowedVendors": [
       "4117893"
@@ -13727,7 +13795,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2023,
     "allowedVendors": [
       "4067715"
@@ -14082,7 +14150,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics)",
+    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics) in Collaboration with HealthAdvanta",
     "firstPerformanceYear": 2023,
     "allowedVendors": [
       "1649514"
@@ -14319,7 +14387,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "ABG QCDR",
+    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Service, LLC",
     "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5551268",
@@ -14587,7 +14655,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8933551"
@@ -14619,7 +14687,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "8933551"
@@ -14649,7 +14717,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "8933551"
@@ -14680,7 +14748,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "8933551"
@@ -14711,7 +14779,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "8933551"
@@ -14742,7 +14810,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "8933551"
@@ -14773,7 +14841,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "8933551"
@@ -14803,7 +14871,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Axon Registry",
+    "primarySteward": "Axon Registry in Collaboration with Verana Health",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "8933551"
@@ -15108,7 +15176,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "ABG QCDR",
+    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Service, LLC",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5551268",
@@ -16074,7 +16142,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "5551268",
@@ -16109,7 +16177,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5551268",
@@ -16142,11 +16210,11 @@
     "strata": [
       {
         "name": "surveyed",
-        "description": "The first performance rate, AQI48a, describes the percentage of surgical patients who receive a survey of their experience with anesthesia care."
+        "description": "AQI48a, percentage of surgical patients who receive a survey of their experience with anesthesia care."
       },
       {
         "name": "overall",
-        "description": "The second performance rate, AQI48b, describes the percentage of surgical patients who report a positive experience with anesthesia care."
+        "description": "AQI48b, percentage of surgical patients who report a positive experience with anesthesia care."
       }
     ]
   },
@@ -16159,7 +16227,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "5551268",
@@ -16194,7 +16262,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "5551268",
@@ -16228,7 +16296,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "5551268",
@@ -16263,7 +16331,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5551268",
@@ -16292,7 +16360,7 @@
     "strata": [
       {
         "name": "overall",
-        "description": "The overall measure score will be calculated as an average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
+        "description": "Average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
       },
       {
         "name": "testedPrior",
@@ -16321,7 +16389,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR)",
+    "primarySteward": "Anesthesia Quality Institute (AQI) National Anesthesia Clinical Outcomes Registry (NACOR) in Collaboration with American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5551268",
@@ -16890,7 +16958,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
+    "primarySteward": "Anesthesia Quality Registry (AQR QCDR) in Collaboration with Anesthesia Quality Institute (AQI) and American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "6775913",
@@ -16921,7 +16989,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": true,
-    "primarySteward": "Anesthesia Quality Registry (AQR QCDR)",
+    "primarySteward": "Anesthesia Quality Registry (AQR QCDR) in Collaboration with Anesthesia Quality Institute (AQI) and American Society of Anesthesiologists (ASA)",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "6169123",
@@ -17074,7 +17142,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "GIQuIC",
+    "primarySteward": "GIQuIC in Collaboration with American College of Gastroenterology, American Society for Gastrointestinal Endoscopy, and Health Catalyst",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5846856"
@@ -17286,7 +17354,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "3927141"
@@ -17316,7 +17384,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "3927141"
@@ -17346,7 +17414,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "3927141"
@@ -17376,7 +17444,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "3927141"
@@ -17406,7 +17474,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "3927141"
@@ -17436,7 +17504,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "3927141"
@@ -17466,7 +17534,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "3927141"
@@ -17496,7 +17564,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "3927141"
@@ -17526,7 +17594,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "3927141"
@@ -17556,7 +17624,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "3927141"
@@ -17586,7 +17654,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "3927141"
@@ -17616,7 +17684,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight)",
+    "primarySteward": "American Academy of Ophthalmology IRIS® Registry (Intelligent Research in Sight) in Collaboration with Verana Health",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "3927141"
@@ -17646,7 +17714,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
       "4067715"
@@ -17676,7 +17744,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "4067715"
@@ -17717,7 +17785,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "4067715"
@@ -17747,7 +17815,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "4067715"
@@ -17777,7 +17845,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "4067715"
@@ -17807,7 +17875,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "4067715"
@@ -17837,7 +17905,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "4067715"
@@ -17867,7 +17935,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
       "4067715"
@@ -17898,7 +17966,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "4067715"
@@ -17929,7 +17997,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "4067715"
@@ -17959,7 +18027,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "MBHR Mental and Behavioral Health Registry",
+    "primarySteward": "MBHR Mental and Behavioral Health Registry in Collaboration with Healthmonix",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "4067715"
@@ -18020,7 +18088,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Registry Clearinghouse",
+    "primarySteward": "Registry Clearinghouse in Collaboration with Ohio Foot and Ankle Medical Association",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
       "4117893"
@@ -18144,7 +18212,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "GIQuIC",
+    "primarySteward": "GIQuIC in Collaboration with American College of Gastroenterology, American Society for Gastrointestinal Endoscopy, and Health Catalyst",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
       "5846856",
@@ -18417,7 +18485,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "PsychPRO",
+    "primarySteward": "PsychPRO in Collaboration with Health Catalyst",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "4078845"
@@ -18670,7 +18738,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2019,
     "allowedVendors": [
       "4302083"
@@ -18700,7 +18768,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "4302083"
@@ -18730,7 +18798,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Registry Clearinghouse",
+    "primarySteward": "Registry Clearinghouse in Collaboration with Ohio Foot and Ankle Medical Association",
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "4117893"
@@ -18760,7 +18828,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Registry Clearinghouse",
+    "primarySteward": "Registry Clearinghouse in Collaboration with Ohio Foot and Ankle Medical Association",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "4117893"
@@ -18790,7 +18858,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Registry Clearinghouse",
+    "primarySteward": "Registry Clearinghouse in Collaboration with Ohio Foot and Ankle Medical Association",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "4117893"
@@ -18820,7 +18888,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "4302083"
@@ -18850,7 +18918,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group",
+    "primarySteward": "Renal and Vascular Outcomes Improvement Program, powered by Forward Health Group in Collaboration with Renal Physicians Association (RPA)",
     "firstPerformanceYear": 2016,
     "allowedVendors": [
       "4302083"
@@ -18880,7 +18948,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics)",
+    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics) in Collaboration with HealthAdvanta",
     "firstPerformanceYear": 2018,
     "allowedVendors": [
       "1649514"
@@ -18910,7 +18978,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics)",
+    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics) in Collaboration with HealthAdvanta",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "1649514"
@@ -18941,7 +19009,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics)",
+    "primarySteward": "UREQA (United Rheumatology Effectiveness and Quality Analytics) in Collaboration with HealthAdvanta",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "1649514"
@@ -18971,7 +19039,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2017,
     "allowedVendors": [
       "6853338"
@@ -19001,7 +19069,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "6853338"
@@ -19031,7 +19099,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "U.S. Wound Registry",
+    "primarySteward": "U.S. Wound Registry in Collaboration with Intellicure, LLC",
     "firstPerformanceYear": 2022,
     "allowedVendors": [
       "6853338"

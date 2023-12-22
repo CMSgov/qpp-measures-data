@@ -112,7 +112,7 @@ Promise.all(
       const measure = doc.QualityMeasureDocument;
       const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
       // These must all be manually added. No accurate way to parse their uuid's
-      const ignoredMeasureIds = ['145', '157', '347'];
+      const ignoredMeasureIds = ['145', '156', '157', '249', '347'];
       if (ignoredMeasureIds.includes(emeasureid)) {
         console.warn('WARNING: CMS' + emeasureid + ' has one numerator but multiple populations and needs to be added manually');
         return;
