@@ -9449,7 +9449,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -9461,7 +9461,18 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "discectomyLaminectmy",
+        "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports back pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at three months (6 to 20 weeks) postoperatively"
+      },
+      {
+        "name": "lumbarFusion",
+        "description": "Percentage of lumbar fusion procedures for which the patient reports back pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric pain scale at one year (9 to 15 months) postoperatively"
+      }
+    ]
   },
   {
     "title": "Leg Pain After Lumbar Surgery",
@@ -9483,7 +9494,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -9495,7 +9506,18 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "discectomyLaminectmy",
+        "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports leg pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at three months (6 to 20 weeks) postoperatively"
+      },
+      {
+        "name": "lumbarFusion",
+        "description": "Percentage of lumbar fusion procedures for which the patient reports leg painless than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at one year (9 to 15 months) postoperatively after lumbar fusion."
+      }
+    ]
   },
   {
     "title": "Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy",
@@ -9727,7 +9749,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "allowedPrograms": [
       "mips",
       "pcf"
@@ -9739,7 +9761,18 @@
       "neurosurgical",
       "orthopedicSurgery"
     ],
-    "measureSpecification": {}
+    "measureSpecification": {},
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "discectomyLaminectmy",
+        "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports functional status is less than or equal to 22 OR an improvement of 30 points or greater on the Oswestry Disability Index (ODI version 2.1a) at three months (6 to 20 weeks) postoperatively"
+      },
+      {
+        "name": "lumbarFusion",
+        "description": "Percentage of lumbar fusion procedures for which the patient reports functional status is less than or equal to 22 OR an improvement of 30 points or greater on the Oswestry Disability Index (ODI Version 2.1a) patient reported outcome tool at one year (9 to 15 months) postoperatively"
+      }
+    ]
   },
   {
     "title": "Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture",
@@ -18459,36 +18492,6 @@
     "firstPerformanceYear": 2020,
     "allowedVendors": [
       "8794712"
-    ],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "category": "quality",
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "measureSets": [],
-    "isRegistryMeasure": true,
-    "isIcdImpacted": false,
-    "metricType": "registrySinglePerformanceRate",
-    "submissionMethods": [
-      "registry"
-    ]
-  },
-  {
-    "measureId": "PP11",
-    "title": "Improvement Or Maintenance In Recovery For All Individuals Seen For Mental Health And/Or Substance Use Care",
-    "description": "The percentage of individuals aged 18 and older with a mental and/or substance use disorder who demonstrated improvement or maintenance in recovery (as defined, prioritized, and/or reported by the individual) based on results from the 24-item Recovery Assessment Scale (RAS-R) 150 to 210 days after an index assessment.",
-    "nqfId": null,
-    "measureType": "patientReportedOutcome",
-    "isHighPriority": true,
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "primarySteward": "PsychPRO in Collaboration with Health Catalyst",
-    "firstPerformanceYear": 2022,
-    "allowedVendors": [
-      "4078845"
     ],
     "allowedPrograms": [
       "mips",
