@@ -3630,7 +3630,7 @@
     "nqfEMeasureId": "0086e",
     "nqfId": null,
     "measureId": "012",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more office visits within 12 months.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more visits within 12 months.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Academy of Ophthalmology",
@@ -4529,7 +4529,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "137",
-    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes:\n• A target date for the next complete physical skin exam, AND\n• A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment",
+    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes:\n• A target date for the next complete physical skin exam, AND\n• A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment.",
     "measureType": "structure",
     "isHighPriority": true,
     "primarySteward": "American Academy of Dermatology",
@@ -8027,7 +8027,7 @@
     "measureSets": [
       "familyMedicine",
       "infectiousDisease",
-      "internalMedicine"
+      "pediatrics"
     ],
     "measureSpecification": {},
     "overallAlgorithm": "overallStratumOnly",
@@ -13036,7 +13036,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "H-CPR (Hospitalist ÐClinical Performance Registry)",
+    "primarySteward": "H-CPR (Hospitalist –Clinical Performance Registry)",
     "firstPerformanceYear": 2024,
     "allowedVendors": [
       "4757099",
@@ -13094,7 +13094,7 @@
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "clinicalGuidelineChanged": [],
-    "overallAlgorithm": "simpleAverage",
+    "overallAlgorithm": "overallStratumOnly",
     "strata": [
       {
         "name": "overall",
@@ -14420,7 +14420,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Service, LLC",
+    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Services, LLC",
     "firstPerformanceYear": 2023,
     "allowedVendors": [
       "5551268",
@@ -14897,7 +14897,7 @@
   },
   {
     "measureId": "AAN9",
-    "title": "Querying and Follow-Up About Symptoms of Autonomic Dysfunction for Patients with Parkinson's Disease",
+    "title": "Querying and Follow-up About Symptoms of Autonomic Dysfunction for Patients with Parkinson’s Disease",
     "description": "Percentage of all patients with a diagnosis of PD (or caregivers, as appropriate) who were queried about symptoms of autonomic dysfunction* in the past 12 months and if autonomic dysfunction identified, patient had appropriate follow-up.",
     "nqfId": null,
     "measureType": "process",
@@ -15173,7 +15173,7 @@
   {
     "measureId": "ABFM12",
     "title": "Measuring the Value-Functions of Primary Care: Physician Level Continuity of Care Measure",
-    "description": "This is a measure evaluating primary care physicians (PCPs); for each PCP, the denominator is all patients seen during the evaluation period who had at least 2 PCP visits. The numerator is the number of those patients whose Bice-Boxerman Continuity of Care Index is >= 0.7. The Bice-Boxerman index is a validated measure of patient-level care continuity that ranges from 0 to 1; 0 reflects completely disjointed care and 1 reflects complete continuity with the same PCP for all visits. The Bice-Boxerman index was used in a previously NQF endorsed measure for children with medical complexity. Compared to lower scores (e.g., 0.6 or lower), continuity index scores of 0.7 or higher have been associated with significantly lower Medicare expenditures and significantly lower odds of hospitalization.\nReferences: \n1. Higher Primary Care Physician Continuity is Associated with Lower Costs and Hospitalizations. Bazemore et al. Annals of Family Medicine. 2018. 16, 492-497.",
+    "description": "This is a measure evaluating primary care physicians (PCPs); for each PCP, the denominator is all patients seen during the evaluation period who had at least 2 PCP visits. The numerator is the number of those patients whose Bice-Boxerman Continuity of Care Index is >= 0.7. The Bice-Boxerman index is a validated measure of patient-level care continuity that ranges from 0 to 1; 0 reflects completely disjointed care and 1 reflects complete continuity with the same PCP for all visits. The Bice-Boxerman index was used in a previously NQF endorsed measure for children with medical complexity. Compared to lower scores (e.g., 0.6 or lower), continuity index scores of 0.7 or higher have been associated with significantly lower Medicare expenditures and significantly lower odds of hospitalization.1\nReferences: \n1. Higher Primary Care Physician Continuity is Associated with Lower Costs and Hospitalizations. Bazemore et al. Annals of Family Medicine. 2018. 16, 492-497.",
     "nqfId": "3617",
     "measureType": "efficiency",
     "isHighPriority": true,
@@ -15209,7 +15209,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "isRiskAdjusted": false,
-    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Service, LLC",
+    "primarySteward": "ABG QCDR in Collaboration with Insight Medical Data Services, LLC",
     "firstPerformanceYear": 2021,
     "allowedVendors": [
       "5551268",
@@ -17651,7 +17651,7 @@
   {
     "measureId": "IRIS50",
     "title": "Amblyopia: Interocular visual acuity",
-    "description": "Percentage of newly diagnosed amblyopic patients with one or more of the following:\nA. a corrected interocular (or if not reported, the uncorrected) visual acuity difference less than 0.23 logMAR 3-12 months after first diagnosis of amblyopia\nOR\nB. an improvement in the corrected visual acuity of the amblyopic eye of 3 or more Snellen lines (> or = 0.30 logMAR) 3-12 months after first diagnosis of amblyopia \nOR\nC. a final visual acuity in the amblyopic eye equal to 20/30 or better (less than or equal to 0.18 log Mar) 3-12 months after first diagnosis of amblyopia",
+    "description": "Percentage of newly diagnosed amblyopic patients with one or more of the following: A. a corrected interocular (or if not reported, the uncorrected) visual acuity difference less than 0.23 logMAR 3-12 months after first diagnosis of amblyopia OR B. an improvement in the corrected visual acuity of the amblyopic eye of 3 or more Snellen lines (> or = 0.30 logMAR) 3-12 months after first diagnosis of amblyopia  OR C. a final visual acuity in the amblyopic eye equal to 20/30 or better (less than or equal to 0.18 log Mar) 3-12 months after first diagnosis of amblyopia",
     "nqfId": null,
     "measureType": "outcome",
     "isHighPriority": true,
@@ -18177,7 +18177,7 @@
   {
     "measureId": "MSN15",
     "title": "Use of Thyroid Imaging Reporting & Data System (TI-RADS) in Final Report to Stratify Thyroid Nodule Risk",
-    "description": "Percentage of patients, 19 years of age or older, undergoing ultrasound of the neck with\nfindings of thyroid nodule(s) whose reports include the TI-RADS assessment.",
+    "description": "Percentage of patients, 19 years of age or older, undergoing ultrasound of the neck with findings of thyroid nodule(s) whose reports include the TI-RADS assessment.",
     "nqfId": null,
     "measureType": "process",
     "isHighPriority": true,
@@ -18248,8 +18248,7 @@
     "primarySteward": "GIQuIC in Collaboration with American College of Gastroenterology, American Society for Gastrointestinal Endoscopy, and Health Catalyst",
     "firstPerformanceYear": 2015,
     "allowedVendors": [
-      "5846856",
-      "6981170"
+      "5846856"
     ],
     "allowedPrograms": [
       "mips",
