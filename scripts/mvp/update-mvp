@@ -12,6 +12,11 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   echo -e "Compiling Typescript..."
   tsc -p .
   
+  # converting csv to json:
+  echo -e "Converting CSV input file to JSON..."
+  node dist/mvp/csv-json-converter.js \
+    mvp/$currentPerformanceYear/mvp.csv $currentPerformanceYear mvp-raw
+  
   # Parse mvp data:
   echo -e "Parsing mvp-raw.json..."
   npm run parse:mvp $currentPerformanceYear
