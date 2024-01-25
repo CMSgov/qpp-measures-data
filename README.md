@@ -2,10 +2,6 @@
 
 [![Build Status](https://travis-ci.org/CMSgov/qpp-measures-data.svg?branch=master)](https://travis-ci.org/CMSgov/qpp-measures-data)
 
-**Performance Year 2024 Data**
-
-**All Measure and Benchmark data for Performance Year 2024 is currently in progress and is subject to change.**
-
 ## Quality Payment Program Measures Data Repository
 
 This is the source of truth for QPP measures data. Stability in the API contract for qpp-measures-data is prioritized but not guaranteed.
