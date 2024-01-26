@@ -45,7 +45,7 @@ export function ingestStrata() {
       }
 
       //remove 'Rate x: ' from the start of the stratum descriptions, if present.
-      stratum.description = stratum.description.replace(/^[Rr]ate [0-9]+: /, "");
+      stratum.description = stratum.description.replace(/^[Rr]ate \d+: /, "");
       
       return {
         ...currentStrata?.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
