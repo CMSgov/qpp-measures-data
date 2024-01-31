@@ -1,0 +1,36 @@
+# Single Source
+
+## Overview
+
+The single source file contains configuration for running the claims to quality (C2Q)
+measures. There are really multiple "single source" files varying in file
+format and contents.  Mathematica Policy Research (MPR) provides an Excel
+version to SemanticBits.  The sheet containing the various codes used in
+C2Q is written to a CSV file and stored in this repository 
+qpp-measures-data/claims-related/data.  A JSON format of the single source
+is also contained in the same directory - this version structures
+the original data in a format to be consumed by C2Q.  The fourth and final 
+version of the single source file resides in the claims-to-quality-analyzer 
+repository in claims_to_quality/lib/assets.  This fourth version is also JSON
+but contains additional data compared to the JSON in this repo.
+
+
+## App
+
+The code within single_source contains the following functionality exposed
+in the Makefile commands
+
+### Creating the CSV from the Excel file
+
+```makefile
+
+```
+
+### Create the JSON format from the CSV file
+```makefile
+
+```
+### Comparing single source versions year over year
+```makefile
+
+```

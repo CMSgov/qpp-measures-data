@@ -1,13 +1,9 @@
-version: "2"
+version: "3"
 services:
-  data-analysis:
-    image: bayesimpact/c2q-data-analysis
+  single-source:
+    build:
+      context: ./
+      dockerfile: Dockerfile
     volumes:
-      - ./:/home/jovyan/work:rw
-      - ../measures/:/home/jovyan/measures:rw
-      - ../:/home/:rw
-    command: bash -c "start-notebook.sh --NotebookApp.token=''"
-    ports:
-      - 8888:8888
-    environment:
-      - PYTHONPATH=/home/jovyan/work
+      - ./data:/home/app/data/
+      - ../measures:/home/app/measures/
