@@ -6,14 +6,38 @@ import argparse
 from pathlib import Path
 from itertools import chain
 import numpy as np
+import json
 
-from single_source.util import write_json
-from single_source.parser import Column, PERFORMANCE_OPTIONS, read_single_source_csv, parse_single_source
+from single_source.parser import Column, Option, read_single_source_csv, parse_single_source
+
+
+INCLUSION_EXCLUSION_RENAME = {
+    "modifier_inclusion": "modifiers",
+    "modifier_exclusion": "modifierExclusions",
+    "place_of_service_inclusion": "placesOfService",
+    "place_of_service_exclusion": "placesOfServiceExclusions"
+}
+
+PERFORMANCE_OPTIONS = [
+    Option.eligible_exception,
+    Option.eligible_exclusion,
+    Option.performance_met,
+    Option.performance_not_met,
+]
+
+PERFORMANCE_OPTION_RENAME = {
+    Option.eligible_exception.value: "eligiblePopulationException",
+    Option.eligible_exclusion.value: "eligiblePopulationExclusion",
+    Option.performance_met.value: "performanceMet",
+    Option.performance_not_met.value: "performanceNotMet",
+}
 
 
 def main():
     parsed_args = parse_args(sys.argv[1:])
     output_path = Path(parsed_args.output_path)
+    if output_path.exists() and parsed_args.overwrite is False:
+        raise FileExistsError("Pass --overwrite to overwrite existing file")
     single_source = read_single_source_csv(parsed_args.input_path)
     parsed_single_source = parse_single_source(single_source)
     formatted_json = format_json(parsed_single_source)
@@ -139,19 +163,9 @@ def get_performance_option(data, option, submission_criteria):
     return results
 
 
-INCLUSION_EXCLUSION_RENAME = {
-    "modifier_inclusion": "modifiers",
-    "modifier_exclusion": "modifierExclusions",
-    "place_of_service_inclusion": "placesOfService",
-    "place_of_service_exclusion": "placesOfServiceExclusions"
-}
-
-PERFORMANCE_OPTION_RENAME = {
-    "performance_met": "performanceMet",
-    "performance_not_met": "performanceNotMet",
-    "eligible_exclusion": "eligiblePopulationExclusion",
-    "eligible_exception": "eligiblePopulationException",
-}
+def write_json(json_data, file_path):
+    with open(file_path, "w") as file_handle:
+        json.dump(json_data, file_handle, sort_keys=True, indent=4)
 
 
 if __name__ == "__main__":

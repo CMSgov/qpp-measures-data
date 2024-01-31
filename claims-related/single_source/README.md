@@ -7,21 +7,18 @@ measures. There are really multiple "single source" files varying in file
 format and contents.  Mathematica Policy Research (MPR) provides an Excel
 version to SemanticBits.  The sheet containing the various codes used in
 C2Q is written to a CSV file and stored in this repository 
-qpp-measures-data/claims-related/data.  A JSON format of the single source
-is also contained in the same directory - this version structures
+qpp-measures-data/claims-related/data. **Note:** The Excel file may have some
+special characters and/or lines that need to be removed before writing the
+CSV.  A JSON format of the single source is also contained in the same directory - this version structures
 the original data in a format to be consumed by C2Q.  The fourth and final 
 version of the single source file resides in the claims-to-quality-analyzer 
 repository in claims_to_quality/lib/assets.  This fourth version is also JSON
-but contains additional data compared to the JSON in this repo.
+but contains additional data compared to the JSON in this repo - it is the 
+"enriched single source file".
 
 
-## App
-
-The code within single_source contains the following functionality exposed
-in the Makefile commands
-
-### Creating the CSV from the Excel file
-
+## Makefile
+### Build Docker Image
 ```makefile
 
 ```
@@ -30,7 +27,12 @@ in the Makefile commands
 ```makefile
 
 ```
-### Comparing single source versions year over year
-```makefile
 
+## Single Source Enrichment
+
+* Install npm
+* Install qpp-measures-data
+* Run
+```shell
+npm 
 ```

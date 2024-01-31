@@ -9,27 +9,6 @@ def parsed_single_source(single_source):
     return parsed
 
 
-def test_format_submission_criteria(parsed_single_source):
-    grouped_measure_id = parsed_single_source.groupby("overall_measure_id")
-    measure_id_data = grouped_measure_id.get_group("001")
-    grouped_submission_criteria = measure_id_data.groupby("submission_criteria")
-    submission_criteria_data = grouped_submission_criteria.get_group("00")
-    data = get_performance_option(submission_criteria_data, "performance_met", "00")
-    data_1 = get_performance_option(submission_criteria_data, "performance_not_met", "00")
-    print("foo")
-
-
-def test_get_all_performance_options(parsed_single_source):
-    grouped_measure_id = parsed_single_source.groupby("overall_measure_id")
-    measure_id_data = grouped_measure_id.get_group("024")
-    grouped_submission_criteria = measure_id_data.groupby("submission_criteria")
-
-    submission_criteria = "00"
-    submission_criteria_data = grouped_submission_criteria.get_group(submission_criteria)
-    performance_options = get_all_performance_options(submission_criteria_data, submission_criteria)
-    print("foo")
-
-
 def test_format_single_measure(single_source):
     measure_id = "155"
     single_measure = single_source.loc[single_source[Column.measure_id.value] == measure_id]
@@ -37,17 +16,6 @@ def test_format_single_measure(single_source):
     formatted = format_json(parsed)
     assert(len(formatted) == 1)
     assert(measure_id in formatted.keys())
-
-
-def test_collect_code_sets(parsed_single_source):
-    measure_id = "141"
-    grouped = parsed_single_source.groupby("overall_measure_id")
-    measure_data = grouped.get_group(measure_id)
-    grouped_sub_crit = measure_data.groupby("submission_criteria")
-    sg_ky = "00"
-    sg_data = grouped_sub_crit.get_group(sg_ky)
-    performance_option = get_performance_option(sg_data, "performance_met", sg_ky)
-    print("foo")
 
 
 @pytest.mark.parametrize("measure_id", [
@@ -82,9 +50,21 @@ def test_compare_versions(csv_path, json_path, data_directory):
     assert sorted_json == expected
 
 
-def test_format_json(data_directory):
-    filepath = data_directory / "2023_Claims_SingleSource_v7.0_1.29.24.csv"
+def test_format_json_new_filename_smoke_test(data_directory):
+    filename = "2023_Claims_SingleSource_v7.0_1.29.24.csv"
+    filepath = data_directory / filename
     source_csv = read_single_source_csv(filepath)
     parsed_single_source = parse_single_source(source_csv)
-    formatted_json = format_json(parsed_single_source)
-    print("foo")
+    _ = format_json(parsed_single_source)
+
+
+@pytest.mark.parametrize("measure_id", [
+    "001", "024", "039", "047", "110", "111", "112", "113", "128", "134", "141",
+    "145", "147", "155", "181", "226", "236", "249", "250", "261", "317", "320", "395", "396", "397",
+    "405", "406", "418", "422", "436"])
+def test_compare_two_jsons_measure_by_measure(data_directory, measure_id):
+    expected = read_and_sort_json(data_directory / "qpp-single-source-2023.json")
+    test_ = read_and_sort_json(data_directory / "qpp-single-source-2023_new.json")
+    test_measure = test_[measure_id]
+    expected_measure = expected[measure_id]
+    assert test_measure == expected_measure

@@ -25,7 +25,3 @@ def sort_performance_options(key):
     x = [key.get("optionGroup"), key.get("optionType")]
     z = [x.get("code") for x in key.get("qualityCodes")]
     return x + z
-
-
-if __name__ == "__main__":
-    main()

@@ -44,15 +44,8 @@ class Column(Enum):
     additional_procedure = "additional_procedure"
 
 
-PERFORMANCE_OPTIONS = [
-    Option.performance_met,
-    Option.performance_not_met,
-    Option.eligible_exception,
-    Option.eligible_exclusion,
-]
-
-DIAGNOSIS_CODE = ["DX_CODE"]
-PROCEDURE_CODE = ["ENCOUNTER_CODE", "PROC_CODE"]
+DIAGNOSIS_CODE = "DX_CODE",
+PROCEDURE_CODE = ("ENCOUNTER_CODE", "PROC_CODE")
 
 
 def read_single_source_table(path):
@@ -193,13 +186,16 @@ def is_eligible(data_element):
 
 def is_diagnosis_code(data_element):
     contains_exception_exclusion = data_element.str.contains("PD_Exe|PD_Exl")
-    starts_with_diagnosis_code = data_element.str.startswith("|".join(DIAGNOSIS_CODE))
+    starts_with_diagnosis_code = data_element.str.startswith(DIAGNOSIS_CODE, na=False)
     is_diagnosis_code_ = starts_with_diagnosis_code & (~contains_exception_exclusion)
     return is_diagnosis_code_
 
 
 def is_procedure_code(data_element):
-    return data_element.str.contains("^" + "|".join(PROCEDURE_CODE))
+    contains_exception_exclusion = data_element.str.contains("PD_Exe|PD_Exl")
+    starts_with_procedure_code = data_element.str.startswith(PROCEDURE_CODE, na=False)
+    is_procedure_code_ = starts_with_procedure_code & (~contains_exception_exclusion)
+    return is_procedure_code_
 
 
 def is_eligible_exclusion(data_element):
