@@ -7,6 +7,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
+import papa from 'papaparse';
 
 import { error } from '../logger';
 
@@ -20,6 +21,14 @@ const measuresJson = JSON.parse(
 );
 
 const validCategories = ['ia', 'pi', 'cost', 'quality', 'qcdr'];
+
+let categoryFields = {
+    ia: [],
+    pi: [],
+    cost: [],
+    quality: [],
+    qcdr: [],
+};
 
 function createJson() {
 
@@ -36,15 +45,26 @@ function createJson() {
     else {
         measuresOfCategory = getAllQcdrOrQualityMeasures();
     }
+    setCategoriesArray(category, measuresOfCategory);
 
-    writeToFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.json`);
+    writeToJsonFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.json`);
+
+    //strata field is not suited for CSVs, change to bool value (TRUE if exists).
+    if (['qcdr', 'quality'].includes(category)) {
+        const simplifiedForCSV = measuresOfCategory.map(measure => {
+            return { ...measure, strata: !!measure.strata }
+        });
+        writeToCSVFile(simplifiedForCSV, `tmp/${performanceYear}/${category}-measures.csv`);
+    } else {
+        writeToCSVFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.csv`);
+    }
 }
 
 function getAllQcdrOrQualityMeasures() {
     let measuresOfCategory: any[] = [];
     for (let i = 0; i < measuresJson.length; i++) {
         if (
-            category === 'quality' &&
+            category === 'qcdr' &&
             measuresJson[i].category === 'quality' &&
             measuresJson[i].isRegistryMeasure &&
             !['cahps', 'costScore'].includes(measuresJson[i].metricType)
@@ -52,7 +72,7 @@ function getAllQcdrOrQualityMeasures() {
             measuresOfCategory.push(measuresJson[i]);
         }
         else if (
-            category === 'qcdr' &&
+            category === 'quality' &&
             measuresJson[i].category === 'quality' &&
             !measuresJson[i].isRegistryMeasure &&
             !measuresJson[i].measureId.includes('CAHPS_')
@@ -63,10 +83,33 @@ function getAllQcdrOrQualityMeasures() {
     return measuresOfCategory;
 }
 
-function writeToFile(file: any, filePath: string) {
-    fs.writeFile(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2), function writeJSON(err) {
-        if (err) return console.log(err);
+function writeToJsonFile(file: any, filePath: string) {
+    fs.writeFile(
+        path.join(appRoot + '', filePath),
+        JSON.stringify(file, null, 2),
+        function writeJSON(err) {
+            if (err) return console.log(err);
+        }
+    );
+}
+
+function writeToCSVFile(file: any, filePath: string) {
+    fs.writeFile(
+        path.join(appRoot + '', filePath),
+        papa.unparse(file, { columns: categoryFields[category] }),
+        function writeCSV(err) {
+            if (err) return console.log(err);
+        }
+    );
+}
+
+function setCategoriesArray(category: string, measures: any[]) {
+    categoryFields[category] = [];
+    measures.forEach(measure => {
+        categoryFields[category].push(...Object.keys(measure));
     });
+    // remove dupes
+    categoryFields[category] = [...new Set(categoryFields[category])]
 }
 
 createJson();

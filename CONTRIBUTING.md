@@ -4,6 +4,7 @@
 
 Run:
 ```
+nvm use
 npm install
 ```
 
@@ -25,6 +26,7 @@ $YEAR refers to the performance year; this command-line argument is required.  $
 To regenerate and validate data, do the following:
 
 ```
+nvm use
 npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json
 npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json
 npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
@@ -35,6 +37,7 @@ npm run build:clinical-clusters     # generates clinical-clusters/clinical-clust
 To export CSVs of the measures data (one for each category):
 
 ```
+nvm use
 npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
 ```
 
@@ -50,7 +53,7 @@ cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2
 ```
 ### Initializing, Adding, Updating, and Deleting Measures
 
-To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
+To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file. REQUIRED: The file [constants.js](./constants.js) should also be updated to include the new performance year in the `validPerformanceYears` array.
 
 New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
 Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
@@ -58,7 +61,7 @@ NOTE FOR TESTING: You may add the -t flag to the above update script to run the 
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
-The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run init:measures $YEAR`.
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`.
 
 The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
 
@@ -68,28 +71,18 @@ To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV
 
 ### Additional Benchmarks
 
-For 2018-2019, only 'full images' of benchmark data are accepted; the csv must contain a full list of included benchmarks. Incremental files are no longer supported (2017 is no longer supported).
+To add or update benchmarks, rename your csv to 'benchmarks.csv'
+and place that file in staging/$YEAR/benchmarks/. 
+Replace any existing files of the same name.
+Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
+$YEAR refers to the performance year you are looking to update. 
+See `build-benchmarks` for more detail.
 
-  To add or update benchmarks, rename your csv to 'benchmarks.csv'
-  and place that file in staging/$YEAR/benchmarks/. 
-  Replace any existing files of the same name.
-  Run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
-  $YEAR refers to the performance year you are looking to update. 
-  See `build-benchmarks` for more detail.
-
-  `build-benchmarks` will call `parse-benchmarks-data.js` directly and validate the data right after. 
-  `parse-benchmarks-data.js` relies on a set of columns to be present and additional empty columns can cause the parsing to fail.
-   See that file for additional instructions on how to generate the JSON file.
-  
-  Also, `parse-benchmarks-data.js` cross references for measureIds in `measures/$YEAR/measures-data.json` for the correct usage. If none are matched, either a padded `000` digit will be used for `measureId`s with all digits or a non-spaced version of the `measureId` will be used.
-
-  If 2 benchmarks have the same Measure ID, Benchmark Year, Performance Year, and Submission method, an error will be thrown. Benchmarks cannot share this composite key.
-
-  Please verify the changes are as expected. (You can run `git diff`.)
+Please verify the changes are as expected. (You can run `git diff`.)
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
-Each performance year, we will receive a file named `mvp.json` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. Then run `npm run update:mvp` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.json`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
+Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run update:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
 
 ## Testing
 

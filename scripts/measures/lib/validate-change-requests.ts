@@ -12,6 +12,7 @@ const ajv = new Ajv();
 export enum measureType {
     ia = 'ia',
     pi = 'pi',
+    cost = 'cost',
     quality = 'quality',
     qcdr = 'qcdr',
 }
@@ -24,6 +25,13 @@ interface baseMeasuresChange {
     yearRemoved?: number,
     firstPerformanceYear?: number,
 }
+
+interface Cost_MeasuresChange extends baseMeasuresChange {
+    isInverse?: boolean,
+    metricType?: string,
+    overallAlgorithm?: string,
+    submissionMethods?: string[],
+};
 
 interface IA_MeasuresChange extends baseMeasuresChange {
     weight?: string,
@@ -67,6 +75,7 @@ interface QCDR_MeasuresChange extends Base_Quality_MeasuresChange {
 export type MeasuresChange =
     IA_MeasuresChange &
     PI_MeasuresChange &
+    Cost_MeasuresChange &
     Base_Quality_MeasuresChange &
     QCDR_MeasuresChange;
 
@@ -113,6 +122,19 @@ const baseQualityRequiredFields = [
     'metricType',
     'firstPerformanceYear',
 ];
+
+const cost_validationSchema: JSONSchemaType<Cost_MeasuresChange> = {
+    type: 'object',
+    properties: {
+        ...baseValidationSchemaProperties,
+        isInverse: { type: 'boolean', nullable: true },
+        metricType: { type: 'string', nullable: true },
+        overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
+        submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
+    },
+    required: ['measureId', 'category'],
+    additionalProperties: false,
+} as JSONSchemaType<Cost_MeasuresChange>;
 
 const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
     type: 'object',
@@ -193,6 +215,8 @@ function getSchema(type: measureType, isNewMeasure: boolean) {
             return createSchema(ia_validationSchema, isNewMeasure, type);
         case measureType.pi:
             return createSchema(pi_validationSchema, isNewMeasure, type);
+        case measureType.cost:
+            return createSchema(cost_validationSchema, isNewMeasure, type)
         case measureType.quality:
             return createSchema(quality_validationSchema, isNewMeasure, type);
         case measureType.qcdr:

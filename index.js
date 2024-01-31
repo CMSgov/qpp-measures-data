@@ -1,8 +1,8 @@
 // Libraries
 const fs = require('fs');
 const path = require('path');
-const YAML = require('yamljs');
-const uniq = require('lodash/uniq');
+const YAML = require('yaml');
+const _ = require('lodash');
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
@@ -14,6 +14,50 @@ const Constants = require('./constants.js');
  */
 exports.getValidPerformanceYears = function() {
   return Constants.validPerformanceYears;
+};
+
+/**
+ *
+ * @return {void}
+ * Adds any new program name fields from the mvp.json file for the given performance year
+ */
+exports.updateProgramNames = function(performanceYear) {
+  let programNames;
+  const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
+  const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
+
+  let mvpData = [];
+
+  try {
+    programNames = JSON.parse(fs.readFileSync(programNamesFilePath));
+    mvpData = JSON.parse(
+      fs.readFileSync(mvpFilePath));
+
+    mvpData.forEach(mvp => {
+      if (!programNames[mvp.mvpId]) {
+        programNames[mvp.mvpId] = mvp.mvpId;
+      }
+    });
+
+    fs.writeFileSync(programNamesFilePath, JSON.stringify(programNames, null, 2));
+  } catch (e) {
+    console.log('Error parsing the program-names.json or mvp.json file: ' + ' --> ' + e);
+  }
+};
+
+/**
+ *
+ * @return {{}} - program names -
+ * An object keyed by program name containing the current program names
+ */
+exports.getProgramNames = function() {
+  const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
+
+  try {
+    return JSON.parse(fs.readFileSync(programNamesFilePath));
+  } catch (e) {
+    console.log('Error parsing the program-names.json file: ' + ' --> ' + e);
+  }
 };
 
 /**
@@ -55,7 +99,15 @@ exports.getBenchmarksYears = function() {
  * @return {{}} - Object representation of the Benchmarks Schema
  */
 exports.getBenchmarksSchema = function(performanceYear = Constants.currentPerformanceYear) {
-  return YAML.load(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'), 'utf8'));
+};
+
+/**
+ * @return {Array<Any>}
+ */
+exports.getBenchmarksExclusionReasons = function(performanceYear = Constants.currentPerformanceYear) {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmark-exclusion-reasons.json')));
 };
 
 /**
@@ -70,7 +122,7 @@ exports.getMeasuresData = function(performanceYear = 2017) {
  * @return {{}} - Object representation of the Measures Schema
  */
 exports.getMeasuresSchema = function(performanceYear = 2017) {
-  return YAML.load(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'), 'utf8'));
 };
 
 /**
@@ -90,8 +142,8 @@ exports.getClinicalClusterData = function(performanceYear = 2017) {
 /**
  * @return {{}} - Object representation of the Clinical Cluster Schema
  */
-exports.getClinicalClusterSchema = function(performanceYear = 2017) {
-  return YAML.load(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'));
+exports.getClinicalClusterSchema = function(performanceYear = 2023) {
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'), 'utf8'));
 };
 
 /**
@@ -150,6 +202,8 @@ exports.createMVPDataFile = function(performanceYear) {
       mvp[item.enrichedMeasureKey] = [];
       this.populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
     });
+
+    mvp.hasOutcomeAdminClaims = !_.isEmpty(mvp.administrativeClaimsMeasureIds);
   });
 
   mvpData.forEach(mvp => {
@@ -164,19 +218,25 @@ exports.createMVPDataFile = function(performanceYear) {
   return mvpData;
 };
 
-exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresData, measureIdKey, enrichedMeasureKey) {
-  mvpDataItem[measureIdKey].forEach(measureId => {
-    const measure = measuresData.find(m => m.measureId === measureId);
+exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, measureIdKey, enrichedMeasureKey) {
+  currentMvp[measureIdKey].forEach(measureId => {
+    const measure = measuresData.find(measure => measure.measureId === measureId);
 
     if (measure) {
-      mvpDataArray.forEach(m => {
-        if (m[measureIdKey].includes(measureId)) {
-          measure.allowedPrograms.push(m.mvpId);
+      allMvps.forEach(mvp => {
+        // update measuresData with MVP programNames.
+        if (mvp[measureIdKey].includes(measureId)) {
+          measure.allowedPrograms.push(mvp.mvpId);
         }
       });
+      measure.allowedPrograms = _.uniq(measure.allowedPrograms);
 
-      measure.allowedPrograms = uniq(measure.allowedPrograms);
-      mvpDataItem[enrichedMeasureKey].push(measure);
+      if (measure.measureId === '321') {
+        currentMvp.hasCahps = true;
+      }
+
+      // update mvp-data with measures.
+      currentMvp[enrichedMeasureKey].push(measure);
     }
   });
 };
@@ -185,5 +245,29 @@ exports.populateMeasuresforMVPs = function(mvpDataItem, mvpDataArray, measuresDa
  * @return {{}} - Object representation of the MVP Schema
  */
 exports.getMVPSchema = function(performanceYear = 2023) {
-  return YAML.load(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'));
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'), 'utf8'));
+};
+
+/**
+ * @return {Array<MVP>}
+ */
+exports.getMVPDataSlim = function(performanceYear = 2023) {
+  const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
+  let mvpData;
+
+  if (fs.existsSync(filePath)) {
+    mvpData = JSON.parse(fs.readFileSync(filePath));
+    mvpData.forEach(mvp => {
+      mvp.measureIds = [].concat(mvp.qualityMeasureIds,
+        mvp.iaMeasureIds,
+        mvp.costMeasureIds,
+        mvp.foundationPiMeasureIds,
+        mvp.foundationQualityMeasureIds,
+        mvp.administrativeClaimsMeasureIds);
+    });
+  } else {
+    console.log('mvp.json file does not exist');
+  }
+
+  return mvpData;
 };

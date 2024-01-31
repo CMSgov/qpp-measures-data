@@ -16,11 +16,16 @@ import appRoot from 'app-root-path';
 import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
 import { convertCsvToJson } from '../lib/csv-json-converter';
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 import {
+    COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,
+    IA_MEASURES_ORDER,
     PI_DEFAULT_VALUES,
-    QUALITY_DEFAULT_VALUES
+    PI_MEASURES_ORDER,
+    QCDR_MEASURES_ORDER,
+    QUALITY_DEFAULT_VALUES,
+    QUALITY_MEASURES_ORDER
 } from '../../constants';
 
 const QUALITY_DEFAULT_PROGRAMS = [
@@ -184,10 +189,10 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
             // check if new exclusions and substitutes exist.
-            if (change.substitutes) {   
+            if (change.substitutes) {
                 checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute');
             }
-            if (change.exclusion) {   
+            if (change.exclusion) {
                 checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion');
             }
 
@@ -202,6 +207,7 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
                     ...updateBenchmarksMetaData(change),
                 }
             }
+            orderFields(measuresJson[i]);
             info(`Measure '${change.measureId}' updated.`);
             break;
         }
@@ -210,50 +216,66 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
 
 export function addMeasure(change: MeasuresChange, measuresJson: any) {
     // check if new exclusions and substitutes exist.
-    if (change.substitutes) {   
+    if (change.substitutes) {
         checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
     }
-    if (change.exclusion) {   
+    if (change.exclusion) {
         checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion', true);
     }
 
     const index = findFinalInCategory(change.category, measuresJson);
     switch (change.category) {
         case 'ia':
-            measuresJson.splice(index + 1, 0, {
+            measuresJson.splice(index + 1, 0, orderFields({
                 ...IA_DEFAULT_VALUES,
                 ...change,
-            });
+            }));
             break;
 
         case 'pi':
-            measuresJson.splice(index + 1, 0, {
+            const preprod = populatePreProdArray(change, measuresJson);
+            measuresJson.splice(index + 1, 0, orderFields({
                 ...PI_DEFAULT_VALUES,
                 ...change,
-            });
+                preprod
+            }));
             break;
 
         case 'quality':
-            measuresJson.splice(index + 1, 0, {
+            measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
                 isRegistryMeasure: false,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
-            });
+            }));
             break;
 
         case 'qcdr':
-            measuresJson.splice(index + 1, 0, {
+            measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
                 category: 'quality',
                 isRegistryMeasure: true,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
-            });
+            }));
             break;
     }
     info(`New measure '${change.measureId}' added.`);
+}
 
+// organizes the fields to match the order of that specific category in measures-data
+function orderFields(measure: any) {
+    if (measure.category === 'pi') {
+        return Object.assign({}, PI_MEASURES_ORDER, measure)
+    } else if (measure.category === 'ia') {
+        return Object.assign({}, IA_MEASURES_ORDER, measure)
+    } else if (measure.category === 'quality' && !measure.isRegistryMeasure) {
+        return Object.assign({}, QUALITY_MEASURES_ORDER, measure)
+    } else if (measure.category === 'quality' && measure.isRegistryMeasure) {
+        return Object.assign({}, QCDR_MEASURES_ORDER, measure)
+    } else if (measure.category === 'cost') {
+        return Object.assign({}, COST_MEASURES_ORDER, measure)
+    }
 }
 
 function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
@@ -266,6 +288,17 @@ function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
         return false;
     }
     return true;
+}
+
+function populatePreProdArray(change: MeasuresChange, measuresJson: any) {
+    if (change.measureId.includes('_PRE') || change.measureId.includes('_PROD')) {
+        return undefined;
+    }
+    
+    const pre = _.find(measuresJson, { measureId: `${change.measureId}_PRE` });
+    const prod = _.find(measuresJson, { measureId: `${change.measureId}_PROD` });
+
+    return _.compact([pre?.measureId, prod?.measureId]);
 }
 
 function isAllowedCostScore(change: MeasuresChange, measuresJson: any): boolean {
@@ -363,16 +396,16 @@ function isOnlyAdminClaims(change: MeasuresChange) {
 }
 
 function checkNewExclusionAndSubstitutes(
-    measureIds: string[], 
-    measureId: string, 
-    measuresJson: any, 
-    arrayType: string, 
+    measureIds: string[],
+    measureId: string,
+    measuresJson: any,
+    arrayType: string,
     isNew: boolean = false
 ) {
     for (let i = 0; i < measureIds.length; i++) {
         if (!_.find(measuresJson, { 'measureId': measureIds[i] })) {
             const rootMessage = `${arrayType} ${measureIds[i]} does not exist in the measures-data.json.`;
-            
+
             if (isNew) {
                 warning(`${measureId}: ${rootMessage} Was it added later in this change request?`);
             } else {

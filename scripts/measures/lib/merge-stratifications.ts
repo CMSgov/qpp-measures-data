@@ -1,4 +1,4 @@
-export function mergeStratifications (measures, additionalStratifications) {
+export function mergeStratifications(measures, additionalStratifications) {
   additionalStratifications.forEach((additionalStratification) => {
     const measure = measures.find(measure => measure.eMeasureId === additionalStratification.eMeasureId);
     measure.strata.forEach(subPopulation => {
@@ -11,7 +11,6 @@ export function mergeStratifications (measures, additionalStratifications) {
 
       if (mapping) {
         subPopulation.eMeasureUuids.strata = mapping.strata;
-        console.log('adding mapping: ' + mapping.strata);
       }
     });
   });

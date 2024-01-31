@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=$(($1))
-maxPerformanceYear=2023
+maxPerformanceYear=2024
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -11,6 +11,15 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   echo -e "Compiling Typescript..."
   tsc -p .
+  
+  # converting csv to json:
+  echo -e "Converting CSV input file to JSON..."
+  node dist/mvp/csv-json-converter.js \
+    mvp/$currentPerformanceYear/mvp.csv $currentPerformanceYear mvp-raw
+  
+  # Parse mvp data:
+  echo -e "Parsing mvp-raw.json..."
+  npm run parse:mvp $currentPerformanceYear
 
   # Update mvp-enriched, if there are any updates:
   echo -e "Updating mvp-enriched.json..."

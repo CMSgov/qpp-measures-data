@@ -1,0 +1,149 @@
+[
+  {
+    "eMeasureId": "CMS145v11",
+    "eMeasureUuid": "2c928083-7f47-c81f-017f-8e1c03421dc7",
+    "strata": [
+      {
+        "name": "LVSD",
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <40%)",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4E0D3490-1061-4C2C-B49D-4A31B2DBC197",
+          "denominatorUuid": "854ADFB2-FAFB-4632-9D74-19DB7EA25034",
+          "numeratorUuid": "45097018-5150-485C-8D87-61BB9BB0943B",
+          "denominatorExceptionUuid": "90C84B31-6F60-41C8-A576-37589C8EEBF5"
+        }
+      },
+      {
+        "name": "priorMI",
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "073B2941-D099-4142-97C0-E907CD7215D8",
+          "denominatorUuid": "00007C18-CC58-4BDB-9759-C08B59B809B1",
+          "numeratorUuid": "82ADC103-BB4D-4436-A0DF-11D8E5907473",
+          "denominatorExceptionUuid": "04EED69A-0FFD-4EF9-80BD-2A0D3C88BBE4"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS156v11",
+    "eMeasureUuid": "2c928084-808a-9589-0180-d74bf7b7164d",
+    "strata": [
+      {
+        "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "064940DC-3F04-4B31-88CA-367BE20AC510",
+          "denominatorUuid": "CD3CCAD3-3E90-4094-9987-9A9D2A5D574D",
+          "numeratorUuid": "E384D9B0-6AD6-45BC-B562-A57E46FC1E90",
+          "denominatorExclusionUuid": "CEC58D2D-4525-45B8-B320-FFB35B654DA8"
+        },
+        "name": "overall"
+      },
+      {
+        "description": "Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "5E28FE53-02D9-4A14-9721-74729FBF2F73",
+          "denominatorUuid": "5BE6C6E2-64FA-49D5-8D2E-B977E2AB62A7",
+          "numeratorUuid": "5577FDAE-5153-4B75-9B85-59CEF09CFC82",
+          "numeratorExclusionUuid": "C813AAC7-6D05-45D0-838D-467A837ECEC0",
+          "denominatorExclusionUuid": "82D62AA5-015B-4256-AF2B-C43D52622EFB"
+        },
+        "name": "appropriateDiagnosis"
+      },
+      {
+        "description": "Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators).",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "2B4CFB1B-43D2-4ABA-AE55-CCF174208A3B",
+          "denominatorUuid": "725E725B-DF32-429A-BAEE-444AD4CE5FC7",
+          "numeratorUuid": "35C1118F-EBF8-470F-8B70-150CB04435AA",
+          "denominatorExclusionUuid": "AEA06864-DA4F-4ECD-93EC-BA6B94930337"
+        },
+        "name": "totalRate"
+      }
+    ],
+    "metricType": "multiPerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS157v11",
+    "eMeasureUuid": "2c928084-7b7e-655a-017b-88e5bfb80591",
+    "strata": [
+      {
+        "name": "Chemotherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0F15C056-2D9F-4B90-A97F-14C34E6AD194",
+          "denominatorUuid": "D54AC8FB-CBA1-4569-9189-7EBFAA66574D",
+          "numeratorUuid": "151395B6-5CD8-4DB5-B86F-8D3DF5100C83"
+        }
+      },
+      {
+        "name": "RadiationTherapy",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "3BC00F94-27F6-45F2-90AC-E47D1BE70A1A",
+          "denominatorUuid": "BD5FB04B-8A49-4488-96B0-6A14BC904E39",
+          "numeratorUuid": "F6B603E8-D49B-4C4D-8AA3-3073626B7A59"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS249v5",
+    "eMeasureUuid": "2c928082-7ac4-569d-017a-ca2f0fa10205",
+    "strata": [
+      {
+        "description": "Female patients who received an order for at least one DXA scan in the measurement period",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "4B34F4ED-1A49-4A8B-87E8-FABF70962F2B",
+          "denominatorUuid": "A89FF41B-8F0B-486D-A640-945054FB9CA4",
+          "numeratorUuid": "C86B7AF8-F152-478F-8CFC-ACCC0D4BA376",
+          "numeratorExclusionUuid": "D50C3A0F-57E4-4491-85AA-FA542D717E87",
+          "denominatorExclusionUuid": "1865BCB7-B020-4329-A3B7-7AEA32E0AC81"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  },
+  {
+    "eMeasureId": "CMS347v6",
+    "eMeasureUuid": "2c928082-7fac-c041-017f-b8180fec068b",
+    "strata": [
+      {
+        "name": "clinicalASCVD",
+        "description": "All patients with an active diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD) or ever had an ASCVD procedure",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B12E750E-E32A-4DAF-93A4-2902B9A7A006",
+          "denominatorUuid": "D7210073-99D6-4616-8511-B15FF2C0DC36",
+          "denominatorExclusionUuid": "5912E99B-963C-4F45-AD54-95D17670B56C",
+          "numeratorUuid": "0DEB457A-D340-42D2-BD19-8038E502F8AA",
+          "denominatorExceptionUuid": "2F1166B5-43F2-4E45-BC3D-2E399BBD41FF"
+        }
+      },
+      {
+        "name": ">=20Familial",
+        "description": "Patients aged >= 20 years who have ever had a low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "0EC4214D-3153-4AAB-84E0-E9F18EB384B5",
+          "denominatorUuid": "4138280C-EE28-4B9D-A963-B9EB69CA2C8B",
+          "denominatorExclusionUuid": "EC8E047A-242B-4798-8A75-09BADEF9C278",
+          "numeratorUuid": "52221AD6-F254-4BD4-9FB5-07B0D9E14F32",
+          "denominatorExceptionUuid": "9F91E492-AEFF-45D3-8637-24DA32CC3363"
+        }
+      },
+      {
+        "name": "between40And75",
+        "description": "Patients aged 40-75 years with a diagnosis of diabetes",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "B2FD2F54-F64B-446A-B8D6-69E87CF6B1DB",
+          "denominatorUuid": "733BFDF4-72B5-4474-95CA-AD14BDD0F739",
+          "denominatorExclusionUuid": "800774E8-D7E7-45CF-8EF6-8D6F8538F60F",
+          "numeratorUuid": "C7164728-E597-499F-80DD-F6E42981E34F",
+          "denominatorExceptionUuid": "64BF25A1-2691-494E-B51F-1B99F5FCE795"
+        }
+      }
+    ],
+    "metricType": "singlePerformanceRate"
+  }
+]

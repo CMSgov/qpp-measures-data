@@ -1,7 +1,8 @@
 const _ = require('lodash');
 const chai = require('chai');
 const path = require('path');
-const YAML = require('yamljs');
+const YAML = require('yaml');
+const fs = require('fs');
 
 const assert = chai.assert;
 
@@ -17,7 +18,7 @@ describe('measures schema validates json', function() {
       let data;
 
       before(() => {
-        schema = YAML.load(path.join(__dirname, '../../', 'measures', year.toString(), 'measures-schema.yaml'));
+        schema = YAML.parse(fs.readFileSync(path.join(__dirname, '../../', 'measures', year.toString(), 'measures-schema.yaml'), 'utf8'));
         data = require(path.join(__dirname, '../../', 'measures', year.toString(), 'measures-data.json'));
       });
 

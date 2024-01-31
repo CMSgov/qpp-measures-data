@@ -7,7 +7,7 @@ const testCsv = 'test/scripts/benchmarks/fixtures/test-benchmarks.csv';
 
 // Function which executes script and reads in output file to a JS object.
 const runTest = function(benchmarksCsv) {
-  const cmd = 'cat ' + testCsv + ' | ' + 'node ./scripts/benchmarks/parse-benchmarks-data.js 2015 2017';
+  const cmd = 'cat ' + testCsv + ' | ' + 'node ./scripts/benchmarks/archive/parse-benchmarks-data.js 2015 2017';
   const benchmark = execSync(cmd).toString();
   return JSON.parse(benchmark);
 };

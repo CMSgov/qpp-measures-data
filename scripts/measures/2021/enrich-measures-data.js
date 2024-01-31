@@ -1,15 +1,15 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
-const mergeEcqmEhrLinks = require('../lib/merge-ecqm-ehr-links');
-const mergeWebInterfaceLinks = require('../lib/merge-web-interface-links');
-const mergeClaimsLinks = require('../lib/merge-claims-links');
-const mergeCqmLinks = require('../lib/merge-cqm-links');
-const mergeEcqmData = require('../lib/merge-ecqm-data');
-const mergeStratifications = require('../lib/merge-stratifications');
-const mergeClaimsRelatedData = require('../lib/merge-claims-related-data');
-const mergeCpcGroups = require('../lib/merge-cpc-groups');
+const mergeEcqmEhrLinks = require('../lib/archive/merge-ecqm-ehr-links');
+const mergeWebInterfaceLinks = require('../lib/archive/merge-web-interface-links');
+const mergeClaimsLinks = require('../lib/archive/merge-claims-links');
+const mergeCqmLinks = require('../lib/archive/merge-cqm-links');
+const mergeEcqmData = require('../lib/archive/merge-ecqm-data');
+const mergeStratifications = require('../lib/archive/merge-stratifications');
+const mergeClaimsRelatedData = require('../lib/archive/merge-claims-related-data');
+const mergeCpcGroups = require('../lib/archive/merge-cpc-groups');
 
 const measuresDataPath = process.argv[2];
 const ecqmEhrLinksPath = process.argv[3];

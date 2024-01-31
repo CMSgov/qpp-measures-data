@@ -1,0 +1,30 @@
+name: Test - Repository Dispatch
+on:
+  workflow_dispatch:
+
+jobs:
+    # Make an announcement to other repositories of interest
+    repo-dispatch:
+      runs-on: ubuntu-latest
+      # todo: remove this:
+      # needs: publish-npm
+      strategy:
+        matrix:
+          repo:
+            # - CMSgov/qpp-scoring-engines
+            # - CMSgov/beneficiary-reporting-api
+            - CMSgov/qpp-submissions-api
+            # - CMSgov/self-nomination-api
+            # - CMSgov/beneficiary-reporting-client
+            # - CMSgov/qpp-submission-client
+            # - CMSgov/claims-to-quality-analyzer
+            # - CMSgov/qpp-ui
+
+      steps:
+        - name: Repository Dispatch
+          uses: peter-evans/repository-dispatch@v2
+          with:
+            token: ${{ secrets.GH_USER_TOKEN }}
+            repository: ${{ matrix.repo }}
+            event-type: lib-update-event
+            client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'

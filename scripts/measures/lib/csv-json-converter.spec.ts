@@ -5,7 +5,7 @@ import appRoot from 'app-root-path';
 
 import { convertCsvToJson } from './csv-json-converter';
 import * as logger from '../../logger';
-import { InvalidValueError } from './errors';
+import { InvalidValueError } from '../../errors';
 
 const iaChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/iaMeasures.csv'), 'utf8');
 const piChangesCSV = fs.readFileSync(path.join(appRoot + '', 'test/measures/2023/piMeasures.csv'), 'utf8');
@@ -124,7 +124,7 @@ describe('#csv-json-converter', () => {
     it('throws InvalidValueError for badly mapped array data', () => {
         expect(() => {
             convertCsvToJson(badQcdrMeasures);
-        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'Part Baddata Claims'));
+        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'PartBaddataClaims'));
     });
 
     it('throws InvalidValueError for badly mapped boolean data', () => {

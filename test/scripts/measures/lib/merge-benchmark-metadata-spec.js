@@ -1,5 +1,5 @@
 const {expect} = require('chai');
-const mergeBenchmarkMetadata = require('../../../../scripts/measures/lib/merge-benchmark-metadata');
+const mergeBenchmarkMetadata = require('../../../../scripts/measures/lib/archive/merge-benchmark-metadata');
 
 describe('merge-benchmark-metadata', () => {
   it('should merge benchmark metadata into base measure data', () => {

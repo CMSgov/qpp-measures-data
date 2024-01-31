@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const mergeCqmLinks = require('../../../../scripts/measures/lib/merge-cqm-links');
+const mergeCqmLinks = require('../../../../scripts/measures/lib/archive/merge-cqm-links');
 
 describe('merge-cqm-links', () => {
   it('should merge cqmLinks into base measure data', () => {

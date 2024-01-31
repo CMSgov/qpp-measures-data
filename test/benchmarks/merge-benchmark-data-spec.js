@@ -2,7 +2,7 @@ const chai = require('chai');
 const path = require('path');
 const assert = chai.assert;
 
-const mergeBenchmarkData = require('../../scripts/benchmarks/helpers/merge-benchmark-data-helpers');
+const mergeBenchmarkData = require('../../scripts/benchmarks/archive/helpers/merge-benchmark-data-helpers');
 
 describe('mergeBenchmarkData', function() {
   describe('getOrderedFileNames', function() {

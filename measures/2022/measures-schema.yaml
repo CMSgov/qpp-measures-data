@@ -1,7 +1,7 @@
 $id: https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2022/measures-schema.yaml
 $schema: http://json-schema.org/draft-07/schema
 type: array
-items: { $ref: #/definitions/measure }
+items: { $ref: '#/definitions/measure' }
 uniqueItemProperties: ['measureId'] # used by ajv-keywords
 
 definitions:
@@ -9,10 +9,10 @@ definitions:
     title: 'Measure'
     type: object
     anyOf:
-      - { $ref: #/definitions/iaMeasure }
-      - { $ref: #/definitions/piMeasure }
-      - { $ref: #/definitions/qualityMeasure }
-      - { $ref: #/definitions/aggregateCostMeasure }
+      - { $ref: '#/definitions/iaMeasure' }
+      - { $ref: '#/definitions/piMeasure' }
+      - { $ref: '#/definitions/qualityMeasure' }
+      - { $ref: '#/definitions/aggregateCostMeasure' }
 
   baseMeasure:
     title: 'Base Measure'
@@ -28,7 +28,7 @@ definitions:
         type: string
         description: A description of the measure for more detail with key words/phrases.
       category:
-        description: QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.
+        description: 'QPP scoring category to which the measure belongs: Improvement Activities, Quality, Promoting Interoperability (formerly Advancing Care Information), and Cost.'
         enum: [ia, quality, pi, cost]
       metricType:
         description: Type of measurement that the measure requires in order to attest.
@@ -44,49 +44,51 @@ definitions:
       measureSpecification:
         description: URL link for Measure Specification PDF to download by Submission Method.
         anyOf:
-          - { $ref: #/definitions/measureSpecification }
+          - { $ref: '#/definitions/measureSpecification' }
           - { type: 'null' }
       measureSets:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
-        items: { $ref: #/definitions/measureSets }
+        items: { $ref: '#/definitions/measureSets' }
     required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
 
   iaMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'IA Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const ia }
+          category:
+            enum: [ia]
           weight:
             description: Determines the points granted for attesting to the measure.
             enum: [null, medium, high]
             default: medium
           subcategoryId:
             description: IA category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/subcategoryIds }]
+            oneOf: [{ $ref: '#/definitions/subcategoryIds' }]
         required: [weight, subcategoryId]
 
   piMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'PI Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const pi }
+          category:
+            enum: [pi]
           reportingCategory:
             description: The reporting category of the PI measure.
             enum: [required, bonus, exclusion, null]
           objective:
             description: PI category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/objectives }]
+            oneOf: [{ $ref: '#/definitions/objectives' }]
           isRequired:
             description: If true, attesting to the measure is required in order to receive a non-zero PI score.
             type: boolean
@@ -97,7 +99,7 @@ definitions:
             default: false
           substitutes:
             description: Identifiers of other PI measures that can be used instead of the current measure.
-            oneOf: [{ $ref: #/definitions/arrayOfStringIdentifiers}]
+            oneOf: [{ $ref: '#/definitions/arrayOfStringIdentifiers' }]
           exclusion:
             description: Identifiers of other PI measures that can be submitted instead of current measure. Cannot submit both current measure and the exclusion measure.
         required: [objective, isRequired, isBonus, measureSets]
@@ -105,13 +107,14 @@ definitions:
   aggregateCostMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'Cost Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const cost }
+          category:
+            enum: [cost]
           isInverse:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
@@ -126,19 +129,20 @@ definitions:
   qualityMeasure:
     $merge:
       source:
-        { $ref: #/definitions/baseMeasure }
+        { $ref: '#/definitions/baseMeasure' }
       with:
         title: 'Quality Measure'
         type: object
         additionalProperties: false
         properties:
-          category: { const quality }
+          category:
+            enum: [quality]
           nationalQualityStrategyDomain: 
             type: ['null', string]
             description: The area of health care quality (NQS Domain) which this measure improves.
           measureType:
             description: Quality category which the measure incentivizes.
-            oneOf: [{ $ref: #/definitions/measureTypes }]
+            oneOf: [{ $ref: '#/definitions/measureTypes' }]
           eMeasureId:
             description: Identifier for Electronic Clinical Quality Measures (ECQM).
             type: ['null', string]
@@ -157,7 +161,7 @@ definitions:
           clinicalGuidelineChanged:
             type: array
             description: List of submissionMethods that have been suppressed for this year due to potentially no longer aligning with best practices or could lead to patient harm.
-            items: { $ref: #/definitions/methods }
+            items: { $ref: '#/definitions/methods' }
           isHighPriority:
             description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
             type: boolean
@@ -172,30 +176,30 @@ definitions:
           strata:
             description: Population segments for which the measure requires reporting data. Only applicable to multiPerformanceRate measures.
             type: array
-            items: { $ref: #/definitions/performanceStrata }
+            items: { $ref: '#/definitions/performanceStrata' }
           primarySteward:
             description: Organization who submits and maintains the measure.
             type: string
           submissionMethods:
             description: Possible methods for submitting performance data for the measure.
             type: array
-            items: { $ref: #/definitions/methods }
+            items: { $ref: '#/definitions/methods' }
           eligibilityOptions:
             description: Eligibility options mirror denominator options in QCDR measure specifications. Each option comprises a set of codes used to identify eligible instances of the associated measure.
             type: array
-            items: { $ref: #/definitions/eligibilityOption }
+            items: { $ref: '#/definitions/eligibilityOption' }
           performanceOptions:
             description: Performance options mirror numerator options in QCDR measure specifications. Each option comprises a set of codes used to identify instances of performance met, performance not met, performance exclusion or performance exception.
             type: array
-            items: { $ref: #/definitions/performanceOption }
+            items: { $ref: '#/definitions/performanceOption' }
           allowedPrograms:
             description: Programs that the measure can be submitted to
             type: array
-            items: { $ref: #/definitions/programs }
+            items: { $ref: '#/definitions/programs' }
           requiredForPrograms:
             description: Programs that the measure is required to be submitted to
             type: array
-            items: { $ref: #/definitions/programs }
+            items: { $ref: '#/definitions/programs' }
           allowedVendors:
             description: List of QCDR Registries that are allowed to submit the QCDR measure
             type: array
@@ -215,11 +219,11 @@ definitions:
           icdImpacted:
             type: array
             description: List of submissionMethods where ICD 10 codes for the measure changed during the submission year. Used to indicate that submissions data should be truncated to only the first nine months of the performance year when the ICD 10 codes were unchanged. Typically impacts claims submissionMethod. Does not impact registry submissionMethod.
-            items: { $ref: #/definitions/methods }
+            items: { $ref: '#/definitions/methods' }
           historic_benchmarks:
             type: object
             description: The submissionMethods of the measure which have had their benchmarks removed or flattened for the current year. A benchmark is marked as flat if the measure is determined to have the potential to result in inappropriate treatment of patients if the top decile is higher than 90%, or if inverse less than 10%. 
-            propertyNames: { $ref: #/definitions/methods }
+            propertyNames: { $ref: '#/definitions/methods' }
             patternProperties:
               "":
                 enum: [removed, flat]
@@ -233,7 +237,7 @@ definitions:
               strata: {
                 type: 'array',
                 minItems: 1,
-                items: { $ref: #/definitions/performanceStrata }
+                items: { $ref: '#/definitions/performanceStrata' }
               }
             },
             required: [overallAlgorithm, strata]
@@ -414,11 +418,14 @@ definitions:
       procedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option.
         type: array
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
       additionalProcedureCodes:
         description: A list of HCPCS or CPT codes, at least one of which must be present to meet the eligibility option. If present, this field imposes a requirement in addition to the one from the procedureCodes field.
         type: array
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
+      optionGroup:
+        description: An identifier for grouping eligibility options together that need to be met together.
+        type: string
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']
@@ -432,7 +439,10 @@ definitions:
       qualityCodes:
         description: A list of quality codes, all of which must be present to meet the performance option.
         type: array
-        items: { $ref: #/definitions/codeObject }
+        items: { $ref: '#/definitions/codeObject' }
+      optionGroup:
+        description: An identifier for grouping eligibility options together that need to be met together.
+        type: string
     required: [optionType, qualityCodes]
 
   programs:

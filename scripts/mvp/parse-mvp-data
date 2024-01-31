@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+performanceYear=$1
+
+if [[ -z "$performanceYear" ]]; then
+  echo 'Performance year is required.'
+  exit 126
+else
+  echo -e "Compiling Typescript..."
+  tsc -p .
+
+  echo -e "Updating mvp.json with new data..."
+  node dist/mvp/parse-mvp-data.js $performanceYear
+
+  echo -e "Completed."
+fi

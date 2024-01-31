@@ -6,12 +6,12 @@
  */
 
 import appRoot from 'app-root-path';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
 
-import { DataValidationError } from '../lib/errors';
+import { DataValidationError } from '../../errors';
 
 const performanceYear = process.argv[2];
 const strataPath = process.argv[3];
@@ -23,7 +23,7 @@ const measuresJson = JSON.parse(
 );
 const strata = parse(
   fs.readFileSync(path.join(appRoot + "", strataPath), "utf8"),
-  { columns: true, skip_empty_lines: true }
+  { columns: true, skip_empty_lines: true, bom: true }
 );
 
 export function ingestStrata() {
@@ -31,21 +31,30 @@ export function ingestStrata() {
     ...new Set(strata.map((stratum) => stratum.measureId)),
   ];
   for (let i = 0; i < uniqueMeasureIds.length; i++) {
+    const currentStrata = measuresJson.find(
+      (measure: any) => measure.measureId === uniqueMeasureIds[i]
+    ).strata;
+
     const measureStrata = _.filter(strata, { measureId: uniqueMeasureIds[i] });
-    const mappedStrata = measureStrata.map((stratum) => {
+    let mappedStrata = measureStrata.map((stratum) => {
       if (!stratum.stratumName || !stratum.description) {
         throw new DataValidationError(
           strataPath,
           "Name and description are required."
         );
       }
+      
+      //remove 'Rate x: ' from the start of the stratum descriptions, if present.
+      stratum.description = stratum.description.replace(/^[Rr]ate \d+: /, "");
+      
       return {
+        ...currentStrata.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
         name: stratum.stratumName,
         description: stratum.description,
       };
     });
     measuresJson.find(
-      (measure) => measure.measureId === uniqueMeasureIds[i]
+      (measure: any) => measure.measureId === uniqueMeasureIds[i]
     ).strata = mappedStrata;
   }
   writeToFile(measuresJson, measuresPath);

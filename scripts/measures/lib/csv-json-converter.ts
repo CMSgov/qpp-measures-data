@@ -5,7 +5,7 @@
 *  This script can be removed once we no longer support CSV change requests.
 */
 import _ from 'lodash';
-import parse from 'csv-parse/lib/sync';
+import { parse } from 'csv-parse/sync';
 
 import { warning } from '../../logger';
 import {
@@ -23,8 +23,9 @@ import {
     REPORTING_CATEGORY,
     WEIGHT,
     SUBCATEGORY_NAME,
+    COST_CSV_COLUMN_NAMES,
 } from '../../constants';
-import { InvalidValueError } from './errors';
+import { InvalidValueError } from '../../errors';
 
 export function convertCsvToJson(csv: any) {
     const parsedCsv = prepareCsv(csv);
@@ -46,6 +47,9 @@ export function convertCsvToJson(csv: any) {
             case 'qcdr':
                 csvColumnNames = QUALITY_CSV_COLUMN_NAMES;
                 break;
+            case 'cost':
+                csvColumnNames = COST_CSV_COLUMN_NAMES;
+                break;
         }
         //maps the csv column values to the matching measures-data fields.
         _.each(csvColumnNames, (columnName, measureKeyName) => {
@@ -59,7 +63,7 @@ export function convertCsvToJson(csv: any) {
 
     //remove any empty rows
     _.remove(mappedCsv, _.isEmpty);
-    
+
     return mappedCsv;
 }
 
@@ -114,8 +118,8 @@ function mapInput(columnName: string, csvRow: any, category: string) {
         return rawArray;
     }
 
-    // null field if the value entered in the CR is 'NULL'.
-    if (csvRow[columnName] === 'NULL') return null;
+    // null field if the value entered in the CR is 'null'.
+    if (csvRow[columnName].toLocaleLowerCase() === 'null') return null;
 
     return csvRow[columnName].trim();
 }
@@ -137,17 +141,20 @@ function csvFieldToArray(fieldValue: string, fieldHeader: string) {
     if (COLLECTION_TYPES_FIELDS.includes(fieldHeader)) {
         return mapArrayItem(fieldHeader, COLLECTION_TYPES, fieldValue);
     }
-    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue === 'NULL') {
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.substitutes && fieldValue.toLocaleLowerCase() === 'null') {
         return [];
     }
-    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue === 'NULL') {
+    if (fieldHeader === PI_CSV_COLUMN_NAMES.exclusion && fieldValue.toLocaleLowerCase() === 'null') {
         return null;
     }
     return fieldValue.split(',').map(element => element.trim());;
 }
 
 function mapArrayItem(field: string, map: any, values: string) {
-    const arrayedField: string[] = values.split(',');
+    // null field if the value entered in the CR is 'null'.
+    if (values.toLocaleLowerCase() === 'null') return [];
+
+    const arrayedField: string[] = values.replace(/\s/g, "").split(',').filter(n => n);
 
     for (let i = 0; i < arrayedField.length; i++) {
         arrayedField[i] = mapItem(field, map, arrayedField[i]);
@@ -158,8 +165,8 @@ function mapArrayItem(field: string, map: any, values: string) {
 
 function mapItem(field: string, map: any, value: string) {
     // .replace(/\s/g, "") removes all whitespace.
-    if (typeof map[value.replace(/\s/g, "")] !== 'undefined') {
-        return map[value.replace(/\s/g, "")];
+    if (typeof map[value.replace(/\s/g, "").toLowerCase()] !== 'undefined') {
+        return map[value.replace(/\s/g, "").toLowerCase()];
     }
     else {
         throw new InvalidValueError(field, value);
@@ -182,8 +189,8 @@ function csvFieldToBoolean(field: string, value: string): boolean {
 
 function prepareCsv(csv: any): any {
     //parse csv.
-    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true });
-    
+    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
+
     //trim keys in parsed csv.
     for (let i = 0; i < parsedCsv.length; i++) {
         Object.keys(parsedCsv[i]).forEach((key) => {
@@ -194,10 +201,10 @@ function prepareCsv(csv: any): any {
             }
         });
     }
-    
+
     //check if the CR includes a leading examples row, and remove.
     if (parsedCsv[0]['Category'].includes('Value')) {
-        parsedCsv.splice(0,1);
+        parsedCsv.splice(0, 1);
     }
 
     return parsedCsv;

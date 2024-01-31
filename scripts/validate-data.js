@@ -11,7 +11,8 @@
  **/
 
 const path = require('path');
-const YAML = require('yamljs');
+const YAML = require('yaml');
+const fs = require('fs');
 
 const Constants = require('../constants.js');
 const ValidateLib = require('./validate-json-data/validate-json-data-lib');
@@ -39,7 +40,7 @@ if (!schemaType) {
 }
 
 // Load the schema file
-const schema = YAML.load(path.join(__dirname, '../', schemaType, performanceYear, schemaType + '-schema.yaml'));
+const schema = YAML.parse(fs.readFileSync(path.join(__dirname, '../', schemaType, performanceYear, schemaType + '-schema.yaml'), 'utf8'));
 
 // Read stdin into a string
 let json = '';

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/lib/sync');
+const parse = require('csv-parse/sync').parse;
 
 const aciRelations = require('../../util/measures/aci-measure-relations.json');
 const cpcPlusGroups = require('../../util/measures/cpc+-measure-groups.json');
