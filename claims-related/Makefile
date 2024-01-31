@@ -1,9 +1,3 @@
-docker-setup:
-	docker-compose up -d
-
-docker-teardown:
-	docker-compose down --remove-orphans
-
 docker-rebuild:
 	docker-compose build single-source
 

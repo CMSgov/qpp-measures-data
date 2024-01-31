@@ -6,33 +6,41 @@ The single source file contains configuration for running the claims to quality 
 measures. There are really multiple "single source" files varying in file
 format and contents.  Mathematica Policy Research (MPR) provides an Excel
 version to SemanticBits.  The sheet containing the various codes used in
-C2Q is written to a CSV file and stored in this repository 
-qpp-measures-data/claims-related/data. **Note:** The Excel file may have some
+C2Q is written to a CSV file and stored in this repository at the following path:
+qpp-measures-data/claims-related/data. **Note:** *The Excel file may have some
 special characters and/or lines that need to be removed before writing the
-CSV.  A JSON format of the single source is also contained in the same directory - this version structures
-the original data in a format to be consumed by C2Q.  The fourth and final 
-version of the single source file resides in the claims-to-quality-analyzer 
+CSV.*  A JSON format of the single source is also contained in the same directory - this version structures
+the original data in a format to be consumed by C2Q.  The fourth and final
+version of the single source file resides in the claims-to-quality-analyzer
 repository in claims_to_quality/lib/assets.  This fourth version is also JSON
-but contains additional data compared to the JSON in this repo - it is the 
+but contains additional data compared to the JSON in this repo - it is the
 "enriched single source file".
+
+## Steps for creating enriched file
+* Download Mathematica's Excel Single Source file
+* Export to CSV format removing any special characters and/or lines
+* Create the json file (use Makefile docker-run-csv-to-json)
+* Enrich the json file
 
 
 ## Makefile
 ### Build Docker Image
 ```makefile
-
+make docker-rebuild
 ```
 
 ### Create the JSON format from the CSV file
 ```makefile
-
+make docker-run-csv-to-json
 ```
+
+
 
 ## Single Source Enrichment
-
 * Install npm
-* Install qpp-measures-data
-* Run
+* Install the npm package qpp-measures-data
+* Run the following command from the project root (vary performance year if necessary)
 ```shell
-npm 
+npm run update:measures 2023
 ```
+* This will create the enriched single source file at the following location measures/<performance-year>/measures-data.json

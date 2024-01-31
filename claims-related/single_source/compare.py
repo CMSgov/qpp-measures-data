@@ -1,10 +1,10 @@
 from copy import deepcopy
 
-from single_source.parser import read_single_source_json
+from single_source.parser import read_json
 
 
 def read_and_sort_json(filepath):
-    single_source = read_single_source_json(filepath)
+    single_source = read_json(filepath)
     sorted_single_source = sort_single_source(single_source)
     return sorted_single_source
 

@@ -63,7 +63,7 @@ def read_single_source_csv(path):
     return data
 
 
-def read_single_source_json(path):
+def read_json(path):
     with open(path, "r") as file_handle:
         lines = file_handle.readlines()
     single_source = json.loads("".join(lines))

@@ -8,7 +8,13 @@ from single_source.parser import read_single_source_csv
 @pytest.fixture(scope="session")
 def data_directory():
     path = Path(__file__)
-    return path.parent.parent.parent / "data"
+    return path.parents[2] / "data"
+
+
+@pytest.fixture(scope="session")
+def measures_directory():
+    path = Path(__file__)
+    return path.parents[3] / "measures"
 
 
 @pytest.fixture(scope="session")
