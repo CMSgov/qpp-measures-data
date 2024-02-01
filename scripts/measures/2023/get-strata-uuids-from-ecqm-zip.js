@@ -30,7 +30,7 @@ function extractStrataDescription(measure, emeasureid) {
   };
 
   // get description
-  if (Object.keys(customMeasures).includes(emeasureid) && customMeasures[emeasureid]['subjectCode']) {
+  if (customMeasures[emeasureid]) {
     description = measure.subjectOf
       .find(item => item.measureAttribute[0].code[0].$.code === customMeasures[emeasureid]['subjectCode'])
       .measureAttribute[0].value[0].$.value;
