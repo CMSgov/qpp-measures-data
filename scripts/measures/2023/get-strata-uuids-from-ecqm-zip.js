@@ -17,6 +17,66 @@ if (!zipPath) {
 }
 
 /*
+return strata description array
+*/
+function extractStrataDescription(measure, emeasureid) {
+  // parse out strata descriptions from numerator text or aggregated rate or text value
+  // descriptions are like "Numerator 1: Patients who initiated treatment within 14 days of the diagnosis\nNumerator 2: Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
+  let description, strataDescriptions;
+  let descriptionIdentifier = 'Numerator';
+  const customMeasures = {
+    '145': { 'subjectCode': 'MSRAGG', 'descriptionIdentifier': '- Population' },
+    '157': { 'subjectCode': 'MSRAGG', 'descriptionIdentifier': '- Population' }
+  };
+
+  // get description
+  if (Object.keys(customMeasures).includes(emeasureid) && customMeasures[emeasureid]['subjectCode']) {
+    description = measure.subjectOf
+      .find(item => item.measureAttribute[0].code[0].$.code === customMeasures[emeasureid]['subjectCode'])
+      .measureAttribute[0].value[0].$.value;
+    descriptionIdentifier = customMeasures[emeasureid]['descriptionIdentifier'];
+  } else {
+    description = measure.subjectOf
+      .find(item => item.measureAttribute[0].code[0].$.code === 'NUMER')
+      .measureAttribute[0].value[0].$.value;
+  }
+
+  // get descriptions for multi strata measures
+  switch (emeasureid) {
+    case '138':
+      strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '').split(/\n|\r|&#xA;/));
+      break;
+    case '156':
+      description = measure.text[0].$.value;
+      strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
+      strataDescriptions = strataDescriptions
+        .filter(string => string.match(/^(\d. )/))
+        .map(string => string.substr(`x. `.length).trim());
+      break;
+    case '347':
+      description = measure.text[0].$.value;
+      strataDescriptions = description.replaceAll('; OR', '').split(/\n/);
+      strataDescriptions = strataDescriptions
+        .filter(string => string.match(/^\*/))
+        .map(string => string.substr('*'.length).trim());
+      break;
+    default:
+      strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
+      const idRegEx = new RegExp('^(' + descriptionIdentifier + ' \\d: )');
+      strataDescriptions = strataDescriptions
+        .filter(string => string.match(idRegEx))
+        .map(string => string.substr(`${descriptionIdentifier} x: `.length).trim());
+  }
+
+  // description stores single stratum otherwise
+  if (strataDescriptions.length === 0) {
+    strataDescriptions = [description.trim()];
+  }
+
+  return strataDescriptions;
+}
+
+/*
 return strata name, description, and uuids like so
 [
   {
@@ -33,26 +93,7 @@ return strata name, description, and uuids like so
   ...
 */
 function extractStrata(measure, emeasureid) {
-  // our version of 'strata' are described as 'numerators'
-  // parse out strata descriptions from numerator text
-  // descriptions are like "Numerator 1: Patients who initiated treatment within 14 days of the diagnosis\nNumerator 2: Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
-  const description = measure.subjectOf
-    .find(item => item.measureAttribute[0].code[0].$.code === 'NUMER')
-    .measureAttribute[0].value[0].$.value;
-  const populationId = ['138', '156'];
-  let strataDescriptions;
-  if (populationId.includes(emeasureid)) {
-    strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '').split(/\n|\r|&#xA;/));
-  } else {
-    strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
-    strataDescriptions = strataDescriptions
-      .filter(string => string.match(/^(Numerator \d: )/))
-      .map(string => string.substr('Numerator x: '.length).trim());
-  }
-  if (strataDescriptions.length === 0) {
-    // description stores single stratum otherwise
-    strataDescriptions = [description.trim()];
-  }
+  const strataDescriptions = extractStrataDescription(measure, emeasureid);
 
   const strata = strataDescriptions.map(description => ({description}));
   // pull out uuids for each stratum
@@ -74,6 +115,12 @@ function extractStrata(measure, emeasureid) {
     if (denominatorExclusion) {
       eMeasureUuids.denominatorExclusionUuid = denominatorExclusion.denominatorExclusionCriteria[0].id[0].$.root;
     }
+
+    const numeratorExclusion = ids.find(item => item.numeratorExclusionCriteria);
+    if (numeratorExclusion) {
+      eMeasureUuids.numeratorExclusionUuid = numeratorExclusion.numeratorExclusionCriteria[0].id[0].$.root;
+    }
+
     strata[index].eMeasureUuids = eMeasureUuids;
   });
 
@@ -111,16 +158,13 @@ Promise.all(
     return _.compact(docs.map(doc => {
       const measure = doc.QualityMeasureDocument;
       const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-      // These must all be manually added. No accurate way to parse their uuid's
-      const ignoredMeasureIds = ['145', '156', '157', '249', '347'];
-      if (ignoredMeasureIds.includes(emeasureid)) {
-        console.warn('WARNING: CMS' + emeasureid + ' has one numerator but multiple populations and needs to be added manually');
-        return;
-      }
       const strata = extractStrata(measure, emeasureid);
       const version = measure.versionNumber[0].$.value.split('.')[0];
       const eMeasureId = `CMS${emeasureid}v${version}`;
-      const mType = (strata.length > 1 || emeasureid === '159') ? 'multiPerformanceRate' : 'singlePerformanceRate';
+      // special measures with multi strata single performance rate will be exception
+      const multiStrataSinglePerformanceRateMeasures = ['145', '157', '347'];
+      const isSpecialMeasure = multiStrataSinglePerformanceRateMeasures.includes(emeasureid);
+      const mType = ((strata.length > 1 || emeasureid === '159') && !isSpecialMeasure) ? 'multiPerformanceRate' : 'singlePerformanceRate';
       return {
         eMeasureId,
         eMeasureUuid: measure.id[0].$.root,
@@ -133,5 +177,5 @@ Promise.all(
   .then(ecqms => {
     const sortedEcqms = _.sortBy(ecqms, ['eMeasureId']);
     fs.writeFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
-    console.warn('remember to add the strata names manually!');
+    console.warn('remember to update measures repo with the generated data!');
   });
