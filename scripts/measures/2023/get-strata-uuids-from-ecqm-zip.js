@@ -44,7 +44,9 @@ function extractStrataDescription(measure, emeasureid) {
   // get descriptions for multi strata measures
   switch (emeasureid) {
     case '138':
-      strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '').split(/\n|\r|&#xA;/));
+      strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '')
+        .split(/\n|\r|&#xA;/))
+        .map(string => string.trim());
       break;
     case '156':
       description = measure.text[0].$.value;
