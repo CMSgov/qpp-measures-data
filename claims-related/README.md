@@ -1,5 +1,10 @@
 # Summary
+**See single_source/README.md the latest approach for creating a single source file from a CSV. Other
+files are kept to compare the latest approach against if interested**
+
 This directory contains resources for parsing the single source spreadsheet to produce a JSON file containing measure eligibility and performance information.
+
+
 
 This file is then used during the enrichment of the measures data to include those attributes.
 # Running
