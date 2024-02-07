@@ -40961,7 +40961,7 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period",
+            "description": "Patients aged 18 years and older who were screened for tobacco use",
             "eMeasureUuids": {
               "initialPopulationUuid": "908AE77A-2E96-4BBA-89C1-8974F28F7DF1",
               "denominatorUuid": "4A8586D1-0CD3-43CA-BFB3-A7089E65EA16",
@@ -40971,7 +40971,7 @@
             "name": "screened"
           },
           {
-            "description": "Percentage of patients aged 18 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Patients aged 18 years and older  who were identified as a tobacco user during the measurement period and who received tobacco cessationintervention during the measurement period or in the six months prior to the measurement period",
             "eMeasureUuids": {
               "initialPopulationUuid": "7C477BC5-C75B-4B7C-B061-A61CEC7E821B",
               "denominatorUuid": "21377D57-D5CC-4599-9DFE-2C989AFAAD1E",
@@ -40981,7 +40981,7 @@
             "name": "overall"
           },
           {
-            "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
+            "description": "Patients aged 18 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
             "eMeasureUuids": {
               "initialPopulationUuid": "124F09CB-F6BB-4717-BC04-49E5C1CE52B2",
               "denominatorUuid": "1764C19B-A8EE-41A0-A384-93B5371CE650",
@@ -41927,15 +41927,15 @@
         "strata": [
           {
             "name": "screened",
-            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
+            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method"
           },
           {
             "name": "overall",
-            "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
+            "description": "Patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
           },
           {
             "name": "combinedPopulations",
-            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
+            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
           }
         ]
       },
