@@ -4241,17 +4241,15 @@
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
-    "allowedPrograms": [],
+    "allowedPrograms": [
+      "pcf"
+    ],
     "submissionMethods": [
-      "claims",
       "electronicHealthRecord",
-      "cmsWebInterface",
-      "registry"
+      "cmsWebInterface"
     ],
     "measureSets": [],
     "measureSpecification": {
-      "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_113_MedicarePartBClaims.pdf",
-      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_113_MIPSCQM.pdf",
       "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0130v12"
     }
   },
@@ -11656,6 +11654,33 @@
       "rheumatology",
       "vascularSurgery"
     ]
+  },
+  {
+    "title": "Preventive Care and Screening: Influenza Immunization",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0041",
+    "measureId": "110",
+    "description": "Percentage of patients aged 6 months and older seen for a visit during the measurement period who received an influenza immunization OR who reported previous receipt of an influenza immunization.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "National Committee for Quality Assurance",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [],
+    "submissionMethods": [
+      "cmsWebInterface"
+    ],
+    "measureSets": []
   },
   {
     "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions",
