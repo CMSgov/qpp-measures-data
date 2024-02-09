@@ -1,1 +1,147 @@
-[]
+[
+  {
+    "measureId": "PP1",
+    "title": "Annual Monitoring for Patients on Persistent Medications (MPM)",
+    "description": "This measure assesses the percentage of patients 18 years of age and older who received a least 180 treatment days of ambulatory medication therapy for a select therapeutic agent during the measurement year and at least one therapeutic monitoring event for the therapeutic agent in the measurement year. Report the following three rates and a total rate:\nRate 1: Annual Monitoring for patients on angiotensin converting enzyme (ACE) inhibitors or angiotensin receptor blockers (ARB): At least one serum potassium and a serum creatinine therapeutic monitoring test in the measurement year. \nRate 2: Annual monitoring for patients on digoxin: At least one serum potassium, one serum creatinine and a serum digoxin therapeutic monitoring test in the measurement year.\nRate 3: Annual monitoring for patients on diuretics: At least one serum potassium and a serum creatinine therapeutic monitoring test in the measurement year.",
+    "nationalQualityStrategyDomain": "Patient Safety",
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "primarySteward": "PsychPRO",
+    "firstPerformanceYear": 2017,
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "metricType": "registryMultiPerformanceRate",
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "ace",
+        "description": "Annual Monitoring for patients on angiotensin converting enzyme (ACE) inhibitors or angiotensin receptor blockers (ARB): At least one serum potassium and a serum creatinine therapeutic monitoring test in the measurement year."
+      },
+      {
+        "name": "digoxin",
+        "description": "Annual monitoring for patients on digoxin: At least one serum potassium, one serum creatinine and a serum digoxin therapeutic monitoring test in the measurement year."
+      },
+      {
+        "name": "diuretics",
+        "description": "Annual monitoring for patients on diuretics: At least one serum potassium and a serum creatinine therapeutic monitoring test in the measurement year."
+      }
+    ],
+    "submissionMethods": [
+      "registry"
+    ]
+  },
+  {
+    "measureId": "PP2",
+    "title": "Follow-Up After Hospitalization for Schizophrenia (7- and 30-day)",
+    "description": "The percentage of discharges for individuals 18 – 85 years of age who were hospitalized for treatment of schizophrenia and who had an outpatient visit, an intensive outpatient encounter or partial hospitalization with a mental health practitioner. Two rates are reported.\nRate 1: The percentage of individuals who received follow-up within 30 days of discharge\nRate 2: The percentage of individuals who received follow-up within 7 days of discharge",
+    "nationalQualityStrategyDomain": "Communication and Care Coordination",
+    "measureType": "process",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "primarySteward": "PsychPRO",
+    "firstPerformanceYear": 2017,
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "metricType": "registryMultiPerformanceRate",
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "overall",
+        "description": "The percentage of individuals who received follow-up within 30 days of discharge"
+      },
+      {
+        "name": "7days",
+        "description": "The percentage of individuals who received follow-up within 7 days of discharge"
+      }
+    ],
+    "submissionMethods": [
+      "registry"
+    ]
+  },
+  {
+    "measureId": "PP3",
+    "title": "ADHD: Symptom Reduction in Follow up Period",
+    "description": "Percentage of children aged 4 through 18 years, with a diagnosis of Attention Deficit Hyperactivity Disorder (ADHD), who demonstrated a 25% reduction in symptoms 6-12 months from baseline as measured using the Vanderbilt ADHD Diagnostic Rating Scale, regardless of treatment prescribed.",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "primarySteward": "PsychPRO",
+    "firstPerformanceYear": 2018,
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "metricType": "registrySinglePerformanceRate",
+    "submissionMethods": [
+      "registry"
+    ]
+  },
+  {
+    "measureId": "PP4",
+    "title": "Risky Behavior Assessment or Counseling by Age 18 Years",
+    "description": "The percentage of adolescents with documentation of assessment or counseling for risky behavior by the age of 18 years. Four rates are reported: Rate 1: Risk Assessment or Counseling for Alcohol Use, Rate 2: Risk Assessment or Counseling for Tobacco Use, Rate 3: Risk Assessment or Counseling for Other Substance Use, and Rate 4: Risk Assessment or Counseling for Sexual Activity.",
+    "nationalQualityStrategyDomain": "Community/Population Health",
+    "measureType": "process",
+    "isHighPriority": false,
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "primarySteward": "PsychPRO",
+    "firstPerformanceYear": 2018,
+    "category": "quality",
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureSets": [],
+    "isRegistryMeasure": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "metricType": "registryMultiPerformanceRate",
+    "overallAlgorithm": "weightedAverage",
+    "strata": [
+      {
+        "name": "counselalcohol",
+        "description": "Risk Assessment or Counseling for Alcohol Use,"
+      },
+      {
+        "name": "counseltobacco",
+        "description": "Risk Assessment or Counseling for Tobacco Use,"
+      },
+      {
+        "name": "counselsubstance",
+        "description": "Risk Assessment or Counseling for Other Substance Use, and"
+      },
+      {
+        "name": "counselactivity",
+        "description": "Risk Assessment or Counseling for Sexual Activity."
+      }
+    ],
+    "submissionMethods": [
+      "registry"
+    ]
+  }
+]

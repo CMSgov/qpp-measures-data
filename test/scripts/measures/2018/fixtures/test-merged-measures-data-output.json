@@ -1,0 +1,209 @@
+[
+  {
+    "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
+    "eMeasureId": "CMS122v6",
+    "nqfEMeasureId": null,
+    "nqfId": "0059",
+    "measureId": "001",
+    "description": "Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "intermediateOutcome",
+    "primarySteward": "National Committee for Quality Assurance",
+    "metricType": "singlePerformanceRate",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": true,
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "submissionMethods": [
+      "claims",
+      "electronicHealthRecord",
+      "cmsWebInterface",
+      "registry"
+    ],
+    "measureSets": [
+      "generalPracticeFamilyMedicine",
+      "internalMedicine",
+      "preventiveMedicine",
+      "nephrology"
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2018_Measure_001_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2018_Measure_001_Claims.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2018_WI_DM.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/measures/cms122v6"
+    }
+  },
+  {
+    "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy - Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF < 40%)",
+    "eMeasureId": "CMS145v6",
+    "nqfEMeasureId": null,
+    "nqfId": "0070",
+    "measureId": "007",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have a prior MI OR a current or prior LVEF <40% who were prescribed beta-blocker therapy",
+    "nationalQualityStrategyDomain": "Effective Clinical Care",
+    "measureType": "process",
+    "primarySteward": "Physician Consortium for Performance Improvement",
+    "metricType": "multiPerformanceRate",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isHighPriority": false,
+    "isInverse": false,
+    "overallAlgorithm": "weightedAverage",
+    "isIcdImpacted": true,
+    "isToppedOutByProgram": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "submissionMethods": [
+      "electronicHealthRecord",
+      "registry"
+    ],
+    "measureSets": [
+      "cardiology",
+      "generalPracticeFamilyMedicine",
+      "internalMedicine"
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2018_Measure_007_Registry.pdf",
+      "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/measures/cms145v6"
+    },
+    "strata": [
+      {
+        "name": "LVSD",
+        "description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a current or prior LVEF < 40% who were prescribed beta-blocker therapy"
+      },
+      {
+        "name": "priorMI",
+        "description": "Percentage of patients with a diagnosis of CAD or history of cardiac surgery who have a prior (within the past 3 years) myocardial infarction who were prescribed beta-blocker therapy"
+      }
+    ]
+  },
+  {
+    "title": "Medication Reconciliation Post-Discharge",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0097",
+    "measureId": "046",
+    "description": "The percentage of discharges from any inpatient facility (e.g. hospital, skilled nursing facility, or rehabilitation facility) for patients 18 years and older of age seen within 30 days following discharge in the office by the physician, prescribing practitioner, registered nurse, or clinical pharmacist providing on-going care for whom the discharge medication list was reconciled with the current medication list in the outpatient medical record.\n\nThis measure is reported as three rates stratified by age group: Submission Criteria 1: 18-64 years of age; Submission Criteria 2: 65 years and older; Total Rate: All patients 18 years of age and older",
+    "nationalQualityStrategyDomain": "Communication and Care Coordination",
+    "measureType": "process",
+    "primarySteward": "National Committee for Quality Assurance",
+    "metricType": "multiPerformanceRate",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isHighPriority": true,
+    "isInverse": false,
+    "overallAlgorithm": "overallStratumOnly",
+    "isIcdImpacted": false,
+    "isToppedOutByProgram": true,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "submissionMethods": [
+      "claims",
+      "cmsWebInterface",
+      "registry"
+    ],
+    "measureSets": [
+      "orthopedicSurgery",
+      "generalSurgery",
+      "nephrology"
+    ],
+    "measureSpecification": {
+      "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2018_Measure_046_Registry.pdf",
+      "claims": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2018_Measure_046_Claims.pdf",
+      "cmsWebInterface": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/Web-Interface-Measures/2018_WI_CARE1.pdf"
+    },
+    "strata": [
+      {
+        "name": "18-64",
+        "description": "Medication Reconciliation Post-Discharge: 18-64 years of age"
+      },
+      {
+        "name": "65+",
+        "description": "Medication Reconciliation Post-Discharge: 65 years and older"
+      },
+      {
+        "name": "overall",
+        "description": "Medication Reconciliation Post-Discharge:All patients 18 years of age and older"
+      }
+    ]
+  },
+  {
+    "measureId": "PI_INFBLO_1",
+    "category": "pi",
+    "title": "Prevention of Information Blocking Attestation",
+    "description": "I attest to CMS that I - (A) did not knowingly and willfully take action (such as to disable functionality) to limit or restrict the compatibility or interoperability of certified EHR technology. (B) Implemented technologies, standards, policies, practices, and agreements reasonably calculated to ensure, to the greatest extent practicable and permitted by law, that the certified EHR technology was, at all relevant times: (1) Connected in accordance with applicable law; (2) Compliant with all standards applicable to the exchange of information, including the standards, implementation specifications, and certification criteria adopted at 45 CFR part 170;  (3) Implemented in a manner that allowed for timely access by patients to their electronic health information; and (4) Implemented in a manner that allowed for the timely, secure, and trusted bi-directional exchange of structured electronic health information with other health care providers (as defined by 42 U.S.C. 300jj(3)), including unaffiliated health care providers, and with disparate certified EHR technology and vendors. (C) Responded in good faith and in a timely manner to requests to retrieve or exchange electronic health information, including from patients, health care providers (as defined by 42 U.S.C. 300jj(3)), and other persons, regardless of the requestor’s affiliation or technology vendor.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": true,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "measureId": "PI_ONCDIR_1",
+    "category": "pi",
+    "title": "ONC Direct Review Attestation",
+    "description": "I attest that I - (1) Acknowledge the requirement to cooperate in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC direct review is received; and (2) If requested, cooperated in good faith with ONC direct review of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": true,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "measureId": "PI_ONCACB_1",
+    "category": "pi",
+    "title": "ONC-ACB Surveillance Attestation (Optional)",
+    "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC–ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC–ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": 0,
+    "isRequired": false,
+    "isBonus": false,
+    "measureSets": [],
+    "objective": null,
+    "reportingCategory": "attestation",
+    "substitutes": []
+  },
+  {
+    "title": "Engagement of New Medicaid Patients and Follow-up",
+    "category": "ia",
+    "description": "Seeing new and follow-up Medicaid patients in a timely manner, including individuals dually eligible for Medicaid and Medicare.  A timely manner is defined as within 10 business days for this activity.",
+    "measureId": "IA_AHE_1",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": "high",
+    "subcategoryId": "achievingHealthEquity",
+    "cehrtEligible": false
+  },
+  {
+    "title": "Leveraging a QCDR to standardize processes for screening",
+    "category": "ia",
+    "description": "Participation in a QCDR, demonstrating performance of activities for use of standardized processes for screening for social determinants of health such as food security, employment and housing.  Use of supporting tools that can be incorporated into the certified EHR technology is also suggested.",
+    "measureId": "IA_AHE_2",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "weight": "medium",
+    "subcategoryId": "achievingHealthEquity",
+    "cehrtEligible": true
+  }
+]
