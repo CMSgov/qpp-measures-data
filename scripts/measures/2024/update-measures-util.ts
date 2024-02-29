@@ -189,6 +189,10 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
             fs.writeFileSync(`${strataPath}/${category}-strata.csv`, updatedStrata);
         }
         measuresJson.splice(measureIndex, 1);
+
+        // Find and remove all instances of the measureId from exclusion and substute arrays of other measures.
+        deepDeleteMeasureId(measureId, measuresJson);
+
         info(`Measure '${measureId}' removed.`);
     } else {
         warning(`Attempted to delete ${measureId}, but not found.`);
@@ -436,3 +440,20 @@ function checkNewExclusionAndSubstitutes(
     }
 }
 
+function deepDeleteMeasureId(measureId: string, measuresJson: any) {
+    for (let i = 0; i < measuresJson.length; i++) {
+        const substitutes = measuresJson[i].substitutes;
+        const exclusion = measuresJson[i].exclusion;
+
+        if (substitutes) {
+            measuresJson[i].substitutes = removeStringFromArray(measureId, substitutes);
+        }
+        if (exclusion) {
+            measuresJson[i].exclusion = removeStringFromArray(measureId, exclusion);
+        }
+    }
+}
+
+function removeStringFromArray(str: string, arr: [string]) {
+    return arr.filter((strAtIndex: string) => strAtIndex !== str);
+}
