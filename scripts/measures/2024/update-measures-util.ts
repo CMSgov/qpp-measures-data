@@ -452,7 +452,6 @@ function deepDeleteMeasureId(measureId: string, measuresJson: any) {
             measuresJson[i].exclusion = removeStringFromArray(measureId, exclusion);
         }
     }
-    return measuresJson;
 }
 
 function removeStringFromArray(str: string, arr: [string]) {
