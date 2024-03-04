@@ -42,7 +42,7 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
 
   if [ $test_mode == 'false' ]; then
     echo -e "Ingesting the Spec Urls, if those files exist..."
-    node dist/measures/$currentPerformanceYear/ingest-specifications-links.js \
+    node dist/measures/lib/ingest-specifications-links.js \
       $currentPerformanceYear
     exitOnFailure
 
