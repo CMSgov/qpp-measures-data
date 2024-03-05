@@ -1,11 +1,8 @@
 /**
- * @UpdateMeasuresUtil
- *  This is the primary script behind maintaining the measures data.
- *  It finds all new measures change files, validates their data and
- * structure, updates/adds the specified measures, and reports and 
- * success or error messages back to the user.
- *  Currently, this script is designed to intake CSVs, but will be 
- * refactored to accept JSON files once the front-end is created.
+ * @MeasuresLibrary
+ *  This is a library of utility functions behind maintaining the measures data.
+ *  It provides the needed functions for finding all new measures change files,
+ *  validating their data and structure, and updating/adding the specified measures.
  */
 
 import _ from 'lodash';
@@ -13,16 +10,14 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { info, error, warning } from '../../logger';
-import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
-import { convertCsvToJson } from '../lib/csv-json-converter';
+import { info, warning } from '../../logger';
+import { MeasuresChange } from '../lib/validate-change-requests';
 import { DataValidationError } from '../../errors';
 import {
     COST_DEFAULT_VALUES,
     COST_MEASURES_ORDER,
     IA_DEFAULT_VALUES,
     IA_MEASURES_ORDER,
-    METRIC_TYPES,
     PI_DEFAULT_VALUES,
     PI_MEASURES_ORDER,
     QCDR_MEASURES_ORDER,
@@ -40,134 +35,10 @@ const COST_DEFAULT_PROGRAMS = [
     'app1',
 ];
 
-const PLACEHOLDER_STRATA = [{
-    name: 'PLACEHOLDER',
-    description: 'WARNING: Update strata file with new measure strata.'
-}];
-
-let strataPath: string;
-
-export function updateMeasuresWithChangeFile(
-    fileName: string,
-    changesPath: string,
-    performanceYear: string,
-    measuresJson: any,
-    testMode: string = 'false',
-): number {
-    strataPath = `util/measures/${performanceYear}/`;
-
-    const csv = fs.readFileSync(path.join(appRoot + '', `${changesPath}${fileName}`), 'utf8');
-
-    try {
-        const changeData = convertCsvToJson(csv);
-
-        const acceptedChangeStack: MeasuresChange[] = [],
-            acceptedNewStack: MeasuresChange[] = [],
-            acceptedDeleteStack: MeasuresChange[] = [];
-
-        for (let i = 0; i < changeData.length; i++) {
-            const change = changeData[i] as MeasuresChange;
-            const measureId = change.measureId;
-
-            if (!change.category) {
-                throw new DataValidationError(measureId, 'Category is required.');
-            } else {
-                const isNew = isNewMeasure(measureId, measuresJson);
-                //validation on the change request. Validation on the updated measures data happens later in update-measures.
-                const validate = initValidation(measureType[change.category], isNew);
-
-                if (!isNew) {
-                    if (change.firstPerformanceYear) warning(
-                        `'${measureId}': 'First Performance Year' was changed. Was this deliberate?`
-                    );
-                    if (!_.isUndefined(change.isInverse)) warning(
-                        `'${measureId}': 'isInverse' was changed. Was this deliberate?`
-                    );
-                    if (isMultiPerfRateChanged(change, measuresJson) && change.metricType) warning(
-                        `'${measureId}': 'Metric Type' was changed. Was the strata file also updated to match?`
-                    );
-                    if (change.overallAlgorithm) warning(
-                        `'${measureId}': 'Calculation Type' was changed. Was the strata file also updated to match?`
-                    );
-                    if (change.metricType || change.isHighPriority || change.isInverse) warning(
-                        `'${measureId}': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
-                    );
-                    if (!isValidECQM(change, measuresJson)) {
-                        throw new DataValidationError(measureId, 'CMS eCQM ID is required if one of the collection types is eCQM.');
-                    }
-                }
-
-                if (!isAllowedCostScore(change, measuresJson)) {
-                    throw new DataValidationError(measureId, `'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
-                }
-                if (!isOutcomeHighPriority(change, measuresJson)) {
-                    throw new DataValidationError(measureId, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
-                }
-                if (isOnlyAdminClaims(change) && (change.metricType !== 'costScore' || !change.isInverse)) warning(
-                    `'${measureId}': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`
-                );
-                if (change.metricType?.includes('ultiPerformanceRate')) {
-                    warning(`'${measureId}': 'New MultiPerformanceRate measures require an update to the strata file.\n         Update strata file with new measure strata before merging into the repo.`);
-                    change.strata = PLACEHOLDER_STRATA;
-
-                    if (isNew && !change.overallAlgorithm) {
-                        throw new DataValidationError(measureId, 'New multiPerformanceRate measures require a Calculation Type.');
-                    }
-                }
-                if (isNew && !change.measureSets && isOnlyAdminClaims(change) && change.category !== 'cost') {
-                    change.measureSets = [];
-                }
-
-                if (change.yearRemoved) {
-                    acceptedDeleteStack.push(change);
-                } else if (validate(change)) {
-                    if (isNew) {
-                        acceptedNewStack.push(change);
-                    } else {
-                        acceptedChangeStack.push(change);
-                    }
-                } else {
-                    console.log(validate.errors);
-                    throw new DataValidationError(measureId, `Validation Failed. More info logged above.`);
-                }
-            }
-        }
-
-        //ingest new measures
-        for (let i = 0; i < acceptedNewStack.length; i++) {
-            exports.addMeasure(acceptedNewStack[i], measuresJson);
-        }
-
-        //ingest deleted measures
-        for (let i = 0; i < acceptedDeleteStack.length; i++) {
-            exports.deleteMeasure(acceptedDeleteStack[i].measureId, acceptedDeleteStack[i].category, measuresJson);
-        }
-
-        //ingest changed measures
-        for (let i = 0; i < acceptedChangeStack.length; i++) {
-            exports.updateMeasure(acceptedChangeStack[i], measuresJson);
-        }
-
-        if (testMode === 'false') {
-            exports.updateChangeLog(fileName, changesPath);
-            info(`File '${fileName}' successfully ingested into measures-data ${performanceYear}`);
-        }
-        else {
-            info(`File '${fileName}' successfully processed and validated, but not persisted in test mode (-t)`);
-        }
-        return 0;
-
-    } catch (err) {
-        if (err instanceof Error) {
-            error(err['message']);
-        } else {
-            /* istanbul ignore next */
-            throw err;
-        }
-        process.exit(1);
-    }
-}
-
+/**
+ * Adds the change file csv to the array in changes.meta.json.
+ * This allows us to track which files are new and which have already been ingested.
+ */
 export function updateChangeLog(fileName: string, changesPath: string) {
     const changelog = JSON.parse(
         fs.readFileSync(path.join(appRoot + '', `${changesPath}changes.meta.json`), 'utf8')
@@ -177,7 +48,13 @@ export function updateChangeLog(fileName: string, changesPath: string) {
     writeToFile(changelog, `${changesPath}changes.meta.json`);
 }
 
-export function deleteMeasure(measureId: string, category: string, measuresJson: any) {
+/**
+ * Deletes the specified measure by: 
+ *  (1) Removing it from measures-data.json
+ *  (2) Deleting it's strata from the related strata.csv
+ *  (3) Removing any reference of it from other measures' exlusion or substitute arrays
+ */
+export function deleteMeasure(measureId: string, category: string, measuresJson: any, strataPath: string) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
     if (measureIndex > -1) {
         if (['quality', 'qcdr'].includes(category)) {
@@ -199,6 +76,10 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
     }
 }
 
+/**
+ * Updates the specified measure.
+ * Will throw a warning if any changed exclusions or substitutes do not exist in the measures-data.json.
+ */
 export function updateMeasure(change: MeasuresChange, measuresJson: any) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
@@ -228,6 +109,11 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
     }
 }
 
+/**
+ * Adds the specified measure.
+ * Will throw a warning if any of its exclusions or substitutes do not exist in the measures-data.json.
+ * Sets any default values for the measure type and orders the fields (based on /constants.ts).
+ */
 export function addMeasure(change: MeasuresChange, measuresJson: any) {
     // check if new exclusions and substitutes exist.
     if (change.substitutes) {
@@ -286,8 +172,90 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
     info(`New measure '${change.measureId}' added.`);
 }
 
-// organizes the fields to match the order of that specific category in measures-data
-function orderFields(measure: any) {
+/**
+ * A valid eCQM measure (submissionMethods = electronicHealthRecord) must 
+ * have a eMeasureId. If neither or both are true, this function passes.
+ */
+export function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    const eMeasureId: string = change.eMeasureId ? change.eMeasureId : currentMeasure?.eMeasureId;
+
+    if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * A valid Cost measure has a metricType of costScore and only adminstrativeClaims as submissionMethods.
+ */
+export function isValidCostScore(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    const type: string = change.metricType ? change.metricType : currentMeasure?.metricType;
+    const methods: string = change.submissionMethods ? change.submissionMethods : currentMeasure?.submissionMethods;
+
+    if (type === 'costScore' && (!methods?.includes('administrativeClaims') || methods?.length !== 1)) {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 'outcome' and 'intermediateOutcome' measures must always be High Priority.
+ */
+export function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    const type: string = change.measureType ? change.measureType : currentMeasure?.measureType;
+    const isHighPriority: string = change.isHighPriority ? change.isHighPriority : currentMeasure?.isHighPriority;
+
+    if (type?.includes('utcome') && !isHighPriority) {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * Checks if the measure being modified/added is a multiPerformanceRate.
+ */
+export function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: any): boolean {
+    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+
+    return change.metricType?.includes('ultiPerformanceRate') || currentMeasure.metricType?.includes('ultiPerformanceRate');
+}
+
+/**
+ * Writes a JSON object to a .json file at the local file path.
+ */
+export function writeToFile(file: any, filePath: string) {
+    fs.writeFileSync(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2));
+}
+
+/**
+ * Checks if the measure already exists for the current year.
+ */
+export function isNewMeasure(measureId: string, measuresJson: any): boolean {
+    const measure = _.find(measuresJson, { 'measureId': measureId });
+    return !measure;
+}
+
+/**
+ * Checks if the submissionMethod is administrativeClaims and nothing else included.
+ */
+export function isOnlyAdminClaims(change: MeasuresChange): boolean {
+    return (
+        change.submissionMethods?.length === 1 &&
+        change.submissionMethods[0] === 'administrativeClaims'
+    );
+}
+
+/**
+ * Organizes the fields of the modified measure based on its category.
+ * This keeps the measures consistent when written to the json file.
+ */
+function orderFields(measure: any): any {
     switch (measure.category) {
         case 'pi':
             return Object.assign({}, PI_MEASURES_ORDER, measure);
@@ -303,64 +271,28 @@ function orderFields(measure: any) {
     }
 }
 
-function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
-
-    const eMeasureId: string = change.eMeasureId ? change.eMeasureId : currentMeasure?.eMeasureId;
-
-    if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
-        return false;
-    }
-    return true;
-}
-
-function populatePreProdArray(change: MeasuresChange, measuresJson: any) {
+/**
+ * Finds and returns the _PRE and _PROD measures that corrospond with the
+ * current measure, if they exist.
+ */
+function populatePreProdArray(change: MeasuresChange, measuresJson: any): string[] | undefined {
     if (change.measureId.includes('_PRE') || change.measureId.includes('_PROD')) {
         return undefined;
     }
-    
+
     const pre = _.find(measuresJson, { measureId: `${change.measureId}_PRE` });
     const prod = _.find(measuresJson, { measureId: `${change.measureId}_PROD` });
 
     return _.compact([pre?.measureId, prod?.measureId]);
 }
 
-function isAllowedCostScore(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
-
-    const type: string = change.metricType ? change.metricType : currentMeasure?.metricType;
-    const methods: string = change.submissionMethods ? change.submissionMethods : currentMeasure?.submissionMethods;
-
-    if (type === 'costScore' && (!methods?.includes('administrativeClaims') || methods?.length !== 1)) {
-        return false;
-    }
-    return true;
-}
-
-function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
-
-    const type: string = change.measureType ? change.measureType : currentMeasure?.measureType;
-    const isHighPriority: string = change.isHighPriority ? change.isHighPriority : currentMeasure?.isHighPriority;
-
-    if (type?.includes('utcome') && !isHighPriority) {
-        return false;
-    }
-    return true;
-}
-
-
-function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
-
-    return change.metricType?.includes('ultiPerformanceRate') || currentMeasure.metricType?.includes('ultiPerformanceRate');
-}
-
-export function writeToFile(file: any, filePath: string) {
-    fs.writeFileSync(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2));
-}
-
-function updateBenchmarksMetaData(change: MeasuresChange): any {
+/**
+ * Updates the ICD and Clinical Guidelines existance fields with whether or not those arrays exist.
+ */
+function updateBenchmarksMetaData(change: MeasuresChange): {
+    isIcdImpacted: boolean,
+    isClinicalGuidelineChanged: boolean
+} {
     return {
         isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
         isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
@@ -368,12 +300,11 @@ function updateBenchmarksMetaData(change: MeasuresChange): any {
 
 }
 
-function isNewMeasure(measureId: string, measuresJson: any) {
-    const measure = _.find(measuresJson, { 'measureId': measureId });
-    return !measure;
-}
-
-function findFinalInCategory(category: string, measuresJson: any) {
+/**
+ * Returns the last measure of a specified category in the measures json.
+ * This allows us to add new measures to the end of its category instead of the end of the file.
+ */
+function findFinalInCategory(category: string, measuresJson: any): number {
     let index: number = 0;
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].category === category) {
@@ -399,6 +330,9 @@ function findFinalInCategory(category: string, measuresJson: any) {
     return index;
 }
 
+/**
+ * Takes a strata csv file, parses it into a 2D array, and removes all lines for the specified measureId.
+ */
 function removeStrata(measureId: string, strata: any): any {
 
     // Get an array of comma separated lines
@@ -413,13 +347,11 @@ function removeStrata(measureId: string, strata: any): any {
 
 }
 
-function isOnlyAdminClaims(change: MeasuresChange) {
-    return (
-        change.submissionMethods?.length === 1 &&
-        change.submissionMethods[0] === 'administrativeClaims'
-    );
-}
-
+/**
+ * Checks if measureIds in the exclusion and substitutes arrays of the modified measure exist
+ * as measures in the measures json files. If not, raises a warning if the measure is being updated
+ * and throws an error if the measure is being added.
+ */
 function checkNewExclusionAndSubstitutes(
     measureIds: string[],
     measureId: string,
@@ -440,6 +372,9 @@ function checkNewExclusionAndSubstitutes(
     }
 }
 
+/**
+ * Removes the specified measureId from all measures' substitutes and exclusions arrays.
+ */
 function deepDeleteMeasureId(measureId: string, measuresJson: any) {
     for (let i = 0; i < measuresJson.length; i++) {
         const substitutes = measuresJson[i].substitutes;
@@ -454,6 +389,9 @@ function deepDeleteMeasureId(measureId: string, measuresJson: any) {
     }
 }
 
-function removeStringFromArray(str: string, arr: [string]) {
+/**
+ * Removes a specified string from an array of strings, returning the updated array.
+ */
+function removeStringFromArray(str: string, arr: [string]): string[] {
     return arr.filter((strAtIndex: string) => strAtIndex !== str);
 }
