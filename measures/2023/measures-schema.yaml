@@ -203,7 +203,7 @@ definitions:
           allowedVendors:
             description: List of QCDR Registries that are allowed to submit the QCDR measure
             type: array
-            items: { type: string }
+            items: { type: string, pattern: '^\d{7}$' }
           isRegistryMeasure:
             description: If true, this measure was authored by a QCDR (Qualified Clinical Data Registry).
             type: boolean
