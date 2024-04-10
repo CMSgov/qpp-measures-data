@@ -1,0 +1,38 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '📏 Measure & MVP Updates'
+    labels:
+      - 'measure-update'
+      - 'mvp-update'
+  - title: '📍 Benchmark Updates'
+    labels:
+      - 'benchmark-update'
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+  - title: '🧰 Maintenance'
+    labels: 
+    - 'chore'
+    - 'dependencies'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+version-resolver:
+  major:
+    labels:
+      - 'major-update'
+  minor:
+    labels:
+      - 'minor-update'
+  patch:
+    labels:
+      - 'patch-update'
+  default: patch
+template: |
+  ## Changes
+
+  $CHANGES

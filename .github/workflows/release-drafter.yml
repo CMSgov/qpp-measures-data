@@ -1,0 +1,54 @@
+name: Release Drafter & Updater
+ 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+ 
+permissions:
+  contents: read
+ 
+jobs:
+  # cleanup draft releases before creating a new one
+  delete-draft-releases:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+ 
+    - name: Delete draft releases
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "Fetching draft releases..."
+        DRAFTS=$(curl -H "Authorization: token $GITHUB_TOKEN" \
+                      -H "Accept: application/vnd.github.v3+json" \
+                      https://api.github.com/repos/${{ github.repository }}/releases \
+                      | jq '.[] | select(.draft==true) | .id')
+ 
+        echo "Draft Releases IDs: $DRAFTS"
+ 
+        for DRAFT_ID in $DRAFTS; do
+          if [ -n "$DRAFT_ID" ]; then
+            echo "Deleting draft release ID: $DRAFT_ID"
+            curl -X DELETE \
+                 -H "Authorization: token $GITHUB_TOKEN" \
+                 -H "Accept: application/vnd.github.v3+json" \
+                 https://api.github.com/repos/${{ github.repository }}/releases/$DRAFT_ID
+          fi
+        done
+ 
+  # create release draft with new release notes
+  update_release_draft:
+    needs: delete-draft-releases
+    permissions:
+      # write permission is required to create a github release
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      # Drafts your next Release notes as Pull Requests are merged into "master"
+      - uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
