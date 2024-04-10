@@ -84,6 +84,11 @@ jobs:
         with:
           ref: 'develop'
     
+      - name: Configure user name and email
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+    
       - name: Update version in package.json and package-lock.json
         run: |
           VERSION=${{ github.event.release.tag_name }}
@@ -98,8 +103,6 @@ jobs:
           # Check if there are changes (version was actually updated)
           git diff --exit-code || HAS_CHANGES=1
           if [ "$HAS_CHANGES" ]; then
-            git config user.name "github-actions"
-            git config user.email "github-actions@github.com"
             git add package.json package-lock.json
             git commit -m "Update version to $VERSION"
             git push
@@ -108,11 +111,6 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-      - name: Configure user name and email
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
     
       - name: Merge develop branch into main
         run: |
