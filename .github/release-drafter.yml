@@ -3,34 +3,34 @@ tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '📏 Measure & MVP Updates'
     labels:
-      - 'measure-update'
-      - 'mvp-update'
+      - 'notes:measure-update'
+      - 'notes:mvp-update'
   - title: '📍 Benchmark Updates'
     labels:
-      - 'benchmark-update'
+      - 'notes:benchmark-update'
   - title: '🚀 Features'
     labels:
-      - 'feature'
-      - 'enhancement'
+      - 'notes:feature'
+      - 'notes:enhancement'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
+      - 'notes:bug-fix'
   - title: '🧰 Maintenance'
     labels: 
-    - 'chore'
-    - 'dependencies'
+      - 'notes:chore'
+      - 'notes:dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 version-resolver:
   major:
     labels:
-      - 'major-update'
+      - 'version:major'
   minor:
     labels:
-      - 'minor-update'
+      - 'version:minor'
   patch:
     labels:
-      - 'patch-update'
+      - 'version:patch'
   default: patch
 template: |
   ## Changes
