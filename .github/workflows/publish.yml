@@ -79,20 +79,44 @@ jobs:
   merge-and-push:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        ref: 'main'
-  
-    - name: Configure user name and email
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-  
-    - name: Merge develop branch into main
-      run: |
-        git fetch origin develop:develop
-        git merge --no-ff develop -m "Merging develop into main via GitHub Action"
-  
-    - name: Push changes
-      run: git push origin main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: 'develop'
+    
+      - name: Configure user name and email
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+    
+      - name: Update version in package.json and package-lock.json
+        run: |
+          VERSION=${{ github.event.release.tag_name }}
+          echo "Updating version to $VERSION"
+            
+          # Update version in package.json
+          jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
+            
+          # Update version in package-lock.json
+          jq --arg version "$VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
+            
+          # Check if there are changes (version was actually updated)
+          git diff --exit-code || HAS_CHANGES=1
+          if [ "$HAS_CHANGES" ]; then
+            git add package.json package-lock.json
+            git commit -m "Update version to $VERSION"
+            git push
+          else
+            echo "Version is already up to date."
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+      - name: Merge develop branch into main
+        run: |
+          git fetch origin develop:develop
+          git checkout main
+          git merge --no-ff develop -m "Merging develop into main via GitHub Action"
+    
+      - name: Push changes
+        run: git push origin main

@@ -12,7 +12,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const requiredLabels = ['feature', 'enhancement', 'fix', 'chore', 'dependencies', 'measure-update', 'mvp-update', 'benchmark-update'];
+            const requiredLabels = ['notes:feature', 'notes:enhancement', 'notes:bug-fix', 'notes:chore', 'notes:dependencies', 'notes:measure-update', 'notes:mvp-update', 'notes:benchmark-update'];
             const prLabels = context.payload.pull_request.labels.map(label => label.name);
  
             const hasAtLeastOneRequiredLabel = requiredLabels.some(label => prLabels.includes(label));
@@ -29,7 +29,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const requiredLabels = ['patch-update', 'minor-update', 'major-update'];
+            const requiredLabels = ['version:patch', 'version:minor', 'version:major'];
             const prLabels = context.payload.pull_request.labels.map(label => label.name);
  
             const hasAtLeastOneRequiredLabel = requiredLabels.some(label => prLabels.includes(label));
