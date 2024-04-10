@@ -1,4 +1,4 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
+name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '📏 Measure & MVP Updates'
@@ -33,6 +33,4 @@ version-resolver:
       - 'version:patch'
   default: patch
 template: |
-  ## Changes
-
   $CHANGES
