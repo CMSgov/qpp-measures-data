@@ -8,13 +8,14 @@ import _ from 'lodash';
 import { COST_NATIONAL_AVERAGES_COLUMN_NAMES } from '../constants';
 import { CostNationalAverage } from './benchmarks.types';
 import { prepareCsv, fetchCSV, writeToFile } from './util';
+import { DataValidationError } from '../errors';
 
-function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
+export function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
     const csv = fetchCSV(csvPath);
     const parsedCsv = prepareCsv(csv);
     const jsonPath = `benchmarks/${performanceYear}/${jsonFileName}.json`;
 
-    const mappedCsv = parsedCsv.map((row) => {
+    const mappedJson = parsedCsv.map((row) => {
         const costAverageData: CostNationalAverage = {
             // measureId needs default values for typing.
             measureId: '',
@@ -30,12 +31,16 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
                 costAverageData[jsonField] = mapInput(csvColumn, row);
             }
         });
+        
+        if (costAverageData.measureId === '') {
+            throw new DataValidationError('Cost National Average CSV', `Validation Failed. All rows need a measureId.`);
+        }
 
         return costAverageData;
     });
 
     // write to [filename].json
-    writeToFile(mappedCsv, jsonPath);
+    writeToFile(mappedJson, jsonPath);
 }
 
 function mapInput(columnName: string, csvRow: any) {
@@ -47,4 +52,6 @@ function mapInput(columnName: string, csvRow: any) {
     return formattedColData;
 }
 
-convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);
+/* istanbul ignore next */
+if (process.argv[2] && process.argv[2] !== '--coverage')
+    convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);
