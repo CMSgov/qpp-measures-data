@@ -30,8 +30,8 @@ const measuresSchema = qppMeasuresData.getMeasuresSchema($YEAR);
 const benchmarksData = qppMeasuresData.getBenchmarksData();
 const benchmarkData$YEAR = benchmarksData[$YEAR];
 const benchmarksSchema = qppMeasuresData.getBenchmarksSchema();
-const benchmarksCostNationalAveragesData = qppMeasuresData.getBenchmarksNationalAverages();
-const benchmarksCostNationalAveragesSchema = qppMeasuresData.getBenchmarksNationalAveragesSchema();
+const benchmarksCostNationalAveragesData = qppMeasuresData.getBenchmarksNationalAverages($YEAR);
+const benchmarksCostNationalAveragesSchema = qppMeasuresData.getBenchmarksNationalAveragesSchema($YEAR);
 // Note: for the following function, the mvpIds is an optional parameter (array of MVP IDs to filter by)
 const mvpData = qppMeasuresData.getMVPData($YEAR, mvpIds);
 const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
