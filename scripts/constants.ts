@@ -70,6 +70,14 @@ export const BENCHMARKS_COLUMN_NAMES = {
     'averagePerformanceRate': 'averagePerformanceRate',
 };
 
+export const COST_NATIONAL_AVERAGES_COLUMN_NAMES = {
+    'measureId': 'measure_id',
+    'benchmarkYear': 'benchmark_year',
+    'performanceYear': 'performance_year',
+    'groupNationalAverage': 'group_national_average',
+    'individualNationalAverage': 'individual_national_average',
+};
+
 export const SUBMISSION_METHOD_MAP = {
     'ecqm': 'electronicHealthRecord',
     'medicarepartbclaims': 'claims',

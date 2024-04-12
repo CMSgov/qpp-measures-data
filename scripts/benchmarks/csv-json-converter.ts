@@ -4,10 +4,6 @@
 * to json.
 */
 import _ from 'lodash';
-import fs from 'fs';
-import path from 'path';
-import appRoot from 'app-root-path';
-import { parse } from 'csv-parse/sync';
 
 import {
     BENCHMARKS_COLUMN_NAMES,
@@ -18,6 +14,7 @@ import {
 import { InvalidValueError } from '../errors';
 
 import { Benchmark } from './benchmarks.types';
+import { prepareCsv, fetchCSV, writeToFile } from './util';
 
 // command to use this file:
 //  node ./dist/benchmarks/csv-json-converter.js ./util/2023/benchmarks/[fileName].csv [year] > ./util/2023/benchmarks/json/[fileName].json
@@ -74,14 +71,6 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
     writeToFile(mappedCsv, jsonPath);
 }
 
-function fetchCSV(filePath: string) {
-    return fs.readFileSync(path.join(appRoot + '', `${filePath}`), 'utf8');
-}
-
-export function writeToFile(file: any, filePath: string) {
-    fs.writeFileSync(path.join(appRoot + '', filePath), JSON.stringify(file, null, 2));
-}
-
 function orderFields(benchmark: Benchmark) {
     //reorder the fields to stay consistent.
     const orderedValues = Object.assign({}, BENCHMARKS_ORDER, benchmark)
@@ -120,24 +109,6 @@ function csvFieldToBoolean(field: string, value: string): boolean {
         default:
             throw new InvalidValueError(field, value);
     }
-}
-
-function prepareCsv(csv: any) {
-    //parse csv.
-    let parsedCsv: Object[] = parse(csv, {
-        columns: true,
-        relax_column_count: true,
-        bom: true,
-    });
-
-    //trim keys in parsed csv.
-    parsedCsv = _.map(parsedCsv, (row) => {
-        return _.mapKeys(row, (value, key) => {
-            return key.trim();
-        });
-    });
-
-    return parsedCsv;
 }
 
 convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);

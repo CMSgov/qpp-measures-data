@@ -19,6 +19,7 @@ const ValidateLib = require('./validate-json-data/validate-json-data-lib');
 
 const schemaType = process.argv[2];
 const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
+const optionalPath = process.argv[4]
 
 function validate(schema, json) {
   const data = JSON.parse(json, 'utf8');
@@ -40,7 +41,7 @@ if (!schemaType) {
 }
 
 // Load the schema file
-const schema = YAML.parse(fs.readFileSync(path.join(__dirname, '../', schemaType, performanceYear, schemaType + '-schema.yaml'), 'utf8'));
+const schema = YAML.parse(fs.readFileSync(path.join(__dirname, '../', optionalPath || schemaType, performanceYear, schemaType + '-schema.yaml'), 'utf8'));
 
 // Read stdin into a string
 let json = '';
