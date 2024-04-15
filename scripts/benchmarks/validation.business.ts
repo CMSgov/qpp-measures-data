@@ -6,7 +6,7 @@ import {
 } from './benchmarks.types';
 import path from 'path';
 import appRoot from 'app-root-path';
-import fs from 'fs';
+import fs from 'fs-extra';
 
 function readStagingJSONFile(fileName: string, performanceYear: number) {
   const benchmarksStagingJSONDirectory = appRoot + `/staging/${performanceYear}/benchmarks/json`
