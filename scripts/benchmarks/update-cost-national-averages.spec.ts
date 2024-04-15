@@ -1,7 +1,4 @@
 import _ from 'lodash';
-import fs from 'fs';
-import path from 'path';
-import appRoot from 'app-root-path';
 
 import { convertCsvToJson } from './update-cost-national-averages';
 import * as Utils from './util';
