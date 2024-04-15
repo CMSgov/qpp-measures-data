@@ -1,5 +1,5 @@
 /**
-* @CsvToJsonConverter
+* @UpdateCostNationalAverages
 *  This script converts the cost national average csv to json
 * to json.
 */
