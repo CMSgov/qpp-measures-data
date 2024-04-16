@@ -2,13 +2,15 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import mockFS from 'mock-fs';
+import { vol } from "memfs";
 
 import * as Lib from '../lib/measures-lib';
 import * as logger from '../../logger'
 import * as UpdateScript from './update-measures';
 import * as csvConverter from '../lib/csv-json-converter';
 import { MeasuresChange } from '../lib/validate-change-requests';
+
+jest.mock('fs-extra');
 
 const allowedIaChange = {
     title: 'Use of telehealth services that expand practice access',
@@ -134,12 +136,12 @@ describe('update-measures', () => {
         });
 
         afterEach(() => {
-            mockFS.restore();
+            vol.reset();
             jest.restoreAllMocks();
         });
 
         it('finds the new files and attempts to update the measures data', () => {
-            mockFS({
+            vol.fromNestedJSON({
                 'measures/2023': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
@@ -160,7 +162,7 @@ describe('update-measures', () => {
         });
 
         it('does nothing and logs if no new files are found', () => {
-            mockFS({
+            vol.fromNestedJSON({
                 'measures/2023': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
@@ -179,7 +181,7 @@ describe('update-measures', () => {
         });
 
         it('handles an empty change file', () => {
-            mockFS({
+            vol.fromNestedJSON({
                 'measures/2023': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
@@ -204,7 +206,7 @@ describe('update-measures', () => {
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
 
-            mockFS({
+            vol.fromNestedJSON({
                 'fakepath': {
                     'test.csv': 'fakevalue',
                 },
@@ -222,7 +224,7 @@ describe('update-measures', () => {
         });
 
         afterEach(() => {
-            mockFS.restore();
+            
             jest.restoreAllMocks();
         });
 

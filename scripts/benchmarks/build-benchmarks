@@ -39,6 +39,23 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   done
   
   
+  # Convert all CSV benchmark util files to JSON.
+  for FILE in util/benchmarks/$currentPerformanceYear/*; do
+    re='^(.+\/)*(.+)\.(.+)$'
+    if [[ $FILE =~ $re ]]; then
+      echo -e "Converting $FILE.csv to JSON..."
+      node dist/benchmarks/update-cost-national-averages.js \
+        util/benchmarks/$currentPerformanceYear/${BASH_REMATCH[2]}.csv $currentPerformanceYear ${BASH_REMATCH[2]}
+      
+      # validate the JSON files
+      echo -e "Validating new $FILE.json"
+      cat benchmarks/$currentPerformanceYear/${BASH_REMATCH[2]}.json | node scripts/validate-data.js ${BASH_REMATCH[2]} $currentPerformanceYear benchmarks
+      
+      exitOnFailure
+    fi
+  done
+  
+  
   # merge all benchmark files into one.
   echo -e "Merging individual JSON files..."
   node dist/benchmarks/merge-benchmark-files.js \

@@ -84,6 +84,10 @@ Please verify the changes are as expected. (You can run `git diff`.)
 
 Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run update:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
 
+## Add/Update National Averages JSON
+
+Add or update `cost-national-averages.csv` to `util/benchmarks/$YEAR/` and run `npm run build:benchmarks $YEAR` 
+
 ## Testing
 
 When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
