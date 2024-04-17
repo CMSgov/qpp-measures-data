@@ -49,6 +49,20 @@ See ticket description.
 - [ ] 📓 Confluence
 - [ ] 🙅 no documentation needed
 
+## Added required labels?
+
+At least one of each type of PR label should be added for checks to pass.
+
+- `notes:*`
+- `version:*`
+
+<!--
+Eg. If this PR contains a minor measures update, add the following labels:
+- notes:measure-update
+- version:minor
+-->
+
+
 ---
 ### [ ⌥ Optional ] Are there any post-deployment tasks we need to perform?
 ---

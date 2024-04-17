@@ -111,6 +111,21 @@ exports.getBenchmarksExclusionReasons = function(performanceYear = Constants.cur
 };
 
 /**
+ * @return {Array<Any>}
+ */
+exports.getBenchmarksNationalAverages = function (performanceYear = Constants.currentPerformanceYear) {
+  return JSON.parse(
+    fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages.json')));
+};
+
+/**
+ * @return {{}} - Object representation of the National Averages Schema
+ */
+exports.getBenchmarksNationalAveragesSchema = function (performanceYear = Constants.currentPerformanceYear) {
+  return YAML.parse(fs.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages-schema.yaml'), 'utf8'));
+};
+
+/**
  * @return {Array<Measure>}
  */
 exports.getMeasuresData = function(performanceYear = 2017) {

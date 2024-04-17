@@ -2,12 +2,14 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import mockFS from 'mock-fs';
+import { vol } from "memfs";
 
 import * as logger from '../logger'
 
 import { benchmarkBusinessValidation } from './validation.business';
 import { BaseMeasure, Benchmark } from './benchmarks.types';
+
+jest.mock('fs-extra');
 
 const measuresJson: BaseMeasure[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', 'measures/2023/measures-data.json'), 'utf8')
@@ -29,7 +31,7 @@ describe('validation.business', () => {
     let logSpy: any, warningSpy: any;
 
     const mockFileSystemResponse = (measures: any[], benchmarks: any[], benchmarksCahps: any[]) => {
-        mockFS({
+        vol.fromNestedJSON({
             'measures/2023': {
                 'measures-data.json': JSON.stringify(measures),
             },
@@ -71,7 +73,7 @@ describe('validation.business', () => {
     });
 
     afterEach(() => {
-        mockFS.restore();
+        vol.reset();
         jest.restoreAllMocks();
     });
 

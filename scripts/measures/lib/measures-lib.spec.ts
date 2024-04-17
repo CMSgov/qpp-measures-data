@@ -1,12 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import mockFS from 'mock-fs';
+import { vol } from "memfs";
 
 import * as MeasuresLib from './measures-lib';
 import * as logger from '../../logger';
 import _ from 'lodash';
 import { MeasuresChange } from '../lib/validate-change-requests';
+
+jest.mock('fs-extra');
 
 const allowedIaNew = {
     title: 'iaTitle',
@@ -74,7 +76,7 @@ describe('#update-measures-util', () => {
 
     describe('updateChangeLog', () => {
         beforeEach(() => {
-            mockFS({
+            vol.fromNestedJSON({
                 'fakepath': {
                     'changes.meta.json': '[]',
                 },
@@ -82,7 +84,7 @@ describe('#update-measures-util', () => {
         });
 
         afterEach(() => {
-            mockFS.restore();
+            vol.reset();
         });
 
         it('writes to the change file', () => {
@@ -99,6 +101,11 @@ describe('#update-measures-util', () => {
         });
 
         it('should delete the measure if found', () => {
+            vol.fromNestedJSON({
+                './util/measures/2024': {
+                    'quality-strata.csv': fs.readFileSync(path.join(appRoot + '', `util/measures/2024/quality-strata.csv`), 'utf8'),
+                },
+            });
             const infoSpy = jest.spyOn(logger, 'info');
 
             MeasuresLib.deleteMeasure('001', 'quality', volatileMeasures, 'util/measures/2024/');

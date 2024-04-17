@@ -2,7 +2,7 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import mockFS from 'mock-fs';
+import { vol } from "memfs";
 
 import * as UpdateMeasures from './update-measures';
 import * as Lib from '../lib/measures-lib';
@@ -10,6 +10,8 @@ import * as csvConverter from '../lib/csv-json-converter';
 import * as logger from '../../logger'
 import { updateMeasures } from './update-measures';
 import { MeasuresChange } from '../lib/validate-change-requests';
+
+jest.mock('fs-extra');
 
 const allowedIaChange = {
     title: 'Use of telehealth services that expand practice access',
@@ -144,16 +146,16 @@ describe('update-measures', () => {
         });
 
         afterEach(() => {
-            mockFS.restore();
+            vol.reset();
             jest.restoreAllMocks();
         });
 
         it('finds the new files and attempts to update the measures data', () => {
-            mockFS({
-                'measures/2024': {
+            vol.fromNestedJSON({
+                './measures/2024': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
-                'updates/measures/2024': {
+                './updates/measures/2024': {
                     'changes.meta.json': '["test1.csv", "test2.csv"]',
                     'test1.csv': "fakedata",
                     'test2.csv': "fakedata",
@@ -170,7 +172,7 @@ describe('update-measures', () => {
         });
 
         it('does nothing and logs if no new files are found', () => {
-            mockFS({
+            vol.fromNestedJSON({
                 'measures/2024': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
@@ -189,7 +191,7 @@ describe('update-measures', () => {
         });
 
         it('handles an empty change file', () => {
-            mockFS({
+            vol.fromNestedJSON({
                 'measures/2024': {
                     'measures-data.json': JSON.stringify(volatileMeasures),
                 },
@@ -214,7 +216,7 @@ describe('update-measures', () => {
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
 
-            mockFS({
+            vol.fromNestedJSON({
                 'fakepath': {
                     'test.csv': 'fakevalue',
                 },
@@ -232,7 +234,7 @@ describe('update-measures', () => {
         });
 
         afterEach(() => {
-            mockFS.restore();
+            vol.reset();
             jest.restoreAllMocks();
         });
 

@@ -1,0 +1,39 @@
+name: Enforce PR Labels
+ 
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize, reopened]
+ 
+jobs:
+  check-release-type-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for at least one release-type label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const requiredLabels = ['notes:feature', 'notes:enhancement', 'notes:bug-fix', 'notes:chore', 'notes:dependencies', 'notes:measure-update', 'notes:mvp-update', 'notes:benchmark-update'];
+            const prLabels = context.payload.pull_request.labels.map(label => label.name);
+ 
+            const hasAtLeastOneRequiredLabel = requiredLabels.some(label => prLabels.includes(label));
+ 
+            if (!hasAtLeastOneRequiredLabel) {
+              core.setFailed(`PR must have at least one of these labels for placement in release notes: ${requiredLabels.join(', ')}`);
+            }
+ 
+  check-version-labels:
+    needs: check-release-type-labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for at least one release-type label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const requiredLabels = ['version:patch', 'version:minor', 'version:major'];
+            const prLabels = context.payload.pull_request.labels.map(label => label.name);
+ 
+            const hasAtLeastOneRequiredLabel = requiredLabels.some(label => prLabels.includes(label));
+ 
+            if (!hasAtLeastOneRequiredLabel) {
+              core.setFailed(`Also, PR must have at least one of these labels for auto bumping of the release version number: ${requiredLabels.join(', ')}`);
+            }

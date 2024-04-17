@@ -242,3 +242,11 @@ export type PerformanceStrata = {
   description: string;
   name: string;
 }
+
+export type CostNationalAverage = {
+  measureId: string;
+  benchmarkYear: number;
+  performanceYear: number;
+  groupNationalAverage: null | number;
+  individualNationalAverage: null | number;
+}
