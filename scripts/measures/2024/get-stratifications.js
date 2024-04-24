@@ -35,12 +35,14 @@ each generated ecqm stratification entry will look similar to this:
 
 const _ = require('lodash');
 const fs = require('fs');
+const os = require('os');
 const rimraf = require('rimraf');
 const path = require('path');
-const Promise = require('bluebird');
+const bbPromise = require('bluebird');
 const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
-const tmpDir = '/tmp/ecqm';
+const extractZip = require('../../extract-zip');
+const tmpDir = os.tmpdir() + '/ecqm';
 const zipPath = process.argv[2];
 
 if (!zipPath) {
@@ -50,7 +52,7 @@ if (!zipPath) {
 
 // gather list of xml files
 rimraf.sync(tmpDir);
-new AdmZip(zipPath).extractAllTo(tmpDir, true);
+extractZip(zipPath, tmpDir);
 // each measure has its own zip, collect name of SimpleXML files
 const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   const zip = new AdmZip(path.join(tmpDir, measureZip));
@@ -67,8 +69,8 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
 });
 
 // parse files into JavaScript objects
-const promisifiedParseString = Promise.promisify(parseString);
-Promise.all(
+const promisifiedParseString = bbPromise.promisify(parseString);
+bbPromise.all(
   xmlFiles.map(xmlFile => {
     return promisifiedParseString(fs.readFileSync(path.join(tmpDir, '/xmls', xmlFile)));
   })

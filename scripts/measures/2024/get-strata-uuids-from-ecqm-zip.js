@@ -2,13 +2,15 @@
 
 const _ = require('lodash');
 const fs = require('fs');
+const os = require('os');
 const rimraf = require('rimraf');
 const path = require('path');
-const Promise = require('bluebird');
+const bbPromise = require('bluebird');
 const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
-const tmpDir = '/tmp/ecqm';
-const tmpPath = '/tmp/ecqm/xmls';
+const extractZip = require('../../extract-zip');
+const tmpDir = os.tmpdir() + '/ecqm';
+const tmpPath = tmpDir + '/xmls';
 const currentYear = '2024';
 const zipPath = '../../../staging/' + currentYear + '/EC-eCQM-2023-11-v2.zip';
 if (!zipPath) {
@@ -18,7 +20,7 @@ if (!zipPath) {
 
 // gather list of xml files
 rimraf.sync(tmpDir);
-new AdmZip(zipPath).extractAllTo(tmpDir, true);
+extractZip(zipPath, tmpDir);
 // each measure has its own zip, collect name of SimpleXML files
 const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
   // 2024 xml fiels list does not have -v2 in the filename. Check for -v2 may need to be removed in future.
@@ -36,8 +38,8 @@ const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
 });
 
 // parse files into JavaScript objects
-const promisifiedParseString = Promise.promisify(parseString);
-Promise.all(
+const promisifiedParseString = bbPromise.promisify(parseString);
+bbPromise.all(
   xmlFiles.map(xmlFile => {
     return promisifiedParseString(fs.readFileSync(path.join(tmpPath, xmlFile)));
   })
