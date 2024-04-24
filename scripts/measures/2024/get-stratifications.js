@@ -50,6 +50,33 @@ if (!zipPath) {
   process.exit(1);
 }
 
+function extractStrata(measure) {
+  const strataMaps = [];
+  const supplementDataType = 'SDE';
+  measure.component.forEach((component, index) => {
+    if (!component.populationCriteriaSection) return;
+    const components = component.populationCriteriaSection[0].component;
+    const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
+    const stratList = [];
+    // Loops through a Stratifier Criteria's components. If it's not a supplemental data component, add the stratum.
+    components.filter(item => item.stratifierCriteria).forEach((component, index) => {
+      const supplementalDataComponent = component.stratifierCriteria[0].component;
+      if (_.isUndefined(supplementalDataComponent) ||
+        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== supplementDataType) {
+        stratList.push(component.stratifierCriteria[0].id[0].$.root);
+      }
+    });
+    if (stratList.length !== 0) {
+      const numeratorMap = {};
+      numeratorMap['numeratorUuid'] = numeratorUuid;
+      numeratorMap['strata'] = stratList;
+      strataMaps.push(numeratorMap);
+    }
+  });
+
+  return strataMaps;
+}
+
 // gather list of xml files
 rimraf.sync(tmpDir);
 extractZip(zipPath, tmpDir);
@@ -95,34 +122,3 @@ bbPromise.all(
   fs.writeFileSync(path.join(__dirname,
     '../../../util/measures/2024/additional-stratifications.json'), JSON.stringify(ecqms, null, 2));
 });
-
-function extractStrata(measure) {
-  const strataMaps = [];
-  const supplementDataType = 'SDE';
-  measure.component.forEach((component, index) => {
-    if (!component.populationCriteriaSection) {
-      return;
-    }
-
-    const components = component.populationCriteriaSection[0].component;
-    const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
-    const stratList = [];
-    // Loops through a Stratifier Criteria's components. If it's not a supplemental data component,
-    // add the stratum.
-    components.filter(item => item.stratifierCriteria).forEach((component, index) => {
-      const supplementalDataComponent = component.stratifierCriteria[0].component;
-      if (_.isUndefined(supplementalDataComponent) ||
-        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== supplementDataType) {
-        stratList.push(component.stratifierCriteria[0].id[0].$.root);
-      }
-    });
-    if (stratList.length !== 0) {
-      const numeratorMap = {};
-      numeratorMap['numeratorUuid'] = numeratorUuid;
-      numeratorMap['strata'] = stratList;
-      strataMaps.push(numeratorMap);
-    }
-  });
-
-  return strataMaps;
-}
