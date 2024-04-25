@@ -39,74 +39,36 @@ const os = require('os');
 const rimraf = require('rimraf');
 const path = require('path');
 const bbPromise = require('bluebird');
-const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
-const extractZip = require('../../extract-zip');
+const { extractZip, getXMLFiles, extractAdditionalStrata } = require('../extract-util');
 const tmpDir = os.tmpdir() + '/ecqm';
-const zipPath = process.argv[2];
+const tmpPath = tmpDir + '/xmls';
+const currentYear = process.argv[2];
+const zipPath = '../../../staging/' + currentYear + '/EC-eCQM-2023-11-v2.zip';
 
-if (!zipPath) {
-  console.log('Missing required argument <path to zip>');
+if (!currentYear) {
+  console.log('Missing required argument <current year>');
   process.exit(1);
-}
-
-function extractStrata(measure) {
-  const strataMaps = [];
-  const supplementDataType = 'SDE';
-  measure.component.forEach((component, index) => {
-    if (!component.populationCriteriaSection) return;
-    const components = component.populationCriteriaSection[0].component;
-    const numeratorUuid = components.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root;
-    const stratList = [];
-    // Loops through a Stratifier Criteria's components. If it's not a supplemental data component, add the stratum.
-    components.filter(item => item.stratifierCriteria).forEach((component, index) => {
-      const supplementalDataComponent = component.stratifierCriteria[0].component;
-      if (_.isUndefined(supplementalDataComponent) ||
-        supplementalDataComponent[0].measureAttribute[0].code[0].$.code !== supplementDataType) {
-        stratList.push(component.stratifierCriteria[0].id[0].$.root);
-      }
-    });
-    if (stratList.length !== 0) {
-      const numeratorMap = {};
-      numeratorMap['numeratorUuid'] = numeratorUuid;
-      numeratorMap['strata'] = stratList;
-      strataMaps.push(numeratorMap);
-    }
-  });
-
-  return strataMaps;
 }
 
 // gather list of xml files
 rimraf.sync(tmpDir);
 extractZip(zipPath, tmpDir);
 // each measure has its own zip, collect name of SimpleXML files
-const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
-  const zip = new AdmZip(path.join(tmpDir, measureZip));
-  const MEASURE_XML_REGEX = (/([A-Z]{3})([0-9]{1,4})v([0-9]{1,2})\.xml$/);
-
-  const filename = zip.getEntries()
-    .find(entry => MEASURE_XML_REGEX.test(entry.entryName))
-    .entryName;
-
-  // extract 'CMS75v5.xml' to /xmls
-  zip.extractEntryTo(filename, tmpDir + '/xmls', false, true);
-
-  return filename;
-});
+const xmlFiles = getXMLFiles(tmpDir, tmpPath);
 
 // parse files into JavaScript objects
 const promisifiedParseString = bbPromise.promisify(parseString);
 bbPromise.all(
   xmlFiles.map(xmlFile => {
-    return promisifiedParseString(fs.readFileSync(path.join(tmpDir, '/xmls', xmlFile)));
+    return promisifiedParseString(fs.readFileSync(path.join(tmpPath, xmlFile)));
   })
 ).then(docs => {
   // extract data from converted JavaScript objects
   return _.compact(docs.map(doc => {
     const measure = doc.QualityMeasureDocument;
     const measureId = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-    const strataMap = extractStrata(measure);
+    const strataMap = extractAdditionalStrata(measure);
     if (_.isEmpty(strataMap)) {
       return;
     }
@@ -120,5 +82,5 @@ bbPromise.all(
 }).then(ecqms => {
   // map of measure id to stratification list
   fs.writeFileSync(path.join(__dirname,
-    '../../../util/measures/2024/additional-stratifications.json'), JSON.stringify(ecqms, null, 2));
+    '../../../util/measures/' + currentYear + '/additional-stratifications.json'), JSON.stringify(ecqms, null, 2));
 });

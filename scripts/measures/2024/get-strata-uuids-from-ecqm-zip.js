@@ -6,36 +6,21 @@ const os = require('os');
 const rimraf = require('rimraf');
 const path = require('path');
 const bbPromise = require('bluebird');
-const AdmZip = require('adm-zip');
 const parseString = require('xml2js').parseString;
-const extractZip = require('../../extract-zip');
+const { extractZip, getXMLFiles, extractStrata } = require('../extract-util');
 const tmpDir = os.tmpdir() + '/ecqm';
 const tmpPath = tmpDir + '/xmls';
-const currentYear = '2024';
+const currentYear = process.argv[2];
 const zipPath = '../../../staging/' + currentYear + '/EC-eCQM-2023-11-v2.zip';
-if (!zipPath) {
-  console.log('Missing required argument <path to zip>');
+if (!currentYear) {
+  console.log('Missing required argument <current year>');
   process.exit(1);
 }
 
 // gather list of xml files
 rimraf.sync(tmpDir);
 extractZip(zipPath, tmpDir);
-// each measure has its own zip, collect name of SimpleXML files
-const xmlFiles = fs.readdirSync(tmpDir).map(measureZip => {
-  // 2024 xml fiels list does not have -v2 in the filename. Check for -v2 may need to be removed in future.
-  const folder = (measureZip.toString().split('.')[0].replace('-v2', ''));
-  const zip = new AdmZip(path.join(tmpDir, measureZip));
-  const { entryName: filename } = zip.getEntries()
-    .find(({ entryName }) => {
-      const filename = entryName.toString();
-      return filename.includes('.xml') && filename.includes(folder);
-    });
-
-  // extract 'CMS75v5.xml' to /xmls
-  zip.extractEntryTo(filename, tmpPath, false, true);
-  return filename;
-});
+const xmlFiles = getXMLFiles(tmpDir, tmpPath);
 
 // parse files into JavaScript objects
 const promisifiedParseString = bbPromise.promisify(parseString);
@@ -48,7 +33,8 @@ bbPromise.all(
   return _.compact(docs.map(doc => {
     const measure = doc.QualityMeasureDocument;
     const emeasureid = measure.subjectOf[0].measureAttribute[0].value[0].$.value;
-    const strata = extractStrata(measure, emeasureid);
+    const strataDescriptions = extractStrataDescription(measure, emeasureid);
+    const strata = extractStrata(measure, strataDescriptions);
     const version = measure.versionNumber[0].$.value.split('.')[0];
     const eMeasureId = `CMS${emeasureid}v${version}`;
     // special measures with multi strata single performance rate will be exception
@@ -68,56 +54,6 @@ bbPromise.all(
   fs.writeFileSync(path.join(__dirname, '../../../util/measures/' + currentYear + '/generated-ecqm-data.json'), JSON.stringify(sortedEcqms, null, 2));
   console.warn('remember to update measures repo with the generated data!');
 });
-
-/*
-return strata name, description, and uuids like so
-[
-  {
-    name: 'strata1',
-    description: 'Patients who initiated treatment within 14 days of the diagnosis',
-    eMeasureUuids: {
-      initialPopulationUuid: '25286925-4221-4396-9DE0-60EA606924DF',
-      denominatorUuid: 'CFB8E3E2-FF4F-4D25-B613-7EC142BAE8A9',
-      numeratorUuid: 'A399FA9C-48CF-41E5-812A-3445188B8301',
-      denominatorExclusionUuid: 'EEAD441F-B3B2-4DC9-A890-B35E14B38EA7',
-      denominatorExceptionUuid: 'E76F6606-1DC9-40DE-8A34-5B4B4E859152'
-    }
-  }
-  ...
-*/
-function extractStrata(measure, emeasureid) {
-  const strataDescriptions = extractStrataDescription(measure, emeasureid);
-  const strata = strataDescriptions.map(description => ({ description }));
-  // pull out uuids for each stratum
-  const components = measure.component.slice(1);
-  components.forEach((component, index) => {
-    const ids = component.populationCriteriaSection[0].component;
-    const eMeasureUuids = {
-      initialPopulationUuid: ids.find(item => item.initialPopulationCriteria).initialPopulationCriteria[0].id[0].$.root,
-      denominatorUuid: ids.find(item => item.denominatorCriteria).denominatorCriteria[0].id[0].$.root,
-      numeratorUuid: ids.find(item => item.numeratorCriteria).numeratorCriteria[0].id[0].$.root
-    };
-
-    const denominatorException = ids.find(item => item.denominatorExceptionCriteria);
-    if (denominatorException) {
-      eMeasureUuids.denominatorExceptionUuid = denominatorException.denominatorExceptionCriteria[0].id[0].$.root;
-    }
-
-    const denominatorExclusion = ids.find(item => item.denominatorExclusionCriteria);
-    if (denominatorExclusion) {
-      eMeasureUuids.denominatorExclusionUuid = denominatorExclusion.denominatorExclusionCriteria[0].id[0].$.root;
-    }
-
-    const numeratorExclusion = ids.find(item => item.numeratorExclusionCriteria);
-    if (numeratorExclusion) {
-      eMeasureUuids.numeratorExclusionUuid = numeratorExclusion.numeratorExclusionCriteria[0].id[0].$.root;
-    }
-
-    strata[index].eMeasureUuids = eMeasureUuids;
-  });
-
-  return strata;
-}
 
 /*
 return strata description array
