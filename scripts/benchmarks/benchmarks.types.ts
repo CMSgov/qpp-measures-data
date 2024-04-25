@@ -165,6 +165,7 @@ export type Benchmark = {
   metricType?: string,
   isToppedOutByProgram?: boolean,
   percentiles?: object,
+  deciles?: number[], // Is now removed while finalizing data, but still sometimes included in third-party input files.
   averagePerformanceRate?: number | null
 }
 
