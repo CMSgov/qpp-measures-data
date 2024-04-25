@@ -7,7 +7,7 @@ import { writeToFile } from './util';
 
 // command to use this file:
 //  node ./dist/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
-export function mergeBenchmarkFiles(benchmarksPath: string) {
+export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: number) {
     let combinedBenchmarks: Benchmark[] = [];
 
     const fileNames = fs.readdirSync(path.join(appRoot + '', benchmarksPath));
@@ -31,10 +31,9 @@ export function mergeBenchmarkFiles(benchmarksPath: string) {
         a.submissionMethod.localeCompare(b.submissionMethod)
     );
     
-    // output to [year].json
-    process.stdout.write(JSON.stringify(combinedBenchmarks, null, 2));
+    writeToFile(combinedBenchmarks, `benchmarks/${performanceYear}.json`);
 };
 
 /* istanbul ignore next */
 if (process.argv[2] && process.argv[2] !== '--coverage')
-    mergeBenchmarkFiles(process.argv[2]);
+    mergeBenchmarkFiles(process.argv[2], parseInt(process.argv[3]));

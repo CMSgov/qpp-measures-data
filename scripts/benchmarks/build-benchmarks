@@ -59,8 +59,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   # merge all benchmark files into one.
   echo -e "Merging individual JSON files..."
   node dist/benchmarks/merge-benchmark-files.js \
-    staging/$currentPerformanceYear/benchmarks/json/ \
-    > ./benchmarks/$currentPerformanceYear.json
+    staging/$currentPerformanceYear/benchmarks/json/ $currentPerformanceYear
 
 
   # Validate benchmarks.
