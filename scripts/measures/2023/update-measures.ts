@@ -164,16 +164,18 @@ export function ingestChangeFile(
         if (err instanceof Error) {
             error(err['message']);
         } else {
-            /* istanbul ignore next */
+            /* c8 ignore next */
             throw err;
         }
-        /* istanbul ignore next */
+        /* c8 ignore next */
         if (process.argv[2] && process.argv[2] !== '--coverage')
+            /* c8 ignore next */
             process.exit(1);
         return 1;
     }
 }
 
-/* istanbul ignore next */
+/* c8 ignore next */
 if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
     updateMeasures(process.argv[2], process.argv[3]);
