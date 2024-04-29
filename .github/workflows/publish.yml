@@ -75,7 +75,7 @@ jobs:
           SLACK_TITLE: New qpp-measures-data release
           SLACK_USERNAME: releaseNotify
 
-  # merge develop into main
+  # merge develop into master
   merge-and-push:
     runs-on: ubuntu-latest
     steps:
@@ -91,14 +91,15 @@ jobs:
     
       - name: Update version in package.json and package-lock.json
         run: |
-          VERSION=${{ github.event.release.tag_name }}
+          TAG=${{ github.event.release.tag_name }}
+          VERSION="${TAG:1}"
           echo "Updating version to $VERSION"
             
           # Update version in package.json
           jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
             
           # Update version in package-lock.json
-          jq --arg version "$VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
+          jq --arg version "$VERSION" '.version = $version | .packages."".version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
             
           # Check if there are changes (version was actually updated)
           git diff --exit-code || HAS_CHANGES=1
@@ -112,11 +113,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-      - name: Merge develop branch into main
+      - name: Merge develop branch into master
         run: |
           git fetch origin develop:develop
-          git checkout main
-          git merge --no-ff develop -m "Merging develop into main via GitHub Action"
+          git checkout master
+          git merge --no-ff develop -m "Merging develop into master via GitHub Action"
     
       - name: Push changes
-        run: git push origin main
+        run: git push origin master
