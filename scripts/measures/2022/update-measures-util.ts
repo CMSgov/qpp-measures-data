@@ -151,7 +151,7 @@ export function updateMeasuresWithChangeFile(
         if (err instanceof Error) {
             error(err['message']);
         } else {
-            /* istanbul ignore next */
+            /* c8 ignore next */
             throw err;
         }
         process.exit(1);

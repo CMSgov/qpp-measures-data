@@ -17,14 +17,14 @@ import { Benchmark } from './benchmarks.types';
 import { prepareCsv, fetchCSV, writeToFile } from './util';
 
 // command to use this file:
-//  node ./dist/benchmarks/csv-json-converter.js ./util/2023/benchmarks/[fileName].csv [year] > ./util/2023/benchmarks/json/[fileName].json
-function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
+//  node dist/benchmarks/csv-json-converter.js staging/2023/benchmarks/[fileName].csv 2023 [fileName]
+export function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
     const csv = fetchCSV(csvPath);
     const parsedCsv = prepareCsv(csv);
     const jsonPath = `staging/${performanceYear}/benchmarks/json/${jsonFileName}.json`;
 
     const mappedCsv = parsedCsv.map((row) => {
-        const measure: Benchmark = {
+        const benchmark: Benchmark = {
             performanceYear,
             benchmarkYear: performanceYear - 2,
             // measureId and submissionMethod need default values for typing.
@@ -38,12 +38,12 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
         //maps the csv column values to the matching measures-data fields.
         _.each(BENCHMARKS_COLUMN_NAMES, (columnName, measureKeyName) => {
             if (row[measureKeyName]) {
-                measure[columnName] = mapInput(measureKeyName, row);
+                benchmark[columnName] = mapInput(measureKeyName, row);
             }
         });
         
         if (row['percentile10']) {
-            measure.percentiles = {
+            benchmark.percentiles = {
                 "1": parseFloat(row['percentile1']),
                 "10": parseFloat(row['percentile10']),
                 "20": parseFloat(row['percentile20']),
@@ -59,12 +59,12 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
         }
         
         //populate some default values if they are not found in the csv.
-        measure.isToppedOutByProgram = measure.isToppedOutByProgram || false;
-        measure.averagePerformanceRate = measure.averagePerformanceRate
-            ? +measure.averagePerformanceRate
+        benchmark.isToppedOutByProgram = benchmark.isToppedOutByProgram || false;
+        benchmark.averagePerformanceRate = benchmark.averagePerformanceRate
+            ? +benchmark.averagePerformanceRate
             : null;
 
-        return orderFields(measure);
+        return orderFields(benchmark);
     });
 
     // write to [filename].json
@@ -87,10 +87,6 @@ function mapInput(columnName: string, csvRow: any) {
     if (columnName === 'submissionMethod') {
         return SUBMISSION_METHOD_MAP[formattedColData];
     }
-    // null field if the value entered in the CR is 'null'.
-    if (formattedColData === 'null') {
-        return null;
-    };
 
     return csvRow[columnName].trim();
 }
@@ -111,4 +107,7 @@ function csvFieldToBoolean(field: string, value: string): boolean {
     }
 }
 
-convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);
+/* c8 ignore next */
+if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
+    convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);

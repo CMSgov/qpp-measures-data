@@ -43,6 +43,7 @@ export function updateMeasures(performanceYear: string, testMode: string = 'fals
     }
 }
 
- /* istanbul ignore next */ 
+/* c8 ignore next */
 if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
     updateMeasures(process.argv[2], process.argv[3]);

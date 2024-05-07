@@ -26,6 +26,7 @@ export function updateMvps(performanceYear: string) {
   index.updateProgramNames(performanceYear);
 }
 
-/* istanbul ignore next */
+/* c8 ignore next */
 if (process.argv[2] && process.argv[2] !== "--coverage")
+  /* c8 ignore next */
   updateMvps(process.argv[2]);
