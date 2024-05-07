@@ -12,26 +12,36 @@ import _ from 'lodash';
 import path from 'path';
 
 import { DataValidationError } from '../../errors';
+import { writeToFile } from '../lib/measures-lib';
+import { csvStratum, jsonStratum } from '../lib/measures.types';
 
-const performanceYear = process.argv[2];
-const strataPath = process.argv[3];
+export function ingestStrata(performanceYear: number, strataPath: string) {
+  const measuresPath = `measures/${performanceYear}/measures-data.json`;
 
-const measuresPath = `measures/${performanceYear}/measures-data.json`;
+  const measuresJson = JSON.parse(
+    fs.readFileSync(path.join(appRoot + "", measuresPath), "utf8")
+  );
+  const strata: csvStratum[] = parse(
+    fs.readFileSync(path.join(appRoot + "", strataPath), "utf8"), {
+    columns: true,
+    relax_column_count: true,
+    bom: true,
+    skip_records_with_empty_values: true,
+  });
 
-const measuresJson = JSON.parse(
-  fs.readFileSync(path.join(appRoot + "", measuresPath), "utf8")
-);
-const strata = parse(
-  fs.readFileSync(path.join(appRoot + "", strataPath), "utf8"),
-  { columns: true, skip_empty_lines: true, bom: true }
-);
-
-export function ingestStrata() {
   const uniqueMeasureIds = [
-    ...new Set(strata.map((stratum) => stratum.measureId)),
+    ...new Set(strata.map((stratum) => {
+      if (!stratum.measureId) {
+        throw new DataValidationError(
+          strataPath,
+          "MeasureId is required."
+        );
+      }
+      return stratum.measureId;
+    })),
   ];
   for (let i = 0; i < uniqueMeasureIds.length; i++) {
-    const currentStrata = measuresJson.find(
+    const currentStrata: jsonStratum[] = measuresJson.find(
       (measure: any) => measure.measureId === uniqueMeasureIds[i]
     ).strata;
 
@@ -46,7 +56,7 @@ export function ingestStrata() {
 
       //remove 'Rate x: ' from the start of the stratum descriptions, if present.
       stratum.description = stratum.description.replace(/^[Rr]ate \d+: /, "");
-      
+
       return {
         ...currentStrata?.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
         name: stratum.stratumName,
@@ -60,14 +70,7 @@ export function ingestStrata() {
   writeToFile(measuresJson, measuresPath);
 }
 
-function writeToFile(file: any, filePath: string) {
-  fs.writeFile(
-    path.join(appRoot + "", filePath),
-    JSON.stringify(file, null, 2),
-    function writeJSON(err) {
-      if (err) return console.log(err);
-    }
-  );
-}
-
-ingestStrata();
+/* c8 ignore next */
+if (process.argv[2] && process.argv[2] !== '--coverage')
+  /* c8 ignore next */
+  ingestStrata(parseInt(process.argv[2]), process.argv[3]);
