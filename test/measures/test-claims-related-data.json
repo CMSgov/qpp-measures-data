@@ -1,0 +1,101 @@
+{
+    "001": {
+        "eligibilityOptions": [
+            {
+                "diagnosisCodes": [
+                    "E10.10",
+                    "E10.11"
+                ],
+                "maxAge": 75.0,
+                "minAge": 18.0,
+                "optionGroup": "00",
+                "procedureCodes": [
+                    {
+                        "code": "97802"
+                    },
+                    {
+                        "code": "97803"
+                    }
+                ]
+            }
+        ],
+        "measureId": "001",
+        "performanceOptions": [
+            {
+                "optionGroup": "00",
+                "optionType": "eligiblePopulationExclusion",
+                "qualityCodes": [
+                    {
+                        "code": "G2081"
+                    }
+                ]
+            },
+            {
+                "optionGroup": "00",
+                "optionType": "eligiblePopulationExclusion",
+                "qualityCodes": [
+                    {
+                        "code": "G2090"
+                    }
+                ]
+            }
+        ]
+    },
+    "002": {
+        "eligibilityOptions": [
+            {
+                "diagnosisCodes": [
+                    "M48.40XA",
+                    "M48.41XA"
+                ],
+                "minAge": 50.0,
+                "optionGroup": "00",
+                "procedureCodes": [
+                    {
+                        "code": "99202"
+                    },
+                    {
+                        "code": "99203"
+                    }
+                ]
+            },
+            {
+                "diagnosisCodes": [
+                    "M48.40XA",
+                    "M48.41XA"
+                ],
+                "minAge": 50.0,
+                "optionGroup": "01",
+                "procedureCodes": [
+                    {
+                        "code": "22310"
+                    },
+                    {
+                        "code": "22315"
+                    }
+                ]
+            }
+        ],
+        "measureId": "024",
+        "performanceOptions": [
+            {
+                "optionGroup": "00",
+                "optionType": "eligiblePopulationExclusion",
+                "qualityCodes": [
+                    {
+                        "code": "G9688"
+                    }
+                ]
+            },
+            {
+                "optionGroup": "00",
+                "optionType": "performanceMet",
+                "qualityCodes": [
+                    {
+                        "code": "5015F"
+                    }
+                ]
+            }
+        ]
+    }
+}
