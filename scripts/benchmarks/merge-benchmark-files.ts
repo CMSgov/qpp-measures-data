@@ -3,10 +3,11 @@ import path from 'path';
 import appRoot from 'app-root-path';
 
 import { Benchmark } from './benchmarks.types';
+import { writeToFile } from './util';
 
 // command to use this file:
 //  node ./dist/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
-function mergeBenchmarkFiles(benchmarksPath: string) {
+export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: number) {
     let combinedBenchmarks: Benchmark[] = [];
 
     const fileNames = fs.readdirSync(path.join(appRoot + '', benchmarksPath));
@@ -18,8 +19,8 @@ function mergeBenchmarkFiles(benchmarksPath: string) {
             fs.readFileSync(path.join(appRoot + '', `${benchmarksPath}${fileName}`), 'utf8')
         );
         //remove the deciles column (which is still sometimes included in 3rd party files)
-        jsonFile.forEach(measure => {
-            delete measure.deciles;
+        jsonFile.forEach((benchmark: Benchmark) => {
+            delete benchmark.deciles;
         });
         combinedBenchmarks.push(...jsonFile);
     });
@@ -30,8 +31,10 @@ function mergeBenchmarkFiles(benchmarksPath: string) {
         a.submissionMethod.localeCompare(b.submissionMethod)
     );
     
-    // output to [year].json
-    process.stdout.write(JSON.stringify(combinedBenchmarks, null, 2));
+    writeToFile(combinedBenchmarks, `benchmarks/${performanceYear}.json`);
 };
 
-mergeBenchmarkFiles(process.argv[2]);
+/* c8 ignore next */
+if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
+    mergeBenchmarkFiles(process.argv[2], parseInt(process.argv[3]));

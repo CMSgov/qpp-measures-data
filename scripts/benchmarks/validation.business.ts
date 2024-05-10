@@ -86,6 +86,7 @@ export function benchmarkBusinessValidation(jsonName: string, performanceYear: n
   }
 }
 
-/* istanbul ignore next */
+/* c8 ignore next */
 if (process.argv[2] && process.argv[2] !== '--coverage')
+  /* c8 ignore next */
   benchmarkBusinessValidation(process.argv[2], parseInt(process.argv[3]));

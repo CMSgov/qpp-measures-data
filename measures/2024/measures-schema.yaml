@@ -261,7 +261,30 @@ definitions:
         type: string
         description: a one-word tag, unique to the strata.
         maxLength: 20
-    required: [description, name]
+      eMeasureUuids:
+        type: object
+        properties:
+          initialPopulationUuid:
+            type: string
+            maxLength: 36
+          denominatorUuid:
+            type: string
+            maxLength: 36
+          numeratorUuid:
+            type: string
+            maxLength: 36
+          denominatorExclusionUuid:
+            type: string
+            maxLength: 36
+          denominatorExceptionUuid:
+            type: string
+            maxLength: 36
+          strata:
+            type: array
+            items:
+              type: string
+              maxLength: 36
+    required: [description]
 
   subcategoryIds:
     enum:

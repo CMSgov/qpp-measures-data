@@ -52,6 +52,7 @@ function mapInput(columnName: string, csvRow: any) {
     return formattedColData;
 }
 
-/* istanbul ignore next */
+/* c8 ignore next */
 if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
     convertCsvToJson(process.argv[2], parseInt(process.argv[3]), process.argv[4]);
