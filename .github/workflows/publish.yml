@@ -2,6 +2,10 @@ name: QPP Measures Data Publish
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to use'
+        required: true
   release:
     types: [published]
 
@@ -25,9 +29,15 @@ jobs:
 
       - name: Update version in package.json and package-lock.json
         run: |
-          VERSION=${{ github.event.release.tag_name }}
+          VERSION=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version || github.event.release.tag_name }}
           echo "Updating version to $VERSION"
 
+          # Fail the action if VERSION isn't set
+          if [ -z "$VERSION" ]; then
+            echo "VERSION is not set. Failing the action."
+            exit 1
+          fi
+          
           # Update version in package.json
           jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
 
@@ -37,6 +47,8 @@ jobs:
           # Check if there are changes (version was actually updated)
           git diff --exit-code || HAS_CHANGES=1
           if [ "$HAS_CHANGES" ]; then
+            git config user.name "GitHub actions"
+            git config user.email noreply@github.com
             git add package.json package-lock.json
             git commit -m "Update version to $VERSION"
             git push
