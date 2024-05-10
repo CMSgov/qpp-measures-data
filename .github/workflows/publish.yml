@@ -28,6 +28,8 @@ jobs:
         run: npm ci
 
       - name: Update version in package.json and package-lock.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
           VERSION=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version || github.event.release.tag_name }}
           echo "Updating version to $VERSION"
@@ -37,7 +39,7 @@ jobs:
             echo "VERSION is not set. Failing the action."
             exit 1
           fi
-          
+
           # Update version in package.json
           jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
 
@@ -62,6 +64,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Merge develop into main
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
           git fetch origin develop:develop
           git fetch origin main:main
