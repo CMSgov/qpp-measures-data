@@ -2,7 +2,7 @@ name: QPP Measures Data Publish
 
 on:
   release:
-    types: [published]
+    types: [published, edited]
 
 jobs:
   update-version-and-publish:
@@ -41,6 +41,7 @@ jobs:
             git push
           else
             echo "Version is already up to date."
+          fi
 
       - name: Publish to NPM
         run: npm publish
