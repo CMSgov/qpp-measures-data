@@ -1,8 +1,9 @@
 name: QPP Measures Data Publish
 
 on:
+  workflow_dispatch:
   release:
-    types: [published, edited]
+    types: [published]
 
 jobs:
   update-version-and-publish:
@@ -51,7 +52,9 @@ jobs:
       - name: Merge develop into main
         run: |
           git fetch origin develop:develop
+          git fetch origin main:main
           git checkout main
+          git reset --hard origin/main  # Resets the local main branch to match origin/main
           git merge --no-ff develop -m "Merging develop into main via GitHub Action"
           git push origin main
 
