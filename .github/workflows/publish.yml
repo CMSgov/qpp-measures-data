@@ -63,16 +63,16 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Merge develop into main
+      - name: Merge develop into master
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
           git fetch origin develop:develop
-          git fetch origin main:main
-          git checkout main
-          git reset --hard origin/main  # Resets the local main branch to match origin/main
-          git merge --no-ff develop -m "Merging develop into main via GitHub Action"
-          git push origin main
+          git fetch origin master:master
+          git checkout master
+          git reset --hard origin/master  # Resets the local master branch to match origin/master
+          git merge --no-ff develop -m "Merging develop into master via GitHub Action"
+          git push origin master
 
   notify-others:
     runs-on: ubuntu-latest
