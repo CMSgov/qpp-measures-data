@@ -46,8 +46,6 @@ export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: num
                         conflicting: benchmark,
                         conflictingFile: fileName
                     });
-                } else if (isPerformanceBenchmark && benchmark.performanceYear === benchmark.benchmarkYear) {
-                    mergedBenchmarks.set(benchmarkKey, benchmark);
                 }
             } else {
                 mergedBenchmarks.set(benchmarkKey, benchmark);
@@ -92,7 +90,7 @@ function getBenchmarkKey(benchmark) {
     let benchmarkKey = '';
     [ 'measureId', 'benchmarkYear', 'performanceYear', 'submissionMethod' ].forEach((keyName) => {
         if (keyName in benchmark) {
-            benchmarkKey += `${benchmarkKey}${benchmark[keyName]}|`;
+            benchmarkKey = `${benchmarkKey}${benchmark[keyName]}|`;
         } else {
             throw new Error('Key is missing: ' + keyName);
         }
