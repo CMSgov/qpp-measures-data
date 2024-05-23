@@ -83,7 +83,7 @@ function processPerformanceBenchmark(benchmark) {
         ...benchmark,
         isToppedOut: false,
         isToppedOutByProgram: false,
-        averagePerformanceRate: benchmark.averagePerformanceRate ? benchmark.averagePerformanceRate : null
+        averagePerformanceRate: (benchmark.averagePerformanceRate != null) ? benchmark.averagePerformanceRate : null
     };
 };
 
