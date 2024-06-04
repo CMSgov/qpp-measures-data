@@ -1,0 +1,204 @@
+[
+  {
+    "category": "cost",
+    "title": "Test Title 1",
+    "description": "Test Description 1.",
+    "measureId": "TPCC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSpecification": {
+      "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
+    },
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "G0053",
+      "M0001",
+      "M1368"
+    ]
+  },
+  {
+    "category": "ia",
+    "title": "Test Title 2",
+    "description": "Test Description 2.",
+    "measureId": "IA_AHE_5",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2018,
+    "lastPerformanceYear": null,
+    "weight": "medium",
+    "subcategoryId": "achievingHealthEquity",
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "M1368"
+    ]
+  },
+  {
+    "category": "pi",
+    "measureId": "PI_PHCDRR_2_PROD",
+    "title": "Test Title 3",
+    "description": "Test Description 3.",
+    "isRequired": true,
+    "metricType": "boolean",
+    "firstPerformanceYear": 2023,
+    "lastPerformanceYear": null,
+    "objective": "publicHealthAndClinicalDataExchange",
+    "isBonus": true,
+    "reportingCategory": "bonus",
+    "substitutes": [
+      "PI_PHCDRR_2_PRE"
+    ],
+    "measureSets": [],
+    "exclusion": null,
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "G0053",
+      "G0054",
+      "G0058",
+      "M0001",
+      "M1368"
+    ]
+  },
+  {
+    "title": "Test Title 4",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "470",
+    "description": "Test Description 4.",
+    "measureType": "patientReportedOutcome",
+    "isHighPriority": true,
+    "primarySteward": "Minnesota Community Measurement",
+    "firstPerformanceYear": 2019,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "allowedPrograms": [
+      "mips",
+      "pcf",
+      "G0058"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "orthopedicSurgery"
+    ],
+    "measureSpecification": {
+      "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_470_MIPSCQM.pdf"
+    }
+  },
+  {
+    "category": "pi",
+    "measureId": "PI_INFBLO_1",
+    "title": "Test Title 5",
+    "description": "Test Description 5.",
+    "isRequired": true,
+    "metricType": "boolean",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "objective": "attestation",
+    "isBonus": false,
+    "reportingCategory": "required",
+    "substitutes": [],
+    "measureSpecification": null,
+    "measureSets": [],
+    "exclusion": null,
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "G0053",
+      "G0054",
+      "G0058",
+      "M0001",
+      "M1368"
+    ],
+    "preprod": []
+  },
+  {
+    "title": "Test Title 6",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "479",
+    "description": "Test Description 6.",
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2021,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "costScore",
+    "allowedPrograms": [
+      "mips",
+      "pcf",
+      "app1",
+      "G0053",
+      "G0054"
+    ],
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "measureSets": [],
+    "measureSpecification": {}
+  },
+  {
+    "title": "Test Title 7",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": "0005",
+    "measureId": "321",
+    "description": "Test Description 7.",
+    "measureType": "patientEngagementExperience",
+    "isHighPriority": true,
+    "primarySteward": "Agency for Healthcare Research & Quality",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "cahps",
+    "allowedPrograms": [
+      "mips",
+      "pcf",
+      "app1",
+      "M0001"
+    ],
+    "submissionMethods": [
+      "certifiedSurveyVendor"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "internalMedicine",
+      "oncology",
+      "urology"
+    ],
+    "measureSpecification": {}
+  }
+]
