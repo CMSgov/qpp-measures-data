@@ -70,10 +70,6 @@ export function parseMvpData(performanceYear: string) {
     }
   });
   writeToFile(mvpData, mvpFileWritePath);
-  // fs.writeFileSync(
-  //   path.join(appRoot + '', mvpFileWritePath),
-  //   JSON.stringify(mvpData, null, 2)
-  // );
 }
 
 function hydrateMeasureIds(mvp, mvpCategory, measure) {
