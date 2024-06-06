@@ -16,8 +16,16 @@ jobs:
       - name: Checkout Codebase
         uses: actions/checkout@v4
         with:
+          ref: develop
           fetch-depth: 0 # Ensures fetching of history for all branches and tags
 
+      - name: Ensure 'develop' branch is checked out
+        run: |
+          CURRENT_BRANCH=$(git branch --show-current)
+          if [ "$CURRENT_BRANCH" != "develop" ]; then
+            git checkout develop
+          fi
+          
       - name: Configure Node version and registry
         uses: actions/setup-node@v4
         with:
