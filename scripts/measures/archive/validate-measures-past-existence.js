@@ -1,6 +1,6 @@
 const _ = require('lodash');
-const QppMeasuresData = require('../');
-const Constants = require('../constants.js');
+const QppMeasuresData = require('../../../index.js');
+const Constants = require('../../../constants.js');
 
 const currentYear = Number(process.argv[2]);
 if (!Constants.validPerformanceYears.includes(currentYear)) {
