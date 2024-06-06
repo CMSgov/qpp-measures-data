@@ -76,6 +76,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
+          git config user.name "GitHub actions"
+          git config user.email noreply@github.com
           git fetch origin master:master
           git checkout master
           git merge --no-ff develop -m "Merging develop into master via GitHub Action"
