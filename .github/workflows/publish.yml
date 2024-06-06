@@ -18,6 +18,7 @@ jobs:
         with:
           ref: develop
           fetch-depth: 0 # Ensures fetching of history for all branches and tags
+          token: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
 
       - name: Ensure 'develop' branch is checked out
         run: |
