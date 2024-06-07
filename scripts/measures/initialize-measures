@@ -31,8 +31,9 @@ else
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/measures-json-to-csv
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/update-mvp
 
-  echo -e "Cloning yearly scripts..."
+  echo -e "Cloning yearly scripts and test files..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
+  cp -r test/measures/$previousPerformanceYear test/measures/$newPerformanceYear
 
   echo -e "Updating the performanceYear for the spec files..."
   for filename in scripts/measures/$newPerformanceYear/*.spec.ts; do
