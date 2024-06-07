@@ -1,6 +1,5 @@
 
 import appRoot from 'app-root-path';
-import { parse } from 'csv-parse/sync';
 import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
@@ -9,7 +8,7 @@ import * as Util from './update-measures-util';
 import { ingestStrata } from './ingest-strata';
 import { DataValidationError } from '../../errors';
 
-const performanceYear = 2022
+const performanceYear = 2022;
 const testDataPath = `test/measures/${performanceYear}`;
 const measuresPath = `${testDataPath}/test-measures.json`;
 

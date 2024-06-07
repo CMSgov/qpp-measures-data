@@ -33,8 +33,12 @@ else
 
   echo -e "Cloning yearly scripts..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
-  cp -r scripts/mvp/$previousPerformanceYear scripts/mvp/$newPerformanceYear
 
+  echo -e "Updating the performanceYear for the spec files..."
+  for filename in scripts/measures/$newPerformanceYear/*.spec.ts; do
+      sed -i '' -e "s/performanceYear = $previousPerformanceYear/performanceYear = $newPerformanceYear/" $filename
+  done
+  
   echo -e "Creating updates directory and initializing changes.meta.json as an empty array..."
   mkdir updates/measures/$newPerformanceYear
   echo "[]" > updates/measures/$newPerformanceYear/changes.meta.json

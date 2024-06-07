@@ -24,7 +24,6 @@
     "export:measures": "scripts/measures/export-measures",
     "pretest": "eslint test scripts index.js",
     "pre-commit": "tools/pre-commit.sh",
-    "jest": "TS_NODE_FILES=true NODE_OPTIONS='--max-old-space-size=3072' jest",
     "jest:cov": "TS_NODE_FILES=true NODE_OPTIONS='--max-old-space-size=3072' jest --coverage --coverage-provider=v8"
   },
   "license": "MIT",
