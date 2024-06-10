@@ -13,7 +13,7 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
     const csv = fetchCSV(csvPath);
     const jsonPath = `mvp/${performanceYear}/${jsonFileName}.json`;
 
-    let parsedCsv: Object[] = parse(csv, {
+    const parsedCsv: any[] = parse(csv, {
         columns: true,
         relax_column_count: true,
         bom: true,

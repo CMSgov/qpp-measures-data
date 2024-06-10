@@ -10,7 +10,7 @@ import { parse } from 'csv-parse/sync';
 
 export function prepareCsv(csv: any) {
     //parse csv.
-    let parsedCsv: Object[] = parse(csv, {
+    let parsedCsv: any[] = parse(csv, {
         columns: true,
         relax_column_count: true,
         bom: true,

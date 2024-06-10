@@ -124,7 +124,6 @@ const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${perf
 describe('#update-measures-util', () => {
     describe('updateMeasuresWithChangeFile', () => {
         let volatileMeasures: any;
-        let processExitMock: jest.SpyInstance;
         let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
 
         beforeEach(() => {
@@ -143,7 +142,7 @@ describe('#update-measures-util', () => {
             updateSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasure');
             addSpy = jest.spyOn(UpdateMeasuresUtil, 'addMeasure');
             deleteSpy = jest.spyOn(UpdateMeasuresUtil, 'deleteMeasure');
-            processExitMock = jest.spyOn(process, 'exit').mockImplementation();
+            jest.spyOn(process, 'exit').mockImplementation();
             jest.spyOn(UpdateMeasuresUtil, 'updateChangeLog').mockImplementation(jest.fn());
 
         });

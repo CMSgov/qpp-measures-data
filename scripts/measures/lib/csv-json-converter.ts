@@ -30,7 +30,7 @@ import { InvalidValueError } from '../../errors';
 export function convertCsvToJson(csv: any) {
     const parsedCsv = prepareCsv(csv);
 
-    let mappedCsv = parsedCsv.map((row: any) => {
+    const mappedCsv = parsedCsv.map((row: any) => {
         const measure = {};
         row['Category'] = row['Category'].toLowerCase().trim();
         let csvColumnNames;
@@ -189,7 +189,7 @@ function csvFieldToBoolean(field: string, value: string): boolean {
 
 function prepareCsv(csv: any): any {
     //parse csv.
-    const parsedCsv: Object[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
+    const parsedCsv: any[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
 
     //trim keys in parsed csv.
     for (let i = 0; i < parsedCsv.length; i++) {

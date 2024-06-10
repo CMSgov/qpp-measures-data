@@ -46,7 +46,7 @@ export function ingestStrata(performanceYear: number, strataPath: string) {
     ).strata;
 
     const measureStrata = _.filter(strata, { measureId: uniqueMeasureIds[i] });
-    let mappedStrata = measureStrata.map((stratum) => {
+    const mappedStrata = measureStrata.map((stratum) => {
       if (!stratum.stratumName || !stratum.description) {
         throw new DataValidationError(
           strataPath,

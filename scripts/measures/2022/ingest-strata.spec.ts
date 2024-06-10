@@ -1,7 +1,6 @@
 
 import appRoot from 'app-root-path';
 import fs from 'fs';
-import _ from 'lodash';
 import path from 'path';
 
 import * as Util from './update-measures-util';

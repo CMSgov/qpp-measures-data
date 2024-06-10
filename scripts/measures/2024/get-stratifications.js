@@ -142,11 +142,13 @@ function extractStrataDescription(measure, emeasureid) {
       description = measure.text[0].$.value;
       strataDescriptions = description.replaceAll('; OR', '').split(/\n/);
       strataDescriptions = strataDescriptions
+        // eslint-disable-next-line no-useless-escape
         .filter(string => string.match(/^\-/))
         .map(string => string.substr('-'.length).trim());
       break;
     default:
       strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
+      // eslint-disable-next-line no-case-declarations
       const idRegEx = new RegExp('^(' + descriptionIdentifier + ' \\d: )');
       strataDescriptions = strataDescriptions
         .filter(string => string.match(idRegEx))

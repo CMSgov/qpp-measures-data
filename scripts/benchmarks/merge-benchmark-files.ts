@@ -8,7 +8,7 @@ import { writeToFile } from './util';
 // command to use this file:
 //  node ./dist/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
 export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: number) {
-    let combinedBenchmarks: Benchmark[] = [];
+    const combinedBenchmarks: Benchmark[] = [];
 
     const fileNames = fs.readdirSync(path.join(appRoot + '', benchmarksPath));
 

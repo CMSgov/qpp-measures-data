@@ -1,8 +1,6 @@
 
 import appRoot from 'app-root-path';
-import { parse } from 'csv-parse/sync';
 import fs from 'fs';
-import _ from 'lodash';
 import path from 'path';
 
 import * as Lib from '../lib/measures-lib';

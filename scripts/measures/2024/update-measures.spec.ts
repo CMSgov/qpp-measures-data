@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
@@ -206,7 +205,6 @@ describe('update-measures', () => {
 
     describe('ingestChangeFile', () => {
         let volatileMeasures: any;
-        let processExitMock: jest.SpyInstance;
         let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
 
         beforeEach(() => {
@@ -225,7 +223,7 @@ describe('update-measures', () => {
             updateSpy = jest.spyOn(Lib, 'updateMeasure');
             addSpy = jest.spyOn(Lib, 'addMeasure');
             deleteSpy = jest.spyOn(Lib, 'deleteMeasure');
-            processExitMock = jest.spyOn(process, 'exit').mockImplementation();
+            jest.spyOn(process, 'exit').mockImplementation();
             jest.spyOn(Lib, 'updateChangeLog').mockImplementation(jest.fn());
 
         });
