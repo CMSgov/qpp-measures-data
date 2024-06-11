@@ -22,7 +22,7 @@ const measuresJson = JSON.parse(
 
 const validCategories = ['ia', 'pi', 'cost', 'quality', 'qcdr'];
 
-let categoryFields = {
+const categoryFields = {
     ia: [],
     pi: [],
     cost: [],
@@ -61,7 +61,7 @@ function createJson() {
 }
 
 function getAllQcdrOrQualityMeasures() {
-    let measuresOfCategory: any[] = [];
+    const measuresOfCategory: any[] = [];
     for (let i = 0; i < measuresJson.length; i++) {
         if (
             category === 'qcdr' &&

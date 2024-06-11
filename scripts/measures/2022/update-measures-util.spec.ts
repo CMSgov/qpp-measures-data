@@ -11,6 +11,8 @@ import { MeasuresChange } from '../lib/validate-change-requests';
 
 jest.mock('fs-extra');
 
+const performanceYear = 2022;
+
 const allowedIaChange = {
     title: 'Use of telehealth services that expand practice access',
     description: 'Create and implement a standardized process for providing telehealth services to expand access to care.',
@@ -87,7 +89,7 @@ const allowedPiChange = {
 
 const allowedQualityChange = {
     measureId: '001',
-    firstPerformanceYear: 2020,
+    firstPerformanceYear: 2023,
     isInverse: false,
     metricType: 'multiPerformanceRate',
     overallAlgorithm: 'overallStratumOnly',
@@ -113,34 +115,34 @@ const newQualityMeasure = {
 };
 
 const measuresJson: any[] = JSON.parse(
-    fs.readFileSync(path.join(appRoot + '', `measures/2023/measures-data.json`), 'utf8')
+    fs.readFileSync(path.join(appRoot + '', `measures/${performanceYear}/measures-data.json`), 'utf8')
 );
 
-const qualityStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/quality-strata.csv`), 'utf8');
-const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/qcdr-strata.csv`), 'utf8');
+const qualityStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${performanceYear}/quality-strata.csv`), 'utf8');
+const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${performanceYear}/qcdr-strata.csv`), 'utf8');
 
 describe('#update-measures-util', () => {
     describe('updateMeasuresWithChangeFile', () => {
         let volatileMeasures: any;
-        let processExitMock: jest.SpyInstance;
         let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
 
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
-
-            vol.fromNestedJSON({
+            const volFileStructure = {
                 'fakepath': {
                     'test.csv': 'fakevalue',
-                },
-                'util/measures/2023/': {
-                    'quality-strata.csv': qualityStrata,
-                    'qcdr-strata.csv': qcdrStrata,
                 }
-            });
+            };
+            volFileStructure[`util/measures/${performanceYear}/`] = {
+                'quality-strata.csv': qualityStrata,
+                'qcdr-strata.csv': qcdrStrata,
+            };
+
+            vol.fromNestedJSON(volFileStructure);
             updateSpy = jest.spyOn(UpdateMeasuresUtil, 'updateMeasure');
             addSpy = jest.spyOn(UpdateMeasuresUtil, 'addMeasure');
             deleteSpy = jest.spyOn(UpdateMeasuresUtil, 'deleteMeasure');
-            processExitMock = jest.spyOn(process, 'exit').mockImplementation();
+            jest.spyOn(process, 'exit').mockImplementation();
             jest.spyOn(UpdateMeasuresUtil, 'updateChangeLog').mockImplementation(jest.fn());
 
         });
@@ -161,13 +163,13 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds IA measure', () => {
@@ -177,7 +179,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -197,13 +199,13 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds PI measure', () => {
@@ -213,7 +215,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -229,7 +231,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -249,13 +251,13 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds QCDR measure', () => {
@@ -265,7 +267,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -282,7 +284,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -303,7 +305,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
@@ -315,7 +317,7 @@ describe('#update-measures-util', () => {
             expect(warningSpy).toBeCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
             expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
-            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
@@ -330,7 +332,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -351,7 +353,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -372,7 +374,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -393,7 +395,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -415,7 +417,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -428,7 +430,7 @@ describe('#update-measures-util', () => {
 
             jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
                 measureId: '005',
-                yearRemoved: 2023,
+                yearRemoved: performanceYear,
                 category: 'quality',
             }]);
 
@@ -436,12 +438,12 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
             expect(deleteSpy).toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('logs any validation errors for bad fields', () => {
@@ -456,7 +458,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -485,7 +487,7 @@ describe('#update-measures-util', () => {
             UpdateMeasuresUtil.updateMeasuresWithChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -537,11 +539,11 @@ describe('#update-measures-util', () => {
         });
 
         it('should delete the measure if found', () => {
-            vol.fromNestedJSON({
-                './util/measures/2023': {
-                    'quality-strata.csv': fs.readFileSync(path.join(appRoot + '', `util/measures/2023/quality-strata.csv`), 'utf8'),
-                },
-            });
+            const volFileStructure = {};
+            volFileStructure[`./util/measures/${performanceYear}`] = {
+                'quality-strata.csv': fs.readFileSync(path.join(appRoot + '', `util/measures/${performanceYear}/quality-strata.csv`), 'utf8'),
+            };
+            vol.fromNestedJSON(volFileStructure);
             const infoSpy = jest.spyOn(logger, 'info');
 
             UpdateMeasuresUtil.deleteMeasure('001', 'quality', volatileMeasures);
@@ -578,7 +580,7 @@ describe('#update-measures-util', () => {
 
             expect(_.find(volatileMeasures, { measureId: '001' })).toEqual(expect.objectContaining({
                 title: 'Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)',
-                eMeasureId: 'CMS122v11',
+                eMeasureId: 'CMS122v10',
                 nqfEMeasureId: null,
                 nqfId: '0059',
                 measureId: '001',
@@ -600,8 +602,7 @@ describe('#update-measures-util', () => {
                 allowedPrograms: [
                     'mips',
                     'pcf',
-                    'app1',
-                    'M0002',
+                    'app1'
                 ],
                 submissionMethods: [
                     'claims',
@@ -614,14 +615,8 @@ describe('#update-measures-util', () => {
                     'familyMedicine',
                     'internalMedicine',
                     'nephrology',
-                    'nutritionDietician',
                     'preventiveMedicine'
-                ],
-                measureSpecification: {
-                    claims: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2023_Measure_001_MedicarePartBClaims.pdf',
-                    electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
-                    registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
-                }
+                ]
             }));
         });
     });

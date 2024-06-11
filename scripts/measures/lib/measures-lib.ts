@@ -125,14 +125,14 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
 
     const index = findFinalInCategory(change.category, measuresJson);
     switch (change.category) {
-        case 'ia':
+        case 'ia': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...IA_DEFAULT_VALUES,
                 ...change,
             }));
             break;
-
-        case 'pi':
+        }
+        case 'pi': {
             const preprod = populatePreProdArray(change, measuresJson);
             measuresJson.splice(index + 1, 0, orderFields({
                 ...PI_DEFAULT_VALUES,
@@ -140,8 +140,8 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 preprod
             }));
             break;
-
-        case 'cost':
+        }
+        case 'cost': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...COST_DEFAULT_VALUES,
                 ...change,
@@ -149,8 +149,8 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 allowedPrograms: COST_DEFAULT_PROGRAMS,
             }));
             break;
-
-        case 'quality':
+        }
+        case 'quality': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
@@ -158,8 +158,8 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
             }));
             break;
-
-        case 'qcdr':
+        }
+        case 'qcdr': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
                 ...change,
@@ -168,6 +168,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
             }));
             break;
+        }
     }
     info(`New measure '${change.measureId}' added.`);
 }
