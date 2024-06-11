@@ -42,7 +42,7 @@ parseOfficeAsync(pptPath, config).then((data) => {
 
 
   // get measures json data for processing
-  const measuresJson: {}[] = JSON.parse(
+  const measuresJson: object[] = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', measuresPath), 'utf8')
   );
 
@@ -59,11 +59,11 @@ parseOfficeAsync(pptPath, config).then((data) => {
   })
 
   // reduce the measures json to filter the only ones that are needed
-  const filteredMeasures: {}[] = measuresJson.filter(measure => [...clinicalMeasuresList, ...specialtyMeasuresList].includes(measure["measureId"]));
+  const filteredMeasures: object[] = measuresJson.filter(measure => [...clinicalMeasuresList, ...specialtyMeasuresList].includes(measure["measureId"]));
 
   // format data into to the structure json2csv accepts
-  const clinicalClaimsData: {}[] = [];
-  const clinicalRegistryData: {}[] = [];
+  const clinicalClaimsData: object[] = [];
+  const clinicalRegistryData: object[] = [];
   Object.keys(clinicalMeasures).map(clinicalTopic => {
     Object.keys(clinicalMeasures[clinicalTopic]).forEach(measureId => {
       const measure = filteredMeasures.find(measure => measure["measureId"] == measureId) || {};
@@ -83,7 +83,7 @@ parseOfficeAsync(pptPath, config).then((data) => {
 // extract measures data from each line
 function extractMeasures(inlineData: string[]) {
   let clinicalTopic = "";
-  const measuresOnly: {}[] = [];
+  const measuresOnly: object[] = [];
   inlineData.forEach((data, index) => {
     // if its measure entry - `123: desc` or `not applicable`
     if (checkMeasure(data)) {

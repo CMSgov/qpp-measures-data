@@ -28,7 +28,7 @@ describe('validation.business', () => {
     let volatileMeasures: any[];
     let volatileBenchmarks: any[];
     let volatileBenchmarksCahps: any[];
-    let logSpy: any, warningSpy: any;
+    let logSpy: jest.SpyInstance;
 
     const mockFileSystemResponse = (measures: any[], benchmarks: any[], benchmarksCahps: any[]) => {
         vol.fromNestedJSON({
@@ -67,7 +67,7 @@ describe('validation.business', () => {
         volatileBenchmarksCahps = [...benchmarksCahpsJson];
         
         logSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
-        warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+        jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
 
         mockFileSystemResponse(volatileMeasures, volatileBenchmarks, volatileBenchmarksCahps);
     });

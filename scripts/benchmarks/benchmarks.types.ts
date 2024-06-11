@@ -236,7 +236,7 @@ export type QualityMeasure = BaseMeasure & {
   isRiskAdjusted?: boolean;
   isIcdImpacted: boolean;
   icdImpacted?: Method;
-  historic_benchmarks?: Object;
+  historic_benchmarks?: any;
 }
 
 export type PerformanceStrata = {

@@ -60,7 +60,7 @@ export function convertCsvToJson(csvPath: string, performanceYear: number, jsonF
         
         //populate some default values if they are not found in the csv.
         benchmark.isToppedOutByProgram = benchmark.isToppedOutByProgram || false;
-        benchmark.averagePerformanceRate = benchmark.averagePerformanceRate
+        benchmark.averagePerformanceRate = (benchmark.averagePerformanceRate != null)
             ? +benchmark.averagePerformanceRate
             : null;
 

@@ -1,8 +1,7 @@
-import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import { vol } from "memfs";
+import { NestedDirectoryJSON, vol } from "memfs";
 
 import * as Lib from '../lib/measures-lib';
 import * as logger from '../../logger'
@@ -11,6 +10,8 @@ import * as csvConverter from '../lib/csv-json-converter';
 import { MeasuresChange } from '../lib/validate-change-requests';
 
 jest.mock('fs-extra');
+
+const performanceYear = 2023;
 
 const allowedIaChange = {
     title: 'Use of telehealth services that expand practice access',
@@ -114,17 +115,18 @@ const newQualityMeasure = {
 };
 
 const measuresJson: any[] = JSON.parse(
-    fs.readFileSync(path.join(appRoot + '', 'measures/2023/measures-data.json'), 'utf8')
+    fs.readFileSync(path.join(appRoot + '', `measures/${performanceYear}/measures-data.json`), 'utf8')
 );
 
-const qualityStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/quality-strata.csv`), 'utf8');
-const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/2023/qcdr-strata.csv`), 'utf8');
+const qualityStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${performanceYear}/quality-strata.csv`), 'utf8');
+const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${performanceYear}/qcdr-strata.csv`), 'utf8');
 
 describe('update-measures', () => {
     describe('updateMeasures', () => {
         let volatileMeasures: any;
         let updateFileSpy: jest.SpyInstance, writeFileSpy: jest.SpyInstance;
         let logSpy: any, warningSpy: any;
+        let volFileStructure: NestedDirectoryJSON;
 
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
@@ -133,6 +135,11 @@ describe('update-measures', () => {
             writeFileSpy = jest.spyOn(Lib, 'writeToFile').mockImplementation(jest.fn());
             logSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
             warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+
+            volFileStructure = {};
+            volFileStructure[`measures/${performanceYear}`] = {
+                'measures-data.json': JSON.stringify(volatileMeasures),
+            };
         });
 
         afterEach(() => {
@@ -141,20 +148,16 @@ describe('update-measures', () => {
         });
 
         it('finds the new files and attempts to update the measures data', () => {
-            vol.fromNestedJSON({
-                'measures/2023': {
-                    'measures-data.json': JSON.stringify(volatileMeasures),
-                },
-                'updates/measures/2023': {
-                    'changes.meta.json': '["test1.csv", "test2.csv"]',
-                    'test1.csv': "fakedata",
-                    'test2.csv': "fakedata",
-                    'test3.csv': "fakedata",
-                    'test4.csv': "fakedata",
-                },
-            });
+            volFileStructure[`updates/measures/${performanceYear}`] = {
+                'changes.meta.json': '["test1.csv", "test2.csv"]',
+                'test1.csv': "fakedata",
+                'test2.csv': "fakedata",
+                'test3.csv': "fakedata",
+                'test4.csv': "fakedata",
+            };
+            vol.fromNestedJSON(volFileStructure);
 
-            UpdateScript.updateMeasures('2023');
+            UpdateScript.updateMeasures(`${performanceYear}`);
 
             expect(updateFileSpy).toBeCalledTimes(2);
             expect(writeFileSpy).toBeCalledTimes(1);
@@ -162,18 +165,14 @@ describe('update-measures', () => {
         });
 
         it('does nothing and logs if no new files are found', () => {
-            vol.fromNestedJSON({
-                'measures/2023': {
-                    'measures-data.json': JSON.stringify(volatileMeasures),
-                },
-                'updates/measures/2023': {
-                    'changes.meta.json': '["test1.csv", "test2.csv"]',
-                    'test1.csv': "fakedata",
-                    'test2.csv': "fakedata",
-                },
-            });
+            volFileStructure[`updates/measures/${performanceYear}`] = {
+                'changes.meta.json': '["test1.csv", "test2.csv"]',
+                'test1.csv': "fakedata",
+                'test2.csv': "fakedata",
+            };
+            vol.fromNestedJSON(volFileStructure);
 
-            UpdateScript.updateMeasures('2023');
+            UpdateScript.updateMeasures(`${performanceYear}`);
 
             expect(updateFileSpy).not.toBeCalled();
             expect(writeFileSpy).not.toBeCalled();
@@ -181,16 +180,12 @@ describe('update-measures', () => {
         });
 
         it('handles an empty change file', () => {
-            vol.fromNestedJSON({
-                'measures/2023': {
-                    'measures-data.json': JSON.stringify(volatileMeasures),
-                },
-                'updates/measures/2023': {
-                    'changes.meta.json': '[]',
-                },
-            });
+            volFileStructure[`updates/measures/${performanceYear}`] = {
+                'changes.meta.json': '[]',
+            };
+            vol.fromNestedJSON(volFileStructure);
 
-            UpdateScript.updateMeasures('2023');
+            UpdateScript.updateMeasures(`${performanceYear}`);
 
             expect(updateFileSpy).not.toBeCalled();
             expect(writeFileSpy).not.toBeCalled();
@@ -200,36 +195,35 @@ describe('update-measures', () => {
 
     describe('ingestChangeFile', () => {
         let volatileMeasures: any;
-        let processExitMock: jest.SpyInstance;
         let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
 
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
-
-            vol.fromNestedJSON({
+            const volFileStructure = {
                 'fakepath': {
                     'test.csv': 'fakevalue',
-                },
-                'util/measures/2023/': {
-                    'quality-strata.csv': qualityStrata,
-                    'qcdr-strata.csv': qcdrStrata,
                 }
-            });
+            };
+            volFileStructure[`util/measures/${performanceYear}/`] = {
+                'quality-strata.csv': qualityStrata,
+                'qcdr-strata.csv': qcdrStrata,
+            };
+
+            vol.fromNestedJSON(volFileStructure);
             updateSpy = jest.spyOn(Lib, 'updateMeasure');
             addSpy = jest.spyOn(Lib, 'addMeasure');
             deleteSpy = jest.spyOn(Lib, 'deleteMeasure');
-            processExitMock = jest.spyOn(process, 'exit').mockImplementation();
+            jest.spyOn(process, 'exit').mockImplementation();
             jest.spyOn(Lib, 'updateChangeLog').mockImplementation(jest.fn());
 
         });
 
         afterEach(() => {
-            
+            vol.reset();
             jest.restoreAllMocks();
         });
 
         it('successfully updates IA measure', () => {
-
             jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
                 ...allowedIaChange,
                 category: 'ia',
@@ -239,13 +233,13 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds IA measure', () => {
@@ -255,7 +249,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -275,13 +269,13 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds PI measure', () => {
@@ -291,7 +285,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -307,7 +301,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -327,13 +321,13 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
             expect(addSpy).not.toBeCalled();
             expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds QCDR measure', () => {
@@ -343,7 +337,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -360,7 +354,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -381,7 +375,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).toBeCalled();
@@ -393,7 +387,7 @@ describe('update-measures', () => {
             expect(warningSpy).toBeCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
             expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
-            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
@@ -408,7 +402,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -429,7 +423,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -450,7 +444,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -471,7 +465,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -493,7 +487,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -506,7 +500,7 @@ describe('update-measures', () => {
 
             jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
                 measureId: '005',
-                yearRemoved: 2023,
+                yearRemoved: performanceYear,
                 category: 'quality',
             }]);
 
@@ -514,12 +508,12 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
             expect(deleteSpy).toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data 2023`);
+            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('logs any validation errors for bad fields', () => {
@@ -534,7 +528,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
@@ -563,7 +557,7 @@ describe('update-measures', () => {
             UpdateScript.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
-                '2023',
+                `${performanceYear}`,
                 volatileMeasures,
             );
             expect(updateSpy).not.toBeCalled();
