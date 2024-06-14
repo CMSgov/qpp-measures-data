@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';

@@ -31,10 +31,15 @@ else
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/measures-json-to-csv
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/update-mvp
 
-  echo -e "Cloning yearly scripts..."
+  echo -e "Cloning yearly scripts and test files..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
-  cp -r scripts/mvp/$previousPerformanceYear scripts/mvp/$newPerformanceYear
+  cp -r test/measures/$previousPerformanceYear test/measures/$newPerformanceYear
 
+  echo -e "Updating the performanceYear for the spec files..."
+  for filename in scripts/measures/$newPerformanceYear/*.spec.ts; do
+      sed -i '' -e "s/performanceYear = $previousPerformanceYear/performanceYear = $newPerformanceYear/" $filename
+  done
+  
   echo -e "Creating updates directory and initializing changes.meta.json as an empty array..."
   mkdir updates/measures/$newPerformanceYear
   echo "[]" > updates/measures/$newPerformanceYear/changes.meta.json

@@ -17,7 +17,7 @@ function readStagingJSONFile(fileName: string, performanceYear: number) {
 }
 
 export function benchmarkBusinessValidation(jsonName: string, performanceYear: number) {
-  let errors: Error[] = [];
+  const errors: Error[] = [];
   let indexedBenchmarks: BenchmarkList;
 
   indexedBenchmarks = readStagingJSONFile(jsonName, performanceYear);

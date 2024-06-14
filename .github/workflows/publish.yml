@@ -36,41 +36,41 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # - name: Update version in package.json and package-lock.json
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
-      #   run: |
-      #     VERSION=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version || github.event.release.tag_name }}
-      #     echo "Updating version to $VERSION"
+      - name: Update version in package.json and package-lock.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+        run: |
+          VERSION=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version || github.event.release.tag_name }}
+          echo "Updating version to $VERSION"
 
-      #     # Fail the action if VERSION isn't set
-      #     if [ -z "$VERSION" ]; then
-      #       echo "VERSION is not set. Failing the action."
-      #       exit 1
-      #     fi
+          # Fail the action if VERSION isn't set
+          if [ -z "$VERSION" ]; then
+            echo "VERSION is not set. Failing the action."
+            exit 1
+          fi
 
-      #     # Update version in package.json
-      #     jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
+          # Update version in package.json
+          jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
 
-      #     # Update version in package-lock.json
-      #     jq --arg version "$VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
+          # Update version in package-lock.json
+          jq --arg version "$VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
 
-      #     # Check if there are changes (version was actually updated)
-      #     git diff --exit-code || HAS_CHANGES=1
-      #     if [ "$HAS_CHANGES" ]; then
-      #       git config user.name "GitHub actions"
-      #       git config user.email noreply@github.com
-      #       git add package.json package-lock.json
-      #       git commit -m "Update version to $VERSION"
-      #       git push --force
-      #     else
-      #       echo "Version is already up to date."
-      #     fi
+          # Check if there are changes (version was actually updated)
+          git diff --exit-code || HAS_CHANGES=1
+          if [ "$HAS_CHANGES" ]; then
+            git config user.name "GitHub actions"
+            git config user.email noreply@github.com
+            git add package.json package-lock.json
+            git commit -m "Update version to $VERSION"
+            git push --force
+          else
+            echo "Version is already up to date."
+          fi
 
-      # - name: Publish to NPM
-      #   run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Merge develop into master
         env:
@@ -83,26 +83,26 @@ jobs:
           git merge --no-ff develop -m "Merging develop into master via GitHub Action"
           git push origin master
 
-  # notify-others:
-  #   runs-on: ubuntu-latest
-  #   needs: update-version-and-publish
-  #   strategy:
-  #     matrix:
-  #       repo:
-  #         - CMSgov/qpp-submissions-api
-  #   steps:
-  #     - name: Repository Dispatch
-  #       uses: peter-evans/repository-dispatch@v3
-  #       with:
-  #         token: ${{ secrets.GH_USER_TOKEN }}
-  #         repository: ${{ matrix.repo }}
-  #         event-type: lib-update-event
-  #         client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
-  #     - name: Notify APP Submissions API Channel
-  #       uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
-  #       env:
-  #         SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
-  #         SLACK_CHANNEL: "p-qppsf-api"
-  #         SLACK_MESSAGE: "`qpp-measures-data` has been updated to version <${{github.event.release.html_url}}|${{ github.event.release.tag_name }}>"
-  #         SLACK_TITLE: New qpp-measures-data release
-  #         SLACK_USERNAME: releaseNotify
+  notify-others:
+    runs-on: ubuntu-latest
+    needs: update-version-and-publish
+    strategy:
+      matrix:
+        repo:
+          - CMSgov/qpp-submissions-api
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GH_USER_TOKEN }}
+          repository: ${{ matrix.repo }}
+          event-type: lib-update-event
+          client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
+      - name: Notify APP Submissions API Channel
+        uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
+          SLACK_CHANNEL: "p-qppsf-api"
+          SLACK_MESSAGE: "`qpp-measures-data` has been updated to version <${{github.event.release.html_url}}|${{ github.event.release.tag_name }}>"
+          SLACK_TITLE: New qpp-measures-data release
+          SLACK_USERNAME: releaseNotify

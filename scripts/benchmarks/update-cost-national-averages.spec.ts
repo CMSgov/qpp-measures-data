@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import { convertCsvToJson } from './update-cost-national-averages';
 import * as Utils from './util';
 import { DataValidationError } from '../errors';

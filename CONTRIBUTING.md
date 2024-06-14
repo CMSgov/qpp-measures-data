@@ -90,12 +90,10 @@ Add or update `cost-national-averages.csv` to `util/benchmarks/$YEAR/` and run `
 
 ## Testing
 
-When making changes to measures-data, include tests in the tests directory and make sure existing tests still pass using:
+When making changes to measures-data, include tests in the .spec.ts files and make sure existing tests still pass using:
 
 ```
 npm test
-npx jest
-npm run jest:cov
 ```
 
 We also use Github Actions CI to run tests on every branch.
