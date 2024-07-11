@@ -17,14 +17,22 @@
  *  }
  * ]
  */
-const fs = require('fs');
-const _ = require('lodash');
-const parse = require('csv-parse/sync').parse;
+import fs from 'fs';
+import _ from 'lodash';
+import path from 'path';
+import appRoot from 'app-root-path';
+import { parse } from 'csv-parse/sync';
+
+import {
+  ClinicalCluster,
+  ClusterInfo,
+  SpecialtySetRelation,
+  ClusterRelations
+} from './clinical-cluster.types';
 
 const MAX_SPECIALITY_SET_SIZE = 6;
 const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
 
-let measuresJson = '';
 const performanceYear = parseInt(process.argv[2], 10);
 const claimsClusterFilePath = process.argv[3];
 const registryClusterFilePath = process.argv[4];
@@ -74,82 +82,82 @@ const specialSpecialtySetRelations = {
 const specialClusterRelations = {
   2017: {
     claims: [
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '117', optionals: []},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      { measureId: '130', optionals: [] },
+      { measureId: '226', optionals: [] },
+      { measureId: '317', optionals: [] },
+      { measureId: '117', optionals: [] },
+      { measureId: '112', optionals: ['113'] },
+      { measureId: '113', optionals: ['112'] }
     ],
     registry: [
-      {measureId: '047', optionals: []},
-      {measureId: '110', optionals: []},
-      {measureId: '130', optionals: []},
-      {measureId: '134', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '424', optionals: []},
-      {measureId: '430', optionals: []},
-      {measureId: '051', optionals: ['052']},
-      {measureId: '052', optionals: ['051']},
-      {measureId: '398', optionals: ['444']},
-      {measureId: '444', optionals: ['398']},
-      {measureId: '024', optionals: ['418']},
-      {measureId: '418', optionals: ['024']},
-      {measureId: '005', optionals: ['008']},
-      {measureId: '006', optionals: ['118', '007']},
-      {measureId: '007', optionals: ['118', '006']},
-      {measureId: '008', optionals: ['005']},
-      {measureId: '118', optionals: ['007', '006']},
-      {measureId: '426', optionals: ['427']},
-      {measureId: '427', optionals: ['426']},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      { measureId: '047', optionals: [] },
+      { measureId: '110', optionals: [] },
+      { measureId: '130', optionals: [] },
+      { measureId: '134', optionals: [] },
+      { measureId: '226', optionals: [] },
+      { measureId: '317', optionals: [] },
+      { measureId: '424', optionals: [] },
+      { measureId: '430', optionals: [] },
+      { measureId: '051', optionals: ['052'] },
+      { measureId: '052', optionals: ['051'] },
+      { measureId: '398', optionals: ['444'] },
+      { measureId: '444', optionals: ['398'] },
+      { measureId: '024', optionals: ['418'] },
+      { measureId: '418', optionals: ['024'] },
+      { measureId: '005', optionals: ['008'] },
+      { measureId: '006', optionals: ['118', '007'] },
+      { measureId: '007', optionals: ['118', '006'] },
+      { measureId: '008', optionals: ['005'] },
+      { measureId: '118', optionals: ['007', '006'] },
+      { measureId: '426', optionals: ['427'] },
+      { measureId: '427', optionals: ['426'] },
+      { measureId: '112', optionals: ['113'] },
+      { measureId: '113', optionals: ['112'] }
     ]
   },
   2018: {
     claims: [
-      {measureId: '130', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '117', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      { measureId: '130', optionals: [] },
+      { measureId: '317', optionals: [] },
+      { measureId: '117', optionals: [] },
+      { measureId: '226', optionals: [] },
+      { measureId: '112', optionals: ['113'] },
+      { measureId: '113', optionals: ['112'] }
     ],
     registry: [
-      {measureId: '110', optionals: []},
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '424', optionals: []},
-      {measureId: '430', optionals: []},
-      {measureId: '317', optionals: []},
-      {measureId: '134', optionals: []},
-      {measureId: '051', optionals: ['052']},
-      {measureId: '052', optionals: ['051']},
-      {measureId: '398', optionals: ['444']},
-      {measureId: '444', optionals: ['398']},
-      {measureId: '024', optionals: ['418']},
-      {measureId: '418', optionals: ['024']},
-      {measureId: '006', optionals: ['118', '007']},
-      {measureId: '007', optionals: ['118', '006']},
-      {measureId: '118', optionals: ['007', '006']},
-      {measureId: '005', optionals: ['008']},
-      {measureId: '008', optionals: ['005']},
-      {measureId: '112', optionals: ['113']},
-      {measureId: '113', optionals: ['112']}
+      { measureId: '110', optionals: [] },
+      { measureId: '130', optionals: [] },
+      { measureId: '226', optionals: [] },
+      { measureId: '424', optionals: [] },
+      { measureId: '430', optionals: [] },
+      { measureId: '317', optionals: [] },
+      { measureId: '134', optionals: [] },
+      { measureId: '051', optionals: ['052'] },
+      { measureId: '052', optionals: ['051'] },
+      { measureId: '398', optionals: ['444'] },
+      { measureId: '444', optionals: ['398'] },
+      { measureId: '024', optionals: ['418'] },
+      { measureId: '418', optionals: ['024'] },
+      { measureId: '006', optionals: ['118', '007'] },
+      { measureId: '007', optionals: ['118', '006'] },
+      { measureId: '118', optionals: ['007', '006'] },
+      { measureId: '005', optionals: ['008'] },
+      { measureId: '008', optionals: ['005'] },
+      { measureId: '112', optionals: ['113'] },
+      { measureId: '113', optionals: ['112'] }
     ]
   },
   2019: {
     claims: [
-      {measureId: '117', optionals: []},
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []},
-      {measureId: '317', optionals: []}
+      { measureId: '117', optionals: [] },
+      { measureId: '130', optionals: [] },
+      { measureId: '226', optionals: [] },
+      { measureId: '317', optionals: [] }
     ],
     registry: [
-      {measureId: '110', optionals: []},
-      {measureId: '130', optionals: []},
-      {measureId: '226', optionals: []}
+      { measureId: '110', optionals: [] },
+      { measureId: '130', optionals: [] },
+      { measureId: '226', optionals: [] }
     ]
   },
   2020: {
@@ -175,26 +183,29 @@ const specialClusterRelations = {
 };
 
 // Handle exceptions to standard populateSpecialtySet logic with manual overrides
-function curateSpecialtySet(clusterMap, relations) {
+function curateSpecialtySet(
+  clusterMap: Map<String, ClusterInfo>,
+  relations: SpecialtySetRelation[]
+) {
   if (relations) {
     relations.forEach(r => {
       if (r.action === 'remove') { // remove specialty set from output
         r.measureIds.forEach(m => {
-          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySets = clusterMap.get(m)?.specialtySets || [];
           const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
           specialtySets.splice(specialtySetIndex, 1);
         });
       } else if (r.action === 'replace') { // replace an existing specialty set with a new set of measures
         r.measureIds.forEach(m => {
-          const specialtySets = clusterMap.get(m).specialtySets;
+          const specialtySets = clusterMap.get(m)?.specialtySets || [];
           const specialtySetIndex = specialtySets.findIndex(ss => ss.name === r.name);
           specialtySets.splice(specialtySetIndex, 1);
-          specialtySets.push({name: r.name, measureIds: r.measureIds});
+          specialtySets.push({ name: r.name, measureIds: r.measureIds });
         });
       } else if (r.action === 'add') { // add a new specialty set to output
         r.measureIds.forEach(m => {
-          const specialtySets = clusterMap.get(m).specialtySets;
-          specialtySets.push({name: r.name, measureIds: r.measureIds});
+          const specialtySets = clusterMap.get(m)?.specialtySets || [];
+          specialtySets.push({ name: r.name, measureIds: r.measureIds });
         });
       }
     });
@@ -202,18 +213,22 @@ function curateSpecialtySet(clusterMap, relations) {
 }
 
 // Handle exceptions to standard populateClinicalClusters logic with manual overrides
-function curateClinicalClusters(clusterMap, relations) {
+function curateClinicalClusters(
+  clusterMap: Map<String, ClusterInfo>,
+  relations: ClusterRelations[]
+) {
   // remove clinicalClusters from measures that belongs to multiple cluster
   relations
     .filter(r => r.optionals.length === 0)
-    .forEach(r => delete clusterMap.get(r.measureId).clinicalClusters);
+    .forEach(r => delete clusterMap.get(r.measureId)?.clinicalClusters || []);
 
   // remove measures in clinicalClusters that are optional
   relations
     .filter(r => r.optionals.length > 0)
     .forEach(r => {
-      clusterMap.get(r.measureId).clinicalClusters
-        .forEach(c => {
+      clusterMap.get(r.measureId)
+        ?.clinicalClusters
+        ?.forEach(c => {
           c.measureIds = c.measureIds.filter(measureId => r.optionals.indexOf(measureId) < 0);
         });
     });
@@ -224,15 +239,20 @@ function curateClinicalClusters(clusterMap, relations) {
     .forEach(cluster => clusterMap.delete(cluster.measureId));
 }
 
-function populateClinicalClusters(clusterMap, measures, submissionMethod, filePath) {
-  const contents = fs.readFileSync(filePath, 'utf8');
-  const rows = parse(contents, {columns: true});
+function populateClinicalClusters(
+  clusterMap: Map<String, ClusterInfo>,
+  measures: any[],
+  submissionMethod: string,
+  filePath: string
+) {
+  const contents = fs.readFileSync(path.join(appRoot + '', `${filePath}`), 'utf8');
+  const rows = parse(contents, { columns: true });
 
   // group the measures by cluster
   const byClusterName = _.chain(rows)
-    .map(r => ({clusterName: _.camelCase(r['Title']), measureId: _.padStart(r['Quality ID'], 3, '0')}))
+    .map(r => ({ clusterName: _.camelCase(r['Title']), measureId: _.padStart(r['Quality ID'], 3, '0') }))
     .groupBy('clusterName')
-    .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
+    .map((val, key) => ({ name: key, measureIds: val.map(m => m.measureId) }))
     .value();
   // read the grouped measures and populate the cluster name
   byClusterName.forEach(clinicalCluster => {
@@ -251,14 +271,18 @@ function populateClinicalClusters(clusterMap, measures, submissionMethod, filePa
   });
 }
 
-function populateSpecialtySet(clusterMap, measures, submissionMethod) {
+function populateSpecialtySet(
+  clusterMap: Map<String, ClusterInfo>,
+  measures: any[],
+  submissionMethod: string
+) {
   // group the measures of submissionMethod by specialty set
   const bySpecialty = _.chain(measures)
     .filter(m => m.category === 'quality')
     .filter(m => m.submissionMethods && m.submissionMethods.indexOf(submissionMethod) > -1)
-    .flatMap(m => m.measureSets.map(specialty => Object.assign({specialty: specialty}, m)))
+    .flatMap(m => m.measureSets.map(specialty => Object.assign({ specialty: specialty }, m)))
     .groupBy('specialty')
-    .map((val, key) => ({name: key, measureIds: val.map(m => m.measureId)}))
+    .map((val, key) => ({ name: key, measureIds: val.map(m => m.measureId) }))
     .value();
 
   // read the grouped measures and populate the specialty set on each
@@ -271,7 +295,7 @@ function populateSpecialtySet(clusterMap, measures, submissionMethod) {
           submissionMethod: submissionMethod,
           firstPerformanceYear: measure.firstPerformanceYear,
           lastPerformanceYear: measure.lastPerformanceYear
-        };
+        } as ClusterInfo;
         cluster['specialtySets'] = cluster['specialtySets'] || [];
         cluster.specialtySets.push(specialty);
         clusterMap.set(measureId, cluster);
@@ -280,14 +304,14 @@ function populateSpecialtySet(clusterMap, measures, submissionMethod) {
   });
 }
 
-function generateEMAClusters(allMeasures) {
+function generateEMAClusters(allMeasures: any[]) {
   const measures = allMeasures.filter(m =>
     (SUPPORTED_PERFORMANCE_YEARS.indexOf(m.firstPerformanceYear) > -1) &&
     (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
   );
 
-  const claimsClusterMap = new Map();
-  const registryClusterMap = new Map();
+  const claimsClusterMap: Map<String, ClusterInfo> = new Map();
+  const registryClusterMap: Map<String, ClusterInfo> = new Map();
 
   // set the claims and registry specialty set
   populateSpecialtySet(claimsClusterMap, measures, 'claims');
@@ -302,7 +326,7 @@ function generateEMAClusters(allMeasures) {
   curateClinicalClusters(claimsClusterMap, specialClusterRelations[performanceYear].claims);
   curateClinicalClusters(registryClusterMap, specialClusterRelations[performanceYear].registry);
 
-  const emaClusters = [];
+  const emaClusters: ClusterInfo[] = [];
 
   claimsClusterMap
     .forEach(v => emaClusters.push(v));
@@ -313,9 +337,9 @@ function generateEMAClusters(allMeasures) {
   // add the current measure to the cluster
   emaClusters.forEach(ema => {
     if (ema.clinicalClusters) {
-      const clinicalClusters = [];
+      const clinicalClusters: ClinicalCluster[] = [];
       ema.clinicalClusters.forEach(cc => {
-        const cluster = Object.assign({}, cc, {measureIds: cc.measureIds.concat([ema.measureId])});
+        const cluster = Object.assign({}, cc, { measureIds: cc.measureIds.concat([ema.measureId]) });
         clinicalClusters.push(cluster);
         cluster.measureIds = _.uniq(cluster.measureIds);
       });
@@ -323,18 +347,19 @@ function generateEMAClusters(allMeasures) {
     }
   });
 
-  // print the JSON back to the stream
-  process.stdout.write(JSON.stringify(emaClusters, null, 2));
+  // write the JSON to the clinical clusters json file
+  fs.writeFileSync(
+    path.join(
+      appRoot + '', `clinical-clusters/${performanceYear}/clinical-clusters.json`
+    ), JSON.stringify(emaClusters, null, 2)
+  );
+
+  // log result to console to maintain expected script behavior.
+  console.log(JSON.stringify(emaClusters, null, 2));
 }
 
-process.stdin.setEncoding('utf8');
-process.stdin.on('readable', () => {
-  const chunk = process.stdin.read();
-  if (chunk !== null) {
-    measuresJson += chunk;
-  }
-});
+const measuresJson = JSON.parse(
+  fs.readFileSync(`measures/${performanceYear}/measures-data.json`, 'utf8')
+);
 
-process.stdin.on('end', () => {
-  generateEMAClusters(JSON.parse(measuresJson, 'utf8'));
-});
+generateEMAClusters(measuresJson);
