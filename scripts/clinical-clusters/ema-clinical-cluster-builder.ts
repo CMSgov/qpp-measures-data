@@ -184,7 +184,7 @@ const specialClusterRelations = {
 
 // Handle exceptions to standard populateSpecialtySet logic with manual overrides
 function curateSpecialtySet(
-  clusterMap: Map<String, ClusterInfo>,
+  clusterMap: Map<string, ClusterInfo>,
   relations: SpecialtySetRelation[]
 ) {
   if (relations) {
@@ -214,7 +214,7 @@ function curateSpecialtySet(
 
 // Handle exceptions to standard populateClinicalClusters logic with manual overrides
 function curateClinicalClusters(
-  clusterMap: Map<String, ClusterInfo>,
+  clusterMap: Map<string, ClusterInfo>,
   relations: ClusterRelations[]
 ) {
   // remove clinicalClusters from measures that belongs to multiple cluster
@@ -240,7 +240,7 @@ function curateClinicalClusters(
 }
 
 function populateClinicalClusters(
-  clusterMap: Map<String, ClusterInfo>,
+  clusterMap: Map<string, ClusterInfo>,
   measures: any[],
   submissionMethod: string,
   filePath: string
@@ -272,7 +272,7 @@ function populateClinicalClusters(
 }
 
 function populateSpecialtySet(
-  clusterMap: Map<String, ClusterInfo>,
+  clusterMap: Map<string, ClusterInfo>,
   measures: any[],
   submissionMethod: string
 ) {
@@ -310,8 +310,8 @@ function generateEMAClusters(allMeasures: any[]) {
     (m.lastPerformanceYear == null || SUPPORTED_PERFORMANCE_YEARS.indexOf(m.lastPerformanceYear) > -1)
   );
 
-  const claimsClusterMap: Map<String, ClusterInfo> = new Map();
-  const registryClusterMap: Map<String, ClusterInfo> = new Map();
+  const claimsClusterMap: Map<string, ClusterInfo> = new Map();
+  const registryClusterMap: Map<string, ClusterInfo> = new Map();
 
   // set the claims and registry specialty set
   populateSpecialtySet(claimsClusterMap, measures, 'claims');
