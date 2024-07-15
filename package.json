@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v7.5.1",
+  "version": "v7.6.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -8,8 +8,8 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=20.11.1",
-    "npm": ">=9.5"
+    "node": ">=20.15",
+    "npm": ">=10.7"
   },
   "scripts": {
     "test": "npm run jest:cov",
@@ -63,7 +63,7 @@
     "papaparse": "^5.4.1",
     "pre-commit": "^1.2.2",
     "xregexp": "^5.1.1",
-    "yaml": "^2.4.2"
+    "yaml": "^2.4.3"
   },
   "pre-commit": [
     "pre-commit"
