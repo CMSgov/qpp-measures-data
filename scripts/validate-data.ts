@@ -17,13 +17,14 @@ import fs from 'fs';
 
 import Constants from '../constants';
 import { ValidateLib } from './validate-lib';
+import { AnySchemaObject } from 'ajv';
 
 const schemaType = process.argv[2];
 const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
 const jsonToValidate = fs.readFileSync(path.join(appRoot + '', process.argv[4]), 'utf8');
 const optionalPath = process.argv[5];
 
-function validate(schema: any, json: any) {
+function validate(schema: AnySchemaObject, json: any) {
   const data = JSON.parse(json);
 
   const {valid, errors, details} = ValidateLib.validate(schema, data);

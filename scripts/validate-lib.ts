@@ -16,20 +16,20 @@ ajvKeywords(ajv, 'uniqueItemProperties');
  * https://github.com/ajv-validator/ajv-merge-patch/tree/master
  * Due to a security vulnerability in the original package, we've integrated these functionalities directly.
  */
-function addKeyword(ajv: Ajv, keyword: string, jsonPatch: Function, patchSchema: any) {
+function addKeyword(ajv: Ajv, keyword: string, jsonPatch: any, patchSchema: { type: string, items?: any }) {
   ajv.addKeyword({
     keyword: keyword,
-    macro: function (schema: any, parentSchema: AnySchemaObject, it: SchemaCxt) {
-      var source = schema.source;
-      var patch = schema.with;
+    macro: function (schema: AnySchemaObject, parentSchema: AnySchemaObject, it: SchemaCxt) {
+      let source = schema.source;
+      let patch = schema.with;
       if (source.$ref) source = JSON.parse(JSON.stringify(getSchema(source.$ref, it)));
       if (patch.$ref) patch = getSchema(patch.$ref, it);
       jsonPatch.call(null, source, patch, true);
       return source;
 
       function getSchema($ref: string, it: SchemaCxt) {
-        var id = it.baseId && it.baseId !== '#' ? URI.resolve(it.baseId, $ref) : $ref;
-        var validate = ajv.getSchema(id);
+        const id = it.baseId && it.baseId !== '#' ? URI.resolve(it.baseId, $ref) : $ref;
+        const validate = ajv.getSchema(id);
         if (validate) return validate.schema;
         throw new MissingRefError(URI, it.baseId, $ref);
       }
@@ -89,7 +89,7 @@ addKeyword(ajv, '$patch', jsonPatch.applyPatch, {
 });
 
 export const ValidateLib = {
-  validate: function (schema: any, data: any) {
+  validate: function (schema: AnySchemaObject, data: any) {
     const valid = ajv.validate(schema, data);
 
     return {
