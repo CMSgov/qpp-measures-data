@@ -16,12 +16,12 @@ import YAML from 'yaml';
 import fs from 'fs';
 
 import Constants from '../constants';
-import { ValidateLib } from './validate-json-data/validate-json-data-lib';
+import { ValidateLib } from './validate-lib';
 
 const schemaType = process.argv[2];
 const performanceYear = (process.argv[3] || Constants.currentPerformanceYear).toString();
 const jsonToValidate = fs.readFileSync(path.join(appRoot + '', process.argv[4]), 'utf8');
-const optionalPath = process.argv[5]
+const optionalPath = process.argv[5];
 
 function validate(schema: any, json: any) {
   const data = JSON.parse(json);
