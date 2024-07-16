@@ -51,8 +51,7 @@ node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
 
 # 2. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json against schema"
-cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/validate-data.js measures $currentPerformanceYear
+node dist/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
 
 # 3. Validate that measures actually existed in their listed firstPerformanceYear and the years after
 echo "validating that measures actually existed in their listed firstPerformanceYear and the years after"

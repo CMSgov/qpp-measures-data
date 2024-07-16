@@ -12,4 +12,4 @@ node dist/clinical-clusters/ema-clinical-cluster-builder.js $currentPerformanceY
 # validate EMA clusters
 echo ""
 echo "Validating clinical-clusters.json produced: "
-cat clinical-clusters/$currentPerformanceYear/clinical-clusters.json | node scripts/validate-data.js clinical-clusters $currentPerformanceYear
+node dist/validate-data.js clinical-clusters $currentPerformanceYear clinical-clusters/$currentPerformanceYear/clinical-clusters.json
