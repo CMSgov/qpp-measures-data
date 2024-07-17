@@ -49,7 +49,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
       
       # validate the JSON files
       echo -e "Validating new $FILE.json"
-      cat benchmarks/$currentPerformanceYear/${BASH_REMATCH[2]}.json | node scripts/validate-data.js ${BASH_REMATCH[2]} $currentPerformanceYear benchmarks
+      node dist/validate-data.js ${BASH_REMATCH[2]} $currentPerformanceYear benchmarks/$currentPerformanceYear/${BASH_REMATCH[2]}.json benchmarks
       
       exitOnFailure
     fi
@@ -64,7 +64,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   # Validate benchmarks.
   echo -e "Validating new benchmarks JSON."
-  cat benchmarks/$currentPerformanceYear.json | node scripts/validate-data.js benchmarks $currentPerformanceYear
+  node dist/validate-data.js benchmarks $currentPerformanceYear benchmarks/$currentPerformanceYear.json
   exitOnFailure
   
   echo -e "${Green}\n${bold}Update complete."

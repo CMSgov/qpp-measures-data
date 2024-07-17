@@ -58,8 +58,7 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
     exitOnFailure
 
     echo -e "Validating new measures-data.json..."
-    cat measures/$currentPerformanceYear/measures-data.json | \
-      node scripts/validate-data.js measures $currentPerformanceYear
+    node dist/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
     exitOnFailure
 
     # mvps don't exist prior to PY2023.
