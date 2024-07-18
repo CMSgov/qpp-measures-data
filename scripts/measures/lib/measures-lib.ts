@@ -85,10 +85,13 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
         if (measuresJson[i].measureId == change.measureId) {
             // check if new exclusions and substitutes exist.
             if (change.substitutes) {
-                checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute');
+                existanceCheckForMeasureArray(change.substitutes, change.measureId, measuresJson, 'Substitute');
             }
             if (change.exclusion) {
-                checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion');
+                existanceCheckForMeasureArray(change.exclusion, change.measureId, measuresJson, 'Exclusion');
+            }
+            if (change.companionMeasureId) {
+                existanceCheckForMeasureArray(change.companionMeasureId, change.measureId, measuresJson, 'companionMeasureId');
             }
 
             measuresJson[i] = {
@@ -117,10 +120,10 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
 export function addMeasure(change: MeasuresChange, measuresJson: any) {
     // check if new exclusions and substitutes exist.
     if (change.substitutes) {
-        checkNewExclusionAndSubstitutes(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
+        existanceCheckForMeasureArray(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
     }
     if (change.exclusion) {
-        checkNewExclusionAndSubstitutes(change.exclusion, change.measureId, measuresJson, 'Exclusion', true);
+        existanceCheckForMeasureArray(change.exclusion, change.measureId, measuresJson, 'Exclusion', true);
     }
 
     const index = findFinalInCategory(change.category, measuresJson);
@@ -156,6 +159,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 ...change,
                 isRegistryMeasure: false,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
+                companionMeasureId: [],
             }));
             break;
         }
@@ -349,11 +353,11 @@ function removeStrata(measureId: string, strata: any): any {
 }
 
 /**
- * Checks if measureIds in the exclusion and substitutes arrays of the modified measure exist
+ * Checks if measureIds in the measureId array of the modified measure exist
  * as measures in the measures json files. If not, raises a warning if the measure is being updated
  * and throws an error if the measure is being added.
  */
-function checkNewExclusionAndSubstitutes(
+function existanceCheckForMeasureArray(
     measureIds: string[],
     measureId: string,
     measuresJson: any,
