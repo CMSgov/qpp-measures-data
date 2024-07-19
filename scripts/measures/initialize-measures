@@ -34,6 +34,7 @@ else
   echo -e "Cloning yearly scripts and test files..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
   cp -r test/measures/$previousPerformanceYear test/measures/$newPerformanceYear
+  cp -r scripts/mvp/$previousPerformanceYear scripts/mvp/$newPerformanceYear
 
   echo -e "Updating the performanceYear for the spec files..."
   for filename in scripts/measures/$newPerformanceYear/*.spec.ts; do
