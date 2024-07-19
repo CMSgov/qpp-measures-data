@@ -227,6 +227,10 @@ definitions:
             patternProperties:
               "":
                 enum: [removed, flat]
+          companionMeasureId:
+            default: []
+            description: List of measureIds to establish a link between the base and Medicare CQM measures.
+            oneOf: [{ $ref: '#/definitions/arrayOfStringIdentifiers' }]  
 
         # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
         # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
