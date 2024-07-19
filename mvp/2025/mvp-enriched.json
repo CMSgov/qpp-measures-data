@@ -13,7 +13,7 @@
     "qualityMeasures": [
       {
         "title": "Documentation of Current Medications in the Medical Record",
-        "eMeasureId": "CMS68v13",
+        "eMeasureId": "CMS68v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
@@ -82,10 +82,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_130_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0068v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0b4977140ad5",
         "strata": [
           {
@@ -101,7 +98,7 @@
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -160,11 +157,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -216,9 +209,7 @@
           "internalMedicine",
           "rheumatology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_176_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity",
@@ -253,9 +244,7 @@
         "measureSets": [
           "rheumatology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_177_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Rheumatoid Arthritis (RA): Functional Status Assessment",
@@ -291,9 +280,7 @@
           "orthopedicSurgery",
           "rheumatology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_178_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Rheumatoid Arthritis (RA): Glucocorticoid Management",
@@ -329,9 +316,7 @@
           "orthopedicSurgery",
           "rheumatology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_180_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -420,9 +405,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Immunization Status",
@@ -475,9 +458,7 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_493_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -552,9 +533,7 @@
           "rheumatology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_503_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -1040,9 +1019,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -1071,9 +1048,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -1114,9 +1089,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -1237,9 +1210,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -1283,9 +1254,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -1330,9 +1299,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -1375,9 +1342,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -1649,9 +1614,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -1690,9 +1653,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -1942,9 +1903,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -2064,9 +2023,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -2316,9 +2273,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -2438,9 +2393,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -2560,9 +2513,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -2601,9 +2552,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -2811,10 +2760,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Stroke and Stroke Rehabilitation: Thrombolytic Therapy",
@@ -2851,13 +2797,11 @@
           "emergencyMedicine",
           "neurosurgical"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_187_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Controlling High Blood Pressure",
-        "eMeasureId": "CMS165v12",
+        "eMeasureId": "CMS165v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "236",
@@ -2904,11 +2848,7 @@
           "rheumatology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_236_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_236_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0165v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928085-806c-39a2-0180-7092fa9b0145",
         "strata": [
           {
@@ -2959,9 +2899,7 @@
           "internalMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_326_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -2998,9 +2936,7 @@
           "neurosurgical",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_344_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Clinical Outcome Post Endovascular Stroke Treatment",
@@ -3036,9 +2972,7 @@
           "interventionalRadiology",
           "neurosurgical"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_409_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "split",
         "strata": [
           {
@@ -3085,13 +3019,11 @@
           "interventionalRadiology",
           "neurosurgical"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_413_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
-        "eMeasureId": "CMS347v7",
+        "eMeasureId": "CMS347v8",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "438",
@@ -3130,14 +3062,7 @@
           "internalMedicine",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_438_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0347v7"
-        },
-        "historic_benchmarks": {
-          "registry": "removed",
-          "electronicHealthRecord": "removed"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc688be40080",
         "strata": [
           {
@@ -3219,9 +3144,7 @@
           "internalMedicine",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_441_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -3310,9 +3233,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "iaMeasures": [
@@ -3623,9 +3544,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-ich-cva.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -3647,9 +3566,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -3690,9 +3607,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -3813,9 +3728,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -3859,9 +3772,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -3906,9 +3817,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -3951,9 +3860,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -4225,9 +4132,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -4266,9 +4171,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -4518,9 +4421,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -4640,9 +4541,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -4892,9 +4791,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -5014,9 +4911,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -5136,9 +5031,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -5177,9 +5070,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -5326,7 +5217,7 @@
     "qualityMeasures": [
       {
         "title": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) or Angiotensin Receptor-Neprilysin Inhibitor (ARNI) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
-        "eMeasureId": "CMS135v12",
+        "eMeasureId": "CMS135v13",
         "nqfEMeasureId": "0081e",
         "nqfId": "0081",
         "measureId": "005",
@@ -5361,10 +5252,7 @@
           "hospitalists",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_005_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0135v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0186-ec6666280586",
         "strata": [
           {
@@ -5416,13 +5304,11 @@
           "internalMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_006_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy – Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
-        "eMeasureId": "CMS145v12",
+        "eMeasureId": "CMS145v13",
         "nqfEMeasureId": "0070e",
         "nqfId": "0070",
         "measureId": "007",
@@ -5457,10 +5343,7 @@
           "internalMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_007_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0145v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-622192411e05",
         "strata": [
           {
@@ -5485,7 +5368,7 @@
       },
       {
         "title": "Heart Failure (HF): Beta-Blocker Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
-        "eMeasureId": "CMS144v12",
+        "eMeasureId": "CMS144v13",
         "nqfEMeasureId": "0083e",
         "nqfId": "0083",
         "measureId": "008",
@@ -5521,10 +5404,7 @@
           "internalMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_008_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0144v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-65e9c0061ec1",
         "strata": [
           {
@@ -5602,10 +5482,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
@@ -5643,13 +5520,11 @@
           "endocrinology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_118_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
-        "eMeasureId": "CMS69v12",
+        "eMeasureId": "CMS69v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "128",
@@ -5681,11 +5556,7 @@
           "registry"
         ],
         "measureSets": [],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0069v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc6968e30090",
         "strata": [
           {
@@ -5702,7 +5573,7 @@
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -5761,11 +5632,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -5782,7 +5649,7 @@
       },
       {
         "title": "Use of High-Risk Medications in Older Adults",
-        "eMeasureId": "CMS156v12",
+        "eMeasureId": "CMS156v13",
         "nqfEMeasureId": null,
         "nqfId": "0022",
         "measureId": "238",
@@ -5826,10 +5693,7 @@
           "skilledNursingFacility",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_238_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0156v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -5901,9 +5765,7 @@
           "internalMedicine",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_243_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Atrial Fibrillation and Atrial Flutter: Chronic Anticoagulation Therapy",
@@ -5942,13 +5804,11 @@
           "internalMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_326_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Assessments for Heart Failure",
-        "eMeasureId": "CMS90v13",
+        "eMeasureId": "CMS90v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "377",
@@ -5980,9 +5840,7 @@
           "familyMedicine",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0090v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-8389-524e-0183-c80f9e480dff",
         "strata": [
           {
@@ -6029,9 +5887,7 @@
         "measureSets": [
           "electrophysiologyCardiacSpecialist"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_392_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -6089,9 +5945,7 @@
         "measureSets": [
           "electrophysiologyCardiacSpecialist"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_393_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)",
@@ -6130,9 +5984,7 @@
           "internalMedicine",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_441_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -6221,9 +6073,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
@@ -6279,9 +6129,7 @@
           "rheumatology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_503_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -6619,9 +6467,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-op-pci.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -6647,9 +6493,7 @@
           "G0055",
           "M0005"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-heart-fail.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "category": "cost",
@@ -6664,9 +6508,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-stemi-pci.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -6686,9 +6528,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -6714,9 +6554,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -6745,9 +6583,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -6788,9 +6624,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -6911,9 +6745,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -6957,9 +6789,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -7004,9 +6834,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -7049,9 +6877,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -7323,9 +7149,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -7364,9 +7188,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -7616,9 +7438,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -7738,9 +7558,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -7990,9 +7808,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -8112,9 +7928,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -8234,9 +8048,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -8275,9 +8087,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -8456,7 +8266,7 @@
     "qualityMeasures": [
       {
         "title": "Appropriate Treatment for Upper Respiratory Infection (URI)",
-        "eMeasureId": "CMS154v12",
+        "eMeasureId": "CMS154v13",
         "nqfEMeasureId": null,
         "nqfId": "0069",
         "measureId": "065",
@@ -8493,10 +8303,7 @@
           "pediatrics",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_065_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0154v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-8389-524e-0183-c8d7a6700f02",
         "strata": [
           {
@@ -8553,9 +8360,7 @@
           "preventiveMedicine",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_116_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain",
@@ -8590,9 +8395,7 @@
         "measureSets": [
           "emergencyMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_254_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "CAHPS for MIPS Clinician/Group Survey",
@@ -8675,9 +8478,7 @@
           "otolaryngology",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_331_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 18 Years and Older",
@@ -8712,9 +8513,7 @@
         "measureSets": [
           "emergencyMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_415_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Emergency Medicine: Emergency Department Utilization of CT for Minor Blunt Head Trauma for Patients Aged 2 Through 17 Years",
@@ -8749,9 +8548,7 @@
         "measureSets": [
           "emergencyMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_416_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -8840,9 +8637,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "measureId": "ACEP50",
@@ -9233,9 +9028,7 @@
           "app1",
           "G0057"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-emergency.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "foundationPiMeasures": [
@@ -9252,9 +9045,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -9295,9 +9086,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -9418,9 +9207,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -9464,9 +9251,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -9511,9 +9296,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -9556,9 +9339,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -9830,9 +9611,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -9871,9 +9650,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -10123,9 +9900,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -10245,9 +10020,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -10497,9 +10270,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -10619,9 +10390,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -10741,9 +10510,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -10782,9 +10549,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -10965,14 +10730,11 @@
           "preventiveMedicine",
           "rheumatology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_024_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_024_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
-        "eMeasureId": "CMS69v12",
+        "eMeasureId": "CMS69v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "128",
@@ -11004,11 +10766,7 @@
           "registry"
         ],
         "measureSets": [],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0069v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc6968e30090",
         "strata": [
           {
@@ -11056,9 +10814,7 @@
         "measureSets": [
           "orthopedicSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_350_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Total Knee or Hip Replacement: Venous Thromboembolic and Cardiovascular Risk Evaluation",
@@ -11093,13 +10849,11 @@
         "measureSets": [
           "orthopedicSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_351_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Assessment for Total Hip Replacement",
-        "eMeasureId": "CMS56v12",
+        "eMeasureId": "CMS56v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "376",
@@ -11130,9 +10884,7 @@
         "measureSets": [
           "orthopedicSurgery"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0056v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-6bd4e33420bd",
         "strata": [
           {
@@ -11179,9 +10931,7 @@
         "measureSets": [
           "orthopedicSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_470_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -11270,9 +11020,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "iaMeasures": [
@@ -11552,9 +11300,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-knee-arthro.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -11574,9 +11320,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-el-ha.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -11598,9 +11342,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -11641,9 +11383,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -11764,9 +11504,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -11810,9 +11548,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -11857,9 +11593,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -11902,9 +11636,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -12176,9 +11908,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -12217,9 +11947,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -12469,9 +12197,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -12591,9 +12317,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -12843,9 +12567,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -12965,9 +12687,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -13087,9 +12807,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -13128,9 +12846,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -13342,9 +13058,7 @@
         "measureSets": [
           "anesthesiology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_404_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Perioperative Temperature Management",
@@ -13379,9 +13093,7 @@
         "measureSets": [
           "anesthesiology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_424_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy",
@@ -13416,9 +13128,7 @@
         "measureSets": [
           "anesthesiology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_430_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)",
@@ -13453,9 +13163,7 @@
         "measureSets": [
           "anesthesiology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_463_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Multimodal Pain Management",
@@ -13490,9 +13198,7 @@
         "measureSets": [
           "anesthesiology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_477_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -13581,9 +13287,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "measureId": "ABG44",
@@ -13984,9 +13688,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -14014,9 +13716,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -14057,9 +13757,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -14180,9 +13878,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -14226,9 +13922,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -14273,9 +13967,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -14318,9 +14010,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -14592,9 +14282,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -14633,9 +14321,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -14885,9 +14571,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -15007,9 +14691,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -15259,9 +14941,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -15381,9 +15061,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -15503,9 +15181,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -15544,9 +15220,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -15753,14 +15427,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -15819,11 +15490,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -15840,7 +15507,7 @@
       },
       {
         "title": "Oncology: Medical and Radiation - Pain Intensity Quantified",
-        "eMeasureId": "CMS157v12",
+        "eMeasureId": "CMS157v13",
         "nqfEMeasureId": "0384e",
         "nqfId": "0384",
         "measureId": "143",
@@ -15873,10 +15540,7 @@
           "oncology",
           "radiationOncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_143_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0157v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-8389-524e-0183-d1b67f3a1388",
         "strata": [
           {
@@ -15931,9 +15595,7 @@
           "oncology",
           "radiationOncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_144_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "CAHPS for MIPS Clinician/Group Survey",
@@ -16010,9 +15672,7 @@
         "measureSets": [
           "oncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_450_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy",
@@ -16047,9 +15707,7 @@
         "measureSets": [
           "oncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_451_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies",
@@ -16084,9 +15742,7 @@
         "measureSets": [
           "oncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_452_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Percentage of Patients Who Died from Cancer Receiving Systemic Cancer-Directed Therapy in the Last 14 Days of Life (lower score – better)",
@@ -16122,9 +15778,7 @@
           "oncology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_453_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Percentage of Patients Who Died from Cancer Admitted to Hospice for Less than 3 days (lower score - better)",
@@ -16160,13 +15814,11 @@
           "oncology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_457_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy",
-        "eMeasureId": "CMS645v7",
+        "eMeasureId": "CMS645v8",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "462",
@@ -16199,9 +15851,7 @@
           "oncology",
           "urology"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0645v7"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-851958a525c2",
         "strata": [
           {
@@ -16302,9 +15952,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Appropriate Intervention of Immune-Related Diarrhea and/or Colitis in Patients Treated with Immune Checkpoint Inhibitors",
@@ -16339,9 +15987,7 @@
         "measureSets": [
           "oncology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_490_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
@@ -16397,9 +16043,7 @@
           "rheumatology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_503_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -16923,9 +16567,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -16954,9 +16596,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -16997,9 +16637,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -17120,9 +16758,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -17166,9 +16802,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -17213,9 +16847,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -17258,9 +16890,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -17532,9 +17162,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -17573,9 +17201,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -17825,9 +17451,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -17947,9 +17571,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -18199,9 +17821,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -18321,9 +17941,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -18443,9 +18061,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -18484,9 +18100,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -18631,7 +18245,7 @@
     "qualityMeasures": [
       {
         "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
-        "eMeasureId": "CMS122v12",
+        "eMeasureId": "CMS122v13",
         "nqfEMeasureId": null,
         "nqfId": "0059",
         "measureId": "001",
@@ -18674,11 +18288,7 @@
           "nutritionDietician",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_001_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_001_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0122v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-83d3-1b44-0183-eb75dc8a03db",
         "strata": [
           {
@@ -18755,14 +18365,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Documentation of Current Medications in the Medical Record",
-        "eMeasureId": "CMS68v13",
+        "eMeasureId": "CMS68v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
@@ -18831,10 +18438,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_130_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0068v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0b4977140ad5",
         "strata": [
           {
@@ -18850,7 +18454,7 @@
       },
       {
         "title": "Controlling High Blood Pressure",
-        "eMeasureId": "CMS165v12",
+        "eMeasureId": "CMS165v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "236",
@@ -18897,11 +18501,7 @@
           "rheumatology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_236_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_236_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0165v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928085-806c-39a2-0180-7092fa9b0145",
         "strata": [
           {
@@ -18948,9 +18548,7 @@
         "measureSets": [
           "nephrology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_482_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -19039,13 +18637,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Kidney Health Evaluation",
-        "eMeasureId": "CMS951v2",
+        "eMeasureId": "CMS951v3",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "488",
@@ -19083,10 +18679,7 @@
           "preventiveMedicine",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_488_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0951v2"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-84ce-8286-0185-30f50cd0190f",
         "strata": [
           {
@@ -19134,9 +18727,7 @@
           "geriatrics",
           "nephrology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_489_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Immunization Status",
@@ -19189,9 +18780,7 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_493_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -19266,9 +18855,7 @@
           "rheumatology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_503_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -19645,9 +19232,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-aki-new-hd.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -19667,9 +19252,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -19698,9 +19281,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -19741,9 +19322,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -19864,9 +19443,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -19910,9 +19487,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -19957,9 +19532,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -20002,9 +19575,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -20276,9 +19847,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -20317,9 +19886,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -20569,9 +20136,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -20691,9 +20256,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -20943,9 +20506,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -21065,9 +20626,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -21187,9 +20746,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -21228,9 +20785,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -21436,14 +20991,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Documentation of Current Medications in the Medical Record",
-        "eMeasureId": "CMS68v13",
+        "eMeasureId": "CMS68v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
@@ -21512,10 +21064,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_130_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0068v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0b4977140ad5",
         "strata": [
           {
@@ -21562,9 +21111,7 @@
         "measureSets": [
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_268_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Overuse of Imaging for the Evaluation of Primary Headache",
@@ -21599,9 +21146,7 @@
         "measureSets": [
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_419_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -21690,9 +21235,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
@@ -21748,9 +21291,7 @@
           "rheumatology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_503_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -22144,9 +21685,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -22174,9 +21713,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -22217,9 +21754,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -22340,9 +21875,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -22386,9 +21919,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -22433,9 +21964,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -22478,9 +22007,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -22752,9 +22279,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -22793,9 +22318,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -23045,9 +22568,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -23167,9 +22688,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -23419,9 +22938,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -23541,9 +23058,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -23663,9 +23178,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -23704,9 +23217,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -23912,14 +23423,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Use of High-Risk Medications in Older Adults",
-        "eMeasureId": "CMS156v12",
+        "eMeasureId": "CMS156v13",
         "nqfEMeasureId": null,
         "nqfId": "0022",
         "measureId": "238",
@@ -23963,10 +23471,7 @@
           "skilledNursingFacility",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_238_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0156v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -24004,7 +23509,7 @@
       },
       {
         "title": "Dementia: Cognitive Assessment",
-        "eMeasureId": "CMS149v12",
+        "eMeasureId": "CMS149v13",
         "nqfEMeasureId": "2872e",
         "nqfId": null,
         "measureId": "281",
@@ -24039,9 +23544,7 @@
           "neurology",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0149v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0186-ec153eff0520",
         "strata": [
           {
@@ -24091,9 +23594,7 @@
           "mentalBehavioralHealth",
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_282_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Dementia: Safety Concern Screening and Follow-Up for Patients with Dementia",
@@ -24132,9 +23633,7 @@
           "neurology",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_286_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Dementia: Education and Support of Caregivers for Patients with Dementia",
@@ -24173,9 +23672,7 @@
           "neurology",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_288_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Assessment of Mood Disorders and Psychosis for Patients with Parkinson's Disease",
@@ -24210,9 +23707,7 @@
         "measureSets": [
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_290_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Assessment of Cognitive Impairment or Dysfunction for Patients with Parkinson's Disease",
@@ -24249,9 +23744,7 @@
           "physicalTherapyOccupationalTherapy",
           "speechLanguagePathology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_291_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Rehabilitative Therapy Referral for Patients with Parkinson's Disease",
@@ -24286,9 +23779,7 @@
         "measureSets": [
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_293_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences",
@@ -24323,9 +23814,7 @@
         "measureSets": [
           "neurology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_386_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -24414,9 +23903,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "iaMeasures": [
@@ -24799,9 +24286,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -24829,9 +24314,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -24872,9 +24355,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -24995,9 +24476,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -25041,9 +24520,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -25088,9 +24565,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -25133,9 +24608,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -25407,9 +24880,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -25448,9 +24919,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -25700,9 +25169,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -25822,9 +25289,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -26074,9 +25539,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -26196,9 +25659,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -26318,9 +25779,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -26359,9 +25818,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -26509,7 +25966,7 @@
     "qualityMeasures": [
       {
         "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
-        "eMeasureId": "CMS122v12",
+        "eMeasureId": "CMS122v13",
         "nqfEMeasureId": null,
         "nqfId": "0059",
         "measureId": "001",
@@ -26552,11 +26009,7 @@
           "nutritionDietician",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_001_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_001_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0122v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-83d3-1b44-0183-eb75dc8a03db",
         "strata": [
           {
@@ -26633,14 +26086,11 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_047_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_047_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -26699,11 +26149,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -26720,7 +26166,7 @@
       },
       {
         "title": "Controlling High Blood Pressure",
-        "eMeasureId": "CMS165v12",
+        "eMeasureId": "CMS165v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "236",
@@ -26767,11 +26213,7 @@
           "rheumatology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_236_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_236_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0165v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928085-806c-39a2-0180-7092fa9b0145",
         "strata": [
           {
@@ -26787,7 +26229,7 @@
       },
       {
         "title": "Initiation and Engagement of Substance Use Disorder Treatment",
-        "eMeasureId": "CMS137v12",
+        "eMeasureId": "CMS137v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "305",
@@ -26823,9 +26265,7 @@
           "mentalBehavioralHealth",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0137v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "simpleAverage",
         "strata": [
           {
@@ -26905,7 +26345,7 @@
       },
       {
         "title": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
-        "eMeasureId": "CMS347v7",
+        "eMeasureId": "CMS347v8",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "438",
@@ -26944,14 +26384,7 @@
           "internalMedicine",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_438_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0347v7"
-        },
-        "historic_benchmarks": {
-          "registry": "removed",
-          "electronicHealthRecord": "removed"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc688be40080",
         "strata": [
           {
@@ -26998,7 +26431,7 @@
       },
       {
         "title": "HIV Screening",
-        "eMeasureId": "CMS349v6",
+        "eMeasureId": "CMS349v7",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "475",
@@ -27036,9 +26469,7 @@
           "obstetricsGynecology",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0349v6"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0a05d6d40a25",
         "strata": [
           {
@@ -27088,9 +26519,7 @@
           "familyMedicine",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_483_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -27179,9 +26608,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Immunization Status",
@@ -27234,9 +26661,7 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_493_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -27294,9 +26719,7 @@
           "obstetricsGynecology",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_497_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -27368,9 +26791,7 @@
           "mentalBehavioralHealth",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_504_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -27771,9 +27192,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-chron-copd.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -27793,9 +27212,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-diabetes.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -27821,9 +27238,7 @@
           "M0005",
           "M1369"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-depression.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "category": "cost",
@@ -27844,9 +27259,7 @@
           "G0055",
           "M0005"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-heart-fail.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "category": "cost",
@@ -27861,9 +27274,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -27892,9 +27303,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -27935,9 +27344,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -28058,9 +27465,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -28104,9 +27509,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -28151,9 +27554,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -28196,9 +27597,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -28470,9 +27869,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -28511,9 +27908,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -28763,9 +28158,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -28885,9 +28278,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -29137,9 +28528,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -29259,9 +28648,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -29381,9 +28768,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -29422,9 +28807,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -29612,13 +28995,11 @@
           "preventiveMedicine",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_048_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Breast Cancer Screening",
-        "eMeasureId": "CMS125v12",
+        "eMeasureId": "CMS125v13",
         "nqfEMeasureId": null,
         "nqfId": "2372",
         "measureId": "112",
@@ -29648,11 +29029,7 @@
           "registry"
         ],
         "measureSets": [],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_112_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_112_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0125v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-8211-3ece-0182-c771f89f2ff3",
         "strata": [
           {
@@ -29668,7 +29045,7 @@
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -29727,11 +29104,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -29748,7 +29121,7 @@
       },
       {
         "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
-        "eMeasureId": "CMS138v12",
+        "eMeasureId": "CMS138v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "226",
@@ -29814,11 +29187,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_226_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_226_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0138v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "split",
         "strata": [
           {
@@ -29856,7 +29225,7 @@
       },
       {
         "title": "Cervical Cancer Screening",
-        "eMeasureId": "CMS124v12",
+        "eMeasureId": "CMS124v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "309",
@@ -29889,9 +29258,7 @@
           "internalMedicine",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0124v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-6bf198d120d0",
         "strata": [
           {
@@ -29907,7 +29274,7 @@
       },
       {
         "title": "Chlamydia Screening for Women",
-        "eMeasureId": "CMS153v12",
+        "eMeasureId": "CMS153v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "310",
@@ -29940,9 +29307,7 @@
           "obstetricsGynecology",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0153v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-6bf2f90320e6",
         "strata": [
           {
@@ -29994,9 +29359,7 @@
           "certifiedNurseMidwife",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_335_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Maternity Care: Postpartum Follow-up and Care Coordination",
@@ -30032,9 +29395,7 @@
           "certifiedNurseMidwife",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_336_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "One-Time Screening for Hepatitis C Virus (HCV) and Treatment Initiation",
@@ -30072,13 +29433,8 @@
           "internalMedicine",
           "nephrology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_400_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "simpleAverage",
-        "historic_benchmarks": {
-          "registry": "removed"
-        },
         "strata": [
           {
             "name": "screening",
@@ -30124,10 +29480,7 @@
         "measureSets": [
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_422_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_422_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Preventive Care and Screening: Unhealthy Alcohol Use: Screening & Brief Counseling",
@@ -30179,9 +29532,7 @@
           "urgentCare",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_431_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "split",
         "strata": [
           {
@@ -30232,9 +29583,7 @@
           "obstetricsGynecology",
           "urology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_432_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Appropriate Workup Prior to Endometrial Ablation",
@@ -30269,13 +29618,11 @@
         "measureSets": [
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_448_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture",
-        "eMeasureId": "CMS249v6",
+        "eMeasureId": "CMS249v7",
         "nqfEMeasureId": "3475e",
         "nqfId": null,
         "measureId": "472",
@@ -30308,9 +29655,7 @@
           "internalMedicine",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0249v6"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-204c9a0c1112",
         "strata": [
           {
@@ -30327,7 +29672,7 @@
       },
       {
         "title": "HIV Screening",
-        "eMeasureId": "CMS349v6",
+        "eMeasureId": "CMS349v7",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "475",
@@ -30365,9 +29710,7 @@
           "obstetricsGynecology",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0349v6"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0a05d6d40a25",
         "strata": [
           {
@@ -30469,9 +29812,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Immunization Status",
@@ -30524,9 +29865,7 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_493_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -30581,9 +29920,7 @@
           "certifiedNurseMidwife",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_496_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "measureId": "UREQA8",
@@ -30941,9 +30278,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -30969,9 +30304,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -31000,9 +30333,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -31043,9 +30374,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -31166,9 +30495,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -31212,9 +30539,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -31259,9 +30584,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -31304,9 +30627,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -31578,9 +30899,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -31619,9 +30938,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -31871,9 +31188,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -31993,9 +31308,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -32245,9 +31558,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -32367,9 +31678,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -32489,9 +31798,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -32530,9 +31837,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -32677,7 +31982,7 @@
     "qualityMeasures": [
       {
         "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
-        "eMeasureId": "CMS69v12",
+        "eMeasureId": "CMS69v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "128",
@@ -32709,11 +32014,7 @@
           "registry"
         ],
         "measureSets": [],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0069v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc6968e30090",
         "strata": [
           {
@@ -32730,7 +32031,7 @@
       },
       {
         "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
-        "eMeasureId": "CMS138v12",
+        "eMeasureId": "CMS138v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "226",
@@ -32796,11 +32097,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_226_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_226_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0138v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "split",
         "strata": [
           {
@@ -32872,9 +32169,7 @@
           "otolaryngology",
           "pulmonology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_277_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Sinusitis: Antibiotic Prescribed for Acute Viral Sinusitis (Overuse)",
@@ -32915,9 +32210,7 @@
           "otolaryngology",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_331_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Sinusitis: Appropriate Choice of Antibiotic: Amoxicillin With or Without Clavulanate Prescribed for Patients with Acute Bacterial Sinusitis (Appropriate Use)",
@@ -32957,9 +32250,7 @@
           "otolaryngology",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_332_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Unplanned Reoperation within the 30 Day Postoperative Period",
@@ -32996,9 +32287,7 @@
           "otolaryngology",
           "plasticSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_355_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Surgical Site Infection (SSI)",
@@ -33036,9 +32325,7 @@
           "plasticSurgery",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_357_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -33127,9 +32414,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "measureId": "AAO16",
@@ -33537,9 +32822,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -33567,9 +32850,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -33610,9 +32891,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -33733,9 +33012,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -33779,9 +33056,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -33826,9 +33101,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -33871,9 +33144,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -34145,9 +33416,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -34186,9 +33455,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -34438,9 +33705,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -34560,9 +33825,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -34812,9 +34075,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -34934,9 +34195,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -35056,9 +34315,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -35097,9 +34354,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -35245,7 +34500,7 @@
     "qualityMeasures": [
       {
         "title": "Appropriate Treatment for Upper Respiratory Infection (URI)",
-        "eMeasureId": "CMS154v12",
+        "eMeasureId": "CMS154v13",
         "nqfEMeasureId": null,
         "nqfId": "0069",
         "measureId": "065",
@@ -35282,10 +34537,7 @@
           "pediatrics",
           "urgentCare"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_065_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0154v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-8389-524e-0183-c8d7a6700f02",
         "strata": [
           {
@@ -35306,7 +34558,7 @@
       },
       {
         "title": "Documentation of Current Medications in the Medical Record",
-        "eMeasureId": "CMS68v13",
+        "eMeasureId": "CMS68v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
@@ -35375,10 +34627,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_130_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0068v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0b4977140ad5",
         "strata": [
           {
@@ -35394,7 +34643,7 @@
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -35453,11 +34702,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -35474,7 +34719,7 @@
       },
       {
         "title": "Sexually Transmitted Infection (STI) Testing for People with HIV",
-        "eMeasureId": "CMS1188v1",
+        "eMeasureId": "CMS1188v2",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "205",
@@ -35507,10 +34752,7 @@
           "infectiousDisease",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_205_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms1188v1"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0186-e6f01b5c037f",
         "strata": [
           {
@@ -35525,7 +34767,7 @@
       },
       {
         "title": "Childhood Immunization Status",
-        "eMeasureId": "CMS117v12",
+        "eMeasureId": "CMS117v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "240",
@@ -35557,9 +34799,7 @@
           "infectiousDisease",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0117v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-138ff3280ad1",
         "strata": [
           {
@@ -35575,7 +34815,7 @@
       },
       {
         "title": "Chlamydia Screening for Women",
-        "eMeasureId": "CMS153v12",
+        "eMeasureId": "CMS153v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "310",
@@ -35608,9 +34848,7 @@
           "obstetricsGynecology",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0153v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0183-6bf2f90320e6",
         "strata": [
           {
@@ -35630,7 +34868,7 @@
       },
       {
         "title": "HIV Viral Suppression",
-        "eMeasureId": "CMS314v1",
+        "eMeasureId": "CMS314v2",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "338",
@@ -35665,10 +34903,7 @@
           "infectiousDisease",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_338_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0314v1"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-03d1acee0811",
         "strata": [
           {
@@ -35715,9 +34950,7 @@
           "allergyImmunology",
           "infectiousDisease"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_340_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users",
@@ -35754,9 +34987,7 @@
           "infectiousDisease",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_387_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "One-Time Screening for Hepatitis C Virus (HCV) and Treatment Initiation",
@@ -35794,13 +35025,8 @@
           "internalMedicine",
           "nephrology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_400_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "simpleAverage",
-        "historic_benchmarks": {
-          "registry": "removed"
-        },
         "strata": [
           {
             "name": "screening",
@@ -35847,13 +35073,11 @@
           "gastroenterology",
           "internalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_401_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "HIV Screening",
-        "eMeasureId": "CMS349v6",
+        "eMeasureId": "CMS349v7",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "475",
@@ -35891,9 +35115,7 @@
           "obstetricsGynecology",
           "preventiveMedicine"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0349v6"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-86db-6718-0187-0a05d6d40a25",
         "strata": [
           {
@@ -35995,9 +35217,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Adult Immunization Status",
@@ -36050,9 +35270,7 @@
           "rheumatology",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_493_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -36392,9 +35610,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-13-mif-tpcc.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -36423,9 +35639,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -36466,9 +35680,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -36589,9 +35801,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -36635,9 +35845,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -36682,9 +35890,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -36727,9 +35933,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37001,9 +36205,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37042,9 +36244,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -37294,9 +36494,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37416,9 +36614,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -37668,9 +36864,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37790,9 +36984,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37912,9 +37104,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -37953,9 +37143,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -38102,7 +37290,7 @@
     "qualityMeasures": [
       {
         "title": "Anti-Depressant Medication Management",
-        "eMeasureId": "CMS128v12",
+        "eMeasureId": "CMS128v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "009",
@@ -38135,9 +37323,7 @@
           "internalMedicine",
           "mentalBehavioralHealth"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0128v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "simpleAverage",
         "strata": [
           {
@@ -38165,7 +37351,7 @@
       },
       {
         "title": "Preventive Care and Screening: Screening for Depression and Follow-Up Plan",
-        "eMeasureId": "CMS2v13",
+        "eMeasureId": "CMS2v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "134",
@@ -38224,11 +37410,7 @@
           "speechLanguagePathology",
           "urology"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_134_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_134_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0002v13"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928083-8651-08a3-0186-c82995a91d28",
         "strata": [
           {
@@ -38245,7 +37427,7 @@
       },
       {
         "title": "Initiation and Engagement of Substance Use Disorder Treatment",
-        "eMeasureId": "CMS137v12",
+        "eMeasureId": "CMS137v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "305",
@@ -38281,9 +37463,7 @@
           "mentalBehavioralHealth",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0137v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "simpleAverage",
         "strata": [
           {
@@ -38321,7 +37501,7 @@
       },
       {
         "title": "Follow-Up Care for Children Prescribed ADHD Medication (ADD)",
-        "eMeasureId": "CMS136v13",
+        "eMeasureId": "CMS136v14",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "366",
@@ -38353,9 +37533,7 @@
           "mentalBehavioralHealth",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0136v13"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -38383,7 +37561,7 @@
       },
       {
         "title": "Depression Remission at Twelve Months",
-        "eMeasureId": "CMS159v12",
+        "eMeasureId": "CMS159v13",
         "nqfEMeasureId": "0710e",
         "nqfId": "0710",
         "measureId": "370",
@@ -38421,10 +37599,7 @@
           "mentalBehavioralHealth",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_370_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0159v12"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
@@ -38450,7 +37625,7 @@
       },
       {
         "title": "Child and Adolescent Major Depressive Disorder (MDD): Suicide Risk Assessment",
-        "eMeasureId": "CMS177v12",
+        "eMeasureId": "CMS177v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "382",
@@ -38483,9 +37658,7 @@
           "mentalBehavioralHealth",
           "pediatrics"
         ],
-        "measureSpecification": {
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0177v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928084-82ea-d7c5-0182-ff64c38d094f",
         "strata": [
           {
@@ -38534,9 +37707,7 @@
           "internalMedicine",
           "mentalBehavioralHealth"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_383_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Continuity of Pharmacotherapy for Opioid Use Disorder (OUD)",
@@ -38574,9 +37745,7 @@
           "mentalBehavioralHealth",
           "physicalMedicine"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_468_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -38665,9 +37834,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Improvement or Maintenance of Functioning for Individuals with a Mental and/or Substance Use Disorder",
@@ -38706,9 +37873,7 @@
           "mentalBehavioralHealth",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_502_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Initiation, Review, And/Or Update To Suicide Safety Plan For Individuals With Suicidal Thoughts, Behavior, Or Suicide Risk",
@@ -38749,9 +37914,7 @@
           "mentalBehavioralHealth",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_504_MIPSCQM.pdf"
-        },
+        "measureSpecification": {},
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
@@ -38801,9 +37964,7 @@
           "mentalBehavioralHealth",
           "obstetricsGynecology"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_505_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "measureId": "MBHR2",
@@ -39258,9 +38419,7 @@
           "M0005",
           "M1369"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-depression.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "category": "cost",
@@ -39280,9 +38439,7 @@
           "app1",
           "M1369"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-psych.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "category": "cost",
@@ -39297,9 +38454,7 @@
         "submissionMethods": [
           "administrativeClaims"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-18-mif-mspb-clinician.pdf"
-        },
+        "measureSpecification": {},
         "allowedPrograms": [
           "mips",
           "app1",
@@ -39327,9 +38482,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -39370,9 +38523,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -39493,9 +38644,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -39539,9 +38688,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -39586,9 +38733,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -39631,9 +38776,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -39905,9 +39048,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -39946,9 +39087,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -40198,9 +39337,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -40320,9 +39457,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -40572,9 +39707,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -40694,9 +39827,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -40816,9 +39947,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -40857,9 +39986,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -41007,7 +40134,7 @@
     "qualityMeasures": [
       {
         "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
-        "eMeasureId": "CMS69v12",
+        "eMeasureId": "CMS69v13",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "128",
@@ -41039,11 +40166,7 @@
           "registry"
         ],
         "measureSets": [],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_128_MIPSCQM.pdf",
-          "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ec/2024/cms0069v12"
-        },
+        "measureSpecification": {},
         "eMeasureUuid": "2c928082-82cb-a3f5-0182-cc6968e30090",
         "strata": [
           {
@@ -41103,10 +40226,7 @@
           "preventiveMedicine",
           "skilledNursingFacility"
         ],
-        "measureSpecification": {
-          "claims": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/Claims-Registry-Measures/2024_Measure_155_MedicarePartBClaims.pdf",
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_155_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Knee Impairments",
@@ -41143,9 +40263,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_217_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Hip Impairments",
@@ -41182,9 +40300,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_218_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Lower Leg, Foot or Ankle Impairments",
@@ -41222,9 +40338,7 @@
           "physicalTherapyOccupationalTherapy",
           "podiatry"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_219_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Low Back Impairments",
@@ -41261,9 +40375,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_220_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Shoulder Impairments",
@@ -41300,9 +40412,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_221_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Elbow, Wrist or Hand Impairments",
@@ -41339,9 +40449,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_222_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Functional Status Change for Patients with Neck Impairments",
@@ -41378,9 +40486,7 @@
           "orthopedicSurgery",
           "physicalTherapyOccupationalTherapy"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_478_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -41469,9 +40575,7 @@
           "urology",
           "vascularSurgery"
         ],
-        "measureSpecification": {
-          "registry": "http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2024_Measure_487_MIPSCQM.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "iaMeasures": [
@@ -41861,9 +40965,7 @@
           "app1",
           "M1370"
         ],
-        "measureSpecification": {
-          "default": "https://qpp.cms.gov/docs/cost_specifications/2023-12-05-mif-ebcm-low-back.pdf"
-        }
+        "measureSpecification": {}
       }
     ],
     "foundationPiMeasures": [
@@ -41880,9 +40982,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEPrescribing.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVPP_1"
@@ -41923,9 +41023,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresQueryofPrescriptionDrugMonitoringProgram.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_EP_2_EX_1",
@@ -42046,9 +41144,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsbySendingHealthInfo.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVOTC_1"
@@ -42092,9 +41188,7 @@
           "PI_HIE_5",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSupportElectronicReferralLoopsReceivingandReconcilling.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_LVITC_2"
@@ -42139,9 +41233,7 @@
           "PI_HIE_4",
           "PI_HIE_6"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov//docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresHIEBi-DirectionalExchange.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -42184,9 +41276,7 @@
           "PI_HIE_4",
           "PI_HIE_5"
         ],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresEnablingExchangeUnderTEFCA.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -42458,9 +41548,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresProvidePatientsElectronicAccess.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -42499,9 +41587,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresImmunizationRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_1_EX_1",
@@ -42751,9 +41837,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSyndromicSurveillanceReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -42873,9 +41957,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresElectronicCaseReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": [
           "PI_PHCDRR_3_EX_1",
@@ -43125,9 +42207,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresPublicHealthRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -43247,9 +42327,7 @@
         "isBonus": true,
         "reportingCategory": "bonus",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresClinicalDataRegistryReporting.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -43369,9 +42447,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSecurityRiskAnalysis.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
@@ -43410,9 +42486,7 @@
         "isBonus": false,
         "reportingCategory": "required",
         "substitutes": [],
-        "measureSpecification": {
-          "default": "http://qpp.cms.gov/docs/pi_specifications/Measure Specifications/2024MIPSPIMeasuresSafetyAssuranceFactorsforEHRResilience.pdf"
-        },
+        "measureSpecification": {},
         "measureSets": [],
         "exclusion": null,
         "allowedPrograms": [
