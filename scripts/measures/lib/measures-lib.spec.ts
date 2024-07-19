@@ -196,8 +196,8 @@ describe('#update-measures-util', () => {
                 measureId: 'PI_PPHI_1',
                 metricType: 'testdata',
                 category: 'pi',
-                substitutes: ['134'],
-                exclusion: ['001'],
+                substitutes: ['PI_PPHI_2'],
+                exclusion: ['PI_ONCDIR_1'],
             } as MeasuresChange;
 
             MeasuresLib.updateMeasure(change, volatileMeasures);
@@ -214,8 +214,8 @@ describe('#update-measures-util', () => {
                 isBonus: false,
                 reportingCategory: 'required',
                 measureSets: [],
-                substitutes: ['134'],
-                exclusion: ['001'],
+                substitutes: ['PI_PPHI_2'],
+                exclusion: ['PI_ONCDIR_1'],
                 preprod: []
             }));
         });
