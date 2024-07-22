@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
+const config: import('ts-jest').JestConfigWithTsJest = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   verbose: false,
@@ -21,3 +21,5 @@ module.exports = {
     'coverage',
   ],
 };
+
+export default config;
