@@ -493,14 +493,14 @@ describe('index', () => {
                 {
                     measureId: '001',
                     allowedPrograms: ['mips', 'G0001', 'G0002'],
-                },
+                } as any,
                 {
                     measureId: '002',
                     allowedPrograms: ['mips', 'G0001'],
-                },
+                } as any,
                 {
                     measureId: '003',
-                },
+                } as any,
             ]);
             vol.fromNestedJSON({
                 'mvp/2024': {

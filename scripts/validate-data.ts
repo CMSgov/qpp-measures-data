@@ -15,7 +15,7 @@ import appRoot from 'app-root-path';
 import YAML from 'yaml';
 import fs from 'fs';
 
-import Constants from '../constants';
+import { Constants } from '../constants';
 import { ValidateLib } from './validate-lib';
 import { AnySchemaObject } from 'ajv';
 

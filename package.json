@@ -12,6 +12,7 @@
     "npm": ">=10.7"
   },
   "scripts": {
+    "build": "tsc",
     "test": "npm run jest:cov",
     "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
