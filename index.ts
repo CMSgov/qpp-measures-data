@@ -1,37 +1,36 @@
 // Libraries
-const fse = require('fs-extra');
-const path = require('path');
-const YAML = require('yaml');
-const _ = require('lodash');
+import * as fse from 'fs-extra';
+import * as path from 'path';
+import * as YAML from 'yaml';
+import * as _ from 'lodash';
+import { Constants } from './constants';
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
-const Constants = require('./constants.js');
 
 /**
  * @return {Array<number>}
  * An array of all the years that the library has data for
  */
-exports.getValidPerformanceYears = function() {
+export function getValidPerformanceYears(): number[] {
   return Constants.validPerformanceYears;
-};
+}
 
 /**
  *
  * @return {void}
  * Adds any new program name fields from the mvp.json file for the given performance year
  */
-exports.updateProgramNames = function(performanceYear) {
-  let programNames;
+export function updateProgramNames(performanceYear: number): void {
+  let programNames: any;
   const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
   const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
 
-  let mvpData = [];
+  let mvpData: any[] = [];
 
   try {
-    programNames = JSON.parse(fse.readFileSync(programNamesFilePath));
-    mvpData = JSON.parse(
-      fse.readFileSync(mvpFilePath));
+    programNames = JSON.parse(fse.readFileSync(programNamesFilePath, 'utf8'));
+    mvpData = JSON.parse(fse.readFileSync(mvpFilePath, 'utf8'));
 
     mvpData.forEach(mvp => {
       if (!programNames[mvp.mvpId]) {
@@ -43,133 +42,134 @@ exports.updateProgramNames = function(performanceYear) {
   } catch (e) {
     console.log('Error parsing the program-names.json or mvp.json file: ' + ' --> ' + e);
   }
-};
+}
 
 /**
  *
- * @return {{}} - program names -
+ * @return {any} - program names -
  * An object keyed by program name containing the current program names
  */
-exports.getProgramNames = function() {
+export function getProgramNames(): any {
   const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
 
   try {
-    return JSON.parse(fse.readFileSync(programNamesFilePath));
+    return JSON.parse(fse.readFileSync(programNamesFilePath, 'utf8'));
   } catch (e) {
     console.log('Error parsing the program-names.json file: ' + ' --> ' + e);
   }
-};
+}
 
 /**
  *
- * @return {{}} - benchmarks data -
+ * @return {any} - benchmarks data -
  * An object keyed by performance year with array values
  * containing the benchmarks for that performance year
  */
-exports.getBenchmarksData = function() {
-  const benchmarksByYear = {};
+export function getBenchmarksData(): any {
+  const benchmarksByYear: any = {};
 
-  exports.getBenchmarksYears().forEach(function(year) {
-    benchmarksByYear[year] = JSON.parse(fse.readFileSync(path.join(__dirname, 'benchmarks', `${year}.json`)));
+  getBenchmarksYears().forEach(function (year) {
+    benchmarksByYear[year] = JSON.parse(fse.readFileSync(path.join(__dirname, 'benchmarks', `${year}.json`), 'utf8'));
   });
 
   return benchmarksByYear;
-};
+}
 
 /**
  *
  * @return {Array<number>}
  * An array of years that the library has benchmarks for
  */
-exports.getBenchmarksYears = function() {
-  const benchmarksYears = new Set();
+export function getBenchmarksYears(): number[] {
+  const benchmarksYears = new Set<number>();
 
-  fse.readdirSync(path.join(__dirname, 'benchmarks')).forEach(function(file) {
-    if (benchmarkJsonFileRegEx.test(file)) {
-      benchmarksYears.add(+file.match(yearRegEx)[0]);
+  fse.readdirSync(path.join(__dirname, 'benchmarks')).forEach(function (file) {
+    const match = file.match(yearRegEx);
+    if (benchmarkJsonFileRegEx.test(file) && match) {
+      benchmarksYears.add(+match[0]);
     }
   });
 
   return Array.from(benchmarksYears);
-};
+}
 
 /**
- * @return {{}} - Object representation of the Benchmarks Schema
+ * @return {any} - Object representation of the Benchmarks Schema
  */
-exports.getBenchmarksSchema = function(performanceYear = Constants.currentPerformanceYear) {
+export function getBenchmarksSchema(performanceYear: number = Constants.currentPerformanceYear): any {
   return YAML.parse(fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmarks-schema.yaml'), 'utf8'));
-};
+}
 
 /**
- * @return {Array<Any>}
+ * @return {any}
  */
-exports.getBenchmarksExclusionReasons = function(performanceYear = Constants.currentPerformanceYear) {
+export function getBenchmarksExclusionReasons(performanceYear: number = Constants.currentPerformanceYear): any {
   return JSON.parse(
-    fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmark-exclusion-reasons.json')));
-};
+      fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmark-exclusion-reasons.json'), 'utf8'));
+}
 
 /**
- * @return {Array<Any>}
+ * @return {any}
  */
-exports.getBenchmarksNationalAverages = function (performanceYear = Constants.currentPerformanceYear) {
+export function getBenchmarksNationalAverages(performanceYear: number = Constants.currentPerformanceYear): any {
   return JSON.parse(
-    fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages.json')));
-};
+      fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages.json'), 'utf8'));
+}
 
 /**
- * @return {{}} - Object representation of the National Averages Schema
+ * @return {any} - Object representation of the National Averages Schema
  */
-exports.getBenchmarksNationalAveragesSchema = function (performanceYear = Constants.currentPerformanceYear) {
+export function getBenchmarksNationalAveragesSchema(performanceYear: number = Constants.currentPerformanceYear): any {
   return YAML.parse(fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages-schema.yaml'), 'utf8'));
-};
+}
 
 /**
- * @return {Array<Measure>}
+ * @return {any}
  */
-exports.getMeasuresData = function(performanceYear = 2017) {
+export function getMeasuresData(performanceYear: number = 2017): any {
   return JSON.parse(
-    fse.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json')));
-};
+      fse.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json'), 'utf8'));
+}
 
 /**
- * @return {{}} - Object representation of the Measures Schema
+ * @return {any} - Object representation of the Measures Schema
  */
-exports.getMeasuresSchema = function(performanceYear = 2017) {
+export function getMeasuresSchema(performanceYear: number = 2017): any {
   return YAML.parse(fse.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-schema.yaml'), 'utf8'));
-};
+}
 
 /**
- * @return {Array<ClinicalCluster>}
+ * @return {any}
  */
-exports.getClinicalClusterData = function(performanceYear = 2017) {
-  let clusterData = [];
+export function getClinicalClusterData(performanceYear: number = 2017): any {
+  let clusterData: any[] = [];
   try {
     clusterData = JSON.parse(
-      fse.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters.json')));
+        fse.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters.json'), 'utf8'));
   } catch (e) {
     console.log('QPP measures data not found for year: ' + performanceYear + ' --> ' + e);
   }
   return clusterData;
-};
+}
 
 /**
- * @return {{}} - Object representation of the Clinical Cluster Schema
+ * @return {any} - Object representation of the Clinical Cluster Schema
  */
-exports.getClinicalClusterSchema = function(performanceYear = 2023) {
+export function getClinicalClusterSchema(performanceYear: number = 2023): any {
   return YAML.parse(fse.readFileSync(path.join(__dirname, 'clinical-clusters', performanceYear.toString(), 'clinical-clusters-schema.yaml'), 'utf8'));
-};
+}
 
 /**
- * @return {Array<MVP>}
+ * @return {any}
  */
-exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
+export function getMVPData(performanceYear: number = 2023, mvpIds: any[] = []): any {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
-  let mvpData;
+  let mvpData: any;
 
   if (fse.existsSync(filePath)) {
-    mvpData = JSON.parse(fse.readFileSync(filePath));
+    mvpData = JSON.parse(fse.readFileSync(filePath, 'utf8'));
   } else {
-    mvpData = this.createMVPDataFile(performanceYear, mvpIds);
+    mvpData = createMVPDataFile(performanceYear);
   }
 
   if (mvpIds.length) {
@@ -177,27 +177,27 @@ exports.getMVPData = function(performanceYear = 2023, mvpIds = []) {
   }
 
   return mvpData;
-};
+}
 
 /**
- * @return {Array<MVP>}
+ * @return {any}
  */
-exports.createMVPDataFile = function(performanceYear) {
+export function createMVPDataFile(performanceYear: number): any {
   const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
   const measureFilePath = path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json');
 
-  let mvpData = [];
-  let measuresData = [];
+  let mvpData: any[] = [];
+  let measuresData: any[] = [];
   try {
     mvpData = JSON.parse(
-      fse.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json')));
-    measuresData = this.getMeasuresData(performanceYear);
+        fse.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json'), 'utf8'));
+    measuresData = getMeasuresData(performanceYear);
   } catch (e) {
     console.log('QPP mvp / measures data not found for year: ' + performanceYear + ' --> ' + e);
     return [];
   }
 
-  const mvpIds = [];
+  const mvpIds: any[] = [];
   mvpData.forEach(mvpDataItem => {
     if (mvpDataItem.mvpId !== 'app1') {
       mvpIds.push(mvpDataItem.mvpId);
@@ -214,7 +214,7 @@ exports.createMVPDataFile = function(performanceYear) {
   mvpData.forEach(mvp => {
     Constants.mvpMeasuresHelper.forEach(item => {
       mvp[item.enrichedMeasureKey] = [];
-      this.populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
+      populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
     });
 
     mvp.hasOutcomeAdminClaims = !_.isEmpty(mvp.administrativeClaimsMeasureIds);
@@ -230,10 +230,10 @@ exports.createMVPDataFile = function(performanceYear) {
   fse.writeFileSync(measureFilePath, JSON.stringify(measuresData, null, 2));
 
   return mvpData;
-};
+}
 
-exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, measureIdKey, enrichedMeasureKey) {
-  currentMvp[measureIdKey].forEach(measureId => {
+export function populateMeasuresforMVPs(currentMvp: any, allMvps: any[], measuresData: any[], measureIdKey: string, enrichedMeasureKey: string): void {
+  currentMvp[measureIdKey].forEach((measureId: string) => {
     const measure = measuresData.find(measure => measure.measureId === measureId);
 
     if (measure) {
@@ -253,32 +253,32 @@ exports.populateMeasuresforMVPs = function(currentMvp, allMvps, measuresData, me
       currentMvp[enrichedMeasureKey].push(measure);
     }
   });
-};
+}
 
 /**
- * @return {{}} - Object representation of the MVP Schema
+ * @return {any} - Object representation of the MVP Schema
  */
-exports.getMVPSchema = function(performanceYear = 2023) {
+export function getMVPSchema(performanceYear: number = 2023): any {
   return YAML.parse(fse.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-schema.yaml'), 'utf8'));
-};
+}
 
 /**
- * @return {Array<MVP>}
+ * @return {any}
  */
-exports.getMVPDataSlim = function(performanceYear = 2023) {
+export function getMVPDataSlim(performanceYear: number = 2023): any {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
-  let mvpData;
+  let mvpData: any;
 
   if (fse.existsSync(filePath)) {
-    mvpData = JSON.parse(fse.readFileSync(filePath));
-    mvpData.forEach(mvp => {
+    mvpData = JSON.parse(fse.readFileSync(filePath, 'utf8'));
+    mvpData.forEach((mvp: any) => {
       mvp.measureIds = [].concat(
-        mvp.qualityMeasureIds,
-        mvp.iaMeasureIds,
-        mvp.costMeasureIds,
-        mvp.foundationPiMeasureIds,
-        mvp.foundationQualityMeasureIds,
-        mvp.administrativeClaimsMeasureIds
+          mvp.qualityMeasureIds,
+          mvp.iaMeasureIds,
+          mvp.costMeasureIds,
+          mvp.foundationPiMeasureIds,
+          mvp.foundationQualityMeasureIds,
+          mvp.administrativeClaimsMeasureIds
       );
     });
   } else {
@@ -286,4 +286,4 @@ exports.getMVPDataSlim = function(performanceYear = 2023) {
   }
 
   return mvpData;
-};
+}
