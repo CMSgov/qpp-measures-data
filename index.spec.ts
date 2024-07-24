@@ -578,7 +578,6 @@ describe('index', () => {
             // one for each data file.
             expect(writeSpy).toBeCalledTimes(2);
 
-            // todo: Enable the tests
             // one for each mvp (2) for each measure type (6).
             expect(populateSpy).toBeCalledTimes(12);
             expect(getSpy).toBeCalledTimes(1);
