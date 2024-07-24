@@ -21,8 +21,8 @@ export function updateMvps(performanceYear: string) {
     }
   }
 
-  index.createMVPDataFile(performanceYear);
-  index.updateProgramNames(performanceYear);
+  index.createMVPDataFile(Number(performanceYear));
+  index.updateProgramNames(Number(performanceYear));
 }
 
 /* c8 ignore next */
