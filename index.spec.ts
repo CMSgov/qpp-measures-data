@@ -7,14 +7,6 @@ import YAML from 'yaml';
 import * as index from './index';
 import { Constants } from './constants';
 
-// this allows us to spyOn functions in the index file.
-jest.mock('./index', () => {
-    return {
-        __esModule: true,
-        ...jest.requireActual('./index')
-    };
-});
-
 const mvpJson = [
     {
         mvpId: 'G0053',
@@ -470,16 +462,15 @@ describe('index', () => {
             expect(createMvpFileSpy).not.toBeCalled();
         });
 
-        // todo: Enable the tests
-        // it('attempts to create an enriched mvp file if none exist for the specified performance year.', () => {
-        //     vol.fromNestedJSON({
-        //         'mvp/2024': {},
-        //     });
-        //
-        //     index.getMVPData(2024);
-        //
-        //     expect(createMvpFileSpy).toBeCalledTimes(1);
-        // });
+        it('attempts to create an enriched mvp file if none exist for the specified performance year.', () => {
+            vol.fromNestedJSON({
+                'mvp/2024': {},
+            });
+
+            index.getMVPData(2024);
+
+            expect(createMvpFileSpy).toBeCalledTimes(1);
+        });
     });
 
     describe('createMVPDataFile', () => {
@@ -589,8 +580,8 @@ describe('index', () => {
 
             // todo: Enable the tests
             // one for each mvp (2) for each measure type (6).
-            // expect(populateSpy).toBeCalledTimes(12);
-            // expect(getSpy).toBeCalledTimes(1);
+            expect(populateSpy).toBeCalledTimes(12);
+            expect(getSpy).toBeCalledTimes(1);
         });
 
         it('gracefully logs error message when unable to access mvp data.', () => {

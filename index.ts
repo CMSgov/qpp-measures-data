@@ -179,7 +179,7 @@ export function getMVPData(performanceYear: number = 2023, mvpIds: string[] = []
   if (fse.existsSync(filePath)) {
     mvpData = JSON.parse(fse.readFileSync(filePath, 'utf8'));
   } else {
-    mvpData = createMVPDataFile(performanceYear);
+    mvpData = exports.createMVPDataFile(performanceYear);
   }
 
   if (mvpIds.length) {
@@ -201,7 +201,7 @@ export function createMVPDataFile(performanceYear: number): any {
   try {
     mvpData = JSON.parse(
         fse.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json'), 'utf8'));
-    measuresData = getMeasuresData(performanceYear);
+    measuresData = exports.getMeasuresData(performanceYear);
   } catch (e) {
     console.log('QPP mvp / measures data not found for year: ' + performanceYear + ' --> ' + e);
     return [];
@@ -224,7 +224,7 @@ export function createMVPDataFile(performanceYear: number): any {
   mvpData.forEach(mvp => {
     Constants.mvpMeasuresHelper.forEach(item => {
       mvp[item.enrichedMeasureKey] = [];
-      populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
+      exports.populateMeasuresforMVPs(mvp, mvpData, measuresData, item.measureIdKey, item.enrichedMeasureKey);
     });
 
     mvp.hasOutcomeAdminClaims = !_.isEmpty(mvp.administrativeClaimsMeasureIds);
