@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version number to use'
+        description: 'Version number to use (x.x.x)'
         required: true
       beta-increment:
         description: 'The beta number for this version (usually 1)'
