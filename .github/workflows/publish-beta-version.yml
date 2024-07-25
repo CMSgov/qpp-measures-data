@@ -90,12 +90,12 @@ jobs:
           token: ${{ secrets.GH_USER_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
-          client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "beta", "html_url": "https://www.npmjs.com/package/qpp-measures-data?activeTab=versions"}'
       - name: Notify APP Submissions API Channel
         uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
         env:
           SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
           SLACK_CHANNEL: "p-qppsf-api"
-          SLACK_MESSAGE: "`qpp-measures-data` has a new beta version avaliable for testing: $BETA_VERSION"
+          SLACK_MESSAGE: "`qpp-measures-data` has a new beta version avaliable for testing: ${{github.event.inputs.version}}-beta.${{github.event.inputs.beta-increment}}"
           SLACK_TITLE: New qpp-measures-data beta release
           SLACK_USERNAME: releaseNotify
