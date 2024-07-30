@@ -10,7 +10,7 @@ else
   tsc -p .
 
   echo -e "Updating mvp.json with new data..."
-  node dist/mvp/parse-mvp-data-script.js $performanceYear
+  node dist/scripts/mvp/parse-mvp-data-script.js $performanceYear
 
   echo -e "Completed."
 fi
