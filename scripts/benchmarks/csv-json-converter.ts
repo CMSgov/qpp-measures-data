@@ -17,7 +17,7 @@ import { Benchmark } from './benchmarks.types';
 import { prepareCsv, fetchCSV, writeToFile } from './util';
 
 // command to use this file:
-//  node dist/benchmarks/csv-json-converter.js staging/2023/benchmarks/[fileName].csv 2023 [fileName]
+//  node dist/scripts/benchmarks/csv-json-converter.js staging/2023/benchmarks/[fileName].csv 2023 [fileName]
 export function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName: string) {
     const csv = fetchCSV(csvPath);
     const parsedCsv = prepareCsv(csv);

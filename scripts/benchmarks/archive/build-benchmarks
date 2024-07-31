@@ -70,5 +70,5 @@ else
  
   # validate benchmarks
   echo 'Validating new benchmarks JSON.'
-  node dist/validate-data.js benchmarks $performanceYear $benchmarkFilename
+  node dist/scripts/validate-data.js benchmarks $performanceYear $benchmarkFilename
 fi

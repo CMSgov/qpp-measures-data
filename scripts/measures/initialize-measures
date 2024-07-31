@@ -20,7 +20,7 @@ else
   cp -r mvp/$previousPerformanceYear mvp/$newPerformanceYear
 
   echo -e "Incrementing eMeasureIds and resetting annual fields..."
-  node dist/measures/initialize-measures-data.js $newPerformanceYear
+  node dist/scripts/measures/initialize-measures-data.js $newPerformanceYear
 
   echo -e "Updating the performance year in the measures-schema and mvp-schema..."
   sed -i '' -e "s/$previousPerformanceYear/$newPerformanceYear/" measures/$newPerformanceYear/measures-schema.yaml
