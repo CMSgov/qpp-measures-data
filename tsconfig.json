@@ -11,9 +11,11 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "downlevelIteration": true,
-    "outDir": "./dist",
+    "outDir": "dist",
     "removeComments": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true
   },
+  "include": ["**/*.json", "**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts", "coverage", "__mocks__"],
 }

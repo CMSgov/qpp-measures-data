@@ -6,13 +6,15 @@
     "type": "git",
     "url": "https://github.com/CMSgov/qpp-measures-data.git"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=20.15",
     "npm": ">=10.7"
   },
   "scripts": {
     "build": "tsc",
+    "build2": "tsc && cp -rf benchmarks dist/benchmarks && cp -rf claims-related dist/claims-related && cp -rf measures dist/measures && cp -rf mvp dist/mvp && cp -rf clinical-clusters dist/clinical-clusters",
     "test": "npm run jest:cov",
     "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
