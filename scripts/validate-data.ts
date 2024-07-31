@@ -44,7 +44,7 @@ if (!schemaType) {
 }
 
 // Load the schema file
-const schema = YAML.parse(fs.readFileSync(path.join(__dirname, '../', optionalPath || schemaType, performanceYear, schemaType + '-schema.yaml'), 'utf8'));
+const schema = YAML.parse(fs.readFileSync(path.join(appRoot + '', optionalPath || schemaType, performanceYear, schemaType + '-schema.yaml'), 'utf8'));
 
 // Validate the json against the schema
 validate(schema, jsonToValidate);

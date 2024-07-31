@@ -18,7 +18,7 @@ if (( $currentPerformanceYear >= 2018 )) && (( $currentPerformanceYear <= $maxPe
   mkdir -p tmp/$currentPerformanceYear
   for category in "${categories[@]}"
   do
-    node dist/measures/json-to-csv.js \
+    node dist/scripts/measures/json-to-csv.js \
       $currentPerformanceYear $category
 
   done
