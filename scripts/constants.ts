@@ -267,6 +267,7 @@ export const QUALITY_MEASURES_ORDER = {
     'isIcdImpacted': undefined,
     'clinicalGuidelineChanged': undefined,
     'metricType': undefined,
+    'companionMeasureId': undefined,
     'allowedPrograms': undefined,
     'submissionMethods': undefined,
     'measureSets': undefined,

@@ -8,7 +8,7 @@ import _ from 'lodash';
 import { BENCHMARKS_ORDER } from '../constants';
 
 // command to use this file:
-//  node ./dist/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
+//  node ./dist/scripts/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
 export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: number) {
     const mergedBenchmarks = new Map();
     const mergeConflicts: any[] = [];

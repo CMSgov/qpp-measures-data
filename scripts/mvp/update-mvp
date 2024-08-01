@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 currentPerformanceYear=$(($1))
-maxPerformanceYear=2024
+maxPerformanceYear=2025
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -14,7 +14,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   
   # converting csv to json:
   echo -e "Converting CSV input file to JSON..."
-  node dist/mvp/csv-json-converter.js \
+  node dist/scripts/mvp/csv-json-converter.js \
     mvp/$currentPerformanceYear/mvp.csv $currentPerformanceYear mvp-raw
   
   # Parse mvp data:
@@ -23,7 +23,7 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
 
   # Update mvp-enriched, if there are any updates:
   echo -e "Updating mvp-enriched.json..."
-  node dist/mvp/$currentPerformanceYear/update-mvp.js \
+  node dist/scripts/mvp/$currentPerformanceYear/update-mvp.js \
     $currentPerformanceYear
   
   echo -e "${Green}Update complete."

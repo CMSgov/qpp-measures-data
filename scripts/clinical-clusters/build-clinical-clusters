@@ -2,11 +2,14 @@
 
 currentPerformanceYear=2024
 
+# compile TypeScript
+tsc -p .
+
 # generate EMA cluster data
 echo "Generating clinical clusters:"
-cat measures/$currentPerformanceYear/measures-data.json | node scripts/clinical-clusters/ema-clinical-cluster-builder.js $currentPerformanceYear ./util/clinical-clusters/$currentPerformanceYear/ClaimsClinical_Cluster.csv ./util/clinical-clusters/$currentPerformanceYear/RegistryClinicalCluster.csv | tee clinical-clusters/$currentPerformanceYear/clinical-clusters.json
+node dist/scripts/clinical-clusters/ema-clinical-cluster-builder.js $currentPerformanceYear util/clinical-clusters/$currentPerformanceYear/ClaimsClinical_Cluster.csv util/clinical-clusters/$currentPerformanceYear/RegistryClinicalCluster.csv
 
 # validate EMA clusters
 echo ""
 echo "Validating clinical-clusters.json produced: "
-cat clinical-clusters/$currentPerformanceYear/clinical-clusters.json | node scripts/validate-data.js clinical-clusters $currentPerformanceYear
+node dist/scripts/validate-data.js clinical-clusters $currentPerformanceYear clinical-clusters/$currentPerformanceYear/clinical-clusters.json

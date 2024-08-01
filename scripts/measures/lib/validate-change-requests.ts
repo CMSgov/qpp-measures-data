@@ -68,6 +68,10 @@ interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     strata?: object[],
 };
 
+interface Non_QCDR_Quality_MeasuresChange extends Base_Quality_MeasuresChange {
+    companionMeasureId?: string[],
+};
+
 interface QCDR_MeasuresChange extends Base_Quality_MeasuresChange {
     allowedVendors?: string[],
 };
@@ -76,7 +80,7 @@ export type MeasuresChange =
     IA_MeasuresChange &
     PI_MeasuresChange &
     Cost_MeasuresChange &
-    Base_Quality_MeasuresChange &
+    Non_QCDR_Quality_MeasuresChange &
     QCDR_MeasuresChange;
 
 const baseValidationSchemaProperties = {

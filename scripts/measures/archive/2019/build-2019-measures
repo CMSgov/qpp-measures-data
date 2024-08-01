@@ -59,5 +59,4 @@ node scripts/measures/$currentPerformanceYear/import-qcdr-measures.js \
 
 # 8. Validate the resulting measures-data.json file:
 echo "validating new measures-data.json"
-cat measures/$currentPerformanceYear/measures-data.json | \
-	node scripts/validate-data.js measures $currentPerformanceYear
+node dist/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json

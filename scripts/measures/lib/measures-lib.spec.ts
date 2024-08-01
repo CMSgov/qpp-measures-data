@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
-import { vol } from "memfs";
+import { vol } from 'memfs';
 
 import * as MeasuresLib from './measures-lib';
 import * as logger from '../../logger';
@@ -44,6 +44,7 @@ const allowedQualityNew = {
     primarySteward: 'stewardTitle',
     measureType: 'process',
     isHighPriority: false,
+    companionMeasureId: ['001'],
     submissionMethods: ['registry', 'claims'],
     measureSets: ['nephrology', 'preventiveMedicine'],
     isInverse: false,
@@ -129,13 +130,14 @@ describe('#update-measures-util', () => {
             volatileMeasures = [...measuresJson];
         });
 
-        it('should update the measure if found', () => {
+        it('should update the quality measure if found', () => {
             const change = {
                 measureId: '001',
                 metricType: 'testdata',
                 icdImpacted: ['testdata'],
                 clinicalGuidelineChanged: ['testdata'],
                 category: 'quality',
+                companionMeasureId: ['134'],
             } as MeasuresChange;
 
             MeasuresLib.updateMeasure(change, volatileMeasures);
@@ -186,6 +188,35 @@ describe('#update-measures-util', () => {
                     electronicHealthRecord: 'https://ecqi.healthit.gov/ecqm/ec/2023/cms122v11',
                     registry: 'http://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2023_Measure_001_MIPSCQM.pdf',
                 }
+            }));
+        });
+
+        it('should update the PI measure if found', () => {
+            const change = {
+                measureId: 'PI_PPHI_1',
+                metricType: 'testdata',
+                category: 'pi',
+                substitutes: ['PI_PPHI_2'],
+                exclusion: ['PI_ONCDIR_1'],
+            } as MeasuresChange;
+
+            MeasuresLib.updateMeasure(change, volatileMeasures);
+
+            expect(_.find(volatileMeasures, { measureId: 'PI_PPHI_1' })).toEqual(expect.objectContaining({
+                category: 'pi',
+                measureId: 'PI_PPHI_1',
+                title: 'Security Risk Analysis',
+                isRequired: true,
+                metricType: 'testdata',
+                firstPerformanceYear: 2017,
+                lastPerformanceYear: null,
+                objective: 'protectPatientHealthInformation',
+                isBonus: false,
+                reportingCategory: 'required',
+                measureSets: [],
+                substitutes: ['PI_PPHI_2'],
+                exclusion: ['PI_ONCDIR_1'],
+                preprod: []
             }));
         });
     });
@@ -258,6 +289,7 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
+                companionMeasureId: [],
                 allowedPrograms: ['mips', 'pcf'],
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],

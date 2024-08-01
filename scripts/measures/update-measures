@@ -2,7 +2,7 @@
 
 currentPerformanceYear=$(($1))
 test_mode='false'
-maxPerformanceYear=2024
+maxPerformanceYear=2025
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -36,36 +36,35 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
   tsc -p .
 
   # Update the measures-data, if there are any updates:
-  node dist/measures/$currentPerformanceYear/update-measures.js \
+  node dist/scripts/measures/$currentPerformanceYear/update-measures.js \
     $currentPerformanceYear $test_mode
   exitOnFailure
 
   if [ $test_mode == 'false' ]; then
     echo -e "Ingesting the Spec Urls, if those files exist..."
-    node dist/measures/lib/ingest-specifications-links.js \
+    node dist/scripts/measures/lib/ingest-specifications-links.js \
       $currentPerformanceYear
     exitOnFailure
 
     echo -e "Ingesting Quality and QCDR strata..."
-    node dist/measures/$currentPerformanceYear/ingest-strata.js \
+    node dist/scripts/measures/$currentPerformanceYear/ingest-strata.js \
       $currentPerformanceYear \
       util/measures/$currentPerformanceYear/qcdr-strata.csv
     exitOnFailure
 
-    node dist/measures/$currentPerformanceYear/ingest-strata.js \
+    node dist/scripts/measures/$currentPerformanceYear/ingest-strata.js \
       $currentPerformanceYear \
       util/measures/$currentPerformanceYear/quality-strata.csv
     exitOnFailure
 
     echo -e "Validating new measures-data.json..."
-    cat measures/$currentPerformanceYear/measures-data.json | \
-      node scripts/validate-data.js measures $currentPerformanceYear
+    node dist/scripts/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
     exitOnFailure
 
     # mvps don't exist prior to PY2023.
     if (( $currentPerformanceYear >= 2023 )); then
       echo -e "Updating mvp-enriched.json..."
-      node dist/mvp/$currentPerformanceYear/update-mvp.js \
+      node dist/scripts/mvp/$currentPerformanceYear/update-mvp.js \
         $currentPerformanceYear
       exitOnFailure
     fi
