@@ -40,6 +40,8 @@ function convertCsvToJson(csvPath: string, performanceYear: number, jsonFileName
         
         return mvp;
     });
+    
+    mappedCsv.sort((a, b) => a['MVP ID'].localeCompare(b['MVP ID']));
 
     writeToFile(mappedCsv, jsonPath);
 }
