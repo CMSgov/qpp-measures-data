@@ -6,6 +6,7 @@ import YAML from 'yaml';
 
 import * as index from './index';
 import { Constants } from './constants';
+import * as mvpDataUtils from './mvp-data-utils';
 
 const mvpJson = [
     {
@@ -405,7 +406,7 @@ describe('index', () => {
     describe('getMVPData', () => {
         let createMvpFileSpy: jest.SpyInstance;
         beforeEach(() => {
-            createMvpFileSpy = jest.spyOn(index, 'createMVPDataFile').mockImplementation(() => mvpJson);
+            createMvpFileSpy = jest.spyOn(mvpDataUtils, 'createMVPDataFile').mockImplementation(() => mvpJson);
         });
 
         it('finds and returns the mvp-enriched json file for the specified performance year.', () => {
@@ -479,7 +480,7 @@ describe('index', () => {
         let getSpy: jest.SpyInstance;
         beforeEach(() => {
             writeSpy = jest.spyOn(fse, 'writeFileSync').mockImplementation(jest.fn());
-            populateSpy = jest.spyOn(index, 'populateMeasuresforMVPs').mockImplementation(jest.fn());
+            populateSpy = jest.spyOn(mvpDataUtils, 'populateMeasuresforMVPs').mockImplementation(jest.fn());
             getSpy = jest.spyOn(index, 'getMeasuresData').mockReturnValue([
                 {
                     measureId: '001',
@@ -541,7 +542,7 @@ describe('index', () => {
         });
 
         it('creates and returns enriched mvp data, updating the mvp-enriched and measures-data files.', () => {
-            expect(index.createMVPDataFile(2024)).toStrictEqual([
+            expect(mvpDataUtils.createMVPDataFile(2024)).toStrictEqual([
                 {
                     mvpId: 'G0053',
                     clinicalTopic: 'Stroke Care and Prevention',
@@ -590,7 +591,7 @@ describe('index', () => {
                 'mvp/2024': {},
             });
 
-            expect(index.createMVPDataFile(2024)).toStrictEqual([]);
+            expect(mvpDataUtils.createMVPDataFile(2024)).toStrictEqual([]);
             expect(logSpy).toBeCalled();
             expect(writeSpy).not.toBeCalled();
             expect(populateSpy).not.toBeCalled();
@@ -623,7 +624,7 @@ describe('index', () => {
 
         it('successfully populates the mvp', () => {
             const testMvp = { ...mvpJson[0], qualityMeasureIds: ['001', '321'], qualityMeasures: [] };
-            index.populateMeasuresforMVPs(testMvp, mvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
+            mvpDataUtils.populateMeasuresforMVPs(testMvp, mvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
 
             expect(testMvp).toStrictEqual({
                 mvpId: 'G0053',
