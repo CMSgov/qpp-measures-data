@@ -1,20 +1,19 @@
-// mvpDataUtils.ts
 import * as fse from 'fs-extra';
 import * as path from 'path';
 import * as _ from 'lodash';
-import { Constants } from './constants';
-import { getMeasuresData } from './index';
+import { Constants } from '../constants';
+import { getMeasuresData } from '../index';
 
 export function createMVPDataFile(performanceYear: number): any {
-    console.log('om namah shivaya');
-    const mvpFilePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
-    const measureFilePath = path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json');
+    const basePath = path.resolve(__dirname, '..');
+    const mvpFilePath = path.join(basePath, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
+    const measureFilePath = path.join(basePath, 'measures', performanceYear.toString(), 'measures-data.json');
 
     let mvpData: any[] = [];
     let measuresData: any[] = [];
     try {
         mvpData = JSON.parse(
-            fse.readFileSync(path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json'), 'utf8'));
+            fse.readFileSync(path.join(basePath, 'mvp', performanceYear.toString(), 'mvp.json'), 'utf8'));
         measuresData = getMeasuresData(performanceYear);
     } catch (e) {
         console.log('QPP mvp / measures data not found for year: ' + performanceYear + ' --> ' + e);
@@ -83,27 +82,4 @@ export function populateMeasuresforMVPs(
             currentMvp[enrichedMeasureKey].push(measure);
         }
     });
-}
-
-export function getMVPDataSlim(performanceYear: number = 2023): any {
-    const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
-    let mvpData: any;
-
-    if (fse.existsSync(filePath)) {
-        mvpData = JSON.parse(fse.readFileSync(filePath, 'utf8'));
-        mvpData.forEach((mvp: any) => {
-            mvp.measureIds = [].concat(
-                mvp.qualityMeasureIds,
-                mvp.iaMeasureIds,
-                mvp.costMeasureIds,
-                mvp.foundationPiMeasureIds,
-                mvp.foundationQualityMeasureIds,
-                mvp.administrativeClaimsMeasureIds
-            );
-        });
-    } else {
-        console.log('mvp.json file does not exist');
-    }
-
-    return mvpData;
 }

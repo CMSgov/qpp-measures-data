@@ -3,7 +3,7 @@ import * as fse from 'fs-extra';
 import * as path from 'path';
 import * as YAML from 'yaml';
 import { Constants } from './constants';
-import { createMVPDataFile } from './mvp-data-utils';
+import { createMVPDataFile } from './util/mvp-data-utils';
 
 
 const yearRegEx = /^[0-9]{4}/;

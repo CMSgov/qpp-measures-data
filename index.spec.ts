@@ -6,7 +6,7 @@ import YAML from 'yaml';
 
 import * as index from './index';
 import { Constants } from './constants';
-import * as mvpDataUtils from './mvp-data-utils';
+import * as mvpDataUtils from './util/mvp-data-utils';
 
 const mvpJson = [
     {
