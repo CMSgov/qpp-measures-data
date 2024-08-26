@@ -3,8 +3,9 @@ import * as path from 'path';
 import * as _ from 'lodash';
 import { Constants } from '../constants';
 import { getMeasuresData } from '../index';
+import { MVPData } from './interfaces/mvp';
 
-export function createMVPDataFile(performanceYear: number): any {
+export function createMVPDataFile(performanceYear: number): MVPData[] {
     const basePath = path.resolve(__dirname, '..');
     const mvpFilePath = path.join(basePath, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
     const measureFilePath = path.join(basePath, 'measures', performanceYear.toString(), 'measures-data.json');
