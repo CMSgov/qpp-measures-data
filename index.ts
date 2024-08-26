@@ -4,6 +4,13 @@ import * as path from 'path';
 import * as YAML from 'yaml';
 import * as _ from 'lodash';
 import { Constants } from './constants';
+import { ProgramNames } from './util/interfaces/program-names';
+import { BenchmarksData } from './util/interfaces/benchmarks';
+import { BenchmarksExclusionReasons } from './util/interfaces/benchmarks-exclusion-reasons';
+import { CostNationalAverage } from './util/interfaces/cost-national-average';
+import { Measure } from './util/interfaces/measure';
+import { ClinicalCluster } from './scripts/clinical-clusters/clinical-cluster.types';
+import { MVPData, MVPDataSlim } from './util/interfaces/mvp';
 
 const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
@@ -51,7 +58,7 @@ export function updateProgramNames(performanceYear: number): void {
  * @return {ProgramNames | undefined} - program names -
  * An object keyed by program name containing the current program names
  */
-export function getProgramNames(): any {
+export function getProgramNames(): ProgramNames | undefined {
   const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
 
   try {
@@ -67,7 +74,7 @@ export function getProgramNames(): any {
  * An object keyed by performance year with array values
  * containing the benchmarks for that performance year
  */
-export function getBenchmarksData(): any {
+export function getBenchmarksData(): BenchmarksData {
   const benchmarksByYear: any = {};
 
   getBenchmarksYears().forEach(function (year) {
@@ -106,16 +113,16 @@ export function getBenchmarksSchema(performanceYear: number = Constants.currentP
  * @param {number} performanceYear - The performance year to get the exclusion reasons for.
  * @return {BenchmarksExclusionReasons[]} - The exclusion reasons for the given performance year.
  **/
-export function getBenchmarksExclusionReasons(performanceYear: number = Constants.currentPerformanceYear): any {
+export function getBenchmarksExclusionReasons(performanceYear: number = Constants.currentPerformanceYear): BenchmarksExclusionReasons[] {
   return JSON.parse(
       fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'benchmark-exclusion-reasons.json'), 'utf8'));
 }
 
 /**
  * @param {number} performanceYear - The performance year to get the national averages for.
- * @return {CostNationalAverages[]} - The national averages for the given performance year.
+ * @return {CostNationalAverage[]} - The national averages for the given performance year.
  **/
-export function getBenchmarksNationalAverages(performanceYear: number = Constants.currentPerformanceYear): any {
+export function getBenchmarksNationalAverages(performanceYear: number = Constants.currentPerformanceYear): CostNationalAverage[] {
   return JSON.parse(
       fse.readFileSync(path.join(__dirname, 'benchmarks', performanceYear.toString(), 'cost-national-averages.json'), 'utf8'));
 }
@@ -131,7 +138,7 @@ export function getBenchmarksNationalAveragesSchema(performanceYear: number = Co
  * @param {number} performanceYear - The performance year for which to load the measures data.
  * @return {Measure[]} An array of measure objects conforming to the Measure type definition.
  **/
-export function getMeasuresData(performanceYear: number = 2017): any {
+export function getMeasuresData(performanceYear: number = 2017): Measure[] {
   return JSON.parse(
       fse.readFileSync(path.join(__dirname, 'measures', performanceYear.toString(), 'measures-data.json'), 'utf8'));
 }
@@ -147,7 +154,7 @@ export function getMeasuresSchema(performanceYear: number = 2017): any {
  * @param {number} performanceYear - The performance year for which to load the clinical cluster data.
  * * @return {ClinicalCluster[]} An array of cluster objects conforming to the ClinicalCluster definition.
  **/
-export function getClinicalClusterData(performanceYear: number = 2017): any {
+export function getClinicalClusterData(performanceYear: number = 2017): ClinicalCluster[] {
   let clusterData: any[] = [];
   try {
     clusterData = JSON.parse(
@@ -166,9 +173,9 @@ export function getClinicalClusterSchema(performanceYear: number = 2023): any {
 }
 
 /**
- * @return {any}
+ * @return {MVPData[]}
  */
-export function getMVPData(performanceYear: number = 2023, mvpIds: string[] = []): any {
+export function getMVPData(performanceYear: number = 2023, mvpIds: string[] = []): MVPData[] {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
   let mvpData: any;
 
@@ -269,9 +276,9 @@ export function getMVPSchema(performanceYear: number = 2023): any {
 }
 
 /**
- * @return {any}
+ * @return {MVPDataSlim[]}
  */
-export function getMVPDataSlim(performanceYear: number = 2023): any {
+export function getMVPDataSlim(performanceYear: number = 2023): MVPDataSlim[] {
   const filePath = path.join(__dirname, 'mvp', performanceYear.toString(), 'mvp.json');
   let mvpData: any;
 
