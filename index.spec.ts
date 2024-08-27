@@ -3,6 +3,7 @@ import fse from 'fs-extra';
 import { vol } from 'memfs';
 import path from 'path';
 import YAML from 'yaml';
+import * as programNamesJson from './util/program-names/program-names.json';
 
 import * as index from './index';
 import { Constants } from './constants';
@@ -705,4 +706,25 @@ describe('index', () => {
             expect(logSpy).toBeCalledWith('mvp.json file does not exist');
         });
     });
+
+    // TODO - automate steps 1 and 2 below
+    // This test will fail when new program-names are programmatically added to ./util/program-names.json
+    // When this occurs, developers should:
+    // (1) update ./util/interfaces/program-names.ts to include the new programName
+    // (2) update this test to include the new programName
+    describe('ProgramNames interface', () => {
+        it('checks that the ProgramNames interface contains all program names', () => {
+            const programNames = Object.keys(programNamesJson).filter(obj => obj !== 'default')
+            expect(programNames).toStrictEqual([
+                'mips',  'cpcPlus', 'pcf',
+                'app1',  'DEFAULT', 'G0053',
+                'G0054', 'G0055',   'G0056',
+                'G0057', 'G0058',   'G0059',
+                'M0001', 'M0005',   'M0002',
+                'M0003', 'M0004',   'M1366',
+                'M1367', 'M1368',   'M1369',
+                'M1370'
+              ]);
+        }) 
+    })
 });

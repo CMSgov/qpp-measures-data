@@ -1,6 +1,7 @@
 import fs from 'fs';
 
-import * as index from '../../../index';
+import { updateProgramNames } from '../../../index';
+import { createMVPDataFile } from '../../../util/mvp-data-utils';
 import {
   info,
   warning
@@ -21,8 +22,8 @@ export function updateMvps(performanceYear: string) {
     }
   }
 
-  index.createMVPDataFile(Number(performanceYear));
-  index.updateProgramNames(Number(performanceYear));
+  createMVPDataFile(Number(performanceYear));
+  updateProgramNames(Number(performanceYear));
 }
 
 /* c8 ignore next */

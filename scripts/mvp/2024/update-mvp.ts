@@ -1,10 +1,11 @@
 import fs from 'fs';
 
-import * as index from '../../../index';
 import {
   info,
   warning
 } from '../../logger';
+import { createMVPDataFile } from '../../../util/mvp-data-utils';
+import { updateProgramNames } from '../../..';
 
 export function updateMvps(performanceYear: string) {
   const filePath = `mvp/${performanceYear}/mvp-enriched.json`;
@@ -21,8 +22,8 @@ export function updateMvps(performanceYear: string) {
     }
   }
 
-  index.createMVPDataFile(Number(performanceYear));
-  index.updateProgramNames(Number(performanceYear));
+  createMVPDataFile(Number(performanceYear));
+  updateProgramNames(Number(performanceYear));
 }
 
 /* c8 ignore next */
