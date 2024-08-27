@@ -56,16 +56,17 @@ export function updateProgramNames(performanceYear: number): void {
 
 /**
  *
- * @return {ProgramNames | undefined} - program names -
+ * @return {ProgramNames} - program names -
  * An object keyed by program name containing the current program names
  */
-export function getProgramNames(): ProgramNames | undefined {
+export function getProgramNames(): ProgramNames {
   const programNamesFilePath = path.join(__dirname, 'util/program-names', 'program-names.json');
 
   try {
     return JSON.parse(fse.readFileSync(programNamesFilePath, 'utf8'));
   } catch (e) {
     console.log('Error parsing the program-names.json file: ' + ' --> ' + e);
+    return <ProgramNames>{}
   }
 }
 
