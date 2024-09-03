@@ -5,6 +5,7 @@ import { Constants } from '../constants';
 import { getMeasuresData } from '../index';
 
 __dirname = __dirname.replace('/dist', '');
+__dirname = __dirname.replace('\\dist', '');
 
 export function createMVPDataFile(performanceYear: number): any {
     const basePath = path.resolve(__dirname, '..');
