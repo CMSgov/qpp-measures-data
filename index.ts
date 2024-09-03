@@ -17,6 +17,7 @@ const yearRegEx = /^[0-9]{4}/;
 const benchmarkJsonFileRegEx = /^[0-9]{4}\.json$/;
 
 __dirname = __dirname.replace('/dist', '');
+__dirname = __dirname.replace('\\dist', '');
 
 /**
  * @return {Array<number>}
