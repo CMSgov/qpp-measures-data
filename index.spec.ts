@@ -3,9 +3,11 @@ import fse from 'fs-extra';
 import { vol } from 'memfs';
 import path from 'path';
 import YAML from 'yaml';
+import * as programNamesJson from './util/program-names/program-names.json';
 
 import * as index from './index';
 import { Constants } from './constants';
+import * as mvpDataUtils from './util/mvp-data-utils';
 
 const mvpJson = [
     {
@@ -405,7 +407,7 @@ describe('index', () => {
     describe('getMVPData', () => {
         let createMvpFileSpy: jest.SpyInstance;
         beforeEach(() => {
-            createMvpFileSpy = jest.spyOn(index, 'createMVPDataFile').mockImplementation(() => mvpJson);
+            createMvpFileSpy = jest.spyOn(mvpDataUtils, 'createMVPDataFile').mockImplementation(() => mvpJson);
         });
 
         it('finds and returns the mvp-enriched json file for the specified performance year.', () => {
@@ -479,7 +481,7 @@ describe('index', () => {
         let getSpy: jest.SpyInstance;
         beforeEach(() => {
             writeSpy = jest.spyOn(fse, 'writeFileSync').mockImplementation(jest.fn());
-            populateSpy = jest.spyOn(index, 'populateMeasuresforMVPs').mockImplementation(jest.fn());
+            populateSpy = jest.spyOn(mvpDataUtils, 'populateMeasuresforMVPs').mockImplementation(jest.fn());
             getSpy = jest.spyOn(index, 'getMeasuresData').mockReturnValue([
                 {
                     measureId: '001',
@@ -541,7 +543,7 @@ describe('index', () => {
         });
 
         it('creates and returns enriched mvp data, updating the mvp-enriched and measures-data files.', () => {
-            expect(index.createMVPDataFile(2024)).toStrictEqual([
+            expect(mvpDataUtils.createMVPDataFile(2024)).toStrictEqual([
                 {
                     mvpId: 'G0053',
                     clinicalTopic: 'Stroke Care and Prevention',
@@ -590,7 +592,7 @@ describe('index', () => {
                 'mvp/2024': {},
             });
 
-            expect(index.createMVPDataFile(2024)).toStrictEqual([]);
+            expect(mvpDataUtils.createMVPDataFile(2024)).toStrictEqual([]);
             expect(logSpy).toBeCalled();
             expect(writeSpy).not.toBeCalled();
             expect(populateSpy).not.toBeCalled();
@@ -623,7 +625,7 @@ describe('index', () => {
 
         it('successfully populates the mvp', () => {
             const testMvp = { ...mvpJson[0], qualityMeasureIds: ['001', '321'], qualityMeasures: [] };
-            index.populateMeasuresforMVPs(testMvp, mvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
+            mvpDataUtils.populateMeasuresforMVPs(testMvp, mvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
 
             expect(testMvp).toStrictEqual({
                 mvpId: 'G0053',
@@ -704,4 +706,25 @@ describe('index', () => {
             expect(logSpy).toBeCalledWith('mvp.json file does not exist');
         });
     });
+
+    // TODO - automate steps 1 and 2 below
+    // This test will fail when new program-names are programmatically added to ./util/program-names.json
+    // When this occurs, developers should:
+    // (1) update ./util/interfaces/program-names.ts to include the new programName
+    // (2) update this test to include the new programName
+    describe('ProgramNames interface', () => {
+        it('checks that the ProgramNames interface contains all program names', () => {
+            const programNames = Object.keys(programNamesJson).filter(obj => obj !== 'default')
+            expect(programNames).toStrictEqual([
+                'mips',  'cpcPlus', 'pcf',
+                'app1',  'DEFAULT', 'G0053',
+                'G0054', 'G0055',   'G0056',
+                'G0057', 'G0058',   'G0059',
+                'M0001', 'M0005',   'M0002',
+                'M0003', 'M0004',   'M1366',
+                'M1367', 'M1368',   'M1369',
+                'M1370'
+              ]);
+        }) 
+    })
 });
