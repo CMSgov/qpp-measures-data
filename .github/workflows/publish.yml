@@ -33,8 +33,10 @@ jobs:
           node-version: 20
           registry-url: "https://registry.npmjs.org"
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install Dependencies and Build
+        run: |
+          npm ci
+          npm run build
 
       - name: Update version in package.json and package-lock.json
         env:
