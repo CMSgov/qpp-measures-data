@@ -27,8 +27,8 @@ Functions take a string version argument and return the appropriate YAML schema 
 
 The module can be used with the following pattern:
 
-```javascript
-const qppMeasuresData = require('qpp-measures-data');
+```typescript
+import * as qppMeasuresData from 'qpp-measures-data';
 const measuresData = qppMeasuresData.getMeasuresData($YEAR);
 const measuresSchema = qppMeasuresData.getMeasuresSchema($YEAR);
 const benchmarksData = qppMeasuresData.getBenchmarksData();
