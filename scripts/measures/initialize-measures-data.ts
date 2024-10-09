@@ -13,6 +13,9 @@ import { error } from '../logger';
 
 const performanceYear = process.argv[2];
 
+// Fix for __dirname when running compiled scripts from dist
+__dirname = __dirname.replace('/dist', '').replace('\\dist', '');
+
 const measuresPath = `../../measures/${performanceYear}/measures-data.json`;
 
 const measuresJson = JSON.parse(
@@ -25,8 +28,26 @@ function initMeasuresData() {
     removeIcdImpacted();
     removeClinicalGuidelineChanged();
     removeBenchmarksRemoved();
+    removeEMeasureUuids();
 
     writeToFile(measuresJson, measuresPath);
+}
+
+// Remove eMeasureUuid from the measure
+function removeEMeasureUuids() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (measuresJson[i].eMeasureId !== null) {
+            delete measuresJson[i].eMeasureUuid;
+
+            if (Array.isArray(measuresJson[i].strata)) {
+                measuresJson[i].strata.forEach((stratum) => {
+                    if (stratum.eMeasureUuids) {
+                        delete stratum.eMeasureUuids;
+                    }
+                });
+            }
+        }
+    }
 }
 
 function incrementEMeasureId() {
