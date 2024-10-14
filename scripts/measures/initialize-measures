@@ -30,6 +30,7 @@ else
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/update-measures
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/measures-json-to-csv
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/update-mvp
+  sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/benchmarks/build-benchmarks
 
   echo -e "Cloning yearly scripts and test files..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear
