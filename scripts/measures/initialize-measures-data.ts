@@ -29,6 +29,7 @@ function initMeasuresData() {
     removeClinicalGuidelineChanged();
     removeBenchmarksRemoved();
     removeEMeasureUuids();
+    initializeSevenPointCapRemoved();
 
     writeToFile(measuresJson, measuresPath);
 }
@@ -97,6 +98,21 @@ function removeBenchmarksRemoved() {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].historic_benchmarks) {
             delete measuresJson[i].historic_benchmarks;
+        }
+    }
+}
+
+function initializeSevenPointCapRemoved() {
+    const year = parseInt(performanceYear, 10);
+
+    if (isNaN(year)) {
+        throw new Error('Invalid performance year. Please provide a valid number.');
+    }
+
+    for (let i = 0; i < measuresJson.length; i++) {
+        if (year >= 2025 && measuresJson[i].category === 'quality') {
+            measuresJson[i].isSevenPointCapRemoved = false;
+            measuresJson[i].sevenPointCapRemoved = [];
         }
     }
 }

@@ -230,7 +230,15 @@ definitions:
           companionMeasureId:
             default: []
             description: List of measureIds to establish a link between the base and Medicare CQM measures.
-            oneOf: [{ $ref: '#/definitions/arrayOfStringIdentifiers' }]  
+            oneOf: [{ $ref: '#/definitions/arrayOfStringIdentifiers' }]
+          isSevenPointCapRemoved:
+            type: boolean
+            description: If true, at least one submission method is listed in sevenPointCapRemoved.
+            default: false
+          sevenPointCapRemoved:
+            type: array
+            description: List of submissionMethods that have been identified for application of the alternative benchmark defined by Policy.
+            items: { $ref: '#/definitions/methods' }
 
         # measures with metricType multiPerformanceRate must also have the properties overallAlgorithm and strata; other metricTypes do not
         # Note: Need to add back required: [overallAlgorithm, strata] for multiPerformanceRate, registryMultiPerformanceRate once strata data for 007 has been received
