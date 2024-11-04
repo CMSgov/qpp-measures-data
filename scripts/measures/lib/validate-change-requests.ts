@@ -34,7 +34,6 @@ interface Cost_MeasuresChange extends baseMeasuresChange {
 };
 
 interface IA_MeasuresChange extends baseMeasuresChange {
-    weight?: string,
     subcategoryId?: string,
 };
 
@@ -144,11 +143,18 @@ const ia_validationSchema: JSONSchemaType<IA_MeasuresChange> = {
     type: 'object',
     properties: {
         ...baseValidationSchemaProperties,
-        weight: { type: 'string', nullable: true },
         subcategoryId: { type: 'string', nullable: true },
     },
     required: ['measureId', 'category'],
     additionalProperties: false,
+} as JSONSchemaType<IA_MeasuresChange>;
+
+const ia_validationSchema_with_weight: JSONSchemaType<IA_MeasuresChange> = {
+    ...ia_validationSchema,
+    properties: {
+        ...ia_validationSchema.properties,
+        weight: { type: 'string', nullable: true },
+    }
 } as JSONSchemaType<IA_MeasuresChange>;
 
 const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
@@ -184,8 +190,8 @@ const qcdr_validationSchema: JSONSchemaType<QCDR_MeasuresChange> = {
     additionalProperties: false,
 } as JSONSchemaType<QCDR_MeasuresChange>;
 
-export function initValidation(type: measureType, isNewMeasure) {
-    return ajv.compile(getSchema(type, isNewMeasure))
+export function initValidation(type: measureType, isNewMeasure: boolean, performanceYear: number) {
+    return ajv.compile(getSchema(type, isNewMeasure, performanceYear))
 }
 
 function createSchema(schema: any, isNewMeasure: boolean, type: measureType) {
@@ -213,9 +219,12 @@ function createSchema(schema: any, isNewMeasure: boolean, type: measureType) {
     }
 }
 
-function getSchema(type: measureType, isNewMeasure: boolean) {
+function getSchema(type: measureType, isNewMeasure: boolean, performanceYear: number) {
     switch (type) {
         case measureType.ia:
+            if (performanceYear < 2025) {
+                return createSchema(ia_validationSchema_with_weight, isNewMeasure, type);
+            }
             return createSchema(ia_validationSchema, isNewMeasure, type);
         case measureType.pi:
             return createSchema(pi_validationSchema, isNewMeasure, type);

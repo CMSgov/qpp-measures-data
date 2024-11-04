@@ -68,14 +68,10 @@ definitions:
         properties:
           category:
             enum: [ia]
-          weight:
-            description: Determines the points granted for attesting to the measure.
-            enum: [null, medium, high]
-            default: medium
           subcategoryId:
             description: IA category which the measure incentivizes.
             oneOf: [{ $ref: '#/definitions/subcategoryIds' }]
-        required: [weight, subcategoryId]
+        required: [subcategoryId]
 
   piMeasure:
     $merge:

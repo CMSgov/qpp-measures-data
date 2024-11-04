@@ -18,7 +18,6 @@ const allowedIaChange = {
     title: 'Use of telehealth services that expand practice access',
     description: 'Create and implement a standardized process for providing telehealth services to expand access to care.',
     measureId: 'IA_EPA_2',
-    weight: 'medium',
     subcategoryId: 'expandedPracticeAccess'
 };
 
@@ -28,7 +27,6 @@ const allowedIaNew = {
     measureId: 'IA_EPA_2_NEW',
     firstPerformanceYear: 2023,
     category: 'ia',
-    weight: 'high',
     subcategoryId: 'populationManagement',
 } as MeasuresChange;
 

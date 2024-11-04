@@ -67,7 +67,7 @@ export function updateMeasuresWithChangeFile(
             } else {
                 const isNew = isNewMeasure(measureId, measuresJson);
                 //validation on the change request. Validation on the updated measures data happens later in update-measures.
-                const validate = initValidation(measureType[change.category], isNew);
+                const validate = initValidation(measureType[change.category], isNew, parseInt(performanceYear));
 
                 if (!isNew) {
                     if (change.firstPerformanceYear) warning(
