@@ -292,7 +292,8 @@ function populatePreProdArray(change: MeasuresChange, measuresJson: any): string
 }
 
 /**
- * Updates the ICD and Clinical Guidelines existance fields with whether or not those arrays exist.
+ * Updates the fields indicating whether ICD, Clinical Guidelines, or the Seven Point Cap removal are impacted
+ * based on the presence and length of respective arrays in the measure change data.
  */
 function updateBenchmarksMetaData(change: MeasuresChange): {
     isIcdImpacted: boolean,
