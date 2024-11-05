@@ -296,11 +296,13 @@ function populatePreProdArray(change: MeasuresChange, measuresJson: any): string
  */
 function updateBenchmarksMetaData(change: MeasuresChange): {
     isIcdImpacted: boolean,
-    isClinicalGuidelineChanged: boolean
+    isClinicalGuidelineChanged: boolean,
+    isSevenPointCapRemoved: boolean,
 } {
     return {
         isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
         isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
+        isSevenPointCapRemoved: change.sevenPointCapRemoved ? !!change.sevenPointCapRemoved.length : false,
     };
 
 }

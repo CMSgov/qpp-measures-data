@@ -56,6 +56,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'isRiskAdjusted': 'Is Risk Adjusted',
     'yearRemoved': 'Year Removed',
     'firstPerformanceYear': 'First Performance Year',
+    'sevenPointCapRemoved': '*** Collection Type(s) where 7-point Cap Removed',
 };
 
 export const BENCHMARKS_COLUMN_NAMES = {
@@ -99,6 +100,7 @@ export const ARRAY_CSV_FIELDS = [
     'Collection Type(s) where Suppressed',
     'Collection Type(s) where Historic Benchmark Removed',
     'Collection Type(s) where Truncated',
+    '*** Collection Type(s) where 7-point Cap Removed',
 ];
 
 export const BOOLEAN_CSV_FIELDS = [
@@ -136,6 +138,7 @@ export const COLLECTION_TYPES_FIELDS = [
     'Collection Type(s) where Historic Benchmark Removed',
     'Collection Type(s) where Truncated',
     '*** Collection Type(s) for Submission',
+    '*** Collection Type(s) where 7-point Cap Removed',
 ];
 
 export const COLLECTION_TYPES = {
