@@ -219,6 +219,34 @@ describe('#update-measures-util', () => {
                 preprod: []
             }));
         });
+
+        it('should update isSevenPointCapRemoved to true when sevenPointCapRemoved has values', () => {
+            const change: MeasuresChange = {
+                measureId: '001',
+                category: 'quality',
+                sevenPointCapRemoved: ['registry'],
+            };
+
+            MeasuresLib.updateMeasure(change, volatileMeasures);
+
+            const updatedMeasure = _.find(volatileMeasures, { measureId: '001' });
+            expect(updatedMeasure.isSevenPointCapRemoved).toBe(true);
+            expect(updatedMeasure.sevenPointCapRemoved).toEqual(['registry']);
+        });
+
+        it('should update isSevenPointCapRemoved to false when sevenPointCapRemoved is empty', () => {
+            const change: MeasuresChange = {
+                measureId: '001',
+                category: 'quality',
+                sevenPointCapRemoved: [],
+            };
+
+            MeasuresLib.updateMeasure(change, volatileMeasures);
+
+            const updatedMeasure = _.find(volatileMeasures, { measureId: '001' });
+            expect(updatedMeasure.isSevenPointCapRemoved).toBe(false);
+            expect(updatedMeasure.sevenPointCapRemoved).toEqual([]);
+        });
     });
 
     describe('addMeasure', () => {

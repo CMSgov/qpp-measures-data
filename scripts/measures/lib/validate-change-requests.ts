@@ -65,6 +65,7 @@ interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     icdImpacted?: string[],
     measureSets?: string[],
     strata?: object[],
+    sevenPointCapRemoved?: string[],
 };
 
 interface Non_QCDR_Quality_MeasuresChange extends Base_Quality_MeasuresChange {
@@ -110,6 +111,7 @@ const baseQualitySchemaProperties = {
     icdImpacted: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
     measureSets: { type: 'array', items: { type: 'string' }, nullable: true },
     strata: { type: 'array', items: { type: 'object' }, nullable: true },
+    sevenPointCapRemoved: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
 };
 
 const baseQualityRequiredFields = [
