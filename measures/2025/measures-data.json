@@ -2791,7 +2791,7 @@
     "measureId": "PI_ONCACB_1",
     "title": "ONC-ACB Surveillance Attestation",
     "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-    "isRequired": false,
+    "isRequired": true,
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -11957,8 +11957,8 @@
   },
   {
     "category": "cost",
-    "title": "Routine Cataract Removal with Intraocular Lens (IOL) Implantation",
-    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (\"episode\"). In all supplemental documentation, \"cost\" generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The Routine Cataract Removal with IOL Implantation episode-based cost measure evaluates a clinician's risk-adjusted cost to Medicare for patients who undergo a procedure for routine cataract removal with IOL implantation during the performance period. The measure score is the clinician's risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician's role in managing care during each episode from 60 days prior to the clinical event that opens, or \"triggers,\" the episode through 90 days after the trigger.",
+    "title": "Cataract Removal with Intraocular Lens (IOL) Implantation episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized Medicare allowed amount and claims data from Medicare Parts A and B are used to construct the episode-based cost measures.\nThe Cataract Removal with IOL Implantation episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for patients who undergo a procedure for cataract removal with IOL implantation during the performance period. The measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This procedural measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from 60 days prior to the clinical event that opens, or “triggers,” the episode through 90 days after the trigger.",
     "measureId": "COST_IOL_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -12074,8 +12074,8 @@
   },
   {
     "category": "cost",
-    "title": "ST-Elevation Myocardial Infarction (STEMI) with Percutaneous Coronary Intervention (PCI)",
-    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (\"episode\"). In all supplemental documentation, \"cost\" generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The STEMI with PCI episode-based cost measure evaluates a clinician's risk-adjusted cost to Medicare for patients who present with STEMI indicating complete blockage of a coronary artery who emergently receive PCI as treatment during the performance period. The measure score is the clinician's risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician's role in managing care during each episode from the clinical event that opens, or \"triggers,\" the episode through 30 days after the trigger.",
+    "title": "Inpatient Percutaneous Coronary Intervention (PCI) episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures.\nThe Inpatient PCI episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for patients who present with a cardiac event and emergently receive PCI as treatment during the performance period. The measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 30 days after the trigger.",
     "measureId": "COST_STEMI_1",
     "metricType": "costScore",
     "firstPerformanceYear": 2019,
@@ -12482,6 +12482,114 @@
       "G0057"
     ],
     "measureSpecification": {}
+  },
+  {
+    "category": "cost",
+    "title": "Respiratory Infection Hospitalization episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures.\nThe Respiratory Infection Hospitalization episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for patients who receive inpatient treatment for a respiratory infection during the performance period. The measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 30 days after the trigger.",
+    "measureId": "COST_RIH_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Chronic Kidney Disease (CKD) episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, the term “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A, B, and D are used to construct this episode-based cost measure.\nThe CKD episode-based cost measure evaluates a clinician’s or clinician group’s risk-adjusted and specialty-adjusted cost to Medicare for patients who receive medical care to manage and treat stage 4 or 5 chronic kidney disease. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a CKD episode.",
+    "measureId": "COST_CDK_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "End-Stage Renal Disease (ESRD) episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, the term “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A, B, and D are used to construct this episode-based cost measure.\nThe ESRD episode-based cost measure evaluates a clinician’s or clinician group’s risk-adjusted and specialty-adjusted cost to Medicare for patients who receive medical care to manage ESRD. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during an ESRD episode.",
+    "measureId": "COST_ESRD_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Kidney Transplant Management episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, the term “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A, B, and D3 are used to construct this episode-based cost measure.\nThe Kidney Transplant Management episode-based cost measure evaluates a clinician’s or clinician group’s risk-adjusted and specialty-adjusted cost to Medicare for patients who receive medical care related to kidney transplant, beginning 90 days post-transplant. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a Kidney Transplant Management episode.",
+    "measureId": "COST_KTM_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Prostate Cancer episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, the term “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A, B, and D are used to construct this episode-based cost measure.\nThe Prostate Cancer episode-based cost measure evaluates a clinician’s or clinician group’s risk-adjusted and specialty-adjusted cost to Medicare for patients who receive medical care to manage and treat prostate cancer. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a Prostate Cancer episode.",
+    "measureId": "COST_PC_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
+  },
+  {
+    "category": "cost",
+    "title": "Rheumatoid Arthritis episode-based cost measure",
+    "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, the term “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A, B, and D are used to construct this episode-based cost measure.\nThe Rheumatoid Arthritis episode-based cost measure evaluates a clinician’s or clinician group’s risk-adjusted and specialty-adjusted cost to Medicare for patients who receive medical care to manage and treat rheumatoid arthritis. This chronic condition measure includes the costs of services that are clinically related to the attributed clinician’s role in managing care during a Rheumatoid Arthritis episode",
+    "measureId": "COST_RA_1",
+    "metricType": "costScore",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": true,
+    "overallAlgorithm": "simpleAverage",
+    "submissionMethods": [
+      "administrativeClaims"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1"
+    ]
   },
   {
     "title": "CAHPS for MIPS SSM: Getting Timely Care, Appointments, and Information",
