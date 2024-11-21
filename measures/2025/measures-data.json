@@ -3215,12 +3215,12 @@
     ]
   },
   {
-    "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
+    "title": "Diabetes: Glycemic Status Assessment Greater Than 9%",
     "eMeasureId": "CMS122v13",
     "nqfEMeasureId": null,
     "nqfId": "0059",
     "measureId": "001",
-    "description": "Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period.",
+    "description": "Percentage of patients 18-75 years of age with diabetes who had a glycemic status assessment (hemoglobin A1c [HbA1c] or glucose management indicator [GMI]) > 9.0% during the measurement period.",
     "measureType": "intermediateOutcome",
     "isHighPriority": true,
     "primarySteward": "National Committee for Quality Assurance",
@@ -3452,7 +3452,7 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Anti-Depressant Medication Management",
+    "title": "Antidepressant Medication Management",
     "eMeasureId": "CMS128v13",
     "nqfEMeasureId": null,
     "nqfId": null,
@@ -3569,8 +3569,7 @@
       "pcf"
     ],
     "submissionMethods": [
-      "electronicHealthRecord",
-      "registry"
+      "electronicHealthRecord"
     ],
     "measureSets": [
       "ophthalmology"
@@ -3632,7 +3631,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0046",
     "measureId": "039",
-    "description": "Percentage of female patients aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) to check for osteoporosis.",
+    "description": "Percentage of women aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) test to check for osteoporosis.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -4011,42 +4010,6 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Prostate Cancer: Combination Androgen Deprivation Therapy for High Risk or Very High Risk Prostate Cancer",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "104",
-    "description": "Percentage of patients, regardless of age, with a diagnosis of prostate cancer at high or very high risk of recurrence receiving external beam radiotherapy to the prostate who were prescribed androgen deprivation therapy in combination with external beam radiotherapy to the prostate.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American Urological Association Education and Research",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "urology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
     "title": "Breast Cancer Screening",
     "eMeasureId": "CMS125v13",
     "nqfEMeasureId": null,
@@ -4067,7 +4030,9 @@
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
     "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
+    "companionMeasureId": [
+      "112SSP"
+    ],
     "allowedPrograms": [
       "M1366"
     ],
@@ -4380,7 +4345,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "130",
-    "description": "Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
+    "description": "Percentage of visits for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -4525,42 +4490,6 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Melanoma: Continuity of Care - Recall System",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "137",
-    "description": "Percentage of patients, regardless of age, with a current diagnosis of melanoma or a history of melanoma whose information was entered, at least once within a 12 month period, into a recall system that includes:\n• A target date for the next complete physical skin exam, AND\n• A process to follow up with patients who either did not make an appointment within the specified timeframe or who missed a scheduled appointment.",
-    "measureType": "structure",
-    "isHighPriority": true,
-    "primarySteward": "American Academy of Dermatology",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "dermatology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
     "title": "Primary Open-Angle Glaucoma (POAG): Reduction of Intraocular Pressure (IOP) by 20% OR Documentation of a Plan of Care.",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -4641,8 +4570,11 @@
         "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy"
       }
     ],
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "electronicHealthRecord",
+      "registry"
+    ]
   },
   {
     "title": "Oncology: Medical and Radiation - Plan of Care for Pain",
@@ -4748,7 +4680,6 @@
       "M1370"
     ],
     "submissionMethods": [
-      "claims",
       "registry"
     ],
     "measureSets": [
@@ -4847,7 +4778,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0115",
     "measureId": "168",
-    "description": "Percentage of patients aged 18 years and older undergoing isolated CABG surgery who require a return to the operating room (OR) during the current hospitalization for mediastinal bleeding with or without tamponade, graft occlusion, valve dysfunction, or other cardiac reason.",
+    "description": "Percentage of patients aged 18 years and older undergoing isolated CABG surgery who require a return to the operating room (OR) for mediastinal bleeding with or without tamponade, unplanned coronary artery intervention (native vessel, graft or both), valve dysfunction, aortic reintervention or other cardiac reason during the current hospitalization.",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Society of Thoracic Surgeons",
@@ -4924,7 +4855,7 @@
     "nqfEMeasureId": null,
     "nqfId": "2523",
     "measureId": "177",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the measurement year.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the performance period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American College of Rheumatology",
@@ -4961,7 +4892,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "178",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed at least once within 12 months.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed during the performance period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American College of Rheumatology",
@@ -4999,7 +4930,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "180",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan within 12 months.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan during the performance period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American College of Rheumatology",
@@ -5064,6 +4995,7 @@
     "measureSets": [
       "audiology",
       "clinicalSocialWork",
+      "emergencyMedicine",
       "familyMedicine",
       "geriatrics",
       "internalMedicine",
@@ -5242,7 +5174,7 @@
   {
     "title": "Sexually Transmitted Infection (STI) Testing for People with HIV",
     "eMeasureId": "CMS1188v2",
-    "nqfEMeasureId": null,
+    "nqfEMeasureId": "3755e",
     "nqfId": null,
     "measureId": "205",
     "description": "Percentage of patients 13 years of age and older with a diagnosis of HIV who had tests for syphilis, gonorrhea, and chlamydia performed within the performance period.",
@@ -5787,7 +5719,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "240",
-    "description": "Percentage of children 2 years of age who had four diphtheria, tetanus and acellular pertussis (DTaP); three polio (IPV), one measles, mumps and rubella (MMR); three or four H influenza type B (HiB); three hepatitis B (Hep B); one chicken pox (VZV); four pneumococcal conjugate (PCV); one hepatitis A (Hep A); two or three rotavirus (RV); and two influenza (flu) vaccines by their second birthday.",
+    "description": "Percentage of children 2 years of age who had four diphtheria, tetanus and acellular pertussis (DTaP); three polio (IPV), one measles, mumps and rubella (MMR); three or four H influenza type B (HiB); three hepatitis B (HepB); one chicken pox (VZV); four pneumococcal conjugate (PCV); one hepatitis A (HepA); two or three rotavirus (RV); and two influenza (flu) vaccines by their second birthday.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -5898,8 +5830,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ]
   },
   {
     "title": "Radical Prostatectomy Pathology Reporting",
@@ -5936,44 +5871,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Ultrasound Determination of Pregnancy Location for Pregnant Patients with Abdominal Pain",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "254",
-    "description": "Percentage of pregnant female patients aged 14 to 50 who present to the emergency department (ED) with a chief complaint of abdominal pain or vaginal bleeding who receive a trans-abdominal or trans-vaginal ultrasound to determine pregnancy location.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American College of Emergency Physicians",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
       "registry"
-    ],
-    "measureSets": [
-      "emergencyMedicine"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    ]
   },
   {
     "title": "Rate of Endovascular Aneurysm Repair (EVAR) of Small or Moderate Non-Ruptured Infrarenal Abdominal Aortic Aneurysms (AAA) without Major Complications (Discharged to Home by Post-Operative Day #2)",
@@ -6005,43 +5907,6 @@
       "registry"
     ],
     "measureSets": [
-      "vascularSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Rate of Carotid Endarterectomy (CEA) for Asymptomatic Patients, without Major Complications (Discharged to Home by Post-Operative Day #2)",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "260",
-    "description": "Percent of asymptomatic patients undergoing Carotid Endarterectomy (CEA) who are discharged to home no later than post-operative day #2.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "primarySteward": "Society for Vascular Surgeons",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "neurosurgical",
       "vascularSurgery"
     ],
     "measureSpecification": {},
@@ -6200,7 +6065,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "277",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea who had an apnea hypopnea index (AHI), a respiratory disturbance index (RDI), or a respiratory event index (REI) documented or measured within 2 months of initial evaluation for suspected obstructive sleep apnea.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea who had an apnea hypopnea index (AHI), a respiratory disturbance index (RDI), or a respiratory event index (REI) documented or measured within 2 months after initial evaluation for suspected obstructive sleep apnea.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "American Academy of Sleep Medicine",
@@ -6355,7 +6220,8 @@
       "clinicalSocialWork",
       "geriatrics",
       "mentalBehavioralHealth",
-      "neurology"
+      "neurology",
+      "speechLanguagePathology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -6397,7 +6263,8 @@
       "geriatrics",
       "mentalBehavioralHealth",
       "neurology",
-      "physicalTherapyOccupationalTherapy"
+      "physicalTherapyOccupationalTherapy",
+      "speechLanguagePathology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -6439,7 +6306,8 @@
       "geriatrics",
       "mentalBehavioralHealth",
       "neurology",
-      "physicalTherapyOccupationalTherapy"
+      "physicalTherapyOccupationalTherapy",
+      "speechLanguagePathology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -6639,7 +6507,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "305",
-    "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+    "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\r\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \r\nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "National Committee for Quality Assurance",
@@ -6893,7 +6761,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0658",
     "measureId": "320",
-    "description": "Percentage of patients aged 45 to 75 years of age receiving a screening colonoscopy without biopsy or polypectomy who had a recommended follow-up interval of at least 10 years for repeat colonoscopy documented in their colonoscopy report.",
+    "description": "Percentage of patients aged 45 to 75 years of age receiving a screening colonoscopy without biopsy or polypectomy who had a recommended follow-up interval of 10 years for repeat colonoscopy documented in their colonoscopy report.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Gastroenterological Association",
@@ -6974,7 +6842,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "322",
-    "description": "Percentage of stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), cardiac computed tomography angiography (CCTA), or cardiac magnetic resonance (CMR) performed in low-risk surgery patients 18 years or older for preoperative evaluation during the 12-month submission period.",
+    "description": "Percentage of stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), multigated acquisition scan (MUGA), cardiac computed tomography angiography (CCTA), or cardiac magnetic resonance (CMR) performed in low-risk surgery patients 18 years or older for preoperative evaluation during the 12-month submission period.",
     "measureType": "efficiency",
     "isHighPriority": true,
     "primarySteward": "American College of Cardiology Foundation",
@@ -7174,7 +7042,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "336",
-    "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who were seen for postpartum care before or at 12 weeks of giving birth and received the following at a postpartum visit: breast-feeding evaluation and education, postpartum depression screening, postpartum glucose screening for gestational diabetes patients, family and contraceptive planning counseling, tobacco use screening and cessation education, healthy lifestyle behavioral advice, and an immunization review and update.",
+    "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who were seen for postpartum care before or at 12 weeks of giving birth and received the following at a postpartum visit: breastfeeding evaluation and education, postpartum depression screening, intimate partner violence screening, postpartum glucose screening for gestational diabetes patients, family and contraceptive planning counseling, tobacco use screening and cessation education, healthy lifestyle behavioral advice, and an immunization review and update.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -7253,12 +7121,12 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "HIV Medical Visit Frequency",
-    "eMeasureId": null,
+    "title": "HIV Annual Retention in Care",
+    "eMeasureId": "CMS1157v1",
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "340",
-    "description": "Percentage of patients, regardless of age with a diagnosis of HIV who had at least one medical visit in each 6 month period of the 24 month measurement period, with a minimum of 60 days between medical visits.",
+    "description": "Percentage of patients, regardless of age, with a diagnosis of Human Immunodeficiency Virus (HIV) before or during the first 240 days of the performance period who had at least two eligible encounters or at least one eligible encounter and one HIV viral load test that were at least 90 days apart within the performance period",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "Health Resources and Services Administration",
@@ -7280,6 +7148,7 @@
       "M1368"
     ],
     "submissionMethods": [
+      "electronicHealthRecord",
       "registry"
     ],
     "measureSets": [
@@ -7288,15 +7157,18 @@
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "sevenPointCapRemoved": [],
+    "historic_benchmarks": {
+      "registry": "removed"
+    }
   },
   {
-    "title": "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
+    "title": "Rate of Carotid Endarterectomy (CEA) or Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "344",
-    "description": "Percent of asymptomatic patients undergoing CAS who are discharged to home no later than post-operative day #2.",
+    "description": "Percent of asymptomatic patients undergoing Carotid Endarterectomy (CEA) or Carotid Artery Stenting (CAS) without major complication who are discharged to home no later than post-operative day #2.",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Society for Vascular Surgeons",
@@ -7327,7 +7199,10 @@
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "sevenPointCapRemoved": [],
+    "historic_benchmarks": {
+      "registry": "removed"
+    }
   },
   {
     "title": "Total Knee or Hip Replacement: Shared Decision-Making: Trial of Conservative (Non-surgical) Therapy",
@@ -7605,7 +7480,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "360",
-    "description": "Percentage of computed tomography (CT) and cardiac nuclear medicine (myocardial perfusion studies) imaging reports for all patients, regardless of age, that document a count of known previous CT (any type of CT) and cardiac nuclear medicine (myocardial perfusion) studies that the patient has received in the 12-month period prior to the current study.",
+    "description": "Percentage of computed tomography (CT) and cardiac nuclear medicine (myocardial perfusion or infarct avid imaging) reports for all patients, regardless of age, that document a count of known previous CT (any type of CT) and cardiac nuclear medicine (myocardial perfusion or infarct avid imaging) studies that the patient has received in the 12-month period prior to the current study.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American College of Radiology",
@@ -7632,8 +7507,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Optimizing Patient Exposure to Ionizing Radiation: Appropriateness: Follow-up CT Imaging for Incidentally Detected Pulmonary Nodules According to Recommended Guidelines",
@@ -7668,8 +7545,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Follow-Up Care for Children Prescribed ADHD Medication (ADD)",
@@ -8462,8 +8341,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ]
   },
   {
     "title": "Lung Cancer Reporting (Resection Specimens)",
@@ -8496,11 +8378,14 @@
       "registry"
     ],
     "measureSets": [
-      "pathology"
+      "neurology",
+      "speechLanguagePathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Melanoma Reporting",
@@ -8536,8 +8421,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ]
   },
   {
     "title": "Optimal Asthma Control",
@@ -8773,8 +8661,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Appropriate Follow-up Imaging for Incidental Thyroid Nodules in Patients",
@@ -8810,56 +8700,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Clinical Outcome Post Endovascular Stroke Treatment",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "409",
-    "description": "Percentage of patients with a Modified Rankin Score (mRS) score of 0 to 2 at 90 days following endovascular stroke intervention.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "primarySteward": "Society of Interventional Radiology",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "multiPerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
       "registry"
-    ],
-    "measureSets": [
-      "interventionalRadiology",
-      "neurosurgical"
-    ],
-    "measureSpecification": {},
-    "overallAlgorithm": "split",
-    "strata": [
-      {
-        "name": "reporting",
-        "description": "Percentage of patients with mRS score assessed at 90 days following endovascular stroke intervention"
-      },
-      {
-        "name": "performance",
-        "description": "Percentage of patients with mRS score of 0 to 2 assessed at 90 days following endovascular stroke intervention"
-      }
-    ],
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    ]
   },
   {
     "title": "Psoriasis: Clinical Response to Systemic Medications",
@@ -9015,7 +8859,7 @@
     "nqfEMeasureId": null,
     "nqfId": "0053",
     "measureId": "418",
-    "description": "The percentage of women 65–85 years of age who suffered a fracture and who had either a bone mineral density (BMD) test or prescription for a drug to treat osteoporosis in the six months after the fracture.",
+    "description": "The percentage of women 50-85 years of age who suffered a fracture and who had either a bone mineral density (BMD) test or prescription for a drug to treat osteoporosis in the 180 days after the fracture.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Committee for Quality Assurance",
@@ -9232,8 +9076,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy",
@@ -9269,8 +9115,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Preventive Care and Screening: Unhealthy Alcohol Use: Screening & Brief Counseling",
@@ -9342,12 +9190,12 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair",
+    "title": "Proportion of Patients Sustaining a Bladder or Bowel Injury at the time of any Pelvic Organ Prolapse Repair",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "432",
-    "description": "Percentage of patients undergoing pelvic organ prolapse repairs who sustain an injury to the bladder recognized either during or within 30 days after surgery.",
+    "description": "Percentage of patients undergoing surgical repair of pelvic organ prolapse that is complicated by a bladder or bowel injury at the time of index surgery that is recognized intraoperatively or within 30 days after surgery.",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "American Urogynecologic Society",
@@ -9361,7 +9209,7 @@
     "isClinicalGuidelineChanged": false,
     "isIcdImpacted": false,
     "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
+    "metricType": "multiPerformanceRate",
     "companionMeasureId": [],
     "allowedPrograms": [
       "mips",
@@ -9377,81 +9225,17 @@
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Proportion of Patients Sustaining a Bowel Injury at the time of any Pelvic Organ Prolapse Repair",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "433",
-    "description": "Percentage of patients undergoing surgical repair of pelvic organ prolapse that is complicated by a bowel injury at the time of index surgery that is recognized intraoperatively or within 30 days after surgery.",
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "primarySteward": "American Urogynecologic Society",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": true,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "obstetricsGynecology",
-      "urology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Radiation Consideration for Adult CT: Utilization of Dose Lowering Techniques",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "436",
-    "description": "Percentage of final reports for patients aged 18 years and older undergoing computed tomography (CT) with documentation that one or more of the following dose reduction techniques were used: Automated exposure control. Adjustment of the mA and/or kV according to patient size. Use of iterative reconstruction technique.",
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American College of Radiology/ American Medical Association/ National Committee for Quality Assurance",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "claims",
-      "registry"
-    ],
-    "measureSets": [
-      "diagnosticRadiology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "sevenPointCapRemoved": [],
+    "overallAlgorithm": "simpleAverage",
+    "historic_benchmarks": {
+      "registry": "removed"
+    },
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
   },
   {
     "title": "Statin Therapy for the Prevention and Treatment of Cardiovascular Disease",
@@ -9513,42 +9297,6 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Age Appropriate Screening Colonoscopy",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureId": "439",
-    "description": "The percentage of screening colonoscopies performed in patients greater than or equal to 86 years of age from January 1 to December 31.",
-    "measureType": "efficiency",
-    "isHighPriority": true,
-    "primarySteward": "American Gastroenterological Association",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": true,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "gastroenterology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
     "title": "Skin Cancer: Biopsy Reporting Time - Pathologist to Clinician",
     "eMeasureId": null,
     "nqfEMeasureId": null,
@@ -9582,8 +9330,10 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)",
@@ -9743,7 +9493,7 @@
     "nqfEMeasureId": null,
     "nqfId": "1858",
     "measureId": "450",
-    "description": "Percentage of female patients aged 18 to 70 with stage I (T1c) - III HER2 positive breast cancer for whom appropriate treatment is initiated.",
+    "description": "Percentage of patients aged 18 to 70 with stage I (T1c) – III HER2 positive breast cancer for whom appropriate treatment is initiated.",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Society of Clinical Oncology",
@@ -9800,42 +9550,6 @@
       "mips",
       "pcf",
       "M0001"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "oncology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
-    "title": "Patients with Metastatic Colorectal Cancer and RAS (KRAS or NRAS) Gene Mutation Spared Treatment with Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibodies",
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": "1860",
-    "measureId": "452",
-    "description": "Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer and RAS (KRAS or NRAS) gene mutation spared treatment with anti-EGFR monoclonal antibodies.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "American Society of Clinical Oncology",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isInverse": false,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
     ],
     "submissionMethods": [
       "registry"
@@ -10097,8 +9811,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Otitis Media with Effusion: Systemic Antimicrobials - Avoidance of Inappropriate Use",
@@ -10301,49 +10017,6 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Appropriate Use of DXA Scans in Women Under 65 Years Who Do Not Meet the Risk Factor Profile for Osteoporotic Fracture",
-    "eMeasureId": "CMS249v7",
-    "nqfEMeasureId": "3475e",
-    "nqfId": null,
-    "measureId": "472",
-    "description": "Percentage of female patients 50 to 64 years of age without select risk factors for osteoporotic fracture who received an order for a dual-energy x-ray absorptiometry (DXA) scan during the measurement period.",
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "firstPerformanceYear": 2019,
-    "lastPerformanceYear": null,
-    "isInverse": true,
-    "category": "quality",
-    "isRegistryMeasure": false,
-    "isRiskAdjusted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "isIcdImpacted": false,
-    "clinicalGuidelineChanged": [],
-    "metricType": "singlePerformanceRate",
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips",
-      "pcf"
-    ],
-    "submissionMethods": [
-      "electronicHealthRecord"
-    ],
-    "measureSets": [
-      "familyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology"
-    ],
-    "measureSpecification": {},
-    "strata": [
-      {
-        "description": "Female patients who received an order for at least one DXA scan in the measurement period"
-      }
-    ],
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
-  },
-  {
     "title": "HIV Screening",
     "eMeasureId": "CMS349v7",
     "nqfEMeasureId": null,
@@ -10470,8 +10143,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": []
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ]
   },
   {
     "title": "Functional Status Change for Patients with Neck Impairments",
@@ -10887,7 +10562,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "488",
-    "description": "Percentage of patients aged 18-75 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
+    "description": "Percentage of patients aged 18--85 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
     "measureType": "process",
     "isHighPriority": false,
     "primarySteward": "National Kidney Foundation",
@@ -10919,6 +10594,7 @@
       "internalMedicine",
       "nephrology",
       "preventiveMedicine",
+      "urgentCare",
       "urology"
     ],
     "measureSpecification": {},
@@ -11006,7 +10682,7 @@
     "sevenPointCapRemoved": []
   },
   {
-    "title": "Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing Status in Colorectal Carcinoma, Endometrial, Gastroesophageal, or Small Bowel Carcinoma",
+    "title": "Mismatch Repair (MMR) or Microsatellite Instability (MSI) Biomarker Testing  Status",
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": "3661",
@@ -11185,7 +10861,9 @@
       "registry"
     ],
     "measureSets": [
+      "cardiology",
       "familyMedicine",
+      "geriatrics",
       "internalMedicine",
       "oncology"
     ],
@@ -11584,10 +11262,13 @@
       "allergyImmunology",
       "cardiology",
       "certifiedNurseMidwife",
+      "clinicalSocialWork",
       "dermatology",
       "endocrinology",
       "familyMedicine",
       "gastroenterology",
+      "geriatrics",
+      "infectiousDisease",
       "internalMedicine",
       "nephrology",
       "neurology",
@@ -11621,7 +11302,7 @@
     "nqfEMeasureId": null,
     "nqfId": null,
     "measureId": "504",
-    "description": "Percentage of adult aged 18 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician.",
+    "description": "Percentage of patients aged 12 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician",
     "measureType": "process",
     "isHighPriority": true,
     "primarySteward": "American Psychiatric Association",
@@ -11875,6 +11556,299 @@
     "measureSets": [],
     "isSevenPointCapRemoved": false,
     "sevenPointCapRemoved": []
+  },
+  {
+    "title": "Breast Cancer Screening",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "112SSP",
+    "description": "Percentage of women 40 - 74 years of age who had a mammogram to screen for breast cancer in the 27 months prior to the end of the measurement period.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "National Committee for Quality Assurance",
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "companionMeasureId": [
+      "112"
+    ],
+    "allowedPrograms": [
+      "app1"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": []
+  },
+  {
+    "title": "Excessive Radiation Dose or Inadequate Image Quality for Diagnostic Computed Tomography (CT) in Adults (Clinician Level)",
+    "eMeasureId": "CMS1056v2",
+    "nqfEMeasureId": "3633e",
+    "nqfId": null,
+    "measureId": "494",
+    "description": "This measure provides a standardized method for monitoring the performance of diagnostic CT to discourage unnecessarily high radiation doses, a risk factor for cancer, while preserving image quality. It is expressed as a percentage of patients with CT exams that are out-of-range based on having either excessive radiation dose or inadequate image quality relative to evidence-based thresholds based on the clinical indication for the exam. All diagnostic CT exams of specified anatomic sites performed in inpatient, outpatient and ambulatory care settings are eligible. This measure is not telehealth eligible. This eCQM requires the use of additional software to access primary data elements stored within radiology electronic health records and translate them into data elements that can be ingested by this eCQM. Additional details are included in the Guidance field.",
+    "measureType": "intermediateOutcome",
+    "isHighPriority": true,
+    "primarySteward": "Alara Imaging, Inc. in collaboration with the University of California, San Francisco (UCSF)",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "electronicHealthRecord"
+    ],
+    "measureSets": [
+      "diagnosticRadiology"
+    ]
+  },
+  {
+    "title": "Positive PD-L1 Biomarker Expression Test Result Prior to First-Line Immune Checkpoint Inhibitor Therapy",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "506",
+    "description": "Percentage of patients, aged 18 years and older, with a diagnosis of metastatic non-small cell lung cancer (NSCLC) or squamous cell carcinoma of head and neck (HNSCC) on first-line immune checkpoint inhibitor (ICI) therapy, who had a positive PD-L1 biomarker expression test result prior to giving ICI therapy.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "Society for Immunotherapy of Cancer (SITC)",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "oncology"
+    ]
+  },
+  {
+    "title": "Appropriate Germline Testing for Ovarian Cancer Patients",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "507",
+    "description": "Percentage of patients, aged 18 and older, diagnosed with epithelial ovarian, fallopian tube, or primary peritoneal cancer who undergo germline testing within 6 months of diagnosis.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "American Society of Clinical Oncology",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "oncology"
+    ]
+  },
+  {
+    "title": "Adult COVID-19 Vaccination Status",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "508",
+    "description": "Percentage of patients aged 18 years and older seen for a visit during the performance period that are up to date on their COVID-19 vaccinations as defined by Centers for Disease Control and Prevention (CDC) recommendations on current vaccination.",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "singlePerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "allergyImmunology",
+      "cardiology",
+      "endocrinology",
+      "familyMedicine",
+      "geriatrics",
+      "infectiousDisease",
+      "internalMedicine",
+      "nephrology",
+      "obstetricsGynecology",
+      "oncology",
+      "pathology",
+      "pulmonology",
+      "radiationOncology",
+      "skilledNursingFacility",
+      "speechLanguagePathology",
+      "vascularSurgery"
+    ]
+  },
+  {
+    "title": "Melanoma: Tracking and Evaluation of Recurrence",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "509",
+    "description": "Percentage of patients who had an excisional surgery for melanoma or melanoma in situ with initial American Joint Committee on Cancer (AJCC) staging of 0, I, or II, in the past 5 years in which the operating provider examines and/or diagnoses the patient for recurrence of melanoma.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "American Academy of Dermatology",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "dermatology"
+    ],
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "title": "First Year Standardized Waitlist Ratio (FYSWR)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "510",
+    "description": "The number of newly initiated patients on dialysis in a practitioner group who are under the age of 75 and were either listed on the kidney or kidney-pancreas transplant waitlist or received a living donor transplant within the first year of initiating dialysis. The practitioner group is inclusive of physicians and advanced practice providers. The measure is the ratio-observed number of waitlist events in a practitioner group to its expected number of waitlist events. The measure uses the expected waitlist events calculated from a Cox model, which is adjusted for age, patient comorbidities, and other risk factors at the time of dialysis.\n\nThe number of incident (newly initiated on dialysis) patients in a practitioner (inclusive of physicians and advanced practice providers) group who are under the age of 75 and were listed on the kidney or kidney-pancreas transplant waitlist or received a living donor transplant within the first year of initiating dialysis. The measure is calculated to compare the observed number of waitlist events in a practitioner group to its expected number of waitlist events. The measure uses the expected waitlist events calculated from a Cox model, adjusted for age, patient comorbidities, and other risk factors at incidence of dialysis",
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "nonProportion",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "nephrology"
+    ],
+    "overallAlgorithm": "split"
+  },
+  {
+    "title": "Percentage of Prevalent Patients Waitlisted (PPPW) and Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)",
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureId": "511",
+    "description": "The measure tracks dialysis patients who are under the age of 75 in a practitioner group and on the kidney or kidney-pancreas transplant waitlist (all patients or patients in active status). This measure is a risk-adjusted percentage of waitlist events among dialysis patients.",
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "firstPerformanceYear": 2025,
+    "lastPerformanceYear": null,
+    "isInverse": false,
+    "category": "quality",
+    "isRegistryMeasure": false,
+    "isRiskAdjusted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "isIcdImpacted": false,
+    "clinicalGuidelineChanged": [],
+    "metricType": "multiPerformanceRate",
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips",
+      "pcf"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "nephrology"
+    ],
+    "overallAlgorithm": "overallStratumOnly",
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
   },
   {
     "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions",
