@@ -169,7 +169,6 @@ function mapItem(field: string, map: any, value: string) {
         return map[value.replace(/\s/g, "").toLowerCase()];
     }
     else {
-        console.log(value.replace(/\s/g, "").toLowerCase())
         throw new InvalidValueError(field, value);
     }
 }
