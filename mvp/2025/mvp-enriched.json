@@ -17,7 +17,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0046",
         "measureId": "039",
-        "description": "Percentage of female patients aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) to check for osteoporosis.",
+        "description": "Percentage of women aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) test to check for osteoporosis.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "National Committee for Quality Assurance",
@@ -62,7 +62,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
-        "description": "Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
+        "description": "Percentage of visits for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -253,7 +253,7 @@
         "nqfEMeasureId": null,
         "nqfId": "2523",
         "measureId": "177",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the measurement year.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the performance period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American College of Rheumatology",
@@ -290,7 +290,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "178",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed at least once within 12 months.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed during the performance period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American College of Rheumatology",
@@ -328,7 +328,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "180",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan within 12 months.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan during the performance period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American College of Rheumatology",
@@ -563,10 +563,13 @@
           "allergyImmunology",
           "cardiology",
           "certifiedNurseMidwife",
+          "clinicalSocialWork",
           "dermatology",
           "endocrinology",
           "familyMedicine",
           "gastroenterology",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "nephrology",
           "neurology",
@@ -1611,7 +1614,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -2989,12 +2992,12 @@
         "sevenPointCapRemoved": []
       },
       {
-        "title": "Rate of Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
+        "title": "Rate of Carotid Endarterectomy (CEA) or Carotid Artery Stenting (CAS) for Asymptomatic Patients, Without Major Complications (Discharged to Home by Post-Operative Day #2)",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "344",
-        "description": "Percent of asymptomatic patients undergoing CAS who are discharged to home no later than post-operative day #2.",
+        "description": "Percent of asymptomatic patients undergoing Carotid Endarterectomy (CEA) or Carotid Artery Stenting (CAS) without major complication who are discharged to home no later than post-operative day #2.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Society for Vascular Surgeons",
@@ -3025,7 +3028,10 @@
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "sevenPointCapRemoved": [],
+        "historic_benchmarks": {
+          "registry": "removed"
+        }
       },
       {
         "title": "Door to Puncture Time for Endovascular Stroke Treatment",
@@ -3291,7 +3297,9 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "oncology"
         ],
@@ -4097,7 +4105,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -6126,7 +6134,9 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "oncology"
         ],
@@ -6191,10 +6201,13 @@
           "allergyImmunology",
           "cardiology",
           "certifiedNurseMidwife",
+          "clinicalSocialWork",
           "dermatology",
           "endocrinology",
           "familyMedicine",
           "gastroenterology",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "nephrology",
           "neurology",
@@ -6563,8 +6576,8 @@
       },
       {
         "category": "cost",
-        "title": "ST-Elevation Myocardial Infarction (STEMI) with Percutaneous Coronary Intervention (PCI)",
-        "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (\"episode\"). In all supplemental documentation, \"cost\" generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures. The STEMI with PCI episode-based cost measure evaluates a clinician's risk-adjusted cost to Medicare for patients who present with STEMI indicating complete blockage of a coronary artery who emergently receive PCI as treatment during the performance period. The measure score is the clinician's risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician's role in managing care during each episode from the clinical event that opens, or \"triggers,\" the episode through 30 days after the trigger.",
+        "title": "Inpatient Percutaneous Coronary Intervention (PCI) episode-based cost measure",
+        "description": "Episode-based cost measures represent the cost to Medicare for the items and services provided to a patient during an episode of care (“episode”). In all supplemental documentation, “cost” generally means the standardized Medicare allowed amount, and claims data from Medicare Parts A and B are used to construct the episode-based cost measures.\nThe Inpatient PCI episode-based cost measure evaluates a clinician’s risk-adjusted cost to Medicare for patients who present with a cardiac event and emergently receive PCI as treatment during the performance period. The measure score is the clinician’s risk-adjusted cost for the episode group averaged across all episodes attributed to the clinician. This acute inpatient medical condition measure includes costs of services that are clinically related to the attributed clinician’s role in managing care during each episode from the clinical event that opens, or “triggers,” the episode through 30 days after the trigger.",
         "measureId": "COST_STEMI_1",
         "metricType": "costScore",
         "firstPerformanceYear": 2019,
@@ -7130,7 +7143,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -9541,7 +9554,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -11835,7 +11848,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -13114,8 +13127,10 @@
           "anesthesiology"
         ],
         "measureSpecification": {},
-        "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "isSevenPointCapRemoved": true,
+        "sevenPointCapRemoved": [
+          "registry"
+        ]
       },
       {
         "title": "Prevention of Post-Operative Nausea and Vomiting (PONV) - Combination Therapy",
@@ -13151,8 +13166,10 @@
           "anesthesiology"
         ],
         "measureSpecification": {},
-        "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "isSevenPointCapRemoved": true,
+        "sevenPointCapRemoved": [
+          "registry"
+        ]
       },
       {
         "title": "Prevention of Post-Operative Vomiting (POV) - Combination Therapy (Pediatrics)",
@@ -13188,8 +13205,10 @@
           "anesthesiology"
         ],
         "measureSpecification": {},
-        "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "isSevenPointCapRemoved": true,
+        "sevenPointCapRemoved": [
+          "registry"
+        ]
       },
       {
         "title": "Multimodal Pain Management",
@@ -13225,8 +13244,10 @@
           "anesthesiology"
         ],
         "measureSpecification": {},
-        "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "isSevenPointCapRemoved": true,
+        "sevenPointCapRemoved": [
+          "registry"
+        ]
       },
       {
         "title": "Screening for Social Drivers of Health",
@@ -14175,7 +14196,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -15572,8 +15593,11 @@
             "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy"
           }
         ],
-        "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "isSevenPointCapRemoved": true,
+        "sevenPointCapRemoved": [
+          "electronicHealthRecord",
+          "registry"
+        ]
       },
       {
         "title": "CAHPS for MIPS Clinician/Group Survey",
@@ -15625,7 +15649,7 @@
         "nqfEMeasureId": null,
         "nqfId": "1858",
         "measureId": "450",
-        "description": "Percentage of female patients aged 18 to 70 with stage I (T1c) - III HER2 positive breast cancer for whom appropriate treatment is initiated.",
+        "description": "Percentage of patients aged 18 to 70 with stage I (T1c) – III HER2 positive breast cancer for whom appropriate treatment is initiated.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "American Society of Clinical Oncology",
@@ -15976,7 +16000,9 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "oncology"
         ],
@@ -16041,10 +16067,13 @@
           "allergyImmunology",
           "cardiology",
           "certifiedNurseMidwife",
+          "clinicalSocialWork",
           "dermatology",
           "endocrinology",
           "familyMedicine",
           "gastroenterology",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "nephrology",
           "neurology",
@@ -17006,7 +17035,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -18177,12 +18206,12 @@
     "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
-        "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
+        "title": "Diabetes: Glycemic Status Assessment Greater Than 9%",
         "eMeasureId": "CMS122v13",
         "nqfEMeasureId": null,
         "nqfId": "0059",
         "measureId": "001",
-        "description": "Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period.",
+        "description": "Percentage of patients 18-75 years of age with diabetes who had a glycemic status assessment (hemoglobin A1c [HbA1c] or glucose management indicator [GMI]) > 9.0% during the measurement period.",
         "measureType": "intermediateOutcome",
         "isHighPriority": true,
         "primarySteward": "National Committee for Quality Assurance",
@@ -18303,7 +18332,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
-        "description": "Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
+        "description": "Percentage of visits for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -18569,7 +18598,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "488",
-        "description": "Percentage of patients aged 18-75 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
+        "description": "Percentage of patients aged 18--85 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "National Kidney Foundation",
@@ -18601,6 +18630,7 @@
           "internalMedicine",
           "nephrology",
           "preventiveMedicine",
+          "urgentCare",
           "urology"
         ],
         "measureSpecification": {},
@@ -18759,7 +18789,9 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "oncology"
         ],
@@ -18824,10 +18856,13 @@
           "allergyImmunology",
           "cardiology",
           "certifiedNurseMidwife",
+          "clinicalSocialWork",
           "dermatology",
           "endocrinology",
           "familyMedicine",
           "gastroenterology",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "nephrology",
           "neurology",
@@ -19714,7 +19749,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -20957,7 +20992,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
-        "description": "Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
+        "description": "Percentage of visits for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -21060,7 +21095,6 @@
           "M1370"
         ],
         "submissionMethods": [
-          "claims",
           "registry"
         ],
         "measureSets": [
@@ -21266,7 +21300,8 @@
           "clinicalSocialWork",
           "geriatrics",
           "mentalBehavioralHealth",
-          "neurology"
+          "neurology",
+          "speechLanguagePathology"
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
@@ -21308,7 +21343,8 @@
           "geriatrics",
           "mentalBehavioralHealth",
           "neurology",
-          "physicalTherapyOccupationalTherapy"
+          "physicalTherapyOccupationalTherapy",
+          "speechLanguagePathology"
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
@@ -21350,7 +21386,8 @@
           "geriatrics",
           "mentalBehavioralHealth",
           "neurology",
-          "physicalTherapyOccupationalTherapy"
+          "physicalTherapyOccupationalTherapy",
+          "speechLanguagePathology"
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
@@ -21673,7 +21710,9 @@
           "registry"
         ],
         "measureSets": [
+          "cardiology",
           "familyMedicine",
+          "geriatrics",
           "internalMedicine",
           "oncology"
         ],
@@ -21738,10 +21777,13 @@
           "allergyImmunology",
           "cardiology",
           "certifiedNurseMidwife",
+          "clinicalSocialWork",
           "dermatology",
           "endocrinology",
           "familyMedicine",
           "gastroenterology",
+          "geriatrics",
+          "infectiousDisease",
           "internalMedicine",
           "nephrology",
           "neurology",
@@ -22582,7 +22624,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -23756,12 +23798,12 @@
     "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
-        "title": "Diabetes: Hemoglobin A1c (HbA1c) Poor Control (>9%)",
+        "title": "Diabetes: Glycemic Status Assessment Greater Than 9%",
         "eMeasureId": "CMS122v13",
         "nqfEMeasureId": null,
         "nqfId": "0059",
         "measureId": "001",
-        "description": "Percentage of patients 18-75 years of age with diabetes who had hemoglobin A1c > 9.0% during the measurement period.",
+        "description": "Percentage of patients 18-75 years of age with diabetes who had a glycemic status assessment (hemoglobin A1c [HbA1c] or glucose management indicator [GMI]) > 9.0% during the measurement period.",
         "measureType": "intermediateOutcome",
         "isHighPriority": true,
         "primarySteward": "National Committee for Quality Assurance",
@@ -24010,7 +24052,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "305",
-        "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+        "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\r\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \r\nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "National Committee for Quality Assurance",
@@ -24491,7 +24533,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "504",
-        "description": "Percentage of adult aged 18 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician.",
+        "description": "Percentage of patients aged 12 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "American Psychiatric Association",
@@ -25459,7 +25501,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -26641,7 +26683,7 @@
         "nqfEMeasureId": null,
         "nqfId": "0046",
         "measureId": "039",
-        "description": "Percentage of female patients aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) to check for osteoporosis.",
+        "description": "Percentage of women aged 65-85 years of age who ever had a central dual-energy X-ray absorptiometry (DXA) test to check for osteoporosis.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "National Committee for Quality Assurance",
@@ -27053,7 +27095,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "336",
-        "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who were seen for postpartum care before or at 12 weeks of giving birth and received the following at a postpartum visit: breast-feeding evaluation and education, postpartum depression screening, postpartum glucose screening for gestational diabetes patients, family and contraceptive planning counseling, tobacco use screening and cessation education, healthy lifestyle behavioral advice, and an immunization review and update.",
+        "description": "Percentage of patients, regardless of age, who gave birth during a 12-month period who were seen for postpartum care before or at 12 weeks of giving birth and received the following at a postpartum visit: breastfeeding evaluation and education, postpartum depression screening, intimate partner violence screening, postpartum glucose screening for gestational diabetes patients, family and contraceptive planning counseling, tobacco use screening and cessation education, healthy lifestyle behavioral advice, and an immunization review and update.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -27244,12 +27286,12 @@
         "sevenPointCapRemoved": []
       },
       {
-        "title": "Proportion of Patients Sustaining a Bladder Injury at the Time of any Pelvic Organ Prolapse Repair",
+        "title": "Proportion of Patients Sustaining a Bladder or Bowel Injury at the time of any Pelvic Organ Prolapse Repair",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "432",
-        "description": "Percentage of patients undergoing pelvic organ prolapse repairs who sustain an injury to the bladder recognized either during or within 30 days after surgery.",
+        "description": "Percentage of patients undergoing surgical repair of pelvic organ prolapse that is complicated by a bladder or bowel injury at the time of index surgery that is recognized intraoperatively or within 30 days after surgery.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "American Urogynecologic Society",
@@ -27263,7 +27305,7 @@
         "isClinicalGuidelineChanged": false,
         "isIcdImpacted": false,
         "clinicalGuidelineChanged": [],
-        "metricType": "singlePerformanceRate",
+        "metricType": "multiPerformanceRate",
         "companionMeasureId": [],
         "allowedPrograms": [
           "mips",
@@ -27279,7 +27321,17 @@
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "sevenPointCapRemoved": [],
+        "overallAlgorithm": "simpleAverage",
+        "historic_benchmarks": {
+          "registry": "removed"
+        },
+        "strata": [
+          {
+            "name": "PLACEHOLDER",
+            "description": "WARNING: Update strata file with new measure strata."
+          }
+        ]
       },
       {
         "title": "Appropriate Workup Prior to Endometrial Ablation",
@@ -28450,7 +28502,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -29759,7 +29811,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "277",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea who had an apnea hypopnea index (AHI), a respiratory disturbance index (RDI), or a respiratory event index (REI) documented or measured within 2 months of initial evaluation for suspected obstructive sleep apnea.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of obstructive sleep apnea who had an apnea hypopnea index (AHI), a respiratory disturbance index (RDI), or a respiratory event index (REI) documented or measured within 2 months after initial evaluation for suspected obstructive sleep apnea.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Academy of Sleep Medicine",
@@ -30849,7 +30901,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -32074,7 +32126,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "130",
-        "description": "Percentage of visits for patients aged 18 years and older for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
+        "description": "Percentage of visits for which the eligible clinician attests to documenting a list of current medications using all immediate resources available on the date of the encounter.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -32221,7 +32273,7 @@
       {
         "title": "Sexually Transmitted Infection (STI) Testing for People with HIV",
         "eMeasureId": "CMS1188v2",
-        "nqfEMeasureId": null,
+        "nqfEMeasureId": "3755e",
         "nqfId": null,
         "measureId": "205",
         "description": "Percentage of patients 13 years of age and older with a diagnosis of HIV who had tests for syphilis, gonorrhea, and chlamydia performed within the performance period.",
@@ -32268,7 +32320,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "240",
-        "description": "Percentage of children 2 years of age who had four diphtheria, tetanus and acellular pertussis (DTaP); three polio (IPV), one measles, mumps and rubella (MMR); three or four H influenza type B (HiB); three hepatitis B (Hep B); one chicken pox (VZV); four pneumococcal conjugate (PCV); one hepatitis A (Hep A); two or three rotavirus (RV); and two influenza (flu) vaccines by their second birthday.",
+        "description": "Percentage of children 2 years of age who had four diphtheria, tetanus and acellular pertussis (DTaP); three polio (IPV), one measles, mumps and rubella (MMR); three or four H influenza type B (HiB); three hepatitis B (HepB); one chicken pox (VZV); four pneumococcal conjugate (PCV); one hepatitis A (HepA); two or three rotavirus (RV); and two influenza (flu) vaccines by their second birthday.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "National Committee for Quality Assurance",
@@ -32396,12 +32448,12 @@
         "sevenPointCapRemoved": []
       },
       {
-        "title": "HIV Medical Visit Frequency",
-        "eMeasureId": null,
+        "title": "HIV Annual Retention in Care",
+        "eMeasureId": "CMS1157v1",
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "340",
-        "description": "Percentage of patients, regardless of age with a diagnosis of HIV who had at least one medical visit in each 6 month period of the 24 month measurement period, with a minimum of 60 days between medical visits.",
+        "description": "Percentage of patients, regardless of age, with a diagnosis of Human Immunodeficiency Virus (HIV) before or during the first 240 days of the performance period who had at least two eligible encounters or at least one eligible encounter and one HIV viral load test that were at least 90 days apart within the performance period",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Health Resources and Services Administration",
@@ -32423,6 +32475,7 @@
           "M1368"
         ],
         "submissionMethods": [
+          "electronicHealthRecord",
           "registry"
         ],
         "measureSets": [
@@ -32431,7 +32484,10 @@
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
-        "sevenPointCapRemoved": []
+        "sevenPointCapRemoved": [],
+        "historic_benchmarks": {
+          "registry": "removed"
+        }
       },
       {
         "title": "Annual Hepatitis C Virus (HCV) Screening for Patients who are Active Injection Drug Users",
@@ -33565,7 +33621,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -34738,7 +34794,7 @@
     "hasOutcomeAdminClaims": false,
     "qualityMeasures": [
       {
-        "title": "Anti-Depressant Medication Management",
+        "title": "Antidepressant Medication Management",
         "eMeasureId": "CMS128v13",
         "nqfEMeasureId": null,
         "nqfId": null,
@@ -34863,7 +34919,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "305",
-        "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+        "description": "Percentage of patients 13 years of age and older with a new substance use disorder (SUD) episode who received the following (Two rates are reported):\r\na. Percentage of patients who initiated treatment, including either an intervention or medication for the treatment of SUD, within 14 days of the new SUD episode. \r\nb. Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "National Committee for Quality Assurance",
@@ -35276,7 +35332,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "504",
-        "description": "Percentage of adult aged 18 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician.",
+        "description": "Percentage of patients aged 12 years and older with suicidal ideation or behavior symptoms (based on results of a standardized assessment tool or screening tool) or increased suicide risk (based on the clinician's evaluation or clinician-rating tool) for whom a suicide safety plan is initiated, reviewed, and/or updated in collaboration between the patient and their clinician",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "American Psychiatric Association",
@@ -36348,7 +36404,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -37635,7 +37691,6 @@
           "M1370"
         ],
         "submissionMethods": [
-          "claims",
           "registry"
         ],
         "measureSets": [
@@ -39007,7 +39062,7 @@
         "measureId": "PI_ONCACB_1",
         "title": "ONC-ACB Surveillance Attestation",
         "description": "I have (1) Acknowledged the option to cooperate in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program if a request to assist in ONC-ACB surveillance is received; and (2) If requested, cooperated in good faith with ONC-ACB surveillance of his or her health information technology certified under the ONC Health IT Certification Program as authorized by 45 CFR part 170, subpart E, to the extent that such technology meets (or can be used to meet) the definition of CEHRT, including by permitting timely access to such technology and demonstrating its capabilities as implemented and used by the MIPS eligible clinician in the field.",
-        "isRequired": false,
+        "isRequired": true,
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
