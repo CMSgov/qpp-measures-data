@@ -23,7 +23,7 @@
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "update:mvp": "scripts/mvp/update-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
-    "export:measures": "scripts/measures/export-measures",
+    "export:measures": "bash scripts/measures/export-measures",
     "pretest": "npm run lint",
     "lint": "eslint scripts index.spec.ts",
     "lint:fix": "eslint scripts index.spec.ts --fix",

@@ -14,6 +14,9 @@ import { error } from '../logger';
 const performanceYear = process.argv[2];
 const category = process.argv[3];
 
+__dirname = __dirname.replace('/dist', '');
+__dirname = __dirname.replace('\\dist', '');
+
 const measuresPath = `../../measures/${performanceYear}/measures-data.json`;
 
 const measuresJson = JSON.parse(
