@@ -5,7 +5,7 @@ import {
   warning
 } from '../../logger';
 import { createMVPDataFile } from '../../../util/mvp-data-utils';
-import { updateProgramNames } from '../../..';
+import { updateProgramNames } from '../../../index';
 
 export function updateMvps(performanceYear: string) {
   const filePath = `mvp/${performanceYear}/mvp-enriched.json`;
