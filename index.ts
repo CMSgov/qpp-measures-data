@@ -3,7 +3,7 @@ import * as fse from 'fs-extra';
 import * as path from 'path';
 import * as YAML from 'yaml';
 import { Constants } from './constants';
-import { ProgramNames } from './util/interfaces/program-names';
+import { ProgramNames, ProgramNamesEnum } from './util/interfaces/program-names';
 import { BenchmarksData } from './util/interfaces/benchmarks';
 import { BenchmarksExclusionReasons } from './util/interfaces/benchmarks-exclusion-reasons';
 import { CostNationalAverage } from './util/interfaces/cost-national-average';
@@ -69,6 +69,17 @@ export function getProgramNames(): ProgramNames {
     console.log('Error parsing the program-names.json file: ' + ' --> ' + e);
     return <ProgramNames>{}
   }
+}
+
+/**
+ *
+ * @return {ProgramNames} - program names -
+ * An Enum containing all program names. 
+ * This is an "all-encompassing" list containing past and present program-name values. 
+ * IE, this enum is not performance-year conscious.
+ */
+export function getProgramNamesEnum(): ProgramNames {
+  return ProgramNamesEnum;
 }
 
 /**
