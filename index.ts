@@ -73,12 +73,12 @@ export function getProgramNames(): ProgramNames {
 
 /**
  *
- * @return {ProgramNames} - program names -
+ * @return {typeof ProgramNamesEnum} - program names -
  * An Enum containing all program names. 
  * This is an "all-encompassing" list containing past and present program-name values. 
  * IE, this enum is not performance-year conscious.
  */
-export function getProgramNamesEnum(): ProgramNames {
+export function getProgramNamesEnum(): typeof ProgramNamesEnum {
   return ProgramNamesEnum;
 }
 
