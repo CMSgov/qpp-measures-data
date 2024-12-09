@@ -348,16 +348,22 @@ definitions:
     properties:
       default:
         type: string
+        pattern: '^https:.*'
       registry:
         type: string
+        pattern: '^https:.*'
       claims:
         type: string
+        pattern: '^https:.*'
       cmsWebInterface:
         type: string
+        pattern: '^https:.*'
       measureInformation:
         type: string
+        pattern: '^https:.*'
       electronicHealthRecord:
         type: string
+        pattern: '^https:.*'
 
   measureSets:
     enum:
