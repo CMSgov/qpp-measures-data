@@ -3,11 +3,12 @@ import fse from 'fs-extra';
 import { vol } from 'memfs';
 import path from 'path';
 import YAML from 'yaml';
-import * as programNamesJson from './util/program-names/program-names.json';
 
+import * as programNamesJson from './util/program-names/program-names.json';
 import * as index from './index';
 import { Constants } from './constants';
 import * as mvpDataUtils from './util/mvp-data-utils';
+import { ProgramNamesEnum } from './util/interfaces/program-names';
 
 const mvpJson = [
     {
@@ -726,5 +727,15 @@ describe('index', () => {
                 'M1370'
               ]);
         }) 
+    })
+    
+    describe('ProgramNames Enum', () => {
+        it('checks that the ProgramNames enum matches the json object of the same values.', () => {
+            const jsonValues = Object.values(programNamesJson)
+                .filter(val => typeof val === 'string');
+            const enumValues = Object.values(ProgramNamesEnum);
+
+            expect(jsonValues).toStrictEqual(enumValues);
+        })
     })
 });
