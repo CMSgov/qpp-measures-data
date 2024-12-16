@@ -8726,8 +8726,8 @@
       },
       {
         "measureId": "ACEP52",
-        "title": "Appropriate Emergency Department Utilization of Lumbar Spine Imaging for Atraumatic Low Back Pain",
-        "description": "Percentage of emergency department visits during which patients aged 18 years and older had a CT or MRI of the Lumbar Spine ordered by an emergency care provider, regardless of discharge disposition, presenting with acute, non-complex low back pain.",
+        "title": "Appropriate Emergency Department Utilization of Lumbar Spine Imaging for Acute Atraumatic Low Back Pain",
+        "description": "Percentage of emergency department visits during which patients aged 18 years and older had a CT or MRI of the Lumbar Spine ordered by an emergency care provider, regardless of discharge disposition, presenting with acute, atraumatic low back pain.",
         "nqfId": null,
         "measureType": "process",
         "isHighPriority": true,
@@ -8737,7 +8737,8 @@
         "firstPerformanceYear": 2020,
         "allowedVendors": [
           "5133825",
-          "1718371"
+          "1718371",
+          "1725296"
         ],
         "allowedPrograms": [
           "mips",
@@ -8771,11 +8772,10 @@
         "firstPerformanceYear": 2018,
         "allowedVendors": [
           "5133825",
-          "3471690",
-          "1718371",
           "4757099",
+          "3967247",
           "1725296",
-          "3967247"
+          "1718371"
         ],
         "allowedPrograms": [
           "mips",
@@ -13356,7 +13356,8 @@
           "6169123",
           "6775913",
           "9181695",
-          "7418330"
+          "7418330",
+          "7746687"
         ],
         "allowedPrograms": [
           "mips",
@@ -13393,14 +13394,10 @@
         "firstPerformanceYear": 2017,
         "allowedVendors": [
           "5551268",
-          "3471690",
           "6169123",
           "6775913",
-          "6704504",
           "9181695",
-          "4757099",
-          "7418330",
-          "3967247"
+          "7418330"
         ],
         "allowedPrograms": [
           "mips",
@@ -16113,8 +16110,8 @@
         "primarySteward": "Practice Insights by McKesson in Collaboration with The US Oncology Network - QCDR",
         "firstPerformanceYear": 2023,
         "allowedVendors": [
-          "8794712",
-          "7037323"
+          "7037323",
+          "8794712"
         ],
         "allowedPrograms": [
           "mips",
@@ -26786,7 +26783,9 @@
         "isIcdImpacted": false,
         "clinicalGuidelineChanged": [],
         "metricType": "singlePerformanceRate",
-        "companionMeasureId": [],
+        "companionMeasureId": [
+          "112SSP"
+        ],
         "allowedPrograms": [
           "M1366"
         ],
