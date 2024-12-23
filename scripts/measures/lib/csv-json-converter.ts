@@ -32,7 +32,7 @@ export function convertCsvToJson(csv: any) {
 
     const mappedCsv = parsedCsv.map((row: any) => {
         const measure = {};
-        row['Category'] = row['Category'].toLowerCase().trim();
+        row['Category'] = row['Category']?.toLowerCase().trim();
         let csvColumnNames;
         switch (row['Category']) {
             case 'ia':
@@ -203,7 +203,7 @@ function prepareCsv(csv: any): any {
     }
 
     //check if the CR includes a leading examples row, and remove.
-    if (parsedCsv[0]['Category'].includes('Value')) {
+    if (parsedCsv[0]['Category']?.includes('Value')) {
         parsedCsv.splice(0, 1);
     }
 
