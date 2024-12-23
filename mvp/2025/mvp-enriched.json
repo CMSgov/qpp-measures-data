@@ -116,6 +116,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -538,7 +539,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -606,6 +607,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -3002,7 +3007,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -3059,7 +3064,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -3342,7 +3347,7 @@
         "description": "Percent of asymptomatic patients undergoing Carotid Endarterectomy (CEA) or Carotid Artery Stenting (CAS) without major complication who are discharged to home no later than post-operative day #2.",
         "measureType": "outcome",
         "isHighPriority": true,
-        "primarySteward": "Society for Vascular Surgeons",
+        "primarySteward": "Society for Vascular Surgery",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
         "isInverse": false,
@@ -5828,7 +5833,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -5885,7 +5890,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -6398,6 +6403,7 @@
           "internalMedicine",
           "oncology",
           "ophthalmology",
+          "optometry",
           "otolaryngology",
           "pulmonology",
           "rheumatology",
@@ -6849,7 +6855,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -6917,6 +6923,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -9190,7 +9200,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -9247,7 +9257,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -11928,7 +11938,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -11985,7 +11995,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -12057,7 +12067,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "024",
-        "description": "Percentage of patients aged 50 years and older treated for a fracture with documentation of communication, between the physician treating the fracture and the physician or other clinician managing the patient's on-going care, that a fracture occurred and that the patient was or should be considered for osteoporosis treatment or testing. This measure is submitted by the physician who treats the fracture and who therefore is held accountable for the communication.",
+        "description": "Percentage of patients aged 50 years and older treated for a fracture with documentation of communication, between the physician treating the fracture and the physician or other clinician managing the patient’s on-going care, that a fracture occurred and that the patient was or should be considered for osteoporosis treatment or testing. This measure is submitted by the physician who treats the fracture and who therefore is held accountable for the communication.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "National Committee for Quality Assurance",
@@ -14543,7 +14553,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -14600,7 +14610,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -14659,7 +14669,7 @@
         "nqfEMeasureId": null,
         "nqfId": "3493",
         "measureId": "480",
-        "description": "This measure is a re-specified version of the measure, \"Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)\" (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (\"provider\") and assesses each provider's complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
+        "description": "The Risk-standardized Complication Rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA) for the Merit-based Incentive Payment System (MIPS) measure is a risk-standardized complication rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who experienced complications after an inpatient elective primary THA and/or TKA procedure, defined as complications occurring from the date of index admission to 90 days post discharge. The measure attributes complications to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Information Numbers (TINs) and assesses each clinician’s or clinician group’s complication rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -14747,7 +14757,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "424",
-        "description": "Percentage of patients, regardless of age, who undergo surgical or therapeutic procedures under general or neuraxial anesthesia of 60 minutes duration or longer for whom at least one body temperature greater than or equal to 35.5 degrees Celsius (or 95.9 degrees Fahrenheit) was achieved within the 30 minutes immediately before or the 15 minutes immediately after anesthesia end time.",
+        "description": "Percentage of patients, regardless of age, who undergo surgical or therapeutic procedures under general or neuraxial anesthesia of 60 minutes duration or longer for whom at least one body temperature greater than or equal to 35.5 degrees Celsius (or 95.9 degrees Fahrenheit) was achieved within the 30 minutes immediately before or 15 minutes immediately after anesthesia end time.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "American Society of Anesthesiologists",
@@ -17213,7 +17223,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -17270,7 +17280,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -17772,7 +17782,7 @@
         "nqfId": "0216",
         "measureId": "457",
         "description": "Percentage of patients who died from cancer, and admitted to hospice and spent less than 3 days there.",
-        "measureType": "outcome",
+        "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "American Society of Clinical Oncology",
         "firstPerformanceYear": 2017,
@@ -17809,7 +17819,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "462",
-        "description": "Patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
+        "description": "Percentage of patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "Oregon Urology Institute",
@@ -18049,7 +18059,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -18117,6 +18127,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -20563,7 +20577,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -20620,7 +20634,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -20868,6 +20882,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -21312,7 +21327,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -21380,6 +21395,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -23758,7 +23777,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -23815,7 +23834,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -24009,6 +24028,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -24121,6 +24141,7 @@
           "internalMedicine",
           "oncology",
           "ophthalmology",
+          "optometry",
           "otolaryngology",
           "pulmonology",
           "rheumatology",
@@ -24498,7 +24519,8 @@
           "registry"
         ],
         "measureSets": [
-          "neurology"
+          "neurology",
+          "speechLanguagePathology"
         ],
         "measureSpecification": {},
         "isSevenPointCapRemoved": false,
@@ -24705,7 +24727,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -24773,6 +24795,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -26977,7 +27003,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -27034,7 +27060,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -27399,7 +27425,7 @@
             "name": "14Days"
           },
           {
-            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
             "name": "34Days"
           }
         ],
@@ -30213,7 +30239,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -30270,7 +30296,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -30600,6 +30626,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -30620,15 +30647,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -30944,15 +30971,15 @@
         "strata": [
           {
             "name": "reporting",
-            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
           },
           {
             "name": "performance",
-            "description": "Patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
+            "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
           },
           {
             "name": "combinedPopulations",
-            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -31001,8 +31028,12 @@
         },
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "bladderInjury",
+            "description": "Rate 1:Percentage of patients undergoing prolapse repair who sustain a bladder injury that necessitates repair either intraoperatively or within 30 days after surgery ."
+          },
+          {
+            "name": "bowelInjury",
+            "description": "Percentage of patients undergoing prolapse repair who sustain a bowel injury that necessitates repair either intraoperatively or within 30 days after surgery."
           }
         ]
       },
@@ -33541,7 +33572,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -33598,7 +33629,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -33768,6 +33799,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -33788,15 +33820,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -33935,7 +33967,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "355",
-        "description": "Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30 day postoperative period.",
+        "description": "Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30-day postoperative period.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "American College of Surgeons",
@@ -36280,7 +36312,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -36337,7 +36369,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -36512,6 +36544,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -36921,7 +36954,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "401",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic hepatitis C cirrhosis who underwent imaging with either ultrasound, contrast enhanced CT or MRI for hepatocellular carcinoma (HCC) at least once within the 12-month submission period.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic Hepatitis C cirrhosis who underwent imaging with either ultrasound, contrast enhanced CT or MRI for hepatocellular carcinoma (HCC) at least once within the 12-month submission period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Gastroenterological Association",
@@ -39314,7 +39347,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -39371,7 +39404,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -39478,7 +39511,7 @@
         "overallAlgorithm": "simpleAverage",
         "strata": [
           {
-            "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). ",
+            "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).",
             "name": "84Days"
           },
           {
@@ -39605,7 +39638,7 @@
             "name": "14Days"
           },
           {
-            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
             "name": "34Days"
           }
         ],
@@ -39942,7 +39975,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "502",
-        "description": "The percentage of individuals aged 18 and older with a mental and/or substance use disorder who demonstrated improvement or maintenance of functioning based on results from the 12-item World Health Organization Disability Assessment Schedule (WHODAS 2.0) or Sheehan Disability Index (SDS) 30 to 180 days after an index assessment.",
+        "description": "The percentage of patients aged 18 and older with a mental and/or substance use disorder who demonstrated improvement or maintenance of functioning based on results from the 12-item World Health Organization Disability Assessment Schedule (WHODAS 2.0) or Sheehan Disability Scale (SDS) 30 to 180 days after an index assessment.",
         "measureType": "patientReportedOutcome",
         "isHighPriority": true,
         "primarySteward": "American Psychiatric Association",
@@ -42415,7 +42448,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -42472,7 +42505,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -45411,7 +45444,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -45468,7 +45501,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
