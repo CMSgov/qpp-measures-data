@@ -49,7 +49,8 @@ export enum MeasureSet {
   neurology= "neurology",
   neurosurgical= "neurosurgical",
   obstetricsGynecology= "obstetricsGynecology",
-  ophthalmology= "ophthalmology",
+  ophthalmology = "ophthalmology",
+  optometry = "optometry",
   orthopedicSurgery= "orthopedicSurgery",
   otolaryngology= "otolaryngology",
   pathology= "pathology",
@@ -93,7 +94,6 @@ export enum Program {
   G0059 = "G0059",
   M0001 = "M0001",
   M0002 = "M0002",
-  M0003 = "M0003",
   M0004 = "M0004",
   M0005 = "M0005",
 }
