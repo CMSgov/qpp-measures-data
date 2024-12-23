@@ -22,6 +22,12 @@ export interface ProgramNames {
     "M1368": "M1368",
     "M1369": "M1369",
     "M1370": "M1370",
+    "M1420": "M1420",
+    "M1421": "M1421",
+    "M1422": "M1422",
+    "M1423": "M1423",
+    "M1424": "M1424",
+    "M1425": "M1425"
 }
 
 export enum ProgramNamesEnum {
