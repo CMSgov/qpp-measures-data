@@ -1,40 +1,59 @@
 ﻿measureId,stratumName,description
-AAD16,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
-AAD16,reconstruction,Strata 2: Reconstruction after skin cancer resection
-AAD16,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
-AAD17,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
-AAD17,reconstruction,Strata 2: Reconstruction after skin cancer resection
-AAD17,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
-AAD18,resection,Strata 1: Intermediate layer or complex linear closures after skin cancer resection
-AAD18,reconstruction,Strata 2: Reconstruction after skin cancer resection
-AAD18,overall,"Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
-ACRAD34,abdomen,Percent of CT Abdomen-pelvis exams with contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
-ACRAD34,chest,Percent of CT Chest exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
-ACRAD34,head,Percent of CT Head/brain exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
-AJRR12,hip,represents total hip arthroplasty
-AJRR12,knee,represents total knee arthroplasty.
-AJRR7,hip,represents total hip arthroplasty
-AJRR7,knee,represents total knee arthroplasty.
-AJRR9,hip,represents total hip arthroplasty
-AJRR9,knee,represents total knee arthroplasty.
-AQI48,surveyed,"AQI48a, percentage of surgical patients who receive a survey of their experience with anesthesia care."
-AQI48,overall,"AQI48b, percentage of surgical patients who report a positive experience with anesthesia care."
-AQI71,overall,"Average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
-AQI71,testedPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery whose blood glucose level is tested prior to the start of anesthesia"
-AQI71,insulinPrior,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
-AQI71,insulinPostoperative,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who received insulin perioperatively and who received a follow-up blood glucose level check following the administration of insulin and prior to discharge"
-AQI71,glucoseEducation,"Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
-GIQIC23,overall,Overall percentage of procedures among average-risk patients aged 45 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report
-GIQIC23,hyperPolyps&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient
-GIQIC23,1-2adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient
-GIQIC23,3-4adenomas&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient
-GIQIC23,5-10adenoma&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
-GIQIC23,neoplasm&FollowUp,"Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
-GIQIC23,serration&FollowUp,Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient
-GIQIC26,overall,Simple average of Rate 2 and Rate 3
-GIQIC26,male,The percentage of male patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
-GIQIC26,female,The percentage of female patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
-HM7,14to17,SUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter
-HM7,18to64,SUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter
-HM7,65over,SUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter
-HM7,overall,SUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter
+AAD16,resection,Rate 1: Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD16,reconstruction,Rate 2: Strata 2: Reconstruction after skin cancer resection
+AAD16,overall,"Rate 3: Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+AAD17,resection,Rate 1: Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD17,reconstruction,Rate 2: Strata 2: Reconstruction after skin cancer resection
+AAD17,overall,"Rate 3: Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+AAD18,resection,Rate 1: Strata 1: Intermediate layer or complex linear closures after skin cancer resection
+AAD18,reconstruction,Rate 2: Strata 2: Reconstruction after skin cancer resection
+AAD18,overall,"Rate 3: Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+ACRAD34,abdomen,Rate 1: Percent of CT Abdomen-pelvis exams with contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+ACRAD34,chest,Rate 2: Percent of CT Chest exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+ACRAD34,head,Rate 3: Percent of CT Head/brain exams without contrast (single phase scan) for which Dose Length Product is at or below the size-specific diagnostic reference level
+AJRR12,hip,Rate 1: represents total hip arthroplasty
+AJRR12,knee,Rate 2: represents total knee arthroplasty.
+AJRR13,neckpain,"Rate 1: Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in neck pain."
+AJRR13,backpain,"Rate 2: Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID), in back pain."
+AJRR13,legpain,"Rate 3: Percentage of denominator patients who showed a statistically significant improvement in comparison to initial assessment, measured by minimum clinically important difference (MCID) in leg pain."
+AJRR15,cervicalspine,Rate 1: All patients experiencing at least one complication within 90 days postoperative cervical spine surgery.
+AJRR15,lumbarspine,Rate 2: All patients  experiencing at least one complication within 90 days postoperative  lumbar spine surgery.
+AJRR7,hip,Rate 1: represents total hip arthroplasty
+AJRR7,knee,Rate 2: represents total knee arthroplasty.
+AJRR9,hip,Rate 1: represents total hip arthroplasty
+AJRR9,knee,Rate 2: represents total knee arthroplasty.
+AQI48,surveyed,"Rate 1: AQI48a, percentage of surgical patients who receive a survey of their experience with anesthesia care."
+AQI48,overall,"Rate 2: AQI48b, percentage of surgical patients who report a positive experience with anesthesia care."
+AQI71,overall,"Rate 1: Average of the performance rates of parts A, B, C and D. (Rates 2, 3, 4 & 5)"
+AQI71,testedPrior,"Rate 2: Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery whose blood glucose level is tested prior to the start of anesthesia"
+AQI71,insulinPerioperative,"Rate 3: Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received insulin prior to anesthesia end time"
+AQI71,"followupTest
+
+","Rate 4: Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who received insulin perioperatively and who received a follow-up blood glucose level check following the administration of insulin and prior to discharge"
+AQI71,glucoseEducation,"Rate 5: Percentage of patients, aged 18 years and older, with a current diagnosis of diabetes mellitus receiving anesthesia services for office-based or ambulatory surgery who experienced a blood glucose level greater than 180 mg/dL (10.0 mmol/L) who received education on managing their glucose in the postoperative period prior to discharge"
+AQI77,screened,Rate 1: Patients who are screened for risk of opioid use disorder using a standardized screening tool.
+AQI77,screenPositive,Rate 2: Patients who screen positive for opioid use disorder and are referred to a treatment program according to facility policies and procedures.
+AQI78,screened,Rate 1: Patients received a cognitive screening using a validated tool within 90 days of their elective surgical procedure.
+AQI78,screenPositive,Rate 2: Patients with a positive cognitive screening or cognitively at-risk using a validated tool within 90 days of their elective surgical procedure received two or more perioperative best practices for the older adult applied to their care.
+AVBC1,fewerthan2,Performance rate 1: Patients with fewer than two chronic conditions who achieve and maintain a resting heart rate of <110 beats per minute.
+AVBC1,2ormore,Performance rate 2: Patients with two or more chronic condition who achieve and maintain a resting heart rate of <110 beats per minute.
+AVBC1,overall,Performance rate 3: Combined populations
+GIQIC23,overall,Rate 1: Overall percentage of procedures among average-risk patients aged 45 to 75 years receiving a screening colonoscopy with biopsy or polypectomy and pathology findings who had a follow-up interval consistent with US Multi-Society Task Force (USMSTF) recommendations for repeat colonoscopy documented in their colonoscopy report
+GIQIC23,hyperPolyps&FollowUp,Rate 2: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of only hyperplastic polyps for which a recommended follow-up interval of 10 years for repeat colonoscopy was given to the patient
+GIQIC23,1-2adenoma&FollowUp,Rate 3: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 1-2 tubular adenoma(s) for which a recommended follow-up interval of not less than 7 years and not greater than 10 years was given to the patient
+GIQIC23,3-4adenomas&FollowUp,Rate 4: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 3-4 tubular adenomas for which a recommended follow-up interval of not less than 3 years and not greater than 5 years was given to the patient
+GIQIC23,5-10adenoma&FollowUp,Rate 5: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of 5-10 tubular adenomas for which a recommended follow-up interval of 3 years was given to the patient
+GIQIC23,neoplasm&FollowUp,"Rate 6: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Advanced Neoplasm (>= 10 mm, high grade dysplasia, villous component) for which a recommended follow-up interval of 3 years for repeat colonoscopy was given to the patient"
+GIQIC23,serration&FollowUp,Rate 7: Percentage of complete and adequately prepped screening colonoscopies of average-risk patients aged 45 to 75 years with biopsy or polypectomy and pathology findings of Sessile serrated polyp >= 10 mm OR sessile serrated polyp with dysplasia OR traditional serrated adenoma who had a recommended follow-up interval of 3 years for repeat colonoscopy consistent was given to the patient
+GIQIC26,overall,Rate 1: Simple average of Rate 2 and Rate 3
+GIQIC26,male,Rate 2: The percentage of male patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
+GIQIC26,female,Rate 3: The percentage of female patients aged 45 to 75 years with at least one conventional adenoma or colorectal cancer detected during screening colonoscopy
+HM7,14to17,Rate 1: SUBMISSION CRITERIA 1: Patients aged 14-17 years of age on date of encounter
+HM7,18to64,Rate 2: SUBMISSION CRITERIA 2: Patients aged 18-64 years and older on date of encounter
+HM7,65over,Rate 3: SUBMISSION CRITERIA 3: Patients aged 65 years of age and older on date of encounter
+HM7,overall,Rate 4: SUBMISSION CRITERIA 4: Patients aged 14 years of age and older on date of encounter
+IRIS59,nocormorbid20/20,Rate 1: Eyes of patients with no comorbidities or additional procedures on the same date as the cataract surgery and a 20/20 or better post-operative best corrected distance visual acuity
+IRIS59,comorbid20/200,Rate 2: Eyes of patients with comorbidities with a pre-operative visual acuity of 20/200 or better and a 2 lines or better improvement in the post-operative best-corrected distance visual acuity from preoperative visual acuity
+IRIS59,comorbid20/400,Rate 3: Eyes of patients with comorbidities with a pre-operative visual acuity of 20/400 or worse and a 1 line or better improvement in the post-operative best-corrected distance visual acuity from pre-operative visual acuity
+IRIS63,5ormoretreatments,"Rate 1: Percentage of patients with a diagnosis of exudative age-related macular degeneration, treated with 5 or more treatments of Anti-VEGF Agents over the reporting year, with a gain of 1 Snellen line or more (which is equivalent to 0.1 logMAR or more) of visual acuity within the past 12 months compared to pre-treatment. "
+IRIS63,lessthan5treatments,"Rate 2: Percentage of patients with a diagnosis of exudative age-related macular degeneration, treated with 1 to 4 treatments of Anti-VEGF Agents over the reporting year, with a gain of 1 Snellen line or more (which is equivalent to 0.1 logMAR or more) of visual acuity within the past 12 months compared to pre-treatment."
