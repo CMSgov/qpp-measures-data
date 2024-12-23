@@ -593,6 +593,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -6232,6 +6236,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -16095,6 +16103,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -18885,6 +18897,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -21809,6 +21825,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -24095,7 +24115,7 @@
             "name": "14Days"
           },
           {
-            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
             "name": "34Days"
           }
         ],
@@ -26954,15 +26974,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -27277,15 +27297,15 @@
         "strata": [
           {
             "name": "reporting",
-            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
           },
           {
             "name": "performance",
-            "description": "Patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
+            "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
           },
           {
             "name": "combinedPopulations",
-            "description": "Patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method and, if identified as unhealthy alcohol users received brief counseling, or were not identified as unhealthy alcohol users"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -27334,8 +27354,12 @@
         },
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "bladderInjury",
+            "description": "Rate 1:Percentage of patients undergoing prolapse repair who sustain a bladder injury that necessitates repair either intraoperatively or within 30 days after surgery ."
+          },
+          {
+            "name": "bowelInjury",
+            "description": "Percentage of patients undergoing prolapse repair who sustain a bowel injury that necessitates repair either intraoperatively or within 30 days after surgery."
           }
         ]
       },
@@ -29797,15 +29821,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -34840,7 +34864,7 @@
         "overallAlgorithm": "simpleAverage",
         "strata": [
           {
-            "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). ",
+            "description": "Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks).",
             "name": "84Days"
           },
           {
@@ -34967,7 +34991,7 @@
             "name": "14Days"
           },
           {
-            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or short-term medications, or one long-term medication for the treatment of SUD, within 34 days of the initiation.",
+            "description": "Percentage of patients who engaged in ongoing treatment, including two additional interventions or medication treatment events for SUD, or one long-acting medication event for the treatment of SUD, within 34 days of the initiation.",
             "name": "34Days"
           }
         ],
