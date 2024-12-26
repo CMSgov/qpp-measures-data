@@ -21437,7 +21437,17 @@
         "measureSets": [
           "nephrology"
         ],
-        "overallAlgorithm": "split"
+        "overallAlgorithm": "split",
+        "strata": [
+          {
+            "name": "reporting",
+            "description": "Percentage of patients in their first year of dialysis who had documentation of waitlist status at the end of the performance period"
+          },
+          {
+            "name": "performance",
+            "description": "Ratio of the observed number of waitlist events to the number of expected waitlist events"
+          }
+        ]
       },
       {
         "title": "Percentage of Prevalent Patients Waitlisted (PPPW) and Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)",
@@ -21475,8 +21485,12 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "waitlisted",
+            "description": "Percentage of Prevalent Patients Waitlisted (PPPW)"
+          },
+          {
+            "name": "overall",
+            "description": "Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)"
           }
         ]
       }
@@ -45640,7 +45654,8 @@
           "electronicHealthRecord"
         ],
         "measureSets": [
-          "ophthalmology"
+          "ophthalmology",
+          "optometry"
         ],
         "measureSpecification": {},
         "strata": [
@@ -45686,7 +45701,8 @@
           "endocrinology",
           "familyMedicine",
           "internalMedicine",
-          "ophthalmology"
+          "ophthalmology",
+          "optometry"
         ],
         "measureSpecification": {},
         "strata": [
@@ -45757,6 +45773,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -45918,6 +45935,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -45938,15 +45956,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -46073,6 +46091,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -46414,7 +46433,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -46482,6 +46501,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -48855,7 +48878,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -48912,7 +48935,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -49041,6 +49064,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -49163,6 +49187,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -49183,15 +49208,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -49282,7 +49307,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "440",
-        "description": "Percentage of biopsies with a diagnosis of cutaneous Basal Cell Carcinoma (BCC) and Squamous Cell Carcinoma (SCC), or melanoma (including in situ disease) in which the pathologist communicates results to the clinician within 7 days from the time when the tissue specimen was received by the pathologist.",
+        "description": "Percentage of biopsies with a diagnosis of cutaneous basal cell carcinoma (BCC) and squamous cell carcinoma (SCC), or melanoma (including in situ disease) in which the pathologist communicates results to the clinician within 7 days from the time when the tissue specimen was received by the pathologist.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "American Academy of Dermatology",
@@ -49490,7 +49515,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -49558,6 +49583,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -49599,8 +49628,12 @@
         "overallAlgorithm": "overallStratumOnly",
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "overall",
+            "description": "Documentation by the clinician who performed the surgery that an exam for recurrence of melanoma was performed on the patient within the performance period"
+          },
+          {
+            "name": "incidence",
+            "description": "All patients that were diagnosed with a recurrent melanoma in the current performance period"
           }
         ]
       },
@@ -51950,7 +51983,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -52007,7 +52040,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -52103,8 +52136,9 @@
           "M1422"
         ],
         "submissionMethods": [
+          "claims",
           "electronicHealthRecord",
-          "cmsWebInterface"
+          "registry"
         ],
         "measureSets": [],
         "measureSpecification": {},
@@ -52176,6 +52210,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -52293,6 +52328,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -52313,15 +52349,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -52449,6 +52485,7 @@
           "obstetricsGynecology",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "physicalMedicine",
@@ -52526,7 +52563,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "401",
-        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic hepatitis C cirrhosis who underwent imaging with either ultrasound, contrast enhanced CT or MRI for hepatocellular carcinoma (HCC) at least once within the 12-month submission period.",
+        "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic Hepatitis C cirrhosis who underwent imaging with either ultrasound, contrast enhanced CT or MRI for hepatocellular carcinoma (HCC) at least once within the 12-month submission period.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "American Gastroenterological Association",
@@ -52660,7 +52697,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -52728,6 +52765,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -55003,7 +55044,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -55060,7 +55101,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -55322,7 +55363,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "462",
-        "description": "Patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
+        "description": "Percentage of patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
         "measureType": "process",
         "isHighPriority": false,
         "primarySteward": "Oregon Urology Institute",
@@ -55412,7 +55453,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "481",
-        "description": "Percentage of patients initially diagnosed with non-muscle invasive bladder cancer and who received intravesical Bacillus-Calmette-Guerin (BCG) within 6 months of bladder cancer staging.",
+        "description": "The measure is a risk-standardized rate of acute, unplanned hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs); i.e., two or more of nine qualifying chronic conditions. The measure is adjusted for age, chronic condition categories, and other clinical and frailty risk factors present at the start of the 12-month measurement period as well as social risk factors. The measure attributes admissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and/or Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s admission rate.",
         "measureType": "process",
         "isHighPriority": true,
         "primarySteward": "Oregon Urology",
@@ -55548,7 +55589,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -55616,6 +55657,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -58042,7 +58087,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -58099,7 +58144,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -58238,7 +58283,7 @@
         "sevenPointCapRemoved": []
       },
       {
-        "title": "Chronic Obstructive Pulmonary Disease (COPD): Spirometry Evaluation for Long-Acting Inhaled Bronchodilator Therapy",
+        "title": "Chronic Obstructive Pulmonary Disease (COPD): Spirometry Evaluation and Long-Acting Inhaled Bronchodilator Therapy",
         "eMeasureId": null,
         "nqfEMeasureId": null,
         "nqfId": "0102",
@@ -58386,6 +58431,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -58406,15 +58452,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -58549,11 +58595,11 @@
             "description": "Overall Percentage for patients (aged 5-50 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
-            "name": "pedCtrlNoExacRisk",
+            "name": "pedCtrlNoExactRisk",
             "description": "Percentage of pediatric patients (aged 5-17 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
-            "name": "adultCtrlNoExacRisk",
+            "name": "adultCtrlNoExactRisk",
             "description": "Percentage of adult patients (aged 18-50 years) with well-controlled asthma, without elevated risk of exacerbation"
           },
           {
@@ -58565,11 +58611,11 @@
             "description": "Asthma well-controlled (submit the most recent specified asthma control tool result) for patients 18 to 50 with Asthma"
           },
           {
-            "name": "pedsNoRiskExac",
+            "name": "pedsNoRiskExact",
             "description": "Patient not at elevated risk of exacerbation for patients 5 to 17 with Asthma"
           },
           {
-            "name": "adultsNoRiskExac",
+            "name": "adultsNoRiskExact",
             "description": "Patient not at elevated risk of exacerbation for patients 18 to 50 with Asthma"
           }
         ],
@@ -58676,7 +58722,7 @@
         "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
         "eMeasureId": null,
         "nqfEMeasureId": null,
-        "nqfId": null,
+        "nqfId": "2483",
         "measureId": "503",
         "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
         "measureType": "patientReportedOutcome",
@@ -58744,6 +58790,10 @@
           {
             "name": "6points",
             "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+          },
+          {
+            "name": "aveChg",
+            "description": "Average change between baseline PAM® score and the second score within 6 to 12 months of a baseline PAM® score."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -60902,7 +60952,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -60959,7 +61009,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -61268,6 +61318,7 @@
           "nutritionDietician",
           "oncology",
           "ophthalmology",
+          "optometry",
           "orthopedicSurgery",
           "otolaryngology",
           "pediatrics",
@@ -61288,15 +61339,15 @@
         "overallAlgorithm": "split",
         "strata": [
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period",
             "name": "reporting"
           },
           {
-            "description": "Patients aged 12 years and older who were identified as a tobacco user during the measurement period and who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
+            "description": "Percentage of patients aged 12 years and older who were identified as a tobacco user during the measurement period who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period",
             "name": "performance"
           },
           {
-            "description": "Patients aged 12 years and older who were screened for tobacco use and, if identified as a tobacco user received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period, or identified as a tobacco non-user",
+            "description": "Percentage of patients aged 12 years and older who were screened for tobacco use one or more times within the measurement period AND who received tobacco cessation intervention during the measurement period or in the six months prior to the measurement period if identified as a tobacco user",
             "name": "combinedPopulations"
           }
         ],
@@ -61383,7 +61434,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "355",
-        "description": "Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30 day postoperative period.",
+        "description": "Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30-day postoperative period.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "American College of Surgeons",
@@ -61578,7 +61629,7 @@
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
-            "name": "discectomyLaminectmy",
+            "name": "lumbarDiscectomy",
             "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports back pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at three months (6 to 20 weeks) postoperatively"
           },
           {
@@ -61627,12 +61678,12 @@
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
-            "name": "discectomyLaminectmy",
+            "name": "lumbarDiscectomy",
             "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports leg pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at three months (6 to 20 weeks) postoperatively"
           },
           {
             "name": "lumbarFusion",
-            "description": "Percentage of lumbar fusion procedures for which the patient reports leg painless than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at one year (9 to 15 months) postoperatively after lumbar fusion."
+            "description": "Percentage of lumbar fusion procedures for which the patient reports leg pain less than or equal to 3.0 OR an improvement of 5.0 points or greater on the VAS or Numeric Pain scale at one year (9 to 15 months) postoperatively after lumbar fusion."
           }
         ],
         "isSevenPointCapRemoved": false,
@@ -61676,7 +61727,7 @@
         "overallAlgorithm": "weightedAverage",
         "strata": [
           {
-            "name": "discectomyLaminectmy",
+            "name": "lumbarDiscectomy",
             "description": "Percentage of lumbar discectomy/laminectomy procedures for which the patient reports functional status is less than or equal to 22 OR an improvement of 30 points or greater on the Oswestry Disability Index (ODI version 2.1a) at three months (6 to 20 weeks) postoperatively"
           },
           {
@@ -63986,7 +64037,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "479",
-        "description": "This measure is a re-specified version of the measure, \"Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition\" (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group's readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
+        "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -64043,7 +64094,7 @@
         "nqfEMeasureId": null,
         "nqfId": null,
         "measureId": "484",
-        "description": "Annual risk-standardized rate of acute, unplanned hospital admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs).",
+        "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
         "measureType": "outcome",
         "isHighPriority": true,
         "primarySteward": "Centers for Medicare & Medicaid Services",
