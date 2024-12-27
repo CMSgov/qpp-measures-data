@@ -65,6 +65,18 @@ The strata are modified by updating the qcdr and quality strata CSVs in the year
 
 The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
 
+### Managing Allowed Programs for Measures
+
+The `manage:allowed-programs` script enables adding or removing a program from the `allowedPrograms` field of all measures in a specific category for a given performance year. This is especially useful for bulk updates, such as adding a new program or making uniform changes across multiple measures.
+
+```bash
+npm run manage:allowed-programs -- <performanceYear> <category> <program> <add|remove>
+````
+Example: To remove the program `pcf` from all `ia` category measures for the year `2024`:
+```bash
+npm run manage:allowed-programs -- 2024 ia pcf remove
+````
+
 ### Importing Measures from a CSV File
 
 To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV UTF-8 (Comma delimited) (.csv)`. This will keep Unknown Characters out of the data set.
