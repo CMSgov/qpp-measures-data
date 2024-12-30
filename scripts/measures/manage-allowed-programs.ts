@@ -2,8 +2,6 @@ import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { getProgramNames } from '../../index';
-
 // Function to update allowedPrograms for a specific category
 export function updateAllowedPrograms(
     performanceYear: string,
