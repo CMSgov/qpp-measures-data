@@ -24,7 +24,7 @@
     "update:mvp": "scripts/mvp/update-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
-    "manage:allowed-programs": "node dist/scripts/measures/manage-allowed-programs.js",
+    "manage:allowed-programs": "tsc -p . && node dist/scripts/measures/manage-allowed-programs.js",
     "pretest": "npm run lint",
     "lint": "eslint scripts index.spec.ts",
     "lint:fix": "eslint scripts index.spec.ts --fix",

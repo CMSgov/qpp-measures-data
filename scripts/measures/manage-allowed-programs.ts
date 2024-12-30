@@ -2,6 +2,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';
 
+import { getProgramNames } from '../../index';
+
 // Function to update allowedPrograms for a specific category
 export function updateAllowedPrograms(
     performanceYear: string,
@@ -10,12 +12,20 @@ export function updateAllowedPrograms(
     action: 'add' | 'remove',
 ) {
     const measuresPath = `measures/${performanceYear}/measures-data.json`;
+    
+    const programNamesPath = `util/program-names/program-names.json`;
 
     try {
         // Load the measures data
         const measuresJson: any[] = JSON.parse(
             fs.readFileSync(path.join(appRoot.toString(), measuresPath), 'utf8')
         );
+
+        // Load the program names json for sorting
+        const programNamesJson: any = JSON.parse(
+            fs.readFileSync(path.join(appRoot.toString(), programNamesPath), 'utf8')
+        );
+        const programNamesArray: string[] = Object.values(programNamesJson);
 
         let updatedMeasures = 0;
 
@@ -28,7 +38,12 @@ export function updateAllowedPrograms(
                     // Add program if it doesn't already exist
                     if (!allowedPrograms.includes(program)) {
                         allowedPrograms.push(program);
-                        measure.allowedPrograms = allowedPrograms;
+                        Object.values(programNamesJson)
+
+                        const sortedPrograms: string[] = allowedPrograms.sort((v1, v2) => {
+                            return programNamesArray.indexOf(v1) - programNamesArray.indexOf(v2);
+                        });
+                        measure.allowedPrograms = sortedPrograms;
                         updatedMeasures++;
                         console.log(`Added program "${program}" to measure "${measure.measureId}".`);
                     }
