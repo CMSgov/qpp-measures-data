@@ -37,6 +37,7 @@ definitions:
         minItems: 9
         maxItems: 10
       percentiles:
+        description: Percentiles is a replacement for deciles. For non-cost measures, it contains the percentile values at the point corresponding to the key. For cost measures, the values are based on standard deviation, median, and an achievement point value that is derived from the performance threshold. They are both used in the same way for scoring purposes.
         type: object
         properties:
           1:
