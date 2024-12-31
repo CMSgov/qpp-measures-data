@@ -718,14 +718,14 @@ describe('index', () => {
             const programNames = Object.keys(programNamesJson).filter(obj => obj !== 'default')
             expect(programNames).toStrictEqual([
                 'mips',  'cpcPlus', 'pcf',
-                'app1',  'DEFAULT', 'G0053',
-                'G0054', 'G0055',   'G0056',
-                'G0057', 'G0058',   'G0059',
-                'M0001', 'M0005',   'M0002',
-                'M0004',   'M1366',
-                'M1367', 'M1368',   'M1369',
-                'M1370', 'M1420',   'M1421',
-                'M1422', 'M1423',   'M1424',
+                'app1', 'appPlus', 'DEFAULT',
+                'G0053', 'G0054', 'G0055',
+                'G0056', 'G0057', 'G0058',
+                'G0059', 'M0001', 'M0002',
+                'M0004', 'M0005', 'M1366',
+                'M1367', 'M1368', 'M1369',
+                'M1370', 'M1420', 'M1421',
+                'M1422', 'M1423', 'M1424',
                 'M1425',
               ]);
         }) 
