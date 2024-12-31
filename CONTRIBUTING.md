@@ -58,19 +58,23 @@ Running `npm run update:measures $YEAR` will also validate the measures-data.jso
 
 To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file. REQUIRED: The file [constants.ts](./constants.ts) should also be updated to include the new performance year in the `validPerformanceYears` array.
 
-New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
+New measures and updates to old measures are handled the same as each other. A CSV Change Request file (CR) with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
 Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 NOTE FOR TESTING: You may add the -t flag to the above update script to run the ingestion without persisting to the change.meta file or measures-data file.
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
+There is no need to ever change CR files after they have been processed. Future data corrections can either be handled in a new CR or via manual updates (see below).
+
+Most external changes will come to us in the form of a CR, but CRs are not required for measures-data.json changes. It is perfectly acceptable to manually update the measures-data.json file manually. This is best for quick data corrections or very small updates. Just make sure to run `npm run update:measures $YEAR` after you make the change to verify all validations pass.
+
 ### Adding/Updating Measures Strata
 
-The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`.
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
 
 ### Adding/Updating Spec URL files
 
-The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run update:measures $YEAR`.
+The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
 
 ### Managing Allowed Programs for Measures
 
@@ -112,6 +116,8 @@ Below are the locations where different types of benchmarks should be added:
 * CAHPS: &nbsp; staging/$YEAR/benchmarks/benchmarks_cahps.csv
 * WI: &nbsp; staging/$YEAR/benchmarks/json/wi_benchmarks.json
 * Mock Cost: &nbsp; staging/$YEAR/benchmarks/json/mock-cost-benchmarks.json
+
+ Check earlier years for examples.
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
