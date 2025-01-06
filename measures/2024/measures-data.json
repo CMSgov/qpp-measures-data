@@ -20283,28 +20283,9 @@
     "measureSets": [],
     "isRegistryMeasure": true,
     "isIcdImpacted": false,
-    "metricType": "registryMultiPerformanceRate",
+    "metricType": "registrySinglePerformanceRate",
     "submissionMethods": [
       "registry"
-    ],
-    "overallAlgorithm": "overallStratumOnly",
-    "strata": [
-      {
-        "name": "noRestrictions",
-        "description": "Normal arterial supply based on testing- No restrictions on type of compression"
-      },
-      {
-        "name": "specialConsideration",
-        "description": "Compression bandaging with special considerations (e.g., short stretch bandaging, warnings to the patient to remove bandages if they feel too tight, etc.)"
-      },
-      {
-        "name": "notRecommended",
-        "description": "Compression bandaging not recommended"
-      },
-      {
-        "name": "overall",
-        "description": "The average of the three risk stratified buckets which will be the performance rate in the JSON XML submitted."
-      }
     ]
   }
 ]
