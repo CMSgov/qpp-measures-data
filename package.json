@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v8.7.0",
+  "version": "v8.8.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -18,12 +18,12 @@
     "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
-    "build:benchmarks:old": "scripts/benchmarks/archive/build-benchmarks",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
     "update:mvp": "scripts/mvp/update-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
+    "manage:allowed-programs": "tsc -p . && node dist/scripts/measures/manage-allowed-programs.js",
     "pretest": "npm run lint",
     "lint": "eslint scripts index.spec.ts",
     "lint:fix": "eslint scripts index.spec.ts --fix",

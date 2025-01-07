@@ -27,10 +27,10 @@ To regenerate and validate data, do the following:
 
 ```
 nvm use
-npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json
-npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json
-npm run build:benchmarks $YEAR      # generates benchmarks/$YEAR.json
-npm run build:clinical-clusters     # generates clinical-clusters/clinical-clusters.json
+npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json and all supporting files.
+npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json and mvp-enriched.json
+npm run build:benchmarks $YEAR      # regenerates benchmarks/$YEAR.json
+npm run build:clinical-clusters     # regenerates clinical-clusters/clinical-clusters.json
 ```
 
 ### Generating measures CSVs
@@ -51,19 +51,50 @@ e.g. from the base directory:
 ```
 cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2018
 ```
+
+Running `npm run update:measures $YEAR` will also validate the measures-data.json for that year.
+
 ### Initializing, Adding, Updating, and Deleting Measures
 
-To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file. REQUIRED: The file [constants.js](./constants.js) should also be updated to include the new performance year in the `validPerformanceYears` array.
+To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file. REQUIRED: The file [constants.ts](./constants.ts) should also be updated to include the new performance year in the `validPerformanceYears` array.
 
-New measures and updates to old measures are handled the same as each other. A CSV file with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
+New measures and updates to old measures are handled the same as each other. A CSV Change Request file (CR) with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
 Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 NOTE FOR TESTING: You may add the -t flag to the above update script to run the ingestion without persisting to the change.meta file or measures-data file.
 
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
 
-The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`.
+There is no need to ever change CR files after they have been processed. Future data corrections can either be handled in a new CR or via manual updates (see below).
 
-The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run init:measures $YEAR`.
+Most external changes will come to us in the form of a CR, but CRs are not required for measures-data.json changes. It is perfectly acceptable to manually update the measures-data.json file manually. This is best for quick data corrections or very small updates. Just make sure to run `npm run update:measures $YEAR` after you make the change to verify all validations pass.
+
+### Adding/Updating Measures Strata
+
+The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
+
+### Adding/Updating Spec URL files
+
+The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
+
+### Managing Allowed Programs for Measures
+
+When creating a new AllowedProgram, the program name should be added to the following files. Place the new allowedProgram where it most makes sense in the array and be consistant with its placement in all files:
+* util/interfaces/program-names.ts
+* util/program-names/program-names.json
+* index.spec.ts (The "ProgramNames interface" test)
+* measures/$YEAR/measures-schema.yaml
+
+When deleting an allowedProgram that is still allowed for previous years, DO NOT remove it from all the above files. Instead, only remove it from the measures-schema.yaml file for the appropiate year(s).
+
+The `manage:allowed-programs` script enables adding or removing a program from the `allowedPrograms` field of all measures in a specific category for a given performance year. This is especially useful for bulk updates, such as adding a new program or making uniform changes across multiple measures.
+
+```bash
+npm run manage:allowed-programs -- <performanceYear> <category> <program> <add|remove>
+```
+Example: To remove the program `pcf` from all `ia` category measures for the year `2024`:
+```bash
+npm run manage:allowed-programs -- 2024 ia pcf remove
+```
 
 ### Importing Measures from a CSV File
 
@@ -79,6 +110,14 @@ $YEAR refers to the performance year you are looking to update.
 See `build-benchmarks` for more detail.
 
 Please verify the changes are as expected. (You can run `git diff`.)
+
+Below are the locations where different types of benchmarks should be added:
+* Quality/QCDR: &nbsp; staging/$YEAR/benchmarks/benchmarks.csv
+* CAHPS: &nbsp; staging/$YEAR/benchmarks/benchmarks_cahps.csv
+* WI: &nbsp; staging/$YEAR/benchmarks/json/wi_benchmarks.json
+* Mock Cost: &nbsp; staging/$YEAR/benchmarks/json/mock-cost-benchmarks.json
+
+ Check earlier years for examples.
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
@@ -102,7 +141,7 @@ We also use Github Actions CI to run tests on every branch.
 
 The release process is semi-automated via github actions. A number of steps are necessarily left manual (such as versioning) and require intervention from the user.
 
-Follow the steps outline in [Package Release Process for Measures Data](https://confluence.cms.gov/x/Wm-gI) to publish new version.
+Follow the steps outline in [Package Release Process for Measures Data](https://confluence.cms.gov/x/jmNiP) to publish new version.
 
 ## Debugging
 
