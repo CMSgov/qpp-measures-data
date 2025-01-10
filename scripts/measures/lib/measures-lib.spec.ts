@@ -321,6 +321,8 @@ describe('#update-measures-util', () => {
                 allowedPrograms: ['mips', 'pcf'],
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
+                sevenPointCapRemoved: [],
+                isSevenPointCapRemoved: false,
             });
         });
 
@@ -352,6 +354,8 @@ describe('#update-measures-util', () => {
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
                 allowedVendors: ['123456', '654321'],
+                sevenPointCapRemoved: [],
+                isSevenPointCapRemoved: false,
             });
         });
     });
