@@ -10,7 +10,7 @@ import { Constants } from './constants';
 import * as mvpDataUtils from './util/mvp-data-utils';
 import { ProgramNamesEnum } from './util/interfaces/program-names';
 
-const mvpJson = [
+export const mockMvpJson = [
     {
         mvpId: 'G0053',
         clinicalTopic: 'Stroke Care and Prevention',
@@ -354,7 +354,7 @@ describe('index', () => {
     describe('getMVPData', () => {
         let createMvpFileSpy: jest.SpyInstance;
         beforeEach(() => {
-            createMvpFileSpy = jest.spyOn(mvpDataUtils, 'createMVPDataFile').mockImplementation(() => mvpJson);
+            createMvpFileSpy = jest.spyOn(mvpDataUtils, 'createMVPDataFile').mockImplementation(() => mockMvpJson);
         });
 
         it('finds and returns the mvp-enriched json file for the specified performance year.', () => {
@@ -565,14 +565,14 @@ describe('index', () => {
         beforeEach(() => {
             vol.fromNestedJSON({
                 'mvp/2024': {
-                    'mvp.json': JSON.stringify(mvpJson),
+                    'mvp.json': JSON.stringify(mockMvpJson),
                 },
             });
         });
 
         it('successfully populates the mvp', () => {
-            const testMvp = { ...mvpJson[0], qualityMeasureIds: ['001', '321'], qualityMeasures: [] };
-            mvpDataUtils.populateMeasuresforMVPs(testMvp, mvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
+            const testMvp = { ...mockMvpJson[0], qualityMeasureIds: ['001', '321'], qualityMeasures: [] };
+            mvpDataUtils.populateMeasuresforMVPs(testMvp, mockMvpJson, testMeasuresData, 'qualityMeasureIds', 'qualityMeasures');
 
             expect(testMvp).toStrictEqual({
                 mvpId: 'G0053',
@@ -627,17 +627,17 @@ describe('index', () => {
         it('returns the mvp data with all the ids concatenated for a specified performance year.', () => {
             vol.fromNestedJSON({
                 'mvp/2024': {
-                    'mvp.json': JSON.stringify(mvpJson),
+                    'mvp.json': JSON.stringify(mockMvpJson),
                 },
             });
 
             expect(index.getMVPDataSlim(2024)).toStrictEqual([
                 {
-                    ...mvpJson[0],
+                    ...mockMvpJson[0],
                     measureIds: ['001', '002', '003', '004', '005', '006', '007', '008', '009'],
                 },
                 {
-                    ...mvpJson[1],
+                    ...mockMvpJson[1],
                     measureIds: ['001', '002', '003', '004', '005'],
                 },
             ]);

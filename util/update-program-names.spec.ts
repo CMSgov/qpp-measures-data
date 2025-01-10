@@ -2,41 +2,7 @@ import fs from 'fs';
 import fse from 'fs-extra';
 import { vol } from 'memfs';
 import * as updateProgramNames from './update-program-names';
-
-const mockMvpJson = [
-    {
-        mvpId: 'G0053',
-        clinicalTopic: 'Stroke Care and Prevention',
-        title: 'Title 1',
-        description: 'Description 1.',
-        specialtiesMostApplicableTo: [],
-        clinicalTopics: 'Stroke Care and Prevention',
-        qualityMeasureIds: ['001', '002', '003'],
-        iaMeasureIds: ['004'],
-        costMeasureIds: ['005', '006'],
-        foundationPiMeasureIds: ['007'],
-        foundationQualityMeasureIds: ['008'],
-        administrativeClaimsMeasureIds: ['009'],
-        hasCahps: false,
-        hasOutcomeAdminClaims: false
-    },
-    {
-        mvpId: 'G0054',
-        clinicalTopic: 'Heart Disease',
-        title: 'Title 2',
-        description: 'Description 2.',
-        specialtiesMostApplicableTo: [],
-        clinicalTopics: 'Heart Disease',
-        qualityMeasureIds: ['001'],
-        iaMeasureIds: ['002'],
-        costMeasureIds: ['003', '004'],
-        foundationPiMeasureIds: [],
-        foundationQualityMeasureIds: ['005'],
-        administrativeClaimsMeasureIds: [],
-        hasCahps: false,
-        hasOutcomeAdminClaims: true
-    }
-];
+import { mockMvpJson } from '../index.spec';
 
 describe("updateProgramNames", () => {
   it("updates the program-names json with any newly-found programs.", () => {
