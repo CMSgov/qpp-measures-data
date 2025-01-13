@@ -303,9 +303,8 @@ function updateBenchmarksMetaData(change: MeasuresChange): {
     return {
         isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
         isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
-        isSevenPointCapRemoved: change.sevenPointCapRemoved ? !!change.sevenPointCapRemoved.length : false,
+        isSevenPointCapRemoved: Array.isArray(change.sevenPointCapRemoved) && change.sevenPointCapRemoved.length > 0
     };
-
 }
 
 /**

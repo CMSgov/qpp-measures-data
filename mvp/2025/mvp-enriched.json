@@ -654,7 +654,7 @@
         "measureId": "ACR14",
         "title": "Gout: Serum Urate Target",
         "description": "The percentage of patients aged 18 and older with at least one clinician encounter (including telehealth) during the measurement period and a diagnosis of gout treated with urate-lowering therapy (ULT) for at least 12 months, whose most recent serum urate result is less than 6.0 mg/dL.",
-        "nqfId": "N/A",
+        "nqfId": null,
         "measureType": "intermediateOutcome",
         "isHighPriority": true,
         "isInverse": false,
@@ -18196,7 +18196,9 @@
         ],
         "measureSets": [
           "oncology"
-        ]
+        ],
+        "isSevenPointCapRemoved": false,
+        "sevenPointCapRemoved": []
       },
       {
         "title": "Appropriate Germline Testing for Ovarian Cancer Patients",
@@ -18230,7 +18232,9 @@
         ],
         "measureSets": [
           "oncology"
-        ]
+        ],
+        "isSevenPointCapRemoved": false,
+        "sevenPointCapRemoved": []
       },
       {
         "measureId": "PIMSH13",
@@ -18302,7 +18306,9 @@
         ],
         "icdImpacted": [],
         "isClinicalGuidelineChanged": false,
-        "clinicalGuidelineChanged": []
+        "clinicalGuidelineChanged": [],
+        "isSevenPointCapRemoved": false,
+        "sevenPointCapRemoved": []
       }
     ],
     "iaMeasures": [
@@ -21533,7 +21539,9 @@
             "name": "overall",
             "description": "Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)"
           }
-        ]
+        ],
+        "isSevenPointCapRemoved": false,
+        "sevenPointCapRemoved": []
       }
     ],
     "iaMeasures": [
@@ -49736,7 +49744,9 @@
             "name": "incidence",
             "description": "All patients that were diagnosed with a recurrent melanoma in the current performance period"
           }
-        ]
+        ],
+        "isSevenPointCapRemoved": false,
+        "sevenPointCapRemoved": []
       },
       {
         "measureId": "AAD6",
