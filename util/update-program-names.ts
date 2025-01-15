@@ -1,6 +1,9 @@
 import * as fse from 'fs-extra';
 import * as path from 'path';
 
+__dirname = __dirname.replace('/dist', '');
+__dirname = __dirname.replace('\\dist', '');
+
 /**
  *
  * @return {void}
@@ -10,9 +13,6 @@ export function updateProgramNames(performanceYear: number): void {
   let programNames: any;
   const programNamesFilePath = path.join(__dirname, '../util/program-names', 'program-names.json');
   const mvpFilePath = path.join(__dirname, '../mvp', performanceYear.toString(), 'mvp.json');
-
-  console.log('programNamesFilePath', programNamesFilePath);
-  console.log('mvpFilePath', mvpFilePath);
 
   let mvpData: any[] = [];
 
