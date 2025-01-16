@@ -60,9 +60,11 @@ Patch versions are code-only changes, with no data updates.
 Minor versions are data changes, such as updates to the measures-data.json files.
 Major versions are annual and tied to a PY's data becoming avaliable, determined by QPPA's PO.
 
+<!--
 Eg. If this PR contains a regular measures update, add the following labels:
 - notes:measure-update
 - version:minor
+-->
 
 
 ---
