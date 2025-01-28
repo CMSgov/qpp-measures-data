@@ -17,10 +17,6 @@ The benchmarks data JSON schema is described in `benchmarks/benchmarks-schema.ya
 To access the benchmarks data without installing the NPM repository, run `git clone git@github.com:CMSgov/qpp-measures-data.git` and navigate to `benchmarks/`. Benchmarks data is organized by performance year. For example, `benchmarks/2017.json` contains the benchmarks for performance year 2017
 (benchmark year 2015).
 
-## Performance Year 2025 Data
-
-All Measure and Benchmark data for Performance Year 2025 is currently in progress and is subject to change. (This note will be removed in December.)
-
 ### Importing the qpp-measures-data module
 
 Functions take a string version argument and return the appropriate YAML schema or JSON data.

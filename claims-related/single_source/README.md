@@ -34,13 +34,6 @@ make docker-rebuild
 make docker-run-csv-to-json
 ```
 
-
-
 ## Single Source Enrichment
-* Install npm
-* Install the npm package qpp-measures-data
-* Run the following command from the project root (vary performance year if necessary)
-```shell
-npm run update:measures 2023
-```
-* This will create the enriched single source file at the following location measures/<performance-year>/measures-data.json
+See `CONTRIBUTING.md` in the root of the repo for instructions on software installation and enriching
+the single source file.
