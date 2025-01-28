@@ -14,26 +14,20 @@ import { info, warning } from '../../logger';
 import { MeasuresChange } from '../lib/validate-change-requests';
 import { DataValidationError } from '../../errors';
 import {
+    COST_DEFAULT_PROGRAMS,
     COST_DEFAULT_VALUES,
     COST_MEASURES_ORDER,
+    IA_DEFAULT_PROGRAMS,
     IA_DEFAULT_VALUES,
     IA_MEASURES_ORDER,
+    PI_DEFAULT_PROGRAMS,
     PI_DEFAULT_VALUES,
     PI_MEASURES_ORDER,
     QCDR_MEASURES_ORDER,
+    QUALITY_DEFAULT_PROGRAMS,
     QUALITY_DEFAULT_VALUES,
     QUALITY_MEASURES_ORDER
 } from '../../constants';
-
-const QUALITY_DEFAULT_PROGRAMS = [
-    'mips',
-    'pcf',
-];
-
-const COST_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
-];
 
 /**
  * Adds the change file csv to the array in changes.meta.json.
@@ -132,6 +126,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...IA_DEFAULT_VALUES,
                 ...change,
+                allowedPrograms: IA_DEFAULT_PROGRAMS,
             }));
             break;
         }
@@ -140,7 +135,8 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...PI_DEFAULT_VALUES,
                 ...change,
-                preprod
+                preprod,
+                allowedPrograms: PI_DEFAULT_PROGRAMS,
             }));
             break;
         }
@@ -303,9 +299,8 @@ function updateBenchmarksMetaData(change: MeasuresChange): {
     return {
         isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
         isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
-        isSevenPointCapRemoved: change.sevenPointCapRemoved ? !!change.sevenPointCapRemoved.length : false,
+        isSevenPointCapRemoved: Array.isArray(change.sevenPointCapRemoved) && change.sevenPointCapRemoved.length > 0
     };
-
 }
 
 /**

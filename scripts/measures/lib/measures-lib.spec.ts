@@ -268,6 +268,12 @@ describe('#update-measures-util', () => {
                 category: 'ia',
                 weight: 'high',
                 subcategoryId: 'populationManagement',
+                allowedPrograms: [
+                    'mips',
+                    'app1',
+                    'appPlus',
+                    'pcf',
+                ],
             });
         });
 
@@ -290,6 +296,12 @@ describe('#update-measures-util', () => {
                 substitutes: ['PI_PPHI_2'],
                 exclusion: ['PI_EP_1', 'PI_EP_32'],
                 measureSets: [],
+                allowedPrograms: [
+                    'mips',
+                    'app1',
+                    'appPlus',
+                    'pcf',
+                ],
             });
         });
 
@@ -321,6 +333,8 @@ describe('#update-measures-util', () => {
                 allowedPrograms: ['mips', 'pcf'],
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
+                sevenPointCapRemoved: [],
+                isSevenPointCapRemoved: false,
             });
         });
 
@@ -352,6 +366,8 @@ describe('#update-measures-util', () => {
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
                 allowedVendors: ['123456', '654321'],
+                sevenPointCapRemoved: [],
+                isSevenPointCapRemoved: false,
             });
         });
     });

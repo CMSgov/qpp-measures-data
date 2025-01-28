@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { updateProgramNames } from '../../../index';
+import { updateProgramNames } from '../../../util/update-program-names';
 import { createMVPDataFile } from '../../../util/mvp-data-utils';
 import {
   info,
