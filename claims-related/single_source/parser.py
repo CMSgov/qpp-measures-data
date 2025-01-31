@@ -21,6 +21,7 @@ class Option(Enum):
 
     procedure = "procedure"
     diagnosis = "diagnosis"
+    diagnosis_exclusion = "diagnosis_exclusion"
     additional_procedure = "additional_procedure"
 
 
@@ -37,6 +38,7 @@ class Column(Enum):
     submission_criteria = "submission_criteria"
     overall_measure_id = "overall_measure_id"
     diagnosis = "diagnosis"
+    diagnosis_exclusion = "diagnosis_exclusion"
     procedure = "procedure"
     min_age = "min_age"
     max_age = "max_age"
@@ -168,6 +170,7 @@ def get_option_code(option_, data_element, code):
         "performance_not_met": is_performance_not_met,
         "procedure": is_procedure_code,
         "diagnosis": is_diagnosis_code,
+        "diagnosis_exclusion": is_diagnosis_exclusion_code,
         "additional_procedure": is_additional_procedure_code
     }
     option_fun = option_map[option_]
@@ -191,6 +194,11 @@ def is_diagnosis_code(data_element):
     return is_diagnosis_code_
 
 
+def is_diagnosis_exclusion_code(data_element):
+    is_diagnosis_exclusion_code_ = data_element == "DX_CODE_PD_Exl"
+    return is_diagnosis_exclusion_code_
+
+
 def is_procedure_code(data_element):
     contains_exception_exclusion = data_element.str.contains("PD_Exe|PD_Exl")
     starts_with_procedure_code = data_element.str.startswith(PROCEDURE_CODE, na=False)
@@ -199,7 +207,10 @@ def is_procedure_code(data_element):
 
 
 def is_eligible_exclusion(data_element):
-    return data_element.str.contains("PD_Exl", regex=True)
+    is_diagnosis_exclusion_code_ = is_diagnosis_exclusion_code(data_element)
+    contains_pd_exl = data_element.str.contains("PD_Exl", regex=True)
+    is_eligible_exclusion_ = contains_pd_exl & (~is_diagnosis_exclusion_code_)
+    return is_eligible_exclusion_
 
 
 def is_eligible_exception(data_element):

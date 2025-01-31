@@ -34,14 +34,16 @@ PERFORMANCE_OPTION_RENAME = {
 
 
 def main():
-    parsed_args = parse_args(sys.argv[1:])
-    output_path = Path(parsed_args.output_path)
-    if output_path.exists() and parsed_args.overwrite is False:
-        raise FileExistsError("Pass --overwrite to overwrite existing file")
-    single_source = read_single_source_csv(parsed_args.input_path)
+    # parsed_args = parse_args(sys.argv[1:])
+    # output_path = Path(parsed_args.output_path)
+    # if output_path.exists() and parsed_args.overwrite is False:
+    #     raise FileExistsError("Pass --overwrite to overwrite existing file")
+    # single_source = read_single_source_csv(parsed_args.input_path)
+    single_source = read_single_source_csv("../data/2024_Claims_SingleSource_v8.csv")
     parsed_single_source = parse_single_source(single_source)
     formatted_json = format_json(parsed_single_source)
-    write_json(formatted_json, parsed_args.output_path)
+    # write_json(formatted_json, parsed_args.output_path)
+    write_json(formatted_json, "../data/qpp-single-source-2024.json")
 
 
 def parse_args(args):
@@ -72,6 +74,7 @@ def format_measure(data, measure_id):
         performance_options.append(perf_opts)
 
         diagnosis = grp[Column.diagnosis.value].dropna().tolist()
+        diagnosis_exclusion = grp[Column.diagnosis_exclusion.value].dropna().tolist()
         procedure = get_procedure(grp)
         additional_procedure = grp[Column.additional_procedure.value].\
             dropna().map(lambda x: dict(code=x)).\
@@ -85,6 +88,8 @@ def format_measure(data, measure_id):
         }
         if diagnosis:
             elig_opts.update({"diagnosisCodes": diagnosis})
+        if diagnosis_exclusion:
+            elig_opts.update({"diagnosisExclusionCodes": diagnosis_exclusion})
         if procedure:
             elig_opts.update({"procedureCodes": procedure})
         if additional_procedure:
