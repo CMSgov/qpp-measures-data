@@ -72,6 +72,7 @@ def format_measure(data, measure_id):
         performance_options.append(perf_opts)
 
         diagnosis = grp[Column.diagnosis.value].dropna().tolist()
+        diagnosis_exclusion = grp[Column.diagnosis_exclusion.value].dropna().tolist()
         procedure = get_procedure(grp)
         additional_procedure = grp[Column.additional_procedure.value].\
             dropna().map(lambda x: dict(code=x)).\
@@ -85,6 +86,8 @@ def format_measure(data, measure_id):
         }
         if diagnosis:
             elig_opts.update({"diagnosisCodes": diagnosis})
+        if diagnosis_exclusion:
+            elig_opts.update({"diagnosisExclusionCodes": diagnosis_exclusion})
         if procedure:
             elig_opts.update({"procedureCodes": procedure})
         if additional_procedure:

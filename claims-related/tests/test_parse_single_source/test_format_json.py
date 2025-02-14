@@ -60,14 +60,14 @@ def test_format_json_new_filename_smoke_test(data_directory):
     _ = format_json(parsed_single_source)
 
 
-@pytest.mark.skipif(True, reason="Useful for comparing files, don't want to throw test failures now")
+# @pytest.mark.skipif(True, reason="Useful for comparing files, don't want to throw test failures now")
 @pytest.mark.parametrize("measure_id", [
     "001", "024", "039", "047", "110", "111", "112", "113", "128", "134", "141",
     "145", "147", "155", "181", "226", "236", "249", "250", "261", "317", "320", "395", "396", "397",
     "405", "406", "418", "422", "436"])
 def test_compare_two_jsons_measure_by_measure(data_directory, measure_id):
-    filename_1 = None
-    filename_2 = None
+    filename_1 = "qpp-single-source-2023.json"
+    filename_2 = "qpp-single-source-2024.json"
     file_1 = read_and_sort_json(data_directory / filename_1)
     file_2 = read_and_sort_json(data_directory / filename_2)
     measure_1 = file_1[measure_id]
