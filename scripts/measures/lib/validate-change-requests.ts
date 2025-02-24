@@ -29,7 +29,6 @@ interface baseMeasuresChange {
 interface Cost_MeasuresChange extends baseMeasuresChange {
     isInverse?: boolean,
     metricType?: string,
-    overallAlgorithm?: string,
     submissionMethods?: string[],
 };
 
@@ -134,7 +133,6 @@ const cost_validationSchema: JSONSchemaType<Cost_MeasuresChange> = {
         ...baseValidationSchemaProperties,
         isInverse: { type: 'boolean', nullable: true },
         metricType: { type: 'string', nullable: true },
-        overallAlgorithm: { type: 'string', enum: Constants.OVERALL_ALGORITHM, nullable: true },
         submissionMethods: { type: 'array', items: { type: 'string' }, nullable: true },
     },
     required: ['measureId', 'category'],

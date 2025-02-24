@@ -12,7 +12,6 @@ export const COST_CSV_COLUMN_NAMES = {
     ...BASE_CSV_COLUMN_NAMES,
     'isInverse': 'Inverse',
     'metricType': 'Metric Type',
-    'overallAlgorithm': 'Calculation Type',
     'submissionMethods': 'Collection Type(s) for Submission',
 };
 
@@ -344,7 +343,6 @@ export const COST_MEASURES_ORDER = {
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
     'isInverse': undefined,
-    'overallAlgorithm': undefined,
     'submissionMethods': undefined,
     'measureSpecification': undefined,
     'allowedPrograms': undefined
