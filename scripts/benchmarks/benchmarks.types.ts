@@ -209,7 +209,6 @@ export type PIMeasure = BaseMeasure & {
 export type CostMeasure = BaseMeasure & {
   category: Category.cost;
   isInverse?: boolean;
-  overallAlgorithm: PerformanceAlgorithm;
   submissionMethods: SubmissionMethod;
 }
 
