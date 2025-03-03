@@ -274,7 +274,10 @@ export const QUALITY_MEASURES_ORDER = {
     'allowedPrograms': undefined,
     'submissionMethods': undefined,
     'measureSets': undefined,
-    'measureSpecification': undefined
+    'measureSpecification': undefined,
+    'isSevenPointCapRemoved': undefined,
+    'sevenPointCapRemoved': undefined,
+    'allowedRegistrationTypes': undefined
 };
 
 export const QCDR_MEASURES_ORDER = {
@@ -298,7 +301,10 @@ export const QCDR_MEASURES_ORDER = {
     'isRegistryMeasure': undefined,
     'isIcdImpacted': undefined,
     'metricType': undefined,
-    'submissionMethods': undefined
+    'submissionMethods': undefined,
+    'isSevenPointCapRemoved': undefined,
+    'sevenPointCapRemoved': undefined,
+    'allowedRegistrationTypes': undefined
 };
 
 export const PI_MEASURES_ORDER = {
@@ -318,7 +324,8 @@ export const PI_MEASURES_ORDER = {
     'measureSets': undefined,
     'exclusion': undefined,
     'allowedPrograms': undefined,
-    'preprod': undefined
+    'preprod': undefined,
+    'allowedRegistrationTypes': undefined
 };
 
 export const IA_MEASURES_ORDER = {
@@ -331,7 +338,8 @@ export const IA_MEASURES_ORDER = {
     'lastPerformanceYear': undefined,
     'weight': undefined,
     'subcategoryId': undefined,
-    'allowedPrograms': undefined
+    'allowedPrograms': undefined,
+    'allowedRegistrationTypes': undefined
 };
 
 export const COST_MEASURES_ORDER = {
@@ -345,7 +353,8 @@ export const COST_MEASURES_ORDER = {
     'isInverse': undefined,
     'submissionMethods': undefined,
     'measureSpecification': undefined,
-    'allowedPrograms': undefined
+    'allowedPrograms': undefined,
+    'allowedRegistrationTypes': undefined
 };
 
 export const BENCHMARKS_ORDER = {
@@ -364,16 +373,34 @@ export const BENCHMARKS_ORDER = {
 export const COST_DEFAULT_VALUES = {
     metricType: 'costScore',
     lastPerformanceYear: null,
+    allowedRegistrationTypes: [
+        'apm',
+        'group',
+        'subgroup',
+        'individual'
+    ]
 };
 
 export const IA_DEFAULT_VALUES = {
     metricType: 'boolean',
     lastPerformanceYear: null,
+    allowedRegistrationTypes: [
+        'apm',
+        'group',
+        'subgroup',
+        'individual'
+    ]
 };
 
 export const PI_DEFAULT_VALUES = {
     lastPerformanceYear: null,
     measureSets: [],
+    allowedRegistrationTypes: [
+        'apm',
+        'group',
+        'subgroup',
+        'individual'
+    ]
 };
 
 export const QUALITY_DEFAULT_VALUES = {
@@ -388,7 +415,13 @@ export const QUALITY_DEFAULT_VALUES = {
     clinicalGuidelineChanged: [],
     measureSets: [],
     isSevenPointCapRemoved: false,
-    sevenPointCapRemoved: []
+    sevenPointCapRemoved: [],
+    allowedRegistrationTypes: [
+        'apm',
+        'group',
+        'subgroup',
+        'individual'
+    ]
 };
 
 export const QUALITY_DEFAULT_PROGRAMS = [

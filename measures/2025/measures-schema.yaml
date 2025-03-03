@@ -52,10 +52,14 @@ definitions:
         type: array
         items: { $ref: '#/definitions/measureSets' }
       allowedPrograms:
-        description: Programs that the measure can be submitted to
+        description: Programs to which the measure can be submitted.
         type: array
         items: { $ref: '#/definitions/programs' }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
+      allowedRegistrationTypes:
+        description: Entity types which the measure is eligible for registration.
+        type: array
+        items: { $ref: '#/definitions/allowedRegistrationTypes'}
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear, allowedRegistrationTypes]
 
   iaMeasure:
     $merge:
@@ -361,6 +365,13 @@ definitions:
       electronicHealthRecord:
         type: string
         pattern: '^https:.*'
+
+  allowedRegistrationTypes:
+    enum:
+      - apm
+      - group
+      - subgroup
+      - individual
 
   measureSets:
     enum:

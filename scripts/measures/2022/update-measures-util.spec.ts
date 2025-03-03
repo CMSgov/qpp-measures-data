@@ -640,6 +640,12 @@ describe('#update-measures-util', () => {
                 category: 'ia',
                 weight: 'high',
                 subcategoryId: 'populationManagement',
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
 
@@ -661,6 +667,12 @@ describe('#update-measures-util', () => {
                 substitutes: [ 'PI_PPHI_2' ],
                 exclusion: [ 'PI_EP_1', 'PI_EP_32' ],
                 measureSets: [],
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
 
@@ -693,6 +705,12 @@ describe('#update-measures-util', () => {
                 measureSets: [ 'nephrology', 'preventiveMedicine' ],
                 sevenPointCapRemoved: [],
                 isSevenPointCapRemoved: false,
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
 
@@ -726,6 +744,12 @@ describe('#update-measures-util', () => {
                 allowedVendors: [ '123456', '654321'],
                 sevenPointCapRemoved: [],
                 isSevenPointCapRemoved: false,
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
     });
