@@ -165,7 +165,6 @@ export interface QualityMeasure extends BaseMeasure {
 export interface AggregateCostMeasure extends BaseMeasure {
     category: Category.COST;
     isInverse: boolean;
-    overallAlgorithm?: string | null;
     submissionMethods: string[];
 }
 

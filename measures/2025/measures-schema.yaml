@@ -52,10 +52,14 @@ definitions:
         type: array
         items: { $ref: '#/definitions/measureSets' }
       allowedPrograms:
-        description: Programs that the measure can be submitted to
+        description: Programs to which the measure can be submitted.
         type: array
         items: { $ref: '#/definitions/programs' }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
+      allowedRegistrationTypes:
+        description: Entity types which the measure is eligible for registration.
+        type: array
+        items: { $ref: '#/definitions/allowedRegistrationTypes'}
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear, allowedRegistrationTypes]
 
   iaMeasure:
     $merge:
@@ -122,9 +126,6 @@ definitions:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
             default: false
-          overallAlgorithm:
-            description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
-            type: ['null', string]
           submissionMethods:
             description: Possible methods for submitting performance data for the measure.
             type: array
@@ -365,6 +366,13 @@ definitions:
         type: string
         pattern: '^https:.*'
 
+  allowedRegistrationTypes:
+    enum:
+      - apm
+      - group
+      - subgroup
+      - individual
+
   measureSets:
     enum:
       - transition # PI only
@@ -452,6 +460,11 @@ definitions:
       optionGroup:
         description: An identifier for grouping eligibility options together that need to be met together.
         type: string
+      diagnosisExclusionCodes:
+        type: array
+        description: Additional list of diagnosis exclusion codes and procedures of the patient for eligibility.
+        items:
+          type: string
     anyOf:
       - required: ['procedureCodes']
       - required: ['diagnosisCodes']

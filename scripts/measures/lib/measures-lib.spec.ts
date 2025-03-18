@@ -274,6 +274,12 @@ describe('#update-measures-util', () => {
                     'appPlus',
                     'pcf',
                 ],
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
 
@@ -301,6 +307,12 @@ describe('#update-measures-util', () => {
                     'app1',
                     'appPlus',
                     'pcf',
+                ],
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
                 ],
             });
         });
@@ -335,6 +347,12 @@ describe('#update-measures-util', () => {
                 measureSets: ['nephrology', 'preventiveMedicine'],
                 sevenPointCapRemoved: [],
                 isSevenPointCapRemoved: false,
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
 
@@ -368,6 +386,12 @@ describe('#update-measures-util', () => {
                 allowedVendors: ['123456', '654321'],
                 sevenPointCapRemoved: [],
                 isSevenPointCapRemoved: false,
+                allowedRegistrationTypes: [
+                    'apm',
+                    'group',
+                    'subgroup',
+                    'individual',
+                ],
             });
         });
     });

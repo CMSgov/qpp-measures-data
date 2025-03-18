@@ -95,7 +95,11 @@ definitions:
         description: Quality measures can belong to multiple measure sets that represent different specialties.
         type: array
         items: { $ref: '#/definitions/measureSets' }
-    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear]
+      allowedRegistrationTypes:
+        description: Entity types which the measure is eligible for registration.
+        type: array
+        items: { $ref: '#/definitions/allowedRegistrationTypes'}
+    required: [measureId, title, description, category, metricType, firstPerformanceYear, lastPerformanceYear, allowedRegistrationTypes]
 
   iaMeasure:
     $merge:
@@ -387,6 +391,13 @@ definitions:
         type: string
       measureInformation:
         type: string
+
+  allowedRegistrationTypes:
+    enum:
+      - apm
+      - group
+      - subgroup
+      - individual
 
   measureSets:
     enum:
