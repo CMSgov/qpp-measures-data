@@ -151,7 +151,7 @@ export function ingestChangeFile(
 
         //ingest changed measures
         for (let i = 0; i < acceptedChangeStack.length; i++) {
-            Lib.updateMeasure(acceptedChangeStack[i], measuresJson);
+            Lib.updateMeasure(acceptedChangeStack[i], measuresJson, performanceYear);
         }
 
         if (testMode === 'false') {

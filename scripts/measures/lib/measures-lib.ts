@@ -74,7 +74,7 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
  * Updates the specified measure.
  * Will throw a warning if any changed exclusions or substitutes do not exist in the measures-data.json.
  */
-export function updateMeasure(change: MeasuresChange, measuresJson: any) {
+export function updateMeasure(change: MeasuresChange, measuresJson: any, performanceYear?: string) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
             // check if new exclusions and substitutes exist.
@@ -96,7 +96,7 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any) {
             if (change.category === 'quality') {
                 measuresJson[i] = {
                     ...measuresJson[i],
-                    ...updateBenchmarksMetaData(change),
+                    ...updateBenchmarksMetaData(change, performanceYear),
                 }
             }
             orderFields(measuresJson[i]);
@@ -291,17 +291,23 @@ function populatePreProdArray(change: MeasuresChange, measuresJson: any): string
  * Updates the fields indicating whether ICD, Clinical Guidelines, or the Seven Point Cap removal are impacted
  * based on the presence and length of respective arrays in the measure change data.
  */
-function updateBenchmarksMetaData(change: MeasuresChange): {
+export function updateBenchmarksMetaData(
+    change: MeasuresChange,
+    performanceYear?: string
+): {
     isIcdImpacted: boolean,
     isClinicalGuidelineChanged: boolean,
-    isSevenPointCapRemoved: boolean,
+    isSevenPointCapRemoved?: boolean,
 } {
     return {
-        isIcdImpacted: change.icdImpacted ? !!change.icdImpacted.length : false,
-        isClinicalGuidelineChanged: change.clinicalGuidelineChanged ? !!change.clinicalGuidelineChanged.length : false,
-        isSevenPointCapRemoved: Array.isArray(change.sevenPointCapRemoved) && change.sevenPointCapRemoved.length > 0
+        isIcdImpacted: !!(change.icdImpacted && change.icdImpacted.length),
+        isClinicalGuidelineChanged: !!(change.clinicalGuidelineChanged && change.clinicalGuidelineChanged.length),
+        ...(performanceYear && parseInt(performanceYear, 10) > 2024 && {
+            isSevenPointCapRemoved: Array.isArray(change.sevenPointCapRemoved) && change.sevenPointCapRemoved.length > 0,
+        }),
     };
 }
+
 
 /**
  * Returns the last measure of a specified category in the measures json.
