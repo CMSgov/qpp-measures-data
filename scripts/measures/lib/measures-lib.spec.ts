@@ -220,6 +220,19 @@ describe('#update-measures-util', () => {
             }));
         });
 
+        it('should not add isSevenPointCapRemoved when performanceYear is 2024 or less', () => {
+            const change: MeasuresChange = {
+                measureId: '001',
+                category: 'quality',
+                sevenPointCapRemoved: ['registry'],
+            };
+
+            MeasuresLib.updateMeasure(change, volatileMeasures, '2024');
+
+            const updatedMeasure = _.find(volatileMeasures, { measureId: '001' });
+            expect(updatedMeasure.isSevenPointCapRemoved).toBeUndefined();
+        });
+
         it('should update isSevenPointCapRemoved to true when sevenPointCapRemoved has values', () => {
             const change: MeasuresChange = {
                 measureId: '001',
@@ -227,7 +240,7 @@ describe('#update-measures-util', () => {
                 sevenPointCapRemoved: ['registry'],
             };
 
-            MeasuresLib.updateMeasure(change, volatileMeasures);
+            MeasuresLib.updateMeasure(change, volatileMeasures, '2025');
 
             const updatedMeasure = _.find(volatileMeasures, { measureId: '001' });
             expect(updatedMeasure.isSevenPointCapRemoved).toBe(true);
@@ -241,7 +254,7 @@ describe('#update-measures-util', () => {
                 sevenPointCapRemoved: [],
             };
 
-            MeasuresLib.updateMeasure(change, volatileMeasures);
+            MeasuresLib.updateMeasure(change, volatileMeasures, '2025');
 
             const updatedMeasure = _.find(volatileMeasures, { measureId: '001' });
             expect(updatedMeasure.isSevenPointCapRemoved).toBe(false);
