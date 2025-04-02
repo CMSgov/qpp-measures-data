@@ -22,7 +22,7 @@ const { extractZip, getXMLFiles, extractStrata, extractAdditionalStrata } = requ
 const tmpDir = os.tmpdir() + '/ecqm';
 const tmpPath = tmpDir + '/xmls';
 const currentYear = process.argv[2];
-const zipPath = '../../../staging/' + currentYear + '/EC-eCQM-2023-11-v2.zip';
+const zipPath = '../../../staging/' + currentYear + '/2025-EC-eCQM-v2.zip';
 
 if (!currentYear) {
   console.log('Missing required argument <current year>');
