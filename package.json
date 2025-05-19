@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v8.17.0",
+  "version": "v8.18.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=20.15",
+    "node": ">=22",
     "npm": ">=10.7"
   },
   "scripts": {
@@ -64,13 +64,13 @@
   },
   "dependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/lodash": "^4.17.15",
+    "@types/lodash": "^4.17.16",
     "app-root-path": "^3.1.0",
     "fs-extra": "^11.3.0",
     "lodash": "^4.17.21",
     "papaparse": "^5.5.2",
-    "xregexp": "^5.1.1",
-    "yaml": "^2.7.0"
+    "xregexp": "^5.1.2",
+    "yaml": "^2.7.1"
   },
   "pre-commit": [
     "pre-commit"
