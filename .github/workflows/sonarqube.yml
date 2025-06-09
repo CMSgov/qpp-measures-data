@@ -1,7 +1,8 @@
-name: SonarQube Analysis 
+name: SonarQube Analysis
+
 on:
   pull_request:
-    types: [ opened, synchronize, closed, reopened ]
+    types: [opened, synchronize, reopened]
     branches:
       - develop
 
@@ -11,22 +12,34 @@ env:
 jobs:
   build:
     name: Quality Gate
-    permissions:
-      id-token: write
-      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 5
+
+    permissions:
+      id-token: write       # for IAM role via OIDC
+      contents: read        # for actions/checkout
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Print branch name
         run: |
           echo "Current branch: ${GITHUB_HEAD_REF}"
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role
           aws-region: us-east-1
 
-      - name: Execute ssh command
+      - name: Start SonarQube CodeBuild scan
+        id: start_build
         run: |
-          aws codebuild start-build --project-name "${PROJECT_NAME}" --source-type-override "GITHUB" --source-location-override "${{ github.event.repository.html_url }}" --source-version "${GITHUB_HEAD_REF}" --environment-variables-override "name=GITHUB_REPO_NAME, value=${{ github.event.repository.name }}, type=PLAINTEXT"
+          aws codebuild start-build \
+            --project-name "${PROJECT_NAME}" \
+            --source-type-override "GITHUB" \
+            --source-location-override "${{ github.event.repository.html_url }}" \
+            --source-version "${GITHUB_HEAD_REF}" \
+            --environment-variables-override \
+              name=GITHUB_REPO_NAME,value=${{ github.event.repository.name }},type=PLAINTEXT
