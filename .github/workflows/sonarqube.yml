@@ -30,7 +30,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role
+          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
           aws-region: us-east-1
 
       - name: Start SonarQube CodeBuild scan
