@@ -1,9 +1,6 @@
 import fs from 'fs';
 
-import {
-  info,
-  warning
-} from '../../logger';
+import { warning } from '../../logger';
 import { createMVPDataFile } from '../../../util/mvp-data-utils';
 import { updateProgramNames } from '../../../util/update-program-names';
 
@@ -13,7 +10,6 @@ export function updateMvps(performanceYear: string) {
   // Delete the existing file
   try {
     fs.unlinkSync(filePath);
-    info(`File ${filePath} deleted.`);
   } catch (err: any) {
     if (err.code === "ENOENT") {
       warning(`File ${filePath} not found; proceeding to next step...`);
