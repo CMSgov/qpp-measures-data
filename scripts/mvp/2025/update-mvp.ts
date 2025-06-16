@@ -13,7 +13,6 @@ export function updateMvps(performanceYear: string) {
   // Delete the existing file
   try {
     fs.unlinkSync(filePath);
-    info(`File ${filePath} deleted.`);
   } catch (err: any) {
     if (err.code === "ENOENT") {
       warning(`File ${filePath} not found; proceeding to next step...`);
