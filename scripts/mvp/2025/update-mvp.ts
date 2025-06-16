@@ -1,9 +1,6 @@
 import fs from 'fs';
 
-import {
-  info,
-  warning
-} from '../../logger';
+import { warning } from '../../logger';
 import { createMVPDataFile } from '../../../util/mvp-data-utils';
 import { updateProgramNames } from '../../../util/update-program-names';
 
