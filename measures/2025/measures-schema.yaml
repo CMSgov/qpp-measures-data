@@ -339,7 +339,6 @@ definitions:
       - administrativeClaims
       - claims
       - certifiedSurveyVendor
-      - cmsWebInterface
       - electronicHealthRecord
       - registry
 
@@ -354,9 +353,6 @@ definitions:
         type: string
         pattern: '^https:.*'
       claims:
-        type: string
-        pattern: '^https:.*'
-      cmsWebInterface:
         type: string
         pattern: '^https:.*'
       measureInformation:

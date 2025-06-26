@@ -5,7 +5,6 @@ import { parse } from 'csv-parse/sync';
 import appRoot from 'app-root-path';
 
 import { mergeEcqmEhrLinks } from './merge-ecqm-ehr-links';
-import { mergeWebInterfaceLinks } from './merge-web-interface-links';
 import { mergeClaimsLinks } from './merge-claims-links';
 import { mergeCqmLinks } from './merge-cqm-links';
 import { mergePiLinks } from './merge-pi-links';
@@ -123,43 +122,6 @@ describe('Specification Links Mergers', () => {
                 measureSpecification: {
                     _other: 'anotherLink',
                     default: 'testLink3',
-                },
-            },
-        ])
-    });
-
-    it('merges WI links into the measures-data json', () => {
-        const measuresJson = [
-            {
-                measureId: '001',
-                measureSpecification: null,
-            },
-            {
-                measureId: '002',
-                measureSpecification: {},
-            },
-            {
-                measureId: '003',
-                measureSpecification: { _other: 'anotherLink' },
-            },
-        ];
-
-        mergeWebInterfaceLinks(measuresJson, testLinksCSV);
-
-        expect(measuresJson).toStrictEqual([
-            {
-                measureId: '001',
-                measureSpecification: { cmsWebInterface: 'testLink1' }
-            },
-            {
-                measureId: '002',
-                measureSpecification: { cmsWebInterface: 'testLink2' }
-            },
-            {
-                measureId: '003',
-                measureSpecification: {
-                    _other: 'anotherLink',
-                    cmsWebInterface: 'testLink3',
                 },
             },
         ])

@@ -13,7 +13,6 @@ import { parse } from 'csv-parse/sync';
 import appRoot from 'app-root-path';
 
 import { mergeEcqmEhrLinks } from './merge-ecqm-ehr-links';
-import { mergeWebInterfaceLinks } from './merge-web-interface-links';
 import { mergeClaimsLinks } from './merge-claims-links';
 import { mergeCqmLinks } from './merge-cqm-links';
 import { mergePiLinks } from './merge-pi-links';
@@ -55,7 +54,6 @@ function getFileDataIfExists(filePath: string, isCSV: boolean = false) {
 }
 
 mergeEcqmEhrLinks(measures, getFileDataIfExists(ecqmEhrLinksPath, true));
-mergeWebInterfaceLinks(measures, getFileDataIfExists(webInterfaceLinksPath, true));
 mergeClaimsLinks(measures, getFileDataIfExists(claimsLinksPath, true));
 mergeCqmLinks(measures, getFileDataIfExists(cqmLinksPath, true));
 mergePiLinks(measures, getFileDataIfExists(piLinksPath, true));
