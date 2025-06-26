@@ -25,7 +25,6 @@ const currentPerformanceYear = process.argv[2];
 
 const measuresDataPath = path.join(appRoot + '', `measures/${currentPerformanceYear}/measures-data.json`);
 const ecqmEhrLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/ecqm-ehr-links.csv`);
-const webInterfaceLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/web-interface-links.csv`);
 const claimsLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/claims-links.csv`);
 const cqmLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/cqm-links.csv`);
 const piLinksPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/pi-links.csv`);
