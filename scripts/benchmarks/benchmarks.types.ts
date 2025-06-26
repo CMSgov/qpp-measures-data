@@ -116,7 +116,6 @@ export enum Objective {
 }
 
 export enum SubmissionMethod {
-  cmsWebInterface = 'cmsWebInterface',
   electronicHealthRecord = 'electronicHealthRecord',
   claims = 'claims',
   registry = 'registry',
