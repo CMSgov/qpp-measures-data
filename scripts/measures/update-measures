@@ -61,11 +61,11 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
     node dist/scripts/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
     exitOnFailure
 
-    echo -e "Sorting Measures by category and measureId..."
+    echo -e "Sorting measures by category and measureId..."
     node dist/scripts/measures/lib/sort-measures.js $currentPerformanceYear
     exitOnFailure
 
-    echo -e "Order all measures' fields..."
+    echo -e "Ordering all measures' fields..."
     node dist/scripts/measures/lib/order-measure-fields.js $currentPerformanceYear
     exitOnFailure
 
