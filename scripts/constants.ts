@@ -257,6 +257,7 @@ export const QUALITY_MEASURES_ORDER = {
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
     'eMeasureId': undefined,
+    'eMeasureUuid': undefined,
     'nqfEMeasureId': undefined,
     'nqfId': undefined,
     'measureType': undefined,
@@ -266,9 +267,9 @@ export const QUALITY_MEASURES_ORDER = {
     'isInverse': undefined,
     'isRegistryMeasure': undefined,
     'isRiskAdjusted': undefined,
+    'isIcdImpacted': undefined,
     'icdImpacted': undefined,
     'isClinicalGuidelineChanged': undefined,
-    'isIcdImpacted': undefined,
     'clinicalGuidelineChanged': undefined,
     'companionMeasureId': undefined,
     'allowedPrograms': undefined,
@@ -277,7 +278,10 @@ export const QUALITY_MEASURES_ORDER = {
     'measureSpecification': undefined,
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
-    'allowedRegistrationTypes': undefined
+    'allowedRegistrationTypes': undefined,
+    'overallAlgorithm': undefined,
+    'historic_benchmarks': undefined,
+    'strata': undefined
 };
 
 export const QCDR_MEASURES_ORDER = {
@@ -301,10 +305,14 @@ export const QCDR_MEASURES_ORDER = {
     'measureSets': undefined,
     'isRegistryMeasure': undefined,
     'isIcdImpacted': undefined,
+    'icdImpacted': undefined,
+    'isClinicalGuidelineChanged': undefined,
+    'clinicalGuidelineChanged': undefined,
     'submissionMethods': undefined,
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
-    'allowedRegistrationTypes': undefined
+    'allowedRegistrationTypes': undefined,
+    'overallAlgorithm': undefined
 };
 
 export const PI_MEASURES_ORDER = {
