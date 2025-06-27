@@ -1,6 +1,7 @@
 import * as Constants from '../../constants';
 import Ajv, { JSONSchemaType } from 'ajv';
 import _ from 'lodash';
+import { Category } from '../../../util/interfaces/measure';
 const ajv = new Ajv();
 
 /**
@@ -19,7 +20,7 @@ export enum measureType {
 
 interface baseMeasuresChange {
     measureId: string,
-    category: string,
+    category: Category,
     title?: string,
     description?: string,
     yearRemoved?: number,

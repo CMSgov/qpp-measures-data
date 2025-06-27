@@ -20,6 +20,7 @@ import { mergeCostLinks } from './merge-cost-links';
 import { mergeEcqmData } from './merge-ecqm-data';
 import { mergeStratifications } from './merge-stratifications';
 import { mergeClaimsRelatedData } from './merge-claims-related-data';
+import { Measure } from '../../../util/interfaces';
 
 const currentPerformanceYear = process.argv[2];
 
@@ -34,7 +35,12 @@ const manuallyCreatedEcqmPath = path.join(appRoot + '', `util/measures/${current
 const AdditionalStratificationsPath = path.join(appRoot + '', `util/measures/${currentPerformanceYear}/additional-stratifications.json`);
 const claimsRelatedData = path.join(appRoot + '', `claims-related/data/qpp-single-source-${currentPerformanceYear}.json`);
 
-const measures = JSON.parse(
+export interface LinkData {
+    link: string;
+    measureId: string;
+}
+
+const measures: Measure[] = JSON.parse(
     fs.readFileSync(measuresDataPath, 'utf8')
 );
 const parseConfig = { columns: true, skip_empty_lines: true, bom: true };

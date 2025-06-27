@@ -14,6 +14,7 @@ import path from 'path';
 import { DataValidationError } from '../../errors';
 import { writeToFile } from '../lib/measures-lib';
 import { csvStratum, jsonStratum } from '../lib/measures.types';
+import { Measure } from '../../../util/interfaces';
 
 export function ingestStrata(performanceYear: number, strataPath: string) {
   const measuresPath = `measures/${performanceYear}/measures-data.json`;
@@ -42,7 +43,7 @@ export function ingestStrata(performanceYear: number, strataPath: string) {
   ];
   for (let i = 0; i < uniqueMeasureIds.length; i++) {
     const currentStrata: jsonStratum[] = measuresJson.find(
-      (measure: any) => measure.measureId === uniqueMeasureIds[i]
+      (measure: Measure) => measure.measureId === uniqueMeasureIds[i]
     ).strata;
 
     const measureStrata = _.filter(strata, { measureId: uniqueMeasureIds[i] });
@@ -58,13 +59,13 @@ export function ingestStrata(performanceYear: number, strataPath: string) {
       stratum.description = stratum.description.replace(/^[Rr]ate \d+: /, "");
 
       return {
-        ...currentStrata?.find((currentStratum: any) => currentStratum.name === stratum.stratumName),
+        ...currentStrata?.find((currentStratum) => currentStratum.name === stratum.stratumName),
         name: stratum.stratumName,
         description: stratum.description,
       };
     });
     measuresJson.find(
-      (measure: any) => measure.measureId === uniqueMeasureIds[i]
+      (measure: Measure) => measure.measureId === uniqueMeasureIds[i]
     ).strata = mappedStrata;
   }
   writeToFile(measuresJson, measuresPath);

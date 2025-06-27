@@ -28,6 +28,8 @@ import {
     QUALITY_DEFAULT_VALUES,
     QUALITY_MEASURES_ORDER
 } from '../../constants';
+import { AggregateCostMeasure, IAMeasure, Measure, PIMeasure, QualityMeasure } from '../../../util/interfaces';
+import { Category } from '../../../util/interfaces/measure';
 
 /**
  * Adds the change file csv to the array in changes.meta.json.
@@ -48,7 +50,7 @@ export function updateChangeLog(fileName: string, changesPath: string) {
  *  (2) Deleting it's strata from the related strata.csv
  *  (3) Removing any reference of it from other measures' exlusion or substitute arrays
  */
-export function deleteMeasure(measureId: string, category: string, measuresJson: any, strataPath: string) {
+export function deleteMeasure(measureId: string, category: string, measuresJson: Measure[], strataPath: string) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
     if (measureIndex > -1) {
         if (['quality', 'qcdr'].includes(category)) {
@@ -74,7 +76,7 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
  * Updates the specified measure.
  * Will throw a warning if any changed exclusions or substitutes do not exist in the measures-data.json.
  */
-export function updateMeasure(change: MeasuresChange, measuresJson: any, performanceYear?: string) {
+export function updateMeasure(change: MeasuresChange, measuresJson: Measure[], performanceYear?: string) {
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].measureId == change.measureId) {
             // check if new exclusions and substitutes exist.
@@ -90,9 +92,9 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any, perform
 
             measuresJson[i] = {
                 ...measuresJson[i],
-                ...change as any,
-                category: change.category === 'qcdr' ? 'quality' : change.category,
-            };
+                ...change,
+                category: change.category === Category.QCDR ? Category.QUALITY : change.category,
+            } as Measure;
             if (change.category === 'quality') {
                 measuresJson[i] = {
                     ...measuresJson[i],
@@ -111,7 +113,7 @@ export function updateMeasure(change: MeasuresChange, measuresJson: any, perform
  * Will throw a warning if any of its exclusions or substitutes do not exist in the measures-data.json.
  * Sets any default values for the measure type and orders the fields (based on /constants.ts).
  */
-export function addMeasure(change: MeasuresChange, measuresJson: any) {
+export function addMeasure(change: MeasuresChange, measuresJson: Measure[]) {
     // check if new exclusions and substitutes exist.
     if (change.substitutes) {
         existanceCheckForMeasureArray(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
@@ -127,7 +129,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 ...IA_DEFAULT_VALUES,
                 ...change,
                 allowedPrograms: IA_DEFAULT_PROGRAMS,
-            }));
+            } as IAMeasure));
             break;
         }
         case 'pi': {
@@ -137,7 +139,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 ...change,
                 preprod,
                 allowedPrograms: PI_DEFAULT_PROGRAMS,
-            }));
+            } as PIMeasure));
             break;
         }
         case 'cost': {
@@ -146,7 +148,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 ...change,
                 category: 'cost',
                 allowedPrograms: COST_DEFAULT_PROGRAMS,
-            }));
+            } as AggregateCostMeasure));
             break;
         }
         case 'quality': {
@@ -156,7 +158,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 isRegistryMeasure: false,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
                 companionMeasureId: [],
-            }));
+            } as QualityMeasure));
             break;
         }
         case 'qcdr': {
@@ -166,7 +168,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
                 category: 'quality',
                 isRegistryMeasure: true,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
-            }));
+            } as QualityMeasure));
             break;
         }
     }
@@ -177,13 +179,15 @@ export function addMeasure(change: MeasuresChange, measuresJson: any) {
  * A valid eCQM measure (submissionMethods = electronicHealthRecord) must 
  * have a eMeasureId. If neither or both are true, this function passes.
  */
-export function isValidECQM(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+export function isValidECQM(change: MeasuresChange, measuresJson: Measure[]): boolean {
+    if (['quality', 'qcdr'].includes(change.category)) {
+        const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId }) as QualityMeasure;
 
-    const eMeasureId: string = change.eMeasureId ? change.eMeasureId : currentMeasure?.eMeasureId;
+        const eMeasureId = change.eMeasureId ? change.eMeasureId : currentMeasure?.eMeasureId;
 
-    if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
-        return false;
+        if (change.submissionMethods?.includes('electronicHealthRecord') && !eMeasureId) {
+            return false;
+        }
     }
     return true;
 }
@@ -191,14 +195,16 @@ export function isValidECQM(change: MeasuresChange, measuresJson: any): boolean 
 /**
  * A valid Cost measure has a metricType of costScore and only adminstrativeClaims as submissionMethods.
  */
-export function isValidCostScore(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+export function isValidCostScore(change: MeasuresChange, measuresJson: Measure[]): boolean {
+    if (['quality', 'qcdr', 'cost'].includes(change.category)) {
+        const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId }) as QualityMeasure | AggregateCostMeasure;
 
-    const type: string = change.metricType ? change.metricType : currentMeasure?.metricType;
-    const methods: string = change.submissionMethods ? change.submissionMethods : currentMeasure?.submissionMethods;
+        const type = change.metricType ? change.metricType : currentMeasure?.metricType;
+        const methods = change.submissionMethods ? change.submissionMethods : currentMeasure?.submissionMethods;
 
-    if (type === 'costScore' && (!methods?.includes('administrativeClaims') || methods?.length !== 1)) {
-        return false;
+        if (type === 'costScore' && (!methods?.includes('administrativeClaims') || methods?.length !== 1)) {
+            return false;
+        }
     }
     return true;
 }
@@ -206,14 +212,16 @@ export function isValidCostScore(change: MeasuresChange, measuresJson: any): boo
 /**
  * 'outcome' and 'intermediateOutcome' measures must always be High Priority.
  */
-export function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any): boolean {
-    const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+export function isOutcomeHighPriority(change: MeasuresChange, measuresJson: Measure[]): boolean {
+    if (['quality', 'qcdr'].includes(change.category)) {
+        const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId }) as QualityMeasure;
 
-    const type: string = change.measureType ? change.measureType : currentMeasure?.measureType;
-    const isHighPriority: string = change.isHighPriority ? change.isHighPriority : currentMeasure?.isHighPriority;
+        const type = change.measureType ? change.measureType : currentMeasure?.measureType;
+        const isHighPriority = change.isHighPriority ? change.isHighPriority : currentMeasure?.isHighPriority;
 
-    if (type?.includes('utcome') && !isHighPriority) {
-        return false;
+        if (type?.includes('utcome') && !isHighPriority) {
+            return false;
+        }
     }
     return true;
 }
@@ -221,8 +229,13 @@ export function isOutcomeHighPriority(change: MeasuresChange, measuresJson: any)
 /**
  * Checks if the measure being modified/added is a multiPerformanceRate.
  */
-export function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: any): boolean {
+export function isMultiPerfRateChanged(change: MeasuresChange, measuresJson: Measure[]): boolean {
     const currentMeasure = _.find(measuresJson, { 'measureId': change.measureId });
+    
+    if (!currentMeasure) {
+        //throw error if the measure does not exist in measuresJson
+        throw new DataValidationError(change.measureId, `Measure does not exist in measures-data.json.`);
+    }
 
     return change.metricType?.includes('ultiPerformanceRate') || currentMeasure.metricType?.includes('ultiPerformanceRate');
 }
@@ -237,7 +250,7 @@ export function writeToFile(file: any, filePath: string) {
 /**
  * Checks if the measure already exists for the current year.
  */
-export function isNewMeasure(measureId: string, measuresJson: any): boolean {
+export function isNewMeasure(measureId: string, measuresJson: Measure[]): boolean {
     const measure = _.find(measuresJson, { 'measureId': measureId });
     return !measure;
 }
@@ -256,7 +269,7 @@ export function isOnlyAdminClaims(change: MeasuresChange): boolean {
  * Organizes the fields of the modified measure based on its category.
  * This keeps the measures consistent when written to the json file.
  */
-function orderFields(measure: any): any {
+function orderFields(measure: Measure): Measure {
     switch (measure.category) {
         case 'pi':
             return Object.assign({}, PI_MEASURES_ORDER, measure);
@@ -269,6 +282,9 @@ function orderFields(measure: any): any {
                 return Object.assign({}, QCDR_MEASURES_ORDER, measure);
             }
             return Object.assign({}, QUALITY_MEASURES_ORDER, measure);
+        default:
+            throw new DataValidationError(measure.measureId, `Measures category '${measure.category}' is not recognized.`);
+
     }
 }
 
@@ -276,7 +292,7 @@ function orderFields(measure: any): any {
  * Finds and returns the _PRE and _PROD measures that corrospond with the
  * current measure, if they exist.
  */
-function populatePreProdArray(change: MeasuresChange, measuresJson: any): string[] | undefined {
+function populatePreProdArray(change: MeasuresChange, measuresJson: Measure[]): string[] | undefined {
     if (change.measureId.includes('_PRE') || change.measureId.includes('_PROD')) {
         return undefined;
     }
@@ -313,7 +329,7 @@ export function updateBenchmarksMetaData(
  * Returns the last measure of a specified category in the measures json.
  * This allows us to add new measures to the end of its category instead of the end of the file.
  */
-function findFinalInCategory(category: string, measuresJson: any): number {
+function findFinalInCategory(category: string, measuresJson: Measure[]): number {
     let index: number = 0;
     for (let i = 0; i < measuresJson.length; i++) {
         if (measuresJson[i].category === category) {
@@ -322,7 +338,7 @@ function findFinalInCategory(category: string, measuresJson: any): number {
             }
             else if (
                 category === 'quality' &&
-                !measuresJson[i].isRegistryMeasure &&
+                !measuresJson[i]['isRegistryMeasure'] &&
                 !['cahps', 'costScore'].includes(measuresJson[i].metricType)
             ) {
                 index = i;
@@ -331,7 +347,7 @@ function findFinalInCategory(category: string, measuresJson: any): number {
         else if (
             category === 'qcdr' &&
             measuresJson[i].category === 'quality' &&
-            !measuresJson[i].isRegistryMeasure
+            !measuresJson[i]['isRegistryMeasure']
         ) {
             index = i;
         }
@@ -342,7 +358,7 @@ function findFinalInCategory(category: string, measuresJson: any): number {
 /**
  * Takes a strata csv file, parses it into a 2D array, and removes all lines for the specified measureId.
  */
-function removeStrata(measureId: string, strata: any): any {
+function removeStrata(measureId: string, strata: string): string {
 
     // Get an array of comma separated lines
     const linesExceptFirst = strata.split('\n').slice(0);
@@ -364,7 +380,7 @@ function removeStrata(measureId: string, strata: any): any {
 function existanceCheckForMeasureArray(
     measureIds: string[],
     measureId: string,
-    measuresJson: any,
+    measuresJson: Measure[],
     arrayType: string,
     isNew: boolean = false
 ) {
@@ -384,16 +400,21 @@ function existanceCheckForMeasureArray(
 /**
  * Removes the specified measureId from all measures' substitutes and exclusions arrays.
  */
-function deepDeleteMeasureId(measureId: string, measuresJson: any) {
+function deepDeleteMeasureId(measureId: string, measuresJson: Measure[]) {
     for (let i = 0; i < measuresJson.length; i++) {
-        const substitutes = measuresJson[i].substitutes;
-        const exclusion = measuresJson[i].exclusion;
+        const measure = measuresJson[i];
+        if (measure.category === 'pi') {
+            const substitutes = measure.substitutes;
+            const exclusion = measure.exclusion;
 
-        if (substitutes) {
-            measuresJson[i].substitutes = removeStringFromArray(measureId, substitutes);
-        }
-        if (exclusion) {
-            measuresJson[i].exclusion = removeStringFromArray(measureId, exclusion);
+            if (substitutes) {
+                measure.substitutes = removeStringFromArray(measureId, substitutes);
+            }
+            if (exclusion) {
+                measure.exclusion = removeStringFromArray(measureId, exclusion);
+            }
+            
+            measuresJson[i] = measure; // Update the measure in the array
         }
     }
 }
@@ -401,6 +422,6 @@ function deepDeleteMeasureId(measureId: string, measuresJson: any) {
 /**
  * Removes a specified string from an array of strings, returning the updated array.
  */
-function removeStringFromArray(str: string, arr: [string]): string[] {
+function removeStringFromArray(str: string, arr: string[]): string[] {
     return arr.filter((strAtIndex: string) => strAtIndex !== str);
 }

@@ -8,6 +8,7 @@ import { initValidation, MeasuresChange, measureType } from '../lib/validate-cha
 import { convertCsvToJson } from '../lib/csv-json-converter';
 import { DataValidationError } from '../../errors';
 import * as Lib from '../lib/measures-lib';
+import { Measure } from '../../../util/interfaces';
 
 const PLACEHOLDER_STRATA = [{
     name: 'PLACEHOLDER',
@@ -25,7 +26,7 @@ export function updateMeasures(performanceYear: string, testMode: string = 'fals
         fs.readFileSync(path.join(appRoot + '', `${changesPath}changes.meta.json`), 'utf8')
     );
 
-    const measuresJson: any[] = JSON.parse(
+    const measuresJson: Measure[] = JSON.parse(
         fs.readFileSync(path.join(appRoot + '', measuresPath), 'utf8')
     );
 
@@ -57,7 +58,7 @@ export function ingestChangeFile(
     fileName: string,
     changesPath: string,
     performanceYear: string,
-    measuresJson: any,
+    measuresJson: Measure[],
     testMode: string = 'false',
 ): number {
     strataPath = `util/measures/${performanceYear}/`;

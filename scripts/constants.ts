@@ -1,3 +1,5 @@
+import { Programs } from "../util/interfaces/measure";
+
 //These are only needed if the csv column names do not match the measures-data field names.
 export const BASE_CSV_COLUMN_NAMES = {
     'title': 'Measure Title',
@@ -249,27 +251,28 @@ export const MEASURE_SETS = {
 };
 
 export const QUALITY_MEASURES_ORDER = {
+    'category': undefined,
+    'measureId': undefined,
     'title': undefined,
+    'description': undefined,
+    'metricType': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
     'eMeasureId': undefined,
+    'eMeasureUuid': undefined,
     'nqfEMeasureId': undefined,
     'nqfId': undefined,
-    'measureId': undefined,
-    'description': undefined,
     'measureType': undefined,
     'isHighPriority': undefined,
     'primarySteward': undefined,
     'primarySteward1': undefined,
-    'firstPerformanceYear': undefined,
-    'lastPerformanceYear': undefined,
     'isInverse': undefined,
-    'category': undefined,
     'isRegistryMeasure': undefined,
     'isRiskAdjusted': undefined,
+    'isIcdImpacted': undefined,
     'icdImpacted': undefined,
     'isClinicalGuidelineChanged': undefined,
-    'isIcdImpacted': undefined,
     'clinicalGuidelineChanged': undefined,
-    'metricType': undefined,
     'companionMeasureId': undefined,
     'allowedPrograms': undefined,
     'submissionMethods': undefined,
@@ -277,34 +280,41 @@ export const QUALITY_MEASURES_ORDER = {
     'measureSpecification': undefined,
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
-    'allowedRegistrationTypes': undefined
+    'allowedRegistrationTypes': undefined,
+    'overallAlgorithm': undefined,
+    'historic_benchmarks': undefined,
+    'strata': undefined
 };
 
 export const QCDR_MEASURES_ORDER = {
+    'category': undefined,
     'measureId': undefined,
     'title': undefined,
     'description': undefined,
+    'metricType': undefined,
+    'firstPerformanceYear': undefined,
+    'lastPerformanceYear': undefined,
+    'eMeasureId': undefined,
+    'nqfEMeasureId': undefined,
     'nqfId': undefined,
     'measureType': undefined,
     'isHighPriority': undefined,
     'isInverse': undefined,
     'isRiskAdjusted': undefined,
     'primarySteward': undefined,
-    'firstPerformanceYear': undefined,
     'allowedVendors': undefined,
     'allowedPrograms': undefined,
-    'category': undefined,
-    'lastPerformanceYear': undefined,
-    'eMeasureId': undefined,
-    'nqfEMeasureId': undefined,
     'measureSets': undefined,
     'isRegistryMeasure': undefined,
     'isIcdImpacted': undefined,
-    'metricType': undefined,
+    'icdImpacted': undefined,
+    'isClinicalGuidelineChanged': undefined,
+    'clinicalGuidelineChanged': undefined,
     'submissionMethods': undefined,
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
-    'allowedRegistrationTypes': undefined
+    'allowedRegistrationTypes': undefined,
+    'overallAlgorithm': undefined
 };
 
 export const PI_MEASURES_ORDER = {
@@ -312,17 +322,17 @@ export const PI_MEASURES_ORDER = {
     'measureId': undefined,
     'title': undefined,
     'description': undefined,
-    'isRequired': undefined,
     'metricType': undefined,
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
+    'isRequired': undefined,
     'objective': undefined,
     'isBonus': undefined,
     'reportingCategory': undefined,
-    'substitutes': undefined,
     'measureSpecification': undefined,
     'measureSets': undefined,
     'exclusion': undefined,
+    'substitutes': undefined,
     'allowedPrograms': undefined,
     'preprod': undefined,
     'allowedRegistrationTypes': undefined
@@ -330,13 +340,12 @@ export const PI_MEASURES_ORDER = {
 
 export const IA_MEASURES_ORDER = {
     'category': undefined,
+    'measureId': undefined,
     'title': undefined,
     'description': undefined,
-    'measureId': undefined,
     'metricType': undefined,
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
-    'weight': undefined,
     'subcategoryId': undefined,
     'allowedPrograms': undefined,
     'allowedRegistrationTypes': undefined
@@ -344,9 +353,9 @@ export const IA_MEASURES_ORDER = {
 
 export const COST_MEASURES_ORDER = {
     'category': undefined,
+    'measureId': undefined,
     'title': undefined,
     'description': undefined,
-    'measureId': undefined,
     'metricType': undefined,
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
@@ -425,25 +434,25 @@ export const QUALITY_DEFAULT_VALUES = {
 };
 
 export const QUALITY_DEFAULT_PROGRAMS = [
-    'mips',
-    'pcf',
+    Programs.MIPS,
+    Programs.PCF,
 ];
 
 export const COST_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
+    Programs.MIPS,
+    Programs.APP1,
 ];
 
 export const IA_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
-    'appPlus',
-    'pcf',
+    Programs.MIPS,
+    Programs.APP1,
+    Programs.APP_PLUS,
+    Programs.PCF,
 ];
 
 export const PI_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
-    'appPlus',
-    'pcf',
+    Programs.MIPS,
+    Programs.APP1,
+    Programs.APP_PLUS,
+    Programs.PCF,
 ];
