@@ -256,7 +256,7 @@ export function isOnlyAdminClaims(change: MeasuresChange): boolean {
  * Organizes the fields of the modified measure based on its category.
  * This keeps the measures consistent when written to the json file.
  */
-function orderFields(measure: any): any {
+export function orderFields(measure: any): any {
     switch (measure.category) {
         case 'pi':
             return Object.assign({}, PI_MEASURES_ORDER, measure);
