@@ -61,6 +61,14 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
     node dist/scripts/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
     exitOnFailure
 
+    echo -e "Sorting Measures by category and measureId..."
+    node dist/scripts/measures/lib/sort-measures.js $currentPerformanceYear
+    exitOnFailure
+
+    echo -e "Order all measures' fields..."
+    node dist/scripts/measures/lib/order-measure-fields.js $currentPerformanceYear
+    exitOnFailure
+
     # mvps don't exist prior to PY2023.
     if (( $currentPerformanceYear >= 2023 )); then
       echo -e "Updating mvp-enriched.json..."
