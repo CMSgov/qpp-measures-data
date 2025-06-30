@@ -25,7 +25,6 @@ export function updateAllowedPrograms(
         const programNamesJson: Record<string, string> = JSON.parse(
             fs.readFileSync(path.join(appRoot.toString(), programNamesPath), 'utf8')
         );
-        const programNamesArray: string[] = Object.values(programNamesJson);
 
         let updatedMeasures = 0;
 
@@ -40,9 +39,8 @@ export function updateAllowedPrograms(
                         allowedPrograms.push(program);
                         Object.values(programNamesJson)
 
-                        const sortedPrograms: Programs[] = allowedPrograms.sort((v1, v2) => {
-                            return programNamesArray.indexOf(v1) - programNamesArray.indexOf(v2);
-                        });
+                        const sortedPrograms: Programs[] = sortPrograms(allowedPrograms, programNamesJson);
+        
                         measure.allowedPrograms = sortedPrograms;
                         updatedMeasures++;
                         console.log(`Added program "${program}" to measure "${measure.measureId}".`);
@@ -73,6 +71,17 @@ export function updateAllowedPrograms(
     } catch (err) {
         console.error(`Failed to update measures: ${(err as Error).message}`);
     }
+}
+
+// Function to sort programs based on their names from the programNamesJson
+function sortPrograms(
+    programs: Programs[],
+    programNamesJson: Record<string, string>
+): Programs[] {
+    const programNamesArray: string[] = Object.values(programNamesJson);
+    return programs.sort((v1, v2) => {
+        return programNamesArray.indexOf(v1) - programNamesArray.indexOf(v2);
+    });
 }
 
 if (require.main === module) {
