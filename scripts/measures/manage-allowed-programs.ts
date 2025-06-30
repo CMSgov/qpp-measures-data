@@ -1,12 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';
+import { Measure } from '../../util/interfaces';
+import { Programs } from '../../util/interfaces/measure';
 
 // Function to update allowedPrograms for a specific category
 export function updateAllowedPrograms(
     performanceYear: string,
     category: string,
-    program: string,
+    program: Programs,
     action: 'add' | 'remove',
 ) {
     const measuresPath = `measures/${performanceYear}/measures-data.json`;
@@ -15,12 +17,12 @@ export function updateAllowedPrograms(
 
     try {
         // Load the measures data
-        const measuresJson: any[] = JSON.parse(
+        const measuresJson: Measure[] = JSON.parse(
             fs.readFileSync(path.join(appRoot.toString(), measuresPath), 'utf8')
         );
 
         // Load the program names json for sorting
-        const programNamesJson: any = JSON.parse(
+        const programNamesJson: Record<string, string> = JSON.parse(
             fs.readFileSync(path.join(appRoot.toString(), programNamesPath), 'utf8')
         );
         const programNamesArray: string[] = Object.values(programNamesJson);
@@ -30,7 +32,7 @@ export function updateAllowedPrograms(
         // Update measures in the specified category
         measuresJson.forEach((measure) => {
             if (measure.category === category) {
-                const allowedPrograms: string[] = measure.allowedPrograms || [];
+                const allowedPrograms: Programs[] = measure.allowedPrograms || [];
 
                 if (action === 'add') {
                     // Add program if it doesn't already exist
@@ -38,7 +40,7 @@ export function updateAllowedPrograms(
                         allowedPrograms.push(program);
                         Object.values(programNamesJson)
 
-                        const sortedPrograms: string[] = allowedPrograms.sort((v1, v2) => {
+                        const sortedPrograms: Programs[] = allowedPrograms.sort((v1, v2) => {
                             return programNamesArray.indexOf(v1) - programNamesArray.indexOf(v2);
                         });
                         measure.allowedPrograms = sortedPrograms;
@@ -88,5 +90,5 @@ if (require.main === module) {
         process.exit(1);
     }
 
-    updateAllowedPrograms(performanceYear, category, program, action as 'add' | 'remove');
+    updateAllowedPrograms(performanceYear, category, program as Programs, action as 'add' | 'remove');
 }

@@ -10,6 +10,7 @@ import appRoot from 'app-root-path';
 import papa from 'papaparse';
 
 import { error } from '../logger';
+import { Measure } from '../../util/interfaces';
 
 const performanceYear = process.argv[2];
 const category = process.argv[3];
@@ -40,7 +41,7 @@ function createJson() {
         return;
     }
 
-    let measuresOfCategory: any[];
+    let measuresOfCategory: Measure[];
 
     if (['ia', 'pi', 'cost'].includes(category)) {
         measuresOfCategory = _.filter(measuresJson, { category });
@@ -55,7 +56,7 @@ function createJson() {
     //strata field is not suited for CSVs, change to bool value (TRUE if exists).
     if (['qcdr', 'quality'].includes(category)) {
         const simplifiedForCSV = measuresOfCategory.map(measure => {
-            return { ...measure, strata: !!measure.strata }
+            return { ...measure, strata: !!measure['strata'] }
         });
         writeToCSVFile(simplifiedForCSV, `tmp/${performanceYear}/${category}-measures.csv`);
     } else {
@@ -64,7 +65,7 @@ function createJson() {
 }
 
 function getAllQcdrOrQualityMeasures() {
-    const measuresOfCategory: any[] = [];
+    const measuresOfCategory: Measure[] = [];
     for (let i = 0; i < measuresJson.length; i++) {
         if (
             category === 'qcdr' &&
@@ -106,7 +107,7 @@ function writeToCSVFile(file: any, filePath: string) {
     );
 }
 
-function setCategoriesArray(category: string, measures: any[]) {
+function setCategoriesArray(category: string, measures: Measure[]) {
     categoryFields[category] = [];
     measures.forEach(measure => {
         categoryFields[category].push(...Object.keys(measure));
