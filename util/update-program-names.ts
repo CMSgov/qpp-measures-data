@@ -1,6 +1,9 @@
 import * as fse from 'fs-extra';
 import * as path from 'path';
 
+import { MVP } from '../scripts/mvp/mvps.types';
+import { Programs } from './interfaces/measure';
+
 __dirname = __dirname.replace('/dist', '');
 __dirname = __dirname.replace('\\dist', '');
 
@@ -10,11 +13,11 @@ __dirname = __dirname.replace('\\dist', '');
  * Adds any new program name fields from the mvp.json file for the given performance year
  */
 export function updateProgramNames(performanceYear: number): void {
-  let programNames: any;
+  let programNames: Programs;
   const programNamesFilePath = path.join(__dirname, '../util/program-names', 'program-names.json');
   const mvpFilePath = path.join(__dirname, '../mvp', performanceYear.toString(), 'mvp.json');
 
-  let mvpData: any[] = [];
+  let mvpData: MVP[] = [];
 
   try {
     programNames = JSON.parse(fse.readFileSync(programNamesFilePath, 'utf8'));

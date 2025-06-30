@@ -11,7 +11,11 @@ import { BENCHMARKS_ORDER } from '../constants';
 //  node ./dist/scripts/benchmarks/merge-benchmark-files.js ./util/2023/benchmarks/json/ > ./benchmarks/2023.json
 export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: number) {
     const mergedBenchmarks = new Map();
-    const mergeConflicts: any[] = [];
+    const mergeConflicts: {
+        existing: Benchmark,
+        conflicting: Benchmark,
+        conflictingFile: string
+    }[] = [];
 
     const fileNames = fs.readdirSync(path.join(appRoot + '', benchmarksPath));
     const benchmarkLayerFiles = fileNames
