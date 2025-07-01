@@ -3,6 +3,7 @@ import path from 'path';
 import appRoot from 'app-root-path';
 import { Measure } from '../../util/interfaces';
 import { Programs } from '../../util/interfaces/measure';
+import { info, error } from '../../scripts/logger';
 
 // Function to update allowedPrograms for a specific category
 export function updateAllowedPrograms(
@@ -43,7 +44,7 @@ export function updateAllowedPrograms(
         
                         measure.allowedPrograms = sortedPrograms;
                         updatedMeasures++;
-                        console.log(`Added program "${program}" to measure "${measure.measureId}".`);
+                        info(`Added program "${program}" to measure "${measure.measureId}".`);
                     }
                 } else if (action === 'remove') {
                     // Remove program if it exists
@@ -52,7 +53,7 @@ export function updateAllowedPrograms(
                         allowedPrograms.splice(index, 1);
                         measure.allowedPrograms = allowedPrograms;
                         updatedMeasures++;
-                        console.log(`Removed program "${program}" from measure "${measure.measureId}".`);
+                        info(`Removed program "${program}" from measure "${measure.measureId}".`);
                     }
                 }
             }
@@ -64,12 +65,12 @@ export function updateAllowedPrograms(
                 path.join(appRoot.toString(), measuresPath),
                 JSON.stringify(measuresJson, null, 2)
             );
-            console.log(`${updatedMeasures} measures updated successfully.`);
+            info(`${updatedMeasures} measures updated successfully.`);
         } else {
-            console.log(`No measures required updates.`);
+            info(`No measures required updates.`);
         }
     } catch (err) {
-        console.error(`Failed to update measures: ${(err as Error).message}`);
+        error(`Failed to update measures: ${(err as Error).message}`);
     }
 }
 
@@ -84,20 +85,22 @@ function sortPrograms(
     });
 }
 
+/* c8 ignore start */
 if (require.main === module) {
     const args = process.argv.slice(2);
 
     if (args.length !== 4) {
-        console.error('Usage: node updateAllowedPrograms.js <performanceYear> <category> <program> <add|remove>');
+        error('Usage: node updateAllowedPrograms.js <performanceYear> <category> <program> <add|remove>');
         process.exit(1);
     }
 
     const [performanceYear, category, program, action] = args;
 
     if (!['add', 'remove'].includes(action)) {
-        console.error('Invalid action. Use "add" or "remove".');
+        error('Invalid action. Use "add" or "remove".');
         process.exit(1);
     }
 
     updateAllowedPrograms(performanceYear, category, program as Programs, action as 'add' | 'remove');
 }
+/* c8 ignore stop */

@@ -11,30 +11,26 @@ import papa from 'papaparse';
 
 import { error } from '../logger';
 import { Measure } from '../../util/interfaces';
-
-const performanceYear = process.argv[2];
-const category = process.argv[3];
+import { Category } from '../../util/interfaces/measure';
 
 __dirname = __dirname.replace('/dist', '');
 __dirname = __dirname.replace('\\dist', '');
 
-const measuresPath = `../../measures/${performanceYear}/measures-data.json`;
-
-const measuresJson = JSON.parse(
-    fs.readFileSync(path.join(__dirname, measuresPath), 'utf8')
-);
-
 const validCategories = ['ia', 'pi', 'cost', 'quality', 'qcdr'];
 
 const categoryFields = {
-    ia: [],
-    pi: [],
-    cost: [],
-    quality: [],
-    qcdr: [],
+    ia: [] as string[],
+    pi: [] as string[],
+    cost: [] as string[],
+    quality: [] as string[],
+    qcdr: [] as string[],
 };
 
-function createJson() {
+export function createJson(performanceYear: string, category: Category) {
+    const measuresPath = `../../measures/${performanceYear}/measures-data.json`;
+    const measuresJson = JSON.parse(
+        fs.readFileSync(path.join(__dirname, measuresPath), 'utf8')
+    );
 
     if (!validCategories.includes(category)) {
         error(`category ${category} is not valid. Must be one of the following: ${validCategories.toString()}`)
@@ -47,7 +43,7 @@ function createJson() {
         measuresOfCategory = _.filter(measuresJson, { category });
     }
     else {
-        measuresOfCategory = getAllQcdrOrQualityMeasures();
+        measuresOfCategory = getAllQcdrOrQualityMeasures(measuresJson, category);
     }
     setCategoriesArray(category, measuresOfCategory);
 
@@ -58,36 +54,37 @@ function createJson() {
         const simplifiedForCSV = measuresOfCategory.map(measure => {
             return { ...measure, strata: !!measure['strata'] }
         });
-        writeToCSVFile(simplifiedForCSV, `tmp/${performanceYear}/${category}-measures.csv`);
+        writeToCSVFile(category, simplifiedForCSV, `tmp/${performanceYear}/${category}-measures.csv`);
     } else {
-        writeToCSVFile(measuresOfCategory, `tmp/${performanceYear}/${category}-measures.csv`);
+        writeToCSVFile(category, measuresOfCategory, `tmp/${performanceYear}/${category}-measures.csv`);
     }
 }
 
-function getAllQcdrOrQualityMeasures() {
+export function getAllQcdrOrQualityMeasures(measuresJson: Measure[], category: string): Measure[] {
     const measuresOfCategory: Measure[] = [];
     for (let i = 0; i < measuresJson.length; i++) {
+        const measure = measuresJson[i];
         if (
-            category === 'qcdr' &&
-            measuresJson[i].category === 'quality' &&
-            measuresJson[i].isRegistryMeasure &&
-            !['cahps', 'costScore'].includes(measuresJson[i].metricType)
+            category === Category.QCDR &&
+            measure.category === Category.QUALITY &&
+            measure.isRegistryMeasure &&
+            !['cahps', 'costScore'].includes(measure.metricType)
         ) {
-            measuresOfCategory.push(measuresJson[i]);
+            measuresOfCategory.push(measure);
         }
         else if (
-            category === 'quality' &&
-            measuresJson[i].category === 'quality' &&
-            !measuresJson[i].isRegistryMeasure &&
-            !measuresJson[i].measureId.includes('CAHPS_')
+            category === Category.QUALITY &&
+            measure.category === Category.QUALITY &&
+            !measure.isRegistryMeasure &&
+            !measure.measureId.includes('CAHPS_')
         ) {
-            measuresOfCategory.push(measuresJson[i]);
+            measuresOfCategory.push(measure);
         }
     }
     return measuresOfCategory;
 }
 
-function writeToJsonFile(file: any, filePath: string) {
+export function writeToJsonFile(file: any, filePath: string) {
     fs.writeFile(
         path.join(appRoot + '', filePath),
         JSON.stringify(file, null, 2),
@@ -97,7 +94,7 @@ function writeToJsonFile(file: any, filePath: string) {
     );
 }
 
-function writeToCSVFile(file: any, filePath: string) {
+export function writeToCSVFile(category: Category, file: any, filePath: string) {
     fs.writeFile(
         path.join(appRoot + '', filePath),
         papa.unparse(file, { columns: categoryFields[category] }),
@@ -116,4 +113,7 @@ function setCategoriesArray(category: string, measures: Measure[]) {
     categoryFields[category] = [...new Set(categoryFields[category])]
 }
 
-createJson();
+/* c8 ignore next */
+if (process.argv[2] && process.argv[2] !== '--coverage')
+    /* c8 ignore next */
+    createJson(process.argv[2], process.argv[3] as Category);

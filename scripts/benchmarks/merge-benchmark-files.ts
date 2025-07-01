@@ -18,6 +18,7 @@ export function mergeBenchmarkFiles(benchmarksPath: string, performanceYear: num
     }[] = [];
 
     const fileNames = fs.readdirSync(path.join(appRoot + '', benchmarksPath));
+    // The sort order should put performance-benchmarks.json last.
     const benchmarkLayerFiles = fileNames
         .sort((left, right) => {
             if (left.indexOf('performance-benchmarks.json') > -1) {
@@ -94,7 +95,7 @@ function processPerformanceBenchmark(benchmark) {
 function getBenchmarkKey(benchmark) {
     let benchmarkKey = '';
     [ 'measureId', 'benchmarkYear', 'performanceYear', 'submissionMethod' ].forEach((keyName) => {
-        if (keyName in benchmark) {
+        if (benchmark[keyName]) {
             benchmarkKey = `${benchmarkKey}${benchmark[keyName]}|`;
         } else {
             throw new Error('Key is missing: ' + keyName);
