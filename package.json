@@ -15,6 +15,7 @@
   "scripts": {
     "build": "tsc",
     "test": "npm run jest:cov",
+    "posttest": "cp coverage/lcov.info lcov.info",
     "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
