@@ -668,6 +668,7 @@ describe('index', () => {
               "pcf",
               "app1",
               "appPlus",
+              "ssp",
               "DEFAULT",
               "G0053",
               "G0054",
@@ -692,7 +693,6 @@ describe('index', () => {
               "M1423",
               "M1424",
               "M1425",
-              "ssp",
             ]);
         }) 
     })
