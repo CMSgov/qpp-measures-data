@@ -5,6 +5,7 @@ export interface ProgramNames {
     "pcf": "pcf",
     "app1": "app1",
     "appPlus": "appPlus",
+    "ssp": "ssp",
     "DEFAULT": "mips",
     "G0053": "G0053",
     "G0054": "G0054",
@@ -29,7 +30,6 @@ export interface ProgramNames {
     "M1423": "M1423",
     "M1424": "M1424",
     "M1425": "M1425",
-    "ssp": "ssp"
 }
 
 export enum ProgramNamesEnum {
@@ -38,6 +38,7 @@ export enum ProgramNamesEnum {
     pcf = "pcf",
     app1 = "app1",
     appPlus = "appPlus",
+    ssp = "ssp",
     DEFAULT = "mips",
     G0053 = "G0053",
     G0054 = "G0054",
@@ -62,5 +63,4 @@ export enum ProgramNamesEnum {
     M1423 = "M1423",
     M1424 = "M1424",
     M1425 = "M1425",
-    ssp = "ssp"
 }
