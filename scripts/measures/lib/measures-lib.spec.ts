@@ -284,8 +284,7 @@ describe('#update-measures-util', () => {
                 allowedPrograms: [
                     'mips',
                     'app1',
-                    'appPlus',
-                    'pcf',
+                    'appPlus'
                 ],
                 allowedRegistrationTypes: [
                     'apm',
@@ -319,7 +318,7 @@ describe('#update-measures-util', () => {
                     'mips',
                     'app1',
                     'appPlus',
-                    'pcf',
+                    'ssp',
                 ],
                 allowedRegistrationTypes: [
                     'apm',
@@ -355,7 +354,7 @@ describe('#update-measures-util', () => {
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
                 companionMeasureId: [],
-                allowedPrograms: ['mips', 'pcf'],
+                allowedPrograms: ['mips'],
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
                 sevenPointCapRemoved: [],
@@ -393,7 +392,7 @@ describe('#update-measures-util', () => {
                 isIcdImpacted: false,
                 clinicalGuidelineChanged: [],
                 metricType: 'singlePerformanceRate',
-                allowedPrograms: ['mips', 'pcf'],
+                allowedPrograms: ['mips'],
                 submissionMethods: ['registry', 'claims'],
                 measureSets: ['nephrology', 'preventiveMedicine'],
                 allowedVendors: ['123456', '654321'],

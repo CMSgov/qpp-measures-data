@@ -28,7 +28,8 @@ export interface ProgramNames {
     "M1422": "M1422",
     "M1423": "M1423",
     "M1424": "M1424",
-    "M1425": "M1425"
+    "M1425": "M1425",
+    "ssp": "ssp"
 }
 
 export enum ProgramNamesEnum {
@@ -60,5 +61,6 @@ export enum ProgramNamesEnum {
     M1422 = "M1422",
     M1423 = "M1423",
     M1424 = "M1424",
-    M1425 = "M1425"
+    M1425 = "M1425",
+    ssp = "ssp"
 }
