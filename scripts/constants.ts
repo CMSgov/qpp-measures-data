@@ -435,7 +435,6 @@ export const QUALITY_DEFAULT_VALUES = {
 
 export const QUALITY_DEFAULT_PROGRAMS = [
     'mips',
-    'pcf',
 ];
 
 export const COST_DEFAULT_PROGRAMS = [
@@ -447,12 +446,11 @@ export const IA_DEFAULT_PROGRAMS = [
     'mips',
     'app1',
     'appPlus',
-    'pcf',
 ];
 
 export const PI_DEFAULT_PROGRAMS = [
     'mips',
     'app1',
     'appPlus',
-    'pcf',
+    'ssp',
 ];
