@@ -670,6 +670,7 @@ describe('index', () => {
               "pcf",
               "app1",
               "appPlus",
+              "ssp",
               "DEFAULT",
               "G0053",
               "G0054",

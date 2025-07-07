@@ -256,6 +256,8 @@ export const QUALITY_MEASURES_ORDER = {
     'title': undefined,
     'description': undefined,
     'metricType': undefined,
+    'overallAlgorithm': undefined,
+    'isRegistryMeasure': undefined,
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
     'eMeasureId': undefined,
@@ -267,7 +269,6 @@ export const QUALITY_MEASURES_ORDER = {
     'primarySteward': undefined,
     'primarySteward1': undefined,
     'isInverse': undefined,
-    'isRegistryMeasure': undefined,
     'isRiskAdjusted': undefined,
     'isIcdImpacted': undefined,
     'icdImpacted': undefined,
@@ -281,9 +282,9 @@ export const QUALITY_MEASURES_ORDER = {
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
     'allowedRegistrationTypes': undefined,
-    'overallAlgorithm': undefined,
     'historic_benchmarks': undefined,
-    'strata': undefined
+    'strata': undefined,
+    'eligilibityOptions': undefined
 };
 
 export const QCDR_MEASURES_ORDER = {
@@ -292,6 +293,8 @@ export const QCDR_MEASURES_ORDER = {
     'title': undefined,
     'description': undefined,
     'metricType': undefined,
+    'overallAlgorithm': undefined,
+    'isRegistryMeasure': undefined,
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
     'eMeasureId': undefined,
@@ -299,22 +302,21 @@ export const QCDR_MEASURES_ORDER = {
     'nqfId': undefined,
     'measureType': undefined,
     'isHighPriority': undefined,
+    'primarySteward': undefined,
     'isInverse': undefined,
     'isRiskAdjusted': undefined,
-    'primarySteward': undefined,
-    'allowedVendors': undefined,
-    'allowedPrograms': undefined,
-    'measureSets': undefined,
-    'isRegistryMeasure': undefined,
     'isIcdImpacted': undefined,
     'icdImpacted': undefined,
     'isClinicalGuidelineChanged': undefined,
     'clinicalGuidelineChanged': undefined,
+    'allowedPrograms': undefined,
     'submissionMethods': undefined,
+    'measureSets': undefined,
     'isSevenPointCapRemoved': undefined,
     'sevenPointCapRemoved': undefined,
     'allowedRegistrationTypes': undefined,
-    'overallAlgorithm': undefined
+    'allowedVendors': undefined,
+    'strata': undefined
 };
 
 export const PI_MEASURES_ORDER = {
@@ -435,7 +437,6 @@ export const QUALITY_DEFAULT_VALUES = {
 
 export const QUALITY_DEFAULT_PROGRAMS = [
     Programs.MIPS,
-    Programs.PCF,
 ];
 
 export const COST_DEFAULT_PROGRAMS = [
@@ -447,12 +448,11 @@ export const IA_DEFAULT_PROGRAMS = [
     Programs.MIPS,
     Programs.APP1,
     Programs.APP_PLUS,
-    Programs.PCF,
 ];
 
 export const PI_DEFAULT_PROGRAMS = [
     Programs.MIPS,
     Programs.APP1,
     Programs.APP_PLUS,
-    Programs.PCF,
+    Programs.SSP,
 ];
