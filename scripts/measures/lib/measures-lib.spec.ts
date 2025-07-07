@@ -7,6 +7,7 @@ import * as MeasuresLib from './measures-lib';
 import * as logger from '../../logger';
 import _ from 'lodash';
 import { MeasuresChange } from '../lib/validate-change-requests';
+import { Category } from '../../../util/interfaces/measure';
 
 jest.mock('fs-extra');
 
@@ -223,7 +224,7 @@ describe('#update-measures-util', () => {
         it('should not add isSevenPointCapRemoved when performanceYear is 2024 or less', () => {
             const change: MeasuresChange = {
                 measureId: '001',
-                category: 'quality',
+                category: Category.QUALITY,
                 sevenPointCapRemoved: ['registry'],
             };
 
@@ -236,7 +237,7 @@ describe('#update-measures-util', () => {
         it('should update isSevenPointCapRemoved to true when sevenPointCapRemoved has values', () => {
             const change: MeasuresChange = {
                 measureId: '001',
-                category: 'quality',
+                category: Category.QUALITY,
                 sevenPointCapRemoved: ['registry'],
             };
 
@@ -250,7 +251,7 @@ describe('#update-measures-util', () => {
         it('should update isSevenPointCapRemoved to false when sevenPointCapRemoved is empty', () => {
             const change: MeasuresChange = {
                 measureId: '001',
-                category: 'quality',
+                category: Category.QUALITY,
                 sevenPointCapRemoved: [],
             };
 

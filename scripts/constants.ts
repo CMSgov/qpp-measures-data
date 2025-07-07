@@ -1,3 +1,5 @@
+import { Programs } from "../util/interfaces/measure";
+
 //These are only needed if the csv column names do not match the measures-data field names.
 export const BASE_CSV_COLUMN_NAMES = {
     'title': 'Measure Title',
@@ -434,23 +436,23 @@ export const QUALITY_DEFAULT_VALUES = {
 };
 
 export const QUALITY_DEFAULT_PROGRAMS = [
-    'mips',
+    Programs.MIPS,
 ];
 
 export const COST_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
+    Programs.MIPS,
+    Programs.APP1,
 ];
 
 export const IA_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
-    'appPlus',
+    Programs.MIPS,
+    Programs.APP1,
+    Programs.APP_PLUS,
 ];
 
 export const PI_DEFAULT_PROGRAMS = [
-    'mips',
-    'app1',
-    'appPlus',
-    'ssp',
+    Programs.MIPS,
+    Programs.APP1,
+    Programs.APP_PLUS,
+    Programs.SSP,
 ];

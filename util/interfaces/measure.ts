@@ -1,6 +1,7 @@
 export enum Category {
     IA = 'ia',
     QUALITY = 'quality',
+    QCDR = 'qcdr',
     PI = 'pi',
     COST = 'cost'
 }
@@ -37,6 +38,8 @@ export enum Programs {
     MIPS = 'mips',
     PCF = 'pcf',
     APP1 = 'app1',
+    APP_PLUS = 'appPlus',
+    SSP = 'ssp',
     G0053 = 'G0053',
     G0054 = 'G0054',
     G0055 = 'G0055',
@@ -61,6 +64,28 @@ export enum Programs {
     M1425 = "M1425"
 }
 
+export interface Stratum {
+    description: string;
+    name?: string;
+    eMeasureUuids: {
+        initialPopulationUuid: string;
+        denominatorUuid: string;
+        numeratorUuid: string;
+        denominatorExclusionUuid?: string;
+        denominatorExceptionUuid?: string;
+        strata?: string[];
+    };
+}
+
+export interface MeasureSpecification {
+    default?: string
+    registry?: string
+    claims?: string
+    cmsWebInterface?: string
+    measureInformation?: string
+    electronicHealthRecord?: string
+}
+
 export interface BaseMeasure {
     measureId: string;
     title: string;
@@ -69,14 +94,14 @@ export interface BaseMeasure {
     metricType: MetricType;
     firstPerformanceYear: number;
     lastPerformanceYear: number | null;
-    measureSpecification?: string | null;
+    measureSpecification?: MeasureSpecification;
     measureSets?: string[];
     allowedPrograms: Programs[];
 }
 
 export interface IAMeasure extends BaseMeasure {
     category: Category.IA;
-    weight: Weight;
+    weight?: Weight;
     subcategoryId: SubcategoryId;
 }
 
@@ -87,7 +112,7 @@ export interface PIMeasure extends BaseMeasure {
     isRequired: boolean;
     isBonus: boolean;
     substitutes?: string[];
-    exclusion?: string;
+    exclusion?: string[];
     preprod?: string;
 }
 
@@ -95,7 +120,7 @@ export interface QualityMeasure extends BaseMeasure {
     category: Category.QUALITY;
     measureType: string;
     eMeasureId: string | null;
-    eMeasureUuid: string;
+    eMeasureUuid?: string;
     nqfEMeasureId: string | null;
     nqfId: string | null;
     isClinicalGuidelineChanged: boolean;
@@ -103,18 +128,7 @@ export interface QualityMeasure extends BaseMeasure {
     isHighPriority: boolean;
     isInverse: boolean;
     overallAlgorithm?: string | null;
-    strata?: {
-        description: string;
-        name: string;
-        eMeasureUuids: {
-            initialPopulationUuid: string;
-            denominatorUuid: string;
-            numeratorUuid: string;
-            denominatorExclusionUuid: string;
-            denominatorExceptionUuid: string;
-            strata: string[];
-        };
-    }[];
+    strata?: Stratum[];
     primarySteward: string;
     submissionMethods: string[];
     eligibilityOptions?: {

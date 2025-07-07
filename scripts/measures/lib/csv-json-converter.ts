@@ -27,7 +27,7 @@ import {
 } from '../../constants';
 import { InvalidValueError } from '../../errors';
 
-export function convertCsvToJson(csv: any) {
+export function convertCsvToJson(csv: string) {
     const parsedCsv = prepareCsv(csv);
 
     const mappedCsv = parsedCsv.map((row: any) => {
@@ -187,7 +187,7 @@ function csvFieldToBoolean(field: string, value: string): boolean {
     }
 }
 
-function prepareCsv(csv: any): any {
+function prepareCsv(csv: string): any {
     //parse csv.
     const parsedCsv: any[] = parse(csv, { columns: true, relax_column_count: true, bom: true });
 

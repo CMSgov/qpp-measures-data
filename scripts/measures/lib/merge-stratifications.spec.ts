@@ -3,6 +3,8 @@ import path from 'path';
 import appRoot from 'app-root-path';
 
 import { mergeStratifications } from './merge-stratifications';
+import { Measure } from '../../../util/interfaces';
+import { Category } from '../../../util/interfaces/measure';
 
 const stratificationData = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', 'test/measures/test-stratifications.json'), 'utf8')
@@ -15,6 +17,7 @@ describe('Stratification Data Merger', () => {
     it('merges eCQM data into the measures-data json', () => {
         const measuresJson = [
             {
+                category: Category.QUALITY,
                 measureId: '001',
                 eMeasureId: 'e001',
                 strata: [
@@ -34,6 +37,7 @@ describe('Stratification Data Merger', () => {
                 ]
             },
             {
+                category: Category.QUALITY,
                 measureId: '002',
                 eMeasureId: 'e002',
                 strata: [
@@ -45,6 +49,7 @@ describe('Stratification Data Merger', () => {
                 ]
             },
             {
+                category: Category.QUALITY,
                 measureId: '003',
                 eMeasureId: 'e003',
                 strata: [
@@ -70,7 +75,7 @@ describe('Stratification Data Merger', () => {
                     }
                 ]
             },
-        ];
+        ] as Measure[];
 
         mergeStratifications(measuresJson, stratificationData);
 
