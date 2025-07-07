@@ -39,6 +39,7 @@ export enum Programs {
     PCF = 'pcf',
     APP1 = 'app1',
     APP_PLUS = 'appPlus',
+    SSP = 'ssp',
     G0053 = 'G0053',
     G0054 = 'G0054',
     G0055 = 'G0055',
