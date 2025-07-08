@@ -4,6 +4,7 @@ import path from 'path';
 import appRoot from 'app-root-path';
 
 import { mergeClaimsRelatedData } from './merge-claims-related-data';
+import { Measure } from '../../../util/interfaces';
 
 const stratificationData = JSON.parse(
     fs.readFileSync(path.join(appRoot + '', 'test/measures/test-claims-related-data.json'), 'utf8')
@@ -17,7 +18,7 @@ describe('Claims-Related Data Merger', () => {
         const measuresJson = [
             { measureId: '001' },
             { measureId: '002' },
-        ];
+        ] as Measure[];
 
         mergeClaimsRelatedData(measuresJson, stratificationData);
 

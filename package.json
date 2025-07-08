@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v8.23.0",
+  "version": "v8.24.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
   "scripts": {
     "build": "tsc",
     "test": "npm run jest:cov",
+    "posttest": "cp coverage/lcov.info lcov.info",
     "init:measures": "scripts/measures/initialize-measures",
     "update:measures": "scripts/measures/update-measures",
     "build:measures": "scripts/measures/build-measures",
@@ -36,6 +37,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.0.3",
     "@types/json-merge-patch": "^0.0.10",
+    "@types/natural-compare-lite": "^1.4.2",
     "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.17.0",
@@ -51,6 +53,7 @@
     "json-2-csv": "^5.5.1",
     "json-merge-patch": "^1.0.2",
     "memfs": "^4.8.2",
+    "natural-compare-lite": "^1.4.0",
     "nyc": "^15.0.0",
     "officeparser": "^4.0.8",
     "pre-commit": "^1.2.2",
@@ -65,6 +68,7 @@
   "dependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.17",
+    "@types/papaparse": "^5.3.16",
     "app-root-path": "^3.1.0",
     "fs-extra": "^11.3.0",
     "lodash": "^4.17.21",

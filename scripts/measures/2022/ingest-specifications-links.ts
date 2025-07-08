@@ -13,7 +13,7 @@ import { parse } from 'csv-parse/sync';
 import appRoot from 'app-root-path';
 
 import { mergeEcqmEhrLinks } from '../lib/merge-ecqm-ehr-links';
-import { mergeWebInterfaceLinks } from '../lib/merge-web-interface-links';
+import { mergeWebInterfaceLinks } from './merge-web-interface-links';
 import { mergeClaimsLinks } from '../lib/merge-claims-links';
 import { mergeCqmLinks } from '../lib/merge-cqm-links';
 import { mergePiLinks } from '../lib/merge-pi-links';

@@ -9,6 +9,8 @@ import _ from 'lodash';
 import path from 'path';
 
 import { writeToFile } from '../measures/lib/measures-lib';
+import { Measure } from '../../util/interfaces';
+import { MVP, MVPCategory } from './mvps.types';
 
 export function parseMvpData(performanceYear: string) {
   const rawMvpFilePath = `mvp/${performanceYear}/mvp-raw.json`;
@@ -23,13 +25,13 @@ export function parseMvpData(performanceYear: string) {
     fs.readFileSync(path.join(appRoot + '', measuresFilePath), "utf8")
   );
 
-  const mvpData = [] as any;
+  const mvpData: MVP[] = [];
 
   rawMvpData.forEach((row) => {
     const existingMvp = mvpData.find((mvp) => mvp.mvpId === row["MVP ID"]);
     const measureId = row["Measure Id"];
 
-    const measure = measuresData.find((m) => m.measureId === measureId);
+    const measure = measuresData.find((m: Measure) => m.measureId === measureId);
     if (!measure) {
       console.log(
         `Measure not found for measureId ${measureId} for mvpId ${row["MVP ID"]}`
@@ -45,17 +47,17 @@ export function parseMvpData(performanceYear: string) {
         description: row["MVP Description"],
         specialtiesMostApplicableTo: row["Most Applicable Medical Specialties"]
           .split(";")
-          .map((s) => s.trim()),
+          .map((s: string) => s.trim()),
         clinicalTopics: row["Clinical Topic"],
-        qualityMeasureIds: [] as any,
-        iaMeasureIds: [] as any,
-        costMeasureIds: [] as any,
-        foundationPiMeasureIds: [] as any,
-        foundationQualityMeasureIds: [] as any,
-        administrativeClaimsMeasureIds: [] as any,
+        qualityMeasureIds: [] as string[],
+        iaMeasureIds: [] as string[],
+        costMeasureIds: [] as string[],
+        foundationPiMeasureIds: [] as string[],
+        foundationQualityMeasureIds: [] as string[],
+        administrativeClaimsMeasureIds: [] as string[],
         hasCahps: false,
         hasOutcomeAdminClaims: false,
-      };
+      } as MVP;
 
       hydrateMeasureIds(newMvp, mvpCategory, measure);
 
@@ -72,12 +74,12 @@ export function parseMvpData(performanceYear: string) {
   writeToFile(mvpData, mvpFileWritePath);
 }
 
-function hydrateMeasureIds(mvp, mvpCategory, measure) {
+function hydrateMeasureIds(mvp: MVP, mvpCategory: string, measure: Measure) {
   switch (measure?.category) {
     case "quality":
-      if (mvpCategory === "Foundational") {
+      if (mvpCategory === MVPCategory.Foundational) {
         mvp.foundationQualityMeasureIds.push(measure.measureId);
-      } else if (mvpCategory === "Quality") {
+      } else if (mvpCategory === MVPCategory.Quality) {
         // if it is an adminclaims measure, add it to that array.
         if (measure?.submissionMethods.includes("administrativeClaims")) {
           mvp.administrativeClaimsMeasureIds.push(measure.measureId);

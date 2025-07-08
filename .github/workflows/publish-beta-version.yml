@@ -76,7 +76,7 @@ jobs:
       - name: Publish to NPM
         run: npm publish --tag beta
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_v2 }}
 
   notify-others:
     runs-on: ubuntu-latest

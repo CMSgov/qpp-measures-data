@@ -9,6 +9,8 @@ import * as index from './index';
 import { Constants } from './constants';
 import * as mvpDataUtils from './util/mvp-data-utils';
 import { ProgramNamesEnum } from './util/interfaces/program-names';
+import { MVP } from './scripts/mvp/mvps.types';
+import { Measure } from './util/interfaces';
 
 export const mockMvpJson = [
     {
@@ -43,7 +45,7 @@ export const mockMvpJson = [
         hasCahps: false,
         hasOutcomeAdminClaims: true
     }
-];
+] as MVP[];
 
 describe('index', () => {
     beforeEach(() => {
@@ -560,7 +562,7 @@ describe('index', () => {
             {
                 measureId: '003',
             },
-        ];
+        ] as Measure[];
 
         beforeEach(() => {
             vol.fromNestedJSON({
@@ -668,6 +670,7 @@ describe('index', () => {
               "pcf",
               "app1",
               "appPlus",
+              "ssp",
               "DEFAULT",
               "G0053",
               "G0054",

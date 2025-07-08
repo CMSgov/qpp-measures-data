@@ -1,19 +1,21 @@
 import * as fse from 'fs-extra';
 import * as path from 'path';
-import * as _ from 'lodash';
+import _ from 'lodash';
 import { Constants } from '../constants';
 import { getMeasuresData } from '../index';
+import { MVP } from '../scripts/mvp/mvps.types';
+import { Measure, Programs } from './interfaces/measure';
 
 __dirname = __dirname.replace('/dist', '');
 __dirname = __dirname.replace('\\dist', '');
 
-export function createMVPDataFile(performanceYear: number): any {
+export function createMVPDataFile(performanceYear: number): MVP[] {
     const basePath = path.resolve(__dirname, '..');
     const mvpFilePath = path.join(basePath, 'mvp', performanceYear.toString(), 'mvp-enriched.json');
     const measureFilePath = path.join(basePath, 'measures', performanceYear.toString(), 'measures-data.json');
 
-    let mvpData: any[] = [];
-    let measuresData: any[] = [];
+    let mvpData: MVP[] = [];
+    let measuresData: Measure[] = [];
     try {
         mvpData = JSON.parse(
             fse.readFileSync(path.join(basePath, 'mvp', performanceYear.toString(), 'mvp.json'), 'utf8'));
@@ -23,9 +25,9 @@ export function createMVPDataFile(performanceYear: number): any {
         return [];
     }
 
-    const mvpIds: any[] = [];
+    const mvpIds: Programs[] = [];
     mvpData.forEach(mvpDataItem => {
-        if (mvpDataItem.mvpId !== 'app1') {
+        if (mvpDataItem.mvpId !== Programs.APP1) {
             mvpIds.push(mvpDataItem.mvpId);
         }
     });
@@ -59,9 +61,9 @@ export function createMVPDataFile(performanceYear: number): any {
 }
 
 export function populateMeasuresforMVPs(
-    currentMvp: any,
-    allMvps: any[],
-    measuresData: any[],
+    currentMvp: MVP,
+    allMvps: MVP[],
+    measuresData: Measure[],
     measureIdKey: string,
     enrichedMeasureKey: string
 ): void {

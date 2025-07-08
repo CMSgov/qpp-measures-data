@@ -11,7 +11,7 @@ import { json2csv } from 'json-2-csv';
 import { parseOfficeAsync } from "officeparser";
 
 const currentYear = process.argv[2];
-const pptPath = "./2024 EMA and Denominator Reduction User Guide_2024 04 23_For Design.pptx";
+const pptPath = "./2025-EMA-and-Denominator-Reduction-User-Guide.pptx";
 const csvPath = `../../util/clinical-clusters/${currentYear}/`;
 const measuresPath = `measures/${currentYear}/measures-data.json`;
 const MEASURE_START_REGEX = (/^([\d]{3}): (.*)$/);  // start with a match like this `123: XX`
@@ -20,9 +20,9 @@ const config = { ignoreNotes: true };
 
 const clinicalTopicReplace = {
   "Pathology 1": "Pathology",
-  "Diagnostic Imaging (C)": "Diagnostic Imaging",
-  "Pathology – Skin Cancer": "Pathology Skin Cancer",
-  "Cardiac Stress Imaging (C)": "Cardiac Stress Imaging"
+  "AnesthesiologyCare": "Anesthesiology Care",
+  "Pathology –Skin Cancer": "Pathology Skin Cancer",
+  "Cardiac StressImaging": "Cardiac Stress Imaging"
 }
 
 if (!currentYear) {
@@ -90,6 +90,8 @@ function extractMeasures(inlineData: string[]) {
       // if previous is clinical topic
       if (!checkMeasure(inlineData[index-1])) {
         clinicalTopic = getClinicalTopic(inlineData, index);
+        // Remove (C) or (N) at the end of the clinicalTopic, if present
+        clinicalTopic = clinicalTopic.replace(/\s*\((C|N)\)$/, '');
         measuresOnly[clinicalTopic] = {};
       }
       // if its valid measure entry - `123: desc`
