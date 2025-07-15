@@ -76,7 +76,7 @@ jobs:
       - name: Publish to NPM
         run: npm publish --tag beta
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_v2 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           
       - name: Update LATEST_BETA_VERSION repo variable
         env:
