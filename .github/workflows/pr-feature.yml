@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for open beta version
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
           echo "Fetching draft releases..."
           DRAFTS=$(curl -H "Authorization: token $GITHUB_TOKEN" \
