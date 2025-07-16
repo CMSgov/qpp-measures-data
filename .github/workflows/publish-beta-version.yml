@@ -76,7 +76,12 @@ jobs:
       - name: Publish to NPM
         run: npm publish --tag beta
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN_v2 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
+      - name: Update LATEST_BETA_VERSION repo variable
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+        run: gh variable set LATEST_BETA_VERSION --body "v${{github.event.inputs.version}}"
 
   notify-others:
     runs-on: ubuntu-latest
