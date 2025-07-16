@@ -13,6 +13,8 @@ import { error } from '../logger';
 
 const performanceYear = process.argv[2];
 
+// This is a Test
+
 // Fix for __dirname when running compiled scripts from dist
 __dirname = __dirname.replace('/dist', '').replace('\\dist', '');
 
