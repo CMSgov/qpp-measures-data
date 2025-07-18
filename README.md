@@ -1,7 +1,5 @@
 # qpp-measures-data
 
-[![Build Status](https://travis-ci.org/CMSgov/qpp-measures-data.svg?branch=master)](https://travis-ci.org/CMSgov/qpp-measures-data)
-
 # Performance Year 2026 Data
 
 **All Measure and Benchmark data for Performance Year 2026 is currently in progress and is subject to change.**
