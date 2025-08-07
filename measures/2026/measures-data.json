@@ -4391,9 +4391,98 @@
   },
   {
     "category": "pi",
+    "measureId": "PI_PHCDRR_6",
+    "title": "Public Health Reporting Using TEFCA",
+    "description": "The MIPS eligible clinician is (1) participating as a signatory to a Framework Agreement (as that term is defined by the Common Agreement for Nationwide Health Information Interoperability as published in the Federal Register and on ASTP/ONC’s website); (2) is not suspended from participating in TEFCA exchange; (3) submits health information using TEFCA to a PHA consistent with one or more of the measures under the Public Health and Clinical Data Exchange objective; (4) is in active engagement Option 2 (validated data\r\nproduction) with a PHA to transfer health\r\ninformation for one or more of the measures\r\nunder the Public Health and Clinical Data Exchange objective; and (5) uses the functions of CEHRT to exchange with the PHA.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "isRequired": false,
+    "objective": "publicHealthAndClinicalDataExchange",
+    "isBonus": true,
+    "reportingCategory": "bonus",
+    "measureSets": [],
+    "exclusion": null,
+    "substitutes": [],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "appPlus",
+      "ssp"
+    ],
+    "preprod": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "pi",
+    "measureId": "PI_PHCDRR_6_PRE",
+    "title": "Public Health Reporting Using TEFCA Active Engagement Level 1",
+    "description": "Option 1 - Pre-Production and Validation: The MIPS eligible clinician must first register to submit data with the PHA or, where applicable, the CDR to which the information is being submitted. Registration must be completed within 60 days after the start of the performance period, while awaiting an invitation from the PHA or CDR to begin testing and validation. MIPS eligible clinicians that have registered in previous years do not need to submit an additional registration for subsequent performance periods. Upon completion of the initial registration, the MIPS eligible clinician must begin the process of testing and validation of the electronic submission of data. The MIPS eligible clinician must respond to requests from the PHA or, where applicable, the CDR within 30 days; failure to respond twice within a performance period would result in the MIPS eligible clinician not meeting the measure.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "isRequired": true,
+    "objective": "publicHealthAndClinicalDataExchange",
+    "isBonus": true,
+    "reportingCategory": "bonus",
+    "measureSets": [],
+    "exclusion": null,
+    "substitutes": [
+      "PI_PHCDRR_6_PROD"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "appPlus",
+      "ssp"
+    ],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "pi",
+    "measureId": "PI_PHCDRR_6_PROD",
+    "title": "Public Health Reporting Using TEFCA Active Engagement Level 2",
+    "description": "Option 2 – Validated Data Production: The MIPS eligible clinician has completed testing and validation of the electronic submission and is electronically submitting production data to the PHA or CDR.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "isRequired": true,
+    "objective": "publicHealthAndClinicalDataExchange",
+    "isBonus": true,
+    "reportingCategory": "bonus",
+    "measureSets": [],
+    "exclusion": null,
+    "substitutes": [
+      "PI_PHCDRR_6_PRE"
+    ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "appPlus",
+      "ssp"
+    ],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "pi",
     "measureId": "PI_PPHI_1",
     "title": "Security Risk Analysis",
-    "description": "Conduct or review a security risk analysis in accordance with the requirements in 45 CFR 164.308(a)(1), including addressing the security (to include encryption) of ePHI data created or maintained by certified electronic health record technology (CEHRT) in accordance with requirements in 45 CFR 164.312(a)(2)(iv) and 45 CFR 164.306(d)(3), implement security updates as necessary, and correct identified security deficiencies as part of the MIPS eligible clinician's risk management process.",
+    "description": "First, conduct or review a security risk analysis; and second, conduct security risk management activities, in accordance with the requirements under 45 CFR 164.308(a)(1)(ii)(A) and (B). Security risk analysis and management activities include addressing the security of data created or maintained by CEHRT (to include encryption), in accordance with 45 CFR 164.312(a)(2)(iv) and 45 CFR 164.306(d)(3). The encryption implementation specified at 45 CFR 164.312(a)(2)(iv) must be implemented if it is reasonable and appropriate; if encryption is not reasonable and appropriate, then the MIPS eligible clinician would adopt an equivalent alternative measure if it is reasonable and appropriate to do so.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -4444,7 +4533,7 @@
     "category": "pi",
     "measureId": "PI_PPHI_2",
     "title": "SAFER Guides High Priority Practices Guide",
-    "description": "Conduct an annual assessment of the High Priority Practices Guide SAFER Guides.",
+    "description": "Beginning with the 2026 MIPS payment year, submit an affirmative attestation regarding the MIPS eligible clinician’s completion of the annual self-assessment under the High Priority Practices SAFER Guide measure using the 2025 High Priority Practices SAFER Guide during the year in which the performance period occurs.",
     "metricType": "boolean",
     "firstPerformanceYear": 2022,
     "lastPerformanceYear": null,
