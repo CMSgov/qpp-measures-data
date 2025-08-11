@@ -30,6 +30,7 @@ function initMeasuresData() {
     removeBenchmarksRemoved();
     removeEMeasureUuids();
     initializeSevenPointCapRemoved();
+    removeStrataForSPR();
 
     writeToFile(measuresJson, measuresPath);
 }
@@ -113,6 +114,19 @@ function initializeSevenPointCapRemoved() {
         if (year >= 2025 && measuresJson[i].category === 'quality') {
             measuresJson[i].isSevenPointCapRemoved = false;
             measuresJson[i].sevenPointCapRemoved = [];
+        }
+    }
+}
+
+// remove strata for SPR measures
+function removeStrataForSPR() {
+    for (let i = 0; i < measuresJson.length; i++) {
+        const metricType = measuresJson[i]?.metricType?.toLowerCase();
+
+        if (metricType === 'singleperformancerate' || metricType === 'registrysingleperformancerate') {
+            if (measuresJson[i].strata) {
+                delete measuresJson[i].strata;
+            }
         }
     }
 }
