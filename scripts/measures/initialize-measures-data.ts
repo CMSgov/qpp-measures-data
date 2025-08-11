@@ -118,14 +118,8 @@ function initializeSevenPointCapRemoved() {
     }
 }
 
+// remove strata for SPR measures
 function removeStrataForSPR() {
-    const year = parseInt(performanceYear, 10);
-
-    if (isNaN(year) || year <= 2025) {
-        return;
-    }
-
-    // For 2026 and beyond, remove strata for SPR measures
     for (let i = 0; i < measuresJson.length; i++) {
         const metricType = measuresJson[i]?.metricType?.toLowerCase();
 
