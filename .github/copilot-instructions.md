@@ -18,7 +18,6 @@ This is an NPM package containing the data associated with Measures, Benchmarks,
 5. Use `npm run lint:fix` to format code before committing
 
 ## Project structure (high level)
-## Project structure (high level)
 - `.github/` — GitHub workflows, PR templates, and repository configuration files.
 - `__mocks__/` — Used for unit tests to store mocks of package functions.
 - `benchmarks/` — The resulting Benchmarks data used by consumers. 

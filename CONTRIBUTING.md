@@ -49,7 +49,7 @@ e.g. from the base directory:
 cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2018
 ```
 
-Also, our script outlined in the `Generating data` section above run validation on their resulting data.
+Also, the scripts outlined in the `Generating data` section above run validation on their resulting data.
 For example, running `npm run update:measures $YEAR` will also validate the measures-data.json for that year.
 
 ### Initializing, Adding, Updating, and Deleting Measures
