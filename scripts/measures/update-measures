@@ -69,13 +69,9 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
     node dist/scripts/measures/lib/order-measure-fields.js $currentPerformanceYear
     exitOnFailure
 
-    # mvps don't exist prior to PY2023.
-    if (( $currentPerformanceYear >= 2023 )); then
-      echo -e "Updating mvp-enriched.json..."
-      node dist/scripts/mvp/$currentPerformanceYear/update-mvp.js \
-        $currentPerformanceYear
-      exitOnFailure
-    fi
+    echo -e "Updating MVP files..."
+    npm run build:mvp $currentPerformanceYear
+    exitOnFailure
   fi
   
   echo -e "${Green}\n${bold}Update complete."
