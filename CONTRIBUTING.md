@@ -14,13 +14,9 @@ Make sure to generate/update the js files when updating the typescript files. e.
 
 ### Pull Requests
 
-Create a pull request for your branch via GitHub. The PR template will have instructions on where to add details in the description. Once the PR is created, the users specified in the CODEOWNERS file will be automatically added as reviewers. 
+Create a pull request for your branch via GitHub. The PR template will have instructions on where to add details in the description. Once the PR is created, reach out to your team and QPPA for approvals. At least one QPPA dev should approve before you merge.
 
 When there are enough reviews, one of the maintainers with write access will merge the PR via a squash commit and delete the branch. It will be merged back into the `develop` branch. Do not update the package version in your branch, this will be done at the time a new release is made.
-
-### Performance year
-
-$YEAR refers to the performance year; this command-line argument is required.  $YEAR is currently only supported as a command-line argument for measures and benchmarks generation, not supported for clinical clusters.
 
 ### Generating data
 To regenerate and validate data, do the following:
@@ -30,6 +26,7 @@ nvm use
 npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.json and all supporting files.
 npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json and mvp-enriched.json
 npm run build:benchmarks $YEAR      # regenerates benchmarks/$YEAR.json
+npm run build:mvp $YEAR             # regenerates the mvp data files in mvp/$YEAR/
 npm run build:clinical-clusters     # regenerates clinical-clusters/clinical-clusters.json
 ```
 
@@ -52,17 +49,28 @@ e.g. from the base directory:
 cat measures/2018/measures-data.json  | node scripts/validate-data.js measures 2018
 ```
 
-Running `npm run update:measures $YEAR` will also validate the measures-data.json for that year.
+Also, the scripts outlined in the `Generating data` section above run validation on their resulting data.
+For example, running `npm run update:measures $YEAR` will also validate the measures-data.json for that year.
 
 ### Initializing, Adding, Updating, and Deleting Measures
 
-To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file. REQUIRED: The file [constants.ts](./constants.ts) should also be updated to include the new performance year in the `validPerformanceYears` array.
+#### Initializing
+
+To create a new perfomance year for measures, run `npm run init:measures $YEAR`. This will create all the necessary folders and files for the new year, as well as perform various resets of the new year's measures data such as increment the quality eMeasureIds and remove last year's spec links from the new measures-data file.
+
+#### Adding/Updating
 
 New measures and updates to old measures are handled the same as each other. A CSV Change Request file (CR) with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
 Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 NOTE FOR TESTING: You may add the -t flag to the above update script to run the ingestion without persisting to the change.meta file or measures-data file.
 
+You can also make changes directly to the measures-data.json files. This is recommended for small changes for which we have not been provided a CR. The same *cannot* be done for Benchmarks, MVPs, or Clinical Clusters data files, as any direct, manual changes will be overwritten by the next build.
+
+#### Deleting
+
 Deleting measures is handled by the "Year Removed" field in the change request file. Removal change request files are handled in the same way as updates, outlined above.
+
+#### Additional Info
 
 There is no need to ever change CR files after they have been processed. Future data corrections can either be handled in a new CR or via manual updates (see below).
 
@@ -70,11 +78,11 @@ Most external changes will come to us in the form of a CR, but CRs are not requi
 
 ### Adding/Updating Measures Strata
 
-The strata are modified by updating the qcdr and quality strata CSVs in the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
+The strata are modified by updating the qcdr and quality strata CSVs in /util/measures/$YEAR/, then running `npm run update:measures $YEAR`. Check earlier years for examples.
 
 ### Adding/Updating Spec URL files
 
-The specification links are added by placing the CSV or JSON files into the year's util directory, then running `npm run update:measures $YEAR`. Check earlier years for examples.
+The specification links are added by placing the CSV or JSON files into /util/measures/$YEAR/, then running `npm run update:measures $YEAR`. Check earlier years for examples.
 
 ### Managing Allowed Programs for Measures
 
@@ -102,12 +110,7 @@ To handle UTF-8 encoding, make sure that you save any new csv from excel as `CSV
 
 ### Additional Benchmarks
 
-To add or update benchmarks, rename your csv to 'benchmarks.csv'
-and place that file in staging/$YEAR/benchmarks/. 
-Replace any existing files of the same name.
-Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to update benchmark JSON files under benchmarks/.
-$YEAR refers to the performance year you are looking to update. 
-See `build-benchmarks` for more detail.
+To add or update benchmarks, rename your csv or json file and place that file in staging/$YEAR/benchmarks/, based on the list of names/directories mentioned below. Replace any existing files of the same name. Run `nvm use` to make sure you are using the correct versions of npm and Nodejs, then run `npm run build:benchmarks $YEAR` to rebuild the benchmark JSON files under /benchmarks/$YEAR/. See `build-benchmarks` for more detail.
 
 Please verify the changes are as expected. (You can run `git diff`.)
 
@@ -121,7 +124,7 @@ Below are the locations where different types of benchmarks should be added:
 
 ### Creating and updating MVP (MIPS Value Pathway) data
 
-Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run update:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run update:mvp` again, which will replace the `mvp-enriched.json` file.
+Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run build:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run build:mvp` again, which will replace the `mvp-enriched.json` file.
 
 ## Add/Update National Averages JSON
 
@@ -141,51 +144,7 @@ We also use Github Actions CI to run tests on every branch.
 
 The release process is semi-automated via github actions. A number of steps are necessarily left manual (such as versioning) and require intervention from the user.
 
-Follow the steps outline in [Package Release Process for Measures Data](https://confluence.cms.gov/x/jmNiP) to publish new version.
-
-## Debugging
-
-This repository uses GitHub Action for CI/CD. The actions that are used can be found in `.github/workflows/` folder and are self-explanatory. GitHub Actions are pretty straight forward and easy to understand, this section offers a few tips around debugging and get the detailed logs at your finger tips. 
- 
-### Runner Diagnostic Logging
-
-[Runner diagnostic logging](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/managing-a-workflow-run#enabling-runner-diagnostic-logging) provides additional log files that contain information about how a runner is executing an action.
-To enable runner diagnostic logging, set the secret `ACTIONS_RUNNER_DEBUG` to `true` in the repository that contains the workflow.
-
-### Step Debug Logging
-
-[Step debug logging](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/managing-a-workflow-run#enabling-step-debug-logging) increases the verbosity of a job's logs during and after a job's execution.
-To enable step debug logging set the secret `ACTIONS_STEP_DEBUG` to `true` in the repository that contains the workflow.
-
-### Output Various Context Variables
-Well above two approaches will vomit a lot of things at you, most of it is not even useful to you as a developer and it is easy to get lost. Use the following approach to dump the context data, which is all what you need most of the time to resolve the problem in hand.
-```yml
-    steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-```
+Follow the steps outline in [Package Release Process for Measures Data](https://confluence.cms.gov/x/Wm-gI) to publish a new version.
 
 ## Licenses
 

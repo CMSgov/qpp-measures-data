@@ -25,16 +25,30 @@ See ticket description.
 <!--
 (mark 'x' all applicable)
 -->
+- [ ] 📊 Data Update
+- [ ] 📝 Documentation Update
+- [ ] 🧑‍💻 Code Update
 - [ ] 🍕 Feature
 - [ ] 🐛 Bug Fix
-- [ ] 📝 Documentation Update
-- [ ] 🧑‍💻 Code Refactor
-- [ ] 🔥 Performance Improvements
 - [ ] ✅ Test
 - [ ] 🤖 Build
 - [ ] 🔁 CI
 - [ ] 📦 Chore
 - [ ] ⏩ Revert
+
+---
+
+
+## 🔴 IMPORTANT: Add required labels
+
+At least one of each type of PR label should be added for checks to pass.
+
+- `notes:*`
+- `version:*`
+
+**Patch** versions are code-only changes, with no data updates.
+**Minor** versions are data changes, such as updates to the measures-data.json files.
+**Major** versions are annual and tied to a PY's data becoming avaliable, determined by QPPA's PO.
 
 ---
 
@@ -48,25 +62,3 @@ See ticket description.
 - [ ] 📜 README.md
 - [ ] 📓 Confluence
 - [ ] 🙅 no documentation needed
-
-## Added required labels?
-
-At least one of each type of PR label should be added for checks to pass.
-
-- `notes:*`
-- `version:*`
-
-Patch versions are code-only changes, with no data updates.
-Minor versions are data changes, such as updates to the measures-data.json files.
-Major versions are annual and tied to a PY's data becoming avaliable, determined by QPPA's PO.
-
-<!--
-Eg. If this PR contains a regular measures update, add the following labels:
-- notes:measure-update
-- version:minor
--->
-
-
----
-### [ ⌥ Optional ] Are there any post-deployment tasks we need to perform?
----
