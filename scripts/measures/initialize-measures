@@ -11,6 +11,7 @@ if [ -d "$DIR" ]; then
   echo -e "${Red}/measures/${newPerformanceYear}/ already exists. Canceling initialization."
 else
   echo -e "Compiling Typescript..."
+  # Temptest
   tsc -p .
 
   echo -e "Cloning measures-data and schema..."
