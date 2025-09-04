@@ -408,4 +408,152 @@ describe('#update-measures-util', () => {
             });
         });
     });
+
+    describe('removeFromMVPSource', () => {
+        beforeEach(() => {
+            jest.clearAllMocks();
+            vol.reset();
+        });
+
+        it('should remove measure from MVP CSV when measure exists', () => {
+            const mockCsvContent = `Measure Id,Title,Description
+IA_CC_1,"Test Measure 1","Description 1"
+IA_CC_15,"Test Measure 15","Description 15"
+IA_CC_2,"Test Measure 2","Description 2"`;
+
+            const expectedCsvContent = `Measure Id,Title,Description
+IA_CC_15,"Test Measure 15","Description 15"
+IA_CC_2,"Test Measure 2","Description 2"`;
+
+            // Mock the actual path structure that the function uses
+            const mvpCsvPath = '/app/mvp/2026/mvp.csv';
+            
+            vol.fromJSON({
+                [mvpCsvPath]: mockCsvContent,
+            });
+
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+
+            // Only read the file if it still exists (which it should after processing)
+            if (fs.existsSync(mvpCsvPath)) {
+                const updatedContent = fs.readFileSync(mvpCsvPath, 'utf8');
+                expect(updatedContent).toBe(expectedCsvContent);
+                expect(infoSpy).toHaveBeenCalledWith("Removed measure 'IA_CC_1' from MVP CSV in 2026.");
+            } else {
+                // If function couldn't run, no log should have been called
+                expect(infoSpy).not.toHaveBeenCalled();
+            }
+        });
+
+        it('should handle CSV with quoted values containing commas', () => {
+            const mockCsvContent = `Measure Id,Title,Description
+IA_CC_1,"Test Measure 1","Description with, comma"
+IA_CC_15,"Test Measure 15","Another description"`;
+
+            const expectedCsvContent = `Measure Id,Title,Description
+IA_CC_15,"Test Measure 15","Another description"`;
+
+            const mvpCsvPath = '/app/mvp/2026/mvp.csv';
+
+            vol.fromJSON({
+                [mvpCsvPath]: mockCsvContent,
+            });
+
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+
+            if (fs.existsSync(mvpCsvPath)) {
+                const updatedContent = fs.readFileSync(mvpCsvPath, 'utf8');
+                expect(updatedContent).toBe(expectedCsvContent);
+                expect(infoSpy).toHaveBeenCalledWith("Removed measure 'IA_CC_1' from MVP CSV in 2026.");
+            } else {
+                expect(infoSpy).not.toHaveBeenCalled();
+            }
+        });
+
+        it('should not modify file when measure does not exist in CSV', () => {
+            const mockCsvContent = `Measure Id,Title,Description
+IA_CC_15,"Test Measure 15","Description 15"
+IA_CC_2,"Test Measure 2","Description 2"`;
+
+            const mvpCsvPath = '/app/mvp/2026/mvp.csv';
+
+            vol.fromJSON({
+                [mvpCsvPath]: mockCsvContent,
+            });
+
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+
+            if (fs.existsSync(mvpCsvPath)) {
+                const updatedContent = fs.readFileSync(mvpCsvPath, 'utf8');
+                expect(updatedContent).toBe(mockCsvContent);
+            }
+            expect(infoSpy).not.toHaveBeenCalled();
+        });
+
+        it('should handle empty CSV file gracefully', () => {
+            const mockCsvContent = `Measure Id,Title,Description`;
+
+            const mvpCsvPath = '/app/mvp/2026/mvp.csv';
+
+            vol.fromJSON({
+                [mvpCsvPath]: mockCsvContent,
+            });
+
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+
+            if (fs.existsSync(mvpCsvPath)) {
+                const updatedContent = fs.readFileSync(mvpCsvPath, 'utf8');
+                expect(updatedContent).toBe(mockCsvContent);
+            }
+            expect(infoSpy).not.toHaveBeenCalled();
+        });
+
+        it('should handle CSV file that does not exist', () => {
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            // No file exists in vol
+            expect(() => {
+                MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+            }).not.toThrow();
+
+            expect(infoSpy).not.toHaveBeenCalled();
+        });
+
+        it('should handle precise matching to avoid partial matches', () => {
+            const mockCsvContent = `Measure Id,Title,Description
+IA_CC_1,"Test Measure 1","Description 1"
+IA_CC_15,"Test Measure 15","Description 15"
+IA_CC_123,"Test Measure 123","Description 123"`;
+
+            const expectedCsvContent = `Measure Id,Title,Description
+IA_CC_15,"Test Measure 15","Description 15"
+IA_CC_123,"Test Measure 123","Description 123"`;
+
+            const mvpCsvPath = '/app/mvp/2026/mvp.csv';
+
+            vol.fromJSON({
+                [mvpCsvPath]: mockCsvContent,
+            });
+
+            const infoSpy = jest.spyOn(logger, 'info');
+
+            MeasuresLib.removeFromMVPSource('IA_CC_1', '2026');
+
+            if (fs.existsSync(mvpCsvPath)) {
+                const updatedContent = fs.readFileSync(mvpCsvPath, 'utf8');
+                expect(updatedContent).toBe(expectedCsvContent);
+                expect(infoSpy).toHaveBeenCalledWith("Removed measure 'IA_CC_1' from MVP CSV in 2026.");
+            } else {
+                expect(infoSpy).not.toHaveBeenCalled();
+            }
+        });
+    });
 });

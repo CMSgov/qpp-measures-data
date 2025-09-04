@@ -435,7 +435,7 @@ function removeStringFromArray(str: string, arr: string[]): string[] {
  * This ensures that deleted measures are not referenced in MVP data.
  * Updates MVP CSV files by removing rows that reference the deleted measureId.
  */
-function removeFromMVPSource(measureId: string, performanceYear?: string) {
+export function removeFromMVPSource(measureId: string, performanceYear?: string) {
     if (!performanceYear) {
         warning(`No performance year provided for removing measure '${measureId}' from MVP sources.`);
         return;
