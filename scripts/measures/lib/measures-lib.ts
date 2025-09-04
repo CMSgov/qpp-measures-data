@@ -73,7 +73,6 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
         info(`Measure '${measureId}' removed.`);
     } else {
         warning(`Attempted to delete ${measureId}, but not found.`);
-        removeFromMVPSource(measureId, performanceYear);
     }
 }
 
