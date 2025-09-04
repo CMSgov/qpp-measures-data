@@ -9,6 +9,7 @@ import _ from 'lodash';
 import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';
+import papa from 'papaparse';
 
 import { info, warning } from '../../logger';
 import { MeasuresChange } from '../lib/validate-change-requests';
@@ -50,7 +51,7 @@ export function updateChangeLog(fileName: string, changesPath: string) {
  *  (2) Deleting it's strata from the related strata.csv
  *  (3) Removing any reference of it from other measures' exlusion or substitute arrays
  */
-export function deleteMeasure(measureId: string, category: string, measuresJson: Measure[], strataPath: string) {
+export function deleteMeasure(measureId: string, category: string, measuresJson: Measure[], strataPath: string, performanceYear?: string) {
     const measureIndex = _.findIndex(measuresJson, { measureId });
     if (measureIndex > -1) {
         if (['quality', 'qcdr'].includes(category)) {
@@ -65,10 +66,14 @@ export function deleteMeasure(measureId: string, category: string, measuresJson:
 
         // Find and remove all instances of the measureId from exclusion and substute arrays of other measures.
         deepDeleteMeasureId(measureId, measuresJson);
+        
+        // Remove from MVP source files to avoid dangling references.
+        removeFromMVPSource(measureId, performanceYear);
 
         info(`Measure '${measureId}' removed.`);
     } else {
         warning(`Attempted to delete ${measureId}, but not found.`);
+        removeFromMVPSource(measureId, performanceYear);
     }
 }
 
@@ -425,3 +430,42 @@ function deepDeleteMeasureId(measureId: string, measuresJson: Measure[]) {
 function removeStringFromArray(str: string, arr: string[]): string[] {
     return arr.filter((strAtIndex: string) => strAtIndex !== str);
 }
+/**
+ * Removes the specified measureId from MVP source files for the specified performance year.
+ * This ensures that deleted measures are not referenced in MVP data.
+ * Updates MVP CSV files by removing rows that reference the deleted measureId.
+ */
+function removeFromMVPSource(measureId: string, performanceYear?: string) {
+    if (!performanceYear) {
+        warning(`No performance year provided for removing measure '${measureId}' from MVP sources.`);
+        return;
+    }
+    
+    const mvpCsvPath = path.join(appRoot + '', 'mvp', performanceYear, 'mvp.csv');
+    if (fs.existsSync(mvpCsvPath)) {
+        const csvContent = fs.readFileSync(mvpCsvPath, 'utf8');
+        
+        // Parse CSV properly to handle quoted values with commas
+        const parsed = papa.parse(csvContent, { 
+            header: true,
+            skipEmptyLines: true
+        });
+        const rows = parsed.data as any[];
+        
+        // Filter out rows where column "Measure Id" matches the measureId
+        const filteredRows = rows.filter(row => {
+            return row['Measure Id'] !== measureId;
+        });
+        
+        // Only update if rows were actually removed
+        if (filteredRows.length < rows.length) {
+            const updatedCsv = papa.unparse(filteredRows, { 
+                header: true,
+                newline: '\n'
+            });
+            fs.writeFileSync(mvpCsvPath, updatedCsv);
+            info(`Removed measure '${measureId}' from MVP CSV in ${performanceYear}.`);
+        }
+    }
+}
+
