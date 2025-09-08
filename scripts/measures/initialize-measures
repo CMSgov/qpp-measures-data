@@ -30,8 +30,11 @@ else
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/update-measures
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/export-measures
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/measures/measures-json-to-csv
-  sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/update-mvp
+  sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/mvp/build-mvp
   sed -i '' -e "s/maxPerformanceYear=$previousPerformanceYear/maxPerformanceYear=$newPerformanceYear/" scripts/benchmarks/build-benchmarks
+
+  echo -e "Adding new performance year to validPerformanceYears in constants.ts..."
+  sed -i '' -e "s/validPerformanceYears: \[\([0-9, ]*\)\]/validPerformanceYears: [\1, $newPerformanceYear]/" constants.ts
 
   echo -e "Cloning yearly scripts and test files..."
   cp -r scripts/measures/$previousPerformanceYear scripts/measures/$newPerformanceYear

@@ -147,7 +147,7 @@ export function ingestChangeFile(
 
         //ingest deleted measures
         for (let i = 0; i < acceptedDeleteStack.length; i++) {
-            Lib.deleteMeasure(acceptedDeleteStack[i].measureId, acceptedDeleteStack[i].category, measuresJson, strataPath);
+            Lib.deleteMeasure(acceptedDeleteStack[i].measureId, acceptedDeleteStack[i].category, measuresJson, strataPath, performanceYear);
         }
 
         //ingest changed measures

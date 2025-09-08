@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v8.27.0",
+  "version": "v8.28.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "build:measures": "scripts/measures/build-measures",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
     "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
-    "update:mvp": "scripts/mvp/update-mvp",
+    "build:mvp": "scripts/mvp/build-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
     "manage:allowed-programs": "tsc -p . && node dist/scripts/measures/manage-allowed-programs.js",
@@ -70,11 +70,11 @@
     "@types/lodash": "^4.17.20",
     "@types/papaparse": "^5.3.16",
     "app-root-path": "^3.1.0",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.1",
     "lodash": "^4.17.21",
     "papaparse": "^5.5.3",
     "xregexp": "^5.1.2",
-    "yaml": "^2.8.0"
+    "yaml": "^2.8.1"
   },
   "pre-commit": [
     "pre-commit"
