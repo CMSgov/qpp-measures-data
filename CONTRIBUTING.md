@@ -97,11 +97,11 @@ When deleting an allowedProgram that is still allowed for previous years, DO NOT
 The `manage:allowed-programs` script enables adding or removing a program from the `allowedPrograms` field of all measures in a specific category for a given performance year. This is especially useful for bulk updates, such as adding a new program or making uniform changes across multiple measures.
 
 ```bash
-npm run manage:allowed-programs -- <performanceYear> <category> <program> <add|remove>
+npm run manage:allowed-programs <performanceYear> <category> <program> <add|remove>
 ```
 Example: To remove the program `pcf` from all `ia` category measures for the year `2024`:
 ```bash
-npm run manage:allowed-programs -- 2024 ia pcf remove
+npm run manage:allowed-programs 2024 ia pcf remove
 ```
 
 ### Importing Measures from a CSV File

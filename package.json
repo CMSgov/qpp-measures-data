@@ -24,7 +24,7 @@
     "build:mvp": "scripts/mvp/build-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
-    "manage:allowed-programs": "tsc -p . && node dist/scripts/measures/manage-allowed-programs.js",
+    "manage:allowed-programs": "scripts/measures/manage-programs",
     "pretest": "npm run lint",
     "lint": "eslint scripts index.spec.ts",
     "lint:fix": "eslint scripts index.spec.ts --fix",
