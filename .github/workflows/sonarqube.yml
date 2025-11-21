@@ -5,6 +5,9 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - develop
+  push:
+    branches:
+      - develop
 
 env:
   PROJECT_NAME: qppa-repos-sonarqube-analysis
