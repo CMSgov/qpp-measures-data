@@ -5295,7 +5295,9 @@
     "icdImpacted": [],
     "isClinicalGuidelineChanged": false,
     "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
+    "companionMeasureId": [
+      "113SSP"
+    ],
     "allowedPrograms": [
       "M1422"
     ],
@@ -5306,6 +5308,46 @@
     ],
     "measureSets": [],
     "measureSpecification": {},
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "113SSP",
+    "title": "Colorectal Cancer Screening",
+    "description": "Percentage of patients 45-75 years of age who had appropriate screening for colorectal cancer.",
+    "metricType": "singlePerformanceRate",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2017,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "National Committee for Quality Assurance",
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [
+      "113"
+    ],
+    "allowedPrograms": [
+      "appPlus"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [],
     "isSevenPointCapRemoved": false,
     "sevenPointCapRemoved": [],
     "allowedRegistrationTypes": [
@@ -6430,47 +6472,6 @@
   },
   {
     "category": "quality",
-    "measureId": "185",
-    "title": "Colonoscopy Interval for Patients with a History of Adenomatous Polyps - Avoidance of Inappropriate Use",
-    "description": "Percentage of patients aged 18 years and older receiving a surveillance colonoscopy, with a history of prior adenomatous polyp(s) in previous colonoscopy findings, which had an interval of 3 or more years since their last colonoscopy.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "American Gastroenterological Association",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "gastroenterology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "187",
     "title": "Stroke and Stroke Rehabilitation: Thrombolytic Therapy",
     "description": "Percentage of patients aged 18 years and older with a diagnosis of acute ischemic stroke who arrive at the hospital within 3.5 hours of time last known well and for whom IV thrombolytic therapy was initiated within 4.5 hours of time last known well.",
@@ -7455,47 +7456,6 @@
   },
   {
     "category": "quality",
-    "measureId": "264",
-    "title": "Sentinel Lymph Node Biopsy for Invasive Breast Cancer",
-    "description": "The percentage of clinically node negative (clinical stage T1N0M0 or T2N0M0) breast cancer patients before or after neoadjuvant systemic therapy, who undergo a sentinel lymph node (SLN) procedure.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American Society of Breast Surgeons",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "generalSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "268",
     "title": "Epilepsy: Counseling for Women of Childbearing Potential with Epilepsy",
     "description": "Percentage of all patients of childbearing potential (12 years and older) diagnosed with epilepsy who were counseled at least once a year about how epilepsy and its treatment may affect contraception and pregnancy.",
@@ -7844,47 +7804,6 @@
       "neurology",
       "physicalTherapyOccupationalTherapy",
       "speechLanguagePathology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
-    "measureId": "290",
-    "title": "Assessment of Mood Disorders and Psychosis for Patients with Parkinson's Disease",
-    "description": "Percentage of all patients with a diagnosis of Parkinson's Disease [PD] who were assessed for depression, anxiety, apathy, AND psychosis once during the measurement period.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "American Academy of Neurology",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "neurology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -8407,47 +8326,6 @@
       "internalMedicine",
       "oncology",
       "urology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
-    "measureId": "322",
-    "title": "Cardiac Stress Imaging Not Meeting Appropriate Use Criteria: Preoperative Evaluation in Low-Risk Surgery Patients",
-    "description": "Percentage of stress single-photon emission computed tomography (SPECT) myocardial perfusion imaging (MPI), stress echocardiogram (ECHO), multigated acquisition scan (MUGA), cardiac computed tomography angiography (CCTA), or cardiac magnetic resonance (CMR) performed in low-risk surgery patients 18 years or older for preoperative evaluation during the 12-month submission period.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "efficiency",
-    "isHighPriority": true,
-    "primarySteward": "American College of Cardiology Foundation",
-    "isInverse": true,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "cardiology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -10679,47 +10557,6 @@
   },
   {
     "category": "quality",
-    "measureId": "419",
-    "title": "Overuse of Imaging for the Evaluation of Primary Headache",
-    "description": "Percentage of patients for whom imaging of the head (CT or MRI) is obtained for the evaluation of primary headache when clinical indications are not present.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "American Academy of Neurology",
-    "isInverse": true,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "neurology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "420",
     "title": "Varicose Vein Treatment with Saphenous Ablation: Outcome Survey",
     "description": "Percentage of patients treated for varicose veins (CEAP C2-S) who are treated with saphenous ablation (with or without adjunctive tributary treatment) that report an improvement on a disease specific patient reported outcome survey instrument after treatment.",
@@ -10833,47 +10670,6 @@
     ],
     "measureSets": [
       "obstetricsGynecology"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
-    "measureId": "424",
-    "title": "Perioperative Temperature Management",
-    "description": "Percentage of patients, regardless of age, who undergo surgical or therapeutic procedures under general or neuraxial anesthesia of 60 minutes duration or longer for whom at least one body temperature greater than or equal to 35.5 degrees Celsius (or 95.9 degrees Fahrenheit) was achieved within the 30 minutes immediately before or 15 minutes immediately after anesthesia end time.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "outcome",
-    "isHighPriority": true,
-    "primarySteward": "American Society of Anesthesiologists",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "anesthesiology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -11181,49 +10977,6 @@
       "familyMedicine",
       "internalMedicine",
       "vascularSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
-    "measureId": "443",
-    "title": "Non-Recommended Cervical Cancer Screening in Adolescent Females",
-    "description": "The percentage of adolescent females 16-20 years of age who were screened unnecessarily for cervical cancer.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "isInverse": true,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "familyMedicine",
-      "internalMedicine",
-      "obstetricsGynecology"
     ],
     "measureSpecification": {},
     "isSevenPointCapRemoved": false,
@@ -12468,86 +12221,6 @@
   },
   {
     "category": "quality",
-    "measureId": "487",
-    "title": "Screening for Social Drivers of Health",
-    "description": "Percent of patients 18 years and older screened for food insecurity, housing instability, transportation needs, utility difficulties, and interpersonal safety.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2023,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "allergyImmunology",
-      "audiology",
-      "cardiology",
-      "certifiedNurseMidwife",
-      "chiropracticMedicine",
-      "clinicalSocialWork",
-      "dermatology",
-      "emergencyMedicine",
-      "endocrinology",
-      "familyMedicine",
-      "gastroenterology",
-      "generalSurgery",
-      "geriatrics",
-      "infectiousDisease",
-      "internalMedicine",
-      "interventionalRadiology",
-      "mentalBehavioralHealth",
-      "nephrology",
-      "neurology",
-      "neurosurgical",
-      "nutritionDietician",
-      "obstetricsGynecology",
-      "oncology",
-      "ophthalmology",
-      "orthopedicSurgery",
-      "otolaryngology",
-      "pediatrics",
-      "physicalMedicine",
-      "physicalTherapyOccupationalTherapy",
-      "plasticSurgery",
-      "podiatry",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "skilledNursingFacility",
-      "speechLanguagePathology",
-      "thoracicSurgery",
-      "urgentCare",
-      "urology",
-      "vascularSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "488",
     "title": "Kidney Health Evaluation",
     "description": "Percentage of patients aged 18--85 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
@@ -13072,86 +12745,6 @@
   },
   {
     "category": "quality",
-    "measureId": "498",
-    "title": "Connection to Community Service Provider",
-    "description": "Percent of patients 18 years or older who screen positive for one or more of the following health related social needs (HRSNs): food insecurity, housing instability, transportation needs, utility help needs, or interpersonal safety; and had contact with a Community Service Provider (CSP) for at least 1 of their HRSNs within 60 days after screening.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2024,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": true,
-    "primarySteward": "OCHIN",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "allergyImmunology",
-      "audiology",
-      "cardiology",
-      "certifiedNurseMidwife",
-      "chiropracticMedicine",
-      "clinicalSocialWork",
-      "dermatology",
-      "emergencyMedicine",
-      "endocrinology",
-      "familyMedicine",
-      "gastroenterology",
-      "generalSurgery",
-      "geriatrics",
-      "infectiousDisease",
-      "internalMedicine",
-      "interventionalRadiology",
-      "mentalBehavioralHealth",
-      "nephrology",
-      "neurology",
-      "neurosurgical",
-      "nutritionDietician",
-      "obstetricsGynecology",
-      "oncology",
-      "ophthalmology",
-      "orthopedicSurgery",
-      "otolaryngology",
-      "pediatrics",
-      "physicalMedicine",
-      "physicalTherapyOccupationalTherapy",
-      "plasticSurgery",
-      "podiatry",
-      "preventiveMedicine",
-      "pulmonology",
-      "rheumatology",
-      "skilledNursingFacility",
-      "speechLanguagePathology",
-      "thoracicSurgery",
-      "urgentCare",
-      "urology",
-      "vascularSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "499",
     "title": "Appropriate screening and plan of care for elevated intraocular pressure following intravitreal or periocular steroid therapy",
     "description": "Percentage of patients who had an intravitreal or periocular corticosteroid injection (e.g., triamcinolone, preservative-free triamcinolone, dexamethasone, dexamethasone intravitreal implant, or fluocinolone intravitreal implant) who, within seven (7) weeks following the date of injection, are screened for elevated intraocular pressure (IOP) with tonometry with documented IOP =<25 mm Hg for injected eye OR if the IOP was >25 mm Hg, a plan of care was documented.",
@@ -13595,62 +13188,6 @@
   },
   {
     "category": "quality",
-    "measureId": "508",
-    "title": "Adult COVID-19 Vaccination Status",
-    "description": "Percentage of patients aged 18 years and older seen for a visit during the performance period that are up to date on their COVID-19 vaccinations as defined by Centers for Disease Control and Prevention (CDC) recommendations on current vaccination.",
-    "metricType": "singlePerformanceRate",
-    "isRegistryMeasure": false,
-    "firstPerformanceYear": 2025,
-    "lastPerformanceYear": null,
-    "eMeasureId": null,
-    "nqfEMeasureId": null,
-    "nqfId": null,
-    "measureType": "process",
-    "isHighPriority": false,
-    "primarySteward": "Centers for Medicare & Medicaid Services",
-    "isInverse": false,
-    "isRiskAdjusted": false,
-    "isIcdImpacted": false,
-    "icdImpacted": [],
-    "isClinicalGuidelineChanged": false,
-    "clinicalGuidelineChanged": [],
-    "companionMeasureId": [],
-    "allowedPrograms": [
-      "mips"
-    ],
-    "submissionMethods": [
-      "registry"
-    ],
-    "measureSets": [
-      "allergyImmunology",
-      "cardiology",
-      "endocrinology",
-      "familyMedicine",
-      "geriatrics",
-      "infectiousDisease",
-      "internalMedicine",
-      "nephrology",
-      "obstetricsGynecology",
-      "oncology",
-      "pathology",
-      "pulmonology",
-      "radiationOncology",
-      "skilledNursingFacility",
-      "speechLanguagePathology",
-      "vascularSurgery"
-    ],
-    "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "quality",
     "measureId": "509",
     "title": "Melanoma: Tracking and Evaluation of Recurrence",
     "description": "Percentage of patients who had an excisional surgery for melanoma or melanoma in situ with initial American Joint Committee on Cancer (AJCC) staging of 0, I, or II, in the past 5 years in which the operating provider examines and/or diagnoses the patient for recurrence of melanoma.",
@@ -13795,6 +13332,217 @@
         "name": "overall",
         "description": "Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)"
       }
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "512",
+    "title": "Prevalent Standardized Kidney Transplant Waitlist Ratio (PSWR)",
+    "description": "The number of prevalent dialysis patients in a practitioner group who are under the age of 75 and were listed on the kidney or kidney-pancreas transplant waitlist or received a living donor transplant. The practitioner group is inclusive of physicians and advanced practice providers. The measure is the ratio-observed number of waitlist events in a practitioner group to its expected number of waitlist events. The measure uses the expected waitlist events calculated from a Cox model, which is adjusted for age, patient comorbidities, and other risk factors at the time of dialysis.",
+    "metricType": "nonProportion",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "Centers for Medicare & Medicaid Services",
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "nephrology"
+    ],
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "513",
+    "title": "Patient Reported Falls and Plan of Care",
+    "description": "Percentage of patients (or caregivers as appropriate) with an active diagnosis of a movement disorder, multiple sclerosis, a neuromuscular disorder, dementia, or stroke who reported a fall occurred and those that fell had a plan of care for falls documented at every visit.",
+    "metricType": "multiPerformanceRate",
+    "overallAlgorithm": "split",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": true,
+    "primarySteward": "American Academy of Neurology",
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "neurology"
+    ],
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ],
+    "strata": [
+      {
+        "name": "PLACEHOLDER",
+        "description": "WARNING: Update strata file with new measure strata."
+      }
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "514",
+    "title": "Diagnostic Delay of Venous Thromboembolism in Primary Care",
+    "description": "Percentage of episodes for patients 18 years of age and older with documented Venous Thromboembolism (VTE) symptoms in the primary care setting and who had a diagnosis of VTE that occurs > 24 hours and within 30 days following the index primary care visit where symptoms for the VTE were first present.",
+    "metricType": "singlePerformanceRate",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "intermediateOutcome",
+    "isHighPriority": true,
+    "primarySteward": "Brigham and Women's Hospital",
+    "isInverse": true,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips"
+    ],
+    "submissionMethods": [
+      "electronicHealthRecord"
+    ],
+    "measureSets": [
+      "familyMedicine"
+    ],
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "515",
+    "title": "Screening for Abnormal Glucose Metabolism in Patients at Risk of Developing Diabetes",
+    "description": "Percentage of adult patients with risk factors for type 2 diabetes who are due for glycemic screening for whom the screening process was completed during the measurement period.",
+    "metricType": "singlePerformanceRate",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "process",
+    "isHighPriority": false,
+    "primarySteward": "American Medical Association",
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips"
+    ],
+    "submissionMethods": [
+      "electronicHealthRecord"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "internalMedicine"
+    ],
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "quality",
+    "measureId": "516",
+    "title": "Hepatitis C Virus (HCV): Sustained Virological Response (SVR)",
+    "description": "Percentage of patients aged greater than or equal to 18 years with active hepatitis C (HCV) with negative/undetectable HCV ribonucleic acid (RNA) at least 20 weeks to 12 months after positive/detectable HCV RNA test result.",
+    "metricType": "singlePerformanceRate",
+    "isRegistryMeasure": false,
+    "firstPerformanceYear": 2026,
+    "lastPerformanceYear": null,
+    "eMeasureId": null,
+    "nqfEMeasureId": null,
+    "nqfId": null,
+    "measureType": "outcome",
+    "isHighPriority": true,
+    "primarySteward": "American Gastroenterological Association",
+    "isInverse": false,
+    "isRiskAdjusted": false,
+    "isIcdImpacted": false,
+    "icdImpacted": [],
+    "isClinicalGuidelineChanged": false,
+    "clinicalGuidelineChanged": [],
+    "companionMeasureId": [],
+    "allowedPrograms": [
+      "mips"
+    ],
+    "submissionMethods": [
+      "registry"
+    ],
+    "measureSets": [
+      "familyMedicine",
+      "gastroenterology",
+      "infectiousDisease",
+      "internalMedicine"
+    ],
+    "isSevenPointCapRemoved": false,
+    "sevenPointCapRemoved": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
     ]
   },
   {
