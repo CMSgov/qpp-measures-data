@@ -16,7 +16,8 @@ export enum Subcategory {
   emergencyResponseAndPreparedness = 'emergencyResponseAndPreparedness',
   expandedPracticeAccess = 'expandedPracticeAccess',
   patientSafetyAndPracticeAssessment = 'patientSafetyAndPracticeAssessment',
-  populationManagement = 'populationManagement'
+  populationManagement = 'populationManagement',
+  advancingHealthAndWellness = 'advancingHealthAndWellness',
 }
 
 export type MeasureSpecification = {
