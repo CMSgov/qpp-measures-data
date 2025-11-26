@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+currentPerformanceYear=$1
+category=$2
+program=$3
+addRemove=$4
+
+Red='\033[0;31m'
+Green='\033[0;32m'
+bold=$(tput bold)
+
+# checks the exit code of the last command and exits if not successful code 0.
+function exitOnFailure () {
+  if (( $? != 0 )); then
+    echo -e "${Red}\n${bold}Update failed."
+    exit
+  fi
+}
+echo -e "Compiling Typescript..."
+tsc -p .
+
+echo -e "Updating allowed programs in the measures json..."
+node dist/scripts/measures/manage-allowed-programs.js $currentPerformanceYear $category $program $addRemove
+exitOnFailure
+
+echo -e "Rerunning update-measures script to reflect changes..."
+npm run update:measures $currentPerformanceYear
+exitOnFailure

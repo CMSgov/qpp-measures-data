@@ -86,15 +86,19 @@ function sortPrograms(
 }
 
 /* c8 ignore start */
-if (require.main === module) {
-    const args = process.argv.slice(2);
+if (require.main === module && process.argv[2] && process.argv[2] !== '--coverage') {
 
-    if (args.length !== 4) {
+    if (process.argv.length !== 6) {
         error('Usage: node updateAllowedPrograms.js <performanceYear> <category> <program> <add|remove>');
         process.exit(1);
     }
 
-    const [performanceYear, category, program, action] = args;
+    const [performanceYear, category, program, action] = [
+        process.argv[2],
+        process.argv[3],
+        process.argv[4],
+        process.argv[5]
+    ];
 
     if (!['add', 'remove'].includes(action)) {
         error('Invalid action. Use "add" or "remove".');

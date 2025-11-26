@@ -31,7 +31,8 @@ export enum SubcategoryId {
     EMERGENCY_RESPONSE_AND_PREPAREDNESS = 'emergencyResponseAndPreparedness',
     EXPANDED_PRACTICE_ACCESS = 'expandedPracticeAccess',
     PATIENT_SAFETY_AND_PRACTICE_ASSESSMENT = 'patientSafetyAndPracticeAssessment',
-    POPULATION_MANAGEMENT = 'populationManagement'
+    POPULATION_MANAGEMENT = 'populationManagement',
+    ADVANCING_HEALTH_AND_WELLNESS = 'advancingHealthAndWellness',   
 }
 
 export enum Programs {

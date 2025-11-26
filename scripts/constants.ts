@@ -196,6 +196,7 @@ export const SUBCATEGORY_NAME = {
     'expandedpracticeaccess': 'expandedPracticeAccess',
     'patientsafetyandpracticeassessment': 'patientSafetyAndPracticeAssessment',
     'populationmanagement': 'populationManagement',
+    'advancinghealthandwellness': 'advancingHealthAndWellness',
     'null': null,
 };
 

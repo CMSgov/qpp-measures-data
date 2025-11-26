@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v8.29.0",
+  "version": "v8.30.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "build:mvp": "scripts/mvp/build-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
-    "manage:allowed-programs": "tsc -p . && node dist/scripts/measures/manage-allowed-programs.js",
+    "manage:allowed-programs": "scripts/measures/manage-programs",
     "pretest": "npm run lint",
     "lint": "eslint scripts index.spec.ts",
     "lint:fix": "eslint scripts index.spec.ts --fix",
@@ -70,7 +70,7 @@
     "@types/lodash": "^4.17.20",
     "@types/papaparse": "^5.3.16",
     "app-root-path": "^3.1.0",
-    "fs-extra": "^11.3.1",
+    "fs-extra": "^11.3.2",
     "lodash": "^4.17.21",
     "papaparse": "^5.5.3",
     "xregexp": "^5.1.2",
