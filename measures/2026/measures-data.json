@@ -4615,7 +4615,7 @@
     "category": "quality",
     "measureId": "012",
     "title": "Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more visits within 12 months.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more visits during the measurement period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -5420,7 +5420,7 @@
     "category": "quality",
     "measureId": "118",
     "title": "Coronary Artery Disease (CAD): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy - Diabetes or Left Ventricular Systolic Dysfunction (LVEF ≤ 40%)",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period who also have diabetes OR a current or prior Left Ventricular Ejection Fraction (LVEF) ≤ 40% who were prescribed ACE inhibitor or ARB therapy.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12-month period who also have diabetes OR a current or prior Left Ventricular Ejection Fraction (LVEF) ≤ 40% who were prescribed ACE inhibitor or ARB therapy.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -5552,7 +5552,7 @@
     "category": "quality",
     "measureId": "128",
     "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
-    "description": "Percentage of patients aged 18 years and older with a BMI documented during the current encounter or within the previous twelve months AND who had a follow-up plan documented if most recent BMI was outside of normal parameters.",
+    "description": "Percentage of patients aged 18 years and older with a BMI documented during the current encounter or within the previous twelve months AND who had a follow-up plan documented if BMI was outside of normal parameters.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -5839,8 +5839,10 @@
       "ophthalmology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -5883,8 +5885,11 @@
       "radiationOncology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry",
+      "electronicHealthRecord"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -5926,8 +5931,10 @@
       "radiationOncology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -5982,7 +5989,7 @@
     "category": "quality",
     "measureId": "155",
     "title": "Falls: Plan of Care",
-    "description": "Percentage of patients aged 65 years and older with a history of falls that had a plan of care for falls documented within 12 months.",
+    "description": "Percentage of patients aged 65 years and older with a history of falls who had a plan of care for falls documented within 12 months.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -6208,7 +6215,7 @@
     "category": "quality",
     "measureId": "177",
     "title": "Rheumatoid Arthritis (RA): Periodic Assessment of Disease Activity",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the performance period.",
+    "description": "Percentage of patients aged 18 years and older with two or more diagnoses of rheumatoid arthritis (RA) at least 90 days apart who have an assessment of disease activity using an ACR-preferred RA disease activity assessment tool at ≥50% of encounters for RA for each patient during the performance period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -6250,7 +6257,7 @@
     "category": "quality",
     "measureId": "178",
     "title": "Rheumatoid Arthritis (RA): Functional Status Assessment",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) for whom a functional status assessment was performed during the performance period.",
+    "description": "Percentage of patients aged 18 years and older with two or more diagnoses of rheumatoid arthritis (RA) at least 90 days apart for whom a functional status assessment was performed at least once during the performance period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -6293,7 +6300,7 @@
     "category": "quality",
     "measureId": "180",
     "title": "Rheumatoid Arthritis (RA): Glucocorticoid Management",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of rheumatoid arthritis (RA) who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan during the performance period.",
+    "description": "Percentage of patients aged 18 years and older with two or more diagnoses of rheumatoid arthritis (RA) at least 90 days apart who have been assessed for glucocorticoid use and, for those on prolonged doses of prednisone > 5 mg daily (or equivalent) with improvement or no change in disease activity, documentation of glucocorticoid management plan during the performance period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -6879,6 +6886,7 @@
       "endocrinology",
       "gastroenterology",
       "generalSurgery",
+      "geriatrics",
       "infectiousDisease",
       "mentalBehavioralHealth",
       "nephrology",
@@ -7284,8 +7292,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -7327,8 +7338,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -7598,7 +7612,7 @@
     "category": "quality",
     "measureId": "281",
     "title": "Dementia: Cognitive Assessment",
-    "description": "Percentage of patients, regardless of age, with a diagnosis of dementia for whom an assessment of cognition is performed and the results reviewed at least once within a 12-month period.",
+    "description": "Percentage of patients, regardless of age, with a diagnosis of dementia for whom an assessment of cognition is performed and the results reviewed at least once within the 12 months preceding a dementia encounter during the measurement period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -8055,7 +8069,7 @@
   {
     "category": "quality",
     "measureId": "310",
-    "title": "Chlamydia Screening for Women",
+    "title": "Chlamydia Screening in Women",
     "description": "Percentage of women 16-24 years of age who were identified as sexually active and who had at least one test for chlamydia during the measurement period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -8243,8 +8257,10 @@
       "gastroenterology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -8255,7 +8271,7 @@
   {
     "category": "quality",
     "measureId": "321",
-    "title": "CAHPS for MIPS Clinician/Group Survey",
+    "title": "CAHPS for MIPs Clinician/Group Survey",
     "description": "The Consumer Assessment of Healthcare Providers and Systems (CAHPS) for MIPS Clinician/Group Survey is comprised of 10 Summary Survey Measures (SSMs) and measures patient experience of care within a group practice. The CBE endorsement status and endorsement id (if applicable) for each SSM utilized in this measure are as follows:                                                                                                                                                                                                                                                                                         \n• Getting Timely Care, Appointments, and Information; (Not endorsed by CBE)\n• How well Providers Communicate; (Not endorsed by CBE)\n• Patient’s Rating of Provider; (CBE endorsed # 0005)\n• Access to Specialists; (Not endorsed by CBE)\n• Health Promotion and Education; (Not endorsed by CBE)\n• Shared Decision-Making; (Not endorsed by CBE) \n• Health Status and Functional Status; (Not endorsed by CBE)\n• Courteous and Helpful Office Staff; (CBE endorsed # 0005)\n• Care Coordination; (Not endorsed by CBE)\n• Stewardship of Patient Resources. (Not endorsed by CBE)",
     "metricType": "cahps",
     "isRegistryMeasure": false,
@@ -8266,7 +8282,7 @@
     "nqfId": "0005",
     "measureType": "patientEngagementExperience",
     "isHighPriority": true,
-    "primarySteward": "Agency for Healthcare Research & Quality",
+    "primarySteward": "Centers for Medicare & Medicaid Services",
     "isInverse": false,
     "isRiskAdjusted": false,
     "isIcdImpacted": false,
@@ -8696,8 +8712,10 @@
       "orthopedicSurgery"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -8738,8 +8756,10 @@
       "orthopedicSurgery"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -8792,7 +8812,7 @@
   {
     "category": "quality",
     "measureId": "355",
-    "title": "Unplanned Reoperation within the 30 Day Postoperative Period",
+    "title": "Unplanned Reoperation within the 30-Day Postoperative Period",
     "description": "Percentage of patients aged 18 years and older who had any unplanned reoperation within the 30-day postoperative period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -9005,8 +9025,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -9046,8 +9068,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -9058,7 +9082,7 @@
   {
     "category": "quality",
     "measureId": "366",
-    "title": "Follow-Up Care for Children Prescribed ADHD Medication (ADD)",
+    "title": "Follow-Up Care for Children Prescribed ADHD Medication",
     "description": "Percentage of children 6-12 years of age and newly prescribed a medication for attention-deficit/hyperactivity disorder (ADHD) who had appropriate follow-up care. Two rates are reported.  \na) Percentage of children who had one follow-up visit with a practitioner with prescribing authority during the 30-Day Initiation Phase.\nb) Percentage of children who remained on ADHD medication for at least 210 days and who, in addition to the visit in the Initiation Phase, had at least two additional follow-up visits with a practitioner within 270 days (9 months) after the Initiation Phase ended.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
@@ -9578,7 +9602,7 @@
     "category": "quality",
     "measureId": "386",
     "title": "Amyotrophic Lateral Sclerosis (ALS) Patient Care Preferences",
-    "description": "Percentage of patients diagnosed with Amyotrophic Lateral Sclerosis (ALS) who were offered assistance in planning for end of life issues (e.g., advance directives, invasive ventilation, lawful physician-hastened death, or hospice) or whose existing end of life plan was reviewed or updated at least once annually or more frequency as clinically indicated (i.e., rapid progression).",
+    "description": "Percentage of patients diagnosed with Amyotrophic Lateral Sclerosis (ALS) who were offered assistance in planning for end of life issues (e.g., advance directives, invasive ventilation, lawful physician-hastened death, or hospice) or whose existing end of life plan was reviewed or updated at least once annually or more frequently as clinically indicated (i.e., rapid progression).",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -9814,7 +9838,7 @@
     "category": "quality",
     "measureId": "394",
     "title": "Immunizations for Adolescents",
-    "description": "The percentage of adolescents 13 years of age who had one dose of meningococcal vaccine (serogroups A, C, W, Y), one tetanus, diphtheria toxoids and acellular pertussis (Tdap) vaccine, and have completed the Human Papillomavirus (HPV) vaccine series by their 13th birthday.",
+    "description": "The percentage of adolescents 13 years of age who had one dose of meningococcal vaccine (serogroups A, C, W, Y or A, C, W, Y, B), one tetanus, diphtheria toxoids and acellular pertussis (Tdap) vaccine, and have completed the Human Papillomavirus (HPV) vaccine series by their 13th birthday.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
     "isRegistryMeasure": false,
@@ -9905,8 +9929,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -9947,8 +9974,10 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -9990,8 +10019,11 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -10081,7 +10113,7 @@
     "category": "quality",
     "measureId": "400",
     "title": "One-Time Screening for Hepatitis C Virus (HCV) and Treatment Initiation",
-    "description": "Percentage of patients age >= 18 years have never been tested for Hepatitis C Virus (HCV) infection who receive an HCV infection test AND who have treatment initiated within three months or who are referred to a clinician who treats HCV infection within one month if tested positive for HCV.",
+    "description": "Percentage of patients age ≥ 18 years who have never been tested for Hepatitis C Virus (HCV) infection who receive an HCV infection test AND who have treatment initiated within three months or who are referred to a clinician who treats HCV infection within one month if tested positive for HCV.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "simpleAverage",
     "isRegistryMeasure": false,
@@ -10254,8 +10286,10 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -10296,8 +10330,11 @@
       "diagnosticRadiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "claims",
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -10317,7 +10354,7 @@
     "eMeasureId": null,
     "nqfEMeasureId": null,
     "nqfId": null,
-    "measureType": "outcome",
+    "measureType": "intermediateOutcome",
     "isHighPriority": true,
     "primarySteward": "American Academy of Dermatology",
     "isInverse": false,
@@ -10679,8 +10716,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -10898,8 +10937,10 @@
       "pathology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -10911,7 +10952,7 @@
     "category": "quality",
     "measureId": "441",
     "title": "Ischemic Vascular Disease (IVD) All or None Outcome Measure (Optimal Control)",
-    "description": "The IVD All-or-None Measure is one outcome measure (optimal control). The measure contains four goals. All four goals within a measure must be reached in order to meet that measure. The numerator for the all-or-none measure should be collected from the organization's total IVD denominator. All-or-None Outcome Measure (Optimal Control) - Using the IVD denominator optimal results include:  Most recent blood pressure (BP) measurement is less than or equal to 140/90 mm Hg -- AND Most recent tobacco status is Tobacco Free -- AND Daily Aspirin or Other Antiplatelet Unless Contraindicated -- AND Statin Use Unless Contraindicated",
+    "description": "The IVD All-or-None Measure is one outcome measure (optimal control). The measure contains four goals. All four goals within a measure must be reached in order to meet that measure. The numerator for the all-or-none measure should be collected from the organization's total IVD denominator. All-or-None Outcome Measure (Optimal Control) - Using the IVD denominator optimal results include:\n• Most recent blood pressure (BP) measurement is less than or equal to 130/80 mm Hg -- AND\n• Most recent tobacco status is Tobacco Free -- AND\n• Daily Aspirin or Other Antiplatelet Unless Contraindicated – AND\n• High Intensity Statin Use Unless Contraindicated",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -11082,8 +11123,8 @@
   {
     "category": "quality",
     "measureId": "451",
-    "title": "RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy",
-    "description": "Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer who receive anti-epidermal growth factor receptor monoclonal antibody therapy for whom RAS (KRAS and NRAS) gene mutation testing was performed.",
+    "title": "RAS (KRAS and NRAS) Gene Mutation Testing Performed for Patients with Metastatic Colorectal Cancer who Receive Anti-epidermal Growth Factor Receptor (EGFR) Monoclonal Antibody Therapy",
+    "description": "Percentage of adult patients (aged 18 or over) with metastatic colorectal cancer who receive anti-epidermal growth factor receptor (EGFR) monoclonal antibody (MoAb) therapy for whom RAS (KRAS and NRAS) gene mutation testing was performed before initiation of anti-EGFR MoAb.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2017,
@@ -11319,7 +11360,7 @@
     "category": "quality",
     "measureId": "462",
     "title": "Bone Density Evaluation for Patients with Prostate Cancer and Receiving Androgen Deprivation Therapy",
-    "description": "Percentage of patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
+    "description": "Patients determined as having prostate cancer who are currently starting or undergoing androgen deprivation therapy (ADT), for an anticipated period of 12 months or greater and who receive an initial bone density evaluation. The bone density evaluation must be prior to the start of ADT or within 3 months of the start of ADT.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2018,
@@ -11393,8 +11434,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -11578,7 +11621,7 @@
     "category": "quality",
     "measureId": "471",
     "title": "Functional Status After Lumbar Surgery",
-    "description": "For patients age 18 and older who had lumbar discectomy/laminectomy or fusion procedure, functional status is rated by the patient as less than or equal to 22 OR an improvement of 30 points or greater on the Oswestry Disability Index (ODI version 2.1a) * at three months (6 to 20 weeks) postoperatively for discectomy/laminectomy or at one year (9 to 15 months) postoperatively for lumbar fusion patients. Rates are stratified by procedure type; lumbar discectomy or fusion procedure. * hereafter referred to as ODI",
+    "description": "For patients age 18 and older who had lumbar discectomy/laminectomy or fusion procedure, functional status is rated by the patient as less than or equal to 22 OR an improvement of 30 points or greater on the Oswestry Disability Index (ODI version 2.1a) * at three months (6 to 20 weeks) postoperatively for discectomy/laminectomy or at one year (9 to 15 months) postoperatively for lumbar fusion patients. Rates are stratified by procedure type; lumbar discectomy/laminectomy or fusion procedure. * hereafter referred to as ODI",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
     "isRegistryMeasure": false,
@@ -11755,8 +11798,10 @@
       "anesthesiology"
     ],
     "measureSpecification": {},
-    "isSevenPointCapRemoved": false,
-    "sevenPointCapRemoved": [],
+    "isSevenPointCapRemoved": true,
+    "sevenPointCapRemoved": [
+      "registry"
+    ],
     "allowedRegistrationTypes": [
       "apm",
       "group",
@@ -11775,7 +11820,7 @@
     "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3461",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "Focus on Therapeutic Outcomes, Inc.",
@@ -11812,7 +11857,7 @@
     "category": "quality",
     "measureId": "479",
     "title": "Hospital-Wide, 30-Day, All-Cause Unplanned Readmission (HWR) Rate for the Merit-Based Incentive Payment System (MIPS) Groups",
-    "description": "The Hospital-wide, 30-Day, All-cause Unplanned Readmission (HWR) rate for the Merit-based Incentive Payment System (MIPS) Groups measure is a risk-standardized readmission rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who were hospitalized and experienced an unplanned readmission for any cause to a short-stay acute-care hospital within 30 days of discharge. The measure attributes readmissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s readmission rate.",
+    "description": "This measure is a re-specified version of the measure, “Risk-adjusted readmission rate (RARR) of unplanned readmission within 30 days of hospital discharge for any condition” (NQF 1789), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to MIPS participating clinician groups and assesses each group’s readmission rate. The measure comprises a single summary score, derived from the results of five models, one for each of the following specialty cohorts (groups of discharge condition categories or procedure categories): medicine, surgery/gynecology, cardio-respiratory, cardiovascular, and neurology.",
     "metricType": "costScore",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2021,
@@ -11874,7 +11919,7 @@
     "category": "quality",
     "measureId": "480",
     "title": "Risk-standardized complication rate (RSCR) following elective primary total hip arthroplasty (THA) and/or total knee arthroplasty (TKA) for Merit-based Incentive Payment System (MIPS)",
-    "description": "The Risk-standardized Complication Rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA) for the Merit-based Incentive Payment System (MIPS) measure is a risk-standardized complication rate for Medicare Fee-for-Service (FFS) beneficiaries aged 65 or older who experienced complications after an inpatient elective primary THA and/or TKA procedure, defined as complications occurring from the date of index admission to 90 days post discharge. The measure attributes complications to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and Taxpayer Information Numbers (TINs) and assesses each clinician’s or clinician group’s complication rate.",
+    "description": "This measure is a re-specified version of the measure, “Hospital-level Risk-standardized Complication rate (RSCR) following Elective Primary Total Hip Arthroplasty (THA) and/or Total Knee Arthroplasty (TKA)” (National Quality Forum 1550), which was developed for patients 65 years and older using Medicare claims. This re-specified measure attributes outcomes to Merit-based Incentive Payment System participating clinicians and/or clinician groups (“provider”) and assesses each provider’s complication rate, defined as any one of the specified complications occurring from the date of index admission to up to 90 days post date of the index procedure.",
     "metricType": "costScore",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2021,
@@ -11915,7 +11960,7 @@
   {
     "category": "quality",
     "measureId": "481",
-    "title": "Intravesical Bacillus-Calmette Guerin for Non-muscle Invasive Bladder Cancer",
+    "title": "Intravesical Bacillus-Calmette-Guerin for Non-Muscle Invasive Bladder Cancer",
     "description": "Percentage of patients initially diagnosed with non-muscle invasive bladder cancer and who received intravesical Bacillus-Calmette-Guerin (BCG) within 6 months of bladder cancer staging.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -12042,7 +12087,7 @@
   {
     "category": "quality",
     "measureId": "484",
-    "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions",
+    "title": "Clinician and Clinician Group Risk-standardized Hospital Admission Rates for Patients with Multiple Chronic Conditions (MCC)",
     "description": "The measure is a risk-standardized rate of acute, unplanned hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with multiple chronic conditions (MCCs); i.e., two or more of nine qualifying chronic conditions. The measure is adjusted for age, chronic condition categories, and other clinical and frailty risk factors present at the start of the 12-month measurement period as well as social risk factors. The measure attributes admissions to MIPS participating clinicians and/or clinician groups, as identified by their National Provider Identifiers (NPIs) and/or Taxpayer Identification Number (TIN) and assesses each clinician’s or clinician group’s admission rate.",
     "metricType": "costScore",
     "isRegistryMeasure": false,
@@ -12050,7 +12095,7 @@
     "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3597",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -12188,7 +12233,7 @@
     "category": "quality",
     "measureId": "488",
     "title": "Kidney Health Evaluation",
-    "description": "Percentage of patients aged 18--85 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period.",
+    "description": "Percentage of patients aged 18--85 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the performance period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2023,
@@ -12238,7 +12283,7 @@
     "category": "quality",
     "measureId": "489",
     "title": "Adult Kidney Disease: Angiotensin Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy",
-    "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within a 12-month period.",
+    "description": "Percentage of patients aged 18 years and older with a diagnosis of chronic kidney disease (CKD) (Stages 1-5, not receiving Renal Replacement Therapy (RRT)) and proteinuria who were prescribed ACE inhibitor or ARB therapy within the 12-month measurement period.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2023,
@@ -12280,7 +12325,7 @@
   {
     "category": "quality",
     "measureId": "490",
-    "title": "Appropriate Intervention of Immune-Related Diarrhea and/or Colitis in Patients Treated with Immune Checkpoint Inhibitors",
+    "title": "Appropriate Intervention of Immune-related Diarrhea and/or Colitis in Patients Treated with Immune Checkpoint Inhibitors",
     "description": "Percentage of patients, aged 18 years and older, with a diagnosis of cancer, on immune checkpoint inhibitor therapy, and grade 2 or above diarrhea and/or grade 2 or above colitis, who have immune checkpoint inhibitor therapy held and corticosteroids or immunosuppressants prescribed or administered.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -12364,14 +12409,14 @@
     "category": "quality",
     "measureId": "492",
     "title": "Risk-Standardized Acute Cardiovascular-Related Hospital Admission Rates for Patients with Heart Failure under the Merit-based Incentive Payment System",
-    "description": "The measure is a risk-standardized rate of acute, unplanned cardiovascular-related acute hospital admissions for the Merit-based Incentive Payment System (MIPS) among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy. The measure attributes admissions to MIPS clinician groups and assesses each clinician group’s admission rate.",
+    "description": "Annual risk-standardized rate of acute, unplanned cardiovascular-related  admissions among Medicare Fee-for-Service (FFS) patients aged 65 years and older with heart failure (HF) or cardiomyopathy.",
     "metricType": "costScore",
     "isRegistryMeasure": false,
     "firstPerformanceYear": 2023,
     "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": "3612",
+    "nqfId": "N/A",
     "measureType": "outcome",
     "isHighPriority": true,
     "primarySteward": "Centers for Medicare & Medicaid Services",
@@ -12403,7 +12448,7 @@
     "category": "quality",
     "measureId": "493",
     "title": "Adult Immunization Status",
-    "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; and pneumococcal.",
+    "description": "Percentage of patients 19 years of age and older who are up-to-date on recommended routine vaccines for influenza; tetanus and diphtheria (Td) or tetanus, diphtheria and acellular pertussis (Tdap); zoster; pneumococcal; and hepatitis B.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "weightedAverage",
     "isRegistryMeasure": false,
@@ -12489,7 +12534,7 @@
     "lastPerformanceYear": null,
     "eMeasureId": "CMS1056v3",
     "nqfEMeasureId": "3633e",
-    "nqfId": null,
+    "nqfId": "3633e\n3662e",
     "measureType": "intermediateOutcome",
     "isHighPriority": true,
     "primarySteward": "Alara Imaging, Inc. in collaboration with the University of California, San Francisco (UCSF)",
@@ -12531,7 +12576,7 @@
     "lastPerformanceYear": null,
     "eMeasureId": null,
     "nqfEMeasureId": null,
-    "nqfId": null,
+    "nqfId": "3665",
     "measureType": "patientReportedOutcome",
     "isHighPriority": true,
     "primarySteward": "American Academy of Hospice and Palliative Medicine (AAHPM)",
@@ -12663,7 +12708,6 @@
     ],
     "measureSets": [
       "familyMedicine",
-      "geriatrics",
       "internalMedicine",
       "obstetricsGynecology",
       "preventiveMedicine"
@@ -12711,7 +12755,7 @@
   {
     "category": "quality",
     "measureId": "499",
-    "title": "Appropriate screening and plan of care for elevated intraocular pressure following intravitreal or periocular steroid therapy",
+    "title": "Appropriate Screening and Plan of Care for Elevated Intraocular Pressure Following Intravitreal or Periocular Steroid Therapy",
     "description": "Percentage of patients who had an intravitreal or periocular corticosteroid injection (e.g., triamcinolone, preservative-free triamcinolone, dexamethasone, dexamethasone intravitreal implant, or fluocinolone intravitreal implant) who, within seven (7) weeks following the date of injection, are screened for elevated intraocular pressure (IOP) with tonometry with documented IOP =<25 mm Hg for injected eye OR if the IOP was >25 mm Hg, a plan of care was documented.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -12753,7 +12797,7 @@
   {
     "category": "quality",
     "measureId": "500",
-    "title": "Acute posterior vitreous detachment appropriate examination and follow-up",
+    "title": "Acute Posterior Vitreous Detachment Appropriate Examination and Follow-up",
     "description": "Percentage of patients with a diagnosis of acute posterior vitreous detachment (PVD) in either eye who were appropriately evaluated during the initial exam and were re-evaluated no later than 8 weeks.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -12795,7 +12839,7 @@
   {
     "category": "quality",
     "measureId": "501",
-    "title": "Acute posterior vitreous detachment and acute vitreous hemorrhage appropriate examination and follow-up",
+    "title": "Acute Posterior Vitreous Detachment and Acute Vitreous Hemorrhage Appropriate Examination and Follow-up",
     "description": "Percentage of patients with a diagnosis of acute posterior vitreous detachment (PVD) and acute vitreous hemorrhage in either eye who were appropriately evaluated during the initial exam and were re-evaluated no later than 2 weeks.",
     "metricType": "singlePerformanceRate",
     "isRegistryMeasure": false,
@@ -12883,8 +12927,8 @@
   {
     "category": "quality",
     "measureId": "503",
-    "title": "Gains in Patient Activation Measure (PAM) Scores at 12 Months",
-    "description": "The Patient Activation Measure (PAM) (Registered Trademark) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM performance measure (PAM-PM) is the change in score on the PAM from baseline to follow-up measurement.",
+    "title": "Gains in Patient Activation Measure (PAM®) Scores at 12 Months",
+    "description": "The Patient Activation Measure® (PAM®) is a 10- or 13- item questionnaire that assesses an individual's knowledge, skills and confidence for managing their health and health care. The measure assesses individuals on a 0-100 scale that converts to one of four levels of activation, from low (1) to high (4). The PAM® performance measure (PAM®-PM) is the change in score on the PAM® from baseline to follow-up measurement.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",
     "isRegistryMeasure": false,
@@ -13207,7 +13251,7 @@
   {
     "category": "quality",
     "measureId": "510",
-    "title": "First Year Standardized Waitlist Ratio (FYSWR)",
+    "title": "First Year Standardized Kidney Transplant Waitlist Ratio (FYSWR)",
     "description": "The number of newly initiated patients on dialysis in a practitioner group who are under the age of 75 and were either listed on the kidney or kidney-pancreas transplant waitlist or received a living donor transplant within the first year of initiating dialysis. The practitioner group is inclusive of physicians and advanced practice providers. The measure is the ratio-observed number of waitlist events in a practitioner group to its expected number of waitlist events. The measure uses the expected waitlist events calculated from a Cox model, which is adjusted for age, patient comorbidities, and other risk factors at the time of dialysis.",
     "metricType": "nonProportion",
     "isRegistryMeasure": false,
@@ -13249,7 +13293,7 @@
   {
     "category": "quality",
     "measureId": "511",
-    "title": "Percentage of Prevalent Patients Waitlisted (PPPW) and Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)",
+    "title": "Percentage of Prevalent Patients Waitlisted for Kidney Transplant (PPPW) and Percentage of Prevalent Patients Waitlisted for Kidney Transplant in Active Status (aPPPW)",
     "description": "The measure tracks dialysis patients who are under the age of 75 in a practitioner group and on the kidney or kidney-pancreas transplant waitlist (all patients or patients in active status). This measure is a risk-adjusted percentage of waitlist events among dialysis patients.",
     "metricType": "multiPerformanceRate",
     "overallAlgorithm": "overallStratumOnly",

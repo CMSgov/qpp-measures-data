@@ -5,6 +5,91 @@ import { Measure } from '../../util/interfaces';
 import { Programs } from '../../util/interfaces/measure';
 import { info, error } from '../../scripts/logger';
 
+function isMVPProgram(program: Programs): boolean {
+    return program.startsWith('G005') || program.startsWith('M0') || program.startsWith('M1');
+}
+
+function removeMeasureFromMVP(
+    performanceYear: string,
+    program: Programs,
+    category: string,
+    affectedMeasureIds: string[]
+): void {
+    if (!isMVPProgram(program) || affectedMeasureIds.length === 0) {
+        return;
+    }
+
+    const mvpCsvFilePath = path.join(appRoot.toString(), `mvp/${performanceYear}/mvp.csv`);
+    
+    try {
+        const csvContent = fs.readFileSync(mvpCsvFilePath, 'utf8');
+        const lines = csvContent.split('\n');
+        
+        if (lines.length === 0 || (lines.length === 1 && lines[0].trim() === '')) {
+            info('MVP CSV file is empty');
+            return;
+        }
+        
+        const header = lines[0];
+        let removedCount = 0;
+        
+        let expectedCategory: string;
+        switch (category) {
+            case 'ia':
+                expectedCategory = 'Improvement';
+                break;
+            case 'quality':
+                expectedCategory = 'Quality';
+                break;
+            case 'cost':
+                expectedCategory = 'Cost';
+                break;
+            case 'pi':
+                expectedCategory = 'Foundational';
+                break;
+            default:
+                info(`Unknown category "${category}" for MVP modification`);
+                return;
+        }
+
+        const filteredLines = [header];
+        
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (!line) continue;
+            
+            const columns = line.split(',');
+            if (columns.length < 7) continue;
+            
+            const mvpId = columns[1];
+            const reportingCategory = columns[5];
+            const measureId = columns[6];
+            
+            const shouldRemove = mvpId === program && 
+                               reportingCategory === expectedCategory && 
+                               affectedMeasureIds.includes(measureId);
+            
+            if (shouldRemove) {
+                info(`  - Removed measure "${measureId}" from MVP "${program}" (${expectedCategory}) in CSV`);
+                removedCount++;
+            } else {
+                filteredLines.push(line);
+            }
+        }
+
+        if (removedCount > 0) {
+            const newCsvContent = filteredLines.join('\n');
+            fs.writeFileSync(mvpCsvFilePath, newCsvContent);
+            info(`Removed ${removedCount} measure associations from MVP "${program}" in mvp.csv`);
+        } else {
+            info(`No measure associations found to remove from MVP "${program}" in mvp.csv`);
+        }
+        
+    } catch (err) {
+        error(`Failed to update MVP CSV data: ${(err as Error).message}`);
+    }
+}
+
 // Function to update allowedPrograms for a specific category
 export function updateAllowedPrograms(
     performanceYear: string,
@@ -28,6 +113,7 @@ export function updateAllowedPrograms(
         );
 
         let updatedMeasures = 0;
+        const affectedMeasureIds: string[] = [];
 
         // Update measures in the specified category
         measuresJson.forEach((measure) => {
@@ -53,11 +139,17 @@ export function updateAllowedPrograms(
                         allowedPrograms.splice(index, 1);
                         measure.allowedPrograms = allowedPrograms;
                         updatedMeasures++;
+                        affectedMeasureIds.push(measure.measureId);
                         info(`Removed program "${program}" from measure "${measure.measureId}".`);
                     }
                 }
             }
         });
+
+        // If removing an MVP program, also update the MVP data
+        if (action === 'remove' && isMVPProgram(program)) {
+            removeMeasureFromMVP(performanceYear, program, category, affectedMeasureIds);
+        }
 
         // Save the updated measures data back to the file
         if (updatedMeasures > 0) {
