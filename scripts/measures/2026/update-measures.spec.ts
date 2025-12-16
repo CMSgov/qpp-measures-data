@@ -104,7 +104,7 @@ const allowedCostScoreQualityChange = {
 };
 
 const allowedQcdrChange = {
-    measureId: 'AQI49',
+    measureId: 'AQI48',
     title: 'testTitle',
 };
 

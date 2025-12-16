@@ -126,6 +126,8 @@ Below are the locations where different types of benchmarks should be added:
 
 Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run build:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run build:mvp` again, which will replace the `mvp-enriched.json` file.
 
+For new MVPs, you will need to update the mvp list in the measures-schema.yaml for that year with the new MVP names.
+
 ## Add/Update National Averages JSON
 
 Add or update `cost-national-averages.csv` to `util/benchmarks/$YEAR/` and run `npm run build:benchmarks $YEAR` 
