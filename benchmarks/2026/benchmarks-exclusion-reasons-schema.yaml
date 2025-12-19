@@ -1,0 +1,34 @@
+$id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-exclusion-reasons-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: '#/definitions/benchmark-exclusion-reasons' }
+
+definitions:
+  benchmark:
+    type: object
+    properties:
+      measureId:
+        description: Corresponds to the measures data JSON ID.
+        type: string
+      submissionMethod:
+        description: The method used to submit. measureID and submissionMethod make up the unique identifier for a benchmark.
+        type: string
+      performanceYear:
+        description: When the performance data was submitted for scoring.
+        type: number
+      benchmarkYear:
+        description: When this benchmark was generated. For historical benchmarks, it will be different than performanceYear.
+          For performance year benchmarks, it will be the same.
+        type: number
+      reasonCodes:
+        description: Machine-readable codes for why the benchmark could not be created. Positions in array match reasonDescriptions.
+        type: array
+        items:
+          type: [string]
+        minItems: 1
+      reasonDescriptions:
+        description: Human-readable descriptions for why the benchmark could not be created. Positions in array match reasonCodes.
+        type: array
+        items:
+          type: [string]
+        minItems: 1
