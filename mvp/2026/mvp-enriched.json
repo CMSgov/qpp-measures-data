@@ -462,19 +462,23 @@
         "strata": [
           {
             "name": "influenza",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period."
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period."
           },
           {
             "name": "herpesZoster",
-            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received 2 doses of the herpes zoster recombinant vaccine anytime on October 20, 2017, through the end of the measurement period."
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
+            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 19th birthday and before the end of the measurement period."
+          },
+          {
+            "name": "hepB",
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who were administered a hepatitis B vaccine series."
           }
         ]
       },
@@ -552,11 +556,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -940,8 +944,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -4289,8 +4293,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -7964,11 +7968,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       }
@@ -11432,8 +11436,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -21224,11 +21228,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -21461,8 +21465,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -24903,19 +24907,23 @@
         "strata": [
           {
             "name": "influenza",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period."
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period."
           },
           {
             "name": "herpesZoster",
-            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received 2 doses of the herpes zoster recombinant vaccine anytime on October 20, 2017, through the end of the measurement period."
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
+            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 19th birthday and before the end of the measurement period."
+          },
+          {
+            "name": "hepB",
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who were administered a hepatitis B vaccine series."
           }
         ]
       },
@@ -25062,11 +25070,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -25157,11 +25165,11 @@
         "strata": [
           {
             "name": "waitlisted",
-            "description": "Percentage of Prevalent Patients Waitlisted (PPPW)"
+            "description": "Percentage of Prevalent Patients Waitlisted (PPPW)."
           },
           {
             "name": "overall",
-            "description": "Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)"
+            "description": "Percentage of Prevalent Patients Waitlisted in Active Status (aPPPW)."
           }
         ]
       },
@@ -25358,8 +25366,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -28956,11 +28964,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -29007,8 +29015,12 @@
         ],
         "strata": [
           {
-            "name": "PLACEHOLDER",
-            "description": "WARNING: Update strata file with new measure strata."
+            "name": "reporting",
+            "description": "Patients with a diagnosis of a movement disorder, multiple sclerosis, a neuromuscular disorder, dementia, or stroke who were assessed for at each visit during the performance period"
+          },
+          {
+            "name": "performance",
+            "description": "Patients with a diagnosis of a movement disorder, multiple sclerosis, a neuromuscular disorder, dementia, or stroke who report a fall occurred since the last visit AND who have a plan of care for falls"
           }
         ]
       }
@@ -29107,8 +29119,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -32507,19 +32519,23 @@
         "strata": [
           {
             "name": "influenza",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period."
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period."
           },
           {
             "name": "herpesZoster",
-            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received 2 doses of the herpes zoster recombinant vaccine anytime on October 20, 2017, through the end of the measurement period."
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
+            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 19th birthday and before the end of the measurement period."
+          },
+          {
+            "name": "hepB",
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who were administered a hepatitis B vaccine series."
           }
         ]
       },
@@ -32575,7 +32591,7 @@
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients who received a pneumococcal vaccination on or after their 60th birthday"
+            "description": "Percentage of patients 65 years of age or older who received a pneumococcal vaccination on or after their 19th birthday"
           },
           {
             "name": "mammogram",
@@ -32587,7 +32603,7 @@
           },
           {
             "name": "BMI",
-            "description": "Percentage of patients with a documented BMI, with follow-up plan if applicable, during the encounter or during the previous 12 months"
+            "description": "Percentage of patients with a documented Body Mass Index (BMI), with follow-up plan if applicable, during the encounter or during the previous 12 months"
           },
           {
             "name": "tobacco",
@@ -32756,8 +32772,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -36206,11 +36222,11 @@
         "strata": [
           {
             "name": "screening",
-            "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
           },
           {
             "name": "follow-up/trtmt",
-            "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
           }
         ]
       },
@@ -36319,15 +36335,15 @@
         "strata": [
           {
             "name": "reporting",
-            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months."
           },
           {
             "name": "performance",
-            "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling"
+            "description": "Percentage of patients aged 18 years and older who were identified as unhealthy alcohol users who received brief counseling."
           },
           {
             "name": "combinedPopulations",
-            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users"
+            "description": "Percentage of patients aged 18 years and older who were screened for unhealthy alcohol use using a systematic screening method at least once within the last 12 months AND who received brief counseling if identified as unhealthy alcohol users."
           }
         ]
       },
@@ -36377,7 +36393,7 @@
         "strata": [
           {
             "name": "bladderInjury",
-            "description": "Rate 1:Percentage of patients undergoing prolapse repair who sustain a bladder injury that necessitates repair either intraoperatively or within 30 days after surgery ."
+            "description": "Percentage of patients undergoing prolapse repair who sustain a bladder injury that necessitates repair either intraoperatively or within 30 days after surgery ."
           },
           {
             "name": "bowelInjury",
@@ -36542,19 +36558,23 @@
         "strata": [
           {
             "name": "influenza",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period."
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period."
           },
           {
             "name": "herpesZoster",
-            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received 2 doses of the herpes zoster recombinant vaccine anytime on October 20, 2017, through the end of the measurement period."
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
+            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 19th birthday and before the end of the measurement period."
+          },
+          {
+            "name": "hepB",
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who were administered a hepatitis B vaccine series."
           }
         ]
       },
@@ -36708,8 +36728,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -40089,8 +40109,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -43324,11 +43344,11 @@
         "strata": [
           {
             "name": "screening",
-            "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
           },
           {
             "name": "follow-up/trtmt",
-            "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
           }
         ]
       },
@@ -43492,19 +43512,23 @@
         "strata": [
           {
             "name": "influenza",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received an influenza vaccine on or between July 1 of the year prior to the measurement period and June 30 of the measurement period."
           },
           {
             "name": "Tdap",
-            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period"
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who received at least 1 tetanus and diphtheria (Td) vaccine or 1 tetanus, diphtheria, and pertussis (Tdap) vaccine between 9 years prior to the encounter and the end of the measurement period."
           },
           {
             "name": "herpesZoster",
-            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received at least 1 dose of the herpes zoster live vaccine or 2 doses of the herpes zoster recombinant vaccine anytime on or after the patients’ 50th birthday"
+            "description": "Percentage of patients (50 years of age and older on the date of the encounter) who received 2 doses of the herpes zoster recombinant vaccine anytime on October 20, 2017, through the end of the measurement period."
           },
           {
             "name": "pneumococcal",
-            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 60th birthday and before the end of the measurement period"
+            "description": "Percentage of patients (66 years of age or older on the date of the encounter) who were administered any pneumococcal conjugate vaccine or polysaccharide vaccine, on or after their 19th birthday and before the end of the measurement period."
+          },
+          {
+            "name": "hepB",
+            "description": "Percentage of patients (19 years of age and older on the date of the encounter) who were administered a hepatitis B vaccine series."
           }
         ]
       },
@@ -43590,8 +43614,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -54675,11 +54699,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -54971,8 +54995,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -58377,11 +58401,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -58524,11 +58548,11 @@
           },
           {
             "name": "reconstruction",
-            "description": "Strata 2: Reconstruction after skin cancer resection"
+            "description": "Strata 2: Reconstruction after skin cancer resection "
           },
           {
             "name": "overall",
-            "description": "Strata 3: Strata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
+            "description": "Strata 3: FOR REPORTING\r\nStrata 1 + Strata 2; Calculate as (numerator 1 + numerator 2 )/(denominator 1 + denominator 2), not the average of the performance rates"
           }
         ]
       },
@@ -58645,8 +58669,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -61865,11 +61889,11 @@
         "strata": [
           {
             "name": "screening",
-            "description": "Percentage of patients age >= 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have never been tested for HCV antibodies and who receive an HCV antibody test."
           },
           {
             "name": "follow-up/trtmt",
-            "description": "Percentage of patients age >= 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
+            "description": "Percentage of patients aged ≥ 18 years who have a reactive HCV antibody test, who have a follow up HCV viral test, and if HCV viremia is detected, have treatment initiated within three months or are referred to a clinician who treats HCV infection within one month of the reactive HCV antibody test."
           }
         ]
       },
@@ -61992,11 +62016,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -62250,8 +62274,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -65460,11 +65484,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -68771,7 +68795,7 @@
           },
           {
             "name": "bronchodilator",
-            "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD who have a documented airflow obstruction (FEV1/FVC < 70%) and are symptomatic, who were prescribed a long-acting inhaled bronchodilator."
+            "description": "Percentage of patients aged 18 years and older with a diagnosis of COPD who have documented airflow obstruction (FEV1/FVC < 70%) and are symptomatic, who were prescribed a long-acting inhaled bronchodilator."
           }
         ]
       },
@@ -69163,11 +69187,11 @@
         "strata": [
           {
             "name": "overall",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 3 points in a 4 to 12 month period"
           },
           {
             "name": "6points",
-            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 6 to 12 month period."
+            "description": "Percentage of patients aged 14 years and older who achieved a net increase in PAM® score of at least 6 points in a 4 to 12 month period"
           }
         ]
       },
@@ -79397,8 +79421,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -82898,8 +82922,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
@@ -93813,8 +93837,8 @@
       {
         "category": "ia",
         "measureId": "IA_BE_4",
-        "title": "Engagement of patients through implementation of improvements in patient portal",
-        "description": "To receive credit for this activity, MIPS eligible clinicians must provide access to an enhanced patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; or any relevant acute or chronic disease management.",
+        "title": "Engagement of Patients through Implementation of New Patient Portal",
+        "description": "To receive credit for this activity, MIPS eligible clinicians must implement and provide access to a new patient/caregiver portal that allows users (patients or caregivers and their clinicians) to engage in bidirectional information exchange. The primary use of this portal should be clinical and not administrative. Examples of the use of such a portal include, but are not limited to, the following:  brief patient reevaluation by messaging; communication about test results and follow up; communication about medication adherence, side effects, and refills; blood pressure management for a patient with hypertension; blood sugar management for a patient with diabetes; and/or any relevant acute or chronic disease management.",
         "metricType": "boolean",
         "firstPerformanceYear": 2017,
         "lastPerformanceYear": null,
