@@ -8,7 +8,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "multiPerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 4.17,
       "10": 41.67,
@@ -108,7 +108,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.71,
       "10": 98.51,
@@ -183,7 +183,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 75,
       "10": 90.82,
@@ -233,7 +233,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 24.33,
       "10": 81.585,
@@ -400,31 +400,6 @@
     "averagePerformanceRate": 0.35
   },
   {
-    "measureId": "397",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "claims",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 84,
-      "10": 86,
-      "20": 88,
-      "30": 90,
-      "40": 92,
-      "50": 94,
-      "60": 96,
-      "70": 98,
-      "80": 99,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 99.53
-  },
-  {
     "measureId": "ACEP25",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -500,6 +475,31 @@
     "averagePerformanceRate": 100
   },
   {
+    "measureId": "397",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "claims",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 84,
+      "10": 86,
+      "20": 88,
+      "30": 90,
+      "40": 92,
+      "50": 94,
+      "60": 96,
+      "70": 98,
+      "80": 99,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 99.53
+  },
+  {
     "measureId": "007",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -533,7 +533,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "multiPerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 8.51,
       "10": 80,
@@ -633,7 +633,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.03,
       "10": 36.68,
@@ -683,7 +683,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 45.97,
       "10": 99.63,
@@ -758,7 +758,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 5.73,
       "10": 88.74,
@@ -800,6 +800,31 @@
     "averagePerformanceRate": 4.68
   },
   {
+    "measureId": "AQI65",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 48.08,
+      "10": 75.875,
+      "20": 88.355,
+      "30": 96.91,
+      "40": 100,
+      "50": 100,
+      "60": 100,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 93.52
+  },
+  {
     "measureId": "MEX5",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -825,29 +850,29 @@
     "averagePerformanceRate": 26.49
   },
   {
-    "measureId": "AQI65",
+    "measureId": "001SSP",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
     "submissionMethod": "registry",
     "isToppedOut": false,
     "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
+    "isInverse": true,
+    "metricType": "singlePerformanceRate",
     "isToppedOutByProgram": false,
     "percentiles": {
-      "1": 48.08,
-      "10": 75.875,
-      "20": 88.355,
-      "30": 96.91,
-      "40": 100,
-      "50": 100,
-      "60": 100,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
+      "1": 3.87,
+      "10": 7.03,
+      "20": 10.14,
+      "30": 14.33,
+      "40": 18.93,
+      "50": 22.27,
+      "60": 25.93,
+      "70": 29.76,
+      "80": 38.28,
+      "90": 49.19,
+      "99": 80.94
     },
-    "averagePerformanceRate": 93.52
+    "averagePerformanceRate": 25.78
   },
   {
     "measureId": "039",
@@ -875,6 +900,31 @@
     "averagePerformanceRate": 76.84
   },
   {
+    "measureId": "128",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "electronicHealthRecord",
+    "isToppedOut": false,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 4.5,
+      "10": 31.26,
+      "20": 38.65,
+      "30": 61.6,
+      "40": 77.91,
+      "50": 85.71,
+      "60": 90.17,
+      "70": 91.5,
+      "80": 94.76,
+      "90": 96.69,
+      "99": 99.49
+    },
+    "averagePerformanceRate": 71.71
+  },
+  {
     "measureId": "AAD16",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -883,7 +933,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "metricType": "registryMultiPerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0,
       "10": 0,
@@ -973,56 +1023,6 @@
       "99": 100
     },
     "averagePerformanceRate": 71.69
-  },
-  {
-    "measureId": "001SSP",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": true,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 3.87,
-      "10": 7.03,
-      "20": 10.14,
-      "30": 14.33,
-      "40": 18.93,
-      "50": 22.27,
-      "60": 25.93,
-      "70": 29.76,
-      "80": 38.28,
-      "90": 49.19,
-      "99": 80.94
-    },
-    "averagePerformanceRate": 25.78
-  },
-  {
-    "measureId": "128",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "electronicHealthRecord",
-    "isToppedOut": false,
-    "isHighPriority": false,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 4.5,
-      "10": 31.26,
-      "20": 38.65,
-      "30": 61.6,
-      "40": 77.91,
-      "50": 85.71,
-      "60": 90.17,
-      "70": 91.5,
-      "80": 94.76,
-      "90": 96.69,
-      "99": 99.49
-    },
-    "averagePerformanceRate": 71.71
   },
   {
     "measureId": "191",
@@ -1225,31 +1225,6 @@
     "averagePerformanceRate": 44.91
   },
   {
-    "measureId": "143",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 84,
-      "10": 86,
-      "20": 88,
-      "30": 90,
-      "40": 92,
-      "50": 94,
-      "60": 96,
-      "70": 98,
-      "80": 99,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 92.71
-  },
-  {
     "measureId": "350",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -1325,56 +1300,6 @@
     "averagePerformanceRate": 52.11
   },
   {
-    "measureId": "NHCR4",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 29.79,
-      "10": 61.9,
-      "20": 84.38,
-      "30": 92.49,
-      "40": 95,
-      "50": 96.265,
-      "60": 97.73,
-      "70": 99.28,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 89.71
-  },
-  {
-    "measureId": "QMM23",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 0.65,
-      "10": 5.94,
-      "20": 40.44,
-      "30": 83.78,
-      "40": 97.78,
-      "50": 100,
-      "60": 100,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 77.96
-  },
-  {
     "measureId": "ACEP22",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -1425,6 +1350,81 @@
     "averagePerformanceRate": 4.2
   },
   {
+    "measureId": "NHCR4",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 29.79,
+      "10": 61.9,
+      "20": 84.38,
+      "30": 92.49,
+      "40": 95,
+      "50": 96.265,
+      "60": 97.73,
+      "70": 99.28,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 89.71
+  },
+  {
+    "measureId": "QMM23",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 0.65,
+      "10": 5.94,
+      "20": 40.44,
+      "30": 83.78,
+      "40": 97.78,
+      "50": 100,
+      "60": 100,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 77.96
+  },
+  {
+    "measureId": "143",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 84,
+      "10": 86,
+      "20": 88,
+      "30": 90,
+      "40": 92,
+      "50": 94,
+      "60": 96,
+      "70": 98,
+      "80": 99,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 92.71
+  },
+  {
     "measureId": "130",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -1433,7 +1433,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 3.65,
       "10": 78.38,
@@ -1508,7 +1508,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 9.09,
       "10": 91.3,
@@ -1533,7 +1533,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 69.05,
       "10": 95.79,
@@ -1583,7 +1583,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 71.43,
       "10": 87.1,
@@ -1608,7 +1608,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0,
       "10": 0,
@@ -1658,7 +1658,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 38.16,
       "10": 70.14,
@@ -1758,7 +1758,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.83,
       "10": 68.31,
@@ -1783,7 +1783,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.11,
       "10": 64.73,
@@ -1833,7 +1833,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 38.75,
       "10": 91.8,
@@ -1858,7 +1858,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 3.7,
       "10": 97.21,
@@ -2083,7 +2083,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.32,
       "10": 21.28,
@@ -2158,7 +2158,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.54,
       "10": 56.72,
@@ -2283,7 +2283,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 63.39,
       "10": 93.9,
@@ -2408,7 +2408,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.44,
       "10": 35,
@@ -2475,6 +2475,31 @@
     "averagePerformanceRate": 100
   },
   {
+    "measureId": "291",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 23.06,
+      "10": 78.68,
+      "20": 92.31,
+      "30": 100,
+      "40": 100,
+      "50": 100,
+      "60": 100,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 94.04
+  },
+  {
     "measureId": "317",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -2483,7 +2508,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.27,
       "10": 34.76,
@@ -2523,31 +2548,6 @@
       "99": 100
     },
     "averagePerformanceRate": 99.62
-  },
-  {
-    "measureId": "ACRAD34",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registryMultiPerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 37.32,
-      "10": 70.38,
-      "20": 81.7,
-      "30": 82.07,
-      "40": 86.9,
-      "50": 89.71,
-      "60": 91.23,
-      "70": 94.32,
-      "80": 96,
-      "90": 96.61,
-      "99": 99.93
-    },
-    "averagePerformanceRate": 86.3
   },
   {
     "measureId": "AQUA8",
@@ -2600,29 +2600,29 @@
     "averagePerformanceRate": 53.82
   },
   {
-    "measureId": "291",
+    "measureId": "ACRAD34",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
     "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": false,
+    "isToppedOut": false,
+    "isHighPriority": true,
     "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "metricType": "registryMultiPerformanceRate",
+    "isToppedOutByProgram": false,
     "percentiles": {
-      "1": 23.06,
-      "10": 78.68,
-      "20": 92.31,
-      "30": 100,
-      "40": 100,
-      "50": 100,
-      "60": 100,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
+      "1": 37.32,
+      "10": 70.38,
+      "20": 81.7,
+      "30": 82.07,
+      "40": 86.9,
+      "50": 89.71,
+      "60": 91.23,
+      "70": 94.32,
+      "80": 96,
+      "90": 96.61,
+      "99": 99.93
     },
-    "averagePerformanceRate": 94.04
+    "averagePerformanceRate": 86.3
   },
   {
     "measureId": "127",
@@ -2633,7 +2633,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.54,
       "10": 42,
@@ -2708,7 +2708,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.85,
       "10": 45.71,
@@ -2783,7 +2783,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 29.12,
       "10": 90.56,
@@ -2825,6 +2825,31 @@
     "averagePerformanceRate": 83.77
   },
   {
+    "measureId": "052",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "multiPerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 0.42,
+      "10": 45.05,
+      "20": 73.64,
+      "30": 90.38,
+      "40": 95.74,
+      "50": 98.76,
+      "60": 100,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 85.98
+  },
+  {
     "measureId": "141",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -2858,7 +2883,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 13.67,
       "10": 78.44,
@@ -2873,31 +2898,6 @@
       "99": 100
     },
     "averagePerformanceRate": 92.89
-  },
-  {
-    "measureId": "243",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 2.86,
-      "10": 34.78,
-      "20": 38.28,
-      "30": 40.91,
-      "40": 69.68,
-      "50": 89.145,
-      "60": 97.09,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 72.12
   },
   {
     "measureId": "438",
@@ -2950,29 +2950,29 @@
     "averagePerformanceRate": 53.5
   },
   {
-    "measureId": "052",
+    "measureId": "243",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
     "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": false,
+    "isToppedOut": false,
+    "isHighPriority": true,
     "isInverse": false,
-    "metricType": "multiPerformanceRate",
+    "metricType": "singlePerformanceRate",
     "isToppedOutByProgram": false,
     "percentiles": {
-      "1": 0.42,
-      "10": 45.05,
-      "20": 73.64,
-      "30": 90.38,
-      "40": 95.74,
-      "50": 98.76,
-      "60": 100,
+      "1": 2.86,
+      "10": 34.78,
+      "20": 38.28,
+      "30": 40.91,
+      "40": 69.68,
+      "50": 89.145,
+      "60": 97.09,
       "70": 100,
       "80": 100,
       "90": 100,
       "99": 100
     },
-    "averagePerformanceRate": 85.98
+    "averagePerformanceRate": 72.12
   },
   {
     "measureId": "005",
@@ -2983,7 +2983,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 73.4,
       "10": 87.69,
@@ -3033,7 +3033,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.26,
       "10": 64.66,
@@ -3150,31 +3150,6 @@
     "averagePerformanceRate": 100
   },
   {
-    "measureId": "379",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "electronicHealthRecord",
-    "isToppedOut": false,
-    "isHighPriority": false,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 3.17,
-      "10": 5.05,
-      "20": 11.11,
-      "30": 13.91,
-      "40": 16.05,
-      "50": 19.17,
-      "60": 23.39,
-      "70": 25.53,
-      "80": 32.85,
-      "90": 36.4,
-      "99": 42.22
-    },
-    "averagePerformanceRate": 20.86
-  },
-  {
     "measureId": "378",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -3225,6 +3200,31 @@
     "averagePerformanceRate": 92.15
   },
   {
+    "measureId": "379",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "electronicHealthRecord",
+    "isToppedOut": false,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 3.17,
+      "10": 5.05,
+      "20": 11.11,
+      "30": 13.91,
+      "40": 16.05,
+      "50": 19.17,
+      "60": 23.39,
+      "70": 25.53,
+      "80": 32.85,
+      "90": 36.4,
+      "99": 42.22
+    },
+    "averagePerformanceRate": 20.86
+  },
+  {
     "measureId": "012",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -3258,7 +3258,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.84,
       "10": 17.82,
@@ -3283,7 +3283,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.8,
       "10": 71.07,
@@ -3308,7 +3308,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 4.35,
       "10": 27.74,
@@ -3425,31 +3425,6 @@
     "averagePerformanceRate": 48.67
   },
   {
-    "measureId": "ECPR46",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": true,
-    "percentiles": {
-      "1": 86.7,
-      "10": 91.31,
-      "20": 94.08,
-      "30": 95.78,
-      "40": 97.32,
-      "50": 98.095,
-      "60": 98.66,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 96.9
-  },
-  {
     "measureId": "MSK4",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -3500,6 +3475,31 @@
     "averagePerformanceRate": 57.01
   },
   {
+    "measureId": "ECPR46",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 86.7,
+      "10": 91.31,
+      "20": 94.08,
+      "30": 95.78,
+      "40": 97.32,
+      "50": 98.095,
+      "60": 98.66,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 96.9
+  },
+  {
     "measureId": "005",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -3533,7 +3533,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 1.51,
       "10": 81.97,
@@ -3583,7 +3583,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 2.94,
       "10": 60.96,
@@ -3650,31 +3650,6 @@
     "averagePerformanceRate": 99.52
   },
   {
-    "measureId": "404",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 12.6,
-      "10": 52.94,
-      "20": 65.84,
-      "30": 75.45,
-      "40": 80.37,
-      "50": 84.3,
-      "60": 87.93,
-      "70": 93.13,
-      "80": 98.35,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 79.89
-  },
-  {
     "measureId": "416",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -3698,6 +3673,31 @@
       "99": 61.9
     },
     "averagePerformanceRate": 4.57
+  },
+  {
+    "measureId": "404",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 12.6,
+      "10": 52.94,
+      "20": 65.84,
+      "30": 75.45,
+      "40": 80.37,
+      "50": 84.3,
+      "60": 87.93,
+      "70": 93.13,
+      "80": 98.35,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 79.89
   },
   {
     "measureId": "457",
@@ -3808,7 +3808,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 30,
       "10": 71.43,
@@ -4125,31 +4125,6 @@
     "averagePerformanceRate": 40.91
   },
   {
-    "measureId": "187",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": false,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
-    "percentiles": {
-      "1": 51.72,
-      "10": 95.45,
-      "20": 98.9,
-      "30": 100,
-      "40": 100,
-      "50": 100,
-      "60": 100,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 97.61
-  },
-  {
     "measureId": "238",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -4158,7 +4133,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "metricType": "multiPerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0,
       "10": 0,
@@ -4225,31 +4200,6 @@
     "averagePerformanceRate": 99.31
   },
   {
-    "measureId": "338",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": true,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 76.6,
-      "10": 89.19,
-      "20": 90.93,
-      "30": 93.16,
-      "40": 95.12,
-      "50": 98.72,
-      "60": 99.48,
-      "70": 100,
-      "80": 100,
-      "90": 100,
-      "99": 100
-    },
-    "averagePerformanceRate": 95.49
-  },
-  {
     "measureId": "AAO20",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -4273,6 +4223,56 @@
       "99": 100
     },
     "averagePerformanceRate": 67.61
+  },
+  {
+    "measureId": "187",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 51.72,
+      "10": 95.45,
+      "20": 98.9,
+      "30": 100,
+      "40": 100,
+      "50": 100,
+      "60": 100,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 97.61
+  },
+  {
+    "measureId": "338",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": true,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 76.6,
+      "10": 89.19,
+      "20": 90.93,
+      "30": 93.16,
+      "40": 95.12,
+      "50": 98.72,
+      "60": 99.48,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 95.49
   },
   {
     "measureId": "MUSIC4",
@@ -4533,7 +4533,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 4.09,
       "10": 98.59,
@@ -4647,7 +4647,7 @@
       "90": 100,
       "99": 100
     },
-    "averagePerformanceRate": 55.13
+    "averagePerformanceRate": 55.14
   },
   {
     "measureId": "REGCLR3",
@@ -4708,7 +4708,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 16.19,
       "10": 95.38,
@@ -4733,7 +4733,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 82.19,
       "10": 91.61,
@@ -4748,31 +4748,6 @@
       "99": 100
     },
     "averagePerformanceRate": 97.01
-  },
-  {
-    "measureId": "AAO36",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 0.56,
-      "10": 1.08,
-      "20": 2.33,
-      "30": 3.23,
-      "40": 3.64,
-      "50": 8.62,
-      "60": 15.31,
-      "70": 19.62,
-      "80": 52.71,
-      "90": 82.86,
-      "99": 89.66
-    },
-    "averagePerformanceRate": 23.71
   },
   {
     "measureId": "ACR10",
@@ -4798,6 +4773,31 @@
       "99": 98
     },
     "averagePerformanceRate": 62.13
+  },
+  {
+    "measureId": "AAO36",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 0.56,
+      "10": 1.08,
+      "20": 2.33,
+      "30": 3.23,
+      "40": 3.64,
+      "50": 8.62,
+      "60": 15.31,
+      "70": 19.62,
+      "80": 52.71,
+      "90": 82.86,
+      "99": 89.66
+    },
+    "averagePerformanceRate": 23.71
   },
   {
     "measureId": "066",
@@ -4833,7 +4833,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 27.08,
       "10": 89.13,
@@ -4858,7 +4858,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 68.18,
       "10": 96.17,
@@ -4883,7 +4883,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.44,
       "10": 6.82,
@@ -4908,7 +4908,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 12.86,
       "10": 99.07,
@@ -4975,31 +4975,6 @@
     "averagePerformanceRate": 33.89
   },
   {
-    "measureId": "IRIS23",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 14.81,
-      "10": 75.86,
-      "20": 81.48,
-      "30": 84.61,
-      "40": 88.71,
-      "50": 90.58,
-      "60": 93.33,
-      "70": 94.64,
-      "80": 96.67,
-      "90": 98.3,
-      "99": 100
-    },
-    "averagePerformanceRate": 87.77
-  },
-  {
     "measureId": "IRIS58",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -5025,6 +5000,31 @@
     "averagePerformanceRate": 86.38
   },
   {
+    "measureId": "IRIS23",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 14.81,
+      "10": 75.86,
+      "20": 81.48,
+      "30": 84.61,
+      "40": 88.71,
+      "50": 90.58,
+      "60": 93.33,
+      "70": 94.64,
+      "80": 96.67,
+      "90": 98.3,
+      "99": 100
+    },
+    "averagePerformanceRate": 87.77
+  },
+  {
     "measureId": "047",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -5033,7 +5033,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 100,
       "10": 100,
@@ -5075,6 +5075,31 @@
     "averagePerformanceRate": 78.9
   },
   {
+    "measureId": "222",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 30,
+      "10": 52.27,
+      "20": 63.64,
+      "30": 66.67,
+      "40": 73.42,
+      "50": 86.125,
+      "60": 98.39,
+      "70": 100,
+      "80": 100,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 80.76
+  },
+  {
     "measureId": "430",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -5098,31 +5123,6 @@
       "99": 100
     },
     "averagePerformanceRate": 99.34
-  },
-  {
-    "measureId": "IRIS39",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 17.78,
-      "10": 26.11,
-      "20": 31.82,
-      "30": 34.92,
-      "40": 40,
-      "50": 44.325,
-      "60": 54.9,
-      "70": 59.37,
-      "80": 60.46,
-      "90": 85.29,
-      "99": 100
-    },
-    "averagePerformanceRate": 49.45
   },
   {
     "measureId": "PIMSH1",
@@ -5150,29 +5150,29 @@
     "averagePerformanceRate": 53.16
   },
   {
-    "measureId": "222",
+    "measureId": "IRIS39",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
     "submissionMethod": "registry",
     "isToppedOut": false,
     "isHighPriority": true,
     "isInverse": false,
-    "metricType": "singlePerformanceRate",
+    "metricType": "registrySinglePerformanceRate",
     "isToppedOutByProgram": false,
     "percentiles": {
-      "1": 30,
-      "10": 52.27,
-      "20": 63.64,
-      "30": 66.67,
-      "40": 73.42,
-      "50": 86.125,
-      "60": 98.39,
-      "70": 100,
-      "80": 100,
-      "90": 100,
+      "1": 17.78,
+      "10": 26.11,
+      "20": 31.82,
+      "30": 34.92,
+      "40": 40,
+      "50": 44.325,
+      "60": 54.9,
+      "70": 59.37,
+      "80": 60.46,
+      "90": 85.29,
       "99": 100
     },
-    "averagePerformanceRate": 80.76
+    "averagePerformanceRate": 49.45
   },
   {
     "measureId": "RPAQIR15",
@@ -5208,7 +5208,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 21.05,
       "10": 80.73,
@@ -5250,6 +5250,31 @@
     "averagePerformanceRate": 62.05
   },
   {
+    "measureId": "128",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": false,
+    "isInverse": false,
+    "metricType": "singlePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 0.17,
+      "10": 7.38,
+      "20": 17.24,
+      "30": 20.56,
+      "40": 49.56,
+      "50": 70.54,
+      "60": 86.21,
+      "70": 93.48,
+      "80": 96.69,
+      "90": 100,
+      "99": 100
+    },
+    "averagePerformanceRate": 58.11
+  },
+  {
     "measureId": "134",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -5258,7 +5283,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 24.03,
       "10": 87.86,
@@ -5283,7 +5308,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.71,
       "10": 79.4,
@@ -5323,31 +5348,6 @@
       "99": 79.02
     },
     "averagePerformanceRate": 20.91
-  },
-  {
-    "measureId": "AAO39",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 1.37,
-      "10": 1.6,
-      "20": 2.27,
-      "30": 3.77,
-      "40": 9.09,
-      "50": 10.64,
-      "60": 11.61,
-      "70": 14.75,
-      "80": 16.9,
-      "90": 21.43,
-      "99": 39.13
-    },
-    "averagePerformanceRate": 10.83
   },
   {
     "measureId": "GIQIC26",
@@ -5400,29 +5400,29 @@
     "averagePerformanceRate": 87.14
   },
   {
-    "measureId": "128",
+    "measureId": "AAO39",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
     "submissionMethod": "registry",
     "isToppedOut": false,
-    "isHighPriority": false,
+    "isHighPriority": true,
     "isInverse": false,
-    "metricType": "singlePerformanceRate",
+    "metricType": "registrySinglePerformanceRate",
     "isToppedOutByProgram": false,
     "percentiles": {
-      "1": 0.17,
-      "10": 7.38,
-      "20": 17.24,
-      "30": 20.56,
-      "40": 49.56,
-      "50": 70.54,
-      "60": 86.21,
-      "70": 93.48,
-      "80": 96.69,
-      "90": 100,
-      "99": 100
+      "1": 1.37,
+      "10": 1.6,
+      "20": 2.27,
+      "30": 3.77,
+      "40": 9.09,
+      "50": 10.64,
+      "60": 11.61,
+      "70": 14.75,
+      "80": 16.9,
+      "90": 21.43,
+      "99": 39.13
     },
-    "averagePerformanceRate": 58.11
+    "averagePerformanceRate": 10.83
   },
   {
     "measureId": "176",
@@ -5433,7 +5433,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 4,
       "10": 25,
@@ -5458,7 +5458,7 @@
     "isHighPriority": true,
     "isInverse": true,
     "metricType": "multiPerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0,
       "10": 0,
@@ -5808,7 +5808,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.33,
       "10": 30.94,
@@ -5833,7 +5833,7 @@
     "isHighPriority": false,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 0.07,
       "10": 40.34,
@@ -5858,7 +5858,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 57.69,
       "10": 99.59,
@@ -5908,7 +5908,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 96.97,
       "10": 99.04,
@@ -5983,7 +5983,7 @@
     "isHighPriority": true,
     "isInverse": false,
     "metricType": "singlePerformanceRate",
-    "isToppedOutByProgram": true,
+    "isToppedOutByProgram": false,
     "percentiles": {
       "1": 31.69,
       "10": 75.73,
@@ -6050,31 +6050,6 @@
     "averagePerformanceRate": 87.44
   },
   {
-    "measureId": "FOTO5",
-    "benchmarkYear": 2024,
-    "performanceYear": 2026,
-    "submissionMethod": "registry",
-    "isToppedOut": false,
-    "isHighPriority": true,
-    "isInverse": false,
-    "metricType": "registrySinglePerformanceRate",
-    "isToppedOutByProgram": false,
-    "percentiles": {
-      "1": 6.25,
-      "10": 33.82,
-      "20": 42.86,
-      "30": 45.45,
-      "40": 52.38,
-      "50": 61.11,
-      "60": 76.32,
-      "70": 80,
-      "80": 81.48,
-      "90": 93.33,
-      "99": 100
-    },
-    "averagePerformanceRate": 62.72
-  },
-  {
     "measureId": "QMM28",
     "benchmarkYear": 2024,
     "performanceYear": 2026,
@@ -6098,6 +6073,31 @@
       "99": 100
     },
     "averagePerformanceRate": 43.89
+  },
+  {
+    "measureId": "FOTO5",
+    "benchmarkYear": 2024,
+    "performanceYear": 2026,
+    "submissionMethod": "registry",
+    "isToppedOut": false,
+    "isHighPriority": true,
+    "isInverse": false,
+    "metricType": "registrySinglePerformanceRate",
+    "isToppedOutByProgram": false,
+    "percentiles": {
+      "1": 6.25,
+      "10": 33.82,
+      "20": 42.86,
+      "30": 45.45,
+      "40": 52.38,
+      "50": 61.11,
+      "60": 76.32,
+      "70": 80,
+      "80": 81.48,
+      "90": 93.33,
+      "99": 100
+    },
+    "averagePerformanceRate": 62.72
   },
   {
     "measureId": "113SSP",
