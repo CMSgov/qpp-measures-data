@@ -128,6 +128,7 @@ export interface QualityMeasure extends BaseMeasure {
     clinicalGuidelineChanged: string[];
     isHighPriority: boolean;
     isInverse: boolean;
+    dataDisplayFormat: DataDisplayFormat;
     overallAlgorithm?: string | null;
     strata?: Stratum[];
     primarySteward: string;
@@ -180,7 +181,14 @@ export interface QualityMeasure extends BaseMeasure {
 export interface AggregateCostMeasure extends BaseMeasure {
     category: Category.COST;
     isInverse: boolean;
+    dataDisplayFormat: DataDisplayFormat;
     submissionMethods: string[];
 }
 
 export type Measure = IAMeasure | PIMeasure | QualityMeasure | AggregateCostMeasure;
+
+export enum DataDisplayFormat {
+    CURRENCY = 'currency',
+    PERCENTAGE = 'percentage',
+    DECIMAL = 'decimal'
+}
