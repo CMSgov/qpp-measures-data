@@ -127,7 +127,7 @@ definitions:
             type: boolean
             default: false
           dataDisplayFormat:
-            description: Defines what the benchmark value represents.
+            description: Defines how the data is to be displayed by the UI.
             oneOf: [ { $ref: '#/definitions/dataDisplayFormat' } ]
           submissionMethods:
             description: Possible methods for submitting performance data for the measure.
@@ -176,7 +176,7 @@ definitions:
             type: boolean
             default: false
           dataDisplayFormat:
-            description: Defines what the benchmark value represents.
+            description: Defines how the data is to be displayed by the UI.
             oneOf: [ { $ref: '#/definitions/dataDisplayFormat' } ]
           overallAlgorithm:
             description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
