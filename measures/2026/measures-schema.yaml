@@ -126,9 +126,13 @@ definitions:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
             default: false
+          dataDisplayFormat:
+            description: Defines how the data is to be displayed by the UI.
+            oneOf: [ { $ref: '#/definitions/dataDisplayFormat' } ]
           submissionMethods:
             description: Possible methods for submitting performance data for the measure.
             type: array
+        required: [dataDisplayFormat]
 
   qualityMeasure:
     $merge:
@@ -171,6 +175,9 @@ definitions:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
             default: false
+          dataDisplayFormat:
+            description: Defines how the data is to be displayed by the UI.
+            oneOf: [ { $ref: '#/definitions/dataDisplayFormat' } ]
           overallAlgorithm:
             description: Formula to determine the overall performance rate, given multiple strata of performance rates. Only applicable to multiPerformanceRate measures.
             enum: [simpleAverage, weightedAverage, sumNumerators, overallStratumOnly, split]
@@ -257,7 +264,7 @@ definitions:
             }
           }
         ]
-        required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
+        required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, dataDisplayFormat, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object
@@ -333,6 +340,12 @@ definitions:
       - process
       - structure
       - patientReportedOutcome
+
+  dataDisplayFormat:
+    enum:
+      - currency
+      - percentage
+      - decimal
 
   methods:
     enum:
