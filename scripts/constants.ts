@@ -270,6 +270,7 @@ export const QUALITY_MEASURES_ORDER = {
     'primarySteward': undefined,
     'primarySteward1': undefined,
     'isInverse': undefined,
+    'dataDisplayFormat': undefined,
     'isRiskAdjusted': undefined,
     'isIcdImpacted': undefined,
     'icdImpacted': undefined,
@@ -305,6 +306,7 @@ export const QCDR_MEASURES_ORDER = {
     'isHighPriority': undefined,
     'primarySteward': undefined,
     'isInverse': undefined,
+    'dataDisplayFormat': undefined,
     'isRiskAdjusted': undefined,
     'isIcdImpacted': undefined,
     'icdImpacted': undefined,
@@ -363,6 +365,7 @@ export const COST_MEASURES_ORDER = {
     'firstPerformanceYear': undefined,
     'lastPerformanceYear': undefined,
     'isInverse': undefined,
+    'dataDisplayFormat': undefined,
     'submissionMethods': undefined,
     'measureSpecification': undefined,
     'allowedPrograms': undefined,
@@ -384,6 +387,7 @@ export const BENCHMARKS_ORDER = {
 
 export const COST_DEFAULT_VALUES = {
     metricType: 'costScore',
+    dataDisplayFormat: 'currency',
     lastPerformanceYear: null,
     allowedRegistrationTypes: [
         'apm',
@@ -419,6 +423,7 @@ export const QUALITY_DEFAULT_VALUES = {
     eMeasureId: null,
     nqfEMeasureId: null,
     nqfId: null,
+    dataDisplayFormat: 'percentage',
     lastPerformanceYear: null,
     isRiskAdjusted: false,
     icdImpacted: [],
@@ -456,4 +461,10 @@ export const PI_DEFAULT_PROGRAMS = [
     Programs.APP1,
     Programs.APP_PLUS,
     Programs.SSP,
+];
+
+export const DATA_DISPLAY_FORMAT = [
+    'currency',
+    'percentage',
+    'decimal',
 ];
