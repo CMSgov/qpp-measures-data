@@ -132,6 +132,17 @@ For new MVPs, you will need to update the mvp list in the measures-schema.yaml f
 
 Add or update `cost-national-averages.csv` to `util/benchmarks/$YEAR/` and run `npm run build:benchmarks $YEAR` 
 
+### Generating a data dictionary CSV
+
+The `export:data-dictionary` script generates a CSV file containing a data dictionary for the measures, benchmarks, and MVP schema files for a specified year. The output includes details such as definitions, property names, types, and descriptions.
+
+To run the script, use the following command:
+
+```bash
+nvm use
+npm run export:data-dictionary -- --year <YEAR>
+```
+
 ## Testing
 
 When making changes to measures-data, include tests in the .spec.ts files and make sure existing tests still pass using:
