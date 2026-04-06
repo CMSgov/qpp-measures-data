@@ -12,16 +12,17 @@ import { mergePiLinks } from './merge-pi-links';
 import { mergeCostLinks } from './merge-cost-links';
 import { Measure } from '../../../util/interfaces';
 import { Category } from '../../../util/interfaces/measure';
+import { LinkData } from './ingest-specifications-links';
 
 const testLinksCSV = parse(
     fs.readFileSync(path.join(appRoot + '', 'test/measures/test-spec-links.csv'), 'utf8'),
     { columns: true, skip_empty_lines: true, bom: true }
-);
+) as LinkData[];
 
 const testeLinksCSV = parse(
     fs.readFileSync(path.join(appRoot + '', 'test/measures/test-spec-elinks.csv'), 'utf8'),
     { columns: true, skip_empty_lines: true, bom: true }
-);
+) as { link: string; eMeasureId: string; }[];
 
 describe('Specification Links Mergers', () => {
     it('merges Claims links into the measures-data json', () => {

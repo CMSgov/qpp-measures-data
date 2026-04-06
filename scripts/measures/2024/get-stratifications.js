@@ -14,7 +14,6 @@ Usage: ./get-stratification.js <current year>
 const _ = require('lodash');
 const fs = require('fs');
 const os = require('os');
-const rimraf = require('rimraf');
 const path = require('path');
 const bbPromise = require('bluebird');
 const parseString = require('xml2js').parseString;
@@ -30,7 +29,7 @@ if (!currentYear) {
 }
 
 // gather list of xml files
-rimraf.sync(tmpDir);
+fs.rmSync(tmpDir, { recursive: true, force: true });
 extractZip(zipPath, tmpDir);
 // each measure has its own zip, collect name of SimpleXML files
 const xmlFiles = getXMLFiles(tmpDir, tmpPath);
