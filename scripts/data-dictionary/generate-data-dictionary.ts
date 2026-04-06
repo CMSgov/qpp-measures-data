@@ -161,6 +161,7 @@ async function readSchema(filePath: string): Promise<SchemaDocument> {
     } catch (error) {
         throw new Error(
             `Unable to parse YAML from ${filePath}. ${(error as Error).message}`,
+            { cause: error },
         );
     }
 }

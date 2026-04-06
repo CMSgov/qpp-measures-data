@@ -1,6 +1,7 @@
 import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import papa from 'papaparse';
+import * as logger from '../logger';
 
 jest.mock('app-root-path', () => ({
     toString: () => '/mock-root'
@@ -52,7 +53,7 @@ describe('json-to-csv', () => {
 
     describe('createJson', () => {
         it('errors and returns for invalid category', () => {
-            const errorSpy = jest.spyOn(require('../logger'), 'error').mockImplementation(jest.fn());
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
             jsonToCsv.createJson('2025', 'invalid' as Category);
             expect(errorSpy).toHaveBeenCalledWith(
                 expect.stringContaining('category invalid is not valid')

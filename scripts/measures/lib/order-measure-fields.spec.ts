@@ -2,6 +2,7 @@ import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import * as fs from 'fs';
 import * as orderMeasureFieldsModule from './order-measure-fields';
 import { Measure } from '../../../util/interfaces/measure';
+import type * as measuresLibType from './measures-lib';
 
 jest.mock('fs');
 jest.mock('app-root-path', () => ({
@@ -12,8 +13,9 @@ jest.mock('./measures-lib', () => ({
     writeToFile: jest.fn()
 }));
 
-const mockOrderFields = require('./measures-lib').orderFields;
-const mockWriteToFile = require('./measures-lib').writeToFile;
+const measuresLibMock = jest.mocked(jest.requireMock<typeof measuresLibType>('./measures-lib'));
+const mockOrderFields = measuresLibMock.orderFields;
+const mockWriteToFile = measuresLibMock.writeToFile;
 
 describe('orderMeasuresFields', () => {
     const performanceYear = '2025';
