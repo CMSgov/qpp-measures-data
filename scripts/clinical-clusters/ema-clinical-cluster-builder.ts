@@ -254,7 +254,7 @@ function populateClinicalClusters(
   filePath: string
 ) {
   const contents = fs.readFileSync(path.join(appRoot + '', `${filePath}`), 'utf8');
-  const rows = parse(contents, { columns: true });
+  const rows = parse(contents, { columns: true }) as { Title: string; 'Quality ID': string; }[];
 
   // group the measures by cluster
   const byClusterName = _.chain(rows)

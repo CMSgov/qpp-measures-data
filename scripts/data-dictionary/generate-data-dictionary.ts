@@ -159,10 +159,11 @@ async function readSchema(filePath: string): Promise<SchemaDocument> {
     try {
         return YAML.parse(yamlContent) as SchemaDocument;
     } catch (error) {
-        throw new Error(
+        const parseError = new Error(
             `Unable to parse YAML from ${filePath}. ${(error as Error).message}`,
-            { cause: error },
-        );
+        ) as Error & { cause?: unknown };
+        parseError.cause = error;
+        throw parseError;
     }
 }
 
