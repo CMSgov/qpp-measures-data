@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
 import { mergeBenchmarkFiles } from './merge-benchmark-files';
 import * as benchmarksUtil from './util';
 import fs from 'fs';
@@ -9,10 +10,10 @@ jest.mock('app-root-path', () => ({
 const performanceYear = 2023;
 
 describe('Merge Benchmark Files', () => {
-    let writeSpy: jest.SpyInstance;
+    let writeSpy: jest.Spied<typeof benchmarksUtil.writeToFile>;
 
     beforeEach(() => {
-        writeSpy = jest.spyOn(benchmarksUtil, 'writeToFile').mockImplementation();
+        writeSpy = jest.spyOn(benchmarksUtil, 'writeToFile').mockImplementation(jest.fn());
     });
 
     afterEach(() => {
@@ -54,7 +55,7 @@ describe('Merge Benchmark Files', () => {
         mergeBenchmarkFiles('test/benchmarks/merge-input-files/', performanceYear);
 
         // Should call writeToFile with sorted benchmarks
-        expect(writeSpy).toBeCalledWith(
+        expect(writeSpy).toHaveBeenCalledWith(
             expect.arrayContaining([
                 expect.objectContaining({ measureId: '001' }),
                 expect.objectContaining({ measureId: '002' })

@@ -286,8 +286,10 @@ export function orderFields(measure: Measure): Measure {
                 return Object.assign({}, QCDR_MEASURES_ORDER, measure);
             }
             return Object.assign({}, QUALITY_MEASURES_ORDER, measure);
-        default:
-            throw new DataValidationError(measure.measureId, `Measures category '${measure.category}' is not recognized.`);
+        default: {
+            const m = measure as unknown as { measureId: string; category: string };
+            throw new DataValidationError(m.measureId, `Measures category '${m.category}' is not recognized.`);
+        }
 
     }
 }

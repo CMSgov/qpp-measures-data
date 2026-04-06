@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import fse from 'fs-extra';
 import { vol } from 'memfs';
@@ -84,7 +85,7 @@ describe('index', () => {
 
             index.getProgramNames();
 
-            expect(logSpy).toBeCalled();
+            expect(logSpy).toHaveBeenCalled();
         });
     });
 
@@ -329,7 +330,7 @@ describe('index', () => {
             });
 
             expect(index.getClinicalClusterData(2050)).toStrictEqual([]);
-            expect(logSpy).toBeCalledTimes(1);
+            expect(logSpy).toHaveBeenCalledTimes(1);
         });
     });
 
@@ -354,7 +355,7 @@ describe('index', () => {
     });
 
     describe('getMVPData', () => {
-        let createMvpFileSpy: jest.SpyInstance;
+        let createMvpFileSpy: jest.Spied<typeof mvpDataUtils.createMVPDataFile>;
         beforeEach(() => {
             createMvpFileSpy = jest.spyOn(mvpDataUtils, 'createMVPDataFile').mockImplementation(() => mockMvpJson);
         });
@@ -379,7 +380,7 @@ describe('index', () => {
             });
 
             expect(index.getMVPData(2024)).toStrictEqual(enrichedMvpArray);
-            expect(createMvpFileSpy).not.toBeCalled();
+            expect(createMvpFileSpy).not.toHaveBeenCalled();
         });
 
         it('returns the mvp data for the specified mvps and performance year.', () => {
@@ -410,7 +411,7 @@ describe('index', () => {
                     }
                 ]
             );
-            expect(createMvpFileSpy).not.toBeCalled();
+            expect(createMvpFileSpy).not.toHaveBeenCalled();
         });
 
         it('attempts to create an enriched mvp file if none exist for the specified performance year.', () => {
@@ -420,14 +421,14 @@ describe('index', () => {
 
             index.getMVPData(2024);
 
-            expect(createMvpFileSpy).toBeCalledTimes(1);
+            expect(createMvpFileSpy).toHaveBeenCalledTimes(1);
         });
     });
 
     describe('createMVPDataFile', () => {
-        let writeSpy: jest.SpyInstance;
-        let populateSpy: jest.SpyInstance;
-        let getSpy: jest.SpyInstance;
+        let writeSpy: jest.Spied<typeof fse.writeFileSync>;
+        let populateSpy: jest.Spied<typeof mvpDataUtils.populateMeasuresforMVPs>;
+        let getSpy: jest.Spied<typeof index.getMeasuresData>;
         beforeEach(() => {
             writeSpy = jest.spyOn(fse, 'writeFileSync').mockImplementation(jest.fn());
             populateSpy = jest.spyOn(mvpDataUtils, 'populateMeasuresforMVPs').mockImplementation(jest.fn());
@@ -527,11 +528,11 @@ describe('index', () => {
                 }
             ]);
             // one for each data file.
-            expect(writeSpy).toBeCalledTimes(2);
+            expect(writeSpy).toHaveBeenCalledTimes(2);
 
             // one for each mvp (2) for each measure type (6).
-            expect(populateSpy).toBeCalledTimes(12);
-            expect(getSpy).toBeCalledTimes(1);
+            expect(populateSpy).toHaveBeenCalledTimes(12);
+            expect(getSpy).toHaveBeenCalledTimes(1);
         });
 
         it('gracefully logs error message when unable to access mvp data.', () => {
@@ -542,10 +543,10 @@ describe('index', () => {
             });
 
             expect(mvpDataUtils.createMVPDataFile(2024)).toStrictEqual([]);
-            expect(logSpy).toBeCalled();
-            expect(writeSpy).not.toBeCalled();
-            expect(populateSpy).not.toBeCalled();
-            expect(getSpy).not.toBeCalled();
+            expect(logSpy).toHaveBeenCalled();
+            expect(writeSpy).not.toHaveBeenCalled();
+            expect(populateSpy).not.toHaveBeenCalled();
+            expect(getSpy).not.toHaveBeenCalled();
         });
     });
 
@@ -652,7 +653,7 @@ describe('index', () => {
             });
 
             expect(index.getMVPDataSlim(2024)).toStrictEqual(undefined);
-            expect(logSpy).toBeCalledWith('mvp.json file does not exist');
+            expect(logSpy).toHaveBeenCalledWith('mvp.json file does not exist');
         });
     });
 

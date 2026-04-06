@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import fs from 'fs-extra';
 import { updateAllowedPrograms } from './manage-allowed-programs';
 import { Category, Programs } from '../../util/interfaces/measure';
@@ -31,9 +32,9 @@ Test MVP,G0053,Test Description,Test Specialties,Test Topic,Improvement,IA_1
 Test MVP,G0053,Test Description,Test Specialties,Test Topic,Quality,039
 Test MVP,M0001,Another MVP,Test Specialties,Test Topic,Improvement,IA_BE_1`;
     
-    let fsWriteSpy: jest.SpyInstance;
-    let consoleLogSpy: jest.SpyInstance;
-    let consoleErrorSpy: jest.SpyInstance;
+    let fsWriteSpy: jest.Spied<typeof fs.writeFileSync>;
+    let consoleLogSpy: jest.Spied<typeof logger.info>;
+    let consoleErrorSpy: jest.Spied<typeof logger.error>;
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -146,19 +147,19 @@ Test MVP,M0001,Another MVP,Test Specialties,Test Topic,Improvement,IA_BE_1`;
             expect(fsWriteSpy).toHaveBeenCalledTimes(2); // measures-data.json + mvp.csv
             
             // Check measures-data.json update
-            const measuresCall = fsWriteSpy.mock.calls.find(call => call[0].includes('measures-data.json'));
+            const measuresCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('measures-data.json'));
             expect(measuresCall).toBeDefined();
             
-            const updatedMeasures = JSON.parse(measuresCall[1]);
+            const updatedMeasures = JSON.parse(measuresCall![1] as string);
             const ia1Measure = updatedMeasures.find((m: Measure) => m.measureId === 'IA_1');
             expect(ia1Measure.allowedPrograms).not.toContain('G0053');
             expect(ia1Measure.allowedPrograms).toContain(Programs.MIPS);
             
             // Check CSV update
-            const csvCall = fsWriteSpy.mock.calls.find(call => call[0].includes('mvp.csv'));
+            const csvCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('mvp.csv'));
             expect(csvCall).toBeDefined();
             
-            const updatedCsvContent = csvCall[1];
+            const updatedCsvContent = csvCall![1];
             expect(updatedCsvContent).not.toContain('Test MVP,G0053,Test Description,Test Specialties,Test Topic,Improvement,IA_1');
             expect(updatedCsvContent).toContain('Test MVP,G0053,Test Description,Test Specialties,Test Topic,Quality,039'); // Quality measures should remain
             
@@ -250,7 +251,7 @@ Test MVP,M0001,Another MVP,Test Specialties,Test Topic,Improvement,IA_BE_1`;
             updateAllowedPrograms('2025', 'quality', 'G0053' as Programs, 'remove');
             
             // Check that it looked for Quality category in CSV
-            const csvCall = fsWriteSpy.mock.calls.find(call => call[0].includes('mvp.csv'));
+            const csvCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('mvp.csv'));
             expect(csvCall).toBeDefined();
             expect(consoleLogSpy).toHaveBeenCalledWith('  - Removed measure "039" from MVP "G0053" (Quality) in CSV');
         });
@@ -277,7 +278,7 @@ Test MVP,G0053,Test Description,Test Specialties,Test Topic,Improvement,IA_1
             updateAllowedPrograms('2025', 'ia', 'G0053' as Programs, 'remove');
             
             // Should still work despite malformed line
-            const csvCall = fsWriteSpy.mock.calls.find(call => call[0].includes('mvp.csv'));
+            const csvCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('mvp.csv'));
             expect(csvCall).toBeDefined();
             expect(consoleLogSpy).toHaveBeenCalledWith('  - Removed measure "IA_1" from MVP "G0053" (Improvement) in CSV');
         });

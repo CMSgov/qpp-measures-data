@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
@@ -113,7 +114,7 @@ describe('#update-measures-util', () => {
             MeasuresLib.deleteMeasure('001', 'quality', volatileMeasures, 'util/measures/2024/');
 
             expect(_.find(volatileMeasures, { measureId: '001' })).toBeUndefined();
-            expect(infoSpy).toBeCalledWith(`Measure '001' removed.`);
+            expect(infoSpy).toHaveBeenCalledWith(`Measure '001' removed.`);
         });
 
         it('should fail to delete the measure if not found', () => {
@@ -121,7 +122,7 @@ describe('#update-measures-util', () => {
 
             MeasuresLib.deleteMeasure('notameasureid', 'qcdr', volatileMeasures, 'util/measures/2024/');
 
-            expect(warningSpy).toBeCalledWith(`Attempted to delete notameasureid, but not found.`);
+            expect(warningSpy).toHaveBeenCalledWith(`Attempted to delete notameasureid, but not found.`);
         });
     });
 
