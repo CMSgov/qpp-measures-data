@@ -1,3 +1,4 @@
+import { describe, it, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
@@ -108,7 +109,7 @@ describe('#csv-json-converter', () => {
     it('converts a Quality csv to json', () => {
         const loggerSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
         expect(convertCsvToJson(qualityChangesCSV)).toEqual([qualityJson, qcdrMeasure]);
-        expect(loggerSpy).toBeCalledWith('Quality measures cannot be Risk Adjusted. Setting isRiskAdjusted to false.');
+        expect(loggerSpy).toHaveBeenCalledWith('Quality measures cannot be Risk Adjusted. Setting isRiskAdjusted to false.');
     });
 
     it('converts a QCDR multiPerfRate measure to json', () => {
@@ -123,12 +124,12 @@ describe('#csv-json-converter', () => {
     it('throws InvalidValueError for badly mapped array data', () => {
         expect(() => {
             convertCsvToJson(badQcdrMeasures);
-        }).toThrowError(new InvalidValueError('Collection Type(s) where Truncated', 'PartBaddataClaims'));
+        }).toThrow(new InvalidValueError('Collection Type(s) where Truncated', 'PartBaddataClaims'));
     });
 
     it('throws InvalidValueError for badly mapped boolean data', () => {
         expect(() => {
             convertCsvToJson(badPiMeasures);
-        }).toThrowError(new InvalidValueError('Bonus', 'Yes'));
+        }).toThrow(new InvalidValueError('Bonus', 'Yes'));
     });
 });

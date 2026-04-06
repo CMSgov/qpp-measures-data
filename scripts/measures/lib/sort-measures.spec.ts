@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import * as fs from 'fs';
 import * as sortMeasuresModule from './sort-measures';
 import { Measure } from '../../../util/interfaces/measure';
@@ -89,7 +90,7 @@ describe('sortMeasures', () => {
             { category: 'ia', measureId: 'IA_AHE_1' } as Measure
         ];
         (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify(input));
-        const logSpy = jest.spyOn(console, 'log').mockImplementation();
+        const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
 
         sortMeasuresModule.sortMeasures(performanceYear);
 

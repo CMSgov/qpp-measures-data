@@ -1,3 +1,4 @@
+import { describe, it, expect, jest } from '@jest/globals';
 
 import appRoot from 'app-root-path';
 import fs from 'fs';
@@ -24,32 +25,32 @@ describe('ingest-strata', () => {
         );
         jest.spyOn(JSON, 'parse').mockReturnValueOnce(measuresJson);
         const writeSpy = jest.spyOn(Util, 'writeToFile');
-        writeSpy.mockImplementation();
+        writeSpy.mockImplementation(jest.fn());
         
         ingestStrata(performanceYear, strataPath);
         
-        expect(writeSpy).toBeCalledWith(measuresResultJson, `measures/${performanceYear}/measures-data.json`);
+        expect(writeSpy).toHaveBeenCalledWith(measuresResultJson, `measures/${performanceYear}/measures-data.json`);
     });
 
     it('fails to ingest strata if the measureId is blank in the csv.', () => {
         const strataPath = `${testDataPath}/blank-measureid-quality-strata.csv`;
         jest.spyOn(JSON, 'parse').mockReturnValueOnce(measuresJson);
         const writeSpy = jest.spyOn(Util, 'writeToFile');
-        writeSpy.mockImplementation();
+        writeSpy.mockImplementation(jest.fn());
 
         expect(() => {
             ingestStrata(performanceYear, strataPath);
-        }).toThrowError(new DataValidationError(strataPath, 'MeasureId is required.'));
+        }).toThrow(new DataValidationError(strataPath, 'MeasureId is required.'));
     });
 
     it('fails to ingest strata if the name or description is blank in the csv.', () => {
         const strataPath = `${testDataPath}/bad-quality-strata.csv`;
         jest.spyOn(JSON, 'parse').mockReturnValueOnce(measuresJson);
         const writeSpy = jest.spyOn(Util, 'writeToFile');
-        writeSpy.mockImplementation();
+        writeSpy.mockImplementation(jest.fn());
         
         expect(() => {
             ingestStrata(performanceYear, strataPath);
-        }).toThrowError(new DataValidationError(strataPath, 'Name and description are required.'));
+        }).toThrow(new DataValidationError(strataPath, 'Name and description are required.'));
     });
 });

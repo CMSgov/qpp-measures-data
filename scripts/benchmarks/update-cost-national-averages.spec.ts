@@ -1,3 +1,4 @@
+import { describe, it, expect, jest } from '@jest/globals';
 import { convertCsvToJson } from './update-cost-national-averages';
 import * as Utils from './util';
 import { DataValidationError } from '../errors';
@@ -35,18 +36,18 @@ const successfulJsonOutput = [
 
 describe('Benchmarks Cost National Averages.', () => {
     it('Successfully creates a json from a csv.', () => {
-        const writeSpy = jest.spyOn(Utils, 'writeToFile').mockImplementation();
+        const writeSpy = jest.spyOn(Utils, 'writeToFile').mockImplementation(jest.fn());
         
         convertCsvToJson('test/benchmarks/cost-national-averages.csv', 2023, 'cost-national-averages');
         
-        expect(writeSpy).toBeCalledWith(successfulJsonOutput, 'benchmarks/2023/cost-national-averages.json')
+        expect(writeSpy).toHaveBeenCalledWith(successfulJsonOutput, 'benchmarks/2023/cost-national-averages.json')
     });
 
     it('Fails to create the json if a measureId is missing.', () => {
-        jest.spyOn(Utils, 'writeToFile').mockImplementation();
+        jest.spyOn(Utils, 'writeToFile').mockImplementation(jest.fn());
         
         expect(() => {
             convertCsvToJson('test/benchmarks/bad-measureid-cost-national-averages.csv', 2023, 'cost-national-averages');
-        }).toThrowError(new DataValidationError('Cost National Average CSV', `Validation Failed. All rows need a measureId.`));
+        }).toThrow(new DataValidationError('Cost National Average CSV', `Validation Failed. All rows need a measureId.`));
     });
 });

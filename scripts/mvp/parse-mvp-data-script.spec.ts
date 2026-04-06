@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
@@ -23,7 +24,7 @@ const testmvpJson: any[] = JSON.parse(
 );
 
 describe('parseMvpData', () => {
-    let writeFileSpy: jest.SpyInstance;
+    let writeFileSpy: jest.Spied<typeof Lib.writeToFile>;
     beforeEach(() => {
         writeFileSpy = jest.spyOn(Lib, 'writeToFile').mockImplementation(jest.fn());
     });
@@ -44,7 +45,7 @@ describe('parseMvpData', () => {
             },
         });
         parseMvpData('2024');
-        expect(writeFileSpy).toBeCalledWith(
+        expect(writeFileSpy).toHaveBeenCalledWith(
             testmvpJson,
             'mvp/2024/mvp.json',
         )
@@ -62,6 +63,6 @@ describe('parseMvpData', () => {
             },
         });
         parseMvpData('2024');
-        expect(logSpy).toBeCalledWith('Measure not found for measureId fakeId for mvpId M1368');
+        expect(logSpy).toHaveBeenCalledWith('Measure not found for measureId fakeId for mvpId M1368');
     });
 });

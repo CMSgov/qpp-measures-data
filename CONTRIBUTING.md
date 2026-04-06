@@ -153,6 +153,16 @@ npm test
 
 We also use Github Actions CI to run tests on every branch.
 
+### Jest globals in spec files
+
+This project does **not** use `@types/jest`. Instead, all `.spec.ts` files must explicitly import the Jest globals they need from `@jest/globals` (which ships with `jest` — no additional dependency required):
+
+```ts
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
+```
+
+Only import the names your file actually uses. This avoids ambient type pollution and removes the need for a third-party `@types/jest` package that may lag on CVE patches.
+
 ## Versioning, publishing, and creating new releases
 
 The release process is semi-automated via github actions. A number of steps are necessarily left manual (such as versioning) and require intervention from the user.

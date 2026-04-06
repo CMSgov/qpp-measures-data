@@ -1,3 +1,4 @@
+import { describe, it, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import fse from 'fs-extra';
 import { vol } from 'memfs';
@@ -27,7 +28,7 @@ describe("updateProgramNames", () => {
 
     updateProgramNames.updateProgramNames(2024);
 
-    expect(writeSpy).toBeCalledWith(
+    expect(writeSpy).toHaveBeenCalledWith(
       expect.any(String),
       JSON.stringify(
         {
@@ -61,7 +62,7 @@ describe("updateProgramNames", () => {
 
     updateProgramNames.updateProgramNames(2024);
 
-    expect(writeSpy).not.toBeCalled();
-    expect(logSpy).toBeCalled();
+    expect(writeSpy).not.toHaveBeenCalled();
+    expect(logSpy).toHaveBeenCalled();
   });
 });

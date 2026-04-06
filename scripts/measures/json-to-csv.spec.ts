@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import papa from 'papaparse';
 
@@ -51,7 +52,7 @@ describe('json-to-csv', () => {
 
     describe('createJson', () => {
         it('errors and returns for invalid category', () => {
-            const errorSpy = jest.spyOn(require('../logger'), 'error').mockImplementation();
+            const errorSpy = jest.spyOn(require('../logger'), 'error').mockImplementation(jest.fn());
             jsonToCsv.createJson('2025', 'invalid' as Category);
             expect(errorSpy).toHaveBeenCalledWith(
                 expect.stringContaining('category invalid is not valid')
@@ -60,7 +61,7 @@ describe('json-to-csv', () => {
         });
 
         it('writes IA/PI/COST measures to JSON and CSV', () => {
-            const fsWriteSpy = jest.spyOn(fs, 'writeFile').mockImplementation();
+            const fsWriteSpy = jest.spyOn(fs, 'writeFile').mockImplementation(jest.fn());
             ['ia', 'pi', 'cost'].forEach(cat => {
                 jsonToCsv.createJson('2025', cat as Category);
                 expect(fsWriteSpy).toHaveBeenCalledWith(
@@ -77,7 +78,7 @@ describe('json-to-csv', () => {
         });
 
         it('writes QCDR/QUALITY measures to JSON and CSV with strata as an array', () => {
-            const fswriteSpy = jest.spyOn(fs, 'writeFile').mockImplementation();
+            const fswriteSpy = jest.spyOn(fs, 'writeFile').mockImplementation(jest.fn());
             ['qcdr', 'quality'].forEach(category => {
                 jsonToCsv.createJson('2025', category as Category);
                 // Should write JSON
