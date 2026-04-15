@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
 import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
@@ -132,14 +133,14 @@ const qcdrStrata = fs.readFileSync(path.join(appRoot + '', `test/measures/${perf
 describe('update-measures', () => {
     describe('updateMeasures', () => {
         let volatileMeasures: any;
-        let updateFileSpy: jest.SpyInstance, writeFileSpy: jest.SpyInstance;
+        let updateFileSpy: jest.Spied<typeof UpdateMeasures.ingestChangeFile>, writeFileSpy: jest.Spied<typeof Lib.writeToFile>;
         let logSpy: any, warningSpy: any;
         let volFileStructure: NestedDirectoryJSON;
 
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
 
-            updateFileSpy = jest.spyOn(UpdateMeasures, 'ingestChangeFile').mockImplementation(jest.fn());
+            updateFileSpy = jest.spyOn(UpdateMeasures, 'ingestChangeFile').mockImplementation(() => 0);
             writeFileSpy = jest.spyOn(Lib, 'writeToFile').mockImplementation(jest.fn());
             logSpy = jest.spyOn(logger, 'info').mockImplementation(jest.fn());
             warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
@@ -167,9 +168,9 @@ describe('update-measures', () => {
 
             updateMeasures(`${performanceYear}`);
 
-            expect(updateFileSpy).toBeCalledTimes(2);
-            expect(writeFileSpy).toBeCalledTimes(1);
-            expect(logSpy).not.toBeCalled();
+            expect(updateFileSpy).toHaveBeenCalledTimes(2);
+            expect(writeFileSpy).toHaveBeenCalledTimes(1);
+            expect(logSpy).not.toHaveBeenCalled();
         });
 
         it('does nothing and logs if no new files are found', () => {
@@ -182,9 +183,9 @@ describe('update-measures', () => {
 
             updateMeasures(`${performanceYear}`);
 
-            expect(updateFileSpy).not.toBeCalled();
-            expect(writeFileSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith('No new change files found.');
+            expect(updateFileSpy).not.toHaveBeenCalled();
+            expect(writeFileSpy).not.toHaveBeenCalled();
+            expect(warningSpy).toHaveBeenCalledWith('No new change files found.');
         });
 
         it('handles an empty change file', () => {
@@ -195,19 +196,19 @@ describe('update-measures', () => {
 
             updateMeasures(`${performanceYear}`);
 
-            expect(updateFileSpy).not.toBeCalled();
-            expect(writeFileSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith('No new change files found.');
+            expect(updateFileSpy).not.toHaveBeenCalled();
+            expect(writeFileSpy).not.toHaveBeenCalled();
+            expect(warningSpy).toHaveBeenCalledWith('No new change files found.');
         });
     });
 
     describe('ingestChangeFile', () => {
         let volatileMeasures: any;
-        let updateSpy: jest.SpyInstance, addSpy: jest.SpyInstance, deleteSpy: jest.SpyInstance;
+        let updateSpy: jest.Spied<typeof Lib.updateMeasure>, addSpy: jest.Spied<typeof Lib.addMeasure>, deleteSpy: jest.Spied<typeof Lib.deleteMeasure>;
 
         beforeEach(() => {
             volatileMeasures = [...measuresJson];
-            const volFileStructure = {
+            const volFileStructure: NestedDirectoryJSON = {
                 'fakepath': {
                     'test.csv': 'fakevalue',
                 }
@@ -221,7 +222,7 @@ describe('update-measures', () => {
             updateSpy = jest.spyOn(Lib, 'updateMeasure');
             addSpy = jest.spyOn(Lib, 'addMeasure');
             deleteSpy = jest.spyOn(Lib, 'deleteMeasure');
-            jest.spyOn(process, 'exit').mockImplementation();
+            jest.spyOn(process, 'exit').mockImplementation(() => undefined as never);
             jest.spyOn(Lib, 'updateChangeLog').mockImplementation(jest.fn());
 
         });
@@ -245,10 +246,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
+            expect(updateSpy).toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds IA measure', () => {
@@ -261,10 +262,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`New measure 'IA_EPA_2_NEW' added.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`New measure 'IA_EPA_2_NEW' added.`);
         });
 
         it('successfully updates PI measure', () => {
@@ -281,10 +282,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
+            expect(updateSpy).toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds PI measure', () => {
@@ -297,10 +298,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`New measure 'PI_PPHI_1_NEW' added.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`New measure 'PI_PPHI_1_NEW' added.`);
         });
 
         it('successfully adds Quality measure', () => {
@@ -313,10 +314,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`New measure '133' added.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`New measure '133' added.`);
         });
 
         it('successfully updates QCDR measure', () => {
@@ -333,10 +334,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
+            expect(updateSpy).toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('successfully adds QCDR measure', () => {
@@ -349,10 +350,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`New measure 'abc' added.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`New measure 'abc' added.`);
         });
 
         it('throws when category is not included', () => {
@@ -366,10 +367,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`'IA_EPA_2': Category is required.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`'IA_EPA_2': Category is required.`);
         });
 
         it('logs warnings when certain fields are changed', () => {
@@ -387,16 +388,16 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith(`'001': 'First Performance Year' was changed. Was this deliberate?`);
-            expect(warningSpy).toBeCalledWith(`'001': 'isInverse' was changed. Was this deliberate?`);
-            expect(warningSpy).toBeCalledWith(`'001': 'Metric Type' was changed. Was the strata file also updated to match?`);
-            expect(warningSpy).toBeCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
-            expect(warningSpy).toBeCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
+            expect(updateSpy).toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'First Performance Year' was changed. Was this deliberate?`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'isInverse' was changed. Was this deliberate?`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Metric Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
-            expect(infoSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
+            expect(infoSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('logs warnings when certain fields are changed', () => {
@@ -413,9 +414,9 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(warningSpy).toBeCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`);
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(warningSpy).toHaveBeenCalledWith(`'002': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`);
         });
 
         it('throws if eCQM but has no eMeasureId', () => {
@@ -433,10 +434,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'USWR32': CMS eCQM ID is required if one of the collection types is eCQM.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'USWR32': CMS eCQM ID is required if one of the collection types is eCQM.`);
         });
 
         it('throws if outcome measure is not High Priority', () => {
@@ -454,10 +455,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'005': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'005': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
         });
 
         it('throws if metricType is costScore but submissionMethod does not include administrativeClaims', () => {
@@ -475,10 +476,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
         });
 
         it('throws if metricType is costScore but submissionMethod includes more than just administrativeClaims', () => {
@@ -496,10 +497,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'479': 'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
         });
 
         it('throws if new multiPerfRate measure does not include a Calc Type', () => {
@@ -518,10 +519,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(addSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'NewId': New multiPerformanceRate measures require a Calculation Type.`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'NewId': New multiPerformanceRate measures require a Calculation Type.`);
         });
 
         it('deletes measure', () => {
@@ -539,9 +540,9 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(deleteSpy).toBeCalled();
-            expect(loggerSpy).toBeCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).toHaveBeenCalled();
+            expect(loggerSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
 
         it('logs any validation errors for bad fields', () => {
@@ -559,10 +560,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'005': Validation Failed. More info logged above.`);
-            expect(logSpy).toBeCalledWith([{
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'005': Validation Failed. More info logged above.`);
+            expect(logSpy).toHaveBeenCalledWith([{
                 instancePath: '',
                 keyword: 'additionalProperties',
                 message: 'must NOT have additional properties',
@@ -588,10 +589,10 @@ describe('update-measures', () => {
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toBeCalled();
-            expect(deleteSpy).not.toBeCalled();
-            expect(errorSpy).toBeCalledWith(`'005': Validation Failed. More info logged above.`);
-            expect(logSpy).toBeCalledWith([{
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(deleteSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'005': Validation Failed. More info logged above.`);
+            expect(logSpy).toHaveBeenCalledWith([{
                 instancePath: '/metricType',
                 keyword: 'enum',
                 message: 'must be equal to one of the allowed values',

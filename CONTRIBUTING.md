@@ -132,6 +132,17 @@ For new MVPs, you will need to update the mvp list in the measures-schema.yaml f
 
 Add or update `cost-national-averages.csv` to `util/benchmarks/$YEAR/` and run `npm run build:benchmarks $YEAR` 
 
+### Generating a data dictionary CSV
+
+The `export:data-dictionary` script generates a CSV file containing a data dictionary for the measures, benchmarks, and MVP schema files for a specified year. The output includes details such as definitions, property names, types, and descriptions.
+
+To run the script, use the following command:
+
+```bash
+nvm use
+npm run export:data-dictionary -- --year <YEAR>
+```
+
 ## Testing
 
 When making changes to measures-data, include tests in the .spec.ts files and make sure existing tests still pass using:
@@ -141,6 +152,16 @@ npm test
 ```
 
 We also use Github Actions CI to run tests on every branch.
+
+### Jest globals in spec files
+
+This project does **not** use `@types/jest`. Instead, all `.spec.ts` files must explicitly import the Jest globals they need from `@jest/globals` (which ships with `jest` — no additional dependency required):
+
+```ts
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
+```
+
+Only import the names your file actually uses. This avoids ambient type pollution and removes the need for a third-party `@types/jest` package that may lag on CVE patches.
 
 ## Versioning, publishing, and creating new releases
 

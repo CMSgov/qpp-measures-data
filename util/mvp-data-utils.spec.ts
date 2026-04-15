@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import fse from 'fs-extra';
 import _ from 'lodash';
 
@@ -55,8 +56,8 @@ describe('mvp-data-utils', () => {
         } as any
     ];
     
-    let fseReadSpy: jest.SpyInstance;
-    let fseWriteSpy: jest.SpyInstance;
+    let fseReadSpy: jest.Spied<typeof fse.readFileSync>;
+    let fseWriteSpy: jest.Spied<typeof fse.writeFileSync>;
 
     beforeEach(() => {
         jest.clearAllMocks();
@@ -71,7 +72,7 @@ describe('mvp-data-utils', () => {
     });
 
     it('returns [] and logs if mvp or measures data not found', () => {
-        const logSpy = jest.spyOn(console, 'log').mockImplementation();
+        const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
         jest.spyOn(fse, 'readFileSync').mockImplementation(() => {
             throw new Error('File not found');
         });

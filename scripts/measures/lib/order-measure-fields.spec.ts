@@ -1,18 +1,21 @@
+import { describe, it, beforeEach, expect, jest } from '@jest/globals';
 import * as fs from 'fs';
 import * as orderMeasureFieldsModule from './order-measure-fields';
 import { Measure } from '../../../util/interfaces/measure';
+import type * as measuresLibType from './measures-lib';
 
 jest.mock('fs');
 jest.mock('app-root-path', () => ({
     toString: () => '/mock-root'
 }));
 jest.mock('./measures-lib', () => ({
-    orderFields: jest.fn(measure => ({ ...measure, ordered: true })),
+    orderFields: jest.fn((measure: Measure) => ({ ...measure, ordered: true })),
     writeToFile: jest.fn()
 }));
 
-const mockOrderFields = require('./measures-lib').orderFields;
-const mockWriteToFile = require('./measures-lib').writeToFile;
+const measuresLibMock = jest.mocked(jest.requireMock<typeof measuresLibType>('./measures-lib'));
+const mockOrderFields = measuresLibMock.orderFields;
+const mockWriteToFile = measuresLibMock.writeToFile;
 
 describe('orderMeasuresFields', () => {
     const performanceYear = '2025';
@@ -72,7 +75,7 @@ describe('orderMeasuresFields', () => {
             { category: 'ia', measureId: 'IA_AHE_1' } as Measure
         ];
         (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify(input));
-        const logSpy = jest.spyOn(console, 'log').mockImplementation();
+        const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
 
         orderMeasureFieldsModule.orderMeasuresFields(performanceYear);
 

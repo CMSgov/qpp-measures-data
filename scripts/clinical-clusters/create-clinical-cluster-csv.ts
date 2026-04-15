@@ -8,7 +8,7 @@ import fs from "fs";
 import path from "path";
 import appRoot from 'app-root-path';
 import { json2csv } from 'json-2-csv';
-import { parseOfficeAsync } from "officeparser";
+import { parseOffice } from "officeparser";
 
 const currentYear = process.argv[2];
 const pptPath = "./2025-EMA-and-Denominator-Reduction-User-Guide.pptx";
@@ -16,7 +16,7 @@ const csvPath = `../../util/clinical-clusters/${currentYear}/`;
 const measuresPath = `measures/${currentYear}/measures-data.json`;
 const MEASURE_START_REGEX = (/^([\d]{3}): (.*)$/);  // start with a match like this `123: XX`
 const MEASURE_REGEX = (/(\d{3}): /g);   // to match `123: `
-const config = { ignoreNotes: true };
+const config = {};
 
 const clinicalTopicReplace = {
   "Pathology 1": "Pathology",
@@ -30,7 +30,8 @@ if (!currentYear) {
   process.exit(1);
 }
 
-parseOfficeAsync(pptPath, config).then((data) => {
+parseOffice(pptPath, config).then((ast) => {
+  const data = ast.toText();
   const specialtySplitSentence = "Appendix B: Specialty Measure Sets with Fewer than 6 Measures";
 
   // First element will have all the clinical data and the specialty set will be split into different elements.

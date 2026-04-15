@@ -1,3 +1,4 @@
+import { describe, it, beforeEach, afterEach, expect, jest } from '@jest/globals';
 import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
@@ -28,7 +29,7 @@ describe('validation.business', () => {
     let volatileMeasures: any[];
     let volatileBenchmarks: any[];
     let volatileBenchmarksCahps: any[];
-    let logSpy: jest.SpyInstance;
+    let logSpy: jest.Spied<typeof logger.info>;
 
     const mockFileSystemResponse = (measures: any[], benchmarks: any[], benchmarksCahps: any[]) => {
         vol.fromNestedJSON({
@@ -80,7 +81,7 @@ describe('validation.business', () => {
     it('validates 2023 benchmarks data', () => {
         const result = benchmarkBusinessValidation('benchmarks.json', 2023);
 
-        expect(logSpy).not.toBeCalled();
+        expect(logSpy).not.toHaveBeenCalled();
         expect(result).toBeFalsy();
     });
 
