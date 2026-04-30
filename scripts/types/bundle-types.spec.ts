@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from '@jest/globals';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const BUNDLE_PATH = path.join(__dirname, '../../dist/qpp-measures-data.d.ts');
 
@@ -8,6 +9,7 @@ describe('bundle-types output', () => {
     let content: string;
 
     beforeAll(() => {
+        execSync('npm run build:types', { stdio: 'inherit' });
         content = fs.readFileSync(BUNDLE_PATH, 'utf-8');
     });
 
