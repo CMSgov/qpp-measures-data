@@ -35,6 +35,8 @@ const mvpData = qppMeasuresData.getMVPData($YEAR, mvpIds);
 const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
 ```
 
+We elso export common data types such as Measures and Benchmarks. You can view the list of these in util/interfaces/index.ts.
+
 ## Contributing
 
 Before creating pull requests, please make sure to review

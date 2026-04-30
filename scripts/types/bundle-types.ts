@@ -2,7 +2,7 @@ import { execSync } from 'node:child_process';
 import * as fs from 'fs-extra';
 import * as path from 'node:path';
 
-const packageJson = require('../../package.json');
+import packageJson from '../../package.json';
 
 const OUTPUT_FILE = path.join(__dirname, '../../dist/qpp-measures-data.d.ts');
 const ENTRY_FILE = path.join(__dirname, '../../util/interfaces/index.ts');
