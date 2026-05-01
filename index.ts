@@ -210,3 +210,5 @@ export function getMVPDataSlim(performanceYear: number = 2023): MVPDataSlim[] {
 
   return mvpData;
 }
+
+export * from './util/interfaces';
