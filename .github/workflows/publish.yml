@@ -9,7 +9,7 @@ on:
       beta-version?:
         description: 'Is this a beta release?'
         type: boolean
-        default: false
+        default: true
         required: false
       beta-increment:
         description: 'The beta number for this version (usually 1, only used if beta release)'
