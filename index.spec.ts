@@ -672,6 +672,7 @@ describe('index', () => {
               "app1",
               "appPlus",
               "ssp",
+              "hvbp",
               "DEFAULT",
               "G0053",
               "G0054",
