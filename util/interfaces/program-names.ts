@@ -46,6 +46,7 @@ export enum ProgramNamesEnum {
     app1 = "app1",
     appPlus = "appPlus",
     ssp = "ssp",
+    hvbp = "hvbp",
     DEFAULT = "mips",
     G0053 = "G0053",
     G0054 = "G0054",
