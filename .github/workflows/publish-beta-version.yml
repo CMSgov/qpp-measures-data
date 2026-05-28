@@ -73,11 +73,31 @@ jobs:
             echo "Version is already up to date."
           fi
 
+      - name: Verify NPM token authentication
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          echo "Checking npm registry..."
+          npm config get registry
+
+          echo "Checking npm token authentication..."
+          npm whoami --registry=https://registry.npmjs.org/
+
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
+          echo "Package to publish: ${PACKAGE_NAME}@${PACKAGE_VERSION}"
+
+          echo "Checking package visibility on npm..."
+          npm view "$PACKAGE_NAME" name --registry=https://registry.npmjs.org/
+
       - name: Publish to NPM
         run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          
+
       - name: Update LATEST_BETA_VERSION repo variable
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
@@ -98,11 +118,12 @@ jobs:
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
           client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "beta", "html_url": "https://www.npmjs.com/package/qpp-measures-data?activeTab=versions"}'
+
       - name: Notify APP Submissions API Channel
         uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
         env:
           SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
           SLACK_CHANNEL: "p-qppsf-api"
-          SLACK_MESSAGE: "`qpp-measures-data` has a new beta version avaliable for testing: ${{github.event.inputs.version}}-beta.${{github.event.inputs.beta-increment}}"
+          SLACK_MESSAGE: "`qpp-measures-data` has a new beta version available for testing: ${{github.event.inputs.version}}-beta.${{github.event.inputs.beta-increment}}"
           SLACK_TITLE: New qpp-measures-data beta release
           SLACK_USERNAME: releaseNotify
