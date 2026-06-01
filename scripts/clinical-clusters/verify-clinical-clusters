@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -e
+
+currentPerformanceYear="${1:-}"
+if [ -z "$currentPerformanceYear" ]; then
+  read -r -p "Enter performance year (e.g. 2026): " currentPerformanceYear
+fi
+
+if ! [[ "$currentPerformanceYear" =~ ^[0-9]{4}$ ]]; then
+  echo "Invalid performance year: ${currentPerformanceYear} (expected 4 digits, e.g. 2026)" >&2
+  exit 1
+fi
+
+jsonPath="clinical-clusters/${currentPerformanceYear}/clinical-clusters.json"
+if [ ! -f "$jsonPath" ]; then
+  echo "Missing ${jsonPath}. Run: npm run build:clinical-clusters" >&2
+  exit 1
+fi
+
+tsc -p .
+
+echo "Validating ${jsonPath}:"
+node dist/scripts/validate-data.js clinical-clusters \
+  "${currentPerformanceYear}" \
+  "${jsonPath}"
+
+echo "Validation passed."

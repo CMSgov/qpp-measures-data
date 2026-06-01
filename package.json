@@ -1,6 +1,6 @@
 {
   "name": "qpp-measures-data",
-  "version": "v10.0.0",
+  "version": "v10.1.0",
   "description": "Quality Payment Program Measures Data Repository",
   "repository": {
     "type": "git",
@@ -20,7 +20,10 @@
     "update:measures": "scripts/measures/update-measures",
     "build:types": "ts-node scripts/types/bundle-types.ts",
     "build:benchmarks": "scripts/benchmarks/build-benchmarks",
-    "build:clinical-clusters": "scripts/clinical-clusters/build-clinical-clusters",
+    "create:clinical-clusters": "TS_NODE_FILES=true ts-node scripts/clinical-clusters/create-clinical-cluster-csv-from-pdf.ts",
+    "build:clinical-clusters": "bash scripts/clinical-clusters/build-clinical-clusters",
+    "verify:clinical-clusters": "bash scripts/clinical-clusters/verify-clinical-clusters",
+    "clinical-clusters": "bash scripts/clinical-clusters/run-clinical-clusters",
     "build:mvp": "scripts/mvp/build-mvp",
     "parse:mvp": "scripts/mvp/parse-mvp-data",
     "export:measures": "bash scripts/measures/export-measures",
@@ -56,6 +59,7 @@
     "memfs": "^4.8.2",
     "natural-compare-lite": "^1.4.0",
     "officeparser": "^6.0.7",
+    "pdf-parse": "^1.1.1",
     "pre-commit": "^1.2.2",
     "rimraf": "^6.1.3",
     "toad-uri-js": "^5.0.1",

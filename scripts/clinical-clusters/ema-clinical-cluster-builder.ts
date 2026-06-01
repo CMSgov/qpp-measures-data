@@ -31,7 +31,7 @@ import {
 } from './clinical-cluster.types';
 
 const MAX_SPECIALITY_SET_SIZE = 6;
-const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+const SUPPORTED_PERFORMANCE_YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 
 const performanceYear = parseInt(process.argv[2], 10);
 const claimsClusterFilePath = process.argv[3];
@@ -78,6 +78,10 @@ const specialSpecialtySetRelations = {
     registry: []
   },
   2025: {
+    claims: [],
+    registry: []
+  },
+  2026: {
     claims: [],
     registry: []
   }
@@ -185,6 +189,10 @@ const specialClusterRelations = {
     registry: []
   },
   2025: {
+    claims: [],
+    registry: []
+  },
+  2026: {
     claims: [],
     registry: []
   }
