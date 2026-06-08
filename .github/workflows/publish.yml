@@ -4,14 +4,30 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version number to use'
+        description: 'Version number to use (x.x.x)'
         required: true
+      beta-version?:
+        description: 'Is this a beta release?'
+        type: boolean
+        default: true
+        required: false
+      beta-increment:
+        description: 'If beta release, add the beta number for this version (usually 1)'
+        default: '1'
+        required: false
   release:
     types: [published]
+    
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 
 jobs:
   update-version-and-publish:
     runs-on: ubuntu-latest
+    outputs:
+      publish_version: ${{ steps.set-version.outputs.publish_version }}
+      is_beta: ${{ steps.set-version.outputs.is_beta }}
     steps:
       - name: Checkout Codebase
         uses: actions/checkout@v4
@@ -30,7 +46,7 @@ jobs:
       - name: Configure Node version and registry
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies and Build
@@ -38,24 +54,38 @@ jobs:
           npm ci
           npm run build
 
+      - name: Set publish version
+        id: set-version
+        run: |
+          IS_BETA="${{ github.event.inputs['beta-version?'] }}"
+          if [ "$IS_BETA" = "true" ]; then
+            PUBLISH_VERSION="${{ github.event.inputs.version }}-beta.${{ github.event.inputs['beta-increment'] }}"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            PUBLISH_VERSION="${{ github.event.inputs.version }}"
+          else
+            PUBLISH_VERSION="${{ github.event.release.tag_name }}"
+          fi
+          echo "PUBLISH_VERSION=$PUBLISH_VERSION" >> $GITHUB_ENV
+          echo "publish_version=$PUBLISH_VERSION" >> $GITHUB_OUTPUT
+          echo "is_beta=$IS_BETA" >> $GITHUB_OUTPUT
+
       - name: Update version in package.json and package-lock.json
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
-          VERSION=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version || github.event.release.tag_name }}
-          echo "Updating version to $VERSION"
+          echo "Updating version to $PUBLISH_VERSION"
 
-          # Fail the action if VERSION isn't set
-          if [ -z "$VERSION" ]; then
-            echo "VERSION is not set. Failing the action."
+          # Fail the action if PUBLISH_VERSION isn't set
+          if [ -z "$PUBLISH_VERSION" ]; then
+            echo "PUBLISH_VERSION is not set. Failing the action."
             exit 1
           fi
 
           # Update version in package.json
-          jq --arg version "$VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
+          jq --arg version "$PUBLISH_VERSION" '.version = $version' package.json > temp.json && mv temp.json package.json
 
           # Update version in package-lock.json
-          jq --arg version "$VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
+          jq --arg version "$PUBLISH_VERSION" '.version = $version' package-lock.json > temp-lock.json && mv temp-lock.json package-lock.json
 
           # Check if there are changes (version was actually updated)
           git diff --exit-code || HAS_CHANGES=1
@@ -63,18 +93,22 @@ jobs:
             git config user.name "GitHub actions"
             git config user.email noreply@github.com
             git add package.json package-lock.json
-            git commit -m "Update version to $VERSION"
+            git commit -m "Update version to $PUBLISH_VERSION"
             git push --force
           else
             echo "Version is already up to date."
           fi
 
       - name: Publish to NPM
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ "${{ github.event.inputs['beta-version?'] }}" = "true" ]; then
+            npm publish --tag beta
+          else
+            npm publish
+          fi
 
       - name: Merge develop into master
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs['beta-version?'] == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
@@ -84,6 +118,13 @@ jobs:
           git checkout master
           git merge --no-ff develop -m "Merging develop into master via GitHub Action"
           git push origin master
+          
+                
+      - name: Update LATEST_BETA_VERSION repo variable
+        if: ${{ github.event.inputs['beta-version?'] == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+        run: gh variable set LATEST_BETA_VERSION --body "v${{github.event.inputs.version}}"
 
   notify-others:
     runs-on: ubuntu-latest
@@ -93,18 +134,29 @@ jobs:
         repo:
           - CMSgov/qpp-submissions-api
     steps:
+      - name: Set notification vars
+        run: |
+          if [ "${{ needs.update-version-and-publish.outputs.is_beta }}" = "true" ]; then
+            echo "DISPATCH_TAG=beta" >> $GITHUB_ENV
+            echo "DISPATCH_URL=https://www.npmjs.com/package/qpp-measures-data?activeTab=versions" >> $GITHUB_ENV
+            echo "SLACK_MSG=\`qpp-measures-data\` has a new beta version available for testing: ${{ needs.update-version-and-publish.outputs.publish_version }}" >> $GITHUB_ENV
+          else
+            echo "DISPATCH_TAG=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+            echo "DISPATCH_URL=${{ github.event.release.html_url }}" >> $GITHUB_ENV
+            echo "SLACK_MSG=\`qpp-measures-data\` has been updated to version <${{ github.event.release.html_url }}|${{ github.event.release.tag_name }}>" >> $GITHUB_ENV
+          fi
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GH_USER_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
-          client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
+          client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data", "tag_name": "${{ env.DISPATCH_TAG }}", "html_url": "${{ env.DISPATCH_URL }}"}'
       - name: Notify APP Submissions API Channel
         uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
         env:
           SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
           SLACK_CHANNEL: "p-qppsf-api"
-          SLACK_MESSAGE: "`qpp-measures-data` has been updated to version <${{github.event.release.html_url}}|${{ github.event.release.tag_name }}>"
+          SLACK_MESSAGE: ${{ env.SLACK_MSG }}
           SLACK_TITLE: New qpp-measures-data release
           SLACK_USERNAME: releaseNotify
