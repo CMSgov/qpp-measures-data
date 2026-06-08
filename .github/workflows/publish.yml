@@ -102,9 +102,9 @@ jobs:
       - name: Publish to NPM
         run: |
           if [ "${{ github.event.inputs['beta-version?'] }}" = "true" ]; then
-            npm publish --tag beta --dry-run
+            npm publish --tag beta
           else
-            npm publish --dry-run
+            npm publish
           fi
 
       - name: Merge develop into master
