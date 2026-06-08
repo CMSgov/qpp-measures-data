@@ -108,7 +108,7 @@ jobs:
           fi
 
       - name: Merge develop into master
-        if: ${{ github.event.inputs['beta-version?'] == 'false' }}
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs['beta-version?'] == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
         run: |
