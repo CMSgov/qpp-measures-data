@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Full workflow: CSV from PDF → build clinical-clusters.json → validate
+set -e
+
+currentPerformanceYear="${1:-}"
+if [ -z "$currentPerformanceYear" ]; then
+  read -r -p "Enter performance year (e.g. 2026): " currentPerformanceYear
+fi
+
+if ! [[ "$currentPerformanceYear" =~ ^[0-9]{4}$ ]]; then
+  echo "Invalid performance year: ${currentPerformanceYear} (expected 4 digits, e.g. 2026)" >&2
+  exit 1
+fi
+
+pdfPath="scripts/clinical-clusters/${currentPerformanceYear}-EMA-and-Denominator-Reduction-User-Guide.pdf"
+if [ ! -f "$pdfPath" ]; then
+  echo "PDF not found: ${pdfPath}" >&2
+  echo "Add the CMS guide as: scripts/clinical-clusters/{year}-EMA-and-Denominator-Reduction-User-Guide.pdf" >&2
+  exit 1
+fi
+
+measuresPath="measures/${currentPerformanceYear}/measures-data.json"
+if [ ! -f "$measuresPath" ]; then
+  echo "Measures data not found: ${measuresPath}" >&2
+  echo "Initialize measures for ${currentPerformanceYear} before running clinical clusters." >&2
+  exit 1
+fi
+
+schemaPath="clinical-clusters/${currentPerformanceYear}/clinical-clusters-schema.yaml"
+if [ ! -f "$schemaPath" ]; then
+  echo "Schema not found: ${schemaPath}" >&2
+  echo "Copy clinical-clusters-schema.yaml from a prior year into clinical-clusters/${currentPerformanceYear}/" >&2
+  exit 1
+fi
+
+echo "=== Clinical clusters for ${currentPerformanceYear} ==="
+echo ""
+echo "Step 1/2: Create CSVs from PDF..."
+TS_NODE_FILES=true npx ts-node \
+  scripts/clinical-clusters/create-clinical-cluster-csv-from-pdf.ts \
+  "${currentPerformanceYear}"
+
+echo ""
+echo "Step 2/2: Build and validate clinical-clusters.json..."
+bash scripts/clinical-clusters/build-clinical-clusters "${currentPerformanceYear}"
+
+echo ""
+echo "All steps completed for ${currentPerformanceYear}."

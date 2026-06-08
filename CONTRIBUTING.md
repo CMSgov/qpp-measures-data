@@ -27,8 +27,38 @@ npm run init:measures $YEAR         # generates measures/$YEAR/measures-data.jso
 npm run update:measures $YEAR       # updates measures/$YEAR/measures-data.json and mvp-enriched.json
 npm run build:benchmarks $YEAR      # regenerates benchmarks/$YEAR.json
 npm run build:mvp $YEAR             # regenerates the mvp data files in mvp/$YEAR/
-npm run build:clinical-clusters     # regenerates clinical-clusters/clinical-clusters.json
+npm run clinical-clusters           # PDF → CSVs → clinical-clusters.json + validate (prompts for year)
+npm run create:clinical-clusters   # CSVs only from PDF (prompts for year)
+npm run build:clinical-clusters     # build + validate from existing CSVs (prompts for year)
+npm run verify:clinical-clusters    # validate existing clinical-clusters.json (prompts for year)
 ```
+
+### Clinical clusters (EMA)
+
+CMS publishes an **EMA and Denominator Reduction User Guide** each year as a **PDF**. This repo produces:
+
+- `util/clinical-clusters/$YEAR/ClaimsClinical_Cluster.csv` and `RegistryClinicalCluster.csv` — built from **Appendix A only** (*MIPS Clinically Related Measures Grouped by Clinical Topic*). Rows follow the measure order in the PDF. Measures listed only in **Appendix B** (*Specialty Measure Sets with Fewer than 6 Measures*) are not included in these CSVs; they still appear in `clinical-clusters.json` via specialty sets from `measures-data.json`.
+- `clinical-clusters/$YEAR/clinical-clusters.json`
+
+Scripts prompt for the performance year unless you pass it after `--` (e.g. `npm run clinical-clusters -- 2026`).
+
+| Command | Description |
+|--------|-------------|
+| `npm run clinical-clusters` | Full workflow: PDF → CSVs → `clinical-clusters.json` → validate |
+| `npm run create:clinical-clusters` | Create CSVs from the PDF only |
+| `npm run build:clinical-clusters` | Build and validate from existing CSVs |
+| `npm run verify:clinical-clusters` | Validate an existing `clinical-clusters.json` |
+
+#### New performance year checklist
+
+1. **EMA guide (PDF)** — Add the CMS file as:
+   ```
+   scripts/clinical-clusters/{year}-EMA-and-Denominator-Reduction-User-Guide.pdf
+   ```
+2. **Measures data** — Ensure `measures/{year}/measures-data.json` exists (`npm run init:measures` / `update:measures` for that year).
+3. **Schema** — Copy `clinical-clusters-schema.yaml` from a prior year into `clinical-clusters/{year}/`.
+4. **Builder config** — In `scripts/clinical-clusters/ema-clinical-cluster-builder.ts`, add `{year}` to `SUPPORTED_PERFORMANCE_YEARS` and empty entries in `specialSpecialtySetRelations` / `specialClusterRelations` (same pattern as the previous year).
+5. **Generate** — Run `npm run clinical-clusters` (or `npm run clinical-clusters -- {year}`).
 
 ### Generating measures CSVs
 To export CSVs of the measures data (one for each category):
