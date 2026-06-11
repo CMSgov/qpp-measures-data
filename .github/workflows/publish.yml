@@ -17,7 +17,7 @@ on:
         required: false
   release:
     types: [published]
-    
+
 permissions:
   id-token: write  # Required for OIDC
   contents: read
@@ -29,12 +29,27 @@ jobs:
       publish_version: ${{ steps.set-version.outputs.publish_version }}
       is_beta: ${{ steps.set-version.outputs.is_beta }}
     steps:
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
+          aws-region: us-east-1
+
+      - name: Retrieve GitHub service account token from secops account
+        id: get-token
+        run: |
+          SECRET_VALUE=$(aws secretsmanager get-secret-value \
+            --secret-id "arn:aws:secretsmanager:us-east-1:863249929524:secret:qpp/qppa/github/token/automation-bhLO2e" \
+            --query SecretString \
+            --output text | jq -r ".GITHUB_TOKEN")
+          echo "::add-mask::$SECRET_VALUE"
+          echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
       - name: Checkout Codebase
         uses: actions/checkout@v4
         with:
           ref: develop
           fetch-depth: 0 # Ensures fetching of history for all branches and tags
-          token: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+          token: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
 
       - name: Ensure 'develop' branch is checked out
         run: |
@@ -71,7 +86,7 @@ jobs:
 
       - name: Update version in package.json and package-lock.json
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+          GITHUB_TOKEN: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
         run: |
           echo "Updating version to $PUBLISH_VERSION"
 
@@ -110,7 +125,7 @@ jobs:
       - name: Merge develop into master
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs['beta-version?'] == 'false' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+          GITHUB_TOKEN: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
         run: |
           git config user.name "GitHub actions"
           git config user.email noreply@github.com
@@ -118,12 +133,12 @@ jobs:
           git checkout master
           git merge --no-ff develop -m "Merging develop into master via GitHub Action"
           git push origin master
-          
-                
+
+
       - name: Update LATEST_BETA_VERSION repo variable
         if: ${{ github.event.inputs['beta-version?'] == 'true' }}
         env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_NICHOLAS_PAT }}
+          GITHUB_TOKEN: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
         run: gh variable set LATEST_BETA_VERSION --body "v${{github.event.inputs.version}}"
 
   notify-others:
@@ -134,6 +149,21 @@ jobs:
         repo:
           - CMSgov/qpp-submissions-api
     steps:
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
+          aws-region: us-east-1
+
+      - name: Retrieve GitHub service account token from secops account
+        id: get-token
+        run: |
+          SECRET_VALUE=$(aws secretsmanager get-secret-value \
+            --secret-id "arn:aws:secretsmanager:us-east-1:863249929524:secret:qpp/qppa/github/token/automation-bhLO2e" \
+            --query SecretString \
+            --output text | jq -r ".GITHUB_TOKEN")
+          echo "::add-mask::$SECRET_VALUE"
+          echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
       - name: Set notification vars
         run: |
           if [ "${{ needs.update-version-and-publish.outputs.is_beta }}" = "true" ]; then
@@ -148,7 +178,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.GH_USER_TOKEN }}
+          token: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
           repository: ${{ matrix.repo }}
           event-type: lib-update-event
           client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data", "tag_name": "${{ env.DISPATCH_TAG }}", "html_url": "${{ env.DISPATCH_URL }}"}'

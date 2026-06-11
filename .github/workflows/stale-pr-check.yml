@@ -5,15 +5,34 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Runs every day at midnight UTC
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   stale-pr-check:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
+          aws-region: us-east-1
+
+      - name: Retrieve GitHub service account token from secops account
+        id: get-token
+        run: |
+          SECRET_VALUE=$(aws secretsmanager get-secret-value \
+            --secret-id "arn:aws:secretsmanager:us-east-1:863249929524:secret:qpp/qppa/github/token/automation-bhLO2e" \
+            --query SecretString \
+            --output text | jq -r ".GITHUB_TOKEN")
+          echo "::add-mask::$SECRET_VALUE"
+          echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
       - name: Check for Stale PRs
         id: stale-pr-check
         uses: sonia-corporation/stale@3.1.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_USER_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
         with:
           pull-request-ignore-any-labels: 'wip'
           pull-request-stale-comment: 'This PR has been automatically marked as stale because it has not had any activity in the last 30 days. It will be closed in 7 days if no further activity occurs. Thank you for your prompt attention.'
