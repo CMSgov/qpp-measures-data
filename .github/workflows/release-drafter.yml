@@ -7,7 +7,6 @@ on:
       - develop
 
 permissions:
-  contents: read
   id-token: write  # Required for OIDC
   contents: read
 
@@ -60,13 +59,27 @@ jobs:
     needs: delete-draft-releases
     permissions:
       # write permission is required to create a github release
-      contents: write
       id-token: write  # Required for OIDC
-      contents: read
+      contents: write
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
+      - name: Configure AWS Credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
+          aws-region: us-east-1
+
+      - name: Retrieve GitHub service account token from secops account
+        id: get-token
+        run: |
+          SECRET_VALUE=$(aws secretsmanager get-secret-value \
+            --secret-id "arn:aws:secretsmanager:us-east-1:863249929524:secret:qpp/qppa/github/token/automation-bhLO2e" \
+            --query SecretString \
+            --output text | jq -r ".GITHUB_TOKEN")
+          echo "::add-mask::$SECRET_VALUE"
+          echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
       - uses: release-drafter/release-drafter@v6
         env:
           GITHUB_TOKEN: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
