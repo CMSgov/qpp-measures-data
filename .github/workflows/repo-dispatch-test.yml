@@ -2,6 +2,10 @@ name: Test - Repository Dispatch
 on:
   workflow_dispatch:
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
     # Make an announcement to other repositories of interest
     repo-dispatch:
@@ -21,10 +25,25 @@ jobs:
             # - CMSgov/qpp-ui
 
       steps:
+        - name: Configure AWS Credentials via OIDC
+          uses: aws-actions/configure-aws-credentials@v4
+          with:
+            role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
+            aws-region: us-east-1
+
+        - name: Retrieve GitHub service account token from secops account
+          id: get-token
+          run: |
+            SECRET_VALUE=$(aws secretsmanager get-secret-value \
+              --secret-id "arn:aws:secretsmanager:us-east-1:863249929524:secret:qpp/qppa/github/token/automation-bhLO2e" \
+              --query SecretString \
+              --output text | jq -r ".GITHUB_TOKEN")
+            echo "::add-mask::$SECRET_VALUE"
+            echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
         - name: Repository Dispatch
           uses: peter-evans/repository-dispatch@v3
           with:
-            token: ${{ secrets.GH_USER_TOKEN }}
+            token: ${{ steps.get-token.outputs.GITHUB_TOKEN }}
             repository: ${{ matrix.repo }}
             event-type: lib-update-event
             client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data" ,"tag_name": "${{ github.event.release.tag_name }}", "html_url": "${{github.event.release.html_url}}"}'
