@@ -1,3 +1,7 @@
+# Performance Year 2027 Data
+
+**All Measure and Benchmark data for Performance Year 2027 is currently in progress and is subject to change.**
+
 # qpp-measures-data
 
 ## Quality Payment Program Measures Data Repository
