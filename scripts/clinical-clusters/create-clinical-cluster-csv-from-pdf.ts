@@ -11,7 +11,7 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 import { json2csv } from 'json-2-csv';
-import pdfParse from 'pdf-parse';
+import { PDFParse } from 'pdf-parse';
 import { getPerformanceYear } from './prompt-performance-year';
 
 /** Clinical topic → measure IDs in PDF document order. */
@@ -43,8 +43,13 @@ async function loadPdfText(year: string): Promise<string> {
     throw new Error(`PDF not found: ${pdfPath}`);
   }
   const buf = fs.readFileSync(pdfPath);
-  const result = await pdfParse(buf);
-  return result.text;
+  const parser = new PDFParse({ data: buf });
+  try {
+    const result = await parser.getText();
+    return result.text;
+  } finally {
+    await parser.destroy();
+  }
 }
 
 function splitClinicalAndSpecialtyFromGuide(raw: string): {

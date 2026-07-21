@@ -1,0 +1,203 @@
+[
+    {
+        "title": "Measure 1",
+        "eMeasureId": "CMS122v10",
+        "nqfEMeasureId": null,
+        "nqfId": "0059",
+        "measureId": "001",
+        "description": "Measure 1",
+        "nationalQualityStrategyDomain": "Effective Clinical Care",
+        "measureType": "intermediateOutcome",
+        "isHighPriority": true,
+        "primarySteward": "National Committee for Quality Assurance",
+        "firstPerformanceYear": 2017,
+        "lastPerformanceYear": null,
+        "isInverse": true,
+        "category": "quality",
+        "isRegistryMeasure": false,
+        "isRiskAdjusted": false,
+        "icdImpacted": [],
+        "isClinicalGuidelineChanged": false,
+        "isIcdImpacted": false,
+        "clinicalGuidelineChanged": [],
+        "metricType": "singlePerformanceRate",
+        "allowedPrograms": [
+            "mips",
+            "pcf",
+            "app1"
+        ],
+        "submissionMethods": [
+            "claims"
+        ],
+        "measureSets": [
+            "endocrinology"
+        ],
+        "eMeasureUuid": "2c928082-74c2-3313-0174-c60bd07b02a6",
+        "strata": [
+            {
+                "name": "Strata 1",
+                "description": "Strata 1"
+            }
+        ],
+        "eligibilityOptions": [
+            {
+                "diagnosisCodes": [
+                    "E10.10"
+                ],
+                "maxAge": 75,
+                "minAge": 18,
+                "optionGroup": "00",
+                "procedureCodes": [
+                    {
+                        "code": "99202"
+                    }
+                ]
+            }
+        ],
+        "performanceOptions": [
+            {
+                "optionGroup": "00",
+                "optionType": "performanceMet",
+                "qualityCodes": [
+                    {
+                        "code": "3046F"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Measure 2",
+        "eMeasureId": "CMS135v10",
+        "nqfEMeasureId": "0081e",
+        "nqfId": "0081",
+        "measureId": "005",
+        "description": "Measure 2",
+        "nationalQualityStrategyDomain": "Effective Clinical Care",
+        "measureType": "process",
+        "isHighPriority": false,
+        "primarySteward": "American Heart Association",
+        "firstPerformanceYear": 2017,
+        "lastPerformanceYear": null,
+        "isInverse": false,
+        "category": "quality",
+        "isRegistryMeasure": false,
+        "isRiskAdjusted": false,
+        "icdImpacted": [],
+        "isClinicalGuidelineChanged": true,
+        "isIcdImpacted": false,
+        "clinicalGuidelineChanged": [
+            "electronicHealthRecord"
+        ],
+        "metricType": "singlePerformanceRate",
+        "allowedPrograms": [
+            "mips",
+            "pcf"
+        ],
+        "submissionMethods": [
+            "electronicHealthRecord",
+            "registry"
+        ],
+        "measureSets": [
+            "cardiology"
+        ],
+        "measureSpecification": {
+            "electronicHealthRecord": "https://ecqi.healthit.gov/ecqm/ep/2022/cms135v10",
+            "registry": "https://qpp.cms.gov/docs/QPP_quality_measure_specifications/CQM-Measures/2022_Measure_005_MIPSCQM.pdf"
+        },
+        "eMeasureUuid": "2c928082-7845-d8ca-0178-4751d715017f",
+        "strata": [
+            {
+                "name": "Within12Months",
+                "description": "Strata 1"
+            },
+            {
+                "name": "HospitalDischarge",
+                "description": "Strata 2"
+            }
+        ]
+    },
+    {
+        "title": "Measure 3",
+        "eMeasureId": null,
+        "nqfEMeasureId": null,
+        "nqfId": "0067",
+        "measureId": "006",
+        "description": "Measure 3",
+        "nationalQualityStrategyDomain": "Effective Clinical Care",
+        "measureType": "process",
+        "isHighPriority": false,
+        "primarySteward": "American Heart Association",
+        "firstPerformanceYear": 2017,
+        "lastPerformanceYear": null,
+        "isInverse": false,
+        "category": "quality",
+        "isRegistryMeasure": false,
+        "isRiskAdjusted": false,
+        "icdImpacted": [
+            "registry"
+        ],
+        "isClinicalGuidelineChanged": false,
+        "isIcdImpacted": true,
+        "clinicalGuidelineChanged": [],
+        "metricType": "singlePerformanceRate",
+        "allowedPrograms": [
+            "mips",
+            "pcf"
+        ],
+        "submissionMethods": [
+            "registry"
+        ],
+        "measureSets": [
+            "cardiology"
+        ]
+    },
+    {
+        "title": "Measure 4",
+        "eMeasureId": "CMS145v10",
+        "nqfEMeasureId": "0070e",
+        "nqfId": "0070",
+        "measureId": "007",
+        "description": "Measure 4",
+        "nationalQualityStrategyDomain": "Effective Clinical Care",
+        "measureType": "process",
+        "isHighPriority": false,
+        "primarySteward": "American Heart Association",
+        "firstPerformanceYear": 2017,
+        "lastPerformanceYear": null,
+        "isInverse": false,
+        "category": "quality",
+        "isRegistryMeasure": false,
+        "isRiskAdjusted": false,
+        "icdImpacted": [],
+        "isClinicalGuidelineChanged": false,
+        "isIcdImpacted": false,
+        "clinicalGuidelineChanged": [],
+        "metricType": "singlePerformanceRate",
+        "allowedPrograms": [
+            "mips",
+            "pcf"
+        ],
+        "submissionMethods": [
+            "electronicHealthRecord",
+            "registry"
+        ],
+        "eMeasureUuid": "2c928085-7859-f261-0178-5ab4f9e400f9",
+        "strata": [
+            {
+                "name": "LVSD",
+                "description": "Strata 1",
+                "eMeasureUuids": {
+                    "initialPopulationUuid": "70874C81-8998-4357-9226-E4D0B227C8F3",
+                    "denominatorUuid": "5EDB6A68-3CBC-47B1-8CE8-7E2B7852A7B1",
+                    "numeratorUuid": "9CCC2C3B-4B1C-48F1-B7B6-C7B16D93A0EA",
+                    "denominatorExceptionUuid": "4F8AC400-18CD-418D-BC7B-DBDE7A6BF52C"
+                }
+            },
+            {
+                "name": "priorMI",
+                "description": "Strata 2"
+            }
+        ]
+    }
+]

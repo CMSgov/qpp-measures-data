@@ -8,7 +8,7 @@ interface IConstants {
 }
 
 export const Constants: IConstants = {
-  validPerformanceYears: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+  validPerformanceYears: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027],
   currentPerformanceYear: 2025,
   mvpMeasuresHelper: [
     {
