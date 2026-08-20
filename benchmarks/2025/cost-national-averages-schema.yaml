@@ -1,0 +1,25 @@
+$id: https://github.com/CMSgov/qpp-measures-data/versions/0.0.1/benchmarks-national-averages-schema.yaml
+$schema: http://json-schema.org/schema#
+type: array
+items: { $ref: '#/definitions/benchmark' }
+
+definitions:
+  benchmark:
+    type: object
+    properties:
+      measureId:
+        description: measureId corresponds to a measure object's measureId.
+        type: string
+      performanceYear:
+        description: The performanceYear four digit integer corresponds to the time period of the performance data that was submitted for scoring.
+        type: number
+      benchmarkYear:
+        description: The benchmarkYear four digit integer corresponds to the time period of the performance data that was used to generate this benchmark. The submitted performance data will be compared against the benchmarkYear's results.
+        type: number
+      groupNationalAverage:
+        description: The measure's national average cost score for groups.
+        type: [number, 'null']
+      individualNationalAverage:
+        description: The measure's national average cost score for individuals.
+        type: [number, 'null']
+    required: [measureId, performanceYear, benchmarkYear]
