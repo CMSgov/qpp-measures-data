@@ -63,11 +63,33 @@ return strata name, description, and uuids like so
   }
   ...
 */
+/*
+ * Extracts strata with UUIDs from measure components
+ * 
+ * Each stratum contains:
+ * - description: Text description of what the stratum measures
+ * - eMeasureUuids: Object with UUIDs for populations (initial, denominator, numerator, exclusions, exceptions)
+ * 
+ * Note: Some measures have more components than descriptions (format changes between years).
+ * We only process components that have matching descriptions to avoid undefined access errors.
+ * 
+ * @param {Object} measure - Parsed XML measure object with component array
+ * @param {Array<string>} strataDescriptions - Array of stratum description texts
+ * @returns {Array<Object>} Array of strata with descriptions and UUIDs
+ */
 function extractStrata(measure, strataDescriptions) {
   const strata = strataDescriptions.map(description => ({ description }));
-  // pull out uuids for each stratum
+  
+  // Extract UUID information from measure components
+  // Skip first component (index 0) as it contains measure-level data, not strata
   const components = measure.component.slice(1);
-  components.forEach((component, index) => {
+  
+  // Process only the number of components that have corresponding descriptions
+  // This handles cases where component count != description count (due to format changes)
+  const componentsToProcess = Math.min(components.length, strata.length);
+  
+  for (let index = 0; index < componentsToProcess; index++) {
+    const component = components[index];
     const ids = component.populationCriteriaSection[0].component;
     const eMeasureUuids = {
       initialPopulationUuid: ids.find(item => item.initialPopulationCriteria).initialPopulationCriteria[0].id[0].$.root,
@@ -91,7 +113,7 @@ function extractStrata(measure, strataDescriptions) {
     }
 
     strata[index].eMeasureUuids = eMeasureUuids;
-  });
+  }
 
   return strata;
 }
