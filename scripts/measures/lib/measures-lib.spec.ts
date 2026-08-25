@@ -320,6 +320,8 @@ describe('#update-measures-util', () => {
                     'mips',
                     'app1',
                     'appPlus',
+                    'asmHf',
+                    'asmLbp',
                     'ssp',
                 ],
                 allowedRegistrationTypes: [
