@@ -82,7 +82,7 @@ const allowedQCDRNew = {
 const allowedPiChange = {
     title: 'piTitle',
     description: 'piDescription',
-    measureId: 'PI_PPHI_1',
+    measureId: 'PI_PPHI_2',
     isBonus: true,
     isRequired: false,
 };
