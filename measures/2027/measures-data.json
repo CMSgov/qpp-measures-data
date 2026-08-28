@@ -223,27 +223,6 @@
   },
   {
     "category": "ia",
-    "measureId": "IA_BE_15",
-    "title": "Engagement of Patients, Family, and Caregivers in Developing a Plan of Care",
-    "description": "Engage patients, family, and caregivers in developing a plan of care and prioritizing their goals for action, documented in the electronic health record (EHR) technology.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "beneficiaryEngagement",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
     "measureId": "IA_BE_16",
     "title": "Promote Self-management in Usual Care",
     "description": "To help patients self-manage their care, incorporate culturally and linguistically tailored evidence-based techniques for promoting self-management into usual care, and provide patients with tools and resources for self-management. Examples of evidence-based techniques to use in usual care include: goal setting with structured follow-up, Teach-back methods, action planning, assessment of need for self-management (for example, the Patient Activation Measure), and motivational interviewing. Examples of tools and resources to provide patients directly or through community organizations include: peer-led support for self-management, condition-specific chronic disease or substance use disorder self-management programs, and self-management materials.",
@@ -493,8 +472,8 @@
   {
     "category": "ia",
     "measureId": "IA_BMH_4",
-    "title": "Depression screening",
-    "description": "Depression screening and follow-up plan:  Regular engagement of MIPS eligible clinicians or groups in integrated prevention and treatment interventions, including depression screening and follow-up plan (refer to NQF #0418) for patients with co-occurring conditions of behavioral or mental health conditions.",
+    "title": "Depression Screening, Treatment, and Prevention",
+    "description": "MIPS-eligible clinicians or groups regularly engage in integrated screening, treatment, and/or prevention interventions for patients with behavioral or mental health conditions, with a focus on early identification and coordinated management of major depressive disorder and associated risks. This activity includes systematic depression screening and follow-up planning, along with suicide risk assessment for individuals at elevated risk.\nClinicians participating in this activity should implement and document:\n• Use of validated depression screening tools administered at appropriate intervals for patients\n• Completion of suicide risk assessments when clinically indicated, using standardized tools for patients who screen positive for depression or exhibit mental-illness warning signs\n• Development and execution of evidence‑based follow-up plans, including safety planning, symptom management, referral to behavioral health specialists, and monitoring of treatment response\n• Integrated, team‑based coordination of care between primary care, behavioral health, psychiatry, and other relevant specialties to support continuity, patient safety, and positive patient outcomes\n• Routine monitoring and reassessment, including documentation of treatment adjustments, patient (and/or family/caregiver) engagement, and adherence to follow-up intervals consistent with clinical guidelines.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -505,27 +484,6 @@
       "appPlus",
       "M0004",
       "M1369"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_BMH_5",
-    "title": "MDD prevention and treatment interventions",
-    "description": "Major depressive disorder: Regular engagement of MIPS eligible clinicians or groups in integrated prevention and treatment interventions, including suicide risk assessment (refer to NQF #0104) for mental health patients with co-occurring conditions of behavioral or mental health conditions.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "behavioralAndMentalHealth",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
     ],
     "allowedRegistrationTypes": [
       "apm",
@@ -726,8 +684,8 @@
   {
     "category": "ia",
     "measureId": "IA_CC_8",
-    "title": "Implementation of documentation improvements for practice/process improvements",
-    "description": "Implementation of practices/processes that document care coordination activities (e.g., a documented care coordination encounter that tracks all clinical staff involved and communications from date patient is scheduled for outpatient procedure through day of procedure).",
+    "title": "Implementation of Documentation and/or Operational Improvements for Practice/Process Improvements",
+    "description": "This activity aims to strengthen communication, transparency, and patient‑centered care across all transitions—outpatient, inpatient, specialty, and community settings. It seeks to promote clinicians' proactively coordinating care, tracking patient progress, documenting actions taken, and maintaining clear, structured processes that reduce fragmentation and improve clinical outcomes. This activity may include:\n• Documentation of care coordination encounters that track all clinical staff involved, communication steps, and handoffs from the time a patient is scheduled for an outpatient procedure or referral through completion of the episode of care\n• Systematic tracking of patients referred to consultants or specialists, including confirmation that the referral was received, appointments were completed, and recommendations were integrated into the plan of care\n• Documentation of care transition practices reflecting a patient‑centered action plan aligned with the patient’s values, preferences, and social context\n• Implementation of care coordination agreements with frequently used consultants or facilities that set expectations for timely, bidirectional information sharing and clearly define responsibilities across settings.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -754,8 +712,8 @@
   {
     "category": "ia",
     "measureId": "IA_CC_9",
-    "title": "Implementation of practices/processes for developing regular individual care plans",
-    "description": "Implementation of practices/processes, including a discussion on care, to develop regularly updated individual care plans for at-risk patients that are shared with the beneficiary or caregiver(s). Individual care plans should include consideration of a patient’s goals and priorities, as well as desired outcomes of care.",
+    "title": "Implementation of Practices/Processes for Developing Regular Individual Care Plans",
+    "description": "Implementation of practices/processes, including a discussion about care goals and preferences, to develop regularly updated individual care plans for at-risk patients that are developed and shared with the beneficiary and family and/or caregiver(s). Individual care plans should include consideration of a patient’s (and family/caregiver’s, as appropriate) goals and priorities, as well as desired outcomes of care.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -781,69 +739,6 @@
       "M1499",
       "M1500",
       "M1501"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_CC_10",
-    "title": "Care transition documentation practice improvements",
-    "description": "In order to receive credit for this activity, a MIPS eligible clinician must document practices/processes for care transition with documentation of how a MIPS eligible clinician or group carried out an action plan for the patient with the patient’s preferences in mind (that is, a “patient-centered” plan) during the first 30 days following a discharge. Examples of these practices/processes for care transition include: staff involved in the care transition; phone calls conducted in support of transition; accompaniments of patients to appointments or other navigation actions; home visits; patient information access to their medical records; real time communication between PCP and consulting clinicians; PCP included on specialist follow-up or transition communications.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "careCoordination",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_CC_11",
-    "title": "Care transition standard operational improvements",
-    "description": "Establish standard operations to manage transitions of care that could include one or more of the following: • Establish formalized lines of communication with local settings in which empaneled patients receive care to ensure documented flow of information and seamless transitions in care; and/or• Partner with community or hospital-based transitional care services.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "careCoordination",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_CC_12",
-    "title": "Care coordination agreements that promote improvements in patient tracking across settings",
-    "description": "Establish effective care coordination and active referral management that could include one or more of the following:• Establish care coordination agreements with frequently used consultants that set expectations for documented flow of information and MIPS eligible clinician or MIPS eligible clinician group expectations between settings. Provide patients with information that sets their expectations consistently with the care coordination agreements; • Track patients referred to specialist through the entire process; and/or• Systematically integrate information from referrals into the plan of care.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "careCoordination",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
     ],
     "allowedRegistrationTypes": [
       "apm",
@@ -899,27 +794,6 @@
       "G0059",
       "M1425",
       "M1503"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_CC_16",
-    "title": "Primary Care Physician and Behavioral Health Bilateral Electronic Exchange of Information for Shared Patients",
-    "description": "The primary care and behavioral health practices use the same electronic health record system for shared patients or have an established bidirectional flow of primary care and behavioral health records.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2018,
-    "lastPerformanceYear": null,
-    "subcategoryId": "careCoordination",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
     ],
     "allowedRegistrationTypes": [
       "apm",
@@ -1051,27 +925,6 @@
       "M1370",
       "M1499",
       "M1503"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_EPA_4",
-    "title": "Additional improvements in access as a result of QIN/QIO TA",
-    "description": "As a result of Quality Innovation Network-Quality Improvement Organization technical assistance, performance of additional activities that improve access to services or improve care coordination (for example, investment of on-site diabetes educator).",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "expandedPracticeAccess",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
     ],
     "allowedRegistrationTypes": [
       "apm",
@@ -1314,27 +1167,6 @@
   },
   {
     "category": "ia",
-    "measureId": "IA_PM_2",
-    "title": "Anticoagulant Management Improvements",
-    "description": "Individual MIPS eligible clinicians and groups who prescribe anti-coagulation medications (including, but not limited to oral Vitamin K antagonist therapy, including warfarin or other coagulation cascade inhibitors) must attest that for 75 percent of their ambulatory care patients receiving these medications are being managed with support from one or more of the following improvement activities:• Participation in a systematic anticoagulation program (coagulation clinic, patient self-reporting program, or patient self-management program);• Patients are being managed by an anticoagulant management service, that involves systematic and coordinated care, incorporating comprehensive patient education, systematic prothrombin time (PT-INR) testing, tracking, follow-up, and patient communication of results and dosing decisions;• Patients are being managed according to validated electronic decision support and clinical management tools that involve systematic and coordinated care, incorporating comprehensive patient education, systematic PT-INR testing, tracking, follow-up, and patient communication of results and dosing decisions;• For rural or remote patients, patients are managed using remote monitoring or telehealth options that involve systematic and coordinated care, incorporating comprehensive patient education, systematic PT-INR testing, tracking, follow-up, and patient communication of results and dosing decisions; or• For patients who demonstrate motivation, competency, and adherence, patients are managed using either a patient self-testing (PST) or patient-self-management (PSM) program.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "populationManagement",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
     "measureId": "IA_PM_3",
     "title": "RHC, IHS or FQHC quality improvement activities",
     "description": "Participating in a Rural Health Clinic (RHC), Indian Health Service Medium Management (IHS), or Federally Qualified Health Center in ongoing engagement activities that contribute to more formal quality reporting, and that include receiving quality data back for broader quality improvement and benchmarking improvement which will ultimately benefit patients. Participation in Indian Health Service, as an improvement activity, requires MIPS eligible clinicians and groups to deliver care to federally recognized American Indian and Alaska Native populations in the U.S. and in the course of that care implement continuous clinical practice improvement including reporting data on quality of services being provided and receiving feedback to make improvements over time.",
@@ -1357,8 +1189,8 @@
   {
     "category": "ia",
     "measureId": "IA_PM_4",
-    "title": "Glycemic management services",
-    "description": "For outpatient Medicare beneficiaries with diabetes and who are prescribed antidiabetic agents (e.g., insulin, sulfonylureas), MIPS eligible clinicians and groups must attest to having: For the first performance year, at least 60 percent of medical records with documentation of an individualized glycemic treatment goal that: a) Takes into account patient-specific factors, including, at least 1) age, 2) comorbidities, and 3) risk for hypoglycemia, andb) Is reassessed at least annually.The performance threshold will increase to 75 percent for the second performance year and onward.Clinician would attest that, 60 percent for first year, or 75 percent for the second year, of their medical records that document individualized glycemic treatment represent patients who are being treated for at least 90 days during the performance period.",
+    "title": "Glycemic Screening, Referral, and Management",
+    "description": "For outpatient Medicare beneficiaries, MIPS-eligible clinicians and groups must attest to having: \nFor the first performance year, at least 60 percent of medical records with documentation of screening patients for abnormal blood glucose, referring eligible patients with prediabetes to a CDC-recognized diabetes prevention program, and developing individualized glycemic treatment plans that: \na) Consider patient-specific factors, including, at least 1) age, 2) comorbidities, and 3) risk for hypoglycemia, and\nb) Are reassessed at least annually.\nThe performance threshold will increase to 75 percent for the second performance year and onward.\n\nClinicians must attest that 60 percent (for the first year) and 75 percent (for the second year and beyond) of their medical records include documentation of screening patients for abnormal blood glucose according to current US Preventive Services Task Force (USPSTF) and/or American Diabetes Association (ADA) guidelines.\nClinicians must attest that 60 percent (for the first year) and 75 percent (for the second year and beyond) of their medical records include documentation of referring eligible patients with prediabetes to a CDC-recognized diabetes prevention program operating under the framework of the National Diabetes Prevention Program.\nClinicians must attest that 60 percent (for the first year) and 75 percent (for the second year and beyond) of their medical records document individualized glycemic treatment plans representing patients who are being seen for at least 90 days during the performance period.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -1534,48 +1366,6 @@
     "measureId": "IA_PM_18",
     "title": "Provide Clinical-Community Linkages",
     "description": "Engaging community health workers to provide a comprehensive link to community resources through family-based services focusing on success in health, education, and self-sufficiency. This activity supports individual MIPS eligible clinicians or groups that coordinate with primary care and other clinicians, engage and support patients, use of health information technology, and employ quality measurement and improvement processes. An example of this community based program is the NCQA Patient-Centered Connected Care (PCCC) Recognition Program or other such programs that meet these criteria.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2018,
-    "lastPerformanceYear": null,
-    "subcategoryId": "populationManagement",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_PM_19",
-    "title": "Glycemic Screening Services",
-    "description": "For at-risk outpatient Medicare beneficiaries, individual MIPS eligible clinicians and groups must attest to implementation of systematic preventive approaches in clinical practice for at least 60 percent for the 2018 performance period and 75 percent in future years, of electronic medical records with documentation of screening patients for abnormal blood glucose according to current US Preventive Services Task Force (USPSTF) and/or American Diabetes Association (ADA) guidelines.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2018,
-    "lastPerformanceYear": null,
-    "subcategoryId": "populationManagement",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
-    "measureId": "IA_PM_20",
-    "title": "Glycemic Referring Services",
-    "description": "For at-risk outpatient Medicare beneficiaries, individual MIPS eligible clinicians and groups must attest to implementation of systematic preventive approaches in clinical practice for at least 60 percent for the CY 2018 performance period and 75 percent in future years, of medical records with documentation of referring eligible patients with prediabetes to a CDC-recognized diabetes prevention program operating under the framework of the National Diabetes Prevention Program.",
     "metricType": "boolean",
     "firstPerformanceYear": 2018,
     "lastPerformanceYear": null,
@@ -1778,27 +1568,6 @@
   },
   {
     "category": "ia",
-    "measureId": "IA_PSPA_2",
-    "title": "Participation in MOC Part IV",
-    "description": "In order to receive credit for this activity, a MIPS eligible clinician must participate in Maintenance of Certification (MOC) Part IV. Maintenance of Certification (MOC) Part IV requires clinicians to perform monthly activities across practice to regularly assess performance by reviewing outcomes addressing identified areas for improvement and evaluating the results. Some examples of activities that can be completed to receive MOC Part IV credit are: the American Board of Internal Medicine (ABIM) Approved Quality Improvement (AQI) Program, National Cardiovascular Data Registry (NCDR) Clinical Quality Coach, Quality Practice Initiative Certification Program, American Board of Medical Specialties Practice Performance Improvement Module or American Society of Anesthesiologists (ASA) Simulation Education Network, for improving professional practice including participation in a local, regional or national outcomes registry or quality assessment program; specialty- specific activities including Safety Certification in Outpatient Practice Excellence (SCOPE); American Psychiatric Association (APA) Performance in Practice modules.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "subcategoryId": "patientSafetyAndPracticeAssessment",
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus"
-    ],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "ia",
     "measureId": "IA_PSPA_3",
     "title": "Participate in IHI Training/Forum Event; National Academy of Medicine, AHRQ Team STEPPS® or Other Similar Activity",
     "description": "For MIPS eligible clinicians not participating in Maintenance of Certification (MOC) Part IV, new engagement for MOC Part IV, such as the Institute for Healthcare Improvement (IHI) Training/Forum Event; National Academy of Medicine, Agency for Healthcare Research and Quality (AHRQ) Team STEPPS®, or the American Board of Family Medicine (ABFM) Performance in Practice Modules.",
@@ -1988,8 +1757,8 @@
   {
     "category": "ia",
     "measureId": "IA_PSPA_16",
-    "title": "Use decision support—ideally platform-agnostic, interoperable clinical decision support (CDS) tools —and standardized treatment protocols to manage workflow on the care team to meet patient needs.",
-    "description": "Use decision support - ideally platform-agnostic, interoperable clinician decision support (CDS) tools - and standardized treatment protocols to manage workflow on the care team to meet patient needs. Clinicians should focus on utilizing open-source, freely available, interoperable CDS in completing the requirements of this activity.",
+    "title": "Use decision support—ideally platform-agnostic, interoperable clinical decision support (CDS) tools, including AI-enabled predictive decision-support interventions—and standardized treatment protocols to manage workflow on the care team to meet patient needs",
+    "description": "MIPS-eligible clinicians use platform-agnostic, interoperable clinical decision support (CDS) tools—including artificial intelligence (AI)-enabled predictive decision-support interventions—to guide care-team workflow and support evidence-based, patient-centered decision-making. As part of this activity, clinicians prioritize open-source or freely available CDS tools where feasible and implement organizational policies to ensure the safe, appropriate, and effective use of these technologies.\nThis activity may include:\n• Use of interoperable CDS tools, including AI-enabled technologies that meet the ONC definition of predictive decision-support interventions in 45 CFR 170.102: \"technology that supports decision-making based on algorithms or models that derive relationships from training data and then produce an output that results in prediction, classification, recommendation, evaluation, or analysis\"\n• Organizational policies for safe CDS and AI use, including processes to identify, review, and mitigate AI-related adverse events or near‑misses, and to address clinician concerns about liability, model reliability, and appropriate use\n• Evaluation of AI-enabled CDS tools using the following quality principles: \n○ Fairness: outputs free from bias or undue risk\n○ Appropriateness: relevance to the clinical context\n○ Validity: accurate and reliable predictions or recommendations\n○ Effectiveness: demonstrated benefit in real‑world use\n• Workflow integration practices showing that CDS recommendations—whether originally human‑curated or AI‑generated—are applied consistently in treatment planning, patient counseling, and follow-up\n• Periodic review and updating of CDS tools and related protocols to maintain alignment with best practices, organizational policies, and patient‑safety standards.",
     "metricType": "boolean",
     "firstPerformanceYear": 2017,
     "lastPerformanceYear": null,
@@ -2775,6 +2544,64 @@
       "PI_HIE_4",
       "PI_HIE_5"
     ],
+    "allowedPrograms": [
+      "mips",
+      "app1",
+      "appPlus",
+      "asmHf",
+      "asmLbp",
+      "ssp",
+      "G0053",
+      "G0054",
+      "G0055",
+      "G0057",
+      "G0058",
+      "G0059",
+      "M0001",
+      "M0002",
+      "M0004",
+      "M0005",
+      "M1366",
+      "M1367",
+      "M1368",
+      "M1369",
+      "M1370",
+      "M1420",
+      "M1421",
+      "M1422",
+      "M1423",
+      "M1424",
+      "M1425",
+      "M1498",
+      "M1499",
+      "M1500",
+      "M1501",
+      "M1502",
+      "M1503"
+    ],
+    "preprod": [],
+    "allowedRegistrationTypes": [
+      "apm",
+      "group",
+      "subgroup",
+      "individual"
+    ]
+  },
+  {
+    "category": "pi",
+    "measureId": "PI_HIE_7",
+    "title": "Electronic Prior Authorization",
+    "description": "For at least one medical item or service (excluding drugs) ordered by the MIPS eligible clinician during the performance period, the prior authorization is requested electronically through a Prior Authorization API using CEHRT.",
+    "metricType": "boolean",
+    "firstPerformanceYear": 2027,
+    "lastPerformanceYear": null,
+    "isRequired": false,
+    "objective": "healthInformationExchange",
+    "isBonus": true,
+    "reportingCategory": "bonus",
+    "measureSets": [],
+    "exclusion": null,
+    "substitutes": [],
     "allowedPrograms": [
       "mips",
       "app1",
@@ -4517,38 +4344,6 @@
       "M1501",
       "M1502",
       "M1503"
-    ],
-    "preprod": [],
-    "allowedRegistrationTypes": [
-      "apm",
-      "group",
-      "subgroup",
-      "individual"
-    ]
-  },
-  {
-    "category": "pi",
-    "measureId": "PI_PPHI_1",
-    "title": "Security Risk Analysis",
-    "description": "First, conduct or review a security risk analysis; and second, conduct security risk management activities, in accordance with the requirements under 45 CFR 164.308(a)(1)(ii)(A) and (B). Security risk analysis and management activities include addressing the security of data created or maintained by CEHRT (to include encryption), in accordance with 45 CFR 164.312(a)(2)(iv) and 45 CFR 164.306(d)(3). The encryption implementation specified at 45 CFR 164.312(a)(2)(iv) must be implemented if it is reasonable and appropriate; if encryption is not reasonable and appropriate, then the MIPS eligible clinician would adopt an equivalent alternative measure if it is reasonable and appropriate to do so.",
-    "metricType": "boolean",
-    "firstPerformanceYear": 2017,
-    "lastPerformanceYear": null,
-    "isRequired": true,
-    "objective": "protectPatientHealthInformation",
-    "isBonus": false,
-    "reportingCategory": "required",
-    "measureSpecification": {},
-    "measureSets": [],
-    "exclusion": null,
-    "substitutes": [],
-    "allowedPrograms": [
-      "mips",
-      "app1",
-      "appPlus",
-      "asmHf",
-      "asmLbp",
-      "ssp"
     ],
     "preprod": [],
     "allowedRegistrationTypes": [
