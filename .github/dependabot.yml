@@ -8,6 +8,12 @@ updates:
     allow:
       - dependency-name: "qpp*"
       - dependency-name: "@cmsgov/*"
+    cooldown:
+      default-days: 7
+      exclude:
+        - "@cmsgov/qpp-scoring-engines"
+        - "qpp-measures-data"
+        - "qpp-shared-logger-node"
 
   - package-ecosystem: "github-actions"
     directory: "/"
