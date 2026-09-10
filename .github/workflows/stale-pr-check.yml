@@ -43,7 +43,7 @@ jobs:
           issue-days-before-close: 7
 
       - name: Send Slack Notification
-        uses: slackapi/slack-github-action@v1.24
+        uses: slackapi/slack-github-action@v4.0
         if: ${{ steps.stale-pr-check.outputs.stale-pull-requests-count > 0 || steps.stale-pr-check.outputs.already-stale-pull-requests-count > 0 || steps.stale-pr-check.outputs.close-pull-requests-count > 0 }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_TO_P_QPPSF_API_TEAM_FEED }}
