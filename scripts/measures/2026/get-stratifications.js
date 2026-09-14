@@ -21,7 +21,9 @@ const { extractZip, getXMLFiles, extractStrata, extractAdditionalStrata } = requ
 const tmpDir = os.tmpdir() + '/ecqm';
 const tmpPath = tmpDir + '/xmls';
 const currentYear = process.argv[2];
-const zipPath = '../../../staging/' + currentYear + '/2025-EC-eCQM-v2.zip';
+// Use path.resolve() to create absolute path for AdmZip (required for 2026)
+// Relative paths cause "Invalid filename" errors in AdmZip constructor
+const zipPath = path.resolve(__dirname, '../../../staging/' + currentYear + '/2026-EligibleClinician-eCQM_v2.zip');
 
 if (!currentYear) {
   console.log('Missing required argument <current year>');
@@ -101,12 +103,29 @@ bbPromise.all(
 /*
 return strata description array
 */
+/*
+ * Extracts stratification descriptions from eCQM measure XML
+ * 
+ * Handles multiple formats:
+ * - 2025 format: strata separated by newlines ("Numerator 1:\n<text>\nNumerator 2:\n<text>")
+ * - 2026 format: strata on same line ("Numerator 1: <text>. Numerator 2: <text>.")
+ * 
+ * Special cases:
+ * - CMS138: Uses 'Population' identifier in DENOM field (not NUMER)
+ * - CMS145/157: Uses MSRAGG field with '- Population' identifier
+ * - CMS156/347: Custom parsing from measure.text field
+ * 
+ * @param {Object} measure - Parsed XML measure object
+ * @param {string} emeasureid - Measure ID (e.g., '128', '138')
+ * @returns {Array<string>} Array of stratum descriptions
+ */
 function extractStrataDescription(measure, emeasureid) {
-  // parse out strata descriptions from numerator text or aggregated rate or text value
-  // descriptions are like "Numerator 1: Patients who initiated treatment within 14 days of the diagnosis\nNumerator 2: Patients who initiated treatment and who had two or more additional services with an AOD diagnosis within 30 days of the initiation visit"
   let description, strataDescriptions;
   let descriptionIdentifier = 'Numerator';
+  
+  // Custom measures that use different XML fields or identifiers
   const customMeasures = {
+    '138': { 'subjectCode': 'DENOM', 'descriptionIdentifier': 'Population' },  // CMS138 uses populations in DENOM field
     '145': { 'subjectCode': 'MSRAGG', 'descriptionIdentifier': '- Population' },
     '157': { 'subjectCode': 'MSRAGG', 'descriptionIdentifier': '- Population' }
   };
@@ -123,12 +142,29 @@ function extractStrataDescription(measure, emeasureid) {
       .measureAttribute[0].value[0].$.value;
   }
 
-  // get descriptions for multi strata measures
+  // Parse descriptions for multi-strata measures with special formatting
   switch (emeasureid) {
     case '138':
+      // CMS138: Preventive Care and Screening - Tobacco Use
+      // 2025 format: "Population 1:\n<text>\nPopulation 2:\n<text>\nPopulation 3:\n<text>"
+      // 2026 format: "Population 1: <text>. Population 2: <text>. Population 3: <text>."
+      
+      // First attempt: Try to split by newlines (works for 2025)
       strataDescriptions = _.compact(description.replaceAll(/(\n{0,1}Population \d:\s{0,3}\n)/g, '')
         .split(/\n|\r|&#xA;/))
         .map(string => string.trim());
+      
+      // If we only got 1 result but multiple populations exist, they're on the same line (2026 format)
+      if (strataDescriptions.length < 2 && description.includes('Population 1:') && description.includes('Population 2:')) {
+        // Extract populations from single-line format using regex
+        // Matches: "Population 1: <text>. Population 2: <text>. Population 3: <text>."
+        const popRegex = /Population (\d+): ([^]+?)(?=\. Population \d+: |\.$|$)/g;
+        let match;
+        strataDescriptions = [];
+        while ((match = popRegex.exec(description)) !== null) {
+          strataDescriptions.push(match[2].trim().replace(/\.$/, ''));
+        }
+      }
       break;
     case '156':
       description = measure.text[0].$.value;
@@ -146,12 +182,33 @@ function extractStrataDescription(measure, emeasureid) {
         .map(string => string.substr('-'.length).trim());
       break;
     default:
+      // Default extraction logic for most measures (e.g., CMS128 and others)
+      // Step 1: Try splitting by newlines (works for 2025 format)
       strataDescriptions = _.compact(description.split(/\n|\r|&#xA;/));
+      
+      // Step 2: Filter lines that start with "Numerator X:" (or other identifier)
       // eslint-disable-next-line no-case-declarations
       const idRegEx = new RegExp('^(' + descriptionIdentifier + ' \\d: )');
       strataDescriptions = strataDescriptions
         .filter(string => string.match(idRegEx))
         .map(string => string.substr(`${descriptionIdentifier} x: `.length).trim());
+      
+      // Step 3: Handle 2026 format where multiple numerators are on same line
+      // Example: "Numerator 1: <84 days text>. Numerator 2: <180 days text>."
+      // This occurs when indicators ("Numerator 1:", "Numerator 2:") exist but we only got 1 stratum
+      if (description.includes(descriptionIdentifier + ' 1:') && 
+          description.includes(descriptionIdentifier + ' 2:') && 
+          strataDescriptions.length < 2) {
+        // Use regex to extract each numerator from the single-line format
+        // Pattern matches: "Numerator N: <text>" followed by either ". Numerator" or end of string
+        const numeratorRegex = new RegExp(descriptionIdentifier + ' (\\d+): ([^]+?)(?=\\. ' + descriptionIdentifier + ' \\d+: |\\.$|$)', 'g');
+        let match;
+        strataDescriptions = [];
+        while ((match = numeratorRegex.exec(description)) !== null) {
+          // match[1] = numerator number, match[2] = description text
+          strataDescriptions.push(match[2].trim().replace(/\.$/, ''));
+        }
+      }
   }
 
   // description stores single stratum otherwise

@@ -460,6 +460,8 @@ export const PI_DEFAULT_PROGRAMS = [
     Programs.MIPS,
     Programs.APP1,
     Programs.APP_PLUS,
+    Programs.ASM_HF,
+    Programs.ASM_LBP,
     Programs.SSP,
 ];
 
