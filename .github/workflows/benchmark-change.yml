@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: 8BitJonny/gh-get-current-pr@2.1.2
       id: PR
-    - uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a #v2.0.2
+    - uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58 #v2.4.0
       env:
         SLACK_WEBHOOK: ${{ secrets.CMS_SLACK_WEBHOOK }}
         SLACK_CHANNEL: "qpp-benchmarks"
