@@ -45,7 +45,7 @@ jobs:
           echo "::add-mask::$SECRET_VALUE"
           echo "GITHUB_TOKEN=$SECRET_VALUE" >> $GITHUB_OUTPUT
       - name: Checkout Codebase
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: develop
           fetch-depth: 0 # Ensures fetching of history for all branches and tags
