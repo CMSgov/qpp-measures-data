@@ -20,7 +20,7 @@ jobs:
       - name: Run Tests
         run: npm test
       - name: Version Check
-        uses: EndBug/version-check@a45f6f582d50047e42a4534ffb74b77a2c3af811 #v1.3.0
+        uses: EndBug/version-check@095362f3cd50f690c8fa0e6afeea81834bd8d320 #v3.0.0
         id: check
       - name: Version Not Updated
         if: steps.check.outputs.changed == 'false'
