@@ -14,7 +14,7 @@ jobs:
     name: Notify ITT via Benchmarks Channel
     runs-on: ubuntu-latest
     steps:
-    - uses: 8BitJonny/gh-get-current-pr@2.1.2
+    - uses: 8BitJonny/gh-get-current-pr@4.0.0
       id: PR
     - uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58 #v2.4.0
       env:
