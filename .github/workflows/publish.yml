@@ -183,7 +183,7 @@ jobs:
           event-type: lib-update-event
           client-payload: '{"ref": "${{ github.ref }}", "private_package": "@CMSGov/qpp-measures-data", "public_package":"qpp-measures-data", "tag_name": "${{ env.DISPATCH_TAG }}", "html_url": "${{ env.DISPATCH_URL }}"}'
       - name: Notify APP Submissions API Channel
-        uses: rtCamp/action-slack-notify@96d5e2a64fc78a6b7ac13265f55bee296869967a
+        uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58
         env:
           SLACK_WEBHOOK: ${{ secrets.SUBMISSIONS_API_SLACK_WEBHOOK }}
           SLACK_CHANNEL: "p-qppsf-api"
