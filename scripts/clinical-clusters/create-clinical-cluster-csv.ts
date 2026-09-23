@@ -30,8 +30,8 @@ if (!currentYear) {
   process.exit(1);
 }
 
-parseOffice(pptPath, config).then((ast) => {
-  const data = ast.toText();
+parseOffice(pptPath, config).then(async (ast) => {
+  const data = (await ast.to("text")).value;
   const specialtySplitSentence = "Appendix B: Specialty Measure Sets with Fewer than 6 Measures";
 
   // First element will have all the clinical data and the specialty set will be split into different elements.
