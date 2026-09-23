@@ -172,6 +172,16 @@ function extractStrataDescription(measure, emeasureid) {
       strataDescriptions = strataDescriptions
         .filter(string => string.match(/^(\d. )/))
         .map(string => string.substr(`x. `.length).trim());
+
+      // 2026 format: numbered items on the same line, e.g. "1. <text>. 2. <text>. 3. <text>."
+      if (strataDescriptions.length < 2 && (description.match(/\d\.\s/g) || []).length >= 2) {
+        const numberedRegex = /\d\.\s+([^]+?)(?=\s\d\.\s|\.$|$)/g;
+        let match;
+        strataDescriptions = [];
+        while ((match = numberedRegex.exec(description)) !== null) {
+          strataDescriptions.push(match[1].trim().replace(/\.$/, ''));
+        }
+      }
       break;
     case '347':
       description = measure.text[0].$.value;
