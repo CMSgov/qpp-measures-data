@@ -30,7 +30,7 @@ jobs:
       is_beta: ${{ steps.set-version.outputs.is_beta }}
     steps:
       - name: Configure AWS Credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
           aws-region: us-east-1
@@ -150,7 +150,7 @@ jobs:
           - CMSgov/qpp-submissions-api
     steps:
       - name: Configure AWS Credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::730335206644:role/delegatedadmin/developer/qppa-github-actions-role-1
           aws-region: us-east-1
