@@ -65,7 +65,7 @@ parseOffice(pptPath, config).then(async (ast) => {
   // format data into to the structure json2csv accepts
   const clinicalClaimsData: object[] = [];
   const clinicalRegistryData: object[] = [];
-  Object.keys(clinicalMeasures).map(clinicalTopic => {
+  Object.keys(clinicalMeasures).forEach(clinicalTopic => {
     Object.keys(clinicalMeasures[clinicalTopic]).forEach(measureId => {
       const measure = filteredMeasures.find(measure => measure["measureId"] == measureId) || {};
       if (measure["submissionMethods"].includes("claims")) clinicalClaimsData.push({ "Title": clinicalTopic, "Quality ID": measureId });
