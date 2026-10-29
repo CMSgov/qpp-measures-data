@@ -183,14 +183,30 @@ function extractStrataDescription(measure, emeasureid) {
         }
       }
       break;
-    case '347':
+    case '347': {
       description = measure.text[0].$.value;
-      strataDescriptions = description.replaceAll('; OR', '').split(/\n/);
+       
+      const cleanedDescription = description.replaceAll('; OR', '');
+      strataDescriptions = cleanedDescription.split(/\n/);
       strataDescriptions = strataDescriptions
         // eslint-disable-next-line no-useless-escape
         .filter(string => string.match(/^\-/))
         .map(string => string.substr('-'.length).trim());
+
+      // 2026 format: all "- <population>" items on one line after the intro sentence
+      if (strataDescriptions.length < 2) {
+         
+        const listStart = cleanedDescription.lastIndexOf(':');
+         
+        const list = listStart !== -1 ? cleanedDescription.slice(listStart + 1) : cleanedDescription;
+        strataDescriptions = list
+          // split only on a dash surrounded by spaces and followed by a capital letter, to avoid splitting hyphenated numbers like "40-75"
+          .split(/\s-\s(?=[A-Z])/)
+          .map(string => string.replace(/^-\s*/, '').trim())
+          .filter(Boolean);
+      }
       break;
+    }
     default:
       // Default extraction logic for most measures (e.g., CMS128 and others)
       // Step 1: Try splitting by newlines (works for 2025 format)
@@ -210,8 +226,10 @@ function extractStrataDescription(measure, emeasureid) {
           description.includes(descriptionIdentifier + ' 2:') && 
           strataDescriptions.length < 2) {
         // Use regex to extract each numerator from the single-line format
-        // Pattern matches: "Numerator N: <text>" followed by either ". Numerator" or end of string
-        const numeratorRegex = new RegExp(descriptionIdentifier + ' (\\d+): ([^]+?)(?=\\. ' + descriptionIdentifier + ' \\d+: |\\.$|$)', 'g');
+        // Pattern matches: "Numerator N: <text>" followed by the next label, an aggregate-rate
+        // explanation (e.g. CMS145/CMS157's "For the purposes of this measure..."), or end of string.
+        // A literal period is not required before the next label/explanation.
+        const numeratorRegex = new RegExp(descriptionIdentifier + ' (\\d+): ([^]+?)(?=\\s*' + descriptionIdentifier + ' \\d+: |\\s*For the purposes of this measure|\\.$|$)', 'g');
         let match;
         strataDescriptions = [];
         while ((match = numeratorRegex.exec(description)) !== null) {

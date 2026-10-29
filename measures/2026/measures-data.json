@@ -4984,12 +4984,21 @@
     ],
     "strata": [
       {
-        "description": "Patients with left ventricular systolic dysfunction (LVEF <=40%) - Population 2: Patients with a prior (within the past 3 years) myocardial infarction For the purposes of this measure, a single performance rate can be calculated as follows: Performance Rate = (Numerator 1 + Numerator 2)/ [(Denominator 1 - Denominator Exceptions 1) + (Denominator 2 - Denominator Exceptions 2)]",
+        "description": "Patients with left ventricular systolic dysfunction (LVEF <=40%)",
         "eMeasureUuids": {
           "initialPopulationUuid": "A8E96013-BA2C-445F-8084-5610925F378A",
           "denominatorUuid": "412A6DD3-1582-43EE-9E7E-BA55261D5485",
           "numeratorUuid": "1A0759C1-708C-4DC9-B3F4-5D8EAC1BA579",
           "denominatorExceptionUuid": "A25F0F00-D7D5-44AA-A335-36E844CB96AD"
+        }
+      },
+      {
+        "description": "Patients with a prior (within the past 3 years) myocardial infarction",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "45B35274-CD8E-4CD7-A433-F4321DFE441D",
+          "denominatorUuid": "0ED9D8CD-0605-41DF-99A8-0887B5F9D281",
+          "numeratorUuid": "7F636E25-F65D-47A9-B9B2-C16D8DC0E8AB",
+          "denominatorExceptionUuid": "CE7D3F94-476C-407E-B032-2491447FBF1B"
         }
       }
     ]
@@ -6673,11 +6682,19 @@
     ],
     "strata": [
       {
-        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy - Population 2: Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy For the purposes of this measure, a single performance rate can be calculated as follows: Performance Rate = (Numerator 1 + Numerator 2)/ (Denominator 1 + Denominator 2)",
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving chemotherapy",
         "eMeasureUuids": {
           "initialPopulationUuid": "F7415275-1792-42E9-B06D-7940E5F07FEC",
           "denominatorUuid": "B174B06F-70E3-4E8D-B173-F12DC08FAFB4",
           "numeratorUuid": "9E2746AB-7FFE-47BD-A962-1F458BEBD694"
+        }
+      },
+      {
+        "description": "Visits for patients with a diagnosis of cancer who are currently receiving radiation therapy",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E94B31A2-76EE-442C-9F4A-A4636EF54444",
+          "denominatorUuid": "3E7AC0C8-C1FA-480D-B394-8203E342EA49",
+          "numeratorUuid": "6FF5A892-9270-4D9E-B321-C692C2529A4F"
         }
       }
     ]
@@ -12399,13 +12416,43 @@
     ],
     "strata": [
       {
-        "description": "Percentage of the following patients - all considered at high risk of cardiovascular events - who were prescribed or were on statin therapy during the measurement period: - All patients who were previously diagnosed with or currently have a diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD), including an ASCVD procedure; OR - Patients aged 20 to 75 years who have ever had a low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial hypercholesterolemia; OR - Patients aged 40-75 years with a diagnosis of diabetes; OR - Patients aged 40 to 75 with a 10-year ASCVD risk score of >= 20 percent.",
+        "description": "All patients who were previously diagnosed with or currently have a diagnosis of clinical atherosclerotic cardiovascular disease (ASCVD), including an ASCVD procedure",
         "eMeasureUuids": {
           "initialPopulationUuid": "DC7EE1FA-285A-447A-AB71-621A180BECBB",
           "denominatorUuid": "F5A7F615-7471-4549-88FD-C8B447C9685F",
           "numeratorUuid": "E87BD132-0762-43F1-B61F-427E13BBE7FD",
           "denominatorExceptionUuid": "5F2E3CBA-C623-492F-8590-A298A5A5240D",
           "denominatorExclusionUuid": "589CFFC5-DA6E-4A83-822F-97A5025D400B"
+        }
+      },
+      {
+        "description": "Patients aged 20 to 75 years who have ever had a low-density lipoprotein cholesterol (LDL-C) level >= 190 mg/dL or were previously diagnosed with or currently have an active diagnosis of familial hypercholesterolemia",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E2331545-B024-4CDD-BC82-64E4A0327010",
+          "denominatorUuid": "122A1E36-6103-4D1A-ACDE-6977F543AA34",
+          "numeratorUuid": "111D5121-56B0-4269-B4B4-19F880794A8A",
+          "denominatorExceptionUuid": "F7FE37E3-E52B-4890-812D-C707FA9AF416",
+          "denominatorExclusionUuid": "D1AAA198-0792-4E54-90C8-9C9500FFD093"
+        }
+      },
+      {
+        "description": "Patients aged 40-75 years with a diagnosis of diabetes",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "7888DEB7-F31B-486F-91CB-C41FD9344763",
+          "denominatorUuid": "4DAA9150-390A-461B-A27F-3564DD9C360D",
+          "numeratorUuid": "5FCDD292-9C20-4150-BA04-6AADC7080AD4",
+          "denominatorExceptionUuid": "8EABC307-B5ED-4817-9338-EAB99F0A7F1A",
+          "denominatorExclusionUuid": "6C587BC4-6BCF-46B9-8DAB-F07F0D6910E1"
+        }
+      },
+      {
+        "description": "Patients aged 40 to 75 with a 10-year ASCVD risk score of >= 20 percent.",
+        "eMeasureUuids": {
+          "initialPopulationUuid": "E8DEBC01-17D3-46DE-B796-842A49607972",
+          "denominatorUuid": "52E4F827-7BDC-4CBC-89BE-E22F718FAAF4",
+          "numeratorUuid": "C5C476DA-322B-4ACE-94F5-B6F50F2D6411",
+          "denominatorExceptionUuid": "11EADE8C-B284-4981-ADB2-0A0EEA93F3EB",
+          "denominatorExclusionUuid": "763FCCBC-EC90-42EF-AC59-9D26969905B2"
         }
       }
     ]
