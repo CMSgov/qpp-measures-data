@@ -10,8 +10,10 @@ import {
     BENCHMARKS_ORDER,
     BOOLEAN_CSV_FIELDS,
     SUBMISSION_METHOD_MAP,
+    isCoreMeasureYear,
 } from '../constants';
 import { InvalidValueError } from '../errors';
+import { warning } from '../logger';
 
 import { Benchmark } from './benchmarks.types';
 import { prepareCsv, fetchCSV, writeToFile } from './util';
@@ -22,6 +24,12 @@ export function convertCsvToJson(csvPath: string, performanceYear: number, jsonF
     const csv = fetchCSV(csvPath);
     const parsedCsv = prepareCsv(csv);
     const jsonPath = `staging/${performanceYear}/benchmarks/json/${jsonFileName}.json`;
+
+    // isHighPriority was replaced by isCoreMeasure (on measures data only) starting with the Core Measures year.
+    const ignoreHighPriority = isCoreMeasureYear(performanceYear);
+    if (ignoreHighPriority && parsedCsv.some((row) => _.has(row, 'isHighPriority'))) {
+        warning(`isHighPriority is ignored for PY${performanceYear} and later; please remove it from the benchmark file '${csvPath}'.`);
+    }
 
     const mappedCsv = parsedCsv.map((row) => {
         const benchmark: Benchmark = {
@@ -37,6 +45,7 @@ export function convertCsvToJson(csvPath: string, performanceYear: number, jsonF
         
         //maps the csv column values to the matching measures-data fields.
         _.each(BENCHMARKS_COLUMN_NAMES, (columnName, measureKeyName) => {
+            if (ignoreHighPriority && measureKeyName === 'isHighPriority') return;
             if (row[measureKeyName]) {
                 benchmark[columnName] = mapInput(measureKeyName, row);
             }

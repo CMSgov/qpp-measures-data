@@ -414,6 +414,119 @@ describe('#update-measures-util', () => {
         });
     });
 
+    describe('Core Measures', () => {
+        let warningSpy: jest.Spied<typeof logger.warning>;
+
+        beforeEach(() => {
+            warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+            jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+        });
+
+        afterEach(() => {
+            jest.restoreAllMocks();
+        });
+
+        describe('applyCoreMeasureFields', () => {
+            const buildMeasures = (): any[] => [
+                { category: 'quality', measureId: '001', isHighPriority: true },
+                { category: 'quality', measureId: '002', isCoreMeasure: true, coreMeasureFor: ['G0053'] },
+                { category: 'ia', measureId: 'IA_1' },
+            ];
+
+            it('does nothing before the Core Measures performance year', () => {
+                const measures = buildMeasures();
+
+                expect(MeasuresLib.applyCoreMeasureFields(measures, '2026')).toBe(false);
+                expect(measures).toEqual(buildMeasures());
+            });
+
+            it('removes isHighPriority and defaults the Core Measure fields on quality measures only', () => {
+                const measures = buildMeasures();
+
+                expect(MeasuresLib.applyCoreMeasureFields(measures, '2027')).toBe(true);
+                expect(measures).toStrictEqual([
+                    { category: 'quality', measureId: '001', isCoreMeasure: false, coreMeasureFor: [] },
+                    { category: 'quality', measureId: '002', isCoreMeasure: true, coreMeasureFor: ['G0053'] },
+                    { category: 'ia', measureId: 'IA_1' },
+                ]);
+            });
+
+            it('is safe to re-run', () => {
+                const measures = buildMeasures();
+                MeasuresLib.applyCoreMeasureFields(measures, '2027');
+                const migrated = _.cloneDeep(measures);
+
+                expect(MeasuresLib.applyCoreMeasureFields(measures, '2027')).toBe(false);
+                expect(measures).toStrictEqual(migrated);
+            });
+        });
+
+        describe('addMeasure', () => {
+            it('adds the Core Measure defaults to new quality and qcdr measures for Core Measures years', () => {
+                const measures = [...measuresJson];
+                const qualityChange = _.omit(allowedQualityNew, 'isHighPriority') as MeasuresChange;
+                const qcdrChange = { ..._.omit(allowedQCDRNew, 'isHighPriority'), isCoreMeasure: true } as MeasuresChange;
+
+                MeasuresLib.addMeasure(qualityChange, measures, '2027');
+                MeasuresLib.addMeasure(qcdrChange, measures, '2027');
+
+                expect(_.find(measures, { measureId: '133' })).toEqual(expect.objectContaining({ isCoreMeasure: false, coreMeasureFor: [] }));
+                // orderFields leaves unused keys as undefined; they are dropped when measures-data.json is written.
+                expect(JSON.parse(JSON.stringify(_.find(measures, { measureId: '133' })))).not.toHaveProperty('isHighPriority');
+                expect(_.find(measures, { measureId: 'abc' })).toEqual(expect.objectContaining({ isCoreMeasure: true, coreMeasureFor: [] }));
+            });
+
+            it('does not add the Core Measure defaults before the Core Measures year', () => {
+                const measures = [...measuresJson];
+
+                MeasuresLib.addMeasure(allowedQualityNew, measures, '2026');
+
+                const written = JSON.parse(JSON.stringify(_.find(measures, { measureId: '133' })));
+                expect(written).toHaveProperty('isHighPriority', false);
+                expect(written).not.toHaveProperty('isCoreMeasure');
+                expect(written).not.toHaveProperty('coreMeasureFor');
+            });
+        });
+
+        describe('orderFields', () => {
+            it('places the Core Measure fields after measureType', () => {
+                const ordered = MeasuresLib.orderFields({
+                    category: 'quality',
+                    measureId: '001',
+                    coreMeasureFor: [],
+                    primarySteward: 'steward',
+                    isCoreMeasure: false,
+                    measureType: 'process',
+                } as any);
+
+                expect(Object.keys(JSON.parse(JSON.stringify(ordered)))).toEqual([
+                    'category', 'measureId', 'measureType', 'isCoreMeasure', 'coreMeasureFor', 'primarySteward',
+                ]);
+            });
+        });
+
+        describe('warnOnCoreMeasureWithoutPrograms', () => {
+            const measures: any[] = [
+                { category: 'quality', measureId: 'noPrograms', isCoreMeasure: true, coreMeasureFor: [] },
+                { category: 'quality', measureId: 'withPrograms', isCoreMeasure: true, coreMeasureFor: ['G0053'] },
+                { category: 'quality', measureId: 'notCore', isCoreMeasure: false, coreMeasureFor: [] },
+                { category: 'ia', measureId: 'IA_1' },
+            ];
+
+            it('warns only for core measures that are not a Core Measure for any MVP', () => {
+                MeasuresLib.warnOnCoreMeasureWithoutPrograms([
+                    { measureId: 'noPrograms', category: Category.QUALITY },
+                    { measureId: 'withPrograms', category: Category.QCDR },
+                    { measureId: 'notCore', category: Category.QUALITY },
+                    { measureId: 'IA_1', category: Category.IA },
+                ] as MeasuresChange[], measures);
+
+                expect(warningSpy).toHaveBeenCalledTimes(1);
+                expect(warningSpy).toHaveBeenCalledWith(`'noPrograms' is flagged as a Core Measure but is not a Core Measure for any MVP (coreMeasureFor is empty). Confirm the MVP source file will be updated.`);
+            });
+        });
+    });
+
     describe('removeFromMVPSource', () => {
         beforeEach(() => {
             jest.clearAllMocks();

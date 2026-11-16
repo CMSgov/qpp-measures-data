@@ -212,7 +212,7 @@ export type CostMeasure = BaseMeasure & {
   submissionMethods: SubmissionMethod;
 }
 
-//required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
+//required: [measureType, eMeasureId, nqfEMeasureId, nqfId, isInverse, primarySteward, submissionMethods, isRegistryMeasure, isIcdImpacted]
 export type QualityMeasure = BaseMeasure & {
   category: Category.quality;
   measureType: MeasureType;
@@ -222,7 +222,7 @@ export type QualityMeasure = BaseMeasure & {
   nqfId?: string | null;
   isClinicalGuidelineChanged?: boolean;
   clinicalGuidelineChanged?: Method;
-  isHighPriority: boolean;
+  isHighPriority?: boolean;
   isInverse: boolean;
   overallAlgorithm?: PerformanceAlgorithm;
   strata?: PerformanceStrata;

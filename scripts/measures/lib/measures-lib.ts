@@ -25,9 +25,11 @@ import {
     PI_DEFAULT_VALUES,
     PI_MEASURES_ORDER,
     QCDR_MEASURES_ORDER,
+    QUALITY_CORE_MEASURE_DEFAULT_VALUES,
     QUALITY_DEFAULT_PROGRAMS,
     QUALITY_DEFAULT_VALUES,
-    QUALITY_MEASURES_ORDER
+    QUALITY_MEASURES_ORDER,
+    isCoreMeasureYear,
 } from '../../constants';
 import { AggregateCostMeasure, IAMeasure, Measure, PIMeasure, QualityMeasure } from '../../../util/interfaces';
 import { Category } from '../../../util/interfaces/measure';
@@ -116,8 +118,9 @@ export function updateMeasure(change: MeasuresChange, measuresJson: Measure[], p
  * Adds the specified measure.
  * Will throw a warning if any of its exclusions or substitutes do not exist in the measures-data.json.
  * Sets any default values for the measure type and orders the fields (based on /constants.ts).
+ * When a Core Measures performanceYear is provided, quality measures also get the Core Measure defaults.
  */
-export function addMeasure(change: MeasuresChange, measuresJson: Measure[]) {
+export function addMeasure(change: MeasuresChange, measuresJson: Measure[], performanceYear?: string) {
     // check if new exclusions and substitutes exist.
     if (change.substitutes) {
         existanceCheckForMeasureArray(change.substitutes, change.measureId, measuresJson, 'Substitute', true);
@@ -127,6 +130,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: Measure[]) {
     }
 
     const index = findFinalInCategory(change.category, measuresJson);
+    const coreMeasureDefaults = isCoreMeasureYear(performanceYear) ? _.cloneDeep(QUALITY_CORE_MEASURE_DEFAULT_VALUES) : {};
     switch (change.category) {
         case 'ia': {
             measuresJson.splice(index + 1, 0, orderFields({
@@ -158,6 +162,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: Measure[]) {
         case 'quality': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
+                ...coreMeasureDefaults,
                 ...change,
                 isRegistryMeasure: false,
                 allowedPrograms: QUALITY_DEFAULT_PROGRAMS,
@@ -168,6 +173,7 @@ export function addMeasure(change: MeasuresChange, measuresJson: Measure[]) {
         case 'qcdr': {
             measuresJson.splice(index + 1, 0, orderFields({
                 ...QUALITY_DEFAULT_VALUES,
+                ...coreMeasureDefaults,
                 ...change,
                 category: 'quality',
                 isRegistryMeasure: true,
@@ -228,6 +234,53 @@ export function isOutcomeHighPriority(change: MeasuresChange, measuresJson: Meas
         }
     }
     return true;
+}
+
+/**
+ * Migrates quality measures to the Core Measures data model for Core Measures performance years:
+ * removes isHighPriority and defaults isCoreMeasure (false) and coreMeasureFor ([]) when missing.
+ * No-op for earlier performance years. Safe to re-run.
+ * Returns true if any measure was changed.
+ */
+export function applyCoreMeasureFields(measuresJson: Measure[], performanceYear: string): boolean {
+    if (!isCoreMeasureYear(performanceYear)) return false;
+
+    let changed = false;
+    measuresJson.forEach((measure) => {
+        if (measure.category !== Category.QUALITY) return;
+        const qualityMeasure = measure as QualityMeasure;
+
+        if (_.has(qualityMeasure, 'isHighPriority')) {
+            delete qualityMeasure.isHighPriority;
+            changed = true;
+        }
+        if (typeof qualityMeasure.isCoreMeasure !== 'boolean') {
+            qualityMeasure.isCoreMeasure = QUALITY_CORE_MEASURE_DEFAULT_VALUES.isCoreMeasure;
+            changed = true;
+        }
+        if (!Array.isArray(qualityMeasure.coreMeasureFor)) {
+            qualityMeasure.coreMeasureFor = [];
+            changed = true;
+        }
+    });
+    return changed;
+}
+
+/**
+ * Warns (does not throw) for each changed/added quality measure that is flagged as a Core Measure
+ * but is not yet a Core Measure for any MVP. MVP data may arrive after the Quality change request.
+ */
+export function warnOnCoreMeasureWithoutPrograms(changes: MeasuresChange[], measuresJson: Measure[]) {
+    changes.forEach((change) => {
+        if (![Category.QUALITY, Category.QCDR].includes(change.category)) return;
+
+        const measure = _.find(measuresJson, { measureId: change.measureId }) as QualityMeasure | undefined;
+        if (measure?.isCoreMeasure === true && _.isEmpty(measure.coreMeasureFor)) {
+            warning(
+                `'${change.measureId}' is flagged as a Core Measure but is not a Core Measure for any MVP (coreMeasureFor is empty). Confirm the MVP source file will be updated.`
+            );
+        }
+    });
 }
 
 /**

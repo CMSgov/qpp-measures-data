@@ -187,6 +187,12 @@ function csvFieldToBoolean(field: string, value: string): boolean {
     }
 }
 
+//returns the trimmed column headers of the change request csv.
+export function getCsvColumnNames(csv: string): string[] {
+    const [headers] = parse(csv, { to_line: 1, relax_column_count: true, bom: true }) as string[][];
+    return (headers || []).map((header) => header.trim());
+}
+
 function prepareCsv(csv: string): any {
     //parse csv.
     const parsedCsv: any[] = parse(csv, { columns: true, relax_column_count: true, bom: true });

@@ -99,6 +99,21 @@ describe('validation.business', () => {
         )
     })
 
+    it('does not compare isHighPriority for Core Measures performance years', () => {
+        const coreYearBenchmarks = _.merge([], _.cloneDeep(volatileBenchmarks), {2: { isHighPriority: true }});
+        vol.reset();
+        vol.fromNestedJSON({
+            'measures/2027': {
+                'measures-data.json': JSON.stringify(volatileMeasures),
+            },
+            'staging/2027/benchmarks/json': {
+                'benchmarks.json': JSON.stringify(coreYearBenchmarks),
+            },
+        });
+
+        expect(() => benchmarkBusinessValidation('benchmarks.json', 2027)).not.toThrow();
+    });
+
     it('throws an error if a benchmark has mismatched data with isInverse', () => {
         testErrorsThrown(
             'Property mismatch for isInverse between Benchmark of id 127 its Measure\'s data. Measure expected false received true.',

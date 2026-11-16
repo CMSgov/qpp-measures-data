@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import appRoot from 'app-root-path';
 
-import { convertCsvToJson } from './csv-json-converter';
+import { convertCsvToJson, getCsvColumnNames } from './csv-json-converter';
 import * as logger from '../../logger';
 import { InvalidValueError } from '../../errors';
 
@@ -125,6 +125,26 @@ describe('#csv-json-converter', () => {
         expect(() => {
             convertCsvToJson(badQcdrMeasures);
         }).toThrow(new InvalidValueError('Collection Type(s) where Truncated', 'PartBaddataClaims'));
+    });
+
+    it('maps the Core Measure column to isCoreMeasure', () => {
+        const coreMeasureCSV = 'Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Y\nQCDR,ABC1,N\n';
+
+        expect(convertCsvToJson(coreMeasureCSV)).toEqual([
+            { category: 'quality', measureId: '001', isCoreMeasure: true },
+            { category: 'qcdr', measureId: 'ABC1', isCoreMeasure: false },
+        ]);
+    });
+
+    it('throws InvalidValueError for a bad Core Measure value', () => {
+        expect(() => {
+            convertCsvToJson('Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Maybe\n');
+        }).toThrow(new InvalidValueError('Core Measure', 'Maybe'));
+    });
+
+    it('returns the trimmed csv column names', () => {
+        expect(getCsvColumnNames('\ufeffCategory , High Priority,Measure ID\nQuality,Y,001\n')).toEqual(['Category', 'High Priority', 'Measure ID']);
+        expect(getCsvColumnNames('')).toEqual([]);
     });
 
     it('throws InvalidValueError for badly mapped boolean data', () => {

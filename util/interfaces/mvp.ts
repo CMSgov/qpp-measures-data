@@ -27,4 +27,6 @@ export interface MVPDataSlim extends BaseMVP {
     foundationPiMeasures: string[];
     foundationQualityMeasures: string[];
     administrativeClaimsMeasures: string[];
+    /** PY2027+. Quality measure IDs that are Core Measures for this MVP. */
+    coreQualityMeasureIds?: string[];
 }
