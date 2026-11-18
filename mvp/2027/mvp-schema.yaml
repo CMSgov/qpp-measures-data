@@ -205,10 +205,16 @@ definitions:
             type: array
             description: List of submissionMethods that have been suppressed for this year due to potentially no longer aligning with best practices or could lead to patient harm.
             items: { $ref: '#/definitions/methods' }
-          isHighPriority:
-            description: If true, can be used in the place of an outcome measure to satisfy quality category requirements.
+          isCoreMeasure:
+            description: If true, the measure is a Core Measure. It satisfies the Core Measure requirement for MIPS (when allowed for MIPS) and for each MVP listed in coreMeasureFor. Replaces isHighPriority starting in PY2027.
             type: boolean
             default: false
+          coreMeasureFor:
+            description: MVP IDs for which this measure is a Core Measure. Derived from the MVP source file during build:mvp.
+            type: array
+            uniqueItems: true
+            items: { $ref: '#/definitions/programs' }
+            default: []
           isInverse:
             description: If true, a lower performance rate correlates with better performance.
             type: boolean
@@ -299,7 +305,7 @@ definitions:
             }
           }
         ]
-        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isHighPriority, isInverse, primarySteward, submissionMethods, allowedPrograms, isRegistryMeasure, isIcdImpacted]
+        required: [nationalQualityStrategyDomain, measureType, eMeasureId, nqfEMeasureId, nqfId, isCoreMeasure, coreMeasureFor, isInverse, primarySteward, submissionMethods, allowedPrograms, isRegistryMeasure, isIcdImpacted]
 
   performanceStrata:
     type: object

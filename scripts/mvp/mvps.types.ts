@@ -8,6 +8,8 @@ export type MVP = {
     specialtiesMostApplicableTo: string[];
     clinicalTopics: string;
     qualityMeasureIds: string[];
+    /** PY2027+. Quality measure IDs that are Core Measures for this MVP (mvp.json only). */
+    coreQualityMeasureIds?: string[];
     iaMeasureIds: string[];
     costMeasureIds: string[];
     foundationPiMeasureIds: string[];
@@ -19,6 +21,7 @@ export type MVP = {
 
 export enum MVPCategory {
     Quality = "Quality",
+    CoreQuality = "Core Quality",
     Improvement = "Improvement",
     Cost = "Cost",
     Foundational = "Foundational"
