@@ -72,6 +72,13 @@ if (( $currentPerformanceYear >= 2022 )) && (( $currentPerformanceYear <= $maxPe
     echo -e "Updating MVP files..."
     npm run build:mvp $currentPerformanceYear
     exitOnFailure
+
+    # build:mvp writes Core Measure data (coreMeasureFor) back into measures-data.json for PY2027+.
+    if (( $currentPerformanceYear >= 2027 )); then
+      echo -e "Re-validating measures-data.json after MVP enrichment..."
+      node dist/scripts/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
+      exitOnFailure
+    fi
   fi
   
   echo -e "${Green}\n${bold}Update complete."

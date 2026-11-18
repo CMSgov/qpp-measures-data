@@ -50,6 +50,7 @@ interface PI_MeasuresChange extends baseMeasuresChange {
 interface Base_Quality_MeasuresChange extends baseMeasuresChange {
     nqfId?: string,
     isHighPriority?: boolean,
+    isCoreMeasure?: boolean,
     isInverse?: boolean,
     isRiskAdjusted?: boolean,
     primarySteward?: string,
@@ -95,7 +96,6 @@ const baseValidationSchemaProperties = {
 const baseQualitySchemaProperties = {
     ...baseValidationSchemaProperties,
     nqfId: { type: 'string', nullable: true },
-    isHighPriority: { type: 'boolean', nullable: true },
     isInverse: { type: 'boolean', nullable: true },
     isRiskAdjusted: { type: 'boolean', nullable: true },
     primarySteward: { type: 'string', nullable: true },
@@ -114,19 +114,33 @@ const baseQualitySchemaProperties = {
     sevenPointCapRemoved: { type: 'array', items: { type: 'string', enum: [...new Set(Object.values(Constants.COLLECTION_TYPES))] }, nullable: true },
 };
 
-const baseQualityRequiredFields = [
-    'measureId',
-    'category',
-    'title',
-    'description',
-    'primarySteward',
-    'measureType',
-    'isHighPriority',
-    'submissionMethods',
-    'isInverse',
-    'metricType',
-    'firstPerformanceYear',
-];
+// 'High Priority' (PY2026 and earlier) was replaced by 'Core Measure' starting with the Core Measures year.
+function getPriorityFieldName(performanceYear: number): 'isCoreMeasure' | 'isHighPriority' {
+    return Constants.isCoreMeasureYear(performanceYear) ? 'isCoreMeasure' : 'isHighPriority';
+}
+
+function getQualitySchemaProperties(performanceYear: number) {
+    return {
+        ...baseQualitySchemaProperties,
+        [getPriorityFieldName(performanceYear)]: { type: 'boolean', nullable: true },
+    };
+}
+
+function getQualityRequiredFields(performanceYear: number): string[] {
+    return [
+        'measureId',
+        'category',
+        'title',
+        'description',
+        'primarySteward',
+        'measureType',
+        getPriorityFieldName(performanceYear),
+        'submissionMethods',
+        'isInverse',
+        'metricType',
+        'firstPerformanceYear',
+    ];
+}
 
 const cost_validationSchema: JSONSchemaType<Cost_MeasuresChange> = {
     type: 'object',
@@ -174,40 +188,44 @@ const pi_validationSchema: JSONSchemaType<PI_MeasuresChange> = {
     additionalProperties: false,
 } as JSONSchemaType<PI_MeasuresChange>;
 
-const quality_validationSchema: JSONSchemaType<Base_Quality_MeasuresChange> = {
-    type: 'object',
-    properties: baseQualitySchemaProperties,
-    required: ['measureId', 'category'],
-    additionalProperties: false,
-} as JSONSchemaType<Base_Quality_MeasuresChange>;
+function getQualityValidationSchema(performanceYear: number): JSONSchemaType<Base_Quality_MeasuresChange> {
+    return {
+        type: 'object',
+        properties: getQualitySchemaProperties(performanceYear),
+        required: ['measureId', 'category'],
+        additionalProperties: false,
+    } as unknown as JSONSchemaType<Base_Quality_MeasuresChange>;
+}
 
-const qcdr_validationSchema: JSONSchemaType<QCDR_MeasuresChange> = {
-    type: 'object',
-    properties: {
-        ...baseQualitySchemaProperties,
-        allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
-    },
-    required: ['measureId', 'category'],
-    additionalProperties: false,
-} as JSONSchemaType<QCDR_MeasuresChange>;
+function getQcdrValidationSchema(performanceYear: number): JSONSchemaType<QCDR_MeasuresChange> {
+    return {
+        type: 'object',
+        properties: {
+            ...getQualitySchemaProperties(performanceYear),
+            allowedVendors: { type: 'array', items: { type: 'string' }, nullable: true },
+        },
+        required: ['measureId', 'category'],
+        additionalProperties: false,
+    } as unknown as JSONSchemaType<QCDR_MeasuresChange>;
+}
 
 export function initValidation(type: measureType, isNewMeasure: boolean, performanceYear: number) {
     return ajv.compile(getSchema(type, isNewMeasure, performanceYear))
 }
 
-function createSchema(schema: any, isNewMeasure: boolean, type: measureType) {
+function createSchema(schema: any, isNewMeasure: boolean, type: measureType, performanceYear: number) {
     // If it's a new measure, some fields are required beyond the category and measureId.
     if (isNewMeasure) {
         switch (type) {
             case measureType.quality:
                 return {
                     ...schema,
-                    required: [...baseQualityRequiredFields, 'measureSets'],
+                    required: [...getQualityRequiredFields(performanceYear), 'measureSets'],
                 };
             case measureType.qcdr:
                 return {
                     ...schema,
-                    required: [...baseQualityRequiredFields, 'allowedVendors', 'isRiskAdjusted'],
+                    required: [...getQualityRequiredFields(performanceYear), 'allowedVendors', 'isRiskAdjusted'],
                 };
             default:
                 return {
@@ -224,16 +242,16 @@ function getSchema(type: measureType, isNewMeasure: boolean, performanceYear: nu
     switch (type) {
         case measureType.ia:
             if (performanceYear < 2025) {
-                return createSchema(ia_validationSchema_with_weight, isNewMeasure, type);
+                return createSchema(ia_validationSchema_with_weight, isNewMeasure, type, performanceYear);
             }
-            return createSchema(ia_validationSchema, isNewMeasure, type);
+            return createSchema(ia_validationSchema, isNewMeasure, type, performanceYear);
         case measureType.pi:
-            return createSchema(pi_validationSchema, isNewMeasure, type);
+            return createSchema(pi_validationSchema, isNewMeasure, type, performanceYear);
         case measureType.cost:
-            return createSchema(cost_validationSchema, isNewMeasure, type)
+            return createSchema(cost_validationSchema, isNewMeasure, type, performanceYear)
         case measureType.quality:
-            return createSchema(quality_validationSchema, isNewMeasure, type);
+            return createSchema(getQualityValidationSchema(performanceYear), isNewMeasure, type, performanceYear);
         case measureType.qcdr:
-            return createSchema(qcdr_validationSchema, isNewMeasure, type);
+            return createSchema(getQcdrValidationSchema(performanceYear), isNewMeasure, type, performanceYear);
     }
 }

@@ -54,7 +54,7 @@ const allowedQualityNew = {
     category: 'quality',
     primarySteward: 'stewardTitle',
     measureType: 'process',
-    isHighPriority: false,
+    isCoreMeasure: false,
     submissionMethods: ['registry', 'claims'],
     measureSets: ['nephrology', 'preventiveMedicine'],
     isInverse: false,
@@ -70,7 +70,7 @@ const allowedQCDRNew = {
     category: 'qcdr',
     primarySteward: 'stewardTitle',
     measureType: 'process',
-    isHighPriority: false,
+    isCoreMeasure: false,
     submissionMethods: ['registry', 'claims'],
     measureSets: ['nephrology', 'preventiveMedicine'],
     isInverse: false,
@@ -115,7 +115,7 @@ const newQualityMeasure = {
     description: 'descriptionText',
     primarySteward: 'stewardId',
     measureType: 'process',
-    isHighPriority: false,
+    isCoreMeasure: false,
     submissionMethods: ['quality'],
     allowedPrograms: ['mips'],
     firstPerformanceYear: 2023,
@@ -186,6 +186,42 @@ describe('update-measures', () => {
             expect(updateFileSpy).not.toHaveBeenCalled();
             expect(writeFileSpy).not.toHaveBeenCalled();
             expect(warningSpy).toHaveBeenCalledWith('No new change files found.');
+        });
+
+        it('writes the Core Measure migration even when no new change files are found', () => {
+            volFileStructure[`measures/${performanceYear}`] = {
+                'measures-data.json': JSON.stringify([
+                    { category: 'quality', measureId: '001', isHighPriority: true },
+                    { category: 'ia', measureId: 'IA_1' },
+                ]),
+            };
+            volFileStructure[`updates/measures/${performanceYear}`] = {
+                'changes.meta.json': '[]',
+            };
+            vol.fromNestedJSON(volFileStructure);
+
+            updateMeasures(`${performanceYear}`);
+
+            expect(updateFileSpy).not.toHaveBeenCalled();
+            expect(logSpy).toHaveBeenCalledWith('Applied Core Measure field migration.');
+            expect(writeFileSpy).toHaveBeenCalledWith([
+                { category: 'quality', measureId: '001', isCoreMeasure: false, coreMeasureFor: [] },
+                { category: 'ia', measureId: 'IA_1' },
+            ], `measures/${performanceYear}/measures-data.json`);
+        });
+
+        it('does not write the Core Measure migration in test mode', () => {
+            volFileStructure[`measures/${performanceYear}`] = {
+                'measures-data.json': JSON.stringify([{ category: 'quality', measureId: '001', isHighPriority: true }]),
+            };
+            volFileStructure[`updates/measures/${performanceYear}`] = {
+                'changes.meta.json': '[]',
+            };
+            vol.fromNestedJSON(volFileStructure);
+
+            updateMeasures(`${performanceYear}`, 'true');
+
+            expect(writeFileSpy).not.toHaveBeenCalled();
         });
 
         it('handles an empty change file', () => {
@@ -395,7 +431,7 @@ describe('update-measures', () => {
             expect(warningSpy).toHaveBeenCalledWith(`'001': 'isInverse' was changed. Was this deliberate?`);
             expect(warningSpy).toHaveBeenCalledWith(`'001': 'Metric Type' was changed. Was the strata file also updated to match?`);
             expect(warningSpy).toHaveBeenCalledWith(`'001': 'Calculation Type' was changed. Was the strata file also updated to match?`);
-            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Metric Type' and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`);
 
             expect(infoSpy).toHaveBeenCalledWith(`File 'test.csv' successfully ingested into measures-data ${performanceYear}`);
         });
@@ -440,7 +476,7 @@ describe('update-measures', () => {
             expect(errorSpy).toHaveBeenCalledWith(`'USWR32': CMS eCQM ID is required if one of the collection types is eCQM.`);
         });
 
-        it('throws if outcome measure is not High Priority', () => {
+        it('no longer requires outcome measures to be High Priority', () => {
 
             jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{
                 measureId: '005',
@@ -449,16 +485,15 @@ describe('update-measures', () => {
             }]);
 
             const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            jest.spyOn(logger, 'info').mockImplementation(jest.fn());
             UpdateMeasures.ingestChangeFile(
                 'test.csv',
                 'fakepath/',
                 `${performanceYear}`,
                 volatileMeasures,
             );
-            expect(updateSpy).not.toHaveBeenCalled();
-            expect(addSpy).not.toHaveBeenCalled();
-            expect(deleteSpy).not.toHaveBeenCalled();
-            expect(errorSpy).toHaveBeenCalledWith(`'005': 'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
+            expect(updateSpy).toHaveBeenCalled();
+            expect(errorSpy).not.toHaveBeenCalled();
         });
 
         it('throws if metricType is costScore but submissionMethod does not include administrativeClaims', () => {
@@ -572,6 +607,70 @@ describe('update-measures', () => {
                 },
                 schemaPath: '#/additionalProperties',
             }]);
+        });
+
+        it('ingests a Core Measure change request csv and sets isCoreMeasure', () => {
+            vol.fromNestedJSON({
+                'fakepath': {
+                    'core.csv': 'Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Y\n',
+                },
+            });
+            jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+            const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+
+            const result = UpdateMeasures.ingestChangeFile('core.csv', 'fakepath/', `${performanceYear}`, volatileMeasures);
+
+            expect(result).toBe(0);
+            expect(errorSpy).not.toHaveBeenCalled();
+            expect(volatileMeasures.find((m: any) => m.measureId === '001').isCoreMeasure).toBe(true);
+            expect(warningSpy).toHaveBeenCalledWith(`'001': 'Core Measure' was changed. Confirm the MVP source file ('Core Quality' rows) is updated to match.`);
+            expect(warningSpy).toHaveBeenCalledWith(`'001' is flagged as a Core Measure but is not a Core Measure for any MVP (coreMeasureFor is empty). Confirm the MVP source file will be updated.`);
+        });
+
+        it('rejects a change request csv that includes the High Priority column', () => {
+            vol.fromNestedJSON({
+                'fakepath': {
+                    'hp.csv': 'Category,*** Quality Number (#) / QCDR #,High Priority\nQuality,001,\n',
+                },
+            });
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+
+            const result = UpdateMeasures.ingestChangeFile('hp.csv', 'fakepath/', `${performanceYear}`, volatileMeasures);
+
+            expect(result).toBe(1);
+            expect(updateSpy).not.toHaveBeenCalled();
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'hp.csv': 'High Priority' is not supported for PY${performanceYear} and later. Use the 'Core Measure' column.`);
+        });
+
+        it('fails validation for a new quality measure without Core Measure', () => {
+            const noCoreMeasure = { ...allowedQualityNew };
+            delete noCoreMeasure.isCoreMeasure;
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([noCoreMeasure]);
+            const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+            const logSpy = jest.spyOn(console, 'log').mockImplementation(jest.fn());
+
+            UpdateMeasures.ingestChangeFile('test.csv', 'fakepath/', `${performanceYear}`, volatileMeasures);
+
+            expect(addSpy).not.toHaveBeenCalled();
+            expect(errorSpy).toHaveBeenCalledWith(`'133': Validation Failed. More info logged above.`);
+            expect(logSpy).toHaveBeenCalledWith([expect.objectContaining({ params: { missingProperty: 'isCoreMeasure' } })]);
+        });
+
+        it('adds a new Core Measure with an empty coreMeasureFor and warns', () => {
+            jest.spyOn(csvConverter, 'convertCsvToJson').mockReturnValue([{ ...allowedQualityNew, isCoreMeasure: true }]);
+            jest.spyOn(logger, 'info').mockImplementation(jest.fn());
+            const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+
+            UpdateMeasures.ingestChangeFile('test.csv', 'fakepath/', `${performanceYear}`, volatileMeasures);
+
+            expect(addSpy).toHaveBeenCalledWith(expect.objectContaining({ measureId: '133' }), volatileMeasures, `${performanceYear}`);
+            expect(volatileMeasures.find((m: any) => m.measureId === '133')).toEqual(expect.objectContaining({
+                isCoreMeasure: true,
+                coreMeasureFor: [],
+            }));
+            expect(warningSpy).toHaveBeenCalledWith(`'133' is flagged as a Core Measure but is not a Core Measure for any MVP (coreMeasureFor is empty). Confirm the MVP source file will be updated.`);
         });
 
         it('logs any validation errors for bad data', () => {

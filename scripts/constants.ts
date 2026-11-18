@@ -1,5 +1,12 @@
 import { Programs } from "../util/interfaces/measure";
 
+// First performance year in which Core Measures replace the High Priority quality requirement.
+export const CORE_MEASURES_START_YEAR = 2027;
+
+export function isCoreMeasureYear(performanceYear: string | number | undefined): boolean {
+    return Number(performanceYear) >= CORE_MEASURES_START_YEAR;
+}
+
 //These are only needed if the csv column names do not match the measures-data field names.
 export const BASE_CSV_COLUMN_NAMES = {
     'title': 'Measure Title',
@@ -46,6 +53,7 @@ export const QUALITY_CSV_COLUMN_NAMES = {
     'description': 'Measure Description',
     'measureType': '*** Measure Type',
     'isHighPriority': 'High Priority',
+    'isCoreMeasure': 'Core Measure',
     'submissionMethods': '*** Collection Type(s) for Submission',
     'measureSets': 'Specialty Measure Sets',
     'isInverse': '*** Inverse',
@@ -109,6 +117,7 @@ export const BOOLEAN_CSV_FIELDS = [
     'Inverse',
     'Is Risk Adjusted',
     'High Priority',
+    'Core Measure',
     'Bonus',
     'Required',
     'benchmark',
@@ -267,6 +276,8 @@ export const QUALITY_MEASURES_ORDER = {
     'nqfId': undefined,
     'measureType': undefined,
     'isHighPriority': undefined,
+    'isCoreMeasure': undefined,
+    'coreMeasureFor': undefined,
     'primarySteward': undefined,
     'primarySteward1': undefined,
     'isInverse': undefined,
@@ -304,6 +315,8 @@ export const QCDR_MEASURES_ORDER = {
     'nqfId': undefined,
     'measureType': undefined,
     'isHighPriority': undefined,
+    'isCoreMeasure': undefined,
+    'coreMeasureFor': undefined,
     'primarySteward': undefined,
     'isInverse': undefined,
     'dataDisplayFormat': undefined,
@@ -439,6 +452,12 @@ export const QUALITY_DEFAULT_VALUES = {
         'subgroup',
         'individual'
     ]
+};
+
+// Applied to quality measures only for performance years >= CORE_MEASURES_START_YEAR.
+export const QUALITY_CORE_MEASURE_DEFAULT_VALUES = {
+    isCoreMeasure: false,
+    coreMeasureFor: [] as Programs[],
 };
 
 export const QUALITY_DEFAULT_PROGRAMS = [
