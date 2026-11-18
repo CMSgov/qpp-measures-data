@@ -3,8 +3,10 @@ import * as path from 'path';
 import _ from 'lodash';
 import { Constants } from '../constants';
 import { getMeasuresData } from '../index';
+import { isCoreMeasureYear } from '../scripts/constants';
+import { warning } from '../scripts/logger';
 import { MVP } from '../scripts/mvp/mvps.types';
-import { Measure, Programs } from './interfaces/measure';
+import { Category, Measure, Programs, QualityMeasure } from './interfaces/measure';
 
 __dirname = __dirname.replace('/dist', '');
 __dirname = __dirname.replace('\\dist', '');
@@ -38,6 +40,10 @@ export function createMVPDataFile(performanceYear: number): MVP[] {
         measure.allowedPrograms = measure.allowedPrograms ? measure.allowedPrograms.filter(program => !mvpIds.includes(program)) : [];
     });
 
+    if (isCoreMeasureYear(performanceYear)) {
+        exports.populateCoreMeasureFor(mvpData, measuresData);
+    }
+
     // Hydrate measures
     mvpData.forEach(mvp => {
         Constants.mvpMeasuresHelper.forEach(item => {
@@ -52,6 +58,8 @@ export function createMVPDataFile(performanceYear: number): MVP[] {
         Constants.mvpMeasuresHelper.forEach(item => {
             delete mvp[item.measureIdKey];
         });
+        // Core status lives on the enriched measures (isCoreMeasure/coreMeasureFor), not on the enriched MVP.
+        delete mvp.coreQualityMeasureIds;
     });
 
     fse.writeFileSync(mvpFilePath, JSON.stringify(mvpData, null, 2));
@@ -85,6 +93,43 @@ export function populateMeasuresforMVPs(
 
             // update mvp-data with measures.
             currentMvp[enrichedMeasureKey].push(measure);
+        }
+    });
+}
+
+/**
+ * PY2027+. Rebuilds coreMeasureFor on every quality measure from each MVP's coreQualityMeasureIds.
+ * Disagreements with isCoreMeasure (owned by the Quality change request) are warnings only.
+ */
+export function populateCoreMeasureFor(mvpData: MVP[], measuresData: Measure[]): void {
+    const qualityMeasures = measuresData.filter(measure => measure.category === Category.QUALITY) as QualityMeasure[];
+
+    // Reset, so a measure removed from an MVP's core list loses that MVP.
+    qualityMeasures.forEach(measure => {
+        measure.coreMeasureFor = [];
+        if (typeof measure.isCoreMeasure !== 'boolean') {
+            measure.isCoreMeasure = false;
+        }
+    });
+
+    mvpData.forEach(mvp => {
+        (mvp.coreQualityMeasureIds ?? []).forEach(measureId => {
+            const measure = qualityMeasures.find(qualityMeasure => qualityMeasure.measureId === measureId);
+            if (!measure) {
+                warning(`Core Quality measure '${measureId}' for MVP '${mvp.mvpId}' was not found in measures-data.json.`);
+                return;
+            }
+            measure.coreMeasureFor!.push(mvp.mvpId);
+        });
+    });
+
+    qualityMeasures.forEach(measure => {
+        measure.coreMeasureFor = _.uniq(measure.coreMeasureFor).sort();
+
+        if (!measure.isCoreMeasure && measure.coreMeasureFor.length > 0) {
+            warning(`'${measure.measureId}' is a Core Quality measure for ${measure.coreMeasureFor.join(', ')} in the MVP source file, but isCoreMeasure is false.`);
+        } else if (measure.isCoreMeasure && measure.coreMeasureFor.length === 0) {
+            warning(`'${measure.measureId}' has isCoreMeasure set to true, but is not a Core Quality measure for any MVP in the MVP source file.`);
         }
     });
 }

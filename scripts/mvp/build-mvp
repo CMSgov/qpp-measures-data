@@ -6,6 +6,14 @@ maxPerformanceYear=2027
 Red='\033[0;31m'
 Green='\033[0;32m'
 
+# checks the exit code of the last command and exits with a failure code if it was not successful.
+function exitOnFailure () {
+  if (( $? != 0 )); then
+    echo -e "${Red}\nMVP build failed."
+    exit 1
+  fi
+}
+
 # This script is not made to work for years prior to 2023.
 if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPerformanceYear )); then
 
@@ -25,7 +33,14 @@ if (( $currentPerformanceYear >= 2023 )) && (( $currentPerformanceYear <= $maxPe
   echo -e "Updating mvp-enriched.json..."
   node dist/scripts/mvp/$currentPerformanceYear/update-mvp.js \
     $currentPerformanceYear
-  
+
+  # update-mvp writes Core Measure data (coreMeasureFor) back into measures-data.json for PY2027+.
+  if (( $currentPerformanceYear >= 2027 )); then
+    echo -e "Validating measures-data.json after MVP enrichment..."
+    node dist/scripts/validate-data.js measures $currentPerformanceYear measures/$currentPerformanceYear/measures-data.json
+    exitOnFailure
+  fi
+
   echo -e "${Green}Update complete."
   exit
 

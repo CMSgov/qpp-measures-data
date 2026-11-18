@@ -41,6 +41,14 @@ const mvpSchema = qppMeasuresData.getMVPSchema($YEAR);
 
 We elso export common data types such as Measures and Benchmarks. You can view the list of these in util/interfaces/index.ts.
 
+### Core Measures
+
+Starting with performance year 2027, a Core Measure replaces the High Priority requirement in the Quality category.
+- Quality measures no longer have `isHighPriority`. Instead, every quality measure has `isCoreMeasure` (boolean) and `coreMeasureFor` (the MVP IDs for which the measure is a Core Measure; `[]` when none).
+- `getMVPData($YEAR)` returns the same MVP shape as earlier years; its quality measures carry `isCoreMeasure` and `coreMeasureFor`. To check whether a measure is a Core Measure for a given MVP, use `measure.coreMeasureFor.includes(mvp.mvpId)`.
+- `getMVPDataSlim($YEAR)` (from `mvp.json`) also includes `coreQualityMeasureIds` for each MVP.
+- Data for performance year 2026 and earlier is unchanged and still uses `isHighPriority`. In the exported TypeScript types, `isHighPriority`, `isCoreMeasure`, and `coreMeasureFor` are optional so one type covers every year.
+
 ## Contributing
 
 Before creating pull requests, please make sure to review

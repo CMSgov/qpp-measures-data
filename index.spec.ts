@@ -657,6 +657,83 @@ describe('index', () => {
         });
     });
 
+    describe('MVP data backward compatibility (Core Measures)', () => {
+        const readCommittedFile = (...segments: string[]) => fs.readFileSync(path.join(__dirname, ...segments), 'utf8');
+        const loadCommittedFiles = (year: number, includeEnriched = true) => {
+            vol.fromNestedJSON({
+                [`mvp/${year}`]: {
+                    'mvp.json': readCommittedFile('mvp', `${year}`, 'mvp.json'),
+                    ...(includeEnriched ? { 'mvp-enriched.json': readCommittedFile('mvp', `${year}`, 'mvp-enriched.json') } : {}),
+                },
+                [`measures/${year}`]: {
+                    'measures-data.json': readCommittedFile('measures', `${year}`, 'measures-data.json'),
+                },
+            });
+        };
+        const qualityMeasuresOf = (mvps: any[]) => mvps.flatMap(mvp => [
+            ...mvp.qualityMeasures,
+            ...mvp.foundationQualityMeasures,
+            ...mvp.administrativeClaimsMeasures,
+        ]);
+
+        it('getMVPData(2026) still returns isHighPriority and no Core Measure fields', () => {
+            loadCommittedFiles(2026);
+            const mvps = index.getMVPData(2026);
+            const qualityMeasures = qualityMeasuresOf(mvps);
+
+            expect(qualityMeasures.length).toBeGreaterThan(0);
+            qualityMeasures.forEach(measure => {
+                expect(typeof measure.isHighPriority).toBe('boolean');
+                expect(measure).not.toHaveProperty('isCoreMeasure');
+                expect(measure).not.toHaveProperty('coreMeasureFor');
+            });
+            mvps.forEach(mvp => expect(mvp).not.toHaveProperty('coreQualityMeasureIds'));
+        });
+
+        it('getMVPData(2027) returns isCoreMeasure and coreMeasureFor instead of isHighPriority, with the same MVP shape as 2026', () => {
+            loadCommittedFiles(2026);
+            const mvpKeys2026 = Object.keys(index.getMVPData(2026)[0]);
+            vol.reset();
+            loadCommittedFiles(2027);
+            const mvps = index.getMVPData(2027);
+            const mvpIds = mvps.map(mvp => mvp.mvpId);
+            const qualityMeasures = qualityMeasuresOf(mvps);
+
+            expect(qualityMeasures.length).toBeGreaterThan(0);
+            qualityMeasures.forEach(measure => {
+                expect(measure).not.toHaveProperty('isHighPriority');
+                expect(typeof measure.isCoreMeasure).toBe('boolean');
+                expect(Array.isArray(measure.coreMeasureFor)).toBe(true);
+                measure.coreMeasureFor!.forEach(mvpId => expect(mvpIds).toContain(mvpId));
+            });
+            mvps.forEach(mvp => expect(Object.keys(mvp)).toEqual(mvpKeys2026));
+        });
+
+        it('getMVPDataSlim only includes coreQualityMeasureIds for 2027+, as a subset of the quality measure ids', () => {
+            loadCommittedFiles(2026);
+            index.getMVPDataSlim(2026).forEach(mvp => expect(mvp).not.toHaveProperty('coreQualityMeasureIds'));
+            vol.reset();
+            loadCommittedFiles(2027);
+
+            index.getMVPDataSlim(2027).forEach((mvp: any) => {
+                expect(Array.isArray(mvp.coreQualityMeasureIds)).toBe(true);
+                mvp.coreQualityMeasureIds.forEach((measureId: string) => {
+                    expect([...mvp.qualityMeasureIds, ...mvp.administrativeClaimsMeasureIds]).toContain(measureId);
+                });
+            });
+        });
+
+        it.each([2026, 2027])('rebuilds the committed %i mvp-enriched.json when getMVPData falls back to createMVPDataFile', (year) => {
+            jest.spyOn(console, 'warn').mockImplementation(jest.fn());
+            // mvp.csv has a line break inside one 2027 MVP title that was removed by hand from mvp.json only.
+            const normalizeTitles = (mvps: any[]) => mvps.map(mvp => ({ ...mvp, title: mvp.title.replace(/\s+/g, ' ') }));
+            const committedEnriched = JSON.parse(readCommittedFile('mvp', `${year}`, 'mvp-enriched.json'));
+            loadCommittedFiles(year, false);
+
+            expect(normalizeTitles(index.getMVPData(year))).toEqual(normalizeTitles(committedEnriched));
+        });
+    });
+
     // TODO - automate steps 1 and 2 below
     // This test will fail when new program-names are programmatically added to ./util/program-names.json
     // When this occurs, developers should:

@@ -3,6 +3,7 @@ import fse from 'fs-extra';
 import _ from 'lodash';
 
 import * as mvpDataUtils from './mvp-data-utils';
+import * as logger from '../scripts/logger';
 import { Constants } from '../constants';
 import { Programs, Measure } from './interfaces/measure';
 import { MVP } from '../scripts/mvp/mvps.types';
@@ -171,6 +172,95 @@ describe('mvp-data-utils', () => {
                 'enrichedQualityMeasures'
             );
             expect(mvp.enrichedQualityMeasures.length).toBe(0);
+        });
+    });
+
+    describe('Core Measures', () => {
+        const coreMvpData: any[] = [
+            {
+                mvpId: 'G0053',
+                qualityMeasureIds: ['039', '130'],
+                coreQualityMeasureIds: ['039', 'NOTFOUND'],
+                iaMeasureIds: [], costMeasureIds: [], foundationPiMeasureIds: [],
+                foundationQualityMeasureIds: [], administrativeClaimsMeasureIds: [],
+            },
+            {
+                mvpId: 'M0001',
+                qualityMeasureIds: ['039', '130'],
+                coreQualityMeasureIds: ['039', '130'],
+                iaMeasureIds: [], costMeasureIds: [], foundationPiMeasureIds: [],
+                foundationQualityMeasureIds: [], administrativeClaimsMeasureIds: [],
+            },
+        ];
+        const coreMeasuresData = () => [
+            { measureId: '039', category: 'quality', isCoreMeasure: true, coreMeasureFor: ['G0099'], allowedPrograms: ['mips'] },
+            { measureId: '130', category: 'quality', isCoreMeasure: false, coreMeasureFor: [], allowedPrograms: ['mips'] },
+            { measureId: '236', category: 'quality', isCoreMeasure: true, coreMeasureFor: [], allowedPrograms: ['mips'] },
+            { measureId: 'IA_1', category: 'ia', allowedPrograms: ['mips'] },
+        ] as any[];
+        let warningSpy: jest.Spied<typeof logger.warning>;
+
+        beforeEach(() => {
+            warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
+        });
+
+        describe('populateCoreMeasureFor', () => {
+            it('rebuilds coreMeasureFor from coreQualityMeasureIds and warns on disagreements', () => {
+                const measures = coreMeasuresData();
+
+                mvpDataUtils.populateCoreMeasureFor(_.cloneDeep(coreMvpData) as MVP[], measures);
+
+                expect(measures.map(m => [m.measureId, m.isCoreMeasure, m.coreMeasureFor])).toEqual([
+                    ['039', true, ['G0053', 'M0001']],
+                    ['130', false, ['M0001']],
+                    ['236', true, []],
+                    ['IA_1', undefined, undefined],
+                ]);
+                expect(warningSpy).toHaveBeenCalledTimes(3);
+                expect(warningSpy).toHaveBeenCalledWith(`Core Quality measure 'NOTFOUND' for MVP 'G0053' was not found in measures-data.json.`);
+                expect(warningSpy).toHaveBeenCalledWith(`'130' is a Core Quality measure for M0001 in the MVP source file, but isCoreMeasure is false.`);
+                expect(warningSpy).toHaveBeenCalledWith(`'236' has isCoreMeasure set to true, but is not a Core Quality measure for any MVP in the MVP source file.`);
+            });
+
+            it('defaults missing Core Measure fields on quality measures', () => {
+                const measures = [{ measureId: '039', category: 'quality' }] as any[];
+
+                mvpDataUtils.populateCoreMeasureFor([{ mvpId: 'G0053' }] as MVP[], measures);
+
+                expect(measures[0]).toEqual({ measureId: '039', category: 'quality', isCoreMeasure: false, coreMeasureFor: [] });
+                expect(warningSpy).not.toHaveBeenCalled();
+            });
+        });
+
+        describe('createMVPDataFile', () => {
+            const mockFiles = (mvpData: any[], measuresData: any[]) => {
+                jest.spyOn(fse, 'readFileSync').mockImplementation(() => JSON.stringify(mvpData));
+                require('../index').getMeasuresData.mockReturnValue(measuresData);
+            };
+
+            it('populates coreMeasureFor and leaves coreQualityMeasureIds out of the enriched MVPs for 2027+', () => {
+                mockFiles(_.cloneDeep(coreMvpData), coreMeasuresData());
+
+                const result = mvpDataUtils.createMVPDataFile(2027);
+
+                result.forEach(mvp => expect(mvp).not.toHaveProperty('coreQualityMeasureIds'));
+                expect((result[1] as any).qualityMeasures.map((m: any) => [m.measureId, m.coreMeasureFor])).toEqual([
+                    ['039', ['G0053', 'M0001']],
+                    ['130', ['M0001']],
+                ]);
+                const writtenMeasures = JSON.parse(fseWriteSpy.mock.calls.find(call => (call[0] as string).includes('measures-data.json'))![1] as string);
+                expect(writtenMeasures[0].coreMeasureFor).toEqual(['G0053', 'M0001']);
+            });
+
+            it('does not touch Core Measure fields before 2027', () => {
+                const measures = coreMeasuresData();
+                mockFiles(_.cloneDeep(coreMvpData), measures);
+
+                mvpDataUtils.createMVPDataFile(2026);
+
+                expect(measures[0].coreMeasureFor).toEqual(['G0099']);
+                expect(warningSpy).not.toHaveBeenCalled();
+            });
         });
     });
 });
