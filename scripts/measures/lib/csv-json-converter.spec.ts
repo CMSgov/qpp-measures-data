@@ -128,7 +128,7 @@ describe('#csv-json-converter', () => {
     });
 
     it('maps the Core Measure column to isCoreMeasure', () => {
-        const coreMeasureCSV = 'Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Y\nQCDR,ABC1,N\n';
+        const coreMeasureCSV = 'Category,*** Quality Number (#) / QCDR #,*** Core Measure\nQuality,001,Y\nQCDR,ABC1,N\n';
 
         expect(convertCsvToJson(coreMeasureCSV)).toEqual([
             { category: 'quality', measureId: '001', isCoreMeasure: true },
@@ -138,8 +138,8 @@ describe('#csv-json-converter', () => {
 
     it('throws InvalidValueError for a bad Core Measure value', () => {
         expect(() => {
-            convertCsvToJson('Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Maybe\n');
-        }).toThrow(new InvalidValueError('Core Measure', 'Maybe'));
+            convertCsvToJson('Category,*** Quality Number (#) / QCDR #,*** Core Measure\nQuality,001,Maybe\n');
+        }).toThrow(new InvalidValueError('*** Core Measure', 'Maybe'));
     });
 
     it('returns the trimmed csv column names', () => {

@@ -97,7 +97,7 @@ Once the update file is added, run `npm run update:measures $YEAR`. Errors durin
 NOTE FOR TESTING: You may add the -t flag to the above update script to run the ingestion without persisting to the change.meta file or measures-data file.
 
 Core Measures (performance year 2027 and later):
-- Quality and QCDR CRs use a `Core Measure` (Y/N) column, which sets `isCoreMeasure`. The `High Priority` column is no longer supported, and a CR that includes it will be rejected.
+- Quality and QCDR CRs use a `*** Core Measure` (Y/N) column, which sets `isCoreMeasure`. The `High Priority` column is no longer supported, and a CR that includes it will be rejected.
 - `coreMeasureFor` is not set by the CR. It is filled in from the MVP data (see "Creating and updating MVP data" below).
 - If a measure is flagged as a Core Measure but is not yet a Core Measure for any MVP, ingestion logs a warning instead of failing, because the MVP data may arrive later.
 

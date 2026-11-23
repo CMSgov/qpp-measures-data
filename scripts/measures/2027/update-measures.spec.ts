@@ -612,12 +612,14 @@ describe('update-measures', () => {
         it('ingests a Core Measure change request csv and sets isCoreMeasure', () => {
             vol.fromNestedJSON({
                 'fakepath': {
-                    'core.csv': 'Category,*** Quality Number (#) / QCDR #,Core Measure\nQuality,001,Y\n',
+                    'core.csv': 'Category,*** Quality Number (#) / QCDR #,*** Core Measure\nQuality,001,Y\n',
                 },
             });
             jest.spyOn(logger, 'info').mockImplementation(jest.fn());
             const warningSpy = jest.spyOn(logger, 'warning').mockImplementation(jest.fn());
             const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn());
+
+            volatileMeasures.find((m: any) => m.measureId === '001').isCoreMeasure = false;
 
             const result = UpdateMeasures.ingestChangeFile('core.csv', 'fakepath/', `${performanceYear}`, volatileMeasures);
 
@@ -641,7 +643,7 @@ describe('update-measures', () => {
             expect(result).toBe(1);
             expect(updateSpy).not.toHaveBeenCalled();
             expect(addSpy).not.toHaveBeenCalled();
-            expect(errorSpy).toHaveBeenCalledWith(`'hp.csv': 'High Priority' is not supported for PY${performanceYear} and later. Use the 'Core Measure' column.`);
+            expect(errorSpy).toHaveBeenCalledWith(`'hp.csv': 'High Priority' is not supported for PY${performanceYear} and later. Use the '*** Core Measure' column.`);
         });
 
         it('fails validation for a new quality measure without Core Measure', () => {
