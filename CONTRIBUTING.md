@@ -121,6 +121,8 @@ The strata are modified by updating the qcdr and quality strata CSVs in /util/me
 
 The specification links are added by placing the CSV or JSON files into /util/measures/$YEAR/, then running `npm run update:measures $YEAR`. Check earlier years for examples.
 
+For Quality measures whose only submission method is `administrativeClaims`, add specification links to `claims-links.csv`; ingestion writes them to `measureSpecification.default`. Other claims links use `measureSpecification.claims`. The `-t` flag skips specification ingestion, so verify link changes with a normal update in a disposable copy.
+
 ### Managing Allowed Programs for Measures
 
 When creating a new AllowedProgram, the program name should be added to the following files. Place the new allowedProgram where it most makes sense in the array and be consistant with its placement in all files:

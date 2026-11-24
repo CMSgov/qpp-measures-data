@@ -62,6 +62,67 @@ describe('Specification Links Mergers', () => {
         ])
     });
 
+    it('writes administrative-claims-only Quality links to default', () => {
+        const measuresJson = [
+            {
+                category: Category.QUALITY,
+                measureId: '479',
+                submissionMethods: ['administrativeClaims'],
+                measureSpecification: null,
+            },
+            {
+                category: Category.QUALITY,
+                measureId: '480',
+                submissionMethods: ['administrativeClaims'],
+                measureSpecification: { default: 'oldLink', registry: 'otherLink' },
+            },
+        ] as Measure[];
+
+        mergeClaimsLinks(measuresJson, [
+            { measureId: ' 479 ', link: ' newLink1 ' },
+            { measureId: '480', link: 'newLink2' },
+            { measureId: 'missing', link: 'unusedLink' },
+        ]);
+
+        expect(measuresJson[0].measureSpecification).toStrictEqual({ default: 'newLink1' });
+        expect(measuresJson[1].measureSpecification).toStrictEqual({
+            default: 'newLink2',
+            registry: 'otherLink',
+        });
+    });
+
+    it('keeps claims links under claims for other measures', () => {
+        const measuresJson = [
+            {
+                category: Category.QUALITY,
+                measureId: '001',
+                submissionMethods: ['claims'],
+            },
+            {
+                category: Category.QUALITY,
+                measureId: '002',
+                submissionMethods: ['administrativeClaims', 'claims'],
+            },
+            {
+                category: Category.COST,
+                measureId: '003',
+                submissionMethods: ['administrativeClaims'],
+            },
+        ] as Measure[];
+
+        mergeClaimsLinks(measuresJson, [
+            { measureId: '001', link: 'link1' },
+            { measureId: '002', link: 'link2' },
+            { measureId: '003', link: 'link3' },
+        ]);
+
+        expect(measuresJson.map(measure => measure.measureSpecification)).toStrictEqual([
+            { claims: 'link1' },
+            { claims: 'link2' },
+            { claims: 'link3' },
+        ]);
+    });
+
     it('merges Cost links into the measures-data json', () => {
         const measuresJson = [
             {
