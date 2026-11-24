@@ -1,4 +1,5 @@
 import { Measure } from "../../../util/interfaces";
+import { Category } from "../../../util/interfaces/measure";
 import { LinkData } from "./ingest-specifications-links";
 
 export function mergeClaimsLinks(measures: Measure[], claimsLinks: LinkData[]) {
@@ -7,7 +8,13 @@ export function mergeClaimsLinks(measures: Measure[], claimsLinks: LinkData[]) {
     const measure = measures.find(measure => measure.measureId === claimsLink.measureId);
     if (measure) {
       if (!measure.measureSpecification) measure.measureSpecification = {};
-      measure.measureSpecification.claims = claimsLink.link.trim();
+      if (measure.category === Category.QUALITY &&
+          measure.submissionMethods?.length === 1 &&
+          measure.submissionMethods[0] === 'administrativeClaims') {
+        measure.measureSpecification.default = claimsLink.link.trim();
+      } else {
+        measure.measureSpecification.claims = claimsLink.link.trim();
+      }
     }
   });
 };
