@@ -95,6 +95,25 @@ describe('json-to-csv', () => {
             });
         });
 
+        it('exports the PY2027+ Core Measure fields as quality CSV columns', () => {
+            const coreMeasures = [
+                { category: 'quality', measureId: '039', isRegistryMeasure: false, isCoreMeasure: true, coreMeasureFor: ['G0053', 'M1366'] },
+                { category: 'quality', measureId: '130', isRegistryMeasure: false, isCoreMeasure: false, coreMeasureFor: [] },
+            ];
+            (fs.readFileSync as jest.Mock).mockImplementation(() => JSON.stringify(coreMeasures));
+            (papa.unparse as jest.Mock).mockRestore();
+            const fsWriteSpy = jest.spyOn(fs, 'writeFile').mockImplementation(jest.fn());
+
+            jsonToCsv.createJson('2027', Category.QUALITY);
+
+            const csvCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).endsWith('tmp/2027/quality-measures.csv'));
+            expect(csvCall![1]).toBe([
+                'category,measureId,isRegistryMeasure,isCoreMeasure,coreMeasureFor',
+                'quality,039,false,true,"G0053,M1366"',
+                'quality,130,false,false,',
+            ].join('\r\n'));
+        });
+
         it('handles empty measuresJson gracefully', () => {
             (fs.readFileSync as jest.Mock).mockImplementation(() => JSON.stringify([]));
             expect(() => jsonToCsv.createJson('2025', 'ia' as Category)).not.toThrow();

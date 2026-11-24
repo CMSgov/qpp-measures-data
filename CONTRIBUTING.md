@@ -68,6 +68,8 @@ nvm use
 npm run export:measures $YEAR       # generates tmp/$YEAR/[category]-measures.csv
 ```
 
+Starting with performance year 2027, the quality and qcdr CSVs include `isCoreMeasure` and `coreMeasureFor` columns instead of `isHighPriority`. Multiple MVP IDs in `coreMeasureFor` are exported as one comma-separated value (e.g. `"G0053,M1366"`).
+
 ### Validation
 
 We've provided a simple tool to validate JSON against our JSON schemas. By providing an argument to indicate the schema against which to validate, it can be used as follows:
@@ -93,6 +95,11 @@ To create a new perfomance year for measures, run `npm run init:measures $YEAR`.
 New measures and updates to old measures are handled the same as each other. A CSV Change Request file (CR) with the proposed changes should be placed in the updates/measures/$YEAR folder. IMPORTANT: Do *not* manually modify the changes.meta.json, this is updated automatically during the ingestion process. 
 Once the update file is added, run `npm run update:measures $YEAR`. Errors during ingestion will be logged to your terminal, if any.
 NOTE FOR TESTING: You may add the -t flag to the above update script to run the ingestion without persisting to the change.meta file or measures-data file.
+
+Core Measures (performance year 2027 and later):
+- Quality and QCDR CRs use a `*** Core Measure` (Y/N) column, which sets `isCoreMeasure`. The `High Priority` column is no longer supported, and a CR that includes it will be rejected.
+- `coreMeasureFor` is not set by the CR. It is filled in from the MVP data (see "Creating and updating MVP data" below).
+- If a measure is flagged as a Core Measure but is not yet a Core Measure for any MVP, ingestion logs a warning instead of failing, because the MVP data may arrive later.
 
 You can also make changes directly to the measures-data.json files. This is recommended for small changes for which we have not been provided a CR. The same *cannot* be done for Benchmarks, MVPs, or Clinical Clusters data files, as any direct, manual changes will be overwritten by the next build.
 
@@ -157,6 +164,12 @@ Below are the locations where different types of benchmarks should be added:
 Each performance year, we will receive a file named `mvp.csv` which contains the data for MVPs for that year. Place this file in the `mvp/$YEAR` directory for the performance year. First run `nvm use` to make sure you are using the correct versions of npm and Nodejs. Then run `npm run build:mvp $YEAR` which will create the `mvp-enriched.json` file populated with complete measure data. If we receive an updated `mvp.csv`, replace the file in the `mvp/$YEAR` directory and simply run `npm run build:mvp` again, which will replace the `mvp-enriched.json` file.
 
 For new MVPs, you will need to update the mvp list in the measures-schema.yaml for that year with the new MVP names.
+
+Core Measures (performance year 2027 and later):
+- In `mvp.csv`, mark a quality measure that is a Core Measure for an MVP with the `MVP Reporting Category` value `Core Quality` (instead of `Quality`). Don't list the same measure as both `Quality` and `Core Quality` for an MVP.
+- `npm run build:mvp $YEAR` adds `coreQualityMeasureIds` to each MVP in `mvp.json`, and writes `coreMeasureFor` back into `measures-data.json` (it is rebuilt from `mvp.csv` on every run). `mvp-enriched.json` does not include `coreQualityMeasureIds`; its quality measures carry `isCoreMeasure` and `coreMeasureFor` instead.
+- `build:mvp` logs warnings, without failing, when an MVP has no `Core Quality` measures, a `Core Quality` row isn't a quality measure, or `mvp.csv` and the Quality CR's `Core Measure` value disagree. It then validates `measures-data.json` against the measures schema.
+- `npm run manage:allowed-programs $YEAR quality <MVP ID> remove` also removes the measure's `Core Quality` rows for that MVP from `mvp.csv`.
 
 ## Add/Update National Averages JSON
 

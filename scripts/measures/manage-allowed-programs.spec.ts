@@ -256,6 +256,39 @@ Test MVP,M0001,Another MVP,Test Specialties,Test Topic,Improvement,IA_BE_1`;
             expect(consoleLogSpy).toHaveBeenCalledWith('  - Removed measure "039" from MVP "G0053" (Quality) in CSV');
         });
 
+        it('removes Core Quality rows and the MVP from coreMeasureFor when removing a quality measure', () => {
+            const coreCsvContent = `MVP Title,MVP ID,MVP Description,Most Applicable Medical Specialties,Clinical Topic,MVP Reporting Category,Measure Id
+Test MVP,G0053,Test Description,Test Specialties,Test Topic,Core Quality,039
+Test MVP,G0053,Test Description,Test Specialties,Test Topic,Quality,130
+Test MVP,M0001,Another MVP,Test Specialties,Test Topic,Core Quality,039`;
+            const coreMeasures = [
+                { category: Category.QUALITY, measureId: '039', allowedPrograms: [Programs.MIPS, 'G0053', 'M0001'], isCoreMeasure: true, coreMeasureFor: ['G0053', 'M0001'] },
+                { category: Category.QUALITY, measureId: '130', allowedPrograms: [Programs.MIPS, 'G0053'], isCoreMeasure: false, coreMeasureFor: [] },
+            ];
+            jest.spyOn(fs, 'readFileSync').mockImplementation((filePath) => {
+                if ((filePath as string).includes('measures-data.json')) {
+                    return JSON.stringify(coreMeasures);
+                }
+                if ((filePath as string).includes('program-names.json')) {
+                    return JSON.stringify(mockProgramNames);
+                }
+                return coreCsvContent;
+            });
+
+            updateAllowedPrograms('2027', 'quality', 'G0053' as Programs, 'remove');
+
+            const measuresCall = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('measures-data.json'));
+            const measure039 = JSON.parse(measuresCall![1] as string).find((m: any) => m.measureId === '039');
+            expect(measure039.allowedPrograms).toEqual([Programs.MIPS, 'M0001']);
+            expect(measure039.coreMeasureFor).toEqual(['M0001']);
+
+            const updatedCsvContent = fsWriteSpy.mock.calls.find(call => (call[0] as string).includes('mvp.csv'))![1];
+            expect(updatedCsvContent).not.toContain('G0053,Test Description,Test Specialties,Test Topic,Core Quality,039');
+            expect(updatedCsvContent).not.toContain('G0053,Test Description,Test Specialties,Test Topic,Quality,130');
+            expect(updatedCsvContent).toContain('M0001,Another MVP,Test Specialties,Test Topic,Core Quality,039');
+            expect(consoleLogSpy).toHaveBeenCalledWith('  - Removed measure "039" from MVP "G0053" (Core Quality) in CSV');
+        });
+
         it('handles malformed CSV lines', () => {
             const malformedCsvContent = `MVP Title,MVP ID,MVP Description,Most Applicable Medical Specialties,Clinical Topic,MVP Reporting Category,Measure Id
 Incomplete line

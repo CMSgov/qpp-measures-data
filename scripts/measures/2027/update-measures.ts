@@ -5,10 +5,11 @@ import appRoot from 'app-root-path';
 
 import { info, error, warning } from '../../logger';
 import { initValidation, MeasuresChange, measureType } from '../lib/validate-change-requests';
-import { convertCsvToJson } from '../lib/csv-json-converter';
+import { convertCsvToJson, getCsvColumnNames } from '../lib/csv-json-converter';
 import { DataValidationError } from '../../errors';
 import * as Lib from '../lib/measures-lib';
-import { Measure } from '../../../util/interfaces';
+import { Measure, QualityMeasure } from '../../../util/interfaces';
+import { QUALITY_CSV_COLUMN_NAMES } from '../../constants';
 
 const PLACEHOLDER_STRATA = [{
     name: 'PLACEHOLDER',
@@ -30,6 +31,12 @@ export function updateMeasures(performanceYear: string, testMode: string = 'fals
         fs.readFileSync(path.join(appRoot + '', measuresPath), 'utf8')
     );
 
+    // Core Measures: removes isHighPriority and defaults isCoreMeasure/coreMeasureFor on quality measures.
+    const migrated = Lib.applyCoreMeasureFields(measuresJson, performanceYear);
+    if (migrated) {
+        info('Applied Core Measure field migration.');
+    }
+
     //to determine if any new changes need to be written to measures-data.json.
     let numOfNewChangeFiles = 0;
 
@@ -45,12 +52,11 @@ export function updateMeasures(performanceYear: string, testMode: string = 'fals
         }
     });
 
-    if (numOfNewChangeFiles > 0) {
-        if (testMode === 'false'){
-            Lib.writeToFile(measuresJson, measuresPath);
-        }
-    } else {
+    if (numOfNewChangeFiles === 0) {
         warning('No new change files found.');
+    }
+    if ((numOfNewChangeFiles > 0 || migrated) && testMode === 'false') {
+        Lib.writeToFile(measuresJson, measuresPath);
     }
 }
 
@@ -66,6 +72,13 @@ export function ingestChangeFile(
     const csv = fs.readFileSync(path.join(appRoot + '', `${changesPath}${fileName}`), 'utf8');
 
     try {
+        if (getCsvColumnNames(csv).includes(QUALITY_CSV_COLUMN_NAMES.isHighPriority)) {
+            throw new DataValidationError(
+                fileName,
+                `'${QUALITY_CSV_COLUMN_NAMES.isHighPriority}' is not supported for PY${performanceYear} and later. Use the '${QUALITY_CSV_COLUMN_NAMES.isCoreMeasure}' column.`
+            );
+        }
+
         const changeData = convertCsvToJson(csv);
 
         const acceptedChangeStack: MeasuresChange[] = [],
@@ -96,8 +109,12 @@ export function ingestChangeFile(
                     if (change.overallAlgorithm) warning(
                         `'${measureId}': 'Calculation Type' was changed. Was the strata file also updated to match?`
                     );
-                    if (change.metricType || change.isHighPriority || change.isInverse) warning(
-                        `'${measureId}': 'Metric Type', 'High Priority', and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
+                    if (change.metricType || change.isInverse) warning(
+                        `'${measureId}': 'Metric Type' and/or 'Inverse' were changed. Make sure benchmarks are also updated with a change request.`
+                    );
+                    const currentMeasure = _.find(measuresJson, { measureId }) as QualityMeasure | undefined;
+                    if (!_.isUndefined(change.isCoreMeasure) && change.isCoreMeasure !== currentMeasure?.isCoreMeasure) warning(
+                        `'${measureId}': 'Core Measure' was changed. Confirm the MVP source file ('Core Quality' rows) is updated to match.`
                     );
                     if (!Lib.isValidECQM(change, measuresJson)) {
                         throw new DataValidationError(measureId, 'CMS eCQM ID is required if one of the collection types is eCQM.');
@@ -106,9 +123,6 @@ export function ingestChangeFile(
 
                 if (!Lib.isValidCostScore(change, measuresJson)) {
                     throw new DataValidationError(measureId, `'costScore' metricType requires an 'administrativeClaims' submissionMethod.`);
-                }
-                if (!Lib.isOutcomeHighPriority(change, measuresJson)) {
-                    throw new DataValidationError(measureId, `'outcome' and 'intermediateOutcome' measures must always be High Priority.`);
                 }
                 if (Lib.isOnlyAdminClaims(change) && (change.metricType !== 'costScore' || !change.isInverse)) warning(
                     `'${measureId}': this measure's only submissionMethod is 'administrativeClaims'; however either the metricType is not 'costScore' and/or isInverse is 'false'. Was this deliberate?`
@@ -142,7 +156,7 @@ export function ingestChangeFile(
 
         //ingest new measures
         for (let i = 0; i < acceptedNewStack.length; i++) {
-            Lib.addMeasure(acceptedNewStack[i], measuresJson);
+            Lib.addMeasure(acceptedNewStack[i], measuresJson, performanceYear);
         }
 
         //ingest deleted measures
@@ -154,6 +168,8 @@ export function ingestChangeFile(
         for (let i = 0; i < acceptedChangeStack.length; i++) {
             Lib.updateMeasure(acceptedChangeStack[i], measuresJson, performanceYear);
         }
+
+        Lib.warnOnCoreMeasureWithoutPrograms([...acceptedNewStack, ...acceptedChangeStack], measuresJson);
 
         if (testMode === 'false') {
             Lib.updateChangeLog(fileName, changesPath);

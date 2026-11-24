@@ -7,6 +7,7 @@ import {
 import path from 'path';
 import appRoot from 'app-root-path';
 import fs from 'fs-extra';
+import { isCoreMeasureYear } from '../constants';
 
 function readStagingJSONFile(fileName: string, performanceYear: number) {
   const benchmarksStagingJSONDirectory = appRoot + `/staging/${performanceYear}/benchmarks/json`
@@ -58,7 +59,8 @@ export function benchmarkBusinessValidation(jsonName: string, performanceYear: n
       return;
     }
 
-    if (_.has(benchmark, 'isHighPriority')) {
+    // isHighPriority no longer exists on measures data starting with the Core Measures year.
+    if (!isCoreMeasureYear(performanceYear) && _.has(benchmark, 'isHighPriority')) {
       if (benchmark.isHighPriority !== (comparableMeasure as QualityMeasure).isHighPriority) {
         errors.push(
           new Error(

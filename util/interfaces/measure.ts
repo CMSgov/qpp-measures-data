@@ -129,7 +129,9 @@ export interface QualityMeasure extends BaseMeasure {
     nqfId: string | null;
     isClinicalGuidelineChanged: boolean;
     clinicalGuidelineChanged: string[];
-    isHighPriority: boolean;
+    isHighPriority?: boolean;
+    isCoreMeasure?: boolean;
+    coreMeasureFor?: Programs[];
     isInverse: boolean;
     dataDisplayFormat: DataDisplayFormat;
     overallAlgorithm?: string | null;

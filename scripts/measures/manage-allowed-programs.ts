@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import appRoot from 'app-root-path';
-import { Measure } from '../../util/interfaces';
+import { Measure, QualityMeasure } from '../../util/interfaces';
 import { Programs } from '../../util/interfaces/measure';
 import { info, error } from '../../scripts/logger';
 
@@ -33,19 +33,20 @@ function removeMeasureFromMVP(
         const header = lines[0];
         let removedCount = 0;
         
-        let expectedCategory: string;
+        let expectedCategories: string[];
         switch (category) {
             case 'ia':
-                expectedCategory = 'Improvement';
+                expectedCategories = ['Improvement'];
                 break;
             case 'quality':
-                expectedCategory = 'Quality';
+                // 'Core Quality' (PY2027+) rows are quality measures too.
+                expectedCategories = ['Quality', 'Core Quality'];
                 break;
             case 'cost':
-                expectedCategory = 'Cost';
+                expectedCategories = ['Cost'];
                 break;
             case 'pi':
-                expectedCategory = 'Foundational';
+                expectedCategories = ['Foundational'];
                 break;
             default:
                 info(`Unknown category "${category}" for MVP modification`);
@@ -66,11 +67,11 @@ function removeMeasureFromMVP(
             const measureId = columns[6];
             
             const shouldRemove = mvpId === program && 
-                               reportingCategory === expectedCategory && 
+                               expectedCategories.includes(reportingCategory) && 
                                affectedMeasureIds.includes(measureId);
             
             if (shouldRemove) {
-                info(`  - Removed measure "${measureId}" from MVP "${program}" (${expectedCategory}) in CSV`);
+                info(`  - Removed measure "${measureId}" from MVP "${program}" (${reportingCategory}) in CSV`);
                 removedCount++;
             } else {
                 filteredLines.push(line);
@@ -138,6 +139,11 @@ export function updateAllowedPrograms(
                     if (index !== -1) {
                         allowedPrograms.splice(index, 1);
                         measure.allowedPrograms = allowedPrograms;
+                        // Keep coreMeasureFor (PY2027+) a subset of allowedPrograms.
+                        const qualityMeasure = measure as QualityMeasure;
+                        if (qualityMeasure.coreMeasureFor?.includes(program)) {
+                            qualityMeasure.coreMeasureFor = qualityMeasure.coreMeasureFor.filter(id => id !== program);
+                        }
                         updatedMeasures++;
                         affectedMeasureIds.push(measure.measureId);
                         info(`Removed program "${program}" from measure "${measure.measureId}".`);
